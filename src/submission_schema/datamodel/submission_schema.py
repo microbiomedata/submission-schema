@@ -1,5 +1,5 @@
 # Auto generated from submission_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-01T09:54:43
+# Generation date: 2023-03-01T11:33:33
 # Schema: submission-schema
 #
 # id: https://w3id.org/microbiomedata/submission-schema

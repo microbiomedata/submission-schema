@@ -1,6 +1,7 @@
 [tool.poetry]
 name = "submission_schema"
-version = "0.1.0"
+# how will this (and the version in the schema itself) be auto-updated?
+version = "0.0.0.post1.dev0+a884957"
 description = "The home of the NMDC submission schema. *Not* the home of sheets_and_friends. *Not* a GH pages host of NMDC DataHarmonizer interfaces."
 authors = ["Mark Andrew Miller <mam@lbl.gov>"]
 license = "MIT"
@@ -12,7 +13,8 @@ python = "^3.9"
 linkml-runtime = "^1.1.24"
 
 [tool.poetry-dynamic-versioning]
-enable = true
+enable = false
+# doesn't this come true from cookiecutter
 vcs = "git"
 style = "pep440"
 
@@ -21,6 +23,10 @@ linkml = "^1.3.5"
 mkdocs-material = "^8.2.8"
 mkdocs-mermaid2-plugin = "^0.6.0"
 schemasheets = "^0.1.14"
+#sheets_and_friends = "^0.1.9"
+# /Users/MAM/Documents/gitrepos/sheets_and_friends
+# /home/mark/gitrepos/sheets_and_friends
+sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
