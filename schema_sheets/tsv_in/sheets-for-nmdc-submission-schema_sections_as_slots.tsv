@@ -1,0 +1,13 @@
+section_order	section_name	is_a	notes	description
+> rank	slot	is_a	comments	description
+1	Sample ID	dh_section		
+2	EMSL	dh_section		
+3	JGI-Metagenomics	dh_section		
+4	JGI-Metatranscriptomics	dh_section		
+5	MIxS	dh_section		
+6	MIxS (modified)	dh_section		
+7	MIxS Inspired	dh_section		
+8	MIxS investigation	dh_section		
+9	MIxS NASSF	dh_section		
+10	MIxS core	dh_section		
+11	Bioscales	dh_section		

@@ -1,0 +1,26 @@
+schema	key class = one DH interface	slot	type	prefix	prefix_uri	shema_uri	description	schema default_prefix	type	base	uri	mappings	todos	range	multivalued	inlined	inlined_as_list	slots
+> schema	class	slot	type	prefix	prefix_reference	id	description	default_prefix	type	base	uri	mappings	todos	range	multivalued	inlined	inlined_as_list	slots
+>												internal_separator: "|"						internal_separator: "|"
+nmdc_submission_schema						https://example.com/nmdc_submission_schema	Schema for creating Data Harmonizer interfaces for biosamples based on MIxS and other standards	nmdc_sub_scheme										
+	dh_interface						One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types											
+		dh_section					A section (ie group if columns) within a DataHarmonizer interface											
+			unit						unit	str	xsd:string	qud:Unit|UO:0000000	why isn't this picked up from the nmdc.yaml import?					
+				nmdc_sub_scheme	https://example.com/nmdc_sub_scheme/													
+				mixs.vocab	https://genomicsstandardsconsortium.github.io/mixs/													
+		air_data												air	TRUE	TRUE	TRUE	
+		biofilm_data												biofilm	TRUE	TRUE	TRUE	
+		bioscales_data												bioscales	TRUE	TRUE	TRUE	
+		built_env_data												built_env	TRUE	TRUE	TRUE	
+		hcr-cores_data												hcr-cores	TRUE	TRUE	TRUE	
+		hcr-fluids-swabs_data												hcr-fluids-swabs	TRUE	TRUE	TRUE	
+		host-associated_data												host-associated	TRUE	TRUE	TRUE	
+		misc-envs_data												misc-envs	TRUE	TRUE	TRUE	
+		plant-associated_data												plant-associated	TRUE	TRUE	TRUE	
+		sediment_data												sediment	TRUE	TRUE	TRUE	
+		soil_data												soil	TRUE	TRUE	TRUE	
+		wastewater_sludge_data												wastewater_sludge	TRUE	TRUE	TRUE	
+		water_data												water	TRUE	TRUE	TRUE	
+		emsl_data												emsl	TRUE	TRUE	TRUE	
+		jgi_mg_data												jgi_mg	TRUE	TRUE	TRUE	
+		jgi_mt_data												jgi_mt	TRUE	TRUE	TRUE	
+	SampleData						represents data produced by the DataHarmonizer tabs of the submission portal											air_data|biofilm_data|bioscales_data|built_env_data|host-associated_data|plant-associated_data|sediment_data|soil_data|wastewater_sludge_data|water_data|emsl_data|jgi_mg_data|jgi_mt_data

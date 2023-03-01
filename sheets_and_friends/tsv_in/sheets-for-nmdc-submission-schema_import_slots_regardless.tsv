@@ -1,0 +1,3 @@
+source class	source file or URL	slot	section	column order	destination class
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc.yaml	elev	MIxS (modified)	6	air|biofilm|bioscales|built_env|hcr-cores|hcr-fluids-swabs|host-associated|misc-envs|plant-associated|sediment|soil|wastewater_sludge|water
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc.yaml	ph	MIxS (modified)	27	biofilm|bioscales|hcr-cores|hcr-fluids-swabs|misc-envs|sediment|soil|wastewater_sludge|water
