@@ -1,0 +1,161 @@
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix PATO: <http://purl.obolibrary.org/obo/PATO_> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix linkml: <https://w3id.org/linkml/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix submission_schema: <https://w3id.org/microbiomedata/submission-schema/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+linkml:SubsetDefinition a owl:Class ;
+    rdfs:label "subset_definition" .
+
+linkml:TypeDefinition a owl:Class ;
+    rdfs:label "type_definition" .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
+<https://w3id.org/microbiomedata/submission-schema> a owl:Ontology ;
+    rdfs:label "submission-schema" ;
+    IAO:0000700 submission_schema:NamedThing,
+        submission_schema:SubmissionCollection ;
+    dcterms:license "MIT" ;
+    dcterms:title "submission-schema" ;
+    rdfs:seeAlso "https://microbiomedata.github.io/submission-schema" ;
+    linkml:generation_date "2023-03-01T09:54:41" ;
+    linkml:metamodel_version "1.7.0" ;
+    linkml:source_file "submission_schema.yaml" ;
+    linkml:source_file_date "2023-03-01T09:53:46" ;
+    linkml:source_file_size 2366 .
+
+submission_schema:SubmissionCollection a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SubmissionCollection" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom submission_schema:Submission ;
+            owl:onProperty submission_schema:entries ] ;
+    skos:definition "A holder for Submission objects" .
+
+submission_schema:age_in_years a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "age_in_years" ;
+    rdfs:range linkml:Integer ;
+    skos:definition "Number of years since birth" .
+
+submission_schema:entries a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "entries" ;
+    rdfs:range submission_schema:Submission .
+
+submission_schema:vital_status a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "vital_status" ;
+    rdfs:range submission_schema:PersonStatus ;
+    skos:definition "living or dead status" .
+
+PATO:0001421 a owl:Class,
+        submission_schema:PersonStatus ;
+    rdfs:label "ALIVE" .
+
+PATO:0001422 a owl:Class,
+        submission_schema:PersonStatus ;
+    rdfs:label "DEAD" .
+
+schema:birthDate a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "birth_date" ;
+    rdfs:range linkml:Date ;
+    skos:definition "Date on which a person is born" ;
+    skos:exactMatch schema:birthDate .
+
+schema:description a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "description" ;
+    rdfs:range linkml:String ;
+    skos:definition "A human-readable description for a thing" ;
+    skos:exactMatch schema:description .
+
+schema:email a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "primary_email" ;
+    rdfs:range linkml:String ;
+    skos:definition "The main email address of a person" ;
+    skos:exactMatch schema:email .
+
+schema:identifier a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "id" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "A unique identifier for a thing" ;
+    skos:exactMatch schema:identifier .
+
+schema:name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "name" ;
+    rdfs:range linkml:String ;
+    skos:definition "A human-readable name for a thing" ;
+    skos:exactMatch schema:name .
+
+submission_schema:NamedThing a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NamedThing" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty schema:identifier ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema:description ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema:name ] ;
+    skos:definition "A generic grouping for any identifiable entity" ;
+    skos:exactMatch schema:Thing .
+
+<https://w3id.org/microbiomedata/submission-schema/PersonStatus#UNKNOWN> a owl:Class,
+        submission_schema:PersonStatus ;
+    rdfs:label "UNKNOWN" .
+
+submission_schema:Submission a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Submission" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass submission_schema:PersonStatus ;
+            owl:onProperty submission_schema:vital_status ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty submission_schema:age_in_years ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty schema:email ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Date ;
+            owl:onProperty schema:birthDate ],
+        submission_schema:NamedThing ;
+    skos:definition "Represents a Submission" .
+
+linkml:ClassDefinition a owl:Class ;
+    rdfs:label "class_definition" .
+
+submission_schema:PersonStatus a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "PersonStatus" ;
+    owl:unionOf ( PATO:0001421 PATO:0001422 <https://w3id.org/microbiomedata/submission-schema/PersonStatus#UNKNOWN> ) ;
+    linkml:permissible_values PATO:0001421,
+        PATO:0001422,
+        <https://w3id.org/microbiomedata/submission-schema/PersonStatus#UNKNOWN> .
+
+linkml:SlotDefinition a owl:Class ;
+    rdfs:label "slot_definition" .
+
+
