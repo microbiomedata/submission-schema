@@ -1,0 +1,57 @@
+water_data:
+  - env_package: xyz
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    source_mat_id:
+      has_raw_value: xyz
+    collection_date: "2023-01-15"
+    depth: "123.4"
+    ecosystem: xyz
+    ecosystem_category: xyz
+    ecosystem_subtype: xyz
+    ecosystem_type: xyz
+    elev: 123.4
+    env_broad_scale:
+      has_raw_value: xyz
+      term:
+        id: xyz
+    env_local_scale:
+      has_raw_value: xyz
+      term:
+        id: xyz
+    env_medium:
+      has_raw_value: xyz
+      term:
+        id: xyz
+    samp_store_temp:
+      has_raw_value: xyz
+    specific_ecosystem: xyz
+  - env_package: xyz
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    source_mat_id:
+      has_raw_value: xyz
+    collection_date: "2023-01-15"
+    depth: "123.4"
+    ecosystem: xyz
+    ecosystem_category: xyz
+    ecosystem_subtype: xyz
+    ecosystem_type: xyz
+    elev: 123.4
+    env_broad_scale:
+      has_raw_value: xyz
+      term:
+        id: xyz
+    env_local_scale:
+      has_raw_value: xyz
+      term:
+        id: xyz
+    env_medium:
+      has_raw_value: xyz
+      term:
+        id: xyz
+    samp_store_temp:
+      has_raw_value: xyz
+    specific_ecosystem: xyz

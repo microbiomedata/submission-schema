@@ -1,0 +1,35 @@
+water_data:
+  - env_package: xyz
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    source_mat_id: nmdc_sub_schema:1
+#    collection_date: "2023-01-15"
+    depth: "123.4"
+    ecosystem: xyz
+    ecosystem_category: xyz
+    ecosystem_subtype: xyz
+    ecosystem_type: xyz
+    elev: 123.4
+    env_broad_scale: ambrosia [ENVO:12345678]
+    env_local_scale: ambrosia [ENVO:12345678]
+    env_medium: ambrosia [ENVO:12345678]
+    samp_store_temp: xyz
+    specific_ecosystem: xyz
+  - env_package: xyz
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    source_mat_id: nmdc_sub_schema:2
+#    collection_date: "2023-01-15"
+    depth: "123.4"
+    ecosystem: xyz
+    ecosystem_category: xyz
+    ecosystem_subtype: xyz
+    ecosystem_type: xyz
+    elev: 123.4
+    env_broad_scale: ambrosia [ENVO:12345678]
+    env_local_scale: ambrosia [ENVO:12345678]
+    env_medium: ambrosia [ENVO:12345678]
+    samp_store_temp: xyz
+    specific_ecosystem: xyz

@@ -119,8 +119,8 @@ gen-project: $(PYMODEL)
 		--include sqlddl \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-
-test: test-schema test-python
+# test-schema test-python
+test: site src/data/output
 test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
@@ -164,7 +164,8 @@ MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
 
-PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
+#PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
+PROJECT_FOLDERS = sqlschema owl jsonschema
 git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init

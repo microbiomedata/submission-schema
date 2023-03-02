@@ -8,8 +8,8 @@ classes:
     - biofilm_data
     - bioscales_data
     - built_env_data
-    - host-associated_data
-    - plant-associated_data
+    - host_associated_data
+    - plant_associated_data
     - sediment_data
     - soil_data
     - wastewater_sludge_data
@@ -17,6 +17,7 @@ classes:
     - emsl_data
     - jgi_mg_data
     - jgi_mt_data
+    tree_root: true
   air:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_interface
@@ -63,15 +64,15 @@ classes:
     - sample_shipped
     - sample_type
     - technical_reps
-  hcr-cores:
+  hcr_cores:
     from_schema: https://example.com/nmdc_submission_schema
     mixins:
     - dh_mutliview_common_columns
-  hcr-fluids-swabs:
+  hcr_fluids_swabs:
     from_schema: https://example.com/nmdc_submission_schema
     mixins:
     - dh_mutliview_common_columns
-  host-associated:
+  host_associated:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_interface
     mixins:
@@ -127,11 +128,11 @@ classes:
     - rna_seq_project_PI
     - rna_seq_project_name
     - rna_volume
-  misc-envs:
+  misc_envs:
     from_schema: https://example.com/nmdc_submission_schema
     mixins:
     - dh_mutliview_common_columns
-  plant-associated:
+  plant_associated:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_interface
     mixins:
@@ -595,11 +596,11 @@ slots:
     slot_group: EMSL
     string_serialization: '{float}'
     title: EMSL sample storage temperature, deg. C
-  JGI-Metagenomics:
+  JGI_Metagenomics:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '3'
-  JGI-Metatranscriptomics:
+  JGI_Metatranscriptomics:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '4'
@@ -607,27 +608,27 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '5'
-  MIxS (modified):
-    from_schema: https://example.com/nmdc_submission_schema
-    is_a: dh_section
-    rank: '6'
-  MIxS Inspired:
+  MIxS_Inspired:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '7'
-  MIxS NASSF:
+  MIxS_NASSF:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '9'
-  MIxS core:
+  MIxS_core:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '10'
-  MIxS investigation:
+  MIxS_investigation:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '8'
-  Sample ID:
+  MixS_Modified:
+    from_schema: https://example.com/nmdc_submission_schema
+    is_a: dh_section
+    rank: '6'
+  Sample_ID:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '1'
@@ -974,24 +975,24 @@ slots:
     slot_group: MIxS Inspired
     string_serialization: '{text}'
     title: filter method
-  hcr-cores_data:
+  hcr_cores_data:
     from_schema: https://example.com/nmdc_submission_schema
     inlined: true
     inlined_as_list: true
     multivalued: true
-    range: hcr-cores
-  hcr-fluids-swabs_data:
+    range: hcr_cores
+  hcr_fluids_swabs_data:
     from_schema: https://example.com/nmdc_submission_schema
     inlined: true
     inlined_as_list: true
     multivalued: true
-    range: hcr-fluids-swabs
-  host-associated_data:
+    range: hcr_fluids_swabs
+  host_associated_data:
     from_schema: https://example.com/nmdc_submission_schema
     inlined: true
     inlined_as_list: true
     multivalued: true
-    range: host-associated
+    range: host_associated
   isotope_exposure:
     description: List isotope exposure or addition applied to your sample.
     from_schema: https://example.com/nmdc_submission_schema
@@ -1058,12 +1059,12 @@ slots:
     slot_group: MIxS Inspired
     string_serialization: '{float} {unit}'
     title: microbial biomass nitrogen
-  misc-envs_data:
+  misc_envs_data:
     from_schema: https://example.com/nmdc_submission_schema
     inlined: true
     inlined_as_list: true
     multivalued: true
-    range: misc-envs
+    range: misc_envs
   non_microb_biomass:
     description: Amount of biomass; should include the name for the part of biomass
       measured, e.g.insect, plant, total. Can include multiple measurements separated
@@ -1108,12 +1109,12 @@ slots:
     slot_group: MIxS Inspired
     string_serialization: '{text}'
     title: other treatments
-  plant-associated_data:
+  plant_associated_data:
     from_schema: https://example.com/nmdc_submission_schema
     inlined: true
     inlined_as_list: true
     multivalued: true
-    range: plant-associated
+    range: plant_associated
   project_ID:
     description: Proposal IDs or names associated with dataset
     from_schema: https://example.com/nmdc_submission_schema

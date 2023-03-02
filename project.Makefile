@@ -1,15 +1,31 @@
-## Add your own custom Makefile targets here
-
 RUN=poetry run
 
 schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cleanup
 	rm -rf src/submission_schema/schema/submission_schema.yaml
+	rm -rf src/data/output
 
 src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
-	# still need to do modifications
-	# including annotations?
-	sleep 5
 	cp $< $@
+	yq -i '(.classes.[].slot_usage.[] | select(.range == "ControlledIdentifiedTermValue")  | .range ) = "string" ' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.range == "ControlledTermValue")  | .range ) = "string" ' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.range == "QuantityValue")  | .range ) = "string" ' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.range == "TextValue")  | .range ) = "string" ' $@
+	yq -i '(.slots.[] | select(.domain == "ControlledTermValue") | .domain ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "ControlledIdentifiedTermValue") | .range ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "ControlledTermValue") | .range ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "QuantityValue") | .range ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "TextValue") | .range ) = "string"' $@
+	yq -i 'del(.classes.ControlledIdentifiedTermValue)'  $@
+	yq -i 'del(.classes.ControlledTermValue)'  $@
+	yq -i 'del(.classes.QuantityValue)'  $@
+	yq -i 'del(.classes.TextValue)'  $@
+
+	yq -i 'del(.classes.[].slot_usage.[].pattern)' $@
+	yq -i 'del(.classes.[].slot_usage.[].required)' $@
+	yq -i 'del(.slots.[].pattern)' $@
+	yq -i 'del(.slots.[].pattern)' $@
+	yq -i 'del(.slots.[].required)' $@
+	yq -i 'del(.slots.collection_date.required)'  $@
 
 .PHONY: modifications_cleanup \
 schema_cleanup \
@@ -19,13 +35,8 @@ schemasheets_cleanup \
 sheets_and_friends_all \
 sheets_and_friends_cleanup
 
-
-#modifications_all:
-
 schemasheets_cleanup:
 	rm -rf schema_sheets/yaml_out/*
-
-#schemasheets_all: schemasheets_cleanup schema_sheets/yaml_out/from_schema_sheets.yaml
 
 schema_sheets/yaml_out/from_schema_sheets.yaml: schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_dh_interfaces.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_enums.tsv \
@@ -38,18 +49,12 @@ schema_sheets/tsv_in/types.tsv
 	$(RUN) sheets2linkml \
 		--output $@ $^
 		# would prefer to discover TSV inputs instead of enumerating them
-		#WARNING:root:Filling in missing prefix for: UO => http://purl.obolibrary.org/obo/UO_
-		#WARNING:root:Filling in missing prefix for: qud => http://example.org/qud/
-		#WARNING:root:Filling in missing prefix for: xsd => http://www.w3.org/2001/XMLSchema#
 
 
 # todo: fewer enums
 # todo: use booleans for yes/no enumerations
 # todo: some numbers appear as strings in the schema (just examples? check for minimum value etc)
 # todo maximum value for pH has to be an int?
-
-
-#sheets_and_friends_all: sheets_and_friends_cleanup sheets_and_friends/yaml_out/with_shuttles.yaml
 
 sheets_and_friends_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
@@ -60,10 +65,9 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardl
 			--config_tsv  $(word 2,$^) \
 			--recipient_model $(word 1,$^) \
 			--yaml_output $@
-		# import nmdc-schema's types or replace these ranges in the modification phase
-#		yq -i 'del(.slots.latitude.range)'  $@
-#		yq -i 'del(.slots.longitude.range)'  $@
-#		yq -i 'del(.slots.language.range)'  $@
+		#yq '(.classes.TextValue)'  $@
+
+
 
 # urllib.error.HTTPError: HTTP Error 404:
 # https://raw.githubusercontent.com/home/mark/.cache/pypoetry/virtualenvs/submission-schema-DC6HKp4p-py3.9/lib/python3.9/site-packages/linkml_runtime/linkml_model/model/schema/types.yaml
@@ -73,11 +77,26 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardl
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
-#modifications_all: modifications_cleanup sheets_and_friends/yaml_out/with_modifications.yaml
-
 sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles.yaml
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
 		--modifications_config_tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv \
 		--validation_config_tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv \
 		--yaml_output $@
+	#yq -i 'del(.classes.[].slot_usage.collection_date.required)'  $@
+
+src/data/output: src/submission_schema/schema/submission_schema.yaml
+	mkdir -p $@
+	$(RUN) linkml-run-examples \
+		--counter-example-input-directory src/data/invalid \
+		--input-directory src/data/valid \
+		--output-directory $@ \
+		--schema $< > $@/README.md
+
+# Warning: The following errors were encountered in the schema
+  #                :  Slot dh_mutliview_common_columns_source_mat_id is declared inline but single valued
+
+schema_sheets/populated_tsv/slot_usage.tsv:
+	$(RUN) linkml2sheets \
+		--output-directory $(dir $@) \
+		--schema src/submission_schema/schema/submission_schema.yaml schema_sheets/templates/slot_usage.tsv

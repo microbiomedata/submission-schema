@@ -1,15 +1,15 @@
 Desc	key class = one DH interface	parent term	mixins	non-imported slots	notes
 > description	class	is_a	mixins	slots	notes
->			internal_separator: "|"	internal_separator: "|"	
+>			"internal_separator: ""|"""	"internal_separator: ""|"""	
 	air	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
 	biofilm	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
 	bioscales	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
 	built_env	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
-	hcr-cores		dh_mutliview_common_columns		
-	hcr-fluids-swabs		dh_mutliview_common_columns		
-	host-associated	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
-	misc-envs		dh_mutliview_common_columns		
-	plant-associated	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
+	hcr_cores		dh_mutliview_common_columns		
+	hcr_fluids_swabs		dh_mutliview_common_columns		
+	host_associated	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
+	misc_envs		dh_mutliview_common_columns		
+	plant_associated	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
 sediment dev	sediment	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
 	soil	dh_interface	samp_id_new_terms_mixin|soil_mixs_inspired_mixin|dh_mutliview_common_columns		
 	wastewater_sludge	dh_interface	samp_id_new_terms_mixin|dh_mutliview_common_columns		
