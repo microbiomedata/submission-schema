@@ -317,8 +317,8 @@
 
 
 <h1 id="slot-name">Slot: name</h1>
-<p><em>A human-readable name for a thing</em></p>
-<p>URI: <a href="http://schema.org/name">schema:name</a></p>
+<p><em>A human readable label for an entity</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/name">nmdc_sub_schema:name</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -332,11 +332,15 @@
 <tbody>
 <tr>
 <td><a href="../NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
+<td>a databased entity or concept/class</td>
 </tr>
 <tr>
-<td><a href="../Submission/">Submission</a></td>
-<td>Represents a Submission</td>
+<td><a href="../Activity/">Activity</a></td>
+<td>a provence-generating activity</td>
+</tr>
+<tr>
+<td><a href="../OntologyClass/">OntologyClass</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -347,19 +351,19 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/microbiomedata/submission-schema</li>
+<li>from schema: https://example.com/nmdc_submission_schema</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: name
-description: A human-readable name for a thing
-from_schema: https://w3id.org/microbiomedata/submission-schema
+description: A human readable label for an entity
+from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
-slot_uri: schema:name
 alias: name
 domain_of:
 - NamedThing
+- Activity
 range: string
 
 </code></pre>

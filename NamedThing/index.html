@@ -200,12 +200,16 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-namedthing">Class: NamedThing</h1>
-<p><em>A generic grouping for any identifiable entity</em></p>
-<p>URI: <a href="http://schema.org/Thing">schema:Thing</a></p>
+<p><em>a databased entity or concept/class</em></p>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/NamedThing">nmdc_sub_schema:NamedThing</a></p>
 <div class="mermaid"> classDiagram
     class NamedThing
-      NamedThing &lt;|-- Submission
+      NamedThing &lt;|-- OntologyClass
 
+      NamedThing : alternative_identifiers
       NamedThing : description
       NamedThing : id
       NamedThing : name
@@ -214,7 +218,7 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>NamedThing</strong><ul>
-<li><a href="../Submission/">Submission</a></li>
+<li><a href="../OntologyClass/">OntologyClass</a></li>
 </ul>
 </li>
 </ul>
@@ -231,20 +235,26 @@
 <tbody>
 <tr>
 <td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for a thing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
+<td>A human readable label for an entity</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
+<td>a human-readable description of a thing</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../alternative_identifiers/">alternative_identifiers</a></td>
+<td>0..* <br/> <a href="../String/">String</a></td>
+<td>A list of alternative identifiers for the entity</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -252,7 +262,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/microbiomedata/submission-schema</li>
+<li>from schema: https://example.com/nmdc_submission_schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -265,11 +275,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>schema:Thing</td>
+<td>nmdc_sub_schema:NamedThing</td>
 </tr>
 <tr>
 <td>native</td>
-<td>submission_schema:NamedThing</td>
+<td>nmdc_sub_schema:NamedThing</td>
 </tr>
 </tbody>
 </table>
@@ -278,59 +288,83 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: NamedThing
-description: A generic grouping for any identifiable entity
-from_schema: https://w3id.org/microbiomedata/submission-schema
+description: a databased entity or concept/class
+from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
+abstract: true
 slots:
 - id
 - name
 - description
-class_uri: schema:Thing
+- alternative_identifiers
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: NamedThing
-description: A generic grouping for any identifiable entity
-from_schema: https://w3id.org/microbiomedata/submission-schema
+description: a databased entity or concept/class
+from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
+abstract: true
 attributes:
   id:
     name: id
-    description: A unique identifier for a thing
-    from_schema: https://w3id.org/microbiomedata/submission-schema
+    description: A unique identifier for a thing. Must be either a CURIE shorthand
+      for a URI or a complete URI
+    notes:
+    - 'abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?'
+    - a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters
+      will be accepted
+    - typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked
+      via per-class id slot usage assertions
+    - minting authority shoulders should probably be enumerated and checked in the
+      pattern
+    examples:
+    - value: nmdc:mgmag-00-x012.1_7_c1
+      description: https://github.com/microbiomedata/nmdc-schema/pull/499#discussion_r1018499248
+    from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
-    slot_uri: schema:identifier
     identifier: true
     alias: id
     owner: NamedThing
     domain_of:
     - NamedThing
-    range: uriorcurie
+    - Activity
+    range: string
   name:
     name: name
-    description: A human-readable name for a thing
-    from_schema: https://w3id.org/microbiomedata/submission-schema
+    description: A human readable label for an entity
+    from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
-    slot_uri: schema:name
     alias: name
     owner: NamedThing
     domain_of:
     - NamedThing
+    - Activity
     range: string
   description:
     name: description
-    description: A human-readable description for a thing
-    from_schema: https://w3id.org/microbiomedata/submission-schema
+    description: a human-readable description of a thing
+    from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
-    slot_uri: schema:description
+    slot_uri: dcterms:description
     alias: description
     owner: NamedThing
     domain_of:
     - NamedThing
     range: string
-class_uri: schema:Thing
+  alternative_identifiers:
+    name: alternative_identifiers
+    description: A list of alternative identifiers for the entity.
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1000
+    multivalued: true
+    alias: alternative_identifiers
+    owner: NamedThing
+    domain_of:
+    - NamedThing
+    range: string
 
 </code></pre>
 </details>
