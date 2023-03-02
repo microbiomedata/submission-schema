@@ -111,16 +111,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/ControlledIdentifiedTermValue/</loc>
-         <lastmod>2023-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/ControlledTermValue/</loc>
-         <lastmod>2023-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://microbiomedata.github.io/submission-schema/CurLandUseEnum/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
@@ -396,17 +386,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/Hcr-cores/</loc>
-         <lastmod>2023-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/Hcr-fluids-swabs/</loc>
+         <loc>https://microbiomedata.github.io/submission-schema/HcrCores/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/HcrEnum/</loc>
+         <lastmod>2023-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/HcrFluidsSwabs/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -426,7 +416,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/Host-associated/</loc>
+         <loc>https://microbiomedata.github.io/submission-schema/HostAssociated/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -501,11 +491,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/MIxS_%28modified%29/</loc>
-         <lastmod>2023-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://microbiomedata.github.io/submission-schema/MIxS_Inspired/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
@@ -531,7 +516,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/Misc-envs/</loc>
+         <loc>https://microbiomedata.github.io/submission-schema/MiscEnvs/</loc>
+         <lastmod>2023-03-02</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/MixS_Modified/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -591,7 +581,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/Plant-associated/</loc>
+         <loc>https://microbiomedata.github.io/submission-schema/PlantAssociated/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -607,11 +597,6 @@
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/QuadPosEnum/</loc>
-         <lastmod>2023-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/QuantityValue/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -812,11 +797,6 @@
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/SurfMaterialEnum/</loc>
-         <lastmod>2023-03-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/TextValue/</loc>
          <lastmod>2023-03-02</lastmod>
          <changefreq>daily</changefreq>
     </url>
