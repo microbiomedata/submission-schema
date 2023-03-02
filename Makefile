@@ -88,7 +88,8 @@ create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
 all: site
-site: gen-project gendoc
+site: schema_cleanup src/submission_schema/schema/submission_schema.yaml gen-project gendoc
+
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
 
@@ -102,7 +103,21 @@ gen-examples:
 # generates all project files
 
 gen-project: $(PYMODEL)
-	$(RUN) gen-project ${GEN_PARGS} -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
+	$(RUN) gen-project ${GEN_PARGS}  \
+		--exclude excel \
+		--exclude graphql \
+		--exclude jsonld \
+		--exclude jsonldcontext \
+		--exclude markdown \
+		--exclude prefixmap \
+		--exclude proto \
+		--exclude shacl \
+		--exclude shex \
+		--include jsonschema \
+		--include owl \
+		--include python \
+		--include sqlddl \
+		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 
 test: test-schema test-python

@@ -10,7 +10,7 @@ include = ["README.md", "src/submission_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.1.24"
+linkml-runtime = "1.4.5"
 
 [tool.poetry-dynamic-versioning]
 enable = false
@@ -19,14 +19,14 @@ vcs = "git"
 style = "pep440"
 
 [tool.poetry.dev-dependencies]
-linkml = "^1.3.5"
+linkml = "^1.4.6"
 mkdocs-material = "^8.2.8"
 mkdocs-mermaid2-plugin = "^0.6.0"
 schemasheets = "^0.1.14"
-#sheets_and_friends = "^0.1.9"
-# /Users/MAM/Documents/gitrepos/sheets_and_friends
-# /home/mark/gitrepos/sheets_and_friends
-sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
+sheets_and_friends = "^0.1.11"
+## /Users/MAM/Documents/gitrepos/sheets_and_friends
+## /home/mark/gitrepos/sheets_and_friends
+#sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]

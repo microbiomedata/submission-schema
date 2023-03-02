@@ -189,7 +189,7 @@ classes:
     mixins:
     - samp_id_new_terms_mixin
     - dh_mutliview_common_columns
-default_prefix: nmdc_sub_scheme
+default_prefix: nmdc_sub_schema
 default_range: string
 description: Schema for creating Data Harmonizer interfaces for biosamples based on
   MIxS and other standards
@@ -571,8 +571,9 @@ prefixes:
   UO: http://purl.obolibrary.org/obo/UO_
   linkml: https://w3id.org/linkml/
   mixs.vocab: https://genomicsstandardsconsortium.github.io/mixs/
-  nmdc_sub_scheme: https://example.com/nmdc_sub_scheme/
+  nmdc_sub_schema: https://example.com/nmdc_sub_schema/
   qud: http://example.org/qud/
+  xsd: http://www.w3.org/2001/XMLSchema#
 slots:
   Bioscales:
     from_schema: https://example.com/nmdc_submission_schema
@@ -1448,6 +1449,9 @@ slots:
     slot_group: EMSL
     string_serialization: '{integer}'
     title: number technical replicate
+  type:
+    description: required by AttributeValue
+    from_schema: https://example.com/nmdc_submission_schema
   wastewater_sludge_data:
     from_schema: https://example.com/nmdc_submission_schema
     inlined: true
@@ -1461,6 +1465,14 @@ slots:
     multivalued: true
     range: water
 types:
+  decimal degree:
+    base: float
+    from_schema: https://example.com/nmdc_submission_schema
+    uri: xsd:decimal
+  language code:
+    base: str
+    from_schema: https://example.com/nmdc_submission_schema
+    uri: xsd:language
   unit:
     base: str
     from_schema: https://example.com/nmdc_submission_schema

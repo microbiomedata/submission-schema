@@ -1,0 +1,6 @@
+type	base	uri	mappings	todos
+>type	base	uri	mappings	todos
+>			"internal_separator: ""|"""	"internal_separator: ""|"""
+unit	str	xsd:string	qud:Unit|UO:0000000	why isn't this picked up from the nmdc.yaml import?
+decimal degree	float	xsd:decimal		
+language code	str	xsd:language		

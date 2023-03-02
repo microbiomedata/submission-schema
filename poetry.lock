@@ -1117,14 +1117,14 @@ linkml-runtime = ">=1.1.6"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.4.7"
+version = "1.4.5"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 category = "main"
 optional = false
 python-versions = ">=3.7.6,<4.0.0"
 files = [
-    {file = "linkml_runtime-1.4.7-py3-none-any.whl", hash = "sha256:acf070d46325799ad7612be1f85b81348f733ed431021f3a77e6005e191c59b1"},
-    {file = "linkml_runtime-1.4.7.tar.gz", hash = "sha256:5cd130664943da7d502fb8974299fac16112c3f4237e4ff757e2fc8c8c07b0ab"},
+    {file = "linkml-runtime-1.4.5.tar.gz", hash = "sha256:bdb6260dfd9b050a6edce8e72061e77e7080471d5d53e694805cb948c8c9f473"},
+    {file = "linkml_runtime-1.4.5-py3-none-any.whl", hash = "sha256:fc1149c59e038a45e5d46c677a19b5dfc15dedce3ef967eed2ee3e0958fd2e49"},
 ]
 
 [package.dependencies]
@@ -2357,26 +2357,24 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 
 [[package]]
 name = "sheets-and-friends"
-version = "0.1.9"
+version = "0.1.11"
 description = "Create a LinkML model with as-is imported slots, imported but modified slots (via yq), or newly minted slots (via schemasheets)"
 category = "dev"
 optional = false
-python-versions = "^3.9"
-files = []
-develop = true
+python-versions = ">=3.9,<4.0"
+files = [
+    {file = "sheets_and_friends-0.1.11-py3-none-any.whl", hash = "sha256:27b059c218dde5146c360744e4218284d44c2ab249f24cef6a8cb344baa7f3bb"},
+    {file = "sheets_and_friends-0.1.11.tar.gz", hash = "sha256:537b6a90398f086454ccf736126279459e37c5a044bf0f2318cd30d26517f271"},
+]
 
 [package.dependencies]
 click_log = "*"
-glom = "^23.1.1"
-linkml-runtime = "^1.0.6"
-pandas = "^1.3.4"
-pandasql = "^0.7.3"
-pygsheets = "^2.0.5"
-schemasheets = "^0.1.8"
-
-[package.source]
-type = "directory"
-url = "../sheets_and_friends"
+glom = ">=23.1.1,<24.0.0"
+linkml-runtime = "1.4.5"
+pandas = ">=1.3.4,<2.0.0"
+pandasql = ">=0.7.3,<0.8.0"
+pygsheets = ">=2.0.5,<3.0.0"
+schemasheets = ">=0.1.8,<0.2.0"
 
 [[package]]
 name = "shexjsg"
@@ -3056,4 +3054,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "0e91b4656e5bf08392f420a60403bce4a01331b4bfba0c3fe7317d7f2f87654f"
+content-hash = "a4ae0000dc3253436f95ead5ee061e79ec9331b4816423e7a962a2cd177e5e9c"
