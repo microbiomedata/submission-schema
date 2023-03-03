@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -332,6 +332,7 @@
 
 
 <h1 id="slot-dna_concentration">Slot: dna_concentration</h1>
+<p><em>placeholder</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/dna_concentration">nmdc_sub_schema:dna_concentration</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -345,15 +346,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMg/">JgiMg</a></td>
-<td></td>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>jgi_mg dh_interface</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Maximum Value: 2000</li>
+<li>
+<p>Required: True</p>
+</li>
+<li>
+<p>Maximum Value: 2000</p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -381,6 +387,7 @@
 <details>
 
 <pre><code class="language-yaml">name: dna_concentration
+description: placeholder
 title: DNA concentration in ng/ul
 comments:
 - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
@@ -392,9 +399,10 @@ rank: 5
 string_serialization: '{float}'
 alias: dna_concentration
 domain_of:
-- jgi_mg
-slot_group: JGI-Metagenomics
+- JgiMgInterface
+slot_group: jgi_metagenomics_section
 range: string
+required: true
 minimum_value: 0
 maximum_value: 2000
 

@@ -123,7 +123,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about.md">
+<a class="md-nav__link" href="../about/">
         About
       </a>
 </li>
@@ -197,19 +197,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-sampidnewtermsmixin">Class: SampIdNewTermsMixin</h1>
+<p><em>Mixin with SampIdNew Terms</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/SampIdNewTermsMixin">nmdc_sub_schema:SampIdNewTermsMixin</a></p>
 <div class="mermaid"> classDiagram
     class SampIdNewTermsMixin
-      SampIdNewTermsMixin &lt;|-- Air
-      SampIdNewTermsMixin &lt;|-- Biofilm
-      SampIdNewTermsMixin &lt;|-- Bioscales
-      SampIdNewTermsMixin &lt;|-- BuiltEnv
-      SampIdNewTermsMixin &lt;|-- HostAssociated
-      SampIdNewTermsMixin &lt;|-- PlantAssociated
-      SampIdNewTermsMixin &lt;|-- Sediment
-      SampIdNewTermsMixin &lt;|-- Soil
-      SampIdNewTermsMixin &lt;|-- WastewaterSludge
-      SampIdNewTermsMixin &lt;|-- Water
+      SampIdNewTermsMixin &lt;|-- AirInterface
+      SampIdNewTermsMixin &lt;|-- BiofilmInterface
+      SampIdNewTermsMixin &lt;|-- BuiltEnvInterface
+      SampIdNewTermsMixin &lt;|-- HostAssociatedInterface
+      SampIdNewTermsMixin &lt;|-- PlantAssociatedInterface
+      SampIdNewTermsMixin &lt;|-- SedimentInterface
+      SampIdNewTermsMixin &lt;|-- SoilInterface
+      SampIdNewTermsMixin &lt;|-- WastewaterSludgeInterface
+      SampIdNewTermsMixin &lt;|-- WaterInterface
 
       SampIdNewTermsMixin : env_package
       SampIdNewTermsMixin : sample_link
@@ -229,7 +229,7 @@
 <tbody>
 <tr>
 <td><a href="../env_package/">env_package</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Select the MIxS enviromental package that best describes the environment from...</td>
 <td>direct</td>
 </tr>
@@ -251,44 +251,40 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Air/">Air</a></td>
-<td></td>
+<td><a href="../AirInterface/">AirInterface</a></td>
+<td>air dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Biofilm/">Biofilm</a></td>
-<td></td>
+<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>biofilm dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Bioscales/">Bioscales</a></td>
-<td></td>
+<td><a href="../BuiltEnvInterface/">BuiltEnvInterface</a></td>
+<td>built_env dh_interface</td>
 </tr>
 <tr>
-<td><a href="../BuiltEnv/">BuiltEnv</a></td>
-<td></td>
+<td><a href="../HostAssociatedInterface/">HostAssociatedInterface</a></td>
+<td>host_associated dh_interface</td>
 </tr>
 <tr>
-<td><a href="../HostAssociated/">HostAssociated</a></td>
-<td></td>
+<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
+<td>plant_associated dh_interface</td>
 </tr>
 <tr>
-<td><a href="../PlantAssociated/">PlantAssociated</a></td>
-<td></td>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Sediment/">Sediment</a></td>
-<td>sediment dev</td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></td>
+<td>wastewater_sludge dh_interface</td>
 </tr>
 <tr>
-<td><a href="../WastewaterSludge/">WastewaterSludge</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../Water/">Water</a></td>
-<td></td>
+<td><a href="../WaterInterface/">WaterInterface</a></td>
+<td>water dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -320,7 +316,9 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: samp_id_new_terms_mixin
+<pre><code class="language-yaml">name: SampIdNewTermsMixin
+description: Mixin with SampIdNew Terms
+title: SampId New Terms
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 mixin: true
@@ -332,7 +330,9 @@ slots:
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: samp_id_new_terms_mixin
+<pre><code class="language-yaml">name: SampIdNewTermsMixin
+description: Mixin with SampIdNew Terms
+title: SampId New Terms
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 mixin: true
@@ -347,11 +347,12 @@ attributes:
     from_schema: https://example.com/nmdc_submission_schema
     rank: 4
     alias: env_package
-    owner: samp_id_new_terms_mixin
+    owner: SampIdNewTermsMixin
     domain_of:
-    - samp_id_new_terms_mixin
-    slot_group: Sample ID
+    - SampIdNewTermsMixin
+    slot_group: sample_id_section
     range: string
+    required: true
   sample_link:
     name: sample_link
     description: A unique identifier to assign parent-child, subsample, or sibling
@@ -369,10 +370,10 @@ attributes:
     rank: 5
     string_serialization: '{text}:{text}'
     alias: sample_link
-    owner: samp_id_new_terms_mixin
+    owner: SampIdNewTermsMixin
     domain_of:
-    - samp_id_new_terms_mixin
-    slot_group: Sample ID
+    - SampIdNewTermsMixin
+    slot_group: sample_id_section
     range: string
     recommended: true
 

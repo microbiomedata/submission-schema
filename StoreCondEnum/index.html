@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -318,6 +318,7 @@
 
 
 <h1 id="enum-storecondenum">Enum: StoreCondEnum</h1>
+<p><em>placeholder enum descr</em></p>
 <p>URI: <a href="StoreCondEnum">StoreCondEnum</a></p>
 <h2 id="permissible-values">Permissible Values</h2>
 <table>
@@ -332,22 +333,22 @@
 <tr>
 <td>fresh</td>
 <td>None</td>
-<td></td>
+<td>placeholder PV descr</td>
 </tr>
 <tr>
 <td>frozen</td>
 <td>None</td>
-<td></td>
+<td>placeholder PV descr</td>
 </tr>
 <tr>
 <td>lyophilized</td>
 <td>None</td>
-<td></td>
+<td>placeholder PV descr</td>
 </tr>
 <tr>
 <td>other</td>
 <td>None</td>
-<td></td>
+<td>placeholder PV descr</td>
 </tr>
 </tbody>
 </table>
@@ -364,10 +365,6 @@
 <td><a href="../store_cond/">store_cond</a></td>
 <td>Explain how the soil sample is stored (fresh/frozen/other)</td>
 </tr>
-<tr>
-<td><a href="../store_cond/">store_cond</a></td>
-<td>Explain how the soil sample is stored (fresh/frozen/other)</td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -378,12 +375,14 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: store_cond_enum
+<pre><code class="language-yaml">name: StoreCondEnum
+description: placeholder enum descr
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 permissible_values:
   fresh:
     text: fresh
+    description: placeholder PV descr
     annotations:
       sntc_name:
         tag: sntc_name
@@ -393,10 +392,13 @@ permissible_values:
       a string range according to mixs-source).
   frozen:
     text: frozen
+    description: placeholder PV descr
   lyophilized:
     text: lyophilized
+    description: placeholder PV descr
   other:
     text: other
+    description: placeholder PV descr
 
 </code></pre>
 

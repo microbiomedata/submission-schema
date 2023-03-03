@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -318,6 +318,7 @@
 
 
 <h1 id="slot-sediment_data">Slot: sediment_data</h1>
+<p><em>aggregation slot relating sediment data collections to a SampleData container</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/sediment_data">nmdc_sub_schema:sediment_data</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,7 +339,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Sediment/">Sediment</a></li>
+<li>Range: <a href="../SedimentInterface/">SedimentInterface</a></li>
 <li>Multivalued: True</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -350,13 +351,14 @@
 <details>
 
 <pre><code class="language-yaml">name: sediment_data
+description: aggregation slot relating sediment data collections to a SampleData container
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 multivalued: true
 alias: sediment_data
 domain_of:
 - SampleData
-range: sediment
+range: SedimentInterface
 inlined: true
 inlined_as_list: true
 

@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -346,14 +346,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Emsl/">Emsl</a></td>
-<td></td>
+<td><a href="../EmslInterface/">EmslInterface</a></td>
+<td>emsl dh_interface</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../SampleTypeEnum/">SampleTypeEnum</a></li>
+<li>Required: True</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -391,9 +392,10 @@ from_schema: https://example.com/nmdc_submission_schema
 rank: 2
 alias: sample_type
 domain_of:
-- emsl
-slot_group: EMSL
-range: sample_type_enum
+- EmslInterface
+slot_group: emsl_section
+range: SampleTypeEnum
+required: true
 
 </code></pre>
 

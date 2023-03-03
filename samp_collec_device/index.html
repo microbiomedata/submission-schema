@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -365,52 +365,48 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Air/">Air</a></td>
-<td></td>
+<td><a href="../AirInterface/">AirInterface</a></td>
+<td>air dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Biofilm/">Biofilm</a></td>
-<td></td>
+<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>biofilm dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Bioscales/">Bioscales</a></td>
-<td></td>
+<td><a href="../HcrCoresInterface/">HcrCoresInterface</a></td>
+<td>hcr_cores dh_interface</td>
 </tr>
 <tr>
-<td><a href="../HcrCores/">HcrCores</a></td>
-<td></td>
+<td><a href="../HcrFluidsSwabsInterface/">HcrFluidsSwabsInterface</a></td>
+<td>hcr_fluids_swabs dh_interface</td>
 </tr>
 <tr>
-<td><a href="../HcrFluidsSwabs/">HcrFluidsSwabs</a></td>
-<td></td>
+<td><a href="../HostAssociatedInterface/">HostAssociatedInterface</a></td>
+<td>host_associated dh_interface</td>
 </tr>
 <tr>
-<td><a href="../HostAssociated/">HostAssociated</a></td>
-<td></td>
+<td><a href="../MiscEnvsInterface/">MiscEnvsInterface</a></td>
+<td>misc_envs dh_interface</td>
 </tr>
 <tr>
-<td><a href="../MiscEnvs/">MiscEnvs</a></td>
-<td></td>
+<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
+<td>plant_associated dh_interface</td>
 </tr>
 <tr>
-<td><a href="../PlantAssociated/">PlantAssociated</a></td>
-<td></td>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Sediment/">Sediment</a></td>
-<td>sediment dev</td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></td>
+<td>wastewater_sludge dh_interface</td>
 </tr>
 <tr>
-<td><a href="../WastewaterSludge/">WastewaterSludge</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../Water/">Water</a></td>
-<td></td>
+<td><a href="../WaterInterface/">WaterInterface</a></td>
+<td>water dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -479,18 +475,17 @@ slot_uri: MIXS:0000002
 multivalued: false
 alias: samp_collec_device
 domain_of:
-- air
-- biofilm
-- bioscales
-- hcr_cores
-- hcr_fluids_swabs
-- host_associated
-- misc_envs
-- plant_associated
-- sediment
-- soil
-- wastewater_sludge
-- water
+- AirInterface
+- BiofilmInterface
+- HcrCoresInterface
+- HcrFluidsSwabsInterface
+- HostAssociatedInterface
+- MiscEnvsInterface
+- PlantAssociatedInterface
+- SedimentInterface
+- SoilInterface
+- WastewaterSludgeInterface
+- WaterInterface
 range: string
 
 </code></pre>

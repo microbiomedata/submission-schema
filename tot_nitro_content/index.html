@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -365,20 +365,16 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Biofilm/">Biofilm</a></td>
-<td></td>
+<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>biofilm dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Bioscales/">Bioscales</a></td>
-<td></td>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Sediment/">Sediment</a></td>
-<td>sediment dev</td>
-</tr>
-<tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -450,10 +446,9 @@ slot_uri: MIXS:0000530
 multivalued: false
 alias: tot_nitro_content
 domain_of:
-- biofilm
-- bioscales
-- sediment
-- soil
+- BiofilmInterface
+- SedimentInterface
+- SoilInterface
 range: string
 
 </code></pre>

@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -318,6 +318,7 @@
 
 
 <h1 id="slot-wastewater_sludge_data">Slot: wastewater_sludge_data</h1>
+<p><em>aggregation slot relating wastewater_sludge data collections to a SampleData container</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/wastewater_sludge_data">nmdc_sub_schema:wastewater_sludge_data</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,7 +339,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../WastewaterSludge/">WastewaterSludge</a></li>
+<li>Range: <a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></li>
 <li>Multivalued: True</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -350,13 +351,15 @@
 <details>
 
 <pre><code class="language-yaml">name: wastewater_sludge_data
+description: aggregation slot relating wastewater_sludge data collections to a SampleData
+  container
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 multivalued: true
 alias: wastewater_sludge_data
 domain_of:
 - SampleData
-range: wastewater_sludge
+range: WastewaterSludgeInterface
 inlined: true
 inlined_as_list: true
 

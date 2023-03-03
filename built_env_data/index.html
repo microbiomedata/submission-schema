@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -318,6 +318,7 @@
 
 
 <h1 id="slot-built_env_data">Slot: built_env_data</h1>
+<p><em>aggregation slot relating built_env data collections to a SampleData container</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/built_env_data">nmdc_sub_schema:built_env_data</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,7 +339,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../BuiltEnv/">BuiltEnv</a></li>
+<li>Range: <a href="../BuiltEnvInterface/">BuiltEnvInterface</a></li>
 <li>Multivalued: True</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -350,13 +351,15 @@
 <details>
 
 <pre><code class="language-yaml">name: built_env_data
+description: aggregation slot relating built_env data collections to a SampleData
+  container
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 multivalued: true
 alias: built_env_data
 domain_of:
 - SampleData
-range: built_env
+range: BuiltEnvInterface
 inlined: true
 inlined_as_list: true
 

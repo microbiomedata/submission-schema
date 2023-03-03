@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -332,6 +332,7 @@
 
 
 <h1 id="slot-dna_cont_well">Slot: dna_cont_well</h1>
+<p><em>placeholder</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/dna_cont_well">nmdc_sub_schema:dna_cont_well</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -345,15 +346,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMg/">JgiMg</a></td>
-<td></td>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>jgi_mg dh_interface</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-<li>Recommended: True</li>
+<li>Required: True</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -370,10 +371,7 @@
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>Required when 'plate' is selected for container type.</li>
-<li>Leave blank if the sample will be shipped in a tube.</li>
-<li>JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.</li>
-<li>For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).</li>
+<li>Required when 'plate' is selected for container type. Corner wells must be blank. For partial plates, fill by columns. Leave blank if the sample will be shipped in a tube.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -384,13 +382,12 @@
 <details>
 
 <pre><code class="language-yaml">name: dna_cont_well
-title: DNA plate position
+description: placeholder
+title: DNA well number
 comments:
-- Required when 'plate' is selected for container type.
-- Leave blank if the sample will be shipped in a tube.
-- JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass
-  validation.
-- For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
+- Required when 'plate' is selected for container type. Corner wells must be blank.
+  For partial plates, fill by columns. Leave blank if the sample will be shipped in
+  a tube.
 examples:
 - value: B2
 from_schema: https://example.com/nmdc_submission_schema
@@ -398,10 +395,10 @@ rank: 11
 string_serialization: '{96 well plate pos}'
 alias: dna_cont_well
 domain_of:
-- jgi_mg
-slot_group: JGI-Metagenomics
+- JgiMgInterface
+slot_group: jgi_metagenomics_section
 range: string
-recommended: true
+required: true
 
 </code></pre>
 

@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -282,13 +282,6 @@
         <li class="md-nav__item">
   <a href="#comments" class="md-nav__link">
     Comments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See Also
   </a>
   
 </li>
@@ -354,11 +347,11 @@
 <tbody>
 <tr>
 <td><a href="../SoilMixsInspiredMixin/">SoilMixsInspiredMixin</a></td>
-<td></td>
+<td>Mixin with SoilMixsInspired Terms</td>
 </tr>
 <tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -384,10 +377,6 @@
 <ul>
 <li>Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter</li>
 </ul>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><a href="https://w3id.org/mixs/collection_date">MIxS:collection_date</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -407,14 +396,12 @@ comments:
 examples:
 - value: 13:33 or 13:33:55
 from_schema: https://example.com/nmdc_submission_schema
-see_also:
-- MIxS:collection_date
 rank: 1
 string_serialization: '{time, seconds optional}'
 alias: collection_time
 domain_of:
-- soil_mixs_inspired_mixin
-slot_group: MIxS Inspired
+- SoilMixsInspiredMixin
+slot_group: mixs_inspired_section
 range: string
 recommended: true
 

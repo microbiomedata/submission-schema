@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -332,6 +332,7 @@
 
 
 <h1 id="slot-dna_project_contact">Slot: dna_project_contact</h1>
+<p><em>placeholder</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/dna_project_contact">nmdc_sub_schema:dna_project_contact</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -345,14 +346,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMg/">JgiMg</a></td>
-<td></td>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>jgi_mg dh_interface</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
+<li>Required: True</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -380,6 +382,7 @@
 <details>
 
 <pre><code class="language-yaml">name: dna_project_contact
+description: placeholder
 title: DNA seq project contact
 comments:
 - Do not edit these values. A template will be provided by NMDC in which these values
@@ -391,9 +394,10 @@ rank: 18
 string_serialization: '{text}'
 alias: dna_project_contact
 domain_of:
-- jgi_mg
-slot_group: JGI-Metagenomics
+- JgiMgInterface
+slot_group: jgi_metagenomics_section
 range: string
+required: true
 
 </code></pre>
 

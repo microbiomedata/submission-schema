@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -332,6 +332,7 @@
 
 
 <h1 id="slot-dnase_rna">Slot: dnase_rna</h1>
+<p><em>placeholder</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/dnase_rna">nmdc_sub_schema:dnase_rna</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -345,14 +346,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMt/">JgiMt</a></td>
-<td></td>
+<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>jgi_mt dh_interface</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../DnaseRnaEnum/">DnaseRnaEnum</a></li>
+<li>Required: True</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -380,6 +382,7 @@
 <details>
 
 <pre><code class="language-yaml">name: dnase_rna
+description: placeholder
 title: DNase treated
 comments:
 - Note DNAse treatment is required for all RNA samples.
@@ -389,9 +392,10 @@ from_schema: https://example.com/nmdc_submission_schema
 rank: 13
 alias: dnase_rna
 domain_of:
-- jgi_mt
-slot_group: JGI-Metatranscriptomics
-range: dnase_rna_enum
+- JgiMtInterface
+slot_group: jgi_metatranscriptomics_section
+range: DnaseRnaEnum
+required: true
 
 </code></pre>
 

@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -275,13 +275,6 @@
         <li class="md-nav__item">
   <a href="#comments" class="md-nav__link">
     Comments
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    See Also
   </a>
   
 </li>
@@ -347,11 +340,11 @@
 <tbody>
 <tr>
 <td><a href="../SoilMixsInspiredMixin/">SoilMixsInspiredMixin</a></td>
-<td></td>
+<td>Mixin with SoilMixsInspired Terms</td>
 </tr>
 <tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -362,10 +355,6 @@
 <h2 id="comments">Comments</h2>
 <ul>
 <li>required if "org_nitro" is provided</li>
-</ul>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><a href="https://w3id.org/mixs/org_nitro|tot_nitro_cont_meth">MIxS:org_nitro|tot_nitro_cont_meth</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -381,14 +370,12 @@ title: organic nitrogen method
 comments:
 - required if &quot;org_nitro&quot; is provided
 from_schema: https://example.com/nmdc_submission_schema
-see_also:
-- MIxS:org_nitro|tot_nitro_cont_meth
 rank: 14
 string_serialization: '{PMID}|{DOI}|{URL}'
 alias: org_nitro_method
 domain_of:
-- soil_mixs_inspired_mixin
-slot_group: MIxS Inspired
+- SoilMixsInspiredMixin
+slot_group: mixs_inspired_section
 range: string
 
 </code></pre>

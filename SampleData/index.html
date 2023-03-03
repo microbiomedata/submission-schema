@@ -123,7 +123,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about.md">
+<a class="md-nav__link" href="../about/">
         About
       </a>
 </li>
@@ -198,7 +198,6 @@
     class SampleData
       SampleData : air_data
       SampleData : biofilm_data
-      SampleData : bioscales_data
       SampleData : built_env_data
       SampleData : emsl_data
       SampleData : host_associated_data
@@ -225,80 +224,74 @@
 <tbody>
 <tr>
 <td><a href="../air_data/">air_data</a></td>
-<td>0..* <br/> <a href="../Air/">Air</a></td>
-<td></td>
+<td>0..* <br/> <a href="../AirInterface/">AirInterface</a></td>
+<td>aggregation slot relating air data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../biofilm_data/">biofilm_data</a></td>
-<td>0..* <br/> <a href="../Biofilm/">Biofilm</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../bioscales_data/">bioscales_data</a></td>
-<td>0..* <br/> <a href="../Bioscales/">Bioscales</a></td>
-<td></td>
+<td>0..* <br/> <a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>aggregation slot relating biofilm data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../built_env_data/">built_env_data</a></td>
-<td>0..* <br/> <a href="../BuiltEnv/">BuiltEnv</a></td>
-<td></td>
+<td>0..* <br/> <a href="../BuiltEnvInterface/">BuiltEnvInterface</a></td>
+<td>aggregation slot relating built_env data collections to a SampleData containe...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../host_associated_data/">host_associated_data</a></td>
-<td>0..* <br/> <a href="../HostAssociated/">HostAssociated</a></td>
-<td></td>
+<td>0..* <br/> <a href="../HostAssociatedInterface/">HostAssociatedInterface</a></td>
+<td>aggregation slot relating host_associated data collections to a SampleData co...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../plant_associated_data/">plant_associated_data</a></td>
-<td>0..* <br/> <a href="../PlantAssociated/">PlantAssociated</a></td>
-<td></td>
+<td>0..* <br/> <a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
+<td>aggregation slot relating plant_associated data collections to a SampleData c...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sediment_data/">sediment_data</a></td>
-<td>0..* <br/> <a href="../Sediment/">Sediment</a></td>
-<td></td>
+<td>0..* <br/> <a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>aggregation slot relating sediment data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../soil_data/">soil_data</a></td>
-<td>0..* <br/> <a href="../Soil/">Soil</a></td>
-<td></td>
+<td>0..* <br/> <a href="../SoilInterface/">SoilInterface</a></td>
+<td>aggregation slot relating soil data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../wastewater_sludge_data/">wastewater_sludge_data</a></td>
-<td>0..* <br/> <a href="../WastewaterSludge/">WastewaterSludge</a></td>
-<td></td>
+<td>0..* <br/> <a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></td>
+<td>aggregation slot relating wastewater_sludge data collections to a SampleData ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../water_data/">water_data</a></td>
-<td>0..* <br/> <a href="../Water/">Water</a></td>
-<td></td>
+<td>0..* <br/> <a href="../WaterInterface/">WaterInterface</a></td>
+<td>aggregation slot relating water data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../emsl_data/">emsl_data</a></td>
-<td>0..* <br/> <a href="../Emsl/">Emsl</a></td>
-<td></td>
+<td>0..* <br/> <a href="../EmslInterface/">EmslInterface</a></td>
+<td>aggregation slot relating emsl data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_mg_data/">jgi_mg_data</a></td>
-<td>0..* <br/> <a href="../JgiMg/">JgiMg</a></td>
-<td></td>
+<td>0..* <br/> <a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>aggregation slot relating jgi_mg data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_mt_data/">jgi_mt_data</a></td>
-<td>0..* <br/> <a href="../JgiMt/">JgiMt</a></td>
-<td></td>
+<td>0..* <br/> <a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>aggregation slot relating jgi_mt data collections to a SampleData container</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -334,12 +327,12 @@
 <pre><code class="language-yaml">name: SampleData
 description: represents data produced by the DataHarmonizer tabs of the submission
   portal
+title: SampleData
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 slots:
 - air_data
 - biofilm_data
-- bioscales_data
 - built_env_data
 - host_associated_data
 - plant_associated_data
@@ -359,11 +352,13 @@ tree_root: true
 <pre><code class="language-yaml">name: SampleData
 description: represents data produced by the DataHarmonizer tabs of the submission
   portal
+title: SampleData
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 attributes:
   air_data:
     name: air_data
+    description: aggregation slot relating air data collections to a SampleData container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -371,11 +366,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: air
+    range: AirInterface
     inlined: true
     inlined_as_list: true
   biofilm_data:
     name: biofilm_data
+    description: aggregation slot relating biofilm data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -383,23 +380,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: biofilm
-    inlined: true
-    inlined_as_list: true
-  bioscales_data:
-    name: bioscales_data
-    from_schema: https://example.com/nmdc_submission_schema
-    rank: 1000
-    multivalued: true
-    alias: bioscales_data
-    owner: SampleData
-    domain_of:
-    - SampleData
-    range: bioscales
+    range: BiofilmInterface
     inlined: true
     inlined_as_list: true
   built_env_data:
     name: built_env_data
+    description: aggregation slot relating built_env data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -407,11 +394,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: built_env
+    range: BuiltEnvInterface
     inlined: true
     inlined_as_list: true
   host_associated_data:
     name: host_associated_data
+    description: aggregation slot relating host_associated data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -419,11 +408,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: host_associated
+    range: HostAssociatedInterface
     inlined: true
     inlined_as_list: true
   plant_associated_data:
     name: plant_associated_data
+    description: aggregation slot relating plant_associated data collections to a
+      SampleData container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -431,11 +422,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: plant_associated
+    range: PlantAssociatedInterface
     inlined: true
     inlined_as_list: true
   sediment_data:
     name: sediment_data
+    description: aggregation slot relating sediment data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -443,11 +436,12 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: sediment
+    range: SedimentInterface
     inlined: true
     inlined_as_list: true
   soil_data:
     name: soil_data
+    description: aggregation slot relating soil data collections to a SampleData container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -455,11 +449,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: soil
+    range: SoilInterface
     inlined: true
     inlined_as_list: true
   wastewater_sludge_data:
     name: wastewater_sludge_data
+    description: aggregation slot relating wastewater_sludge data collections to a
+      SampleData container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -467,11 +463,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: wastewater_sludge
+    range: WastewaterSludgeInterface
     inlined: true
     inlined_as_list: true
   water_data:
     name: water_data
+    description: aggregation slot relating water data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -479,11 +477,12 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: water
+    range: WaterInterface
     inlined: true
     inlined_as_list: true
   emsl_data:
     name: emsl_data
+    description: aggregation slot relating emsl data collections to a SampleData container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -491,11 +490,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: emsl
+    range: EmslInterface
     inlined: true
     inlined_as_list: true
   jgi_mg_data:
     name: jgi_mg_data
+    description: aggregation slot relating jgi_mg data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -503,11 +504,13 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: jgi_mg
+    range: JgiMgInterface
     inlined: true
     inlined_as_list: true
   jgi_mt_data:
     name: jgi_mt_data
+    description: aggregation slot relating jgi_mt data collections to a SampleData
+      container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
     multivalued: true
@@ -515,7 +518,7 @@ attributes:
     owner: SampleData
     domain_of:
     - SampleData
-    range: jgi_mt
+    range: JgiMtInterface
     inlined: true
     inlined_as_list: true
 tree_root: true

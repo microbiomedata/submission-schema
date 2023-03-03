@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -365,24 +365,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Biofilm/">Biofilm</a></td>
-<td></td>
+<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>biofilm dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Bioscales/">Bioscales</a></td>
-<td></td>
+<td><a href="../HcrCoresInterface/">HcrCoresInterface</a></td>
+<td>hcr_cores dh_interface</td>
 </tr>
 <tr>
-<td><a href="../HcrCores/">HcrCores</a></td>
-<td></td>
+<td><a href="../HcrFluidsSwabsInterface/">HcrFluidsSwabsInterface</a></td>
+<td>hcr_fluids_swabs dh_interface</td>
 </tr>
 <tr>
-<td><a href="../HcrFluidsSwabs/">HcrFluidsSwabs</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="../Sediment/">Sediment</a></td>
-<td>sediment dev</td>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -454,11 +450,10 @@ slot_uri: MIXS:0000431
 multivalued: false
 alias: magnesium
 domain_of:
-- biofilm
-- bioscales
-- hcr_cores
-- hcr_fluids_swabs
-- sediment
+- BiofilmInterface
+- HcrCoresInterface
+- HcrFluidsSwabsInterface
+- SedimentInterface
 range: string
 
 </code></pre>

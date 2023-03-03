@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -332,6 +332,7 @@
 
 
 <h1 id="slot-rna_volume">Slot: rna_volume</h1>
+<p><em>placeholder</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/rna_volume">nmdc_sub_schema:rna_volume</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -345,14 +346,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMt/">JgiMt</a></td>
-<td></td>
+<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>jgi_mt dh_interface</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Required: True</p>
+</li>
+<li>
+<p>Maximum Value: 1000</p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -380,6 +387,7 @@
 <details>
 
 <pre><code class="language-yaml">name: rna_volume
+description: placeholder
 title: RNA volume in ul
 comments:
 - Units must be in uL. Enter the numerical part only. Value must 0-1000. Values &lt;25
@@ -391,9 +399,12 @@ rank: 6
 string_serialization: '{float}'
 alias: rna_volume
 domain_of:
-- jgi_mt
-slot_group: JGI-Metatranscriptomics
+- JgiMtInterface
+slot_group: jgi_metatranscriptomics_section
 range: string
+required: true
+minimum_value: 0
+maximum_value: 1000
 
 </code></pre>
 

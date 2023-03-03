@@ -225,7 +225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about.md" class="md-nav__link">
+      <a href="../about/" class="md-nav__link">
         About
       </a>
     </li>
@@ -365,12 +365,36 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Bioscales/">Bioscales</a></td>
-<td></td>
+<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>biofilm dh_interface</td>
 </tr>
 <tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../HcrCoresInterface/">HcrCoresInterface</a></td>
+<td>hcr_cores dh_interface</td>
+</tr>
+<tr>
+<td><a href="../HcrFluidsSwabsInterface/">HcrFluidsSwabsInterface</a></td>
+<td>hcr_fluids_swabs dh_interface</td>
+</tr>
+<tr>
+<td><a href="../MiscEnvsInterface/">MiscEnvsInterface</a></td>
+<td>misc_envs dh_interface</td>
+</tr>
+<tr>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
+</tr>
+<tr>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
+</tr>
+<tr>
+<td><a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></td>
+<td>wastewater_sludge dh_interface</td>
+</tr>
+<tr>
+<td><a href="../WaterInterface/">WaterInterface</a></td>
+<td>water dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -440,8 +464,14 @@ slot_uri: MIXS:0001106
 multivalued: false
 alias: ph_meth
 domain_of:
-- bioscales
-- soil
+- BiofilmInterface
+- HcrCoresInterface
+- HcrFluidsSwabsInterface
+- MiscEnvsInterface
+- SedimentInterface
+- SoilInterface
+- WastewaterSludgeInterface
+- WaterInterface
 range: string
 
 </code></pre>

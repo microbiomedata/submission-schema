@@ -123,7 +123,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about.md">
+<a class="md-nav__link" href="../about/">
         About
       </a>
 </li>
@@ -197,10 +197,11 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-soilmixsinspiredmixin">Class: SoilMixsInspiredMixin</h1>
+<p><em>Mixin with SoilMixsInspired Terms</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/SoilMixsInspiredMixin">nmdc_sub_schema:SoilMixsInspiredMixin</a></p>
 <div class="mermaid"> classDiagram
     class SoilMixsInspiredMixin
-      SoilMixsInspiredMixin &lt;|-- Soil
+      SoilMixsInspiredMixin &lt;|-- SoilInterface
 
       SoilMixsInspiredMixin : collection_date_inc
       SoilMixsInspiredMixin : collection_time
@@ -208,10 +209,10 @@
       SoilMixsInspiredMixin : experimental_factor_other
       SoilMixsInspiredMixin : filter_method
       SoilMixsInspiredMixin : isotope_exposure
-      SoilMixsInspiredMixin : micro_biomass_C_meth
-      SoilMixsInspiredMixin : micro_biomass_N_meth
-      SoilMixsInspiredMixin : microbial_biomass_C
-      SoilMixsInspiredMixin : microbial_biomass_N
+      SoilMixsInspiredMixin : micro_biomass_c_meth
+      SoilMixsInspiredMixin : micro_biomass_n_meth
+      SoilMixsInspiredMixin : microbial_biomass_c
+      SoilMixsInspiredMixin : microbial_biomass_n
       SoilMixsInspiredMixin : non_microb_biomass
       SoilMixsInspiredMixin : non_microb_biomass_method
       SoilMixsInspiredMixin : org_nitro_method
@@ -269,25 +270,25 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../micro_biomass_C_meth/">micro_biomass_C_meth</a></td>
+<td><a href="../micro_biomass_c_meth/">micro_biomass_c_meth</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Reference or method used in determining microbial biomass</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../micro_biomass_N_meth/">micro_biomass_N_meth</a></td>
+<td><a href="../micro_biomass_n_meth/">micro_biomass_n_meth</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Reference or method used in determining microbial biomass nitrogen</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../microbial_biomass_C/">microbial_biomass_C</a></td>
+<td><a href="../microbial_biomass_c/">microbial_biomass_c</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The part of the organic matter in the soil that constitutes living microorgan...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../microbial_biomass_N/">microbial_biomass_N</a></td>
+<td><a href="../microbial_biomass_n/">microbial_biomass_n</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The part of the organic matter in the soil that constitutes living microorgan...</td>
 <td>direct</td>
@@ -340,8 +341,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Soil/">Soil</a></td>
-<td></td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 </tr>
 </tbody>
 </table>
@@ -373,7 +374,9 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: soil_mixs_inspired_mixin
+<pre><code class="language-yaml">name: SoilMixsInspiredMixin
+description: Mixin with SoilMixsInspired Terms
+title: Soil MIxS Inspired Mixin
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 mixin: true
@@ -384,10 +387,10 @@ slots:
 - experimental_factor_other
 - filter_method
 - isotope_exposure
-- micro_biomass_C_meth
-- micro_biomass_N_meth
-- microbial_biomass_C
-- microbial_biomass_N
+- micro_biomass_c_meth
+- micro_biomass_n_meth
+- microbial_biomass_c
+- microbial_biomass_n
 - non_microb_biomass
 - non_microb_biomass_method
 - org_nitro_method
@@ -399,7 +402,9 @@ slots:
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: soil_mixs_inspired_mixin
+<pre><code class="language-yaml">name: SoilMixsInspiredMixin
+description: Mixin with SoilMixsInspired Terms
+title: Soil MIxS Inspired Mixin
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
 mixin: true
@@ -417,15 +422,13 @@ attributes:
     examples:
     - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:collection_date
     rank: 2
     string_serialization: '{date, arbitrary precision}'
     alias: collection_date_inc
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   collection_time:
@@ -440,15 +443,13 @@ attributes:
     examples:
     - value: 13:33 or 13:33:55
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:collection_date
     rank: 1
     string_serialization: '{time, seconds optional}'
     alias: collection_time
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   collection_time_inc:
@@ -464,15 +465,13 @@ attributes:
     examples:
     - value: 13:33 or 13:33:55
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:collection_date
     rank: 3
     string_serialization: '{time, seconds optional}'
     alias: collection_time_inc
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   experimental_factor_other:
@@ -481,15 +480,13 @@ attributes:
       represented in the available columns.
     title: experimental factor- other
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:experimental_factor|additional_info
     rank: 7
     string_serialization: '{text}'
     alias: experimental_factor_other
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   filter_method:
@@ -497,15 +494,13 @@ attributes:
     description: Type of filter used or how the sample was filtered
     title: filter method
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:filter_type
     rank: 6
     string_serialization: '{text}'
     alias: filter_method
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   isotope_exposure:
@@ -513,84 +508,74 @@ attributes:
     description: List isotope exposure or addition applied to your sample.
     title: isotope exposure/addition
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:chem_administration
     rank: 16
     string_serialization: '{termLabel} {[termID]}; {timestamp}'
     alias: isotope_exposure
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
-  micro_biomass_C_meth:
-    name: micro_biomass_C_meth
+  micro_biomass_c_meth:
+    name: micro_biomass_c_meth
     description: Reference or method used in determining microbial biomass
     title: microbial biomass carbon method
     comments:
     - required if "microbial_biomass_C" is provided
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:micro_biomass_meth
     rank: 11
     string_serialization: '{PMID}|{DOI}|{URL}'
-    alias: micro_biomass_C_meth
-    owner: soil_mixs_inspired_mixin
+    alias: micro_biomass_c_meth
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
-  micro_biomass_N_meth:
-    name: micro_biomass_N_meth
+  micro_biomass_n_meth:
+    name: micro_biomass_n_meth
     description: Reference or method used in determining microbial biomass nitrogen
     title: microbial biomass nitrogen method
     comments:
     - required if "microbial_biomass_N" is provided
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:micro_biomass_meth
     rank: 13
     string_serialization: '{PMID}|{DOI}|{URL}'
-    alias: micro_biomass_N_meth
-    owner: soil_mixs_inspired_mixin
+    alias: micro_biomass_n_meth
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
-  microbial_biomass_C:
-    name: microbial_biomass_C
+  microbial_biomass_c:
+    name: microbial_biomass_c
     description: The part of the organic matter in the soil that constitutes living
       microorganisms smaller than 5-10 micrometer. If you keep this, you would need
       to have correction factors used for conversion to the final units
     title: microbial biomass carbon
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:microbial_biomass
     rank: 10
     string_serialization: '{float} {unit}'
-    alias: microbial_biomass_C
-    owner: soil_mixs_inspired_mixin
+    alias: microbial_biomass_c
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
-  microbial_biomass_N:
-    name: microbial_biomass_N
+  microbial_biomass_n:
+    name: microbial_biomass_n
     description: The part of the organic matter in the soil that constitutes living
       microorganisms smaller than 5-10 micrometer. If you keep this, you would need
       to have correction factors used for conversion to the final units
     title: microbial biomass nitrogen
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:microbial_biomass
     rank: 12
     string_serialization: '{float} {unit}'
-    alias: microbial_biomass_N
-    owner: soil_mixs_inspired_mixin
+    alias: microbial_biomass_n
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
   non_microb_biomass:
     name: non_microb_biomass
@@ -599,15 +584,13 @@ attributes:
       by ;
     title: non-microbial biomass
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:biomass|microbial_biomass
     rank: 8
     string_serialization: '{text};{float} {unit}'
     alias: non_microb_biomass
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
   non_microb_biomass_method:
     name: non_microb_biomass_method
@@ -616,15 +599,13 @@ attributes:
     comments:
     - required if "non-microbial biomass" is provided
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:microbial_biomass
     rank: 9
     string_serialization: '{PMID}|{DOI}|{URL}'
     alias: non_microb_biomass_method
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
   org_nitro_method:
     name: org_nitro_method
@@ -633,15 +614,13 @@ attributes:
     comments:
     - required if "org_nitro" is provided
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:org_nitro|tot_nitro_cont_meth
     rank: 14
     string_serialization: '{PMID}|{DOI}|{URL}'
     alias: org_nitro_method
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
   other_treatment:
     name: other_treatment
@@ -649,15 +628,13 @@ attributes:
       to the provided fields
     title: other treatments
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:additional_info
     rank: 15
     string_serialization: '{text}'
     alias: other_treatment
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   start_date_inc:
@@ -672,15 +649,13 @@ attributes:
     examples:
     - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:collection_date
     rank: 4
     string_serialization: '{date, arbitrary precision}'
     alias: start_date_inc
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
   start_time_inc:
@@ -695,15 +670,13 @@ attributes:
     examples:
     - value: 13:33 or 13:33:55
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:collection_date
     rank: 5
     string_serialization: '{time, seconds optional}'
     alias: start_time_inc
-    owner: soil_mixs_inspired_mixin
+    owner: SoilMixsInspiredMixin
     domain_of:
-    - soil_mixs_inspired_mixin
-    slot_group: MIxS Inspired
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
     range: string
     recommended: true
 
