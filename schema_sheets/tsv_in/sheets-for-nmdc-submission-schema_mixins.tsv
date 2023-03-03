@@ -1,6 +1,0 @@
-mixin class name	yes, I am a mixin	all slots
-> class	mixin	slots
->		internal_separator: "|"
-samp_id_new_terms_mixin	TRUE	env_package|sample_link
-soil_mixs_inspired_mixin	TRUE	collection_date_inc|collection_time|collection_time_inc|experimental_factor_other|filter_method|isotope_exposure|micro_biomass_C_meth|micro_biomass_N_meth|microbial_biomass_C|microbial_biomass_N|non_microb_biomass|non_microb_biomass_method|org_nitro_method|other_treatment|start_date_inc|start_time_inc
-dh_mutliview_common_columns	TRUE	analysis_type

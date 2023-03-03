@@ -4786,9 +4786,9 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'API gravity is a measure of how heavy or light a petroleum liquid
-      is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g.
-      31.1¬∞ API)'
+    description: "API gravity is a measure of how heavy or light a petroleum liquid\
+      \ is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g.\
+      \ 31.1\xAC\u221E API)"
     title: API gravity
     examples:
     - value: ''
@@ -4832,11 +4832,11 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-      method that divides¬†crude oil¬†components according to their polarizability
-      and polarity. There are three main methods to obtain SARA results. The most
-      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
-      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
+      \ method that divides\xAC\u2020crude oil\xAC\u2020components according to their\
+      \ polarizability and polarity. There are three main methods to obtain SARA results.\
+      \ The most popular one is known as the Iatroscan TLC-FID and is referred to\
+      \ as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
     title: aromatics wt%
     examples:
     - value: ''
@@ -4860,11 +4860,11 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-      method that divides¬†crude oil¬†components according to their polarizability
-      and polarity. There are three main methods to obtain SARA results. The most
-      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
-      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
+      \ method that divides\xAC\u2020crude oil\xAC\u2020components according to their\
+      \ polarizability and polarity. There are three main methods to obtain SARA results.\
+      \ The most popular one is known as the Iatroscan TLC-FID and is referred to\
+      \ as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
     title: asphaltenes wt%
     examples:
     - value: ''
@@ -6966,11 +6966,12 @@ slots:
         value: The major environment type(s) where the sample was collected. Recommend
           subclasses of biome [ENVO:00000428]. Multiple terms can be separated by
           one or more pipes.
-    description: 'Report the major environmental system the sample or specimen came
-      from. The system(s) identified should have a coarse spatial grain, to provide
-      the general environmental context of where the sampling was done (e.g. in the
-      desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428.
-      EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+    description: "Report the major environmental system the sample or specimen came\
+      \ from. The system(s) identified should have a coarse spatial grain, to provide\
+      \ the general environmental context of where the sampling was done (e.g. in\
+      \ the desert or a rainforest). We recommend using subclasses of EnvO\u2019s\
+      \ biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation\
+      \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS"
     title: broad-scale environmental context
     examples:
     - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
@@ -6990,12 +6991,13 @@ slots:
         tag: expected_value
         value: Environmental entities having causal influences upon the entity at
           time of sampling.
-    description: 'Report the entity or entities which are in the sample or specimen’s
-      local vicinity and which you believe have significant causal influences on your
-      sample or specimen. We recommend using EnvO terms which are of smaller spatial
-      grain than your entry for env_broad_scale. Terms, such as anatomical sites,
-      from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON)
-      are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
+    description: "Report the entity or entities which are in the sample or specimen\u2019\
+      s local vicinity and which you believe have significant causal influences on\
+      \ your sample or specimen. We recommend using EnvO terms which are of smaller\
+      \ spatial grain than your entry for env_broad_scale. Terms, such as anatomical\
+      \ sites, from other OBO Library ontologies which interoperate with EnvO (e.g.\
+      \ UBERON) are accepted in this field. EnvO documentation about how to use the\
+      \ field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
     title: local environmental context
     examples:
     - value: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from
@@ -10672,10 +10674,10 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'Temperature at which a liquid becomes semi solid and loses its flow
-      characteristics. In crude oil a high¬†pour point¬†is generally associated with
-      a high paraffin content, typically found in crude deriving from a larger proportion
-      of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)'
+    description: "Temperature at which a liquid becomes semi solid and loses its flow\
+      \ characteristics. In crude oil a high\xAC\u2020pour point\xAC\u2020is generally\
+      \ associated with a high paraffin content, typically found in crude deriving\
+      \ from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)"
     title: pour point
     examples:
     - value: ''
@@ -11146,11 +11148,11 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-      method that divides¬†crude oil¬†components according to their polarizability
-      and polarity. There are three main methods to obtain SARA results. The most
-      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
-      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
+      \ method that divides\xAC\u2020crude oil\xAC\u2020components according to their\
+      \ polarizability and polarity. There are three main methods to obtain SARA results.\
+      \ The most popular one is known as the Iatroscan TLC-FID and is referred to\
+      \ as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
     title: resins wt%
     examples:
     - value: ''
@@ -11612,11 +11614,11 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: Measurement of the culture rooting medium macronutrients (N,P, K,
-      Ca, Mg, S); e.g. KH2PO4 (170¬†mg/L).
+    description: "Measurement of the culture rooting medium macronutrients (N,P, K,\
+      \ Ca, Mg, S); e.g. KH2PO4 (170\xAC\u2020mg/L)."
     title: rooting medium macronutrients
     examples:
-    - value: KH2PO4;170¬†milligram per liter
+    - value: "KH2PO4;170\xAC\u2020milligram per liter"
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - rooting medium macronutrients
@@ -11637,11 +11639,11 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: Measurement of the culture rooting medium micronutrients (Fe, Mn,
-      Zn, B, Cu, Mo); e.g. H3BO3 (6.2¬†mg/L).
+    description: "Measurement of the culture rooting medium micronutrients (Fe, Mn,\
+      \ Zn, B, Cu, Mo); e.g. H3BO3 (6.2\xAC\u2020mg/L)."
     title: rooting medium micronutrients
     examples:
-    - value: H3BO3;6.2¬†milligram per liter
+    - value: "H3BO3;6.2\xAC\u2020milligram per liter"
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - rooting medium micronutrients
@@ -11682,8 +11684,8 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: Growth regulators in the culture rooting medium such as cytokinins,
-      auxins, gybberellins, abscisic acid; e.g. 0.5¬†mg/L NAA.
+    description: "Growth regulators in the culture rooting medium such as cytokinins,\
+      \ auxins, gybberellins, abscisic acid; e.g. 0.5\xAC\u2020mg/L NAA."
     title: rooting medium regulators
     examples:
     - value: abscisic acid;0.75 milligram per liter
@@ -11729,9 +11731,9 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: Organic supplements of the culture rooting medium, such as vitamins,
-      amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic acid
-      (0.5¬†mg/L).
+    description: "Organic supplements of the culture rooting medium, such as vitamins,\
+      \ amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic\
+      \ acid (0.5\xAC\u2020mg/L)."
     title: rooting medium organic supplements
     examples:
     - value: nicotinic acid;0.5 milligram per liter
@@ -12256,8 +12258,8 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: Sample transport duration (in days or hrs) and temperature the sample
-      was exposed to (e.g. 5.5 days; 20 ¬∞C)
+    description: "Sample transport duration (in days or hrs) and temperature the sample\
+      \ was exposed to (e.g. 5.5 days; 20 \xAC\u221EC)"
     title: sample transport conditions
     examples:
     - value: 5 days;-20 degree Celsius
@@ -12374,11 +12376,11 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-      method that divides¬†crude oil¬†components according to their polarizability
-      and polarity. There are three main methods to obtain SARA results. The most
-      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
-      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is an analysis\
+      \ method that divides\xAC\u2020crude oil\xAC\u2020components according to their\
+      \ polarizability and polarity. There are three main methods to obtain SARA results.\
+      \ The most popular one is known as the Iatroscan TLC-FID and is referred to\
+      \ as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
     title: saturates wt%
     examples:
     - value: ''
@@ -13609,10 +13611,10 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: 'Total Acid Number¬†(TAN) is a measurement of acidity that is determined
-      by the amount of¬†potassium hydroxide¬†in milligrams that is needed to neutralize
-      the acids in one gram of oil.¬†It is an important quality measurement of¬†crude
-      oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)'
+    description: "Total Acid Number\xAC\u2020(TAN) is a measurement of acidity that\
+      \ is determined by the amount of\xAC\u2020potassium hydroxide\xAC\u2020in milligrams\
+      \ that is needed to neutralize the acids in one gram of oil.\xAC\u2020It is\
+      \ an important quality measurement of\xAC\u2020crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)"
     title: total acid number
     examples:
     - value: ''
@@ -14369,8 +14371,9 @@ slots:
       occurrence:
         tag: occurrence
         value: '1'
-    description: A measure of oil's resistance¬†to gradual deformation by¬†shear stress¬†or¬†tensile
-      stress (e.g. 3.5 cp; 100 ¬∞C)
+    description: "A measure of oil's resistance\xAC\u2020to gradual deformation by\xAC\
+      \u2020shear stress\xAC\u2020or\xAC\u2020tensile stress (e.g. 3.5 cp; 100 \xAC\
+      \u221EC)"
     title: viscosity
     examples:
     - value: ''
@@ -15632,10 +15635,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -15643,7 +15642,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -15651,7 +15649,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       depth:
         name: depth
@@ -15663,10 +15666,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -15674,7 +15673,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -15682,7 +15680,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       ecosystem:
         name: ecosystem
@@ -15817,9 +15820,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -15832,20 +15832,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -15858,6 +15858,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -15869,9 +15872,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -15884,6 +15884,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -16279,8 +16282,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -16296,6 +16297,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -16305,8 +16308,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -16322,6 +16323,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -16359,9 +16362,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -16369,7 +16369,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -16377,6 +16376,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -17194,10 +17197,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -17205,7 +17204,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -17213,7 +17211,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       depth:
         name: depth
@@ -17225,10 +17228,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -17236,7 +17235,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -17244,7 +17242,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       diether_lipids:
         name: diether_lipids
@@ -17582,9 +17585,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -17597,20 +17597,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -17623,6 +17623,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -17634,9 +17637,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -17649,6 +17649,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -18268,8 +18271,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -18277,7 +18278,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -18285,9 +18285,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -18549,8 +18552,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -18566,6 +18567,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -18575,8 +18578,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -18592,6 +18593,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -18629,9 +18632,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -18639,7 +18639,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -18647,6 +18646,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -19003,12 +19006,8 @@ classes:
       water_content:
         name: water_content
         annotations:
-          expected_value:
-            tag: expected_value
-            value: string
-          preferred_unit:
-            tag: preferred_unit
-            value: gram per gram or cubic centimeter per cubic centimeter
+          expected_value: string
+          preferred_unit: gram per gram or cubic centimeter per cubic centimeter
         description: Water content measurement
         title: water content
         todos:
@@ -19992,10 +19991,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -20003,7 +19998,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -20011,7 +20005,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       cool_syst_id:
         name: cool_syst_id
@@ -20073,10 +20072,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -20084,7 +20079,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -20092,7 +20086,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       dew_point:
         name: dew_point
@@ -20587,9 +20586,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -20602,20 +20598,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -20628,6 +20624,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -20639,9 +20638,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -20654,6 +20650,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       escalator:
         name: escalator
@@ -24185,9 +24184,9 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'API gravity is a measure of how heavy or light a petroleum liquid
-          is compared to water (source: https://en.wikipedia.org/wiki/API_gravity)
-          (e.g. 31.1¬∞ API)'
+        description: "API gravity is a measure of how heavy or light a petroleum liquid\
+          \ is compared to water (source: https://en.wikipedia.org/wiki/API_gravity)\
+          \ (e.g. 31.1\xAC\u221E API)"
         title: API gravity
         examples:
         - value: ''
@@ -24215,11 +24214,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: aromatics wt%
         examples:
         - value: ''
@@ -24249,11 +24248,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: asphaltenes wt%
         examples:
         - value: ''
@@ -24419,10 +24418,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -24430,7 +24425,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -24438,7 +24432,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       density:
         name: density
@@ -24505,10 +24504,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -24516,7 +24511,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -24524,7 +24518,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       diss_carb_dioxide:
         name: diss_carb_dioxide
@@ -24831,9 +24830,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -24846,20 +24842,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -24872,6 +24868,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -24883,9 +24882,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -24898,6 +24894,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       ethylbenzene:
         name: ethylbenzene
@@ -25524,8 +25523,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -25533,7 +25530,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -25541,9 +25537,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -25635,10 +25634,10 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Temperature at which a liquid becomes semi solid and loses its
-          flow characteristics. In crude oil a high¬†pour point¬†is generally associated
-          with a high paraffin content, typically found in crude deriving from a larger
-          proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)'
+        description: "Temperature at which a liquid becomes semi solid and loses its\
+          \ flow characteristics. In crude oil a high\xAC\u2020pour point\xAC\u2020\
+          is generally associated with a high paraffin content, typically found in\
+          \ crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)"
         title: pour point
         examples:
         - value: ''
@@ -25743,11 +25742,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: resins wt%
         examples:
         - value: ''
@@ -25808,8 +25807,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -25825,6 +25822,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -25834,8 +25833,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -25851,6 +25848,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -25922,9 +25921,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -25932,7 +25928,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -25940,6 +25935,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -26062,8 +26061,8 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: Sample transport duration (in days or hrs) and temperature the
-          sample was exposed to (e.g. 5.5 days; 20 ¬∞C)
+        description: "Sample transport duration (in days or hrs) and temperature the\
+          \ sample was exposed to (e.g. 5.5 days; 20 \xAC\u221EC)"
         title: sample transport conditions
         examples:
         - value: 5 days;-20 degree Celsius
@@ -26181,11 +26180,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: saturates wt%
         examples:
         - value: ''
@@ -26509,10 +26508,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Total Acid Number¬†(TAN) is a measurement of acidity that is
-          determined by the amount of¬†potassium hydroxide¬†in milligrams that is
-          needed to neutralize the acids in one gram of oil.¬†It is an important quality
-          measurement of¬†crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)'
+        description: "Total Acid Number\xAC\u2020(TAN) is a measurement of acidity\
+          \ that is determined by the amount of\xAC\u2020potassium hydroxide\xAC\u2020\
+          in milligrams that is needed to neutralize the acids in one gram of oil.\xAC\
+          \u2020It is an important quality measurement of\xAC\u2020crude oil. (source:\
+          \ https://en.wikipedia.org/wiki/Total_acid_number)"
         title: total acid number
         examples:
         - value: ''
@@ -26823,8 +26823,9 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: A measure of oil's resistance¬†to gradual deformation by¬†shear
-          stress¬†or¬†tensile stress (e.g. 3.5 cp; 100 ¬∞C)
+        description: "A measure of oil's resistance\xAC\u2020to gradual deformation\
+          \ by\xAC\u2020shear stress\xAC\u2020or\xAC\u2020tensile stress (e.g. 3.5\
+          \ cp; 100 \xAC\u221EC)"
         title: viscosity
         examples:
         - value: ''
@@ -27194,9 +27195,9 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'API gravity is a measure of how heavy or light a petroleum liquid
-          is compared to water (source: https://en.wikipedia.org/wiki/API_gravity)
-          (e.g. 31.1¬∞ API)'
+        description: "API gravity is a measure of how heavy or light a petroleum liquid\
+          \ is compared to water (source: https://en.wikipedia.org/wiki/API_gravity)\
+          \ (e.g. 31.1\xAC\u221E API)"
         title: API gravity
         examples:
         - value: ''
@@ -27224,11 +27225,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: aromatics wt%
         examples:
         - value: ''
@@ -27258,11 +27259,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: asphaltenes wt%
         examples:
         - value: ''
@@ -27547,10 +27548,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -27558,7 +27555,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -27566,7 +27562,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       density:
         name: density
@@ -27633,10 +27634,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -27644,7 +27641,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -27652,7 +27648,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       diss_carb_dioxide:
         name: diss_carb_dioxide
@@ -27959,9 +27960,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -27974,20 +27972,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -28000,6 +27998,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -28011,9 +28012,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -28026,6 +28024,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       ethylbenzene:
         name: ethylbenzene
@@ -28648,8 +28649,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -28657,7 +28656,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -28665,9 +28663,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -28729,10 +28730,10 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Temperature at which a liquid becomes semi solid and loses its
-          flow characteristics. In crude oil a high¬†pour point¬†is generally associated
-          with a high paraffin content, typically found in crude deriving from a larger
-          proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)'
+        description: "Temperature at which a liquid becomes semi solid and loses its\
+          \ flow characteristics. In crude oil a high\xAC\u2020pour point\xAC\u2020\
+          is generally associated with a high paraffin content, typically found in\
+          \ crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)"
         title: pour point
         examples:
         - value: ''
@@ -28890,11 +28891,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: resins wt%
         examples:
         - value: ''
@@ -28955,8 +28956,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -28972,6 +28971,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -28981,8 +28982,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -28998,6 +28997,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_collect_point:
         name: samp_collect_point
         annotations:
@@ -29128,9 +29129,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -29138,7 +29136,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -29146,6 +29143,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -29268,8 +29269,8 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: Sample transport duration (in days or hrs) and temperature the
-          sample was exposed to (e.g. 5.5 days; 20 ¬∞C)
+        description: "Sample transport duration (in days or hrs) and temperature the\
+          \ sample was exposed to (e.g. 5.5 days; 20 \xAC\u221EC)"
         title: sample transport conditions
         examples:
         - value: 5 days;-20 degree Celsius
@@ -29356,11 +29357,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
-          method that divides¬†crude oil¬†components according to their polarizability
-          and polarity. There are three main methods to obtain SARA results. The most
-          popular one is known as the Iatroscan TLC-FID and is referred to as IP-143
-          (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+        description: "Saturate, Aromatic, Resin and Asphaltene\xAC\u2020(SARA) is\
+          \ an analysis method that divides\xAC\u2020crude oil\xAC\u2020components\
+          \ according to their polarizability and polarity. There are three main methods\
+          \ to obtain SARA results. The most popular one is known as the Iatroscan\
+          \ TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)"
         title: saturates wt%
         examples:
         - value: ''
@@ -29577,10 +29578,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: 'Total Acid Number¬†(TAN) is a measurement of acidity that is
-          determined by the amount of¬†potassium hydroxide¬†in milligrams that is
-          needed to neutralize the acids in one gram of oil.¬†It is an important quality
-          measurement of¬†crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)'
+        description: "Total Acid Number\xAC\u2020(TAN) is a measurement of acidity\
+          \ that is determined by the amount of\xAC\u2020potassium hydroxide\xAC\u2020\
+          in milligrams that is needed to neutralize the acids in one gram of oil.\xAC\
+          \u2020It is an important quality measurement of\xAC\u2020crude oil. (source:\
+          \ https://en.wikipedia.org/wiki/Total_acid_number)"
         title: total acid number
         examples:
         - value: ''
@@ -29891,8 +29893,9 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: A measure of oil's resistance¬†to gradual deformation by¬†shear
-          stress¬†or¬†tensile stress (e.g. 3.5 cp; 100 ¬∞C)
+        description: "A measure of oil's resistance\xAC\u2020to gradual deformation\
+          \ by\xAC\u2020shear stress\xAC\u2020or\xAC\u2020tensile stress (e.g. 3.5\
+          \ cp; 100 \xAC\u221EC)"
         title: viscosity
         examples:
         - value: ''
@@ -30275,10 +30278,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -30286,7 +30285,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -30294,7 +30292,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       depth:
         name: depth
@@ -30306,10 +30309,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -30317,7 +30316,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -30325,7 +30323,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       ecosystem:
         name: ecosystem
@@ -30460,9 +30463,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -30475,20 +30475,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -30501,6 +30501,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -30512,9 +30515,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -30527,6 +30527,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -31571,8 +31574,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -31588,6 +31589,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -31597,8 +31600,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -31614,6 +31615,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_dis_stage:
         name: samp_dis_stage
         annotations:
@@ -31677,9 +31680,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -31687,7 +31687,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -31695,6 +31694,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -32241,10 +32244,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -32252,7 +32251,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -32260,7 +32258,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       density:
         name: density
@@ -32301,10 +32304,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -32312,7 +32311,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -32320,7 +32318,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       diether_lipids:
         name: diether_lipids
@@ -32629,9 +32632,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -32644,20 +32644,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -32670,6 +32670,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -32681,9 +32684,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -32696,6 +32696,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -33088,8 +33091,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -33097,7 +33098,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -33105,9 +33105,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -33310,8 +33313,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -33327,6 +33328,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -33336,8 +33339,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -33353,6 +33354,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -33390,9 +33393,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -33400,7 +33400,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -33408,6 +33407,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -34073,10 +34076,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -34084,7 +34083,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -34092,7 +34090,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       cult_root_med:
         name: cult_root_med
@@ -34133,10 +34136,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -34144,7 +34143,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -34152,7 +34150,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       ecosystem:
         name: ecosystem
@@ -34287,9 +34290,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -34302,20 +34302,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -34328,6 +34328,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -34339,9 +34342,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -34354,6 +34354,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -34583,8 +34586,6 @@ classes:
           vocabulary: growth chamber, open top chamber, glasshouse, experimental garden,
           field.'
         title: growth facility
-        notes:
-        - 'Removed from description: Alternatively use Crop Ontology (CO) terms'
         examples:
         - value: Growth chamber [CO_715:0000189]
         from_schema: https://microbiomedata/schema
@@ -34600,6 +34601,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: GrowthFacilEnum
+        notes:
+        - 'Removed from description: Alternatively use Crop Ontology (CO) terms'
         required: true
       growth_habit:
         name: growth_habit
@@ -35705,11 +35708,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: Measurement of the culture rooting medium macronutrients (N,P,
-          K, Ca, Mg, S); e.g. KH2PO4 (170¬†mg/L).
+        description: "Measurement of the culture rooting medium macronutrients (N,P,\
+          \ K, Ca, Mg, S); e.g. KH2PO4 (170\xAC\u2020mg/L)."
         title: rooting medium macronutrients
         examples:
-        - value: KH2PO4;170¬†milligram per liter
+        - value: "KH2PO4;170\xAC\u2020milligram per liter"
         from_schema: https://microbiomedata/schema
         aliases:
         - rooting medium macronutrients
@@ -35736,11 +35739,11 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: Measurement of the culture rooting medium micronutrients (Fe,
-          Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2¬†mg/L).
+        description: "Measurement of the culture rooting medium micronutrients (Fe,\
+          \ Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2\xAC\u2020mg/L)."
         title: rooting medium micronutrients
         examples:
-        - value: H3BO3;6.2¬†milligram per liter
+        - value: "H3BO3;6.2\xAC\u2020milligram per liter"
         from_schema: https://microbiomedata/schema
         aliases:
         - rooting medium micronutrients
@@ -35792,8 +35795,8 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: Growth regulators in the culture rooting medium such as cytokinins,
-          auxins, gybberellins, abscisic acid; e.g. 0.5¬†mg/L NAA.
+        description: "Growth regulators in the culture rooting medium such as cytokinins,\
+          \ auxins, gybberellins, abscisic acid; e.g. 0.5\xAC\u2020mg/L NAA."
         title: rooting medium regulators
         examples:
         - value: abscisic acid;0.75 milligram per liter
@@ -35850,9 +35853,9 @@ classes:
           occurrence:
             tag: occurrence
             value: '1'
-        description: Organic supplements of the culture rooting medium, such as vitamins,
-          amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic
-          acid (0.5¬†mg/L).
+        description: "Organic supplements of the culture rooting medium, such as vitamins,\
+          \ amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic\
+          \ acid (0.5\xAC\u2020mg/L)."
         title: rooting medium organic supplements
         examples:
         - value: nicotinic acid;0.5 milligram per liter
@@ -35971,8 +35974,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -35988,6 +35989,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -35997,8 +36000,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -36014,6 +36015,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_dis_stage:
         name: samp_dis_stage
         annotations:
@@ -36077,9 +36080,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -36087,7 +36087,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -36095,6 +36094,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -36916,10 +36919,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -36927,7 +36926,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -36935,7 +36933,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       density:
         name: density
@@ -36976,10 +36979,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -36987,7 +36986,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -36995,7 +36993,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       diether_lipids:
         name: diether_lipids
@@ -37333,9 +37336,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -37348,20 +37348,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -37374,6 +37374,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -37385,9 +37388,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -37400,6 +37400,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -38052,8 +38055,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -38061,7 +38062,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -38069,9 +38069,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -38363,8 +38366,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -38380,6 +38381,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -38389,8 +38392,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -38406,6 +38407,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -38443,9 +38446,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -38453,7 +38453,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -38461,6 +38460,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -38895,12 +38898,8 @@ classes:
       water_content:
         name: water_content
         annotations:
-          expected_value:
-            tag: expected_value
-            value: string
-          preferred_unit:
-            tag: preferred_unit
-            value: gram per gram or cubic centimeter per cubic centimeter
+          expected_value: string
+          preferred_unit: gram per gram or cubic centimeter per cubic centimeter
         description: Water content measurement
         title: water content
         todos:
@@ -39419,10 +39418,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -39430,7 +39425,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -39438,7 +39432,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       crop_rotation:
         name: crop_rotation
@@ -39564,10 +39563,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -39575,7 +39570,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -39583,7 +39577,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       drainage_class:
         name: drainage_class
@@ -39744,9 +39743,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -39759,20 +39755,20 @@ classes:
         slot_group: sample_id_section
         range: EnvBroadScaleSoilEnum
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -39785,6 +39781,9 @@ classes:
         slot_group: sample_id_section
         range: EnvLocalScaleSoilEnum
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -39796,9 +39795,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -39811,6 +39807,9 @@ classes:
         slot_group: sample_id_section
         range: EnvMediumSoilEnum
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -39843,9 +39842,7 @@ classes:
       extreme_event:
         name: extreme_event
         annotations:
-          expected_value:
-            tag: expected_value
-            value: date, string
+          expected_value: date, string
         description: Unusual physical events that may have affected microbial populations
         title: history/extreme events
         todos:
@@ -39894,9 +39891,7 @@ classes:
       fire:
         name: fire
         annotations:
-          expected_value:
-            tag: expected_value
-            value: date string
+          expected_value: date string
         description: Historical and/or physical evidence of fire
         title: history/fire
         todos:
@@ -39928,9 +39923,7 @@ classes:
       flooding:
         name: flooding
         annotations:
-          expected_value:
-            tag: expected_value
-            value: date string
+          expected_value: date string
         description: Historical and/or physical evidence of flooding
         title: history/flooding
         todos:
@@ -40032,8 +40025,6 @@ classes:
           vocabulary: growth chamber, open top chamber, glasshouse, experimental garden,
           field.'
         title: growth facility
-        notes:
-        - 'Removed from description: Alternatively use Crop Ontology (CO) terms'
         examples:
         - value: Growth chamber [CO_715:0000189]
         from_schema: https://microbiomedata/schema
@@ -40049,6 +40040,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: GrowthFacilEnum
+        notes:
+        - 'Removed from description: Alternatively use Crop Ontology (CO) terms'
         required: true
       heavy_metals:
         name: heavy_metals
@@ -40636,8 +40629,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -40645,7 +40636,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -40653,9 +40643,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -40868,8 +40861,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -40885,6 +40876,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -40894,8 +40887,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -40911,6 +40902,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -40948,9 +40941,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -40958,7 +40948,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -40966,6 +40955,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_temp:
         name: samp_store_temp
@@ -41603,12 +41596,8 @@ classes:
       water_content:
         name: water_content
         annotations:
-          expected_value:
-            tag: expected_value
-            value: string
-          preferred_unit:
-            tag: preferred_unit
-            value: gram per gram or cubic centimeter per cubic centimeter
+          expected_value: string
+          preferred_unit: gram per gram or cubic centimeter per cubic centimeter
         description: Water content measurement
         title: water content
         todos:
@@ -41937,10 +41926,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -41948,7 +41933,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -41956,7 +41940,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       depth:
         name: depth
@@ -41968,10 +41957,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -41979,7 +41964,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -41987,7 +41971,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       ecosystem:
         name: ecosystem
@@ -42182,9 +42171,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -42197,20 +42183,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -42223,6 +42209,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -42234,9 +42223,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -42249,6 +42235,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -42623,8 +42612,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -42632,7 +42619,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -42640,9 +42626,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -42841,8 +42830,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -42858,6 +42845,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -42867,8 +42856,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -42884,6 +42871,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -42921,9 +42910,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -42931,7 +42917,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -42939,6 +42924,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -44031,10 +44020,6 @@ classes:
             value: date and time
         description: The date of sampling
         title: collection date
-        notes:
-        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
-          only
-        - Use modified term (amended definition)
         examples:
         - value: 2021-04-15; 2021-04; 2021
         from_schema: https://microbiomedata/schema
@@ -44042,7 +44027,6 @@ classes:
         - collection date
         rank: 3
         is_a: environment field
-        string_serialization: '{date, arbitrary precision}'
         slot_uri: MIXS:0000011
         multivalued: false
         owner: Biosample
@@ -44050,7 +44034,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        notes:
+        - MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date
+          only
+        - Use modified term (amended definition)
         required: true
+        string_serialization: '{date, arbitrary precision}'
         pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
       conduc:
         name: conduc
@@ -44119,10 +44108,6 @@ classes:
           or soil samples depth is measured from sediment or soil surface, respectively.
           Depth can be reported as an interval for subsurface samples.
         title: depth, meters
-        notes:
-        - Use modified term
-        comments:
-        - All depths must be reported in meters. Provide the numerical portion only.
         examples:
         - value: 0-0.1; 1
         from_schema: https://microbiomedata/schema
@@ -44130,7 +44115,6 @@ classes:
         - depth
         rank: 10
         is_a: environment field
-        string_serialization: '{float}|{float}-{float}'
         slot_uri: MIXS:0000018
         multivalued: false
         owner: Biosample
@@ -44138,7 +44122,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - All depths must be reported in meters. Provide the numerical portion only.
+        notes:
+        - Use modified term
         required: true
+        string_serialization: '{float}|{float}-{float}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$|^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?-[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$
       diether_lipids:
         name: diether_lipids
@@ -44562,9 +44551,6 @@ classes:
           the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228].
           If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
         title: broad-scale environmental context
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 6
         is_a: environment field
@@ -44577,20 +44563,20 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
-        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
-      env_local_scale:
-        name: env_local_scale
-        description: 'Report the entity or entities which are in the sample or specimen’s
-          local vicinity and which you believe have significant causal influences
-          on your sample or specimen. We recommend using EnvO terms which are of smaller
-          spatial grain than your entry for env_broad_scale. Terms, such as anatomical
-          sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
-          UBERON) are accepted in this field. EnvO documentation about how to use
-          the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
-        title: local environmental context
         notes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
+        pattern: ^\S+.*\S+ \[ENVO:\d+\]$
+      env_local_scale:
+        name: env_local_scale
+        description: "Report the entity or entities which are in the sample or specimen\u2019\
+          s local vicinity and which you believe have significant causal influences\
+          \ on your sample or specimen. We recommend using EnvO terms which are of\
+          \ smaller spatial grain than your entry for env_broad_scale. Terms, such\
+          \ as anatomical sites, from other OBO Library ontologies which interoperate\
+          \ with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation\
+          \ about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
+        title: local environmental context
         from_schema: https://microbiomedata/schema
         rank: 7
         is_a: environment field
@@ -44603,6 +44589,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       env_medium:
         name: env_medium
@@ -44614,9 +44603,6 @@ classes:
           mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
-        notes:
-        - range changed to enumeration late in makefile, so this is modified (but
-          "sample ID" anyway)
         from_schema: https://microbiomedata/schema
         rank: 8
         is_a: environment field
@@ -44629,6 +44615,9 @@ classes:
         slot_group: sample_id_section
         range: ControlledIdentifiedTermValue
         required: true
+        notes:
+        - range changed to enumeration late in makefile, so this is modified (but
+          "sample ID" anyway)
         pattern: ^\S+.*\S+ \[ENVO:\d+\]$
       experimental_factor:
         name: experimental_factor
@@ -45275,8 +45264,6 @@ classes:
         description: pH measurement of the sample, or liquid portion of sample, or
           aqueous phase of the fluid
         title: pH
-        notes:
-        - Use modified term
         examples:
         - value: '7.2'
         from_schema: https://microbiomedata/schema
@@ -45284,7 +45271,6 @@ classes:
         - pH
         rank: 27
         is_a: core field
-        string_serialization: '{float}'
         slot_uri: MIXS:0001001
         multivalued: false
         owner: Biosample
@@ -45292,9 +45278,12 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        maximum_value: '14'
+        minimum_value: '0'
+        notes:
+        - Use modified term
         recommended: true
-        minimum_value: 0
-        maximum_value: 14
+        string_serialization: '{float}'
       ph_meth:
         name: ph_meth
         description: Reference or method used in determining ph
@@ -45613,8 +45602,6 @@ classes:
           accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
           This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
         title: sample collection device
-        comments:
-        - Report dimensions and details when applicable
         examples:
         - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
         from_schema: https://microbiomedata/schema
@@ -45630,6 +45617,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - Report dimensions and details when applicable
         recommended: true
       samp_collec_method:
         name: samp_collec_method
@@ -45639,8 +45628,6 @@ classes:
             value: PMID,DOI,url , or text
         description: The method employed for collecting the sample.
         title: sample collection method
-        comments:
-        - This can be a citation or description
         examples:
         - value: swabbing
         from_schema: https://microbiomedata/schema
@@ -45656,6 +45643,8 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This can be a citation or description
       samp_mat_process:
         name: samp_mat_process
         annotations:
@@ -45693,9 +45682,6 @@ classes:
         description: The total amount or size (volume (ml), mass (g) or area (m2)
           ) of sample collected.
         title: amount or size of sample collected
-        comments:
-        - This refers to the TOTAL amount of sample collected from the experiment.
-          NOT the amount sent to each institution or collected for a specific analysis.
         examples:
         - value: 5 grams; 10 mL
         from_schema: https://microbiomedata/schema
@@ -45703,7 +45689,6 @@ classes:
         - amount or size of sample collected
         rank: 18
         is_a: nucleic acid sequence source field
-        string_serialization: '{float} {unit}'
         slot_uri: MIXS:0000001
         multivalued: false
         owner: Biosample
@@ -45711,6 +45696,10 @@ classes:
         - Biosample
         slot_group: mixs_modified_section
         range: string
+        comments:
+        - This refers to the TOTAL amount of sample collected from the experiment.
+          NOT the amount sent to each institution or collected for a specific analysis.
+        string_serialization: '{float} {unit}'
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
       samp_store_dur:
         name: samp_store_dur
@@ -46335,8 +46324,6 @@ classes:
           NMDC identifiers with the minter we dont need to require a GUID. It can
           be an optional field to fill out only if they already have a resolvable
           ID.
-        notes:
-        - The source material IS the Globally Unique ID
         comments:
         - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
           NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
@@ -46355,21 +46342,23 @@ classes:
         string_serialization: '{text}:{text}'
         slot_uri: MIXS:0000026
         multivalued: false
-        identifier: true
         owner: Biosample
         domain_of:
         - Biosample
         slot_group: sample_id_section
         range: TextValue
+        identifier: true
+        notes:
+        - The source material IS the Globally Unique ID
         required: true
         pattern: '[^\:\n\r]+\:[^\:\n\r]+'
       samp_name:
         name: samp_name
-        description: A local identifier or name that for the material sample collected.
-          Refers to the original material collected or to any derived sub-samples.
         comments:
         - It can have any format, but we suggest that you make it concise, unique
           and consistent within your lab, and as informative as possible.
+        description: A local identifier or name that for the material sample collected.
+          Refers to the original material collected or to any derived sub-samples.
         examples:
         - value: Rock core CB1178(5-6) from NSW
   Activity:
@@ -46525,5 +46514,4 @@ classes:
     is_a: AttributeValue
     slots:
     - language
-source_file: sheets_and_friends/yaml_out/with_modifications.yaml.raw
-
+source_file: sheets_and_friends/yaml_out/with_shuttles.yaml.raw

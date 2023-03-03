@@ -88,7 +88,7 @@ create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
 all: site
-site: schema_cleanup src/submission_schema/schema/submission_schema.yaml gen-project gendoc
+site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml gen-project gendoc schema_sheets/populated_tsv/slot_usage.tsv src/data/SampleData-water-data.regen.yaml
 
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
@@ -119,8 +119,7 @@ gen-project: $(PYMODEL)
 		--include sqlddl \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-# test-schema test-python
-test: site src/data/output
+test: site test-python src/data/output
 test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 

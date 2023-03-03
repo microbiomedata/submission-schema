@@ -1,490 +1,489 @@
 source class	source file or URL	slot	section	column order	destination class
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	abs_air_humidity	MIxS core	64	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	add_recov_method	MIxS core	293	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	additional_info	MIxS core	294	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	address	MIxS core	65	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	adj_room	MIxS core	66	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	aero_struc	MIxS core	67	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	agrochem_addition	MIxS	2	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	air_PM_concen	MIxS core	51	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	air_temp	MIxS core	68	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	air_temp_regm	MIxS (modified)	16	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	al_sat	MIxS	3	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	al_sat_meth	MIxS	4	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alkalinity	MIxS core	1	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alkalinity_method	MIxS core	221	hcr_cores|hcr_fluids_swabs|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alkyl_diethers	MIxS core	2	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alt	MIxS (modified)	26	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	aminopept_act	MIxS core	3	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ammonium	MIxS core	4	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ammonium_nitrogen	Bioscales	1997	bioscales
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	amount_light	MIxS core	69	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ances_data	MIxS core	241	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	annual_precpt	MIxS	5	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	annual_temp	MIxS	6	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	antibiotic_regm	MIxS core	242	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	api	MIxS core	295	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	arch_struc	MIxS core	70	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	aromatics_pc	MIxS core	296	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	asphaltenes_pc	MIxS core	297	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	atmospheric_data	MIxS core	222	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	avg_dew_point	MIxS core	71	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	avg_occup	MIxS core	72	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	avg_temp	MIxS core	73	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bac_prod	MIxS core	223	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bac_resp	MIxS core	224	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bacteria_carb_prod	MIxS core	5	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	barometric_press	MIxS core	52	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	basin	MIxS core	298	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bathroom_count	MIxS core	74	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bedroom_count	MIxS core	75	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	benzene	MIxS core	299	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biochem_oxygen_dem	MIxS core	300	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biocide	MIxS core	301	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biocide_admin_method	MIxS core	302	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biol_stat	MIxS core	243	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biomass	MIxS core	6	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biotic_regm	MIxS (modified)	13	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biotic_relationship	MIxS (modified)	22	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bishomohopanol	MIxS core	7	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	blood_press_diast	MIxS core	303	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	blood_press_syst	MIxS core	304	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bromide	MIxS core	8	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	build_docs	MIxS core	76	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	build_occup_type	MIxS core	77	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	building_setting	MIxS core	78	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	built_struc_age	MIxS core	79	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	built_struc_set	MIxS core	80	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	built_struc_type	MIxS core	81	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	calcium	MIxS core	9	biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	carb_dioxide	MIxS core	53	air|built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	carb_monoxide	MIxS core	54	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	carb_nitro_ratio	MIxS	44	biofilm|bioscales|sediment|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_area	MIxS core	82	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_cond	MIxS core	83	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_finish_mat	MIxS core	84	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_struc	MIxS core	85	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_texture	MIxS core	86	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_thermal_mass	MIxS core	87	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_type	MIxS core	88	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_water_mold	MIxS core	89	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_administration	MIxS (modified)	17	air|biofilm|bioscales|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_mutagen	MIxS core	244	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_oxygen_dem	MIxS core	305	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_treat_method	MIxS core	306	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_treatment	MIxS core	307	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chloride	MIxS core	10	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chlorophyll	MIxS core	11	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	climate_environment	MIxS (modified)	19	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	collection_date	MIxS (modified)	3	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	conduc	MIxS core	225	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cool_syst_id	MIxS core	90	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	crop_rotation	MIxS	7	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cult_root_med	MIxS core	245	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cur_land_use	MIxS	8	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cur_vegetation	MIxS	9	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cur_vegetation_meth	MIxS	10	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	date_last_rain	MIxS core	91	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	density	MIxS core	12	hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	depos_env	MIxS core	308	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	depth	MIxS (modified)	10	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	dew_point	MIxS core	92	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diether_lipids	MIxS core	13	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_carb_dioxide	MIxS core	14	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_hydrogen	MIxS core	15	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_inorg_carb	MIxS core	16	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_inorg_nitro	MIxS core	226	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_inorg_phosp	MIxS core	227	hcr_cores|hcr_fluids_swabs|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_iron	MIxS core	309	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_org_carb	MIxS core	17	biofilm|hcr_cores|hcr_fluids_swabs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_org_nitro	MIxS core	18	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_oxygen	MIxS core	19	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_oxygen_fluid	MIxS core	310	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	dna_cont_well	JGI-Metagenomics	11	jgi_mg
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_comp_type	MIxS core	93	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_cond	MIxS core	94	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_direct	MIxS core	95	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_loc	MIxS core	96	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_mat	MIxS core	97	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_move	MIxS core	98	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_size	MIxS core	99	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_type	MIxS core	100	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_type_metal	MIxS core	101	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_type_wood	MIxS core	102	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_water_mold	MIxS core	103	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	down_par	MIxS core	228	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	drainage_class	MIxS	11	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	drawings	MIxS core	104	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem	Sample ID	9	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem_category	Sample ID	10	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem_subtype	Sample ID	12	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem_type	Sample ID	11	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	efficiency_percent	MIxS core	311	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	elev	MIxS (modified)	6	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	elevator	MIxS core	105	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	emulsions	MIxS core	312	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	env_broad_scale	Sample ID	6	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	env_local_scale	Sample ID	7	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	env_medium	Sample ID	8	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	escalator	MIxS core	106	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ethylbenzene	MIxS core	313	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	exp_duct	MIxS core	107	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	exp_pipe	MIxS core	108	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	experimental_factor	MIxS	12	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ext_door	MIxS core	109	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ext_wall_orient	MIxS core	110	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ext_window_orient	MIxS core	111	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	extreme_event	MIxS	13	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fao_class	MIxS	14	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fertilizer_regm	MIxS core	246	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	field	MIxS core	314	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	filter_type	MIxS core	112	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fire	MIxS	15	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fireplace_type	MIxS core	113	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	flooding	MIxS	16	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_age	MIxS core	114	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_area	MIxS core	115	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_cond	MIxS core	116	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_count	MIxS core	117	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_finish_mat	MIxS core	118	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_struc	MIxS core	119	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_thermal_mass	MIxS core	120	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_water_mold	MIxS core	121	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fluor	MIxS core	229	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	freq_clean	MIxS core	122	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	freq_cook	MIxS core	123	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fungicide_regm	MIxS core	247	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	furniture	MIxS core	124	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gaseous_environment	MIxS (modified)	20	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gaseous_substances	MIxS core	315	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gender_restroom	MIxS core	125	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	genetic_mod	MIxS core	248	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	geo_loc_name	MIxS (modified)	4	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	glucosidase_act	MIxS core	20	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gravidity	MIxS core	316	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gravity	MIxS core	249	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	growth_facil	MIxS (modified)	1	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	growth_habit	MIxS core	250	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	growth_hormone_regm	MIxS core	251	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hall_count	MIxS core	126	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	handidness	MIxS core	127	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hc_produced	MIxS core	317	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr	MIxS core	318	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_fw_salinity	MIxS core	319	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_geol_age	MIxS core	320	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_pressure	MIxS core	321	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_temp	MIxS core	322	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_cool_type	MIxS core	128	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_deliv_loc	MIxS core	129	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_sys_deliv_meth	MIxS core	130	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_system_id	MIxS core	131	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heavy_metals	MIxS	17	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heavy_metals_meth	MIxS	18	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	height_carper_fiber	MIxS core	132	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	herbicide_regm	MIxS core	252	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	horizon_meth	MIxS	19	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_age	MIxS core	253	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_habitat	MIxS core	323	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_product	MIxS core	324	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_site	MIxS core	325	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_temp	MIxS core	326	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_color	MIxS core	327	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_common_name	MIxS core	254	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_diet	MIxS core	328	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_dry_mass	MIxS core	255	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_family_relation	MIxS core	329	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_genotype	MIxS core	256	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_growth_cond	MIxS core	330	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_height	MIxS core	257	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_last_meal	MIxS core	331	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_length	MIxS core	258	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_life_stage	MIxS core	259	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_phenotype	MIxS core	260	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_sex	MIxS core	332	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_shape	MIxS core	333	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_subject_id	MIxS core	334	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_subspecf_genlin	MIxS core	261	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_substrate	MIxS core	335	host_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_symbiont	MIxS core	262	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_taxid	MIxS core	263	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_tot_mass	MIxS core	264	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_wet_mass	MIxS core	265	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	humidity	MIxS core	55	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	humidity_regm	MIxS (modified)	21	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	indoor_space	MIxS core	133	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	indoor_surf	MIxS core	134	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	indust_eff_percent	MIxS core	336	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	inorg_particles	MIxS core	337	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	inside_lux	MIxS core	135	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	int_wall_cond	MIxS core	136	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	iw_bt_date_well	MIxS core	338	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	iwf	MIxS core	339	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	last_clean	MIxS core	137	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lat_lon	MIxS (modified)	5	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lbc_thirty	Bioscales	1001	bioscales
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lbceq	Bioscales	1002	bioscales
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	light_intensity	MIxS core	230	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	light_regm	MIxS (modified)	24	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	light_type	MIxS core	138	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	link_class_info	MIxS	20	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	link_climate_info	MIxS	21	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lithology	MIxS core	340	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	local_class	MIxS	22	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	local_class_meth	MIxS	24	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	magnesium	MIxS core	21	biofilm|bioscales|hcr_cores|hcr_fluids_swabs|sediment
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	manganese	Bioscales	1003	bioscales
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	max_occup	MIxS core	139	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mean_frict_vel	MIxS core	22	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mean_peak_frict_vel	MIxS core	23	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mech_struc	MIxS core	140	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mechanical_damage	MIxS core	266	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	methane	MIxS core	24	air|biofilm|sediment
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	micro_biomass_meth	MIxS	43	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	microbial_biomass	MIxS	42	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mineral_nutr_regm	MIxS core	267	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	misc_param	MIxS	24	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	n_alkanes	MIxS core	25	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrate	MIxS core	26	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrate_nitrogen	Bioscales	1998	bioscales
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrite	MIxS core	27	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrite_nitrogen	Bioscales	1999	bioscales
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitro	MIxS core	28	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	non_min_nutr_regm	MIxS core	268	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	number_pets	MIxS core	141	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	number_plants	MIxS core	142	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	number_resident	MIxS core	143	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	occup_density_samp	MIxS core	144	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	occup_document	MIxS core	145	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	occup_samp	MIxS core	146	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_carb	MIxS core	29	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_count_qpcr_info	MIxS core	341	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_matter	MIxS	45	biofilm|bioscales|misc_envs|sediment|soil|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_nitro	MIxS	46	biofilm|bioscales|misc_envs|sediment|soil|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_particles	MIxS core	342	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	organism_count	MIxS core	30	air|biofilm|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	owc_tvdss	MIxS core	343	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	oxy_stat_samp	MIxS	25	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	oxygen	MIxS core	56	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	part_org_carb	MIxS core	31	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	part_org_nitro	MIxS core	231	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	particle_class	MIxS core	32	sediment
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	permeability	MIxS core	344	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	perturbation	MIxS core	33	air|biofilm|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pesticide_regm	MIxS core	269	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	petroleum_hydrocarb	MIxS core	34	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ph	MIxS (modified)	27	biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ph_meth	MIxS	41	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ph_regm	MIxS core	270	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	phaeopigments	MIxS core	35	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	phosphate	MIxS	53	biofilm|bioscales|misc_envs|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	phosplipid_fatt_acid	MIxS core	36	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	photon_flux	MIxS core	232	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_growth_med	MIxS core	271	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_product	MIxS core	272	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_sex	MIxS core	273	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_struc	MIxS core	274	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pollutants	MIxS core	57	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	porosity	MIxS core	37	hcr_cores|sediment
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	potassium	MIxS core	38	biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pour_point	MIxS core	345	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pre_treatment	MIxS core	346	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pres_animal_insect	MIxS core	147	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pressure	MIxS core	39	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	prev_land_use_meth	MIxS	26	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	previous_land_use	MIxS	27	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	primary_prod	MIxS core	233	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	primary_treatment	MIxS core	347	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	prod_rate	MIxS core	348	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	prod_start_date	MIxS core	349	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	profile_position	MIxS	28	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	quad_pos	MIxS core	148	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	radiation_regm	MIxS core	275	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rainfall_regm	MIxS core	276	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	reactor_type	MIxS core	350	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	redox_potential	MIxS core	40	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_air_humidity	MIxS core	149	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_humidity_out	MIxS core	150	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_samp_loc	MIxS core	151	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_to_oxygen	MIxS (modified)	23	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	reservoir	MIxS core	351	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	resins_pc	MIxS core	352	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_air_exch_rate	MIxS core	152	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_architec_elem	MIxS core	153	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_condt	MIxS core	154	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_connected	MIxS core	155	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_count	MIxS core	156	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_dim	MIxS core	157	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_door_dist	MIxS core	158	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_door_share	MIxS core	159	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_hallway	MIxS core	160	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_loc	MIxS core	161	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_moist_dam_hist	MIxS core	162	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_net_area	MIxS core	163	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_occup	MIxS core	164	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_samp_pos	MIxS core	165	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_type	MIxS core	166	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_vol	MIxS core	167	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_wall_share	MIxS core	168	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_window_count	MIxS core	169	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_cond	MIxS core	277	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_carbon	MIxS core	278	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_macronutr	MIxS core	279	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_micronutr	MIxS core	280	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_ph	MIxS core	281	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_regl	MIxS core	282	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_solid	MIxS core	283	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_suppl	MIxS core	284	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	salinity	MIxS	54	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	salinity_meth	MIxS	55	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	salt_regm	MIxS core	285	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_capt_status	MIxS core	286	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_collec_device	MIxS (modified)	14	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_collec_method	MIxS (modified)	15	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_collect_point	MIxS core	353	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_dis_stage	MIxS core	287	host_associated|plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_floor	MIxS core	170	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_loc_corr_rate	MIxS core	354	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_mat_process	MIxS (modified)	12	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_md	MIxS core	355	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_name	Sample ID	1	dh_mutliview_common_columns
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_preserv	MIxS core	356	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_room_id	MIxS core	171	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_size	MIxS (modified)	18	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_sort_meth	MIxS core	172	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_store_dur	MIxS core	357	air|biofilm|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_store_loc	MIxS core	42	air|biofilm|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_store_temp	MIxS (modified)	7	air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_subtype	MIxS core	358	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_time_out	MIxS core	173	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_transport_cond	MIxS core	359	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_tvdss	MIxS core	360	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_type	MIxS core	361	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_weather	MIxS core	174	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_well_name	MIxS core	362	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	saturates_pc	MIxS core	363	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season	MIxS core	175	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_environment	MIxS core	288	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_precpt	MIxS	29	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_temp	MIxS	30	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_use	MIxS core	176	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	secondary_treatment	MIxS core	364	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sediment_type	MIxS core	43	sediment
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sewage_type	MIxS core	365	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shad_dev_water_mold	MIxS core	177	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_cond	MIxS core	178	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_loc	MIxS core	179	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_mat	MIxS core	180	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_type	MIxS core	181	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sieving	MIxS (modified)	8	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	silicate	MIxS core	44	biofilm|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	size_frac	MIxS core	289	air|biofilm|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	size_frac_low	MIxS (modified)	9	bioscales|soil|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	size_frac_up	MIxS (modified)	11	bioscales|soil|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	slope_aspect	MIxS	1	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	slope_gradient	MIxS	31	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sludge_retent_time	MIxS core	366	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sodium	MIxS core	367	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_horizon	MIxS	32	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_text_measure	MIxS	33	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_texture_meth	MIxS	34	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_type	MIxS	35	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_type_meth	MIxS	36	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	solar_irradiance	MIxS core	58	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soluble_inorg_mat	MIxS core	368	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soluble_org_mat	MIxS core	369	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soluble_react_phosp	MIxS core	234	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	source_mat_id	Sample ID	2	dh_mutliview_common_columns
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	space_typ_state	MIxS core	182	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	specific	MIxS core	183	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	specific_ecosystem	Sample ID	13	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	specific_humidity	MIxS core	184	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_dep_env	MIxS core	370	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_geol_age	MIxS core	371	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_kerog_type	MIxS core	372	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_lithology	MIxS core	373	hcr_cores
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	standing_water_regm	MIxS core	290	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	store_cond	MIxS (modified)	2	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	substructure_type	MIxS core	185	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sulfate	MIxS core	46	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sulfate_fw	MIxS core	374	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sulfide	MIxS core	375	biofilm|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_air_cont	MIxS core	186	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_humidity	MIxS core	187	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_material	MIxS core	188	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_moisture	MIxS core	189	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_moisture_ph	MIxS core	190	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_temp	MIxS core	191	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	suspend_part_matter	MIxS core	235	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	suspend_solids	MIxS core	376	hcr_cores|hcr_fluids_swabs|wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tan	MIxS core	377	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	temp	MIxS	37	air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	temp_out	MIxS core	192	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tertiary_treatment	MIxS core	378	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tidal_stage	MIxS core	48	sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tillage	MIxS	38	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tiss_cult_growth_med	MIxS core	291	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	toluene	MIxS core	379	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_carb	MIxS	47	biofilm|bioscales|sediment|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_depth_water_col	MIxS core	49	sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_diss_nitro	MIxS core	236	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_inorg_nitro	MIxS core	237	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_iron	MIxS core	380	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_nitro	MIxS core	381	bioscales|hcr_cores|hcr_fluids_swabs|wastewater_sludge|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_nitro_cont_meth	MIxS	49	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_nitro_content	MIxS	48	biofilm|bioscales|sediment|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_org_c_meth	MIxS	51	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_org_carb	MIxS	50	biofilm|bioscales|sediment|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_part_carb	MIxS core	239	water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_phosp	MIxS	52	bioscales|hcr_cores|hcr_fluids_swabs|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_phosphate	MIxS core	382	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_sulfur	MIxS core	383	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	train_line	MIxS core	193	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	train_stat_loc	MIxS core	194	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	train_stop_loc	MIxS core	195	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	turbidity	MIxS core	50	biofilm|sediment|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tvdss_of_hcr_press	MIxS core	384	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tvdss_of_hcr_temp	MIxS core	385	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	typ_occup_density	MIxS core	196	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ventilation_rate	MIxS core	59	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ventilation_type	MIxS core	60	air|built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	vfa	MIxS core	386	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	vfa_fw	MIxS core	387	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	vis_media	MIxS core	197	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	viscosity	MIxS core	388	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	volatile_org_comp	MIxS core	61	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_area	MIxS core	198	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_const_type	MIxS core	199	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_finish_mat	MIxS core	200	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_height	MIxS core	201	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_loc	MIxS core	202	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_surf_treatment	MIxS core	203	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_texture	MIxS core	204	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_thermal_mass	MIxS core	205	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_water_mold	MIxS core	206	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wastewater_type	MIxS core	389	wastewater_sludge
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_cont_soil_meth	MIxS	40	bioscales|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_content	MIxS	39	biofilm|bioscales|sediment|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_current	MIxS core	240	misc_envs|water
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_cut	MIxS core	390	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_feat_size	MIxS core	207	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_feat_type	MIxS core	208	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_prod_rate	MIxS core	391	hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_temp_regm	MIxS core	292	plant_associated
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	watering_regm	MIxS (modified)	25	bioscales|plant_associated|soil
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	weekday	MIxS core	209	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	win	MIxS core	392	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wind_direction	MIxS core	62	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wind_speed	MIxS core	63	air
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_cond	MIxS core	210	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_cover	MIxS core	211	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_horiz_pos	MIxS core	212	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_loc	MIxS core	213	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_mat	MIxS core	214	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_open_freq	MIxS core	215	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_size	MIxS core	216	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_status	MIxS core	217	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_type	MIxS core	218	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_vert_pos	MIxS core	219	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_water_mold	MIxS core	220	built_env
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	xylene	MIxS core	393	hcr_cores|hcr_fluids_swabs
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	zinc	Bioscales	1004	bioscales
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	abs_air_humidity	mixs_core_section	61	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	add_recov_method	mixs_core_section	289	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	additional_info	mixs_core_section	290	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	address	mixs_core_section	62	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	adj_room	mixs_core_section	63	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	aero_struc	mixs_core_section	64	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	agrochem_addition	mixs_section	2	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	air_PM_concen	mixs_core_section	48	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	air_temp	mixs_core_section	65	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	air_temp_regm	mixs_modified_section	16	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	al_sat	mixs_section	3	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	al_sat_meth	mixs_section	4	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alkalinity	mixs_core_section	1	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alkalinity_method	mixs_core_section	218	HcrCoresInterface|HcrFluidsSwabsInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alkyl_diethers	mixs_core_section	2	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	alt	mixs_modified_section	26	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	aminopept_act	mixs_core_section	3	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ammonium	mixs_core_section	4	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ammonium_nitrogen	mixs_inspired_section	1005	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	amount_light	mixs_core_section	66	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ances_data	mixs_core_section	237	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	annual_precpt	mixs_section	5	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	annual_temp	mixs_section	6	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	antibiotic_regm	mixs_core_section	238	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	api	mixs_core_section	291	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	arch_struc	mixs_core_section	67	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	aromatics_pc	mixs_core_section	292	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	asphaltenes_pc	mixs_core_section	293	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	atmospheric_data	mixs_core_section	219	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	avg_dew_point	mixs_core_section	68	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	avg_occup	mixs_core_section	69	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	avg_temp	mixs_core_section	70	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bac_prod	mixs_core_section	220	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bac_resp	mixs_core_section	221	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bacteria_carb_prod	mixs_core_section	5	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	barometric_press	mixs_core_section	49	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	basin	mixs_core_section	294	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bathroom_count	mixs_core_section	71	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bedroom_count	mixs_core_section	72	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	benzene	mixs_core_section	295	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biochem_oxygen_dem	mixs_core_section	296	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biocide	mixs_core_section	297	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biocide_admin_method	mixs_core_section	298	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biol_stat	mixs_core_section	239	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biomass	mixs_core_section	6	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biotic_regm	mixs_modified_section	13	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	biotic_relationship	mixs_modified_section	22	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bishomohopanol	mixs_core_section	7	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	blood_press_diast	mixs_core_section	299	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	blood_press_syst	mixs_core_section	300	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	bromide	mixs_core_section	8	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	build_docs	mixs_core_section	73	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	build_occup_type	mixs_core_section	74	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	building_setting	mixs_core_section	75	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	built_struc_age	mixs_core_section	76	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	built_struc_set	mixs_core_section	77	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	built_struc_type	mixs_core_section	78	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	calcium	mixs_core_section	9	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	carb_dioxide	mixs_core_section	50	AirInterface|BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	carb_monoxide	mixs_core_section	51	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	carb_nitro_ratio	mixs_section	44	BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_area	mixs_core_section	79	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_cond	mixs_core_section	80	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_finish_mat	mixs_core_section	81	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_struc	mixs_core_section	82	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_texture	mixs_core_section	83	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_thermal_mass	mixs_core_section	84	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_type	mixs_core_section	85	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ceil_water_mold	mixs_core_section	86	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_administration	mixs_modified_section	17	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_mutagen	mixs_core_section	240	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_oxygen_dem	mixs_core_section	301	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_treat_method	mixs_core_section	302	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chem_treatment	mixs_core_section	303	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chloride	mixs_core_section	10	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	chlorophyll	mixs_core_section	11	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	climate_environment	mixs_modified_section	19	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	collection_date	mixs_modified_section	3	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	conduc	mixs_core_section	222	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cool_syst_id	mixs_core_section	87	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	crop_rotation	mixs_section	7	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cult_root_med	mixs_core_section	241	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cur_land_use	mixs_section	8	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cur_vegetation	mixs_section	9	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	cur_vegetation_meth	mixs_section	10	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	date_last_rain	mixs_core_section	88	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	density	mixs_core_section	12	HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	depos_env	mixs_core_section	304	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	depth	mixs_modified_section	10	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	dew_point	mixs_core_section	89	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diether_lipids	mixs_core_section	13	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_carb_dioxide	mixs_core_section	14	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_hydrogen	mixs_core_section	15	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_inorg_carb	mixs_core_section	16	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_inorg_nitro	mixs_core_section	223	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_inorg_phosp	mixs_core_section	224	HcrCoresInterface|HcrFluidsSwabsInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_iron	mixs_core_section	305	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_org_carb	mixs_core_section	17	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_org_nitro	mixs_core_section	18	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_oxygen	mixs_core_section	19	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	diss_oxygen_fluid	mixs_core_section	306	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_comp_type	mixs_core_section	90	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_cond	mixs_core_section	91	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_direct	mixs_core_section	92	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_loc	mixs_core_section	93	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_mat	mixs_core_section	94	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_move	mixs_core_section	95	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_size	mixs_core_section	96	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_type	mixs_core_section	97	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_type_metal	mixs_core_section	98	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_type_wood	mixs_core_section	99	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	door_water_mold	mixs_core_section	100	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	down_par	mixs_core_section	225	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	drainage_class	mixs_section	11	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	drawings	mixs_core_section	101	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem	sample_id_section	9	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem_category	sample_id_section	10	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem_subtype	sample_id_section	12	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ecosystem_type	sample_id_section	11	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	efficiency_percent	mixs_core_section	307	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	elev	mixs_modified_section	6	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	elevator	mixs_core_section	102	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	emulsions	mixs_core_section	308	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	env_broad_scale	sample_id_section	6	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	env_local_scale	sample_id_section	7	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	env_medium	sample_id_section	8	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	escalator	mixs_core_section	103	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ethylbenzene	mixs_core_section	309	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	exp_duct	mixs_core_section	104	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	exp_pipe	mixs_core_section	105	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	experimental_factor	mixs_section	12	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ext_door	mixs_core_section	106	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ext_wall_orient	mixs_core_section	107	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ext_window_orient	mixs_core_section	108	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	extreme_event	mixs_section	13	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fao_class	mixs_section	14	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fertilizer_regm	mixs_core_section	242	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	field	mixs_core_section	310	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	filter_type	mixs_core_section	109	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fire	mixs_section	15	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fireplace_type	mixs_core_section	110	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	flooding	mixs_section	16	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_age	mixs_core_section	111	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_area	mixs_core_section	112	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_cond	mixs_core_section	113	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_count	mixs_core_section	114	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_finish_mat	mixs_core_section	115	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_struc	mixs_core_section	116	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_thermal_mass	mixs_core_section	117	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	floor_water_mold	mixs_core_section	118	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fluor	mixs_core_section	226	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	freq_clean	mixs_core_section	119	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	freq_cook	mixs_core_section	120	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	fungicide_regm	mixs_core_section	243	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	furniture	mixs_core_section	121	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gaseous_environment	mixs_modified_section	20	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gaseous_substances	mixs_core_section	311	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gender_restroom	mixs_core_section	122	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	genetic_mod	mixs_core_section	244	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	geo_loc_name	mixs_modified_section	4	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	glucosidase_act	mixs_core_section	20	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gravidity	mixs_core_section	312	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	gravity	mixs_core_section	245	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	growth_facil	mixs_modified_section	1	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	growth_habit	mixs_core_section	246	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	growth_hormone_regm	mixs_core_section	247	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hall_count	mixs_core_section	123	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	handidness	mixs_core_section	124	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hc_produced	mixs_core_section	313	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr	mixs_core_section	314	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_fw_salinity	mixs_core_section	315	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_geol_age	mixs_core_section	316	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_pressure	mixs_core_section	317	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	hcr_temp	mixs_core_section	318	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_cool_type	mixs_core_section	125	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_deliv_loc	mixs_core_section	126	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_sys_deliv_meth	mixs_core_section	127	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heat_system_id	mixs_core_section	128	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heavy_metals	mixs_section	17	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	heavy_metals_meth	mixs_section	18	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	height_carper_fiber	mixs_core_section	129	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	herbicide_regm	mixs_core_section	248	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	horizon_meth	mixs_section	19	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_age	mixs_core_section	249	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_habitat	mixs_core_section	319	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_product	mixs_core_section	320	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_site	mixs_core_section	321	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_body_temp	mixs_core_section	322	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_color	mixs_core_section	323	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_common_name	mixs_core_section	250	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_diet	mixs_core_section	324	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_dry_mass	mixs_core_section	251	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_family_relation	mixs_core_section	325	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_genotype	mixs_core_section	252	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_growth_cond	mixs_core_section	326	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_height	mixs_core_section	253	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_last_meal	mixs_core_section	327	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_length	mixs_core_section	254	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_life_stage	mixs_core_section	255	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_phenotype	mixs_core_section	256	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_sex	mixs_core_section	328	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_shape	mixs_core_section	329	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_subject_id	mixs_core_section	330	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_subspecf_genlin	mixs_core_section	257	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_substrate	mixs_core_section	331	HostAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_symbiont	mixs_core_section	258	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_taxid	mixs_core_section	259	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_tot_mass	mixs_core_section	260	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	host_wet_mass	mixs_core_section	261	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	humidity	mixs_core_section	52	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	humidity_regm	mixs_modified_section	21	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	indoor_space	mixs_core_section	130	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	indoor_surf	mixs_core_section	131	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	indust_eff_percent	mixs_core_section	332	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	inorg_particles	mixs_core_section	333	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	inside_lux	mixs_core_section	132	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	int_wall_cond	mixs_core_section	133	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	iw_bt_date_well	mixs_core_section	334	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	iwf	mixs_core_section	335	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	last_clean	mixs_core_section	134	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lat_lon	mixs_modified_section	5	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lbc_thirty	mixs_inspired_section	1001	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lbceq	mixs_inspired_section	1002	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	light_intensity	mixs_core_section	227	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	light_regm	mixs_modified_section	24	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	light_type	mixs_core_section	135	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	link_class_info	mixs_section	20	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	link_climate_info	mixs_section	21	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	lithology	mixs_core_section	336	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	local_class	mixs_section	22	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	local_class_meth	mixs_section	24	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	magnesium	mixs_core_section	21	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|SedimentInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	manganese	mixs_inspired_section	1003	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	max_occup	mixs_core_section	136	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mean_frict_vel	mixs_core_section	22	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mean_peak_frict_vel	mixs_core_section	23	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mech_struc	mixs_core_section	137	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mechanical_damage	mixs_core_section	262	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	methane	mixs_core_section	24	AirInterface|BiofilmInterface|SedimentInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	micro_biomass_meth	mixs_section	43	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	microbial_biomass	mixs_section	42	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	mineral_nutr_regm	mixs_core_section	263	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	misc_param	mixs_section	23	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	n_alkanes	mixs_core_section	25	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrate	mixs_core_section	26	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrate_nitrogen	mixs_inspired_section	1006	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrite	mixs_core_section	27	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitrite_nitrogen	mixs_inspired_section	1007	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	nitro	mixs_core_section	28	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	non_min_nutr_regm	mixs_core_section	264	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	number_pets	mixs_core_section	138	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	number_plants	mixs_core_section	139	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	number_resident	mixs_core_section	140	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	occup_density_samp	mixs_core_section	141	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	occup_document	mixs_core_section	142	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	occup_samp	mixs_core_section	143	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_carb	mixs_core_section	29	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_count_qpcr_info	mixs_core_section	337	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_matter	mixs_section	45	BiofilmInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_nitro	mixs_section	46	BiofilmInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	org_particles	mixs_core_section	338	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	organism_count	mixs_core_section	30	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	owc_tvdss	mixs_core_section	339	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	oxy_stat_samp	mixs_section	25	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	oxygen	mixs_core_section	53	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	part_org_carb	mixs_core_section	31	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	part_org_nitro	mixs_core_section	228	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	particle_class	mixs_core_section	32	SedimentInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	permeability	mixs_core_section	340	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	perturbation	mixs_core_section	33	AirInterface|BiofilmInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pesticide_regm	mixs_core_section	265	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	petroleum_hydrocarb	mixs_core_section	34	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ph	mixs_modified_section	27	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ph_meth	mixs_section	41	SoilInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ph_regm	mixs_core_section	266	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	phaeopigments	mixs_core_section	35	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	phosphate	mixs_section	53	BiofilmInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	phosplipid_fatt_acid	mixs_core_section	36	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	photon_flux	mixs_core_section	229	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_growth_med	mixs_core_section	267	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_product	mixs_core_section	268	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_sex	mixs_core_section	269	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	plant_struc	mixs_core_section	270	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pollutants	mixs_core_section	54	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	porosity	mixs_core_section	37	HcrCoresInterface|SedimentInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	potassium	mixs_core_section	38	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pour_point	mixs_core_section	341	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pre_treatment	mixs_core_section	342	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pres_animal_insect	mixs_core_section	144	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	pressure	mixs_core_section	39	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	prev_land_use_meth	mixs_section	26	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	previous_land_use	mixs_section	27	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	primary_prod	mixs_core_section	230	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	primary_treatment	mixs_core_section	343	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	prod_rate	mixs_core_section	344	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	prod_start_date	mixs_core_section	345	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	profile_position	mixs_section	28	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	quad_pos	mixs_core_section	145	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	radiation_regm	mixs_core_section	271	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rainfall_regm	mixs_core_section	272	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	reactor_type	mixs_core_section	346	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	redox_potential	mixs_core_section	40	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_air_humidity	mixs_core_section	146	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_humidity_out	mixs_core_section	147	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_samp_loc	mixs_core_section	148	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	rel_to_oxygen	mixs_modified_section	23	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	reservoir	mixs_core_section	347	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	resins_pc	mixs_core_section	348	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_air_exch_rate	mixs_core_section	149	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_architec_elem	mixs_core_section	150	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_condt	mixs_core_section	151	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_connected	mixs_core_section	152	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_count	mixs_core_section	153	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_dim	mixs_core_section	154	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_door_dist	mixs_core_section	155	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_door_share	mixs_core_section	156	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_hallway	mixs_core_section	157	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_loc	mixs_core_section	158	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_moist_dam_hist	mixs_core_section	159	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_net_area	mixs_core_section	160	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_occup	mixs_core_section	161	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_samp_pos	mixs_core_section	162	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_type	mixs_core_section	163	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_vol	mixs_core_section	164	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_wall_share	mixs_core_section	165	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	room_window_count	mixs_core_section	166	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_cond	mixs_core_section	273	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_carbon	mixs_core_section	274	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_macronutr	mixs_core_section	275	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_micronutr	mixs_core_section	276	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_ph	mixs_core_section	277	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_regl	mixs_core_section	278	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_solid	mixs_core_section	279	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	root_med_suppl	mixs_core_section	280	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	salinity	mixs_section	54	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	salinity_meth	mixs_section	55	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	salt_regm	mixs_core_section	281	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_capt_status	mixs_core_section	282	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_collec_device	mixs_modified_section	14	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_collec_method	mixs_modified_section	15	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_collect_point	mixs_core_section	349	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_dis_stage	mixs_core_section	283	HostAssociatedInterface|PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_floor	mixs_core_section	167	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_loc_corr_rate	mixs_core_section	350	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_mat_process	mixs_modified_section	12	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_md	mixs_core_section	351	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_name	sample_id_section	1	DhMultiviewCommonColumns
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_preserv	mixs_core_section	352	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_room_id	mixs_core_section	168	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_size	mixs_modified_section	18	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_sort_meth	mixs_core_section	169	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_store_dur	mixs_core_section	353	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_store_loc	mixs_core_section	41	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_store_temp	mixs_modified_section	7	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_subtype	mixs_core_section	354	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_time_out	mixs_core_section	170	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_transport_cond	mixs_core_section	355	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_tvdss	mixs_core_section	356	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_type	mixs_core_section	357	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_weather	mixs_core_section	171	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	samp_well_name	mixs_core_section	358	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	saturates_pc	mixs_core_section	359	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season	mixs_core_section	172	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_environment	mixs_core_section	284	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_precpt	mixs_section	29	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_temp	mixs_section	30	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	season_use	mixs_core_section	173	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	secondary_treatment	mixs_core_section	360	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sediment_type	mixs_core_section	42	SedimentInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sewage_type	mixs_core_section	361	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shad_dev_water_mold	mixs_core_section	174	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_cond	mixs_core_section	175	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_loc	mixs_core_section	176	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_mat	mixs_core_section	177	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	shading_device_type	mixs_core_section	178	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sieving	mixs_modified_section	8	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	silicate	mixs_core_section	43	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	size_frac	mixs_core_section	285	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	size_frac_low	mixs_modified_section	9	SoilInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	size_frac_up	mixs_modified_section	11	SoilInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	slope_aspect	mixs_section	1	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	slope_gradient	mixs_section	31	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sludge_retent_time	mixs_core_section	362	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sodium	mixs_core_section	363	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_horizon	mixs_section	32	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_text_measure	mixs_section	33	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_texture_meth	mixs_section	34	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_type	mixs_section	35	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soil_type_meth	mixs_section	36	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	solar_irradiance	mixs_core_section	55	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soluble_inorg_mat	mixs_core_section	364	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soluble_org_mat	mixs_core_section	365	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	soluble_react_phosp	mixs_core_section	231	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	source_mat_id	sample_id_section	2	DhMultiviewCommonColumns
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	space_typ_state	mixs_core_section	179	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	specific	mixs_core_section	180	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	specific_ecosystem	sample_id_section	13	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	specific_humidity	mixs_core_section	181	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_dep_env	mixs_core_section	366	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_geol_age	mixs_core_section	367	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_kerog_type	mixs_core_section	368	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sr_lithology	mixs_core_section	369	HcrCoresInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	standing_water_regm	mixs_core_section	286	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	store_cond	mixs_modified_section	2	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	substructure_type	mixs_core_section	182	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sulfate	mixs_core_section	44	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sulfate_fw	mixs_core_section	370	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	sulfide	mixs_core_section	371	BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_air_cont	mixs_core_section	183	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_humidity	mixs_core_section	184	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_material	mixs_core_section	185	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_moisture	mixs_core_section	186	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_moisture_ph	mixs_core_section	187	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	surf_temp	mixs_core_section	188	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	suspend_part_matter	mixs_core_section	232	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	suspend_solids	mixs_core_section	372	HcrCoresInterface|HcrFluidsSwabsInterface|WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tan	mixs_core_section	373	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	temp	mixs_section	37	AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	temp_out	mixs_core_section	189	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tertiary_treatment	mixs_core_section	374	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tidal_stage	mixs_core_section	45	SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tillage	mixs_section	38	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tiss_cult_growth_med	mixs_core_section	287	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	toluene	mixs_core_section	375	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_carb	mixs_section	47	BiofilmInterface|SedimentInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_depth_water_col	mixs_core_section	46	SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_diss_nitro	mixs_core_section	233	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_inorg_nitro	mixs_core_section	234	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_iron	mixs_core_section	376	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_nitro	mixs_core_section	377	HcrCoresInterface|HcrFluidsSwabsInterface|WastewaterSludgeInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_nitro_cont_meth	mixs_section	49	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_nitro_content	mixs_section	48	BiofilmInterface|SedimentInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_org_c_meth	mixs_section	51	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_org_carb	mixs_section	50	BiofilmInterface|SedimentInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_part_carb	mixs_core_section	235	WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_phosp	mixs_section	52	HcrCoresInterface|HcrFluidsSwabsInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_phosphate	mixs_core_section	378	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tot_sulfur	mixs_core_section	379	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	train_line	mixs_core_section	190	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	train_stat_loc	mixs_core_section	191	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	train_stop_loc	mixs_core_section	192	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	turbidity	mixs_core_section	47	BiofilmInterface|SedimentInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tvdss_of_hcr_press	mixs_core_section	380	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	tvdss_of_hcr_temp	mixs_core_section	381	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	typ_occup_density	mixs_core_section	193	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ventilation_rate	mixs_core_section	56	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	ventilation_type	mixs_core_section	57	AirInterface|BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	vfa	mixs_core_section	382	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	vfa_fw	mixs_core_section	383	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	vis_media	mixs_core_section	194	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	viscosity	mixs_core_section	384	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	volatile_org_comp	mixs_core_section	58	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_area	mixs_core_section	195	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_const_type	mixs_core_section	196	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_finish_mat	mixs_core_section	197	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_height	mixs_core_section	198	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_loc	mixs_core_section	199	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_surf_treatment	mixs_core_section	200	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_texture	mixs_core_section	201	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_thermal_mass	mixs_core_section	202	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wall_water_mold	mixs_core_section	203	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wastewater_type	mixs_core_section	385	WastewaterSludgeInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_cont_soil_meth	mixs_section	40	SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_content	mixs_section	39	BiofilmInterface|SedimentInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_current	mixs_core_section	236	MiscEnvsInterface|WaterInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_cut	mixs_core_section	386	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_feat_size	mixs_core_section	204	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_feat_type	mixs_core_section	205	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_prod_rate	mixs_core_section	387	HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	water_temp_regm	mixs_core_section	288	PlantAssociatedInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	watering_regm	mixs_modified_section	25	PlantAssociatedInterface|SoilInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	weekday	mixs_core_section	206	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	win	mixs_core_section	388	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wind_direction	mixs_core_section	59	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	wind_speed	mixs_core_section	60	AirInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_cond	mixs_core_section	207	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_cover	mixs_core_section	208	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_horiz_pos	mixs_core_section	209	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_loc	mixs_core_section	210	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_mat	mixs_core_section	211	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_open_freq	mixs_core_section	212	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_size	mixs_core_section	213	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_status	mixs_core_section	214	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_type	mixs_core_section	215	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_vert_pos	mixs_core_section	216	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	window_water_mold	mixs_core_section	217	BuiltEnvInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	xylene	mixs_core_section	389	HcrCoresInterface|HcrFluidsSwabsInterface
+Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml	zinc	mixs_inspired_section	1004	SoilInterface

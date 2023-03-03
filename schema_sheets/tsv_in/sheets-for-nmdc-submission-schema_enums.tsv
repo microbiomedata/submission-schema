@@ -1,290 +1,311 @@
-DH pulldown column	DH pulldown option	term_id	old SNTC name	MIxS see also	notes
-> enum	permissible_value	ignore	annotations	see_also	notes
->			inner_key: sntc_name		
-analysis_type_enum	metabolomics				
-analysis_type_enum	metagenomics				
-analysis_type_enum	metaproteomics				
-analysis_type_enum	metatranscriptomics				
-analysis_type_enum	natural organic matter				
-biotic_relationship_enum	commensalism		samp_biotic_relationship	https://genomicsstandardsconsortium.github.io/mixs/biotic_relationship_enum/	biotic_relationship_enum: free living|parasitism|commensalism|symbiotic|mutualism
-biotic_relationship_enum	free living				
-biotic_relationship_enum	mutualism				
-biotic_relationship_enum	parasitism				
-biotic_relationship_enum	symbiotic				
-dna_cont_type_enum	plate				
-dna_cont_type_enum	tube				
-dna_dnase_enum	no				
-dna_dnase_enum	yes				
-dna_sample_format_enum	10 mM Tris-HCl				
-dna_sample_format_enum	DNAStable				
-dna_sample_format_enum	Ethanol				
-dna_sample_format_enum	Low EDTA TE				
-dna_sample_format_enum	MDA reaction buffer				
-dna_sample_format_enum	PBS				
-dna_sample_format_enum	Pellet				
-dna_sample_format_enum	RNAStable				
-dna_sample_format_enum	TE				
-dna_sample_format_enum	Water				
-dnase_rna_enum	no				
-dnase_rna_enum	yes				
-ecosystem_category_enum	Terrestrial			https://github.com/microbiomedata/sheets_and_friends/issues/22	
-ecosystem_enum	Environmental				
-ecosystem_subtype_enum	Biocrust				
-ecosystem_subtype_enum	Biocrust				
-ecosystem_subtype_enum	Biofilm				
-ecosystem_subtype_enum	Bulk soil				
-ecosystem_subtype_enum	Clay				
-ecosystem_subtype_enum	Floodplain				
-ecosystem_subtype_enum	Fossil				
-ecosystem_subtype_enum	Glacier				
-ecosystem_subtype_enum	Loam				
-ecosystem_subtype_enum	Mineral horizon				
-ecosystem_subtype_enum	Nature reserve				
-ecosystem_subtype_enum	Organic layer				
-ecosystem_subtype_enum	Paddy field/soil				
-ecosystem_subtype_enum	Pasture				
-ecosystem_subtype_enum	Peat				
-ecosystem_subtype_enum	Ranch				
-ecosystem_subtype_enum	Sand				
-ecosystem_subtype_enum	Silt				
-ecosystem_subtype_enum	Soil crust				
-ecosystem_subtype_enum	Unclassified				
-ecosystem_subtype_enum	Watershed				
-ecosystem_subtype_enum	Wetlands				
-ecosystem_type_enum	Soil				
-env_package_enum	soil				I don't think this is a MIxS term anymore, so it make sense to define it here
-growth_facil_enum	experimental_garden		growth_facility	https://genomicsstandardsconsortium.github.io/mixs/growth_facil/	string range according to MIxS
-growth_facil_enum	field				
-growth_facil_enum	field_incubation				
-growth_facil_enum	glasshouse				
-growth_facil_enum	greenhouse				
-growth_facil_enum	growth_chamber				
-growth_facil_enum	lab_incubation				
-growth_facil_enum	open_top_chamber				
-growth_facil_enum	other				
-rel_to_oxygen_enum	aerobe		oxygen_relationship	https://genomicsstandardsconsortium.github.io/mixs/rel_to_oxygen_enum/	
-rel_to_oxygen_enum	anaerobe				
-rel_to_oxygen_enum	facultative				
-rel_to_oxygen_enum	microaerophilic				
-rel_to_oxygen_enum	microanaerobe				
-rel_to_oxygen_enum	obligate aerobe				
-rel_to_oxygen_enum	obligate anaerobe				
-rna_cont_type_enum	plate				
-rna_cont_type_enum	tube				
-rna_sample_format_enum	10 mM Tris-HCl				
-rna_sample_format_enum	DNAStable				
-rna_sample_format_enum	Ethanol				
-rna_sample_format_enum	Low EDTA TE				
-rna_sample_format_enum	MDA reaction buffer				
-rna_sample_format_enum	PBS				
-rna_sample_format_enum	Pellet				
-rna_sample_format_enum	RNAStable				
-rna_sample_format_enum	TE				
-rna_sample_format_enum	Water				
-sample_type_enum	soil				
-sample_type_enum	water_extract_soil				
-specific_ecosystem_enum	Agricultural				
-specific_ecosystem_enum	Agricultural land				
-specific_ecosystem_enum	Agricultural soil				
-specific_ecosystem_enum	Alpine				
-specific_ecosystem_enum	Bog				
-specific_ecosystem_enum	Boreal forest				
-specific_ecosystem_enum	Contaminated				
-specific_ecosystem_enum	Desert				
-specific_ecosystem_enum	Farm				
-specific_ecosystem_enum	Forest soil				
-specific_ecosystem_enum	Forest Soil				
-specific_ecosystem_enum	Grasslands				
-specific_ecosystem_enum	Meadow				
-specific_ecosystem_enum	Mine				
-specific_ecosystem_enum	Mine drainage				
-specific_ecosystem_enum	Oil-contaminated				
-specific_ecosystem_enum	Orchard soil				
-specific_ecosystem_enum	Permafrost				
-specific_ecosystem_enum	Riparian soil				
-specific_ecosystem_enum	River				
-specific_ecosystem_enum	Shrubland				
-specific_ecosystem_enum	Tropical rainforest				
-specific_ecosystem_enum	Unclassified				
-specific_ecosystem_enum	Uranium contaminated				
-store_cond_enum	fresh		storage_condt		see samp_store_dur, samp_store_loc, samp_store_temp and store_cond (which takes a string range according to mixs-source).
-store_cond_enum	frozen				
-store_cond_enum	lyophilized				
-store_cond_enum	other				
-env_broad_scale_soil_enum	alpine biome [ENVO:01001835]				
-env_broad_scale_soil_enum	__alpine tundra biome [ENVO:01001505]				
-env_broad_scale_soil_enum	anthropogenic terrestrial biome [ENVO:01000219]				
-env_broad_scale_soil_enum	__rangeland biome [ENVO:01000247]				
-env_broad_scale_soil_enum	__village biome [ENVO:01000246]				
-env_broad_scale_soil_enum	arid biome [ENVO:01001838]				
-env_broad_scale_soil_enum	mangrove biome [ENVO:01000181]				
-env_broad_scale_soil_enum	montane biome [ENVO:01001836]				
-env_broad_scale_soil_enum	__montane savanna biome [ENVO:01000223]				
-env_broad_scale_soil_enum	__montane shrubland biome [ENVO:01000216]				
-env_broad_scale_soil_enum	polar biome [ENVO:01000339]				
-env_broad_scale_soil_enum	shrubland biome [ENVO:01000176]				
-env_broad_scale_soil_enum	__montane shrubland biome [ENVO:01000216]				
-env_broad_scale_soil_enum	__subtropical shrubland biome [ENVO:01000213]				
-env_broad_scale_soil_enum	____mediterranean shrubland biome [ENVO:01000217]				
-env_broad_scale_soil_enum	__temperate shrubland biome [ENVO:01000215]				
-env_broad_scale_soil_enum	__tropical shrubland biome [ENVO:01000214]				
-env_broad_scale_soil_enum	subalpine biome [ENVO:01001837]				
-env_broad_scale_soil_enum	subpolar biome [ENVO:01001834]				
-env_broad_scale_soil_enum	subtropical biome [ENVO:01001832]				
-env_broad_scale_soil_enum	__mediterranean biome [ENVO:01001833]				
-env_broad_scale_soil_enum	____mediterranean savanna biome [ENVO:01000229]				
-env_broad_scale_soil_enum	____mediterranean shrubland biome [ENVO:01000217]				
-env_broad_scale_soil_enum	____mediterranean woodland biome [ENVO:01000208]				
-env_broad_scale_soil_enum	__subtropical savanna biome [ENVO:01000187]				
-env_broad_scale_soil_enum	____mediterranean savanna biome [ENVO:01000229]				
-env_broad_scale_soil_enum	__subtropical shrubland biome [ENVO:01000213]				
-env_broad_scale_soil_enum	____mediterranean shrubland biome [ENVO:01000217]				
-env_broad_scale_soil_enum	__subtropical woodland biome [ENVO:01000222]				
-env_broad_scale_soil_enum	____mediterranean woodland biome [ENVO:01000208]				
-env_broad_scale_soil_enum	temperate biome [ENVO:01001831]				
-env_broad_scale_soil_enum	__temperate savanna biome [ENVO:01000189]				
-env_broad_scale_soil_enum	__temperate shrubland biome [ENVO:01000215]				
-env_broad_scale_soil_enum	__temperate woodland biome [ENVO:01000221]				
-env_broad_scale_soil_enum	tropical biome [ENVO:01001830]				
-env_broad_scale_soil_enum	__tropical savanna biome [ENVO:01000188]				
-env_broad_scale_soil_enum	__tropical shrubland biome [ENVO:01000214]				
-env_broad_scale_soil_enum	__tropical woodland biome [ENVO:01000220]				
-env_broad_scale_soil_enum	tundra biome [ENVO:01000180]				
-env_broad_scale_soil_enum	__alpine tundra biome [ENVO:01001505]				
-env_broad_scale_soil_enum	urban biome [ENVO:01000249]				
-env_broad_scale_soil_enum	woodland biome [ENVO:01000175]				
-env_broad_scale_soil_enum	__savanna biome [ENVO:01000178]				
-env_broad_scale_soil_enum	____flooded savanna biome [ENVO:01000190]				
-env_broad_scale_soil_enum	____montane savanna biome [ENVO:01000223]				
-env_broad_scale_soil_enum	____subtropical savanna biome [ENVO:01000187]				
-env_broad_scale_soil_enum	______mediterranean savanna biome [ENVO:01000229]				
-env_broad_scale_soil_enum	____temperate savanna biome [ENVO:01000189]				
-env_broad_scale_soil_enum	____tropical savanna biome [ENVO:01000188]				
-env_broad_scale_soil_enum	__subtropical woodland biome [ENVO:01000222]				
-env_broad_scale_soil_enum	____mediterranean woodland biome [ENVO:01000208]				
-env_broad_scale_soil_enum	__temperate woodland biome [ENVO:01000221]				
-env_broad_scale_soil_enum	__tropical woodland biome [ENVO:01000220]				
-env_local_scale_soil_enum	active geological fault [ENVO:01000669]				
-env_local_scale_soil_enum	agricultural field [ENVO:00000114]				
-env_local_scale_soil_enum	beach [ENVO:00000091]				
-env_local_scale_soil_enum	cave [ENVO:00000067]				
-env_local_scale_soil_enum	channel [ENVO:03000117]				
-env_local_scale_soil_enum	__tunnel [ENVO:00000068]				
-env_local_scale_soil_enum	coast [ENVO:01000687]				
-env_local_scale_soil_enum	dry lake [ENVO:00000277]				
-env_local_scale_soil_enum	dry river [ENVO:01000995]				
-env_local_scale_soil_enum	garden [ENVO:00000011]				
-env_local_scale_soil_enum	hill [ENVO:00000083]				
-env_local_scale_soil_enum	__dune [ENVO:00000170]				
-env_local_scale_soil_enum	hummock [ENVO:00000516]				
-env_local_scale_soil_enum	impact crater [ENVO:01001071]				
-env_local_scale_soil_enum	isthmus [ENVO:00000174]				
-env_local_scale_soil_enum	karst [ENVO:00000175]				
-env_local_scale_soil_enum	lake shore [ENVO:00000382]				
-env_local_scale_soil_enum	lava field [ENVO:01000437]				
-env_local_scale_soil_enum	mesa [ENVO:00000179]				
-env_local_scale_soil_enum	mountain [ENVO:00000081]				
-env_local_scale_soil_enum	peatland [ENVO:00000044]				
-env_local_scale_soil_enum	peninsula [ENVO:00000305]				
-env_local_scale_soil_enum	plain [ENVO:00000086]				
-env_local_scale_soil_enum	plateau [ENVO:00000182]				
-env_local_scale_soil_enum	ridge [ENVO:00000283]				
-env_local_scale_soil_enum	slope [ENVO:00002000]				
-env_local_scale_soil_enum	__cliff [ENVO:00000087]				
-env_local_scale_soil_enum	__hillside [ENVO:01000333]				
-env_local_scale_soil_enum	snow field [ENVO:00000146]				
-env_local_scale_soil_enum	tombolo [ENVO:00000420]				
-env_local_scale_soil_enum	tuff cone [ENVO:01000664]				
-env_local_scale_soil_enum	valley [ENVO:00000100]				
-env_local_scale_soil_enum	__canyon [ENVO:00000169]				
-env_local_scale_soil_enum	__dry valley [ENVO:00000128]				
-env_local_scale_soil_enum	__glacial valley [ENVO:00000248]				
-env_local_scale_soil_enum	vein [ENVO:01000670]				
-env_local_scale_soil_enum	volcano [ENVO:00000247]				
-env_local_scale_soil_enum	woodland clearing [ENVO:00000444]				
-env_medium_soil_enum	agricultural soil [ENVO:00002259]				
-env_medium_soil_enum	__bluegrass field soil [ENVO:00005789]				
-env_medium_soil_enum	__paddy field soil [ENVO:00005740]				
-env_medium_soil_enum	____peaty paddy field soil [ENVO:00005776]				
-env_medium_soil_enum	__rubber plantation soil [ENVO:00005788]				
-env_medium_soil_enum	albeluvisol [ENVO:00002233]				
-env_medium_soil_enum	alisol [ENVO:00002231]				
-env_medium_soil_enum	alluvial soil [ENVO:00002871]				
-env_medium_soil_enum	__alluvial swamp soil [ENVO:00005758]				
-env_medium_soil_enum	alpine soil [ENVO:00005741]				
-env_medium_soil_enum	andosol [ENVO:00002232]				
-env_medium_soil_enum	__volcanic soil [ENVO:01001841]				
-env_medium_soil_enum	anthrosol [ENVO:00002230]				
-env_medium_soil_enum	arenosol [ENVO:00002229]				
-env_medium_soil_enum	bare soil [ENVO:01001616]				
-env_medium_soil_enum	burned soil [ENVO:00005760]				
-env_medium_soil_enum	calcisol [ENVO:00002239]				
-env_medium_soil_enum	cambisol [ENVO:00002235]				
-env_medium_soil_enum	carbon nanotube enriched soil [ENVO:01000427]				
-env_medium_soil_enum	chernozem [ENVO:00002237]				
-env_medium_soil_enum	compost soil [ENVO:00005747]				
-env_medium_soil_enum	__frozen compost soil [ENVO:00005765]				
-env_medium_soil_enum	contaminated soil [ENVO:00002116]				
-env_medium_soil_enum	__xylene contaminated soil [ENVO:00002146]				
-env_medium_soil_enum	dune soil [ENVO:00002260]				
-env_medium_soil_enum	durisol [ENVO:00002238]				
-env_medium_soil_enum	ferralsol [ENVO:00002246]				
-env_medium_soil_enum	fluvisol [ENVO:00002273]				
-env_medium_soil_enum	forest soil [ENVO:00002261]				
-env_medium_soil_enum	__beech forest soil [ENVO:00005770]				
-env_medium_soil_enum	__eucalyptus forest soil [ENVO:00005787]				
-env_medium_soil_enum	__mountain forest soil [ENVO:00005769]				
-env_medium_soil_enum	frost-susceptible soil [ENVO:01001638]				
-env_medium_soil_enum	frozen soil [ENVO:01001526]				
-env_medium_soil_enum	__cryosol [ENVO:00002236]				
-env_medium_soil_enum	__friable-frozen soil [ENVO:01001528]				
-env_medium_soil_enum	__frozen compost soil [ENVO:00005765]				
-env_medium_soil_enum	__plastic-frozen soil [ENVO:01001527]				
-env_medium_soil_enum	gleysol [ENVO:00002244]				
-env_medium_soil_enum	grassland soil [ENVO:00005750]				
-env_medium_soil_enum	__savanna soil [ENVO:00005746]				
-env_medium_soil_enum	__steppe soil [ENVO:00005777]				
-env_medium_soil_enum	greenhouse soil [ENVO:00005780]				
-env_medium_soil_enum	gypsisol [ENVO:00002245]				
-env_medium_soil_enum	histosol [ENVO:00002243]				
-env_medium_soil_enum	humus-rich acidic ash soil [ENVO:00005763]				
-env_medium_soil_enum	jungle soil [ENVO:00005751]				
-env_medium_soil_enum	kastanozem [ENVO:00002240]				
-env_medium_soil_enum	leptosol [ENVO:00002241]				
-env_medium_soil_enum	limed soil [ENVO:00005766]				
-env_medium_soil_enum	lixisol [ENVO:00002242]				
-env_medium_soil_enum	loam [ENVO:00002258]				
-env_medium_soil_enum	luvisol [ENVO:00002248]				
-env_medium_soil_enum	manured soil [ENVO:00005767]				
-env_medium_soil_enum	meadow soil [ENVO:00005761]				
-env_medium_soil_enum	muddy soil [ENVO:00005771]				
-env_medium_soil_enum	nitisol [ENVO:00002247]				
-env_medium_soil_enum	orchard soil [ENVO:00005772]				
-env_medium_soil_enum	ornithogenic soil [ENVO:00005782]				
-env_medium_soil_enum	pantothenate enriched soil [ENVO:00003088]				
-env_medium_soil_enum	pasture soil [ENVO:00005773]				
-env_medium_soil_enum	peat soil [ENVO:00005774]				
-env_medium_soil_enum	phaeozem [ENVO:00002249]				
-env_medium_soil_enum	planosol [ENVO:00002251]				
-env_medium_soil_enum	plinthosol [ENVO:00002250]				
-env_medium_soil_enum	podzol [ENVO:00002257]				
-env_medium_soil_enum	poly-beta-hydroxybutyrate enriched soil [ENVO:00003093]				
-env_medium_soil_enum	pond soil [ENVO:00005764]				
-env_medium_soil_enum	quinate enriched soil [ENVO:00003095]				
-env_medium_soil_enum	regosol [ENVO:00002256]				
-env_medium_soil_enum	sarcosine enriched soil [ENVO:00003083]				
-env_medium_soil_enum	skatole enriched soil [ENVO:00003085]				
-env_medium_soil_enum	solonchak [ENVO:00002252]				
-env_medium_soil_enum	solonetz [ENVO:00002255]				
-env_medium_soil_enum	stagnosol [ENVO:00002274]				
-env_medium_soil_enum	surface soil [ENVO:02000059]				
-env_medium_soil_enum	technosol [ENVO:00002275]				
-env_medium_soil_enum	threonine enriched soil [ENVO:00003091]				
-env_medium_soil_enum	trimethylamine enriched soil [ENVO:00003084]				
-env_medium_soil_enum	tropical soil [ENVO:00005778]				
-env_medium_soil_enum	ultisol [ENVO:01001397]				
-env_medium_soil_enum	__acrisol [ENVO:00002234]				
-env_medium_soil_enum	umbrisol [ENVO:00002253]				
-env_medium_soil_enum	upland soil [ENVO:00005786]				
-env_medium_soil_enum	urea enriched soil [ENVO:00005753]				
-env_medium_soil_enum	vertisol [ENVO:00002254]				
+DH pulldown column	DH pulldown option	description	term_id	old SNTC name	MIxS see also	notes
+> enum	permissible_value	description	ignore	annotations	see_also	notes
+>				inner_key: sntc_name	"internal_separator: ""|"""	"internal_separator: ""|"""
+AnalysisTypeEnum	metabolomics	placeholder PV descr				
+AnalysisTypeEnum	metagenomics	placeholder PV descr				
+AnalysisTypeEnum	metaproteomics	placeholder PV descr				
+AnalysisTypeEnum	metatranscriptomics	placeholder PV descr				
+BioticRelationshipEnum	natural organic matter	placeholder PV descr				
+BioticRelationshipEnum	commensalism	placeholder PV descr		samp_biotic_relationship	https://genomicsstandardsconsortium.github.io/mixs/biotic_relationship_enum/	biotic_relationship_enum: free living|parasitism|commensalism|symbiotic|mutualism
+BioticRelationshipEnum	free living	placeholder PV descr				
+BioticRelationshipEnum	mutualism	placeholder PV descr				
+BioticRelationshipEnum	parasitism	placeholder PV descr				
+DnaContTypeEnum	symbiotic	placeholder PV descr				
+DnaContTypeEnum	plate	placeholder PV descr				
+DnaDnaseEnum	tube	placeholder PV descr				
+DnaDnaseEnum	no	placeholder PV descr				
+DnaSampleFormatEnum	yes	placeholder PV descr				
+DnaSampleFormatEnum	10 mM Tris-HCl	placeholder PV descr				
+DnaSampleFormatEnum	DNAStable	placeholder PV descr				
+DnaSampleFormatEnum	Ethanol	placeholder PV descr				
+DnaSampleFormatEnum	Low EDTA TE	placeholder PV descr				
+DnaSampleFormatEnum	MDA reaction buffer	placeholder PV descr				
+DnaSampleFormatEnum	PBS	placeholder PV descr				
+DnaSampleFormatEnum	Pellet	placeholder PV descr				
+DnaSampleFormatEnum	RNAStable	placeholder PV descr				
+DnaSampleFormatEnum	TE	placeholder PV descr				
+DnaSampleFormatEnum	Water	placeholder PV descr				
+DnaseRnaEnum	no	placeholder PV descr				
+DnaseRnaEnum	yes	placeholder PV descr				
+EcosystemCategoryEnum	Terrestrial	placeholder PV descr			https://github.com/microbiomedata/sheets_and_friends/issues/22	
+EcosystemEnum	Environmental	placeholder PV descr				
+EcosystemSubtypeEnum	Biocrust	placeholder PV descr				
+EcosystemSubtypeEnum	Biocrust	placeholder PV descr				
+EcosystemSubtypeEnum	Biofilm	placeholder PV descr				
+EcosystemSubtypeEnum	Bulk soil	placeholder PV descr				
+EcosystemSubtypeEnum	Clay	placeholder PV descr				
+EcosystemSubtypeEnum	Floodplain	placeholder PV descr				
+EcosystemSubtypeEnum	Fossil	placeholder PV descr				
+EcosystemSubtypeEnum	Glacier	placeholder PV descr				
+EcosystemSubtypeEnum	Loam	placeholder PV descr				
+EcosystemSubtypeEnum	Mineral horizon	placeholder PV descr				
+EcosystemSubtypeEnum	Nature reserve	placeholder PV descr				
+EcosystemSubtypeEnum	Organic layer	placeholder PV descr				
+EcosystemSubtypeEnum	Paddy field/soil	placeholder PV descr				
+EcosystemSubtypeEnum	Pasture	placeholder PV descr				
+EcosystemSubtypeEnum	Peat	placeholder PV descr				
+EcosystemSubtypeEnum	Ranch	placeholder PV descr				
+EcosystemSubtypeEnum	Sand	placeholder PV descr				
+EcosystemSubtypeEnum	Silt	placeholder PV descr				
+EcosystemSubtypeEnum	Soil crust	placeholder PV descr				
+EcosystemSubtypeEnum	Unclassified	placeholder PV descr				
+EcosystemSubtypeEnum	Watershed	placeholder PV descr				
+EcosystemSubtypeEnum	Wetlands	placeholder PV descr				
+EcosystemTypeEnum	Soil	placeholder PV descr				
+EnvPackageEnum	soil	placeholder PV descr				I don't think this is a MIxS term anymore, so it make sense to define it here
+GrowthFacilEnum	experimental_garden	placeholder PV descr		growth_facility	https://genomicsstandardsconsortium.github.io/mixs/growth_facil/	string range according to MIxS
+GrowthFacilEnum	field	placeholder PV descr				
+GrowthFacilEnum	field_incubation	placeholder PV descr				
+GrowthFacilEnum	glasshouse	placeholder PV descr				
+GrowthFacilEnum	greenhouse	placeholder PV descr				
+GrowthFacilEnum	growth_chamber	placeholder PV descr				
+GrowthFacilEnum	lab_incubation	placeholder PV descr				
+GrowthFacilEnum	open_top_chamber	placeholder PV descr				
+GrowthFacilEnum	other	placeholder PV descr				
+RelToOxygenEnum	aerobe	placeholder PV descr		oxygen_relationship	https://genomicsstandardsconsortium.github.io/mixs/rel_to_oxygen_enum/	
+RelToOxygenEnum	anaerobe	placeholder PV descr				
+RelToOxygenEnum	facultative	placeholder PV descr				
+RelToOxygenEnum	microaerophilic	placeholder PV descr				
+RelToOxygenEnum	microanaerobe	placeholder PV descr				
+RelToOxygenEnum	obligate aerobe	placeholder PV descr				
+RelToOxygenEnum	obligate anaerobe	placeholder PV descr				
+RnaContTypeEnum	plate	placeholder PV descr				
+RnaContTypeEnum	tube	placeholder PV descr				
+RnaSampleFormatEnum	10 mM Tris-HCl	placeholder PV descr				
+RnaSampleFormatEnum	DNAStable	placeholder PV descr				
+RnaSampleFormatEnum	Ethanol	placeholder PV descr				
+RnaSampleFormatEnum	Low EDTA TE	placeholder PV descr				
+RnaSampleFormatEnum	MDA reaction buffer	placeholder PV descr				
+RnaSampleFormatEnum	PBS	placeholder PV descr				
+RnaSampleFormatEnum	Pellet	placeholder PV descr				
+RnaSampleFormatEnum	RNAStable	placeholder PV descr				
+RnaSampleFormatEnum	TE	placeholder PV descr				
+RnaSampleFormatEnum	Water	placeholder PV descr				
+SampleTypeEnum	soil	placeholder PV descr				
+SampleTypeEnum	water_extract_soil	placeholder PV descr				
+SpecificEcosystemEnum	Agricultural	placeholder PV descr				
+SpecificEcosystemEnum	Agricultural land	placeholder PV descr				
+SpecificEcosystemEnum	Agricultural soil	placeholder PV descr				
+SpecificEcosystemEnum	Alpine	placeholder PV descr				
+SpecificEcosystemEnum	Bog	placeholder PV descr				
+SpecificEcosystemEnum	Boreal forest	placeholder PV descr				
+SpecificEcosystemEnum	Contaminated	placeholder PV descr				
+SpecificEcosystemEnum	Desert	placeholder PV descr				
+SpecificEcosystemEnum	Farm	placeholder PV descr				
+SpecificEcosystemEnum	Forest soil	placeholder PV descr				
+SpecificEcosystemEnum	Forest Soil	placeholder PV descr				
+SpecificEcosystemEnum	Grasslands	placeholder PV descr				
+SpecificEcosystemEnum	Meadow	placeholder PV descr				
+SpecificEcosystemEnum	Mine	placeholder PV descr				
+SpecificEcosystemEnum	Mine drainage	placeholder PV descr				
+SpecificEcosystemEnum	Oil-contaminated	placeholder PV descr				
+SpecificEcosystemEnum	Orchard soil	placeholder PV descr				
+SpecificEcosystemEnum	Permafrost	placeholder PV descr				
+SpecificEcosystemEnum	Riparian soil	placeholder PV descr				
+SpecificEcosystemEnum	River	placeholder PV descr				
+SpecificEcosystemEnum	Shrubland	placeholder PV descr				
+SpecificEcosystemEnum	Tropical rainforest	placeholder PV descr				
+SpecificEcosystemEnum	Unclassified	placeholder PV descr				
+SpecificEcosystemEnum	Uranium contaminated	placeholder PV descr				
+StoreCondEnum	fresh	placeholder PV descr		storage_condt		see samp_store_dur, samp_store_loc, samp_store_temp and store_cond (which takes a string range according to mixs-source).
+StoreCondEnum	frozen	placeholder PV descr				
+StoreCondEnum	lyophilized	placeholder PV descr				
+StoreCondEnum	other	placeholder PV descr				
+EnvBroadScaleSoilEnum	alpine biome [ENVO:01001835]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__alpine tundra biome [ENVO:01001505]	placeholder PV descr				
+EnvBroadScaleSoilEnum	anthropogenic terrestrial biome [ENVO:01000219]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__rangeland biome [ENVO:01000247]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__village biome [ENVO:01000246]	placeholder PV descr				
+EnvBroadScaleSoilEnum	arid biome [ENVO:01001838]	placeholder PV descr				
+EnvBroadScaleSoilEnum	mangrove biome [ENVO:01000181]	placeholder PV descr				
+EnvBroadScaleSoilEnum	montane biome [ENVO:01001836]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__montane savanna biome [ENVO:01000223]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__montane shrubland biome [ENVO:01000216]	placeholder PV descr				
+EnvBroadScaleSoilEnum	polar biome [ENVO:01000339]	placeholder PV descr				
+EnvBroadScaleSoilEnum	shrubland biome [ENVO:01000176]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__montane shrubland biome [ENVO:01000216]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__subtropical shrubland biome [ENVO:01000213]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean shrubland biome [ENVO:01000217]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__temperate shrubland biome [ENVO:01000215]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__tropical shrubland biome [ENVO:01000214]	placeholder PV descr				
+EnvBroadScaleSoilEnum	subalpine biome [ENVO:01001837]	placeholder PV descr				
+EnvBroadScaleSoilEnum	subpolar biome [ENVO:01001834]	placeholder PV descr				
+EnvBroadScaleSoilEnum	subtropical biome [ENVO:01001832]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__mediterranean biome [ENVO:01001833]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean savanna biome [ENVO:01000229]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean shrubland biome [ENVO:01000217]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean woodland biome [ENVO:01000208]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__subtropical savanna biome [ENVO:01000187]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean savanna biome [ENVO:01000229]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__subtropical shrubland biome [ENVO:01000213]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean shrubland biome [ENVO:01000217]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__subtropical woodland biome [ENVO:01000222]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean woodland biome [ENVO:01000208]	placeholder PV descr				
+EnvBroadScaleSoilEnum	temperate biome [ENVO:01001831]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__temperate savanna biome [ENVO:01000189]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__temperate shrubland biome [ENVO:01000215]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__temperate woodland biome [ENVO:01000221]	placeholder PV descr				
+EnvBroadScaleSoilEnum	tropical biome [ENVO:01001830]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__tropical savanna biome [ENVO:01000188]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__tropical shrubland biome [ENVO:01000214]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__tropical woodland biome [ENVO:01000220]	placeholder PV descr				
+EnvBroadScaleSoilEnum	tundra biome [ENVO:01000180]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__alpine tundra biome [ENVO:01001505]	placeholder PV descr				
+EnvBroadScaleSoilEnum	urban biome [ENVO:01000249]	placeholder PV descr				
+EnvBroadScaleSoilEnum	woodland biome [ENVO:01000175]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__savanna biome [ENVO:01000178]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____flooded savanna biome [ENVO:01000190]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____montane savanna biome [ENVO:01000223]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____subtropical savanna biome [ENVO:01000187]	placeholder PV descr				
+EnvBroadScaleSoilEnum	______mediterranean savanna biome [ENVO:01000229]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____temperate savanna biome [ENVO:01000189]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____tropical savanna biome [ENVO:01000188]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__subtropical woodland biome [ENVO:01000222]	placeholder PV descr				
+EnvBroadScaleSoilEnum	____mediterranean woodland biome [ENVO:01000208]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__temperate woodland biome [ENVO:01000221]	placeholder PV descr				
+EnvBroadScaleSoilEnum	__tropical woodland biome [ENVO:01000220]	placeholder PV descr				
+EnvLocalScaleSoilEnum	active geological fault [ENVO:01000669]	placeholder PV descr				
+EnvLocalScaleSoilEnum	agricultural field [ENVO:00000114]	placeholder PV descr				
+EnvLocalScaleSoilEnum	beach [ENVO:00000091]	placeholder PV descr				
+EnvLocalScaleSoilEnum	cave [ENVO:00000067]	placeholder PV descr				
+EnvLocalScaleSoilEnum	channel [ENVO:03000117]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__tunnel [ENVO:00000068]	placeholder PV descr				
+EnvLocalScaleSoilEnum	coast [ENVO:01000687]	placeholder PV descr				
+EnvLocalScaleSoilEnum	dry lake [ENVO:00000277]	placeholder PV descr				
+EnvLocalScaleSoilEnum	dry river [ENVO:01000995]	placeholder PV descr				
+EnvLocalScaleSoilEnum	garden [ENVO:00000011]	placeholder PV descr				
+EnvLocalScaleSoilEnum	hill [ENVO:00000083]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__dune [ENVO:00000170]	placeholder PV descr				
+EnvLocalScaleSoilEnum	hummock [ENVO:00000516]	placeholder PV descr				
+EnvLocalScaleSoilEnum	impact crater [ENVO:01001071]	placeholder PV descr				
+EnvLocalScaleSoilEnum	isthmus [ENVO:00000174]	placeholder PV descr				
+EnvLocalScaleSoilEnum	karst [ENVO:00000175]	placeholder PV descr				
+EnvLocalScaleSoilEnum	lake shore [ENVO:00000382]	placeholder PV descr				
+EnvLocalScaleSoilEnum	lava field [ENVO:01000437]	placeholder PV descr				
+EnvLocalScaleSoilEnum	mesa [ENVO:00000179]	placeholder PV descr				
+EnvLocalScaleSoilEnum	mountain [ENVO:00000081]	placeholder PV descr				
+EnvLocalScaleSoilEnum	peatland [ENVO:00000044]	placeholder PV descr				
+EnvLocalScaleSoilEnum	peninsula [ENVO:00000305]	placeholder PV descr				
+EnvLocalScaleSoilEnum	plain [ENVO:00000086]	placeholder PV descr				
+EnvLocalScaleSoilEnum	plateau [ENVO:00000182]	placeholder PV descr				
+EnvLocalScaleSoilEnum	ridge [ENVO:00000283]	placeholder PV descr				
+EnvLocalScaleSoilEnum	slope [ENVO:00002000]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__cliff [ENVO:00000087]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__hillside [ENVO:01000333]	placeholder PV descr				
+EnvLocalScaleSoilEnum	snow field [ENVO:00000146]	placeholder PV descr				
+EnvLocalScaleSoilEnum	tombolo [ENVO:00000420]	placeholder PV descr				
+EnvLocalScaleSoilEnum	tuff cone [ENVO:01000664]	placeholder PV descr				
+EnvLocalScaleSoilEnum	valley [ENVO:00000100]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__canyon [ENVO:00000169]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__dry valley [ENVO:00000128]	placeholder PV descr				
+EnvLocalScaleSoilEnum	__glacial valley [ENVO:00000248]	placeholder PV descr				
+EnvLocalScaleSoilEnum	vein [ENVO:01000670]	placeholder PV descr				
+EnvLocalScaleSoilEnum	volcano [ENVO:00000247]	placeholder PV descr				
+EnvLocalScaleSoilEnum	woodland clearing [ENVO:00000444]	placeholder PV descr				
+EnvMediumSoilEnum	agricultural soil [ENVO:00002259]	placeholder PV descr				
+EnvMediumSoilEnum	__bluegrass field soil [ENVO:00005789]	placeholder PV descr				
+EnvMediumSoilEnum	__paddy field soil [ENVO:00005740]	placeholder PV descr				
+EnvMediumSoilEnum	____peaty paddy field soil [ENVO:00005776]	placeholder PV descr				
+EnvMediumSoilEnum	__rubber plantation soil [ENVO:00005788]	placeholder PV descr				
+EnvMediumSoilEnum	albeluvisol [ENVO:00002233]	placeholder PV descr				
+EnvMediumSoilEnum	alisol [ENVO:00002231]	placeholder PV descr				
+EnvMediumSoilEnum	alluvial soil [ENVO:00002871]	placeholder PV descr				
+EnvMediumSoilEnum	__alluvial swamp soil [ENVO:00005758]	placeholder PV descr				
+EnvMediumSoilEnum	alpine soil [ENVO:00005741]	placeholder PV descr				
+EnvMediumSoilEnum	andosol [ENVO:00002232]	placeholder PV descr				
+EnvMediumSoilEnum	__volcanic soil [ENVO:01001841]	placeholder PV descr				
+EnvMediumSoilEnum	anthrosol [ENVO:00002230]	placeholder PV descr				
+EnvMediumSoilEnum	arenosol [ENVO:00002229]	placeholder PV descr				
+EnvMediumSoilEnum	bare soil [ENVO:01001616]	placeholder PV descr				
+EnvMediumSoilEnum	burned soil [ENVO:00005760]	placeholder PV descr				
+EnvMediumSoilEnum	calcisol [ENVO:00002239]	placeholder PV descr				
+EnvMediumSoilEnum	cambisol [ENVO:00002235]	placeholder PV descr				
+EnvMediumSoilEnum	carbon nanotube enriched soil [ENVO:01000427]	placeholder PV descr				
+EnvMediumSoilEnum	chernozem [ENVO:00002237]	placeholder PV descr				
+EnvMediumSoilEnum	compost soil [ENVO:00005747]	placeholder PV descr				
+EnvMediumSoilEnum	__frozen compost soil [ENVO:00005765]	placeholder PV descr				
+EnvMediumSoilEnum	contaminated soil [ENVO:00002116]	placeholder PV descr				
+EnvMediumSoilEnum	__xylene contaminated soil [ENVO:00002146]	placeholder PV descr				
+EnvMediumSoilEnum	dune soil [ENVO:00002260]	placeholder PV descr				
+EnvMediumSoilEnum	durisol [ENVO:00002238]	placeholder PV descr				
+EnvMediumSoilEnum	ferralsol [ENVO:00002246]	placeholder PV descr				
+EnvMediumSoilEnum	fluvisol [ENVO:00002273]	placeholder PV descr				
+EnvMediumSoilEnum	forest soil [ENVO:00002261]	placeholder PV descr				
+EnvMediumSoilEnum	__beech forest soil [ENVO:00005770]	placeholder PV descr				
+EnvMediumSoilEnum	__eucalyptus forest soil [ENVO:00005787]	placeholder PV descr				
+EnvMediumSoilEnum	__mountain forest soil [ENVO:00005769]	placeholder PV descr				
+EnvMediumSoilEnum	frost-susceptible soil [ENVO:01001638]	placeholder PV descr				
+EnvMediumSoilEnum	frozen soil [ENVO:01001526]	placeholder PV descr				
+EnvMediumSoilEnum	__cryosol [ENVO:00002236]	placeholder PV descr				
+EnvMediumSoilEnum	__friable-frozen soil [ENVO:01001528]	placeholder PV descr				
+EnvMediumSoilEnum	__frozen compost soil [ENVO:00005765]	placeholder PV descr				
+EnvMediumSoilEnum	__plastic-frozen soil [ENVO:01001527]	placeholder PV descr				
+EnvMediumSoilEnum	gleysol [ENVO:00002244]	placeholder PV descr				
+EnvMediumSoilEnum	grassland soil [ENVO:00005750]	placeholder PV descr				
+EnvMediumSoilEnum	__savanna soil [ENVO:00005746]	placeholder PV descr				
+EnvMediumSoilEnum	__steppe soil [ENVO:00005777]	placeholder PV descr				
+EnvMediumSoilEnum	greenhouse soil [ENVO:00005780]	placeholder PV descr				
+EnvMediumSoilEnum	gypsisol [ENVO:00002245]	placeholder PV descr				
+EnvMediumSoilEnum	histosol [ENVO:00002243]	placeholder PV descr				
+EnvMediumSoilEnum	humus-rich acidic ash soil [ENVO:00005763]	placeholder PV descr				
+EnvMediumSoilEnum	jungle soil [ENVO:00005751]	placeholder PV descr				
+EnvMediumSoilEnum	kastanozem [ENVO:00002240]	placeholder PV descr				
+EnvMediumSoilEnum	leptosol [ENVO:00002241]	placeholder PV descr				
+EnvMediumSoilEnum	limed soil [ENVO:00005766]	placeholder PV descr				
+EnvMediumSoilEnum	lixisol [ENVO:00002242]	placeholder PV descr				
+EnvMediumSoilEnum	loam [ENVO:00002258]	placeholder PV descr				
+EnvMediumSoilEnum	luvisol [ENVO:00002248]	placeholder PV descr				
+EnvMediumSoilEnum	manured soil [ENVO:00005767]	placeholder PV descr				
+EnvMediumSoilEnum	meadow soil [ENVO:00005761]	placeholder PV descr				
+EnvMediumSoilEnum	muddy soil [ENVO:00005771]	placeholder PV descr				
+EnvMediumSoilEnum	nitisol [ENVO:00002247]	placeholder PV descr				
+EnvMediumSoilEnum	orchard soil [ENVO:00005772]	placeholder PV descr				
+EnvMediumSoilEnum	ornithogenic soil [ENVO:00005782]	placeholder PV descr				
+EnvMediumSoilEnum	pantothenate enriched soil [ENVO:00003088]	placeholder PV descr				
+EnvMediumSoilEnum	pasture soil [ENVO:00005773]	placeholder PV descr				
+EnvMediumSoilEnum	peat soil [ENVO:00005774]	placeholder PV descr				
+EnvMediumSoilEnum	phaeozem [ENVO:00002249]	placeholder PV descr				
+EnvMediumSoilEnum	planosol [ENVO:00002251]	placeholder PV descr				
+EnvMediumSoilEnum	plinthosol [ENVO:00002250]	placeholder PV descr				
+EnvMediumSoilEnum	podzol [ENVO:00002257]	placeholder PV descr				
+EnvMediumSoilEnum	poly-beta-hydroxybutyrate enriched soil [ENVO:00003093]	placeholder PV descr				
+EnvMediumSoilEnum	pond soil [ENVO:00005764]	placeholder PV descr				
+EnvMediumSoilEnum	quinate enriched soil [ENVO:00003095]	placeholder PV descr				
+EnvMediumSoilEnum	regosol [ENVO:00002256]	placeholder PV descr				
+EnvMediumSoilEnum	sarcosine enriched soil [ENVO:00003083]	placeholder PV descr				
+EnvMediumSoilEnum	skatole enriched soil [ENVO:00003085]	placeholder PV descr				
+EnvMediumSoilEnum	solonchak [ENVO:00002252]	placeholder PV descr				
+EnvMediumSoilEnum	solonetz [ENVO:00002255]	placeholder PV descr				
+EnvMediumSoilEnum	stagnosol [ENVO:00002274]	placeholder PV descr				
+EnvMediumSoilEnum	surface soil [ENVO:02000059]	placeholder PV descr				
+EnvMediumSoilEnum	technosol [ENVO:00002275]	placeholder PV descr				
+EnvMediumSoilEnum	threonine enriched soil [ENVO:00003091]	placeholder PV descr				
+EnvMediumSoilEnum	trimethylamine enriched soil [ENVO:00003084]	placeholder PV descr				
+EnvMediumSoilEnum	tropical soil [ENVO:00005778]	placeholder PV descr				
+EnvMediumSoilEnum	ultisol [ENVO:01001397]	placeholder PV descr				
+EnvMediumSoilEnum	__acrisol [ENVO:00002234]	placeholder PV descr				
+EnvMediumSoilEnum	umbrisol [ENVO:00002253]	placeholder PV descr				
+EnvMediumSoilEnum	upland soil [ENVO:00005786]	placeholder PV descr				
+EnvMediumSoilEnum	urea enriched soil [ENVO:00005753]	placeholder PV descr				
+EnvMediumSoilEnum	vertisol [ENVO:00002254]	placeholder PV descr				
+AnalysisTypeEnum		placeholder enum descr				
+BioticRelationshipEnum		placeholder enum descr				
+DnaContTypeEnum		placeholder enum descr				
+DnaDnaseEnum		placeholder enum descr				
+DnaSampleFormatEnum		placeholder enum descr				
+DnaseRnaEnum		placeholder enum descr				
+EcosystemCategoryEnum		placeholder enum descr				
+EcosystemEnum		placeholder enum descr				
+EcosystemSubtypeEnum		placeholder enum descr				
+EcosystemTypeEnum		placeholder enum descr				
+EnvBroadScaleSoilEnum		placeholder enum descr				
+EnvLocalScaleSoilEnum		placeholder enum descr				
+EnvMediumSoilEnum		placeholder enum descr				
+EnvPackageEnum		placeholder enum descr				
+GrowthFacilEnum		placeholder enum descr				
+RelToOxygenEnum		placeholder enum descr				
+RnaContTypeEnum		placeholder enum descr				
+RnaSampleFormatEnum		placeholder enum descr				
+SampleTypeEnum		placeholder enum descr				
+SpecificEcosystemEnum		placeholder enum descr				
+StoreCondEnum		placeholder enum descr				

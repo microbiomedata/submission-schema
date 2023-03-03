@@ -1,186 +1,186 @@
 class	slot	action	target	path	LinkML implementation notes	value
-bioscales|plant_associated|soil	air_temp_regm	replace_attribute	recommended			true
-bioscales|soil	al_sat	add_attribute	comments			Aluminum saturation is the percentage of the CEC occupies by aluminum. Like all cations, aluminum held by the cation exchange complex is in equilibrium with aluminum in the soil solution.
-bioscales|soil	al_sat	replace_attribute	description			The relative abundance of aluminum in the sample
-bioscales|soil	al_sat	overwrite_examples	examples			0.27
-bioscales|soil	al_sat	replace_attribute	title			aluminum saturation/ extreme unusual properties
-bioscales|soil	al_sat	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
-bioscales|soil	al_sat_meth	add_attribute	comments			Required when aluminum saturation is provided.
-bioscales|soil	al_sat_meth	replace_attribute	description			Reference or method used in determining Aluminum saturation
-bioscales|soil	al_sat_meth	overwrite_examples	examples			https://doi.org/10.1371/journal.pone.0176357
-bioscales|soil	al_sat_meth	replace_attribute	title			aluminum saturation method/ extreme unusual properties
-bioscales|soil	al_sat_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	alt	replace_attribute	recommended			true
-bioscales|soil	annual_precpt	overwrite_examples	examples			8.94 inch
-bioscales|soil	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
-bioscales|plant_associated|soil	biotic_regm	replace_attribute	recommended			true
-biofilm|bioscales|sediment|soil|water	carb_nitro_ratio	replace_attribute	range			float
-air|biofilm|bioscales|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	chem_administration	replace_attribute	recommended			true
-bioscales|plant_associated|soil	climate_environment	replace_attribute	recommended			true
-bioscales|plant_associated|soil	climate_environment	add_attribute	todos			"description says ""can include multiple climates"" but multivalued is set to false|add examples, i need to see some examples to add correctly formatted example."
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	replace_attribute	description			The date of sampling
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	overwrite_examples	examples			2021-04-15; 2021-04; 2021
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	add_attribute	notes			MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date only
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	add_attribute	notes			Use modified term (amended definition)
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	replace_attribute	range			string
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	replace_attribute	required			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	collection_date	replace_attribute	string_serialization			{date, arbitrary precision}
-bioscales|soil	cur_vegetation	add_attribute	comments			Values provided here can be specific species of vegetation or vegetation regions|See for vegetation regions- https://education.nationalgeographic.org/resource/vegetation-region
-bioscales|soil	cur_vegetation	replace_attribute	description			Vegetation classification from one or more standard classification systems, or agricultural crop
-bioscales|soil	cur_vegetation	overwrite_examples	examples			deciduous forest|forest|Bauhinia variegata
-bioscales|soil	cur_vegetation	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Recommend changing this from text value to some kind of ontology?
-bioscales|soil	cur_vegetation_meth	add_attribute	comments			Required when current vegetation is provided.
-bioscales|soil	cur_vegetation_meth	overwrite_examples	examples			https://doi.org/10.1111/j.1654-109X.2011.01154.x
-bioscales|soil	cur_vegetation_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I'm not sure this is a DOI, PMID, or URI. Should pool the community and find out how they accomplish this if provided.
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	add_attribute	comments			All depths must be reported in meters. Provide the numerical portion only.
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	overwrite_examples	examples			0-0.1; 1
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	add_attribute	notes			Use modified term
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	replace_attribute	range			string
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	replace_attribute	required			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	replace_attribute	string_serialization			{float}|{float}-{float}
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	depth	replace_attribute	title			depth, meters
-air|biofilm|built_env|sediment|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water	ecosystem	replace_attribute	range			string
-bioscales|soil	ecosystem	replace_attribute	range			ecosystem_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	ecosystem	replace_attribute	required			true
-air|biofilm|built_env|sediment|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water	ecosystem_category	replace_attribute	range			string
-bioscales|soil	ecosystem_category	replace_attribute	range			ecosystem_category_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	ecosystem_category	replace_attribute	required			true
-air|biofilm|built_env|sediment|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water	ecosystem_subtype	replace_attribute	range			string
-bioscales|soil	ecosystem_subtype	replace_attribute	range			ecosystem_subtype_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	ecosystem_subtype	replace_attribute	required			true
-air|biofilm|built_env|sediment|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water	ecosystem_type	replace_attribute	range			string
-bioscales|soil	ecosystem_type	replace_attribute	range			ecosystem_type_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	ecosystem_type	replace_attribute	required			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	elev	add_attribute	comments			All elevations must be reported in meters. Provide the numerical portion only.
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	elev	overwrite_examples	examples			225 | 0 | 1250
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	elev	replace_attribute	range			float
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	elev	replace_attribute	required			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	elev	replace_attribute	title			elevation, meters
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	env_broad_scale	replace_attribute	description			In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html
-bioscales|soil	env_broad_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
-bioscales|soil	env_broad_scale	replace_attribute	range			env_broad_scale_soil_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	env_broad_scale	replace_attribute	required			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	env_local_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
-bioscales|soil	env_local_scale	replace_attribute	range			env_local_scale_soil_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	env_local_scale	replace_attribute	required			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	env_medium	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
-bioscales|soil	env_medium	replace_attribute	range			env_medium_soil_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	env_medium	replace_attribute	required			true
-bioscales|soil	extreme_event	overwrite_examples	examples			1980-05-18, volcanic eruption
-bioscales|soil	extreme_event	replace_attribute	range			string
-bioscales|soil	extreme_event	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
-bioscales|soil	fire	add_attribute	comments			Provide the date the fire occurred. If extended burning occurred provide the date range.
-bioscales|soil	fire	overwrite_examples	examples			1871-10-10|1871-10-01 to 1871-10-31
-bioscales|soil	fire	replace_attribute	pattern			^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?(\s+to\s+[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)?$
-bioscales|soil	fire	replace_attribute	range			string
-bioscales|soil	fire	add_attribute	todos			"is ""to"" acceptable? Is there a better way to request that be written?|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot"
-bioscales|soil	flooding	add_attribute	comments			Provide the date the flood occurred. If extended flooding occurred provide the date range.
-bioscales|soil	flooding	overwrite_examples	examples			1927-04-15|1927-04 to 1927-05
-bioscales|soil	flooding	replace_attribute	range			string
-bioscales|soil	flooding	add_attribute	todos			"is ""to"" acceptable? Is there a better way to request that be written?|What about if the ""day"" isn't known? Is this ok?|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot"
-bioscales|plant_associated|soil	gaseous_environment	overwrite_examples	examples			CO2; 500ppm above ambient; constant|nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
-bioscales|plant_associated|soil	gaseous_environment	replace_attribute	recommended			true
-bioscales|plant_associated|soil	gaseous_environment	add_attribute	todos			would like to see usage examples for this slot. Requiring micromole/L seems too limiting and doesn't match expected_value value|did I do this right? keep the example that's provided and add another? so as to not override
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	geo_loc_name	replace_attribute	string_serialization			{text}: {text}, {text}
-bioscales|plant_associated|soil	growth_facil	replace_attribute	description			Type of facility/location where the sample was harvested; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field.
-bioscales|plant_associated|soil	growth_facil	add_attribute	notes			Removed from description: Alternatively use Crop Ontology (CO) terms
-bioscales|plant_associated|soil	growth_facil	replace_attribute	range			growth_facil_enum
-bioscales|plant_associated|soil	growth_facil	replace_attribute	required			true
-bioscales|soil	heavy_metals	add_attribute	comments			For multiple heavy metals and concentrations, separate by ;
-bioscales|soil	heavy_metals	replace_attribute	description			Heavy metals present in the sample and their concentrations.
-bioscales|soil	heavy_metals	overwrite_examples	examples			mercury 0.09 micrograms per gram|mercury 0.09 ug/g; chromium 0.03 ug/g
-bioscales|soil	heavy_metals	replace_attribute	multivalued			true
-bioscales|soil	heavy_metals	add_attribute	notes			Changed to multi-valued. In MIxS, you add another column to denote multiple heavy metals. We don't have that ability in the submission portal.
-bioscales|soil	heavy_metals	replace_attribute	title			heavy metals/ extreme unusual properties
-bioscales|soil	heavy_metals	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
-bioscales|soil	heavy_metals_meth	add_attribute	comments			Required when heavy metals are provided|If different methods are used for multiple metals, indicate the metal and method. Separate metals by ;
-bioscales|soil	heavy_metals_meth	overwrite_examples	examples			https://doi.org/10.3390/ijms9040434|mercury https://doi.org/10.1007/BF01056090; chromium https://doi.org/10.1007/s00216-006-0322-8
-bioscales|soil	heavy_metals_meth	replace_attribute	multivalued			true
-bioscales|soil	heavy_metals_meth	replace_attribute	title			heavy metals method/ extreme unusual properties
-bioscales|soil	heavy_metals_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	horizon_meth	replace_attribute	title			horizon method
-bioscales|plant_associated|soil	humidity_regm	replace_attribute	recommended			true
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	lat_lon	replace_attribute	description			This is currently a required field but it's not clear if this should be required for human hosts
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	lat_lon	replace_attribute	range			string
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	lat_lon	replace_attribute	string_serialization			{lat lon}
-bioscales|plant_associated|soil	light_regm	replace_attribute	recommended			true
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	oxy_stat_samp	add_attribute	notes			this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	oxy_stat_samp	replace_attribute	range			rel_to_oxygen_enum
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	replace_attribute	description			pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	replace_attribute	maximum_value			14
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	replace_attribute	minimum_value		expects int?!	0
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	add_attribute	notes			Use modified term
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	replace_attribute	range			string
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	replace_attribute	recommended			true
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph	replace_attribute	string_serialization			{float}
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph_meth	add_attribute	comments			This can include a link to the instrument used or a citation for the method.
-biofilm|bioscales|hcr_cores|hcr_fluids_swabs|misc_envs|sediment|soil|wastewater_sludge|water	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
-bioscales|soil	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_collec_device	replace_attribute	recommended			true
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_collec_method	add_attribute	comments			This can be a citation or description
-dh_mutliview_common_columns	samp_name	add_attribute	comments			It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
-dh_mutliview_common_columns	samp_name	replace_attribute	description			A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.
-dh_mutliview_common_columns	samp_name	overwrite_examples	examples			Rock core CB1178(5-6) from NSW
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_size	add_attribute	comments			This refers to the TOTAL amount of sample collected from the experiment. NOT the amount sent to each institution or collected for a specific analysis.
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_size	overwrite_examples	examples			5 grams; 10 mL
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_size	replace_attribute	range			string
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_size	replace_attribute	string_serialization			{float} {unit}
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_store_temp	replace_attribute	description			Temperature at which the sample was stored (degrees are assumed)
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_store_temp	overwrite_examples	examples			-80 Celsius
-air|biofilm|bioscales|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	samp_store_temp	replace_attribute	required			true
-bioscales|soil	season_precpt	add_attribute	comments			Seasons are defined as spring (March, April, May), summer (June, July, August), autumn (September, October, November) and winter (December, January, February).
-bioscales|soil	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
-bioscales|soil	season_precpt	add_attribute	notes			mean and average are the same thing, but it seems like bad practice to not be consistent. Changed mean to average
-bioscales|soil	season_precpt	replace_attribute	title			average seasonal precipitation
-bioscales|soil	season_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|check validation & examples. always mm? so value only? Or value + unit
-bioscales|soil	sieving	add_attribute	comments			Describe how samples were composited or sieved.|Use 'sample link' to indicate which samples were combined.
-bioscales|soil	sieving	overwrite_examples	examples			combined 2 cores | 4mm sieved|4 mm sieved and homogenized|50 g | 5 cores | 2 mm sieved
-bioscales|soil	sieving	replace_attribute	recommended			true
-bioscales|soil	sieving	add_attribute	todos			check validation and examples
-bioscales|soil|water	size_frac_low	replace_attribute	recommended			false
-bioscales|soil|water	size_frac_up	replace_attribute	recommended			false
-bioscales|soil	slope_aspect	add_attribute	comments			Aspect is the orientation of slope, measured clockwise in degrees from 0 to 360, where 0 is north-facing, 90 is east-facing, 180 is south-facing, and 270 is west-facing.
-bioscales|soil	slope_aspect	replace_attribute	description			The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.
-bioscales|soil	slope_aspect	overwrite_examples	examples			35
-bioscales|soil	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
-bioscales|soil	slope_gradient	overwrite_examples	examples			10%|10 %|0.1
-bioscales|soil	slope_gradient	add_attribute	todos			Slope is a percent. How does the validation work? Check to correct examples
-dh_mutliview_common_columns	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
-dh_mutliview_common_columns	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
-dh_mutliview_common_columns	source_mat_id	overwrite_examples	examples			IGSN:AU1243 or UUID:24f1467a-40f4-11ed-b878-0242ac120002  
-dh_mutliview_common_columns	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
-dh_mutliview_common_columns	source_mat_id	replace_attribute	identifier			true
-dh_mutliview_common_columns	source_mat_id	add_attribute	notes			The source material IS the Globally Unique ID
-dh_mutliview_common_columns	source_mat_id	replace_attribute	required			true
-dh_mutliview_common_columns	source_mat_id	replace_attribute	string_serialization			{text}:{text}
-dh_mutliview_common_columns	source_mat_id	replace_attribute	title			source material identifier
-dh_mutliview_common_columns	source_mat_id	add_attribute	todos			Currently, the comments say to use UUIDs. However, if we implement assigning NMDC identifiers with the minter we dont need to require a GUID. It can be an optional field to fill out only if they already have a resolvable ID.
-air|biofilm|built_env|sediment|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|wastewater_sludge|water	specific_ecosystem	replace_attribute	range			string
-bioscales|soil	specific_ecosystem	replace_attribute	range			specific_ecosystem_enum
-air|biofilm|bioscales|built_env|hcr_cores|hcr_fluids_swabs|host_associated|misc_envs|plant_associated|sediment|soil|wastewater_sludge|water	specific_ecosystem	replace_attribute	required			true
-bioscales|soil	store_cond	replace_attribute	description			Explain how the soil sample is stored (fresh/frozen/other).
-bioscales|soil	store_cond	replace_attribute	range			store_cond_enum
-bioscales|soil	store_cond	replace_attribute	required			true
-biofilm|bioscales|sediment|soil	tot_carb	overwrite_examples	examples			1 ug/L
-biofilm|bioscales|sediment|soil	tot_carb	add_attribute	todos			is this inorganic and organic? both? could use some clarification.|ug/L doesn't seem like the right units. Should check this slots usage in databases and re-evaluate. I couldn't find any references that provided this data in this format
-bioscales|soil	tot_nitro_cont_meth	overwrite_examples	examples			https://doi.org/10.2134/agronmonogr9.2.c32|https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo
-biofilm|bioscales|sediment|soil	tot_nitro_content	overwrite_examples	examples			5 mg N/ L
-bioscales|soil	tot_org_c_meth	overwrite_examples	examples			https://doi.org/10.1080/07352680902776556
-biofilm|bioscales|sediment|soil	tot_org_carb	overwrite_examples	examples			5 mg N/ L
-biofilm|bioscales|sediment|soil	tot_org_carb	add_attribute	todos			check description. How are they different?
-bioscales|soil	water_cont_soil_meth	add_attribute	comments			Required if providing water content
-bioscales|soil	water_cont_soil_meth	overwrite_examples	examples			J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503|https://dec.alaska.gov/applications/spar/webcalc/definitions.htm
-bioscales|soil	water_cont_soil_meth	add_attribute	todos			Why is it soil water content method in the name but not the title? Is this slot used in other samples?|Soil water content can be measure MANY ways and often, multiple ways are used in one experiment (gravimetric water content and water holding capacity and water filled pore space, to name a few).|Should this be multi valued? How to we manage and validate this?
-biofilm|bioscales|sediment|soil	water_content	overwrite_examples	examples			75%|75 %|0.75 g water/g dry soil|75% water holding capacity|1.1 g fresh weight/ dry weight|10% water filled pore space
-biofilm|bioscales|sediment|soil	water_content	replace_attribute	multivalued			true
-biofilm|bioscales|sediment|soil	water_content	replace_attribute	range			quantity value
-biofilm|bioscales|sediment|soil	water_content	replace_attribute	range			string
-biofilm|bioscales|sediment|soil	water_content	add_attribute	todos			value in preferred unit is too limiting. need to change this|check and correct validation so examples are accepted|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|how to manage multiple water content methods?
-bioscales|plant_associated|soil	watering_regm	overwrite_examples	examples			1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M|75% water holding capacity; constant
-bioscales|plant_associated|soil	watering_regm	replace_attribute	recommended			true
-biofilm|bioscales|sediment|soil	water_content	replace_annotation	expected_value			string
-biofilm|bioscales|sediment|soil	water_content	replace_annotation	preferred_unit			gram per gram or cubic centimeter per cubic centimeter
-bioscales|soil	extreme_event	replace_annotation	expected_value			date, string
-bioscales|soil	fire	replace_annotation	expected_value			date string
-bioscales|soil	flooding	replace_annotation	expected_value			date string
+SoilInterface	al_sat	add_attribute	comments			Aluminum saturation is the percentage of the CEC occupies by aluminum. Like all cations, aluminum held by the cation exchange complex is in equilibrium with aluminum in the soil solution.
+SoilInterface	al_sat_meth	add_attribute	comments			Required when aluminum saturation is provided.
+SoilInterface	cur_vegetation	add_attribute	comments			Values provided here can be specific species of vegetation or vegetation regions|See for vegetation regions- https://education.nationalgeographic.org/resource/vegetation-region
+SoilInterface	cur_vegetation_meth	add_attribute	comments			Required when current vegetation is provided.
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	add_attribute	comments			All depths must be reported in meters. Provide the numerical portion only.
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	add_attribute	comments			All elevations must be reported in meters. Provide the numerical portion only.
+SoilInterface	fire	add_attribute	comments			Provide the date the fire occurred. If extended burning occurred provide the date range.
+SoilInterface	flooding	add_attribute	comments			Provide the date the flood occurred. If extended flooding occurred provide the date range.
+SoilInterface	heavy_metals	add_attribute	comments			For multiple heavy metals and concentrations, separate by ;
+SoilInterface	heavy_metals_meth	add_attribute	comments			Required when heavy metals are provided|If different methods are used for multiple metals, indicate the metal and method. Separate metals by ;
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph_meth	add_attribute	comments			This can include a link to the instrument used or a citation for the method.
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_method	add_attribute	comments			This can be a citation or description
+DhMultiviewCommonColumns	samp_name	add_attribute	comments			It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	add_attribute	comments			This refers to the TOTAL amount of sample collected from the experiment. NOT the amount sent to each institution or collected for a specific analysis.
+SoilInterface	season_precpt	add_attribute	comments			Seasons are defined as spring (March, April, May), summer (June, July, August), autumn (September, October, November) and winter (December, January, February).
+SoilInterface	sieving	add_attribute	comments			Describe how samples were composited or sieved.|Use 'sample link' to indicate which samples were combined.
+SoilInterface	slope_aspect	add_attribute	comments			Aspect is the orientation of slope, measured clockwise in degrees from 0 to 360, where 0 is north-facing, 90 is east-facing, 180 is south-facing, and 270 is west-facing.
+DhMultiviewCommonColumns	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+SoilInterface	water_cont_soil_meth	add_attribute	comments			Required if providing water content
+SoilInterface	al_sat	replace_attribute	description			The relative abundance of aluminum in the sample
+SoilInterface	al_sat_meth	replace_attribute	description			Reference or method used in determining Aluminum saturation
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	description			The date of sampling
+SoilInterface	cur_vegetation	replace_attribute	description			Vegetation classification from one or more standard classification systems, or agricultural crop
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	replace_attribute	description			In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html
+PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	description			Type of facility/location where the sample was harvested; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field.
+SoilInterface	heavy_metals	replace_attribute	description			Heavy metals present in the sample and their concentrations.
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	lat_lon	replace_attribute	description			This is currently a required field but it's not clear if this should be required for human hosts
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	description			pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
+DhMultiviewCommonColumns	samp_name	replace_attribute	description			A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	replace_attribute	description			Temperature at which the sample was stored (degrees are assumed)
+SoilInterface	slope_aspect	replace_attribute	description			The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.
+DhMultiviewCommonColumns	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
+SoilInterface	store_cond	replace_attribute	description			Explain how the soil sample is stored (fresh/frozen/other).
+SoilInterface	al_sat	overwrite_examples	examples			0.27
+SoilInterface	al_sat_meth	overwrite_examples	examples			https://doi.org/10.1371/journal.pone.0176357
+SoilInterface	annual_precpt	overwrite_examples	examples			8.94 inch
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	overwrite_examples	examples			2021-04-15; 2021-04; 2021
+SoilInterface	cur_vegetation	overwrite_examples	examples			deciduous forest|forest|Bauhinia variegata
+SoilInterface	cur_vegetation_meth	overwrite_examples	examples			https://doi.org/10.1111/j.1654-109X.2011.01154.x
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	overwrite_examples	examples			0-0.1; 1
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	overwrite_examples	examples			225 | 0 | 1250
+SoilInterface	extreme_event	overwrite_examples	examples			1980-05-18, volcanic eruption
+SoilInterface	fire	overwrite_examples	examples			1871-10-10|1871-10-01 to 1871-10-31
+SoilInterface	flooding	overwrite_examples	examples			1927-04-15|1927-04 to 1927-05
+PlantAssociatedInterface|SoilInterface	gaseous_environment	overwrite_examples	examples			CO2; 500ppm above ambient; constant|nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+SoilInterface	heavy_metals	overwrite_examples	examples			mercury 0.09 micrograms per gram|mercury 0.09 ug/g; chromium 0.03 ug/g
+SoilInterface	heavy_metals_meth	overwrite_examples	examples			https://doi.org/10.3390/ijms9040434|mercury https://doi.org/10.1007/BF01056090; chromium https://doi.org/10.1007/s00216-006-0322-8
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
+SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
+DhMultiviewCommonColumns	samp_name	overwrite_examples	examples			Rock core CB1178(5-6) from NSW
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	overwrite_examples	examples			5 grams; 10 mL
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	overwrite_examples	examples			-80 Celsius
+SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
+SoilInterface	sieving	overwrite_examples	examples			combined 2 cores | 4mm sieved|4 mm sieved and homogenized|50 g | 5 cores | 2 mm sieved
+SoilInterface	slope_aspect	overwrite_examples	examples			35
+SoilInterface	slope_gradient	overwrite_examples	examples			10%|10 %|0.1
+DhMultiviewCommonColumns	source_mat_id	overwrite_examples	examples			IGSN:AU1243 or UUID:24f1467a-40f4-11ed-b878-0242ac120002  
+DhMultiviewCommonColumns	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
+BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	overwrite_examples	examples			1 ug/L
+SoilInterface	tot_nitro_cont_meth	overwrite_examples	examples			https://doi.org/10.2134/agronmonogr9.2.c32|https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo
+BiofilmInterface|SedimentInterface|SoilInterface	tot_nitro_content	overwrite_examples	examples			5 mg N/ L
+SoilInterface	tot_org_c_meth	overwrite_examples	examples			https://doi.org/10.1080/07352680902776556
+BiofilmInterface|SedimentInterface|SoilInterface	tot_org_carb	overwrite_examples	examples			5 mg N/ L
+SoilInterface	water_cont_soil_meth	overwrite_examples	examples			J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503|https://dec.alaska.gov/applications/spar/webcalc/definitions.htm
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	overwrite_examples	examples			75%|75 %|0.75 g water/g dry soil|75% water holding capacity|1.1 g fresh weight/ dry weight|10% water filled pore space
+PlantAssociatedInterface|SoilInterface	watering_regm	overwrite_examples	examples			1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M|75% water holding capacity; constant
+SoilInterface	extreme_event	replace_annotation	expected_value			date, string
+SoilInterface	fire	replace_annotation	expected_value			date string
+SoilInterface	flooding	replace_annotation	expected_value			date string
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_annotation	expected_value			string
+DhMultiviewCommonColumns	source_mat_id	replace_attribute	identifier			true
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	maximum_value			14
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	minimum_value		expects int?!	0
+SoilInterface	heavy_metals	replace_attribute	multivalued			true
+SoilInterface	heavy_metals_meth	replace_attribute	multivalued			true
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_attribute	multivalued			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	add_attribute	notes			MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date only
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	add_attribute	notes			Use modified term (amended definition)
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	add_attribute	notes			Use modified term
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
+PlantAssociatedInterface|SoilInterface	growth_facil	add_attribute	notes			Removed from description: Alternatively use Crop Ontology (CO) terms
+SoilInterface	heavy_metals	add_attribute	notes			Changed to multi-valued. In MIxS, you add another column to denote multiple heavy metals. We don't have that ability in the submission portal.
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	add_attribute	notes			this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	add_attribute	notes			Use modified term
+SoilInterface	season_precpt	add_attribute	notes			mean and average are the same thing, but it seems like bad practice to not be consistent. Changed mean to average
+DhMultiviewCommonColumns	source_mat_id	add_attribute	notes			The source material IS the Globally Unique ID
+SoilInterface	fire	replace_attribute	pattern			^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?(\s+to\s+[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)?$
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_annotation	preferred_unit			gram per gram or cubic centimeter per cubic centimeter
+BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface	carb_nitro_ratio	replace_attribute	range			float
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem	replace_attribute	range			EcosystemEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_category	replace_attribute	range			EcosystemCategoryEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_category	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_subtype	replace_attribute	range			EcosystemSubtypeEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_subtype	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_type	replace_attribute	range			EcosystemTypeEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_type	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	replace_attribute	range			float
+SoilInterface	env_broad_scale	replace_attribute	range			EnvBroadScaleSoilEnum
+SoilInterface	env_local_scale	replace_attribute	range			EnvLocalScaleSoilEnum
+SoilInterface	env_medium	replace_attribute	range			EnvMediumSoilEnum
+SoilInterface	extreme_event	replace_attribute	range			string
+SoilInterface	fire	replace_attribute	range			string
+SoilInterface	flooding	replace_attribute	range			string
+PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	range			GrowthFacilEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	lat_lon	replace_attribute	range			string
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	replace_attribute	range			RelToOxygenEnum
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	range			string
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	specific_ecosystem	replace_attribute	range			SpecificEcosystemEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	specific_ecosystem	replace_attribute	range			string
+SoilInterface	store_cond	replace_attribute	range			StoreCondEnum
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_attribute	range			quantity value
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_attribute	range			string
+PlantAssociatedInterface|SoilInterface	air_temp_regm	replace_attribute	recommended			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	alt	replace_attribute	recommended			true
+PlantAssociatedInterface|SoilInterface	biotic_regm	replace_attribute	recommended			true
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	chem_administration	replace_attribute	recommended			true
+PlantAssociatedInterface|SoilInterface	climate_environment	replace_attribute	recommended			true
+PlantAssociatedInterface|SoilInterface	gaseous_environment	replace_attribute	recommended			true
+PlantAssociatedInterface|SoilInterface	humidity_regm	replace_attribute	recommended			true
+PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended			true
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	recommended			true
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_device	replace_attribute	recommended			true
+SoilInterface	sieving	replace_attribute	recommended			true
+SoilInterface|WaterInterface	size_frac_low	replace_attribute	recommended			false
+SoilInterface|WaterInterface	size_frac_up	replace_attribute	recommended			false
+PlantAssociatedInterface|SoilInterface	watering_regm	replace_attribute	recommended			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_category	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_subtype	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem_type	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	replace_attribute	required			true
+PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	required			true
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	replace_attribute	required			true
+DhMultiviewCommonColumns	source_mat_id	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	specific_ecosystem	replace_attribute	required			true
+SoilInterface	store_cond	replace_attribute	required			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	string_serialization			{date, arbitrary precision}
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	string_serialization			{float}|{float}-{float}
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	geo_loc_name	replace_attribute	string_serialization			{text}: {text}, {text}
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	lat_lon	replace_attribute	string_serialization			{lat lon}
+BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	string_serialization			{float}
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	replace_attribute	string_serialization			{float} {unit}
+DhMultiviewCommonColumns	source_mat_id	replace_attribute	string_serialization			{text}:{text}
+SoilInterface	al_sat	replace_attribute	title			aluminum saturation/ extreme unusual properties
+SoilInterface	al_sat_meth	replace_attribute	title			aluminum saturation method/ extreme unusual properties
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	replace_attribute	title			elevation, meters
+SoilInterface	heavy_metals	replace_attribute	title			heavy metals/ extreme unusual properties
+SoilInterface	heavy_metals_meth	replace_attribute	title			heavy metals method/ extreme unusual properties
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface	horizon_meth	replace_attribute	title			horizon method
+SoilInterface	season_precpt	replace_attribute	title			average seasonal precipitation
+DhMultiviewCommonColumns	source_mat_id	replace_attribute	title			source material identifier
+SoilInterface	al_sat	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
+SoilInterface	al_sat_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
+SoilInterface	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
+PlantAssociatedInterface|SoilInterface	climate_environment	add_attribute	todos			"description says ""can include multiple climates"" but multivalued is set to false|add examples, i need to see some examples to add correctly formatted example."
+SoilInterface	cur_vegetation	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Recommend changing this from text value to some kind of ontology?
+SoilInterface	cur_vegetation_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I'm not sure this is a DOI, PMID, or URI. Should pool the community and find out how they accomplish this if provided.
+SoilInterface	extreme_event	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
+SoilInterface	fire	add_attribute	todos			"is ""to"" acceptable? Is there a better way to request that be written?|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot"
+SoilInterface	flooding	add_attribute	todos			"is ""to"" acceptable? Is there a better way to request that be written?|What about if the ""day"" isn't known? Is this ok?|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot"
+PlantAssociatedInterface|SoilInterface	gaseous_environment	add_attribute	todos			would like to see usage examples for this slot. Requiring micromole/L seems too limiting and doesn't match expected_value value|did I do this right? keep the example that's provided and add another? so as to not override
+SoilInterface	heavy_metals	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
+SoilInterface	heavy_metals_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
+SoilInterface	season_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|check validation & examples. always mm? so value only? Or value + unit
+SoilInterface	sieving	add_attribute	todos			check validation and examples
+SoilInterface	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
+SoilInterface	slope_gradient	add_attribute	todos			Slope is a percent. How does the validation work? Check to correct examples
+DhMultiviewCommonColumns	source_mat_id	add_attribute	todos			Currently, the comments say to use UUIDs. However, if we implement assigning NMDC identifiers with the minter we dont need to require a GUID. It can be an optional field to fill out only if they already have a resolvable ID.
+BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	add_attribute	todos			is this inorganic and organic? both? could use some clarification.|ug/L doesn't seem like the right units. Should check this slots usage in databases and re-evaluate. I couldn't find any references that provided this data in this format
+BiofilmInterface|SedimentInterface|SoilInterface	tot_org_carb	add_attribute	todos			check description. How are they different?
+SoilInterface	water_cont_soil_meth	add_attribute	todos			Why is it soil water content method in the name but not the title? Is this slot used in other samples?|Soil water content can be measure MANY ways and often, multiple ways are used in one experiment (gravimetric water content and water holding capacity and water filled pore space, to name a few).|Should this be multi valued? How to we manage and validate this?
+BiofilmInterface|SedimentInterface|SoilInterface	water_content	add_attribute	todos			value in preferred unit is too limiting. need to change this|check and correct validation so examples are accepted|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|how to manage multiple water content methods?

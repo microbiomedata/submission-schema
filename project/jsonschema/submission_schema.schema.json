@@ -50,9 +50,9 @@
             "title": "Agent",
             "type": "object"
         },
-        "Air": {
+        "AirInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "air dh_interface",
             "properties": {
                 "air_PM_concen": {
                     "description": "Concentration of substances that remain suspended in the air, and comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can report multiple PM's by entering numeric values preceded by name of PM",
@@ -143,6 +143,10 @@
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "humidity": {
                     "description": "Amount of water vapour in the air, at the time of sampling",
                     "type": "string"
@@ -211,10 +215,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -241,10 +241,6 @@
                 },
                 "solar_irradiance": {
                     "description": "The amount of solar energy that arrives at a specific area of a surface during a specific time interval",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -279,17 +275,32 @@
                     "type": "string"
                 }
             },
-            "title": "Air",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "AirInterface",
             "type": "object"
         },
         "AnalysisTypeEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "metabolomics",
                 "metagenomics",
                 "metaproteomics",
-                "metatranscriptomics",
-                "natural organic matter"
+                "metatranscriptomics"
             ],
             "title": "AnalysisTypeEnum",
             "type": "string"
@@ -319,9 +330,9 @@
             "title": "AttributeValue",
             "type": "object"
         },
-        "Biofilm": {
+        "BiofilmInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "biofilm dh_interface",
             "properties": {
                 "alkalinity": {
                     "description": "Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
@@ -479,6 +490,10 @@
                     "description": "Measurement of glucosidase activity",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "type": "string"
@@ -569,6 +584,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "phaeopigments": {
                     "description": "Concentration of phaeopigments; can include multiple phaeopigments",
                     "items": {
@@ -619,10 +638,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -653,10 +668,6 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -699,7 +710,23 @@
                     "type": "array"
                 }
             },
-            "title": "Biofilm",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "BiofilmInterface",
             "type": "object"
         },
         "BiolStatEnum": {
@@ -716,479 +743,6 @@
             ],
             "title": "BiolStatEnum",
             "type": "string"
-        },
-        "Bioscales": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "agrochem_addition": {
-                    "description": "Addition of fertilizers, pesticides, etc. - amount and time of applications",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "air_temp_regm": {
-                    "description": "Information about treatment involving an exposure to varying temperatures; should include the temperature, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include different temperature regimens",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "al_sat": {
-                    "description": "The relative abundance of aluminum in the sample",
-                    "type": "string"
-                },
-                "al_sat_meth": {
-                    "description": "Reference or method used in determining Aluminum saturation",
-                    "type": "string"
-                },
-                "alt": {
-                    "description": "Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air",
-                    "type": "string"
-                },
-                "ammonium_nitrogen": {
-                    "description": "Concentration of ammonium nitrogen in the sample",
-                    "type": "string"
-                },
-                "analysis_type": {
-                    "description": "Select all the data types associated or available for this biosample",
-                    "items": {
-                        "$ref": "#/$defs/AnalysisTypeEnum"
-                    },
-                    "type": "array"
-                },
-                "annual_precpt": {
-                    "description": "The average of all annual precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps.",
-                    "type": "string"
-                },
-                "annual_temp": {
-                    "description": "Mean annual temperature",
-                    "type": "string"
-                },
-                "biotic_regm": {
-                    "description": "Information about treatment(s) involving use of biotic factors, such as bacteria, viruses or fungi.",
-                    "type": "string"
-                },
-                "biotic_relationship": {
-                    "$ref": "#/$defs/BioticRelationshipEnum",
-                    "description": "Description of relationship(s) between the subject organism and other organism(s) it is associated with. E.g., parasite on species X; mutualist with species Y. The target organism is the subject of the relationship, and the other organism(s) is the object"
-                },
-                "calcium": {
-                    "description": "Concentration of calcium in the sample",
-                    "type": "string"
-                },
-                "carb_nitro_ratio": {
-                    "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "type": "number"
-                },
-                "chem_administration": {
-                    "description": "List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "climate_environment": {
-                    "description": "Treatment involving an exposure to a particular climate; treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple climates",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "collection_date": {
-                    "description": "The date of sampling",
-                    "type": "string"
-                },
-                "crop_rotation": {
-                    "description": "Whether or not crop is rotated, and if yes, rotation schedule",
-                    "type": "string"
-                },
-                "cur_land_use": {
-                    "$ref": "#/$defs/CurLandUseEnum",
-                    "description": "Present state of sample site"
-                },
-                "cur_vegetation": {
-                    "description": "Vegetation classification from one or more standard classification systems, or agricultural crop",
-                    "type": "string"
-                },
-                "cur_vegetation_meth": {
-                    "description": "Reference or method used in vegetation classification",
-                    "type": "string"
-                },
-                "depth": {
-                    "description": "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
-                    "type": "string"
-                },
-                "drainage_class": {
-                    "$ref": "#/$defs/DrainageClassEnum",
-                    "description": "Drainage classification from a standard system such as the USDA system"
-                },
-                "ecosystem": {
-                    "$ref": "#/$defs/EcosystemEnum",
-                    "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path."
-                },
-                "ecosystem_category": {
-                    "$ref": "#/$defs/EcosystemCategoryEnum",
-                    "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path."
-                },
-                "ecosystem_subtype": {
-                    "$ref": "#/$defs/EcosystemSubtypeEnum",
-                    "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path."
-                },
-                "ecosystem_type": {
-                    "$ref": "#/$defs/EcosystemTypeEnum",
-                    "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path."
-                },
-                "elev": {
-                    "description": "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.",
-                    "type": "number"
-                },
-                "env_broad_scale": {
-                    "$ref": "#/$defs/EnvBroadScaleSoilEnum",
-                    "description": "In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html"
-                },
-                "env_local_scale": {
-                    "$ref": "#/$defs/EnvLocalScaleSoilEnum",
-                    "description": "Report the entity or entities which are in the sample or specimen\u2019s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS."
-                },
-                "env_medium": {
-                    "$ref": "#/$defs/EnvMediumSoilEnum",
-                    "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top)."
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
-                },
-                "experimental_factor": {
-                    "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
-                    "type": "string"
-                },
-                "extreme_event": {
-                    "description": "Unusual physical events that may have affected microbial populations",
-                    "type": "string"
-                },
-                "fao_class": {
-                    "$ref": "#/$defs/FaoClassEnum",
-                    "description": "Soil classification from the FAO World Reference Database for Soil Resources. The list can be found at http://www.fao.org/nr/land/sols/soil/wrb-soil-maps/reference-groups"
-                },
-                "fire": {
-                    "description": "Historical and/or physical evidence of fire",
-                    "type": "string"
-                },
-                "flooding": {
-                    "description": "Historical and/or physical evidence of flooding",
-                    "type": "string"
-                },
-                "gaseous_environment": {
-                    "description": "Use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
-                    "type": "string"
-                },
-                "growth_facil": {
-                    "$ref": "#/$defs/GrowthFacilEnum",
-                    "description": "Type of facility/location where the sample was harvested; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field."
-                },
-                "heavy_metals": {
-                    "description": "Heavy metals present in the sample and their concentrations.",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "heavy_metals_meth": {
-                    "description": "Reference or method used in determining heavy metals",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
-                "humidity_regm": {
-                    "description": "Information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "lat_lon": {
-                    "description": "This is currently a required field but it's not clear if this should be required for human hosts",
-                    "type": "string"
-                },
-                "lbc_thirty": {
-                    "description": "lime buffer capacity, determined after 30 minute incubation",
-                    "type": "string"
-                },
-                "lbceq": {
-                    "description": "lime buffer capacity, determined at equilibrium after 5 day incubation",
-                    "type": "string"
-                },
-                "light_regm": {
-                    "description": "Information about treatment(s) involving exposure to light, including both light intensity and quality.",
-                    "type": "string"
-                },
-                "link_class_info": {
-                    "description": "Link to digitized soil maps or other soil classification information",
-                    "type": "string"
-                },
-                "link_climate_info": {
-                    "description": "Link to climate resource",
-                    "type": "string"
-                },
-                "local_class": {
-                    "description": "Soil classification based on local soil classification system",
-                    "type": "string"
-                },
-                "local_class_meth": {
-                    "description": "Reference or method used in determining the local soil classification",
-                    "type": "string"
-                },
-                "magnesium": {
-                    "description": "Concentration of magnesium in the sample",
-                    "type": "string"
-                },
-                "manganese": {
-                    "description": "Concentration of manganese in the sample",
-                    "type": "string"
-                },
-                "micro_biomass_meth": {
-                    "description": "Reference or method used in determining microbial biomass",
-                    "type": "string"
-                },
-                "microbial_biomass": {
-                    "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units",
-                    "type": "string"
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "nitrate_nitrogen": {
-                    "description": "Concentration of nitrate nitrogen in the sample",
-                    "type": "string"
-                },
-                "nitrite_nitrogen": {
-                    "description": "Concentration of nitrite nitrogen in the sample",
-                    "type": "string"
-                },
-                "org_matter": {
-                    "description": "Concentration of organic matter",
-                    "type": "string"
-                },
-                "org_nitro": {
-                    "description": "Concentration of organic nitrogen",
-                    "type": "string"
-                },
-                "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Oxygenation status of sample"
-                },
-                "ph": {
-                    "description": "pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid",
-                    "maximum": 14,
-                    "minimum": 0,
-                    "type": "string"
-                },
-                "ph_meth": {
-                    "description": "Reference or method used in determining ph",
-                    "type": "string"
-                },
-                "phosphate": {
-                    "description": "Concentration of phosphate",
-                    "type": "string"
-                },
-                "potassium": {
-                    "description": "Concentration of potassium in the sample",
-                    "type": "string"
-                },
-                "prev_land_use_meth": {
-                    "description": "Reference or method used in determining previous land use and dates",
-                    "type": "string"
-                },
-                "previous_land_use": {
-                    "description": "Previous land use and dates",
-                    "type": "string"
-                },
-                "profile_position": {
-                    "$ref": "#/$defs/ProfilePositionEnum",
-                    "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
-                },
-                "salinity": {
-                    "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
-                    "type": "string"
-                },
-                "salinity_meth": {
-                    "description": "Reference or method used in determining salinity",
-                    "type": "string"
-                },
-                "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).",
-                    "type": "string"
-                },
-                "samp_collec_method": {
-                    "description": "The method employed for collecting the sample.",
-                    "type": "string"
-                },
-                "samp_mat_process": {
-                    "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "samp_size": {
-                    "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
-                    "type": "string"
-                },
-                "samp_store_temp": {
-                    "description": "Temperature at which the sample was stored (degrees are assumed)",
-                    "type": "string"
-                },
-                "sample_link": {
-                    "description": "A unique identifier to assign parent-child, subsample, or sibling samples. This is relevant when a sample or other material was used to generate the new sample.",
-                    "type": "string"
-                },
-                "season_precpt": {
-                    "description": "The average of all seasonal precipitation values known, or an estimated equivalent value derived by such methods as regional indexes or Isohyetal maps.",
-                    "type": "string"
-                },
-                "season_temp": {
-                    "description": "Mean seasonal temperature",
-                    "type": "string"
-                },
-                "sieving": {
-                    "description": "Collection design of pooled samples and/or sieve size and amount of sample sieved",
-                    "type": "string"
-                },
-                "size_frac_low": {
-                    "description": "Refers to the mesh/pore size used to pre-filter/pre-sort the sample. Materials larger than the size threshold are excluded from the sample",
-                    "type": "string"
-                },
-                "size_frac_up": {
-                    "description": "Refers to the mesh/pore size used to retain the sample. Materials smaller than the size threshold are excluded from the sample",
-                    "type": "string"
-                },
-                "slope_aspect": {
-                    "description": "The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.",
-                    "type": "string"
-                },
-                "slope_gradient": {
-                    "description": "Commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer",
-                    "type": "string"
-                },
-                "soil_horizon": {
-                    "$ref": "#/$defs/SoilHorizonEnum",
-                    "description": "Specific layer in the land area which measures parallel to the soil surface and possesses physical characteristics which differ from the layers above and beneath"
-                },
-                "soil_text_measure": {
-                    "description": "The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
-                    "type": "string"
-                },
-                "soil_texture_meth": {
-                    "description": "Reference or method used in determining soil texture",
-                    "type": "string"
-                },
-                "soil_type": {
-                    "description": "Description of the soil type or classification. This field accepts terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms can be separated by pipes.",
-                    "type": "string"
-                },
-                "soil_type_meth": {
-                    "description": "Reference or method used in determining soil series name or other lower-level classification",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                },
-                "specific_ecosystem": {
-                    "$ref": "#/$defs/SpecificEcosystemEnum",
-                    "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path."
-                },
-                "store_cond": {
-                    "$ref": "#/$defs/StoreCondEnum",
-                    "description": "Explain how the soil sample is stored (fresh/frozen/other)."
-                },
-                "temp": {
-                    "description": "Temperature of the sample at the time of sampling.",
-                    "type": "string"
-                },
-                "tillage": {
-                    "description": "Note method(s) used for tilling",
-                    "items": {
-                        "$ref": "#/$defs/TillageEnum"
-                    },
-                    "type": "array"
-                },
-                "tot_carb": {
-                    "description": "Total carbon content",
-                    "type": "string"
-                },
-                "tot_nitro": {
-                    "description": "Total nitrogen concentration of water samples, calculated by: total nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured without filtering, reported as nitrogen",
-                    "type": "string"
-                },
-                "tot_nitro_cont_meth": {
-                    "description": "Reference or method used in determining the total nitrogen",
-                    "type": "string"
-                },
-                "tot_nitro_content": {
-                    "description": "Total nitrogen content of the sample",
-                    "type": "string"
-                },
-                "tot_org_c_meth": {
-                    "description": "Reference or method used in determining total organic carbon",
-                    "type": "string"
-                },
-                "tot_org_carb": {
-                    "description": "Definition for soil: total organic carbon content of the soil, definition otherwise: total organic carbon content",
-                    "type": "string"
-                },
-                "tot_phosp": {
-                    "description": "Total phosphorus concentration in the sample, calculated by: total phosphorus = total dissolved phosphorus + particulate phosphorus",
-                    "type": "string"
-                },
-                "water_cont_soil_meth": {
-                    "description": "Reference or method used in determining the water content of soil",
-                    "type": "string"
-                },
-                "water_content": {
-                    "description": "Water content measurement",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "watering_regm": {
-                    "description": "Information about treatment involving an exposure to watering frequencies, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "zinc": {
-                    "description": "Concentration of zinc in the sample",
-                    "type": "string"
-                }
-            },
-            "title": "Bioscales",
-            "type": "object"
         },
         "BioticRelationshipEnum": {
             "description": "",
@@ -1252,9 +806,9 @@
             "title": "BuildingSettingEnum",
             "type": "string"
         },
-        "BuiltEnv": {
+        "BuiltEnvInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "built_env dh_interface",
             "properties": {
                 "abs_air_humidity": {
                     "description": "Actual mass of water vapor - mh20 - present in the air water vapor mixture",
@@ -1387,8 +941,8 @@
                     "type": "string"
                 },
                 "date_last_rain": {
-                    "$ref": "#/$defs/TimestampValue",
-                    "description": "The date of the last time it rained"
+                    "description": "The date of the last time it rained",
+                    "type": "string"
                 },
                 "depth": {
                     "description": "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
@@ -1608,6 +1162,10 @@
                     "description": "The average carpet fiber height in the indoor environment",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "indoor_space": {
                     "$ref": "#/$defs/IndoorSpaceEnum",
                     "description": "A distinguishable space within a structure, the purpose for which discrete areas of a building is used"
@@ -1625,8 +1183,8 @@
                     "description": "The physical condition of the wall at the time of sampling; photos or video preferred; use drawings to indicate location of damaged areas"
                 },
                 "last_clean": {
-                    "$ref": "#/$defs/TimestampValue",
-                    "description": "The last time the floor was cleaned (swept, mopped, vacuumed)"
+                    "description": "The last time the floor was cleaned (swept, mopped, vacuumed)",
+                    "type": "string"
                 },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
@@ -1774,10 +1332,6 @@
                     "$ref": "#/$defs/SampFloorEnum",
                     "description": "The floor of the building, where the sampling room is located"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_room_id": {
                     "description": "Sampling room number. This ID should be consistent with the designations on the building floor plans",
                     "type": "string"
@@ -1831,10 +1385,6 @@
                 },
                 "size_frac": {
                     "description": "Filtering pore size used in sample preparation",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "space_typ_state": {
@@ -2012,7 +1562,22 @@
                     "type": "string"
                 }
             },
-            "title": "BuiltEnv",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "BuiltEnvInterface",
             "type": "object"
         },
         "CeilCondEnum": {
@@ -2149,26 +1714,41 @@
             "title": "DhInterface",
             "type": "object"
         },
-        "DnaContTypeEnum": {
+        "DhMultiviewCommonColumns": {
+            "additionalProperties": false,
             "description": "",
+            "properties": {
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "source_mat_id"
+            ],
+            "title": "DhMultiviewCommonColumns",
+            "type": "object"
+        },
+        "DnaContTypeEnum": {
+            "description": "placeholder enum descr",
             "enum": [
                 "plate",
-                "tube"
+                "symbiotic"
             ],
             "title": "DnaContTypeEnum",
             "type": "string"
         },
         "DnaDnaseEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "no",
-                "yes"
+                "tube"
             ],
             "title": "DnaDnaseEnum",
             "type": "string"
         },
         "DnaSampleFormatEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "10 mM Tris-HCl",
                 "DNAStable",
@@ -2179,13 +1759,14 @@
                 "Pellet",
                 "RNAStable",
                 "TE",
-                "Water"
+                "Water",
+                "yes"
             ],
             "title": "DnaSampleFormatEnum",
             "type": "string"
         },
         "DnaseRnaEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "no",
                 "yes"
@@ -2335,7 +1916,7 @@
             "type": "string"
         },
         "EcosystemCategoryEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "Terrestrial"
             ],
@@ -2343,7 +1924,7 @@
             "type": "string"
         },
         "EcosystemEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "Environmental"
             ],
@@ -2351,7 +1932,7 @@
             "type": "string"
         },
         "EcosystemSubtypeEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "Biocrust",
                 "Biofilm",
@@ -2379,21 +1960,17 @@
             "type": "string"
         },
         "EcosystemTypeEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "Soil"
             ],
             "title": "EcosystemTypeEnum",
             "type": "string"
         },
-        "Emsl": {
+        "EmslInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "emsl dh_interface",
             "properties": {
-                "EMSL_store_temp": {
-                    "description": "Temperature at which the sample sent to EMSL should be stored",
-                    "type": "string"
-                },
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
                     "items": {
@@ -2401,16 +1978,16 @@
                     },
                     "type": "array"
                 },
-                "project_ID": {
+                "emsl_store_temp": {
+                    "description": "Temperature at which the sample sent to EMSL should be stored",
+                    "type": "string"
+                },
+                "project_id": {
                     "description": "Proposal IDs or names associated with dataset",
                     "type": "string"
                 },
                 "replicate_number": {
                     "description": "If sending biological replicates, indicate the rep number here.",
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
                 },
                 "sample_shipped": {
@@ -2421,20 +1998,23 @@
                     "$ref": "#/$defs/SampleTypeEnum",
                     "description": "Type of sample being submitted"
                 },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                },
                 "technical_reps": {
                     "description": "If sending multiple technical replicates of the same sample, indicate how many replicates are being sent",
                     "type": "string"
                 }
             },
-            "title": "Emsl",
+            "required": [
+                "emsl_store_temp",
+                "project_id",
+                "sample_shipped",
+                "sample_type",
+                "analysis_type"
+            ],
+            "title": "EmslInterface",
             "type": "object"
         },
         "EnvBroadScaleSoilEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "______mediterranean savanna biome [ENVO:01000229]",
                 "____flooded savanna biome [ENVO:01000190]",
@@ -2481,7 +2061,7 @@
             "type": "string"
         },
         "EnvLocalScaleSoilEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "__canyon [ENVO:00000169]",
                 "__cliff [ENVO:00000087]",
@@ -2526,7 +2106,7 @@
             "type": "string"
         },
         "EnvMediumSoilEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "____peaty paddy field soil [ENVO:00005776]",
                 "__acrisol [ENVO:00002234]",
@@ -2618,7 +2198,7 @@
             "type": "string"
         },
         "EnvPackageEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "soil"
             ],
@@ -2791,31 +2371,8 @@
             "title": "GenderRestroomEnum",
             "type": "string"
         },
-        "GeolocationValue": {
-            "additionalProperties": false,
-            "description": "A normalized value for a location on the earth's surface",
-            "properties": {
-                "has_raw_value": {
-                    "description": "The raw value for a  geolocation should follow {lat} {long}",
-                    "type": "string"
-                },
-                "latitude": {
-                    "description": "latitude",
-                    "type": "number"
-                },
-                "longitude": {
-                    "description": "longitude",
-                    "type": "number"
-                },
-                "was_generated_by": {
-                    "type": "string"
-                }
-            },
-            "title": "GeolocationValue",
-            "type": "object"
-        },
         "GrowthFacilEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "experimental_garden",
                 "field",
@@ -2865,9 +2422,9 @@
             "title": "HcProducedEnum",
             "type": "string"
         },
-        "HcrCores": {
+        "HcrCoresInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "hcr_cores dh_interface",
             "properties": {
                 "additional_info": {
                     "description": "Information that doesn't fit anywhere else. Can also be used to propose new entries for fields with controlled vocabulary",
@@ -2919,6 +2476,13 @@
                 "calcium": {
                     "description": "Concentration of calcium in the sample",
                     "type": "string"
+                },
+                "chem_administration": {
+                    "description": "List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "chloride": {
                     "description": "Concentration of chloride in the sample",
@@ -3036,6 +2600,10 @@
                     "description": "Original temperature of the hydrocarbon resource",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "type": "string"
@@ -3092,6 +2660,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "porosity": {
                     "description": "Porosity of deposited sediment is volume of voids divided by the total volume of sample",
                     "type": "string"
@@ -3140,10 +2712,6 @@
                     "description": "In non deviated well, measured depth is equal to the true vertical depth, TVD (TVD=TVDSS plus the reference or datum it refers to). In deviated wells, the MD is the length of trajectory of the borehole measured from the same reference or datum. Common datums used are ground level (GL), drilling rig floor (DF), rotary table (RT), kelly bushing (KB) and mean sea level (MSL). If \"other\" is specified, please propose entry in \"additional info\" field",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -3190,10 +2758,6 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -3293,9 +2857,21 @@
                 }
             },
             "required": [
-                "source_mat_id"
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type"
             ],
-            "title": "HcrCores",
+            "title": "HcrCoresInterface",
             "type": "object"
         },
         "HcrEnum": {
@@ -3313,9 +2889,9 @@
             "title": "HcrEnum",
             "type": "string"
         },
-        "HcrFluidsSwabs": {
+        "HcrFluidsSwabsInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "hcr_fluids_swabs dh_interface",
             "properties": {
                 "add_recov_method": {
                     "description": "Additional (i.e. Secondary, tertiary, etc.) recovery methods deployed for increase of hydrocarbon recovery from resource and start date for each one of them. If \"other\" is specified, please propose entry in \"additional info\" field",
@@ -3379,6 +2955,13 @@
                 "calcium": {
                     "description": "Concentration of calcium in the sample",
                     "type": "string"
+                },
+                "chem_administration": {
+                    "description": "List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "chem_treat_method": {
                     "description": "Method of chemical administration(dose, frequency, duration, time elapsed between administration and sampling) (e.g. 50 mg/l; twice a week; 1 hr; 0 days)",
@@ -3504,9 +3087,13 @@
                     "description": "Original temperature of the hydrocarbon resource",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "iw_bt_date_well": {
-                    "$ref": "#/$defs/TimestampValue",
-                    "description": "Injection water breakthrough date per well following a secondary and/or tertiary recovery"
+                    "description": "Injection water breakthrough date per well following a secondary and/or tertiary recovery",
+                    "type": "string"
                 },
                 "iwf": {
                     "description": "Proportion of the produced fluids derived from injected water at the time of sampling. (e.g. 87%)",
@@ -3560,6 +3147,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "potassium": {
                     "description": "Concentration of potassium in the sample",
                     "type": "string"
@@ -3577,8 +3168,8 @@
                     "type": "string"
                 },
                 "prod_start_date": {
-                    "$ref": "#/$defs/TimestampValue",
-                    "description": "Date of field's first production"
+                    "description": "Date of field's first production",
+                    "type": "string"
                 },
                 "rel_to_oxygen": {
                     "$ref": "#/$defs/RelToOxygenEnum",
@@ -3614,10 +3205,6 @@
                 },
                 "samp_mat_process": {
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
                 },
                 "samp_preserv": {
@@ -3666,10 +3253,6 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -3761,9 +3344,21 @@
                 }
             },
             "required": [
-                "source_mat_id"
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type"
             ],
-            "title": "HcrFluidsSwabs",
+            "title": "HcrFluidsSwabsInterface",
             "type": "object"
         },
         "HcrGeolAgeEnum": {
@@ -3814,9 +3409,9 @@
             "title": "HeatDelivLocEnum",
             "type": "string"
         },
-        "HostAssociated": {
+        "HostAssociatedInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "host_associated dh_interface",
             "properties": {
                 "alt": {
                     "description": "Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air",
@@ -3910,6 +3505,10 @@
                 },
                 "gravidity": {
                     "description": "Whether or not subject is gravid, and if yes date due or date post-conception, specifying which is used",
+                    "type": "string"
+                },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "host_age": {
@@ -4084,10 +3683,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -4112,10 +3707,6 @@
                     "description": "Filtering pore size used in sample preparation",
                     "type": "string"
                 },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                },
                 "specific_ecosystem": {
                     "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
                     "type": "string"
@@ -4125,7 +3716,23 @@
                     "type": "string"
                 }
             },
-            "title": "HostAssociated",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "HostAssociatedInterface",
             "type": "object"
         },
         "HostSexEnum": {
@@ -4181,9 +3788,9 @@
             "title": "IntWallCondEnum",
             "type": "string"
         },
-        "JgiMg": {
+        "JgiMgInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "jgi_mg dh_interface",
             "properties": {
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
@@ -4205,6 +3812,7 @@
                     "type": "string"
                 },
                 "dna_concentration": {
+                    "description": "placeholder",
                     "maximum": 2000,
                     "minimum": 0,
                     "type": "string"
@@ -4214,13 +3822,16 @@
                     "description": "Tube or plate (96-well)"
                 },
                 "dna_cont_well": {
+                    "description": "placeholder",
                     "type": "string"
                 },
-                "dna_container_ID": {
+                "dna_container_id": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "dna_dnase": {
-                    "$ref": "#/$defs/DnaDnaseEnum"
+                    "$ref": "#/$defs/DnaDnaseEnum",
+                    "description": "placeholder"
                 },
                 "dna_isolate_meth": {
                     "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
@@ -4231,9 +3842,11 @@
                     "type": "string"
                 },
                 "dna_project_contact": {
+                    "description": "placeholder",
                     "type": "string"
                 },
-                "dna_samp_ID": {
+                "dna_samp_id": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "dna_sample_format": {
@@ -4245,37 +3858,53 @@
                     "type": "string"
                 },
                 "dna_seq_project": {
-                    "type": "string"
-                },
-                "dna_seq_project_PI": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "dna_seq_project_name": {
+                    "description": "placeholder",
+                    "type": "string"
+                },
+                "dna_seq_project_pi": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "dna_volume": {
+                    "description": "placeholder",
                     "maximum": 1000,
                     "minimum": 0,
                     "type": "string"
                 },
                 "proposal_dna": {
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "description": "placeholder",
                     "type": "string"
                 }
             },
-            "title": "JgiMg",
+            "required": [
+                "dna_collect_site",
+                "dna_concentration",
+                "dna_cont_type",
+                "dna_cont_well",
+                "dna_container_id",
+                "dna_dnase",
+                "dna_isolate_meth",
+                "dna_project_contact",
+                "dna_samp_id",
+                "dna_sample_format",
+                "dna_sample_name",
+                "dna_seq_project",
+                "dna_seq_project_name",
+                "dna_seq_project_pi",
+                "dna_volume",
+                "proposal_dna",
+                "analysis_type"
+            ],
+            "title": "JgiMgInterface",
             "type": "object"
         },
-        "JgiMt": {
+        "JgiMtInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "jgi_mt dh_interface",
             "properties": {
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
@@ -4285,9 +3914,11 @@
                     "type": "array"
                 },
                 "dnase_rna": {
-                    "$ref": "#/$defs/DnaseRnaEnum"
+                    "$ref": "#/$defs/DnaseRnaEnum",
+                    "description": "placeholder"
                 },
                 "proposal_rna": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "rna_absorb1": {
@@ -4303,7 +3934,8 @@
                     "type": "string"
                 },
                 "rna_concentration": {
-                    "maximum": 1000,
+                    "description": "placeholder",
+                    "maximum": 2000,
                     "minimum": 0,
                     "type": "string"
                 },
@@ -4312,9 +3944,11 @@
                     "description": "Tube or plate (96-well)"
                 },
                 "rna_cont_well": {
+                    "description": "placeholder",
                     "type": "string"
                 },
-                "rna_container_ID": {
+                "rna_container_id": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "rna_isolate_meth": {
@@ -4326,9 +3960,11 @@
                     "type": "string"
                 },
                 "rna_project_contact": {
+                    "description": "placeholder",
                     "type": "string"
                 },
-                "rna_samp_ID": {
+                "rna_samp_id": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "rna_sample_format": {
@@ -4337,32 +3973,47 @@
                 },
                 "rna_sample_name": {
                     "description": "Give the RNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
-                    "maximum": 2000,
-                    "minimum": 0,
                     "type": "string"
                 },
                 "rna_seq_project": {
-                    "type": "string"
-                },
-                "rna_seq_project_PI": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "rna_seq_project_name": {
+                    "description": "placeholder",
+                    "type": "string"
+                },
+                "rna_seq_project_pi": {
+                    "description": "placeholder",
                     "type": "string"
                 },
                 "rna_volume": {
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "description": "placeholder",
+                    "maximum": 1000,
+                    "minimum": 0,
                     "type": "string"
                 }
             },
-            "title": "JgiMt",
+            "required": [
+                "dnase_rna",
+                "proposal_rna",
+                "rna_collect_site",
+                "rna_concentration",
+                "rna_cont_type",
+                "rna_cont_well",
+                "rna_container_id",
+                "rna_isolate_meth",
+                "rna_project_contact",
+                "rna_samp_id",
+                "rna_sample_format",
+                "rna_sample_name",
+                "rna_seq_project",
+                "rna_seq_project_name",
+                "rna_seq_project_pi",
+                "rna_volume",
+                "analysis_type"
+            ],
+            "title": "JgiMtInterface",
             "type": "object"
         },
         "LightTypeEnum": {
@@ -4413,9 +4064,9 @@
             "title": "MechStrucEnum",
             "type": "string"
         },
-        "MiscEnvs": {
+        "MiscEnvsInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "misc_envs dh_interface",
             "properties": {
                 "alkalinity": {
                     "description": "Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
@@ -4545,6 +4196,10 @@
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "type": "string"
@@ -4604,6 +4259,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "phosphate": {
                     "description": "Concentration of phosphate",
                     "type": "string"
@@ -4643,10 +4302,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -4675,10 +4330,6 @@
                     "description": "Sodium concentration in the sample",
                     "type": "string"
                 },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                },
                 "specific_ecosystem": {
                     "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
                     "type": "string"
@@ -4701,9 +4352,21 @@
                 }
             },
             "required": [
-                "source_mat_id"
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type"
             ],
-            "title": "MiscEnvs",
+            "title": "MiscEnvsInterface",
             "type": "object"
         },
         "OccupDocumentEnum": {
@@ -4757,9 +4420,9 @@
             "title": "OxyStatSampEnum",
             "type": "string"
         },
-        "PlantAssociated": {
+        "PlantAssociatedInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "plant_associated dh_interface",
             "properties": {
                 "air_temp_regm": {
                     "description": "Information about treatment involving an exposure to varying temperatures; should include the temperature, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include different temperature regimens",
@@ -4928,6 +4591,10 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
                 },
                 "host_age": {
                     "description": "Age of host at the time of sampling; relevant scale depends on species and study, e.g. Could be seconds for amoebae or centuries for trees",
@@ -5159,10 +4826,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -5192,10 +4855,6 @@
                 },
                 "size_frac": {
                     "description": "Filtering pore size used in sample preparation",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -5232,7 +4891,24 @@
                     "type": "array"
                 }
             },
-            "title": "PlantAssociated",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "growth_facil",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "PlantAssociatedInterface",
             "type": "object"
         },
         "PlantSexEnum": {
@@ -5319,7 +4995,7 @@
             "type": "string"
         },
         "RnaContTypeEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "plate",
                 "tube"
@@ -5328,7 +5004,7 @@
             "type": "string"
         },
         "RnaSampleFormatEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "10 mM Tris-HCl",
                 "DNAStable",
@@ -5516,80 +5192,86 @@
             "description": "represents data produced by the DataHarmonizer tabs of the submission portal",
             "properties": {
                 "air_data": {
+                    "description": "aggregation slot relating air data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/Air"
+                        "$ref": "#/$defs/AirInterface"
                     },
                     "type": "array"
                 },
                 "biofilm_data": {
+                    "description": "aggregation slot relating biofilm data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/Biofilm"
-                    },
-                    "type": "array"
-                },
-                "bioscales_data": {
-                    "items": {
-                        "$ref": "#/$defs/Bioscales"
+                        "$ref": "#/$defs/BiofilmInterface"
                     },
                     "type": "array"
                 },
                 "built_env_data": {
+                    "description": "aggregation slot relating built_env data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/BuiltEnv"
+                        "$ref": "#/$defs/BuiltEnvInterface"
                     },
                     "type": "array"
                 },
                 "emsl_data": {
+                    "description": "aggregation slot relating emsl data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/Emsl"
+                        "$ref": "#/$defs/EmslInterface"
                     },
                     "type": "array"
                 },
                 "host_associated_data": {
+                    "description": "aggregation slot relating host_associated data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/HostAssociated"
+                        "$ref": "#/$defs/HostAssociatedInterface"
                     },
                     "type": "array"
                 },
                 "jgi_mg_data": {
+                    "description": "aggregation slot relating jgi_mg data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/JgiMg"
+                        "$ref": "#/$defs/JgiMgInterface"
                     },
                     "type": "array"
                 },
                 "jgi_mt_data": {
+                    "description": "aggregation slot relating jgi_mt data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/JgiMt"
+                        "$ref": "#/$defs/JgiMtInterface"
                     },
                     "type": "array"
                 },
                 "plant_associated_data": {
+                    "description": "aggregation slot relating plant_associated data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/PlantAssociated"
+                        "$ref": "#/$defs/PlantAssociatedInterface"
                     },
                     "type": "array"
                 },
                 "sediment_data": {
+                    "description": "aggregation slot relating sediment data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/Sediment"
+                        "$ref": "#/$defs/SedimentInterface"
                     },
                     "type": "array"
                 },
                 "soil_data": {
+                    "description": "aggregation slot relating soil data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/Soil"
+                        "$ref": "#/$defs/SoilInterface"
                     },
                     "type": "array"
                 },
                 "wastewater_sludge_data": {
+                    "description": "aggregation slot relating wastewater_sludge data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/WastewaterSludge"
+                        "$ref": "#/$defs/WastewaterSludgeInterface"
                     },
                     "type": "array"
                 },
                 "water_data": {
+                    "description": "aggregation slot relating water data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/Water"
+                        "$ref": "#/$defs/WaterInterface"
                     },
                     "type": "array"
                 }
@@ -5598,7 +5280,7 @@
             "type": "object"
         },
         "SampleTypeEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "soil",
                 "water_extract_soil"
@@ -5617,9 +5299,9 @@
             "title": "SeasonUseEnum",
             "type": "string"
         },
-        "Sediment": {
+        "SedimentInterface": {
             "additionalProperties": false,
-            "description": "sediment dev",
+            "description": "sediment dh_interface",
             "properties": {
                 "alkalinity": {
                     "description": "Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
@@ -5781,6 +5463,10 @@
                     "description": "Measurement of glucosidase activity",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "type": "string"
@@ -5878,6 +5564,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "phaeopigments": {
                     "description": "Concentration of phaeopigments; can include multiple phaeopigments",
                     "items": {
@@ -5932,10 +5622,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -5970,10 +5656,6 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -6024,7 +5706,23 @@
                     "type": "array"
                 }
             },
-            "title": "Sediment",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "SedimentInterface",
             "type": "object"
         },
         "SedimentTypeEnum": {
@@ -6069,9 +5767,23 @@
             "title": "ShadingDeviceTypeEnum",
             "type": "string"
         },
-        "Soil": {
-            "additionalProperties": false,
+        "SoilHorizonEnum": {
             "description": "",
+            "enum": [
+                "O horizon",
+                "A horizon",
+                "E horizon",
+                "B horizon",
+                "C horizon",
+                "R layer",
+                "Permafrost"
+            ],
+            "title": "SoilHorizonEnum",
+            "type": "string"
+        },
+        "SoilInterface": {
+            "additionalProperties": false,
+            "description": "soil dh_interface",
             "properties": {
                 "agrochem_addition": {
                     "description": "Addition of fertilizers, pesticides, etc. - amount and time of applications",
@@ -6097,6 +5809,10 @@
                 },
                 "alt": {
                     "description": "Altitude is a term used to identify heights of objects such as airplanes, space shuttles, rockets, atmospheric balloons and heights of places such as atmospheric layers and clouds. It is used to measure the height of an object which is above the earth's surface. In this context, the altitude measurement is the vertical distance between the earth's surface above sea level and the sampled position in the air",
+                    "type": "string"
+                },
+                "ammonium_nitrogen": {
+                    "description": "Concentration of ammonium nitrogen in the sample",
                     "type": "string"
                 },
                 "analysis_type": {
@@ -6181,20 +5897,20 @@
                     "description": "Drainage classification from a standard system such as the USDA system"
                 },
                 "ecosystem": {
-                    "$ref": "#/$defs/EcosystemEnum",
-                    "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path."
+                    "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+                    "type": "string"
                 },
                 "ecosystem_category": {
-                    "$ref": "#/$defs/EcosystemCategoryEnum",
-                    "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path."
+                    "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+                    "type": "string"
                 },
                 "ecosystem_subtype": {
-                    "$ref": "#/$defs/EcosystemSubtypeEnum",
-                    "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path."
+                    "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+                    "type": "string"
                 },
                 "ecosystem_type": {
-                    "$ref": "#/$defs/EcosystemTypeEnum",
-                    "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path."
+                    "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+                    "type": "string"
                 },
                 "elev": {
                     "description": "Elevation of the sampling site is its height above a fixed reference point, most commonly the mean sea level. Elevation is mainly used when referring to points on the earth's surface, while altitude is used for points above the surface, such as an aircraft in flight or a spacecraft in orbit.",
@@ -6273,10 +5989,6 @@
                     },
                     "type": "array"
                 },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
                 "humidity_regm": {
                     "description": "Information about treatment involving an exposure to varying degree of humidity; information about treatment involving use of growth hormones; should include amount of humidity administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",
                     "items": {
@@ -6290,6 +6002,14 @@
                 },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
+                    "type": "string"
+                },
+                "lbc_thirty": {
+                    "description": "lime buffer capacity, determined after 30 minute incubation",
+                    "type": "string"
+                },
+                "lbceq": {
+                    "description": "lime buffer capacity, determined at equilibrium after 5 day incubation",
                     "type": "string"
                 },
                 "light_regm": {
@@ -6312,27 +6032,31 @@
                     "description": "Reference or method used in determining the local soil classification",
                     "type": "string"
                 },
-                "micro_biomass_C_meth": {
-                    "description": "Reference or method used in determining microbial biomass",
+                "manganese": {
+                    "description": "Concentration of manganese in the sample",
                     "type": "string"
                 },
-                "micro_biomass_N_meth": {
-                    "description": "Reference or method used in determining microbial biomass nitrogen",
+                "micro_biomass_c_meth": {
+                    "description": "Reference or method used in determining microbial biomass",
                     "type": "string"
                 },
                 "micro_biomass_meth": {
                     "description": "Reference or method used in determining microbial biomass",
                     "type": "string"
                 },
+                "micro_biomass_n_meth": {
+                    "description": "Reference or method used in determining microbial biomass nitrogen",
+                    "type": "string"
+                },
                 "microbial_biomass": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units",
                     "type": "string"
                 },
-                "microbial_biomass_C": {
+                "microbial_biomass_c": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units",
                     "type": "string"
                 },
-                "microbial_biomass_N": {
+                "microbial_biomass_n": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units",
                     "type": "string"
                 },
@@ -6342,6 +6066,14 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "nitrate_nitrogen": {
+                    "description": "Concentration of nitrate nitrogen in the sample",
+                    "type": "string"
+                },
+                "nitrite_nitrogen": {
+                    "description": "Concentration of nitrite nitrogen in the sample",
+                    "type": "string"
                 },
                 "non_microb_biomass": {
                     "description": "Amount of biomass; should include the name for the part of biomass measured, e.g.insect, plant, total. Can include multiple measurements separated by ;",
@@ -6421,10 +6153,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -6485,13 +6213,9 @@
                     "description": "Reference or method used in determining soil series name or other lower-level classification",
                     "type": "string"
                 },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                },
                 "specific_ecosystem": {
-                    "$ref": "#/$defs/SpecificEcosystemEnum",
-                    "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path."
+                    "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+                    "type": "string"
                 },
                 "start_date_inc": {
                     "description": "Date the incubation was started. Only relevant for incubation samples.",
@@ -6557,27 +6281,35 @@
                         "type": "string"
                     },
                     "type": "array"
+                },
+                "zinc": {
+                    "description": "Concentration of zinc in the sample",
+                    "type": "string"
                 }
             },
-            "title": "Soil",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "growth_facil",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "store_cond",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "SoilInterface",
             "type": "object"
         },
-        "SoilHorizonEnum": {
-            "description": "",
-            "enum": [
-                "O horizon",
-                "A horizon",
-                "E horizon",
-                "B horizon",
-                "C horizon",
-                "R layer",
-                "Permafrost"
-            ],
-            "title": "SoilHorizonEnum",
-            "type": "string"
-        },
         "SpecificEcosystemEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "Agricultural",
                 "Agricultural land",
@@ -6682,7 +6414,7 @@
             "type": "string"
         },
         "StoreCondEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "fresh",
                 "frozen",
@@ -6765,21 +6497,6 @@
             ],
             "title": "TillageEnum",
             "type": "string"
-        },
-        "TimestampValue": {
-            "additionalProperties": false,
-            "description": "A value that is a timestamp. The range should be ISO-8601",
-            "properties": {
-                "has_raw_value": {
-                    "description": "The value that was specified for an annotation in raw form, i.e. a string. E.g. \"2 cm\" or \"2-4 cm\"",
-                    "type": "string"
-                },
-                "was_generated_by": {
-                    "type": "string"
-                }
-            },
-            "title": "TimestampValue",
-            "type": "object"
         },
         "TrainLineEnum": {
             "description": "",
@@ -6903,9 +6620,9 @@
             "title": "WallTextureEnum",
             "type": "string"
         },
-        "WastewaterSludge": {
+        "WastewaterSludgeInterface": {
             "additionalProperties": false,
-            "description": "",
+            "description": "wastewater_sludge dh_interface",
             "properties": {
                 "alkalinity": {
                     "description": "Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
@@ -7007,6 +6724,10 @@
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "indust_eff_percent": {
                     "description": "Percentage of industrial effluents received by wastewater treatment plant",
                     "type": "string"
@@ -7064,6 +6785,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "phosphate": {
                     "description": "Concentration of phosphate",
                     "type": "string"
@@ -7098,10 +6823,6 @@
                 },
                 "samp_mat_process": {
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
                 },
                 "samp_size": {
@@ -7158,10 +6879,6 @@
                     },
                     "type": "array"
                 },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                },
                 "specific_ecosystem": {
                     "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
                     "type": "string"
@@ -7194,12 +6911,40 @@
                     "type": "string"
                 }
             },
-            "title": "WastewaterSludge",
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
+            ],
+            "title": "WastewaterSludgeInterface",
             "type": "object"
         },
-        "Water": {
-            "additionalProperties": false,
+        "WaterFeatTypeEnum": {
             "description": "",
+            "enum": [
+                "fountain",
+                "pool",
+                "standing feature",
+                "stream",
+                "waterfall"
+            ],
+            "title": "WaterFeatTypeEnum",
+            "type": "string"
+        },
+        "WaterInterface": {
+            "additionalProperties": false,
+            "description": "water dh_interface",
             "properties": {
                 "alkalinity": {
                     "description": "Alkalinity, the ability of a solution to neutralize acids to the equivalence point of carbonate or bicarbonate",
@@ -7269,6 +7014,10 @@
                 "calcium": {
                     "description": "Concentration of calcium in the sample",
                     "type": "string"
+                },
+                "carb_nitro_ratio": {
+                    "description": "Ratio of amount or concentrations of carbon to nitrogen",
+                    "type": "number"
                 },
                 "chem_administration": {
                     "description": "List of chemical compounds administered to the host or site where sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can include multiple compounds. For chemical entities of biological interest ontology (chebi) (v 163), http://purl.bioontology.org/ontology/chebi",
@@ -7396,6 +7145,10 @@
                     "description": "Measurement of glucosidase activity",
                     "type": "string"
                 },
+                "horizon_meth": {
+                    "description": "Reference or method used in determining the horizon",
+                    "type": "string"
+                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "type": "string"
@@ -7486,6 +7239,10 @@
                     "minimum": 0,
                     "type": "string"
                 },
+                "ph_meth": {
+                    "description": "Reference or method used in determining ph",
+                    "type": "string"
+                },
                 "phaeopigments": {
                     "description": "Concentration of phaeopigments; can include multiple phaeopigments",
                     "items": {
@@ -7544,10 +7301,6 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -7590,10 +7343,6 @@
                 },
                 "soluble_react_phosp": {
                     "description": "Concentration of soluble reactive phosphorus",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -7649,20 +7398,24 @@
                     "type": "string"
                 }
             },
-            "title": "Water",
-            "type": "object"
-        },
-        "WaterFeatTypeEnum": {
-            "description": "",
-            "enum": [
-                "fountain",
-                "pool",
-                "standing feature",
-                "stream",
-                "waterfall"
+            "required": [
+                "collection_date",
+                "depth",
+                "ecosystem",
+                "ecosystem_category",
+                "ecosystem_subtype",
+                "ecosystem_type",
+                "elev",
+                "env_broad_scale",
+                "env_local_scale",
+                "env_medium",
+                "samp_store_temp",
+                "specific_ecosystem",
+                "analysis_type",
+                "env_package"
             ],
-            "title": "WaterFeatTypeEnum",
-            "type": "string"
+            "title": "WaterInterface",
+            "type": "object"
         },
         "WeekdayEnum": {
             "description": "",
@@ -7762,80 +7515,86 @@
     "metamodel_version": "1.7.0",
     "properties": {
         "air_data": {
+            "description": "aggregation slot relating air data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/Air"
+                "$ref": "#/$defs/AirInterface"
             },
             "type": "array"
         },
         "biofilm_data": {
+            "description": "aggregation slot relating biofilm data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/Biofilm"
-            },
-            "type": "array"
-        },
-        "bioscales_data": {
-            "items": {
-                "$ref": "#/$defs/Bioscales"
+                "$ref": "#/$defs/BiofilmInterface"
             },
             "type": "array"
         },
         "built_env_data": {
+            "description": "aggregation slot relating built_env data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/BuiltEnv"
+                "$ref": "#/$defs/BuiltEnvInterface"
             },
             "type": "array"
         },
         "emsl_data": {
+            "description": "aggregation slot relating emsl data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/Emsl"
+                "$ref": "#/$defs/EmslInterface"
             },
             "type": "array"
         },
         "host_associated_data": {
+            "description": "aggregation slot relating host_associated data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/HostAssociated"
+                "$ref": "#/$defs/HostAssociatedInterface"
             },
             "type": "array"
         },
         "jgi_mg_data": {
+            "description": "aggregation slot relating jgi_mg data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/JgiMg"
+                "$ref": "#/$defs/JgiMgInterface"
             },
             "type": "array"
         },
         "jgi_mt_data": {
+            "description": "aggregation slot relating jgi_mt data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/JgiMt"
+                "$ref": "#/$defs/JgiMtInterface"
             },
             "type": "array"
         },
         "plant_associated_data": {
+            "description": "aggregation slot relating plant_associated data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/PlantAssociated"
+                "$ref": "#/$defs/PlantAssociatedInterface"
             },
             "type": "array"
         },
         "sediment_data": {
+            "description": "aggregation slot relating sediment data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/Sediment"
+                "$ref": "#/$defs/SedimentInterface"
             },
             "type": "array"
         },
         "soil_data": {
+            "description": "aggregation slot relating soil data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/Soil"
+                "$ref": "#/$defs/SoilInterface"
             },
             "type": "array"
         },
         "wastewater_sludge_data": {
+            "description": "aggregation slot relating wastewater_sludge data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/WastewaterSludge"
+                "$ref": "#/$defs/WastewaterSludgeInterface"
             },
             "type": "array"
         },
         "water_data": {
+            "description": "aggregation slot relating water data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/Water"
+                "$ref": "#/$defs/WaterInterface"
             },
             "type": "array"
         }
