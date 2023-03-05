@@ -154,3 +154,4 @@ src/data/SampleData-water-data.regen.yaml: src/data/SampleData-water-data.tsv
 		--index-slot water_data \
 		--schema src/submission_schema/schema/submission_schema.yaml \
 		--no-validate $<
+
