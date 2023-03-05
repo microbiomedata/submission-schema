@@ -117,6 +117,7 @@ gen-project: $(PYMODEL)
 		--include owl \
 		--include python \
 		--include sqlddl \
+		--generator-arguments 'jsonschema: {not_closed: false}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: site test-python src/data/output
