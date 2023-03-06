@@ -120,7 +120,7 @@ gen-project: $(PYMODEL)
 		--generator-arguments 'jsonschema: {not_closed: false}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: site test-python src/data/output
+test: site test-python src/data/output check-valid-vs-json-schema check-invalid-vs-json-schema
 test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
