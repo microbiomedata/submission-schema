@@ -34,7 +34,16 @@ endif
 
 
 # basename of a YAML file in model/
-.PHONY: all clean
+.PHONY: all clean \
+check-invalid-vs-json-schema \
+check-valid-vs-json-schema \
+clean \
+gen-project \
+gendoc \
+schema_cleanup  \
+site \
+test \
+test-python
 
 # note: "help" MUST be the first target in the file,
 # when the user types "make" they should get help info
@@ -105,7 +114,7 @@ gen-examples:
 
 # generates all project files
 
-gen-project: $(PYMODEL)
+gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml
 	$(RUN) gen-project ${GEN_PARGS}  \
 		--exclude excel \
 		--exclude graphql \
