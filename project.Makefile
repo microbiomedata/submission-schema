@@ -155,3 +155,10 @@ src/data/SampleData-water-data.regen.yaml: src/data/SampleData-water-data.tsv
 		--schema src/submission_schema/schema/submission_schema.yaml \
 		--no-validate $<
 
+.PHONY:
+
+check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
+	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+
+check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
+	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
