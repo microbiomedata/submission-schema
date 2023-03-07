@@ -89,8 +89,9 @@ create-data-harmonizer:
 
 all: site
 site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml \
-gen-project gendoc schema_sheets/populated_tsv/slot_usage.tsv src/data/SampleData-water-data.regen.yaml \
-src/data/SampleData-water-data.db
+gen-project gendoc \
+schema_sheets/populated_tsv/slot_usage.tsv examples/output/SampleData-water-data.regen.yaml examples/output/SampleData-water-data.db \
+examples/output/README.md
 
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
@@ -122,7 +123,7 @@ gen-project: $(PYMODEL)
 		--generator-arguments 'jsonschema: {not_closed: false}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: site test-python src/data/output check-valid-vs-json-schema check-invalid-vs-json-schema
+test: site test-python check-valid-vs-json-schema check-invalid-vs-json-schema
 test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
