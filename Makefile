@@ -88,7 +88,9 @@ create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
 all: site
-site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml gen-project gendoc schema_sheets/populated_tsv/slot_usage.tsv src/data/SampleData-water-data.regen.yaml
+site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml \
+gen-project gendoc schema_sheets/populated_tsv/slot_usage.tsv src/data/SampleData-water-data.regen.yaml \
+src/data/SampleData-water-data.db
 
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
