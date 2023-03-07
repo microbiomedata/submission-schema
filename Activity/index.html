@@ -278,14 +278,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Agent/">Agent</a></td>
-<td><a href="../was_informed_by/">was_informed_by</a></td>
+<td><a href="../AttributeValue/">AttributeValue</a></td>
+<td><a href="../was_generated_by/">was_generated_by</a></td>
 <td>range</td>
 <td><a href="./">Activity</a></td>
 </tr>
 <tr>
-<td><a href="../AttributeValue/">AttributeValue</a></td>
-<td><a href="../was_generated_by/">was_generated_by</a></td>
+<td><a href="../Agent/">Agent</a></td>
+<td><a href="../was_informed_by/">was_informed_by</a></td>
 <td>range</td>
 <td><a href="./">Activity</a></td>
 </tr>
@@ -357,10 +357,10 @@ slot_usage:
     - Study
     - Activity
     - NamedThing
-    - Activity
     - NamedThing
     - Activity
     - NamedThing
+    - Activity
     structured_pattern:
       syntax: '{id_nmdc_prefix}:act-{id_shoulder}-{id_blade}{id_version}{id_locus}'
       interpolated: true
@@ -386,10 +386,10 @@ slot_usage:
     - Study
     - Activity
     - NamedThing
-    - Activity
     - NamedThing
     - Activity
     - NamedThing
+    - Activity
     structured_pattern:
       syntax: '{id_nmdc_prefix}:act-{id_shoulder}-{id_blade}{id_version}{id_locus}'
       interpolated: true
@@ -411,10 +411,10 @@ attributes:
     - Study
     - Activity
     - NamedThing
-    - Activity
     - NamedThing
     - Activity
     - NamedThing
+    - Activity
     range: string
     structured_pattern:
       syntax: '{id_nmdc_prefix}:act-{id_shoulder}-{id_blade}{id_version}{id_locus}'
@@ -430,8 +430,8 @@ attributes:
     alias: name
     owner: Activity
     domain_of:
-    - Activity
     - NamedThing
+    - Activity
     range: string
   started_at_time:
     name: started_at_time
