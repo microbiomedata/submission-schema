@@ -1,6 +1,13 @@
 RUN=poetry run
 
 schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cleanup
+	rm -rf examples/*.yaml
+	rm -rf examples/output/*.db
+	rm -rf examples/output/*.json
+	rm -rf examples/output/*.tsv
+	rm -rf examples/output/*.yaml
+	rm -rf examples/output/README.md
+	rm -rf examples/output/output
 	rm -rf from_schema_sheets.lint_report.txt
 	rm -rf schema_sheets/from_schema_sheets.lint_report.txt
 	rm -rf schema_sheets/populated_tsv/slot_usage.tsv
@@ -12,10 +19,9 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
-	rm -rf src/data/SampleData-water-data.regen.yaml
-	rm -rf src/data/SampleData-water-data.tsv
-	rm -rf src/data/output
 	rm -rf src/submission_schema/schema/submission_schema.yaml
+	mkdir -p examples/output
+
 
 src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
 	cp $< $@
@@ -51,9 +57,11 @@ src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out
 #	yq -i 'del(.slots.collection_date.required)'  $@
 #	yq -i 'del(.slots.[].required)' $@
 
-.PHONY: modifications_cleanup \
-schema_cleanup \
+.PHONY: check-invalid-vs-json-schema \
+check-valid-vs-json-schema \
+modifications_cleanup \
 schema_all \
+schema_cleanup \
 schemasheets_all \
 schemasheets_cleanup \
 sheets_and_friends_all \
@@ -117,8 +125,8 @@ sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out
 		--format yaml $@.raw > $@
 	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
 
-src/data/output: src/submission_schema/schema/submission_schema.yaml
-	mkdir -p $@
+examples/output/README.md: src/submission_schema/schema/submission_schema.yaml
+	mkdir -p $(dir $@)
 	# RDF/TTL generation is failing
 	# WARNING:root:No namespace defined for URI: https://microbiomedata/schema/ecosystem
 	# added fix to nmdc-schema repo... regen? merge?
@@ -127,8 +135,8 @@ src/data/output: src/submission_schema/schema/submission_schema.yaml
 		--output-formats yaml \
 		--counter-example-input-directory src/data/invalid \
 		--input-directory src/data/valid \
-		--output-directory $@ \
-		--schema $< > $@/README.md
+		--output-directory $(dir $@) \
+		--schema $< > $@
 
 schema_sheets/populated_tsv/slot_usage.tsv:
 	$(RUN) linkml2sheets \
@@ -139,7 +147,7 @@ schema_sheets/populated_tsv/slot_usage.tsv:
 # without it...
 #jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
 #On instance['water_data'][0]['elev']:
-src/data/SampleData-water-data.tsv: src/data/valid/SampleData-water-data.yaml
+examples/output/SampleData-water-data.tsv: src/data/valid/SampleData-water-data.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
@@ -147,7 +155,7 @@ src/data/SampleData-water-data.tsv: src/data/valid/SampleData-water-data.yaml
 		--schema src/submission_schema/schema/submission_schema.yaml \
 		--no-validate $<
 
-src/data/SampleData-water-data.regen.yaml: src/data/SampleData-water-data.tsv
+examples/output/SampleData-water-data.regen.yaml: examples/output/SampleData-water-data.tsv
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
@@ -155,15 +163,13 @@ src/data/SampleData-water-data.regen.yaml: src/data/SampleData-water-data.tsv
 		--schema src/submission_schema/schema/submission_schema.yaml \
 		--no-validate $<
 
-src/data/SampleData-water-data.db: src/data/SampleData-water-data.tsv
+examples/output/SampleData-water-data.db: examples/output/SampleData-water-data.tsv
 	$(RUN)  linkml-sqldb dump \
 		--db $@ \
 		--target-class SampleData \
 		--index-slot water_data \
 		--schema src/submission_schema/schema/submission_schema.yaml \
 		--no-validate $<
-
-.PHONY:
 
 check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
 	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
