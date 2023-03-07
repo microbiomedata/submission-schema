@@ -1,4 +1,4 @@
-/home/mark/gitrepos/submission-schema/schema_sheets/yaml_out/from_schema_sheets.yaml
+/Users/MAM/Documents/gitrepos/submission-schema/schema_sheets/yaml_out/from_schema_sheets.yaml
   warning  Permissible value of Enum 'BioticRelationshipEnum' has name 'free living'  (standard_naming)
   warning  Permissible value of Enum 'BioticRelationshipEnum' has name 'natural organic matter'  (standard_naming)
   warning  Permissible value of Enum 'DnaSampleFormatEnum' has name '10 mM Tris-HCl'  (standard_naming)

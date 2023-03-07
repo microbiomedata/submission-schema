@@ -7511,7 +7511,7 @@
     },
     "$id": "https://example.com/nmdc_submission_schema",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "additionalProperties": true,
+    "additionalProperties": false,
     "metamodel_version": "1.7.0",
     "properties": {
         "air_data": {
