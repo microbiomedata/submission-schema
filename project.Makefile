@@ -155,6 +155,14 @@ src/data/SampleData-water-data.regen.yaml: src/data/SampleData-water-data.tsv
 		--schema src/submission_schema/schema/submission_schema.yaml \
 		--no-validate $<
 
+src/data/SampleData-water-data.db: src/data/SampleData-water-data.tsv
+	$(RUN)  linkml-sqldb dump \
+		--db $@ \
+		--target-class SampleData \
+		--index-slot water_data \
+		--schema src/submission_schema/schema/submission_schema.yaml \
+		--no-validate $<
+
 .PHONY:
 
 check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
