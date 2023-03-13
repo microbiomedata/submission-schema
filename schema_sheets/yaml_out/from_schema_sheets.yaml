@@ -1204,7 +1204,9 @@ slots:
     - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021
       are all acceptable.
     examples:
-    - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 2
     string_serialization: '{date, arbitrary precision}'
@@ -1220,7 +1222,8 @@ slots:
     comments:
     - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
     examples:
-    - value: 13:33 or 13:33:55
+    - value: '13:33'
+    - value: '13:33:55'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1
     string_serialization: '{time, seconds optional}'
@@ -1237,7 +1240,8 @@ slots:
     comments:
     - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
     examples:
-    - value: 13:33 or 13:33:55
+    - value: '13:33'
+    - value: '13:33:55'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 3
     string_serialization: '{time, seconds optional}'
@@ -2108,7 +2112,9 @@ slots:
     - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021
       are all acceptable.
     examples:
-    - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 4
     string_serialization: '{date, arbitrary precision}'
@@ -2124,7 +2130,8 @@ slots:
     comments:
     - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
     examples:
-    - value: 13:33 or 13:33:55
+    - value: '13:33'
+    - value: '13:33:55'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 5
     string_serialization: '{time, seconds optional}'
