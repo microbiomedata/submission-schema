@@ -199,4 +199,14 @@ clean:
 	rm -rf tmp
 	rm -fr docs/*
 
+project/jsonschema/submission_schema.schema.json: gen-project
+
+check-valid-vs-json-schema: project/jsonschema/submission_schema.schema.json \
+src/data/valid/SampleData-water-data-exhaustive.yaml
+	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
+
+check-invalid-vs-json-schema: project/jsonschema/submission_schema.schema.json \
+src/data/invalid/SampleData-water-data-alkalinity-list.yaml
+	! $(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
+
 include project.Makefile

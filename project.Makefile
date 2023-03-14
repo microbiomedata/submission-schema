@@ -10,6 +10,7 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf examples/output/README.md
 	rm -rf examples/output/output
 	rm -rf from_schema_sheets.lint_report.txt
+	rm -rf project/jsonschema/submission_schema.schema.json
 	rm -rf schema_sheets/from_schema_sheets.lint_report.txt
 	rm -rf schema_sheets/populated_tsv/*.tsv
 	rm -rf schema_sheets/populated_tsv/*.txt
@@ -20,8 +21,8 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
-	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
+	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
 	rm -rf src/submission_schema/schema/submission_schema.yaml
 	mkdir -p examples/output
 
@@ -46,12 +47,8 @@ schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_schema_only.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_slots.tsv \
 schema_sheets/tsv_in/types.tsv
 	$(RUN) sheets2linkml \
-		--output $@.raw $^
+		--output $@ $^
 		# would prefer to discover TSV inputs instead of enumerating them
-	$(RUN) gen-linkml \
-		--no-materialize-attributes \
-		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > schema_sheets/from_schema_sheets.lint_report.txt
 
 
 # todo: fewer enums
@@ -68,12 +65,6 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardl
 		--config_tsv  $(word 2,$^) \
 		--recipient_model $(word 1,$^) \
 		--yaml_output $@
-
-	$(RUN) linkml2sheets \
-		--output-directory schema_sheets/populated_tsv \
-		--schema $@ schema_sheets/templates/slot_usage_minimal.tsv
-
-	mv schema_sheets/populated_tsv/slot_usage_minimal.tsv schema_sheets/populated_tsv/with_shuttles_slot_usage_minimal.tsv
 
 sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/with_shuttles.yaml
 	cp $< $@
@@ -194,28 +185,6 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 	yq -i 'del(.slots.[] | select(.name == "was_generated_by"))' $@
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
 
-
-#	yq -i '(.slots.[] | select(.name == "analysis_type") | .multivalued ) = true' $@
-#	yq -i '(.slots.[].multivalued) = false' $@
-
-#	$(RUN) linkml-run-examples \
-#		--output-formats json \
-#		--output-formats yaml \
-#		--counter-example-input-directory src/data/invalid \
-#		--input-directory src/data/valid \
-#		--output-directory examples/output/ \
-#		--schema $@
-#
-#temp_cleanup:
-#	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
-#
-#temp: temp_cleanup sheets_and_friends/yaml_out/with_shuttles_yq.yaml
-
-#	$(RUN) linkml2sheets \
-#		--output-directory schema_sheets/populated_tsv \
-#		--schema $@ schema_sheets/templates/slot_usage_minimal.tsv
-#
-#	mv schema_sheets/populated_tsv/slot_usage_minimal.tsv schema_sheets/populated_tsv/with_shuttles_slot_usage_minimal.tsv
 #
 #	# globally replace structured ranges with strings.
 #	# undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
@@ -235,11 +204,7 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 #	#   impact on other serializations?
 #
 #	# escape pipes that are going to be used literally as future delimiters
-#
-#	$(RUN) gen-linkml \
-#		--no-materialize-attributes \
-#		--format yaml $@.pregen > $@
-#
+
 ##	 should add a remove attribute option to sheets and friend's modify and validate
 ##	  currently have nan string serializations
 #
@@ -248,9 +213,6 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 ## synchronize between guidance, examples and validation
 ##   cross reference MIxS' values for those aspects
 ##
-##	#add another gen-linkml step here?
-##
-##	- $(RUN) linkml-lint $@ > sheets_and_friends/with_shuttles.lint_report.tsv
 #
 ## fixed?
 ## safe to use latest linkml-runtime again now? in sheets_and_friends too?
@@ -262,21 +224,20 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
-sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles_yq.yaml
+sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles_yq.yaml \
+sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long_empty.tsv  \
+sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
-		--modifications_config_tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long_empty.tsv \
-		--validation_config_tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter_empty.tsv \
-		--yaml_output $@.raw
-	$(RUN) gen-linkml \
-		--no-materialize-attributes \
-		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
+		--modifications_config_tsv $(word 2,$^) \
+		--validation_config_tsv $(word 3,$^) \
+		--yaml_output $@
 
 src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
 	cp $< $@
 
-examples/output/README.md: src/submission_schema/schema/submission_schema.yaml
+examples/output/README.md: src/submission_schema/schema/submission_schema.yaml \
+src/data/invalid src/data/valid
 	mkdir -p $(dir $@)
 	# RDF/TTL generation is failing
 	# WARNING:root:No namespace defined for URI: https://microbiomedata/schema/ecosystem
@@ -290,48 +251,48 @@ examples/output/README.md: src/submission_schema/schema/submission_schema.yaml
 	$(RUN) linkml-run-examples \
 		--output-formats json \
 		--output-formats yaml \
-		--counter-example-input-directory src/data/invalid \
-		--input-directory src/data/valid \
+		--counter-example-input-directory $(word 2,$^) \
+		--input-directory $(word 3,$^) \
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-schema_sheets/populated_tsv/slot_usage.tsv:
+schema_sheets/populated_tsv/slot_usage.tsv: src/submission_schema/schema/submission_schema.yaml \
+schema_sheets/templates/slot_usage.tsv
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
-		--schema src/submission_schema/schema/submission_schema.yaml schema_sheets/templates/slot_usage.tsv
+		--schema $^
 
-# why is --no-validate required?
-# without it...
-#jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
-#On instance['water_data'][0]['elev']:
-examples/output/SampleData-water-data.tsv: src/data/valid/SampleData-water-data-exhaustive.yaml
+examples/output/SampleData-water-data.tsv: src/submission_schema/schema/submission_schema.yaml \
+src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/submission_schema/schema/submission_schema.yaml \
-		--no-validate $<
+		--schema $(word 1,$^) $(word 2,$^)
 
-examples/output/SampleData-water-data.regen.yaml: examples/output/SampleData-water-data.tsv
+examples/output/SampleData-water-data.regen.yaml: src/submission_schema/schema/submission_schema.yaml \
+examples/output/SampleData-water-data.tsv
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/submission_schema/schema/submission_schema.yaml \
-		--no-validate $<
+		--schema $(word 1,$^) $(word 2,$^)
 
-examples/output/SampleData-water-data.db: src/data/valid/SampleData-water-data-exhaustive.yaml
+examples/output/SampleData-water-data.db: src/submission_schema/schema/submission_schema.yaml \
+src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN)  linkml-sqldb dump \
 		--db $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/submission_schema/schema/submission_schema.yaml \
-		--no-validate $<
+		--schema $(word 1,$^) $(word 2,$^)
 
-check-valid-vs-json-schema: src/data/valid/SampleData-water-data-exhaustive.yaml
-	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
-
-check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data-alkalinity-list.yaml
-	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
-
-
+#
+# # could run these inbetween every step
+# #  but should probably save output into a .gitignored dir like local
+# #  but check if it is .gitignored!
+#
+#	$(RUN) gen-linkml \
+#		--no-materialize-attributes \
+#		--format yaml $@.raw > $@
+#
+#	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
