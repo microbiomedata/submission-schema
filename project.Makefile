@@ -177,6 +177,24 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 	yq -i '(.slots.[] | select(.name == "phaeopigments") | .multivalued) = false' $@
 	yq -i '(.slots.[] | select(.name == "phosplipid_fatt_acid") | .multivalued) = false' $@
 
+# remove slots that are no longer necessary due to removal of classes above
+	yq -i 'del(.slots.[] | select(.name == "acted_on_behalf_of"))' $@
+	yq -i 'del(.slots.[] | select(.name == "ended_at_time"))' $@
+	yq -i 'del(.slots.[] | select(.name == "has_maximum_numeric_value"))' $@
+	yq -i 'del(.slots.[] | select(.name == "has_minimum_numeric_value"))' $@
+	yq -i 'del(.slots.[] | select(.name == "has_numeric_value"))' $@
+	yq -i 'del(.slots.[] | select(.name == "has_raw_value"))' $@
+	yq -i 'del(.slots.[] | select(.name == "has_unit"))' $@
+	yq -i 'del(.slots.[] | select(.name == "latitude"))' $@
+	yq -i 'del(.slots.[] | select(.name == "longitude"))' $@
+	yq -i 'del(.slots.[] | select(.name == "started_at_time"))' $@
+	yq -i 'del(.slots.[] | select(.name == "term"))' $@
+	yq -i 'del(.slots.[] | select(.name == "used"))' $@
+	yq -i 'del(.slots.[] | select(.name == "was_associated_with"))' $@
+	yq -i 'del(.slots.[] | select(.name == "was_generated_by"))' $@
+	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
+
+
 #	yq -i '(.slots.[] | select(.name == "analysis_type") | .multivalued ) = true' $@
 #	yq -i '(.slots.[].multivalued) = false' $@
 
