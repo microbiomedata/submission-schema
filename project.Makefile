@@ -114,11 +114,11 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardl
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
-sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles.yaml
+sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles.yaml sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
-		--modifications_config_tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv \
-		--validation_config_tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv \
+		--modifications_config_tsv $(word 2,$^) \
+		--validation_config_tsv $(word 3,$^) \
 		--yaml_output $@.raw
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \
