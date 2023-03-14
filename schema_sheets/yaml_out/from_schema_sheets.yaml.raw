@@ -1242,6 +1242,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '2'
+    title: EMSL
   emsl_store_temp:
     comments:
     - Enter a temperature in celsius. Numeric portion only.
@@ -1318,11 +1319,13 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '3'
+    title: JGI-Metagenomics
   jgi_metatranscriptomics_section:
     description: placeholder
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '4'
+    title: JGI-Metatranscriptomics
   jgi_mg_data:
     description: aggregation slot relating jgi_mg data collections to a SampleData
       container
@@ -1388,11 +1391,13 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '10'
+    title: MIxS Core
   mixs_inspired_section:
     description: placeholder
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '7'
+    title: MIxS Inspired
   mixs_investigation_section:
     description: placeholder
     from_schema: https://example.com/nmdc_submission_schema
@@ -1403,6 +1408,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '6'
+    title: MIxS (modified)
   mixs_nassf_section:
     description: placeholder
     from_schema: https://example.com/nmdc_submission_schema
@@ -1413,6 +1419,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '5'
+    title: MIxS
   non_microb_biomass:
     description: Amount of biomass; should include the name for the part of biomass
       measured, e.g.insect, plant, total. Can include multiple measurements separated
@@ -1715,6 +1722,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: dh_section
     rank: '1'
+    title: Sample ID
   sample_link:
     comments:
     - 'This field allows multiple entries separated by ; (Examples: Soil collected

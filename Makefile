@@ -114,7 +114,7 @@ gen-examples:
 
 # generates all project files
 
-gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml
+gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml project/json/submission_schema.json
 	$(RUN) gen-project ${GEN_PARGS}  \
 		--exclude excel \
 		--exclude graphql \

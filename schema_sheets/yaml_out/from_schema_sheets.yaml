@@ -1518,6 +1518,7 @@ slots:
   emsl_section:
     name: emsl_section
     description: placeholder
+    title: EMSL
     from_schema: https://example.com/nmdc_submission_schema
     rank: 2
     is_a: dh_section
@@ -1603,12 +1604,14 @@ slots:
   jgi_metagenomics_section:
     name: jgi_metagenomics_section
     description: placeholder
+    title: JGI-Metagenomics
     from_schema: https://example.com/nmdc_submission_schema
     rank: 3
     is_a: dh_section
   jgi_metatranscriptomics_section:
     name: jgi_metatranscriptomics_section
     description: placeholder
+    title: JGI-Metatranscriptomics
     from_schema: https://example.com/nmdc_submission_schema
     rank: 4
     is_a: dh_section
@@ -1682,12 +1685,14 @@ slots:
   mixs_core_section:
     name: mixs_core_section
     description: placeholder
+    title: MIxS Core
     from_schema: https://example.com/nmdc_submission_schema
     rank: 10
     is_a: dh_section
   mixs_inspired_section:
     name: mixs_inspired_section
     description: placeholder
+    title: MIxS Inspired
     from_schema: https://example.com/nmdc_submission_schema
     rank: 7
     is_a: dh_section
@@ -1700,6 +1705,7 @@ slots:
   mixs_modified_section:
     name: mixs_modified_section
     description: placeholder
+    title: MIxS (modified)
     from_schema: https://example.com/nmdc_submission_schema
     rank: 6
     is_a: dh_section
@@ -1712,6 +1718,7 @@ slots:
   mixs_section:
     name: mixs_section
     description: placeholder
+    title: MIxS
     from_schema: https://example.com/nmdc_submission_schema
     rank: 5
     is_a: dh_section
@@ -2041,6 +2048,7 @@ slots:
   sample_id_section:
     name: sample_id_section
     description: placeholder
+    title: Sample ID
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1
     is_a: dh_section
