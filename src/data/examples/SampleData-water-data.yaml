@@ -106,7 +106,7 @@ water_data:
     diether_lipids:
       - xyz
       - abc
-    misc_param:
+    misc_param: # xyz; abc # add an annotation about how to parse
       - xyz
       - abc
     n_alkanes:
