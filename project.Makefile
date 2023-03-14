@@ -163,6 +163,19 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 	yq -i 'del(.classes.TextValue)'  $@
 	yq -i 'del(.classes.TimestampValue)'  $@
 
+# remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert
+#   esp to tsv? and dumping to SQLite?
+# follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
+	yq -i '(.slots.[] | select(.name == "atmospheric_data") | .multivalued ) = false' $@
+	yq -i '(.slots.[] | select(.name == "biomass") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "chem_administration") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "diether_lipids") | .multivalued ) = false' $@
+	yq -i '(.slots.[] | select(.name == "misc_param") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "n_alkanes") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "organism_count") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "perturbation") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "phaeopigments") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "phosplipid_fatt_acid") | .multivalued) = false' $@
 
 #	yq -i '(.slots.[] | select(.name == "analysis_type") | .multivalued ) = true' $@
 #	yq -i '(.slots.[].multivalued) = false' $@
