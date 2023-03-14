@@ -1,24 +1,10 @@
 class	slot	action	target	path	LinkML implementation notes	value
-SoilInterface	al_sat	add_attribute	comments			Aluminum saturation is the percentage of the CEC occupies by aluminum. Like all cations, aluminum held by the cation exchange complex is in equilibrium with aluminum in the soil solution.
-SoilInterface	al_sat_meth	add_attribute	comments			Required when aluminum saturation is provided.
-SoilInterface	cur_vegetation	add_attribute	comments			Values provided here can be specific species of vegetation or vegetation regions|See for vegetation regions- https://education.nationalgeographic.org/resource/vegetation-region
-SoilInterface	cur_vegetation_meth	add_attribute	comments			Required when current vegetation is provided.
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	add_attribute	comments			All depths must be reported in meters. Provide the numerical portion only.
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	add_attribute	comments			All elevations must be reported in meters. Provide the numerical portion only.
-SoilInterface	fire	add_attribute	comments			Provide the date the fire occurred. If extended burning occurred provide the date range.
-SoilInterface	flooding	add_attribute	comments			Provide the date the flood occurred. If extended flooding occurred provide the date range.
-SoilInterface	heavy_metals	add_attribute	comments			For multiple heavy metals and concentrations, separate by ;
-SoilInterface	heavy_metals_meth	add_attribute	comments			Required when heavy metals are provided|If different methods are used for multiple metals, indicate the metal and method. Separate metals by ;
-BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph_meth	add_attribute	comments			This can include a link to the instrument used or a citation for the method.
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_method	add_attribute	comments			This can be a citation or description
 DhMultiviewCommonColumns	samp_name	add_attribute	comments			It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	add_attribute	comments			This refers to the TOTAL amount of sample collected from the experiment. NOT the amount sent to each institution or collected for a specific analysis.
-SoilInterface	season_precpt	add_attribute	comments			Seasons are defined as spring (March, April, May), summer (June, July, August), autumn (September, October, November) and winter (December, January, February).
-SoilInterface	sieving	add_attribute	comments			Describe how samples were composited or sieved.|Use 'sample link' to indicate which samples were combined.
-SoilInterface	slope_aspect	add_attribute	comments			Aspect is the orientation of slope, measured clockwise in degrees from 0 to 360, where 0 is north-facing, 90 is east-facing, 180 is south-facing, and 270 is west-facing.
 DhMultiviewCommonColumns	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
-SoilInterface	water_cont_soil_meth	add_attribute	comments			Required if providing water content
 SoilInterface	al_sat	replace_attribute	description			The relative abundance of aluminum in the sample
 SoilInterface	al_sat_meth	replace_attribute	description			Reference or method used in determining Aluminum saturation
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	description			The date of sampling
@@ -36,10 +22,10 @@ SoilInterface	store_cond	replace_attribute	description			Explain how the soil sa
 SoilInterface	al_sat	overwrite_examples	examples			0.27
 SoilInterface	al_sat_meth	overwrite_examples	examples			https://doi.org/10.1371/journal.pone.0176357
 SoilInterface	annual_precpt	overwrite_examples	examples			8.94 inch
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	overwrite_examples	examples			2021-04-15; 2021-04; 2021
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	overwrite_examples	examples			2021-04-15|2021-04|2021
 SoilInterface	cur_vegetation	overwrite_examples	examples			deciduous forest|forest|Bauhinia variegata
 SoilInterface	cur_vegetation_meth	overwrite_examples	examples			https://doi.org/10.1111/j.1654-109X.2011.01154.x
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	overwrite_examples	examples			0-0.1; 1
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	overwrite_examples	examples			0-0.1|1
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	elev	overwrite_examples	examples			225 | 0 | 1250
 SoilInterface	extreme_event	overwrite_examples	examples			1980-05-18, volcanic eruption
 SoilInterface	fire	overwrite_examples	examples			1871-10-10|1871-10-01 to 1871-10-31
@@ -47,10 +33,13 @@ SoilInterface	flooding	overwrite_examples	examples			1927-04-15|1927-04 to 1927-
 PlantAssociatedInterface|SoilInterface	gaseous_environment	overwrite_examples	examples			CO2; 500ppm above ambient; constant|nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
 SoilInterface	heavy_metals	overwrite_examples	examples			mercury 0.09 micrograms per gram|mercury 0.09 ug/g; chromium 0.03 ug/g
 SoilInterface	heavy_metals_meth	overwrite_examples	examples			https://doi.org/10.3390/ijms9040434|mercury https://doi.org/10.1007/BF01056090; chromium https://doi.org/10.1007/s00216-006-0322-8
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	overwrite_examples	examples			canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	overwrite_examples	examples			soil [ENVO:00001998]
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_mat_process	overwrite_examples	examples			filtering of seawater|storing samples in ethanol
 DhMultiviewCommonColumns	samp_name	overwrite_examples	examples			Rock core CB1178(5-6) from NSW
-AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	overwrite_examples	examples			5 grams; 10 mL
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	overwrite_examples	examples			5 grams|10 mL
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	overwrite_examples	examples			-80 Celsius
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
 SoilInterface	sieving	overwrite_examples	examples			combined 2 cores | 4mm sieved|4 mm sieved and homogenized|50 g | 5 cores | 2 mm sieved
