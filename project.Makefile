@@ -285,7 +285,7 @@ examples/output/SampleData-water-data.db: src/data/valid/SampleData-water-data-e
 check-valid-vs-json-schema: src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
 
-check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
+check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data-alkalinity-list.yaml
 	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
 
 

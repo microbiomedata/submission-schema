@@ -98,11 +98,10 @@ create-data-harmonizer:
 
 all: site
 site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml \
-gen-project \
-examples/output/README.md
+gen-project gendoc \
+schema_sheets/populated_tsv/slot_usage.tsv examples/output/README.md
 
-# gendoc
-# schema_sheets/populated_tsv/slot_usage.tsv examples/output/SampleData-water-data.regen.yaml examples/output/SampleData-water-data.db \
+#  examples/output/SampleData-water-data.regen.yaml examples/output/SampleData-water-data.db \
 
 
 %.yaml: gen-project
