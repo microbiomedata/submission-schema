@@ -1,17 +1,5 @@
 
 
-CREATE TABLE "Activity" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	started_at_time DATETIME, 
-	ended_at_time DATETIME, 
-	was_informed_by TEXT, 
-	was_associated_with TEXT, 
-	used TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(was_informed_by) REFERENCES "Activity" (id)
-);
-
 CREATE TABLE "AirInterface" (
 	"air_PM_concen" TEXT, 
 	alt TEXT, 
@@ -341,8 +329,7 @@ CREATE TABLE "BuiltEnvInterface" (
 
 CREATE TABLE "DhMultiviewCommonColumns" (
 	source_mat_id TEXT, 
-	samp_name TEXT, 
-	PRIMARY KEY (source_mat_id, samp_name)
+	PRIMARY KEY (source_mat_id)
 );
 
 CREATE TABLE "EmslInterface" (
@@ -761,13 +748,6 @@ CREATE TABLE "MiscEnvsInterface" (
 	water_current TEXT, 
 	analysis_type VARCHAR(19) NOT NULL, 
 	PRIMARY KEY (alkalinity, alt, ammonium, biomass, bromide, calcium, chem_administration, chloride, chlorophyll, collection_date, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, experimental_factor, geo_loc_name, horizon_meth, lat_lon, misc_param, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, perturbation, ph, ph_meth, phosphate, phosplipid_fatt_acid, potassium, pressure, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", water_current, analysis_type)
-);
-
-CREATE TABLE "OntologyClass" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
 );
 
 CREATE TABLE "PlantAssociatedInterface" (
@@ -1270,26 +1250,4 @@ CREATE TABLE "WaterInterface" (
 	env_package TEXT NOT NULL, 
 	sample_link TEXT, 
 	PRIMARY KEY (alkalinity, alkalinity_method, alkyl_diethers, alt, aminopept_act, ammonium, atmospheric_data, bac_prod, bac_resp, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, conduc, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_inorg_nitro, diss_inorg_phosp, diss_org_carb, diss_org_nitro, diss_oxygen, down_par, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, experimental_factor, fluor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, light_intensity, mean_frict_vel, mean_peak_frict_vel, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, part_org_nitro, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, photon_flux, potassium, pressure, primary_prod, redox_potential, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, silicate, size_frac, size_frac_low, size_frac_up, sodium, soluble_react_phosp, specific_ecosystem, sulfate, sulfide, suspend_part_matter, "temp", tidal_stage, tot_depth_water_col, tot_diss_nitro, tot_inorg_nitro, tot_nitro, tot_part_carb, turbidity, water_current, analysis_type, env_package, sample_link)
-);
-
-CREATE TABLE "Agent" (
-	acted_on_behalf_of TEXT, 
-	was_informed_by TEXT, 
-	PRIMARY KEY (acted_on_behalf_of, was_informed_by), 
-	FOREIGN KEY(was_informed_by) REFERENCES "Activity" (id)
-);
-
-CREATE TABLE "AttributeValue" (
-	has_raw_value TEXT, 
-	was_generated_by TEXT, 
-	type TEXT, 
-	PRIMARY KEY (has_raw_value, was_generated_by, type), 
-	FOREIGN KEY(was_generated_by) REFERENCES "Activity" (id)
-);
-
-CREATE TABLE "OntologyClass_alternative_identifiers" (
-	backref_id TEXT, 
-	alternative_identifiers TEXT, 
-	PRIMARY KEY (backref_id, alternative_identifiers), 
-	FOREIGN KEY(backref_id) REFERENCES "OntologyClass" (id)
 );

@@ -76,6 +76,34 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 	# ControlledTermValue: what about multivalued CTVs? don't see any besides chem_administration above at this time
 	# for water, can depth be a point, a range, or both?
 
+
+# globally replace structured ranges with strings.
+# undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
+# future versions of the nmdc-schema might just use strings, too
+
+# there's still more to do. see schema_sheets/populated_tsv/slot_usage.tsv
+# to some degree this should be handled globally by sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
+# and on a slot-by-slot basic by sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv
+
+# we should be consistent about the following things in patterns
+# single or multiple whitespace?
+# [0-9] or \d?
+# include scientific notation? (eg quantity value)
+# what whitespace to exclude?
+
+# be careful about strings that look like numbers with quotes in YAML
+#   impact on other serializations?
+
+# escape pipes that are going to be used literally as future delimiters ?
+
+#	 should add a remove attribute option to sheets and friend's modify and validate
+#	  currently have nan string serializations
+
+# scrutininze the slots that currerntly accept xyz or 100 units. how could they be better constrained?
+
+# synchronize between guidance, examples and validation
+#   cross reference MIxS' values for those aspects
+
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="carb_nitro_ratio")  | .range) = "float"' $@
 
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .examples) = [{"value": "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"}, {"value": "agar [CHEBI:2509];2018-05"}]' $@
@@ -185,42 +213,6 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 	yq -i 'del(.slots.[] | select(.name == "was_generated_by"))' $@
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
 
-#
-#	# globally replace structured ranges with strings.
-#	# undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
-#	# future versions of the nmdc-schema might just use strings, too/
-#	# there's still more to do. see schema_sheets/populated_tsv/slot_usage.tsv
-#	# should probably be populating slot usage sheets after each intermediate step
-#	# to some degree this should be handled globally by sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
-#	# and on a slot-by-slot basic by sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv
-#
-#	# we should be consistent about the following things in patterns
-#	# single or multiple whitespace?
-#	# [0-9] or \d?
-#	# include scientific notation? (eg quantity value)
-#	# what whitespace to exclude?
-#	#
-#	# be careful about strings that look like numbers with quotes in YAML
-#	#   impact on other serializations?
-#
-#	# escape pipes that are going to be used literally as future delimiters
-
-##	 should add a remove attribute option to sheets and friend's modify and validate
-##	  currently have nan string serializations
-#
-## scrutininze the slots that currerntly accept xyz or abc. how could they be better constrained?
-#
-## synchronize between guidance, examples and validation
-##   cross reference MIxS' values for those aspects
-##
-#
-## fixed?
-## safe to use latest linkml-runtime again now? in sheets_and_friends too?
-## urllib.error.HTTPError: HTTP Error 404:
-## https://raw.githubusercontent.com/home/mark/.cache/pypoetry/virtualenvs/submission-schema-DC6HKp4p-py3.9/lib/python3.9/site-packages/linkml_runtime/linkml_model/model/schema/types.yaml
-## when source file or URL = https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc.yaml
-## use https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/nmdc_schema/nmdc_materialized_patterns.yaml instead?!
-
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
@@ -240,14 +232,7 @@ examples/output/README.md: src/submission_schema/schema/submission_schema.yaml \
 src/data/invalid src/data/valid
 	mkdir -p $(dir $@)
 	# RDF/TTL generation is failing
-	# WARNING:root:No namespace defined for URI: https://microbiomedata/schema/ecosystem
-	# added fix to nmdc-schema repo... regen? merge?
-	# --output-formats ttl \
-	# fixed namespaces but now
-	#  File "/Users/MAM/Library/Caches/pypoetry/virtualenvs/submission-schema-LusGX8SJ-py3.10/lib/python3.10/site-packages/linkml_runtime/dumpers/rdflib_dumper.py", line 130, in inject_triples
-	#    slot_uri = URIRef(schemaview.get_uri(slot, expand=True))
-	#  File "/Users/MAM/Library/Caches/pypoetry/virtualenvs/submission-schema-LusGX8SJ-py3.10/lib/python3.10/site-packages/linkml_runtime/utils/schemaview.py", line 877, in get_uri
-	#    schema = next(sc for sc in self.schema_map.values() if sc.id == e.from_schema)
+	# https://github.com/microbiomedata/submission-schema/issues/13
 	$(RUN) linkml-run-examples \
 		--output-formats json \
 		--output-formats yaml \
@@ -286,7 +271,7 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 		--index-slot water_data \
 		--schema $(word 1,$^) $(word 2,$^)
 
-#
+
 # # could run these inbetween every step
 # #  but should probably save output into a .gitignored dir like local
 # #  but check if it is .gitignored!
