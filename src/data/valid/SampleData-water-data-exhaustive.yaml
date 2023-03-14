@@ -61,6 +61,7 @@ water_data:
     org_matter: 1.75 milligram per cubic meter
     org_nitro: 4 micromole per liter
     organism_count: "total prokaryotes;3.5e7 cells per milliliter;qPCR|total prokaryotes;1e5 CFU;MPN"
+#    oxy_stat_samp: anaerobe
     part_org_carb: 1.92 micromole per liter
     part_org_nitro: 0.3 micromole per liter
     perturbation: "xyz1|xyz2"

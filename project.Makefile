@@ -134,20 +134,35 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "string")  | .multivalued) = false' $@
 
+	yq -i '(.slots.[] | select(.domain == "Activity") | .domain ) = "NamedThing"' $@
+	yq -i '(.slots.[] | select(.domain == "Agent") | .domain ) = "NamedThing"' $@
+	yq -i '(.slots.[] | select(.domain == "AttributeValue") | .domain ) = "NamedThing"' $@
+	yq -i '(.slots.[] | select(.domain == "AttributeValue") | .domain ) = "NamedThing"' $@
 	yq -i '(.slots.[] | select(.domain == "ControlledTermValue") | .domain ) = "NamedThing"' $@
 	yq -i '(.slots.[] | select(.domain == "GeolocationValue") | .domain ) = "NamedThing"' $@
+
+	yq -i '(.slots.[] | select(.range == "Activity") | .range ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "Agent") | .range ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "Agent") | .range ) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "ControlledIdentifiedTermValue") | .range ) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "ControlledTermValue") | .range ) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "GeolocationValue") | .range ) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "OntologyClass") | .range ) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "QuantityValue") | .range ) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "TextValue") | .range ) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "TimestampValue") | .range ) = "string"' $@
+
+	yq -i 'del(.classes.Activity)'  $@
+	yq -i 'del(.classes.Agent)'  $@
+	yq -i 'del(.classes.AttributeValue)'  $@
 	yq -i 'del(.classes.ControlledIdentifiedTermValue)'  $@
 	yq -i 'del(.classes.ControlledTermValue)'  $@
 	yq -i 'del(.classes.GeolocationValue)'  $@
+	yq -i 'del(.classes.OntologyClass)'  $@
 	yq -i 'del(.classes.QuantityValue)'  $@
 	yq -i 'del(.classes.TextValue)'  $@
 	yq -i 'del(.classes.TimestampValue)'  $@
+
 
 #	yq -i '(.slots.[] | select(.name == "analysis_type") | .multivalued ) = true' $@
 #	yq -i '(.slots.[].multivalued) = false' $@

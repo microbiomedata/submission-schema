@@ -60,6 +60,7 @@ water_data:
     org_carb: 100 units
     org_matter: 100 units
     org_nitro: 100 units
+#    oxy_stat_samp: anaerobe
     organism_count: xyz;100 units;qPCR
     part_org_carb: 100 units
     part_org_nitro: 100 units

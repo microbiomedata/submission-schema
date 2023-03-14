@@ -118,7 +118,6 @@ gen-examples:
 
 gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml
 	$(RUN) gen-project ${GEN_PARGS}  \
-		--exclude excel \
 		--exclude graphql \
 		--exclude jsonld \
 		--exclude jsonldcontext \
@@ -127,6 +126,7 @@ gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml
 		--exclude proto \
 		--exclude shacl \
 		--exclude shex \
+		--include excel \
 		--include jsonschema \
 		--include owl \
 		--include python \
