@@ -2185,7 +2185,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   BiofilmInterface:
     name: BiofilmInterface
@@ -2194,7 +2194,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   BuiltEnvInterface:
     name: BuiltEnvInterface
@@ -2203,7 +2203,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   DhInterface:
     name: DhInterface
@@ -2212,8 +2212,8 @@ classes:
       analysis types
     title: Dh Root Interface
     from_schema: https://example.com/nmdc_submission_schema
-  DhMutliviewCommonColumnsMixin:
-    name: DhMutliviewCommonColumnsMixin
+  DhMultiviewCommonColumnsMixin:
+    name: DhMultiviewCommonColumnsMixin
     description: Mixin with DhMutliviewCommon Columns
     title: Dh Mutliview Common Columns
     from_schema: https://example.com/nmdc_submission_schema
@@ -2227,7 +2227,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     slots:
     - emsl_store_temp
     - project_id
@@ -2242,7 +2242,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
   HcrFluidsSwabsInterface:
     name: HcrFluidsSwabsInterface
     description: hcr_fluids_swabs dh_interface
@@ -2250,7 +2250,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
   HostAssociatedInterface:
     name: HostAssociatedInterface
     description: host_associated dh_interface
@@ -2258,7 +2258,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   JgiMgInterface:
     name: JgiMgInterface
@@ -2267,7 +2267,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     slots:
     - dna_absorb1
     - dna_absorb2
@@ -2295,7 +2295,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     slots:
     - dnase_rna
     - proposal_rna
@@ -2323,7 +2323,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
   PlantAssociatedInterface:
     name: PlantAssociatedInterface
     description: plant_associated dh_interface
@@ -2331,7 +2331,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   SampIdNewTermsMixin:
     name: SampIdNewTermsMixin
@@ -2369,7 +2369,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   SoilInterface:
     name: SoilInterface
@@ -2378,7 +2378,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
     - SoilMixsInspiredMixin
   SoilMixsInspiredMixin:
@@ -2411,7 +2411,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
   WaterInterface:
     name: WaterInterface
@@ -2420,7 +2420,7 @@ classes:
     from_schema: https://example.com/nmdc_submission_schema
     is_a: DhInterface
     mixins:
-    - DhMutliviewCommonColumnsMixin
+    - DhMultiviewCommonColumnsMixin
     - SampIdNewTermsMixin
 source_file: schema_sheets/yaml_out/from_schema_sheets.yaml.raw
 
