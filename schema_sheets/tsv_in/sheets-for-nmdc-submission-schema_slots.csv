@@ -42,24 +42,24 @@ dna_seq_project	placeholder	Do not edit these values. A template will be provide
 dna_seq_project_name	placeholder	Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled.	DNA seq project name		2	jgi_metagenomics_section						JGI Pond metagenomics	TRUE				{text}				
 dna_seq_project_pi	placeholder	Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled.	DNA seq project PI		17	jgi_metagenomics_section						Jane Johnson	TRUE				{text}				
 dna_volume	placeholder	Units must be in uL. Enter the numerical part only. Value must 0-1000. Values <25 by special permission only.	DNA volume in ul		6	jgi_metagenomics_section						25	TRUE		0	1000	{float}				
-emsl_section	placeholder			dh_section	2																
+emsl_section	placeholder		EMSL	dh_section	2																
 emsl_store_temp	Temperature at which the sample sent to EMSL should be stored	Enter a temperature in celsius. Numeric portion only.	EMSL sample storage temperature, deg. C		4	emsl_section						-80	TRUE				{float}				
 env_package	Select the MIxS enviromental package that best describes the environment from which your sample was collected.		environmental package		4	sample_id_section						soil	TRUE								
 experimental_factor_other	Other details about your sample that you feel can't be accurately represented in the available columns.		experimental factor- other		7	mixs_inspired_section								TRUE			{text}				
 filter_method	Type of filter used or how the sample was filtered		filter method		6	mixs_inspired_section								TRUE			{text}				
 isotope_exposure	List isotope exposure or addition applied to your sample.		isotope exposure/addition		16	mixs_inspired_section								TRUE			{termLabel} {[termID]}; {timestamp}				
-jgi_metagenomics_section	placeholder			dh_section	3																
-jgi_metatranscriptomics_section	placeholder			dh_section	4																
+jgi_metagenomics_section	placeholder		JGI-Metagenomics	dh_section	3																
+jgi_metatranscriptomics_section	placeholder		JGI-Metatranscriptomics	dh_section	4																
 micro_biomass_c_meth	Reference or method used in determining microbial biomass	"required if ""microbial_biomass_C"" is provided"	microbial biomass carbon method		11	mixs_inspired_section											{PMID}|{DOI}|{URL}				
 micro_biomass_n_meth	Reference or method used in determining microbial biomass nitrogen	"required if ""microbial_biomass_N"" is provided"	microbial biomass nitrogen method		13	mixs_inspired_section											{PMID}|{DOI}|{URL}				
 microbial_biomass_c	The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units		microbial biomass carbon		10	mixs_inspired_section											{float} {unit}				
 microbial_biomass_n	The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer. If you keep this, you would need to have correction factors used for conversion to the final units		microbial biomass nitrogen		12	mixs_inspired_section											{float} {unit}				
-mixs_core_section	placeholder			dh_section	10																
-mixs_inspired_section	placeholder			dh_section	7																
+mixs_core_section	placeholder		MIxS Core	dh_section	10																
+mixs_inspired_section	placeholder		MIxS Inspired	dh_section	7																
 mixs_investigation_section	placeholder			dh_section	8																
-mixs_modified_section	placeholder			dh_section	6																
+mixs_modified_section	placeholder		MIxS (modified)	dh_section	6																
 mixs_nassf_section	placeholder			dh_section	9																
-mixs_section	placeholder			dh_section	5																
+mixs_section	placeholder		MIxS	dh_section	5																
 non_microb_biomass	Amount of biomass; should include the name for the part of biomass measured, e.g.insect, plant, total. Can include multiple measurements separated by ;		non-microbial biomass		8	mixs_inspired_section											{text};{float} {unit}				
 non_microb_biomass_method	Reference or method used in determining biomass	"required if ""non-microbial biomass"" is provided"	non-microbial biomass method		9	mixs_inspired_section											{PMID}|{DOI}|{URL}				
 org_nitro_method	Method used for obtaining organic nitrogen	"required if ""org_nitro"" is provided"	organic nitrogen method		14	mixs_inspired_section											{PMID}|{DOI}|{URL}				
@@ -83,7 +83,7 @@ rna_seq_project	placeholder	Do not edit these values. A template will be provide
 rna_seq_project_name	placeholder	Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled.	RNA seq project name		2	jgi_metatranscriptomics_section						JGI Pond metatranscriptomics	TRUE				{text}				
 rna_seq_project_pi	placeholder	Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled.	RNA seq project PI		17	jgi_metatranscriptomics_section						Jane Johnson	TRUE				{text}				
 rna_volume	placeholder	Units must be in uL. Enter the numerical part only. Value must 0-1000. Values <25 by special permission only.	RNA volume in ul		6	jgi_metatranscriptomics_section						25	TRUE		0	1000	{float}				
-sample_id_section	placeholder			dh_section	1																
+sample_id_section	placeholder		Sample ID	dh_section	1																
 sample_link	A unique identifier to assign parent-child, subsample, or sibling samples. This is relevant when a sample or other material was used to generate the new sample.	This field allows multiple entries separated by ; (Examples: Soil collected from the field will link with the soil used in an incubation. The soil a plant was grown in links to the plant sample. An original culture sample was transferred to a new vial and generated a new sample)	sample linkage		5	sample_id_section						IGSN:DSJ0284		TRUE			{text}:{text}				
 sample_shipped	The total amount or size (volume (ml), mass (g) or area (m2) ) of sample sent to EMSL		sample shipped amount		3	emsl_section							TRUE				{float} {unit}				
 start_date_inc	Date the incubation was started. Only relevant for incubation samples.	Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable.	incubation start date		4	mixs_inspired_section					MIxS collection_date accepts (truncated) ISO8601. DH taking arb prec date only	2021-04-15|2021-04|2021		TRUE			{date, arbitrary precision}				

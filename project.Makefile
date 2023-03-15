@@ -176,3 +176,7 @@ check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
 
 check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
 	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+
+project/json/submission_schema.json: src/submission_schema/schema/submission_schema.yaml
+	mkdir -p $(@D)
+	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@
