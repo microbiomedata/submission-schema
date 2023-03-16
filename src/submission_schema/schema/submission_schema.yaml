@@ -1,5 +1,6 @@
 name: nmdc_submission_schema
 description: Schema for creating Data Harmonizer interfaces for biosamples based on MIxS and other standards
+version: 0.0.0
 id: https://example.com/nmdc_submission_schema
 prefixes:
   UO:
