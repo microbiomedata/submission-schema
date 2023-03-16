@@ -9,7 +9,7 @@ include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "1.4.5"
+linkml-runtime = "^1.4.5"
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
@@ -38,7 +38,7 @@ linkml = "^1.4.6"
 mkdocs-material = "^9.1.0"
 mkdocs-mermaid2-plugin = "^0.6.0"
 schemasheets = "^0.1.14"
-sheets_and_friends = "^0.1.14"
+sheets_and_friends = "^0.2.0"
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
 ## /home/mark/gitrepos/sheets_and_friends
 #sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }

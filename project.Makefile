@@ -20,10 +20,13 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
 	rm -rf src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	rm -rf local/*
+	mkdir -p local
+	cp placeholder.md local
 	mkdir -p examples/output
 
 
-src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
+src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml
 	cp $< $@
 	# globally replace structured ranges with strings.
 	# there's still more to do. see schema_sheets/populated_tsv/slot_usage.tsv
@@ -68,9 +71,9 @@ sheets_and_friends_all \
 sheets_and_friends_cleanup
 
 schemasheets_cleanup:
-	rm -rf schema_sheets/yaml_out/*
+	rm -rf schema_sheets/yaml_out/*.yaml
 
-schema_sheets/yaml_out/from_schema_sheets.yaml: schema_sheets/tsv_in/prefixes.tsv \
+local/from_schema_sheets.yaml: schema_sheets/tsv_in/prefixes.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_classes.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_enums.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_schema_only.csv \
@@ -82,7 +85,7 @@ schema_sheets/tsv_in/types.tsv
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \
 		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > schema_sheets/from_schema_sheets.lint_report.txt
+	- $(RUN) linkml-lint $@ > local/from_schema_sheets.lint_report.txt
 
 
 # todo: fewer enums
@@ -93,7 +96,7 @@ schema_sheets/tsv_in/types.tsv
 sheets_and_friends_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
-sheets_and_friends/yaml_out/with_shuttles.yaml: schema_sheets/yaml_out/from_schema_sheets.yaml \
+local/with_shuttles.yaml: local/from_schema_sheets.yaml \
 sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardless.tsv
 		$(RUN) do_shuttle \
 			--config_tsv  $(word 2,$^) \
@@ -102,7 +105,7 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardl
 		$(RUN) gen-linkml \
 			--no-materialize-attributes \
 			--format yaml $@.raw > $@
-		- $(RUN) linkml-lint $@ > sheets_and_friends/with_shuttles.lint_report.txt
+		- $(RUN) linkml-lint $@ > local/with_shuttles.lint_report.txt
 
 # fixed?
 # safe to use latest linkml-runtime again now? in sheets_and_freinds too?
@@ -114,7 +117,9 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardl
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
-sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles.yaml sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
+local/with_modifications.yaml: local/with_shuttles.yaml \
+sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv \
+sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
 		--modifications_config_tsv $(word 2,$^) \
@@ -123,7 +128,7 @@ sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \
 		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
+	- $(RUN) linkml-lint $@ > local/with_modifications.lint_report.txt
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(dir $@)
@@ -138,44 +143,42 @@ examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_sch
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-schema_sheets/populated_tsv/slot_usage.tsv:
+local/slot_usage.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+schema_sheets/templates/slot_usage.tsv
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
-		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml schema_sheets/templates/slot_usage.tsv
+		--schema $< $(word 2,$^)
 
 # why is --no-validate required?
 # without it...
 #jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
 #On instance['water_data'][0]['elev']:
-examples/output/SampleData-water-data.tsv: src/data/valid/SampleData-water-data.yaml
+local/SampleData-water-data.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+src/data/valid/SampleData-water-data.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-		--no-validate $<
+		--schema $< \
+		--no-validate $(word 2,$^)
 
-examples/output/SampleData-water-data.regen.yaml: examples/output/SampleData-water-data.tsv
+examples/output/SampleData-water-data.regen.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+local/SampleData-water-data.tsv
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-		--no-validate $<
+		--schema $< \
+		--no-validate $(word 2,$^)
 
-examples/output/SampleData-water-data.db: examples/output/SampleData-water-data.tsv
+local/SampleData-water-data.db: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+local/SampleData-water-data.tsv
 	$(RUN)  linkml-sqldb dump \
 		--db $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-		--no-validate $<
-
-check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
-	$(RUN) check-jsonschema --schemafile project/jsonschema/nmdc_submission_schema.schema.json $<
-
-check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
-	! $(RUN) check-jsonschema --schemafile project/jsonschema/nmdc_submission_schema.schema.json $<
+		--schema $< \
+		--no-validate $(word 2,$^)
 
 project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)

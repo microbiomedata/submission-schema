@@ -123,6 +123,8 @@ water_data:
   tot_part_carb: xyz
   turbidity: xyz
   water_current: xyz
+  samp_name: xyz
+  source_mat_id: UUID:1
   sample_link: xyz
 - analysis_type:
   - metagenomics
@@ -248,4 +250,6 @@ water_data:
   tot_part_carb: xyz
   turbidity: xyz
   water_current: xyz
+  samp_name: xyz
+  source_mat_id: UUID:2
   sample_link: xyz

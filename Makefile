@@ -99,7 +99,7 @@ create-data-harmonizer:
 all: site
 site: clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 gen-project gendoc \
-schema_sheets/populated_tsv/slot_usage.tsv examples/output/SampleData-water-data.regen.yaml examples/output/SampleData-water-data.db \
+local/slot_usage.tsv examples/output/SampleData-water-data.regen.yaml local/SampleData-water-data.db \
 examples/output/README.md
 
 %.yaml: gen-project
@@ -116,7 +116,6 @@ gen-examples:
 
 gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml project/json/nmdc_submission_schema.json
 	$(RUN) gen-project ${GEN_PARGS}  \
-		--exclude excel \
 		--exclude graphql \
 		--exclude jsonld \
 		--exclude jsonldcontext \
@@ -125,11 +124,12 @@ gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema
 		--exclude proto \
 		--exclude shacl \
 		--exclude shex \
+		--include excel \
 		--include jsonschema \
 		--include owl \
 		--include python \
 		--include sqlddl \
-		--generator-arguments 'jsonschema: {not_closed: false}' \
+		--generator-arguments '{jsonschema: {not_closed: false}, excel: {output: local/submission_schema.xlsx}, sqlddl: {output: local/submission_schema.sql}}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: site test-python check-valid-vs-json-schema check-invalid-vs-json-schema
@@ -198,5 +198,13 @@ clean:
 	rm -rf $(DEST)
 	rm -rf tmp
 	rm -fr docs/*
+
+check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
+	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+
+check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
+	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+
+src/data/valid/SampleData-water-data.yaml: gen-project
 
 include project.Makefile

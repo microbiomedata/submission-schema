@@ -2,9 +2,9 @@ class	slot	action	target	path	LinkML implementation notes	value
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	add_attribute	comments			All depths must be reported in meters. Provide the numerical portion only.
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_collec_method	add_attribute	comments			This can be a citation or description
-DhMultiviewCommonColumns	samp_name	add_attribute	comments			It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
+DhMultiviewCommonColumnsMixin	samp_name	add_attribute	comments			It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	add_attribute	comments			This refers to the TOTAL amount of sample collected from the experiment. NOT the amount sent to each institution or collected for a specific analysis.
-DhMultiviewCommonColumns	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
 SoilInterface	al_sat	replace_attribute	description			The relative abundance of aluminum in the sample
 SoilInterface	al_sat_meth	replace_attribute	description			Reference or method used in determining Aluminum saturation
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	description			The date of sampling
@@ -14,10 +14,10 @@ PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	descriptio
 SoilInterface	heavy_metals	replace_attribute	description			Heavy metals present in the sample and their concentrations.
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	lat_lon	replace_attribute	description			This is currently a required field but it's not clear if this should be required for human hosts
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	description			pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
-DhMultiviewCommonColumns	samp_name	replace_attribute	description			A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.
+DhMultiviewCommonColumnsMixin	samp_name	replace_attribute	description			A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	replace_attribute	description			Temperature at which the sample was stored (degrees are assumed)
 SoilInterface	slope_aspect	replace_attribute	description			The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.
-DhMultiviewCommonColumns	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
+DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
 SoilInterface	store_cond	replace_attribute	description			Explain how the soil sample is stored (fresh/frozen/other).
 SoilInterface	al_sat	overwrite_examples	examples			0.27
 SoilInterface	al_sat_meth	overwrite_examples	examples			https://doi.org/10.1371/journal.pone.0176357
@@ -38,15 +38,14 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_mat_process	overwrite_examples	examples			filtering of seawater|storing samples in ethanol
-DhMultiviewCommonColumns	samp_name	overwrite_examples	examples			Rock core CB1178(5-6) from NSW
+DhMultiviewCommonColumnsMixin	samp_name	overwrite_examples	examples			Rock core CB1178(5-6) from NSW
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	overwrite_examples	examples			5 grams|10 mL
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	overwrite_examples	examples			-80 Celsius
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
 SoilInterface	sieving	overwrite_examples	examples			combined 2 cores | 4mm sieved|4 mm sieved and homogenized|50 g | 5 cores | 2 mm sieved
 SoilInterface	slope_aspect	overwrite_examples	examples			35
 SoilInterface	slope_gradient	overwrite_examples	examples			10%|10 %|0.1
-DhMultiviewCommonColumns	source_mat_id	overwrite_examples	examples			IGSN:AU1243 or UUID:24f1467a-40f4-11ed-b878-0242ac120002  
-DhMultiviewCommonColumns	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
+DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
 BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	overwrite_examples	examples			1 ug/L
 SoilInterface	tot_nitro_cont_meth	overwrite_examples	examples			https://doi.org/10.2134/agronmonogr9.2.c32|https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo
 BiofilmInterface|SedimentInterface|SoilInterface	tot_nitro_content	overwrite_examples	examples			5 mg N/ L
@@ -59,7 +58,7 @@ SoilInterface	extreme_event	replace_annotation	expected_value			date, string
 SoilInterface	fire	replace_annotation	expected_value			date string
 SoilInterface	flooding	replace_annotation	expected_value			date string
 BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_annotation	expected_value			string
-DhMultiviewCommonColumns	source_mat_id	replace_attribute	identifier			true
+DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	identifier			true
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	maximum_value			14
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	minimum_value		expects int?!	0
 SoilInterface	heavy_metals	replace_attribute	multivalued			true
@@ -76,7 +75,7 @@ SoilInterface	heavy_metals	add_attribute	notes			Changed to multi-valued. In MIx
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	add_attribute	notes			this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	add_attribute	notes			Use modified term
 SoilInterface	season_precpt	add_attribute	notes			mean and average are the same thing, but it seems like bad practice to not be consistent. Changed mean to average
-DhMultiviewCommonColumns	source_mat_id	add_attribute	notes			The source material IS the Globally Unique ID
+DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	notes			The source material IS the Globally Unique ID
 SoilInterface	fire	replace_attribute	pattern			^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?(\s+to\s+[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)?$
 BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_annotation	preferred_unit			gram per gram or cubic centimeter per cubic centimeter
 BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface	carb_nitro_ratio	replace_attribute	range			float
@@ -132,8 +131,9 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	replace_attribute	required			true
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	required			true
+DhMultiviewCommonColumnsMixin	samp_name	replace_attribute	required			true
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_store_temp	replace_attribute	required			true
-DhMultiviewCommonColumns	source_mat_id	replace_attribute	required			true
+DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	specific_ecosystem	replace_attribute	required			true
 SoilInterface	store_cond	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	collection_date	replace_attribute	string_serialization			{date, arbitrary precision}
@@ -142,7 +142,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	lat_lon	replace_attribute	string_serialization			{lat lon}
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ph	replace_attribute	string_serialization			{float}
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_size	replace_attribute	string_serialization			{float} {unit}
-DhMultiviewCommonColumns	source_mat_id	replace_attribute	string_serialization			{text}:{text}
+DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	string_serialization			{text}:{text}
 SoilInterface	al_sat	replace_attribute	title			aluminum saturation/ extreme unusual properties
 SoilInterface	al_sat_meth	replace_attribute	title			aluminum saturation method/ extreme unusual properties
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
@@ -151,7 +151,7 @@ SoilInterface	heavy_metals	replace_attribute	title			heavy metals/ extreme unusu
 SoilInterface	heavy_metals_meth	replace_attribute	title			heavy metals method/ extreme unusual properties
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface|WaterInterface	horizon_meth	replace_attribute	title			horizon method
 SoilInterface	season_precpt	replace_attribute	title			average seasonal precipitation
-DhMultiviewCommonColumns	source_mat_id	replace_attribute	title			source material identifier
+DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	title			globally unique ID
 SoilInterface	al_sat	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
 SoilInterface	al_sat_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
 SoilInterface	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
@@ -168,7 +168,7 @@ SoilInterface	season_precpt	add_attribute	todos			This is no longer matching the
 SoilInterface	sieving	add_attribute	todos			check validation and examples
 SoilInterface	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
 SoilInterface	slope_gradient	add_attribute	todos			Slope is a percent. How does the validation work? Check to correct examples
-DhMultiviewCommonColumns	source_mat_id	add_attribute	todos			Currently, the comments say to use UUIDs. However, if we implement assigning NMDC identifiers with the minter we dont need to require a GUID. It can be an optional field to fill out only if they already have a resolvable ID.
+DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	todos			Currently, the comments say to use UUIDs. However, if we implement assigning NMDC identifiers with the minter we dont need to require a GUID. It can be an optional field to fill out only if they already have a resolvable ID.
 BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	add_attribute	todos			is this inorganic and organic? both? could use some clarification.|ug/L doesn't seem like the right units. Should check this slots usage in databases and re-evaluate. I couldn't find any references that provided this data in this format
 BiofilmInterface|SedimentInterface|SoilInterface	tot_org_carb	add_attribute	todos			check description. How are they different?
 SoilInterface	water_cont_soil_meth	add_attribute	todos			Why is it soil water content method in the name but not the title? Is this slot used in other samples?|Soil water content can be measure MANY ways and often, multiple ways are used in one experiment (gravimetric water content and water holding capacity and water filled pore space, to name a few).|Should this be multi valued? How to we manage and validate this?

@@ -103,6 +103,7 @@ water_data:
   samp_collec_device: xyz
   samp_collec_method: xyz
   samp_mat_process: xyz
+  samp_name: xyz
   samp_size: xyz
   samp_store_dur: xyz
   samp_store_loc: xyz
@@ -114,6 +115,7 @@ water_data:
   size_frac_up: xyz
   sodium: xyz
   soluble_react_phosp: xyz
+  source_mat_id: UUID:1
   specific_ecosystem: xyz
   sulfate: xyz
   sulfide: xyz
@@ -228,6 +230,7 @@ water_data:
   samp_collec_device: xyz
   samp_collec_method: xyz
   samp_mat_process: xyz
+  samp_name: xyz
   samp_size: xyz
   samp_store_dur: xyz
   samp_store_loc: xyz
@@ -239,6 +242,7 @@ water_data:
   size_frac_up: xyz
   sodium: xyz
   soluble_react_phosp: xyz
+  source_mat_id: UUID:2
   specific_ecosystem: xyz
   sulfate: xyz
   sulfide: xyz
