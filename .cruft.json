@@ -5,9 +5,9 @@
   "context": {
     "cookiecutter": {
       "project_name": "submission-schema",
-      "__project_slug": "submission_schema",
+      "__project_slug": "nmdc_submission_schema",
       "github_org": "microbiomedata",
-      "__source_path": "src/submission_schema/schema/submission_schema.yaml",
+      "__source_path": "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml",
       "project_description": "The home of the NMDC submission schema. *Not* the home of sheets_and_friends. *Not* a GH pages host of NMDC DataHarmonizer interfaces.",
       "full_name": "Mark Andrew Miller",
       "email": "mam@lbl.gov",

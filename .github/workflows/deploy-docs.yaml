@@ -1,4 +1,4 @@
-name: Auto-deployment of submission_schema Documentation
+name: Auto-deployment of nmdc_submission_schema Documentation
 on:
   push:
     branches: [ main ]
@@ -27,5 +27,5 @@ jobs:
       run: |
         mkdir -p docs
         touch docs/.nojekyll
-        poetry run gen-doc -d docs src/submission_schema/schema/submission_schema.yaml
+        poetry run gen-doc -d docs src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
         poetry run mkdocs gh-deploy

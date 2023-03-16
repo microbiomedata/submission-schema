@@ -19,11 +19,11 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
-	rm -rf src/submission_schema/schema/submission_schema.yaml
+	rm -rf src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p examples/output
 
 
-src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
+src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
 	cp $< $@
 	# globally replace structured ranges with strings.
 	# there's still more to do. see schema_sheets/populated_tsv/slot_usage.tsv
@@ -51,9 +51,9 @@ src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out
 	yq -i 'del(.classes.TimestampValue)'  $@
 	yq -i 'del(.classes.[].slot_usage.[].pattern)' $@
 	yq -i 'del(.slots.[].pattern)' $@
-#	yq -i 'del(.classes.[].slot_usage.[].examples.[] | select(.value == ""))' src/submission_schema/schema/submission_schema.yaml
+#	yq -i 'del(.classes.[].slot_usage.[].examples.[] | select(.value == ""))' src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 #	yq -i 'del(.classes.[].slot_usage.[].required)' $@
-#	yq -i 'del(.slots.[].examples.[] | select(.value == ""))' src/submission_schema/schema/submission_schema.yaml
+#	yq -i 'del(.slots.[].examples.[] | select(.value == ""))' src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 #	yq -i 'del(.slots.collection_date.required)'  $@
 #	yq -i 'del(.slots.[].required)' $@
 
@@ -125,7 +125,7 @@ sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out
 		--format yaml $@.raw > $@
 	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
 
-examples/output/README.md: src/submission_schema/schema/submission_schema.yaml
+examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(dir $@)
 	# RDF/TTL generation is failing
 	# WARNING:root:No namespace defined for URI: https://microbiomedata/schema/ecosystem
@@ -141,7 +141,7 @@ examples/output/README.md: src/submission_schema/schema/submission_schema.yaml
 schema_sheets/populated_tsv/slot_usage.tsv:
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
-		--schema src/submission_schema/schema/submission_schema.yaml schema_sheets/templates/slot_usage.tsv
+		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml schema_sheets/templates/slot_usage.tsv
 
 # why is --no-validate required?
 # without it...
@@ -152,7 +152,7 @@ examples/output/SampleData-water-data.tsv: src/data/valid/SampleData-water-data.
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/submission_schema/schema/submission_schema.yaml \
+		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 		--no-validate $<
 
 examples/output/SampleData-water-data.regen.yaml: examples/output/SampleData-water-data.tsv
@@ -160,7 +160,7 @@ examples/output/SampleData-water-data.regen.yaml: examples/output/SampleData-wat
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/submission_schema/schema/submission_schema.yaml \
+		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 		--no-validate $<
 
 examples/output/SampleData-water-data.db: examples/output/SampleData-water-data.tsv
@@ -168,15 +168,15 @@ examples/output/SampleData-water-data.db: examples/output/SampleData-water-data.
 		--db $@ \
 		--target-class SampleData \
 		--index-slot water_data \
-		--schema src/submission_schema/schema/submission_schema.yaml \
+		--schema src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 		--no-validate $<
 
 check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
-	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+	$(RUN) check-jsonschema --schemafile project/jsonschema/nmdc_submission_schema.schema.json $<
 
 check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
-	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+	! $(RUN) check-jsonschema --schemafile project/jsonschema/nmdc_submission_schema.schema.json $<
 
-project/json/submission_schema.json: src/submission_schema/schema/submission_schema.yaml
+project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
 	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@

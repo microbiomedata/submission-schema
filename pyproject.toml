@@ -5,7 +5,7 @@ description = "The home of the NMDC submission schema. *Not* the home of sheets_
 authors = ["Mark Andrew Miller <mam@lbl.gov>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/submission_schema/schema", "project"]
+include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -26,7 +26,7 @@ files = [
     "src/**/__init__.py", 
     "src/**/__version__.py", 
     "src/**/_version.py",
-    "src/submission_schema/schema/submission_schema.yaml"
+    "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 ]
 patterns = [
     "(^\\s*__version__\\s*(?::.*?)?=\\s*['\\\"])[^'\\\"]*(['\\\"])",

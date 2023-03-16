@@ -1,6 +1,6 @@
-name: submission_schema
+name: nmdc_submission_schema
 author: Mark Andrew Miller <mam@lbl.gov>
 description: The home of the NMDC submission schema. *Not* the home of sheets_and_friends. *Not* a GH pages host of NMDC DataHarmonizer interfaces.
-source_schema_path: src/submission_schema/schema/submission_schema.yaml
+source_schema_path: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
 google_sheet_tabs: personinfo enums

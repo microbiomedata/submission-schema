@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from submission_schema.datamodel.submission_schema import SampleData
+from nmdc_submission_schema.datamodel.nmdc_submission_schema import SampleData
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")

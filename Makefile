@@ -97,7 +97,7 @@ create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
 all: site
-site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml \
+site: clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 gen-project gendoc \
 schema_sheets/populated_tsv/slot_usage.tsv examples/output/SampleData-water-data.regen.yaml examples/output/SampleData-water-data.db \
 examples/output/README.md
@@ -114,7 +114,7 @@ gen-examples:
 
 # generates all project files
 
-gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml project/json/submission_schema.json
+gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml project/json/nmdc_submission_schema.json
 	$(RUN) gen-project ${GEN_PARGS}  \
 		--exclude excel \
 		--exclude graphql \
@@ -182,7 +182,7 @@ git-init-add: git-init git-add git-commit git-status
 git-init:
 	git init
 git-add: .cruft.json
-	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/submission_schema/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
+	git add .gitignore .github .cruft.json Makefile LICENSE *.md examples utils about.yaml mkdocs.yml poetry.lock project.Makefile pyproject.toml src/nmdc_submission_schema/schema/*yaml src/*/datamodel/*py src/data src/docs tests src/*/_version.py
 	git add $(patsubst %, project/%, $(PROJECT_FOLDERS))
 git-commit:
 	git commit -m 'chore: initial commit' -a
