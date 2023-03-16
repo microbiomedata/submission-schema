@@ -1,5 +1,5 @@
-# Auto generated from submission_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-14T15:03:28
+# Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.9.0
+# Generation date: 2023-03-16T11:47:19
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -25,7 +25,7 @@ from linkml_runtime.utils.curienamespace import CurieNamespace
 from linkml_runtime.utils.metamodelcore import Bool, Curie, Decimal, ElementIdentifier, NCName, NodeIdentifier, URI, URIorCURIE, XSDDate, XSDDateTime, XSDTime
 
 metamodel_version = "1.7.0"
-version = None
+version = "0.0.0"
 
 # Overwrite dataclasses _init_fn to add **kwargs in __init__
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
