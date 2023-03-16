@@ -99,8 +99,8 @@ create-data-harmonizer:
 all: site
 site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml \
 gen-project gendoc \
-examples/output/SampleData-water-data.regen.yaml examples/output/SampleData-water-data.db \
-schema_sheets/populated_tsv/slot_usage.tsv examples/output/README.md
+local/slot_usage.tsv examples/output/SampleData-water-data-exhaustive.regen.yaml local/SampleData-water-data-exhaustive.db \
+examples/output/README.md
 
 %.yaml: gen-project
 deploy: all mkd-gh-deploy
@@ -114,7 +114,7 @@ gen-examples:
 
 # generates all project files
 
-gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml
+gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml project/json/submission_schema.json
 	$(RUN) gen-project ${GEN_PARGS}  \
 		--exclude graphql \
 		--exclude jsonld \
@@ -129,7 +129,7 @@ gen-project: $(PYMODEL) src/submission_schema/schema/submission_schema.yaml
 		--include owl \
 		--include python \
 		--include sqlddl \
-		--generator-arguments 'jsonschema: {not_closed: false}' \
+		--generator-arguments '{jsonschema: {not_closed: false}, excel: {output: local/submission_schema.xlsx}, sqlddl: {output: local/submission_schema.sql}}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: site test-python check-valid-vs-json-schema check-invalid-vs-json-schema
@@ -199,10 +199,19 @@ clean:
 	rm -rf tmp
 	rm -fr docs/*
 
-project/jsonschema/submission_schema.schema.json: gen-project
+project/jsonschema/submission_schema.schema.json: src/submission_schema/schema/submission_schema.yaml
+	$(RUN) gen-json-schema \
+		--closed $< > $@
 
+
+# these each re-trigger all linkml schema generation steps
+# could just make a pure jsonschema generation step, or refactor the explict ordering or targets
 check-valid-vs-json-schema: project/jsonschema/submission_schema.schema.json \
 src/data/valid/SampleData-water-data-exhaustive.yaml
+	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
+
+check-valid-soil-vs-json-schema: project/jsonschema/submission_schema.schema.json \
+src/data/valid/SampleData-soil-data-exhaustive.yaml
 	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
 
 check-invalid-vs-json-schema: project/jsonschema/submission_schema.schema.json \

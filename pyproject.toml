@@ -10,8 +10,7 @@ include = ["README.md", "src/submission_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.4.5"
-
+linkml-runtime = "^1.4.9"
 
 [tool.poetry-dynamic-versioning]
 enable = false
@@ -20,9 +19,10 @@ vcs = "git"
 style = "pep440"
 
 [tool.poetry.dev-dependencies]
-linkml = "^1.4.6"
+linkml = "^1.4.8"
 mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
+
 schemasheets = "^0.1.19"
 sheets-and-friends = "^0.2.0"
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends

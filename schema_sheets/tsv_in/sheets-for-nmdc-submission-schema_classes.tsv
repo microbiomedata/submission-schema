@@ -1,23 +1,23 @@
->key class = one DH interface	abstract	title	Desc	tree_root	parent term	"yes, I am a mixin"	mixins	non-imported slots
->class	abstract	title	description	tree_root	is_a	mixin	mixins	slots
->							"internal_separator: ""|"""	"internal_separator: ""|"""
-AirInterface		Air	air dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-BiofilmInterface		Biofilm	biofilm dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-BuiltEnvInterface		Built Env	built_env dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-EmslInterface		Emsl	emsl dh_interface		DhInterface		DhMutliviewCommonColumns	emsl_store_temp|project_id|replicate_number|sample_shipped|sample_type|technical_reps
-HcrCoresInterface		Hcr Cores	hcr_cores dh_interface		DhInterface		DhMutliviewCommonColumns
-HcrFluidsSwabsInterface		Hcr Fluids Swabs	hcr_fluids_swabs dh_interface		DhInterface		DhMutliviewCommonColumns
-HostAssociatedInterface		Host Associated	host_associated dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-JgiMgInterface		JGI MG	jgi_mg dh_interface		DhInterface		DhMutliviewCommonColumns	dna_absorb1|dna_absorb2|dna_collect_site|dna_concentration|dna_cont_type|dna_cont_well|dna_container_id|dna_dnase|dna_isolate_meth|dna_organisms|dna_project_contact|dna_samp_id|dna_sample_format|dna_sample_name|dna_seq_project|dna_seq_project_name|dna_seq_project_pi|dna_volume|proposal_dna
-JgiMtInterface		JGI MT	jgi_mt dh_interface		DhInterface		DhMutliviewCommonColumns	dnase_rna|proposal_rna|rna_absorb1|rna_absorb2|rna_collect_site|rna_concentration|rna_cont_type|rna_cont_well|rna_container_id|rna_isolate_meth|rna_organisms|rna_project_contact|rna_samp_id|rna_sample_format|rna_sample_name|rna_seq_project|rna_seq_project_name|rna_seq_project_pi|rna_volume
-MiscEnvsInterface		Misc Envs	misc_envs dh_interface		DhInterface		DhMutliviewCommonColumns
-PlantAssociatedInterface		Plant Associated	plant_associated dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-SedimentInterface		Sediment	sediment dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-SoilInterface		Soil	soil dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin|SoilMixsInspiredMixin
-WastewaterSludgeInterface		Wastewater Sludge	wastewater_sludge dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-WaterInterface		Water	water dh_interface		DhInterface		DhMutliviewCommonColumns|SampIdNewTermsMixin
-DhMutliviewCommonColumns		Dh Mutliview Common Columns	Mixin with DhMutliviewCommon Columns			TRUE		analysis_type
-SampIdNewTermsMixin		SampId New Terms	Mixin with SampIdNew Terms			TRUE		env_package|sample_link
-SoilMixsInspiredMixin		Soil MIxS Inspired Mixin	Mixin with SoilMixsInspired Terms			TRUE		collection_date_inc|collection_time|collection_time_inc|experimental_factor_other|filter_method|isotope_exposure|micro_biomass_c_meth|micro_biomass_n_meth|microbial_biomass_c|microbial_biomass_n|non_microb_biomass|non_microb_biomass_method|org_nitro_method|other_treatment|start_date_inc|start_time_inc
-DhInterface	TRUE	Dh Root Interface	"One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types"					
-SampleData		SampleData	represents data produced by the DataHarmonizer tabs of the submission portal	TRUE				air_data|biofilm_data|built_env_data|host_associated_data|plant_associated_data|sediment_data|soil_data|wastewater_sludge_data|water_data|emsl_data|jgi_mg_data|jgi_mt_data
+>key class = one DH interface	title	Desc	tree_root	parent term	yes, I am a mixin	mixins	non-imported slots
+>class	title	description	tree_root	is_a	mixin	mixins	slots
+>						"internal_separator: ""|"""	"internal_separator: ""|"""
+AirInterface	Air	air dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+BiofilmInterface	Biofilm	biofilm dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+BuiltEnvInterface	Built Env	built_env dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+EmslInterface	Emsl	emsl dh_interface		DhInterface		DhMultiviewCommonColumnsMixin	emsl_store_temp|project_id|replicate_number|sample_shipped|sample_type|technical_reps
+HcrCoresInterface	Hcr Cores	hcr_cores dh_interface		DhInterface		DhMultiviewCommonColumnsMixin	
+HcrFluidsSwabsInterface	Hcr Fluids Swabs	hcr_fluids_swabs dh_interface		DhInterface		DhMultiviewCommonColumnsMixin	
+HostAssociatedInterface	Host Associated	host_associated dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+JgiMgInterface	JGI MG	jgi_mg dh_interface		DhInterface		DhMultiviewCommonColumnsMixin	dna_absorb1|dna_absorb2|dna_collect_site|dna_concentration|dna_cont_type|dna_cont_well|dna_container_id|dna_dnase|dna_isolate_meth|dna_organisms|dna_project_contact|dna_samp_id|dna_sample_format|dna_sample_name|dna_seq_project|dna_seq_project_name|dna_seq_project_pi|dna_volume|proposal_dna
+JgiMtInterface	JGI MT	jgi_mt dh_interface		DhInterface		DhMultiviewCommonColumnsMixin	dnase_rna|proposal_rna|rna_absorb1|rna_absorb2|rna_collect_site|rna_concentration|rna_cont_type|rna_cont_well|rna_container_id|rna_isolate_meth|rna_organisms|rna_project_contact|rna_samp_id|rna_sample_format|rna_sample_name|rna_seq_project|rna_seq_project_name|rna_seq_project_pi|rna_volume
+MiscEnvsInterface	Misc Envs	misc_envs dh_interface		DhInterface		DhMultiviewCommonColumnsMixin	
+PlantAssociatedInterface	Plant Associated	plant_associated dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+SedimentInterface	Sediment	sediment dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+SoilInterface	Soil	soil dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin|SoilMixsInspiredMixin	
+WastewaterSludgeInterface	Wastewater Sludge	wastewater_sludge dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+WaterInterface	Water	water dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
+DhMultiviewCommonColumnsMixin	Dh Mutliview Common Columns	Mixin with DhMutliviewCommon Columns			TRUE		analysis_type
+SampIdNewTermsMixin	SampId New Terms	Mixin with SampIdNew Terms			TRUE		env_package|sample_link
+SoilMixsInspiredMixin	Soil MIxS Inspired Mixin	Mixin with SoilMixsInspired Terms			TRUE		collection_date_inc|collection_time|collection_time_inc|experimental_factor_other|filter_method|isotope_exposure|micro_biomass_c_meth|micro_biomass_n_meth|microbial_biomass_c|microbial_biomass_n|non_microb_biomass|non_microb_biomass_method|org_nitro_method|other_treatment|start_date_inc|start_time_inc
+DhInterface	Dh Root Interface	One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types					
+SampleData	SampleData	represents data produced by the DataHarmonizer tabs of the submission portal	TRUE				air_data|biofilm_data|built_env_data|host_associated_data|plant_associated_data|sediment_data|soil_data|wastewater_sludge_data|water_data|emsl_data|jgi_mg_data|jgi_mt_data

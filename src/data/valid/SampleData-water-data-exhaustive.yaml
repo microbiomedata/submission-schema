@@ -2,6 +2,8 @@ water_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
+    samp_name: xyz
+    source_mat_id: x:1
     alkalinity: 50 milligram per liter
     alkalinity_method: titration
     alkyl_diethers: 0.005 mole per liter

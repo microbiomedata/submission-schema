@@ -8,7 +8,6 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf examples/output/*.ttl
 	rm -rf examples/output/*.yaml
 	rm -rf examples/output/README.md
-	rm -rf examples/output/output
 	rm -rf from_schema_sheets.lint_report.txt
 	rm -rf project/jsonschema/submission_schema.schema.json
 	rm -rf schema_sheets/from_schema_sheets.lint_report.txt
@@ -24,8 +23,10 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
 	rm -rf src/submission_schema/schema/submission_schema.yaml
+	rm -rf local/*
+	mkdir -p local
+	cp placeholder.md local
 	mkdir -p examples/output
-
 
 .PHONY: check-invalid-vs-json-schema \
 check-valid-vs-json-schema \
@@ -38,17 +39,21 @@ sheets_and_friends_all \
 sheets_and_friends_cleanup
 
 schemasheets_cleanup:
-	rm -rf schema_sheets/yaml_out/*
+	rm -rf schema_sheets/yaml_out/*.yaml
 
-schema_sheets/yaml_out/from_schema_sheets.yaml: schema_sheets/tsv_in/prefixes.tsv \
+local/from_schema_sheets.yaml: schema_sheets/tsv_in/prefixes.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_classes.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_enums.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_schema_only.tsv \
 schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_slots.tsv \
 schema_sheets/tsv_in/types.tsv
 	$(RUN) sheets2linkml \
-		--output $@ $^
+		--output $@.raw $^
 		# would prefer to discover TSV inputs instead of enumerating them
+	$(RUN) gen-linkml \
+		--no-materialize-attributes \
+		--format yaml $@.raw > $@
+	- $(RUN) linkml-lint $@ > local/from_schema_sheets.lint_report.txt
 
 
 # todo: fewer enums
@@ -59,14 +64,18 @@ schema_sheets/tsv_in/types.tsv
 sheets_and_friends_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
-sheets_and_friends/yaml_out/with_shuttles.yaml: schema_sheets/yaml_out/from_schema_sheets.yaml \
+local/with_shuttles.yaml: local/from_schema_sheets.yaml \
 sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardless.tsv
-	$(RUN) do_shuttle \
-		--config_tsv  $(word 2,$^) \
-		--recipient_model $(word 1,$^) \
-		--yaml_output $@
+		$(RUN) do_shuttle \
+			--config_tsv  $(word 2,$^) \
+			--recipient_model $(word 1,$^) \
+			--yaml_output $@.raw
+		$(RUN) gen-linkml \
+			--no-materialize-attributes \
+			--format yaml $@.raw > $@
+		- $(RUN) linkml-lint $@ > local/with_shuttles.lint_report.txt
 
-sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/with_shuttles.yaml
+local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	cp $< $@
 	# using \x0A to represent a line feed
 	# double $ gets reduced to one by make
@@ -196,6 +205,12 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 	yq -i '(.slots.[] | select(.name == "phaeopigments") | .multivalued) = false' $@
 	yq -i '(.slots.[] | select(.name == "phosplipid_fatt_acid") | .multivalued) = false' $@
 
+# for soil
+	yq -i '(.slots.[] | select(.name == "heavy_metals_meth") | .multivalued) = false' $@
+	yq -i '(.slots.[] | select(.name == "water_content") | .multivalued) = false' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name=="heavy_metals_meth") | .multivalued) = false' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name=="water_content") | .multivalued) = false' $@
+
 # remove slots that are no longer necessary due to removal of classes above
 	yq -i 'del(.slots.[] | select(.name == "acted_on_behalf_of"))' $@
 	yq -i 'del(.slots.[] | select(.name == "ended_at_time"))' $@
@@ -216,16 +231,20 @@ sheets_and_friends/yaml_out/with_shuttles_yq.yaml: sheets_and_friends/yaml_out/w
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
-sheets_and_friends/yaml_out/with_modifications.yaml: sheets_and_friends/yaml_out/with_shuttles_yq.yaml \
-sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long_empty.tsv  \
+local/with_modifications.yaml: local/with_shuttles_yq.yaml \
+sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long-dont-mod-water.tsv \
 sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
 		--modifications_config_tsv $(word 2,$^) \
 		--validation_config_tsv $(word 3,$^) \
-		--yaml_output $@
+		--yaml_output $@.raw
+	$(RUN) gen-linkml \
+		--no-materialize-attributes \
+		--format yaml $@.raw > $@
+	- $(RUN) linkml-lint $@ > local/with_modifications.lint_report.txt
 
-src/submission_schema/schema/submission_schema.yaml: sheets_and_friends/yaml_out/with_modifications.yaml
+src/submission_schema/schema/submission_schema.yaml: local/with_modifications.yaml
 	cp $< $@
 
 examples/output/README.md: src/submission_schema/schema/submission_schema.yaml \
@@ -241,13 +260,17 @@ src/data/invalid src/data/valid
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-schema_sheets/populated_tsv/slot_usage.tsv: src/submission_schema/schema/submission_schema.yaml \
+local/slot_usage.tsv: src/submission_schema/schema/submission_schema.yaml \
 schema_sheets/templates/slot_usage.tsv
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
-		--schema $^
+		--schema $< $(word 2,$^)
 
-examples/output/SampleData-water-data.tsv: src/submission_schema/schema/submission_schema.yaml \
+# why is --no-validate required?
+# without it...
+#jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
+#On instance['water_data'][0]['elev']:
+local/SampleData-water-data-exhaustive.tsv: src/submission_schema/schema/submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
@@ -255,15 +278,15 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 		--index-slot water_data \
 		--schema $(word 1,$^) $(word 2,$^)
 
-examples/output/SampleData-water-data.regen.yaml: src/submission_schema/schema/submission_schema.yaml \
-examples/output/SampleData-water-data.tsv
+examples/output/SampleData-water-data-exhaustive.regen.yaml: src/submission_schema/schema/submission_schema.yaml \
+local/SampleData-water-data-exhaustive.tsv
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
 		--index-slot water_data \
 		--schema $(word 1,$^) $(word 2,$^)
 
-examples/output/SampleData-water-data.db: src/submission_schema/schema/submission_schema.yaml \
+local/SampleData-water-data-exhaustive.db: src/submission_schema/schema/submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN)  linkml-sqldb dump \
 		--db $@ \
@@ -281,3 +304,8 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 #		--format yaml $@.raw > $@
 #
 #	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
+
+project/json/submission_schema.json: src/submission_schema/schema/submission_schema.yaml
+	mkdir -p $(@D)
+	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@
+
