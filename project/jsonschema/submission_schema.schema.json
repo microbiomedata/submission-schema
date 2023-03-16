@@ -215,6 +215,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -241,6 +245,10 @@
                 },
                 "solar_irradiance": {
                     "description": "The amount of solar energy that arrives at a specific area of a surface during a specific time interval",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -289,6 +297,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "AirInterface",
@@ -638,6 +648,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -668,6 +682,10 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -724,6 +742,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "BiofilmInterface",
@@ -1332,6 +1352,10 @@
                     "$ref": "#/$defs/SampFloorEnum",
                     "description": "The floor of the building, where the sampling room is located"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_room_id": {
                     "description": "Sampling room number. This ID should be consistent with the designations on the building floor plans",
                     "type": "string"
@@ -1385,6 +1409,10 @@
                 },
                 "size_frac": {
                     "description": "Filtering pore size used in sample preparation",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "space_typ_state": {
@@ -1575,6 +1603,8 @@
                 "env_medium",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "BuiltEnvInterface",
@@ -1712,21 +1742,6 @@
             "additionalProperties": false,
             "description": "One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types",
             "title": "DhInterface",
-            "type": "object"
-        },
-        "DhMultiviewCommonColumns": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "source_mat_id"
-            ],
-            "title": "DhMultiviewCommonColumns",
             "type": "object"
         },
         "DnaContTypeEnum": {
@@ -1990,6 +2005,10 @@
                     "description": "If sending biological replicates, indicate the rep number here.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "sample_shipped": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample sent to EMSL",
                     "type": "string"
@@ -1997,6 +2016,10 @@
                 "sample_type": {
                     "$ref": "#/$defs/SampleTypeEnum",
                     "description": "Type of sample being submitted"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "type": "string"
                 },
                 "technical_reps": {
                     "description": "If sending multiple technical replicates of the same sample, indicate how many replicates are being sent",
@@ -2008,7 +2031,9 @@
                 "project_id",
                 "sample_shipped",
                 "sample_type",
-                "analysis_type"
+                "analysis_type",
+                "samp_name",
+                "source_mat_id"
             ],
             "title": "EmslInterface",
             "type": "object"
@@ -2712,6 +2737,10 @@
                     "description": "In non deviated well, measured depth is equal to the true vertical depth, TVD (TVD=TVDSS plus the reference or datum it refers to). In deviated wells, the MD is the length of trajectory of the borehole measured from the same reference or datum. Common datums used are ground level (GL), drilling rig floor (DF), rotary table (RT), kelly bushing (KB) and mean sea level (MSL). If \"other\" is specified, please propose entry in \"additional info\" field",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -2758,6 +2787,10 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -2869,7 +2902,9 @@
                 "env_medium",
                 "samp_store_temp",
                 "specific_ecosystem",
-                "analysis_type"
+                "analysis_type",
+                "samp_name",
+                "source_mat_id"
             ],
             "title": "HcrCoresInterface",
             "type": "object"
@@ -3207,6 +3242,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_preserv": {
                     "description": "Preservative added to the sample (e.g. Rnalater, alcohol, formaldehyde, etc.). Where appropriate include volume added (e.g. Rnalater; 2 ml)",
                     "type": "string"
@@ -3253,6 +3292,10 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -3356,7 +3399,9 @@
                 "env_medium",
                 "samp_store_temp",
                 "specific_ecosystem",
-                "analysis_type"
+                "analysis_type",
+                "samp_name",
+                "source_mat_id"
             ],
             "title": "HcrFluidsSwabsInterface",
             "type": "object"
@@ -3683,6 +3728,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -3705,6 +3754,10 @@
                 },
                 "size_frac": {
                     "description": "Filtering pore size used in sample preparation",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -3730,6 +3783,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "HostAssociatedInterface",
@@ -3878,6 +3933,14 @@
                 "proposal_dna": {
                     "description": "placeholder",
                     "type": "string"
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "type": "string"
                 }
             },
             "required": [
@@ -3897,7 +3960,9 @@
                 "dna_seq_project_pi",
                 "dna_volume",
                 "proposal_dna",
-                "analysis_type"
+                "analysis_type",
+                "samp_name",
+                "source_mat_id"
             ],
             "title": "JgiMgInterface",
             "type": "object"
@@ -3992,6 +4057,14 @@
                     "maximum": 1000,
                     "minimum": 0,
                     "type": "string"
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "type": "string"
                 }
             },
             "required": [
@@ -4011,7 +4084,9 @@
                 "rna_seq_project_name",
                 "rna_seq_project_pi",
                 "rna_volume",
-                "analysis_type"
+                "analysis_type",
+                "samp_name",
+                "source_mat_id"
             ],
             "title": "JgiMtInterface",
             "type": "object"
@@ -4302,6 +4377,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -4328,6 +4407,10 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -4364,7 +4447,9 @@
                 "env_medium",
                 "samp_store_temp",
                 "specific_ecosystem",
-                "analysis_type"
+                "analysis_type",
+                "samp_name",
+                "source_mat_id"
             ],
             "title": "MiscEnvsInterface",
             "type": "object"
@@ -4826,6 +4911,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -4855,6 +4944,10 @@
                 },
                 "size_frac": {
                     "description": "Filtering pore size used in sample preparation",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -4906,6 +4999,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "PlantAssociatedInterface",
@@ -5622,6 +5717,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -5656,6 +5755,10 @@
                 },
                 "sodium": {
                     "description": "Sodium concentration in the sample",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -5720,6 +5823,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "SedimentInterface",
@@ -6153,6 +6258,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -6211,6 +6320,10 @@
                 },
                 "soil_type_meth": {
                     "description": "Reference or method used in determining soil series name or other lower-level classification",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -6303,6 +6416,8 @@
                 "specific_ecosystem",
                 "store_cond",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "SoilInterface",
@@ -6825,6 +6940,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -6879,6 +6998,10 @@
                     },
                     "type": "array"
                 },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "type": "string"
+                },
                 "specific_ecosystem": {
                     "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
                     "type": "string"
@@ -6925,6 +7048,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "WastewaterSludgeInterface",
@@ -7301,6 +7426,10 @@
                     "description": "A brief description of any processing applied to the sample during or after retrieving the sample from environment, or a link to the relevant protocol(s) performed.",
                     "type": "string"
                 },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
                 "samp_size": {
                     "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample collected.",
                     "type": "string"
@@ -7343,6 +7472,10 @@
                 },
                 "soluble_react_phosp": {
                     "description": "Concentration of soluble reactive phosphorus",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
                     "type": "string"
                 },
                 "specific_ecosystem": {
@@ -7412,6 +7545,8 @@
                 "samp_store_temp",
                 "specific_ecosystem",
                 "analysis_type",
+                "samp_name",
+                "source_mat_id",
                 "env_package"
             ],
             "title": "WaterInterface",
