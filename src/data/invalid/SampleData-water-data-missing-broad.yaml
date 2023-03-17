@@ -1,0 +1,7 @@
+water_data:
+  - analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    env_local_scale: sand [ONTO:1234]
+    env_medium: sand [ONTO:1234]
+    env_package: xyz
