@@ -231,9 +231,10 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
+# sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
 sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long-dont-mod-water.tsv \
-sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
+sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
 		--modifications_config_tsv $(word 2,$^) \
