@@ -7,8 +7,3 @@ water_data:
     env_medium: sand [ONTO:1234]
     env_package: xyz
     samp_name: xyz
-    source_mat_id: x:1
-    alkalinity:
-      - 50 milligram per liter
-      - 100 spoons per bucket
-

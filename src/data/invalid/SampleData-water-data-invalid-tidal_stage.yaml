@@ -7,3 +7,5 @@ water_data:
     env_medium: sand [ONTO:1234]
     env_package: xyz
     tidal_stage: xyz
+    samp_name: xyz
+    source_mat_id: x:1

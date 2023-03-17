@@ -7,3 +7,5 @@ water_data:
     env_medium: sand [ONTO:1234]
     env_package: xyz
     rel_to_oxygen: xyz
+    samp_name: xyz
+    source_mat_id: x:1
