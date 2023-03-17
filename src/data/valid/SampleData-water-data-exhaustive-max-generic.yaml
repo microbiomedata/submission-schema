@@ -1,0 +1,108 @@
+water_data:
+  - analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    samp_name: xyz
+    source_mat_id: x:1
+    alkalinity: 100 units
+    alkalinity_method: xyz
+    alkyl_diethers: 100 units
+    alt: 100 units
+    aminopept_act: 100 units
+    ammonium: 100 units
+    atmospheric_data: xyz;100 units
+    bac_prod: 100 units
+    bac_resp: 100 units
+    bacteria_carb_prod: 100 units
+    biomass: xyz;100 units
+    bishomohopanol: 100 units
+    bromide: 100 units
+    calcium: 100 units
+    carb_nitro_ratio: 1.5
+    chem_administration: xyz [XYZ:123];2111-11-11
+    chloride: 100 units
+    chlorophyll: 100 units
+    collection_date: '2021-01-01'
+    conduc: 100 units
+    density: 100 units
+    depth: "1.5"
+    diether_lipids: xyz;100 units
+    diss_carb_dioxide: 100 units
+    diss_hydrogen: 100 units
+    diss_inorg_carb: 100 units
+    diss_inorg_nitro: 100 units
+    diss_inorg_phosp: 100 units
+    diss_org_carb: 100 units
+    diss_org_nitro: 100 units
+    diss_oxygen: 100 units
+    down_par: 100 units
+    ecosystem: xyz
+    ecosystem_category: xyz
+    ecosystem_subtype: xyz
+    ecosystem_type: xyz
+    elev: 1.5
+    env_broad_scale: xyz xyz xyz [XYZ:123]
+    env_local_scale: xyz xyz xyz [XYZ:123]
+    env_medium: xyz xyz xyz [XYZ:123]
+    env_package: xyz
+    experimental_factor: xyz xyz xyz [XYZ:123]
+    fluor: 100 units
+    geo_loc_name: 'xyz: xyz, xyz'
+    glucosidase_act: 100 units
+    horizon_meth: xyz
+    lat_lon: 78 89
+    light_intensity: 100 units
+    mean_frict_vel: 100 units
+    mean_peak_frict_vel: 100 units
+    misc_param: xyz;100 units
+    n_alkanes: xyz;100 units
+    nitrate: 100 units
+    nitrite: 100 units
+    nitro: 100 units
+    org_carb: 100 units
+    org_matter: 100 units
+    org_nitro: 100 units
+#    oxy_stat_samp: anaerobe
+    organism_count: xyz;100 units;qPCR
+    part_org_carb: 100 units
+    part_org_nitro: 100 units
+    perturbation: xyz
+    petroleum_hydrocarb: 100 units
+    ph: 1.5
+    ph_meth: xyz
+    phaeopigments: xyz;100 units
+    phosphate: 100 units
+    phosplipid_fatt_acid: xyz;100 units
+    potassium: 100 units
+    pressure: 100 units
+    primary_prod: 100 units
+    redox_potential: 100 units
+    rel_to_oxygen: anaerobe
+    salinity: 100 units
+    samp_collec_device: xyz
+    samp_collec_method: xyz
+    samp_mat_process: xyz
+    samp_size: 100 units
+    samp_store_dur: xyz
+    samp_store_loc: xyz
+    samp_store_temp: 100 units
+    sample_link: xyz
+    silicate: 100 units
+    size_frac: xyz
+    size_frac_low: 100 units
+    size_frac_up: 100 units
+    sodium: 100 units
+    soluble_react_phosp: 100 units
+    specific_ecosystem: xyz
+    sulfate: 100 units
+    sulfide: 100 units
+    suspend_part_matter: 100 units
+    temp: 100 units
+    tidal_stage: high tide
+    tot_depth_water_col: 100 units
+    tot_diss_nitro: 100 units
+    tot_inorg_nitro: 100 units
+    tot_nitro: 100 units
+    tot_part_carb: 100 units
+    turbidity: 100 units
+    water_current: 100 units

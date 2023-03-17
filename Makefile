@@ -99,7 +99,7 @@ create-data-harmonizer:
 all: site
 site: clean schema_cleanup src/submission_schema/schema/submission_schema.yaml \
 gen-project gendoc \
-local/slot_usage.tsv examples/output/SampleData-water-data.regen.yaml local/SampleData-water-data.db \
+local/slot_usage.tsv examples/output/SampleData-water-data-exhaustive.regen.yaml local/SampleData-water-data-exhaustive.db \
 examples/output/README.md
 
 %.yaml: gen-project
@@ -199,12 +199,23 @@ clean:
 	rm -rf tmp
 	rm -fr docs/*
 
-check-valid-vs-json-schema: src/data/valid/SampleData-water-data.yaml
-	$(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
+project/jsonschema/submission_schema.schema.json: src/submission_schema/schema/submission_schema.yaml
+	$(RUN) gen-json-schema \
+		--closed $< > $@
 
-check-invalid-vs-json-schema: src/data/invalid/SampleData-water-data.yaml
-	! $(RUN) check-jsonschema --schemafile project/jsonschema/submission_schema.schema.json $<
 
-src/data/valid/SampleData-water-data.yaml: gen-project
+# these each re-trigger all linkml schema generation steps
+# could just make a pure jsonschema generation step, or refactor the explict ordering or targets
+check-valid-vs-json-schema: project/jsonschema/submission_schema.schema.json \
+src/data/valid/SampleData-water-data-exhaustive.yaml
+	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
+
+check-valid-soil-vs-json-schema: project/jsonschema/submission_schema.schema.json \
+src/data/valid/SampleData-soil-data-exhaustive.yaml
+	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
+
+check-invalid-vs-json-schema: project/jsonschema/submission_schema.schema.json \
+src/data/invalid/SampleData-water-data-alkalinity-list.yaml
+	! $(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
 
 include project.Makefile

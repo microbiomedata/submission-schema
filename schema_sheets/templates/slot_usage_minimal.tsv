@@ -1,0 +1,3 @@
+slot	class	aliases	annotations	aev	apu	ao	comments	description	examples	identifier	in_subset	maximum_value	minimum_value	mixin	multivalued	notes	pattern	range	recommended	required	slot_uri	string_serialization	structured_pattern	title	todos
+> slot	class	aliases	ignore	annotations	annotations	annotations	comments	description	examples	identifier	in_subset	maximum_value	minimum_value	mixin	multivalued	notes	pattern	range	recommended	required	slot_uri	string_serialization	structured_pattern	title	todos
+>		"internal_separator: ""|"""		inner_key: expected_value	inner_key: preferred_unit	inner_key: occurrence	"internal_separator: ""|"""		"internal_separator: ""|"""		"internal_separator: ""|"""					"internal_separator: ""|"""									"internal_separator: ""|"""

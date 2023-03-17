@@ -1,5 +1,5 @@
 # Auto generated from submission_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-16T11:04:29
+# Generation date: 2023-03-16T16:52:02
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -235,14 +235,6 @@ class NamedThingId(extended_str):
     pass
 
 
-class ActivityId(extended_str):
-    pass
-
-
-class OntologyClassId(NamedThingId):
-    pass
-
-
 class DhInterface(YAMLRoot):
     """
     One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various
@@ -275,7 +267,7 @@ class AirInterface(DhInterface):
     barometric_press: Optional[str] = None
     carb_dioxide: Optional[str] = None
     carb_monoxide: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     collection_date: Optional[str] = None
     depth: Optional[str] = None
     ecosystem: Optional[str] = None
@@ -292,11 +284,11 @@ class AirInterface(DhInterface):
     humidity: Optional[str] = None
     lat_lon: Optional[str] = None
     methane: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     oxygen: Optional[str] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     pollutants: Optional[Union[str, List[str]]] = empty_list()
     rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     salinity: Optional[str] = None
@@ -408,9 +400,8 @@ class AirInterface(DhInterface):
         if self.carb_monoxide is not None and not isinstance(self.carb_monoxide, str):
             self.carb_monoxide = str(self.carb_monoxide)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.collection_date is not None and not isinstance(self.collection_date, str):
             self.collection_date = str(self.collection_date)
@@ -460,13 +451,11 @@ class AirInterface(DhInterface):
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -474,9 +463,8 @@ class AirInterface(DhInterface):
         if self.oxygen is not None and not isinstance(self.oxygen, str):
             self.oxygen = str(self.oxygen)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if not isinstance(self.pollutants, list):
             self.pollutants = [self.pollutants] if self.pollutants is not None else []
@@ -553,9 +541,8 @@ class AirInterface(DhInterface):
         if self.carb_monoxide is not None and not isinstance(self.carb_monoxide, str):
             self.carb_monoxide = str(self.carb_monoxide)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
@@ -575,13 +562,11 @@ class AirInterface(DhInterface):
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
@@ -589,9 +574,8 @@ class AirInterface(DhInterface):
         if self.oxygen is not None and not isinstance(self.oxygen, str):
             self.oxygen = str(self.oxygen)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if not isinstance(self.pollutants, list):
             self.pollutants = [self.pollutants] if self.pollutants is not None else []
@@ -678,17 +662,17 @@ class BiofilmInterface(DhInterface):
     aminopept_act: Optional[str] = None
     ammonium: Optional[str] = None
     bacteria_carb_prod: Optional[str] = None
-    biomass: Optional[Union[str, List[str]]] = empty_list()
+    biomass: Optional[str] = None
     bishomohopanol: Optional[str] = None
     bromide: Optional[str] = None
     calcium: Optional[str] = None
     carb_nitro_ratio: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chloride: Optional[str] = None
     chlorophyll: Optional[str] = None
     collection_date: Optional[str] = None
     depth: Optional[str] = None
-    diether_lipids: Optional[Union[str, List[str]]] = empty_list()
+    diether_lipids: Optional[str] = None
     diss_carb_dioxide: Optional[str] = None
     diss_hydrogen: Optional[str] = None
     diss_inorg_carb: Optional[str] = None
@@ -712,24 +696,24 @@ class BiofilmInterface(DhInterface):
     mean_frict_vel: Optional[str] = None
     mean_peak_frict_vel: Optional[str] = None
     methane: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
-    n_alkanes: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
+    n_alkanes: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     nitro: Optional[str] = None
     org_carb: Optional[str] = None
     org_matter: Optional[str] = None
     org_nitro: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     part_org_carb: Optional[str] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     petroleum_hydrocarb: Optional[str] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
-    phaeopigments: Optional[Union[str, List[str]]] = empty_list()
+    phaeopigments: Optional[str] = None
     phosphate: Optional[str] = None
-    phosplipid_fatt_acid: Optional[Union[str, List[str]]] = empty_list()
+    phosplipid_fatt_acid: Optional[str] = None
     potassium: Optional[str] = None
     pressure: Optional[str] = None
     redox_potential: Optional[str] = None
@@ -848,9 +832,8 @@ class BiofilmInterface(DhInterface):
         if self.bacteria_carb_prod is not None and not isinstance(self.bacteria_carb_prod, str):
             self.bacteria_carb_prod = str(self.bacteria_carb_prod)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bishomohopanol is not None and not isinstance(self.bishomohopanol, str):
             self.bishomohopanol = str(self.bishomohopanol)
@@ -864,9 +847,8 @@ class BiofilmInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, str):
             self.carb_nitro_ratio = str(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -880,9 +862,8 @@ class BiofilmInterface(DhInterface):
         if self.depth is not None and not isinstance(self.depth, str):
             self.depth = str(self.depth)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -953,13 +934,11 @@ class BiofilmInterface(DhInterface):
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.n_alkanes, list):
-            self.n_alkanes = [self.n_alkanes] if self.n_alkanes is not None else []
-        self.n_alkanes = [v if isinstance(v, str) else str(v) for v in self.n_alkanes]
+        if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
+            self.n_alkanes = str(self.n_alkanes)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -979,9 +958,8 @@ class BiofilmInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -989,9 +967,8 @@ class BiofilmInterface(DhInterface):
         if self.part_org_carb is not None and not isinstance(self.part_org_carb, str):
             self.part_org_carb = str(self.part_org_carb)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.petroleum_hydrocarb is not None and not isinstance(self.petroleum_hydrocarb, str):
             self.petroleum_hydrocarb = str(self.petroleum_hydrocarb)
@@ -1002,16 +979,14 @@ class BiofilmInterface(DhInterface):
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
 
-        if not isinstance(self.phaeopigments, list):
-            self.phaeopigments = [self.phaeopigments] if self.phaeopigments is not None else []
-        self.phaeopigments = [v if isinstance(v, str) else str(v) for v in self.phaeopigments]
+        if self.phaeopigments is not None and not isinstance(self.phaeopigments, str):
+            self.phaeopigments = str(self.phaeopigments)
 
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.potassium is not None and not isinstance(self.potassium, str):
             self.potassium = str(self.potassium)
@@ -1103,9 +1078,8 @@ class BiofilmInterface(DhInterface):
         if self.bacteria_carb_prod is not None and not isinstance(self.bacteria_carb_prod, str):
             self.bacteria_carb_prod = str(self.bacteria_carb_prod)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bishomohopanol is not None and not isinstance(self.bishomohopanol, str):
             self.bishomohopanol = str(self.bishomohopanol)
@@ -1119,9 +1093,8 @@ class BiofilmInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, float):
             self.carb_nitro_ratio = float(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -1129,9 +1102,8 @@ class BiofilmInterface(DhInterface):
         if self.chlorophyll is not None and not isinstance(self.chlorophyll, str):
             self.chlorophyll = str(self.chlorophyll)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -1178,13 +1150,11 @@ class BiofilmInterface(DhInterface):
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.n_alkanes, list):
-            self.n_alkanes = [self.n_alkanes] if self.n_alkanes is not None else []
-        self.n_alkanes = [v if isinstance(v, str) else str(v) for v in self.n_alkanes]
+        if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
+            self.n_alkanes = str(self.n_alkanes)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -1204,9 +1174,8 @@ class BiofilmInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
@@ -1214,9 +1183,8 @@ class BiofilmInterface(DhInterface):
         if self.part_org_carb is not None and not isinstance(self.part_org_carb, str):
             self.part_org_carb = str(self.part_org_carb)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.petroleum_hydrocarb is not None and not isinstance(self.petroleum_hydrocarb, str):
             self.petroleum_hydrocarb = str(self.petroleum_hydrocarb)
@@ -1227,16 +1195,14 @@ class BiofilmInterface(DhInterface):
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
 
-        if not isinstance(self.phaeopigments, list):
-            self.phaeopigments = [self.phaeopigments] if self.phaeopigments is not None else []
-        self.phaeopigments = [v if isinstance(v, str) else str(v) for v in self.phaeopigments]
+        if self.phaeopigments is not None and not isinstance(self.phaeopigments, str):
+            self.phaeopigments = str(self.phaeopigments)
 
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.potassium is not None and not isinstance(self.potassium, str):
             self.potassium = str(self.potassium)
@@ -1301,9 +1267,8 @@ class BiofilmInterface(DhInterface):
         if self.turbidity is not None and not isinstance(self.turbidity, str):
             self.turbidity = str(self.turbidity)
 
-        if not isinstance(self.water_content, list):
-            self.water_content = [self.water_content] if self.water_content is not None else []
-        self.water_content = [v if isinstance(v, str) else str(v) for v in self.water_content]
+        if self.water_content is not None and not isinstance(self.water_content, str):
+            self.water_content = str(self.water_content)
 
         if self.samp_name is not None and not isinstance(self.samp_name, str):
             self.samp_name = str(self.samp_name)
@@ -1430,7 +1395,7 @@ class BuiltEnvInterface(DhInterface):
     occup_density_samp: Optional[str] = None
     occup_document: Optional[Union[str, "OccupDocumentEnum"]] = None
     occup_samp: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     pres_animal_insect: Optional[str] = None
     quad_pos: Optional[Union[str, "QuadPosEnum"]] = None
     rel_air_humidity: Optional[str] = None
@@ -1881,9 +1846,8 @@ class BuiltEnvInterface(DhInterface):
         if self.occup_samp is not None and not isinstance(self.occup_samp, str):
             self.occup_samp = str(self.occup_samp)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, str):
             self.pres_animal_insect = str(self.pres_animal_insect)
@@ -2393,9 +2357,8 @@ class BuiltEnvInterface(DhInterface):
         if self.occup_samp is not None and not isinstance(self.occup_samp, str):
             self.occup_samp = str(self.occup_samp)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, str):
             self.pres_animal_insect = str(self.pres_animal_insect)
@@ -2773,7 +2736,7 @@ class HcrCoresInterface(DhInterface):
     basin: Optional[str] = None
     benzene: Optional[str] = None
     calcium: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chloride: Optional[str] = None
     collection_date: Optional[str] = None
     density: Optional[str] = None
@@ -2807,11 +2770,11 @@ class HcrCoresInterface(DhInterface):
     lat_lon: Optional[str] = None
     lithology: Optional[Union[str, "LithologyEnum"]] = None
     magnesium: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     org_count_qpcr_info: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     owc_tvdss: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     permeability: Optional[str] = None
@@ -2967,9 +2930,8 @@ class HcrCoresInterface(DhInterface):
         if self.calcium is not None and not isinstance(self.calcium, str):
             self.calcium = str(self.calcium)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -3070,9 +3032,8 @@ class HcrCoresInterface(DhInterface):
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -3083,9 +3044,8 @@ class HcrCoresInterface(DhInterface):
         if self.org_count_qpcr_info is not None and not isinstance(self.org_count_qpcr_info, str):
             self.org_count_qpcr_info = str(self.org_count_qpcr_info)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.owc_tvdss is not None and not isinstance(self.owc_tvdss, str):
             self.owc_tvdss = str(self.owc_tvdss)
@@ -3277,9 +3237,8 @@ class HcrCoresInterface(DhInterface):
         if self.calcium is not None and not isinstance(self.calcium, str):
             self.calcium = str(self.calcium)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -3350,9 +3309,8 @@ class HcrCoresInterface(DhInterface):
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -3363,9 +3321,8 @@ class HcrCoresInterface(DhInterface):
         if self.org_count_qpcr_info is not None and not isinstance(self.org_count_qpcr_info, str):
             self.org_count_qpcr_info = str(self.org_count_qpcr_info)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.owc_tvdss is not None and not isinstance(self.owc_tvdss, str):
             self.owc_tvdss = str(self.owc_tvdss)
@@ -3554,7 +3511,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     biocide: Optional[str] = None
     biocide_admin_method: Optional[str] = None
     calcium: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chem_treat_method: Optional[str] = None
     chem_treatment: Optional[str] = None
     chloride: Optional[str] = None
@@ -3592,11 +3549,11 @@ class HcrFluidsSwabsInterface(DhInterface):
     lat_lon: Optional[str] = None
     lithology: Optional[Union[str, "LithologyEnum"]] = None
     magnesium: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     org_count_qpcr_info: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
@@ -3759,9 +3716,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.calcium is not None and not isinstance(self.calcium, str):
             self.calcium = str(self.calcium)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chem_treat_method is not None and not isinstance(self.chem_treat_method, str):
             self.chem_treat_method = str(self.chem_treat_method)
@@ -3874,9 +3830,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -3887,9 +3842,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.org_count_qpcr_info is not None and not isinstance(self.org_count_qpcr_info, str):
             self.org_count_qpcr_info = str(self.org_count_qpcr_info)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -4084,9 +4038,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.calcium is not None and not isinstance(self.calcium, str):
             self.calcium = str(self.calcium)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chem_treat_method is not None and not isinstance(self.chem_treat_method, str):
             self.chem_treat_method = str(self.chem_treat_method)
@@ -4169,9 +4122,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -4182,9 +4134,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.org_count_qpcr_info is not None and not isinstance(self.org_count_qpcr_info, str):
             self.org_count_qpcr_info = str(self.org_count_qpcr_info)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
@@ -4359,7 +4310,7 @@ class HostAssociatedInterface(DhInterface):
     biol_stat: Optional[Union[str, "BiolStatEnum"]] = None
     blood_press_diast: Optional[str] = None
     blood_press_syst: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     collection_date: Optional[str] = None
     depth: Optional[str] = None
     ecosystem: Optional[str] = None
@@ -4401,10 +4352,10 @@ class HostAssociatedInterface(DhInterface):
     host_taxid: Optional[str] = None
     host_tot_mass: Optional[str] = None
     lat_lon: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
     salinity: Optional[str] = None
     samp_capt_status: Optional[Union[str, "SampCaptStatusEnum"]] = None
@@ -4510,9 +4461,8 @@ class HostAssociatedInterface(DhInterface):
         if self.blood_press_syst is not None and not isinstance(self.blood_press_syst, str):
             self.blood_press_syst = str(self.blood_press_syst)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.collection_date is not None and not isinstance(self.collection_date, str):
             self.collection_date = str(self.collection_date)
@@ -4642,20 +4592,17 @@ class HostAssociatedInterface(DhInterface):
         if self.lat_lon is not None and not isinstance(self.lat_lon, str):
             self.lat_lon = str(self.lat_lon)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
             self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
@@ -4714,9 +4661,8 @@ class HostAssociatedInterface(DhInterface):
         if self.blood_press_syst is not None and not isinstance(self.blood_press_syst, str):
             self.blood_press_syst = str(self.blood_press_syst)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
@@ -4816,20 +4762,17 @@ class HostAssociatedInterface(DhInterface):
         if self.lat_lon is not None and not isinstance(self.lat_lon, str):
             self.lat_lon = str(self.lat_lon)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.rel_to_oxygen is not None and not isinstance(self.rel_to_oxygen, RelToOxygenEnum):
             self.rel_to_oxygen = RelToOxygenEnum(self.rel_to_oxygen)
@@ -5175,16 +5118,16 @@ class MiscEnvsInterface(DhInterface):
     alkalinity: Optional[str] = None
     alt: Optional[str] = None
     ammonium: Optional[str] = None
-    biomass: Optional[Union[str, List[str]]] = empty_list()
+    biomass: Optional[str] = None
     bromide: Optional[str] = None
     calcium: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chloride: Optional[str] = None
     chlorophyll: Optional[str] = None
     collection_date: Optional[str] = None
     density: Optional[str] = None
     depth: Optional[str] = None
-    diether_lipids: Optional[Union[str, List[str]]] = empty_list()
+    diether_lipids: Optional[str] = None
     diss_carb_dioxide: Optional[str] = None
     diss_hydrogen: Optional[str] = None
     diss_inorg_carb: Optional[str] = None
@@ -5202,20 +5145,20 @@ class MiscEnvsInterface(DhInterface):
     geo_loc_name: Optional[str] = None
     horizon_meth: Optional[str] = None
     lat_lon: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     nitro: Optional[str] = None
     org_carb: Optional[str] = None
     org_matter: Optional[str] = None
     org_nitro: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
     phosphate: Optional[str] = None
-    phosplipid_fatt_acid: Optional[Union[str, List[str]]] = empty_list()
+    phosplipid_fatt_acid: Optional[str] = None
     potassium: Optional[str] = None
     pressure: Optional[str] = None
     rel_to_oxygen: Optional[Union[str, "RelToOxygenEnum"]] = None
@@ -5314,9 +5257,8 @@ class MiscEnvsInterface(DhInterface):
         if self.ammonium is not None and not isinstance(self.ammonium, str):
             self.ammonium = str(self.ammonium)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bromide is not None and not isinstance(self.bromide, str):
             self.bromide = str(self.bromide)
@@ -5324,9 +5266,8 @@ class MiscEnvsInterface(DhInterface):
         if self.calcium is not None and not isinstance(self.calcium, str):
             self.calcium = str(self.calcium)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -5343,9 +5284,8 @@ class MiscEnvsInterface(DhInterface):
         if self.depth is not None and not isinstance(self.depth, str):
             self.depth = str(self.depth)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -5398,9 +5338,8 @@ class MiscEnvsInterface(DhInterface):
         if self.lat_lon is not None and not isinstance(self.lat_lon, str):
             self.lat_lon = str(self.lat_lon)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -5420,16 +5359,14 @@ class MiscEnvsInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.ph is not None and not isinstance(self.ph, float):
             self.ph = float(self.ph)
@@ -5440,9 +5377,8 @@ class MiscEnvsInterface(DhInterface):
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.potassium is not None and not isinstance(self.potassium, str):
             self.potassium = str(self.potassium)
@@ -5510,9 +5446,8 @@ class MiscEnvsInterface(DhInterface):
         if self.ammonium is not None and not isinstance(self.ammonium, str):
             self.ammonium = str(self.ammonium)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bromide is not None and not isinstance(self.bromide, str):
             self.bromide = str(self.bromide)
@@ -5520,9 +5455,8 @@ class MiscEnvsInterface(DhInterface):
         if self.calcium is not None and not isinstance(self.calcium, str):
             self.calcium = str(self.calcium)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -5533,9 +5467,8 @@ class MiscEnvsInterface(DhInterface):
         if self.density is not None and not isinstance(self.density, str):
             self.density = str(self.density)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -5564,9 +5497,8 @@ class MiscEnvsInterface(DhInterface):
         if self.lat_lon is not None and not isinstance(self.lat_lon, str):
             self.lat_lon = str(self.lat_lon)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -5586,16 +5518,14 @@ class MiscEnvsInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.ph is not None and not isinstance(self.ph, str):
             self.ph = str(self.ph)
@@ -5606,9 +5536,8 @@ class MiscEnvsInterface(DhInterface):
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.potassium is not None and not isinstance(self.potassium, str):
             self.potassium = str(self.potassium)
@@ -5690,7 +5619,7 @@ class PlantAssociatedInterface(DhInterface):
     antibiotic_regm: Optional[Union[str, List[str]]] = empty_list()
     biol_stat: Optional[Union[str, "BiolStatEnum"]] = None
     biotic_regm: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chem_mutagen: Optional[Union[str, List[str]]] = empty_list()
     climate_environment: Optional[Union[str, List[str]]] = empty_list()
     collection_date: Optional[str] = None
@@ -5734,11 +5663,11 @@ class PlantAssociatedInterface(DhInterface):
     light_regm: Optional[str] = None
     mechanical_damage: Optional[Union[str, List[str]]] = empty_list()
     mineral_nutr_regm: Optional[Union[str, List[str]]] = empty_list()
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
     non_min_nutr_regm: Optional[Union[str, List[str]]] = empty_list()
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     pesticide_regm: Optional[Union[str, List[str]]] = empty_list()
     ph_regm: Optional[Union[str, List[str]]] = empty_list()
     plant_growth_med: Optional[str] = None
@@ -5876,9 +5805,8 @@ class PlantAssociatedInterface(DhInterface):
         if self.biotic_regm is not None and not isinstance(self.biotic_regm, str):
             self.biotic_regm = str(self.biotic_regm)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if not isinstance(self.chem_mutagen, list):
             self.chem_mutagen = [self.chem_mutagen] if self.chem_mutagen is not None else []
@@ -6022,24 +5950,21 @@ class PlantAssociatedInterface(DhInterface):
             self.mineral_nutr_regm = [self.mineral_nutr_regm] if self.mineral_nutr_regm is not None else []
         self.mineral_nutr_regm = [v if isinstance(v, str) else str(v) for v in self.mineral_nutr_regm]
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if not isinstance(self.non_min_nutr_regm, list):
             self.non_min_nutr_regm = [self.non_min_nutr_regm] if self.non_min_nutr_regm is not None else []
         self.non_min_nutr_regm = [v if isinstance(v, str) else str(v) for v in self.non_min_nutr_regm]
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if not isinstance(self.pesticide_regm, list):
             self.pesticide_regm = [self.pesticide_regm] if self.pesticide_regm is not None else []
@@ -6178,9 +6103,8 @@ class PlantAssociatedInterface(DhInterface):
         if self.biotic_regm is not None and not isinstance(self.biotic_regm, str):
             self.biotic_regm = str(self.biotic_regm)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if not isinstance(self.chem_mutagen, list):
             self.chem_mutagen = [self.chem_mutagen] if self.chem_mutagen is not None else []
@@ -6291,24 +6215,21 @@ class PlantAssociatedInterface(DhInterface):
             self.mineral_nutr_regm = [self.mineral_nutr_regm] if self.mineral_nutr_regm is not None else []
         self.mineral_nutr_regm = [v if isinstance(v, str) else str(v) for v in self.mineral_nutr_regm]
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if not isinstance(self.non_min_nutr_regm, list):
             self.non_min_nutr_regm = [self.non_min_nutr_regm] if self.non_min_nutr_regm is not None else []
         self.non_min_nutr_regm = [v if isinstance(v, str) else str(v) for v in self.non_min_nutr_regm]
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if not isinstance(self.pesticide_regm, list):
             self.pesticide_regm = [self.pesticide_regm] if self.pesticide_regm is not None else []
@@ -6557,18 +6478,18 @@ class SedimentInterface(DhInterface):
     aminopept_act: Optional[str] = None
     ammonium: Optional[str] = None
     bacteria_carb_prod: Optional[str] = None
-    biomass: Optional[Union[str, List[str]]] = empty_list()
+    biomass: Optional[str] = None
     bishomohopanol: Optional[str] = None
     bromide: Optional[str] = None
     calcium: Optional[str] = None
     carb_nitro_ratio: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chloride: Optional[str] = None
     chlorophyll: Optional[str] = None
     collection_date: Optional[str] = None
     density: Optional[str] = None
     depth: Optional[str] = None
-    diether_lipids: Optional[Union[str, List[str]]] = empty_list()
+    diether_lipids: Optional[str] = None
     diss_carb_dioxide: Optional[str] = None
     diss_hydrogen: Optional[str] = None
     diss_inorg_carb: Optional[str] = None
@@ -6592,25 +6513,25 @@ class SedimentInterface(DhInterface):
     mean_frict_vel: Optional[str] = None
     mean_peak_frict_vel: Optional[str] = None
     methane: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
-    n_alkanes: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
+    n_alkanes: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     nitro: Optional[str] = None
     org_carb: Optional[str] = None
     org_matter: Optional[str] = None
     org_nitro: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     part_org_carb: Optional[str] = None
     particle_class: Optional[Union[str, List[str]]] = empty_list()
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     petroleum_hydrocarb: Optional[str] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
-    phaeopigments: Optional[Union[str, List[str]]] = empty_list()
+    phaeopigments: Optional[str] = None
     phosphate: Optional[str] = None
-    phosplipid_fatt_acid: Optional[Union[str, List[str]]] = empty_list()
+    phosplipid_fatt_acid: Optional[str] = None
     porosity: Optional[str] = None
     potassium: Optional[str] = None
     pressure: Optional[str] = None
@@ -6733,9 +6654,8 @@ class SedimentInterface(DhInterface):
         if self.bacteria_carb_prod is not None and not isinstance(self.bacteria_carb_prod, str):
             self.bacteria_carb_prod = str(self.bacteria_carb_prod)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bishomohopanol is not None and not isinstance(self.bishomohopanol, str):
             self.bishomohopanol = str(self.bishomohopanol)
@@ -6749,9 +6669,8 @@ class SedimentInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, str):
             self.carb_nitro_ratio = str(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -6768,9 +6687,8 @@ class SedimentInterface(DhInterface):
         if self.depth is not None and not isinstance(self.depth, str):
             self.depth = str(self.depth)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -6841,13 +6759,11 @@ class SedimentInterface(DhInterface):
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.n_alkanes, list):
-            self.n_alkanes = [self.n_alkanes] if self.n_alkanes is not None else []
-        self.n_alkanes = [v if isinstance(v, str) else str(v) for v in self.n_alkanes]
+        if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
+            self.n_alkanes = str(self.n_alkanes)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -6867,9 +6783,8 @@ class SedimentInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -6881,9 +6796,8 @@ class SedimentInterface(DhInterface):
             self.particle_class = [self.particle_class] if self.particle_class is not None else []
         self.particle_class = [v if isinstance(v, str) else str(v) for v in self.particle_class]
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.petroleum_hydrocarb is not None and not isinstance(self.petroleum_hydrocarb, str):
             self.petroleum_hydrocarb = str(self.petroleum_hydrocarb)
@@ -6894,16 +6808,14 @@ class SedimentInterface(DhInterface):
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
 
-        if not isinstance(self.phaeopigments, list):
-            self.phaeopigments = [self.phaeopigments] if self.phaeopigments is not None else []
-        self.phaeopigments = [v if isinstance(v, str) else str(v) for v in self.phaeopigments]
+        if self.phaeopigments is not None and not isinstance(self.phaeopigments, str):
+            self.phaeopigments = str(self.phaeopigments)
 
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.porosity is not None and not isinstance(self.porosity, str):
             self.porosity = str(self.porosity)
@@ -7007,9 +6919,8 @@ class SedimentInterface(DhInterface):
         if self.bacteria_carb_prod is not None and not isinstance(self.bacteria_carb_prod, str):
             self.bacteria_carb_prod = str(self.bacteria_carb_prod)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bishomohopanol is not None and not isinstance(self.bishomohopanol, str):
             self.bishomohopanol = str(self.bishomohopanol)
@@ -7023,9 +6934,8 @@ class SedimentInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, float):
             self.carb_nitro_ratio = float(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -7036,9 +6946,8 @@ class SedimentInterface(DhInterface):
         if self.density is not None and not isinstance(self.density, str):
             self.density = str(self.density)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -7085,13 +6994,11 @@ class SedimentInterface(DhInterface):
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.n_alkanes, list):
-            self.n_alkanes = [self.n_alkanes] if self.n_alkanes is not None else []
-        self.n_alkanes = [v if isinstance(v, str) else str(v) for v in self.n_alkanes]
+        if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
+            self.n_alkanes = str(self.n_alkanes)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -7111,9 +7018,8 @@ class SedimentInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
@@ -7125,9 +7031,8 @@ class SedimentInterface(DhInterface):
             self.particle_class = [self.particle_class] if self.particle_class is not None else []
         self.particle_class = [v if isinstance(v, str) else str(v) for v in self.particle_class]
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.petroleum_hydrocarb is not None and not isinstance(self.petroleum_hydrocarb, str):
             self.petroleum_hydrocarb = str(self.petroleum_hydrocarb)
@@ -7138,16 +7043,14 @@ class SedimentInterface(DhInterface):
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
 
-        if not isinstance(self.phaeopigments, list):
-            self.phaeopigments = [self.phaeopigments] if self.phaeopigments is not None else []
-        self.phaeopigments = [v if isinstance(v, str) else str(v) for v in self.phaeopigments]
+        if self.phaeopigments is not None and not isinstance(self.phaeopigments, str):
+            self.phaeopigments = str(self.phaeopigments)
 
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.porosity is not None and not isinstance(self.porosity, str):
             self.porosity = str(self.porosity)
@@ -7224,9 +7127,8 @@ class SedimentInterface(DhInterface):
         if self.turbidity is not None and not isinstance(self.turbidity, str):
             self.turbidity = str(self.turbidity)
 
-        if not isinstance(self.water_content, list):
-            self.water_content = [self.water_content] if self.water_content is not None else []
-        self.water_content = [v if isinstance(v, str) else str(v) for v in self.water_content]
+        if self.water_content is not None and not isinstance(self.water_content, str):
+            self.water_content = str(self.water_content)
 
         if self.samp_name is not None and not isinstance(self.samp_name, str):
             self.samp_name = str(self.samp_name)
@@ -7265,7 +7167,7 @@ class SoilInterface(DhInterface):
     biotic_regm: Optional[str] = None
     biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
     carb_nitro_ratio: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     climate_environment: Optional[Union[str, List[str]]] = empty_list()
     collection_date: Optional[str] = None
     crop_rotation: Optional[str] = None
@@ -7304,7 +7206,7 @@ class SoilInterface(DhInterface):
     manganese: Optional[str] = None
     micro_biomass_meth: Optional[str] = None
     microbial_biomass: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
     nitrate_nitrogen: Optional[str] = None
     nitrite_nitrogen: Optional[str] = None
     org_matter: Optional[str] = None
@@ -7487,9 +7389,8 @@ class SoilInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, str):
             self.carb_nitro_ratio = str(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if not isinstance(self.climate_environment, list):
             self.climate_environment = [self.climate_environment] if self.climate_environment is not None else []
@@ -7609,9 +7510,8 @@ class SoilInterface(DhInterface):
         if self.microbial_biomass is not None and not isinstance(self.microbial_biomass, str):
             self.microbial_biomass = str(self.microbial_biomass)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate_nitrogen is not None and not isinstance(self.nitrate_nitrogen, str):
             self.nitrate_nitrogen = str(self.nitrate_nitrogen)
@@ -7785,9 +7685,8 @@ class SoilInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, float):
             self.carb_nitro_ratio = float(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if not isinstance(self.climate_environment, list):
             self.climate_environment = [self.climate_environment] if self.climate_environment is not None else []
@@ -7834,9 +7733,8 @@ class SoilInterface(DhInterface):
             self.heavy_metals = [self.heavy_metals] if self.heavy_metals is not None else []
         self.heavy_metals = [v if isinstance(v, str) else str(v) for v in self.heavy_metals]
 
-        if not isinstance(self.heavy_metals_meth, list):
-            self.heavy_metals_meth = [self.heavy_metals_meth] if self.heavy_metals_meth is not None else []
-        self.heavy_metals_meth = [v if isinstance(v, str) else str(v) for v in self.heavy_metals_meth]
+        if self.heavy_metals_meth is not None and not isinstance(self.heavy_metals_meth, str):
+            self.heavy_metals_meth = str(self.heavy_metals_meth)
 
         if not isinstance(self.humidity_regm, list):
             self.humidity_regm = [self.humidity_regm] if self.humidity_regm is not None else []
@@ -7875,9 +7773,8 @@ class SoilInterface(DhInterface):
         if self.microbial_biomass is not None and not isinstance(self.microbial_biomass, str):
             self.microbial_biomass = str(self.microbial_biomass)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate_nitrogen is not None and not isinstance(self.nitrate_nitrogen, str):
             self.nitrate_nitrogen = str(self.nitrate_nitrogen)
@@ -7997,9 +7894,8 @@ class SoilInterface(DhInterface):
         if self.water_cont_soil_meth is not None and not isinstance(self.water_cont_soil_meth, str):
             self.water_cont_soil_meth = str(self.water_cont_soil_meth)
 
-        if not isinstance(self.water_content, list):
-            self.water_content = [self.water_content] if self.water_content is not None else []
-        self.water_content = [v if isinstance(v, str) else str(v) for v in self.water_content]
+        if self.water_content is not None and not isinstance(self.water_content, str):
+            self.water_content = str(self.water_content)
 
         if not isinstance(self.watering_regm, list):
             self.watering_regm = [self.watering_regm] if self.watering_regm is not None else []
@@ -8166,7 +8062,7 @@ class WastewaterSludgeInterface(DhInterface):
     alkalinity: Optional[str] = None
     alt: Optional[str] = None
     biochem_oxygen_dem: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chem_oxygen_dem: Optional[str] = None
     collection_date: Optional[str] = None
     depth: Optional[str] = None
@@ -8187,12 +8083,12 @@ class WastewaterSludgeInterface(DhInterface):
     indust_eff_percent: Optional[str] = None
     inorg_particles: Optional[Union[str, List[str]]] = empty_list()
     lat_lon: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     org_particles: Optional[Union[str, List[str]]] = empty_list()
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
     phosphate: Optional[str] = None
@@ -8307,9 +8203,8 @@ class WastewaterSludgeInterface(DhInterface):
         if self.biochem_oxygen_dem is not None and not isinstance(self.biochem_oxygen_dem, str):
             self.biochem_oxygen_dem = str(self.biochem_oxygen_dem)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chem_oxygen_dem is not None and not isinstance(self.chem_oxygen_dem, str):
             self.chem_oxygen_dem = str(self.chem_oxygen_dem)
@@ -8374,9 +8269,8 @@ class WastewaterSludgeInterface(DhInterface):
         if self.lat_lon is not None and not isinstance(self.lat_lon, str):
             self.lat_lon = str(self.lat_lon)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -8385,16 +8279,14 @@ class WastewaterSludgeInterface(DhInterface):
             self.org_particles = [self.org_particles] if self.org_particles is not None else []
         self.org_particles = [v if isinstance(v, str) else str(v) for v in self.org_particles]
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.ph is not None and not isinstance(self.ph, float):
             self.ph = float(self.ph)
@@ -8495,9 +8387,8 @@ class WastewaterSludgeInterface(DhInterface):
         if self.biochem_oxygen_dem is not None and not isinstance(self.biochem_oxygen_dem, str):
             self.biochem_oxygen_dem = str(self.biochem_oxygen_dem)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chem_oxygen_dem is not None and not isinstance(self.chem_oxygen_dem, str):
             self.chem_oxygen_dem = str(self.chem_oxygen_dem)
@@ -8532,9 +8423,8 @@ class WastewaterSludgeInterface(DhInterface):
         if self.lat_lon is not None and not isinstance(self.lat_lon, str):
             self.lat_lon = str(self.lat_lon)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -8543,16 +8433,14 @@ class WastewaterSludgeInterface(DhInterface):
             self.org_particles = [self.org_particles] if self.org_particles is not None else []
         self.org_particles = [v if isinstance(v, str) else str(v) for v in self.org_particles]
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.ph is not None and not isinstance(self.ph, str):
             self.ph = str(self.ph)
@@ -8670,23 +8558,23 @@ class WaterInterface(DhInterface):
     alt: Optional[str] = None
     aminopept_act: Optional[str] = None
     ammonium: Optional[str] = None
-    atmospheric_data: Optional[Union[str, List[str]]] = empty_list()
+    atmospheric_data: Optional[str] = None
     bac_prod: Optional[str] = None
     bac_resp: Optional[str] = None
     bacteria_carb_prod: Optional[str] = None
-    biomass: Optional[Union[str, List[str]]] = empty_list()
+    biomass: Optional[str] = None
     bishomohopanol: Optional[str] = None
     bromide: Optional[str] = None
     calcium: Optional[str] = None
     carb_nitro_ratio: Optional[str] = None
-    chem_administration: Optional[Union[str, List[str]]] = empty_list()
+    chem_administration: Optional[str] = None
     chloride: Optional[str] = None
     chlorophyll: Optional[str] = None
     collection_date: Optional[str] = None
     conduc: Optional[str] = None
     density: Optional[str] = None
     depth: Optional[str] = None
-    diether_lipids: Optional[Union[str, List[str]]] = empty_list()
+    diether_lipids: Optional[str] = None
     diss_carb_dioxide: Optional[str] = None
     diss_hydrogen: Optional[str] = None
     diss_inorg_carb: Optional[str] = None
@@ -8713,25 +8601,25 @@ class WaterInterface(DhInterface):
     light_intensity: Optional[str] = None
     mean_frict_vel: Optional[str] = None
     mean_peak_frict_vel: Optional[str] = None
-    misc_param: Optional[Union[str, List[str]]] = empty_list()
-    n_alkanes: Optional[Union[str, List[str]]] = empty_list()
+    misc_param: Optional[str] = None
+    n_alkanes: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     nitro: Optional[str] = None
     org_carb: Optional[str] = None
     org_matter: Optional[str] = None
     org_nitro: Optional[str] = None
-    organism_count: Optional[Union[str, List[str]]] = empty_list()
+    organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     part_org_carb: Optional[str] = None
     part_org_nitro: Optional[str] = None
-    perturbation: Optional[Union[str, List[str]]] = empty_list()
+    perturbation: Optional[str] = None
     petroleum_hydrocarb: Optional[str] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
-    phaeopigments: Optional[Union[str, List[str]]] = empty_list()
+    phaeopigments: Optional[str] = None
     phosphate: Optional[str] = None
-    phosplipid_fatt_acid: Optional[Union[str, List[str]]] = empty_list()
+    phosplipid_fatt_acid: Optional[str] = None
     photon_flux: Optional[str] = None
     potassium: Optional[str] = None
     pressure: Optional[str] = None
@@ -8770,41 +8658,6 @@ class WaterInterface(DhInterface):
     sample_link: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.collection_date):
-            self.MissingRequiredField("collection_date")
-        if not isinstance(self.collection_date, str):
-            self.collection_date = str(self.collection_date)
-
-        if self._is_empty(self.depth):
-            self.MissingRequiredField("depth")
-        if not isinstance(self.depth, str):
-            self.depth = str(self.depth)
-
-        if self._is_empty(self.ecosystem):
-            self.MissingRequiredField("ecosystem")
-        if not isinstance(self.ecosystem, str):
-            self.ecosystem = str(self.ecosystem)
-
-        if self._is_empty(self.ecosystem_category):
-            self.MissingRequiredField("ecosystem_category")
-        if not isinstance(self.ecosystem_category, str):
-            self.ecosystem_category = str(self.ecosystem_category)
-
-        if self._is_empty(self.ecosystem_subtype):
-            self.MissingRequiredField("ecosystem_subtype")
-        if not isinstance(self.ecosystem_subtype, str):
-            self.ecosystem_subtype = str(self.ecosystem_subtype)
-
-        if self._is_empty(self.ecosystem_type):
-            self.MissingRequiredField("ecosystem_type")
-        if not isinstance(self.ecosystem_type, str):
-            self.ecosystem_type = str(self.ecosystem_type)
-
-        if self._is_empty(self.elev):
-            self.MissingRequiredField("elev")
-        if not isinstance(self.elev, float):
-            self.elev = float(self.elev)
-
         if self._is_empty(self.env_broad_scale):
             self.MissingRequiredField("env_broad_scale")
         if not isinstance(self.env_broad_scale, str):
@@ -8819,16 +8672,6 @@ class WaterInterface(DhInterface):
             self.MissingRequiredField("env_medium")
         if not isinstance(self.env_medium, str):
             self.env_medium = str(self.env_medium)
-
-        if self._is_empty(self.samp_store_temp):
-            self.MissingRequiredField("samp_store_temp")
-        if not isinstance(self.samp_store_temp, str):
-            self.samp_store_temp = str(self.samp_store_temp)
-
-        if self._is_empty(self.specific_ecosystem):
-            self.MissingRequiredField("specific_ecosystem")
-        if not isinstance(self.specific_ecosystem, str):
-            self.specific_ecosystem = str(self.specific_ecosystem)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -8859,9 +8702,8 @@ class WaterInterface(DhInterface):
         if self.ammonium is not None and not isinstance(self.ammonium, str):
             self.ammonium = str(self.ammonium)
 
-        if not isinstance(self.atmospheric_data, list):
-            self.atmospheric_data = [self.atmospheric_data] if self.atmospheric_data is not None else []
-        self.atmospheric_data = [v if isinstance(v, str) else str(v) for v in self.atmospheric_data]
+        if self.atmospheric_data is not None and not isinstance(self.atmospheric_data, str):
+            self.atmospheric_data = str(self.atmospheric_data)
 
         if self.bac_prod is not None and not isinstance(self.bac_prod, str):
             self.bac_prod = str(self.bac_prod)
@@ -8872,9 +8714,8 @@ class WaterInterface(DhInterface):
         if self.bacteria_carb_prod is not None and not isinstance(self.bacteria_carb_prod, str):
             self.bacteria_carb_prod = str(self.bacteria_carb_prod)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bishomohopanol is not None and not isinstance(self.bishomohopanol, str):
             self.bishomohopanol = str(self.bishomohopanol)
@@ -8888,9 +8729,8 @@ class WaterInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, str):
             self.carb_nitro_ratio = str(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -8910,9 +8750,8 @@ class WaterInterface(DhInterface):
         if self.depth is not None and not isinstance(self.depth, str):
             self.depth = str(self.depth)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -8992,13 +8831,11 @@ class WaterInterface(DhInterface):
         if self.mean_peak_frict_vel is not None and not isinstance(self.mean_peak_frict_vel, str):
             self.mean_peak_frict_vel = str(self.mean_peak_frict_vel)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.n_alkanes, list):
-            self.n_alkanes = [self.n_alkanes] if self.n_alkanes is not None else []
-        self.n_alkanes = [v if isinstance(v, str) else str(v) for v in self.n_alkanes]
+        if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
+            self.n_alkanes = str(self.n_alkanes)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -9018,9 +8855,8 @@ class WaterInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -9031,9 +8867,8 @@ class WaterInterface(DhInterface):
         if self.part_org_nitro is not None and not isinstance(self.part_org_nitro, str):
             self.part_org_nitro = str(self.part_org_nitro)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.petroleum_hydrocarb is not None and not isinstance(self.petroleum_hydrocarb, str):
             self.petroleum_hydrocarb = str(self.petroleum_hydrocarb)
@@ -9044,16 +8879,14 @@ class WaterInterface(DhInterface):
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
 
-        if not isinstance(self.phaeopigments, list):
-            self.phaeopigments = [self.phaeopigments] if self.phaeopigments is not None else []
-        self.phaeopigments = [v if isinstance(v, str) else str(v) for v in self.phaeopigments]
+        if self.phaeopigments is not None and not isinstance(self.phaeopigments, str):
+            self.phaeopigments = str(self.phaeopigments)
 
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.photon_flux is not None and not isinstance(self.photon_flux, str):
             self.photon_flux = str(self.photon_flux)
@@ -9172,9 +9005,8 @@ class WaterInterface(DhInterface):
         if self.ammonium is not None and not isinstance(self.ammonium, str):
             self.ammonium = str(self.ammonium)
 
-        if not isinstance(self.atmospheric_data, list):
-            self.atmospheric_data = [self.atmospheric_data] if self.atmospheric_data is not None else []
-        self.atmospheric_data = [v if isinstance(v, str) else str(v) for v in self.atmospheric_data]
+        if self.atmospheric_data is not None and not isinstance(self.atmospheric_data, str):
+            self.atmospheric_data = str(self.atmospheric_data)
 
         if self.bac_prod is not None and not isinstance(self.bac_prod, str):
             self.bac_prod = str(self.bac_prod)
@@ -9185,9 +9017,8 @@ class WaterInterface(DhInterface):
         if self.bacteria_carb_prod is not None and not isinstance(self.bacteria_carb_prod, str):
             self.bacteria_carb_prod = str(self.bacteria_carb_prod)
 
-        if not isinstance(self.biomass, list):
-            self.biomass = [self.biomass] if self.biomass is not None else []
-        self.biomass = [v if isinstance(v, str) else str(v) for v in self.biomass]
+        if self.biomass is not None and not isinstance(self.biomass, str):
+            self.biomass = str(self.biomass)
 
         if self.bishomohopanol is not None and not isinstance(self.bishomohopanol, str):
             self.bishomohopanol = str(self.bishomohopanol)
@@ -9201,9 +9032,8 @@ class WaterInterface(DhInterface):
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, float):
             self.carb_nitro_ratio = float(self.carb_nitro_ratio)
 
-        if not isinstance(self.chem_administration, list):
-            self.chem_administration = [self.chem_administration] if self.chem_administration is not None else []
-        self.chem_administration = [v if isinstance(v, str) else str(v) for v in self.chem_administration]
+        if self.chem_administration is not None and not isinstance(self.chem_administration, str):
+            self.chem_administration = str(self.chem_administration)
 
         if self.chloride is not None and not isinstance(self.chloride, str):
             self.chloride = str(self.chloride)
@@ -9211,15 +9041,20 @@ class WaterInterface(DhInterface):
         if self.chlorophyll is not None and not isinstance(self.chlorophyll, str):
             self.chlorophyll = str(self.chlorophyll)
 
+        if self.collection_date is not None and not isinstance(self.collection_date, str):
+            self.collection_date = str(self.collection_date)
+
         if self.conduc is not None and not isinstance(self.conduc, str):
             self.conduc = str(self.conduc)
 
         if self.density is not None and not isinstance(self.density, str):
             self.density = str(self.density)
 
-        if not isinstance(self.diether_lipids, list):
-            self.diether_lipids = [self.diether_lipids] if self.diether_lipids is not None else []
-        self.diether_lipids = [v if isinstance(v, str) else str(v) for v in self.diether_lipids]
+        if self.depth is not None and not isinstance(self.depth, str):
+            self.depth = str(self.depth)
+
+        if self.diether_lipids is not None and not isinstance(self.diether_lipids, str):
+            self.diether_lipids = str(self.diether_lipids)
 
         if self.diss_carb_dioxide is not None and not isinstance(self.diss_carb_dioxide, str):
             self.diss_carb_dioxide = str(self.diss_carb_dioxide)
@@ -9248,6 +9083,21 @@ class WaterInterface(DhInterface):
         if self.down_par is not None and not isinstance(self.down_par, str):
             self.down_par = str(self.down_par)
 
+        if self.ecosystem is not None and not isinstance(self.ecosystem, str):
+            self.ecosystem = str(self.ecosystem)
+
+        if self.ecosystem_category is not None and not isinstance(self.ecosystem_category, str):
+            self.ecosystem_category = str(self.ecosystem_category)
+
+        if self.ecosystem_subtype is not None and not isinstance(self.ecosystem_subtype, str):
+            self.ecosystem_subtype = str(self.ecosystem_subtype)
+
+        if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
+            self.ecosystem_type = str(self.ecosystem_type)
+
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
+
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
@@ -9275,13 +9125,11 @@ class WaterInterface(DhInterface):
         if self.mean_peak_frict_vel is not None and not isinstance(self.mean_peak_frict_vel, str):
             self.mean_peak_frict_vel = str(self.mean_peak_frict_vel)
 
-        if not isinstance(self.misc_param, list):
-            self.misc_param = [self.misc_param] if self.misc_param is not None else []
-        self.misc_param = [v if isinstance(v, str) else str(v) for v in self.misc_param]
+        if self.misc_param is not None and not isinstance(self.misc_param, str):
+            self.misc_param = str(self.misc_param)
 
-        if not isinstance(self.n_alkanes, list):
-            self.n_alkanes = [self.n_alkanes] if self.n_alkanes is not None else []
-        self.n_alkanes = [v if isinstance(v, str) else str(v) for v in self.n_alkanes]
+        if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
+            self.n_alkanes = str(self.n_alkanes)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -9301,9 +9149,8 @@ class WaterInterface(DhInterface):
         if self.org_nitro is not None and not isinstance(self.org_nitro, str):
             self.org_nitro = str(self.org_nitro)
 
-        if not isinstance(self.organism_count, list):
-            self.organism_count = [self.organism_count] if self.organism_count is not None else []
-        self.organism_count = [v if isinstance(v, str) else str(v) for v in self.organism_count]
+        if self.organism_count is not None and not isinstance(self.organism_count, str):
+            self.organism_count = str(self.organism_count)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, RelToOxygenEnum):
             self.oxy_stat_samp = RelToOxygenEnum(self.oxy_stat_samp)
@@ -9314,29 +9161,26 @@ class WaterInterface(DhInterface):
         if self.part_org_nitro is not None and not isinstance(self.part_org_nitro, str):
             self.part_org_nitro = str(self.part_org_nitro)
 
-        if not isinstance(self.perturbation, list):
-            self.perturbation = [self.perturbation] if self.perturbation is not None else []
-        self.perturbation = [v if isinstance(v, str) else str(v) for v in self.perturbation]
+        if self.perturbation is not None and not isinstance(self.perturbation, str):
+            self.perturbation = str(self.perturbation)
 
         if self.petroleum_hydrocarb is not None and not isinstance(self.petroleum_hydrocarb, str):
             self.petroleum_hydrocarb = str(self.petroleum_hydrocarb)
 
-        if self.ph is not None and not isinstance(self.ph, str):
-            self.ph = str(self.ph)
+        if self.ph is not None and not isinstance(self.ph, float):
+            self.ph = float(self.ph)
 
         if self.ph_meth is not None and not isinstance(self.ph_meth, str):
             self.ph_meth = str(self.ph_meth)
 
-        if not isinstance(self.phaeopigments, list):
-            self.phaeopigments = [self.phaeopigments] if self.phaeopigments is not None else []
-        self.phaeopigments = [v if isinstance(v, str) else str(v) for v in self.phaeopigments]
+        if self.phaeopigments is not None and not isinstance(self.phaeopigments, str):
+            self.phaeopigments = str(self.phaeopigments)
 
         if self.phosphate is not None and not isinstance(self.phosphate, str):
             self.phosphate = str(self.phosphate)
 
-        if not isinstance(self.phosplipid_fatt_acid, list):
-            self.phosplipid_fatt_acid = [self.phosplipid_fatt_acid] if self.phosplipid_fatt_acid is not None else []
-        self.phosplipid_fatt_acid = [v if isinstance(v, str) else str(v) for v in self.phosplipid_fatt_acid]
+        if self.phosplipid_fatt_acid is not None and not isinstance(self.phosplipid_fatt_acid, str):
+            self.phosplipid_fatt_acid = str(self.phosplipid_fatt_acid)
 
         if self.photon_flux is not None and not isinstance(self.photon_flux, str):
             self.photon_flux = str(self.photon_flux)
@@ -9377,6 +9221,9 @@ class WaterInterface(DhInterface):
         if self.samp_store_loc is not None and not isinstance(self.samp_store_loc, str):
             self.samp_store_loc = str(self.samp_store_loc)
 
+        if self.samp_store_temp is not None and not isinstance(self.samp_store_temp, str):
+            self.samp_store_temp = str(self.samp_store_temp)
+
         if self.silicate is not None and not isinstance(self.silicate, str):
             self.silicate = str(self.silicate)
 
@@ -9394,6 +9241,9 @@ class WaterInterface(DhInterface):
 
         if self.soluble_react_phosp is not None and not isinstance(self.soluble_react_phosp, str):
             self.soluble_react_phosp = str(self.soluble_react_phosp)
+
+        if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, str):
+            self.specific_ecosystem = str(self.specific_ecosystem)
 
         if self.sulfate is not None and not isinstance(self.sulfate, str):
             self.sulfate = str(self.sulfate)
@@ -9444,61 +9294,6 @@ class WaterInterface(DhInterface):
 
 
 @dataclass
-class Agent(YAMLRoot):
-    """
-    a provence-generating agent
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.Agent
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:Agent"
-    class_name: ClassVar[str] = "Agent"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.Agent
-
-    acted_on_behalf_of: Optional[Union[dict, "Agent"]] = None
-    was_informed_by: Optional[Union[str, ActivityId]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.acted_on_behalf_of is not None and not isinstance(self.acted_on_behalf_of, Agent):
-            self.acted_on_behalf_of = Agent(**as_dict(self.acted_on_behalf_of))
-
-        if self.was_informed_by is not None and not isinstance(self.was_informed_by, ActivityId):
-            self.was_informed_by = ActivityId(self.was_informed_by)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class AttributeValue(YAMLRoot):
-    """
-    The value for any value of a attribute for a sample. This object can hold both the un-normalized atomic value and
-    the structured value
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.AttributeValue
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:AttributeValue"
-    class_name: ClassVar[str] = "AttributeValue"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.AttributeValue
-
-    has_raw_value: Optional[str] = None
-    was_generated_by: Optional[Union[str, ActivityId]] = None
-    type: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_raw_value is not None and not isinstance(self.has_raw_value, str):
-            self.has_raw_value = str(self.has_raw_value)
-
-        if self.was_generated_by is not None and not isinstance(self.was_generated_by, ActivityId):
-            self.was_generated_by = ActivityId(self.was_generated_by)
-
-        if self.type is not None and not isinstance(self.type, str):
-            self.type = str(self.type)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
 class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
@@ -9530,73 +9325,6 @@ class NamedThing(YAMLRoot):
         if not isinstance(self.alternative_identifiers, list):
             self.alternative_identifiers = [self.alternative_identifiers] if self.alternative_identifiers is not None else []
         self.alternative_identifiers = [v if isinstance(v, str) else str(v) for v in self.alternative_identifiers]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class Activity(YAMLRoot):
-    """
-    a provence-generating activity
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.Activity
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:Activity"
-    class_name: ClassVar[str] = "Activity"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.Activity
-
-    id: Union[str, ActivityId] = None
-    name: Optional[str] = None
-    started_at_time: Optional[Union[str, XSDDateTime]] = None
-    ended_at_time: Optional[Union[str, XSDDateTime]] = None
-    was_informed_by: Optional[Union[str, ActivityId]] = None
-    was_associated_with: Optional[Union[dict, Agent]] = None
-    used: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ActivityId):
-            self.id = ActivityId(self.id)
-
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
-
-        if self.started_at_time is not None and not isinstance(self.started_at_time, XSDDateTime):
-            self.started_at_time = XSDDateTime(self.started_at_time)
-
-        if self.ended_at_time is not None and not isinstance(self.ended_at_time, XSDDateTime):
-            self.ended_at_time = XSDDateTime(self.ended_at_time)
-
-        if self.was_informed_by is not None and not isinstance(self.was_informed_by, ActivityId):
-            self.was_informed_by = ActivityId(self.was_informed_by)
-
-        if self.was_associated_with is not None and not isinstance(self.was_associated_with, Agent):
-            self.was_associated_with = Agent(**as_dict(self.was_associated_with))
-
-        if self.used is not None and not isinstance(self.used, str):
-            self.used = str(self.used)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class OntologyClass(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.OntologyClass
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:OntologyClass"
-    class_name: ClassVar[str] = "OntologyClass"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.OntologyClass
-
-    id: Union[str, OntologyClassId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, OntologyClassId):
-            self.id = OntologyClassId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -10570,170 +10298,6 @@ class StoreCondEnum(EnumDefinitionImpl):
         description="placeholder enum descr",
     )
 
-class OccupDocumentEnum(EnumDefinitionImpl):
-
-    estimate = PermissibleValue(text="estimate")
-    videos = PermissibleValue(text="videos")
-
-    _defn = EnumDefinition(
-        name="OccupDocumentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "automated count",
-                PermissibleValue(text="automated count") )
-        setattr(cls, "manual count",
-                PermissibleValue(text="manual count") )
-
-class ExtWallOrientEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-    northeast = PermissibleValue(text="northeast")
-    southeast = PermissibleValue(text="southeast")
-    southwest = PermissibleValue(text="southwest")
-    northwest = PermissibleValue(text="northwest")
-
-    _defn = EnumDefinition(
-        name="ExtWallOrientEnum",
-    )
-
-class CeilFinishMatEnum(EnumDefinitionImpl):
-
-    drywall = PermissibleValue(text="drywall")
-    tiles = PermissibleValue(text="tiles")
-    PVC = PermissibleValue(text="PVC")
-    plasterboard = PermissibleValue(text="plasterboard")
-    metal = PermissibleValue(text="metal")
-    fiberglass = PermissibleValue(text="fiberglass")
-    stucco = PermissibleValue(text="stucco")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="CeilFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "mineral fibre",
-                PermissibleValue(text="mineral fibre") )
-        setattr(cls, "mineral wool/calcium silicate",
-                PermissibleValue(text="mineral wool/calcium silicate") )
-
-class WallFinishMatEnum(EnumDefinitionImpl):
-
-    plaster = PermissibleValue(text="plaster")
-    tile = PermissibleValue(text="tile")
-    terrazzo = PermissibleValue(text="terrazzo")
-    wood = PermissibleValue(text="wood")
-    metal = PermissibleValue(text="metal")
-    masonry = PermissibleValue(text="masonry")
-
-    _defn = EnumDefinition(
-        name="WallFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "gypsum plaster",
-                PermissibleValue(text="gypsum plaster") )
-        setattr(cls, "veneer plaster",
-                PermissibleValue(text="veneer plaster") )
-        setattr(cls, "gypsum board",
-                PermissibleValue(text="gypsum board") )
-        setattr(cls, "stone facing",
-                PermissibleValue(text="stone facing") )
-        setattr(cls, "acoustical treatment",
-                PermissibleValue(text="acoustical treatment") )
-
-class ArchStrucEnum(EnumDefinitionImpl):
-
-    building = PermissibleValue(text="building")
-    shed = PermissibleValue(text="shed")
-    home = PermissibleValue(text="home")
-
-    _defn = EnumDefinition(
-        name="ArchStrucEnum",
-    )
-
-class SurfMaterialEnum(EnumDefinitionImpl):
-
-    adobe = PermissibleValue(text="adobe")
-    carpet = PermissibleValue(text="carpet")
-    concrete = PermissibleValue(text="concrete")
-    glass = PermissibleValue(text="glass")
-    metal = PermissibleValue(text="metal")
-    paint = PermissibleValue(text="paint")
-    plastic = PermissibleValue(text="plastic")
-    stone = PermissibleValue(text="stone")
-    stucco = PermissibleValue(text="stucco")
-    tile = PermissibleValue(text="tile")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="SurfMaterialEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "cinder blocks",
-                PermissibleValue(text="cinder blocks") )
-        setattr(cls, "hay bales",
-                PermissibleValue(text="hay bales") )
-        setattr(cls, "stainless steel",
-                PermissibleValue(text="stainless steel") )
-
-class SampFloorEnum(EnumDefinitionImpl):
-
-    basement = PermissibleValue(text="basement")
-    lobby = PermissibleValue(text="lobby")
-
-    _defn = EnumDefinition(
-        name="SampFloorEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "1st floor",
-                PermissibleValue(text="1st floor") )
-        setattr(cls, "2nd floor",
-                PermissibleValue(text="2nd floor") )
-
-class WaterFeatTypeEnum(EnumDefinitionImpl):
-
-    fountain = PermissibleValue(text="fountain")
-    pool = PermissibleValue(text="pool")
-    stream = PermissibleValue(text="stream")
-    waterfall = PermissibleValue(text="waterfall")
-
-    _defn = EnumDefinition(
-        name="WaterFeatTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "standing feature",
-                PermissibleValue(text="standing feature") )
-
-class DoorCompTypeEnum(EnumDefinitionImpl):
-
-    revolving = PermissibleValue(text="revolving")
-    sliding = PermissibleValue(text="sliding")
-    telescopic = PermissibleValue(text="telescopic")
-
-    _defn = EnumDefinition(
-        name="DoorCompTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "metal covered",
-                PermissibleValue(text="metal covered") )
-
 class ShadingDeviceCondEnum(EnumDefinitionImpl):
 
     damaged = PermissibleValue(text="damaged")
@@ -10750,788 +10314,6 @@ class ShadingDeviceCondEnum(EnumDefinitionImpl):
                 PermissibleValue(text="needs repair") )
         setattr(cls, "visible wear",
                 PermissibleValue(text="visible wear") )
-
-class LightTypeEnum(EnumDefinitionImpl):
-
-    none = PermissibleValue(text="none")
-
-    _defn = EnumDefinition(
-        name="LightTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "natural light",
-                PermissibleValue(text="natural light") )
-        setattr(cls, "electric light",
-                PermissibleValue(text="electric light") )
-        setattr(cls, "desk lamp",
-                PermissibleValue(text="desk lamp") )
-        setattr(cls, "flourescent lights",
-                PermissibleValue(text="flourescent lights") )
-
-class WindowCoverEnum(EnumDefinitionImpl):
-
-    blinds = PermissibleValue(text="blinds")
-    curtains = PermissibleValue(text="curtains")
-    none = PermissibleValue(text="none")
-
-    _defn = EnumDefinition(
-        name="WindowCoverEnum",
-    )
-
-class TrainStopLocEnum(EnumDefinitionImpl):
-
-    end = PermissibleValue(text="end")
-    mid = PermissibleValue(text="mid")
-    downtown = PermissibleValue(text="downtown")
-
-    _defn = EnumDefinition(
-        name="TrainStopLocEnum",
-    )
-
-class FloorWaterMoldEnum(EnumDefinitionImpl):
-
-    condensation = PermissibleValue(text="condensation")
-
-    _defn = EnumDefinition(
-        name="FloorWaterMoldEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "mold odor",
-                PermissibleValue(text="mold odor") )
-        setattr(cls, "wet floor",
-                PermissibleValue(text="wet floor") )
-        setattr(cls, "water stains",
-                PermissibleValue(text="water stains") )
-        setattr(cls, "wall discoloration",
-                PermissibleValue(text="wall discoloration") )
-        setattr(cls, "floor discoloration",
-                PermissibleValue(text="floor discoloration") )
-        setattr(cls, "ceiling discoloration",
-                PermissibleValue(text="ceiling discoloration") )
-        setattr(cls, "peeling paint or wallpaper",
-                PermissibleValue(text="peeling paint or wallpaper") )
-        setattr(cls, "bulging walls",
-                PermissibleValue(text="bulging walls") )
-
-class TrainStatLocEnum(EnumDefinitionImpl):
-
-    riverside = PermissibleValue(text="riverside")
-
-    _defn = EnumDefinition(
-        name="TrainStatLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "south station above ground",
-                PermissibleValue(text="south station above ground") )
-        setattr(cls, "south station underground",
-                PermissibleValue(text="south station underground") )
-        setattr(cls, "south station amtrak",
-                PermissibleValue(text="south station amtrak") )
-        setattr(cls, "forest hills",
-                PermissibleValue(text="forest hills") )
-
-class DoorTypeWoodEnum(EnumDefinitionImpl):
-
-    battened = PermissibleValue(text="battened")
-    flush = PermissibleValue(text="flush")
-    louvered = PermissibleValue(text="louvered")
-
-    _defn = EnumDefinition(
-        name="DoorTypeWoodEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "bettened and ledged",
-                PermissibleValue(text="bettened and ledged") )
-        setattr(cls, "ledged and braced",
-                PermissibleValue(text="ledged and braced") )
-        setattr(cls, "ledged and framed",
-                PermissibleValue(text="ledged and framed") )
-        setattr(cls, "ledged, braced and frame",
-                PermissibleValue(text="ledged, braced and frame") )
-        setattr(cls, "framed and paneled",
-                PermissibleValue(text="framed and paneled") )
-        setattr(cls, "glashed or sash",
-                PermissibleValue(text="glashed or sash") )
-        setattr(cls, "wire gauged",
-                PermissibleValue(text="wire gauged") )
-
-class BuildingSettingEnum(EnumDefinitionImpl):
-
-    urban = PermissibleValue(text="urban")
-    suburban = PermissibleValue(text="suburban")
-    exurban = PermissibleValue(text="exurban")
-    rural = PermissibleValue(text="rural")
-
-    _defn = EnumDefinition(
-        name="BuildingSettingEnum",
-    )
-
-class MechStrucEnum(EnumDefinitionImpl):
-
-    subway = PermissibleValue(text="subway")
-    coach = PermissibleValue(text="coach")
-    carriage = PermissibleValue(text="carriage")
-    elevator = PermissibleValue(text="elevator")
-    escalator = PermissibleValue(text="escalator")
-    boat = PermissibleValue(text="boat")
-    train = PermissibleValue(text="train")
-    car = PermissibleValue(text="car")
-    bus = PermissibleValue(text="bus")
-
-    _defn = EnumDefinition(
-        name="MechStrucEnum",
-    )
-
-class BuildDocsEnum(EnumDefinitionImpl):
-
-    schedule = PermissibleValue(text="schedule")
-    sections = PermissibleValue(text="sections")
-    submittals = PermissibleValue(text="submittals")
-    windows = PermissibleValue(text="windows")
-
-    _defn = EnumDefinition(
-        name="BuildDocsEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "building information model",
-                PermissibleValue(text="building information model") )
-        setattr(cls, "commissioning report",
-                PermissibleValue(text="commissioning report") )
-        setattr(cls, "complaint logs",
-                PermissibleValue(text="complaint logs") )
-        setattr(cls, "contract administration",
-                PermissibleValue(text="contract administration") )
-        setattr(cls, "cost estimate",
-                PermissibleValue(text="cost estimate") )
-        setattr(cls, "janitorial schedules or logs",
-                PermissibleValue(text="janitorial schedules or logs") )
-        setattr(cls, "maintenance plans",
-                PermissibleValue(text="maintenance plans") )
-        setattr(cls, "shop drawings",
-                PermissibleValue(text="shop drawings") )
-        setattr(cls, "ventilation system",
-                PermissibleValue(text="ventilation system") )
-
-class WallTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="WallTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-                PermissibleValue(text="crows feet") )
-        setattr(cls, "crows-foot stomp",
-                PermissibleValue(text="crows-foot stomp") )
-        setattr(cls, "",
-                PermissibleValue(text="") )
-        setattr(cls, "double skip",
-                PermissibleValue(text="double skip") )
-        setattr(cls, "hawk and trowel",
-                PermissibleValue(text="hawk and trowel") )
-        setattr(cls, "orange peel",
-                PermissibleValue(text="orange peel") )
-        setattr(cls, "rosebud stomp",
-                PermissibleValue(text="rosebud stomp") )
-        setattr(cls, "Santa-Fe texture",
-                PermissibleValue(text="Santa-Fe texture") )
-        setattr(cls, "skip trowel",
-                PermissibleValue(text="skip trowel") )
-        setattr(cls, "stomp knockdown",
-                PermissibleValue(text="stomp knockdown") )
-
-class HeatDelivLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="HeatDelivLocEnum",
-    )
-
-class WallLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WallLocEnum",
-    )
-
-class SampWeatherEnum(EnumDefinitionImpl):
-
-    cloudy = PermissibleValue(text="cloudy")
-    foggy = PermissibleValue(text="foggy")
-    hail = PermissibleValue(text="hail")
-    rain = PermissibleValue(text="rain")
-    snow = PermissibleValue(text="snow")
-    sleet = PermissibleValue(text="sleet")
-    sunny = PermissibleValue(text="sunny")
-    windy = PermissibleValue(text="windy")
-
-    _defn = EnumDefinition(
-        name="SampWeatherEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "clear sky",
-                PermissibleValue(text="clear sky") )
-
-class WindowMatEnum(EnumDefinitionImpl):
-
-    clad = PermissibleValue(text="clad")
-    fiberglass = PermissibleValue(text="fiberglass")
-    metal = PermissibleValue(text="metal")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="WindowMatEnum",
-    )
-
-class RoomConnectedEnum(EnumDefinitionImpl):
-
-    attic = PermissibleValue(text="attic")
-    bathroom = PermissibleValue(text="bathroom")
-    closet = PermissibleValue(text="closet")
-    elevator = PermissibleValue(text="elevator")
-    hallway = PermissibleValue(text="hallway")
-    kitchen = PermissibleValue(text="kitchen")
-    office = PermissibleValue(text="office")
-    stairwell = PermissibleValue(text="stairwell")
-
-    _defn = EnumDefinition(
-        name="RoomConnectedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "conference room",
-                PermissibleValue(text="conference room") )
-        setattr(cls, "examining room",
-                PermissibleValue(text="examining room") )
-        setattr(cls, "mail room",
-                PermissibleValue(text="mail room") )
-
-class FloorCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="FloorCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class DoorTypeMetalEnum(EnumDefinitionImpl):
-
-    collapsible = PermissibleValue(text="collapsible")
-    hollow = PermissibleValue(text="hollow")
-
-    _defn = EnumDefinition(
-        name="DoorTypeMetalEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "corrugated steel",
-                PermissibleValue(text="corrugated steel") )
-        setattr(cls, "rolling shutters",
-                PermissibleValue(text="rolling shutters") )
-        setattr(cls, "steel plate",
-                PermissibleValue(text="steel plate") )
-
-class IndoorSpaceEnum(EnumDefinitionImpl):
-
-    bedroom = PermissibleValue(text="bedroom")
-    office = PermissibleValue(text="office")
-    bathroom = PermissibleValue(text="bathroom")
-    foyer = PermissibleValue(text="foyer")
-    kitchen = PermissibleValue(text="kitchen")
-    hallway = PermissibleValue(text="hallway")
-    elevator = PermissibleValue(text="elevator")
-
-    _defn = EnumDefinition(
-        name="IndoorSpaceEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "locker room",
-                PermissibleValue(text="locker room") )
-
-class FilterTypeEnum(EnumDefinitionImpl):
-
-    HEPA = PermissibleValue(text="HEPA")
-    electrostatic = PermissibleValue(text="electrostatic")
-
-    _defn = EnumDefinition(
-        name="FilterTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "particulate air filter",
-                PermissibleValue(text="particulate air filter") )
-        setattr(cls, "chemical air filter",
-                PermissibleValue(text="chemical air filter") )
-        setattr(cls, "low-MERV pleated media",
-                PermissibleValue(text="low-MERV pleated media") )
-        setattr(cls, "gas-phase or ultraviolet air treatments",
-                PermissibleValue(text="gas-phase or ultraviolet air treatments") )
-
-class BuildOccupTypeEnum(EnumDefinitionImpl):
-
-    office = PermissibleValue(text="office")
-    market = PermissibleValue(text="market")
-    restaurant = PermissibleValue(text="restaurant")
-    residence = PermissibleValue(text="residence")
-    school = PermissibleValue(text="school")
-    residential = PermissibleValue(text="residential")
-    commercial = PermissibleValue(text="commercial")
-    airport = PermissibleValue(text="airport")
-
-    _defn = EnumDefinition(
-        name="BuildOccupTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "low rise",
-                PermissibleValue(text="low rise") )
-        setattr(cls, "high rise",
-                PermissibleValue(text="high rise") )
-        setattr(cls, "wood framed",
-                PermissibleValue(text="wood framed") )
-        setattr(cls, "health care",
-                PermissibleValue(text="health care") )
-        setattr(cls, "sports complex",
-                PermissibleValue(text="sports complex") )
-
-class FloorFinishMatEnum(EnumDefinitionImpl):
-
-    tile = PermissibleValue(text="tile")
-    carpet = PermissibleValue(text="carpet")
-    rug = PermissibleValue(text="rug")
-    lineoleum = PermissibleValue(text="lineoleum")
-    stone = PermissibleValue(text="stone")
-    bamboo = PermissibleValue(text="bamboo")
-    cork = PermissibleValue(text="cork")
-    terrazo = PermissibleValue(text="terrazo")
-    concrete = PermissibleValue(text="concrete")
-    none = PermissibleValue(text="none")
-    sealed = PermissibleValue(text="sealed")
-    paint = PermissibleValue(text="paint")
-
-    _defn = EnumDefinition(
-        name="FloorFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "wood strip or parquet",
-                PermissibleValue(text="wood strip or parquet") )
-        setattr(cls, "laminate wood",
-                PermissibleValue(text="laminate wood") )
-        setattr(cls, "vinyl composition tile",
-                PermissibleValue(text="vinyl composition tile") )
-        setattr(cls, "sheet vinyl",
-                PermissibleValue(text="sheet vinyl") )
-        setattr(cls, "clear finish",
-                PermissibleValue(text="clear finish") )
-        setattr(cls, "none or unfinished",
-                PermissibleValue(text="none or unfinished") )
-
-class CeilCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="CeilCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class RoomTypeEnum(EnumDefinitionImpl):
-
-    attic = PermissibleValue(text="attic")
-    bathroom = PermissibleValue(text="bathroom")
-    closet = PermissibleValue(text="closet")
-    elevator = PermissibleValue(text="elevator")
-    hallway = PermissibleValue(text="hallway")
-    kitchen = PermissibleValue(text="kitchen")
-    stairwell = PermissibleValue(text="stairwell")
-    lobby = PermissibleValue(text="lobby")
-    vestibule = PermissibleValue(text="vestibule")
-    laboratory_wet = PermissibleValue(text="laboratory_wet")
-    laboratory_dry = PermissibleValue(text="laboratory_dry")
-    gymnasium = PermissibleValue(text="gymnasium")
-    natatorium = PermissibleValue(text="natatorium")
-    auditorium = PermissibleValue(text="auditorium")
-    lockers = PermissibleValue(text="lockers")
-    cafe = PermissibleValue(text="cafe")
-    warehouse = PermissibleValue(text="warehouse")
-
-    _defn = EnumDefinition(
-        name="RoomTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "conference room",
-                PermissibleValue(text="conference room") )
-        setattr(cls, "examining room",
-                PermissibleValue(text="examining room") )
-        setattr(cls, "mail room",
-                PermissibleValue(text="mail room") )
-        setattr(cls, "private office",
-                PermissibleValue(text="private office") )
-        setattr(cls, "open office",
-                PermissibleValue(text="open office") )
-        setattr(cls, ",restroom",
-                PermissibleValue(text=",restroom") )
-        setattr(cls, "mechanical or electrical room",
-                PermissibleValue(text="mechanical or electrical room") )
-        setattr(cls, "data center",
-                PermissibleValue(text="data center") )
-
-class TrainLineEnum(EnumDefinitionImpl):
-
-    red = PermissibleValue(text="red")
-    green = PermissibleValue(text="green")
-    orange = PermissibleValue(text="orange")
-
-    _defn = EnumDefinition(
-        name="TrainLineEnum",
-    )
-
-class WindowLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WindowLocEnum",
-    )
-
-class FloorStrucEnum(EnumDefinitionImpl):
-
-    balcony = PermissibleValue(text="balcony")
-    concrete = PermissibleValue(text="concrete")
-
-    _defn = EnumDefinition(
-        name="FloorStrucEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "floating floor",
-                PermissibleValue(text="floating floor") )
-        setattr(cls, "glass floor",
-                PermissibleValue(text="glass floor") )
-        setattr(cls, "raised floor",
-                PermissibleValue(text="raised floor") )
-        setattr(cls, "sprung floor",
-                PermissibleValue(text="sprung floor") )
-        setattr(cls, "wood-framed",
-                PermissibleValue(text="wood-framed") )
-
-class IntWallCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="IntWallCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class FurnitureEnum(EnumDefinitionImpl):
-
-    cabinet = PermissibleValue(text="cabinet")
-    chair = PermissibleValue(text="chair")
-    desks = PermissibleValue(text="desks")
-
-    _defn = EnumDefinition(
-        name="FurnitureEnum",
-    )
-
-class QuadPosEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="QuadPosEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "North side",
-                PermissibleValue(text="North side") )
-        setattr(cls, "West side",
-                PermissibleValue(text="West side") )
-        setattr(cls, "South side",
-                PermissibleValue(text="South side") )
-        setattr(cls, "East side",
-                PermissibleValue(text="East side") )
-
-class WallSurfTreatmentEnum(EnumDefinitionImpl):
-
-    painted = PermissibleValue(text="painted")
-    paneling = PermissibleValue(text="paneling")
-    stucco = PermissibleValue(text="stucco")
-    fabric = PermissibleValue(text="fabric")
-
-    _defn = EnumDefinition(
-        name="WallSurfTreatmentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "wall paper",
-                PermissibleValue(text="wall paper") )
-        setattr(cls, "no treatment",
-                PermissibleValue(text="no treatment") )
-
-class DoorDirectEnum(EnumDefinitionImpl):
-
-    inward = PermissibleValue(text="inward")
-    outward = PermissibleValue(text="outward")
-    sideways = PermissibleValue(text="sideways")
-
-    _defn = EnumDefinition(
-        name="DoorDirectEnum",
-    )
-
-class RelSampLocEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="RelSampLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "edge of car",
-                PermissibleValue(text="edge of car") )
-        setattr(cls, "center of car",
-                PermissibleValue(text="center of car") )
-        setattr(cls, "under a seat",
-                PermissibleValue(text="under a seat") )
-
-class WallConstTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="WallConstTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "frame construction",
-                PermissibleValue(text="frame construction") )
-        setattr(cls, "joisted masonry",
-                PermissibleValue(text="joisted masonry") )
-        setattr(cls, "light noncombustible",
-                PermissibleValue(text="light noncombustible") )
-        setattr(cls, "masonry noncombustible",
-                PermissibleValue(text="masonry noncombustible") )
-        setattr(cls, "modified fire resistive",
-                PermissibleValue(text="modified fire resistive") )
-        setattr(cls, "fire resistive",
-                PermissibleValue(text="fire resistive") )
-
-class DrawingsEnum(EnumDefinitionImpl):
-
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
-    bid = PermissibleValue(text="bid")
-    design = PermissibleValue(text="design")
-    diagram = PermissibleValue(text="diagram")
-    sketch = PermissibleValue(text="sketch")
-
-    _defn = EnumDefinition(
-        name="DrawingsEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "as built",
-                PermissibleValue(text="as built") )
-        setattr(cls, "building navigation map",
-                PermissibleValue(text="building navigation map") )
-
-class WeekdayEnum(EnumDefinitionImpl):
-
-    Monday = PermissibleValue(text="Monday")
-    Tuesday = PermissibleValue(text="Tuesday")
-    Wednesday = PermissibleValue(text="Wednesday")
-    Thursday = PermissibleValue(text="Thursday")
-    Friday = PermissibleValue(text="Friday")
-    Saturday = PermissibleValue(text="Saturday")
-    Sunday = PermissibleValue(text="Sunday")
-
-    _defn = EnumDefinition(
-        name="WeekdayEnum",
-    )
-
-class VisMediaEnum(EnumDefinitionImpl):
-
-    photos = PermissibleValue(text="photos")
-    videos = PermissibleValue(text="videos")
-    interiors = PermissibleValue(text="interiors")
-    equipment = PermissibleValue(text="equipment")
-
-    _defn = EnumDefinition(
-        name="VisMediaEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "commonly of the building",
-                PermissibleValue(text="commonly of the building") )
-        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
-                PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)") )
-        setattr(cls, "3D scans",
-                PermissibleValue(text="3D scans") )
-
-class DoorMatEnum(EnumDefinitionImpl):
-
-    aluminum = PermissibleValue(text="aluminum")
-    fiberboard = PermissibleValue(text="fiberboard")
-    fiberglass = PermissibleValue(text="fiberglass")
-    metal = PermissibleValue(text="metal")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="DoorMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "cellular PVC",
-                PermissibleValue(text="cellular PVC") )
-        setattr(cls, "engineered plastic",
-                PermissibleValue(text="engineered plastic") )
-        setattr(cls, "thermoplastic alloy",
-                PermissibleValue(text="thermoplastic alloy") )
-        setattr(cls, "wood/plastic composite",
-                PermissibleValue(text="wood/plastic composite") )
-
-class CeilTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="CeilTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-                PermissibleValue(text="crows feet") )
-        setattr(cls, "crows-foot stomp",
-                PermissibleValue(text="crows-foot stomp") )
-        setattr(cls, "double skip",
-                PermissibleValue(text="double skip") )
-        setattr(cls, "hawk and trowel",
-                PermissibleValue(text="hawk and trowel") )
-        setattr(cls, "orange peel",
-                PermissibleValue(text="orange peel") )
-        setattr(cls, "rosebud stomp",
-                PermissibleValue(text="rosebud stomp") )
-        setattr(cls, "Santa-Fe texture",
-                PermissibleValue(text="Santa-Fe texture") )
-        setattr(cls, "skip trowel",
-                PermissibleValue(text="skip trowel") )
-        setattr(cls, "stomp knockdown",
-                PermissibleValue(text="stomp knockdown") )
-
-class WindowVertPosEnum(EnumDefinitionImpl):
-
-    bottom = PermissibleValue(text="bottom")
-    middle = PermissibleValue(text="middle")
-    top = PermissibleValue(text="top")
-    low = PermissibleValue(text="low")
-    high = PermissibleValue(text="high")
-
-    _defn = EnumDefinition(
-        name="WindowVertPosEnum",
-    )
-
-class SeasonUseEnum(EnumDefinitionImpl):
-
-    Spring = PermissibleValue(text="Spring")
-    Summer = PermissibleValue(text="Summer")
-    Fall = PermissibleValue(text="Fall")
-    Winter = PermissibleValue(text="Winter")
-
-    _defn = EnumDefinition(
-        name="SeasonUseEnum",
-    )
-
-class HeatCoolTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="HeatCoolTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "radiant system",
-                PermissibleValue(text="radiant system") )
-        setattr(cls, "heat pump",
-                PermissibleValue(text="heat pump") )
-        setattr(cls, "forced air system",
-                PermissibleValue(text="forced air system") )
-        setattr(cls, "steam forced heat",
-                PermissibleValue(text="steam forced heat") )
-        setattr(cls, "wood stove",
-                PermissibleValue(text="wood stove") )
 
 class ShadingDeviceTypeEnum(EnumDefinitionImpl):
 
@@ -11583,36 +10365,6 @@ class CeilTypeEnum(EnumDefinitionImpl):
         setattr(cls, "barrel-shaped",
                 PermissibleValue(text="barrel-shaped") )
 
-class DoorLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="DoorLocEnum",
-    )
-
-class GenderRestroomEnum(EnumDefinitionImpl):
-
-    female = PermissibleValue(text="female")
-    male = PermissibleValue(text="male")
-    unisex = PermissibleValue(text="unisex")
-
-    _defn = EnumDefinition(
-        name="GenderRestroomEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "all gender",
-                PermissibleValue(text="all gender") )
-        setattr(cls, "gender neurtral",
-                PermissibleValue(text="gender neurtral") )
-        setattr(cls, "male and female",
-                PermissibleValue(text="male and female") )
-
 class RoomCondtEnum(EnumDefinitionImpl):
 
     new = PermissibleValue(text="new")
@@ -11632,6 +10384,210 @@ class RoomCondtEnum(EnumDefinitionImpl):
         setattr(cls, "visible signs of mold/mildew",
                 PermissibleValue(text="visible signs of mold/mildew") )
 
+class SampFloorEnum(EnumDefinitionImpl):
+
+    basement = PermissibleValue(text="basement")
+    lobby = PermissibleValue(text="lobby")
+
+    _defn = EnumDefinition(
+        name="SampFloorEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "1st floor",
+                PermissibleValue(text="1st floor") )
+        setattr(cls, "2nd floor",
+                PermissibleValue(text="2nd floor") )
+
+class CeilFinishMatEnum(EnumDefinitionImpl):
+
+    drywall = PermissibleValue(text="drywall")
+    tiles = PermissibleValue(text="tiles")
+    PVC = PermissibleValue(text="PVC")
+    plasterboard = PermissibleValue(text="plasterboard")
+    metal = PermissibleValue(text="metal")
+    fiberglass = PermissibleValue(text="fiberglass")
+    stucco = PermissibleValue(text="stucco")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="CeilFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "mineral fibre",
+                PermissibleValue(text="mineral fibre") )
+        setattr(cls, "mineral wool/calcium silicate",
+                PermissibleValue(text="mineral wool/calcium silicate") )
+
+class FloorStrucEnum(EnumDefinitionImpl):
+
+    balcony = PermissibleValue(text="balcony")
+    concrete = PermissibleValue(text="concrete")
+
+    _defn = EnumDefinition(
+        name="FloorStrucEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "floating floor",
+                PermissibleValue(text="floating floor") )
+        setattr(cls, "glass floor",
+                PermissibleValue(text="glass floor") )
+        setattr(cls, "raised floor",
+                PermissibleValue(text="raised floor") )
+        setattr(cls, "sprung floor",
+                PermissibleValue(text="sprung floor") )
+        setattr(cls, "wood-framed",
+                PermissibleValue(text="wood-framed") )
+
+class WaterFeatTypeEnum(EnumDefinitionImpl):
+
+    fountain = PermissibleValue(text="fountain")
+    pool = PermissibleValue(text="pool")
+    stream = PermissibleValue(text="stream")
+    waterfall = PermissibleValue(text="waterfall")
+
+    _defn = EnumDefinition(
+        name="WaterFeatTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "standing feature",
+                PermissibleValue(text="standing feature") )
+
+class WallLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="WallLocEnum",
+    )
+
+class WindowCoverEnum(EnumDefinitionImpl):
+
+    blinds = PermissibleValue(text="blinds")
+    curtains = PermissibleValue(text="curtains")
+    none = PermissibleValue(text="none")
+
+    _defn = EnumDefinition(
+        name="WindowCoverEnum",
+    )
+
+class DoorLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="DoorLocEnum",
+    )
+
+class FloorWaterMoldEnum(EnumDefinitionImpl):
+
+    condensation = PermissibleValue(text="condensation")
+
+    _defn = EnumDefinition(
+        name="FloorWaterMoldEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "mold odor",
+                PermissibleValue(text="mold odor") )
+        setattr(cls, "wet floor",
+                PermissibleValue(text="wet floor") )
+        setattr(cls, "water stains",
+                PermissibleValue(text="water stains") )
+        setattr(cls, "wall discoloration",
+                PermissibleValue(text="wall discoloration") )
+        setattr(cls, "floor discoloration",
+                PermissibleValue(text="floor discoloration") )
+        setattr(cls, "ceiling discoloration",
+                PermissibleValue(text="ceiling discoloration") )
+        setattr(cls, "peeling paint or wallpaper",
+                PermissibleValue(text="peeling paint or wallpaper") )
+        setattr(cls, "bulging walls",
+                PermissibleValue(text="bulging walls") )
+
+class WallTextureEnum(EnumDefinitionImpl):
+
+    knockdown = PermissibleValue(text="knockdown")
+    popcorn = PermissibleValue(text="popcorn")
+    smooth = PermissibleValue(text="smooth")
+    swirl = PermissibleValue(text="swirl")
+
+    _defn = EnumDefinition(
+        name="WallTextureEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "crows feet",
+                PermissibleValue(text="crows feet") )
+        setattr(cls, "crows-foot stomp",
+                PermissibleValue(text="crows-foot stomp") )
+        setattr(cls, "",
+                PermissibleValue(text="") )
+        setattr(cls, "double skip",
+                PermissibleValue(text="double skip") )
+        setattr(cls, "hawk and trowel",
+                PermissibleValue(text="hawk and trowel") )
+        setattr(cls, "orange peel",
+                PermissibleValue(text="orange peel") )
+        setattr(cls, "rosebud stomp",
+                PermissibleValue(text="rosebud stomp") )
+        setattr(cls, "Santa-Fe texture",
+                PermissibleValue(text="Santa-Fe texture") )
+        setattr(cls, "skip trowel",
+                PermissibleValue(text="skip trowel") )
+        setattr(cls, "stomp knockdown",
+                PermissibleValue(text="stomp knockdown") )
+
+class SpecificEnum(EnumDefinitionImpl):
+
+    operation = PermissibleValue(text="operation")
+    construction = PermissibleValue(text="construction")
+    bid = PermissibleValue(text="bid")
+    design = PermissibleValue(text="design")
+    photos = PermissibleValue(text="photos")
+
+    _defn = EnumDefinition(
+        name="SpecificEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "as built",
+                PermissibleValue(text="as built") )
+
+class DoorTypeMetalEnum(EnumDefinitionImpl):
+
+    collapsible = PermissibleValue(text="collapsible")
+    hollow = PermissibleValue(text="hollow")
+
+    _defn = EnumDefinition(
+        name="DoorTypeMetalEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "corrugated steel",
+                PermissibleValue(text="corrugated steel") )
+        setattr(cls, "rolling shutters",
+                PermissibleValue(text="rolling shutters") )
+        setattr(cls, "steel plate",
+                PermissibleValue(text="steel plate") )
+
 class HandidnessEnum(EnumDefinitionImpl):
 
     ambidexterity = PermissibleValue(text="ambidexterity")
@@ -11649,47 +10605,263 @@ class HandidnessEnum(EnumDefinitionImpl):
         setattr(cls, "right handedness",
                 PermissibleValue(text="right handedness") )
 
-class DoorCondEnum(EnumDefinitionImpl):
+class SeasonUseEnum(EnumDefinitionImpl):
 
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
+    Spring = PermissibleValue(text="Spring")
+    Summer = PermissibleValue(text="Summer")
+    Fall = PermissibleValue(text="Fall")
+    Winter = PermissibleValue(text="Winter")
 
     _defn = EnumDefinition(
-        name="DoorCondEnum",
+        name="SeasonUseEnum",
+    )
+
+class TrainLineEnum(EnumDefinitionImpl):
+
+    red = PermissibleValue(text="red")
+    green = PermissibleValue(text="green")
+    orange = PermissibleValue(text="orange")
+
+    _defn = EnumDefinition(
+        name="TrainLineEnum",
+    )
+
+class SampWeatherEnum(EnumDefinitionImpl):
+
+    cloudy = PermissibleValue(text="cloudy")
+    foggy = PermissibleValue(text="foggy")
+    hail = PermissibleValue(text="hail")
+    rain = PermissibleValue(text="rain")
+    snow = PermissibleValue(text="snow")
+    sleet = PermissibleValue(text="sleet")
+    sunny = PermissibleValue(text="sunny")
+    windy = PermissibleValue(text="windy")
+
+    _defn = EnumDefinition(
+        name="SampWeatherEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
+        setattr(cls, "clear sky",
+                PermissibleValue(text="clear sky") )
 
-class WindowTypeEnum(EnumDefinitionImpl):
+class QuadPosEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="WindowTypeEnum",
+        name="QuadPosEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "single-hung sash window",
-                PermissibleValue(text="single-hung sash window") )
-        setattr(cls, "horizontal sash window",
-                PermissibleValue(text="horizontal sash window") )
-        setattr(cls, "fixed window",
-                PermissibleValue(text="fixed window") )
+        setattr(cls, "North side",
+                PermissibleValue(text="North side") )
+        setattr(cls, "West side",
+                PermissibleValue(text="West side") )
+        setattr(cls, "South side",
+                PermissibleValue(text="South side") )
+        setattr(cls, "East side",
+                PermissibleValue(text="East side") )
 
-class DoorTypeEnum(EnumDefinitionImpl):
+class FurnitureEnum(EnumDefinitionImpl):
 
-    composite = PermissibleValue(text="composite")
-    metal = PermissibleValue(text="metal")
-    wooden = PermissibleValue(text="wooden")
+    cabinet = PermissibleValue(text="cabinet")
+    chair = PermissibleValue(text="chair")
+    desks = PermissibleValue(text="desks")
 
     _defn = EnumDefinition(
-        name="DoorTypeEnum",
+        name="FurnitureEnum",
     )
+
+class BuildOccupTypeEnum(EnumDefinitionImpl):
+
+    office = PermissibleValue(text="office")
+    market = PermissibleValue(text="market")
+    restaurant = PermissibleValue(text="restaurant")
+    residence = PermissibleValue(text="residence")
+    school = PermissibleValue(text="school")
+    residential = PermissibleValue(text="residential")
+    commercial = PermissibleValue(text="commercial")
+    airport = PermissibleValue(text="airport")
+
+    _defn = EnumDefinition(
+        name="BuildOccupTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "low rise",
+                PermissibleValue(text="low rise") )
+        setattr(cls, "high rise",
+                PermissibleValue(text="high rise") )
+        setattr(cls, "wood framed",
+                PermissibleValue(text="wood framed") )
+        setattr(cls, "health care",
+                PermissibleValue(text="health care") )
+        setattr(cls, "sports complex",
+                PermissibleValue(text="sports complex") )
+
+class BuildingSettingEnum(EnumDefinitionImpl):
+
+    urban = PermissibleValue(text="urban")
+    suburban = PermissibleValue(text="suburban")
+    exurban = PermissibleValue(text="exurban")
+    rural = PermissibleValue(text="rural")
+
+    _defn = EnumDefinition(
+        name="BuildingSettingEnum",
+    )
+
+class BuildDocsEnum(EnumDefinitionImpl):
+
+    schedule = PermissibleValue(text="schedule")
+    sections = PermissibleValue(text="sections")
+    submittals = PermissibleValue(text="submittals")
+    windows = PermissibleValue(text="windows")
+
+    _defn = EnumDefinition(
+        name="BuildDocsEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "building information model",
+                PermissibleValue(text="building information model") )
+        setattr(cls, "commissioning report",
+                PermissibleValue(text="commissioning report") )
+        setattr(cls, "complaint logs",
+                PermissibleValue(text="complaint logs") )
+        setattr(cls, "contract administration",
+                PermissibleValue(text="contract administration") )
+        setattr(cls, "cost estimate",
+                PermissibleValue(text="cost estimate") )
+        setattr(cls, "janitorial schedules or logs",
+                PermissibleValue(text="janitorial schedules or logs") )
+        setattr(cls, "maintenance plans",
+                PermissibleValue(text="maintenance plans") )
+        setattr(cls, "shop drawings",
+                PermissibleValue(text="shop drawings") )
+        setattr(cls, "ventilation system",
+                PermissibleValue(text="ventilation system") )
+
+class WindowHorizPosEnum(EnumDefinitionImpl):
+
+    left = PermissibleValue(text="left")
+    middle = PermissibleValue(text="middle")
+    right = PermissibleValue(text="right")
+
+    _defn = EnumDefinition(
+        name="WindowHorizPosEnum",
+    )
+
+class DoorTypeWoodEnum(EnumDefinitionImpl):
+
+    battened = PermissibleValue(text="battened")
+    flush = PermissibleValue(text="flush")
+    louvered = PermissibleValue(text="louvered")
+
+    _defn = EnumDefinition(
+        name="DoorTypeWoodEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "bettened and ledged",
+                PermissibleValue(text="bettened and ledged") )
+        setattr(cls, "ledged and braced",
+                PermissibleValue(text="ledged and braced") )
+        setattr(cls, "ledged and framed",
+                PermissibleValue(text="ledged and framed") )
+        setattr(cls, "ledged, braced and frame",
+                PermissibleValue(text="ledged, braced and frame") )
+        setattr(cls, "framed and paneled",
+                PermissibleValue(text="framed and paneled") )
+        setattr(cls, "glashed or sash",
+                PermissibleValue(text="glashed or sash") )
+        setattr(cls, "wire gauged",
+                PermissibleValue(text="wire gauged") )
+
+class DoorMoveEnum(EnumDefinitionImpl):
+
+    collapsible = PermissibleValue(text="collapsible")
+    folding = PermissibleValue(text="folding")
+    revolving = PermissibleValue(text="revolving")
+    sliding = PermissibleValue(text="sliding")
+    swinging = PermissibleValue(text="swinging")
+
+    _defn = EnumDefinition(
+        name="DoorMoveEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "rolling shutter",
+                PermissibleValue(text="rolling shutter") )
+
+class ExtWindowOrientEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+    northeast = PermissibleValue(text="northeast")
+    southeast = PermissibleValue(text="southeast")
+    southwest = PermissibleValue(text="southwest")
+    northwest = PermissibleValue(text="northwest")
+
+    _defn = EnumDefinition(
+        name="ExtWindowOrientEnum",
+    )
+
+class MechStrucEnum(EnumDefinitionImpl):
+
+    subway = PermissibleValue(text="subway")
+    coach = PermissibleValue(text="coach")
+    carriage = PermissibleValue(text="carriage")
+    elevator = PermissibleValue(text="elevator")
+    escalator = PermissibleValue(text="escalator")
+    boat = PermissibleValue(text="boat")
+    train = PermissibleValue(text="train")
+    car = PermissibleValue(text="car")
+    bus = PermissibleValue(text="bus")
+
+    _defn = EnumDefinition(
+        name="MechStrucEnum",
+    )
+
+class FloorFinishMatEnum(EnumDefinitionImpl):
+
+    tile = PermissibleValue(text="tile")
+    carpet = PermissibleValue(text="carpet")
+    rug = PermissibleValue(text="rug")
+    lineoleum = PermissibleValue(text="lineoleum")
+    stone = PermissibleValue(text="stone")
+    bamboo = PermissibleValue(text="bamboo")
+    cork = PermissibleValue(text="cork")
+    terrazo = PermissibleValue(text="terrazo")
+    concrete = PermissibleValue(text="concrete")
+    none = PermissibleValue(text="none")
+    sealed = PermissibleValue(text="sealed")
+    paint = PermissibleValue(text="paint")
+
+    _defn = EnumDefinition(
+        name="FloorFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "wood strip or parquet",
+                PermissibleValue(text="wood strip or parquet") )
+        setattr(cls, "laminate wood",
+                PermissibleValue(text="laminate wood") )
+        setattr(cls, "vinyl composition tile",
+                PermissibleValue(text="vinyl composition tile") )
+        setattr(cls, "sheet vinyl",
+                PermissibleValue(text="sheet vinyl") )
+        setattr(cls, "clear finish",
+                PermissibleValue(text="clear finish") )
+        setattr(cls, "none or unfinished",
+                PermissibleValue(text="none or unfinished") )
 
 class IndoorSurfEnum(EnumDefinitionImpl):
 
@@ -11710,86 +10882,6 @@ class IndoorSurfEnum(EnumDefinitionImpl):
                 PermissibleValue(text="counter top") )
         setattr(cls, "vent cover",
                 PermissibleValue(text="vent cover") )
-
-class RoomLocEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="RoomLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "corner room",
-                PermissibleValue(text="corner room") )
-        setattr(cls, "interior room",
-                PermissibleValue(text="interior room") )
-        setattr(cls, "exterior wall",
-                PermissibleValue(text="exterior wall") )
-
-class SpecificEnum(EnumDefinitionImpl):
-
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
-    bid = PermissibleValue(text="bid")
-    design = PermissibleValue(text="design")
-    photos = PermissibleValue(text="photos")
-
-    _defn = EnumDefinition(
-        name="SpecificEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "as built",
-                PermissibleValue(text="as built") )
-
-class DoorMoveEnum(EnumDefinitionImpl):
-
-    collapsible = PermissibleValue(text="collapsible")
-    folding = PermissibleValue(text="folding")
-    revolving = PermissibleValue(text="revolving")
-    sliding = PermissibleValue(text="sliding")
-    swinging = PermissibleValue(text="swinging")
-
-    _defn = EnumDefinition(
-        name="DoorMoveEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "rolling shutter",
-                PermissibleValue(text="rolling shutter") )
-
-class WindowCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="WindowCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-
-class SubstructureTypeEnum(EnumDefinitionImpl):
-
-    crawlspace = PermissibleValue(text="crawlspace")
-    basement = PermissibleValue(text="basement")
-
-    _defn = EnumDefinition(
-        name="SubstructureTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "slab on grade",
-                PermissibleValue(text="slab on grade") )
 
 class SurfAirContEnum(EnumDefinitionImpl):
 
@@ -11813,15 +10905,363 @@ class SurfAirContEnum(EnumDefinitionImpl):
         setattr(cls, "biological contaminants",
                 PermissibleValue(text="biological contaminants") )
 
-class WindowHorizPosEnum(EnumDefinitionImpl):
+class TrainStatLocEnum(EnumDefinitionImpl):
 
-    left = PermissibleValue(text="left")
-    middle = PermissibleValue(text="middle")
-    right = PermissibleValue(text="right")
+    riverside = PermissibleValue(text="riverside")
 
     _defn = EnumDefinition(
-        name="WindowHorizPosEnum",
+        name="TrainStatLocEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "south station above ground",
+                PermissibleValue(text="south station above ground") )
+        setattr(cls, "south station underground",
+                PermissibleValue(text="south station underground") )
+        setattr(cls, "south station amtrak",
+                PermissibleValue(text="south station amtrak") )
+        setattr(cls, "forest hills",
+                PermissibleValue(text="forest hills") )
+
+class RoomLocEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="RoomLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "corner room",
+                PermissibleValue(text="corner room") )
+        setattr(cls, "interior room",
+                PermissibleValue(text="interior room") )
+        setattr(cls, "exterior wall",
+                PermissibleValue(text="exterior wall") )
+
+class SubstructureTypeEnum(EnumDefinitionImpl):
+
+    crawlspace = PermissibleValue(text="crawlspace")
+    basement = PermissibleValue(text="basement")
+
+    _defn = EnumDefinition(
+        name="SubstructureTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "slab on grade",
+                PermissibleValue(text="slab on grade") )
+
+class CeilCondEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="CeilCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+
+class WindowCondEnum(EnumDefinitionImpl):
+
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="WindowCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+
+class HeatDelivLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="HeatDelivLocEnum",
+    )
+
+class WindowTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="WindowTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "single-hung sash window",
+                PermissibleValue(text="single-hung sash window") )
+        setattr(cls, "horizontal sash window",
+                PermissibleValue(text="horizontal sash window") )
+        setattr(cls, "fixed window",
+                PermissibleValue(text="fixed window") )
+
+class ExtWallOrientEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+    northeast = PermissibleValue(text="northeast")
+    southeast = PermissibleValue(text="southeast")
+    southwest = PermissibleValue(text="southwest")
+    northwest = PermissibleValue(text="northwest")
+
+    _defn = EnumDefinition(
+        name="ExtWallOrientEnum",
+    )
+
+class CeilTextureEnum(EnumDefinitionImpl):
+
+    knockdown = PermissibleValue(text="knockdown")
+    popcorn = PermissibleValue(text="popcorn")
+    smooth = PermissibleValue(text="smooth")
+    swirl = PermissibleValue(text="swirl")
+
+    _defn = EnumDefinition(
+        name="CeilTextureEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "crows feet",
+                PermissibleValue(text="crows feet") )
+        setattr(cls, "crows-foot stomp",
+                PermissibleValue(text="crows-foot stomp") )
+        setattr(cls, "double skip",
+                PermissibleValue(text="double skip") )
+        setattr(cls, "hawk and trowel",
+                PermissibleValue(text="hawk and trowel") )
+        setattr(cls, "orange peel",
+                PermissibleValue(text="orange peel") )
+        setattr(cls, "rosebud stomp",
+                PermissibleValue(text="rosebud stomp") )
+        setattr(cls, "Santa-Fe texture",
+                PermissibleValue(text="Santa-Fe texture") )
+        setattr(cls, "skip trowel",
+                PermissibleValue(text="skip trowel") )
+        setattr(cls, "stomp knockdown",
+                PermissibleValue(text="stomp knockdown") )
+
+class WallSurfTreatmentEnum(EnumDefinitionImpl):
+
+    painted = PermissibleValue(text="painted")
+    paneling = PermissibleValue(text="paneling")
+    stucco = PermissibleValue(text="stucco")
+    fabric = PermissibleValue(text="fabric")
+
+    _defn = EnumDefinition(
+        name="WallSurfTreatmentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "wall paper",
+                PermissibleValue(text="wall paper") )
+        setattr(cls, "no treatment",
+                PermissibleValue(text="no treatment") )
+
+class DoorCompTypeEnum(EnumDefinitionImpl):
+
+    revolving = PermissibleValue(text="revolving")
+    sliding = PermissibleValue(text="sliding")
+    telescopic = PermissibleValue(text="telescopic")
+
+    _defn = EnumDefinition(
+        name="DoorCompTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "metal covered",
+                PermissibleValue(text="metal covered") )
+
+class WindowVertPosEnum(EnumDefinitionImpl):
+
+    bottom = PermissibleValue(text="bottom")
+    middle = PermissibleValue(text="middle")
+    top = PermissibleValue(text="top")
+    low = PermissibleValue(text="low")
+    high = PermissibleValue(text="high")
+
+    _defn = EnumDefinition(
+        name="WindowVertPosEnum",
+    )
+
+class WallConstTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="WallConstTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "frame construction",
+                PermissibleValue(text="frame construction") )
+        setattr(cls, "joisted masonry",
+                PermissibleValue(text="joisted masonry") )
+        setattr(cls, "light noncombustible",
+                PermissibleValue(text="light noncombustible") )
+        setattr(cls, "masonry noncombustible",
+                PermissibleValue(text="masonry noncombustible") )
+        setattr(cls, "modified fire resistive",
+                PermissibleValue(text="modified fire resistive") )
+        setattr(cls, "fire resistive",
+                PermissibleValue(text="fire resistive") )
+
+class RoomConnectedEnum(EnumDefinitionImpl):
+
+    attic = PermissibleValue(text="attic")
+    bathroom = PermissibleValue(text="bathroom")
+    closet = PermissibleValue(text="closet")
+    elevator = PermissibleValue(text="elevator")
+    hallway = PermissibleValue(text="hallway")
+    kitchen = PermissibleValue(text="kitchen")
+    office = PermissibleValue(text="office")
+    stairwell = PermissibleValue(text="stairwell")
+
+    _defn = EnumDefinition(
+        name="RoomConnectedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "conference room",
+                PermissibleValue(text="conference room") )
+        setattr(cls, "examining room",
+                PermissibleValue(text="examining room") )
+        setattr(cls, "mail room",
+                PermissibleValue(text="mail room") )
+
+class TrainStopLocEnum(EnumDefinitionImpl):
+
+    end = PermissibleValue(text="end")
+    mid = PermissibleValue(text="mid")
+    downtown = PermissibleValue(text="downtown")
+
+    _defn = EnumDefinition(
+        name="TrainStopLocEnum",
+    )
+
+class GenderRestroomEnum(EnumDefinitionImpl):
+
+    female = PermissibleValue(text="female")
+    male = PermissibleValue(text="male")
+    unisex = PermissibleValue(text="unisex")
+
+    _defn = EnumDefinition(
+        name="GenderRestroomEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "all gender",
+                PermissibleValue(text="all gender") )
+        setattr(cls, "gender neurtral",
+                PermissibleValue(text="gender neurtral") )
+        setattr(cls, "male and female",
+                PermissibleValue(text="male and female") )
+
+class FloorCondEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="FloorCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+
+class DoorCondEnum(EnumDefinitionImpl):
+
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="DoorCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+
+class WindowLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="WindowLocEnum",
+    )
+
+class HeatCoolTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="HeatCoolTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "radiant system",
+                PermissibleValue(text="radiant system") )
+        setattr(cls, "heat pump",
+                PermissibleValue(text="heat pump") )
+        setattr(cls, "forced air system",
+                PermissibleValue(text="forced air system") )
+        setattr(cls, "steam forced heat",
+                PermissibleValue(text="steam forced heat") )
+        setattr(cls, "wood stove",
+                PermissibleValue(text="wood stove") )
+
+class VisMediaEnum(EnumDefinitionImpl):
+
+    photos = PermissibleValue(text="photos")
+    videos = PermissibleValue(text="videos")
+    interiors = PermissibleValue(text="interiors")
+    equipment = PermissibleValue(text="equipment")
+
+    _defn = EnumDefinition(
+        name="VisMediaEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "commonly of the building",
+                PermissibleValue(text="commonly of the building") )
+        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
+                PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)") )
+        setattr(cls, "3D scans",
+                PermissibleValue(text="3D scans") )
 
 class RoomSampPosEnum(EnumDefinitionImpl):
 
@@ -11850,102 +11290,308 @@ class RoomSampPosEnum(EnumDefinitionImpl):
         setattr(cls, "southwest corner",
                 PermissibleValue(text="southwest corner") )
 
-class ExtWindowOrientEnum(EnumDefinitionImpl):
+class DrawingsEnum(EnumDefinitionImpl):
 
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-    northeast = PermissibleValue(text="northeast")
-    southeast = PermissibleValue(text="southeast")
-    southwest = PermissibleValue(text="southwest")
-    northwest = PermissibleValue(text="northwest")
+    operation = PermissibleValue(text="operation")
+    construction = PermissibleValue(text="construction")
+    bid = PermissibleValue(text="bid")
+    design = PermissibleValue(text="design")
+    diagram = PermissibleValue(text="diagram")
+    sketch = PermissibleValue(text="sketch")
 
     _defn = EnumDefinition(
-        name="ExtWindowOrientEnum",
-    )
-
-class HcrGeolAgeEnum(EnumDefinitionImpl):
-
-    Archean = PermissibleValue(text="Archean")
-    Cambrian = PermissibleValue(text="Cambrian")
-    Carboniferous = PermissibleValue(text="Carboniferous")
-    Cenozoic = PermissibleValue(text="Cenozoic")
-    Cretaceous = PermissibleValue(text="Cretaceous")
-    Devonian = PermissibleValue(text="Devonian")
-    Jurassic = PermissibleValue(text="Jurassic")
-    Mesozoic = PermissibleValue(text="Mesozoic")
-    Neogene = PermissibleValue(text="Neogene")
-    Ordovician = PermissibleValue(text="Ordovician")
-    Paleogene = PermissibleValue(text="Paleogene")
-    Paleozoic = PermissibleValue(text="Paleozoic")
-    Permian = PermissibleValue(text="Permian")
-    Precambrian = PermissibleValue(text="Precambrian")
-    Proterozoic = PermissibleValue(text="Proterozoic")
-    Silurian = PermissibleValue(text="Silurian")
-    Triassic = PermissibleValue(text="Triassic")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="HcrGeolAgeEnum",
-    )
-
-class RelToOxygenEnum(EnumDefinitionImpl):
-
-    aerobe = PermissibleValue(text="aerobe")
-    anaerobe = PermissibleValue(text="anaerobe")
-    facultative = PermissibleValue(text="facultative")
-    microaerophilic = PermissibleValue(text="microaerophilic")
-    microanaerobe = PermissibleValue(text="microanaerobe")
-
-    _defn = EnumDefinition(
-        name="RelToOxygenEnum",
+        name="DrawingsEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "obligate aerobe",
-                PermissibleValue(text="obligate aerobe") )
-        setattr(cls, "obligate anaerobe",
-                PermissibleValue(text="obligate anaerobe") )
+        setattr(cls, "as built",
+                PermissibleValue(text="as built") )
+        setattr(cls, "building navigation map",
+                PermissibleValue(text="building navigation map") )
 
-class HcProducedEnum(EnumDefinitionImpl):
+class ArchStrucEnum(EnumDefinitionImpl):
 
-    Oil = PermissibleValue(text="Oil")
-    Gas = PermissibleValue(text="Gas")
-    Bitumen = PermissibleValue(text="Bitumen")
-    other = PermissibleValue(text="other")
+    building = PermissibleValue(text="building")
+    shed = PermissibleValue(text="shed")
+    home = PermissibleValue(text="home")
 
     _defn = EnumDefinition(
-        name="HcProducedEnum",
+        name="ArchStrucEnum",
+    )
+
+class DoorDirectEnum(EnumDefinitionImpl):
+
+    inward = PermissibleValue(text="inward")
+    outward = PermissibleValue(text="outward")
+    sideways = PermissibleValue(text="sideways")
+
+    _defn = EnumDefinition(
+        name="DoorDirectEnum",
+    )
+
+class LightTypeEnum(EnumDefinitionImpl):
+
+    none = PermissibleValue(text="none")
+
+    _defn = EnumDefinition(
+        name="LightTypeEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "Gas-Condensate",
-                PermissibleValue(text="Gas-Condensate") )
-        setattr(cls, "Coalbed Methane",
-                PermissibleValue(text="Coalbed Methane") )
+        setattr(cls, "natural light",
+                PermissibleValue(text="natural light") )
+        setattr(cls, "electric light",
+                PermissibleValue(text="electric light") )
+        setattr(cls, "desk lamp",
+                PermissibleValue(text="desk lamp") )
+        setattr(cls, "flourescent lights",
+                PermissibleValue(text="flourescent lights") )
 
-class LithologyEnum(EnumDefinitionImpl):
+class IntWallCondEnum(EnumDefinitionImpl):
 
-    Basement = PermissibleValue(text="Basement")
-    Chalk = PermissibleValue(text="Chalk")
-    Chert = PermissibleValue(text="Chert")
-    Coal = PermissibleValue(text="Coal")
-    Conglomerate = PermissibleValue(text="Conglomerate")
-    Diatomite = PermissibleValue(text="Diatomite")
-    Dolomite = PermissibleValue(text="Dolomite")
-    Limestone = PermissibleValue(text="Limestone")
-    Sandstone = PermissibleValue(text="Sandstone")
-    Shale = PermissibleValue(text="Shale")
-    Siltstone = PermissibleValue(text="Siltstone")
-    Volcanic = PermissibleValue(text="Volcanic")
-    other = PermissibleValue(text="other")
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="LithologyEnum",
+        name="IntWallCondEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+
+class DoorTypeEnum(EnumDefinitionImpl):
+
+    composite = PermissibleValue(text="composite")
+    metal = PermissibleValue(text="metal")
+    wooden = PermissibleValue(text="wooden")
+
+    _defn = EnumDefinition(
+        name="DoorTypeEnum",
+    )
+
+class OccupDocumentEnum(EnumDefinitionImpl):
+
+    estimate = PermissibleValue(text="estimate")
+    videos = PermissibleValue(text="videos")
+
+    _defn = EnumDefinition(
+        name="OccupDocumentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "automated count",
+                PermissibleValue(text="automated count") )
+        setattr(cls, "manual count",
+                PermissibleValue(text="manual count") )
+
+class IndoorSpaceEnum(EnumDefinitionImpl):
+
+    bedroom = PermissibleValue(text="bedroom")
+    office = PermissibleValue(text="office")
+    bathroom = PermissibleValue(text="bathroom")
+    foyer = PermissibleValue(text="foyer")
+    kitchen = PermissibleValue(text="kitchen")
+    hallway = PermissibleValue(text="hallway")
+    elevator = PermissibleValue(text="elevator")
+
+    _defn = EnumDefinition(
+        name="IndoorSpaceEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "locker room",
+                PermissibleValue(text="locker room") )
+
+class SurfMaterialEnum(EnumDefinitionImpl):
+
+    adobe = PermissibleValue(text="adobe")
+    carpet = PermissibleValue(text="carpet")
+    concrete = PermissibleValue(text="concrete")
+    glass = PermissibleValue(text="glass")
+    metal = PermissibleValue(text="metal")
+    paint = PermissibleValue(text="paint")
+    plastic = PermissibleValue(text="plastic")
+    stone = PermissibleValue(text="stone")
+    stucco = PermissibleValue(text="stucco")
+    tile = PermissibleValue(text="tile")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="SurfMaterialEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cinder blocks",
+                PermissibleValue(text="cinder blocks") )
+        setattr(cls, "hay bales",
+                PermissibleValue(text="hay bales") )
+        setattr(cls, "stainless steel",
+                PermissibleValue(text="stainless steel") )
+
+class RoomTypeEnum(EnumDefinitionImpl):
+
+    attic = PermissibleValue(text="attic")
+    bathroom = PermissibleValue(text="bathroom")
+    closet = PermissibleValue(text="closet")
+    elevator = PermissibleValue(text="elevator")
+    hallway = PermissibleValue(text="hallway")
+    kitchen = PermissibleValue(text="kitchen")
+    stairwell = PermissibleValue(text="stairwell")
+    lobby = PermissibleValue(text="lobby")
+    vestibule = PermissibleValue(text="vestibule")
+    laboratory_wet = PermissibleValue(text="laboratory_wet")
+    laboratory_dry = PermissibleValue(text="laboratory_dry")
+    gymnasium = PermissibleValue(text="gymnasium")
+    natatorium = PermissibleValue(text="natatorium")
+    auditorium = PermissibleValue(text="auditorium")
+    lockers = PermissibleValue(text="lockers")
+    cafe = PermissibleValue(text="cafe")
+    warehouse = PermissibleValue(text="warehouse")
+
+    _defn = EnumDefinition(
+        name="RoomTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "conference room",
+                PermissibleValue(text="conference room") )
+        setattr(cls, "examining room",
+                PermissibleValue(text="examining room") )
+        setattr(cls, "mail room",
+                PermissibleValue(text="mail room") )
+        setattr(cls, "private office",
+                PermissibleValue(text="private office") )
+        setattr(cls, "open office",
+                PermissibleValue(text="open office") )
+        setattr(cls, ",restroom",
+                PermissibleValue(text=",restroom") )
+        setattr(cls, "mechanical or electrical room",
+                PermissibleValue(text="mechanical or electrical room") )
+        setattr(cls, "data center",
+                PermissibleValue(text="data center") )
+
+class RelSampLocEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="RelSampLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "edge of car",
+                PermissibleValue(text="edge of car") )
+        setattr(cls, "center of car",
+                PermissibleValue(text="center of car") )
+        setattr(cls, "under a seat",
+                PermissibleValue(text="under a seat") )
+
+class WindowMatEnum(EnumDefinitionImpl):
+
+    clad = PermissibleValue(text="clad")
+    fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="WindowMatEnum",
+    )
+
+class WeekdayEnum(EnumDefinitionImpl):
+
+    Monday = PermissibleValue(text="Monday")
+    Tuesday = PermissibleValue(text="Tuesday")
+    Wednesday = PermissibleValue(text="Wednesday")
+    Thursday = PermissibleValue(text="Thursday")
+    Friday = PermissibleValue(text="Friday")
+    Saturday = PermissibleValue(text="Saturday")
+    Sunday = PermissibleValue(text="Sunday")
+
+    _defn = EnumDefinition(
+        name="WeekdayEnum",
+    )
+
+class WallFinishMatEnum(EnumDefinitionImpl):
+
+    plaster = PermissibleValue(text="plaster")
+    tile = PermissibleValue(text="tile")
+    terrazzo = PermissibleValue(text="terrazzo")
+    wood = PermissibleValue(text="wood")
+    metal = PermissibleValue(text="metal")
+    masonry = PermissibleValue(text="masonry")
+
+    _defn = EnumDefinition(
+        name="WallFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "gypsum plaster",
+                PermissibleValue(text="gypsum plaster") )
+        setattr(cls, "veneer plaster",
+                PermissibleValue(text="veneer plaster") )
+        setattr(cls, "gypsum board",
+                PermissibleValue(text="gypsum board") )
+        setattr(cls, "stone facing",
+                PermissibleValue(text="stone facing") )
+        setattr(cls, "acoustical treatment",
+                PermissibleValue(text="acoustical treatment") )
+
+class DoorMatEnum(EnumDefinitionImpl):
+
+    aluminum = PermissibleValue(text="aluminum")
+    fiberboard = PermissibleValue(text="fiberboard")
+    fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="DoorMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cellular PVC",
+                PermissibleValue(text="cellular PVC") )
+        setattr(cls, "engineered plastic",
+                PermissibleValue(text="engineered plastic") )
+        setattr(cls, "thermoplastic alloy",
+                PermissibleValue(text="thermoplastic alloy") )
+        setattr(cls, "wood/plastic composite",
+                PermissibleValue(text="wood/plastic composite") )
+
+class FilterTypeEnum(EnumDefinitionImpl):
+
+    HEPA = PermissibleValue(text="HEPA")
+    electrostatic = PermissibleValue(text="electrostatic")
+
+    _defn = EnumDefinition(
+        name="FilterTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "particulate air filter",
+                PermissibleValue(text="particulate air filter") )
+        setattr(cls, "chemical air filter",
+                PermissibleValue(text="chemical air filter") )
+        setattr(cls, "low-MERV pleated media",
+                PermissibleValue(text="low-MERV pleated media") )
+        setattr(cls, "gas-phase or ultraviolet air treatments",
+                PermissibleValue(text="gas-phase or ultraviolet air treatments") )
 
 class OxyStatSampEnum(EnumDefinitionImpl):
 
@@ -11956,6 +11602,29 @@ class OxyStatSampEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="OxyStatSampEnum",
     )
+
+class HcrEnum(EnumDefinitionImpl):
+
+    Coalbed = PermissibleValue(text="Coalbed")
+    Shale = PermissibleValue(text="Shale")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="HcrEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Oil Reservoir",
+                PermissibleValue(text="Oil Reservoir") )
+        setattr(cls, "Gas Reservoir",
+                PermissibleValue(text="Gas Reservoir") )
+        setattr(cls, "Oil Sand",
+                PermissibleValue(text="Oil Sand") )
+        setattr(cls, "Tight Oil Reservoir",
+                PermissibleValue(text="Tight Oil Reservoir") )
+        setattr(cls, "Tight Gas Reservoir",
+                PermissibleValue(text="Tight Gas Reservoir") )
 
 class SampSubtypeEnum(EnumDefinitionImpl):
 
@@ -12016,28 +11685,62 @@ class DeposEnvEnum(EnumDefinitionImpl):
         setattr(cls, "Other - Volcanic",
                 PermissibleValue(text="Other - Volcanic") )
 
-class HcrEnum(EnumDefinitionImpl):
+class LithologyEnum(EnumDefinitionImpl):
 
-    Coalbed = PermissibleValue(text="Coalbed")
+    Basement = PermissibleValue(text="Basement")
+    Chalk = PermissibleValue(text="Chalk")
+    Chert = PermissibleValue(text="Chert")
+    Coal = PermissibleValue(text="Coal")
+    Conglomerate = PermissibleValue(text="Conglomerate")
+    Diatomite = PermissibleValue(text="Diatomite")
+    Dolomite = PermissibleValue(text="Dolomite")
+    Limestone = PermissibleValue(text="Limestone")
+    Sandstone = PermissibleValue(text="Sandstone")
     Shale = PermissibleValue(text="Shale")
+    Siltstone = PermissibleValue(text="Siltstone")
+    Volcanic = PermissibleValue(text="Volcanic")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="HcrEnum",
+        name="LithologyEnum",
+    )
+
+class HcProducedEnum(EnumDefinitionImpl):
+
+    Oil = PermissibleValue(text="Oil")
+    Gas = PermissibleValue(text="Gas")
+    Bitumen = PermissibleValue(text="Bitumen")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="HcProducedEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "Oil Reservoir",
-                PermissibleValue(text="Oil Reservoir") )
-        setattr(cls, "Gas Reservoir",
-                PermissibleValue(text="Gas Reservoir") )
-        setattr(cls, "Oil Sand",
-                PermissibleValue(text="Oil Sand") )
-        setattr(cls, "Tight Oil Reservoir",
-                PermissibleValue(text="Tight Oil Reservoir") )
-        setattr(cls, "Tight Gas Reservoir",
-                PermissibleValue(text="Tight Gas Reservoir") )
+        setattr(cls, "Gas-Condensate",
+                PermissibleValue(text="Gas-Condensate") )
+        setattr(cls, "Coalbed Methane",
+                PermissibleValue(text="Coalbed Methane") )
+
+class RelToOxygenEnum(EnumDefinitionImpl):
+
+    aerobe = PermissibleValue(text="aerobe")
+    anaerobe = PermissibleValue(text="anaerobe")
+    facultative = PermissibleValue(text="facultative")
+    microaerophilic = PermissibleValue(text="microaerophilic")
+    microanaerobe = PermissibleValue(text="microanaerobe")
+
+    _defn = EnumDefinition(
+        name="RelToOxygenEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "obligate aerobe",
+                PermissibleValue(text="obligate aerobe") )
+        setattr(cls, "obligate anaerobe",
+                PermissibleValue(text="obligate anaerobe") )
 
 class SampCollectPointEnum(EnumDefinitionImpl):
 
@@ -12059,6 +11762,31 @@ class SampCollectPointEnum(EnumDefinitionImpl):
         setattr(cls, "storage tank",
                 PermissibleValue(text="storage tank") )
 
+class HcrGeolAgeEnum(EnumDefinitionImpl):
+
+    Archean = PermissibleValue(text="Archean")
+    Cambrian = PermissibleValue(text="Cambrian")
+    Carboniferous = PermissibleValue(text="Carboniferous")
+    Cenozoic = PermissibleValue(text="Cenozoic")
+    Cretaceous = PermissibleValue(text="Cretaceous")
+    Devonian = PermissibleValue(text="Devonian")
+    Jurassic = PermissibleValue(text="Jurassic")
+    Mesozoic = PermissibleValue(text="Mesozoic")
+    Neogene = PermissibleValue(text="Neogene")
+    Ordovician = PermissibleValue(text="Ordovician")
+    Paleogene = PermissibleValue(text="Paleogene")
+    Paleozoic = PermissibleValue(text="Paleozoic")
+    Permian = PermissibleValue(text="Permian")
+    Precambrian = PermissibleValue(text="Precambrian")
+    Proterozoic = PermissibleValue(text="Proterozoic")
+    Silurian = PermissibleValue(text="Silurian")
+    Triassic = PermissibleValue(text="Triassic")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="HcrGeolAgeEnum",
+    )
+
 class SrDepEnvEnum(EnumDefinitionImpl):
 
     Lacustine = PermissibleValue(text="Lacustine")
@@ -12069,6 +11797,18 @@ class SrDepEnvEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="SrDepEnvEnum",
+    )
+
+class SrLithologyEnum(EnumDefinitionImpl):
+
+    Clastic = PermissibleValue(text="Clastic")
+    Carbonate = PermissibleValue(text="Carbonate")
+    Coal = PermissibleValue(text="Coal")
+    Biosilicieous = PermissibleValue(text="Biosilicieous")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SrLithologyEnum",
     )
 
 class SrGeolAgeEnum(EnumDefinitionImpl):
@@ -12096,18 +11836,6 @@ class SrGeolAgeEnum(EnumDefinitionImpl):
         name="SrGeolAgeEnum",
     )
 
-class SrLithologyEnum(EnumDefinitionImpl):
-
-    Clastic = PermissibleValue(text="Clastic")
-    Carbonate = PermissibleValue(text="Carbonate")
-    Coal = PermissibleValue(text="Coal")
-    Biosilicieous = PermissibleValue(text="Biosilicieous")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SrLithologyEnum",
-    )
-
 class SrKerogTypeEnum(EnumDefinitionImpl):
 
     other = PermissibleValue(text="other")
@@ -12126,6 +11854,45 @@ class SrKerogTypeEnum(EnumDefinitionImpl):
                 PermissibleValue(text="Type III") )
         setattr(cls, "Type IV",
                 PermissibleValue(text="Type IV") )
+
+class BioticRelationshipEnum(EnumDefinitionImpl):
+
+    parasite = PermissibleValue(text="parasite")
+    commensal = PermissibleValue(text="commensal")
+    symbiont = PermissibleValue(text="symbiont")
+
+    _defn = EnumDefinition(
+        name="BioticRelationshipEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "free living",
+                PermissibleValue(text="free living") )
+
+class TillageEnum(EnumDefinitionImpl):
+
+    drill = PermissibleValue(text="drill")
+    chisel = PermissibleValue(text="chisel")
+    tined = PermissibleValue(text="tined")
+    mouldboard = PermissibleValue(text="mouldboard")
+
+    _defn = EnumDefinition(
+        name="TillageEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cutting disc",
+                PermissibleValue(text="cutting disc") )
+        setattr(cls, "ridge till",
+                PermissibleValue(text="ridge till") )
+        setattr(cls, "strip tillage",
+                PermissibleValue(text="strip tillage") )
+        setattr(cls, "zonal tillage",
+                PermissibleValue(text="zonal tillage") )
+        setattr(cls, "disc plough",
+                PermissibleValue(text="disc plough") )
 
 class FaoClassEnum(EnumDefinitionImpl):
 
@@ -12158,42 +11925,6 @@ class FaoClassEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="FaoClassEnum",
-    )
-
-class TillageEnum(EnumDefinitionImpl):
-
-    drill = PermissibleValue(text="drill")
-    chisel = PermissibleValue(text="chisel")
-    tined = PermissibleValue(text="tined")
-    mouldboard = PermissibleValue(text="mouldboard")
-
-    _defn = EnumDefinition(
-        name="TillageEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "cutting disc",
-                PermissibleValue(text="cutting disc") )
-        setattr(cls, "ridge till",
-                PermissibleValue(text="ridge till") )
-        setattr(cls, "strip tillage",
-                PermissibleValue(text="strip tillage") )
-        setattr(cls, "zonal tillage",
-                PermissibleValue(text="zonal tillage") )
-        setattr(cls, "disc plough",
-                PermissibleValue(text="disc plough") )
-
-class ProfilePositionEnum(EnumDefinitionImpl):
-
-    summit = PermissibleValue(text="summit")
-    shoulder = PermissibleValue(text="shoulder")
-    backslope = PermissibleValue(text="backslope")
-    footslope = PermissibleValue(text="footslope")
-    toeslope = PermissibleValue(text="toeslope")
-
-    _defn = EnumDefinition(
-        name="ProfilePositionEnum",
     )
 
 class CurLandUseEnum(EnumDefinitionImpl):
@@ -12287,21 +12018,6 @@ class DrainageClassEnum(EnumDefinitionImpl):
         setattr(cls, "excessively drained",
                 PermissibleValue(text="excessively drained") )
 
-class BioticRelationshipEnum(EnumDefinitionImpl):
-
-    parasite = PermissibleValue(text="parasite")
-    commensal = PermissibleValue(text="commensal")
-    symbiont = PermissibleValue(text="symbiont")
-
-    _defn = EnumDefinition(
-        name="BioticRelationshipEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "free living",
-                PermissibleValue(text="free living") )
-
 class SoilHorizonEnum(EnumDefinitionImpl):
 
     Permafrost = PermissibleValue(text="Permafrost")
@@ -12325,6 +12041,37 @@ class SoilHorizonEnum(EnumDefinitionImpl):
         setattr(cls, "R layer",
                 PermissibleValue(text="R layer") )
 
+class ProfilePositionEnum(EnumDefinitionImpl):
+
+    summit = PermissibleValue(text="summit")
+    shoulder = PermissibleValue(text="shoulder")
+    backslope = PermissibleValue(text="backslope")
+    footslope = PermissibleValue(text="footslope")
+    toeslope = PermissibleValue(text="toeslope")
+
+    _defn = EnumDefinition(
+        name="ProfilePositionEnum",
+    )
+
+class SampCaptStatusEnum(EnumDefinitionImpl):
+
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SampCaptStatusEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "active surveillance in response to an outbreak",
+                PermissibleValue(text="active surveillance in response to an outbreak") )
+        setattr(cls, "active surveillance not initiated by an outbreak",
+                PermissibleValue(text="active surveillance not initiated by an outbreak") )
+        setattr(cls, "farm sample",
+                PermissibleValue(text="farm sample") )
+        setattr(cls, "market sample",
+                PermissibleValue(text="market sample") )
+
 class GrowthHabitEnum(EnumDefinitionImpl):
 
     erect = PermissibleValue(text="erect")
@@ -12339,6 +12086,45 @@ class GrowthHabitEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "semi-erect",
                 PermissibleValue(text="semi-erect") )
+
+class BiolStatEnum(EnumDefinitionImpl):
+
+    wild = PermissibleValue(text="wild")
+    natural = PermissibleValue(text="natural")
+    hybrid = PermissibleValue(text="hybrid")
+    mutant = PermissibleValue(text="mutant")
+
+    _defn = EnumDefinition(
+        name="BiolStatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "semi-natural",
+                PermissibleValue(text="semi-natural") )
+        setattr(cls, "inbred line",
+                PermissibleValue(text="inbred line") )
+        setattr(cls, "breeder's line",
+                PermissibleValue(text="breeder's line") )
+        setattr(cls, "clonal selection",
+                PermissibleValue(text="clonal selection") )
+
+class SampDisStageEnum(EnumDefinitionImpl):
+
+    dissemination = PermissibleValue(text="dissemination")
+    infection = PermissibleValue(text="infection")
+    inoculation = PermissibleValue(text="inoculation")
+    penetration = PermissibleValue(text="penetration")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SampDisStageEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "growth and reproduction",
+                PermissibleValue(text="growth and reproduction") )
 
 class PlantSexEnum(EnumDefinitionImpl):
 
@@ -12376,63 +12162,16 @@ class PlantSexEnum(EnumDefinitionImpl):
         name="PlantSexEnum",
     )
 
-class SampCaptStatusEnum(EnumDefinitionImpl):
+class SedimentTypeEnum(EnumDefinitionImpl):
 
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SampCaptStatusEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "active surveillance in response to an outbreak",
-                PermissibleValue(text="active surveillance in response to an outbreak") )
-        setattr(cls, "active surveillance not initiated by an outbreak",
-                PermissibleValue(text="active surveillance not initiated by an outbreak") )
-        setattr(cls, "farm sample",
-                PermissibleValue(text="farm sample") )
-        setattr(cls, "market sample",
-                PermissibleValue(text="market sample") )
-
-class SampDisStageEnum(EnumDefinitionImpl):
-
-    dissemination = PermissibleValue(text="dissemination")
-    infection = PermissibleValue(text="infection")
-    inoculation = PermissibleValue(text="inoculation")
-    penetration = PermissibleValue(text="penetration")
-    other = PermissibleValue(text="other")
+    biogenous = PermissibleValue(text="biogenous")
+    cosmogenous = PermissibleValue(text="cosmogenous")
+    hydrogenous = PermissibleValue(text="hydrogenous")
+    lithogenous = PermissibleValue(text="lithogenous")
 
     _defn = EnumDefinition(
-        name="SampDisStageEnum",
+        name="SedimentTypeEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "growth and reproduction",
-                PermissibleValue(text="growth and reproduction") )
-
-class BiolStatEnum(EnumDefinitionImpl):
-
-    wild = PermissibleValue(text="wild")
-    natural = PermissibleValue(text="natural")
-    hybrid = PermissibleValue(text="hybrid")
-    mutant = PermissibleValue(text="mutant")
-
-    _defn = EnumDefinition(
-        name="BiolStatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "semi-natural",
-                PermissibleValue(text="semi-natural") )
-        setattr(cls, "inbred line",
-                PermissibleValue(text="inbred line") )
-        setattr(cls, "breeder's line",
-                PermissibleValue(text="breeder's line") )
-        setattr(cls, "clonal selection",
-                PermissibleValue(text="clonal selection") )
 
 class TidalStageEnum(EnumDefinitionImpl):
 
@@ -12450,17 +12189,6 @@ class TidalStageEnum(EnumDefinitionImpl):
                 PermissibleValue(text="flood tide") )
         setattr(cls, "high tide",
                 PermissibleValue(text="high tide") )
-
-class SedimentTypeEnum(EnumDefinitionImpl):
-
-    biogenous = PermissibleValue(text="biogenous")
-    cosmogenous = PermissibleValue(text="cosmogenous")
-    hydrogenous = PermissibleValue(text="hydrogenous")
-    lithogenous = PermissibleValue(text="lithogenous")
-
-    _defn = EnumDefinition(
-        name="SedimentTypeEnum",
-    )
 
 class HostSexEnum(EnumDefinitionImpl):
 
@@ -12832,7 +12560,7 @@ slots.asphaltenes_pc = Slot(uri=MIXS['0000135'], name="asphaltenes_pc", curie=MI
                    model_uri=NMDC_SUB_SCHEMA.asphaltenes_pc, domain=None, range=Optional[str])
 
 slots.atmospheric_data = Slot(uri=MIXS['0001097'], name="atmospheric_data", curie=MIXS.curie('0001097'),
-                   model_uri=NMDC_SUB_SCHEMA.atmospheric_data, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.atmospheric_data, domain=None, range=Optional[str])
 
 slots.avg_dew_point = Slot(uri=MIXS['0000141'], name="avg_dew_point", curie=MIXS.curie('0000141'),
                    model_uri=NMDC_SUB_SCHEMA.avg_dew_point, domain=None, range=Optional[str])
@@ -12880,7 +12608,7 @@ slots.biol_stat = Slot(uri=MIXS['0000858'], name="biol_stat", curie=MIXS.curie('
                    model_uri=NMDC_SUB_SCHEMA.biol_stat, domain=None, range=Optional[Union[str, "BiolStatEnum"]])
 
 slots.biomass = Slot(uri=MIXS['0000174'], name="biomass", curie=MIXS.curie('0000174'),
-                   model_uri=NMDC_SUB_SCHEMA.biomass, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.biomass, domain=None, range=Optional[str])
 
 slots.biotic_regm = Slot(uri=MIXS['0001038'], name="biotic_regm", curie=MIXS.curie('0001038'),
                    model_uri=NMDC_SUB_SCHEMA.biotic_regm, domain=None, range=Optional[str])
@@ -12955,7 +12683,7 @@ slots.ceil_water_mold = Slot(uri=MIXS['0000781'], name="ceil_water_mold", curie=
                    model_uri=NMDC_SUB_SCHEMA.ceil_water_mold, domain=None, range=Optional[str])
 
 slots.chem_administration = Slot(uri=MIXS['0000751'], name="chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.chem_administration, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.chem_administration, domain=None, range=Optional[str])
 
 slots.chem_mutagen = Slot(uri=MIXS['0000555'], name="chem_mutagen", curie=MIXS.curie('0000555'),
                    model_uri=NMDC_SUB_SCHEMA.chem_mutagen, domain=None, range=Optional[Union[str, List[str]]])
@@ -13018,7 +12746,7 @@ slots.dew_point = Slot(uri=MIXS['0000129'], name="dew_point", curie=MIXS.curie('
                    model_uri=NMDC_SUB_SCHEMA.dew_point, domain=None, range=Optional[str])
 
 slots.diether_lipids = Slot(uri=MIXS['0000178'], name="diether_lipids", curie=MIXS.curie('0000178'),
-                   model_uri=NMDC_SUB_SCHEMA.diether_lipids, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.diether_lipids, domain=None, range=Optional[str])
 
 slots.diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="diss_carb_dioxide", curie=MIXS.curie('0000436'),
                    model_uri=NMDC_SUB_SCHEMA.diss_carb_dioxide, domain=None, range=Optional[str])
@@ -13474,10 +13202,10 @@ slots.mineral_nutr_regm = Slot(uri=MIXS['0000570'], name="mineral_nutr_regm", cu
                    model_uri=NMDC_SUB_SCHEMA.mineral_nutr_regm, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.misc_param = Slot(uri=MIXS['0000752'], name="misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.misc_param, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.misc_param, domain=None, range=Optional[str])
 
 slots.n_alkanes = Slot(uri=MIXS['0000503'], name="n_alkanes", curie=MIXS.curie('0000503'),
-                   model_uri=NMDC_SUB_SCHEMA.n_alkanes, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.n_alkanes, domain=None, range=Optional[str])
 
 slots.nitrate = Slot(uri=MIXS['0000425'], name="nitrate", curie=MIXS.curie('0000425'),
                    model_uri=NMDC_SUB_SCHEMA.nitrate, domain=None, range=Optional[str])
@@ -13531,7 +13259,7 @@ slots.org_particles = Slot(uri=MIXS['0000665'], name="org_particles", curie=MIXS
                    model_uri=NMDC_SUB_SCHEMA.org_particles, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.organism_count = Slot(uri=MIXS['0000103'], name="organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.organism_count, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.organism_count, domain=None, range=Optional[str])
 
 slots.owc_tvdss = Slot(uri=MIXS['0000405'], name="owc_tvdss", curie=MIXS.curie('0000405'),
                    model_uri=NMDC_SUB_SCHEMA.owc_tvdss, domain=None, range=Optional[str])
@@ -13555,7 +13283,7 @@ slots.permeability = Slot(uri=MIXS['0000404'], name="permeability", curie=MIXS.c
                    model_uri=NMDC_SUB_SCHEMA.permeability, domain=None, range=Optional[str])
 
 slots.perturbation = Slot(uri=MIXS['0000754'], name="perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.perturbation, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.perturbation, domain=None, range=Optional[str])
 
 slots.pesticide_regm = Slot(uri=MIXS['0000573'], name="pesticide_regm", curie=MIXS.curie('0000573'),
                    model_uri=NMDC_SUB_SCHEMA.pesticide_regm, domain=None, range=Optional[Union[str, List[str]]])
@@ -13573,13 +13301,13 @@ slots.ph_regm = Slot(uri=MIXS['0001056'], name="ph_regm", curie=MIXS.curie('0001
                    model_uri=NMDC_SUB_SCHEMA.ph_regm, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.phaeopigments = Slot(uri=MIXS['0000180'], name="phaeopigments", curie=MIXS.curie('0000180'),
-                   model_uri=NMDC_SUB_SCHEMA.phaeopigments, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.phaeopigments, domain=None, range=Optional[str])
 
 slots.phosphate = Slot(uri=MIXS['0000505'], name="phosphate", curie=MIXS.curie('0000505'),
                    model_uri=NMDC_SUB_SCHEMA.phosphate, domain=None, range=Optional[str])
 
 slots.phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
-                   model_uri=NMDC_SUB_SCHEMA.phosplipid_fatt_acid, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.phosplipid_fatt_acid, domain=None, range=Optional[str])
 
 slots.photon_flux = Slot(uri=MIXS['0000725'], name="photon_flux", curie=MIXS.curie('0000725'),
                    model_uri=NMDC_SUB_SCHEMA.photon_flux, domain=None, range=Optional[str])
@@ -13612,7 +13340,8 @@ slots.pre_treatment = Slot(uri=MIXS['0000348'], name="pre_treatment", curie=MIXS
                    model_uri=NMDC_SUB_SCHEMA.pre_treatment, domain=None, range=Optional[str])
 
 slots.pres_animal_insect = Slot(uri=MIXS['0000819'], name="pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=NMDC_SUB_SCHEMA.pres_animal_insect, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.pres_animal_insect, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(cat|dog|rodent|snake|other);\d+$'))
 
 slots.pressure = Slot(uri=MIXS['0000412'], name="pressure", curie=MIXS.curie('0000412'),
                    model_uri=NMDC_SUB_SCHEMA.pressure, domain=None, range=Optional[str])
@@ -14211,107 +13940,70 @@ slots.xylene = Slot(uri=MIXS['0000156'], name="xylene", curie=MIXS.curie('000015
 slots.zinc = Slot(uri=NMDC_SUB_SCHEMA.zinc, name="zinc", curie=NMDC_SUB_SCHEMA.curie('zinc'),
                    model_uri=NMDC_SUB_SCHEMA.zinc, domain=None, range=Optional[str])
 
-slots.acted_on_behalf_of = Slot(uri=NMDC_SUB_SCHEMA.acted_on_behalf_of, name="acted_on_behalf_of", curie=NMDC_SUB_SCHEMA.curie('acted_on_behalf_of'),
-                   model_uri=NMDC_SUB_SCHEMA.acted_on_behalf_of, domain=None, range=Optional[Union[dict, Agent]], mappings = [PROV.actedOnBehalfOf])
-
-slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
-                   model_uri=NMDC_SUB_SCHEMA.description, domain=None, range=Optional[str])
-
-slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
-                   model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
-
-slots.was_informed_by = Slot(uri=NMDC_SUB_SCHEMA.was_informed_by, name="was_informed_by", curie=NMDC_SUB_SCHEMA.curie('was_informed_by'),
-                   model_uri=NMDC_SUB_SCHEMA.was_informed_by, domain=None, range=Optional[Union[str, ActivityId]], mappings = [PROV.wasInformedBy])
-
-slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
-                   model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
-
-slots.has_raw_value = Slot(uri=NMDC_SUB_SCHEMA.has_raw_value, name="has_raw_value", curie=NMDC_SUB_SCHEMA.curie('has_raw_value'),
-                   model_uri=NMDC_SUB_SCHEMA.has_raw_value, domain=AttributeValue, range=Optional[str])
-
-slots.started_at_time = Slot(uri=NMDC_SUB_SCHEMA.started_at_time, name="started_at_time", curie=NMDC_SUB_SCHEMA.curie('started_at_time'),
-                   model_uri=NMDC_SUB_SCHEMA.started_at_time, domain=None, range=Optional[Union[str, XSDDateTime]], mappings = [PROV.startedAtTime])
-
-slots.ended_at_time = Slot(uri=NMDC_SUB_SCHEMA.ended_at_time, name="ended_at_time", curie=NMDC_SUB_SCHEMA.curie('ended_at_time'),
-                   model_uri=NMDC_SUB_SCHEMA.ended_at_time, domain=None, range=Optional[Union[str, XSDDateTime]], mappings = [PROV.endedAtTime])
-
-slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.has_minimum_numeric_value = Slot(uri=NMDC_SUB_SCHEMA.has_minimum_numeric_value, name="has_minimum_numeric_value", curie=NMDC_SUB_SCHEMA.curie('has_minimum_numeric_value'),
-                   model_uri=NMDC_SUB_SCHEMA.has_minimum_numeric_value, domain=None, range=Optional[float])
-
-slots.was_generated_by = Slot(uri=NMDC_SUB_SCHEMA.was_generated_by, name="was_generated_by", curie=NMDC_SUB_SCHEMA.curie('was_generated_by'),
-                   model_uri=NMDC_SUB_SCHEMA.was_generated_by, domain=None, range=Optional[Union[str, ActivityId]], mappings = [PROV.wasGeneratedBy])
+slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('id'),
+                   model_uri=NMDC_SUB_SCHEMA.id, domain=None, range=URIRef)
 
 slots.environment_field = Slot(uri=NMDC_SUB_SCHEMA.environment_field, name="environment field", curie=NMDC_SUB_SCHEMA.curie('environment_field'),
                    model_uri=NMDC_SUB_SCHEMA.environment_field, domain=None, range=Optional[str])
 
-slots.has_numeric_value = Slot(uri=NMDC_SUB_SCHEMA.has_numeric_value, name="has_numeric_value", curie=NMDC_SUB_SCHEMA.curie('has_numeric_value'),
-                   model_uri=NMDC_SUB_SCHEMA.has_numeric_value, domain=None, range=Optional[float], mappings = [QUD.quantityValue, SCHEMA.value])
+slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
+                   model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
 
-slots.was_associated_with = Slot(uri=NMDC_SUB_SCHEMA.was_associated_with, name="was_associated_with", curie=NMDC_SUB_SCHEMA.curie('was_associated_with'),
-                   model_uri=NMDC_SUB_SCHEMA.was_associated_with, domain=None, range=Optional[Union[dict, Agent]], mappings = [PROV.wasAssociatedWith])
+slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
-                   model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
-
-slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
-                   model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
-
-slots.term = Slot(uri=NMDC_SUB_SCHEMA.term, name="term", curie=NMDC_SUB_SCHEMA.curie('term'),
-                   model_uri=NMDC_SUB_SCHEMA.term, domain=NamedThing, range=Optional[Union[dict, "OntologyClass"]])
-
-slots.has_maximum_numeric_value = Slot(uri=NMDC_SUB_SCHEMA.has_maximum_numeric_value, name="has_maximum_numeric_value", curie=NMDC_SUB_SCHEMA.curie('has_maximum_numeric_value'),
-                   model_uri=NMDC_SUB_SCHEMA.has_maximum_numeric_value, domain=None, range=Optional[float])
-
-slots.latitude = Slot(uri=WGS84.lat, name="latitude", curie=WGS84.curie('lat'),
-                   model_uri=NMDC_SUB_SCHEMA.latitude, domain=NamedThing, range=Optional[float], mappings = [SCHEMA.latitude])
-
-slots.gold_path_field = Slot(uri=NMDC_SUB_SCHEMA.gold_path_field, name="gold_path_field", curie=NMDC_SUB_SCHEMA.curie('gold_path_field'),
-                   model_uri=NMDC_SUB_SCHEMA.gold_path_field, domain=None, range=Optional[str])
-
-slots.longitude = Slot(uri=WGS84.long, name="longitude", curie=WGS84.curie('long'),
-                   model_uri=NMDC_SUB_SCHEMA.longitude, domain=NamedThing, range=Optional[float], mappings = [SCHEMA.longitude])
-
-slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('id'),
-                   model_uri=NMDC_SUB_SCHEMA.id, domain=None, range=URIRef)
-
-slots.has_unit = Slot(uri=NMDC_SUB_SCHEMA.has_unit, name="has_unit", curie=NMDC_SUB_SCHEMA.curie('has_unit'),
-                   model_uri=NMDC_SUB_SCHEMA.has_unit, domain=None, range=Optional[str], mappings = [QUD.unit, SCHEMA.unitCode])
-
-slots.attribute = Slot(uri=NMDC_SUB_SCHEMA.attribute, name="attribute", curie=NMDC_SUB_SCHEMA.curie('attribute'),
-                   model_uri=NMDC_SUB_SCHEMA.attribute, domain=None, range=Optional[str])
-
-slots.used = Slot(uri=NMDC_SUB_SCHEMA.used, name="used", curie=NMDC_SUB_SCHEMA.curie('used'),
-                   model_uri=NMDC_SUB_SCHEMA.used, domain=Activity, range=Optional[str], mappings = [PROV.used])
+slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
+                   model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
 
 slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
                    model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
 
+slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
+                   model_uri=NMDC_SUB_SCHEMA.description, domain=None, range=Optional[str])
+
+slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
+                   model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
+
+slots.attribute = Slot(uri=NMDC_SUB_SCHEMA.attribute, name="attribute", curie=NMDC_SUB_SCHEMA.curie('attribute'),
+                   model_uri=NMDC_SUB_SCHEMA.attribute, domain=None, range=Optional[str])
+
+slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
+                   model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
+
+slots.gold_path_field = Slot(uri=NMDC_SUB_SCHEMA.gold_path_field, name="gold_path_field", curie=NMDC_SUB_SCHEMA.curie('gold_path_field'),
+                   model_uri=NMDC_SUB_SCHEMA.gold_path_field, domain=None, range=Optional[str])
+
 slots.AirInterface_air_PM_concen = Slot(uri=MIXS['0000108'], name="AirInterface_air_PM_concen", curie=MIXS.curie('0000108'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_air_PM_concen, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_air_PM_concen, domain=AirInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.AirInterface_alt = Slot(uri=MIXS['0000094'], name="AirInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_alt, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_alt, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_barometric_press = Slot(uri=MIXS['0000096'], name="AirInterface_barometric_press", curie=MIXS.curie('0000096'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_barometric_press, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_barometric_press, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_carb_dioxide = Slot(uri=MIXS['0000097'], name="AirInterface_carb_dioxide", curie=MIXS.curie('0000097'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_carb_dioxide, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_carb_dioxide, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_carb_monoxide = Slot(uri=MIXS['0000098'], name="AirInterface_carb_monoxide", curie=MIXS.curie('0000098'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_carb_monoxide, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_carb_monoxide, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_chem_administration = Slot(uri=MIXS['0000751'], name="AirInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_chem_administration, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_chem_administration, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.AirInterface_collection_date = Slot(uri=MIXS['0000011'], name="AirInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_collection_date, domain=AirInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_collection_date, domain=AirInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.AirInterface_depth = Slot(uri=MIXS['0000018'], name="AirInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_depth, domain=AirInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_depth, domain=AirInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.AirInterface_ecosystem = Slot(uri="str(uriorcurie)", name="AirInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem, domain=AirInterface, range=str)
@@ -14329,13 +14021,16 @@ slots.AirInterface_elev = Slot(uri=MIXS['0000093'], name="AirInterface_elev", cu
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_elev, domain=AirInterface, range=float)
 
 slots.AirInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="AirInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_env_broad_scale, domain=AirInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_env_broad_scale, domain=AirInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.AirInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="AirInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_env_local_scale, domain=AirInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_env_local_scale, domain=AirInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.AirInterface_env_medium = Slot(uri=MIXS['0000014'], name="AirInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_env_medium, domain=AirInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_env_medium, domain=AirInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.AirInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="AirInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_experimental_factor, domain=AirInterface, range=Optional[str])
@@ -14347,37 +14042,45 @@ slots.AirInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="AirInterface_h
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_horizon_meth, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_humidity = Slot(uri=MIXS['0000100'], name="AirInterface_humidity", curie=MIXS.curie('0000100'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_humidity, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_humidity, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_lat_lon = Slot(uri=MIXS['0000009'], name="AirInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_lat_lon, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_lat_lon, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.AirInterface_methane = Slot(uri=MIXS['0000101'], name="AirInterface_methane", curie=MIXS.curie('0000101'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_methane, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_methane, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_misc_param = Slot(uri=MIXS['0000752'], name="AirInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_misc_param, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_misc_param, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.AirInterface_organism_count = Slot(uri=MIXS['0000103'], name="AirInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_organism_count, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_organism_count, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.AirInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="AirInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_oxy_stat_samp, domain=AirInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.AirInterface_oxygen = Slot(uri=MIXS['0000104'], name="AirInterface_oxygen", curie=MIXS.curie('0000104'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_oxygen, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_oxygen, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_perturbation = Slot(uri=MIXS['0000754'], name="AirInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_perturbation, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_perturbation, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_pollutants = Slot(uri=MIXS['0000107'], name="AirInterface_pollutants", curie=MIXS.curie('0000107'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_pollutants, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_pollutants, domain=AirInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.AirInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="AirInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_rel_to_oxygen, domain=AirInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.AirInterface_salinity = Slot(uri=MIXS['0000183'], name="AirInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_salinity, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_salinity, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="AirInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_collec_device, domain=AirInterface, range=Optional[str])
@@ -14386,10 +14089,12 @@ slots.AirInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="AirInter
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_collec_method, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="AirInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_mat_process, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_mat_process, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.AirInterface_samp_size = Slot(uri=MIXS['0000001'], name="AirInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_size, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_size, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="AirInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_dur, domain=AirInterface, range=Optional[str])
@@ -14398,103 +14103,131 @@ slots.AirInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="AirInterface
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_loc, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="AirInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_temp, domain=AirInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_temp, domain=AirInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_size_frac = Slot(uri=MIXS['0000017'], name="AirInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_size_frac, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_solar_irradiance = Slot(uri=MIXS['0000112'], name="AirInterface_solar_irradiance", curie=MIXS.curie('0000112'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_solar_irradiance, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_solar_irradiance, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="AirInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_specific_ecosystem, domain=AirInterface, range=str)
 
 slots.AirInterface_temp = Slot(uri=MIXS['0000113'], name="AirInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_temp, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_temp, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_ventilation_rate = Slot(uri=MIXS['0000114'], name="AirInterface_ventilation_rate", curie=MIXS.curie('0000114'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_ventilation_rate, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_ventilation_rate, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.AirInterface_ventilation_type = Slot(uri=MIXS['0000756'], name="AirInterface_ventilation_type", curie=MIXS.curie('0000756'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ventilation_type, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_volatile_org_comp = Slot(uri=MIXS['0000115'], name="AirInterface_volatile_org_comp", curie=MIXS.curie('0000115'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_volatile_org_comp, domain=AirInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_volatile_org_comp, domain=AirInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.AirInterface_wind_direction = Slot(uri=MIXS['0000757'], name="AirInterface_wind_direction", curie=MIXS.curie('0000757'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_wind_direction, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_wind_speed = Slot(uri=MIXS['0000118'], name="AirInterface_wind_speed", curie=MIXS.curie('0000118'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_wind_speed, domain=AirInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_wind_speed, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_alkalinity = Slot(uri=MIXS['0000421'], name="BiofilmInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_alkalinity, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_alkalinity, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_alkyl_diethers = Slot(uri=MIXS['0000490'], name="BiofilmInterface_alkyl_diethers", curie=MIXS.curie('0000490'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_alkyl_diethers, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_alkyl_diethers, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_alt = Slot(uri=MIXS['0000094'], name="BiofilmInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_alt, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_alt, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_aminopept_act = Slot(uri=MIXS['0000172'], name="BiofilmInterface_aminopept_act", curie=MIXS.curie('0000172'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_aminopept_act, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_aminopept_act, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_ammonium = Slot(uri=MIXS['0000427'], name="BiofilmInterface_ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ammonium, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ammonium, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_bacteria_carb_prod = Slot(uri=MIXS['0000173'], name="BiofilmInterface_bacteria_carb_prod", curie=MIXS.curie('0000173'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_bacteria_carb_prod, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_bacteria_carb_prod, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_biomass = Slot(uri=MIXS['0000174'], name="BiofilmInterface_biomass", curie=MIXS.curie('0000174'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_biomass, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_biomass, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.BiofilmInterface_bishomohopanol = Slot(uri=MIXS['0000175'], name="BiofilmInterface_bishomohopanol", curie=MIXS.curie('0000175'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_bishomohopanol, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_bishomohopanol, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_bromide = Slot(uri=MIXS['0000176'], name="BiofilmInterface_bromide", curie=MIXS.curie('0000176'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_bromide, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_bromide, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_calcium = Slot(uri=MIXS['0000432'], name="BiofilmInterface_calcium", curie=MIXS.curie('0000432'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_calcium, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_calcium, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="BiofilmInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_carb_nitro_ratio, domain=BiofilmInterface, range=Optional[float])
 
 slots.BiofilmInterface_chem_administration = Slot(uri=MIXS['0000751'], name="BiofilmInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chem_administration, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chem_administration, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.BiofilmInterface_chloride = Slot(uri=MIXS['0000429'], name="BiofilmInterface_chloride", curie=MIXS.curie('0000429'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chloride, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chloride, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_chlorophyll = Slot(uri=MIXS['0000177'], name="BiofilmInterface_chlorophyll", curie=MIXS.curie('0000177'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chlorophyll, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chlorophyll, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_collection_date = Slot(uri=MIXS['0000011'], name="BiofilmInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_collection_date, domain=BiofilmInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_collection_date, domain=BiofilmInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.BiofilmInterface_depth = Slot(uri=MIXS['0000018'], name="BiofilmInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_depth, domain=BiofilmInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_depth, domain=BiofilmInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.BiofilmInterface_diether_lipids = Slot(uri=MIXS['0000178'], name="BiofilmInterface_diether_lipids", curie=MIXS.curie('0000178'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diether_lipids, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diether_lipids, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.BiofilmInterface_diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="BiofilmInterface_diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_carb_dioxide, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_carb_dioxide, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_diss_hydrogen = Slot(uri=MIXS['0000179'], name="BiofilmInterface_diss_hydrogen", curie=MIXS.curie('0000179'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_hydrogen, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_hydrogen, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_diss_inorg_carb = Slot(uri=MIXS['0000434'], name="BiofilmInterface_diss_inorg_carb", curie=MIXS.curie('0000434'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_inorg_carb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_inorg_carb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_diss_org_carb = Slot(uri=MIXS['0000433'], name="BiofilmInterface_diss_org_carb", curie=MIXS.curie('0000433'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_org_carb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_org_carb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_diss_org_nitro = Slot(uri=MIXS['0000162'], name="BiofilmInterface_diss_org_nitro", curie=MIXS.curie('0000162'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_org_nitro, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_org_nitro, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="BiofilmInterface_diss_oxygen", curie=MIXS.curie('0000119'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_oxygen, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_oxygen, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_ecosystem = Slot(uri="str(uriorcurie)", name="BiofilmInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem, domain=BiofilmInterface, range=str)
@@ -14512,13 +14245,16 @@ slots.BiofilmInterface_elev = Slot(uri=MIXS['0000093'], name="BiofilmInterface_e
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_elev, domain=BiofilmInterface, range=float)
 
 slots.BiofilmInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="BiofilmInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_broad_scale, domain=BiofilmInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_broad_scale, domain=BiofilmInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BiofilmInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="BiofilmInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_local_scale, domain=BiofilmInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_local_scale, domain=BiofilmInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BiofilmInterface_env_medium = Slot(uri=MIXS['0000014'], name="BiofilmInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_medium, domain=BiofilmInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_medium, domain=BiofilmInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BiofilmInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="BiofilmInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_experimental_factor, domain=BiofilmInterface, range=Optional[str])
@@ -14527,64 +14263,81 @@ slots.BiofilmInterface_geo_loc_name = Slot(uri=MIXS['0000010'], name="BiofilmInt
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_geo_loc_name, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_glucosidase_act = Slot(uri=MIXS['0000137'], name="BiofilmInterface_glucosidase_act", curie=MIXS.curie('0000137'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_glucosidase_act, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_glucosidase_act, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="BiofilmInterface_horizon_meth", curie=MIXS.curie('0000321'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_horizon_meth, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_lat_lon = Slot(uri=MIXS['0000009'], name="BiofilmInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_lat_lon, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_lat_lon, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.BiofilmInterface_magnesium = Slot(uri=MIXS['0000431'], name="BiofilmInterface_magnesium", curie=MIXS.curie('0000431'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_magnesium, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_magnesium, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_mean_frict_vel = Slot(uri=MIXS['0000498'], name="BiofilmInterface_mean_frict_vel", curie=MIXS.curie('0000498'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_mean_frict_vel, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_mean_frict_vel, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_mean_peak_frict_vel = Slot(uri=MIXS['0000502'], name="BiofilmInterface_mean_peak_frict_vel", curie=MIXS.curie('0000502'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_mean_peak_frict_vel, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_mean_peak_frict_vel, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_methane = Slot(uri=MIXS['0000101'], name="BiofilmInterface_methane", curie=MIXS.curie('0000101'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_methane, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_methane, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_misc_param = Slot(uri=MIXS['0000752'], name="BiofilmInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_misc_param, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_misc_param, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.BiofilmInterface_n_alkanes = Slot(uri=MIXS['0000503'], name="BiofilmInterface_n_alkanes", curie=MIXS.curie('0000503'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_n_alkanes, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_n_alkanes, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.BiofilmInterface_nitrate = Slot(uri=MIXS['0000425'], name="BiofilmInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_nitrate, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_nitrate, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_nitrite = Slot(uri=MIXS['0000426'], name="BiofilmInterface_nitrite", curie=MIXS.curie('0000426'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_nitrite, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_nitrite, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_nitro = Slot(uri=MIXS['0000504'], name="BiofilmInterface_nitro", curie=MIXS.curie('0000504'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_nitro, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_nitro, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_org_carb = Slot(uri=MIXS['0000508'], name="BiofilmInterface_org_carb", curie=MIXS.curie('0000508'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_org_carb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_org_carb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_org_matter = Slot(uri=MIXS['0000204'], name="BiofilmInterface_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_org_matter, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_org_matter, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_org_nitro = Slot(uri=MIXS['0000205'], name="BiofilmInterface_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_org_nitro, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_org_nitro, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_organism_count = Slot(uri=MIXS['0000103'], name="BiofilmInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_organism_count, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_organism_count, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.BiofilmInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="BiofilmInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_oxy_stat_samp, domain=BiofilmInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.BiofilmInterface_part_org_carb = Slot(uri=MIXS['0000515'], name="BiofilmInterface_part_org_carb", curie=MIXS.curie('0000515'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_part_org_carb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_part_org_carb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_perturbation = Slot(uri=MIXS['0000754'], name="BiofilmInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_perturbation, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_perturbation, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_petroleum_hydrocarb = Slot(uri=MIXS['0000516'], name="BiofilmInterface_petroleum_hydrocarb", curie=MIXS.curie('0000516'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_petroleum_hydrocarb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_petroleum_hydrocarb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_ph = Slot(uri=MIXS['0001001'], name="BiofilmInterface_ph", curie=MIXS.curie('0001001'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ph, domain=BiofilmInterface, range=Optional[str])
@@ -14593,28 +14346,35 @@ slots.BiofilmInterface_ph_meth = Slot(uri=MIXS['0001106'], name="BiofilmInterfac
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ph_meth, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_phaeopigments = Slot(uri=MIXS['0000180'], name="BiofilmInterface_phaeopigments", curie=MIXS.curie('0000180'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phaeopigments, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phaeopigments, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.BiofilmInterface_phosphate = Slot(uri=MIXS['0000505'], name="BiofilmInterface_phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phosphate, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phosphate, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="BiofilmInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phosplipid_fatt_acid, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phosplipid_fatt_acid, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.BiofilmInterface_potassium = Slot(uri=MIXS['0000430'], name="BiofilmInterface_potassium", curie=MIXS.curie('0000430'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_potassium, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_potassium, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_pressure = Slot(uri=MIXS['0000412'], name="BiofilmInterface_pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_pressure, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_pressure, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_redox_potential = Slot(uri=MIXS['0000182'], name="BiofilmInterface_redox_potential", curie=MIXS.curie('0000182'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_redox_potential, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_redox_potential, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="BiofilmInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_rel_to_oxygen, domain=BiofilmInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.BiofilmInterface_salinity = Slot(uri=MIXS['0000183'], name="BiofilmInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_salinity, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_salinity, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="BiofilmInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_collec_device, domain=BiofilmInterface, range=Optional[str])
@@ -14623,10 +14383,12 @@ slots.BiofilmInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="Biof
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_collec_method, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="BiofilmInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_mat_process, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_mat_process, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.BiofilmInterface_samp_size = Slot(uri=MIXS['0000001'], name="BiofilmInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_size, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_size, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="BiofilmInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_dur, domain=BiofilmInterface, range=Optional[str])
@@ -14635,46 +14397,57 @@ slots.BiofilmInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="BiofilmI
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_loc, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="BiofilmInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_temp, domain=BiofilmInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_temp, domain=BiofilmInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_silicate = Slot(uri=MIXS['0000184'], name="BiofilmInterface_silicate", curie=MIXS.curie('0000184'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_silicate, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_silicate, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_size_frac = Slot(uri=MIXS['0000017'], name="BiofilmInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_size_frac, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_sodium = Slot(uri=MIXS['0000428'], name="BiofilmInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sodium, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sodium, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="BiofilmInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_specific_ecosystem, domain=BiofilmInterface, range=str)
 
 slots.BiofilmInterface_sulfate = Slot(uri=MIXS['0000423'], name="BiofilmInterface_sulfate", curie=MIXS.curie('0000423'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sulfate, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sulfate, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_sulfide = Slot(uri=MIXS['0000424'], name="BiofilmInterface_sulfide", curie=MIXS.curie('0000424'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sulfide, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sulfide, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_temp = Slot(uri=MIXS['0000113'], name="BiofilmInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_temp, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_temp, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_tot_carb = Slot(uri=MIXS['0000525'], name="BiofilmInterface_tot_carb", curie=MIXS.curie('0000525'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_tot_carb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_tot_carb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_tot_nitro_content = Slot(uri=MIXS['0000530'], name="BiofilmInterface_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_tot_nitro_content, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_tot_nitro_content, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_tot_org_carb = Slot(uri=MIXS['0000533'], name="BiofilmInterface_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_tot_org_carb, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_tot_org_carb, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_turbidity = Slot(uri=MIXS['0000191'], name="BiofilmInterface_turbidity", curie=MIXS.curie('0000191'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_turbidity, domain=BiofilmInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_turbidity, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_water_content = Slot(uri=MIXS['0000185'], name="BiofilmInterface_water_content", curie=MIXS.curie('0000185'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_water_content, domain=BiofilmInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_water_content, domain=BiofilmInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_abs_air_humidity = Slot(uri=MIXS['0000122'], name="BuiltEnvInterface_abs_air_humidity", curie=MIXS.curie('0000122'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_abs_air_humidity, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_abs_air_humidity, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_address = Slot(uri=MIXS['0000218'], name="BuiltEnvInterface_address", curie=MIXS.curie('0000218'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_address, domain=BuiltEnvInterface, range=Optional[str])
@@ -14686,25 +14459,30 @@ slots.BuiltEnvInterface_aero_struc = Slot(uri=MIXS['0000773'], name="BuiltEnvInt
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_aero_struc, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_air_temp = Slot(uri=MIXS['0000124'], name="BuiltEnvInterface_air_temp", curie=MIXS.curie('0000124'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_air_temp, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_air_temp, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_alt = Slot(uri=MIXS['0000094'], name="BuiltEnvInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_alt, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_alt, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_amount_light = Slot(uri=MIXS['0000140'], name="BuiltEnvInterface_amount_light", curie=MIXS.curie('0000140'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_amount_light, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_amount_light, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_arch_struc = Slot(uri=MIXS['0000774'], name="BuiltEnvInterface_arch_struc", curie=MIXS.curie('0000774'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_arch_struc, domain=BuiltEnvInterface, range=Optional[Union[str, "ArchStrucEnum"]])
 
 slots.BuiltEnvInterface_avg_dew_point = Slot(uri=MIXS['0000141'], name="BuiltEnvInterface_avg_dew_point", curie=MIXS.curie('0000141'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_avg_dew_point, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_avg_dew_point, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_avg_occup = Slot(uri=MIXS['0000775'], name="BuiltEnvInterface_avg_occup", curie=MIXS.curie('0000775'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_avg_occup, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_avg_temp = Slot(uri=MIXS['0000142'], name="BuiltEnvInterface_avg_temp", curie=MIXS.curie('0000142'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_avg_temp, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_avg_temp, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_bathroom_count = Slot(uri=MIXS['0000776'], name="BuiltEnvInterface_bathroom_count", curie=MIXS.curie('0000776'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_bathroom_count, domain=BuiltEnvInterface, range=Optional[str])
@@ -14722,7 +14500,8 @@ slots.BuiltEnvInterface_building_setting = Slot(uri=MIXS['0000768'], name="Built
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_building_setting, domain=BuiltEnvInterface, range=Optional[Union[str, "BuildingSettingEnum"]])
 
 slots.BuiltEnvInterface_built_struc_age = Slot(uri=MIXS['0000145'], name="BuiltEnvInterface_built_struc_age", curie=MIXS.curie('0000145'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_built_struc_age, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_built_struc_age, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_built_struc_set = Slot(uri=MIXS['0000778'], name="BuiltEnvInterface_built_struc_set", curie=MIXS.curie('0000778'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_built_struc_set, domain=BuiltEnvInterface, range=Optional[str])
@@ -14731,10 +14510,12 @@ slots.BuiltEnvInterface_built_struc_type = Slot(uri=MIXS['0000721'], name="Built
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_built_struc_type, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_carb_dioxide = Slot(uri=MIXS['0000097'], name="BuiltEnvInterface_carb_dioxide", curie=MIXS.curie('0000097'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_carb_dioxide, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_carb_dioxide, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_ceil_area = Slot(uri=MIXS['0000148'], name="BuiltEnvInterface_ceil_area", curie=MIXS.curie('0000148'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_area, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_area, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_ceil_cond = Slot(uri=MIXS['0000779'], name="BuiltEnvInterface_ceil_cond", curie=MIXS.curie('0000779'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_cond, domain=BuiltEnvInterface, range=Optional[Union[str, "CeilCondEnum"]])
@@ -14749,7 +14530,8 @@ slots.BuiltEnvInterface_ceil_texture = Slot(uri=MIXS['0000783'], name="BuiltEnvI
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_texture, domain=BuiltEnvInterface, range=Optional[Union[str, "CeilTextureEnum"]])
 
 slots.BuiltEnvInterface_ceil_thermal_mass = Slot(uri=MIXS['0000143'], name="BuiltEnvInterface_ceil_thermal_mass", curie=MIXS.curie('0000143'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_thermal_mass, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_thermal_mass, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_ceil_type = Slot(uri=MIXS['0000784'], name="BuiltEnvInterface_ceil_type", curie=MIXS.curie('0000784'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_type, domain=BuiltEnvInterface, range=Optional[Union[str, "CeilTypeEnum"]])
@@ -14758,19 +14540,23 @@ slots.BuiltEnvInterface_ceil_water_mold = Slot(uri=MIXS['0000781'], name="BuiltE
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ceil_water_mold, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_collection_date = Slot(uri=MIXS['0000011'], name="BuiltEnvInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_collection_date, domain=BuiltEnvInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_collection_date, domain=BuiltEnvInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.BuiltEnvInterface_cool_syst_id = Slot(uri=MIXS['0000785'], name="BuiltEnvInterface_cool_syst_id", curie=MIXS.curie('0000785'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_cool_syst_id, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_date_last_rain = Slot(uri=MIXS['0000786'], name="BuiltEnvInterface_date_last_rain", curie=MIXS.curie('0000786'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_date_last_rain, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_date_last_rain, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.BuiltEnvInterface_depth = Slot(uri=MIXS['0000018'], name="BuiltEnvInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_depth, domain=BuiltEnvInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_depth, domain=BuiltEnvInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.BuiltEnvInterface_dew_point = Slot(uri=MIXS['0000129'], name="BuiltEnvInterface_dew_point", curie=MIXS.curie('0000129'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_dew_point, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_dew_point, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_door_comp_type = Slot(uri=MIXS['0000795'], name="BuiltEnvInterface_door_comp_type", curie=MIXS.curie('0000795'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_door_comp_type, domain=BuiltEnvInterface, range=Optional[Union[str, "DoorCompTypeEnum"]])
@@ -14791,7 +14577,8 @@ slots.BuiltEnvInterface_door_move = Slot(uri=MIXS['0000792'], name="BuiltEnvInte
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_door_move, domain=BuiltEnvInterface, range=Optional[Union[str, "DoorMoveEnum"]])
 
 slots.BuiltEnvInterface_door_size = Slot(uri=MIXS['0000158'], name="BuiltEnvInterface_door_size", curie=MIXS.curie('0000158'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_door_size, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_door_size, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_door_type = Slot(uri=MIXS['0000794'], name="BuiltEnvInterface_door_type", curie=MIXS.curie('0000794'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_door_type, domain=BuiltEnvInterface, range=Optional[Union[str, "DoorTypeEnum"]])
@@ -14827,22 +14614,27 @@ slots.BuiltEnvInterface_elevator = Slot(uri=MIXS['0000799'], name="BuiltEnvInter
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_elevator, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="BuiltEnvInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_broad_scale, domain=BuiltEnvInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_broad_scale, domain=BuiltEnvInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BuiltEnvInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="BuiltEnvInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_local_scale, domain=BuiltEnvInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_local_scale, domain=BuiltEnvInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BuiltEnvInterface_env_medium = Slot(uri=MIXS['0000014'], name="BuiltEnvInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_medium, domain=BuiltEnvInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_medium, domain=BuiltEnvInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BuiltEnvInterface_escalator = Slot(uri=MIXS['0000800'], name="BuiltEnvInterface_escalator", curie=MIXS.curie('0000800'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_escalator, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_exp_duct = Slot(uri=MIXS['0000144'], name="BuiltEnvInterface_exp_duct", curie=MIXS.curie('0000144'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_exp_duct, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_exp_duct, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_exp_pipe = Slot(uri=MIXS['0000220'], name="BuiltEnvInterface_exp_pipe", curie=MIXS.curie('0000220'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_exp_pipe, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_exp_pipe, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="BuiltEnvInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_experimental_factor, domain=BuiltEnvInterface, range=Optional[str])
@@ -14863,10 +14655,12 @@ slots.BuiltEnvInterface_fireplace_type = Slot(uri=MIXS['0000802'], name="BuiltEn
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_fireplace_type, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_floor_age = Slot(uri=MIXS['0000164'], name="BuiltEnvInterface_floor_age", curie=MIXS.curie('0000164'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_age, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_age, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_floor_area = Slot(uri=MIXS['0000165'], name="BuiltEnvInterface_floor_area", curie=MIXS.curie('0000165'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_area, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_area, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_floor_cond = Slot(uri=MIXS['0000803'], name="BuiltEnvInterface_floor_cond", curie=MIXS.curie('0000803'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_cond, domain=BuiltEnvInterface, range=Optional[Union[str, "FloorCondEnum"]])
@@ -14881,16 +14675,19 @@ slots.BuiltEnvInterface_floor_struc = Slot(uri=MIXS['0000806'], name="BuiltEnvIn
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_struc, domain=BuiltEnvInterface, range=Optional[Union[str, "FloorStrucEnum"]])
 
 slots.BuiltEnvInterface_floor_thermal_mass = Slot(uri=MIXS['0000166'], name="BuiltEnvInterface_floor_thermal_mass", curie=MIXS.curie('0000166'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_thermal_mass, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_thermal_mass, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_floor_water_mold = Slot(uri=MIXS['0000805'], name="BuiltEnvInterface_floor_water_mold", curie=MIXS.curie('0000805'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_floor_water_mold, domain=BuiltEnvInterface, range=Optional[Union[str, "FloorWaterMoldEnum"]])
 
 slots.BuiltEnvInterface_freq_clean = Slot(uri=MIXS['0000226'], name="BuiltEnvInterface_freq_clean", curie=MIXS.curie('0000226'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_freq_clean, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_freq_clean, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_freq_cook = Slot(uri=MIXS['0000227'], name="BuiltEnvInterface_freq_cook", curie=MIXS.curie('0000227'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_freq_cook, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_freq_cook, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_furniture = Slot(uri=MIXS['0000807'], name="BuiltEnvInterface_furniture", curie=MIXS.curie('0000807'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_furniture, domain=BuiltEnvInterface, range=Optional[Union[str, "FurnitureEnum"]])
@@ -14920,7 +14717,8 @@ slots.BuiltEnvInterface_heat_system_id = Slot(uri=MIXS['0000833'], name="BuiltEn
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_heat_system_id, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_height_carper_fiber = Slot(uri=MIXS['0000167'], name="BuiltEnvInterface_height_carper_fiber", curie=MIXS.curie('0000167'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_height_carper_fiber, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_height_carper_fiber, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="BuiltEnvInterface_horizon_meth", curie=MIXS.curie('0000321'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_horizon_meth, domain=BuiltEnvInterface, range=Optional[str])
@@ -14932,64 +14730,78 @@ slots.BuiltEnvInterface_indoor_surf = Slot(uri=MIXS['0000764'], name="BuiltEnvIn
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_indoor_surf, domain=BuiltEnvInterface, range=Optional[Union[str, "IndoorSurfEnum"]])
 
 slots.BuiltEnvInterface_inside_lux = Slot(uri=MIXS['0000168'], name="BuiltEnvInterface_inside_lux", curie=MIXS.curie('0000168'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_inside_lux, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_inside_lux, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_int_wall_cond = Slot(uri=MIXS['0000813'], name="BuiltEnvInterface_int_wall_cond", curie=MIXS.curie('0000813'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_int_wall_cond, domain=BuiltEnvInterface, range=Optional[Union[str, "IntWallCondEnum"]])
 
 slots.BuiltEnvInterface_last_clean = Slot(uri=MIXS['0000814'], name="BuiltEnvInterface_last_clean", curie=MIXS.curie('0000814'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_last_clean, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_last_clean, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.BuiltEnvInterface_lat_lon = Slot(uri=MIXS['0000009'], name="BuiltEnvInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_lat_lon, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_lat_lon, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.BuiltEnvInterface_light_type = Slot(uri=MIXS['0000769'], name="BuiltEnvInterface_light_type", curie=MIXS.curie('0000769'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_light_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
 
 slots.BuiltEnvInterface_max_occup = Slot(uri=MIXS['0000229'], name="BuiltEnvInterface_max_occup", curie=MIXS.curie('0000229'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_max_occup, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_max_occup, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_mech_struc = Slot(uri=MIXS['0000815'], name="BuiltEnvInterface_mech_struc", curie=MIXS.curie('0000815'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_mech_struc, domain=BuiltEnvInterface, range=Optional[Union[str, "MechStrucEnum"]])
 
 slots.BuiltEnvInterface_number_pets = Slot(uri=MIXS['0000231'], name="BuiltEnvInterface_number_pets", curie=MIXS.curie('0000231'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_number_pets, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_number_pets, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_number_plants = Slot(uri=MIXS['0000230'], name="BuiltEnvInterface_number_plants", curie=MIXS.curie('0000230'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_number_plants, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_number_plants, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_number_resident = Slot(uri=MIXS['0000232'], name="BuiltEnvInterface_number_resident", curie=MIXS.curie('0000232'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_number_resident, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_number_resident, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_occup_density_samp = Slot(uri=MIXS['0000217'], name="BuiltEnvInterface_occup_density_samp", curie=MIXS.curie('0000217'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_density_samp, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_density_samp, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_occup_document = Slot(uri=MIXS['0000816'], name="BuiltEnvInterface_occup_document", curie=MIXS.curie('0000816'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_document, domain=BuiltEnvInterface, range=Optional[Union[str, "OccupDocumentEnum"]])
 
 slots.BuiltEnvInterface_occup_samp = Slot(uri=MIXS['0000772'], name="BuiltEnvInterface_occup_samp", curie=MIXS.curie('0000772'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_samp, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_samp, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_organism_count = Slot(uri=MIXS['0000103'], name="BuiltEnvInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_organism_count, domain=BuiltEnvInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_organism_count, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.BuiltEnvInterface_pres_animal_insect = Slot(uri=MIXS['0000819'], name="BuiltEnvInterface_pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_pres_animal_insect, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_pres_animal_insect, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^(cat|dog|rodent|snake|other);\d+$'))
 
 slots.BuiltEnvInterface_quad_pos = Slot(uri=MIXS['0000820'], name="BuiltEnvInterface_quad_pos", curie=MIXS.curie('0000820'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_quad_pos, domain=BuiltEnvInterface, range=Optional[Union[str, "QuadPosEnum"]])
 
 slots.BuiltEnvInterface_rel_air_humidity = Slot(uri=MIXS['0000121'], name="BuiltEnvInterface_rel_air_humidity", curie=MIXS.curie('0000121'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_air_humidity, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_air_humidity, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_rel_humidity_out = Slot(uri=MIXS['0000188'], name="BuiltEnvInterface_rel_humidity_out", curie=MIXS.curie('0000188'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_humidity_out, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_humidity_out, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_rel_samp_loc = Slot(uri=MIXS['0000821'], name="BuiltEnvInterface_rel_samp_loc", curie=MIXS.curie('0000821'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_samp_loc, domain=BuiltEnvInterface, range=Optional[Union[str, "RelSampLocEnum"]])
 
 slots.BuiltEnvInterface_room_air_exch_rate = Slot(uri=MIXS['0000169'], name="BuiltEnvInterface_room_air_exch_rate", curie=MIXS.curie('0000169'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_air_exch_rate, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_air_exch_rate, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_room_architec_elem = Slot(uri=MIXS['0000233'], name="BuiltEnvInterface_room_architec_elem", curie=MIXS.curie('0000233'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_architec_elem, domain=BuiltEnvInterface, range=Optional[str])
@@ -15025,7 +14837,8 @@ slots.BuiltEnvInterface_room_net_area = Slot(uri=MIXS['0000194'], name="BuiltEnv
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_net_area, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_room_occup = Slot(uri=MIXS['0000236'], name="BuiltEnvInterface_room_occup", curie=MIXS.curie('0000236'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_occup, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_occup, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_room_samp_pos = Slot(uri=MIXS['0000824'], name="BuiltEnvInterface_room_samp_pos", curie=MIXS.curie('0000824'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_room_samp_pos, domain=BuiltEnvInterface, range=Optional[Union[str, "RoomSampPosEnum"]])
@@ -15058,7 +14871,8 @@ slots.BuiltEnvInterface_samp_weather = Slot(uri=MIXS['0000827'], name="BuiltEnvI
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_samp_weather, domain=BuiltEnvInterface, range=Optional[Union[str, "SampWeatherEnum"]])
 
 slots.BuiltEnvInterface_season = Slot(uri=MIXS['0000829'], name="BuiltEnvInterface_season", curie=MIXS.curie('0000829'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_season, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_season, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.BuiltEnvInterface_season_use = Slot(uri=MIXS['0000830'], name="BuiltEnvInterface_season_use", curie=MIXS.curie('0000830'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_season_use, domain=BuiltEnvInterface, range=Optional[Union[str, "SeasonUseEnum"]])
@@ -15091,7 +14905,8 @@ slots.BuiltEnvInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="B
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific_ecosystem, domain=BuiltEnvInterface, range=str)
 
 slots.BuiltEnvInterface_specific_humidity = Slot(uri=MIXS['0000214'], name="BuiltEnvInterface_specific_humidity", curie=MIXS.curie('0000214'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific_humidity, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific_humidity, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_substructure_type = Slot(uri=MIXS['0000767'], name="BuiltEnvInterface_substructure_type", curie=MIXS.curie('0000767'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_substructure_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
@@ -15100,25 +14915,30 @@ slots.BuiltEnvInterface_surf_air_cont = Slot(uri=MIXS['0000759'], name="BuiltEnv
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_air_cont, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
 
 slots.BuiltEnvInterface_surf_humidity = Slot(uri=MIXS['0000123'], name="BuiltEnvInterface_surf_humidity", curie=MIXS.curie('0000123'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_humidity, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_humidity, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_surf_material = Slot(uri=MIXS['0000758'], name="BuiltEnvInterface_surf_material", curie=MIXS.curie('0000758'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_material, domain=BuiltEnvInterface, range=Optional[Union[str, "SurfMaterialEnum"]])
 
 slots.BuiltEnvInterface_surf_moisture = Slot(uri=MIXS['0000128'], name="BuiltEnvInterface_surf_moisture", curie=MIXS.curie('0000128'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_moisture, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_moisture, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_surf_moisture_ph = Slot(uri=MIXS['0000760'], name="BuiltEnvInterface_surf_moisture_ph", curie=MIXS.curie('0000760'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_moisture_ph, domain=BuiltEnvInterface, range=Optional[float])
 
 slots.BuiltEnvInterface_surf_temp = Slot(uri=MIXS['0000125'], name="BuiltEnvInterface_surf_temp", curie=MIXS.curie('0000125'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_temp, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_temp, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_temp = Slot(uri=MIXS['0000113'], name="BuiltEnvInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_temp, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_temp, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_temp_out = Slot(uri=MIXS['0000197'], name="BuiltEnvInterface_temp_out", curie=MIXS.curie('0000197'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_temp_out, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_temp_out, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_train_line = Slot(uri=MIXS['0000837'], name="BuiltEnvInterface_train_line", curie=MIXS.curie('0000837'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_train_line, domain=BuiltEnvInterface, range=Optional[Union[str, "TrainLineEnum"]])
@@ -15139,7 +14959,8 @@ slots.BuiltEnvInterface_vis_media = Slot(uri=MIXS['0000840'], name="BuiltEnvInte
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_vis_media, domain=BuiltEnvInterface, range=Optional[Union[str, "VisMediaEnum"]])
 
 slots.BuiltEnvInterface_wall_area = Slot(uri=MIXS['0000198'], name="BuiltEnvInterface_wall_area", curie=MIXS.curie('0000198'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_area, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_area, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_wall_const_type = Slot(uri=MIXS['0000841'], name="BuiltEnvInterface_wall_const_type", curie=MIXS.curie('0000841'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_const_type, domain=BuiltEnvInterface, range=Optional[Union[str, "WallConstTypeEnum"]])
@@ -15148,7 +14969,8 @@ slots.BuiltEnvInterface_wall_finish_mat = Slot(uri=MIXS['0000842'], name="BuiltE
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_finish_mat, domain=BuiltEnvInterface, range=Optional[Union[str, "WallFinishMatEnum"]])
 
 slots.BuiltEnvInterface_wall_height = Slot(uri=MIXS['0000221'], name="BuiltEnvInterface_wall_height", curie=MIXS.curie('0000221'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_height, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_height, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_wall_loc = Slot(uri=MIXS['0000843'], name="BuiltEnvInterface_wall_loc", curie=MIXS.curie('0000843'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_loc, domain=BuiltEnvInterface, range=Optional[Union[str, "WallLocEnum"]])
@@ -15160,13 +14982,15 @@ slots.BuiltEnvInterface_wall_texture = Slot(uri=MIXS['0000846'], name="BuiltEnvI
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_texture, domain=BuiltEnvInterface, range=Optional[Union[str, "WallTextureEnum"]])
 
 slots.BuiltEnvInterface_wall_thermal_mass = Slot(uri=MIXS['0000222'], name="BuiltEnvInterface_wall_thermal_mass", curie=MIXS.curie('0000222'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_thermal_mass, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_thermal_mass, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_wall_water_mold = Slot(uri=MIXS['0000844'], name="BuiltEnvInterface_wall_water_mold", curie=MIXS.curie('0000844'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_wall_water_mold, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_water_feat_size = Slot(uri=MIXS['0000223'], name="BuiltEnvInterface_water_feat_size", curie=MIXS.curie('0000223'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_water_feat_size, domain=BuiltEnvInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_water_feat_size, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_water_feat_type = Slot(uri=MIXS['0000847'], name="BuiltEnvInterface_water_feat_type", curie=MIXS.curie('0000847'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_water_feat_type, domain=BuiltEnvInterface, range=Optional[Union[str, "WaterFeatTypeEnum"]])
@@ -15217,70 +15041,89 @@ slots.HcrCoresInterface_additional_info = Slot(uri=MIXS['0000300'], name="HcrCor
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_additional_info, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_alkalinity = Slot(uri=MIXS['0000421'], name="HcrCoresInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_alkalinity, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_alkalinity, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_alkalinity_method = Slot(uri=MIXS['0000298'], name="HcrCoresInterface_alkalinity_method", curie=MIXS.curie('0000298'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_alkalinity_method, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_alt = Slot(uri=MIXS['0000094'], name="HcrCoresInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_alt, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_alt, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_ammonium = Slot(uri=MIXS['0000427'], name="HcrCoresInterface_ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ammonium, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ammonium, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_api = Slot(uri=MIXS['0000157'], name="HcrCoresInterface_api", curie=MIXS.curie('0000157'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_api, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_api, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_aromatics_pc = Slot(uri=MIXS['0000133'], name="HcrCoresInterface_aromatics_pc", curie=MIXS.curie('0000133'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_aromatics_pc, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_aromatics_pc, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrCoresInterface_asphaltenes_pc = Slot(uri=MIXS['0000135'], name="HcrCoresInterface_asphaltenes_pc", curie=MIXS.curie('0000135'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_asphaltenes_pc, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_asphaltenes_pc, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrCoresInterface_basin = Slot(uri=MIXS['0000290'], name="HcrCoresInterface_basin", curie=MIXS.curie('0000290'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_basin, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_benzene = Slot(uri=MIXS['0000153'], name="HcrCoresInterface_benzene", curie=MIXS.curie('0000153'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_benzene, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_benzene, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_calcium = Slot(uri=MIXS['0000432'], name="HcrCoresInterface_calcium", curie=MIXS.curie('0000432'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_calcium, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_calcium, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_chem_administration = Slot(uri=MIXS['0000751'], name="HcrCoresInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_chem_administration, domain=HcrCoresInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_chem_administration, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.HcrCoresInterface_chloride = Slot(uri=MIXS['0000429'], name="HcrCoresInterface_chloride", curie=MIXS.curie('0000429'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_chloride, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_chloride, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_collection_date = Slot(uri=MIXS['0000011'], name="HcrCoresInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_collection_date, domain=HcrCoresInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_collection_date, domain=HcrCoresInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.HcrCoresInterface_density = Slot(uri=MIXS['0000435'], name="HcrCoresInterface_density", curie=MIXS.curie('0000435'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_density, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_density, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_depos_env = Slot(uri=MIXS['0000992'], name="HcrCoresInterface_depos_env", curie=MIXS.curie('0000992'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_depos_env, domain=HcrCoresInterface, range=Optional[Union[str, "DeposEnvEnum"]])
 
 slots.HcrCoresInterface_depth = Slot(uri=MIXS['0000018'], name="HcrCoresInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_depth, domain=HcrCoresInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_depth, domain=HcrCoresInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.HcrCoresInterface_diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="HcrCoresInterface_diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_carb_dioxide, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_carb_dioxide, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_diss_inorg_carb = Slot(uri=MIXS['0000434'], name="HcrCoresInterface_diss_inorg_carb", curie=MIXS.curie('0000434'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_inorg_carb, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_inorg_carb, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_diss_inorg_phosp = Slot(uri=MIXS['0000106'], name="HcrCoresInterface_diss_inorg_phosp", curie=MIXS.curie('0000106'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_inorg_phosp, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_inorg_phosp, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_diss_iron = Slot(uri=MIXS['0000139'], name="HcrCoresInterface_diss_iron", curie=MIXS.curie('0000139'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_iron, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_iron, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_diss_org_carb = Slot(uri=MIXS['0000433'], name="HcrCoresInterface_diss_org_carb", curie=MIXS.curie('0000433'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_org_carb, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_org_carb, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="HcrCoresInterface_diss_oxygen_fluid", curie=MIXS.curie('0000438'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_oxygen_fluid, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_oxygen_fluid, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_ecosystem = Slot(uri="str(uriorcurie)", name="HcrCoresInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem, domain=HcrCoresInterface, range=str)
@@ -15298,16 +15141,20 @@ slots.HcrCoresInterface_elev = Slot(uri=MIXS['0000093'], name="HcrCoresInterface
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_elev, domain=HcrCoresInterface, range=float)
 
 slots.HcrCoresInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="HcrCoresInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_broad_scale, domain=HcrCoresInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_broad_scale, domain=HcrCoresInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrCoresInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HcrCoresInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_local_scale, domain=HcrCoresInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_local_scale, domain=HcrCoresInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrCoresInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrCoresInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_medium, domain=HcrCoresInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_medium, domain=HcrCoresInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrCoresInterface_ethylbenzene = Slot(uri=MIXS['0000155'], name="HcrCoresInterface_ethylbenzene", curie=MIXS.curie('0000155'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ethylbenzene, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ethylbenzene, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="HcrCoresInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_experimental_factor, domain=HcrCoresInterface, range=Optional[str])
@@ -15325,7 +15172,8 @@ slots.HcrCoresInterface_hcr = Slot(uri=MIXS['0000988'], name="HcrCoresInterface_
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_hcr, domain=HcrCoresInterface, range=Optional[Union[str, "HcrEnum"]])
 
 slots.HcrCoresInterface_hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="HcrCoresInterface_hcr_fw_salinity", curie=MIXS.curie('0000406'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_hcr_fw_salinity, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_hcr_fw_salinity, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_hcr_geol_age = Slot(uri=MIXS['0000993'], name="HcrCoresInterface_hcr_geol_age", curie=MIXS.curie('0000993'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_hcr_geol_age, domain=HcrCoresInterface, range=Optional[Union[str, "HcrGeolAgeEnum"]])
@@ -15340,31 +15188,38 @@ slots.HcrCoresInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="HcrCoresI
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_horizon_meth, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HcrCoresInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_lat_lon, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_lat_lon, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.HcrCoresInterface_lithology = Slot(uri=MIXS['0000990'], name="HcrCoresInterface_lithology", curie=MIXS.curie('0000990'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_lithology, domain=HcrCoresInterface, range=Optional[Union[str, "LithologyEnum"]])
 
 slots.HcrCoresInterface_magnesium = Slot(uri=MIXS['0000431'], name="HcrCoresInterface_magnesium", curie=MIXS.curie('0000431'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_magnesium, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_magnesium, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_misc_param = Slot(uri=MIXS['0000752'], name="HcrCoresInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_misc_param, domain=HcrCoresInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_misc_param, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.HcrCoresInterface_nitrate = Slot(uri=MIXS['0000425'], name="HcrCoresInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_nitrate, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_nitrate, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_nitrite = Slot(uri=MIXS['0000426'], name="HcrCoresInterface_nitrite", curie=MIXS.curie('0000426'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_nitrite, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_nitrite, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_org_count_qpcr_info = Slot(uri=MIXS['0000099'], name="HcrCoresInterface_org_count_qpcr_info", curie=MIXS.curie('0000099'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_org_count_qpcr_info, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_organism_count = Slot(uri=MIXS['0000103'], name="HcrCoresInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_organism_count, domain=HcrCoresInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_organism_count, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.HcrCoresInterface_owc_tvdss = Slot(uri=MIXS['0000405'], name="HcrCoresInterface_owc_tvdss", curie=MIXS.curie('0000405'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_owc_tvdss, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_owc_tvdss, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="HcrCoresInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_oxy_stat_samp, domain=HcrCoresInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
@@ -15382,13 +15237,16 @@ slots.HcrCoresInterface_porosity = Slot(uri=MIXS['0000211'], name="HcrCoresInter
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_porosity, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_potassium = Slot(uri=MIXS['0000430'], name="HcrCoresInterface_potassium", curie=MIXS.curie('0000430'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_potassium, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_potassium, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_pour_point = Slot(uri=MIXS['0000127'], name="HcrCoresInterface_pour_point", curie=MIXS.curie('0000127'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_pour_point, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_pour_point, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_pressure = Slot(uri=MIXS['0000412'], name="HcrCoresInterface_pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_pressure, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_pressure, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="HcrCoresInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_rel_to_oxygen, domain=HcrCoresInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
@@ -15397,10 +15255,12 @@ slots.HcrCoresInterface_reservoir = Slot(uri=MIXS['0000303'], name="HcrCoresInte
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_reservoir, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_resins_pc = Slot(uri=MIXS['0000134'], name="HcrCoresInterface_resins_pc", curie=MIXS.curie('0000134'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_resins_pc, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_resins_pc, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrCoresInterface_salinity = Slot(uri=MIXS['0000183'], name="HcrCoresInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_salinity, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_salinity, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="HcrCoresInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_collec_device, domain=HcrCoresInterface, range=Optional[str])
@@ -15409,13 +15269,16 @@ slots.HcrCoresInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="Hcr
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_collec_method, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="HcrCoresInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_mat_process, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_mat_process, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.HcrCoresInterface_samp_md = Slot(uri=MIXS['0000413'], name="HcrCoresInterface_samp_md", curie=MIXS.curie('0000413'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_md, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_md, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_samp_size = Slot(uri=MIXS['0000001'], name="HcrCoresInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_size, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_size, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="HcrCoresInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_dur, domain=HcrCoresInterface, range=Optional[str])
@@ -15424,7 +15287,8 @@ slots.HcrCoresInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="HcrCore
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_loc, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HcrCoresInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_temp, domain=HcrCoresInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_temp, domain=HcrCoresInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_samp_subtype = Slot(uri=MIXS['0000999'], name="HcrCoresInterface_samp_subtype", curie=MIXS.curie('0000999'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_subtype, domain=HcrCoresInterface, range=Optional[Union[str, "SampSubtypeEnum"]])
@@ -15436,19 +15300,22 @@ slots.HcrCoresInterface_samp_tvdss = Slot(uri=MIXS['0000409'], name="HcrCoresInt
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_tvdss, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_samp_type = Slot(uri=MIXS['0000998'], name="HcrCoresInterface_samp_type", curie=MIXS.curie('0000998'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_type, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_type, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrCoresInterface_samp_well_name = Slot(uri=MIXS['0000296'], name="HcrCoresInterface_samp_well_name", curie=MIXS.curie('0000296'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_well_name, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_saturates_pc = Slot(uri=MIXS['0000131'], name="HcrCoresInterface_saturates_pc", curie=MIXS.curie('0000131'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_saturates_pc, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_saturates_pc, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrCoresInterface_size_frac = Slot(uri=MIXS['0000017'], name="HcrCoresInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_size_frac, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_sodium = Slot(uri=MIXS['0000428'], name="HcrCoresInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sodium, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sodium, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="HcrCoresInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_specific_ecosystem, domain=HcrCoresInterface, range=str)
@@ -15466,49 +15333,64 @@ slots.HcrCoresInterface_sr_lithology = Slot(uri=MIXS['0000995'], name="HcrCoresI
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sr_lithology, domain=HcrCoresInterface, range=Optional[Union[str, "SrLithologyEnum"]])
 
 slots.HcrCoresInterface_sulfate = Slot(uri=MIXS['0000423'], name="HcrCoresInterface_sulfate", curie=MIXS.curie('0000423'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sulfate, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sulfate, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_sulfate_fw = Slot(uri=MIXS['0000407'], name="HcrCoresInterface_sulfate_fw", curie=MIXS.curie('0000407'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sulfate_fw, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sulfate_fw, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_sulfide = Slot(uri=MIXS['0000424'], name="HcrCoresInterface_sulfide", curie=MIXS.curie('0000424'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sulfide, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sulfide, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_suspend_solids = Slot(uri=MIXS['0000150'], name="HcrCoresInterface_suspend_solids", curie=MIXS.curie('0000150'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_suspend_solids, domain=HcrCoresInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_suspend_solids, domain=HcrCoresInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.HcrCoresInterface_tan = Slot(uri=MIXS['0000120'], name="HcrCoresInterface_tan", curie=MIXS.curie('0000120'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tan, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tan, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_temp = Slot(uri=MIXS['0000113'], name="HcrCoresInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_temp, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_temp, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_toluene = Slot(uri=MIXS['0000154'], name="HcrCoresInterface_toluene", curie=MIXS.curie('0000154'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_toluene, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_toluene, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_tot_iron = Slot(uri=MIXS['0000105'], name="HcrCoresInterface_tot_iron", curie=MIXS.curie('0000105'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_iron, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_iron, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_tot_nitro = Slot(uri=MIXS['0000102'], name="HcrCoresInterface_tot_nitro", curie=MIXS.curie('0000102'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_nitro, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_nitro, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_tot_phosp = Slot(uri=MIXS['0000117'], name="HcrCoresInterface_tot_phosp", curie=MIXS.curie('0000117'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_phosp, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_phosp, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_tot_sulfur = Slot(uri=MIXS['0000419'], name="HcrCoresInterface_tot_sulfur", curie=MIXS.curie('0000419'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_sulfur, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tot_sulfur, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_tvdss_of_hcr_press = Slot(uri=MIXS['0000397'], name="HcrCoresInterface_tvdss_of_hcr_press", curie=MIXS.curie('0000397'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tvdss_of_hcr_press, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tvdss_of_hcr_press, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_tvdss_of_hcr_temp = Slot(uri=MIXS['0000394'], name="HcrCoresInterface_tvdss_of_hcr_temp", curie=MIXS.curie('0000394'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tvdss_of_hcr_temp, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_tvdss_of_hcr_temp, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_vfa = Slot(uri=MIXS['0000152'], name="HcrCoresInterface_vfa", curie=MIXS.curie('0000152'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_vfa, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_vfa, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_vfa_fw = Slot(uri=MIXS['0000408'], name="HcrCoresInterface_vfa_fw", curie=MIXS.curie('0000408'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_vfa_fw, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_vfa_fw, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrCoresInterface_viscosity = Slot(uri=MIXS['0000126'], name="HcrCoresInterface_viscosity", curie=MIXS.curie('0000126'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_viscosity, domain=HcrCoresInterface, range=Optional[str])
@@ -15517,7 +15399,8 @@ slots.HcrCoresInterface_win = Slot(uri=MIXS['0000297'], name="HcrCoresInterface_
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_win, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_xylene = Slot(uri=MIXS['0000156'], name="HcrCoresInterface_xylene", curie=MIXS.curie('0000156'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_xylene, domain=HcrCoresInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_xylene, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_add_recov_method = Slot(uri=MIXS['0001009'], name="HcrFluidsSwabsInterface_add_recov_method", curie=MIXS.curie('0001009'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_add_recov_method, domain=HcrFluidsSwabsInterface, range=Optional[str])
@@ -15526,31 +15409,38 @@ slots.HcrFluidsSwabsInterface_additional_info = Slot(uri=MIXS['0000300'], name="
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_additional_info, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_alkalinity = Slot(uri=MIXS['0000421'], name="HcrFluidsSwabsInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_alkalinity, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_alkalinity, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_alkalinity_method = Slot(uri=MIXS['0000298'], name="HcrFluidsSwabsInterface_alkalinity_method", curie=MIXS.curie('0000298'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_alkalinity_method, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_alt = Slot(uri=MIXS['0000094'], name="HcrFluidsSwabsInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_alt, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_alt, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_ammonium = Slot(uri=MIXS['0000427'], name="HcrFluidsSwabsInterface_ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ammonium, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ammonium, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_api = Slot(uri=MIXS['0000157'], name="HcrFluidsSwabsInterface_api", curie=MIXS.curie('0000157'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_api, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_api, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_aromatics_pc = Slot(uri=MIXS['0000133'], name="HcrFluidsSwabsInterface_aromatics_pc", curie=MIXS.curie('0000133'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_aromatics_pc, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_aromatics_pc, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrFluidsSwabsInterface_asphaltenes_pc = Slot(uri=MIXS['0000135'], name="HcrFluidsSwabsInterface_asphaltenes_pc", curie=MIXS.curie('0000135'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_asphaltenes_pc, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_asphaltenes_pc, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrFluidsSwabsInterface_basin = Slot(uri=MIXS['0000290'], name="HcrFluidsSwabsInterface_basin", curie=MIXS.curie('0000290'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_basin, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_benzene = Slot(uri=MIXS['0000153'], name="HcrFluidsSwabsInterface_benzene", curie=MIXS.curie('0000153'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_benzene, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_benzene, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_biocide = Slot(uri=MIXS['0001011'], name="HcrFluidsSwabsInterface_biocide", curie=MIXS.curie('0001011'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_biocide, domain=HcrFluidsSwabsInterface, range=Optional[str])
@@ -15559,10 +15449,12 @@ slots.HcrFluidsSwabsInterface_biocide_admin_method = Slot(uri=MIXS['0000456'], n
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_biocide_admin_method, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_calcium = Slot(uri=MIXS['0000432'], name="HcrFluidsSwabsInterface_calcium", curie=MIXS.curie('0000432'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_calcium, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_calcium, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_chem_administration = Slot(uri=MIXS['0000751'], name="HcrFluidsSwabsInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_chem_administration, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_chem_administration, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.HcrFluidsSwabsInterface_chem_treat_method = Slot(uri=MIXS['0000457'], name="HcrFluidsSwabsInterface_chem_treat_method", curie=MIXS.curie('0000457'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_chem_treat_method, domain=HcrFluidsSwabsInterface, range=Optional[str])
@@ -15571,37 +15463,47 @@ slots.HcrFluidsSwabsInterface_chem_treatment = Slot(uri=MIXS['0001012'], name="H
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_chem_treatment, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_chloride = Slot(uri=MIXS['0000429'], name="HcrFluidsSwabsInterface_chloride", curie=MIXS.curie('0000429'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_chloride, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_chloride, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_collection_date = Slot(uri=MIXS['0000011'], name="HcrFluidsSwabsInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_collection_date, domain=HcrFluidsSwabsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_collection_date, domain=HcrFluidsSwabsInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.HcrFluidsSwabsInterface_density = Slot(uri=MIXS['0000435'], name="HcrFluidsSwabsInterface_density", curie=MIXS.curie('0000435'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_density, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_density, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_depos_env = Slot(uri=MIXS['0000992'], name="HcrFluidsSwabsInterface_depos_env", curie=MIXS.curie('0000992'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_depos_env, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "DeposEnvEnum"]])
 
 slots.HcrFluidsSwabsInterface_depth = Slot(uri=MIXS['0000018'], name="HcrFluidsSwabsInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_depth, domain=HcrFluidsSwabsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_depth, domain=HcrFluidsSwabsInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.HcrFluidsSwabsInterface_diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="HcrFluidsSwabsInterface_diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_carb_dioxide, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_carb_dioxide, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_diss_inorg_carb = Slot(uri=MIXS['0000434'], name="HcrFluidsSwabsInterface_diss_inorg_carb", curie=MIXS.curie('0000434'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_inorg_carb, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_inorg_carb, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_diss_inorg_phosp = Slot(uri=MIXS['0000106'], name="HcrFluidsSwabsInterface_diss_inorg_phosp", curie=MIXS.curie('0000106'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_inorg_phosp, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_inorg_phosp, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_diss_iron = Slot(uri=MIXS['0000139'], name="HcrFluidsSwabsInterface_diss_iron", curie=MIXS.curie('0000139'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_iron, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_iron, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_diss_org_carb = Slot(uri=MIXS['0000433'], name="HcrFluidsSwabsInterface_diss_org_carb", curie=MIXS.curie('0000433'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_org_carb, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_org_carb, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="HcrFluidsSwabsInterface_diss_oxygen_fluid", curie=MIXS.curie('0000438'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_oxygen_fluid, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_oxygen_fluid, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_ecosystem = Slot(uri="str(uriorcurie)", name="HcrFluidsSwabsInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem, domain=HcrFluidsSwabsInterface, range=str)
@@ -15619,16 +15521,20 @@ slots.HcrFluidsSwabsInterface_elev = Slot(uri=MIXS['0000093'], name="HcrFluidsSw
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_elev, domain=HcrFluidsSwabsInterface, range=float)
 
 slots.HcrFluidsSwabsInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="HcrFluidsSwabsInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_broad_scale, domain=HcrFluidsSwabsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_broad_scale, domain=HcrFluidsSwabsInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrFluidsSwabsInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HcrFluidsSwabsInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_local_scale, domain=HcrFluidsSwabsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_local_scale, domain=HcrFluidsSwabsInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrFluidsSwabsInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrFluidsSwabsInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_medium, domain=HcrFluidsSwabsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_medium, domain=HcrFluidsSwabsInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrFluidsSwabsInterface_ethylbenzene = Slot(uri=MIXS['0000155'], name="HcrFluidsSwabsInterface_ethylbenzene", curie=MIXS.curie('0000155'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ethylbenzene, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ethylbenzene, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="HcrFluidsSwabsInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_experimental_factor, domain=HcrFluidsSwabsInterface, range=Optional[str])
@@ -15646,7 +15552,8 @@ slots.HcrFluidsSwabsInterface_hcr = Slot(uri=MIXS['0000988'], name="HcrFluidsSwa
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_hcr, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "HcrEnum"]])
 
 slots.HcrFluidsSwabsInterface_hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="HcrFluidsSwabsInterface_hcr_fw_salinity", curie=MIXS.curie('0000406'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_hcr_fw_salinity, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_hcr_fw_salinity, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_hcr_geol_age = Slot(uri=MIXS['0000993'], name="HcrFluidsSwabsInterface_hcr_geol_age", curie=MIXS.curie('0000993'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_hcr_geol_age, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "HcrGeolAgeEnum"]])
@@ -15661,34 +15568,42 @@ slots.HcrFluidsSwabsInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="Hcr
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_horizon_meth, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_iw_bt_date_well = Slot(uri=MIXS['0001010'], name="HcrFluidsSwabsInterface_iw_bt_date_well", curie=MIXS.curie('0001010'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_iw_bt_date_well, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_iw_bt_date_well, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.HcrFluidsSwabsInterface_iwf = Slot(uri=MIXS['0000455'], name="HcrFluidsSwabsInterface_iwf", curie=MIXS.curie('0000455'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_iwf, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_iwf, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HcrFluidsSwabsInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_lat_lon, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_lat_lon, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.HcrFluidsSwabsInterface_lithology = Slot(uri=MIXS['0000990'], name="HcrFluidsSwabsInterface_lithology", curie=MIXS.curie('0000990'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_lithology, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "LithologyEnum"]])
 
 slots.HcrFluidsSwabsInterface_magnesium = Slot(uri=MIXS['0000431'], name="HcrFluidsSwabsInterface_magnesium", curie=MIXS.curie('0000431'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_magnesium, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_magnesium, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_misc_param = Slot(uri=MIXS['0000752'], name="HcrFluidsSwabsInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_misc_param, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_misc_param, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.HcrFluidsSwabsInterface_nitrate = Slot(uri=MIXS['0000425'], name="HcrFluidsSwabsInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_nitrate, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_nitrate, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_nitrite = Slot(uri=MIXS['0000426'], name="HcrFluidsSwabsInterface_nitrite", curie=MIXS.curie('0000426'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_nitrite, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_nitrite, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_org_count_qpcr_info = Slot(uri=MIXS['0000099'], name="HcrFluidsSwabsInterface_org_count_qpcr_info", curie=MIXS.curie('0000099'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_org_count_qpcr_info, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_organism_count = Slot(uri=MIXS['0000103'], name="HcrFluidsSwabsInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_organism_count, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_organism_count, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.HcrFluidsSwabsInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="HcrFluidsSwabsInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_oxy_stat_samp, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
@@ -15700,19 +15615,24 @@ slots.HcrFluidsSwabsInterface_ph_meth = Slot(uri=MIXS['0001106'], name="HcrFluid
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ph_meth, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_potassium = Slot(uri=MIXS['0000430'], name="HcrFluidsSwabsInterface_potassium", curie=MIXS.curie('0000430'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_potassium, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_potassium, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_pour_point = Slot(uri=MIXS['0000127'], name="HcrFluidsSwabsInterface_pour_point", curie=MIXS.curie('0000127'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_pour_point, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_pour_point, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_pressure = Slot(uri=MIXS['0000412'], name="HcrFluidsSwabsInterface_pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_pressure, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_pressure, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_prod_rate = Slot(uri=MIXS['0000452'], name="HcrFluidsSwabsInterface_prod_rate", curie=MIXS.curie('0000452'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_prod_rate, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_prod_rate, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_prod_start_date = Slot(uri=MIXS['0001008'], name="HcrFluidsSwabsInterface_prod_start_date", curie=MIXS.curie('0001008'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_prod_start_date, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_prod_start_date, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.HcrFluidsSwabsInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="HcrFluidsSwabsInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_rel_to_oxygen, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
@@ -15721,10 +15641,12 @@ slots.HcrFluidsSwabsInterface_reservoir = Slot(uri=MIXS['0000303'], name="HcrFlu
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_reservoir, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_resins_pc = Slot(uri=MIXS['0000134'], name="HcrFluidsSwabsInterface_resins_pc", curie=MIXS.curie('0000134'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_resins_pc, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_resins_pc, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrFluidsSwabsInterface_salinity = Slot(uri=MIXS['0000183'], name="HcrFluidsSwabsInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_salinity, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_salinity, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="HcrFluidsSwabsInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_collec_device, domain=HcrFluidsSwabsInterface, range=Optional[str])
@@ -15739,13 +15661,16 @@ slots.HcrFluidsSwabsInterface_samp_loc_corr_rate = Slot(uri=MIXS['0000136'], nam
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_loc_corr_rate, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="HcrFluidsSwabsInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_mat_process, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_mat_process, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.HcrFluidsSwabsInterface_samp_preserv = Slot(uri=MIXS['0000463'], name="HcrFluidsSwabsInterface_samp_preserv", curie=MIXS.curie('0000463'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_preserv, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_preserv, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrFluidsSwabsInterface_samp_size = Slot(uri=MIXS['0000001'], name="HcrFluidsSwabsInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_size, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_size, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="HcrFluidsSwabsInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_dur, domain=HcrFluidsSwabsInterface, range=Optional[str])
@@ -15754,7 +15679,8 @@ slots.HcrFluidsSwabsInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="H
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_loc, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HcrFluidsSwabsInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_temp, domain=HcrFluidsSwabsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_temp, domain=HcrFluidsSwabsInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_samp_subtype = Slot(uri=MIXS['0000999'], name="HcrFluidsSwabsInterface_samp_subtype", curie=MIXS.curie('0000999'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_subtype, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "SampSubtypeEnum"]])
@@ -15763,85 +15689,107 @@ slots.HcrFluidsSwabsInterface_samp_transport_cond = Slot(uri=MIXS['0000410'], na
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_transport_cond, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_samp_type = Slot(uri=MIXS['0000998'], name="HcrFluidsSwabsInterface_samp_type", curie=MIXS.curie('0000998'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_type, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_type, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HcrFluidsSwabsInterface_samp_well_name = Slot(uri=MIXS['0000296'], name="HcrFluidsSwabsInterface_samp_well_name", curie=MIXS.curie('0000296'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_well_name, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_saturates_pc = Slot(uri=MIXS['0000131'], name="HcrFluidsSwabsInterface_saturates_pc", curie=MIXS.curie('0000131'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_saturates_pc, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_saturates_pc, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.HcrFluidsSwabsInterface_size_frac = Slot(uri=MIXS['0000017'], name="HcrFluidsSwabsInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_size_frac, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_sodium = Slot(uri=MIXS['0000428'], name="HcrFluidsSwabsInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sodium, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sodium, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="HcrFluidsSwabsInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_specific_ecosystem, domain=HcrFluidsSwabsInterface, range=str)
 
 slots.HcrFluidsSwabsInterface_sulfate = Slot(uri=MIXS['0000423'], name="HcrFluidsSwabsInterface_sulfate", curie=MIXS.curie('0000423'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sulfate, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sulfate, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_sulfate_fw = Slot(uri=MIXS['0000407'], name="HcrFluidsSwabsInterface_sulfate_fw", curie=MIXS.curie('0000407'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sulfate_fw, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sulfate_fw, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_sulfide = Slot(uri=MIXS['0000424'], name="HcrFluidsSwabsInterface_sulfide", curie=MIXS.curie('0000424'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sulfide, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sulfide, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_suspend_solids = Slot(uri=MIXS['0000150'], name="HcrFluidsSwabsInterface_suspend_solids", curie=MIXS.curie('0000150'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_suspend_solids, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_suspend_solids, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.HcrFluidsSwabsInterface_tan = Slot(uri=MIXS['0000120'], name="HcrFluidsSwabsInterface_tan", curie=MIXS.curie('0000120'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tan, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tan, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_temp = Slot(uri=MIXS['0000113'], name="HcrFluidsSwabsInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_temp, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_temp, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_toluene = Slot(uri=MIXS['0000154'], name="HcrFluidsSwabsInterface_toluene", curie=MIXS.curie('0000154'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_toluene, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_toluene, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_tot_iron = Slot(uri=MIXS['0000105'], name="HcrFluidsSwabsInterface_tot_iron", curie=MIXS.curie('0000105'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_iron, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_iron, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_tot_nitro = Slot(uri=MIXS['0000102'], name="HcrFluidsSwabsInterface_tot_nitro", curie=MIXS.curie('0000102'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_nitro, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_nitro, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_tot_phosp = Slot(uri=MIXS['0000117'], name="HcrFluidsSwabsInterface_tot_phosp", curie=MIXS.curie('0000117'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_phosp, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_phosp, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_tot_sulfur = Slot(uri=MIXS['0000419'], name="HcrFluidsSwabsInterface_tot_sulfur", curie=MIXS.curie('0000419'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_sulfur, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tot_sulfur, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_tvdss_of_hcr_press = Slot(uri=MIXS['0000397'], name="HcrFluidsSwabsInterface_tvdss_of_hcr_press", curie=MIXS.curie('0000397'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tvdss_of_hcr_press, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tvdss_of_hcr_press, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_tvdss_of_hcr_temp = Slot(uri=MIXS['0000394'], name="HcrFluidsSwabsInterface_tvdss_of_hcr_temp", curie=MIXS.curie('0000394'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tvdss_of_hcr_temp, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_tvdss_of_hcr_temp, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_vfa = Slot(uri=MIXS['0000152'], name="HcrFluidsSwabsInterface_vfa", curie=MIXS.curie('0000152'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_vfa, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_vfa, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_vfa_fw = Slot(uri=MIXS['0000408'], name="HcrFluidsSwabsInterface_vfa_fw", curie=MIXS.curie('0000408'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_vfa_fw, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_vfa_fw, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_viscosity = Slot(uri=MIXS['0000126'], name="HcrFluidsSwabsInterface_viscosity", curie=MIXS.curie('0000126'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_viscosity, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_water_cut = Slot(uri=MIXS['0000454'], name="HcrFluidsSwabsInterface_water_cut", curie=MIXS.curie('0000454'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_water_cut, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_water_cut, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_water_prod_rate = Slot(uri=MIXS['0000453'], name="HcrFluidsSwabsInterface_water_prod_rate", curie=MIXS.curie('0000453'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_water_prod_rate, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_water_prod_rate, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HcrFluidsSwabsInterface_win = Slot(uri=MIXS['0000297'], name="HcrFluidsSwabsInterface_win", curie=MIXS.curie('0000297'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_win, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_xylene = Slot(uri=MIXS['0000156'], name="HcrFluidsSwabsInterface_xylene", curie=MIXS.curie('0000156'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_xylene, domain=HcrFluidsSwabsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_xylene, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_alt = Slot(uri=MIXS['0000094'], name="HostAssociatedInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_alt, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_alt, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_ances_data = Slot(uri=MIXS['0000247'], name="HostAssociatedInterface_ances_data", curie=MIXS.curie('0000247'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ances_data, domain=HostAssociatedInterface, range=Optional[str])
@@ -15850,19 +15798,24 @@ slots.HostAssociatedInterface_biol_stat = Slot(uri=MIXS['0000858'], name="HostAs
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_biol_stat, domain=HostAssociatedInterface, range=Optional[Union[str, "BiolStatEnum"]])
 
 slots.HostAssociatedInterface_blood_press_diast = Slot(uri=MIXS['0000258'], name="HostAssociatedInterface_blood_press_diast", curie=MIXS.curie('0000258'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_blood_press_diast, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_blood_press_diast, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_blood_press_syst = Slot(uri=MIXS['0000259'], name="HostAssociatedInterface_blood_press_syst", curie=MIXS.curie('0000259'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_blood_press_syst, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_blood_press_syst, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_chem_administration = Slot(uri=MIXS['0000751'], name="HostAssociatedInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_chem_administration, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_chem_administration, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.HostAssociatedInterface_collection_date = Slot(uri=MIXS['0000011'], name="HostAssociatedInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_collection_date, domain=HostAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_collection_date, domain=HostAssociatedInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.HostAssociatedInterface_depth = Slot(uri=MIXS['0000018'], name="HostAssociatedInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_depth, domain=HostAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_depth, domain=HostAssociatedInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.HostAssociatedInterface_ecosystem = Slot(uri="str(uriorcurie)", name="HostAssociatedInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem, domain=HostAssociatedInterface, range=str)
@@ -15880,13 +15833,16 @@ slots.HostAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="HostAssocia
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_elev, domain=HostAssociatedInterface, range=float)
 
 slots.HostAssociatedInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="HostAssociatedInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_broad_scale, domain=HostAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_broad_scale, domain=HostAssociatedInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HostAssociatedInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HostAssociatedInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_local_scale, domain=HostAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_local_scale, domain=HostAssociatedInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HostAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="HostAssociatedInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_medium, domain=HostAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_medium, domain=HostAssociatedInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HostAssociatedInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="HostAssociatedInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_experimental_factor, domain=HostAssociatedInterface, range=Optional[str])
@@ -15904,19 +15860,23 @@ slots.HostAssociatedInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="Hos
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_horizon_meth, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_host_age = Slot(uri=MIXS['0000255'], name="HostAssociatedInterface_host_age", curie=MIXS.curie('0000255'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_age, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_age, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_host_body_habitat = Slot(uri=MIXS['0000866'], name="HostAssociatedInterface_host_body_habitat", curie=MIXS.curie('0000866'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_habitat, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_host_body_product = Slot(uri=MIXS['0000888'], name="HostAssociatedInterface_host_body_product", curie=MIXS.curie('0000888'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_product, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_product, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HostAssociatedInterface_host_body_site = Slot(uri=MIXS['0000867'], name="HostAssociatedInterface_host_body_site", curie=MIXS.curie('0000867'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_site, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_site, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HostAssociatedInterface_host_body_temp = Slot(uri=MIXS['0000274'], name="HostAssociatedInterface_host_body_temp", curie=MIXS.curie('0000274'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_temp, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_body_temp, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_host_color = Slot(uri=MIXS['0000260'], name="HostAssociatedInterface_host_color", curie=MIXS.curie('0000260'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_color, domain=HostAssociatedInterface, range=Optional[str])
@@ -15928,7 +15888,8 @@ slots.HostAssociatedInterface_host_diet = Slot(uri=MIXS['0000869'], name="HostAs
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_diet, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.HostAssociatedInterface_host_dry_mass = Slot(uri=MIXS['0000257'], name="HostAssociatedInterface_host_dry_mass", curie=MIXS.curie('0000257'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_dry_mass, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_dry_mass, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_host_family_relation = Slot(uri=MIXS['0000872'], name="HostAssociatedInterface_host_family_relation", curie=MIXS.curie('0000872'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_family_relation, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -15940,19 +15901,22 @@ slots.HostAssociatedInterface_host_growth_cond = Slot(uri=MIXS['0000871'], name=
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_growth_cond, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_host_height = Slot(uri=MIXS['0000264'], name="HostAssociatedInterface_host_height", curie=MIXS.curie('0000264'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_height, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_height, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_host_last_meal = Slot(uri=MIXS['0000870'], name="HostAssociatedInterface_host_last_meal", curie=MIXS.curie('0000870'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_last_meal, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.HostAssociatedInterface_host_length = Slot(uri=MIXS['0000256'], name="HostAssociatedInterface_host_length", curie=MIXS.curie('0000256'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_length, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_length, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_host_life_stage = Slot(uri=MIXS['0000251'], name="HostAssociatedInterface_host_life_stage", curie=MIXS.curie('0000251'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_life_stage, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_host_phenotype = Slot(uri=MIXS['0000874'], name="HostAssociatedInterface_host_phenotype", curie=MIXS.curie('0000874'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_phenotype, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_phenotype, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.HostAssociatedInterface_host_sex = Slot(uri=MIXS['0000811'], name="HostAssociatedInterface_host_sex", curie=MIXS.curie('0000811'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_sex, domain=HostAssociatedInterface, range=Optional[Union[str, "HostSexEnum"]])
@@ -15976,28 +15940,33 @@ slots.HostAssociatedInterface_host_taxid = Slot(uri=MIXS['0000250'], name="HostA
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_taxid, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_host_tot_mass = Slot(uri=MIXS['0000263'], name="HostAssociatedInterface_host_tot_mass", curie=MIXS.curie('0000263'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_tot_mass, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_host_tot_mass, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HostAssociatedInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_lat_lon, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_lat_lon, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.HostAssociatedInterface_misc_param = Slot(uri=MIXS['0000752'], name="HostAssociatedInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_misc_param, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_misc_param, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.HostAssociatedInterface_organism_count = Slot(uri=MIXS['0000103'], name="HostAssociatedInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_organism_count, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_organism_count, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.HostAssociatedInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="HostAssociatedInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_oxy_stat_samp, domain=HostAssociatedInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.HostAssociatedInterface_perturbation = Slot(uri=MIXS['0000754'], name="HostAssociatedInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_perturbation, domain=HostAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_perturbation, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="HostAssociatedInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_rel_to_oxygen, domain=HostAssociatedInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.HostAssociatedInterface_salinity = Slot(uri=MIXS['0000183'], name="HostAssociatedInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_salinity, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_salinity, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_samp_capt_status = Slot(uri=MIXS['0000860'], name="HostAssociatedInterface_samp_capt_status", curie=MIXS.curie('0000860'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_capt_status, domain=HostAssociatedInterface, range=Optional[Union[str, "SampCaptStatusEnum"]])
@@ -16012,10 +15981,12 @@ slots.HostAssociatedInterface_samp_dis_stage = Slot(uri=MIXS['0000249'], name="H
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_dis_stage, domain=HostAssociatedInterface, range=Optional[Union[str, "SampDisStageEnum"]])
 
 slots.HostAssociatedInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="HostAssociatedInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_mat_process, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_mat_process, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.HostAssociatedInterface_samp_size = Slot(uri=MIXS['0000001'], name="HostAssociatedInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_size, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_size, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="HostAssociatedInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_dur, domain=HostAssociatedInterface, range=Optional[str])
@@ -16024,7 +15995,8 @@ slots.HostAssociatedInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="H
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_loc, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HostAssociatedInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_temp, domain=HostAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_temp, domain=HostAssociatedInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.HostAssociatedInterface_size_frac = Slot(uri=MIXS['0000017'], name="HostAssociatedInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_size_frac, domain=HostAssociatedInterface, range=Optional[str])
@@ -16033,61 +16005,80 @@ slots.HostAssociatedInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", n
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_specific_ecosystem, domain=HostAssociatedInterface, range=str)
 
 slots.HostAssociatedInterface_temp = Slot(uri=MIXS['0000113'], name="HostAssociatedInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_temp, domain=HostAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_temp, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_alkalinity = Slot(uri=MIXS['0000421'], name="MiscEnvsInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_alkalinity, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_alkalinity, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_alt = Slot(uri=MIXS['0000094'], name="MiscEnvsInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_alt, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_alt, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_ammonium = Slot(uri=MIXS['0000427'], name="MiscEnvsInterface_ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ammonium, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ammonium, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_biomass = Slot(uri=MIXS['0000174'], name="MiscEnvsInterface_biomass", curie=MIXS.curie('0000174'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_biomass, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_biomass, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.MiscEnvsInterface_bromide = Slot(uri=MIXS['0000176'], name="MiscEnvsInterface_bromide", curie=MIXS.curie('0000176'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_bromide, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_bromide, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_calcium = Slot(uri=MIXS['0000432'], name="MiscEnvsInterface_calcium", curie=MIXS.curie('0000432'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_calcium, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_calcium, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_chem_administration = Slot(uri=MIXS['0000751'], name="MiscEnvsInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_chem_administration, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_chem_administration, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.MiscEnvsInterface_chloride = Slot(uri=MIXS['0000429'], name="MiscEnvsInterface_chloride", curie=MIXS.curie('0000429'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_chloride, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_chloride, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_chlorophyll = Slot(uri=MIXS['0000177'], name="MiscEnvsInterface_chlorophyll", curie=MIXS.curie('0000177'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_chlorophyll, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_chlorophyll, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_collection_date = Slot(uri=MIXS['0000011'], name="MiscEnvsInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_collection_date, domain=MiscEnvsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_collection_date, domain=MiscEnvsInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.MiscEnvsInterface_density = Slot(uri=MIXS['0000435'], name="MiscEnvsInterface_density", curie=MIXS.curie('0000435'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_density, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_density, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_depth = Slot(uri=MIXS['0000018'], name="MiscEnvsInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_depth, domain=MiscEnvsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_depth, domain=MiscEnvsInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.MiscEnvsInterface_diether_lipids = Slot(uri=MIXS['0000178'], name="MiscEnvsInterface_diether_lipids", curie=MIXS.curie('0000178'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diether_lipids, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diether_lipids, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.MiscEnvsInterface_diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="MiscEnvsInterface_diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_carb_dioxide, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_carb_dioxide, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_diss_hydrogen = Slot(uri=MIXS['0000179'], name="MiscEnvsInterface_diss_hydrogen", curie=MIXS.curie('0000179'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_hydrogen, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_hydrogen, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_diss_inorg_carb = Slot(uri=MIXS['0000434'], name="MiscEnvsInterface_diss_inorg_carb", curie=MIXS.curie('0000434'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_inorg_carb, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_inorg_carb, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_diss_org_nitro = Slot(uri=MIXS['0000162'], name="MiscEnvsInterface_diss_org_nitro", curie=MIXS.curie('0000162'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_org_nitro, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_org_nitro, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="MiscEnvsInterface_diss_oxygen", curie=MIXS.curie('0000119'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_oxygen, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_oxygen, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_ecosystem = Slot(uri="str(uriorcurie)", name="MiscEnvsInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem, domain=MiscEnvsInterface, range=str)
@@ -16105,13 +16096,16 @@ slots.MiscEnvsInterface_elev = Slot(uri=MIXS['0000093'], name="MiscEnvsInterface
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_elev, domain=MiscEnvsInterface, range=float)
 
 slots.MiscEnvsInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="MiscEnvsInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_broad_scale, domain=MiscEnvsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_broad_scale, domain=MiscEnvsInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.MiscEnvsInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="MiscEnvsInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_local_scale, domain=MiscEnvsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_local_scale, domain=MiscEnvsInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.MiscEnvsInterface_env_medium = Slot(uri=MIXS['0000014'], name="MiscEnvsInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_medium, domain=MiscEnvsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_medium, domain=MiscEnvsInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.MiscEnvsInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="MiscEnvsInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_experimental_factor, domain=MiscEnvsInterface, range=Optional[str])
@@ -16123,37 +16117,46 @@ slots.MiscEnvsInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="MiscEnvsI
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_horizon_meth, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_lat_lon = Slot(uri=MIXS['0000009'], name="MiscEnvsInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_lat_lon, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_lat_lon, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.MiscEnvsInterface_misc_param = Slot(uri=MIXS['0000752'], name="MiscEnvsInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_misc_param, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_misc_param, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.MiscEnvsInterface_nitrate = Slot(uri=MIXS['0000425'], name="MiscEnvsInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_nitrate, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_nitrate, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_nitrite = Slot(uri=MIXS['0000426'], name="MiscEnvsInterface_nitrite", curie=MIXS.curie('0000426'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_nitrite, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_nitrite, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_nitro = Slot(uri=MIXS['0000504'], name="MiscEnvsInterface_nitro", curie=MIXS.curie('0000504'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_nitro, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_nitro, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_org_carb = Slot(uri=MIXS['0000508'], name="MiscEnvsInterface_org_carb", curie=MIXS.curie('0000508'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_org_carb, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_org_carb, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_org_matter = Slot(uri=MIXS['0000204'], name="MiscEnvsInterface_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_org_matter, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_org_matter, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_org_nitro = Slot(uri=MIXS['0000205'], name="MiscEnvsInterface_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_org_nitro, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_org_nitro, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_organism_count = Slot(uri=MIXS['0000103'], name="MiscEnvsInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_organism_count, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_organism_count, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.MiscEnvsInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="MiscEnvsInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_oxy_stat_samp, domain=MiscEnvsInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.MiscEnvsInterface_perturbation = Slot(uri=MIXS['0000754'], name="MiscEnvsInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_perturbation, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_perturbation, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_ph = Slot(uri=MIXS['0001001'], name="MiscEnvsInterface_ph", curie=MIXS.curie('0001001'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ph, domain=MiscEnvsInterface, range=Optional[str])
@@ -16162,22 +16165,27 @@ slots.MiscEnvsInterface_ph_meth = Slot(uri=MIXS['0001106'], name="MiscEnvsInterf
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ph_meth, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_phosphate = Slot(uri=MIXS['0000505'], name="MiscEnvsInterface_phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_phosphate, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_phosphate, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="MiscEnvsInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_phosplipid_fatt_acid, domain=MiscEnvsInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_phosplipid_fatt_acid, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.MiscEnvsInterface_potassium = Slot(uri=MIXS['0000430'], name="MiscEnvsInterface_potassium", curie=MIXS.curie('0000430'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_potassium, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_potassium, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_pressure = Slot(uri=MIXS['0000412'], name="MiscEnvsInterface_pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_pressure, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_pressure, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="MiscEnvsInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_rel_to_oxygen, domain=MiscEnvsInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.MiscEnvsInterface_salinity = Slot(uri=MIXS['0000183'], name="MiscEnvsInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_salinity, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_salinity, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="MiscEnvsInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_collec_device, domain=MiscEnvsInterface, range=Optional[str])
@@ -16186,10 +16194,12 @@ slots.MiscEnvsInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="Mis
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_collec_method, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="MiscEnvsInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_mat_process, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_mat_process, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.MiscEnvsInterface_samp_size = Slot(uri=MIXS['0000001'], name="MiscEnvsInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_size, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_size, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="MiscEnvsInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_dur, domain=MiscEnvsInterface, range=Optional[str])
@@ -16198,37 +16208,45 @@ slots.MiscEnvsInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="MiscEnv
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_loc, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="MiscEnvsInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_temp, domain=MiscEnvsInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_temp, domain=MiscEnvsInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_silicate = Slot(uri=MIXS['0000184'], name="MiscEnvsInterface_silicate", curie=MIXS.curie('0000184'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_silicate, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_silicate, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_size_frac = Slot(uri=MIXS['0000017'], name="MiscEnvsInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_size_frac, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_sodium = Slot(uri=MIXS['0000428'], name="MiscEnvsInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sodium, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sodium, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="MiscEnvsInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_specific_ecosystem, domain=MiscEnvsInterface, range=str)
 
 slots.MiscEnvsInterface_sulfate = Slot(uri=MIXS['0000423'], name="MiscEnvsInterface_sulfate", curie=MIXS.curie('0000423'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sulfate, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sulfate, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_sulfide = Slot(uri=MIXS['0000424'], name="MiscEnvsInterface_sulfide", curie=MIXS.curie('0000424'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sulfide, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sulfide, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_temp = Slot(uri=MIXS['0000113'], name="MiscEnvsInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_temp, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_temp, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.MiscEnvsInterface_water_current = Slot(uri=MIXS['0000203'], name="MiscEnvsInterface_water_current", curie=MIXS.curie('0000203'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_water_current, domain=MiscEnvsInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_water_current, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_air_temp_regm = Slot(uri=MIXS['0000551'], name="PlantAssociatedInterface_air_temp_regm", curie=MIXS.curie('0000551'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_air_temp_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_alt = Slot(uri=MIXS['0000094'], name="PlantAssociatedInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_alt, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_alt, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_ances_data = Slot(uri=MIXS['0000247'], name="PlantAssociatedInterface_ances_data", curie=MIXS.curie('0000247'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ances_data, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16243,7 +16261,8 @@ slots.PlantAssociatedInterface_biotic_regm = Slot(uri=MIXS['0001038'], name="Pla
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_biotic_regm, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_chem_administration = Slot(uri=MIXS['0000751'], name="PlantAssociatedInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_chem_administration, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_chem_administration, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.PlantAssociatedInterface_chem_mutagen = Slot(uri=MIXS['0000555'], name="PlantAssociatedInterface_chem_mutagen", curie=MIXS.curie('0000555'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_chem_mutagen, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -16252,13 +16271,15 @@ slots.PlantAssociatedInterface_climate_environment = Slot(uri=MIXS['0001040'], n
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_climate_environment, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_collection_date = Slot(uri=MIXS['0000011'], name="PlantAssociatedInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_collection_date, domain=PlantAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_collection_date, domain=PlantAssociatedInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.PlantAssociatedInterface_cult_root_med = Slot(uri=MIXS['0001041'], name="PlantAssociatedInterface_cult_root_med", curie=MIXS.curie('0001041'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_cult_root_med, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_depth = Slot(uri=MIXS['0000018'], name="PlantAssociatedInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_depth, domain=PlantAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_depth, domain=PlantAssociatedInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.PlantAssociatedInterface_ecosystem = Slot(uri="str(uriorcurie)", name="PlantAssociatedInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem, domain=PlantAssociatedInterface, range=str)
@@ -16276,13 +16297,16 @@ slots.PlantAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="PlantAssoc
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_elev, domain=PlantAssociatedInterface, range=float)
 
 slots.PlantAssociatedInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="PlantAssociatedInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_broad_scale, domain=PlantAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_broad_scale, domain=PlantAssociatedInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="PlantAssociatedInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_local_scale, domain=PlantAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_local_scale, domain=PlantAssociatedInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="PlantAssociatedInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_medium, domain=PlantAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_medium, domain=PlantAssociatedInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="PlantAssociatedInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_experimental_factor, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16306,7 +16330,8 @@ slots.PlantAssociatedInterface_gravity = Slot(uri=MIXS['0000559'], name="PlantAs
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_gravity, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_growth_facil = Slot(uri=MIXS['0001043'], name="PlantAssociatedInterface_growth_facil", curie=MIXS.curie('0001043'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_growth_facil, domain=PlantAssociatedInterface, range=Union[str, "GrowthFacilEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_growth_facil, domain=PlantAssociatedInterface, range=Union[str, "GrowthFacilEnum"],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_growth_habit = Slot(uri=MIXS['0001044'], name="PlantAssociatedInterface_growth_habit", curie=MIXS.curie('0001044'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_growth_habit, domain=PlantAssociatedInterface, range=Optional[Union[str, "GrowthHabitEnum"]])
@@ -16321,28 +16346,33 @@ slots.PlantAssociatedInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="Pl
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_horizon_meth, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_host_age = Slot(uri=MIXS['0000255'], name="PlantAssociatedInterface_host_age", curie=MIXS.curie('0000255'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_age, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_age, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_host_common_name = Slot(uri=MIXS['0000248'], name="PlantAssociatedInterface_host_common_name", curie=MIXS.curie('0000248'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_common_name, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_host_dry_mass = Slot(uri=MIXS['0000257'], name="PlantAssociatedInterface_host_dry_mass", curie=MIXS.curie('0000257'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_dry_mass, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_dry_mass, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_host_genotype = Slot(uri=MIXS['0000365'], name="PlantAssociatedInterface_host_genotype", curie=MIXS.curie('0000365'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_genotype, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_host_height = Slot(uri=MIXS['0000264'], name="PlantAssociatedInterface_host_height", curie=MIXS.curie('0000264'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_height, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_height, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_host_length = Slot(uri=MIXS['0000256'], name="PlantAssociatedInterface_host_length", curie=MIXS.curie('0000256'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_length, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_length, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_host_life_stage = Slot(uri=MIXS['0000251'], name="PlantAssociatedInterface_host_life_stage", curie=MIXS.curie('0000251'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_life_stage, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_host_phenotype = Slot(uri=MIXS['0000874'], name="PlantAssociatedInterface_host_phenotype", curie=MIXS.curie('0000874'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_phenotype, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_phenotype, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_host_subspecf_genlin = Slot(uri=MIXS['0001318'], name="PlantAssociatedInterface_host_subspecf_genlin", curie=MIXS.curie('0001318'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_subspecf_genlin, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -16354,16 +16384,19 @@ slots.PlantAssociatedInterface_host_taxid = Slot(uri=MIXS['0000250'], name="Plan
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_taxid, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_host_tot_mass = Slot(uri=MIXS['0000263'], name="PlantAssociatedInterface_host_tot_mass", curie=MIXS.curie('0000263'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_tot_mass, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_tot_mass, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_host_wet_mass = Slot(uri=MIXS['0000567'], name="PlantAssociatedInterface_host_wet_mass", curie=MIXS.curie('0000567'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_wet_mass, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_host_wet_mass, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="PlantAssociatedInterface_humidity_regm", curie=MIXS.curie('0000568'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_humidity_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_lat_lon = Slot(uri=MIXS['0000009'], name="PlantAssociatedInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_lat_lon, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_lat_lon, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.PlantAssociatedInterface_light_regm = Slot(uri=MIXS['0000569'], name="PlantAssociatedInterface_light_regm", curie=MIXS.curie('0000569'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_light_regm, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16375,19 +16408,21 @@ slots.PlantAssociatedInterface_mineral_nutr_regm = Slot(uri=MIXS['0000570'], nam
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_mineral_nutr_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_misc_param = Slot(uri=MIXS['0000752'], name="PlantAssociatedInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_misc_param, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_misc_param, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.PlantAssociatedInterface_non_min_nutr_regm = Slot(uri=MIXS['0000571'], name="PlantAssociatedInterface_non_min_nutr_regm", curie=MIXS.curie('0000571'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_non_min_nutr_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_organism_count = Slot(uri=MIXS['0000103'], name="PlantAssociatedInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_organism_count, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_organism_count, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.PlantAssociatedInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="PlantAssociatedInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_oxy_stat_samp, domain=PlantAssociatedInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.PlantAssociatedInterface_perturbation = Slot(uri=MIXS['0000754'], name="PlantAssociatedInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_perturbation, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_perturbation, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_pesticide_regm = Slot(uri=MIXS['0000573'], name="PlantAssociatedInterface_pesticide_regm", curie=MIXS.curie('0000573'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_pesticide_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -16396,7 +16431,8 @@ slots.PlantAssociatedInterface_ph_regm = Slot(uri=MIXS['0001056'], name="PlantAs
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ph_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_plant_growth_med = Slot(uri=MIXS['0001057'], name="PlantAssociatedInterface_plant_growth_med", curie=MIXS.curie('0001057'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_plant_growth_med, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_plant_growth_med, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_plant_product = Slot(uri=MIXS['0001058'], name="PlantAssociatedInterface_plant_product", curie=MIXS.curie('0001058'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_plant_product, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16405,7 +16441,8 @@ slots.PlantAssociatedInterface_plant_sex = Slot(uri=MIXS['0001059'], name="Plant
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_plant_sex, domain=PlantAssociatedInterface, range=Optional[Union[str, "PlantSexEnum"]])
 
 slots.PlantAssociatedInterface_plant_struc = Slot(uri=MIXS['0001060'], name="PlantAssociatedInterface_plant_struc", curie=MIXS.curie('0001060'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_plant_struc, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_plant_struc, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.PlantAssociatedInterface_radiation_regm = Slot(uri=MIXS['0000575'], name="PlantAssociatedInterface_radiation_regm", curie=MIXS.curie('0000575'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_radiation_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -16420,28 +16457,35 @@ slots.PlantAssociatedInterface_root_cond = Slot(uri=MIXS['0001061'], name="Plant
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_cond, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_root_med_carbon = Slot(uri=MIXS['0000577'], name="PlantAssociatedInterface_root_med_carbon", curie=MIXS.curie('0000577'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_carbon, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_carbon, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_root_med_macronutr = Slot(uri=MIXS['0000578'], name="PlantAssociatedInterface_root_med_macronutr", curie=MIXS.curie('0000578'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_macronutr, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_macronutr, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_root_med_micronutr = Slot(uri=MIXS['0000579'], name="PlantAssociatedInterface_root_med_micronutr", curie=MIXS.curie('0000579'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_micronutr, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_micronutr, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_root_med_ph = Slot(uri=MIXS['0001062'], name="PlantAssociatedInterface_root_med_ph", curie=MIXS.curie('0001062'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_ph, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_ph, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_root_med_regl = Slot(uri=MIXS['0000581'], name="PlantAssociatedInterface_root_med_regl", curie=MIXS.curie('0000581'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_regl, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_regl, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_root_med_solid = Slot(uri=MIXS['0001063'], name="PlantAssociatedInterface_root_med_solid", curie=MIXS.curie('0001063'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_solid, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_root_med_suppl = Slot(uri=MIXS['0000580'], name="PlantAssociatedInterface_root_med_suppl", curie=MIXS.curie('0000580'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_suppl, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_suppl, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_salinity = Slot(uri=MIXS['0000183'], name="PlantAssociatedInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_salinity, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_salinity, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_salt_regm = Slot(uri=MIXS['0000582'], name="PlantAssociatedInterface_salt_regm", curie=MIXS.curie('0000582'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_salt_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -16459,10 +16503,12 @@ slots.PlantAssociatedInterface_samp_dis_stage = Slot(uri=MIXS['0000249'], name="
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_dis_stage, domain=PlantAssociatedInterface, range=Optional[Union[str, "SampDisStageEnum"]])
 
 slots.PlantAssociatedInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="PlantAssociatedInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_mat_process, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_mat_process, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.PlantAssociatedInterface_samp_size = Slot(uri=MIXS['0000001'], name="PlantAssociatedInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_size, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_size, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="PlantAssociatedInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_dur, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16471,7 +16517,8 @@ slots.PlantAssociatedInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_loc, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="PlantAssociatedInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_temp, domain=PlantAssociatedInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_temp, domain=PlantAssociatedInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_season_environment = Slot(uri=MIXS['0001068'], name="PlantAssociatedInterface_season_environment", curie=MIXS.curie('0001068'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_season_environment, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
@@ -16486,7 +16533,8 @@ slots.PlantAssociatedInterface_standing_water_regm = Slot(uri=MIXS['0001069'], n
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_standing_water_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.PlantAssociatedInterface_temp = Slot(uri=MIXS['0000113'], name="PlantAssociatedInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_temp, domain=PlantAssociatedInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_temp, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_tiss_cult_growth_med = Slot(uri=MIXS['0001070'], name="PlantAssociatedInterface_tiss_cult_growth_med", curie=MIXS.curie('0001070'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_tiss_cult_growth_med, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16498,76 +16546,99 @@ slots.PlantAssociatedInterface_watering_regm = Slot(uri=MIXS['0000591'], name="P
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_watering_regm, domain=PlantAssociatedInterface, range=Optional[Union[str, List[str]]])
 
 slots.SedimentInterface_alkalinity = Slot(uri=MIXS['0000421'], name="SedimentInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_alkalinity, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_alkalinity, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_alkyl_diethers = Slot(uri=MIXS['0000490'], name="SedimentInterface_alkyl_diethers", curie=MIXS.curie('0000490'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_alkyl_diethers, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_alkyl_diethers, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_alt = Slot(uri=MIXS['0000094'], name="SedimentInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_alt, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_alt, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_aminopept_act = Slot(uri=MIXS['0000172'], name="SedimentInterface_aminopept_act", curie=MIXS.curie('0000172'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_aminopept_act, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_aminopept_act, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_ammonium = Slot(uri=MIXS['0000427'], name="SedimentInterface_ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ammonium, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ammonium, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_bacteria_carb_prod = Slot(uri=MIXS['0000173'], name="SedimentInterface_bacteria_carb_prod", curie=MIXS.curie('0000173'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_bacteria_carb_prod, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_bacteria_carb_prod, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_biomass = Slot(uri=MIXS['0000174'], name="SedimentInterface_biomass", curie=MIXS.curie('0000174'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_biomass, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_biomass, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_bishomohopanol = Slot(uri=MIXS['0000175'], name="SedimentInterface_bishomohopanol", curie=MIXS.curie('0000175'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_bishomohopanol, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_bishomohopanol, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_bromide = Slot(uri=MIXS['0000176'], name="SedimentInterface_bromide", curie=MIXS.curie('0000176'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_bromide, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_bromide, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_calcium = Slot(uri=MIXS['0000432'], name="SedimentInterface_calcium", curie=MIXS.curie('0000432'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_calcium, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_calcium, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="SedimentInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_carb_nitro_ratio, domain=SedimentInterface, range=Optional[float])
 
 slots.SedimentInterface_chem_administration = Slot(uri=MIXS['0000751'], name="SedimentInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chem_administration, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chem_administration, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.SedimentInterface_chloride = Slot(uri=MIXS['0000429'], name="SedimentInterface_chloride", curie=MIXS.curie('0000429'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chloride, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chloride, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_chlorophyll = Slot(uri=MIXS['0000177'], name="SedimentInterface_chlorophyll", curie=MIXS.curie('0000177'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chlorophyll, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chlorophyll, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_collection_date = Slot(uri=MIXS['0000011'], name="SedimentInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_collection_date, domain=SedimentInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_collection_date, domain=SedimentInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.SedimentInterface_density = Slot(uri=MIXS['0000435'], name="SedimentInterface_density", curie=MIXS.curie('0000435'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_density, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_density, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_depth = Slot(uri=MIXS['0000018'], name="SedimentInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_depth, domain=SedimentInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_depth, domain=SedimentInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.SedimentInterface_diether_lipids = Slot(uri=MIXS['0000178'], name="SedimentInterface_diether_lipids", curie=MIXS.curie('0000178'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diether_lipids, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diether_lipids, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="SedimentInterface_diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_carb_dioxide, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_carb_dioxide, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_diss_hydrogen = Slot(uri=MIXS['0000179'], name="SedimentInterface_diss_hydrogen", curie=MIXS.curie('0000179'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_hydrogen, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_hydrogen, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_diss_inorg_carb = Slot(uri=MIXS['0000434'], name="SedimentInterface_diss_inorg_carb", curie=MIXS.curie('0000434'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_inorg_carb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_inorg_carb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_diss_org_carb = Slot(uri=MIXS['0000433'], name="SedimentInterface_diss_org_carb", curie=MIXS.curie('0000433'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_org_carb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_org_carb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_diss_org_nitro = Slot(uri=MIXS['0000162'], name="SedimentInterface_diss_org_nitro", curie=MIXS.curie('0000162'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_org_nitro, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_org_nitro, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="SedimentInterface_diss_oxygen", curie=MIXS.curie('0000119'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_oxygen, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_oxygen, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_ecosystem = Slot(uri="str(uriorcurie)", name="SedimentInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem, domain=SedimentInterface, range=str)
@@ -16585,13 +16656,16 @@ slots.SedimentInterface_elev = Slot(uri=MIXS['0000093'], name="SedimentInterface
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_elev, domain=SedimentInterface, range=float)
 
 slots.SedimentInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SedimentInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_broad_scale, domain=SedimentInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_broad_scale, domain=SedimentInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SedimentInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SedimentInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_local_scale, domain=SedimentInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_local_scale, domain=SedimentInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SedimentInterface_env_medium = Slot(uri=MIXS['0000014'], name="SedimentInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_medium, domain=SedimentInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_medium, domain=SedimentInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SedimentInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SedimentInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_experimental_factor, domain=SedimentInterface, range=Optional[str])
@@ -16600,67 +16674,85 @@ slots.SedimentInterface_geo_loc_name = Slot(uri=MIXS['0000010'], name="SedimentI
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_geo_loc_name, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_glucosidase_act = Slot(uri=MIXS['0000137'], name="SedimentInterface_glucosidase_act", curie=MIXS.curie('0000137'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_glucosidase_act, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_glucosidase_act, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="SedimentInterface_horizon_meth", curie=MIXS.curie('0000321'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_horizon_meth, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SedimentInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_lat_lon, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_lat_lon, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.SedimentInterface_magnesium = Slot(uri=MIXS['0000431'], name="SedimentInterface_magnesium", curie=MIXS.curie('0000431'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_magnesium, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_magnesium, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_mean_frict_vel = Slot(uri=MIXS['0000498'], name="SedimentInterface_mean_frict_vel", curie=MIXS.curie('0000498'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_mean_frict_vel, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_mean_frict_vel, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_mean_peak_frict_vel = Slot(uri=MIXS['0000502'], name="SedimentInterface_mean_peak_frict_vel", curie=MIXS.curie('0000502'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_mean_peak_frict_vel, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_mean_peak_frict_vel, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_methane = Slot(uri=MIXS['0000101'], name="SedimentInterface_methane", curie=MIXS.curie('0000101'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_methane, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_methane, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_misc_param = Slot(uri=MIXS['0000752'], name="SedimentInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_misc_param, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_misc_param, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_n_alkanes = Slot(uri=MIXS['0000503'], name="SedimentInterface_n_alkanes", curie=MIXS.curie('0000503'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_n_alkanes, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_n_alkanes, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_nitrate = Slot(uri=MIXS['0000425'], name="SedimentInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_nitrate, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_nitrate, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_nitrite = Slot(uri=MIXS['0000426'], name="SedimentInterface_nitrite", curie=MIXS.curie('0000426'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_nitrite, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_nitrite, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_nitro = Slot(uri=MIXS['0000504'], name="SedimentInterface_nitro", curie=MIXS.curie('0000504'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_nitro, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_nitro, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_org_carb = Slot(uri=MIXS['0000508'], name="SedimentInterface_org_carb", curie=MIXS.curie('0000508'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_org_carb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_org_carb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_org_matter = Slot(uri=MIXS['0000204'], name="SedimentInterface_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_org_matter, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_org_matter, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_org_nitro = Slot(uri=MIXS['0000205'], name="SedimentInterface_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_org_nitro, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_org_nitro, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_organism_count = Slot(uri=MIXS['0000103'], name="SedimentInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_organism_count, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_organism_count, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.SedimentInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="SedimentInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_oxy_stat_samp, domain=SedimentInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.SedimentInterface_part_org_carb = Slot(uri=MIXS['0000515'], name="SedimentInterface_part_org_carb", curie=MIXS.curie('0000515'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_part_org_carb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_part_org_carb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_particle_class = Slot(uri=MIXS['0000206'], name="SedimentInterface_particle_class", curie=MIXS.curie('0000206'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_particle_class, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_particle_class, domain=SedimentInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_perturbation = Slot(uri=MIXS['0000754'], name="SedimentInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_perturbation, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_perturbation, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_petroleum_hydrocarb = Slot(uri=MIXS['0000516'], name="SedimentInterface_petroleum_hydrocarb", curie=MIXS.curie('0000516'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_petroleum_hydrocarb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_petroleum_hydrocarb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_ph = Slot(uri=MIXS['0001001'], name="SedimentInterface_ph", curie=MIXS.curie('0001001'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ph, domain=SedimentInterface, range=Optional[str])
@@ -16669,31 +16761,38 @@ slots.SedimentInterface_ph_meth = Slot(uri=MIXS['0001106'], name="SedimentInterf
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ph_meth, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_phaeopigments = Slot(uri=MIXS['0000180'], name="SedimentInterface_phaeopigments", curie=MIXS.curie('0000180'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phaeopigments, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phaeopigments, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_phosphate = Slot(uri=MIXS['0000505'], name="SedimentInterface_phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phosphate, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phosphate, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="SedimentInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phosplipid_fatt_acid, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phosplipid_fatt_acid, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SedimentInterface_porosity = Slot(uri=MIXS['0000211'], name="SedimentInterface_porosity", curie=MIXS.curie('0000211'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_porosity, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_potassium = Slot(uri=MIXS['0000430'], name="SedimentInterface_potassium", curie=MIXS.curie('0000430'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_potassium, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_potassium, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_pressure = Slot(uri=MIXS['0000412'], name="SedimentInterface_pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_pressure, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_pressure, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_redox_potential = Slot(uri=MIXS['0000182'], name="SedimentInterface_redox_potential", curie=MIXS.curie('0000182'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_redox_potential, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_redox_potential, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="SedimentInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_rel_to_oxygen, domain=SedimentInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.SedimentInterface_salinity = Slot(uri=MIXS['0000183'], name="SedimentInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_salinity, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_salinity, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="SedimentInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_collec_device, domain=SedimentInterface, range=Optional[str])
@@ -16702,10 +16801,12 @@ slots.SedimentInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="Sed
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_collec_method, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="SedimentInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_mat_process, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_mat_process, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.SedimentInterface_samp_size = Slot(uri=MIXS['0000001'], name="SedimentInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_size, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_size, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="SedimentInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_dur, domain=SedimentInterface, range=Optional[str])
@@ -16714,52 +16815,63 @@ slots.SedimentInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="Sedimen
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_loc, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SedimentInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_temp, domain=SedimentInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_temp, domain=SedimentInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_sediment_type = Slot(uri=MIXS['0001078'], name="SedimentInterface_sediment_type", curie=MIXS.curie('0001078'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sediment_type, domain=SedimentInterface, range=Optional[Union[str, "SedimentTypeEnum"]])
 
 slots.SedimentInterface_silicate = Slot(uri=MIXS['0000184'], name="SedimentInterface_silicate", curie=MIXS.curie('0000184'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_silicate, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_silicate, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_size_frac = Slot(uri=MIXS['0000017'], name="SedimentInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_size_frac, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_sodium = Slot(uri=MIXS['0000428'], name="SedimentInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sodium, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sodium, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="SedimentInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_specific_ecosystem, domain=SedimentInterface, range=str)
 
 slots.SedimentInterface_sulfate = Slot(uri=MIXS['0000423'], name="SedimentInterface_sulfate", curie=MIXS.curie('0000423'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sulfate, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sulfate, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_sulfide = Slot(uri=MIXS['0000424'], name="SedimentInterface_sulfide", curie=MIXS.curie('0000424'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sulfide, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sulfide, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_temp = Slot(uri=MIXS['0000113'], name="SedimentInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_temp, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_temp, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_tidal_stage = Slot(uri=MIXS['0000750'], name="SedimentInterface_tidal_stage", curie=MIXS.curie('0000750'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tidal_stage, domain=SedimentInterface, range=Optional[Union[str, "TidalStageEnum"]])
 
 slots.SedimentInterface_tot_carb = Slot(uri=MIXS['0000525'], name="SedimentInterface_tot_carb", curie=MIXS.curie('0000525'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_carb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_carb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_tot_depth_water_col = Slot(uri=MIXS['0000634'], name="SedimentInterface_tot_depth_water_col", curie=MIXS.curie('0000634'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_depth_water_col, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_depth_water_col, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_tot_nitro_content = Slot(uri=MIXS['0000530'], name="SedimentInterface_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_nitro_content, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_nitro_content, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_tot_org_carb = Slot(uri=MIXS['0000533'], name="SedimentInterface_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_org_carb, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_tot_org_carb, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_turbidity = Slot(uri=MIXS['0000191'], name="SedimentInterface_turbidity", curie=MIXS.curie('0000191'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_turbidity, domain=SedimentInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_turbidity, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_water_content = Slot(uri=MIXS['0000185'], name="SedimentInterface_water_content", curie=MIXS.curie('0000185'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_water_content, domain=SedimentInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_water_content, domain=SedimentInterface, range=Optional[str])
 
 slots.SoilInterface_agrochem_addition = Slot(uri=MIXS['0000639'], name="SoilInterface_agrochem_addition", curie=MIXS.curie('0000639'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_agrochem_addition, domain=SoilInterface, range=Optional[Union[str, List[str]]])
@@ -16768,22 +16880,27 @@ slots.SoilInterface_air_temp_regm = Slot(uri=MIXS['0000551'], name="SoilInterfac
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_air_temp_regm, domain=SoilInterface, range=Optional[Union[str, List[str]]])
 
 slots.SoilInterface_al_sat = Slot(uri=MIXS['0000607'], name="SoilInterface_al_sat", curie=MIXS.curie('0000607'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_al_sat, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_al_sat, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_al_sat_meth = Slot(uri=MIXS['0000324'], name="SoilInterface_al_sat_meth", curie=MIXS.curie('0000324'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_al_sat_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_alt = Slot(uri=MIXS['0000094'], name="SoilInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_alt, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_alt, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_ammonium_nitrogen = Slot(uri="str(uriorcurie)", name="SoilInterface_ammonium_nitrogen", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_ammonium_nitrogen, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_ammonium_nitrogen, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_annual_precpt = Slot(uri=MIXS['0000644'], name="SoilInterface_annual_precpt", curie=MIXS.curie('0000644'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_annual_precpt, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_annual_precpt, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_annual_temp = Slot(uri=MIXS['0000642'], name="SoilInterface_annual_temp", curie=MIXS.curie('0000642'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_annual_temp, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_annual_temp, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_biotic_regm = Slot(uri=MIXS['0001038'], name="SoilInterface_biotic_regm", curie=MIXS.curie('0001038'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_biotic_regm, domain=SoilInterface, range=Optional[str])
@@ -16795,13 +16912,15 @@ slots.SoilInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="SoilInter
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_carb_nitro_ratio, domain=SoilInterface, range=Optional[float])
 
 slots.SoilInterface_chem_administration = Slot(uri=MIXS['0000751'], name="SoilInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_chem_administration, domain=SoilInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_chem_administration, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.SoilInterface_climate_environment = Slot(uri=MIXS['0001040'], name="SoilInterface_climate_environment", curie=MIXS.curie('0001040'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_climate_environment, domain=SoilInterface, range=Optional[Union[str, List[str]]])
 
 slots.SoilInterface_collection_date = Slot(uri=MIXS['0000011'], name="SoilInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_collection_date, domain=SoilInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_collection_date, domain=SoilInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.SoilInterface_crop_rotation = Slot(uri=MIXS['0000318'], name="SoilInterface_crop_rotation", curie=MIXS.curie('0000318'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_crop_rotation, domain=SoilInterface, range=Optional[str])
@@ -16816,7 +16935,8 @@ slots.SoilInterface_cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="SoilIn
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_cur_vegetation_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_depth = Slot(uri=MIXS['0000018'], name="SoilInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_depth, domain=SoilInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_depth, domain=SoilInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.SoilInterface_drainage_class = Slot(uri=MIXS['0001085'], name="SoilInterface_drainage_class", curie=MIXS.curie('0001085'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_drainage_class, domain=SoilInterface, range=Optional[Union[str, "DrainageClassEnum"]])
@@ -16837,13 +16957,16 @@ slots.SoilInterface_elev = Slot(uri=MIXS['0000093'], name="SoilInterface_elev", 
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_elev, domain=SoilInterface, range=float)
 
 slots.SoilInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SoilInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=Union[str, "EnvBroadScaleSoilEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=Union[str, "EnvBroadScaleSoilEnum"],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SoilInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=Union[str, "EnvLocalScaleSoilEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=Union[str, "EnvLocalScaleSoilEnum"],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_env_medium = Slot(uri=MIXS['0000014'], name="SoilInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=Union[str, "EnvMediumSoilEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=Union[str, "EnvMediumSoilEnum"],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SoilInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_experimental_factor, domain=SoilInterface, range=Optional[str])
@@ -16855,7 +16978,8 @@ slots.SoilInterface_fao_class = Slot(uri=MIXS['0001083'], name="SoilInterface_fa
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_fao_class, domain=SoilInterface, range=Optional[Union[str, "FaoClassEnum"]])
 
 slots.SoilInterface_fire = Slot(uri=MIXS['0001086'], name="SoilInterface_fire", curie=MIXS.curie('0001086'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_fire, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_fire, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?(\s+to\s+[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)?$'))
 
 slots.SoilInterface_flooding = Slot(uri=MIXS['0000319'], name="SoilInterface_flooding", curie=MIXS.curie('0000319'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_flooding, domain=SoilInterface, range=Optional[str])
@@ -16867,25 +16991,30 @@ slots.SoilInterface_geo_loc_name = Slot(uri=MIXS['0000010'], name="SoilInterface
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_geo_loc_name, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_growth_facil = Slot(uri=MIXS['0001043'], name="SoilInterface_growth_facil", curie=MIXS.curie('0001043'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_growth_facil, domain=SoilInterface, range=Union[str, "GrowthFacilEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_growth_facil, domain=SoilInterface, range=Union[str, "GrowthFacilEnum"],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_heavy_metals = Slot(uri=MIXS['0000652'], name="SoilInterface_heavy_metals", curie=MIXS.curie('0000652'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_heavy_metals, domain=SoilInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_heavy_metals, domain=SoilInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SoilInterface_heavy_metals_meth = Slot(uri=MIXS['0000343'], name="SoilInterface_heavy_metals_meth", curie=MIXS.curie('0000343'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_heavy_metals_meth, domain=SoilInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_heavy_metals_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="SoilInterface_humidity_regm", curie=MIXS.curie('0000568'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_humidity_regm, domain=SoilInterface, range=Optional[Union[str, List[str]]])
 
 slots.SoilInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SoilInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_lat_lon, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_lat_lon, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.SoilInterface_lbc_thirty = Slot(uri="str(uriorcurie)", name="SoilInterface_lbc_thirty", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_lbc_thirty, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_lbc_thirty, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_lbceq = Slot(uri="str(uriorcurie)", name="SoilInterface_lbceq", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_lbceq, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_lbceq, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_light_regm = Slot(uri=MIXS['0000569'], name="SoilInterface_light_regm", curie=MIXS.curie('0000569'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_light_regm, domain=SoilInterface, range=Optional[str])
@@ -16903,28 +17032,35 @@ slots.SoilInterface_local_class_meth = Slot(uri=MIXS['0000331'], name="SoilInter
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_local_class_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_manganese = Slot(uri="str(uriorcurie)", name="SoilInterface_manganese", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_manganese, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_manganese, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_micro_biomass_meth = Slot(uri=MIXS['0000339'], name="SoilInterface_micro_biomass_meth", curie=MIXS.curie('0000339'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_micro_biomass_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_microbial_biomass = Slot(uri=MIXS['0000650'], name="SoilInterface_microbial_biomass", curie=MIXS.curie('0000650'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_misc_param = Slot(uri=MIXS['0000752'], name="SoilInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_misc_param, domain=SoilInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_misc_param, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SoilInterface_nitrate_nitrogen = Slot(uri="str(uriorcurie)", name="SoilInterface_nitrate_nitrogen", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_nitrate_nitrogen, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_nitrate_nitrogen, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_nitrite_nitrogen = Slot(uri="str(uriorcurie)", name="SoilInterface_nitrite_nitrogen", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_nitrite_nitrogen, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_nitrite_nitrogen, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_org_matter = Slot(uri=MIXS['0000204'], name="SoilInterface_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_org_matter, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_org_matter, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_org_nitro = Slot(uri=MIXS['0000205'], name="SoilInterface_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_org_nitro, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_org_nitro, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="SoilInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_oxy_stat_samp, domain=SoilInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
@@ -16936,7 +17072,8 @@ slots.SoilInterface_ph_meth = Slot(uri=MIXS['0001106'], name="SoilInterface_ph_m
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ph_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_phosphate = Slot(uri=MIXS['0000505'], name="SoilInterface_phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_phosphate, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_phosphate, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_prev_land_use_meth = Slot(uri=MIXS['0000316'], name="SoilInterface_prev_land_use_meth", curie=MIXS.curie('0000316'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_prev_land_use_meth, domain=SoilInterface, range=Optional[str])
@@ -16951,7 +17088,8 @@ slots.SoilInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="SoilInterfac
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_rel_to_oxygen, domain=SoilInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.SoilInterface_salinity = Slot(uri=MIXS['0000183'], name="SoilInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_salinity, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_salinity, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_salinity_meth = Slot(uri=MIXS['0000341'], name="SoilInterface_salinity_meth", curie=MIXS.curie('0000341'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_salinity_meth, domain=SoilInterface, range=Optional[str])
@@ -16963,46 +17101,57 @@ slots.SoilInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="SoilInt
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_collec_method, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="SoilInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_mat_process, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_mat_process, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.SoilInterface_samp_size = Slot(uri=MIXS['0000001'], name="SoilInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_size, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_size, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SoilInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_store_temp, domain=SoilInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_store_temp, domain=SoilInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_season_precpt = Slot(uri=MIXS['0000645'], name="SoilInterface_season_precpt", curie=MIXS.curie('0000645'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_season_precpt, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_season_precpt, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_season_temp = Slot(uri=MIXS['0000643'], name="SoilInterface_season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_season_temp, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_season_temp, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_sieving = Slot(uri=MIXS['0000322'], name="SoilInterface_sieving", curie=MIXS.curie('0000322'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_sieving, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_size_frac_low = Slot(uri=MIXS['0000735'], name="SoilInterface_size_frac_low", curie=MIXS.curie('0000735'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_size_frac_low, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_size_frac_low, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_size_frac_up = Slot(uri=MIXS['0000736'], name="SoilInterface_size_frac_up", curie=MIXS.curie('0000736'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_size_frac_up, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_size_frac_up, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_slope_aspect = Slot(uri=MIXS['0000647'], name="SoilInterface_slope_aspect", curie=MIXS.curie('0000647'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_slope_aspect, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_slope_aspect, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_slope_gradient = Slot(uri=MIXS['0000646'], name="SoilInterface_slope_gradient", curie=MIXS.curie('0000646'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_slope_gradient, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_slope_gradient, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_soil_horizon = Slot(uri=MIXS['0001082'], name="SoilInterface_soil_horizon", curie=MIXS.curie('0001082'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_horizon, domain=SoilInterface, range=Optional[Union[str, "SoilHorizonEnum"]])
 
 slots.SoilInterface_soil_text_measure = Slot(uri=MIXS['0000335'], name="SoilInterface_soil_text_measure", curie=MIXS.curie('0000335'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_text_measure, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_text_measure, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_soil_texture_meth = Slot(uri=MIXS['0000336'], name="SoilInterface_soil_texture_meth", curie=MIXS.curie('0000336'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_texture_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_soil_type = Slot(uri=MIXS['0000332'], name="SoilInterface_soil_type", curie=MIXS.curie('0000332'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_type, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_type, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_soil_type_meth = Slot(uri=MIXS['0000334'], name="SoilInterface_soil_type_meth", curie=MIXS.curie('0000334'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_type_meth, domain=SoilInterface, range=Optional[str])
@@ -17014,61 +17163,74 @@ slots.SoilInterface_store_cond = Slot(uri=MIXS['0000327'], name="SoilInterface_s
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_store_cond, domain=SoilInterface, range=Union[str, "StoreCondEnum"])
 
 slots.SoilInterface_temp = Slot(uri=MIXS['0000113'], name="SoilInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_temp, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_temp, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_tillage = Slot(uri=MIXS['0001081'], name="SoilInterface_tillage", curie=MIXS.curie('0001081'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_tillage, domain=SoilInterface, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
 
 slots.SoilInterface_tot_carb = Slot(uri=MIXS['0000525'], name="SoilInterface_tot_carb", curie=MIXS.curie('0000525'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_carb, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_carb, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="SoilInterface_tot_nitro_cont_meth", curie=MIXS.curie('0000338'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_nitro_cont_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_tot_nitro_content = Slot(uri=MIXS['0000530'], name="SoilInterface_tot_nitro_content", curie=MIXS.curie('0000530'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_nitro_content, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_nitro_content, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_tot_org_c_meth = Slot(uri=MIXS['0000337'], name="SoilInterface_tot_org_c_meth", curie=MIXS.curie('0000337'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_org_c_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_tot_org_carb = Slot(uri=MIXS['0000533'], name="SoilInterface_tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_org_carb, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_org_carb, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_tot_phosp = Slot(uri=MIXS['0000117'], name="SoilInterface_tot_phosp", curie=MIXS.curie('0000117'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_phosp, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_phosp, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_water_cont_soil_meth = Slot(uri=MIXS['0000323'], name="SoilInterface_water_cont_soil_meth", curie=MIXS.curie('0000323'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_water_cont_soil_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_water_content = Slot(uri=MIXS['0000185'], name="SoilInterface_water_content", curie=MIXS.curie('0000185'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_water_content, domain=SoilInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_water_content, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_watering_regm = Slot(uri=MIXS['0000591'], name="SoilInterface_watering_regm", curie=MIXS.curie('0000591'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_watering_regm, domain=SoilInterface, range=Optional[Union[str, List[str]]])
 
 slots.SoilInterface_zinc = Slot(uri="str(uriorcurie)", name="SoilInterface_zinc", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_zinc, domain=SoilInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_zinc, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_alkalinity = Slot(uri=MIXS['0000421'], name="WastewaterSludgeInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_alkalinity, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_alkalinity, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_alt = Slot(uri=MIXS['0000094'], name="WastewaterSludgeInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_alt, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_alt, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_biochem_oxygen_dem = Slot(uri=MIXS['0000653'], name="WastewaterSludgeInterface_biochem_oxygen_dem", curie=MIXS.curie('0000653'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_biochem_oxygen_dem, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_biochem_oxygen_dem, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_chem_administration = Slot(uri=MIXS['0000751'], name="WastewaterSludgeInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_chem_administration, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_chem_administration, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.WastewaterSludgeInterface_chem_oxygen_dem = Slot(uri=MIXS['0000656'], name="WastewaterSludgeInterface_chem_oxygen_dem", curie=MIXS.curie('0000656'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_chem_oxygen_dem, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_chem_oxygen_dem, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_collection_date = Slot(uri=MIXS['0000011'], name="WastewaterSludgeInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_collection_date, domain=WastewaterSludgeInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_collection_date, domain=WastewaterSludgeInterface, range=str,
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.WastewaterSludgeInterface_depth = Slot(uri=MIXS['0000018'], name="WastewaterSludgeInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_depth, domain=WastewaterSludgeInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_depth, domain=WastewaterSludgeInterface, range=str,
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.WastewaterSludgeInterface_ecosystem = Slot(uri="str(uriorcurie)", name="WastewaterSludgeInterface_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem, domain=WastewaterSludgeInterface, range=str)
@@ -17083,28 +17245,34 @@ slots.WastewaterSludgeInterface_ecosystem_type = Slot(uri="str(uriorcurie)", nam
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem_type, domain=WastewaterSludgeInterface, range=str)
 
 slots.WastewaterSludgeInterface_efficiency_percent = Slot(uri=MIXS['0000657'], name="WastewaterSludgeInterface_efficiency_percent", curie=MIXS.curie('0000657'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_efficiency_percent, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_efficiency_percent, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_elev = Slot(uri=MIXS['0000093'], name="WastewaterSludgeInterface_elev", curie=MIXS.curie('0000093'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_elev, domain=WastewaterSludgeInterface, range=float)
 
 slots.WastewaterSludgeInterface_emulsions = Slot(uri=MIXS['0000660'], name="WastewaterSludgeInterface_emulsions", curie=MIXS.curie('0000660'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_emulsions, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_emulsions, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WastewaterSludgeInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_broad_scale, domain=WastewaterSludgeInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_broad_scale, domain=WastewaterSludgeInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.WastewaterSludgeInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WastewaterSludgeInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_local_scale, domain=WastewaterSludgeInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_local_scale, domain=WastewaterSludgeInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.WastewaterSludgeInterface_env_medium = Slot(uri=MIXS['0000014'], name="WastewaterSludgeInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_medium, domain=WastewaterSludgeInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_medium, domain=WastewaterSludgeInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.WastewaterSludgeInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="WastewaterSludgeInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_experimental_factor, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_gaseous_substances = Slot(uri=MIXS['0000661'], name="WastewaterSludgeInterface_gaseous_substances", curie=MIXS.curie('0000661'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_gaseous_substances, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_gaseous_substances, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_geo_loc_name = Slot(uri=MIXS['0000010'], name="WastewaterSludgeInterface_geo_loc_name", curie=MIXS.curie('0000010'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_geo_loc_name, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -17113,31 +17281,38 @@ slots.WastewaterSludgeInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="W
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_horizon_meth, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_indust_eff_percent = Slot(uri=MIXS['0000662'], name="WastewaterSludgeInterface_indust_eff_percent", curie=MIXS.curie('0000662'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_indust_eff_percent, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_indust_eff_percent, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_inorg_particles = Slot(uri=MIXS['0000664'], name="WastewaterSludgeInterface_inorg_particles", curie=MIXS.curie('0000664'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_inorg_particles, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_inorg_particles, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WastewaterSludgeInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_lat_lon, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_lat_lon, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.WastewaterSludgeInterface_misc_param = Slot(uri=MIXS['0000752'], name="WastewaterSludgeInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_misc_param, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_misc_param, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_nitrate = Slot(uri=MIXS['0000425'], name="WastewaterSludgeInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_nitrate, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_nitrate, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_org_particles = Slot(uri=MIXS['0000665'], name="WastewaterSludgeInterface_org_particles", curie=MIXS.curie('0000665'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_org_particles, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_org_particles, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_organism_count = Slot(uri=MIXS['0000103'], name="WastewaterSludgeInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_organism_count, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_organism_count, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.WastewaterSludgeInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="WastewaterSludgeInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_oxy_stat_samp, domain=WastewaterSludgeInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.WastewaterSludgeInterface_perturbation = Slot(uri=MIXS['0000754'], name="WastewaterSludgeInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_perturbation, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_perturbation, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_ph = Slot(uri=MIXS['0001001'], name="WastewaterSludgeInterface_ph", curie=MIXS.curie('0001001'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ph, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -17146,7 +17321,8 @@ slots.WastewaterSludgeInterface_ph_meth = Slot(uri=MIXS['0001106'], name="Wastew
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ph_meth, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_phosphate = Slot(uri=MIXS['0000505'], name="WastewaterSludgeInterface_phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_phosphate, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_phosphate, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_pre_treatment = Slot(uri=MIXS['0000348'], name="WastewaterSludgeInterface_pre_treatment", curie=MIXS.curie('0000348'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_pre_treatment, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -17161,7 +17337,8 @@ slots.WastewaterSludgeInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_rel_to_oxygen, domain=WastewaterSludgeInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.WastewaterSludgeInterface_salinity = Slot(uri=MIXS['0000183'], name="WastewaterSludgeInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_salinity, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_salinity, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="WastewaterSludgeInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_collec_device, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -17170,10 +17347,12 @@ slots.WastewaterSludgeInterface_samp_collec_method = Slot(uri=MIXS['0001225'], n
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_collec_method, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="WastewaterSludgeInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_mat_process, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_mat_process, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.WastewaterSludgeInterface_samp_size = Slot(uri=MIXS['0000001'], name="WastewaterSludgeInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_size, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_size, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="WastewaterSludgeInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_dur, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -17182,7 +17361,8 @@ slots.WastewaterSludgeInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name=
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_loc, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WastewaterSludgeInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_temp, domain=WastewaterSludgeInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_temp, domain=WastewaterSludgeInterface, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_secondary_treatment = Slot(uri=MIXS['0000351'], name="WastewaterSludgeInterface_secondary_treatment", curie=MIXS.curie('0000351'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_secondary_treatment, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -17194,262 +17374,330 @@ slots.WastewaterSludgeInterface_size_frac = Slot(uri=MIXS['0000017'], name="Wast
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_size_frac, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_sludge_retent_time = Slot(uri=MIXS['0000669'], name="WastewaterSludgeInterface_sludge_retent_time", curie=MIXS.curie('0000669'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_sludge_retent_time, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_sludge_retent_time, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_sodium = Slot(uri=MIXS['0000428'], name="WastewaterSludgeInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_sodium, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_sodium, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_soluble_inorg_mat = Slot(uri=MIXS['0000672'], name="WastewaterSludgeInterface_soluble_inorg_mat", curie=MIXS.curie('0000672'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_soluble_inorg_mat, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_soluble_inorg_mat, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_soluble_org_mat = Slot(uri=MIXS['0000673'], name="WastewaterSludgeInterface_soluble_org_mat", curie=MIXS.curie('0000673'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_soluble_org_mat, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_soluble_org_mat, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="WastewaterSludgeInterface_specific_ecosystem", curie=None,
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_specific_ecosystem, domain=WastewaterSludgeInterface, range=str)
 
 slots.WastewaterSludgeInterface_suspend_solids = Slot(uri=MIXS['0000150'], name="WastewaterSludgeInterface_suspend_solids", curie=MIXS.curie('0000150'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_suspend_solids, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_suspend_solids, domain=WastewaterSludgeInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WastewaterSludgeInterface_temp = Slot(uri=MIXS['0000113'], name="WastewaterSludgeInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_temp, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_temp, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_tertiary_treatment = Slot(uri=MIXS['0000352'], name="WastewaterSludgeInterface_tertiary_treatment", curie=MIXS.curie('0000352'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_tertiary_treatment, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_tot_nitro = Slot(uri=MIXS['0000102'], name="WastewaterSludgeInterface_tot_nitro", curie=MIXS.curie('0000102'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_tot_nitro, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_tot_nitro, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_tot_phosphate = Slot(uri=MIXS['0000689'], name="WastewaterSludgeInterface_tot_phosphate", curie=MIXS.curie('0000689'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_tot_phosphate, domain=WastewaterSludgeInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_tot_phosphate, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WastewaterSludgeInterface_wastewater_type = Slot(uri=MIXS['0000353'], name="WastewaterSludgeInterface_wastewater_type", curie=MIXS.curie('0000353'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_wastewater_type, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WaterInterface_alkalinity = Slot(uri=MIXS['0000421'], name="WaterInterface_alkalinity", curie=MIXS.curie('0000421'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_alkalinity, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_alkalinity, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_alkalinity_method = Slot(uri=MIXS['0000298'], name="WaterInterface_alkalinity_method", curie=MIXS.curie('0000298'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_alkalinity_method, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_alkyl_diethers = Slot(uri=MIXS['0000490'], name="WaterInterface_alkyl_diethers", curie=MIXS.curie('0000490'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_alkyl_diethers, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_alkyl_diethers, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_alt = Slot(uri=MIXS['0000094'], name="WaterInterface_alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_alt, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_alt, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_aminopept_act = Slot(uri=MIXS['0000172'], name="WaterInterface_aminopept_act", curie=MIXS.curie('0000172'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_aminopept_act, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_aminopept_act, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_ammonium = Slot(uri=MIXS['0000427'], name="WaterInterface_ammonium", curie=MIXS.curie('0000427'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ammonium, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ammonium, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_atmospheric_data = Slot(uri=MIXS['0001097'], name="WaterInterface_atmospheric_data", curie=MIXS.curie('0001097'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_atmospheric_data, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_atmospheric_data, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_bac_prod = Slot(uri=MIXS['0000683'], name="WaterInterface_bac_prod", curie=MIXS.curie('0000683'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bac_prod, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bac_prod, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_bac_resp = Slot(uri=MIXS['0000684'], name="WaterInterface_bac_resp", curie=MIXS.curie('0000684'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bac_resp, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bac_resp, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_bacteria_carb_prod = Slot(uri=MIXS['0000173'], name="WaterInterface_bacteria_carb_prod", curie=MIXS.curie('0000173'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bacteria_carb_prod, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bacteria_carb_prod, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_biomass = Slot(uri=MIXS['0000174'], name="WaterInterface_biomass", curie=MIXS.curie('0000174'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_biomass, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_biomass, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_bishomohopanol = Slot(uri=MIXS['0000175'], name="WaterInterface_bishomohopanol", curie=MIXS.curie('0000175'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bishomohopanol, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bishomohopanol, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_bromide = Slot(uri=MIXS['0000176'], name="WaterInterface_bromide", curie=MIXS.curie('0000176'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bromide, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_bromide, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_calcium = Slot(uri=MIXS['0000432'], name="WaterInterface_calcium", curie=MIXS.curie('0000432'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_calcium, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_calcium, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="WaterInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_carb_nitro_ratio, domain=WaterInterface, range=Optional[float])
 
 slots.WaterInterface_chem_administration = Slot(uri=MIXS['0000751'], name="WaterInterface_chem_administration", curie=MIXS.curie('0000751'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_chem_administration, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_chem_administration, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$'))
 
 slots.WaterInterface_chloride = Slot(uri=MIXS['0000429'], name="WaterInterface_chloride", curie=MIXS.curie('0000429'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_chloride, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_chloride, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_chlorophyll = Slot(uri=MIXS['0000177'], name="WaterInterface_chlorophyll", curie=MIXS.curie('0000177'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_chlorophyll, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_chlorophyll, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_collection_date = Slot(uri=MIXS['0000011'], name="WaterInterface_collection_date", curie=MIXS.curie('0000011'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_collection_date, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_collection_date, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.WaterInterface_conduc = Slot(uri=MIXS['0000692'], name="WaterInterface_conduc", curie=MIXS.curie('0000692'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_conduc, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_conduc, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_density = Slot(uri=MIXS['0000435'], name="WaterInterface_density", curie=MIXS.curie('0000435'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_density, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_density, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_depth = Slot(uri=MIXS['0000018'], name="WaterInterface_depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_depth, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_depth, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'))
 
 slots.WaterInterface_diether_lipids = Slot(uri=MIXS['0000178'], name="WaterInterface_diether_lipids", curie=MIXS.curie('0000178'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diether_lipids, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diether_lipids, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="WaterInterface_diss_carb_dioxide", curie=MIXS.curie('0000436'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_carb_dioxide, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_carb_dioxide, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_hydrogen = Slot(uri=MIXS['0000179'], name="WaterInterface_diss_hydrogen", curie=MIXS.curie('0000179'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_hydrogen, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_hydrogen, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_inorg_carb = Slot(uri=MIXS['0000434'], name="WaterInterface_diss_inorg_carb", curie=MIXS.curie('0000434'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_inorg_carb, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_inorg_carb, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_inorg_nitro = Slot(uri=MIXS['0000698'], name="WaterInterface_diss_inorg_nitro", curie=MIXS.curie('0000698'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_inorg_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_inorg_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_inorg_phosp = Slot(uri=MIXS['0000106'], name="WaterInterface_diss_inorg_phosp", curie=MIXS.curie('0000106'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_inorg_phosp, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_inorg_phosp, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_org_carb = Slot(uri=MIXS['0000433'], name="WaterInterface_diss_org_carb", curie=MIXS.curie('0000433'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_org_carb, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_org_carb, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_org_nitro = Slot(uri=MIXS['0000162'], name="WaterInterface_diss_org_nitro", curie=MIXS.curie('0000162'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_org_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_org_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="WaterInterface_diss_oxygen", curie=MIXS.curie('0000119'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_oxygen, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_diss_oxygen, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_down_par = Slot(uri=MIXS['0000703'], name="WaterInterface_down_par", curie=MIXS.curie('0000703'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_down_par, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_down_par, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_ecosystem = Slot(uri="str(uriorcurie)", name="WaterInterface_ecosystem", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_ecosystem_category = Slot(uri="str(uriorcurie)", name="WaterInterface_ecosystem_category", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_category, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_category, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_ecosystem_subtype = Slot(uri="str(uriorcurie)", name="WaterInterface_ecosystem_subtype", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_subtype, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_subtype, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_ecosystem_type = Slot(uri="str(uriorcurie)", name="WaterInterface_ecosystem_type", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_type, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_type, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_elev = Slot(uri=MIXS['0000093'], name="WaterInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_elev, domain=WaterInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_elev, domain=WaterInterface, range=Optional[float])
 
 slots.WaterInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WaterInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_broad_scale, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_broad_scale, domain=WaterInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.WaterInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WaterInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_local_scale, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_local_scale, domain=WaterInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.WaterInterface_env_medium = Slot(uri=MIXS['0000014'], name="WaterInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_medium, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_medium, domain=WaterInterface, range=str,
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.WaterInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="WaterInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_experimental_factor, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_fluor = Slot(uri=MIXS['0000704'], name="WaterInterface_fluor", curie=MIXS.curie('0000704'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_fluor, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_fluor, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_geo_loc_name = Slot(uri=MIXS['0000010'], name="WaterInterface_geo_loc_name", curie=MIXS.curie('0000010'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_geo_loc_name, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_glucosidase_act = Slot(uri=MIXS['0000137'], name="WaterInterface_glucosidase_act", curie=MIXS.curie('0000137'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_glucosidase_act, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_glucosidase_act, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="WaterInterface_horizon_meth", curie=MIXS.curie('0000321'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_horizon_meth, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WaterInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
 slots.WaterInterface_light_intensity = Slot(uri=MIXS['0000706'], name="WaterInterface_light_intensity", curie=MIXS.curie('0000706'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_light_intensity, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_light_intensity, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_mean_frict_vel = Slot(uri=MIXS['0000498'], name="WaterInterface_mean_frict_vel", curie=MIXS.curie('0000498'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_mean_frict_vel, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_mean_frict_vel, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_mean_peak_frict_vel = Slot(uri=MIXS['0000502'], name="WaterInterface_mean_peak_frict_vel", curie=MIXS.curie('0000502'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_mean_peak_frict_vel, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_mean_peak_frict_vel, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_misc_param = Slot(uri=MIXS['0000752'], name="WaterInterface_misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_misc_param, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_misc_param, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_n_alkanes = Slot(uri=MIXS['0000503'], name="WaterInterface_n_alkanes", curie=MIXS.curie('0000503'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_n_alkanes, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_n_alkanes, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_nitrate = Slot(uri=MIXS['0000425'], name="WaterInterface_nitrate", curie=MIXS.curie('0000425'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_nitrate, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_nitrate, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_nitrite = Slot(uri=MIXS['0000426'], name="WaterInterface_nitrite", curie=MIXS.curie('0000426'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_nitrite, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_nitrite, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_nitro = Slot(uri=MIXS['0000504'], name="WaterInterface_nitro", curie=MIXS.curie('0000504'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_org_carb = Slot(uri=MIXS['0000508'], name="WaterInterface_org_carb", curie=MIXS.curie('0000508'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_org_carb, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_org_carb, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_org_matter = Slot(uri=MIXS['0000204'], name="WaterInterface_org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_org_matter, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_org_matter, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_org_nitro = Slot(uri=MIXS['0000205'], name="WaterInterface_org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_org_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_org_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_organism_count = Slot(uri=MIXS['0000103'], name="WaterInterface_organism_count", curie=MIXS.curie('0000103'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_organism_count, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_organism_count, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.WaterInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="WaterInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_oxy_stat_samp, domain=WaterInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.WaterInterface_part_org_carb = Slot(uri=MIXS['0000515'], name="WaterInterface_part_org_carb", curie=MIXS.curie('0000515'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_part_org_carb, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_part_org_carb, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_part_org_nitro = Slot(uri=MIXS['0000719'], name="WaterInterface_part_org_nitro", curie=MIXS.curie('0000719'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_part_org_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_part_org_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_perturbation = Slot(uri=MIXS['0000754'], name="WaterInterface_perturbation", curie=MIXS.curie('0000754'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_perturbation, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_perturbation, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_petroleum_hydrocarb = Slot(uri=MIXS['0000516'], name="WaterInterface_petroleum_hydrocarb", curie=MIXS.curie('0000516'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_petroleum_hydrocarb, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_petroleum_hydrocarb, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_ph = Slot(uri=MIXS['0001001'], name="WaterInterface_ph", curie=MIXS.curie('0001001'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ph, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_ph, domain=WaterInterface, range=Optional[float])
 
 slots.WaterInterface_ph_meth = Slot(uri=MIXS['0001106'], name="WaterInterface_ph_meth", curie=MIXS.curie('0001106'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_ph_meth, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_phaeopigments = Slot(uri=MIXS['0000180'], name="WaterInterface_phaeopigments", curie=MIXS.curie('0000180'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_phaeopigments, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_phaeopigments, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_phosphate = Slot(uri=MIXS['0000505'], name="WaterInterface_phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_phosphate, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_phosphate, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="WaterInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_phosplipid_fatt_acid, domain=WaterInterface, range=Optional[Union[str, List[str]]])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_phosplipid_fatt_acid, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.WaterInterface_photon_flux = Slot(uri=MIXS['0000725'], name="WaterInterface_photon_flux", curie=MIXS.curie('0000725'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_photon_flux, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_photon_flux, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_potassium = Slot(uri=MIXS['0000430'], name="WaterInterface_potassium", curie=MIXS.curie('0000430'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_potassium, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_potassium, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_pressure = Slot(uri=MIXS['0000412'], name="WaterInterface_pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_pressure, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_pressure, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_primary_prod = Slot(uri=MIXS['0000728'], name="WaterInterface_primary_prod", curie=MIXS.curie('0000728'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_primary_prod, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_primary_prod, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_redox_potential = Slot(uri=MIXS['0000182'], name="WaterInterface_redox_potential", curie=MIXS.curie('0000182'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_redox_potential, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_redox_potential, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_rel_to_oxygen = Slot(uri=MIXS['0000015'], name="WaterInterface_rel_to_oxygen", curie=MIXS.curie('0000015'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_rel_to_oxygen, domain=WaterInterface, range=Optional[Union[str, "RelToOxygenEnum"]])
 
 slots.WaterInterface_salinity = Slot(uri=MIXS['0000183'], name="WaterInterface_salinity", curie=MIXS.curie('0000183'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_salinity, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_salinity, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_samp_collec_device = Slot(uri=MIXS['0000002'], name="WaterInterface_samp_collec_device", curie=MIXS.curie('0000002'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_collec_device, domain=WaterInterface, range=Optional[str])
@@ -17458,10 +17706,12 @@ slots.WaterInterface_samp_collec_method = Slot(uri=MIXS['0001225'], name="WaterI
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_collec_method, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_samp_mat_process = Slot(uri=MIXS['0000016'], name="WaterInterface_samp_mat_process", curie=MIXS.curie('0000016'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_mat_process, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_mat_process, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'.*'))
 
 slots.WaterInterface_samp_size = Slot(uri=MIXS['0000001'], name="WaterInterface_samp_size", curie=MIXS.curie('0000001'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_size, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_size, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_samp_store_dur = Slot(uri=MIXS['0000116'], name="WaterInterface_samp_store_dur", curie=MIXS.curie('0000116'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_dur, domain=WaterInterface, range=Optional[str])
@@ -17470,67 +17720,78 @@ slots.WaterInterface_samp_store_loc = Slot(uri=MIXS['0000755'], name="WaterInter
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_loc, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WaterInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_temp, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_temp, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_silicate = Slot(uri=MIXS['0000184'], name="WaterInterface_silicate", curie=MIXS.curie('0000184'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_silicate, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_silicate, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_size_frac = Slot(uri=MIXS['0000017'], name="WaterInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_size_frac, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_size_frac_low = Slot(uri=MIXS['0000735'], name="WaterInterface_size_frac_low", curie=MIXS.curie('0000735'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_size_frac_low, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_size_frac_low, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_size_frac_up = Slot(uri=MIXS['0000736'], name="WaterInterface_size_frac_up", curie=MIXS.curie('0000736'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_size_frac_up, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_size_frac_up, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_sodium = Slot(uri=MIXS['0000428'], name="WaterInterface_sodium", curie=MIXS.curie('0000428'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sodium, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sodium, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_soluble_react_phosp = Slot(uri=MIXS['0000738'], name="WaterInterface_soluble_react_phosp", curie=MIXS.curie('0000738'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_soluble_react_phosp, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_soluble_react_phosp, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_specific_ecosystem = Slot(uri="str(uriorcurie)", name="WaterInterface_specific_ecosystem", curie=None,
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_specific_ecosystem, domain=WaterInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_specific_ecosystem, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_sulfate = Slot(uri=MIXS['0000423'], name="WaterInterface_sulfate", curie=MIXS.curie('0000423'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sulfate, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sulfate, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_sulfide = Slot(uri=MIXS['0000424'], name="WaterInterface_sulfide", curie=MIXS.curie('0000424'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sulfide, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sulfide, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_suspend_part_matter = Slot(uri=MIXS['0000741'], name="WaterInterface_suspend_part_matter", curie=MIXS.curie('0000741'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_suspend_part_matter, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_suspend_part_matter, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_temp = Slot(uri=MIXS['0000113'], name="WaterInterface_temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_temp, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_temp, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_tidal_stage = Slot(uri=MIXS['0000750'], name="WaterInterface_tidal_stage", curie=MIXS.curie('0000750'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_tidal_stage, domain=WaterInterface, range=Optional[Union[str, "TidalStageEnum"]])
 
 slots.WaterInterface_tot_depth_water_col = Slot(uri=MIXS['0000634'], name="WaterInterface_tot_depth_water_col", curie=MIXS.curie('0000634'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_depth_water_col, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_depth_water_col, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_tot_diss_nitro = Slot(uri=MIXS['0000744'], name="WaterInterface_tot_diss_nitro", curie=MIXS.curie('0000744'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_diss_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_diss_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_tot_inorg_nitro = Slot(uri=MIXS['0000745'], name="WaterInterface_tot_inorg_nitro", curie=MIXS.curie('0000745'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_inorg_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_inorg_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_tot_nitro = Slot(uri=MIXS['0000102'], name="WaterInterface_tot_nitro", curie=MIXS.curie('0000102'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_nitro, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_nitro, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_tot_part_carb = Slot(uri=MIXS['0000747'], name="WaterInterface_tot_part_carb", curie=MIXS.curie('0000747'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_part_carb, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_tot_part_carb, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_turbidity = Slot(uri=MIXS['0000191'], name="WaterInterface_turbidity", curie=MIXS.curie('0000191'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_turbidity, domain=WaterInterface, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_turbidity, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_water_current = Slot(uri=MIXS['0000203'], name="WaterInterface_water_current", curie=MIXS.curie('0000203'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_water_current, domain=WaterInterface, range=Optional[str])
-
-slots.AttributeValue_type = Slot(uri=NMDC_SUB_SCHEMA.type, name="AttributeValue_type", curie=NMDC_SUB_SCHEMA.curie('type'),
-                   model_uri=NMDC_SUB_SCHEMA.AttributeValue_type, domain=AttributeValue, range=Optional[str])
-
-slots.Activity_id = Slot(uri=NMDC_SUB_SCHEMA.id, name="Activity_id", curie=NMDC_SUB_SCHEMA.curie('id'),
-                   model_uri=NMDC_SUB_SCHEMA.Activity_id, domain=Activity, range=Union[str, ActivityId])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_water_current, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
