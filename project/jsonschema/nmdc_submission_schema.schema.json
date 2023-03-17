@@ -7868,5 +7868,5 @@
     },
     "title": "nmdc_submission_schema",
     "type": "object",
-    "version": null
+    "version": "0.0.0"
 }

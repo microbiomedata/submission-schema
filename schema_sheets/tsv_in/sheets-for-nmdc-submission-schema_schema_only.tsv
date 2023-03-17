@@ -1,3 +1,3 @@
-schema	shema_uri	description	schema default_prefix
-> schema	id	description	default_prefix
-nmdc_submission_schema	https://example.com/nmdc_submission_schema	Schema for creating Data Harmonizer interfaces for biosamples based on MIxS and other standards	nmdc_sub_schema
+schema	version	shema_uri	description	schema default_prefix
+> schema	version	id	description	default_prefix
+nmdc_submission_schema	0.0.0	https://example.com/nmdc_submission_schema	Schema for creating Data Harmonizer interfaces for biosamples based on MIxS and other standards	nmdc_sub_schema

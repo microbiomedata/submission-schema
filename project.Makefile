@@ -9,7 +9,7 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf examples/output/*.yaml
 	rm -rf examples/output/README.md
 	rm -rf from_schema_sheets.lint_report.txt
-	rm -rf project/jsonschema/submission_schema.schema.json
+	rm -rf project/jsonschema/nmdc_submission_schema.schema.json
 	rm -rf schema_sheets/from_schema_sheets.lint_report.txt
 	rm -rf schema_sheets/populated_tsv/*.tsv
 	rm -rf schema_sheets/populated_tsv/*.txt
@@ -22,7 +22,7 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
-	rm -rf src/submission_schema/schema/submission_schema.yaml
+	rm -rf src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	rm -rf local/*
 	mkdir -p local
 	cp placeholder.md local
@@ -244,10 +244,10 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter
 		--format yaml $@.raw > $@
 	- $(RUN) linkml-lint $@ > local/with_modifications.lint_report.txt
 
-src/submission_schema/schema/submission_schema.yaml: local/with_modifications.yaml
+src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml
 	cp $< $@
 
-examples/output/README.md: src/submission_schema/schema/submission_schema.yaml \
+examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
 	mkdir -p $(dir $@)
 	# RDF/TTL generation is failing
@@ -260,7 +260,7 @@ src/data/invalid src/data/valid
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-local/slot_usage.tsv: src/submission_schema/schema/submission_schema.yaml \
+local/slot_usage.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 schema_sheets/templates/slot_usage.tsv
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
@@ -270,7 +270,7 @@ schema_sheets/templates/slot_usage.tsv
 # without it...
 #jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
 #On instance['water_data'][0]['elev']:
-local/SampleData-water-data-exhaustive.tsv: src/submission_schema/schema/submission_schema.yaml \
+local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) linkml-convert \
 		--output $@ \
@@ -278,7 +278,7 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 		--index-slot water_data \
 		--schema $(word 1,$^) $(word 2,$^)
 
-examples/output/SampleData-water-data-exhaustive.regen.yaml: src/submission_schema/schema/submission_schema.yaml \
+examples/output/SampleData-water-data-exhaustive.regen.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 local/SampleData-water-data-exhaustive.tsv
 	$(RUN) linkml-convert \
 		--output $@ \
@@ -286,7 +286,7 @@ local/SampleData-water-data-exhaustive.tsv
 		--index-slot water_data \
 		--schema $(word 1,$^) $(word 2,$^)
 
-local/SampleData-water-data-exhaustive.db: src/submission_schema/schema/submission_schema.yaml \
+local/SampleData-water-data-exhaustive.db: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN)  linkml-sqldb dump \
 		--db $@ \
@@ -305,7 +305,7 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 #
 #	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
 
-project/json/submission_schema.json: src/submission_schema/schema/submission_schema.yaml
+project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
 	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@
 
