@@ -36,8 +36,9 @@ jobs:
 
     - name: Generate project files
       run: |
+        make clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
         poetry dynamic-versioning
-        make clean schema_cleanup gen-project
+        make gen-project
 
     - name: Build source and wheel archives
       run: poetry build
