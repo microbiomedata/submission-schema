@@ -19,16 +19,23 @@ jobs:
 
     - name: Install Poetry
       run: |
-        pip install poetry
+        pip install poetry==1.3.2
         poetry self add "poetry-dynamic-versioning[plugin]"
 
     - name: Install project dependencies
       run: poetry install --no-interaction
 
+    - name: Install yq
+      env:
+        YQ_VERSION: v4.30.5
+        YQ_BINARY: yq_linux_amd64
+      run: |
+        wget https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/$YQ_BINARY.tar.gz -O - | tar xz && mv $YQ_BINARY /usr/bin/yq
+
     - name: Generate project files
       run: |
         poetry dynamic-versioning
-        make gen-project
+        make clean schema_cleanup gen-project
 
     - name: Build source and wheel archives
       run: poetry build
