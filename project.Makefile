@@ -211,6 +211,13 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="heavy_metals_meth") | .multivalued) = false' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="water_content") | .multivalued) = false' $@
 
+
+# rel_to_oxygen / oxy_stat_samp
+	yq -i '(.slots.[] | select(.name == "rel_to_oxygen") | .range) = "rel_to_oxygen_enum"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name=="rel_to_oxygen") | .range) = "rel_to_oxygen_enum"' $@
+	yq -i '(.slots.[] | select(.name == "oxy_stat_samp") | .range) = "rel_to_oxygen_enum"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name=="oxy_stat_samp") | .range) = "rel_to_oxygen_enum"' $@
+
 # remove slots that are no longer necessary due to removal of classes above
 	yq -i 'del(.slots.[] | select(.name == "acted_on_behalf_of"))' $@
 	yq -i 'del(.slots.[] | select(.name == "ended_at_time"))' $@
