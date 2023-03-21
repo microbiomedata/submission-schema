@@ -4,11 +4,7 @@ soil_data:
       - chisel
     analysis_type:
       - metagenomics
-    #    horizon_meth: xxx
-    #    micro_biomass_C_meth: xxx
-    #    micro_biomass_N_meth: xxx
-    #    microbial_biomass_C: 111 units
-    #    microbial_biomass_N: 111 units
+      - metatranscriptomics
     air_temp_regm: xxx
     al_sat_meth: xxx
     alt: 111 units
@@ -49,6 +45,7 @@ soil_data:
     geo_loc_name: 'USA: Maryland, Bethesda'
     growth_facil: greenhouse
     heavy_metals_meth: xxx
+    horizon_meth: xxx
     humidity_regm: xxx
     isotope_exposure: xxx
     lat_lon: 77 88
@@ -57,22 +54,26 @@ soil_data:
     link_climate_info: xxx
     local_class: xxx
     local_class_meth: xxx
+    micro_biomass_c_meth: xxx
     micro_biomass_meth: xxx
+    micro_biomass_n_meth: xxx
     microbial_biomass: 111 units
+    microbial_biomass_c: 111 units
+    microbial_biomass_n: 111 units
     non_microb_biomass: 111 units
     non_microb_biomass_method: xxx
     org_matter: 111 units
     org_nitro: 111 units
     org_nitro_method: xxx
     other_treatment: xxx
-#    oxy_stat_samp: aerobe
+    oxy_stat_samp: anaerobe
     ph: '9'
     ph_meth: xxx
     phosphate: 111 units
     prev_land_use_meth: xxx
     previous_land_use: circus tent;+0530
     profile_position: summit
-#    rel_to_oxygen: aerobe
+    rel_to_oxygen: anaerobe
     salinity: 111 units
     salinity_meth: xxx
     samp_collec_device: xxx
