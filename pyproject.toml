@@ -39,7 +39,7 @@ mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
 
 schemasheets = "^0.1.19"
-sheets-and-friends = "^0.3.0"
+sheets-and-friends = "^0.4.0"
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
 ## /home/mark/gitrepos/sheets_and_friends
 #sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
