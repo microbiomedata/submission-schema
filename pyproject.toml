@@ -9,7 +9,7 @@ include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-linkml-runtime = "^1.4.9"
+linkml-runtime = "1.4.5"
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
