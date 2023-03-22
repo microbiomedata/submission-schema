@@ -2469,22 +2469,20 @@ version = "0.3.0"
 description = "Create a LinkML model with as-is imported slots, imported but modified slots (via yq), or newly minted slots (via schemasheets)"
 category = "dev"
 optional = false
-python-versions = "^3.9"
-files = []
-develop = true
+python-versions = ">=3.9,<4.0"
+files = [
+    {file = "sheets_and_friends-0.3.0-py3-none-any.whl", hash = "sha256:90bb66a57b91ee953271c3a889bf7274c70b5f3d4833617511890670f75bf38e"},
+    {file = "sheets_and_friends-0.3.0.tar.gz", hash = "sha256:797b17fb1851d2807c3cf39116d6b748dbf56b319bfe7c5356d6995361da5674"},
+]
 
 [package.dependencies]
 click_log = "*"
-glom = "^23.1.1"
-linkml-runtime = "^1.4.9"
-pandas = "^1.3.4"
-pandasql = "^0.7.3"
-pygsheets = "^2.0.5"
-schemasheets = "^0.1.8"
-
-[package.source]
-type = "directory"
-url = "../sheets_and_friends"
+glom = ">=23.1.1,<24.0.0"
+linkml-runtime = ">=1.4.9,<2.0.0"
+pandas = ">=1.3.4,<2.0.0"
+pandasql = ">=0.7.3,<0.8.0"
+pygsheets = ">=2.0.5,<3.0.0"
+schemasheets = ">=0.1.8,<0.2.0"
 
 [[package]]
 name = "shexjsg"
@@ -3173,4 +3171,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "9bc7f60f8e58676c02d24b9a2b172298f39e4f303f9b982809b52dc4d9c47909"
+content-hash = "007c980e110643c3a4b6a649ef51980ac4dae65e95481ff22ca6940985b94f6c"
