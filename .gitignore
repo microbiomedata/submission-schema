@@ -2,6 +2,7 @@ local
 .idea
 .~*#
 .DS_Store
+sub_schema_dh/
 
 /docs/
 /project/docs/

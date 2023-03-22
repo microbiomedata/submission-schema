@@ -67,7 +67,7 @@ soil_data:
     org_nitro_method: xxx
     other_treatment: xxx
     oxy_stat_samp: anaerobe
-    ph: '9'
+    ph: 9
     ph_meth: xxx
     phosphate: 111 units
     prev_land_use_meth: xxx
@@ -78,7 +78,7 @@ soil_data:
     salinity_meth: xxx
     samp_collec_device: xxx
     samp_collec_method: xxx
-    samp_mat_process: xxx
+    samp_mat_process: text [ONTO:000000000]
     samp_name: a
     samp_size: 111 units
     samp_store_temp: "-80 Celsius"

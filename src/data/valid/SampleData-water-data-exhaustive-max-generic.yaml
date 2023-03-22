@@ -2,8 +2,6 @@ water_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    samp_name: xyz
-    source_mat_id: x:1
     alkalinity: 100 units
     alkalinity_method: xyz
     alkyl_diethers: 100 units
@@ -62,8 +60,8 @@ water_data:
     org_carb: 100 units
     org_matter: 100 units
     org_nitro: 100 units
-#    oxy_stat_samp: anaerobe
     organism_count: xyz;100 units;qPCR
+    oxy_stat_samp: anaerobe
     part_org_carb: 100 units
     part_org_nitro: 100 units
     perturbation: xyz
@@ -81,7 +79,8 @@ water_data:
     salinity: 100 units
     samp_collec_device: xyz
     samp_collec_method: xyz
-    samp_mat_process: xyz
+    samp_mat_process: text [ONTO:000000000]
+    samp_name: xyz
     samp_size: 100 units
     samp_store_dur: xyz
     samp_store_loc: xyz
@@ -93,6 +92,7 @@ water_data:
     size_frac_up: 100 units
     sodium: 100 units
     soluble_react_phosp: 100 units
+    source_mat_id: x:1
     specific_ecosystem: xyz
     sulfate: 100 units
     sulfide: 100 units

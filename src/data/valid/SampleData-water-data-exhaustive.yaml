@@ -2,8 +2,6 @@ water_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    samp_name: xyz
-    source_mat_id: x:1
     alkalinity: 50 milligram per liter
     alkalinity_method: titration
     alkyl_diethers: 0.005 mole per liter
@@ -82,7 +80,8 @@ water_data:
     salinity: 25 practical salinity unit
     samp_collec_device: xyz
     samp_collec_method: xyz
-    samp_mat_process: xyz
+    samp_mat_process: text [ONTO:000000000]
+    samp_name: xyz
     samp_size: 5 liter
     samp_store_dur: xyz
     samp_store_loc: xyz
@@ -94,6 +93,7 @@ water_data:
     size_frac_up: 20 micrometer
     sodium: 10.5 milligram per liter
     soluble_react_phosp: 0.1 milligram per liter
+    source_mat_id: x:1
     specific_ecosystem: xyz
     sulfate: 5 micromole per liter
     sulfide: 2 micromole per liter

@@ -113,54 +113,23 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 # synchronize between guidance, examples and validation
 #   cross reference MIxS' values for those aspects
 
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="carb_nitro_ratio")  | .range) = "float"' $@
-
+# use yq to add examples when the examples themselves include the packed value separator |
+#   good reason for using ! instead of |
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .examples) = [{"value": "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"}, {"value": "agar [CHEBI:2509];2018-05"}]' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .pattern) = "^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .range) = "string"' $@
 
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="collection_date") | .examples) = [{"value": "2023-01-15"}, {"value": "2023-01"}]' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="collection_date") | .pattern) = "^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="collection_date") | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="depth") | .pattern) = "^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="depth") | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="experimental_factor") | .examples) = [{"value": "time series design [EFO:0001779]"}]' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="experimental_factor") | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="organism_count") | .pattern) = "^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="organism_count") | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="samp_mat_process") | .examples) = [{"value": "filtering of seawater"}, {"value": "storing samples in ethanol"}]' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="samp_mat_process") | .pattern) = ".*"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="samp_mat_process") | .range) = "string"' $@
-
+# use yq to add patterns with a secondary condition like mutivalued
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .pattern) = "^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$$"' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .range) = "string"' $@
 
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "QuantityValue") | .pattern) = "^[-+]?[0-9]*\.?[0-9]+ +\S.*$$"' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "QuantityValue" and .multivalued == true)  | .pattern) = "^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.range == "QuantityValue")  | .range) = "string"' $@
 
-	yq -i '(.classes.[].slot_usage.[] | select(.range == "TextValue")  | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.range == "TimestampValue")  | .pattern) = "^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.range == "TimestampValue")  | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.range=="ControlledTermValue") | .pattern) = "^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.range=="ControlledTermValue") | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{termLabel} {[termID]}") | .pattern) = "^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$$"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{termLabel} {[termID]}") | .range) = "string"' $@
+# add a pattern for {termLabel} {[termID]} in teh validation configuration
+# need more invalid examples
+	#yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{termLabel} {[termID]}") | .range) = "string"' $@
 
 	yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{text};{float} {unit}") | .pattern) = "^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$$"' $@
-
 	yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{text};{float} {unit}" and .multivalued == true ) | .pattern) = "^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$$"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{text};{float} {unit}") | .range) = "string"' $@
-
-	yq -i '(.classes.[].slot_usage.[] | select(.range == "string")  | .multivalued) = false' $@
 
 	yq -i '(.slots.[] | select(.domain == "Activity") | .domain ) = "NamedThing"' $@
 	yq -i '(.slots.[] | select(.domain == "Agent") | .domain ) = "NamedThing"' $@
@@ -168,17 +137,6 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i '(.slots.[] | select(.domain == "AttributeValue") | .domain ) = "NamedThing"' $@
 	yq -i '(.slots.[] | select(.domain == "ControlledTermValue") | .domain ) = "NamedThing"' $@
 	yq -i '(.slots.[] | select(.domain == "GeolocationValue") | .domain ) = "NamedThing"' $@
-
-	yq -i '(.slots.[] | select(.range == "Activity") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "Agent") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "Agent") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "ControlledIdentifiedTermValue") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "ControlledTermValue") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "GeolocationValue") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "OntologyClass") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "QuantityValue") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "TextValue") | .range ) = "string"' $@
-	yq -i '(.slots.[] | select(.range == "TimestampValue") | .range ) = "string"' $@
 
 	yq -i 'del(.classes.Activity)'  $@
 	yq -i 'del(.classes.Agent)'  $@
@@ -191,32 +149,10 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i 'del(.classes.TextValue)'  $@
 	yq -i 'del(.classes.TimestampValue)'  $@
 
-# remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert
-#   esp to tsv? and dumping to SQLite?
-# follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
-	yq -i '(.slots.[] | select(.name == "atmospheric_data") | .multivalued ) = false' $@
-	yq -i '(.slots.[] | select(.name == "biomass") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "chem_administration") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "diether_lipids") | .multivalued ) = false' $@
-	yq -i '(.slots.[] | select(.name == "misc_param") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "n_alkanes") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "organism_count") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "perturbation") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "phaeopigments") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "phosplipid_fatt_acid") | .multivalued) = false' $@
-
-# for soil
-	yq -i '(.slots.[] | select(.name == "heavy_metals_meth") | .multivalued) = false' $@
-	yq -i '(.slots.[] | select(.name == "water_content") | .multivalued) = false' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="heavy_metals_meth") | .multivalued) = false' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="water_content") | .multivalued) = false' $@
-
-
+# use yq for global modifications
 # rel_to_oxygen / oxy_stat_samp
 	yq -i '(.slots.[] | select(.name == "rel_to_oxygen") | .range) = "rel_to_oxygen_enum"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="rel_to_oxygen") | .range) = "rel_to_oxygen_enum"' $@
 	yq -i '(.slots.[] | select(.name == "oxy_stat_samp") | .range) = "rel_to_oxygen_enum"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name=="oxy_stat_samp") | .range) = "rel_to_oxygen_enum"' $@
 
 # remove slots that are no longer necessary due to removal of classes above
 	yq -i 'del(.slots.[] | select(.name == "acted_on_behalf_of"))' $@
@@ -254,6 +190,20 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter
 
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml
 	cp $< $@
+# remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert
+#   esp to tsv? and dumping to SQLite?
+# follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
+
+	yq -i '(.slots.[] | select(.range == "ControlledIdentifiedTermValue") | .range) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "ControlledTermValue") | .range) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "GeolocationValue") | .range) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "OntologyClass") | .range) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "QuantityValue") | .range) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "TextValue") | .range) = "string"' $@
+	yq -i '(.slots.[] | select(.range == "TimestampValue") | .range) = "string"' $@
+
+	yq -i '(.slots.[] | select(.range == "string") | .multivalued ) = false' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.range=="string") | .multivalued) = false' $@
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid

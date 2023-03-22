@@ -1,18 +1,30 @@
 from_val	from_type	to_type	to_val	len
+{date, arbitrary precision}	NMDC string serialization	DH pattern regex	^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$	67
 {float}	MIxS string serialization	DH datatype	float	5
-{text}	MIxS string serialization	DH datatype	string	6
-{integer}	MIxS string serialization	DH datatype	integer	7
-{text < 20 characters}	NMDC string serialization	DH pattern regex	"^.{1,20}$"	9
-{text}:{text}	MIxS string serialization	DH pattern regex	[^\:\n\r]+\:[^\:\n\r]+	22
-"{text}: {text}, {text}"	NMDC string serialization	DH pattern regex	"^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$"	36
-{float} {unit}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$	44
-"{time, seconds optional}"	NMDC string serialization	DH pattern regex	^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$	57
-"{date, arbitrary precision}"	NMDC string serialization	DH pattern regex	^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$	67
 {float} {float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	79
-{lat lon}	NMDC string serialization	DH pattern regex	^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$	86
-{text};{float} {unit};{float} {unit}	MIxS string serialization	DH pattern regex	^\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$	96
+{float} {unit}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$	44
 {float}|{float}-{float}	MIxS string serialization	DH pattern regex	^([-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? to )?[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	#REF!
-{text};{timestamp}	MIxS string serialization	DH pattern regex	"^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$"	292
-{termLabel} {[termID]}; {timestamp}	MIxS string serialization	DH pattern regex	"^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$"	314
-{termLabel} {[termID]};{timestamp}	MIxS string serialization	DH pattern regex	"^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$"	313
+{integer}	MIxS string serialization	DH datatype	integer	7
+{lat lon}	NMDC string serialization	DH pattern regex	^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$	86
+{termLabel} {[termID]}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$	
+{termLabel} {[termID]}; {timestamp}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$	314
+{termLabel} {[termID]};{timestamp}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$	313
+{text < 20 characters}	NMDC string serialization	DH pattern regex	^.{1,20}$	9
+{text}	MIxS string serialization	DH datatype	string	6
+{text};{float} {unit}	MIxS string serialization	DH datatype	string	
+{text};{float} {unit};{float} {unit}	MIxS string serialization	DH pattern regex	^\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$	96
 {text};{float} {unit};{timestamp}	MIxS string serialization	DH pattern regex	.*	2
+{text};{timestamp}	MIxS string serialization	DH pattern regex	^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$	292
+{text}: {text}, {text}	NMDC string serialization	DH pattern regex	^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$	36
+{text}:{text}	MIxS string serialization	DH pattern regex	[^\:\n\r]+\:[^\:\n\r]+	22
+{time, seconds optional}	NMDC string serialization	DH pattern regex	^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$	57
+ControlledIdentifiedTermValue	linkml range	DH datatype	string	
+ControlledTermValue	linkml range	DH datatype	string	
+ControlledTermValue	linkml range	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$	
+GeolocationValue	linkml range	DH datatype	string	
+GeolocationValue	linkml range	DH pattern regex	^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$	
+OntologyClass	linkml range	DH datatype	string	
+QuantityValue	linkml range	DH datatype	string	
+TextValue	linkml range	DH datatype	string	
+TimestampValue	linkml range	DH datatype	string	
+TimestampValue	linkml range	DH pattern regex	^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$	
