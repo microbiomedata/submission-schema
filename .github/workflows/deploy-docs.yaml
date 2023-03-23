@@ -5,6 +5,11 @@ on:
 
 jobs:
   build-docs:
+    # TODO: this should probably be split into separate build and deploy jobs to 
+    # reduce privileged token exposure
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
