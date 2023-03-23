@@ -86,7 +86,7 @@ water_data:
     samp_store_dur: xyz
     samp_store_loc: xyz
     samp_store_temp: -80 degree Celsius
-    sample_link: xyz
+    sample_link: z:99
     silicate: 0.05 micromole per liter
     size_frac: xyz
     size_frac_low: 0.2 micrometer

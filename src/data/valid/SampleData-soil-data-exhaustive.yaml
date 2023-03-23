@@ -47,7 +47,7 @@ soil_data:
     heavy_metals_meth: xxx
     horizon_meth: xxx
     humidity_regm: xxx
-    isotope_exposure: xxx
+    isotope_exposure: strontium 90 [ONTO:00000000]; 2010-10-31T08:45:15.432-0700
     lat_lon: 77 88
     light_regm: incandescant light;10 lux;450 nanometer
     link_class_info: xxx
@@ -60,7 +60,7 @@ soil_data:
     microbial_biomass: 111 units
     microbial_biomass_c: 111 units
     microbial_biomass_n: 111 units
-    non_microb_biomass: 111 units
+    non_microb_biomass: xxx;123.45 units
     non_microb_biomass_method: xxx
     org_matter: 111 units
     org_nitro: 111 units
