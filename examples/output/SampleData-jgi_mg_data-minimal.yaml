@@ -1,0 +1,22 @@
+jgi_mg_data:
+- dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  samp_name: xxx
+  source_mat_id: x:1

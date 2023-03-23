@@ -1,10 +1,18 @@
 water_data:
-- analysis_type:
+- collection_date: '2022-01-15'
+  depth: '111'
+  samp_mat_process: text [ONTO:000000000]
+  analysis_type:
   - metagenomics
   - metatranscriptomics
   env_package: xyz
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_type: Soil
+  ecosystem_subtype: Unclassified
+  specific_ecosystem: Unclassified
   samp_name: xyz
   source_mat_id: x:1

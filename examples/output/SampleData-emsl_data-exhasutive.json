@@ -1,0 +1,19 @@
+{
+  "emsl_data": [
+    {
+      "emsl_store_temp": "-80.0",
+      "project_id": "xxx",
+      "replicate_number": "2",
+      "sample_shipped": "100 units",
+      "sample_type": "soil",
+      "technical_reps": "3",
+      "analysis_type": [
+        "metagenomics",
+        "metatranscriptomics"
+      ],
+      "samp_name": "xxx",
+      "source_mat_id": "x:1"
+    }
+  ],
+  "@type": "SampleData"
+}

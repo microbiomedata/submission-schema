@@ -1,0 +1,10 @@
+emsl_data:
+- emsl_store_temp: '-80.0'
+  project_id: xxx
+  sample_shipped: 100 units
+  sample_type: soil
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  samp_name: xxx
+  source_mat_id: x:1
