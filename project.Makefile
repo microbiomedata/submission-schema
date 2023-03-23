@@ -202,6 +202,11 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 	yq -i '(.slots.[] | select(.range == "TextValue") | .range) = "string"' $@
 	yq -i '(.slots.[] | select(.range == "TimestampValue") | .range) = "string"' $@
 
+#	yq -i '(.slots.[] | select(has("range") | not  ) | .range ) = "string"' $@
+#	yq -i '(.classes.[].slot_usage.[] | select(has("range") | not  ) | .range ) = "string"' $@
+
+	yq -i '(.slots.[] | select(.name == "sample_link") | .range ) = "string"' $@
+
 	yq -i '(.slots.[] | select(.range == "string") | .multivalued ) = false' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range=="string") | .multivalued) = false' $@
 
