@@ -19,7 +19,3 @@ soil_data:
     source_mat_id: x:2
     specific_ecosystem: Unclassified
     store_cond: frozen
-#    geo_loc_name: 'USA: Maryland, Bethesda'
-#    lat_lon: 77 88
-#    sample_link: z:99
-#    slope_aspect: 100 units
