@@ -15541,7 +15541,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -17632,7 +17632,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -22986,7 +22986,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -25872,7 +25872,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -28930,7 +28930,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -30800,7 +30800,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -33305,7 +33305,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -35809,7 +35809,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -38285,7 +38285,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -39990,7 +39990,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -43521,7 +43521,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
@@ -46311,7 +46311,7 @@ classes:
           expected_value:
             tag: expected_value
             value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location name'
-        description: The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)
+        description: 'The geographical origin of the sample as defined by the country or sea name followed by specific region name. '
         title: geographic location (country and/or sea,region)
         examples:
           - value: 'USA: Maryland, Bethesda'
