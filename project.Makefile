@@ -272,3 +272,8 @@ project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc
 	mkdir -p $(@D)
 	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@
 
+dh-dev: project/json/nmdc_submission_schema.json
+	cd data_harmonizer && npm run dev
+
+dh-build: project/json/nmdc_submission_schema.json
+	cd data_harmonizer && npm run build
