@@ -1,0 +1,13 @@
+emsl_data:
+  - analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    emsl_store_temp: -80
+    project_id: xxx
+    replicate_number: 2
+    samp_name: xxx
+    sample_shipped: 100 units
+    sample_type: soil
+    source_mat_id: x:1
+    technical_reps: 3
+
