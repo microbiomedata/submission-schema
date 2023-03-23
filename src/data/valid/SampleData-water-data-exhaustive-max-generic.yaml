@@ -85,7 +85,7 @@ water_data:
     samp_store_dur: xyz
     samp_store_loc: xyz
     samp_store_temp: 100 units
-    sample_link: xyz
+    sample_link: z:99
     silicate: 100 units
     size_frac: xyz
     size_frac_low: 100 units
