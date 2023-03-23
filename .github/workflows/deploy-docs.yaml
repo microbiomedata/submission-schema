@@ -1,4 +1,4 @@
-name: Auto-deployment of nmdc_submission_schema Documentation
+name: Auto-deployment of nmdc_submission_schema documentation and DH interface
 on:
   push:
     branches: [ main ]
@@ -20,12 +20,29 @@ jobs:
     - name: Install Poetry.
       uses: snok/install-poetry@v1.3
 
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
     - name: Install dependencies.
       run: poetry install -E docs
     
     - name: Build documentation.
       run: |
-        mkdir -p docs
-        touch docs/.nojekyll
         poetry run gen-doc -d docs src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-        poetry run mkdocs gh-deploy
+        poetry run mkdocs build -d dist
+    
+    - name: Build DataHarmonizer interface.
+      working-directory: data_harmonizer
+      run: |
+        npm run build -- --outDir ../dist/_playground --base /${{ github.event.repository.name }}/_playground/
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: dist
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
