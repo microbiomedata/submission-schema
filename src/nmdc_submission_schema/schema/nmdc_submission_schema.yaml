@@ -16123,7 +16123,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -16143,7 +16143,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -16163,7 +16163,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -16183,7 +16183,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -16203,7 +16203,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   BiofilmInterface:
     name: BiofilmInterface
@@ -18474,7 +18474,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -18494,7 +18494,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -18514,7 +18514,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -18534,7 +18534,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -18554,7 +18554,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   BuiltEnvInterface:
     name: BuiltEnvInterface
@@ -23309,7 +23309,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -23329,7 +23329,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -23349,7 +23349,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -23369,7 +23369,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -23389,7 +23389,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -26534,7 +26534,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -26554,7 +26554,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -26574,7 +26574,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -26594,7 +26594,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -26614,7 +26614,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   HcrFluidsSwabsInterface:
     name: HcrFluidsSwabsInterface
@@ -29592,7 +29592,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -29612,7 +29612,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -29632,7 +29632,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -29652,7 +29652,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -29672,7 +29672,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   HostAssociatedInterface:
     name: HostAssociatedInterface
@@ -31382,7 +31382,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -31402,7 +31402,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -31422,7 +31422,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -31442,7 +31442,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -31462,7 +31462,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   JgiMgInterface:
     name: JgiMgInterface
@@ -34025,7 +34025,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -34045,7 +34045,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -34065,7 +34065,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -34085,7 +34085,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -34105,7 +34105,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   PlantAssociatedInterface:
     name: PlantAssociatedInterface
@@ -36573,7 +36573,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -36593,7 +36593,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -36613,7 +36613,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -36633,7 +36633,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -36653,7 +36653,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   SampIdNewTermsMixin:
     name: SampIdNewTermsMixin
@@ -39127,7 +39127,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -39147,7 +39147,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -39167,7 +39167,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -39187,7 +39187,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -39207,7 +39207,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   SoilInterface:
     name: SoilInterface
@@ -42144,7 +42144,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: EcosystemEnum
-        required: true
+        recommended: true
       ecosystem_category:
         name: ecosystem_category
         description: Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.
@@ -42163,7 +42163,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: EcosystemCategoryEnum
-        required: true
+        recommended: true
       ecosystem_type:
         name: ecosystem_type
         description: Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.
@@ -42182,7 +42182,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: EcosystemTypeEnum
-        required: true
+        recommended: true
       ecosystem_subtype:
         name: ecosystem_subtype
         description: Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.
@@ -42201,7 +42201,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: EcosystemSubtypeEnum
-        required: true
+        recommended: true
       specific_ecosystem:
         name: specific_ecosystem
         description: Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.
@@ -42220,7 +42220,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: SpecificEcosystemEnum
-        required: true
+        recommended: true
       organism_count:
         name: organism_count
         range: string
@@ -44183,7 +44183,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -44203,7 +44203,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -44223,7 +44223,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -44243,7 +44243,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -44263,7 +44263,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
   WaterInterface:
     name: WaterInterface
@@ -47078,7 +47078,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_category:
         name: ecosystem_category
@@ -47096,7 +47096,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_type:
         name: ecosystem_type
@@ -47114,7 +47114,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       ecosystem_subtype:
         name: ecosystem_subtype
@@ -47132,7 +47132,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       specific_ecosystem:
         name: specific_ecosystem
@@ -47150,7 +47150,7 @@ classes:
           - Study
         slot_group: sample_id_section
         range: string
-        required: true
+        recommended: true
         multivalued: false
       water_content:
         name: water_content
