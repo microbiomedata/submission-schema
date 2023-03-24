@@ -1,0 +1,10 @@
+emsl_data:
+  - analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    emsl_store_temp: -80
+    project_id: xxx
+    samp_name: xxx
+    sample_shipped: 100 units
+    sample_type: sandwich
+    source_mat_id: x:1

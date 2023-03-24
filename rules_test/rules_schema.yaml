@@ -1,0 +1,80 @@
+name: rules_schema
+id: http://example.org/rules_schema
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+
+imports:
+  - linkml:types
+
+#enums:
+#  boolean_enum:
+#    permissible_values:
+#      "true":
+#      "false":
+slots:
+  #  happy:
+  #    range: string
+  #  sad:
+  #    range: string
+  #  people:
+  #    range: Person
+  #    multivalued: true
+  #    inlined: true
+  #    inlined_as_list: true
+  addresses:
+    range: Address
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  street_address:
+  country:
+  postal_code:
+  telephone:
+
+classes:
+
+  Address:
+    slots:
+      - street_address
+      - country
+      - postal_code
+      - telephone
+    rules:
+      - preconditions:
+          slot_conditions:
+            country:
+              any_of:
+                - equals_string: USA
+                - equals_string: USA_territory
+        postconditions:
+          slot_conditions:
+            postal_code:
+              pattern: "[0-9]{5}(-[0-9]{4})?"
+            telephone:
+              pattern: "^\\+1 "
+
+  #  Person:
+  #    slots:
+  #      - happy
+  #      - sad
+  #    rules:
+  #      - description: test rule
+  #        preconditions:
+  #          slot_conditions:
+  #            happy:
+  #              equals_string: birthday
+  #        postconditions:
+  #          slot_conditions:
+  #            sad:
+  #              pattern: "older"
+  #
+  #
+  #  PersonCollection:
+  #    slots:
+  #      - people
+
+  AddressCollection:
+    slots:
+      - addresses
+    tree_root: true
