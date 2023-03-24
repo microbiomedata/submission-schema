@@ -1,0 +1,18 @@
+#people:
+#  - happy: birthday
+#    sad: not at all
+#  - happy: "false"
+#    sad: "true"
+#  - happy: "true"
+#    sad: "true"
+#  - happy: "false"
+#    sad: "false"
+addresses:
+  - street_address: 123 main street
+    country: USA
+    postal_code: XX
+    telephone: "1234567890"
+  - street_address: 600 Pennsylvania Ave NW
+    country: USA
+    postal_code: XX
+    telephone: "1234567890"

@@ -183,6 +183,9 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter
 		--modifications_config_tsv $(word 2,$^) \
 		--validation_config_tsv $(word 3,$^) \
 		--yaml_output $@.raw
+
+	yq -i '(.classes.[] | select(.name == "JgiMgInterface") | .rules) = [{"preconditions":{"slot_conditions":{"dna_cont_type":{"equals_string":"plate"}}},"postconditions":{"slot_conditions":{"dna_volume":{"maximum_value":1}}}},{"preconditions":{"slot_conditions":{"dna_cont_type":{"equals_string":"tube"}}},"postconditions":{"slot_conditions":{"dna_volume":{"minimum_value":1}}}}]' local/with_modifications.yaml.raw
+
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \
 		--format yaml $@.raw > $@

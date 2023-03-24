@@ -497,7 +497,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 1.23
+  dna_volume: 999
   proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
@@ -553,6 +553,21 @@ water_data:
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
+
+```
+## SampleData-emsl_data-bad-emsl_store_temp
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: ice cold
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
+  source_mat_id: x:1
 
 ```
 ## SampleData-water-data-missing-broad
@@ -644,6 +659,90 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
+## SampleData-jgi_mg_data-bad-dna_cont_type
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: bucket
+  dna_cont_well: H3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
+  samp_name: xxx
+  source_mat_id: x:1
+
+```
+## SampleData-emsl_data-bad-sample_type
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: sandwich
+  source_mat_id: x:1
+
+```
+## SampleData-jgi_mg_data-bad-dna_cont_well
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: Z99
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
+  samp_name: xxx
+  source_mat_id: x:1
+
+```
+## SampleData-emsl_data-bad-sample_shipped
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: three buckets
+  sample_type: soil
+  source_mat_id: x:1
+
+```
 ## SampleData-water-data-string-alkalinity
 ### Input
 ```yaml
@@ -731,6 +830,75 @@ water_data:
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
+
+```
+## SampleData-jgi_mg_data-bad-dna_dnase
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: false
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
+  samp_name: xxx
+  source_mat_id: x:1
+
+```
+## SampleData-jgi_mg_data-bad-dna_volume
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23 liters
+  proposal_dna: xxx
+  samp_name: xxx
+  source_mat_id: x:1
+
+```
+## SampleData-emsl_data-bad-source_mat_id
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
+  source_mat_id: no_colon
 
 ```
 ## SampleData-water-data-invalid-rel_to_oxygen
@@ -892,6 +1060,33 @@ water_data:
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
+
+```
+## SampleData-jgi_mg_data-bad-dna_sample_format
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: red red wine
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
+  samp_name: xxx
+  source_mat_id: x:1
 
 ```
 ## SampleData-water-data-incomplete-organsim_count
