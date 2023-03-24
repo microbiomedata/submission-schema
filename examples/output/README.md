@@ -7,10 +7,6 @@ water_data:
   - metatranscriptomics
   collection_date: '2022-01-15'
   depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
@@ -18,7 +14,6 @@ water_data:
   samp_mat_process: text [ONTO:000000000]
   samp_name: xyz
   source_mat_id: x:1
-  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-soil-data-minimal
@@ -30,10 +25,6 @@ soil_data:
   - metatranscriptomics
   collection_date: '2022-01-15'
   depth: 111 to 222
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
   elev: 123
   env_broad_scale: urban biome [ENVO:01000249]
   env_local_scale: __tunnel [ENVO:00000068]
@@ -43,7 +34,6 @@ soil_data:
   samp_name: b
   samp_store_temp: -80 Celsius
   source_mat_id: x:2
-  specific_ecosystem: Unclassified
   store_cond: frozen
 
 ```
@@ -305,17 +295,12 @@ water_data:
   - metatranscriptomics
   collection_date: '2022-01-15'
   depth: '1.5'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
   samp_name: xyz
   source_mat_id: x:1
-  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-emsl_data-minimal
@@ -483,17 +468,12 @@ water_data:
   - metatranscriptomics
   collection_date: '2022-01-15'
   depth: 1.5 to 2.5
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
   samp_name: xyz
   source_mat_id: x:1
-  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-jgi_mg_data-minimal

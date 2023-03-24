@@ -1,0 +1,79 @@
+{
+  "nmdc_submission_schema": {
+    "AirInterface": {
+      "name": "AirInterface",
+      "status": "published",
+      "display": true
+    },
+    "BiofilmInterface": {
+      "name": "BiofilmInterface",
+      "status": "published",
+      "display": true
+    },
+    "BuiltEnvInterface": {
+      "name": "BuiltEnvInterface",
+      "status": "published",
+      "display": true
+    },
+    "EmslInterface": {
+      "name": "EmslInterface",
+      "status": "published",
+      "display": true
+    },
+    "HcrCoresInterface": {
+      "name": "HcrCoresInterface",
+      "status": "published",
+      "display": true
+    },
+    "HcrFluidsSwabsInterface": {
+      "name": "HcrFluidsSwabsInterface",
+      "status": "published",
+      "display": true
+    },
+    "HostAssociatedInterface": {
+      "name": "HostAssociatedInterface",
+      "status": "published",
+      "display": true
+    },
+    "JgiMgInterface": {
+      "name": "JgiMgInterface",
+      "status": "published",
+      "display": true
+    },
+    "JgiMtInterface": {
+      "name": "JgiMtInterface",
+      "status": "published",
+      "display": true
+    },
+    "MiscEnvsInterface": {
+      "name": "MiscEnvsInterface",
+      "status": "published",
+      "display": true
+    },
+    "PlantAssociatedInterface": {
+      "name": "PlantAssociatedInterface",
+      "status": "published",
+      "display": true
+    },
+    "SedimentInterface": {
+      "name": "SedimentInterface",
+      "status": "published",
+      "display": true
+    },
+    "SoilInterface": {
+      "name": "SoilInterface",
+      "status": "published",
+      "display": true
+    },
+    "WastewaterSludgeInterface": {
+      "name": "WastewaterSludgeInterface",
+      "status": "published",
+      "display": true
+    },
+    "WaterInterface": {
+      "name": "WaterInterface",
+      "status": "published",
+      "display": true
+    }
+  }
+}

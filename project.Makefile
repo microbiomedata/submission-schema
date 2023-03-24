@@ -237,10 +237,6 @@ schema_sheets/templates/slot_usage_minimal.tsv
 		--schema $< $(word 2,$^)
 # WARNING:root:Not implemented: slot
 
-# why is --no-validate required?
-# without it...
-#jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
-#On instance['water_data'][0]['elev']:
 local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) linkml-convert \
@@ -280,3 +276,8 @@ project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc
 	mkdir -p $(@D)
 	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@
 
+dh-dev: project/json/nmdc_submission_schema.json
+	cd data_harmonizer && npm run dev
+
+dh-build: project/json/nmdc_submission_schema.json
+	cd data_harmonizer && npm run build

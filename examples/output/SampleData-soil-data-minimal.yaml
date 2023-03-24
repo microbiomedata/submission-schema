@@ -12,10 +12,5 @@ soil_data:
   env_broad_scale: urban biome [ENVO:01000249]
   env_local_scale: __tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_type: Soil
-  ecosystem_subtype: Unclassified
-  specific_ecosystem: Unclassified
   samp_name: b
   source_mat_id: x:2

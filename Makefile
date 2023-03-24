@@ -92,10 +92,6 @@ update-template:
 update-linkml:
 	poetry add -D linkml@latest
 
-# EXPERIMENTAL
-create-data-harmonizer:
-	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
-
 all: site
 site: clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 gen-project gendoc \
