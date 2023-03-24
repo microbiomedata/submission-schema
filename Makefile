@@ -55,7 +55,7 @@ help: status
 	@echo "make test -- runs tests"
 	@echo "make lint -- perfom linting"
 	@echo "make testdoc -- builds docs and runs local test server"
-	@echo "make deploy -- deploys site"
+#	@echo "make deploy -- deploys site"
 	@echo "make update -- updates linkml version"
 	@echo "make help -- show this help"
 	@echo ""
@@ -99,7 +99,8 @@ schema_sheets/populated_tsv/slot_usage_minimal.tsv examples/output/SampleData-wa
 examples/output/README.md
 
 %.yaml: gen-project
-deploy: all mkd-gh-deploy
+# make deploy has been depricated by an updated .github/workflows/deploy-docs.yaml
+#deploy: all mkd-gh-deploy
 
 compile-sheets:
 	$(RUN) sheets2linkml --gsheet-id $(SHEET_ID) $(SHEET_TABS) > $(SHEET_MODULE_PATH).tmp && mv $(SHEET_MODULE_PATH).tmp $(SHEET_MODULE_PATH)
