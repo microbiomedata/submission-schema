@@ -1,3 +1,21 @@
+## SampleData-water-data-minimal
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+
+```
 ## SampleData-soil-data-minimal
 ### Input
 ```yaml
@@ -132,37 +150,7 @@ water_data:
   water_current: 100 units
 
 ```
-## SampleData-jgi_mg_data-exhaustive
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_absorb1: 1.23
-  dna_absorb2: 1.23
-  dna_collect_site: xxx
-  dna_concentration: 1.23
-  dna_cont_type: plate
-  dna_cont_well: C3
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_organisms: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 1.23
-  proposal_dna: xxx
-  samp_name: xxx
-  source_mat_id: x:1
-
-```
-## SampleData-emsl_data-minimal
+## SampleData-emsl_data-exhasutive
 ### Input
 ```yaml
 emsl_data:
@@ -171,10 +159,12 @@ emsl_data:
   - metatranscriptomics
   emsl_store_temp: -80
   project_id: xxx
+  replicate_number: 2
   samp_name: xxx
   sample_shipped: 100 units
   sample_type: soil
   source_mat_id: x:1
+  technical_reps: 3
 
 ```
 ## SampleData-water-data-exhaustive
@@ -294,6 +284,38 @@ water_data:
   tot_part_carb: 35 micromole per liter
   turbidity: 0.3 nephelometric turbidity units
   water_current: 10 cubic meter per second
+
+```
+## SampleData-water-data-0-dim-depth
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '1.5'
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  samp_name: xyz
+  source_mat_id: x:1
+
+```
+## SampleData-emsl_data-minimal
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
+  source_mat_id: x:1
 
 ```
 ## SampleData-soil-data-exhaustive
@@ -437,23 +459,6 @@ soil_data:
   store_cond: frozen
 
 ```
-## SampleData-water-data-0-dim-depth
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '1.5'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-
-```
 ## SampleData-water-data-1-dim-depth
 ### Input
 ```yaml
@@ -498,48 +503,43 @@ jgi_mg_data:
   source_mat_id: x:1
 
 ```
-## SampleData-water-data-minimal
+## SampleData-jgi_mg_data-exhaustive
 ### Input
 ```yaml
-water_data:
+jgi_mg_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-
-```
-## SampleData-emsl_data-exhasutive
-### Input
-```yaml
-emsl_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  emsl_store_temp: -80
-  project_id: xxx
-  replicate_number: 2
+  dna_absorb1: 1.23
+  dna_absorb2: 1.23
+  dna_collect_site: xxx
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_organisms: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
   samp_name: xxx
-  sample_shipped: 100 units
-  sample_type: soil
   source_mat_id: x:1
-  technical_reps: 3
 
 ```
-## SampleData-water-data-invalid-rel_to_oxygen
+## SampleData-water-data-invalid-analysis-type
 ### Input
 ```yaml
 water_data:
 - analysis_type:
   - metagenomics
-  - metatranscriptomics
+  - invalid
   collection_date: '2022-01-15'
   depth: '111'
   ecosystem: Environmental
@@ -550,7 +550,6 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
-  rel_to_oxygen: xyz
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -577,6 +576,29 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
+## SampleData-water-data-invalid-tidal_stage
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  samp_name: xyz
+  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+  tidal_stage: xyz
+
+```
 ## SampleData-water-data-broad-label-only
 ### Input
 ```yaml
@@ -599,7 +621,7 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
-## SampleData-water-data-incomplete-organsim_count
+## SampleData-water-data-organsim_count-invalid-method
 ### Input
 ```yaml
 water_data:
@@ -616,7 +638,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
-  organism_count: xyz;100 units
+  organism_count: xyz;100 units;xyz
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -632,92 +654,6 @@ water_data:
   - metatranscriptomics
   collection_date: '2022-01-15'
   depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-broad-term-only
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_local_scale:
-  - ONTO:1234
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-scalar-analysis-type
-### Input
-```yaml
-water_data:
-- analysis_type: metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-depth-invalid-range
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 1.5-2.5
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-string-depth
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: meters
   ecosystem: Environmental
   ecosystem_category: Terrestrial
   ecosystem_subtype: Unclassified
@@ -754,35 +690,11 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
-## SampleData-water-data-numeric-depth
+## SampleData-water-data-scalar-analysis-type
 ### Input
 ```yaml
 water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 1.5
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-invalid-tidal_stage
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
+- analysis_type: metatranscriptomics
   collection_date: '2022-01-15'
   depth: '111'
   ecosystem: Environmental
@@ -793,55 +705,6 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-  tidal_stage: xyz
-
-```
-## SampleData-soil-data-missing-elev
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 111 to 222
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: urban biome [ENVO:01000249]
-  env_local_scale: __tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  growth_facil: greenhouse
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:2
-  specific_ecosystem: Unclassified
-  store_cond: frozen
-
-```
-## SampleData-water-data-organsim_count-invalid-method
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  organism_count: xyz;100 units;xyz
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -870,14 +733,11 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
-## SampleData-water-data-alkalinity-list
+## SampleData-water-data-invalid-rel_to_oxygen
 ### Input
 ```yaml
 water_data:
-- alkalinity:
-  - 50 milligram per liter
-  - 100 spoons per bucket
-  analysis_type:
+- analysis_type:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
@@ -890,7 +750,29 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
-  samp_mat_process: text [ONTO:000000000]
+  rel_to_oxygen: xyz
+  samp_name: xyz
+  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-numeric-depth
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 1.5
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -917,15 +799,133 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
-## SampleData-water-data-invalid-analysis-type
+## SampleData-water-data-broad-term-only
 ### Input
 ```yaml
 water_data:
 - analysis_type:
   - metagenomics
-  - invalid
+  - metatranscriptomics
   collection_date: '2022-01-15'
   depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_local_scale:
+  - ONTO:1234
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  samp_name: xyz
+  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-soil-data-missing-elev
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 111 to 222
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: urban biome [ENVO:01000249]
+  env_local_scale: __tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  growth_facil: greenhouse
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:2
+  specific_ecosystem: Unclassified
+  store_cond: frozen
+
+```
+## SampleData-water-data-alkalinity-list
+### Input
+```yaml
+water_data:
+- alkalinity:
+  - 50 milligram per liter
+  - 100 spoons per bucket
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-string-depth
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: meters
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  samp_name: xyz
+  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-incomplete-organsim_count
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  organism_count: xyz;100 units
+  samp_name: xyz
+  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-depth-invalid-range
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 1.5-2.5
   ecosystem: Environmental
   ecosystem_category: Terrestrial
   ecosystem_subtype: Unclassified
