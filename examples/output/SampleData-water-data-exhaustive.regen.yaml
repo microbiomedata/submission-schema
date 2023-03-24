@@ -74,8 +74,8 @@ water_data:
   lat_lon: 78 89
   elev: 1.5
   samp_store_temp: -80 degree Celsius
-  size_frac_low: 0.2 micrometer
   depth: '1.5'
+  size_frac_low: 0.2 micrometer
   size_frac_up: 20 micrometer
   samp_mat_process: text [ONTO:000000000]
   samp_collec_device: xyz
