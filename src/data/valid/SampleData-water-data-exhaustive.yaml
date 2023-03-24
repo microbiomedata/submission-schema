@@ -107,3 +107,5 @@ water_data:
     tot_part_carb: 35 micromole per liter
     turbidity: 0.3 nephelometric turbidity units
     water_current: 10 cubic meter per second
+#    growth_facil:
+#    store_cond:

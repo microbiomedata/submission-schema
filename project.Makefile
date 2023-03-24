@@ -229,10 +229,6 @@ schema_sheets/templates/slot_usage.tsv
 		--output-directory $(dir $@) \
 		--schema $< $(word 2,$^)
 
-# why is --no-validate required?
-# without it...
-#jsonschema.exceptions.ValidationError: '1.5' is not of type 'number'
-#On instance['water_data'][0]['elev']:
 local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) linkml-convert \
