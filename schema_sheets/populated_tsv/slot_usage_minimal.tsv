@@ -578,17 +578,17 @@ ecosystem_category							The Environmental ecosystem (for example) is divided in
 ecosystem_type							The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc.	Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.																	
 ecosystem_subtype							Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category.	Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.																	
 specific_ecosystem							Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system.	Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.																	
-attribute		field|property|template field|key|characteristic						A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template																	
 language								"Should use ISO 639-1 code e.g. ""en"", ""fr"""										language code							
-name								A human readable label for an entity							false			string							
 id								A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI	nmdc:mgmag-00-x012.1_7_c1	true						abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?|a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted|typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions|minting authority shoulders should probably be enumerated and checked in the pattern									
-investigation field								field describing aspect of the investigation/study to which the sample belongs																	
-gold_path_field								This is a grouping for any of the gold path fields							false			string							
+attribute		field|property|template field|key|characteristic						A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template																	
+name								A human readable label for an entity							false			string							
+environment field								field describing environmental aspect of a sample																	
 core field								basic fields																	
 description								a human-readable description of a thing							false			string			dcterms:description				
-alternative_identifiers								A list of alternative identifiers for the entity.							false			string							
 nucleic acid sequence source field																									
-environment field								field describing environmental aspect of a sample																	
+alternative_identifiers								A list of alternative identifiers for the entity.							false			string							
+investigation field								field describing aspect of the investigation/study to which the sample belongs																	
+gold_path_field								This is a grouping for any of the gold path fields							false			string							
 	AirInterface							air dh_interface																Air	
 methane	AirInterface	methane		measurement value	micromole per liter, parts per billion, parts per million	1		Methane (gas) amount or concentration at the time of sampling	1800 parts per billion						false		^[-+]?[0-9]*\.?[0-9]+ +\S.*$	string			MIXS:0000101			methane	
 organism_count	AirInterface	organism count		organism name;measurement value;enumeration	number of cells per cubic meter, number of cells per milliliter, number of cells per cubic centimeter	m		Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)	total prokaryotes;3.5e7 cells per milliliter;qPCR						false		^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$	string			MIXS:0000103			organism count	
