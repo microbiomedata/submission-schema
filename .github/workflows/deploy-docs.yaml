@@ -1,10 +1,15 @@
-name: Auto-deployment of nmdc_submission_schema Documentation
+name: Auto-deployment of nmdc_submission_schema documentation and DH interface
 on:
   push:
     branches: [ main ]
 
 jobs:
   build-docs:
+    # TODO: this should probably be split into separate build and deploy jobs to 
+    # reduce privileged token exposure
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -20,12 +25,50 @@ jobs:
     - name: Install Poetry.
       uses: snok/install-poetry@v1.3
 
-    - name: Install dependencies.
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Install yq
+      env:
+        YQ_VERSION: v4.30.5
+        YQ_BINARY: yq_linux_amd64
+      run: |
+        mkdir -p $HOME/.local/bin
+        wget https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/$YQ_BINARY.tar.gz -O - | tar xz && mv $YQ_BINARY $HOME/.local/bin/yq
+        echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+    - name: Install Python dependencies.
       run: poetry install -E docs
+
+    - name: Install JavaScript dependencies.
+      working-directory: data_harmonizer
+      run: npm install
+
+    - name: Regenerate schema
+      run: |
+        make \
+          clean \
+          schema_cleanup \
+          src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+          project/json/nmdc_submission_schema.json
     
     - name: Build documentation.
       run: |
-        mkdir -p docs
-        touch docs/.nojekyll
         poetry run gen-doc -d docs src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-        poetry run mkdocs gh-deploy
+        poetry run mkdocs build -d dist
+    
+    - name: Build DataHarmonizer interface.
+      working-directory: data_harmonizer
+      run: |
+        npm run build -- --outDir ../dist/_playground --base /${{ github.event.repository.name }}/_playground/
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: dist
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
