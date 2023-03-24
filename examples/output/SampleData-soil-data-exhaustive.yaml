@@ -23,8 +23,8 @@ soil_data:
   elev: '123.0'
   samp_store_temp: -80 Celsius
   sieving: xxx
-  size_frac_low: 99 units
   depth: '111'
+  size_frac_low: 99 units
   size_frac_up: 111 units
   samp_mat_process: text [ONTO:000000000]
   biotic_regm: xxx

@@ -95,7 +95,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -248,11 +248,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -451,7 +446,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -710,11 +705,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -1144,7 +1134,7 @@
                     "description": "The gender type of the restroom"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "hall_count": {
@@ -1615,11 +1605,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -2645,7 +2630,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "hc_produced": {
@@ -2976,11 +2961,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -3197,7 +3177,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "hc_produced": {
@@ -3531,11 +3511,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -3687,7 +3662,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "gravidity": {
@@ -3913,11 +3888,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -4384,7 +4354,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -4574,11 +4544,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -4729,7 +4694,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "gravity": {
@@ -5038,11 +5003,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -5614,7 +5574,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -5895,11 +5855,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -6148,7 +6103,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "growth_facil": {
@@ -6508,11 +6463,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -6936,7 +6886,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -7139,11 +7089,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -7381,7 +7326,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. Country or sea names should be chosen from the INSDC country list (http://insdc.org/country.html), or the GAZ ontology (http://purl.bioontology.org/ontology/GAZ)",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -7681,11 +7626,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "ecosystem",
-                "ecosystem_category",
-                "ecosystem_type",
-                "ecosystem_subtype",
-                "specific_ecosystem",
                 "samp_name",
                 "source_mat_id"
             ],
