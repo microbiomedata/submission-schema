@@ -223,11 +223,16 @@ src/data/invalid src/data/valid
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-local/slot_usage.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-schema_sheets/templates/slot_usage.tsv
+# target was was local/slot_usage.tsv,
+#   but I changed the destination to a checked-in directory
+#   so collaborators can sort and filter the slot attributes
+#   and I switched to a smaller template
+schema_sheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+schema_sheets/templates/slot_usage_minimal.tsv
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
 		--schema $< $(word 2,$^)
+# WARNING:root:Not implemented: slot
 
 # why is --no-validate required?
 # without it...
