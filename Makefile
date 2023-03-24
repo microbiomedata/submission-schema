@@ -95,7 +95,7 @@ update-linkml:
 all: site
 site: clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 gen-project gendoc \
-local/slot_usage.tsv examples/output/SampleData-water-data-exhaustive.regen.yaml local/SampleData-water-data-exhaustive.db \
+schema_sheets/populated_tsv/slot_usage_minimal.tsv examples/output/SampleData-water-data-exhaustive.regen.yaml local/SampleData-water-data-exhaustive.db \
 examples/output/README.md
 
 %.yaml: gen-project
