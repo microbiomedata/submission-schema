@@ -171,6 +171,9 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i 'del(.slots.[] | select(.name == "was_generated_by"))' $@
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
 
+	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
+
+
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
@@ -184,6 +187,7 @@ sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter
 		--validation_config_tsv $(word 3,$^) \
 		--yaml_output $@.raw
 
+	# inserting rule... but rules aren't handled properly in gen jsonschema yet
 	yq -i '(.classes.[] | select(.name == "JgiMgInterface") | .rules) = [{"preconditions":{"slot_conditions":{"dna_cont_type":{"equals_string":"plate"}}},"postconditions":{"slot_conditions":{"dna_volume":{"maximum_value":1}}}},{"preconditions":{"slot_conditions":{"dna_cont_type":{"equals_string":"tube"}}},"postconditions":{"slot_conditions":{"dna_volume":{"minimum_value":1}}}}]' local/with_modifications.yaml.raw
 
 	$(RUN) gen-linkml \
@@ -212,6 +216,9 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 
 	yq -i '(.slots.[] | select(.range == "string") | .multivalued ) = false' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range=="string") | .multivalued) = false' $@
+
+	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
