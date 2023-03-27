@@ -57,6 +57,7 @@ jobs:
     - name: Build documentation.
       run: |
         poetry run gen-doc -d docs src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+        cp src/docs/*md docs/
         poetry run mkdocs build -d dist
     
     - name: Build DataHarmonizer interface.
