@@ -24,7 +24,7 @@ Note that the while this repo is named `submission-schema`, the generated artifa
 Use the `make` command to generate project artefacts:
 
 - `make all`: make everything
-- `make deploy`: deploys site
+- ~~`make deploy`: deploys site~~
 
 </details>
 
