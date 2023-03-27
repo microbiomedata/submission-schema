@@ -217,8 +217,14 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 	yq -i '(.slots.[] | select(.range == "string") | .multivalued ) = false' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range=="string") | .multivalued) = false' $@
 
-	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
+#	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
+#	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
+
+	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
+
+	yq -i '(.slots.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
