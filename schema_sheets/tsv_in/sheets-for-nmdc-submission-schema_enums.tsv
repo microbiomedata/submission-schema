@@ -13,12 +13,9 @@ BioticRelationshipEnum	natural organic matter	placeholder PV descr
 BioticRelationshipEnum	parasitism	placeholder PV descr				
 BioticRelationshipEnum	symbiotic	placeholder enum descr				
 BioticRelationshipEnum		placeholder enum descr				
-DnaContTypeEnum	plate	placeholder PV descr				
-DnaContTypeEnum	tube	placeholder PV descr				
-DnaContTypeEnum		placeholder enum descr				
-DnaDnaseEnum	no	placeholder PV descr				
-DnaDnaseEnum	yes	placeholder PV descr				
-DnaDnaseEnum		placeholder enum descr				
+JgiContTypeEnum	plate	placeholder PV descr				
+JgiContTypeEnum	tube	placeholder PV descr				
+JgiContTypeEnum		placeholder enum descr				
 DnaSampleFormatEnum	10 mM Tris-HCl	placeholder PV descr				
 DnaSampleFormatEnum	DNAStable	placeholder PV descr				
 DnaSampleFormatEnum	Ethanol	placeholder PV descr				
@@ -30,9 +27,6 @@ DnaSampleFormatEnum	RNAStable	placeholder PV descr
 DnaSampleFormatEnum	TE	placeholder PV descr				
 DnaSampleFormatEnum	Water	placeholder PV descr				
 DnaSampleFormatEnum		placeholder enum descr				
-DnaseRnaEnum	no	placeholder PV descr				
-DnaseRnaEnum	yes	placeholder PV descr				
-DnaseRnaEnum		placeholder enum descr				
 EcosystemCategoryEnum	Terrestrial	placeholder PV descr			https://github.com/microbiomedata/sheets_and_friends/issues/22	
 EcosystemCategoryEnum		placeholder enum descr				
 EcosystemEnum	Environmental	placeholder PV descr				
@@ -247,9 +241,6 @@ RelToOxygenEnum	microanaerobe	placeholder PV descr
 RelToOxygenEnum	obligate aerobe	placeholder PV descr				
 RelToOxygenEnum	obligate anaerobe	placeholder PV descr				
 RelToOxygenEnum		placeholder enum descr				
-RnaContTypeEnum	plate	placeholder PV descr				
-RnaContTypeEnum	tube	placeholder PV descr				
-RnaContTypeEnum		placeholder enum descr				
 RnaSampleFormatEnum	10 mM Tris-HCl	placeholder PV descr				
 RnaSampleFormatEnum	DNAStable	placeholder PV descr				
 RnaSampleFormatEnum	Ethanol	placeholder PV descr				
@@ -294,3 +285,6 @@ StoreCondEnum	frozen	placeholder PV descr
 StoreCondEnum	lyophilized	placeholder PV descr				
 StoreCondEnum	other	placeholder PV descr				
 StoreCondEnum		placeholder enum descr				
+YesNoEnum	no					
+YesNoEnum	yes					
+YesNoEnum		replaces DnaDnaseEnum and DnaseRnaEnum				
