@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-03-24T16:12:05
+# Generation date: 2023-03-27T23:27:12
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -4843,7 +4843,7 @@ class JgiMgInterface(DhInterface):
     dna_cont_type: Optional[Union[str, "DnaContTypeEnum"]] = None
     dna_cont_well: Optional[str] = None
     dna_container_id: Optional[str] = None
-    dna_dnase: Optional[Union[str, "DnaDnaseEnum"]] = None
+    dna_dnase: Optional[Union[str, "YesNoEnum"]] = None
     dna_isolate_meth: Optional[str] = None
     dna_organisms: Optional[str] = None
     dna_project_contact: Optional[str] = None
@@ -4883,8 +4883,8 @@ class JgiMgInterface(DhInterface):
         if self.dna_container_id is not None and not isinstance(self.dna_container_id, str):
             self.dna_container_id = str(self.dna_container_id)
 
-        if self.dna_dnase is not None and not isinstance(self.dna_dnase, DnaDnaseEnum):
-            self.dna_dnase = DnaDnaseEnum(self.dna_dnase)
+        if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
+            self.dna_dnase = YesNoEnum(self.dna_dnase)
 
         if self.dna_isolate_meth is not None and not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
@@ -4955,8 +4955,8 @@ class JgiMgInterface(DhInterface):
         if self.dna_sample_format is not None and not isinstance(self.dna_sample_format, DnaSampleFormatEnum):
             self.dna_sample_format = DnaSampleFormatEnum(self.dna_sample_format)
 
-        if self.dna_dnase is not None and not isinstance(self.dna_dnase, DnaDnaseEnum):
-            self.dna_dnase = DnaDnaseEnum(self.dna_dnase)
+        if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
+            self.dna_dnase = YesNoEnum(self.dna_dnase)
 
         if self.dna_organisms is not None and not isinstance(self.dna_organisms, str):
             self.dna_organisms = str(self.dna_organisms)
@@ -5136,8 +5136,8 @@ class JgiMtInterface(DhInterface):
         if self.rna_sample_format is not None and not isinstance(self.rna_sample_format, RnaSampleFormatEnum):
             self.rna_sample_format = RnaSampleFormatEnum(self.rna_sample_format)
 
-        if self.dnase_rna is not None and not isinstance(self.dnase_rna, DnaseRnaEnum):
-            self.dnase_rna = DnaseRnaEnum(self.dnase_rna)
+        if self.dnase_rna is not None and not isinstance(self.dnase_rna, YesNoEnum):
+            self.dnase_rna = YesNoEnum(self.dnase_rna)
 
         if self.rna_organisms is not None and not isinstance(self.rna_organisms, str):
             self.rna_organisms = str(self.rna_organisms)
@@ -9424,6 +9424,12 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
         description="placeholder enum descr",
     )
 
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "natural organic matter",
+                PermissibleValue(text="natural organic matter",
+                                 description="placeholder PV descr") )
+
 class BioticRelationshipEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
@@ -9447,37 +9453,6 @@ class BioticRelationshipEnum(EnumDefinitionImpl):
         setattr(cls, "free living",
                 PermissibleValue(text="free living",
                                  description="placeholder PV descr") )
-        setattr(cls, "natural organic matter",
-                PermissibleValue(text="natural organic matter",
-                                 description="placeholder PV descr") )
-
-class DnaContTypeEnum(EnumDefinitionImpl):
-    """
-    placeholder enum descr
-    """
-    plate = PermissibleValue(text="plate",
-                                 description="placeholder PV descr")
-    tube = PermissibleValue(text="tube",
-                               description="placeholder PV descr")
-
-    _defn = EnumDefinition(
-        name="DnaContTypeEnum",
-        description="placeholder enum descr",
-    )
-
-class DnaDnaseEnum(EnumDefinitionImpl):
-    """
-    placeholder enum descr
-    """
-    no = PermissibleValue(text="no",
-                           description="placeholder PV descr")
-    yes = PermissibleValue(text="yes",
-                             description="placeholder PV descr")
-
-    _defn = EnumDefinition(
-        name="DnaDnaseEnum",
-        description="placeholder enum descr",
-    )
 
 class DnaSampleFormatEnum(EnumDefinitionImpl):
     """
@@ -9514,20 +9489,6 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
         setattr(cls, "MDA reaction buffer",
                 PermissibleValue(text="MDA reaction buffer",
                                  description="placeholder PV descr") )
-
-class DnaseRnaEnum(EnumDefinitionImpl):
-    """
-    placeholder enum descr
-    """
-    no = PermissibleValue(text="no",
-                           description="placeholder PV descr")
-    yes = PermissibleValue(text="yes",
-                             description="placeholder PV descr")
-
-    _defn = EnumDefinition(
-        name="DnaseRnaEnum",
-        description="placeholder enum descr",
-    )
 
 class EcosystemCategoryEnum(EnumDefinitionImpl):
     """
@@ -9628,528 +9589,783 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
 
 class EnvBroadScaleSoilEnum(EnumDefinitionImpl):
     """
-    placeholder enum descr
+    placeholder enum descr, DO NOT SORT
     """
     _defn = EnumDefinition(
         name="EnvBroadScaleSoilEnum",
-        description="placeholder enum descr",
+        description="placeholder enum descr, DO NOT SORT",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "______mediterranean savanna biome [ENVO:01000229]",
-                PermissibleValue(text="______mediterranean savanna biome [ENVO:01000229]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "____flooded savanna biome [ENVO:01000190]",
-                PermissibleValue(text="____flooded savanna biome [ENVO:01000190]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "____mediterranean savanna biome [ENVO:01000229]",
-                PermissibleValue(text="____mediterranean savanna biome [ENVO:01000229]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "____mediterranean shrubland biome [ENVO:01000217]",
-                PermissibleValue(text="____mediterranean shrubland biome [ENVO:01000217]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "____mediterranean woodland biome [ENVO:01000208]",
-                PermissibleValue(text="____mediterranean woodland biome [ENVO:01000208]",
-                                 description="placeholder PV descr") )
+        setattr(cls, "________________mediterranean savanna biome [ENVO:01000229]",
+                PermissibleValue(text="________________mediterranean savanna biome [ENVO:01000229]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________flooded savanna biome [ENVO:01000190]",
+                PermissibleValue(text="____________flooded savanna biome [ENVO:01000190]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________mediterranean shrubland biome [ENVO:01000217]",
+                PermissibleValue(text="____________mediterranean shrubland biome [ENVO:01000217]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________mediterranean woodland biome [ENVO:01000208]",
+                PermissibleValue(text="____________mediterranean woodland biome [ENVO:01000208]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________montane savanna biome [ENVO:01000223]",
+                PermissibleValue(text="____________montane savanna biome [ENVO:01000223]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________subtropical savanna biome [ENVO:01000187]",
+                PermissibleValue(text="____________subtropical savanna biome [ENVO:01000187]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________temperate savanna biome [ENVO:01000189]",
+                PermissibleValue(text="____________temperate savanna biome [ENVO:01000189]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________tropical savanna biome [ENVO:01000188]",
+                PermissibleValue(text="____________tropical savanna biome [ENVO:01000188]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____________urban biome [ENVO:01000249]",
+                PermissibleValue(text="____________urban biome [ENVO:01000249]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________alpine tundra biome [ENVO:01001505]",
+                PermissibleValue(text="________alpine tundra biome [ENVO:01001505]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________dense settlement biome [ENVO:01000248]",
+                PermissibleValue(text="________dense settlement biome [ENVO:01000248]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________mediterranean savanna biome [ENVO:01000229]",
+                PermissibleValue(text="________mediterranean savanna biome [ENVO:01000229]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________mediterranean shrubland biome [ENVO:01000217]",
+                PermissibleValue(text="________mediterranean shrubland biome [ENVO:01000217]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________mediterranean woodland biome [ENVO:01000208]",
+                PermissibleValue(text="________mediterranean woodland biome [ENVO:01000208]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________montane shrubland biome [ENVO:01000216]",
+                PermissibleValue(text="________montane shrubland biome [ENVO:01000216]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________rangeland biome [ENVO:01000247]",
+                PermissibleValue(text="________rangeland biome [ENVO:01000247]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________savanna biome [ENVO:01000178]",
+                PermissibleValue(text="________savanna biome [ENVO:01000178]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________subtropical shrubland biome [ENVO:01000213]",
+                PermissibleValue(text="________subtropical shrubland biome [ENVO:01000213]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________subtropical woodland biome [ENVO:01000222]",
+                PermissibleValue(text="________subtropical woodland biome [ENVO:01000222]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________temperate shrubland biome [ENVO:01000215]",
+                PermissibleValue(text="________temperate shrubland biome [ENVO:01000215]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________temperate woodland biome [ENVO:01000221]",
+                PermissibleValue(text="________temperate woodland biome [ENVO:01000221]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________tidal mangrove shrubland [ENVO:01001369]",
+                PermissibleValue(text="________tidal mangrove shrubland [ENVO:01001369]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________tropical shrubland biome [ENVO:01000214]",
+                PermissibleValue(text="________tropical shrubland biome [ENVO:01000214]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________tropical woodland biome [ENVO:01000220]",
+                PermissibleValue(text="________tropical woodland biome [ENVO:01000220]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________village biome [ENVO:01000246]",
+                PermissibleValue(text="________village biome [ENVO:01000246]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________xeric shrubland biome [ENVO:01000218]",
+                PermissibleValue(text="________xeric shrubland biome [ENVO:01000218]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____alpine tundra biome [ENVO:01001505]",
+                PermissibleValue(text="____alpine tundra biome [ENVO:01001505]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____anthropogenic terrestrial biome [ENVO:01000219]",
+                PermissibleValue(text="____anthropogenic terrestrial biome [ENVO:01000219]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____mangrove biome [ENVO:01000181]",
+                PermissibleValue(text="____mangrove biome [ENVO:01000181]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____mediterranean biome [ENVO:01001833]",
+                PermissibleValue(text="____mediterranean biome [ENVO:01001833]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "____montane savanna biome [ENVO:01000223]",
                 PermissibleValue(text="____montane savanna biome [ENVO:01000223]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____montane shrubland biome [ENVO:01000216]",
+                PermissibleValue(text="____montane shrubland biome [ENVO:01000216]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____shrubland biome [ENVO:01000176]",
+                PermissibleValue(text="____shrubland biome [ENVO:01000176]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "____subtropical savanna biome [ENVO:01000187]",
                 PermissibleValue(text="____subtropical savanna biome [ENVO:01000187]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____subtropical shrubland biome [ENVO:01000213]",
+                PermissibleValue(text="____subtropical shrubland biome [ENVO:01000213]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____subtropical woodland biome [ENVO:01000222]",
+                PermissibleValue(text="____subtropical woodland biome [ENVO:01000222]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "____temperate savanna biome [ENVO:01000189]",
                 PermissibleValue(text="____temperate savanna biome [ENVO:01000189]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____temperate shrubland biome [ENVO:01000215]",
+                PermissibleValue(text="____temperate shrubland biome [ENVO:01000215]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____temperate woodland biome [ENVO:01000221]",
+                PermissibleValue(text="____temperate woodland biome [ENVO:01000221]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "____tropical savanna biome [ENVO:01000188]",
                 PermissibleValue(text="____tropical savanna biome [ENVO:01000188]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__alpine tundra biome [ENVO:01001505]",
-                PermissibleValue(text="__alpine tundra biome [ENVO:01001505]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__mediterranean biome [ENVO:01001833]",
-                PermissibleValue(text="__mediterranean biome [ENVO:01001833]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__montane savanna biome [ENVO:01000223]",
-                PermissibleValue(text="__montane savanna biome [ENVO:01000223]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__montane shrubland biome [ENVO:01000216]",
-                PermissibleValue(text="__montane shrubland biome [ENVO:01000216]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__rangeland biome [ENVO:01000247]",
-                PermissibleValue(text="__rangeland biome [ENVO:01000247]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__savanna biome [ENVO:01000178]",
-                PermissibleValue(text="__savanna biome [ENVO:01000178]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__subtropical savanna biome [ENVO:01000187]",
-                PermissibleValue(text="__subtropical savanna biome [ENVO:01000187]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__subtropical shrubland biome [ENVO:01000213]",
-                PermissibleValue(text="__subtropical shrubland biome [ENVO:01000213]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__subtropical woodland biome [ENVO:01000222]",
-                PermissibleValue(text="__subtropical woodland biome [ENVO:01000222]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__temperate savanna biome [ENVO:01000189]",
-                PermissibleValue(text="__temperate savanna biome [ENVO:01000189]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__temperate shrubland biome [ENVO:01000215]",
-                PermissibleValue(text="__temperate shrubland biome [ENVO:01000215]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__temperate woodland biome [ENVO:01000221]",
-                PermissibleValue(text="__temperate woodland biome [ENVO:01000221]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__tropical savanna biome [ENVO:01000188]",
-                PermissibleValue(text="__tropical savanna biome [ENVO:01000188]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__tropical shrubland biome [ENVO:01000214]",
-                PermissibleValue(text="__tropical shrubland biome [ENVO:01000214]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__tropical woodland biome [ENVO:01000220]",
-                PermissibleValue(text="__tropical woodland biome [ENVO:01000220]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__village biome [ENVO:01000246]",
-                PermissibleValue(text="__village biome [ENVO:01000246]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____tropical shrubland biome [ENVO:01000214]",
+                PermissibleValue(text="____tropical shrubland biome [ENVO:01000214]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____tropical woodland biome [ENVO:01000220]",
+                PermissibleValue(text="____tropical woodland biome [ENVO:01000220]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____tundra biome [ENVO:01000180]",
+                PermissibleValue(text="____tundra biome [ENVO:01000180]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____woodland biome [ENVO:01000175]",
+                PermissibleValue(text="____woodland biome [ENVO:01000175]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "alpine biome [ENVO:01001835]",
                 PermissibleValue(text="alpine biome [ENVO:01001835]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "anthropogenic terrestrial biome [ENVO:01000219]",
-                PermissibleValue(text="anthropogenic terrestrial biome [ENVO:01000219]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "arid biome [ENVO:01001838]",
                 PermissibleValue(text="arid biome [ENVO:01001838]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "mangrove biome [ENVO:01000181]",
-                PermissibleValue(text="mangrove biome [ENVO:01000181]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "montane biome [ENVO:01001836]",
                 PermissibleValue(text="montane biome [ENVO:01001836]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "polar biome [ENVO:01000339]",
                 PermissibleValue(text="polar biome [ENVO:01000339]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "shrubland biome [ENVO:01000176]",
-                PermissibleValue(text="shrubland biome [ENVO:01000176]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "subalpine biome [ENVO:01001837]",
                 PermissibleValue(text="subalpine biome [ENVO:01001837]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "subpolar biome [ENVO:01001834]",
                 PermissibleValue(text="subpolar biome [ENVO:01001834]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "subtropical biome [ENVO:01001832]",
                 PermissibleValue(text="subtropical biome [ENVO:01001832]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "temperate biome [ENVO:01001831]",
                 PermissibleValue(text="temperate biome [ENVO:01001831]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "terrestrial biome [ENVO:00000446]",
+                PermissibleValue(text="terrestrial biome [ENVO:00000446]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "tropical biome [ENVO:01001830]",
                 PermissibleValue(text="tropical biome [ENVO:01001830]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "tundra biome [ENVO:01000180]",
-                PermissibleValue(text="tundra biome [ENVO:01000180]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "urban biome [ENVO:01000249]",
-                PermissibleValue(text="urban biome [ENVO:01000249]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "woodland biome [ENVO:01000175]",
-                PermissibleValue(text="woodland biome [ENVO:01000175]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
 
 class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
     """
-    placeholder enum descr
+    placeholder enum descr, DO NOT SORT
     """
     _defn = EnumDefinition(
         name="EnvLocalScaleSoilEnum",
-        description="placeholder enum descr",
+        description="placeholder enum descr, DO NOT SORT",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "__canyon [ENVO:00000169]",
-                PermissibleValue(text="__canyon [ENVO:00000169]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__cliff [ENVO:00000087]",
-                PermissibleValue(text="__cliff [ENVO:00000087]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__dry valley [ENVO:00000128]",
-                PermissibleValue(text="__dry valley [ENVO:00000128]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__dune [ENVO:00000170]",
-                PermissibleValue(text="__dune [ENVO:00000170]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__glacial valley [ENVO:00000248]",
-                PermissibleValue(text="__glacial valley [ENVO:00000248]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__hillside [ENVO:01000333]",
-                PermissibleValue(text="__hillside [ENVO:01000333]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__tunnel [ENVO:00000068]",
-                PermissibleValue(text="__tunnel [ENVO:00000068]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "active geological fault [ENVO:01000669]",
-                PermissibleValue(text="active geological fault [ENVO:01000669]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "agricultural field [ENVO:00000114]",
-                PermissibleValue(text="agricultural field [ENVO:00000114]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "beach [ENVO:00000091]",
-                PermissibleValue(text="beach [ENVO:00000091]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "cave [ENVO:00000067]",
-                PermissibleValue(text="cave [ENVO:00000067]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "channel [ENVO:03000117]",
-                PermissibleValue(text="channel [ENVO:03000117]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "coast [ENVO:01000687]",
-                PermissibleValue(text="coast [ENVO:01000687]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "dry lake [ENVO:00000277]",
-                PermissibleValue(text="dry lake [ENVO:00000277]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "dry river [ENVO:01000995]",
-                PermissibleValue(text="dry river [ENVO:01000995]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "garden [ENVO:00000011]",
-                PermissibleValue(text="garden [ENVO:00000011]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "hill [ENVO:00000083]",
-                PermissibleValue(text="hill [ENVO:00000083]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "hummock [ENVO:00000516]",
-                PermissibleValue(text="hummock [ENVO:00000516]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "impact crater [ENVO:01001071]",
-                PermissibleValue(text="impact crater [ENVO:01001071]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "isthmus [ENVO:00000174]",
-                PermissibleValue(text="isthmus [ENVO:00000174]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "karst [ENVO:00000175]",
-                PermissibleValue(text="karst [ENVO:00000175]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "lake shore [ENVO:00000382]",
-                PermissibleValue(text="lake shore [ENVO:00000382]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "lava field [ENVO:01000437]",
-                PermissibleValue(text="lava field [ENVO:01000437]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "mesa [ENVO:00000179]",
-                PermissibleValue(text="mesa [ENVO:00000179]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "mountain [ENVO:00000081]",
-                PermissibleValue(text="mountain [ENVO:00000081]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "peatland [ENVO:00000044]",
-                PermissibleValue(text="peatland [ENVO:00000044]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "peninsula [ENVO:00000305]",
-                PermissibleValue(text="peninsula [ENVO:00000305]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "plain [ENVO:00000086]",
-                PermissibleValue(text="plain [ENVO:00000086]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "plateau [ENVO:00000182]",
-                PermissibleValue(text="plateau [ENVO:00000182]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "ridge [ENVO:00000283]",
-                PermissibleValue(text="ridge [ENVO:00000283]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "slope [ENVO:00002000]",
-                PermissibleValue(text="slope [ENVO:00002000]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "snow field [ENVO:00000146]",
-                PermissibleValue(text="snow field [ENVO:00000146]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "tombolo [ENVO:00000420]",
-                PermissibleValue(text="tombolo [ENVO:00000420]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "tuff cone [ENVO:01000664]",
-                PermissibleValue(text="tuff cone [ENVO:01000664]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "valley [ENVO:00000100]",
-                PermissibleValue(text="valley [ENVO:00000100]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "vein [ENVO:01000670]",
-                PermissibleValue(text="vein [ENVO:01000670]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "volcano [ENVO:00000247]",
-                PermissibleValue(text="volcano [ENVO:00000247]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "woodland clearing [ENVO:00000444]",
-                PermissibleValue(text="woodland clearing [ENVO:00000444]",
-                                 description="placeholder PV descr") )
+        setattr(cls, "__________________________canyon [ENVO:00000169]",
+                PermissibleValue(text="__________________________canyon [ENVO:00000169]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________________ditch [ENVO:00000037]",
+                PermissibleValue(text="__________________________ditch [ENVO:00000037]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________________dry river [ENVO:01000995]",
+                PermissibleValue(text="__________________________dry river [ENVO:01000995]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________________dry valley [ENVO:00000128]",
+                PermissibleValue(text="__________________________dry valley [ENVO:00000128]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________________dune [ENVO:00000170]",
+                PermissibleValue(text="__________________________dune [ENVO:00000170]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________________glacial valley [ENVO:00000248]",
+                PermissibleValue(text="__________________________glacial valley [ENVO:00000248]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________________plumbing drain [ENVO:01000924]",
+                PermissibleValue(text="__________________________plumbing drain [ENVO:01000924]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "_________________________hill [ENVO:00000083]",
+                PermissibleValue(text="_________________________hill [ENVO:00000083]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________artificial channel [ENVO:00000121]",
+                PermissibleValue(text="______________________artificial channel [ENVO:00000121]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________butte [ENVO:00000287]",
+                PermissibleValue(text="______________________butte [ENVO:00000287]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________caldera [ENVO:00000096]",
+                PermissibleValue(text="______________________caldera [ENVO:00000096]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________dry stream [ENVO:00000278]",
+                PermissibleValue(text="______________________dry stream [ENVO:00000278]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________impact crater [ENVO:01001071]",
+                PermissibleValue(text="______________________impact crater [ENVO:01001071]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________lake shore [ENVO:00000382]",
+                PermissibleValue(text="______________________lake shore [ENVO:00000382]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________mesa [ENVO:00000179]",
+                PermissibleValue(text="______________________mesa [ENVO:00000179]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________mountain [ENVO:00000081]",
+                PermissibleValue(text="______________________mountain [ENVO:00000081]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________plateau [ENVO:00000182]",
+                PermissibleValue(text="______________________plateau [ENVO:00000182]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________strait [ENVO:00000394]",
+                PermissibleValue(text="______________________strait [ENVO:00000394]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________valley [ENVO:00000100]",
+                PermissibleValue(text="______________________valley [ENVO:00000100]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________volcanic cone [ENVO:00000398]",
+                PermissibleValue(text="______________________volcanic cone [ENVO:00000398]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________________volcanic crater [ENVO:00000246]",
+                PermissibleValue(text="______________________volcanic crater [ENVO:00000246]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "___________________tunnel [ENVO:00000068]",
+                PermissibleValue(text="___________________tunnel [ENVO:00000068]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________active geological fault [ENVO:01000669]",
+                PermissibleValue(text="__________________active geological fault [ENVO:01000669]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________badland [ENVO:00000127]",
+                PermissibleValue(text="__________________badland [ENVO:00000127]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________bank [ENVO:00000141]",
+                PermissibleValue(text="__________________bank [ENVO:00000141]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________beach [ENVO:00000091]",
+                PermissibleValue(text="__________________beach [ENVO:00000091]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________boulder field [ENVO:00000537]",
+                PermissibleValue(text="__________________boulder field [ENVO:00000537]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________cave [ENVO:00000067]",
+                PermissibleValue(text="__________________cave [ENVO:00000067]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________channel of a watercourse [ENVO:00000395]",
+                PermissibleValue(text="__________________channel of a watercourse [ENVO:00000395]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________cliff [ENVO:00000087]",
+                PermissibleValue(text="__________________cliff [ENVO:00000087]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________crater [ENVO:00000514]",
+                PermissibleValue(text="__________________crater [ENVO:00000514]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________desert [ENVO:01001357]",
+                PermissibleValue(text="__________________desert [ENVO:01001357]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________dry lake [ENVO:00000277]",
+                PermissibleValue(text="__________________dry lake [ENVO:00000277]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________flattened elevation [ENVO:01001491]",
+                PermissibleValue(text="__________________flattened elevation [ENVO:01001491]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________geographic basin [ENVO:03000015]",
+                PermissibleValue(text="__________________geographic basin [ENVO:03000015]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________hillside [ENVO:01000333]",
+                PermissibleValue(text="__________________hillside [ENVO:01000333]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________hummock [ENVO:00000516]",
+                PermissibleValue(text="__________________hummock [ENVO:00000516]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________isthmus [ENVO:00000174]",
+                PermissibleValue(text="__________________isthmus [ENVO:00000174]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________karst [ENVO:00000175]",
+                PermissibleValue(text="__________________karst [ENVO:00000175]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________landfill [ENVO:00000533]",
+                PermissibleValue(text="__________________landfill [ENVO:00000533]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________levee [ENVO:00000178]",
+                PermissibleValue(text="__________________levee [ENVO:00000178]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________mount [ENVO:00000477]",
+                PermissibleValue(text="__________________mount [ENVO:00000477]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________outcrop [ENVO:01000302]",
+                PermissibleValue(text="__________________outcrop [ENVO:01000302]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________peninsula [ENVO:00000305]",
+                PermissibleValue(text="__________________peninsula [ENVO:00000305]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________pinnacle [ENVO:00000481]",
+                PermissibleValue(text="__________________pinnacle [ENVO:00000481]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________pit [ENVO:01001871]",
+                PermissibleValue(text="__________________pit [ENVO:01001871]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________plain [ENVO:00000086]",
+                PermissibleValue(text="__________________plain [ENVO:00000086]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________shore [ENVO:00000304]",
+                PermissibleValue(text="__________________shore [ENVO:00000304]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________sinkhole [ENVO:00000195]",
+                PermissibleValue(text="__________________sinkhole [ENVO:00000195]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________spring [ENVO:00000027]",
+                PermissibleValue(text="__________________spring [ENVO:00000027]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________swale [ENVO:00000543]",
+                PermissibleValue(text="__________________swale [ENVO:00000543]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________talus slope [ENVO:01000334]",
+                PermissibleValue(text="__________________talus slope [ENVO:01000334]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________terrace [ENVO:00000508]",
+                PermissibleValue(text="__________________terrace [ENVO:00000508]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________trench [ENVO:01000649]",
+                PermissibleValue(text="__________________trench [ENVO:01000649]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________________volcanic feature [ENVO:00000094]",
+                PermissibleValue(text="__________________volcanic feature [ENVO:00000094]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "_______________vein [ENVO:01000670]",
+                PermissibleValue(text="_______________vein [ENVO:01000670]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________channel [ENVO:03000117]",
+                PermissibleValue(text="______________channel [ENVO:03000117]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________depressed landform [ENVO:00000309]",
+                PermissibleValue(text="______________depressed landform [ENVO:00000309]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________elevated landform [ENVO:00000176]",
+                PermissibleValue(text="______________elevated landform [ENVO:00000176]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________geological fault [ENVO:01000668]",
+                PermissibleValue(text="______________geological fault [ENVO:01000668]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________peak [ENVO:00000480]",
+                PermissibleValue(text="______________peak [ENVO:00000480]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________peninsula [ENVO:00000305]",
+                PermissibleValue(text="______________peninsula [ENVO:00000305]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________residential backyard [ENVO:03600033]",
+                PermissibleValue(text="______________residential backyard [ENVO:03600033]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________slope [ENVO:00002000]",
+                PermissibleValue(text="______________slope [ENVO:00002000]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________surface landform [ENVO:01001884]",
+                PermissibleValue(text="______________surface landform [ENVO:01001884]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________tombolo [ENVO:00000420]",
+                PermissibleValue(text="______________tombolo [ENVO:00000420]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______________volcano [ENVO:00000247]",
+                PermissibleValue(text="______________volcano [ENVO:00000247]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "___________landform [ENVO:01001886]",
+                PermissibleValue(text="___________landform [ENVO:01001886]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "___________part of a landmass [ENVO:01001781]",
+                PermissibleValue(text="___________part of a landmass [ENVO:01001781]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________bar [ENVO:00000167]",
+                PermissibleValue(text="__________bar [ENVO:00000167]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________garden [ENVO:00000011]",
+                PermissibleValue(text="__________garden [ENVO:00000011]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________geological fracture [ENVO:01000667]",
+                PermissibleValue(text="__________geological fracture [ENVO:01000667]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________inlet [ENVO:00000475]",
+                PermissibleValue(text="__________inlet [ENVO:00000475]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________market [ENVO:01000987]",
+                PermissibleValue(text="__________market [ENVO:01000987]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________park [ENVO:00000562]",
+                PermissibleValue(text="__________park [ENVO:00000562]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________reef [ENVO:01001899]",
+                PermissibleValue(text="__________reef [ENVO:01001899]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________well [ENVO:00000026]",
+                PermissibleValue(text="__________well [ENVO:00000026]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__________yard [ENVO:03600053]",
+                PermissibleValue(text="__________yard [ENVO:03600053]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "_________ridge [ENVO:00000283]",
+                PermissibleValue(text="_________ridge [ENVO:00000283]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______agricultural field [ENVO:00000114]",
+                PermissibleValue(text="______agricultural field [ENVO:00000114]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______anthropogenic geographic feature [ENVO:00000002]",
+                PermissibleValue(text="______anthropogenic geographic feature [ENVO:00000002]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______coast [ENVO:01000687]",
+                PermissibleValue(text="______coast [ENVO:01000687]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______gravel field [ENVO:00000548]",
+                PermissibleValue(text="______gravel field [ENVO:00000548]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______hydrographic feature [ENVO:00000012]",
+                PermissibleValue(text="______hydrographic feature [ENVO:00000012]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______lava field [ENVO:01000437]",
+                PermissibleValue(text="______lava field [ENVO:01000437]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______snow field [ENVO:00000146]",
+                PermissibleValue(text="______snow field [ENVO:00000146]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______solid astronomical body part [ENVO:00000191]",
+                PermissibleValue(text="______solid astronomical body part [ENVO:00000191]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "______woodland clearing [ENVO:00000444]",
+                PermissibleValue(text="______woodland clearing [ENVO:00000444]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____tuff cone [ENVO:01000664]",
+                PermissibleValue(text="____tuff cone [ENVO:01000664]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__field [ENVO:01000352]",
+                PermissibleValue(text="__field [ENVO:01000352]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "__geographic feature [ENVO:00000000]",
+                PermissibleValue(text="__geographic feature [ENVO:00000000]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "astronomical body part [ENVO:01000813]",
+                PermissibleValue(text="astronomical body part [ENVO:01000813]",
+                                 description="placeholder PV descr, DO NOT SORT") )
 
 class EnvMediumSoilEnum(EnumDefinitionImpl):
     """
-    placeholder enum descr
+    placeholder enum descr, DO NOT SORT
     """
     _defn = EnumDefinition(
         name="EnvMediumSoilEnum",
-        description="placeholder enum descr",
+        description="placeholder enum descr, DO NOT SORT",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "____peaty paddy field soil [ENVO:00005776]",
-                PermissibleValue(text="____peaty paddy field soil [ENVO:00005776]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__acrisol [ENVO:00002234]",
-                PermissibleValue(text="__acrisol [ENVO:00002234]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__alluvial swamp soil [ENVO:00005758]",
-                PermissibleValue(text="__alluvial swamp soil [ENVO:00005758]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__beech forest soil [ENVO:00005770]",
-                PermissibleValue(text="__beech forest soil [ENVO:00005770]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__bluegrass field soil [ENVO:00005789]",
-                PermissibleValue(text="__bluegrass field soil [ENVO:00005789]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__cryosol [ENVO:00002236]",
-                PermissibleValue(text="__cryosol [ENVO:00002236]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__eucalyptus forest soil [ENVO:00005787]",
-                PermissibleValue(text="__eucalyptus forest soil [ENVO:00005787]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__friable-frozen soil [ENVO:01001528]",
-                PermissibleValue(text="__friable-frozen soil [ENVO:01001528]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__frozen compost soil [ENVO:00005765]",
-                PermissibleValue(text="__frozen compost soil [ENVO:00005765]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__mountain forest soil [ENVO:00005769]",
-                PermissibleValue(text="__mountain forest soil [ENVO:00005769]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__paddy field soil [ENVO:00005740]",
-                PermissibleValue(text="__paddy field soil [ENVO:00005740]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__plastic-frozen soil [ENVO:01001527]",
-                PermissibleValue(text="__plastic-frozen soil [ENVO:01001527]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__rubber plantation soil [ENVO:00005788]",
-                PermissibleValue(text="__rubber plantation soil [ENVO:00005788]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__savanna soil [ENVO:00005746]",
-                PermissibleValue(text="__savanna soil [ENVO:00005746]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__steppe soil [ENVO:00005777]",
-                PermissibleValue(text="__steppe soil [ENVO:00005777]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__volcanic soil [ENVO:01001841]",
-                PermissibleValue(text="__volcanic soil [ENVO:01001841]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "__xylene contaminated soil [ENVO:00002146]",
-                PermissibleValue(text="__xylene contaminated soil [ENVO:00002146]",
-                                 description="placeholder PV descr") )
+        setattr(cls, "________alluvial paddy field soil [ENVO:00005759]",
+                PermissibleValue(text="________alluvial paddy field soil [ENVO:00005759]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________peaty paddy field soil [ENVO:00005776]",
+                PermissibleValue(text="________peaty paddy field soil [ENVO:00005776]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________sandy clay loam [ENVO:06105276]",
+                PermissibleValue(text="________sandy clay loam [ENVO:06105276]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "________silty clay loam [ENVO:06105278]",
+                PermissibleValue(text="________silty clay loam [ENVO:06105278]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____acrisol [ENVO:00002234]",
+                PermissibleValue(text="____acrisol [ENVO:00002234]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____allotment garden soil [ENVO:00005744]",
+                PermissibleValue(text="____allotment garden soil [ENVO:00005744]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____alluvial paddy field soil [ENVO:00005759]",
+                PermissibleValue(text="____alluvial paddy field soil [ENVO:00005759]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____alluvial swamp soil [ENVO:00005758]",
+                PermissibleValue(text="____alluvial swamp soil [ENVO:00005758]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____beech forest soil [ENVO:00005770]",
+                PermissibleValue(text="____beech forest soil [ENVO:00005770]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____bluegrass field soil [ENVO:00005789]",
+                PermissibleValue(text="____bluegrass field soil [ENVO:00005789]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____clay loam [ENVO:06105277]",
+                PermissibleValue(text="____clay loam [ENVO:06105277]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____cryosol [ENVO:00002236]",
+                PermissibleValue(text="____cryosol [ENVO:00002236]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____dune soil [ENVO:00002260]",
+                PermissibleValue(text="____dune soil [ENVO:00002260]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____eucalyptus forest soil [ENVO:00005787]",
+                PermissibleValue(text="____eucalyptus forest soil [ENVO:00005787]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____friable-frozen soil [ENVO:01001528]",
+                PermissibleValue(text="____friable-frozen soil [ENVO:01001528]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____frozen compost soil [ENVO:00005765]",
+                PermissibleValue(text="____frozen compost soil [ENVO:00005765]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____hard-frozen soil [ENVO:01001525]",
+                PermissibleValue(text="____hard-frozen soil [ENVO:01001525]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____leafy wood soil [ENVO:00005783]",
+                PermissibleValue(text="____leafy wood soil [ENVO:00005783]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____mountain forest soil [ENVO:00005769]",
+                PermissibleValue(text="____mountain forest soil [ENVO:00005769]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____orchard soil [ENVO:00005772]",
+                PermissibleValue(text="____orchard soil [ENVO:00005772]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____paddy field soil [ENVO:00005740]",
+                PermissibleValue(text="____paddy field soil [ENVO:00005740]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____peat soil [ENVO:00005774]",
+                PermissibleValue(text="____peat soil [ENVO:00005774]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____plastic-frozen soil [ENVO:01001527]",
+                PermissibleValue(text="____plastic-frozen soil [ENVO:01001527]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____rubber plantation soil [ENVO:00005788]",
+                PermissibleValue(text="____rubber plantation soil [ENVO:00005788]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____sandy loam [ENVO:06105274]",
+                PermissibleValue(text="____sandy loam [ENVO:06105274]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____savanna soil [ENVO:00005746]",
+                PermissibleValue(text="____savanna soil [ENVO:00005746]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____silty loam [ENVO:06105275]",
+                PermissibleValue(text="____silty loam [ENVO:06105275]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____spruce forest soil [ENVO:00005784]",
+                PermissibleValue(text="____spruce forest soil [ENVO:00005784]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____steppe soil [ENVO:00005777]",
+                PermissibleValue(text="____steppe soil [ENVO:00005777]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____vegetable garden soil [ENVO:00005779]",
+                PermissibleValue(text="____vegetable garden soil [ENVO:00005779]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "____volcanic soil [ENVO:01001841]",
+                PermissibleValue(text="____volcanic soil [ENVO:01001841]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "acidic soil [ENVO:01001185]",
+                PermissibleValue(text="acidic soil [ENVO:01001185]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "agricultural soil [ENVO:00002259]",
                 PermissibleValue(text="agricultural soil [ENVO:00002259]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "albeluvisol [ENVO:00002233]",
                 PermissibleValue(text="albeluvisol [ENVO:00002233]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "alisol [ENVO:00002231]",
                 PermissibleValue(text="alisol [ENVO:00002231]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "alluvial soil [ENVO:00002871]",
                 PermissibleValue(text="alluvial soil [ENVO:00002871]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "alpine soil [ENVO:00005741]",
                 PermissibleValue(text="alpine soil [ENVO:00005741]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "andosol [ENVO:00002232]",
                 PermissibleValue(text="andosol [ENVO:00002232]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "anthrosol [ENVO:00002230]",
                 PermissibleValue(text="anthrosol [ENVO:00002230]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "arable soil [ENVO:00005742]",
+                PermissibleValue(text="arable soil [ENVO:00005742]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "arenosol [ENVO:00002229]",
                 PermissibleValue(text="arenosol [ENVO:00002229]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "bare soil [ENVO:01001616]",
                 PermissibleValue(text="bare soil [ENVO:01001616]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "bulk soil [ENVO:00005802]",
+                PermissibleValue(text="bulk soil [ENVO:00005802]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "burned soil [ENVO:00005760]",
                 PermissibleValue(text="burned soil [ENVO:00005760]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "calcisol [ENVO:00002239]",
                 PermissibleValue(text="calcisol [ENVO:00002239]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "cambisol [ENVO:00002235]",
                 PermissibleValue(text="cambisol [ENVO:00002235]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "carbon nanotube enriched soil [ENVO:01000427]",
-                PermissibleValue(text="carbon nanotube enriched soil [ENVO:01000427]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "chernozem [ENVO:00002237]",
                 PermissibleValue(text="chernozem [ENVO:00002237]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "clay soil [ENVO:00002262]",
+                PermissibleValue(text="clay soil [ENVO:00002262]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "compost soil [ENVO:00005747]",
                 PermissibleValue(text="compost soil [ENVO:00005747]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "contaminated soil [ENVO:00002116]",
-                PermissibleValue(text="contaminated soil [ENVO:00002116]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "dune soil [ENVO:00002260]",
-                PermissibleValue(text="dune soil [ENVO:00002260]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "dry soil [ENVO:00005748]",
+                PermissibleValue(text="dry soil [ENVO:00005748]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "durisol [ENVO:00002238]",
                 PermissibleValue(text="durisol [ENVO:00002238]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "farm soil [ENVO:00005749]",
+                PermissibleValue(text="farm soil [ENVO:00005749]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "ferralsol [ENVO:00002246]",
                 PermissibleValue(text="ferralsol [ENVO:00002246]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "fertilized soil [ENVO:00005754]",
+                PermissibleValue(text="fertilized soil [ENVO:00005754]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "field soil [ENVO:00005755]",
+                PermissibleValue(text="field soil [ENVO:00005755]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "fluvisol [ENVO:00002273]",
                 PermissibleValue(text="fluvisol [ENVO:00002273]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "forest soil [ENVO:00002261]",
                 PermissibleValue(text="forest soil [ENVO:00002261]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "frost-susceptible soil [ENVO:01001638]",
                 PermissibleValue(text="frost-susceptible soil [ENVO:01001638]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "frozen soil [ENVO:01001526]",
                 PermissibleValue(text="frozen soil [ENVO:01001526]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "garden soil [ENVO:00002263]",
+                PermissibleValue(text="garden soil [ENVO:00002263]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "gleysol [ENVO:00002244]",
                 PermissibleValue(text="gleysol [ENVO:00002244]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "grassland soil [ENVO:00005750]",
                 PermissibleValue(text="grassland soil [ENVO:00005750]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "greenhouse soil [ENVO:00005780]",
                 PermissibleValue(text="greenhouse soil [ENVO:00005780]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "gypsisol [ENVO:00002245]",
                 PermissibleValue(text="gypsisol [ENVO:00002245]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "heat stressed soil [ENVO:00005781]",
+                PermissibleValue(text="heat stressed soil [ENVO:00005781]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "histosol [ENVO:00002243]",
                 PermissibleValue(text="histosol [ENVO:00002243]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "humus-rich acidic ash soil [ENVO:00005763]",
-                PermissibleValue(text="humus-rich acidic ash soil [ENVO:00005763]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "jungle soil [ENVO:00005751]",
                 PermissibleValue(text="jungle soil [ENVO:00005751]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "kastanozem [ENVO:00002240]",
                 PermissibleValue(text="kastanozem [ENVO:00002240]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "lawn soil [ENVO:00005756]",
+                PermissibleValue(text="lawn soil [ENVO:00005756]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "leptosol [ENVO:00002241]",
                 PermissibleValue(text="leptosol [ENVO:00002241]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "limed soil [ENVO:00005766]",
                 PermissibleValue(text="limed soil [ENVO:00005766]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "lixisol [ENVO:00002242]",
                 PermissibleValue(text="lixisol [ENVO:00002242]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "loam [ENVO:00002258]",
                 PermissibleValue(text="loam [ENVO:00002258]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "luvisol [ENVO:00002248]",
                 PermissibleValue(text="luvisol [ENVO:00002248]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "mangrove biome soil [ENVO:02000138]",
+                PermissibleValue(text="mangrove biome soil [ENVO:02000138]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "manured soil [ENVO:00005767]",
                 PermissibleValue(text="manured soil [ENVO:00005767]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "meadow soil [ENVO:00005761]",
                 PermissibleValue(text="meadow soil [ENVO:00005761]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "muddy soil [ENVO:00005771]",
                 PermissibleValue(text="muddy soil [ENVO:00005771]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "nitisol [ENVO:00002247]",
                 PermissibleValue(text="nitisol [ENVO:00002247]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "orchard soil [ENVO:00005772]",
-                PermissibleValue(text="orchard soil [ENVO:00005772]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "orchid soil [ENVO:00005768]",
+                PermissibleValue(text="orchid soil [ENVO:00005768]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "ornithogenic soil [ENVO:00005782]",
                 PermissibleValue(text="ornithogenic soil [ENVO:00005782]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "pantothenate enriched soil [ENVO:00003088]",
-                PermissibleValue(text="pantothenate enriched soil [ENVO:00003088]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "pasture soil [ENVO:00005773]",
                 PermissibleValue(text="pasture soil [ENVO:00005773]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "peat soil [ENVO:00005774]",
-                PermissibleValue(text="peat soil [ENVO:00005774]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "pathogen-suppressive soil [ENVO:03600036]",
+                PermissibleValue(text="pathogen-suppressive soil [ENVO:03600036]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "phaeozem [ENVO:00002249]",
                 PermissibleValue(text="phaeozem [ENVO:00002249]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "planosol [ENVO:00002251]",
                 PermissibleValue(text="planosol [ENVO:00002251]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "plinthosol [ENVO:00002250]",
                 PermissibleValue(text="plinthosol [ENVO:00002250]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "podzol [ENVO:00002257]",
                 PermissibleValue(text="podzol [ENVO:00002257]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "poly-beta-hydroxybutyrate enriched soil [ENVO:00003093]",
-                PermissibleValue(text="poly-beta-hydroxybutyrate enriched soil [ENVO:00003093]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "pond soil [ENVO:00005764]",
                 PermissibleValue(text="pond soil [ENVO:00005764]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "quinate enriched soil [ENVO:00003095]",
-                PermissibleValue(text="quinate enriched soil [ENVO:00003095]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "red soil [ENVO:00005790]",
+                PermissibleValue(text="red soil [ENVO:00005790]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "regosol [ENVO:00002256]",
                 PermissibleValue(text="regosol [ENVO:00002256]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "sarcosine enriched soil [ENVO:00003083]",
-                PermissibleValue(text="sarcosine enriched soil [ENVO:00003083]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "skatole enriched soil [ENVO:00003085]",
-                PermissibleValue(text="skatole enriched soil [ENVO:00003085]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "roadside soil [ENVO:00005743]",
+                PermissibleValue(text="roadside soil [ENVO:00005743]",
+                                 description="placeholder PV descr, DO NOT SORT") )
+        setattr(cls, "sawah soil [ENVO:00005752]",
+                PermissibleValue(text="sawah soil [ENVO:00005752]",
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "solonchak [ENVO:00002252]",
                 PermissibleValue(text="solonchak [ENVO:00002252]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "solonetz [ENVO:00002255]",
                 PermissibleValue(text="solonetz [ENVO:00002255]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "stagnosol [ENVO:00002274]",
                 PermissibleValue(text="stagnosol [ENVO:00002274]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "surface soil [ENVO:02000059]",
                 PermissibleValue(text="surface soil [ENVO:02000059]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "technosol [ENVO:00002275]",
                 PermissibleValue(text="technosol [ENVO:00002275]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "threonine enriched soil [ENVO:00003091]",
-                PermissibleValue(text="threonine enriched soil [ENVO:00003091]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "trimethylamine enriched soil [ENVO:00003084]",
-                PermissibleValue(text="trimethylamine enriched soil [ENVO:00003084]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "tropical soil [ENVO:00005778]",
                 PermissibleValue(text="tropical soil [ENVO:00005778]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "ultisol [ENVO:01001397]",
                 PermissibleValue(text="ultisol [ENVO:01001397]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "umbrisol [ENVO:00002253]",
                 PermissibleValue(text="umbrisol [ENVO:00002253]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "upland soil [ENVO:00005786]",
                 PermissibleValue(text="upland soil [ENVO:00005786]",
-                                 description="placeholder PV descr") )
-        setattr(cls, "urea enriched soil [ENVO:00005753]",
-                PermissibleValue(text="urea enriched soil [ENVO:00005753]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
         setattr(cls, "vertisol [ENVO:00002254]",
                 PermissibleValue(text="vertisol [ENVO:00002254]",
-                                 description="placeholder PV descr") )
+                                 description="placeholder PV descr, DO NOT SORT") )
 
 class EnvPackageEnum(EnumDefinitionImpl):
     """
@@ -10191,6 +10407,20 @@ class GrowthFacilEnum(EnumDefinitionImpl):
         description="placeholder enum descr",
     )
 
+class JgiContTypeEnum(EnumDefinitionImpl):
+    """
+    placeholder enum descr
+    """
+    plate = PermissibleValue(text="plate",
+                                 description="placeholder PV descr")
+    tube = PermissibleValue(text="tube",
+                               description="placeholder PV descr")
+
+    _defn = EnumDefinition(
+        name="JgiContTypeEnum",
+        description="placeholder enum descr",
+    )
+
 class RelToOxygenEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
@@ -10219,20 +10449,6 @@ class RelToOxygenEnum(EnumDefinitionImpl):
         setattr(cls, "obligate anaerobe",
                 PermissibleValue(text="obligate anaerobe",
                                  description="placeholder PV descr") )
-
-class RnaContTypeEnum(EnumDefinitionImpl):
-    """
-    placeholder enum descr
-    """
-    plate = PermissibleValue(text="plate",
-                                 description="placeholder PV descr")
-    tube = PermissibleValue(text="tube",
-                               description="placeholder PV descr")
-
-    _defn = EnumDefinition(
-        name="RnaContTypeEnum",
-        description="placeholder enum descr",
-    )
 
 class RnaSampleFormatEnum(EnumDefinitionImpl):
     """
@@ -10374,13 +10590,16 @@ class StoreCondEnum(EnumDefinitionImpl):
         description="placeholder enum descr",
     )
 
-class SampleTypeEnum(EnumDefinitionImpl):
-
-    soil = PermissibleValue(text="soil")
-    water_extract_soil = PermissibleValue(text="water_extract_soil")
+class YesNoEnum(EnumDefinitionImpl):
+    """
+    replaces DnaDnaseEnum and DnaseRnaEnum
+    """
+    no = PermissibleValue(text="no")
+    yes = PermissibleValue(text="yes")
 
     _defn = EnumDefinition(
-        name="SampleTypeEnum",
+        name="YesNoEnum",
+        description="replaces DnaDnaseEnum and DnaseRnaEnum",
     )
 
 class AnalysisTypeEnum(EnumDefinitionImpl):
@@ -10399,22 +10618,13 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
         setattr(cls, "natural organic matter",
                 PermissibleValue(text="natural organic matter") )
 
-class DnaDnaseEnum(EnumDefinitionImpl):
+class SampleTypeEnum(EnumDefinitionImpl):
 
-    no = PermissibleValue(text="no")
-    yes = PermissibleValue(text="yes")
-
-    _defn = EnumDefinition(
-        name="DnaDnaseEnum",
-    )
-
-class DnaContTypeEnum(EnumDefinitionImpl):
-
-    plate = PermissibleValue(text="plate")
-    tube = PermissibleValue(text="tube")
+    soil = PermissibleValue(text="soil")
+    water_extract_soil = PermissibleValue(text="water_extract_soil")
 
     _defn = EnumDefinition(
-        name="DnaContTypeEnum",
+        name="SampleTypeEnum",
     )
 
 class DnaSampleFormatEnum(EnumDefinitionImpl):
@@ -10443,6 +10653,24 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
                 PermissibleValue(text="Gentegra-DNA") )
         setattr(cls, "Gentegra-RNA",
                 PermissibleValue(text="Gentegra-RNA") )
+
+class DnaContTypeEnum(EnumDefinitionImpl):
+
+    plate = PermissibleValue(text="plate")
+    tube = PermissibleValue(text="tube")
+
+    _defn = EnumDefinition(
+        name="DnaContTypeEnum",
+    )
+
+class DnaDnaseEnum(EnumDefinitionImpl):
+
+    no = PermissibleValue(text="no")
+    yes = PermissibleValue(text="yes")
+
+    _defn = EnumDefinition(
+        name="DnaDnaseEnum",
+    )
 
 class RnaContTypeEnum(EnumDefinitionImpl):
 
@@ -10489,16 +10717,6 @@ class DnaseRnaEnum(EnumDefinitionImpl):
         name="DnaseRnaEnum",
     )
 
-class OxyStatSampEnum(EnumDefinitionImpl):
-
-    aerobic = PermissibleValue(text="aerobic")
-    anaerobic = PermissibleValue(text="anaerobic")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="OxyStatSampEnum",
-    )
-
 class RelToOxygenEnum(EnumDefinitionImpl):
 
     aerobe = PermissibleValue(text="aerobe")
@@ -10518,55 +10736,15 @@ class RelToOxygenEnum(EnumDefinitionImpl):
         setattr(cls, "obligate anaerobe",
                 PermissibleValue(text="obligate anaerobe") )
 
-class SrLithologyEnum(EnumDefinitionImpl):
+class OxyStatSampEnum(EnumDefinitionImpl):
 
-    Clastic = PermissibleValue(text="Clastic")
-    Carbonate = PermissibleValue(text="Carbonate")
-    Coal = PermissibleValue(text="Coal")
-    Biosilicieous = PermissibleValue(text="Biosilicieous")
+    aerobic = PermissibleValue(text="aerobic")
+    anaerobic = PermissibleValue(text="anaerobic")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="SrLithologyEnum",
+        name="OxyStatSampEnum",
     )
-
-class LithologyEnum(EnumDefinitionImpl):
-
-    Basement = PermissibleValue(text="Basement")
-    Chalk = PermissibleValue(text="Chalk")
-    Chert = PermissibleValue(text="Chert")
-    Coal = PermissibleValue(text="Coal")
-    Conglomerate = PermissibleValue(text="Conglomerate")
-    Diatomite = PermissibleValue(text="Diatomite")
-    Dolomite = PermissibleValue(text="Dolomite")
-    Limestone = PermissibleValue(text="Limestone")
-    Sandstone = PermissibleValue(text="Sandstone")
-    Shale = PermissibleValue(text="Shale")
-    Siltstone = PermissibleValue(text="Siltstone")
-    Volcanic = PermissibleValue(text="Volcanic")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="LithologyEnum",
-    )
-
-class HcProducedEnum(EnumDefinitionImpl):
-
-    Oil = PermissibleValue(text="Oil")
-    Gas = PermissibleValue(text="Gas")
-    Bitumen = PermissibleValue(text="Bitumen")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="HcProducedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Gas-Condensate",
-                PermissibleValue(text="Gas-Condensate") )
-        setattr(cls, "Coalbed Methane",
-                PermissibleValue(text="Coalbed Methane") )
 
 class DeposEnvEnum(EnumDefinitionImpl):
 
@@ -10609,23 +10787,58 @@ class DeposEnvEnum(EnumDefinitionImpl):
         setattr(cls, "Other - Volcanic",
                 PermissibleValue(text="Other - Volcanic") )
 
-class SampSubtypeEnum(EnumDefinitionImpl):
+class SrLithologyEnum(EnumDefinitionImpl):
 
-    biofilm = PermissibleValue(text="biofilm")
+    Clastic = PermissibleValue(text="Clastic")
+    Carbonate = PermissibleValue(text="Carbonate")
+    Coal = PermissibleValue(text="Coal")
+    Biosilicieous = PermissibleValue(text="Biosilicieous")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="SampSubtypeEnum",
+        name="SrLithologyEnum",
+    )
+
+class HcrEnum(EnumDefinitionImpl):
+
+    Coalbed = PermissibleValue(text="Coalbed")
+    Shale = PermissibleValue(text="Shale")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="HcrEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "oil phase",
-                PermissibleValue(text="oil phase") )
-        setattr(cls, "water phase",
-                PermissibleValue(text="water phase") )
-        setattr(cls, "not applicable",
-                PermissibleValue(text="not applicable") )
+        setattr(cls, "Oil Reservoir",
+                PermissibleValue(text="Oil Reservoir") )
+        setattr(cls, "Gas Reservoir",
+                PermissibleValue(text="Gas Reservoir") )
+        setattr(cls, "Oil Sand",
+                PermissibleValue(text="Oil Sand") )
+        setattr(cls, "Tight Oil Reservoir",
+                PermissibleValue(text="Tight Oil Reservoir") )
+        setattr(cls, "Tight Gas Reservoir",
+                PermissibleValue(text="Tight Gas Reservoir") )
+
+class HcProducedEnum(EnumDefinitionImpl):
+
+    Oil = PermissibleValue(text="Oil")
+    Gas = PermissibleValue(text="Gas")
+    Bitumen = PermissibleValue(text="Bitumen")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="HcProducedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Gas-Condensate",
+                PermissibleValue(text="Gas-Condensate") )
+        setattr(cls, "Coalbed Methane",
+                PermissibleValue(text="Coalbed Methane") )
 
 class SrGeolAgeEnum(EnumDefinitionImpl):
 
@@ -10651,29 +10864,6 @@ class SrGeolAgeEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="SrGeolAgeEnum",
     )
-
-class HcrEnum(EnumDefinitionImpl):
-
-    Coalbed = PermissibleValue(text="Coalbed")
-    Shale = PermissibleValue(text="Shale")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="HcrEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Oil Reservoir",
-                PermissibleValue(text="Oil Reservoir") )
-        setattr(cls, "Gas Reservoir",
-                PermissibleValue(text="Gas Reservoir") )
-        setattr(cls, "Oil Sand",
-                PermissibleValue(text="Oil Sand") )
-        setattr(cls, "Tight Oil Reservoir",
-                PermissibleValue(text="Tight Oil Reservoir") )
-        setattr(cls, "Tight Gas Reservoir",
-                PermissibleValue(text="Tight Gas Reservoir") )
 
 class SrKerogTypeEnum(EnumDefinitionImpl):
 
@@ -10706,6 +10896,24 @@ class SrDepEnvEnum(EnumDefinitionImpl):
         name="SrDepEnvEnum",
     )
 
+class SampSubtypeEnum(EnumDefinitionImpl):
+
+    biofilm = PermissibleValue(text="biofilm")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SampSubtypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "oil phase",
+                PermissibleValue(text="oil phase") )
+        setattr(cls, "water phase",
+                PermissibleValue(text="water phase") )
+        setattr(cls, "not applicable",
+                PermissibleValue(text="not applicable") )
+
 class HcrGeolAgeEnum(EnumDefinitionImpl):
 
     Archean = PermissibleValue(text="Archean")
@@ -10729,6 +10937,26 @@ class HcrGeolAgeEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="HcrGeolAgeEnum",
+    )
+
+class LithologyEnum(EnumDefinitionImpl):
+
+    Basement = PermissibleValue(text="Basement")
+    Chalk = PermissibleValue(text="Chalk")
+    Chert = PermissibleValue(text="Chert")
+    Coal = PermissibleValue(text="Coal")
+    Conglomerate = PermissibleValue(text="Conglomerate")
+    Diatomite = PermissibleValue(text="Diatomite")
+    Dolomite = PermissibleValue(text="Dolomite")
+    Limestone = PermissibleValue(text="Limestone")
+    Sandstone = PermissibleValue(text="Sandstone")
+    Shale = PermissibleValue(text="Shale")
+    Siltstone = PermissibleValue(text="Siltstone")
+    Volcanic = PermissibleValue(text="Volcanic")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="LithologyEnum",
     )
 
 class SampCollectPointEnum(EnumDefinitionImpl):
@@ -10779,257 +11007,14 @@ class TidalStageEnum(EnumDefinitionImpl):
         setattr(cls, "high tide",
                 PermissibleValue(text="high tide") )
 
-class BuildingSettingEnum(EnumDefinitionImpl):
-
-    urban = PermissibleValue(text="urban")
-    suburban = PermissibleValue(text="suburban")
-    exurban = PermissibleValue(text="exurban")
-    rural = PermissibleValue(text="rural")
-
-    _defn = EnumDefinition(
-        name="BuildingSettingEnum",
-    )
-
-class DoorCompTypeEnum(EnumDefinitionImpl):
-
-    revolving = PermissibleValue(text="revolving")
-    sliding = PermissibleValue(text="sliding")
-    telescopic = PermissibleValue(text="telescopic")
-
-    _defn = EnumDefinition(
-        name="DoorCompTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "metal covered",
-                PermissibleValue(text="metal covered") )
-
-class WindowCoverEnum(EnumDefinitionImpl):
-
-    blinds = PermissibleValue(text="blinds")
-    curtains = PermissibleValue(text="curtains")
-    none = PermissibleValue(text="none")
-
-    _defn = EnumDefinition(
-        name="WindowCoverEnum",
-    )
-
-class GenderRestroomEnum(EnumDefinitionImpl):
-
-    female = PermissibleValue(text="female")
-    male = PermissibleValue(text="male")
-    unisex = PermissibleValue(text="unisex")
-
-    _defn = EnumDefinition(
-        name="GenderRestroomEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "all gender",
-                PermissibleValue(text="all gender") )
-        setattr(cls, "gender neurtral",
-                PermissibleValue(text="gender neurtral") )
-        setattr(cls, "male and female",
-                PermissibleValue(text="male and female") )
-
-class DoorLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="DoorLocEnum",
-    )
-
-class HandidnessEnum(EnumDefinitionImpl):
-
-    ambidexterity = PermissibleValue(text="ambidexterity")
-
-    _defn = EnumDefinition(
-        name="HandidnessEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "left handedness",
-                PermissibleValue(text="left handedness") )
-        setattr(cls, "mixed-handedness",
-                PermissibleValue(text="mixed-handedness") )
-        setattr(cls, "right handedness",
-                PermissibleValue(text="right handedness") )
-
-class SubstructureTypeEnum(EnumDefinitionImpl):
-
-    crawlspace = PermissibleValue(text="crawlspace")
-    basement = PermissibleValue(text="basement")
-
-    _defn = EnumDefinition(
-        name="SubstructureTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "slab on grade",
-                PermissibleValue(text="slab on grade") )
-
-class SpecificEnum(EnumDefinitionImpl):
-
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
-    bid = PermissibleValue(text="bid")
-    design = PermissibleValue(text="design")
-    photos = PermissibleValue(text="photos")
-
-    _defn = EnumDefinition(
-        name="SpecificEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "as built",
-                PermissibleValue(text="as built") )
-
-class QuadPosEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="QuadPosEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "North side",
-                PermissibleValue(text="North side") )
-        setattr(cls, "West side",
-                PermissibleValue(text="West side") )
-        setattr(cls, "South side",
-                PermissibleValue(text="South side") )
-        setattr(cls, "East side",
-                PermissibleValue(text="East side") )
-
-class VisMediaEnum(EnumDefinitionImpl):
-
-    photos = PermissibleValue(text="photos")
-    videos = PermissibleValue(text="videos")
-    interiors = PermissibleValue(text="interiors")
-    equipment = PermissibleValue(text="equipment")
-
-    _defn = EnumDefinition(
-        name="VisMediaEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "commonly of the building",
-                PermissibleValue(text="commonly of the building") )
-        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
-                PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)") )
-        setattr(cls, "3D scans",
-                PermissibleValue(text="3D scans") )
-
-class SampWeatherEnum(EnumDefinitionImpl):
-
-    cloudy = PermissibleValue(text="cloudy")
-    foggy = PermissibleValue(text="foggy")
-    hail = PermissibleValue(text="hail")
-    rain = PermissibleValue(text="rain")
-    snow = PermissibleValue(text="snow")
-    sleet = PermissibleValue(text="sleet")
-    sunny = PermissibleValue(text="sunny")
-    windy = PermissibleValue(text="windy")
-
-    _defn = EnumDefinition(
-        name="SampWeatherEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "clear sky",
-                PermissibleValue(text="clear sky") )
-
-class DoorMatEnum(EnumDefinitionImpl):
-
-    aluminum = PermissibleValue(text="aluminum")
-    fiberboard = PermissibleValue(text="fiberboard")
-    fiberglass = PermissibleValue(text="fiberglass")
-    metal = PermissibleValue(text="metal")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="DoorMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "cellular PVC",
-                PermissibleValue(text="cellular PVC") )
-        setattr(cls, "engineered plastic",
-                PermissibleValue(text="engineered plastic") )
-        setattr(cls, "thermoplastic alloy",
-                PermissibleValue(text="thermoplastic alloy") )
-        setattr(cls, "wood/plastic composite",
-                PermissibleValue(text="wood/plastic composite") )
-
-class DoorTypeMetalEnum(EnumDefinitionImpl):
-
-    collapsible = PermissibleValue(text="collapsible")
-    hollow = PermissibleValue(text="hollow")
-
-    _defn = EnumDefinition(
-        name="DoorTypeMetalEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "corrugated steel",
-                PermissibleValue(text="corrugated steel") )
-        setattr(cls, "rolling shutters",
-                PermissibleValue(text="rolling shutters") )
-        setattr(cls, "steel plate",
-                PermissibleValue(text="steel plate") )
-
-class ExtWindowOrientEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-    northeast = PermissibleValue(text="northeast")
-    southeast = PermissibleValue(text="southeast")
-    southwest = PermissibleValue(text="southwest")
-    northwest = PermissibleValue(text="northwest")
-
-    _defn = EnumDefinition(
-        name="ExtWindowOrientEnum",
-    )
-
-class WindowTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="WindowTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "single-hung sash window",
-                PermissibleValue(text="single-hung sash window") )
-        setattr(cls, "horizontal sash window",
-                PermissibleValue(text="horizontal sash window") )
-        setattr(cls, "fixed window",
-                PermissibleValue(text="fixed window") )
-
-class RoomCondtEnum(EnumDefinitionImpl):
+class IntWallCondEnum(EnumDefinitionImpl):
 
     new = PermissibleValue(text="new")
     damaged = PermissibleValue(text="damaged")
     rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="RoomCondtEnum",
+        name="IntWallCondEnum",
     )
 
     @classmethod
@@ -11038,505 +11023,6 @@ class RoomCondtEnum(EnumDefinitionImpl):
                 PermissibleValue(text="visible wear") )
         setattr(cls, "needs repair",
                 PermissibleValue(text="needs repair") )
-        setattr(cls, "visible signs of mold/mildew",
-                PermissibleValue(text="visible signs of mold/mildew") )
-
-class ExtWallOrientEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-    northeast = PermissibleValue(text="northeast")
-    southeast = PermissibleValue(text="southeast")
-    southwest = PermissibleValue(text="southwest")
-    northwest = PermissibleValue(text="northwest")
-
-    _defn = EnumDefinition(
-        name="ExtWallOrientEnum",
-    )
-
-class DoorCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="DoorCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-
-class WindowHorizPosEnum(EnumDefinitionImpl):
-
-    left = PermissibleValue(text="left")
-    middle = PermissibleValue(text="middle")
-    right = PermissibleValue(text="right")
-
-    _defn = EnumDefinition(
-        name="WindowHorizPosEnum",
-    )
-
-class FloorWaterMoldEnum(EnumDefinitionImpl):
-
-    condensation = PermissibleValue(text="condensation")
-
-    _defn = EnumDefinition(
-        name="FloorWaterMoldEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "mold odor",
-                PermissibleValue(text="mold odor") )
-        setattr(cls, "wet floor",
-                PermissibleValue(text="wet floor") )
-        setattr(cls, "water stains",
-                PermissibleValue(text="water stains") )
-        setattr(cls, "wall discoloration",
-                PermissibleValue(text="wall discoloration") )
-        setattr(cls, "floor discoloration",
-                PermissibleValue(text="floor discoloration") )
-        setattr(cls, "ceiling discoloration",
-                PermissibleValue(text="ceiling discoloration") )
-        setattr(cls, "peeling paint or wallpaper",
-                PermissibleValue(text="peeling paint or wallpaper") )
-        setattr(cls, "bulging walls",
-                PermissibleValue(text="bulging walls") )
-
-class TrainStatLocEnum(EnumDefinitionImpl):
-
-    riverside = PermissibleValue(text="riverside")
-
-    _defn = EnumDefinition(
-        name="TrainStatLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "south station above ground",
-                PermissibleValue(text="south station above ground") )
-        setattr(cls, "south station underground",
-                PermissibleValue(text="south station underground") )
-        setattr(cls, "south station amtrak",
-                PermissibleValue(text="south station amtrak") )
-        setattr(cls, "forest hills",
-                PermissibleValue(text="forest hills") )
-
-class FilterTypeEnum(EnumDefinitionImpl):
-
-    HEPA = PermissibleValue(text="HEPA")
-    electrostatic = PermissibleValue(text="electrostatic")
-
-    _defn = EnumDefinition(
-        name="FilterTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "particulate air filter",
-                PermissibleValue(text="particulate air filter") )
-        setattr(cls, "chemical air filter",
-                PermissibleValue(text="chemical air filter") )
-        setattr(cls, "low-MERV pleated media",
-                PermissibleValue(text="low-MERV pleated media") )
-        setattr(cls, "gas-phase or ultraviolet air treatments",
-                PermissibleValue(text="gas-phase or ultraviolet air treatments") )
-
-class ShadingDeviceCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="ShadingDeviceCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-
-class CeilTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="CeilTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-                PermissibleValue(text="crows feet") )
-        setattr(cls, "crows-foot stomp",
-                PermissibleValue(text="crows-foot stomp") )
-        setattr(cls, "double skip",
-                PermissibleValue(text="double skip") )
-        setattr(cls, "hawk and trowel",
-                PermissibleValue(text="hawk and trowel") )
-        setattr(cls, "orange peel",
-                PermissibleValue(text="orange peel") )
-        setattr(cls, "rosebud stomp",
-                PermissibleValue(text="rosebud stomp") )
-        setattr(cls, "Santa-Fe texture",
-                PermissibleValue(text="Santa-Fe texture") )
-        setattr(cls, "skip trowel",
-                PermissibleValue(text="skip trowel") )
-        setattr(cls, "stomp knockdown",
-                PermissibleValue(text="stomp knockdown") )
-
-class SurfAirContEnum(EnumDefinitionImpl):
-
-    dust = PermissibleValue(text="dust")
-    radon = PermissibleValue(text="radon")
-    nutrients = PermissibleValue(text="nutrients")
-    biocides = PermissibleValue(text="biocides")
-
-    _defn = EnumDefinition(
-        name="SurfAirContEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "organic matter",
-                PermissibleValue(text="organic matter") )
-        setattr(cls, "particulate matter",
-                PermissibleValue(text="particulate matter") )
-        setattr(cls, "volatile organic compounds",
-                PermissibleValue(text="volatile organic compounds") )
-        setattr(cls, "biological contaminants",
-                PermissibleValue(text="biological contaminants") )
-
-class LightTypeEnum(EnumDefinitionImpl):
-
-    none = PermissibleValue(text="none")
-
-    _defn = EnumDefinition(
-        name="LightTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "natural light",
-                PermissibleValue(text="natural light") )
-        setattr(cls, "electric light",
-                PermissibleValue(text="electric light") )
-        setattr(cls, "desk lamp",
-                PermissibleValue(text="desk lamp") )
-        setattr(cls, "flourescent lights",
-                PermissibleValue(text="flourescent lights") )
-
-class RoomLocEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="RoomLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "corner room",
-                PermissibleValue(text="corner room") )
-        setattr(cls, "interior room",
-                PermissibleValue(text="interior room") )
-        setattr(cls, "exterior wall",
-                PermissibleValue(text="exterior wall") )
-
-class WallTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="WallTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-                PermissibleValue(text="crows feet") )
-        setattr(cls, "crows-foot stomp",
-                PermissibleValue(text="crows-foot stomp") )
-        setattr(cls, "",
-                PermissibleValue(text="") )
-        setattr(cls, "double skip",
-                PermissibleValue(text="double skip") )
-        setattr(cls, "hawk and trowel",
-                PermissibleValue(text="hawk and trowel") )
-        setattr(cls, "orange peel",
-                PermissibleValue(text="orange peel") )
-        setattr(cls, "rosebud stomp",
-                PermissibleValue(text="rosebud stomp") )
-        setattr(cls, "Santa-Fe texture",
-                PermissibleValue(text="Santa-Fe texture") )
-        setattr(cls, "skip trowel",
-                PermissibleValue(text="skip trowel") )
-        setattr(cls, "stomp knockdown",
-                PermissibleValue(text="stomp knockdown") )
-
-class DoorMoveEnum(EnumDefinitionImpl):
-
-    collapsible = PermissibleValue(text="collapsible")
-    folding = PermissibleValue(text="folding")
-    revolving = PermissibleValue(text="revolving")
-    sliding = PermissibleValue(text="sliding")
-    swinging = PermissibleValue(text="swinging")
-
-    _defn = EnumDefinition(
-        name="DoorMoveEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "rolling shutter",
-                PermissibleValue(text="rolling shutter") )
-
-class WindowLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WindowLocEnum",
-    )
-
-class FloorStrucEnum(EnumDefinitionImpl):
-
-    balcony = PermissibleValue(text="balcony")
-    concrete = PermissibleValue(text="concrete")
-
-    _defn = EnumDefinition(
-        name="FloorStrucEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "floating floor",
-                PermissibleValue(text="floating floor") )
-        setattr(cls, "glass floor",
-                PermissibleValue(text="glass floor") )
-        setattr(cls, "raised floor",
-                PermissibleValue(text="raised floor") )
-        setattr(cls, "sprung floor",
-                PermissibleValue(text="sprung floor") )
-        setattr(cls, "wood-framed",
-                PermissibleValue(text="wood-framed") )
-
-class TrainLineEnum(EnumDefinitionImpl):
-
-    red = PermissibleValue(text="red")
-    green = PermissibleValue(text="green")
-    orange = PermissibleValue(text="orange")
-
-    _defn = EnumDefinition(
-        name="TrainLineEnum",
-    )
-
-class MechStrucEnum(EnumDefinitionImpl):
-
-    subway = PermissibleValue(text="subway")
-    coach = PermissibleValue(text="coach")
-    carriage = PermissibleValue(text="carriage")
-    elevator = PermissibleValue(text="elevator")
-    escalator = PermissibleValue(text="escalator")
-    boat = PermissibleValue(text="boat")
-    train = PermissibleValue(text="train")
-    car = PermissibleValue(text="car")
-    bus = PermissibleValue(text="bus")
-
-    _defn = EnumDefinition(
-        name="MechStrucEnum",
-    )
-
-class RoomConnectedEnum(EnumDefinitionImpl):
-
-    attic = PermissibleValue(text="attic")
-    bathroom = PermissibleValue(text="bathroom")
-    closet = PermissibleValue(text="closet")
-    elevator = PermissibleValue(text="elevator")
-    hallway = PermissibleValue(text="hallway")
-    kitchen = PermissibleValue(text="kitchen")
-    office = PermissibleValue(text="office")
-    stairwell = PermissibleValue(text="stairwell")
-
-    _defn = EnumDefinition(
-        name="RoomConnectedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "conference room",
-                PermissibleValue(text="conference room") )
-        setattr(cls, "examining room",
-                PermissibleValue(text="examining room") )
-        setattr(cls, "mail room",
-                PermissibleValue(text="mail room") )
-
-class RoomTypeEnum(EnumDefinitionImpl):
-
-    attic = PermissibleValue(text="attic")
-    bathroom = PermissibleValue(text="bathroom")
-    closet = PermissibleValue(text="closet")
-    elevator = PermissibleValue(text="elevator")
-    hallway = PermissibleValue(text="hallway")
-    kitchen = PermissibleValue(text="kitchen")
-    stairwell = PermissibleValue(text="stairwell")
-    lobby = PermissibleValue(text="lobby")
-    vestibule = PermissibleValue(text="vestibule")
-    laboratory_wet = PermissibleValue(text="laboratory_wet")
-    laboratory_dry = PermissibleValue(text="laboratory_dry")
-    gymnasium = PermissibleValue(text="gymnasium")
-    natatorium = PermissibleValue(text="natatorium")
-    auditorium = PermissibleValue(text="auditorium")
-    lockers = PermissibleValue(text="lockers")
-    cafe = PermissibleValue(text="cafe")
-    warehouse = PermissibleValue(text="warehouse")
-
-    _defn = EnumDefinition(
-        name="RoomTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "conference room",
-                PermissibleValue(text="conference room") )
-        setattr(cls, "examining room",
-                PermissibleValue(text="examining room") )
-        setattr(cls, "mail room",
-                PermissibleValue(text="mail room") )
-        setattr(cls, "private office",
-                PermissibleValue(text="private office") )
-        setattr(cls, "open office",
-                PermissibleValue(text="open office") )
-        setattr(cls, ",restroom",
-                PermissibleValue(text=",restroom") )
-        setattr(cls, "mechanical or electrical room",
-                PermissibleValue(text="mechanical or electrical room") )
-        setattr(cls, "data center",
-                PermissibleValue(text="data center") )
-
-class WallConstTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="WallConstTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "frame construction",
-                PermissibleValue(text="frame construction") )
-        setattr(cls, "joisted masonry",
-                PermissibleValue(text="joisted masonry") )
-        setattr(cls, "light noncombustible",
-                PermissibleValue(text="light noncombustible") )
-        setattr(cls, "masonry noncombustible",
-                PermissibleValue(text="masonry noncombustible") )
-        setattr(cls, "modified fire resistive",
-                PermissibleValue(text="modified fire resistive") )
-        setattr(cls, "fire resistive",
-                PermissibleValue(text="fire resistive") )
-
-class HeatDelivLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="HeatDelivLocEnum",
-    )
-
-class DoorDirectEnum(EnumDefinitionImpl):
-
-    inward = PermissibleValue(text="inward")
-    outward = PermissibleValue(text="outward")
-    sideways = PermissibleValue(text="sideways")
-
-    _defn = EnumDefinition(
-        name="DoorDirectEnum",
-    )
-
-class WindowMatEnum(EnumDefinitionImpl):
-
-    clad = PermissibleValue(text="clad")
-    fiberglass = PermissibleValue(text="fiberglass")
-    metal = PermissibleValue(text="metal")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="WindowMatEnum",
-    )
-
-class ShadingDeviceTypeEnum(EnumDefinitionImpl):
-
-    tree = PermissibleValue(text="tree")
-    trellis = PermissibleValue(text="trellis")
-
-    _defn = EnumDefinition(
-        name="ShadingDeviceTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "bahama shutters",
-                PermissibleValue(text="bahama shutters") )
-        setattr(cls, "exterior roll blind",
-                PermissibleValue(text="exterior roll blind") )
-        setattr(cls, "gambrel awning",
-                PermissibleValue(text="gambrel awning") )
-        setattr(cls, "hood awning",
-                PermissibleValue(text="hood awning") )
-        setattr(cls, "porchroller awning",
-                PermissibleValue(text="porchroller awning") )
-        setattr(cls, "sarasota shutters",
-                PermissibleValue(text="sarasota shutters") )
-        setattr(cls, "slatted aluminum",
-                PermissibleValue(text="slatted aluminum") )
-        setattr(cls, "solid aluminum awning",
-                PermissibleValue(text="solid aluminum awning") )
-        setattr(cls, "sun screen",
-                PermissibleValue(text="sun screen") )
-        setattr(cls, "venetian awning",
-                PermissibleValue(text="venetian awning") )
-
-class SeasonUseEnum(EnumDefinitionImpl):
-
-    Spring = PermissibleValue(text="Spring")
-    Summer = PermissibleValue(text="Summer")
-    Fall = PermissibleValue(text="Fall")
-    Winter = PermissibleValue(text="Winter")
-
-    _defn = EnumDefinition(
-        name="SeasonUseEnum",
-    )
-
-class TrainStopLocEnum(EnumDefinitionImpl):
-
-    end = PermissibleValue(text="end")
-    mid = PermissibleValue(text="mid")
-    downtown = PermissibleValue(text="downtown")
-
-    _defn = EnumDefinition(
-        name="TrainStopLocEnum",
-    )
 
 class CeilTypeEnum(EnumDefinitionImpl):
 
@@ -11555,327 +11041,6 @@ class CeilTypeEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "barrel-shaped",
                 PermissibleValue(text="barrel-shaped") )
-
-class IntWallCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="IntWallCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class WaterFeatTypeEnum(EnumDefinitionImpl):
-
-    fountain = PermissibleValue(text="fountain")
-    pool = PermissibleValue(text="pool")
-    stream = PermissibleValue(text="stream")
-    waterfall = PermissibleValue(text="waterfall")
-
-    _defn = EnumDefinition(
-        name="WaterFeatTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "standing feature",
-                PermissibleValue(text="standing feature") )
-
-class HeatCoolTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="HeatCoolTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "radiant system",
-                PermissibleValue(text="radiant system") )
-        setattr(cls, "heat pump",
-                PermissibleValue(text="heat pump") )
-        setattr(cls, "forced air system",
-                PermissibleValue(text="forced air system") )
-        setattr(cls, "steam forced heat",
-                PermissibleValue(text="steam forced heat") )
-        setattr(cls, "wood stove",
-                PermissibleValue(text="wood stove") )
-
-class FloorCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="FloorCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class DrawingsEnum(EnumDefinitionImpl):
-
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
-    bid = PermissibleValue(text="bid")
-    design = PermissibleValue(text="design")
-    diagram = PermissibleValue(text="diagram")
-    sketch = PermissibleValue(text="sketch")
-
-    _defn = EnumDefinition(
-        name="DrawingsEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "as built",
-                PermissibleValue(text="as built") )
-        setattr(cls, "building navigation map",
-                PermissibleValue(text="building navigation map") )
-
-class RelSampLocEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="RelSampLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "edge of car",
-                PermissibleValue(text="edge of car") )
-        setattr(cls, "center of car",
-                PermissibleValue(text="center of car") )
-        setattr(cls, "under a seat",
-                PermissibleValue(text="under a seat") )
-
-class DoorTypeWoodEnum(EnumDefinitionImpl):
-
-    battened = PermissibleValue(text="battened")
-    flush = PermissibleValue(text="flush")
-    louvered = PermissibleValue(text="louvered")
-
-    _defn = EnumDefinition(
-        name="DoorTypeWoodEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "bettened and ledged",
-                PermissibleValue(text="bettened and ledged") )
-        setattr(cls, "ledged and braced",
-                PermissibleValue(text="ledged and braced") )
-        setattr(cls, "ledged and framed",
-                PermissibleValue(text="ledged and framed") )
-        setattr(cls, "ledged, braced and frame",
-                PermissibleValue(text="ledged, braced and frame") )
-        setattr(cls, "framed and paneled",
-                PermissibleValue(text="framed and paneled") )
-        setattr(cls, "glashed or sash",
-                PermissibleValue(text="glashed or sash") )
-        setattr(cls, "wire gauged",
-                PermissibleValue(text="wire gauged") )
-
-class BuildDocsEnum(EnumDefinitionImpl):
-
-    schedule = PermissibleValue(text="schedule")
-    sections = PermissibleValue(text="sections")
-    submittals = PermissibleValue(text="submittals")
-    windows = PermissibleValue(text="windows")
-
-    _defn = EnumDefinition(
-        name="BuildDocsEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "building information model",
-                PermissibleValue(text="building information model") )
-        setattr(cls, "commissioning report",
-                PermissibleValue(text="commissioning report") )
-        setattr(cls, "complaint logs",
-                PermissibleValue(text="complaint logs") )
-        setattr(cls, "contract administration",
-                PermissibleValue(text="contract administration") )
-        setattr(cls, "cost estimate",
-                PermissibleValue(text="cost estimate") )
-        setattr(cls, "janitorial schedules or logs",
-                PermissibleValue(text="janitorial schedules or logs") )
-        setattr(cls, "maintenance plans",
-                PermissibleValue(text="maintenance plans") )
-        setattr(cls, "shop drawings",
-                PermissibleValue(text="shop drawings") )
-        setattr(cls, "ventilation system",
-                PermissibleValue(text="ventilation system") )
-
-class DoorTypeEnum(EnumDefinitionImpl):
-
-    composite = PermissibleValue(text="composite")
-    metal = PermissibleValue(text="metal")
-    wooden = PermissibleValue(text="wooden")
-
-    _defn = EnumDefinition(
-        name="DoorTypeEnum",
-    )
-
-class OccupDocumentEnum(EnumDefinitionImpl):
-
-    estimate = PermissibleValue(text="estimate")
-    videos = PermissibleValue(text="videos")
-
-    _defn = EnumDefinition(
-        name="OccupDocumentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "automated count",
-                PermissibleValue(text="automated count") )
-        setattr(cls, "manual count",
-                PermissibleValue(text="manual count") )
-
-class WallLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WallLocEnum",
-    )
-
-class FurnitureEnum(EnumDefinitionImpl):
-
-    cabinet = PermissibleValue(text="cabinet")
-    chair = PermissibleValue(text="chair")
-    desks = PermissibleValue(text="desks")
-
-    _defn = EnumDefinition(
-        name="FurnitureEnum",
-    )
-
-class WallFinishMatEnum(EnumDefinitionImpl):
-
-    plaster = PermissibleValue(text="plaster")
-    tile = PermissibleValue(text="tile")
-    terrazzo = PermissibleValue(text="terrazzo")
-    wood = PermissibleValue(text="wood")
-    metal = PermissibleValue(text="metal")
-    masonry = PermissibleValue(text="masonry")
-
-    _defn = EnumDefinition(
-        name="WallFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "gypsum plaster",
-                PermissibleValue(text="gypsum plaster") )
-        setattr(cls, "veneer plaster",
-                PermissibleValue(text="veneer plaster") )
-        setattr(cls, "gypsum board",
-                PermissibleValue(text="gypsum board") )
-        setattr(cls, "stone facing",
-                PermissibleValue(text="stone facing") )
-        setattr(cls, "acoustical treatment",
-                PermissibleValue(text="acoustical treatment") )
-
-class CeilFinishMatEnum(EnumDefinitionImpl):
-
-    drywall = PermissibleValue(text="drywall")
-    tiles = PermissibleValue(text="tiles")
-    PVC = PermissibleValue(text="PVC")
-    plasterboard = PermissibleValue(text="plasterboard")
-    metal = PermissibleValue(text="metal")
-    fiberglass = PermissibleValue(text="fiberglass")
-    stucco = PermissibleValue(text="stucco")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="CeilFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "mineral fibre",
-                PermissibleValue(text="mineral fibre") )
-        setattr(cls, "mineral wool/calcium silicate",
-                PermissibleValue(text="mineral wool/calcium silicate") )
-
-class WindowVertPosEnum(EnumDefinitionImpl):
-
-    bottom = PermissibleValue(text="bottom")
-    middle = PermissibleValue(text="middle")
-    top = PermissibleValue(text="top")
-    low = PermissibleValue(text="low")
-    high = PermissibleValue(text="high")
-
-    _defn = EnumDefinition(
-        name="WindowVertPosEnum",
-    )
-
-class CeilCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="CeilCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class IndoorSurfEnum(EnumDefinitionImpl):
-
-    cabinet = PermissibleValue(text="cabinet")
-    ceiling = PermissibleValue(text="ceiling")
-    door = PermissibleValue(text="door")
-    shelving = PermissibleValue(text="shelving")
-    window = PermissibleValue(text="window")
-    wall = PermissibleValue(text="wall")
-
-    _defn = EnumDefinition(
-        name="IndoorSurfEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "counter top",
-                PermissibleValue(text="counter top") )
-        setattr(cls, "vent cover",
-                PermissibleValue(text="vent cover") )
-
-class WeekdayEnum(EnumDefinitionImpl):
-
-    Monday = PermissibleValue(text="Monday")
-    Tuesday = PermissibleValue(text="Tuesday")
-    Wednesday = PermissibleValue(text="Wednesday")
-    Thursday = PermissibleValue(text="Thursday")
-    Friday = PermissibleValue(text="Friday")
-    Saturday = PermissibleValue(text="Saturday")
-    Sunday = PermissibleValue(text="Sunday")
-
-    _defn = EnumDefinition(
-        name="WeekdayEnum",
-    )
 
 class RoomSampPosEnum(EnumDefinitionImpl):
 
@@ -11938,6 +11103,197 @@ class FloorFinishMatEnum(EnumDefinitionImpl):
         setattr(cls, "none or unfinished",
                 PermissibleValue(text="none or unfinished") )
 
+class DoorMatEnum(EnumDefinitionImpl):
+
+    aluminum = PermissibleValue(text="aluminum")
+    fiberboard = PermissibleValue(text="fiberboard")
+    fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="DoorMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cellular PVC",
+                PermissibleValue(text="cellular PVC") )
+        setattr(cls, "engineered plastic",
+                PermissibleValue(text="engineered plastic") )
+        setattr(cls, "thermoplastic alloy",
+                PermissibleValue(text="thermoplastic alloy") )
+        setattr(cls, "wood/plastic composite",
+                PermissibleValue(text="wood/plastic composite") )
+
+class ExtWallOrientEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+    northeast = PermissibleValue(text="northeast")
+    southeast = PermissibleValue(text="southeast")
+    southwest = PermissibleValue(text="southwest")
+    northwest = PermissibleValue(text="northwest")
+
+    _defn = EnumDefinition(
+        name="ExtWallOrientEnum",
+    )
+
+class SeasonUseEnum(EnumDefinitionImpl):
+
+    Spring = PermissibleValue(text="Spring")
+    Summer = PermissibleValue(text="Summer")
+    Fall = PermissibleValue(text="Fall")
+    Winter = PermissibleValue(text="Winter")
+
+    _defn = EnumDefinition(
+        name="SeasonUseEnum",
+    )
+
+class SurfAirContEnum(EnumDefinitionImpl):
+
+    dust = PermissibleValue(text="dust")
+    radon = PermissibleValue(text="radon")
+    nutrients = PermissibleValue(text="nutrients")
+    biocides = PermissibleValue(text="biocides")
+
+    _defn = EnumDefinition(
+        name="SurfAirContEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "organic matter",
+                PermissibleValue(text="organic matter") )
+        setattr(cls, "particulate matter",
+                PermissibleValue(text="particulate matter") )
+        setattr(cls, "volatile organic compounds",
+                PermissibleValue(text="volatile organic compounds") )
+        setattr(cls, "biological contaminants",
+                PermissibleValue(text="biological contaminants") )
+
+class LightTypeEnum(EnumDefinitionImpl):
+
+    none = PermissibleValue(text="none")
+
+    _defn = EnumDefinition(
+        name="LightTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "natural light",
+                PermissibleValue(text="natural light") )
+        setattr(cls, "electric light",
+                PermissibleValue(text="electric light") )
+        setattr(cls, "desk lamp",
+                PermissibleValue(text="desk lamp") )
+        setattr(cls, "flourescent lights",
+                PermissibleValue(text="flourescent lights") )
+
+class BuildingSettingEnum(EnumDefinitionImpl):
+
+    urban = PermissibleValue(text="urban")
+    suburban = PermissibleValue(text="suburban")
+    exurban = PermissibleValue(text="exurban")
+    rural = PermissibleValue(text="rural")
+
+    _defn = EnumDefinition(
+        name="BuildingSettingEnum",
+    )
+
+class FilterTypeEnum(EnumDefinitionImpl):
+
+    HEPA = PermissibleValue(text="HEPA")
+    electrostatic = PermissibleValue(text="electrostatic")
+
+    _defn = EnumDefinition(
+        name="FilterTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "particulate air filter",
+                PermissibleValue(text="particulate air filter") )
+        setattr(cls, "chemical air filter",
+                PermissibleValue(text="chemical air filter") )
+        setattr(cls, "low-MERV pleated media",
+                PermissibleValue(text="low-MERV pleated media") )
+        setattr(cls, "gas-phase or ultraviolet air treatments",
+                PermissibleValue(text="gas-phase or ultraviolet air treatments") )
+
+class DrawingsEnum(EnumDefinitionImpl):
+
+    operation = PermissibleValue(text="operation")
+    construction = PermissibleValue(text="construction")
+    bid = PermissibleValue(text="bid")
+    design = PermissibleValue(text="design")
+    diagram = PermissibleValue(text="diagram")
+    sketch = PermissibleValue(text="sketch")
+
+    _defn = EnumDefinition(
+        name="DrawingsEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "as built",
+                PermissibleValue(text="as built") )
+        setattr(cls, "building navigation map",
+                PermissibleValue(text="building navigation map") )
+
+class WindowVertPosEnum(EnumDefinitionImpl):
+
+    bottom = PermissibleValue(text="bottom")
+    middle = PermissibleValue(text="middle")
+    top = PermissibleValue(text="top")
+    low = PermissibleValue(text="low")
+    high = PermissibleValue(text="high")
+
+    _defn = EnumDefinition(
+        name="WindowVertPosEnum",
+    )
+
+class FloorStrucEnum(EnumDefinitionImpl):
+
+    balcony = PermissibleValue(text="balcony")
+    concrete = PermissibleValue(text="concrete")
+
+    _defn = EnumDefinition(
+        name="FloorStrucEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "floating floor",
+                PermissibleValue(text="floating floor") )
+        setattr(cls, "glass floor",
+                PermissibleValue(text="glass floor") )
+        setattr(cls, "raised floor",
+                PermissibleValue(text="raised floor") )
+        setattr(cls, "sprung floor",
+                PermissibleValue(text="sprung floor") )
+        setattr(cls, "wood-framed",
+                PermissibleValue(text="wood-framed") )
+
+class WindowTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="WindowTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "single-hung sash window",
+                PermissibleValue(text="single-hung sash window") )
+        setattr(cls, "horizontal sash window",
+                PermissibleValue(text="horizontal sash window") )
+        setattr(cls, "fixed window",
+                PermissibleValue(text="fixed window") )
+
 class SurfMaterialEnum(EnumDefinitionImpl):
 
     adobe = PermissibleValue(text="adobe")
@@ -11965,6 +11321,399 @@ class SurfMaterialEnum(EnumDefinitionImpl):
                 PermissibleValue(text="hay bales") )
         setattr(cls, "stainless steel",
                 PermissibleValue(text="stainless steel") )
+
+class CeilTextureEnum(EnumDefinitionImpl):
+
+    knockdown = PermissibleValue(text="knockdown")
+    popcorn = PermissibleValue(text="popcorn")
+    smooth = PermissibleValue(text="smooth")
+    swirl = PermissibleValue(text="swirl")
+
+    _defn = EnumDefinition(
+        name="CeilTextureEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "crows feet",
+                PermissibleValue(text="crows feet") )
+        setattr(cls, "crows-foot stomp",
+                PermissibleValue(text="crows-foot stomp") )
+        setattr(cls, "double skip",
+                PermissibleValue(text="double skip") )
+        setattr(cls, "hawk and trowel",
+                PermissibleValue(text="hawk and trowel") )
+        setattr(cls, "orange peel",
+                PermissibleValue(text="orange peel") )
+        setattr(cls, "rosebud stomp",
+                PermissibleValue(text="rosebud stomp") )
+        setattr(cls, "Santa-Fe texture",
+                PermissibleValue(text="Santa-Fe texture") )
+        setattr(cls, "skip trowel",
+                PermissibleValue(text="skip trowel") )
+        setattr(cls, "stomp knockdown",
+                PermissibleValue(text="stomp knockdown") )
+
+class QuadPosEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="QuadPosEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "North side",
+                PermissibleValue(text="North side") )
+        setattr(cls, "West side",
+                PermissibleValue(text="West side") )
+        setattr(cls, "South side",
+                PermissibleValue(text="South side") )
+        setattr(cls, "East side",
+                PermissibleValue(text="East side") )
+
+class CeilFinishMatEnum(EnumDefinitionImpl):
+
+    drywall = PermissibleValue(text="drywall")
+    tiles = PermissibleValue(text="tiles")
+    PVC = PermissibleValue(text="PVC")
+    plasterboard = PermissibleValue(text="plasterboard")
+    metal = PermissibleValue(text="metal")
+    fiberglass = PermissibleValue(text="fiberglass")
+    stucco = PermissibleValue(text="stucco")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="CeilFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "mineral fibre",
+                PermissibleValue(text="mineral fibre") )
+        setattr(cls, "mineral wool/calcium silicate",
+                PermissibleValue(text="mineral wool/calcium silicate") )
+
+class WindowHorizPosEnum(EnumDefinitionImpl):
+
+    left = PermissibleValue(text="left")
+    middle = PermissibleValue(text="middle")
+    right = PermissibleValue(text="right")
+
+    _defn = EnumDefinition(
+        name="WindowHorizPosEnum",
+    )
+
+class FloorCondEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="FloorCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+
+class ShadingDeviceCondEnum(EnumDefinitionImpl):
+
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="ShadingDeviceCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+
+class DoorLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="DoorLocEnum",
+    )
+
+class WallFinishMatEnum(EnumDefinitionImpl):
+
+    plaster = PermissibleValue(text="plaster")
+    tile = PermissibleValue(text="tile")
+    terrazzo = PermissibleValue(text="terrazzo")
+    wood = PermissibleValue(text="wood")
+    metal = PermissibleValue(text="metal")
+    masonry = PermissibleValue(text="masonry")
+
+    _defn = EnumDefinition(
+        name="WallFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "gypsum plaster",
+                PermissibleValue(text="gypsum plaster") )
+        setattr(cls, "veneer plaster",
+                PermissibleValue(text="veneer plaster") )
+        setattr(cls, "gypsum board",
+                PermissibleValue(text="gypsum board") )
+        setattr(cls, "stone facing",
+                PermissibleValue(text="stone facing") )
+        setattr(cls, "acoustical treatment",
+                PermissibleValue(text="acoustical treatment") )
+
+class HeatDelivLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="HeatDelivLocEnum",
+    )
+
+class WindowCondEnum(EnumDefinitionImpl):
+
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="WindowCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+
+class HeatCoolTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="HeatCoolTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "radiant system",
+                PermissibleValue(text="radiant system") )
+        setattr(cls, "heat pump",
+                PermissibleValue(text="heat pump") )
+        setattr(cls, "forced air system",
+                PermissibleValue(text="forced air system") )
+        setattr(cls, "steam forced heat",
+                PermissibleValue(text="steam forced heat") )
+        setattr(cls, "wood stove",
+                PermissibleValue(text="wood stove") )
+
+class WallTextureEnum(EnumDefinitionImpl):
+
+    knockdown = PermissibleValue(text="knockdown")
+    popcorn = PermissibleValue(text="popcorn")
+    smooth = PermissibleValue(text="smooth")
+    swirl = PermissibleValue(text="swirl")
+
+    _defn = EnumDefinition(
+        name="WallTextureEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "crows feet",
+                PermissibleValue(text="crows feet") )
+        setattr(cls, "crows-foot stomp",
+                PermissibleValue(text="crows-foot stomp") )
+        setattr(cls, "",
+                PermissibleValue(text="") )
+        setattr(cls, "double skip",
+                PermissibleValue(text="double skip") )
+        setattr(cls, "hawk and trowel",
+                PermissibleValue(text="hawk and trowel") )
+        setattr(cls, "orange peel",
+                PermissibleValue(text="orange peel") )
+        setattr(cls, "rosebud stomp",
+                PermissibleValue(text="rosebud stomp") )
+        setattr(cls, "Santa-Fe texture",
+                PermissibleValue(text="Santa-Fe texture") )
+        setattr(cls, "skip trowel",
+                PermissibleValue(text="skip trowel") )
+        setattr(cls, "stomp knockdown",
+                PermissibleValue(text="stomp knockdown") )
+
+class RoomLocEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="RoomLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "corner room",
+                PermissibleValue(text="corner room") )
+        setattr(cls, "interior room",
+                PermissibleValue(text="interior room") )
+        setattr(cls, "exterior wall",
+                PermissibleValue(text="exterior wall") )
+
+class VisMediaEnum(EnumDefinitionImpl):
+
+    photos = PermissibleValue(text="photos")
+    videos = PermissibleValue(text="videos")
+    interiors = PermissibleValue(text="interiors")
+    equipment = PermissibleValue(text="equipment")
+
+    _defn = EnumDefinition(
+        name="VisMediaEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "commonly of the building",
+                PermissibleValue(text="commonly of the building") )
+        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
+                PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)") )
+        setattr(cls, "3D scans",
+                PermissibleValue(text="3D scans") )
+
+class WeekdayEnum(EnumDefinitionImpl):
+
+    Monday = PermissibleValue(text="Monday")
+    Tuesday = PermissibleValue(text="Tuesday")
+    Wednesday = PermissibleValue(text="Wednesday")
+    Thursday = PermissibleValue(text="Thursday")
+    Friday = PermissibleValue(text="Friday")
+    Saturday = PermissibleValue(text="Saturday")
+    Sunday = PermissibleValue(text="Sunday")
+
+    _defn = EnumDefinition(
+        name="WeekdayEnum",
+    )
+
+class TrainStopLocEnum(EnumDefinitionImpl):
+
+    end = PermissibleValue(text="end")
+    mid = PermissibleValue(text="mid")
+    downtown = PermissibleValue(text="downtown")
+
+    _defn = EnumDefinition(
+        name="TrainStopLocEnum",
+    )
+
+class IndoorSurfEnum(EnumDefinitionImpl):
+
+    cabinet = PermissibleValue(text="cabinet")
+    ceiling = PermissibleValue(text="ceiling")
+    door = PermissibleValue(text="door")
+    shelving = PermissibleValue(text="shelving")
+    window = PermissibleValue(text="window")
+    wall = PermissibleValue(text="wall")
+
+    _defn = EnumDefinition(
+        name="IndoorSurfEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "counter top",
+                PermissibleValue(text="counter top") )
+        setattr(cls, "vent cover",
+                PermissibleValue(text="vent cover") )
+
+class FurnitureEnum(EnumDefinitionImpl):
+
+    cabinet = PermissibleValue(text="cabinet")
+    chair = PermissibleValue(text="chair")
+    desks = PermissibleValue(text="desks")
+
+    _defn = EnumDefinition(
+        name="FurnitureEnum",
+    )
+
+class MechStrucEnum(EnumDefinitionImpl):
+
+    subway = PermissibleValue(text="subway")
+    coach = PermissibleValue(text="coach")
+    carriage = PermissibleValue(text="carriage")
+    elevator = PermissibleValue(text="elevator")
+    escalator = PermissibleValue(text="escalator")
+    boat = PermissibleValue(text="boat")
+    train = PermissibleValue(text="train")
+    car = PermissibleValue(text="car")
+    bus = PermissibleValue(text="bus")
+
+    _defn = EnumDefinition(
+        name="MechStrucEnum",
+    )
+
+class WindowCoverEnum(EnumDefinitionImpl):
+
+    blinds = PermissibleValue(text="blinds")
+    curtains = PermissibleValue(text="curtains")
+    none = PermissibleValue(text="none")
+
+    _defn = EnumDefinition(
+        name="WindowCoverEnum",
+    )
+
+class OccupDocumentEnum(EnumDefinitionImpl):
+
+    estimate = PermissibleValue(text="estimate")
+    videos = PermissibleValue(text="videos")
+
+    _defn = EnumDefinition(
+        name="OccupDocumentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "automated count",
+                PermissibleValue(text="automated count") )
+        setattr(cls, "manual count",
+                PermissibleValue(text="manual count") )
+
+class SubstructureTypeEnum(EnumDefinitionImpl):
+
+    crawlspace = PermissibleValue(text="crawlspace")
+    basement = PermissibleValue(text="basement")
+
+    _defn = EnumDefinition(
+        name="SubstructureTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "slab on grade",
+                PermissibleValue(text="slab on grade") )
+
+class DoorCompTypeEnum(EnumDefinitionImpl):
+
+    revolving = PermissibleValue(text="revolving")
+    sliding = PermissibleValue(text="sliding")
+    telescopic = PermissibleValue(text="telescopic")
+
+    _defn = EnumDefinition(
+        name="DoorCompTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "metal covered",
+                PermissibleValue(text="metal covered") )
 
 class BuildOccupTypeEnum(EnumDefinitionImpl):
 
@@ -11994,24 +11743,111 @@ class BuildOccupTypeEnum(EnumDefinitionImpl):
         setattr(cls, "sports complex",
                 PermissibleValue(text="sports complex") )
 
-class ArchStrucEnum(EnumDefinitionImpl):
+class ExtWindowOrientEnum(EnumDefinitionImpl):
 
-    building = PermissibleValue(text="building")
-    shed = PermissibleValue(text="shed")
-    home = PermissibleValue(text="home")
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+    northeast = PermissibleValue(text="northeast")
+    southeast = PermissibleValue(text="southeast")
+    southwest = PermissibleValue(text="southwest")
+    northwest = PermissibleValue(text="northwest")
 
     _defn = EnumDefinition(
-        name="ArchStrucEnum",
+        name="ExtWindowOrientEnum",
     )
 
-class WindowCondEnum(EnumDefinitionImpl):
+class WallConstTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="WallConstTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "frame construction",
+                PermissibleValue(text="frame construction") )
+        setattr(cls, "joisted masonry",
+                PermissibleValue(text="joisted masonry") )
+        setattr(cls, "light noncombustible",
+                PermissibleValue(text="light noncombustible") )
+        setattr(cls, "masonry noncombustible",
+                PermissibleValue(text="masonry noncombustible") )
+        setattr(cls, "modified fire resistive",
+                PermissibleValue(text="modified fire resistive") )
+        setattr(cls, "fire resistive",
+                PermissibleValue(text="fire resistive") )
+
+class SpecificEnum(EnumDefinitionImpl):
+
+    operation = PermissibleValue(text="operation")
+    construction = PermissibleValue(text="construction")
+    bid = PermissibleValue(text="bid")
+    design = PermissibleValue(text="design")
+    photos = PermissibleValue(text="photos")
+
+    _defn = EnumDefinition(
+        name="SpecificEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "as built",
+                PermissibleValue(text="as built") )
+
+class RoomConnectedEnum(EnumDefinitionImpl):
+
+    attic = PermissibleValue(text="attic")
+    bathroom = PermissibleValue(text="bathroom")
+    closet = PermissibleValue(text="closet")
+    elevator = PermissibleValue(text="elevator")
+    hallway = PermissibleValue(text="hallway")
+    kitchen = PermissibleValue(text="kitchen")
+    office = PermissibleValue(text="office")
+    stairwell = PermissibleValue(text="stairwell")
+
+    _defn = EnumDefinition(
+        name="RoomConnectedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "conference room",
+                PermissibleValue(text="conference room") )
+        setattr(cls, "examining room",
+                PermissibleValue(text="examining room") )
+        setattr(cls, "mail room",
+                PermissibleValue(text="mail room") )
+
+class SampWeatherEnum(EnumDefinitionImpl):
+
+    cloudy = PermissibleValue(text="cloudy")
+    foggy = PermissibleValue(text="foggy")
+    hail = PermissibleValue(text="hail")
+    rain = PermissibleValue(text="rain")
+    snow = PermissibleValue(text="snow")
+    sleet = PermissibleValue(text="sleet")
+    sunny = PermissibleValue(text="sunny")
+    windy = PermissibleValue(text="windy")
+
+    _defn = EnumDefinition(
+        name="SampWeatherEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "clear sky",
+                PermissibleValue(text="clear sky") )
+
+class DoorCondEnum(EnumDefinitionImpl):
 
     damaged = PermissibleValue(text="damaged")
     new = PermissibleValue(text="new")
     rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="WindowCondEnum",
+        name="DoorCondEnum",
     )
 
     @classmethod
@@ -12021,23 +11857,22 @@ class WindowCondEnum(EnumDefinitionImpl):
         setattr(cls, "visible wear",
                 PermissibleValue(text="visible wear") )
 
-class WallSurfTreatmentEnum(EnumDefinitionImpl):
+class DoorMoveEnum(EnumDefinitionImpl):
 
-    painted = PermissibleValue(text="painted")
-    paneling = PermissibleValue(text="paneling")
-    stucco = PermissibleValue(text="stucco")
-    fabric = PermissibleValue(text="fabric")
+    collapsible = PermissibleValue(text="collapsible")
+    folding = PermissibleValue(text="folding")
+    revolving = PermissibleValue(text="revolving")
+    sliding = PermissibleValue(text="sliding")
+    swinging = PermissibleValue(text="swinging")
 
     _defn = EnumDefinition(
-        name="WallSurfTreatmentEnum",
+        name="DoorMoveEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "wall paper",
-                PermissibleValue(text="wall paper") )
-        setattr(cls, "no treatment",
-                PermissibleValue(text="no treatment") )
+        setattr(cls, "rolling shutter",
+                PermissibleValue(text="rolling shutter") )
 
 class IndoorSpaceEnum(EnumDefinitionImpl):
 
@@ -12058,6 +11893,339 @@ class IndoorSpaceEnum(EnumDefinitionImpl):
         setattr(cls, "locker room",
                 PermissibleValue(text="locker room") )
 
+class DoorDirectEnum(EnumDefinitionImpl):
+
+    inward = PermissibleValue(text="inward")
+    outward = PermissibleValue(text="outward")
+    sideways = PermissibleValue(text="sideways")
+
+    _defn = EnumDefinition(
+        name="DoorDirectEnum",
+    )
+
+class DoorTypeWoodEnum(EnumDefinitionImpl):
+
+    battened = PermissibleValue(text="battened")
+    flush = PermissibleValue(text="flush")
+    louvered = PermissibleValue(text="louvered")
+
+    _defn = EnumDefinition(
+        name="DoorTypeWoodEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "bettened and ledged",
+                PermissibleValue(text="bettened and ledged") )
+        setattr(cls, "ledged and braced",
+                PermissibleValue(text="ledged and braced") )
+        setattr(cls, "ledged and framed",
+                PermissibleValue(text="ledged and framed") )
+        setattr(cls, "ledged, braced and frame",
+                PermissibleValue(text="ledged, braced and frame") )
+        setattr(cls, "framed and paneled",
+                PermissibleValue(text="framed and paneled") )
+        setattr(cls, "glashed or sash",
+                PermissibleValue(text="glashed or sash") )
+        setattr(cls, "wire gauged",
+                PermissibleValue(text="wire gauged") )
+
+class WallSurfTreatmentEnum(EnumDefinitionImpl):
+
+    painted = PermissibleValue(text="painted")
+    paneling = PermissibleValue(text="paneling")
+    stucco = PermissibleValue(text="stucco")
+    fabric = PermissibleValue(text="fabric")
+
+    _defn = EnumDefinition(
+        name="WallSurfTreatmentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "wall paper",
+                PermissibleValue(text="wall paper") )
+        setattr(cls, "no treatment",
+                PermissibleValue(text="no treatment") )
+
+class GenderRestroomEnum(EnumDefinitionImpl):
+
+    female = PermissibleValue(text="female")
+    male = PermissibleValue(text="male")
+    unisex = PermissibleValue(text="unisex")
+
+    _defn = EnumDefinition(
+        name="GenderRestroomEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "all gender",
+                PermissibleValue(text="all gender") )
+        setattr(cls, "gender neurtral",
+                PermissibleValue(text="gender neurtral") )
+        setattr(cls, "male and female",
+                PermissibleValue(text="male and female") )
+
+class ShadingDeviceTypeEnum(EnumDefinitionImpl):
+
+    tree = PermissibleValue(text="tree")
+    trellis = PermissibleValue(text="trellis")
+
+    _defn = EnumDefinition(
+        name="ShadingDeviceTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "bahama shutters",
+                PermissibleValue(text="bahama shutters") )
+        setattr(cls, "exterior roll blind",
+                PermissibleValue(text="exterior roll blind") )
+        setattr(cls, "gambrel awning",
+                PermissibleValue(text="gambrel awning") )
+        setattr(cls, "hood awning",
+                PermissibleValue(text="hood awning") )
+        setattr(cls, "porchroller awning",
+                PermissibleValue(text="porchroller awning") )
+        setattr(cls, "sarasota shutters",
+                PermissibleValue(text="sarasota shutters") )
+        setattr(cls, "slatted aluminum",
+                PermissibleValue(text="slatted aluminum") )
+        setattr(cls, "solid aluminum awning",
+                PermissibleValue(text="solid aluminum awning") )
+        setattr(cls, "sun screen",
+                PermissibleValue(text="sun screen") )
+        setattr(cls, "venetian awning",
+                PermissibleValue(text="venetian awning") )
+
+class WindowLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="WindowLocEnum",
+    )
+
+class RelSampLocEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="RelSampLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "edge of car",
+                PermissibleValue(text="edge of car") )
+        setattr(cls, "center of car",
+                PermissibleValue(text="center of car") )
+        setattr(cls, "under a seat",
+                PermissibleValue(text="under a seat") )
+
+class TrainLineEnum(EnumDefinitionImpl):
+
+    red = PermissibleValue(text="red")
+    green = PermissibleValue(text="green")
+    orange = PermissibleValue(text="orange")
+
+    _defn = EnumDefinition(
+        name="TrainLineEnum",
+    )
+
+class WindowMatEnum(EnumDefinitionImpl):
+
+    clad = PermissibleValue(text="clad")
+    fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="WindowMatEnum",
+    )
+
+class FloorWaterMoldEnum(EnumDefinitionImpl):
+
+    condensation = PermissibleValue(text="condensation")
+
+    _defn = EnumDefinition(
+        name="FloorWaterMoldEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "mold odor",
+                PermissibleValue(text="mold odor") )
+        setattr(cls, "wet floor",
+                PermissibleValue(text="wet floor") )
+        setattr(cls, "water stains",
+                PermissibleValue(text="water stains") )
+        setattr(cls, "wall discoloration",
+                PermissibleValue(text="wall discoloration") )
+        setattr(cls, "floor discoloration",
+                PermissibleValue(text="floor discoloration") )
+        setattr(cls, "ceiling discoloration",
+                PermissibleValue(text="ceiling discoloration") )
+        setattr(cls, "peeling paint or wallpaper",
+                PermissibleValue(text="peeling paint or wallpaper") )
+        setattr(cls, "bulging walls",
+                PermissibleValue(text="bulging walls") )
+
+class WallLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="WallLocEnum",
+    )
+
+class DoorTypeMetalEnum(EnumDefinitionImpl):
+
+    collapsible = PermissibleValue(text="collapsible")
+    hollow = PermissibleValue(text="hollow")
+
+    _defn = EnumDefinition(
+        name="DoorTypeMetalEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "corrugated steel",
+                PermissibleValue(text="corrugated steel") )
+        setattr(cls, "rolling shutters",
+                PermissibleValue(text="rolling shutters") )
+        setattr(cls, "steel plate",
+                PermissibleValue(text="steel plate") )
+
+class ArchStrucEnum(EnumDefinitionImpl):
+
+    building = PermissibleValue(text="building")
+    shed = PermissibleValue(text="shed")
+    home = PermissibleValue(text="home")
+
+    _defn = EnumDefinition(
+        name="ArchStrucEnum",
+    )
+
+class TrainStatLocEnum(EnumDefinitionImpl):
+
+    riverside = PermissibleValue(text="riverside")
+
+    _defn = EnumDefinition(
+        name="TrainStatLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "south station above ground",
+                PermissibleValue(text="south station above ground") )
+        setattr(cls, "south station underground",
+                PermissibleValue(text="south station underground") )
+        setattr(cls, "south station amtrak",
+                PermissibleValue(text="south station amtrak") )
+        setattr(cls, "forest hills",
+                PermissibleValue(text="forest hills") )
+
+class WaterFeatTypeEnum(EnumDefinitionImpl):
+
+    fountain = PermissibleValue(text="fountain")
+    pool = PermissibleValue(text="pool")
+    stream = PermissibleValue(text="stream")
+    waterfall = PermissibleValue(text="waterfall")
+
+    _defn = EnumDefinition(
+        name="WaterFeatTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "standing feature",
+                PermissibleValue(text="standing feature") )
+
+class BuildDocsEnum(EnumDefinitionImpl):
+
+    schedule = PermissibleValue(text="schedule")
+    sections = PermissibleValue(text="sections")
+    submittals = PermissibleValue(text="submittals")
+    windows = PermissibleValue(text="windows")
+
+    _defn = EnumDefinition(
+        name="BuildDocsEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "building information model",
+                PermissibleValue(text="building information model") )
+        setattr(cls, "commissioning report",
+                PermissibleValue(text="commissioning report") )
+        setattr(cls, "complaint logs",
+                PermissibleValue(text="complaint logs") )
+        setattr(cls, "contract administration",
+                PermissibleValue(text="contract administration") )
+        setattr(cls, "cost estimate",
+                PermissibleValue(text="cost estimate") )
+        setattr(cls, "janitorial schedules or logs",
+                PermissibleValue(text="janitorial schedules or logs") )
+        setattr(cls, "maintenance plans",
+                PermissibleValue(text="maintenance plans") )
+        setattr(cls, "shop drawings",
+                PermissibleValue(text="shop drawings") )
+        setattr(cls, "ventilation system",
+                PermissibleValue(text="ventilation system") )
+
+class DoorTypeEnum(EnumDefinitionImpl):
+
+    composite = PermissibleValue(text="composite")
+    metal = PermissibleValue(text="metal")
+    wooden = PermissibleValue(text="wooden")
+
+    _defn = EnumDefinition(
+        name="DoorTypeEnum",
+    )
+
+class RoomCondtEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="RoomCondtEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+        setattr(cls, "visible signs of mold/mildew",
+                PermissibleValue(text="visible signs of mold/mildew") )
+
+class HandidnessEnum(EnumDefinitionImpl):
+
+    ambidexterity = PermissibleValue(text="ambidexterity")
+
+    _defn = EnumDefinition(
+        name="HandidnessEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "left handedness",
+                PermissibleValue(text="left handedness") )
+        setattr(cls, "mixed-handedness",
+                PermissibleValue(text="mixed-handedness") )
+        setattr(cls, "right handedness",
+                PermissibleValue(text="right handedness") )
+
 class SampFloorEnum(EnumDefinitionImpl):
 
     basement = PermissibleValue(text="basement")
@@ -12074,16 +12242,84 @@ class SampFloorEnum(EnumDefinitionImpl):
         setattr(cls, "2nd floor",
                 PermissibleValue(text="2nd floor") )
 
-class HostSexEnum(EnumDefinitionImpl):
+class CeilCondEnum(EnumDefinitionImpl):
 
-    female = PermissibleValue(text="female")
-    hermaphrodite = PermissibleValue(text="hermaphrodite")
-    male = PermissibleValue(text="male")
-    neuter = PermissibleValue(text="neuter")
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="HostSexEnum",
+        name="CeilCondEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+                PermissibleValue(text="visible wear") )
+        setattr(cls, "needs repair",
+                PermissibleValue(text="needs repair") )
+
+class RoomTypeEnum(EnumDefinitionImpl):
+
+    attic = PermissibleValue(text="attic")
+    bathroom = PermissibleValue(text="bathroom")
+    closet = PermissibleValue(text="closet")
+    elevator = PermissibleValue(text="elevator")
+    hallway = PermissibleValue(text="hallway")
+    kitchen = PermissibleValue(text="kitchen")
+    stairwell = PermissibleValue(text="stairwell")
+    lobby = PermissibleValue(text="lobby")
+    vestibule = PermissibleValue(text="vestibule")
+    laboratory_wet = PermissibleValue(text="laboratory_wet")
+    laboratory_dry = PermissibleValue(text="laboratory_dry")
+    gymnasium = PermissibleValue(text="gymnasium")
+    natatorium = PermissibleValue(text="natatorium")
+    auditorium = PermissibleValue(text="auditorium")
+    lockers = PermissibleValue(text="lockers")
+    cafe = PermissibleValue(text="cafe")
+    warehouse = PermissibleValue(text="warehouse")
+
+    _defn = EnumDefinition(
+        name="RoomTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "conference room",
+                PermissibleValue(text="conference room") )
+        setattr(cls, "examining room",
+                PermissibleValue(text="examining room") )
+        setattr(cls, "mail room",
+                PermissibleValue(text="mail room") )
+        setattr(cls, "private office",
+                PermissibleValue(text="private office") )
+        setattr(cls, "open office",
+                PermissibleValue(text="open office") )
+        setattr(cls, ",restroom",
+                PermissibleValue(text=",restroom") )
+        setattr(cls, "mechanical or electrical room",
+                PermissibleValue(text="mechanical or electrical room") )
+        setattr(cls, "data center",
+                PermissibleValue(text="data center") )
+
+class SampCaptStatusEnum(EnumDefinitionImpl):
+
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SampCaptStatusEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "active surveillance in response to an outbreak",
+                PermissibleValue(text="active surveillance in response to an outbreak") )
+        setattr(cls, "active surveillance not initiated by an outbreak",
+                PermissibleValue(text="active surveillance not initiated by an outbreak") )
+        setattr(cls, "farm sample",
+                PermissibleValue(text="farm sample") )
+        setattr(cls, "market sample",
+                PermissibleValue(text="market sample") )
 
 class BiolStatEnum(EnumDefinitionImpl):
 
@@ -12124,24 +12360,16 @@ class SampDisStageEnum(EnumDefinitionImpl):
         setattr(cls, "growth and reproduction",
                 PermissibleValue(text="growth and reproduction") )
 
-class SampCaptStatusEnum(EnumDefinitionImpl):
+class HostSexEnum(EnumDefinitionImpl):
 
-    other = PermissibleValue(text="other")
+    female = PermissibleValue(text="female")
+    hermaphrodite = PermissibleValue(text="hermaphrodite")
+    male = PermissibleValue(text="male")
+    neuter = PermissibleValue(text="neuter")
 
     _defn = EnumDefinition(
-        name="SampCaptStatusEnum",
+        name="HostSexEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "active surveillance in response to an outbreak",
-                PermissibleValue(text="active surveillance in response to an outbreak") )
-        setattr(cls, "active surveillance not initiated by an outbreak",
-                PermissibleValue(text="active surveillance not initiated by an outbreak") )
-        setattr(cls, "farm sample",
-                PermissibleValue(text="farm sample") )
-        setattr(cls, "market sample",
-                PermissibleValue(text="market sample") )
 
 class PlantSexEnum(EnumDefinitionImpl):
 
@@ -12193,82 +12421,6 @@ class GrowthHabitEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "semi-erect",
                 PermissibleValue(text="semi-erect") )
-
-class DrainageClassEnum(EnumDefinitionImpl):
-
-    poorly = PermissibleValue(text="poorly")
-    well = PermissibleValue(text="well")
-
-    _defn = EnumDefinition(
-        name="DrainageClassEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "very poorly",
-                PermissibleValue(text="very poorly") )
-        setattr(cls, "somewhat poorly",
-                PermissibleValue(text="somewhat poorly") )
-        setattr(cls, "moderately well",
-                PermissibleValue(text="moderately well") )
-        setattr(cls, "excessively drained",
-                PermissibleValue(text="excessively drained") )
-
-class SoilHorizonEnum(EnumDefinitionImpl):
-
-    Permafrost = PermissibleValue(text="Permafrost")
-
-    _defn = EnumDefinition(
-        name="SoilHorizonEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "O horizon",
-                PermissibleValue(text="O horizon") )
-        setattr(cls, "A horizon",
-                PermissibleValue(text="A horizon") )
-        setattr(cls, "E horizon",
-                PermissibleValue(text="E horizon") )
-        setattr(cls, "B horizon",
-                PermissibleValue(text="B horizon") )
-        setattr(cls, "C horizon",
-                PermissibleValue(text="C horizon") )
-        setattr(cls, "R layer",
-                PermissibleValue(text="R layer") )
-
-class FaoClassEnum(EnumDefinitionImpl):
-
-    Acrisols = PermissibleValue(text="Acrisols")
-    Andosols = PermissibleValue(text="Andosols")
-    Arenosols = PermissibleValue(text="Arenosols")
-    Cambisols = PermissibleValue(text="Cambisols")
-    Chernozems = PermissibleValue(text="Chernozems")
-    Ferralsols = PermissibleValue(text="Ferralsols")
-    Fluvisols = PermissibleValue(text="Fluvisols")
-    Gleysols = PermissibleValue(text="Gleysols")
-    Greyzems = PermissibleValue(text="Greyzems")
-    Gypsisols = PermissibleValue(text="Gypsisols")
-    Histosols = PermissibleValue(text="Histosols")
-    Kastanozems = PermissibleValue(text="Kastanozems")
-    Lithosols = PermissibleValue(text="Lithosols")
-    Luvisols = PermissibleValue(text="Luvisols")
-    Nitosols = PermissibleValue(text="Nitosols")
-    Phaeozems = PermissibleValue(text="Phaeozems")
-    Planosols = PermissibleValue(text="Planosols")
-    Podzols = PermissibleValue(text="Podzols")
-    Podzoluvisols = PermissibleValue(text="Podzoluvisols")
-    Rankers = PermissibleValue(text="Rankers")
-    Regosols = PermissibleValue(text="Regosols")
-    Rendzinas = PermissibleValue(text="Rendzinas")
-    Solonchaks = PermissibleValue(text="Solonchaks")
-    Solonetz = PermissibleValue(text="Solonetz")
-    Vertisols = PermissibleValue(text="Vertisols")
-    Yermosols = PermissibleValue(text="Yermosols")
-
-    _defn = EnumDefinition(
-        name="FaoClassEnum",
-    )
 
 class CurLandUseEnum(EnumDefinitionImpl):
 
@@ -12356,18 +12508,6 @@ class BioticRelationshipEnum(EnumDefinitionImpl):
         setattr(cls, "free living",
                 PermissibleValue(text="free living") )
 
-class ProfilePositionEnum(EnumDefinitionImpl):
-
-    summit = PermissibleValue(text="summit")
-    shoulder = PermissibleValue(text="shoulder")
-    backslope = PermissibleValue(text="backslope")
-    footslope = PermissibleValue(text="footslope")
-    toeslope = PermissibleValue(text="toeslope")
-
-    _defn = EnumDefinition(
-        name="ProfilePositionEnum",
-    )
-
 class TillageEnum(EnumDefinitionImpl):
 
     drill = PermissibleValue(text="drill")
@@ -12391,6 +12531,94 @@ class TillageEnum(EnumDefinitionImpl):
                 PermissibleValue(text="zonal tillage") )
         setattr(cls, "disc plough",
                 PermissibleValue(text="disc plough") )
+
+class DrainageClassEnum(EnumDefinitionImpl):
+
+    poorly = PermissibleValue(text="poorly")
+    well = PermissibleValue(text="well")
+
+    _defn = EnumDefinition(
+        name="DrainageClassEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "very poorly",
+                PermissibleValue(text="very poorly") )
+        setattr(cls, "somewhat poorly",
+                PermissibleValue(text="somewhat poorly") )
+        setattr(cls, "moderately well",
+                PermissibleValue(text="moderately well") )
+        setattr(cls, "excessively drained",
+                PermissibleValue(text="excessively drained") )
+
+class FaoClassEnum(EnumDefinitionImpl):
+
+    Acrisols = PermissibleValue(text="Acrisols")
+    Andosols = PermissibleValue(text="Andosols")
+    Arenosols = PermissibleValue(text="Arenosols")
+    Cambisols = PermissibleValue(text="Cambisols")
+    Chernozems = PermissibleValue(text="Chernozems")
+    Ferralsols = PermissibleValue(text="Ferralsols")
+    Fluvisols = PermissibleValue(text="Fluvisols")
+    Gleysols = PermissibleValue(text="Gleysols")
+    Greyzems = PermissibleValue(text="Greyzems")
+    Gypsisols = PermissibleValue(text="Gypsisols")
+    Histosols = PermissibleValue(text="Histosols")
+    Kastanozems = PermissibleValue(text="Kastanozems")
+    Lithosols = PermissibleValue(text="Lithosols")
+    Luvisols = PermissibleValue(text="Luvisols")
+    Nitosols = PermissibleValue(text="Nitosols")
+    Phaeozems = PermissibleValue(text="Phaeozems")
+    Planosols = PermissibleValue(text="Planosols")
+    Podzols = PermissibleValue(text="Podzols")
+    Podzoluvisols = PermissibleValue(text="Podzoluvisols")
+    Rankers = PermissibleValue(text="Rankers")
+    Regosols = PermissibleValue(text="Regosols")
+    Rendzinas = PermissibleValue(text="Rendzinas")
+    Solonchaks = PermissibleValue(text="Solonchaks")
+    Solonetz = PermissibleValue(text="Solonetz")
+    Vertisols = PermissibleValue(text="Vertisols")
+    Yermosols = PermissibleValue(text="Yermosols")
+
+    _defn = EnumDefinition(
+        name="FaoClassEnum",
+    )
+
+class SoilHorizonEnum(EnumDefinitionImpl):
+
+    Permafrost = PermissibleValue(text="Permafrost")
+
+    _defn = EnumDefinition(
+        name="SoilHorizonEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "O horizon",
+                PermissibleValue(text="O horizon") )
+        setattr(cls, "A horizon",
+                PermissibleValue(text="A horizon") )
+        setattr(cls, "E horizon",
+                PermissibleValue(text="E horizon") )
+        setattr(cls, "B horizon",
+                PermissibleValue(text="B horizon") )
+        setattr(cls, "C horizon",
+                PermissibleValue(text="C horizon") )
+        setattr(cls, "R layer",
+                PermissibleValue(text="R layer") )
+
+class ProfilePositionEnum(EnumDefinitionImpl):
+
+    summit = PermissibleValue(text="summit")
+    shoulder = PermissibleValue(text="shoulder")
+    backslope = PermissibleValue(text="backslope")
+    footslope = PermissibleValue(text="footslope")
+    toeslope = PermissibleValue(text="toeslope")
+
+    _defn = EnumDefinition(
+        name="ProfilePositionEnum",
+    )
 
 # Slots
 class slots:
@@ -12530,7 +12758,7 @@ slots.dna_sample_format = Slot(uri=NMDC_SUB_SCHEMA.dna_sample_format, name="dna_
                    model_uri=NMDC_SUB_SCHEMA.dna_sample_format, domain=None, range=Optional[Union[str, "DnaSampleFormatEnum"]])
 
 slots.dna_dnase = Slot(uri=NMDC_SUB_SCHEMA.dna_dnase, name="dna_dnase", curie=NMDC_SUB_SCHEMA.curie('dna_dnase'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_dnase, domain=None, range=Optional[Union[str, "DnaDnaseEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.dna_dnase, domain=None, range=Optional[Union[str, "YesNoEnum"]])
 
 slots.dna_organisms = Slot(uri=NMDC_SUB_SCHEMA.dna_organisms, name="dna_organisms", curie=NMDC_SUB_SCHEMA.curie('dna_organisms'),
                    model_uri=NMDC_SUB_SCHEMA.dna_organisms, domain=None, range=Optional[str])
@@ -12588,7 +12816,7 @@ slots.rna_sample_format = Slot(uri=NMDC_SUB_SCHEMA.rna_sample_format, name="rna_
                    model_uri=NMDC_SUB_SCHEMA.rna_sample_format, domain=None, range=Optional[Union[str, "RnaSampleFormatEnum"]])
 
 slots.dnase_rna = Slot(uri=NMDC_SUB_SCHEMA.dnase_rna, name="dnase_rna", curie=NMDC_SUB_SCHEMA.curie('dnase_rna'),
-                   model_uri=NMDC_SUB_SCHEMA.dnase_rna, domain=None, range=Optional[Union[str, "DnaseRnaEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.dnase_rna, domain=None, range=Optional[Union[str, "YesNoEnum"]])
 
 slots.rna_organisms = Slot(uri=NMDC_SUB_SCHEMA.rna_organisms, name="rna_organisms", curie=NMDC_SUB_SCHEMA.curie('rna_organisms'),
                    model_uri=NMDC_SUB_SCHEMA.rna_organisms, domain=None, range=Optional[str])
@@ -14130,38 +14358,38 @@ slots.ecosystem_subtype = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_subtype, name="ecos
 slots.specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.specific_ecosystem, domain=None, range=Optional[str])
 
-slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
-                   model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
+slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
+                   model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
 
 slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('id'),
                    model_uri=NMDC_SUB_SCHEMA.id, domain=None, range=URIRef)
 
+slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
+                   model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
+
 slots.attribute = Slot(uri=NMDC_SUB_SCHEMA.attribute, name="attribute", curie=NMDC_SUB_SCHEMA.curie('attribute'),
                    model_uri=NMDC_SUB_SCHEMA.attribute, domain=None, range=Optional[str])
-
-slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
-                   model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
-
-slots.gold_path_field = Slot(uri=NMDC_SUB_SCHEMA.gold_path_field, name="gold_path_field", curie=NMDC_SUB_SCHEMA.curie('gold_path_field'),
-                   model_uri=NMDC_SUB_SCHEMA.gold_path_field, domain=None, range=Optional[str])
 
 slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
                    model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
 
-slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
-                   model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
-
-slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[str])
-
-slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
-                   model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
+slots.gold_path_field = Slot(uri=NMDC_SUB_SCHEMA.gold_path_field, name="gold_path_field", curie=NMDC_SUB_SCHEMA.curie('gold_path_field'),
+                   model_uri=NMDC_SUB_SCHEMA.gold_path_field, domain=None, range=Optional[str])
 
 slots.environment_field = Slot(uri=NMDC_SUB_SCHEMA.environment_field, name="environment field", curie=NMDC_SUB_SCHEMA.curie('environment_field'),
                    model_uri=NMDC_SUB_SCHEMA.environment_field, domain=None, range=Optional[str])
 
+slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[str])
+
 slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
                    model_uri=NMDC_SUB_SCHEMA.description, domain=None, range=Optional[str])
+
+slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
+                   model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
+
+slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
+                   model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
 
 slots.AirInterface_methane = Slot(uri=MIXS['0000101'], name="AirInterface_methane", curie=MIXS.curie('0000101'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_methane, domain=AirInterface, range=Optional[str],
@@ -16334,7 +16562,7 @@ slots.JgiMgInterface_dna_sample_format = Slot(uri=NMDC_YAML['nmdc/dna_sample_for
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_format, domain=JgiMgInterface, range=Optional[Union[str, "DnaSampleFormatEnum"]])
 
 slots.JgiMgInterface_dna_dnase = Slot(uri=NMDC_YAML['nmdc/dna_dnase'], name="JgiMgInterface_dna_dnase", curie=NMDC_YAML.curie('nmdc/dna_dnase'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_dnase, domain=JgiMgInterface, range=Optional[Union[str, "DnaDnaseEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_dnase, domain=JgiMgInterface, range=Optional[Union[str, "YesNoEnum"]])
 
 slots.JgiMgInterface_dna_organisms = Slot(uri=NMDC_YAML['nmdc/dna_organisms'], name="JgiMgInterface_dna_organisms", curie=NMDC_YAML.curie('nmdc/dna_organisms'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_organisms, domain=JgiMgInterface, range=Optional[str])

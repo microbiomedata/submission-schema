@@ -45,7 +45,7 @@ dna_container_id							Must be unique across all tubes and plates, and <20 chara
 dna_cont_type								Tube or plate (96-well)	plate									dna_cont_type_enum	true					DNA container type	
 dna_cont_well							Required when 'plate' is selected for container type.|Leave blank if the sample will be shipped in a tube.|JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.|For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).		B2								^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$		true			{96 well plate pos}		DNA plate position	
 dna_sample_format								Solution in which the DNA sample has been suspended	Water									dna_sample_format_enum	true					DNA sample format	
-dna_dnase							Note DNase treatment is required for all RNA samples.		no									dna_dnase_enum	true					DNase treatment DNA	
+dna_dnase							Note DNase treatment is required for all RNA samples.		no									YesNoEnum	true					DNase treatment DNA	
 dna_organisms								List any organisms known or suspected to grow in co-culture, as well as estimated % of the organism in that culture.	expected to contain microbes (59%) fungi (30%), viruses (10%), tadpoles (1%)										true			{text}		DNA expected organisms	
 dna_collect_site								Provide information on the site your DNA sample was collected from	untreated pond water										true			{text}		DNA collection site	
 dna_isolate_meth								Describe the method/protocol/kit used to extract DNA/RNA.	phenol/chloroform extraction										true			{text}		DNA isolation method	
@@ -64,7 +64,7 @@ rna_container_id							Must be unique across all tubes and plates, and <20 chara
 rna_cont_type								Tube or plate (96-well)	plate									rna_cont_type_enum	true					RNA container type	
 rna_cont_well							Required when 'plate' is selected for container type.|Leave blank if the sample will be shipped in a tube.|JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.|For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).		B2								^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$		true			{96 well plate pos}		RNA plate position	
 rna_sample_format								Solution in which the RNA sample has been suspended	Water									rna_sample_format_enum	true					RNA sample format	
-dnase_rna							Note DNase treatment is required for all RNA samples.		no									dnase_rna_enum	true					DNase treated	
+dnase_rna							Note DNase treatment is required for all RNA samples.		no									YesNoEnum	true					DNase treated	
 rna_organisms								List any organisms known or suspected to grow in co-culture, as well as estimated % of the organism in that culture.	expected to contain microbes (59%) fungi (30%), viruses (10%), tadpoles (1%)										true			{text}		RNA expected organisms	
 rna_collect_site								Provide information on the site your RNA sample was collected from	untreated pond water										true			{text}		RNA collection site	
 rna_isolate_meth								Describe the method/protocol/kit used to extract DNA/RNA.	phenol/chloroform extraction										true			{text}		RNA isolation method	
@@ -578,17 +578,17 @@ ecosystem_category							The Environmental ecosystem (for example) is divided in
 ecosystem_type							The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc.	Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.																	
 ecosystem_subtype							Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category.	Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.																	
 specific_ecosystem							Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system.	Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.																	
-language								"Should use ISO 639-1 code e.g. ""en"", ""fr"""										language code							
-id								A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI	nmdc:mgmag-00-x012.1_7_c1	true						abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?|a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted|typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions|minting authority shoulders should probably be enumerated and checked in the pattern									
-attribute		field|property|template field|key|characteristic						A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template																	
 name								A human readable label for an entity							false			string							
-gold_path_field								This is a grouping for any of the gold path fields							false			string							
+id								A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI	nmdc:mgmag-00-x012.1_7_c1	true						abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?|a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted|typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions|minting authority shoulders should probably be enumerated and checked in the pattern									
+language								"Should use ISO 639-1 code e.g. ""en"", ""fr"""										language code							
+attribute		field|property|template field|key|characteristic						A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template																	
 nucleic acid sequence source field																									
-investigation field								field describing aspect of the investigation/study to which the sample belongs																	
-alternative_identifiers								A list of alternative identifiers for the entity.							false			string							
-core field								basic fields																	
+gold_path_field								This is a grouping for any of the gold path fields							false			string							
 environment field								field describing environmental aspect of a sample																	
+alternative_identifiers								A list of alternative identifiers for the entity.							false			string							
 description								a human-readable description of a thing							false			string			dcterms:description				
+core field								basic fields																	
+investigation field								field describing aspect of the investigation/study to which the sample belongs																	
 	AirInterface							air dh_interface																Air	
 methane	AirInterface	methane		measurement value	micromole per liter, parts per billion, parts per million	1		Methane (gas) amount or concentration at the time of sampling	1800 parts per billion						false		^[-+]?[0-9]*\.?[0-9]+ +\S.*$	string			MIXS:0000101			methane	
 organism_count	AirInterface	organism count		organism name;measurement value;enumeration	number of cells per cubic meter, number of cells per milliliter, number of cells per cubic centimeter	m		Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)	total prokaryotes;3.5e7 cells per milliliter;qPCR						false		^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$	string			MIXS:0000103			organism count	
@@ -1225,7 +1225,7 @@ dna_container_id	JgiMgInterface						Must be unique across all tubes and plates,
 dna_cont_type	JgiMgInterface							Tube or plate (96-well)	plate									dna_cont_type_enum	true					DNA container type	
 dna_cont_well	JgiMgInterface						Required when 'plate' is selected for container type.|Leave blank if the sample will be shipped in a tube.|JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.|For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).		B2						false		^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$	string	true			{96 well plate pos}		DNA plate position	
 dna_sample_format	JgiMgInterface							Solution in which the DNA sample has been suspended	Water									dna_sample_format_enum	true					DNA sample format	
-dna_dnase	JgiMgInterface						Note DNase treatment is required for all RNA samples.		no									dna_dnase_enum	true					DNase treatment DNA	
+dna_dnase	JgiMgInterface						Note DNase treatment is required for all RNA samples.		no									YesNoEnum	true					DNase treatment DNA	
 dna_organisms	JgiMgInterface							List any organisms known or suspected to grow in co-culture, as well as estimated % of the organism in that culture.	expected to contain microbes (59%) fungi (30%), viruses (10%), tadpoles (1%)						false			string	true			{text}		DNA expected organisms	
 dna_collect_site	JgiMgInterface							Provide information on the site your DNA sample was collected from	untreated pond water						false			string	true			{text}		DNA collection site	
 dna_isolate_meth	JgiMgInterface							Describe the method/protocol/kit used to extract DNA/RNA.	phenol/chloroform extraction						false			string	true			{text}		DNA isolation method	
