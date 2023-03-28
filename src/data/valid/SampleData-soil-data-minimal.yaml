@@ -5,9 +5,9 @@ soil_data:
       - metatranscriptomics
     collection_date: '2022-01-15'
     depth: "111 to 222"
-    env_broad_scale: urban biome [ENVO:01000249]
-    env_local_scale: __tunnel [ENVO:00000068]
-    env_medium: bare soil [ENVO:01001616]
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '__tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
     env_package: soil
     growth_facil: greenhouse
     samp_name: b

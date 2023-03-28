@@ -376,7 +376,27 @@ local/soil_pvs.txt: local/soil_tree_down.txt
 		--input-file $< \
 		--output-file $@
 
+
+local/abp_tree_down.txt: local/envo.db
+	$(RUN) runoak \
+		-i $< tree \
+		--down \
+		--output $@ \
+		--predicates rdfs:subClassOf 'astronomical body part'
+
+local/abp_pvs.txt: local/abp_tree_down.txt
+	$(RUN) oak-tree-to-pv-list \
+		--discard-line-pattern 'xxx'  \
+		--input-file $< \
+		--output-file $@
+
 #x:  local/envo.db
 #	$(RUN) runoak -i $< extract-triples .desc//p=i 'terrestrial biome'
 
 # now add/edit those in the schema sheets enums file
+# would like to compose with and, or, not etc
+# would like to sort alphabetically within heirarchical groups
+
+# for local:
+# human construction
+# astronomical body part
