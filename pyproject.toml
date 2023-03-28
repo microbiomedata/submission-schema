@@ -22,9 +22,9 @@ style = "pep440"
 
 [tool.poetry-dynamic-versioning.substitution]
 files = [
-    "*.py", 
-    "src/**/__init__.py", 
-    "src/**/__version__.py", 
+    "*.py",
+    "src/**/__init__.py",
+    "src/**/__version__.py",
     "src/**/_version.py",
     "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 ]
@@ -34,16 +34,18 @@ patterns = [
 ]
 
 [tool.poetry.dev-dependencies]
+check-jsonschema = "^0.22.0"
 linkml = "^1.4.8"
 mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
-
+oaklib = "^0.2.1"
 schemasheets = "^0.1.19"
+
 sheets-and-friends = "^0.4.0"
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
 ## /home/mark/gitrepos/sheets_and_friends
 #sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
-check-jsonschema = "^0.22.0"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
@@ -51,3 +53,6 @@ build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
+
+[tool.poetry.scripts]
+oak-tree-to-pv-list = "src.nmdc_submission_schema.datamodel.oak_tree_to_pv_list:main"
