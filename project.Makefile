@@ -294,3 +294,109 @@ dh-dev: project/json/nmdc_submission_schema.json
 
 dh-build: project/json/nmdc_submission_schema.json
 	cd data_harmonizer && npm run build
+
+###
+
+local/envo.db.gz:
+	wget https://s3.amazonaws.com/bbop-sqlite/envo.db.gz -O $@
+
+local/envo.db: local/envo.db.gz
+	gzip -d $<
+
+
+
+local/terrestrial_biome_tree_down.txt: local/envo.db
+	$(RUN) runoak \
+		-i $< tree \
+		--down \
+		--output $@ \
+		--predicates rdfs:subClassOf 'terrestrial biome'
+
+local/terrestrial_biome_pvs.txt: local/terrestrial_biome_tree_down.txt
+	$(RUN) oak-tree-to-pv-list \
+		--discard-line-pattern 'terrestrial biome'  \
+		--input-file $< \
+		--output-file $@
+
+
+
+#local/alpine_biome_tree_down.txt: local/envo.db
+#	$(RUN) runoak \
+#		-i $< tree \
+#		--down \
+#		--output $@ \
+#		--predicates rdfs:subClassOf 'alpine biome'
+#
+#local/alpine_biome_pvs.txt: local/alpine_biome_tree_down.txt
+#	$(RUN) oak-tree-to-pv-list \
+#		--discard-line-pattern 'alpine biome'  \
+#		--input-file $< \
+#		--output-file $@
+
+
+
+local/aquatic_biome_tree_down.txt: local/envo.db
+	$(RUN) runoak \
+		-i $< tree \
+		--down \
+		--output $@ \
+		--predicates rdfs:subClassOf 'aquatic biome'
+
+local/aquatic_biome_pvs.txt: local/aquatic_biome_tree_down.txt
+	$(RUN) oak-tree-to-pv-list \
+		--discard-line-pattern 'aquatic biome'  \
+		--input-file $< \
+		--output-file $@
+
+
+local/biome_tree_down.txt: local/envo.db
+	$(RUN) runoak \
+		-i $< tree \
+		--down \
+		--output $@ \
+		--predicates rdfs:subClassOf 'biome'
+
+local/biome_pvs.txt: local/biome_tree_down.txt
+	$(RUN) oak-tree-to-pv-list \
+		--discard-line-pattern 'xxx'  \
+		--input-file $< \
+		--output-file $@
+
+
+local/soil_tree_down.txt: local/envo.db
+	$(RUN) runoak \
+		-i $< tree \
+		--down \
+		--output $@ \
+		--predicates rdfs:subClassOf 'soil'
+
+local/soil_pvs.txt: local/soil_tree_down.txt
+	$(RUN) oak-tree-to-pv-list \
+		--discard-line-pattern 'xxx'  \
+		--input-file $< \
+		--output-file $@
+
+
+local/abp_tree_down.txt: local/envo.db
+	$(RUN) runoak \
+		-i $< tree \
+		--down \
+		--output $@ \
+		--predicates rdfs:subClassOf 'astronomical body part'
+
+local/abp_pvs.txt: local/abp_tree_down.txt
+	$(RUN) oak-tree-to-pv-list \
+		--discard-line-pattern 'xxx'  \
+		--input-file $< \
+		--output-file $@
+
+#x:  local/envo.db
+#	$(RUN) runoak -i $< extract-triples .desc//p=i 'terrestrial biome'
+
+# now add/edit those in the schema sheets enums file
+# would like to compose with and, or, not etc
+# would like to sort alphabetically within heirarchical groups
+
+# for local:
+# human construction
+# astronomical body part
