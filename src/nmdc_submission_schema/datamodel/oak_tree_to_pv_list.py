@@ -44,7 +44,7 @@ def main(discard_line_pattern, input_file, output_file):
         match = re.match(r'^(\s*)', line)
         my_initial_whitespace = match.group(1)
         no_ws_line = line[len(my_initial_whitespace):]
-        name, code = no_ws_line.split(" ! ")
+        code, name = no_ws_line.split(" ! ")
 
         reassembled = f"{len(my_initial_whitespace) * '_'}{name} [{code}]"
         assembled_lines.append(reassembled)
