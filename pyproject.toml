@@ -39,7 +39,7 @@ linkml = "^1.4.8"
 mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
 oaklib = "^0.2.1"
-schemasheets = "^0.1.19"
+schemasheets = "^0.1.20"
 
 sheets-and-friends = "^0.4.0"
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
