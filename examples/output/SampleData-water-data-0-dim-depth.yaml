@@ -1,12 +1,12 @@
 water_data:
-- collection_date: '2022-01-15'
-  depth: '1.5'
-  analysis_type:
+- analysis_type:
   - metagenomics
   - metatranscriptomics
-  env_package: xyz
+  collection_date: '2022-01-15'
+  depth: '1.5'
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
+  env_package: xyz
   samp_name: xyz
   source_mat_id: x:1

@@ -1,6 +1,5 @@
 jgi_mg_data:
-- dna_collect_site: xxx
-  dna_concentration: 1.23
+- dna_concentration: 1.23
   dna_cont_type: plate
   dna_cont_well: C3
   dna_container_id: xxx

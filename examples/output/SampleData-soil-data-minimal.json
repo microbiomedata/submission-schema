@@ -1,20 +1,20 @@
 {
   "soil_data": [
     {
-      "growth_facil": "greenhouse",
-      "store_cond": "frozen",
-      "collection_date": "2022-01-15",
-      "elev": "123.0",
-      "samp_store_temp": "-80 Celsius",
-      "depth": "111 to 222",
       "analysis_type": [
         "metagenomics",
         "metatranscriptomics"
       ],
-      "env_package": "soil",
+      "collection_date": "2022-01-15",
+      "depth": "111 to 222",
+      "elev": "123.0",
       "env_broad_scale": "____________urban biome [ENVO:01000249]",
       "env_local_scale": "___________________tunnel [ENVO:00000068]",
       "env_medium": "bare soil [ENVO:01001616]",
+      "env_package": "soil",
+      "growth_facil": "greenhouse",
+      "samp_store_temp": "-80 Celsius",
+      "store_cond": "frozen",
       "samp_name": "b",
       "source_mat_id": "x:2"
     }
