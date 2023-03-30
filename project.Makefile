@@ -8,13 +8,13 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf examples/output/*.ttl
 	rm -rf examples/output/*.yaml
 	rm -rf examples/output/README.md
-	rm -rf from_schema_sheets.lint_report.txt
+	rm -rf from_schemasheets.lint_report.txt
 	rm -rf project/jsonschema/nmdc_submission_schema.schema.json
-	rm -rf schema_sheets/from_schema_sheets.lint_report.txt
-	rm -rf schema_sheets/populated_tsv/*.tsv
-	rm -rf schema_sheets/populated_tsv/*.txt
-	rm -rf schema_sheets/yaml_out/from_schema_sheets.yaml
-	rm -rf schema_sheets/yaml_out/from_schema_sheets.yaml.raw
+	rm -rf schemasheets/from_schemasheets.lint_report.txt
+	rm -rf schemasheets/populated_tsv/*.tsv
+	rm -rf schemasheets/populated_tsv/*.txt
+	rm -rf schemasheets/yaml_out/from_schemasheets.yaml
+	rm -rf schemasheets/yaml_out/from_schemasheets.yaml.raw
 	rm -rf sheets_and_friends/with_modifications.lint_report.txt
 	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
@@ -39,21 +39,21 @@ sheets_and_friends_all \
 sheets_and_friends_cleanup
 
 schemasheets_cleanup:
-	rm -rf schema_sheets/yaml_out/*.yaml
+	rm -rf schemasheets/yaml_out/*.yaml
 
-local/from_schema_sheets.yaml: schema_sheets/tsv_in/prefixes.tsv \
-schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_classes.tsv \
-schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_enums.tsv \
-schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_schema_only.tsv \
-schema_sheets/tsv_in/sheets-for-nmdc-submission-schema_slots.tsv \
-schema_sheets/tsv_in/types.tsv
+local/from_schemasheets.yaml: schemasheets/tsv_in/prefixes.tsv \
+schemasheets/tsv_in/classes.tsv \
+schemasheets/tsv_in/enums.tsv \
+schemasheets/tsv_in/schema_only.tsv \
+schemasheets/tsv_in/slots.tsv \
+schemasheets/tsv_in/types.tsv
 	$(RUN) sheets2linkml \
 		--output $@.raw $^
 		# would prefer to discover TSV inputs instead of enumerating them
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \
 		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > local/from_schema_sheets.lint_report.txt
+	- $(RUN) linkml-lint $@ > local/from_schemasheets.lint_report.txt
 
 
 # todo: fewer enums
@@ -64,8 +64,8 @@ schema_sheets/tsv_in/types.tsv
 sheets_and_friends_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
-local/with_shuttles.yaml: local/from_schema_sheets.yaml \
-sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_import_slots_regardless.tsv
+local/with_shuttles.yaml: local/from_schemasheets.yaml \
+sheets_and_friends/tsv_in/import_slots_regardless.tsv
 		$(RUN) do_shuttle \
 			--config_tsv  $(word 2,$^) \
 			--recipient_model $(word 1,$^) \
@@ -90,9 +90,9 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 # undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
 # future versions of the nmdc-schema might just use strings, too
 
-# there's still more to do. see schema_sheets/populated_tsv/slot_usage.tsv
-# to some degree this should be handled globally by sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
-# and on a slot-by-slot basic by sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long.tsv
+# there's still more to do. see schemasheets/populated_tsv/slot_usage.tsv
+# to some degree this should be handled globally by sheets_and_friends/tsv_in/validation_converter.tsv
+# and on a slot-by-slot basic by sheets_and_friends/tsv_in/modifications_long.tsv
 
 # we should be consistent about the following things in patterns
 # single or multiple whitespace?
@@ -179,8 +179,8 @@ modifications_cleanup:
 
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
-sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_modifications_long-dont-mod-water.tsv \
-sheets_and_friends/tsv_in/sheets-for-nmdc-submission-schema_validation_converter.tsv
+sheets_and_friends/tsv_in/modifications_long.tsv \
+sheets_and_friends/tsv_in/validation_converter.tsv
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
 		--modifications_config_tsv $(word 2,$^) \
@@ -243,8 +243,8 @@ src/data/invalid src/data/valid
 #   but I changed the destination to a checked-in directory
 #   so collaborators can sort and filter the slot attributes
 #   and I switched to a smaller template
-schema_sheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-schema_sheets/templates/slot_usage_minimal.tsv
+schemasheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+schemasheets/templates/slot_usage_minimal.tsv
 	$(RUN) linkml2sheets \
 		--output-directory $(dir $@) \
 		--schema $< $(word 2,$^)

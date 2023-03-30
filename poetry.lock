@@ -887,20 +887,21 @@ tqdm = ["tqdm"]
 
 [[package]]
 name = "funowl"
-version = "0.1.12"
+version = "0.1.13"
 description = "Python rendering of the OWL Functional syntax"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "funowl-0.1.12-py3-none-any.whl", hash = "sha256:44f2337d47d21ab6532f8f0e51173c506a0d9dae9efa959cb105b0311e352082"},
-    {file = "funowl-0.1.12.tar.gz", hash = "sha256:3316c37ecde08cdfa96ebcbcc02ed53c355dc56845d654a8f37aa7a913ca6f71"},
+    {file = "funowl-0.1.13-py3-none-any.whl", hash = "sha256:81dc273b11cb1b0c9fbf15496a6b85f335ef1694c321fd704267bcd694e3cb26"},
+    {file = "funowl-0.1.13.tar.gz", hash = "sha256:49f26a0e9b072ba331914564478a90e99e1d8fa10c4570d600bb3bae9250ea06"},
 ]
 
 [package.dependencies]
 bcp47 = "*"
+jsonasobj = "*"
 pyjsg = ">=0.11.6"
-rdflib = ">=5.0.0"
+rdflib = "6.2.0"
 rdflib-shim = "*"
 rfc3987 = "*"
 
@@ -1603,14 +1604,14 @@ regex = ["regex"]
 
 [[package]]
 name = "linkml"
-version = "1.4.11"
+version = "1.5.0"
 description = "Linked Open Data Modeling Language"
 category = "dev"
 optional = false
 python-versions = ">=3.7.6,<4.0.0"
 files = [
-    {file = "linkml-1.4.11-py3-none-any.whl", hash = "sha256:2811af5c6a69fb5b8acc4c85741b6aa6d17ef5579a0118a5028025d8a2480866"},
-    {file = "linkml-1.4.11.tar.gz", hash = "sha256:ac5260a0cab15b36dbf2929afc43d7bc8e8af0e198ade7ee90be1dad8fd8d743"},
+    {file = "linkml-1.5.0-py3-none-any.whl", hash = "sha256:8f8d23f7f7bd6a10a5130d28ea576f7ceccd14e123ad4c0365bb53bc58664ba0"},
+    {file = "linkml-1.5.0.tar.gz", hash = "sha256:120fac9dd5a27d3dabc5e45fdeaf0b2fe187fe5f59bf7bc0806ebb5a884e6942"},
 ]
 
 [package.dependencies]
@@ -1623,7 +1624,7 @@ jinja2 = ">=3.1.0"
 jsonasobj2 = ">=1.0.3,<2.0.0"
 jsonschema = {version = ">=4.0.0", extras = ["format"]}
 linkml-dataops = "*"
-linkml-runtime = ">=1,<2"
+linkml-runtime = ">=1.5.0"
 myst-parser = "*"
 openpyxl = "*"
 parse = "*"
@@ -1688,14 +1689,14 @@ docs = ["myst-parser[docs] (>=0.18.1,<0.19.0)", "sphinx-autodoc-typehints[docs] 
 
 [[package]]
 name = "linkml-runtime"
-version = "1.4.5"
+version = "1.5.0"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 category = "main"
 optional = false
 python-versions = ">=3.7.6,<4.0.0"
 files = [
-    {file = "linkml-runtime-1.4.5.tar.gz", hash = "sha256:bdb6260dfd9b050a6edce8e72061e77e7080471d5d53e694805cb948c8c9f473"},
-    {file = "linkml_runtime-1.4.5-py3-none-any.whl", hash = "sha256:fc1149c59e038a45e5d46c677a19b5dfc15dedce3ef967eed2ee3e0958fd2e49"},
+    {file = "linkml_runtime-1.5.0-py3-none-any.whl", hash = "sha256:ddc3d224d9db39be2df33a02718cd75462942009454aca7f828b726129357a37"},
+    {file = "linkml_runtime-1.5.0.tar.gz", hash = "sha256:dd80aec72f6d3226b39415cf4aa8cdda482dc73fcc227f938c6fff72afd80b20"},
 ]
 
 [package.dependencies]
@@ -2176,14 +2177,14 @@ viz = ["pygraphviz"]
 
 [[package]]
 name = "oaklib"
-version = "0.2.8"
+version = "0.3.1"
 description = "Ontology Access Kit: Python library for common ontology operations over a variety of backends"
 category = "dev"
 optional = false
 python-versions = ">=3.9,<4.0.0"
 files = [
-    {file = "oaklib-0.2.8-py3-none-any.whl", hash = "sha256:202729f6ebf16f725f412152926f08709e5b001ec1743e512363aa93fbaa6377"},
-    {file = "oaklib-0.2.8.tar.gz", hash = "sha256:dc501b6b4ddd7a2d1e06aa62901b8579d830897c5898b28f0616913177b2f6c2"},
+    {file = "oaklib-0.3.1-py3-none-any.whl", hash = "sha256:7f951cc841d4ffadcf2d2633aa41af5428931da0f3f00c55bb9f450fee85ed78"},
+    {file = "oaklib-0.3.1.tar.gz", hash = "sha256:23c5911e27e42cb0ea07df403f23be8589ec7b95b1a0d0ec64bf58c404ff0386"},
 ]
 
 [package.dependencies]
@@ -2973,25 +2974,28 @@ files = [
 
 [[package]]
 name = "rdflib"
-version = "6.3.2"
+version = "6.2.0"
 description = "RDFLib is a Python library for working with RDF, a simple yet powerful language for representing information."
 category = "main"
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = ">=3.7"
 files = [
-    {file = "rdflib-6.3.2-py3-none-any.whl", hash = "sha256:36b4e74a32aa1e4fa7b8719876fb192f19ecd45ff932ea5ebbd2e417a0247e63"},
-    {file = "rdflib-6.3.2.tar.gz", hash = "sha256:72af591ff704f4caacea7ecc0c5a9056b8553e0489dd4f35a9bc52dbd41522e0"},
+    {file = "rdflib-6.2.0-py3-none-any.whl", hash = "sha256:85c34a86dfc517a41e5f2425a41a0aceacc23983462b32e68610b9fad1383bca"},
+    {file = "rdflib-6.2.0.tar.gz", hash = "sha256:62dc3c86d1712db0f55785baf8047f63731fa59b2682be03219cb89262065942"},
 ]
 
 [package.dependencies]
-isodate = ">=0.6.0,<0.7.0"
-pyparsing = ">=2.1.0,<4"
+isodate = "*"
+pyparsing = "*"
+setuptools = "*"
 
 [package.extras]
-berkeleydb = ["berkeleydb (>=18.1.0,<19.0.0)"]
-html = ["html5lib (>=1.0,<2.0)"]
-lxml = ["lxml (>=4.3.0,<5.0.0)"]
-networkx = ["networkx (>=2.0.0,<3.0.0)"]
+berkeleydb = ["berkeleydb"]
+dev = ["black (==22.6.0)", "flake8", "flakeheaven", "isort", "mypy", "pep8-naming", "types-setuptools"]
+docs = ["myst-parser", "sphinx (<6)", "sphinx-autodoc-typehints", "sphinxcontrib-apidoc", "sphinxcontrib-kroki"]
+html = ["html5lib"]
+networkx = ["networkx"]
+tests = ["html5lib", "pytest", "pytest-cov"]
 
 [[package]]
 name = "rdflib-jsonld"
@@ -3227,6 +3231,9 @@ files = [
     {file = "ruamel.yaml.clib-0.2.7-cp310-cp310-win_amd64.whl", hash = "sha256:d000f258cf42fec2b1bbf2863c61d7b8918d31ffee905da62dede869254d3b8a"},
     {file = "ruamel.yaml.clib-0.2.7-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:045e0626baf1c52e5527bd5db361bc83180faaba2ff586e763d3d5982a876a9e"},
     {file = "ruamel.yaml.clib-0.2.7-cp311-cp311-macosx_12_6_arm64.whl", hash = "sha256:721bc4ba4525f53f6a611ec0967bdcee61b31df5a56801281027a3a6d1c2daf5"},
+    {file = "ruamel.yaml.clib-0.2.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl", hash = "sha256:41d0f1fa4c6830176eef5b276af04c89320ea616655d01327d5ce65e50575c94"},
+    {file = "ruamel.yaml.clib-0.2.7-cp311-cp311-win32.whl", hash = "sha256:f6d3d39611ac2e4f62c3128a9eed45f19a6608670c5a2f4f07f24e8de3441d38"},
+    {file = "ruamel.yaml.clib-0.2.7-cp311-cp311-win_amd64.whl", hash = "sha256:da538167284de58a52109a9b89b8f6a53ff8437dd6dc26d33b57bf6699153122"},
     {file = "ruamel.yaml.clib-0.2.7-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:4b3a93bb9bc662fc1f99c5c3ea8e623d8b23ad22f861eb6fce9377ac07ad6072"},
     {file = "ruamel.yaml.clib-0.2.7-cp36-cp36m-macosx_12_0_arm64.whl", hash = "sha256:a234a20ae07e8469da311e182e70ef6b199d0fbeb6c6cc2901204dd87fb867e8"},
     {file = "ruamel.yaml.clib-0.2.7-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:15910ef4f3e537eea7fe45f8a5d19997479940d9196f357152a09031c5be59f3"},
@@ -3256,21 +3263,21 @@ files = [
 
 [[package]]
 name = "schemasheets"
-version = "0.1.20"
+version = "0.1.21"
 description = "Package to author schemas using spreadsheets"
 category = "dev"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "schemasheets-0.1.20-py3-none-any.whl", hash = "sha256:201fe8d23a11e8815189af01a991698e45b67156b3ac75008b5cc0054544e82a"},
-    {file = "schemasheets-0.1.20.tar.gz", hash = "sha256:10b65e8e5d8b5cce5a5a4843deb93d9e5b3034fff715181f875b7fb56806bdcb"},
+    {file = "schemasheets-0.1.21-py3-none-any.whl", hash = "sha256:41f993cdc68f21f7ae0fa7f62a5ed02b5b8ce40c52ef29ae6486f6fe7bc7dd0a"},
+    {file = "schemasheets-0.1.21.tar.gz", hash = "sha256:5768b07b25a5adbee56af7c86a493c8ba1428426d5b211c5d7fe7a22c3109cee"},
 ]
 
 [package.dependencies]
-bioregistry = ">=0.5.0,<0.7.0"
+bioregistry = ">0.5.0,<0.7.0"
 Jinja2 = ">=3.0.3,<4.0.0"
-linkml = ">=1.4,<1.5.0"
-linkml-runtime = ">=1.4,<1.5.0"
+linkml = ">=1.4,<2.0"
+linkml-runtime = ">=1.4,<2.0"
 ontodev-cogs = ">=0.3.3,<0.4.0"
 
 [[package]]
@@ -3333,7 +3340,7 @@ SQLAlchemy-Utils = ">=0.38.2,<0.39.0"
 name = "setuptools"
 version = "67.6.1"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
@@ -3348,24 +3355,24 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 
 [[package]]
 name = "sheets-and-friends"
-version = "0.4.0"
-description = "Create a LinkML model with as-is imported slots, imported but modified slots (via yq), or newly minted slots (via schemasheets)"
+version = "0.5.0"
+description = "Enhance a LinkML model with imported and optionally modified slots"
 category = "dev"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "sheets_and_friends-0.4.0-py3-none-any.whl", hash = "sha256:419fd8f34721f44dbc9bb2419af2ade26968ff0a423d21628b0b36c1dea152ef"},
-    {file = "sheets_and_friends-0.4.0.tar.gz", hash = "sha256:7650accd153363f6649c77695c9b3834fd818e3cf5baf50cf9c8c61ea650d0b7"},
+    {file = "sheets_and_friends-0.5.0-py3-none-any.whl", hash = "sha256:6b9b43375ac395da2851cdf37089e0a368c077cdbeb9982e64d3650f0eca30be"},
+    {file = "sheets_and_friends-0.5.0.tar.gz", hash = "sha256:25de352377390610e94461e843324f8633119efbe86359bbc745cc92f027aecd"},
 ]
 
 [package.dependencies]
-click_log = "*"
+click = ">=8.0.0,<9.0.0"
+click_log = "0.4.0"
 glom = ">=23.1.1,<24.0.0"
-linkml-runtime = "1.4.5"
+linkml-runtime = ">=1.4.0,<2.0.0"
 pandas = ">=1.3.4,<2.0.0"
 pandasql = ">=0.7.3,<0.8.0"
 pygsheets = ">=2.0.5,<3.0.0"
-schemasheets = ">=0.1.8,<0.2.0"
 
 [[package]]
 name = "shexjsg"
@@ -4237,4 +4244,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "51e84f4b67d29063c61ac8293feb65a1f87dc13b0ac3eee25ff21b3a1ab4e159"
+content-hash = "6c542715706d2512df00036ff00952e61852dbbe303ac47c9a5120ec5b715c64"
