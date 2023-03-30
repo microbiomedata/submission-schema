@@ -400,3 +400,15 @@ local/abp_pvs.txt: local/abp_tree_down.txt
 # for local:
 # human construction
 # astronomical body part
+
+src/data/data_harmonizer_io/soil_for_linkml.json: src/data/data_harmonizer_io/soil_from_dh.json
+	$(RUN) dh-json2linkml \
+		--input-file $< \
+		--output-file $@ \
+		--key soil_data
+
+
+src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for_linkml.json
+	$(RUN) linkml-json2dh \
+		--input-file $< \
+		--output-dir $(dir $@)
