@@ -10,11 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const dhFooterRoot = document.querySelector('#data-harmonizer-footer');
   const dhToolbarRoot = document.querySelector('#data-harmonizer-toolbar');
 
+  const params = new URLSearchParams(location.search);
+  const templatePath = params.get('template');
+
   const dh = new DataHarmonizer(dhRoot);
   
   new Footer(dhFooterRoot, dh);
 
   new Toolbar(dhToolbarRoot, dh, menu, {
+    templatePath,
     getSchema: async (schema) => {
       return (await import(`../project/json/${schema}.json`)).default
     },
