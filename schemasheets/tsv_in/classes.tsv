@@ -17,7 +17,7 @@ SoilInterface	Soil	soil dh_interface		DhInterface		DhMultiviewCommonColumnsMixin
 WastewaterSludgeInterface	Wastewater Sludge	wastewater_sludge dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
 WaterInterface	Water	water dh_interface		DhInterface		DhMultiviewCommonColumnsMixin|SampIdNewTermsMixin	
 DhMultiviewCommonColumnsMixin	Dh Mutliview Common Columns	Mixin with DhMutliviewCommon Columns			TRUE		
-SampIdNewTermsMixin	SampId New Terms	Mixin with SampIdNew Terms			TRUE		env_package|sample_link
+SampIdNewTermsMixin	SampId New Terms	Mixin with SampIdNew Terms			TRUE		sample_link
 SoilMixsInspiredMixin	Soil MIxS Inspired Mixin	Mixin with SoilMixsInspired Terms			TRUE		collection_date_inc|collection_time|collection_time_inc|experimental_factor_other|filter_method|isotope_exposure|micro_biomass_c_meth|micro_biomass_n_meth|microbial_biomass_c|microbial_biomass_n|non_microb_biomass|non_microb_biomass_method|org_nitro_method|other_treatment|start_date_inc|start_time_inc
 DhInterface	Dh Root Interface	One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types					
 SampleData	SampleData	represents data produced by the DataHarmonizer tabs of the submission portal	TRUE				air_data|biofilm_data|built_env_data|host_associated_data|plant_associated_data|sediment_data|soil_data|wastewater_sludge_data|water_data|emsl_data|jgi_mg_data|jgi_mt_data
