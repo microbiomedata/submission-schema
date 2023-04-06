@@ -87,7 +87,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -95,7 +95,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -247,7 +247,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -438,7 +442,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -446,7 +450,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -704,7 +708,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -1036,7 +1044,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "escalator": {
@@ -1134,7 +1142,7 @@
                     "description": "The gender type of the restroom"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "hall_count": {
@@ -1605,6 +1613,10 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -1999,10 +2011,6 @@
                     "description": "The temperature at which the sample should be stored upon delivery to EMSL",
                     "type": "number"
                 },
-                "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
-                    "type": "string"
-                },
                 "project_id": {
                     "description": "Proposal IDs or names associated with dataset",
                     "type": "string"
@@ -2013,11 +2021,6 @@
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "sample_link": {
-                    "description": "A unique identifier to assign parent-child, subsample, or sibling samples. This is relevant when a sample or other material was used to generate the new sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
                     "type": "string"
                 },
                 "sample_shipped": {
@@ -2040,6 +2043,11 @@
                 }
             },
             "required": [
+                "emsl_store_temp",
+                "project_id",
+                "sample_shipped",
+                "sample_type",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -2698,7 +2706,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "ethylbenzene": {
@@ -2715,7 +2723,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "hc_produced": {
@@ -3045,7 +3053,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -3245,7 +3257,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "ethylbenzene": {
@@ -3262,7 +3274,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "hc_produced": {
@@ -3595,7 +3607,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -3735,7 +3751,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -3747,7 +3763,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "gravidity": {
@@ -3972,7 +3988,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -4111,20 +4131,11 @@
                     "minimum": 0,
                     "type": "number"
                 },
-                "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
-                    "type": "string"
-                },
                 "proposal_dna": {
                     "type": "string"
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "sample_link": {
-                    "description": "A unique identifier to assign parent-child, subsample, or sibling samples. This is relevant when a sample or other material was used to generate the new sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
                     "type": "string"
                 },
                 "source_mat_id": {
@@ -4134,6 +4145,21 @@
                 }
             },
             "required": [
+                "dna_concentration",
+                "dna_cont_type",
+                "dna_container_id",
+                "dna_dnase",
+                "dna_isolate_meth",
+                "dna_project_contact",
+                "dna_samp_id",
+                "dna_sample_format",
+                "dna_sample_name",
+                "dna_seq_project",
+                "dna_seq_project_name",
+                "dna_seq_project_pi",
+                "dna_volume",
+                "proposal_dna",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -4153,10 +4179,6 @@
                 },
                 "dnase_rna": {
                     "$ref": "#/$defs/DnaseRnaEnum"
-                },
-                "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
-                    "type": "string"
                 },
                 "proposal_rna": {
                     "type": "string"
@@ -4221,11 +4243,6 @@
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
                 },
-                "sample_link": {
-                    "description": "A unique identifier to assign parent-child, subsample, or sibling samples. This is relevant when a sample or other material was used to generate the new sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
-                    "type": "string"
-                },
                 "source_mat_id": {
                     "description": "A globally unique identifier assigned to the biological sample.",
                     "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
@@ -4233,6 +4250,22 @@
                 }
             },
             "required": [
+                "dnase_rna",
+                "proposal_rna",
+                "rna_concentration",
+                "rna_cont_type",
+                "rna_cont_well",
+                "rna_container_id",
+                "rna_isolate_meth",
+                "rna_project_contact",
+                "rna_samp_id",
+                "rna_sample_format",
+                "rna_sample_name",
+                "rna_seq_project",
+                "rna_seq_project_name",
+                "rna_seq_project_pi",
+                "rna_volume",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -4424,7 +4457,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -4432,7 +4465,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -4621,7 +4654,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -4748,7 +4785,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -4772,7 +4809,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "gravity": {
@@ -5079,8 +5116,12 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
                 "growth_facil",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -5644,7 +5685,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -5652,7 +5693,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -5932,7 +5973,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -6144,7 +6189,7 @@
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -6181,7 +6226,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "growth_facil": {
@@ -6538,9 +6583,13 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
                 "growth_facil",
+                "lat_lon",
                 "samp_store_temp",
                 "store_cond",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -6951,7 +7000,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -6964,7 +7013,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -7166,7 +7215,11 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "lat_lon",
                 "samp_store_temp",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],
@@ -7391,7 +7444,7 @@
                     "type": "string"
                 },
                 "env_package": {
-                    "description": "MIxS extension for reporting of measurements and observations obtained from one or more of the environments where the sample was obtained. All environmental packages listed here are further defined in separate subtables. By giving the name of the environmental package, a selection of fields can be made from the subtables and can be reported",
+                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -7404,7 +7457,7 @@
                     "type": "string"
                 },
                 "geo_loc_name": {
-                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name. ",
+                    "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -7704,6 +7757,9 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
+                "env_package",
+                "geo_loc_name",
+                "analysis_type",
                 "samp_name",
                 "source_mat_id"
             ],

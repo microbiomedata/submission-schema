@@ -12,7 +12,9 @@ soil_data:
   env_local_scale: ___________________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
   growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
   samp_name: b
   samp_store_temp: -80 Celsius
   source_mat_id: x:2
@@ -448,6 +450,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
 
@@ -465,6 +468,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
 
@@ -508,6 +512,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_mat_process: text [ONTO:000000000]
   samp_name: xyz
   source_mat_id: x:1
@@ -588,6 +593,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   rel_to_oxygen: xyz
   samp_name: xyz
   source_mat_id: x:1
@@ -610,6 +616,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -632,6 +639,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -680,6 +688,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   organism_count: xyz;100 units
   samp_name: xyz
   source_mat_id: x:1
@@ -757,6 +766,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -779,6 +789,7 @@ water_data:
   - ONTO:1234
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -799,6 +810,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -851,6 +863,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -888,6 +901,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -911,6 +925,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -959,6 +974,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -981,6 +997,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -1004,7 +1021,9 @@ soil_data:
   env_local_scale: ___________________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
   growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
   samp_name: b
   samp_store_temp: -80 Celsius
   source_mat_id: x:2
@@ -1029,6 +1048,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   organism_count: xyz;100 units;xyz
   samp_name: xyz
   source_mat_id: x:1
@@ -1053,6 +1073,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -1078,6 +1099,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_mat_process: text [ONTO:000000000]
   samp_name: xyz
   source_mat_id: x:1
@@ -1101,6 +1123,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   specific_ecosystem: Unclassified
 
@@ -1149,6 +1172,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   source_mat_id: x:1
   specific_ecosystem: Unclassified
@@ -1197,6 +1221,7 @@ water_data:
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
   source_mat_id: x:1
   specific_ecosystem: Unclassified
 

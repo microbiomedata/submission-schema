@@ -3,7 +3,6 @@
     {
       "dna_concentration": 1.23,
       "dna_cont_type": "plate",
-      "dna_cont_well": "C3",
       "dna_container_id": "xxx",
       "dna_dnase": "no",
       "dna_isolate_meth": "xxx",
@@ -20,6 +19,7 @@
         "metagenomics",
         "metatranscriptomics"
       ],
+      "dna_cont_well": "C3",
       "samp_name": "xxx",
       "source_mat_id": "x:1"
     }

@@ -1,13 +1,13 @@
 {
   "soil_data": [
     {
-      "air_temp_regm": "xxx",
-      "al_sat_meth": "xxx",
-      "alt": "111 units",
       "analysis_type": [
         "metagenomics",
         "metatranscriptomics"
       ],
+      "air_temp_regm": "xxx",
+      "al_sat_meth": "xxx",
+      "alt": "111 units",
       "annual_precpt": "111 units",
       "annual_temp": "111 units",
       "biotic_regm": "xxx",
