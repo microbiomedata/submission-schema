@@ -43,18 +43,18 @@ JgiMgInterface	dna_absorb1	replace_attribute	recommended			true
 JgiMgInterface	dna_absorb2	replace_attribute	recommended			true
 JgiMgInterface	dna_collect_site	replace_attribute	required			true
 JgiMgInterface	dna_concentration	replace_attribute	required			true
-JgiMgInterface	dna_container_ID	replace_attribute	required			true
+JgiMgInterface	dna_container_id	replace_attribute	required			true
 JgiMgInterface	dna_cont_type	replace_attribute	required			true
 JgiMgInterface	dna_dnase	replace_attribute	required			true
 JgiMgInterface	dna_isolate_meth	replace_attribute	required			true
 JgiMgInterface	dna_organisms	replace_attribute	recommended			true
 JgiMgInterface	dna_project_contact	replace_attribute	required			true
-JgiMgInterface	dna_samp_ID	replace_attribute	required			true
+JgiMgInterface	dna_samp_id	replace_attribute	required			true
 JgiMgInterface	dna_sample_format	replace_attribute	required			true
 JgiMgInterface	dna_sample_name	replace_attribute	required			true
 JgiMgInterface	dna_seq_project	replace_attribute	required			true
 JgiMgInterface	dna_seq_project_name	replace_attribute	required			true
-JgiMgInterface	dna_seq_project_PI	replace_attribute	required			true
+JgiMgInterface	dna_seq_project_pi	replace_attribute	required			true
 JgiMtInterface	dnase_rna	replace_attribute	required			true
 JgiMgInterface	dna_volume	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ecosystem	add_attribute	notes			range: string or EcosystemEnum? The enum could be dynamic or might be soil biased.
@@ -77,7 +77,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	elev	replace_attribute	range			float
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	elev	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	elev	replace_attribute	title			elevation, meters
-EmslInterface	EMSL_store_temp	replace_attribute	required			true
+EmslInterface	emsl_store_temp	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_broad_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_broad_scale	replace_attribute	description			In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html
 SoilInterface	env_broad_scale	replace_attribute	range			EnvBroadScaleSoilEnum
@@ -155,18 +155,18 @@ JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
 JgiMtInterface	rna_collect_site	replace_attribute	required			true
 JgiMtInterface	rna_concentration	replace_attribute	required			true
-JgiMtInterface	rna_container_ID	replace_attribute	required			true
+JgiMtInterface	rna_container_id	replace_attribute	required			true
 JgiMtInterface	rna_cont_type	replace_attribute	required			true
 JgiMtInterface	rna_cont_well	replace_attribute	required			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
 JgiMtInterface	rna_organisms	replace_attribute	recommended			true
 JgiMtInterface	rna_project_contact	replace_attribute	required			true
-JgiMtInterface	rna_samp_ID	replace_attribute	required			true
+JgiMtInterface	rna_samp_id	replace_attribute	required			true
 JgiMtInterface	rna_sample_format	replace_attribute	required			true
 JgiMtInterface	rna_sample_name	replace_attribute	required			true
 JgiMtInterface	rna_seq_project	replace_attribute	required			true
 JgiMtInterface	rna_seq_project_name	replace_attribute	required			true
-JgiMtInterface	rna_seq_project_PI	replace_attribute	required			true
+JgiMtInterface	rna_seq_project_pi	replace_attribute	required			true
 JgiMtInterface	rna_volume	replace_attribute	required			true
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
