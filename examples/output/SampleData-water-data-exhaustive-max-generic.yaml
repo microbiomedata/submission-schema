@@ -1,13 +1,13 @@
 water_data:
-- alkalinity: 100 units
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  alkalinity: 100 units
   alkalinity_method: xyz
   alkyl_diethers: 100 units
   alt: 100 units
   aminopept_act: 100 units
   ammonium: 100 units
-  analysis_type:
-  - metagenomics
-  - metatranscriptomics
   atmospheric_data: xyz;100 units
   bac_prod: 100 units
   bac_resp: 100 units

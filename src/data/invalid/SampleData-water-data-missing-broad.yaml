@@ -11,6 +11,7 @@ water_data:
     env_local_scale: sand [ONTO:1234]
     env_medium: sand [ONTO:1234]
     env_package: xyz
+    geo_loc_name: "USA: Crater Lake"
     samp_name: xyz
     source_mat_id: x:1
     specific_ecosystem: Unclassified

@@ -23,7 +23,7 @@ soil_data:
     cur_land_use: cities
     cur_vegetation: xxx
     cur_vegetation_meth: xxx
-    depth: '111'
+    depth: '0'
     drainage_class: well
     ecosystem: Environmental
     ecosystem_category: Terrestrial
@@ -111,7 +111,7 @@ soil_data:
     water_content: 111 units
     watering_regm: xxx
   - elev: 123
-    depth: "111 to 222"
+    depth: "0 - 1"
     lat_lon: 77 88
     ecosystem: Environmental
     samp_name: b
@@ -130,7 +130,6 @@ soil_data:
     collection_date: '2022-01-15'
     env_broad_scale: '____________urban biome [ENVO:01000249]'
     env_local_scale: '___________________tunnel [ENVO:00000068]'
-    env_medium: 'bare soil [ENVO:01001616]'
     samp_store_temp: "-80 Celsius"
     ecosystem_subtype: Unclassified
     ecosystem_category: Terrestrial
