@@ -780,17 +780,17 @@ enums:
       montane biome [ENVO:01001836]:
         text: montane biome [ENVO:01001836]
         description: placeholder PV descr, DO NOT SORT
-      ____montane savanna biome [ENVO:01000223]:
-        text: ____montane savanna biome [ENVO:01000223]
+      __montane savanna biome [ENVO:01000223]:
+        text: __montane savanna biome [ENVO:01000223]
         description: placeholder PV descr, DO NOT SORT
-      ____montane shrubland biome [ENVO:01000216]:
-        text: ____montane shrubland biome [ENVO:01000216]
+      __montane shrubland biome [ENVO:01000216]:
+        text: __montane shrubland biome [ENVO:01000216]
         description: placeholder PV descr, DO NOT SORT
       alpine biome [ENVO:01001835]:
         text: alpine biome [ENVO:01001835]
         description: placeholder PV descr, DO NOT SORT
-      ____alpine tundra biome [ENVO:01001505]:
-        text: ____alpine tundra biome [ENVO:01001505]
+      __alpine tundra biome [ENVO:01001505]:
+        text: __alpine tundra biome [ENVO:01001505]
         description: placeholder PV descr, DO NOT SORT
       subpolar biome [ENVO:01001834]:
         text: subpolar biome [ENVO:01001834]
@@ -798,50 +798,50 @@ enums:
       subtropical biome [ENVO:01001832]:
         text: subtropical biome [ENVO:01001832]
         description: placeholder PV descr, DO NOT SORT
-      ____mediterranean biome [ENVO:01001833]:
-        text: ____mediterranean biome [ENVO:01001833]
+      __mediterranean biome [ENVO:01001833]:
+        text: __mediterranean biome [ENVO:01001833]
         description: placeholder PV descr, DO NOT SORT
-      ________mediterranean savanna biome [ENVO:01000229]:
-        text: ________mediterranean savanna biome [ENVO:01000229]
+      ____mediterranean savanna biome [ENVO:01000229]:
+        text: ____mediterranean savanna biome [ENVO:01000229]
         description: placeholder PV descr, DO NOT SORT
-      ________mediterranean shrubland biome [ENVO:01000217]:
-        text: ________mediterranean shrubland biome [ENVO:01000217]
+      ____mediterranean shrubland biome [ENVO:01000217]:
+        text: ____mediterranean shrubland biome [ENVO:01000217]
         description: placeholder PV descr, DO NOT SORT
-      ________mediterranean woodland biome [ENVO:01000208]:
-        text: ________mediterranean woodland biome [ENVO:01000208]
+      ____mediterranean woodland biome [ENVO:01000208]:
+        text: ____mediterranean woodland biome [ENVO:01000208]
         description: placeholder PV descr, DO NOT SORT
-      ____subtropical woodland biome [ENVO:01000222]:
-        text: ____subtropical woodland biome [ENVO:01000222]
+      __subtropical woodland biome [ENVO:01000222]:
+        text: __subtropical woodland biome [ENVO:01000222]
         description: placeholder PV descr, DO NOT SORT
-      ____subtropical shrubland biome [ENVO:01000213]:
-        text: ____subtropical shrubland biome [ENVO:01000213]
+      __subtropical shrubland biome [ENVO:01000213]:
+        text: __subtropical shrubland biome [ENVO:01000213]
         description: placeholder PV descr, DO NOT SORT
-      ____subtropical savanna biome [ENVO:01000187]:
-        text: ____subtropical savanna biome [ENVO:01000187]
+      __subtropical savanna biome [ENVO:01000187]:
+        text: __subtropical savanna biome [ENVO:01000187]
         description: placeholder PV descr, DO NOT SORT
       temperate biome [ENVO:01001831]:
         text: temperate biome [ENVO:01001831]
         description: placeholder PV descr, DO NOT SORT
-      ____temperate woodland biome [ENVO:01000221]:
-        text: ____temperate woodland biome [ENVO:01000221]
+      __temperate woodland biome [ENVO:01000221]:
+        text: __temperate woodland biome [ENVO:01000221]
         description: placeholder PV descr, DO NOT SORT
-      ____temperate shrubland biome [ENVO:01000215]:
-        text: ____temperate shrubland biome [ENVO:01000215]
+      __temperate shrubland biome [ENVO:01000215]:
+        text: __temperate shrubland biome [ENVO:01000215]
         description: placeholder PV descr, DO NOT SORT
-      ____temperate savanna biome [ENVO:01000189]:
-        text: ____temperate savanna biome [ENVO:01000189]
+      __temperate savanna biome [ENVO:01000189]:
+        text: __temperate savanna biome [ENVO:01000189]
         description: placeholder PV descr, DO NOT SORT
       tropical biome [ENVO:01001830]:
         text: tropical biome [ENVO:01001830]
         description: placeholder PV descr, DO NOT SORT
-      ____tropical woodland biome [ENVO:01000220]:
-        text: ____tropical woodland biome [ENVO:01000220]
+      __tropical woodland biome [ENVO:01000220]:
+        text: __tropical woodland biome [ENVO:01000220]
         description: placeholder PV descr, DO NOT SORT
-      ____tropical shrubland biome [ENVO:01000214]:
-        text: ____tropical shrubland biome [ENVO:01000214]
+      __tropical shrubland biome [ENVO:01000214]:
+        text: __tropical shrubland biome [ENVO:01000214]
         description: placeholder PV descr, DO NOT SORT
-      ____tropical savanna biome [ENVO:01000188]:
-        text: ____tropical savanna biome [ENVO:01000188]
+      __tropical savanna biome [ENVO:01000188]:
+        text: __tropical savanna biome [ENVO:01000188]
         description: placeholder PV descr, DO NOT SORT
       polar biome [ENVO:01000339]:
         text: polar biome [ENVO:01000339]
@@ -849,89 +849,89 @@ enums:
       terrestrial biome [ENVO:00000446]:
         text: terrestrial biome [ENVO:00000446]
         description: placeholder PV descr, DO NOT SORT
-      ____anthropogenic terrestrial biome [ENVO:01000219]:
-        text: ____anthropogenic terrestrial biome [ENVO:01000219]
+      __anthropogenic terrestrial biome [ENVO:01000219]:
+        text: __anthropogenic terrestrial biome [ENVO:01000219]
         description: placeholder PV descr, DO NOT SORT
-      ________dense settlement biome [ENVO:01000248]:
-        text: ________dense settlement biome [ENVO:01000248]
+      ____dense settlement biome [ENVO:01000248]:
+        text: ____dense settlement biome [ENVO:01000248]
         description: placeholder PV descr, DO NOT SORT
-      ____________urban biome [ENVO:01000249]:
-        text: ____________urban biome [ENVO:01000249]
+      ______urban biome [ENVO:01000249]:
+        text: ______urban biome [ENVO:01000249]
         description: placeholder PV descr, DO NOT SORT
-      ________rangeland biome [ENVO:01000247]:
-        text: ________rangeland biome [ENVO:01000247]
+      ____rangeland biome [ENVO:01000247]:
+        text: ____rangeland biome [ENVO:01000247]
         description: placeholder PV descr, DO NOT SORT
-      ________village biome [ENVO:01000246]:
-        text: ________village biome [ENVO:01000246]
+      ____village biome [ENVO:01000246]:
+        text: ____village biome [ENVO:01000246]
         description: placeholder PV descr, DO NOT SORT
-      ____mangrove biome [ENVO:01000181]:
-        text: ____mangrove biome [ENVO:01000181]
+      __mangrove biome [ENVO:01000181]:
+        text: __mangrove biome [ENVO:01000181]
         description: placeholder PV descr, DO NOT SORT
-      ____tundra biome [ENVO:01000180]:
-        text: ____tundra biome [ENVO:01000180]
+      __tundra biome [ENVO:01000180]:
+        text: __tundra biome [ENVO:01000180]
         description: placeholder PV descr, DO NOT SORT
-      ________alpine tundra biome [ENVO:01001505]:
-        text: ________alpine tundra biome [ENVO:01001505]
+      ____alpine tundra biome [ENVO:01001505]:
+        text: ____alpine tundra biome [ENVO:01001505]
         description: placeholder PV descr, DO NOT SORT
-      ____shrubland biome [ENVO:01000176]:
-        text: ____shrubland biome [ENVO:01000176]
+      __shrubland biome [ENVO:01000176]:
+        text: __shrubland biome [ENVO:01000176]
         description: placeholder PV descr, DO NOT SORT
-      ________tidal mangrove shrubland [ENVO:01001369]:
-        text: ________tidal mangrove shrubland [ENVO:01001369]
+      ____tidal mangrove shrubland [ENVO:01001369]:
+        text: ____tidal mangrove shrubland [ENVO:01001369]
         description: placeholder PV descr, DO NOT SORT
-      ________xeric shrubland biome [ENVO:01000218]:
-        text: ________xeric shrubland biome [ENVO:01000218]
+      ____xeric shrubland biome [ENVO:01000218]:
+        text: ____xeric shrubland biome [ENVO:01000218]
         description: placeholder PV descr, DO NOT SORT
-      ________montane shrubland biome [ENVO:01000216]:
-        text: ________montane shrubland biome [ENVO:01000216]
+      ____montane shrubland biome [ENVO:01000216]:
+        text: ____montane shrubland biome [ENVO:01000216]
         description: placeholder PV descr, DO NOT SORT
-      ________temperate shrubland biome [ENVO:01000215]:
-        text: ________temperate shrubland biome [ENVO:01000215]
+      ____temperate shrubland biome [ENVO:01000215]:
+        text: ____temperate shrubland biome [ENVO:01000215]
         description: placeholder PV descr, DO NOT SORT
-      ________tropical shrubland biome [ENVO:01000214]:
-        text: ________tropical shrubland biome [ENVO:01000214]
+      ____tropical shrubland biome [ENVO:01000214]:
+        text: ____tropical shrubland biome [ENVO:01000214]
         description: placeholder PV descr, DO NOT SORT
-      ________subtropical shrubland biome [ENVO:01000213]:
-        text: ________subtropical shrubland biome [ENVO:01000213]
+      ____subtropical shrubland biome [ENVO:01000213]:
+        text: ____subtropical shrubland biome [ENVO:01000213]
         description: placeholder PV descr, DO NOT SORT
-      ____________mediterranean shrubland biome [ENVO:01000217]:
-        text: ____________mediterranean shrubland biome [ENVO:01000217]
+      ______mediterranean shrubland biome [ENVO:01000217]:
+        text: ______mediterranean shrubland biome [ENVO:01000217]
         description: placeholder PV descr, DO NOT SORT
-      ____woodland biome [ENVO:01000175]:
-        text: ____woodland biome [ENVO:01000175]
+      __woodland biome [ENVO:01000175]:
+        text: __woodland biome [ENVO:01000175]
         description: placeholder PV descr, DO NOT SORT
-      ________subtropical woodland biome [ENVO:01000222]:
-        text: ________subtropical woodland biome [ENVO:01000222]
+      ____subtropical woodland biome [ENVO:01000222]:
+        text: ____subtropical woodland biome [ENVO:01000222]
         description: placeholder PV descr, DO NOT SORT
-      ____________mediterranean woodland biome [ENVO:01000208]:
-        text: ____________mediterranean woodland biome [ENVO:01000208]
+      ______mediterranean woodland biome [ENVO:01000208]:
+        text: ______mediterranean woodland biome [ENVO:01000208]
         description: placeholder PV descr, DO NOT SORT
-      ________temperate woodland biome [ENVO:01000221]:
-        text: ________temperate woodland biome [ENVO:01000221]
+      ____temperate woodland biome [ENVO:01000221]:
+        text: ____temperate woodland biome [ENVO:01000221]
         description: placeholder PV descr, DO NOT SORT
-      ________tropical woodland biome [ENVO:01000220]:
-        text: ________tropical woodland biome [ENVO:01000220]
+      ____tropical woodland biome [ENVO:01000220]:
+        text: ____tropical woodland biome [ENVO:01000220]
         description: placeholder PV descr, DO NOT SORT
-      ________savanna biome [ENVO:01000178]:
-        text: ________savanna biome [ENVO:01000178]
+      ____savanna biome [ENVO:01000178]:
+        text: ____savanna biome [ENVO:01000178]
         description: placeholder PV descr, DO NOT SORT
-      ____________montane savanna biome [ENVO:01000223]:
-        text: ____________montane savanna biome [ENVO:01000223]
+      ______montane savanna biome [ENVO:01000223]:
+        text: ______montane savanna biome [ENVO:01000223]
         description: placeholder PV descr, DO NOT SORT
-      ____________flooded savanna biome [ENVO:01000190]:
-        text: ____________flooded savanna biome [ENVO:01000190]
+      ______flooded savanna biome [ENVO:01000190]:
+        text: ______flooded savanna biome [ENVO:01000190]
         description: placeholder PV descr, DO NOT SORT
-      ____________temperate savanna biome [ENVO:01000189]:
-        text: ____________temperate savanna biome [ENVO:01000189]
+      ______temperate savanna biome [ENVO:01000189]:
+        text: ______temperate savanna biome [ENVO:01000189]
         description: placeholder PV descr, DO NOT SORT
-      ____________tropical savanna biome [ENVO:01000188]:
-        text: ____________tropical savanna biome [ENVO:01000188]
+      ______tropical savanna biome [ENVO:01000188]:
+        text: ______tropical savanna biome [ENVO:01000188]
         description: placeholder PV descr, DO NOT SORT
-      ____________subtropical savanna biome [ENVO:01000187]:
-        text: ____________subtropical savanna biome [ENVO:01000187]
+      ______subtropical savanna biome [ENVO:01000187]:
+        text: ______subtropical savanna biome [ENVO:01000187]
         description: placeholder PV descr, DO NOT SORT
-      ________________mediterranean savanna biome [ENVO:01000229]:
-        text: ________________mediterranean savanna biome [ENVO:01000229]
+      ________mediterranean savanna biome [ENVO:01000229]:
+        text: ________mediterranean savanna biome [ENVO:01000229]
         description: placeholder PV descr, DO NOT SORT
   EnvMediumSoilEnum:
     name: EnvMediumSoilEnum
@@ -956,26 +956,26 @@ enums:
       frozen soil [ENVO:01001526]:
         text: frozen soil [ENVO:01001526]
         description: placeholder PV descr, DO NOT SORT
-      ____friable-frozen soil [ENVO:01001528]:
-        text: ____friable-frozen soil [ENVO:01001528]
+      __friable-frozen soil [ENVO:01001528]:
+        text: __friable-frozen soil [ENVO:01001528]
         description: placeholder PV descr, DO NOT SORT
-      ____plastic-frozen soil [ENVO:01001527]:
-        text: ____plastic-frozen soil [ENVO:01001527]
+      __plastic-frozen soil [ENVO:01001527]:
+        text: __plastic-frozen soil [ENVO:01001527]
         description: placeholder PV descr, DO NOT SORT
-      ____hard-frozen soil [ENVO:01001525]:
-        text: ____hard-frozen soil [ENVO:01001525]
+      __hard-frozen soil [ENVO:01001525]:
+        text: __hard-frozen soil [ENVO:01001525]
         description: placeholder PV descr, DO NOT SORT
-      ____frozen compost soil [ENVO:00005765]:
-        text: ____frozen compost soil [ENVO:00005765]
+      __frozen compost soil [ENVO:00005765]:
+        text: __frozen compost soil [ENVO:00005765]
         description: placeholder PV descr, DO NOT SORT
-      ____cryosol [ENVO:00002236]:
-        text: ____cryosol [ENVO:00002236]
+      __cryosol [ENVO:00002236]:
+        text: __cryosol [ENVO:00002236]
         description: placeholder PV descr, DO NOT SORT
       ultisol [ENVO:01001397]:
         text: ultisol [ENVO:01001397]
         description: placeholder PV descr, DO NOT SORT
-      ____acrisol [ENVO:00002234]:
-        text: ____acrisol [ENVO:00002234]
+      __acrisol [ENVO:00002234]:
+        text: __acrisol [ENVO:00002234]
         description: placeholder PV descr, DO NOT SORT
       acidic soil [ENVO:01001185]:
         text: acidic soil [ENVO:01001185]
@@ -989,11 +989,11 @@ enums:
       upland soil [ENVO:00005786]:
         text: upland soil [ENVO:00005786]
         description: placeholder PV descr, DO NOT SORT
-      ____mountain forest soil [ENVO:00005769]:
-        text: ____mountain forest soil [ENVO:00005769]
+      __mountain forest soil [ENVO:00005769]:
+        text: __mountain forest soil [ENVO:00005769]
         description: placeholder PV descr, DO NOT SORT
-      ____dune soil [ENVO:00002260]:
-        text: ____dune soil [ENVO:00002260]
+      __dune soil [ENVO:00002260]:
+        text: __dune soil [ENVO:00002260]
         description: placeholder PV descr, DO NOT SORT
       ornithogenic soil [ENVO:00005782]:
         text: ornithogenic soil [ENVO:00005782]
@@ -1037,14 +1037,14 @@ enums:
       field soil [ENVO:00005755]:
         text: field soil [ENVO:00005755]
         description: placeholder PV descr, DO NOT SORT
-      ____paddy field soil [ENVO:00005740]:
-        text: ____paddy field soil [ENVO:00005740]
+      __paddy field soil [ENVO:00005740]:
+        text: __paddy field soil [ENVO:00005740]
         description: placeholder PV descr, DO NOT SORT
-      ________peaty paddy field soil [ENVO:00005776]:
-        text: ________peaty paddy field soil [ENVO:00005776]
+      ____peaty paddy field soil [ENVO:00005776]:
+        text: ____peaty paddy field soil [ENVO:00005776]
         description: placeholder PV descr, DO NOT SORT
-      ________alluvial paddy field soil [ENVO:00005759]:
-        text: ________alluvial paddy field soil [ENVO:00005759]
+      ____alluvial paddy field soil [ENVO:00005759]:
+        text: ____alluvial paddy field soil [ENVO:00005759]
         description: placeholder PV descr, DO NOT SORT
       fertilized soil [ENVO:00005754]:
         text: fertilized soil [ENVO:00005754]
@@ -1058,20 +1058,20 @@ enums:
       grassland soil [ENVO:00005750]:
         text: grassland soil [ENVO:00005750]
         description: placeholder PV descr, DO NOT SORT
-      ____steppe soil [ENVO:00005777]:
-        text: ____steppe soil [ENVO:00005777]
+      __steppe soil [ENVO:00005777]:
+        text: __steppe soil [ENVO:00005777]
         description: placeholder PV descr, DO NOT SORT
-      ____savanna soil [ENVO:00005746]:
-        text: ____savanna soil [ENVO:00005746]
+      __savanna soil [ENVO:00005746]:
+        text: __savanna soil [ENVO:00005746]
         description: placeholder PV descr, DO NOT SORT
       farm soil [ENVO:00005749]:
         text: farm soil [ENVO:00005749]
         description: placeholder PV descr, DO NOT SORT
-      ____rubber plantation soil [ENVO:00005788]:
-        text: ____rubber plantation soil [ENVO:00005788]
+      __rubber plantation soil [ENVO:00005788]:
+        text: __rubber plantation soil [ENVO:00005788]
         description: placeholder PV descr, DO NOT SORT
-      ____orchard soil [ENVO:00005772]:
-        text: ____orchard soil [ENVO:00005772]
+      __orchard soil [ENVO:00005772]:
+        text: __orchard soil [ENVO:00005772]
         description: placeholder PV descr, DO NOT SORT
       dry soil [ENVO:00005748]:
         text: dry soil [ENVO:00005748]
@@ -1091,11 +1091,11 @@ enums:
       alluvial soil [ENVO:00002871]:
         text: alluvial soil [ENVO:00002871]
         description: placeholder PV descr, DO NOT SORT
-      ____alluvial paddy field soil [ENVO:00005759]:
-        text: ____alluvial paddy field soil [ENVO:00005759]
+      __alluvial paddy field soil [ENVO:00005759]:
+        text: __alluvial paddy field soil [ENVO:00005759]
         description: placeholder PV descr, DO NOT SORT
-      ____alluvial swamp soil [ENVO:00005758]:
-        text: ____alluvial swamp soil [ENVO:00005758]
+      __alluvial swamp soil [ENVO:00005758]:
+        text: __alluvial swamp soil [ENVO:00005758]
         description: placeholder PV descr, DO NOT SORT
       technosol [ENVO:00002275]:
         text: technosol [ENVO:00002275]
@@ -1109,11 +1109,11 @@ enums:
       garden soil [ENVO:00002263]:
         text: garden soil [ENVO:00002263]
         description: placeholder PV descr, DO NOT SORT
-      ____vegetable garden soil [ENVO:00005779]:
-        text: ____vegetable garden soil [ENVO:00005779]
+      __vegetable garden soil [ENVO:00005779]:
+        text: __vegetable garden soil [ENVO:00005779]
         description: placeholder PV descr, DO NOT SORT
-      ____allotment garden soil [ENVO:00005744]:
-        text: ____allotment garden soil [ENVO:00005744]
+      __allotment garden soil [ENVO:00005744]:
+        text: __allotment garden soil [ENVO:00005744]
         description: placeholder PV descr, DO NOT SORT
       clay soil [ENVO:00002262]:
         text: clay soil [ENVO:00002262]
@@ -1121,41 +1121,41 @@ enums:
       forest soil [ENVO:00002261]:
         text: forest soil [ENVO:00002261]
         description: placeholder PV descr, DO NOT SORT
-      ____eucalyptus forest soil [ENVO:00005787]:
-        text: ____eucalyptus forest soil [ENVO:00005787]
+      __eucalyptus forest soil [ENVO:00005787]:
+        text: __eucalyptus forest soil [ENVO:00005787]
         description: placeholder PV descr, DO NOT SORT
-      ____spruce forest soil [ENVO:00005784]:
-        text: ____spruce forest soil [ENVO:00005784]
+      __spruce forest soil [ENVO:00005784]:
+        text: __spruce forest soil [ENVO:00005784]
         description: placeholder PV descr, DO NOT SORT
-      ____leafy wood soil [ENVO:00005783]:
-        text: ____leafy wood soil [ENVO:00005783]
+      __leafy wood soil [ENVO:00005783]:
+        text: __leafy wood soil [ENVO:00005783]
         description: placeholder PV descr, DO NOT SORT
-      ____beech forest soil [ENVO:00005770]:
-        text: ____beech forest soil [ENVO:00005770]
+      __beech forest soil [ENVO:00005770]:
+        text: __beech forest soil [ENVO:00005770]
         description: placeholder PV descr, DO NOT SORT
       agricultural soil [ENVO:00002259]:
         text: agricultural soil [ENVO:00002259]
         description: placeholder PV descr, DO NOT SORT
-      ____bluegrass field soil [ENVO:00005789]:
-        text: ____bluegrass field soil [ENVO:00005789]
+      __bluegrass field soil [ENVO:00005789]:
+        text: __bluegrass field soil [ENVO:00005789]
         description: placeholder PV descr, DO NOT SORT
       loam [ENVO:00002258]:
         text: loam [ENVO:00002258]
         description: placeholder PV descr, DO NOT SORT
-      ____clay loam [ENVO:06105277]:
-        text: ____clay loam [ENVO:06105277]
+      __clay loam [ENVO:06105277]:
+        text: __clay loam [ENVO:06105277]
         description: placeholder PV descr, DO NOT SORT
-      ________silty clay loam [ENVO:06105278]:
-        text: ________silty clay loam [ENVO:06105278]
+      ____silty clay loam [ENVO:06105278]:
+        text: ____silty clay loam [ENVO:06105278]
         description: placeholder PV descr, DO NOT SORT
-      ________sandy clay loam [ENVO:06105276]:
-        text: ________sandy clay loam [ENVO:06105276]
+      ____sandy clay loam [ENVO:06105276]:
+        text: ____sandy clay loam [ENVO:06105276]
         description: placeholder PV descr, DO NOT SORT
-      ____silty loam [ENVO:06105275]:
-        text: ____silty loam [ENVO:06105275]
+      __silty loam [ENVO:06105275]:
+        text: __silty loam [ENVO:06105275]
         description: placeholder PV descr, DO NOT SORT
-      ____sandy loam [ENVO:06105274]:
-        text: ____sandy loam [ENVO:06105274]
+      __sandy loam [ENVO:06105274]:
+        text: __sandy loam [ENVO:06105274]
         description: placeholder PV descr, DO NOT SORT
       podzol [ENVO:00002257]:
         text: podzol [ENVO:00002257]
@@ -1202,8 +1202,8 @@ enums:
       histosol [ENVO:00002243]:
         text: histosol [ENVO:00002243]
         description: placeholder PV descr, DO NOT SORT
-      ____peat soil [ENVO:00005774]:
-        text: ____peat soil [ENVO:00005774]
+      __peat soil [ENVO:00005774]:
+        text: __peat soil [ENVO:00005774]
         description: placeholder PV descr, DO NOT SORT
       lixisol [ENVO:00002242]:
         text: lixisol [ENVO:00002242]
@@ -1232,8 +1232,8 @@ enums:
       andosol [ENVO:00002232]:
         text: andosol [ENVO:00002232]
         description: placeholder PV descr, DO NOT SORT
-      ____volcanic soil [ENVO:01001841]:
-        text: ____volcanic soil [ENVO:01001841]
+      __volcanic soil [ENVO:01001841]:
+        text: __volcanic soil [ENVO:01001841]
         description: placeholder PV descr, DO NOT SORT
       alisol [ENVO:00002231]:
         text: alisol [ENVO:00002231]
@@ -1252,341 +1252,329 @@ enums:
       astronomical body part [ENVO:01000813]:
         text: astronomical body part [ENVO:01000813]
         description: placeholder PV descr, DO NOT SORT
-      ______coast [ENVO:01000687]:
-        text: ______coast [ENVO:01000687]
+      __coast [ENVO:01000687]:
+        text: __coast [ENVO:01000687]
         description: placeholder PV descr, DO NOT SORT
-      ______solid astronomical body part [ENVO:00000191]:
-        text: ______solid astronomical body part [ENVO:00000191]
+      __solid astronomical body part [ENVO:00000191]:
+        text: __solid astronomical body part [ENVO:00000191]
         description: placeholder PV descr, DO NOT SORT
-      ___________landform [ENVO:01001886]:
-        text: ___________landform [ENVO:01001886]
+      ______landform [ENVO:01001886]:
+        text: ______landform [ENVO:01001886]
         description: placeholder PV descr, DO NOT SORT
-      ______________channel [ENVO:03000117]:
-        text: ______________channel [ENVO:03000117]
+      ______channel [ENVO:03000117]:
+        text: ______channel [ENVO:03000117]
         description: placeholder PV descr, DO NOT SORT
-      ___________________tunnel [ENVO:00000068]:
-        text: ___________________tunnel [ENVO:00000068]
+      ________tunnel [ENVO:00000068]:
+        text: ________tunnel [ENVO:00000068]
         description: placeholder PV descr, DO NOT SORT
-      ______________surface landform [ENVO:01001884]:
-        text: ______________surface landform [ENVO:01001884]
+      ______surface landform [ENVO:01001884]:
+        text: ______surface landform [ENVO:01001884]
         description: placeholder PV descr, DO NOT SORT
-      __________________desert [ENVO:01001357]:
-        text: __________________desert [ENVO:01001357]
+      ________desert [ENVO:01001357]:
+        text: ________desert [ENVO:01001357]
         description: placeholder PV descr, DO NOT SORT
-      __________________outcrop [ENVO:01000302]:
-        text: __________________outcrop [ENVO:01000302]
+      ________outcrop [ENVO:01000302]:
+        text: ________outcrop [ENVO:01000302]
         description: placeholder PV descr, DO NOT SORT
-      __________________boulder field [ENVO:00000537]:
-        text: __________________boulder field [ENVO:00000537]
+      ________boulder field [ENVO:00000537]:
+        text: ________boulder field [ENVO:00000537]
         description: placeholder PV descr, DO NOT SORT
-      __________________landfill [ENVO:00000533]:
-        text: __________________landfill [ENVO:00000533]
+      ________landfill [ENVO:00000533]:
+        text: ________landfill [ENVO:00000533]
         description: placeholder PV descr, DO NOT SORT
-      __________________hummock [ENVO:00000516]:
-        text: __________________hummock [ENVO:00000516]
+      ________hummock [ENVO:00000516]:
+        text: ________hummock [ENVO:00000516]
         description: placeholder PV descr, DO NOT SORT
-      __________________terrace [ENVO:00000508]:
-        text: __________________terrace [ENVO:00000508]
+      ________terrace [ENVO:00000508]:
+        text: ________terrace [ENVO:00000508]
         description: placeholder PV descr, DO NOT SORT
-      __________________peninsula [ENVO:00000305]:
-        text: __________________peninsula [ENVO:00000305]
+      ________peninsula [ENVO:00000305]:
+        text: ________peninsula [ENVO:00000305]
         description: placeholder PV descr, DO NOT SORT
-      __________________shore [ENVO:00000304]:
-        text: __________________shore [ENVO:00000304]
+      ________shore [ENVO:00000304]:
+        text: ________shore [ENVO:00000304]
         description: placeholder PV descr, DO NOT SORT
-      ______________________lake shore [ENVO:00000382]:
-        text: ______________________lake shore [ENVO:00000382]
+      __________lake shore [ENVO:00000382]:
+        text: __________lake shore [ENVO:00000382]
         description: placeholder PV descr, DO NOT SORT
-      __________________dry lake [ENVO:00000277]:
-        text: __________________dry lake [ENVO:00000277]
+      ________dry lake [ENVO:00000277]:
+        text: ________dry lake [ENVO:00000277]
         description: placeholder PV descr, DO NOT SORT
-      __________________karst [ENVO:00000175]:
-        text: __________________karst [ENVO:00000175]
+      ________karst [ENVO:00000175]:
+        text: ________karst [ENVO:00000175]
         description: placeholder PV descr, DO NOT SORT
-      __________________isthmus [ENVO:00000174]:
-        text: __________________isthmus [ENVO:00000174]
+      ________isthmus [ENVO:00000174]:
+        text: ________isthmus [ENVO:00000174]
         description: placeholder PV descr, DO NOT SORT
-      __________________badland [ENVO:00000127]:
-        text: __________________badland [ENVO:00000127]
+      ________badland [ENVO:00000127]:
+        text: ________badland [ENVO:00000127]
         description: placeholder PV descr, DO NOT SORT
-      __________________volcanic feature [ENVO:00000094]:
-        text: __________________volcanic feature [ENVO:00000094]
+      ________volcanic feature [ENVO:00000094]:
+        text: ________volcanic feature [ENVO:00000094]
         description: placeholder PV descr, DO NOT SORT
-      ______________________volcanic cone [ENVO:00000398]:
-        text: ______________________volcanic cone [ENVO:00000398]
+      __________volcanic cone [ENVO:00000398]:
+        text: __________volcanic cone [ENVO:00000398]
         description: placeholder PV descr, DO NOT SORT
-      ____tuff cone [ENVO:01000664]:
-        text: ____tuff cone [ENVO:01000664]
+      ____________tuff cone [ENVO:01000664]:
+        text: ____________tuff cone [ENVO:01000664]
         description: placeholder PV descr, DO NOT SORT
-      __________________beach [ENVO:00000091]:
-        text: __________________beach [ENVO:00000091]
+      ________beach [ENVO:00000091]:
+        text: ________beach [ENVO:00000091]
         description: placeholder PV descr, DO NOT SORT
-      __________________plain [ENVO:00000086]:
-        text: __________________plain [ENVO:00000086]
+      ________plain [ENVO:00000086]:
+        text: ________plain [ENVO:00000086]
         description: placeholder PV descr, DO NOT SORT
-      __________________cave [ENVO:00000067]:
-        text: __________________cave [ENVO:00000067]
+      ________cave [ENVO:00000067]:
+        text: ________cave [ENVO:00000067]
         description: placeholder PV descr, DO NOT SORT
-      __________________spring [ENVO:00000027]:
-        text: __________________spring [ENVO:00000027]
+      ________spring [ENVO:00000027]:
+        text: ________spring [ENVO:00000027]
         description: placeholder PV descr, DO NOT SORT
-      ______________slope [ENVO:00002000]:
-        text: ______________slope [ENVO:00002000]
+      ______slope [ENVO:00002000]:
+        text: ______slope [ENVO:00002000]
         description: placeholder PV descr, DO NOT SORT
-      __________________talus slope [ENVO:01000334]:
-        text: __________________talus slope [ENVO:01000334]
+      ________talus slope [ENVO:01000334]:
+        text: ________talus slope [ENVO:01000334]
         description: placeholder PV descr, DO NOT SORT
-      __________________hillside [ENVO:01000333]:
-        text: __________________hillside [ENVO:01000333]
+      ________hillside [ENVO:01000333]:
+        text: ________hillside [ENVO:01000333]
         description: placeholder PV descr, DO NOT SORT
-      __________________levee [ENVO:00000178]:
-        text: __________________levee [ENVO:00000178]
+      ________levee [ENVO:00000178]:
+        text: ________levee [ENVO:00000178]
         description: placeholder PV descr, DO NOT SORT
-      __________________bank [ENVO:00000141]:
-        text: __________________bank [ENVO:00000141]
+      ________bank [ENVO:00000141]:
+        text: ________bank [ENVO:00000141]
         description: placeholder PV descr, DO NOT SORT
-      __________________cliff [ENVO:00000087]:
-        text: __________________cliff [ENVO:00000087]
+      ________cliff [ENVO:00000087]:
+        text: ________cliff [ENVO:00000087]
         description: placeholder PV descr, DO NOT SORT
-      ______________peak [ENVO:00000480]:
-        text: ______________peak [ENVO:00000480]
+      ______peak [ENVO:00000480]:
+        text: ______peak [ENVO:00000480]
         description: placeholder PV descr, DO NOT SORT
-      ______________depressed landform [ENVO:00000309]:
-        text: ______________depressed landform [ENVO:00000309]
+      ______depressed landform [ENVO:00000309]:
+        text: ______depressed landform [ENVO:00000309]
         description: placeholder PV descr, DO NOT SORT
-      __________________geographic basin [ENVO:03000015]:
-        text: __________________geographic basin [ENVO:03000015]
+      ________geographic basin [ENVO:03000015]:
+        text: ________geographic basin [ENVO:03000015]
         description: placeholder PV descr, DO NOT SORT
-      ______________________valley [ENVO:00000100]:
-        text: ______________________valley [ENVO:00000100]
+      __________valley [ENVO:00000100]:
+        text: __________valley [ENVO:00000100]
         description: placeholder PV descr, DO NOT SORT
-      __________________________canyon [ENVO:00000169]:
-        text: __________________________canyon [ENVO:00000169]
+      ____________canyon [ENVO:00000169]:
+        text: ____________canyon [ENVO:00000169]
         description: placeholder PV descr, DO NOT SORT
-      __________________________dry valley [ENVO:00000128]:
-        text: __________________________dry valley [ENVO:00000128]
+      ____________dry valley [ENVO:00000128]:
+        text: ____________dry valley [ENVO:00000128]
         description: placeholder PV descr, DO NOT SORT
-      __________________________glacial valley [ENVO:00000248]:
-        text: __________________________glacial valley [ENVO:00000248]
+      ____________glacial valley [ENVO:00000248]:
+        text: ____________glacial valley [ENVO:00000248]
         description: placeholder PV descr, DO NOT SORT
-      __________________pit [ENVO:01001871]:
-        text: __________________pit [ENVO:01001871]
+      ________pit [ENVO:01001871]:
+        text: ________pit [ENVO:01001871]
         description: placeholder PV descr, DO NOT SORT
-      __________________trench [ENVO:01000649]:
-        text: __________________trench [ENVO:01000649]
+      ________trench [ENVO:01000649]:
+        text: ________trench [ENVO:01000649]
         description: placeholder PV descr, DO NOT SORT
-      __________________swale [ENVO:00000543]:
-        text: __________________swale [ENVO:00000543]
+      ________swale [ENVO:00000543]:
+        text: ________swale [ENVO:00000543]
         description: placeholder PV descr, DO NOT SORT
-      __________________crater [ENVO:00000514]:
-        text: __________________crater [ENVO:00000514]
+      ________crater [ENVO:00000514]:
+        text: ________crater [ENVO:00000514]
         description: placeholder PV descr, DO NOT SORT
-      ______________________impact crater [ENVO:01001071]:
-        text: ______________________impact crater [ENVO:01001071]
+      __________impact crater [ENVO:01001071]:
+        text: __________impact crater [ENVO:01001071]
         description: placeholder PV descr, DO NOT SORT
-      ______________________volcanic crater [ENVO:00000246]:
-        text: ______________________volcanic crater [ENVO:00000246]
+      __________volcanic crater [ENVO:00000246]:
+        text: __________volcanic crater [ENVO:00000246]
         description: placeholder PV descr, DO NOT SORT
-      ______________________caldera [ENVO:00000096]:
-        text: ______________________caldera [ENVO:00000096]
+      __________caldera [ENVO:00000096]:
+        text: __________caldera [ENVO:00000096]
         description: placeholder PV descr, DO NOT SORT
-      __________________channel of a watercourse [ENVO:00000395]:
-        text: __________________channel of a watercourse [ENVO:00000395]
+      ________channel of a watercourse [ENVO:00000395]:
+        text: ________channel of a watercourse [ENVO:00000395]
         description: placeholder PV descr, DO NOT SORT
-      ______________________strait [ENVO:00000394]:
-        text: ______________________strait [ENVO:00000394]
+      __________strait [ENVO:00000394]:
+        text: __________strait [ENVO:00000394]
         description: placeholder PV descr, DO NOT SORT
-      ______________________dry stream [ENVO:00000278]:
-        text: ______________________dry stream [ENVO:00000278]
+      __________dry stream [ENVO:00000278]:
+        text: __________dry stream [ENVO:00000278]
         description: placeholder PV descr, DO NOT SORT
-      __________________________dry river [ENVO:01000995]:
-        text: __________________________dry river [ENVO:01000995]
+      ____________dry river [ENVO:01000995]:
+        text: ____________dry river [ENVO:01000995]
         description: placeholder PV descr, DO NOT SORT
-      ______________________artificial channel [ENVO:00000121]:
-        text: ______________________artificial channel [ENVO:00000121]
+      __________artificial channel [ENVO:00000121]:
+        text: __________artificial channel [ENVO:00000121]
         description: placeholder PV descr, DO NOT SORT
-      __________________________plumbing drain [ENVO:01000924]:
-        text: __________________________plumbing drain [ENVO:01000924]
+      ____________plumbing drain [ENVO:01000924]:
+        text: ____________plumbing drain [ENVO:01000924]
         description: placeholder PV descr, DO NOT SORT
-      __________________________ditch [ENVO:00000037]:
-        text: __________________________ditch [ENVO:00000037]
+      ____________ditch [ENVO:00000037]:
+        text: ____________ditch [ENVO:00000037]
         description: placeholder PV descr, DO NOT SORT
-      __________________sinkhole [ENVO:00000195]:
-        text: __________________sinkhole [ENVO:00000195]
+      ________sinkhole [ENVO:00000195]:
+        text: ________sinkhole [ENVO:00000195]
         description: placeholder PV descr, DO NOT SORT
-      ______________elevated landform [ENVO:00000176]:
-        text: ______________elevated landform [ENVO:00000176]
+      ______elevated landform [ENVO:00000176]:
+        text: ______elevated landform [ENVO:00000176]
         description: placeholder PV descr, DO NOT SORT
-      __________________flattened elevation [ENVO:01001491]:
-        text: __________________flattened elevation [ENVO:01001491]
+      ________flattened elevation [ENVO:01001491]:
+        text: ________flattened elevation [ENVO:01001491]
         description: placeholder PV descr, DO NOT SORT
-      ______________________butte [ENVO:00000287]:
-        text: ______________________butte [ENVO:00000287]
+      __________butte [ENVO:00000287]:
+        text: __________butte [ENVO:00000287]
         description: placeholder PV descr, DO NOT SORT
-      ______________________plateau [ENVO:00000182]:
-        text: ______________________plateau [ENVO:00000182]
+      __________plateau [ENVO:00000182]:
+        text: __________plateau [ENVO:00000182]
         description: placeholder PV descr, DO NOT SORT
-      ______________________mesa [ENVO:00000179]:
-        text: ______________________mesa [ENVO:00000179]
+      __________mesa [ENVO:00000179]:
+        text: __________mesa [ENVO:00000179]
         description: placeholder PV descr, DO NOT SORT
-      __________________pinnacle [ENVO:00000481]:
-        text: __________________pinnacle [ENVO:00000481]
+      ________pinnacle [ENVO:00000481]:
+        text: ________pinnacle [ENVO:00000481]
         description: placeholder PV descr, DO NOT SORT
-      __________________mount [ENVO:00000477]:
-        text: __________________mount [ENVO:00000477]
+      ________mount [ENVO:00000477]:
+        text: ________mount [ENVO:00000477]
         description: placeholder PV descr, DO NOT SORT
-      _________________________hill [ENVO:00000083]:
-        text: _________________________hill [ENVO:00000083]
+      __________hill [ENVO:00000083]:
+        text: __________hill [ENVO:00000083]
         description: placeholder PV descr, DO NOT SORT
-      __________________________dune [ENVO:00000170]:
-        text: __________________________dune [ENVO:00000170]
+      ____________dune [ENVO:00000170]:
+        text: ____________dune [ENVO:00000170]
         description: placeholder PV descr, DO NOT SORT
-      ______________________mountain [ENVO:00000081]:
-        text: ______________________mountain [ENVO:00000081]
+      __________mountain [ENVO:00000081]:
+        text: __________mountain [ENVO:00000081]
         description: placeholder PV descr, DO NOT SORT
-      _________ridge [ENVO:00000283]:
-        text: _________ridge [ENVO:00000283]
+      ________ridge [ENVO:00000283]:
+        text: ________ridge [ENVO:00000283]
         description: placeholder PV descr, DO NOT SORT
-      ___________part of a landmass [ENVO:01001781]:
-        text: ___________part of a landmass [ENVO:01001781]
+      ____part of a landmass [ENVO:01001781]:
+        text: ____part of a landmass [ENVO:01001781]
         description: placeholder PV descr, DO NOT SORT
-      ______________peninsula [ENVO:00000305]:
-        text: ______________peninsula [ENVO:00000305]
+      ______peninsula [ENVO:00000305]:
+        text: ______peninsula [ENVO:00000305]
         description: placeholder PV descr, DO NOT SORT
-      __________geological fracture [ENVO:01000667]:
-        text: __________geological fracture [ENVO:01000667]
+      ____geological fracture [ENVO:01000667]:
+        text: ____geological fracture [ENVO:01000667]
         description: placeholder PV descr, DO NOT SORT
-      _______________vein [ENVO:01000670]:
-        text: _______________vein [ENVO:01000670]
+      ______vein [ENVO:01000670]:
+        text: ______vein [ENVO:01000670]
         description: placeholder PV descr, DO NOT SORT
-      ______________geological fault [ENVO:01000668]:
-        text: ______________geological fault [ENVO:01000668]
+      ______geological fault [ENVO:01000668]:
+        text: ______geological fault [ENVO:01000668]
         description: placeholder PV descr, DO NOT SORT
-      __________________active geological fault [ENVO:01000669]:
-        text: __________________active geological fault [ENVO:01000669]
+      ________active geological fault [ENVO:01000669]:
+        text: ________active geological fault [ENVO:01000669]
         description: placeholder PV descr, DO NOT SORT
-      ______________volcano [ENVO:00000247]:
-        text: ______________volcano [ENVO:00000247]
+      ______volcano [ENVO:00000247]:
+        text: ______volcano [ENVO:00000247]
         description: placeholder PV descr, DO NOT SORT
       __field [ENVO:01000352]:
         text: __field [ENVO:01000352]
         description: placeholder PV descr, DO NOT SORT
-      ______lava field [ENVO:01000437]:
-        text: ______lava field [ENVO:01000437]
+      ____lava field [ENVO:01000437]:
+        text: ____lava field [ENVO:01000437]
         description: placeholder PV descr, DO NOT SORT
-      ______gravel field [ENVO:00000548]:
-        text: ______gravel field [ENVO:00000548]
+      ____gravel field [ENVO:00000548]:
+        text: ____gravel field [ENVO:00000548]
         description: placeholder PV descr, DO NOT SORT
-      ______woodland clearing [ENVO:00000444]:
-        text: ______woodland clearing [ENVO:00000444]
+      ____woodland clearing [ENVO:00000444]:
+        text: ____woodland clearing [ENVO:00000444]
         description: placeholder PV descr, DO NOT SORT
-      ______agricultural field [ENVO:00000114]:
-        text: ______agricultural field [ENVO:00000114]
+      ____agricultural field [ENVO:00000114]:
+        text: ____agricultural field [ENVO:00000114]
         description: placeholder PV descr, DO NOT SORT
-      ______snow field [ENVO:00000146]:
-        text: ______snow field [ENVO:00000146]
+      ____snow field [ENVO:00000146]:
+        text: ____snow field [ENVO:00000146]
         description: placeholder PV descr, DO NOT SORT
       __geographic feature [ENVO:00000000]:
         text: __geographic feature [ENVO:00000000]
         description: placeholder PV descr, DO NOT SORT
-      ______hydrographic feature [ENVO:00000012]:
-        text: ______hydrographic feature [ENVO:00000012]
+      ____hydrographic feature [ENVO:00000012]:
+        text: ____hydrographic feature [ENVO:00000012]
         description: placeholder PV descr, DO NOT SORT
-      __________reef [ENVO:01001899]:
-        text: __________reef [ENVO:01001899]
+      ______reef [ENVO:01001899]:
+        text: ______reef [ENVO:01001899]
         description: placeholder PV descr, DO NOT SORT
-      __________inlet [ENVO:00000475]:
-        text: __________inlet [ENVO:00000475]
+      ______inlet [ENVO:00000475]:
+        text: ______inlet [ENVO:00000475]
         description: placeholder PV descr, DO NOT SORT
-      __________bar [ENVO:00000167]:
-        text: __________bar [ENVO:00000167]
+      ______bar [ENVO:00000167]:
+        text: ______bar [ENVO:00000167]
         description: placeholder PV descr, DO NOT SORT
-      ______________tombolo [ENVO:00000420]:
-        text: ______________tombolo [ENVO:00000420]
+      ________tombolo [ENVO:00000420]:
+        text: ________tombolo [ENVO:00000420]
         description: placeholder PV descr, DO NOT SORT
-      ______anthropogenic geographic feature [ENVO:00000002]:
-        text: ______anthropogenic geographic feature [ENVO:00000002]
+      ____anthropogenic geographic feature [ENVO:00000002]:
+        text: ____anthropogenic geographic feature [ENVO:00000002]
         description: placeholder PV descr, DO NOT SORT
-      __________yard [ENVO:03600053]:
-        text: __________yard [ENVO:03600053]
+      ______yard [ENVO:03600053]:
+        text: ______yard [ENVO:03600053]
         description: placeholder PV descr, DO NOT SORT
-      ______________residential backyard [ENVO:03600033]:
-        text: ______________residential backyard [ENVO:03600033]
+      ________residential backyard [ENVO:03600033]:
+        text: ________residential backyard [ENVO:03600033]
         description: placeholder PV descr, DO NOT SORT
-      __________market [ENVO:01000987]:
-        text: __________market [ENVO:01000987]
+      ______market [ENVO:01000987]:
+        text: ______market [ENVO:01000987]
         description: placeholder PV descr, DO NOT SORT
-      __________park [ENVO:00000562]:
-        text: __________park [ENVO:00000562]
+      ______park [ENVO:00000562]:
+        text: ______park [ENVO:00000562]
         description: placeholder PV descr, DO NOT SORT
-      __________well [ENVO:00000026]:
-        text: __________well [ENVO:00000026]
+      ______well [ENVO:00000026]:
+        text: ______well [ENVO:00000026]
         description: placeholder PV descr, DO NOT SORT
-      __________garden [ENVO:00000011]:
-        text: __________garden [ENVO:00000011]
+      ______garden [ENVO:00000011]:
+        text: ______garden [ENVO:00000011]
         description: placeholder PV descr, DO NOT SORT
-  shading_device_type_enum:
-    name: shading_device_type_enum
+  train_stop_loc_enum:
+    name: train_stop_loc_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      bahama shutters:
-        text: bahama shutters
-      exterior roll blind:
-        text: exterior roll blind
-      gambrel awning:
-        text: gambrel awning
-      hood awning:
-        text: hood awning
-      porchroller awning:
-        text: porchroller awning
-      sarasota shutters:
-        text: sarasota shutters
-      slatted aluminum:
-        text: slatted aluminum
-      solid aluminum awning:
-        text: solid aluminum awning
-      sun screen:
-        text: sun screen
-      tree:
-        text: tree
-      trellis:
-        text: trellis
-      venetian awning:
-        text: venetian awning
-  door_type_wood_enum:
-    name: door_type_wood_enum
+      end:
+        text: end
+      mid:
+        text: mid
+      downtown:
+        text: downtown
+  samp_floor_enum:
+    name: samp_floor_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      bettened and ledged:
-        text: bettened and ledged
-      battened:
-        text: battened
-      ledged and braced:
-        text: ledged and braced
-      ledged and framed:
-        text: ledged and framed
-      ledged, braced and frame:
-        text: ledged, braced and frame
-      framed and paneled:
-        text: framed and paneled
-      glashed or sash:
-        text: glashed or sash
-      flush:
-        text: flush
-      louvered:
-        text: louvered
-      wire gauged:
-        text: wire gauged
-  furniture_enum:
-    name: furniture_enum
+      1st floor:
+        text: 1st floor
+      2nd floor:
+        text: 2nd floor
+      basement:
+        text: basement
+      lobby:
+        text: lobby
+  train_stat_loc_enum:
+    name: train_stat_loc_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      cabinet:
-        text: cabinet
-      chair:
-        text: chair
-      desks:
-        text: desks
+      south station above ground:
+        text: south station above ground
+      south station underground:
+        text: south station underground
+      south station amtrak:
+        text: south station amtrak
+      forest hills:
+        text: forest hills
+      riverside:
+        text: riverside
+  ceil_cond_enum:
+    name: ceil_cond_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      new:
+        text: new
+      visible wear:
+        text: visible wear
+      needs repair:
+        text: needs repair
+      damaged:
+        text: damaged
+      rupture:
+        text: rupture
   room_condt_enum:
     name: room_condt_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -1603,156 +1591,6 @@ enums:
         text: rupture
       visible signs of mold/mildew:
         text: visible signs of mold/mildew
-  vis_media_enum:
-    name: vis_media_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      photos:
-        text: photos
-      videos:
-        text: videos
-      commonly of the building:
-        text: commonly of the building
-      site context (adjacent buildings, vegetation, terrain, streets):
-        text: site context (adjacent buildings, vegetation, terrain, streets)
-      interiors:
-        text: interiors
-      equipment:
-        text: equipment
-      3D scans:
-        text: 3D scans
-  ceil_texture_enum:
-    name: ceil_texture_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      crows feet:
-        text: crows feet
-      crows-foot stomp:
-        text: crows-foot stomp
-      double skip:
-        text: double skip
-      hawk and trowel:
-        text: hawk and trowel
-      knockdown:
-        text: knockdown
-      popcorn:
-        text: popcorn
-      orange peel:
-        text: orange peel
-      rosebud stomp:
-        text: rosebud stomp
-      Santa-Fe texture:
-        text: Santa-Fe texture
-      skip trowel:
-        text: skip trowel
-      smooth:
-        text: smooth
-      stomp knockdown:
-        text: stomp knockdown
-      swirl:
-        text: swirl
-  quad_pos_enum:
-    name: quad_pos_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      North side:
-        text: North side
-      West side:
-        text: West side
-      South side:
-        text: South side
-      East side:
-        text: East side
-  samp_weather_enum:
-    name: samp_weather_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      clear sky:
-        text: clear sky
-      cloudy:
-        text: cloudy
-      foggy:
-        text: foggy
-      hail:
-        text: hail
-      rain:
-        text: rain
-      snow:
-        text: snow
-      sleet:
-        text: sleet
-      sunny:
-        text: sunny
-      windy:
-        text: windy
-  ceil_cond_enum:
-    name: ceil_cond_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      new:
-        text: new
-      visible wear:
-        text: visible wear
-      needs repair:
-        text: needs repair
-      damaged:
-        text: damaged
-      rupture:
-        text: rupture
-  rel_samp_loc_enum:
-    name: rel_samp_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      edge of car:
-        text: edge of car
-      center of car:
-        text: center of car
-      under a seat:
-        text: under a seat
-  door_type_enum:
-    name: door_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      composite:
-        text: composite
-      metal:
-        text: metal
-      wooden:
-        text: wooden
-  wall_surf_treatment_enum:
-    name: wall_surf_treatment_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      painted:
-        text: painted
-      wall paper:
-        text: wall paper
-      no treatment:
-        text: no treatment
-      paneling:
-        text: paneling
-      stucco:
-        text: stucco
-      fabric:
-        text: fabric
-  ceil_type_enum:
-    name: ceil_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      cathedral:
-        text: cathedral
-      dropped:
-        text: dropped
-      concave:
-        text: concave
-      barrel-shaped:
-        text: barrel-shaped
-      coffered:
-        text: coffered
-      cove:
-        text: cove
-      stretched:
-        text: stretched
   room_samp_pos_enum:
     name: room_samp_pos_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -1775,762 +1613,6 @@ enums:
         text: southwest corner
       center:
         text: center
-  weekday_enum:
-    name: weekday_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      Monday:
-        text: Monday
-      Tuesday:
-        text: Tuesday
-      Wednesday:
-        text: Wednesday
-      Thursday:
-        text: Thursday
-      Friday:
-        text: Friday
-      Saturday:
-        text: Saturday
-      Sunday:
-        text: Sunday
-  floor_finish_mat_enum:
-    name: floor_finish_mat_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      tile:
-        text: tile
-      wood strip or parquet:
-        text: wood strip or parquet
-      carpet:
-        text: carpet
-      rug:
-        text: rug
-      laminate wood:
-        text: laminate wood
-      lineoleum:
-        text: lineoleum
-      vinyl composition tile:
-        text: vinyl composition tile
-      sheet vinyl:
-        text: sheet vinyl
-      stone:
-        text: stone
-      bamboo:
-        text: bamboo
-      cork:
-        text: cork
-      terrazo:
-        text: terrazo
-      concrete:
-        text: concrete
-      none:
-        text: none
-      sealed:
-        text: sealed
-      clear finish:
-        text: clear finish
-      paint:
-        text: paint
-      none or unfinished:
-        text: none or unfinished
-  surf_material_enum:
-    name: surf_material_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      adobe:
-        text: adobe
-      carpet:
-        text: carpet
-      cinder blocks:
-        text: cinder blocks
-      concrete:
-        text: concrete
-      hay bales:
-        text: hay bales
-      glass:
-        text: glass
-      metal:
-        text: metal
-      paint:
-        text: paint
-      plastic:
-        text: plastic
-      stainless steel:
-        text: stainless steel
-      stone:
-        text: stone
-      stucco:
-        text: stucco
-      tile:
-        text: tile
-      vinyl:
-        text: vinyl
-      wood:
-        text: wood
-  mech_struc_enum:
-    name: mech_struc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      subway:
-        text: subway
-      coach:
-        text: coach
-      carriage:
-        text: carriage
-      elevator:
-        text: elevator
-      escalator:
-        text: escalator
-      boat:
-        text: boat
-      train:
-        text: train
-      car:
-        text: car
-      bus:
-        text: bus
-  train_stat_loc_enum:
-    name: train_stat_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      south station above ground:
-        text: south station above ground
-      south station underground:
-        text: south station underground
-      south station amtrak:
-        text: south station amtrak
-      forest hills:
-        text: forest hills
-      riverside:
-        text: riverside
-  wall_finish_mat_enum:
-    name: wall_finish_mat_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      plaster:
-        text: plaster
-      gypsum plaster:
-        text: gypsum plaster
-      veneer plaster:
-        text: veneer plaster
-      gypsum board:
-        text: gypsum board
-      tile:
-        text: tile
-      terrazzo:
-        text: terrazzo
-      stone facing:
-        text: stone facing
-      acoustical treatment:
-        text: acoustical treatment
-      wood:
-        text: wood
-      metal:
-        text: metal
-      masonry:
-        text: masonry
-  samp_floor_enum:
-    name: samp_floor_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      1st floor:
-        text: 1st floor
-      2nd floor:
-        text: 2nd floor
-      basement:
-        text: basement
-      lobby:
-        text: lobby
-  occup_document_enum:
-    name: occup_document_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      automated count:
-        text: automated count
-      estimate:
-        text: estimate
-      manual count:
-        text: manual count
-      videos:
-        text: videos
-  building_setting_enum:
-    name: building_setting_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      urban:
-        text: urban
-      suburban:
-        text: suburban
-      exurban:
-        text: exurban
-      rural:
-        text: rural
-  arch_struc_enum:
-    name: arch_struc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      building:
-        text: building
-      shed:
-        text: shed
-      home:
-        text: home
-  wall_loc_enum:
-    name: wall_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      north:
-        text: north
-      south:
-        text: south
-      east:
-        text: east
-      west:
-        text: west
-  window_mat_enum:
-    name: window_mat_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      clad:
-        text: clad
-      fiberglass:
-        text: fiberglass
-      metal:
-        text: metal
-      vinyl:
-        text: vinyl
-      wood:
-        text: wood
-  substructure_type_enum:
-    name: substructure_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      crawlspace:
-        text: crawlspace
-      slab on grade:
-        text: slab on grade
-      basement:
-        text: basement
-  heat_deliv_loc_enum:
-    name: heat_deliv_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      north:
-        text: north
-      south:
-        text: south
-      east:
-        text: east
-      west:
-        text: west
-  window_cover_enum:
-    name: window_cover_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      blinds:
-        text: blinds
-      curtains:
-        text: curtains
-      none:
-        text: none
-  door_mat_enum:
-    name: door_mat_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      aluminum:
-        text: aluminum
-      cellular PVC:
-        text: cellular PVC
-      engineered plastic:
-        text: engineered plastic
-      fiberboard:
-        text: fiberboard
-      fiberglass:
-        text: fiberglass
-      metal:
-        text: metal
-      thermoplastic alloy:
-        text: thermoplastic alloy
-      vinyl:
-        text: vinyl
-      wood:
-        text: wood
-      wood/plastic composite:
-        text: wood/plastic composite
-  build_occup_type_enum:
-    name: build_occup_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      office:
-        text: office
-      market:
-        text: market
-      restaurant:
-        text: restaurant
-      residence:
-        text: residence
-      school:
-        text: school
-      residential:
-        text: residential
-      commercial:
-        text: commercial
-      low rise:
-        text: low rise
-      high rise:
-        text: high rise
-      wood framed:
-        text: wood framed
-      health care:
-        text: health care
-      airport:
-        text: airport
-      sports complex:
-        text: sports complex
-  indoor_space_enum:
-    name: indoor_space_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      bedroom:
-        text: bedroom
-      office:
-        text: office
-      bathroom:
-        text: bathroom
-      foyer:
-        text: foyer
-      kitchen:
-        text: kitchen
-      locker room:
-        text: locker room
-      hallway:
-        text: hallway
-      elevator:
-        text: elevator
-  ext_wall_orient_enum:
-    name: ext_wall_orient_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      north:
-        text: north
-      south:
-        text: south
-      east:
-        text: east
-      west:
-        text: west
-      northeast:
-        text: northeast
-      southeast:
-        text: southeast
-      southwest:
-        text: southwest
-      northwest:
-        text: northwest
-  room_connected_enum:
-    name: room_connected_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      attic:
-        text: attic
-      bathroom:
-        text: bathroom
-      closet:
-        text: closet
-      conference room:
-        text: conference room
-      elevator:
-        text: elevator
-      examining room:
-        text: examining room
-      hallway:
-        text: hallway
-      kitchen:
-        text: kitchen
-      mail room:
-        text: mail room
-      office:
-        text: office
-      stairwell:
-        text: stairwell
-  train_stop_loc_enum:
-    name: train_stop_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      end:
-        text: end
-      mid:
-        text: mid
-      downtown:
-        text: downtown
-  shading_device_cond_enum:
-    name: shading_device_cond_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      damaged:
-        text: damaged
-      needs repair:
-        text: needs repair
-      new:
-        text: new
-      rupture:
-        text: rupture
-      visible wear:
-        text: visible wear
-  door_comp_type_enum:
-    name: door_comp_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      metal covered:
-        text: metal covered
-      revolving:
-        text: revolving
-      sliding:
-        text: sliding
-      telescopic:
-        text: telescopic
-  filter_type_enum:
-    name: filter_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      particulate air filter:
-        text: particulate air filter
-      chemical air filter:
-        text: chemical air filter
-      low-MERV pleated media:
-        text: low-MERV pleated media
-      HEPA:
-        text: HEPA
-      electrostatic:
-        text: electrostatic
-      gas-phase or ultraviolet air treatments:
-        text: gas-phase or ultraviolet air treatments
-  handidness_enum:
-    name: handidness_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      ambidexterity:
-        text: ambidexterity
-      left handedness:
-        text: left handedness
-      mixed-handedness:
-        text: mixed-handedness
-      right handedness:
-        text: right handedness
-  room_loc_enum:
-    name: room_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      corner room:
-        text: corner room
-      interior room:
-        text: interior room
-      exterior wall:
-        text: exterior wall
-  int_wall_cond_enum:
-    name: int_wall_cond_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      new:
-        text: new
-      visible wear:
-        text: visible wear
-      needs repair:
-        text: needs repair
-      damaged:
-        text: damaged
-      rupture:
-        text: rupture
-  season_use_enum:
-    name: season_use_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      Spring:
-        text: Spring
-      Summer:
-        text: Summer
-      Fall:
-        text: Fall
-      Winter:
-        text: Winter
-  ceil_finish_mat_enum:
-    name: ceil_finish_mat_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      drywall:
-        text: drywall
-      mineral fibre:
-        text: mineral fibre
-      tiles:
-        text: tiles
-      PVC:
-        text: PVC
-      plasterboard:
-        text: plasterboard
-      metal:
-        text: metal
-      fiberglass:
-        text: fiberglass
-      stucco:
-        text: stucco
-      mineral wool/calcium silicate:
-        text: mineral wool/calcium silicate
-      wood:
-        text: wood
-  window_horiz_pos_enum:
-    name: window_horiz_pos_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      left:
-        text: left
-      middle:
-        text: middle
-      right:
-        text: right
-  drawings_enum:
-    name: drawings_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      operation:
-        text: operation
-      as built:
-        text: as built
-      construction:
-        text: construction
-      bid:
-        text: bid
-      design:
-        text: design
-      building navigation map:
-        text: building navigation map
-      diagram:
-        text: diagram
-      sketch:
-        text: sketch
-  ext_window_orient_enum:
-    name: ext_window_orient_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      north:
-        text: north
-      south:
-        text: south
-      east:
-        text: east
-      west:
-        text: west
-      northeast:
-        text: northeast
-      southeast:
-        text: southeast
-      southwest:
-        text: southwest
-      northwest:
-        text: northwest
-  heat_cool_type_enum:
-    name: heat_cool_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      radiant system:
-        text: radiant system
-      heat pump:
-        text: heat pump
-      forced air system:
-        text: forced air system
-      steam forced heat:
-        text: steam forced heat
-      wood stove:
-        text: wood stove
-  floor_water_mold_enum:
-    name: floor_water_mold_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      mold odor:
-        text: mold odor
-      wet floor:
-        text: wet floor
-      water stains:
-        text: water stains
-      wall discoloration:
-        text: wall discoloration
-      floor discoloration:
-        text: floor discoloration
-      ceiling discoloration:
-        text: ceiling discoloration
-      peeling paint or wallpaper:
-        text: peeling paint or wallpaper
-      bulging walls:
-        text: bulging walls
-      condensation:
-        text: condensation
-  window_cond_enum:
-    name: window_cond_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      damaged:
-        text: damaged
-      needs repair:
-        text: needs repair
-      new:
-        text: new
-      rupture:
-        text: rupture
-      visible wear:
-        text: visible wear
-  gender_restroom_enum:
-    name: gender_restroom_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      all gender:
-        text: all gender
-      female:
-        text: female
-      gender neurtral:
-        text: gender neurtral
-      male:
-        text: male
-      male and female:
-        text: male and female
-      unisex:
-        text: unisex
-  window_loc_enum:
-    name: window_loc_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      north:
-        text: north
-      south:
-        text: south
-      east:
-        text: east
-      west:
-        text: west
-  floor_cond_enum:
-    name: floor_cond_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      new:
-        text: new
-      visible wear:
-        text: visible wear
-      needs repair:
-        text: needs repair
-      damaged:
-        text: damaged
-      rupture:
-        text: rupture
-  door_type_metal_enum:
-    name: door_type_metal_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      collapsible:
-        text: collapsible
-      corrugated steel:
-        text: corrugated steel
-      hollow:
-        text: hollow
-      rolling shutters:
-        text: rolling shutters
-      steel plate:
-        text: steel plate
-  build_docs_enum:
-    name: build_docs_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      building information model:
-        text: building information model
-      commissioning report:
-        text: commissioning report
-      complaint logs:
-        text: complaint logs
-      contract administration:
-        text: contract administration
-      cost estimate:
-        text: cost estimate
-      janitorial schedules or logs:
-        text: janitorial schedules or logs
-      maintenance plans:
-        text: maintenance plans
-      schedule:
-        text: schedule
-      sections:
-        text: sections
-      shop drawings:
-        text: shop drawings
-      submittals:
-        text: submittals
-      ventilation system:
-        text: ventilation system
-      windows:
-        text: windows
-  light_type_enum:
-    name: light_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      natural light:
-        text: natural light
-      electric light:
-        text: electric light
-      desk lamp:
-        text: desk lamp
-      flourescent lights:
-        text: flourescent lights
-      none:
-        text: none
-  indoor_surf_enum:
-    name: indoor_surf_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      cabinet:
-        text: cabinet
-      ceiling:
-        text: ceiling
-      counter top:
-        text: counter top
-      door:
-        text: door
-      shelving:
-        text: shelving
-      vent cover:
-        text: vent cover
-      window:
-        text: window
-      wall:
-        text: wall
-  surf_air_cont_enum:
-    name: surf_air_cont_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      dust:
-        text: dust
-      organic matter:
-        text: organic matter
-      particulate matter:
-        text: particulate matter
-      volatile organic compounds:
-        text: volatile organic compounds
-      biological contaminants:
-        text: biological contaminants
-      radon:
-        text: radon
-      nutrients:
-        text: nutrients
-      biocides:
-        text: biocides
-  window_vert_pos_enum:
-    name: window_vert_pos_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      bottom:
-        text: bottom
-      middle:
-        text: middle
-      top:
-        text: top
-      low:
-        text: low
-      high:
-        text: high
   room_type_enum:
     name: room_type_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2585,6 +1667,46 @@ enums:
         text: cafe
       warehouse:
         text: warehouse
+  window_cover_enum:
+    name: window_cover_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      blinds:
+        text: blinds
+      curtains:
+        text: curtains
+      none:
+        text: none
+  window_loc_enum:
+    name: window_loc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      north:
+        text: north
+      south:
+        text: south
+      east:
+        text: east
+      west:
+        text: west
+  ceil_type_enum:
+    name: ceil_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      cathedral:
+        text: cathedral
+      dropped:
+        text: dropped
+      concave:
+        text: concave
+      barrel-shaped:
+        text: barrel-shaped
+      coffered:
+        text: coffered
+      cove:
+        text: cove
+      stretched:
+        text: stretched
   door_cond_enum:
     name: door_cond_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2599,6 +1721,226 @@ enums:
         text: rupture
       visible wear:
         text: visible wear
+  filter_type_enum:
+    name: filter_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      particulate air filter:
+        text: particulate air filter
+      chemical air filter:
+        text: chemical air filter
+      low-MERV pleated media:
+        text: low-MERV pleated media
+      HEPA:
+        text: HEPA
+      electrostatic:
+        text: electrostatic
+      gas-phase or ultraviolet air treatments:
+        text: gas-phase or ultraviolet air treatments
+  train_line_enum:
+    name: train_line_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      red:
+        text: red
+      green:
+        text: green
+      orange:
+        text: orange
+  build_docs_enum:
+    name: build_docs_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      building information model:
+        text: building information model
+      commissioning report:
+        text: commissioning report
+      complaint logs:
+        text: complaint logs
+      contract administration:
+        text: contract administration
+      cost estimate:
+        text: cost estimate
+      janitorial schedules or logs:
+        text: janitorial schedules or logs
+      maintenance plans:
+        text: maintenance plans
+      schedule:
+        text: schedule
+      sections:
+        text: sections
+      shop drawings:
+        text: shop drawings
+      submittals:
+        text: submittals
+      ventilation system:
+        text: ventilation system
+      windows:
+        text: windows
+  light_type_enum:
+    name: light_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      natural light:
+        text: natural light
+      electric light:
+        text: electric light
+      desk lamp:
+        text: desk lamp
+      flourescent lights:
+        text: flourescent lights
+      none:
+        text: none
+  ext_window_orient_enum:
+    name: ext_window_orient_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      north:
+        text: north
+      south:
+        text: south
+      east:
+        text: east
+      west:
+        text: west
+      northeast:
+        text: northeast
+      southeast:
+        text: southeast
+      southwest:
+        text: southwest
+      northwest:
+        text: northwest
+  season_use_enum:
+    name: season_use_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Spring:
+        text: Spring
+      Summer:
+        text: Summer
+      Fall:
+        text: Fall
+      Winter:
+        text: Winter
+  window_type_enum:
+    name: window_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      single-hung sash window:
+        text: single-hung sash window
+      horizontal sash window:
+        text: horizontal sash window
+      fixed window:
+        text: fixed window
+  occup_document_enum:
+    name: occup_document_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      automated count:
+        text: automated count
+      estimate:
+        text: estimate
+      manual count:
+        text: manual count
+      videos:
+        text: videos
+  surf_air_cont_enum:
+    name: surf_air_cont_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      dust:
+        text: dust
+      organic matter:
+        text: organic matter
+      particulate matter:
+        text: particulate matter
+      volatile organic compounds:
+        text: volatile organic compounds
+      biological contaminants:
+        text: biological contaminants
+      radon:
+        text: radon
+      nutrients:
+        text: nutrients
+      biocides:
+        text: biocides
+  furniture_enum:
+    name: furniture_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      cabinet:
+        text: cabinet
+      chair:
+        text: chair
+      desks:
+        text: desks
+  quad_pos_enum:
+    name: quad_pos_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      North side:
+        text: North side
+      West side:
+        text: West side
+      South side:
+        text: South side
+      East side:
+        text: East side
+  build_occup_type_enum:
+    name: build_occup_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      office:
+        text: office
+      market:
+        text: market
+      restaurant:
+        text: restaurant
+      residence:
+        text: residence
+      school:
+        text: school
+      residential:
+        text: residential
+      commercial:
+        text: commercial
+      low rise:
+        text: low rise
+      high rise:
+        text: high rise
+      wood framed:
+        text: wood framed
+      health care:
+        text: health care
+      airport:
+        text: airport
+      sports complex:
+        text: sports complex
+  shading_device_cond_enum:
+    name: shading_device_cond_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      damaged:
+        text: damaged
+      needs repair:
+        text: needs repair
+      new:
+        text: new
+      rupture:
+        text: rupture
+      visible wear:
+        text: visible wear
+  substructure_type_enum:
+    name: substructure_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      crawlspace:
+        text: crawlspace
+      slab on grade:
+        text: slab on grade
+      basement:
+        text: basement
   floor_struc_enum:
     name: floor_struc_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2617,44 +1959,30 @@ enums:
         text: wood-framed
       concrete:
         text: concrete
-  door_move_enum:
-    name: door_move_enum
+  window_horiz_pos_enum:
+    name: window_horiz_pos_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      collapsible:
-        text: collapsible
-      folding:
-        text: folding
-      revolving:
-        text: revolving
-      rolling shutter:
-        text: rolling shutter
-      sliding:
-        text: sliding
-      swinging:
-        text: swinging
-  door_loc_enum:
-    name: door_loc_enum
+      left:
+        text: left
+      middle:
+        text: middle
+      right:
+        text: right
+  floor_cond_enum:
+    name: floor_cond_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      north:
-        text: north
-      south:
-        text: south
-      east:
-        text: east
-      west:
-        text: west
-  train_line_enum:
-    name: train_line_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      red:
-        text: red
-      green:
-        text: green
-      orange:
-        text: orange
+      new:
+        text: new
+      visible wear:
+        text: visible wear
+      needs repair:
+        text: needs repair
+      damaged:
+        text: damaged
+      rupture:
+        text: rupture
   wall_const_type_enum:
     name: wall_const_type_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2671,30 +1999,164 @@ enums:
         text: modified fire resistive
       fire resistive:
         text: fire resistive
-  door_direct_enum:
-    name: door_direct_enum
+  door_move_enum:
+    name: door_move_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      inward:
-        text: inward
-      outward:
-        text: outward
-      sideways:
-        text: sideways
-  water_feat_type_enum:
-    name: water_feat_type_enum
+      collapsible:
+        text: collapsible
+      folding:
+        text: folding
+      revolving:
+        text: revolving
+      rolling shutter:
+        text: rolling shutter
+      sliding:
+        text: sliding
+      swinging:
+        text: swinging
+  door_comp_type_enum:
+    name: door_comp_type_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      fountain:
-        text: fountain
-      pool:
-        text: pool
-      standing feature:
-        text: standing feature
-      stream:
-        text: stream
-      waterfall:
-        text: waterfall
+      metal covered:
+        text: metal covered
+      revolving:
+        text: revolving
+      sliding:
+        text: sliding
+      telescopic:
+        text: telescopic
+  door_loc_enum:
+    name: door_loc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      north:
+        text: north
+      south:
+        text: south
+      east:
+        text: east
+      west:
+        text: west
+  shading_device_type_enum:
+    name: shading_device_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      bahama shutters:
+        text: bahama shutters
+      exterior roll blind:
+        text: exterior roll blind
+      gambrel awning:
+        text: gambrel awning
+      hood awning:
+        text: hood awning
+      porchroller awning:
+        text: porchroller awning
+      sarasota shutters:
+        text: sarasota shutters
+      slatted aluminum:
+        text: slatted aluminum
+      solid aluminum awning:
+        text: solid aluminum awning
+      sun screen:
+        text: sun screen
+      tree:
+        text: tree
+      trellis:
+        text: trellis
+      venetian awning:
+        text: venetian awning
+  handidness_enum:
+    name: handidness_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      ambidexterity:
+        text: ambidexterity
+      left handedness:
+        text: left handedness
+      mixed-handedness:
+        text: mixed-handedness
+      right handedness:
+        text: right handedness
+  gender_restroom_enum:
+    name: gender_restroom_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      all gender:
+        text: all gender
+      female:
+        text: female
+      gender neurtral:
+        text: gender neurtral
+      male:
+        text: male
+      male and female:
+        text: male and female
+      unisex:
+        text: unisex
+  heat_deliv_loc_enum:
+    name: heat_deliv_loc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      north:
+        text: north
+      south:
+        text: south
+      east:
+        text: east
+      west:
+        text: west
+  drawings_enum:
+    name: drawings_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      operation:
+        text: operation
+      as built:
+        text: as built
+      construction:
+        text: construction
+      bid:
+        text: bid
+      design:
+        text: design
+      building navigation map:
+        text: building navigation map
+      diagram:
+        text: diagram
+      sketch:
+        text: sketch
+  specific_enum:
+    name: specific_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      operation:
+        text: operation
+      as built:
+        text: as built
+      construction:
+        text: construction
+      bid:
+        text: bid
+      design:
+        text: design
+      photos:
+        text: photos
+  heat_cool_type_enum:
+    name: heat_cool_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      radiant system:
+        text: radiant system
+      heat pump:
+        text: heat pump
+      forced air system:
+        text: forced air system
+      steam forced heat:
+        text: steam forced heat
+      wood stove:
+        text: wood stove
   wall_texture_enum:
     name: wall_texture_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2727,78 +2189,570 @@ enums:
         text: stomp knockdown
       swirl:
         text: swirl
-  window_type_enum:
-    name: window_type_enum
+  arch_struc_enum:
+    name: arch_struc_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      single-hung sash window:
-        text: single-hung sash window
-      horizontal sash window:
-        text: horizontal sash window
-      fixed window:
-        text: fixed window
-  specific_enum:
-    name: specific_enum
+      building:
+        text: building
+      shed:
+        text: shed
+      home:
+        text: home
+  samp_weather_enum:
+    name: samp_weather_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      operation:
-        text: operation
-      as built:
-        text: as built
-      construction:
-        text: construction
-      bid:
-        text: bid
-      design:
-        text: design
+      clear sky:
+        text: clear sky
+      cloudy:
+        text: cloudy
+      foggy:
+        text: foggy
+      hail:
+        text: hail
+      rain:
+        text: rain
+      snow:
+        text: snow
+      sleet:
+        text: sleet
+      sunny:
+        text: sunny
+      windy:
+        text: windy
+  rel_samp_loc_enum:
+    name: rel_samp_loc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      edge of car:
+        text: edge of car
+      center of car:
+        text: center of car
+      under a seat:
+        text: under a seat
+  ext_wall_orient_enum:
+    name: ext_wall_orient_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      north:
+        text: north
+      south:
+        text: south
+      east:
+        text: east
+      west:
+        text: west
+      northeast:
+        text: northeast
+      southeast:
+        text: southeast
+      southwest:
+        text: southwest
+      northwest:
+        text: northwest
+  wall_loc_enum:
+    name: wall_loc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      north:
+        text: north
+      south:
+        text: south
+      east:
+        text: east
+      west:
+        text: west
+  door_direct_enum:
+    name: door_direct_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      inward:
+        text: inward
+      outward:
+        text: outward
+      sideways:
+        text: sideways
+  vis_media_enum:
+    name: vis_media_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
       photos:
         text: photos
-  oxy_stat_samp_enum:
-    name: oxy_stat_samp_enum
+      videos:
+        text: videos
+      commonly of the building:
+        text: commonly of the building
+      site context (adjacent buildings, vegetation, terrain, streets):
+        text: site context (adjacent buildings, vegetation, terrain, streets)
+      interiors:
+        text: interiors
+      equipment:
+        text: equipment
+      3D scans:
+        text: 3D scans
+  door_type_wood_enum:
+    name: door_type_wood_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      aerobic:
-        text: aerobic
-      anaerobic:
-        text: anaerobic
-      other:
-        text: other
-  depos_env_enum:
-    name: depos_env_enum
+      bettened and ledged:
+        text: bettened and ledged
+      battened:
+        text: battened
+      ledged and braced:
+        text: ledged and braced
+      ledged and framed:
+        text: ledged and framed
+      ledged, braced and frame:
+        text: ledged, braced and frame
+      framed and paneled:
+        text: framed and paneled
+      glashed or sash:
+        text: glashed or sash
+      flush:
+        text: flush
+      louvered:
+        text: louvered
+      wire gauged:
+        text: wire gauged
+  window_mat_enum:
+    name: window_mat_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      Continental - Alluvial:
-        text: Continental - Alluvial
-      Continental - Aeolian:
-        text: Continental - Aeolian
-      Continental - Fluvial:
-        text: Continental - Fluvial
-      Continental - Lacustrine:
-        text: Continental - Lacustrine
-      Transitional - Deltaic:
-        text: Transitional - Deltaic
-      Transitional - Tidal:
-        text: Transitional - Tidal
-      Transitional - Lagoonal:
-        text: Transitional - Lagoonal
-      Transitional - Beach:
-        text: Transitional - Beach
-      Transitional - Lake:
-        text: Transitional - Lake
-      Marine - Shallow:
-        text: Marine - Shallow
-      Marine - Deep:
-        text: Marine - Deep
-      Marine - Reef:
-        text: Marine - Reef
-      Other - Evaporite:
-        text: Other - Evaporite
-      Other - Glacial:
-        text: Other - Glacial
-      Other - Volcanic:
-        text: Other - Volcanic
-      other:
-        text: other
+      clad:
+        text: clad
+      fiberglass:
+        text: fiberglass
+      metal:
+        text: metal
+      vinyl:
+        text: vinyl
+      wood:
+        text: wood
+  floor_finish_mat_enum:
+    name: floor_finish_mat_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      tile:
+        text: tile
+      wood strip or parquet:
+        text: wood strip or parquet
+      carpet:
+        text: carpet
+      rug:
+        text: rug
+      laminate wood:
+        text: laminate wood
+      lineoleum:
+        text: lineoleum
+      vinyl composition tile:
+        text: vinyl composition tile
+      sheet vinyl:
+        text: sheet vinyl
+      stone:
+        text: stone
+      bamboo:
+        text: bamboo
+      cork:
+        text: cork
+      terrazo:
+        text: terrazo
+      concrete:
+        text: concrete
+      none:
+        text: none
+      sealed:
+        text: sealed
+      clear finish:
+        text: clear finish
+      paint:
+        text: paint
+      none or unfinished:
+        text: none or unfinished
+  room_connected_enum:
+    name: room_connected_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      attic:
+        text: attic
+      bathroom:
+        text: bathroom
+      closet:
+        text: closet
+      conference room:
+        text: conference room
+      elevator:
+        text: elevator
+      examining room:
+        text: examining room
+      hallway:
+        text: hallway
+      kitchen:
+        text: kitchen
+      mail room:
+        text: mail room
+      office:
+        text: office
+      stairwell:
+        text: stairwell
+  mech_struc_enum:
+    name: mech_struc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      subway:
+        text: subway
+      coach:
+        text: coach
+      carriage:
+        text: carriage
+      elevator:
+        text: elevator
+      escalator:
+        text: escalator
+      boat:
+        text: boat
+      train:
+        text: train
+      car:
+        text: car
+      bus:
+        text: bus
+  floor_water_mold_enum:
+    name: floor_water_mold_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      mold odor:
+        text: mold odor
+      wet floor:
+        text: wet floor
+      water stains:
+        text: water stains
+      wall discoloration:
+        text: wall discoloration
+      floor discoloration:
+        text: floor discoloration
+      ceiling discoloration:
+        text: ceiling discoloration
+      peeling paint or wallpaper:
+        text: peeling paint or wallpaper
+      bulging walls:
+        text: bulging walls
+      condensation:
+        text: condensation
+  door_type_metal_enum:
+    name: door_type_metal_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      collapsible:
+        text: collapsible
+      corrugated steel:
+        text: corrugated steel
+      hollow:
+        text: hollow
+      rolling shutters:
+        text: rolling shutters
+      steel plate:
+        text: steel plate
+  door_mat_enum:
+    name: door_mat_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      aluminum:
+        text: aluminum
+      cellular PVC:
+        text: cellular PVC
+      engineered plastic:
+        text: engineered plastic
+      fiberboard:
+        text: fiberboard
+      fiberglass:
+        text: fiberglass
+      metal:
+        text: metal
+      thermoplastic alloy:
+        text: thermoplastic alloy
+      vinyl:
+        text: vinyl
+      wood:
+        text: wood
+      wood/plastic composite:
+        text: wood/plastic composite
+  door_type_enum:
+    name: door_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      composite:
+        text: composite
+      metal:
+        text: metal
+      wooden:
+        text: wooden
+  int_wall_cond_enum:
+    name: int_wall_cond_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      new:
+        text: new
+      visible wear:
+        text: visible wear
+      needs repair:
+        text: needs repair
+      damaged:
+        text: damaged
+      rupture:
+        text: rupture
+  weekday_enum:
+    name: weekday_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Monday:
+        text: Monday
+      Tuesday:
+        text: Tuesday
+      Wednesday:
+        text: Wednesday
+      Thursday:
+        text: Thursday
+      Friday:
+        text: Friday
+      Saturday:
+        text: Saturday
+      Sunday:
+        text: Sunday
+  wall_surf_treatment_enum:
+    name: wall_surf_treatment_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      painted:
+        text: painted
+      wall paper:
+        text: wall paper
+      no treatment:
+        text: no treatment
+      paneling:
+        text: paneling
+      stucco:
+        text: stucco
+      fabric:
+        text: fabric
+  water_feat_type_enum:
+    name: water_feat_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      fountain:
+        text: fountain
+      pool:
+        text: pool
+      standing feature:
+        text: standing feature
+      stream:
+        text: stream
+      waterfall:
+        text: waterfall
+  ceil_texture_enum:
+    name: ceil_texture_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      crows feet:
+        text: crows feet
+      crows-foot stomp:
+        text: crows-foot stomp
+      double skip:
+        text: double skip
+      hawk and trowel:
+        text: hawk and trowel
+      knockdown:
+        text: knockdown
+      popcorn:
+        text: popcorn
+      orange peel:
+        text: orange peel
+      rosebud stomp:
+        text: rosebud stomp
+      Santa-Fe texture:
+        text: Santa-Fe texture
+      skip trowel:
+        text: skip trowel
+      smooth:
+        text: smooth
+      stomp knockdown:
+        text: stomp knockdown
+      swirl:
+        text: swirl
+  indoor_space_enum:
+    name: indoor_space_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      bedroom:
+        text: bedroom
+      office:
+        text: office
+      bathroom:
+        text: bathroom
+      foyer:
+        text: foyer
+      kitchen:
+        text: kitchen
+      locker room:
+        text: locker room
+      hallway:
+        text: hallway
+      elevator:
+        text: elevator
+  window_cond_enum:
+    name: window_cond_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      damaged:
+        text: damaged
+      needs repair:
+        text: needs repair
+      new:
+        text: new
+      rupture:
+        text: rupture
+      visible wear:
+        text: visible wear
+  surf_material_enum:
+    name: surf_material_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      adobe:
+        text: adobe
+      carpet:
+        text: carpet
+      cinder blocks:
+        text: cinder blocks
+      concrete:
+        text: concrete
+      hay bales:
+        text: hay bales
+      glass:
+        text: glass
+      metal:
+        text: metal
+      paint:
+        text: paint
+      plastic:
+        text: plastic
+      stainless steel:
+        text: stainless steel
+      stone:
+        text: stone
+      stucco:
+        text: stucco
+      tile:
+        text: tile
+      vinyl:
+        text: vinyl
+      wood:
+        text: wood
+  wall_finish_mat_enum:
+    name: wall_finish_mat_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      plaster:
+        text: plaster
+      gypsum plaster:
+        text: gypsum plaster
+      veneer plaster:
+        text: veneer plaster
+      gypsum board:
+        text: gypsum board
+      tile:
+        text: tile
+      terrazzo:
+        text: terrazzo
+      stone facing:
+        text: stone facing
+      acoustical treatment:
+        text: acoustical treatment
+      wood:
+        text: wood
+      metal:
+        text: metal
+      masonry:
+        text: masonry
+  room_loc_enum:
+    name: room_loc_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      corner room:
+        text: corner room
+      interior room:
+        text: interior room
+      exterior wall:
+        text: exterior wall
+  ceil_finish_mat_enum:
+    name: ceil_finish_mat_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      drywall:
+        text: drywall
+      mineral fibre:
+        text: mineral fibre
+      tiles:
+        text: tiles
+      PVC:
+        text: PVC
+      plasterboard:
+        text: plasterboard
+      metal:
+        text: metal
+      fiberglass:
+        text: fiberglass
+      stucco:
+        text: stucco
+      mineral wool/calcium silicate:
+        text: mineral wool/calcium silicate
+      wood:
+        text: wood
+  building_setting_enum:
+    name: building_setting_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      urban:
+        text: urban
+      suburban:
+        text: suburban
+      exurban:
+        text: exurban
+      rural:
+        text: rural
+  window_vert_pos_enum:
+    name: window_vert_pos_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      bottom:
+        text: bottom
+      middle:
+        text: middle
+      top:
+        text: top
+      low:
+        text: low
+      high:
+        text: high
+  indoor_surf_enum:
+    name: indoor_surf_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      cabinet:
+        text: cabinet
+      ceiling:
+        text: ceiling
+      counter top:
+        text: counter top
+      door:
+        text: door
+      shelving:
+        text: shelving
+      vent cover:
+        text: vent cover
+      window:
+        text: window
+      wall:
+        text: wall
   hcr_geol_age_enum:
     name: hcr_geol_age_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2839,6 +2793,138 @@ enums:
         text: Triassic
       other:
         text: other
+  hcr_enum:
+    name: hcr_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Oil Reservoir:
+        text: Oil Reservoir
+      Gas Reservoir:
+        text: Gas Reservoir
+      Oil Sand:
+        text: Oil Sand
+      Coalbed:
+        text: Coalbed
+      Shale:
+        text: Shale
+      Tight Oil Reservoir:
+        text: Tight Oil Reservoir
+      Tight Gas Reservoir:
+        text: Tight Gas Reservoir
+      other:
+        text: other
+  rel_to_oxygen_enum:
+    name: rel_to_oxygen_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      aerobe:
+        text: aerobe
+      anaerobe:
+        text: anaerobe
+      facultative:
+        text: facultative
+      microaerophilic:
+        text: microaerophilic
+      microanaerobe:
+        text: microanaerobe
+      obligate aerobe:
+        text: obligate aerobe
+      obligate anaerobe:
+        text: obligate anaerobe
+  hc_produced_enum:
+    name: hc_produced_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Oil:
+        text: Oil
+      Gas-Condensate:
+        text: Gas-Condensate
+      Gas:
+        text: Gas
+      Bitumen:
+        text: Bitumen
+      Coalbed Methane:
+        text: Coalbed Methane
+      other:
+        text: other
+  depos_env_enum:
+    name: depos_env_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Continental - Alluvial:
+        text: Continental - Alluvial
+      Continental - Aeolian:
+        text: Continental - Aeolian
+      Continental - Fluvial:
+        text: Continental - Fluvial
+      Continental - Lacustrine:
+        text: Continental - Lacustrine
+      Transitional - Deltaic:
+        text: Transitional - Deltaic
+      Transitional - Tidal:
+        text: Transitional - Tidal
+      Transitional - Lagoonal:
+        text: Transitional - Lagoonal
+      Transitional - Beach:
+        text: Transitional - Beach
+      Transitional - Lake:
+        text: Transitional - Lake
+      Marine - Shallow:
+        text: Marine - Shallow
+      Marine - Deep:
+        text: Marine - Deep
+      Marine - Reef:
+        text: Marine - Reef
+      Other - Evaporite:
+        text: Other - Evaporite
+      Other - Glacial:
+        text: Other - Glacial
+      Other - Volcanic:
+        text: Other - Volcanic
+      other:
+        text: other
+  oxy_stat_samp_enum:
+    name: oxy_stat_samp_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      aerobic:
+        text: aerobic
+      anaerobic:
+        text: anaerobic
+      other:
+        text: other
+  samp_collect_point_enum:
+    name: samp_collect_point_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      well:
+        text: well
+      test well:
+        text: test well
+      drilling rig:
+        text: drilling rig
+      wellhead:
+        text: wellhead
+      separator:
+        text: separator
+      storage tank:
+        text: storage tank
+      other:
+        text: other
+  samp_subtype_enum:
+    name: samp_subtype_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      oil phase:
+        text: oil phase
+      water phase:
+        text: water phase
+      biofilm:
+        text: biofilm
+      not applicable:
+        text: not applicable
+      other:
+        text: other
   lithology_enum:
     name: lithology_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2867,120 +2953,6 @@ enums:
         text: Siltstone
       Volcanic:
         text: Volcanic
-      other:
-        text: other
-  samp_subtype_enum:
-    name: samp_subtype_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      oil phase:
-        text: oil phase
-      water phase:
-        text: water phase
-      biofilm:
-        text: biofilm
-      not applicable:
-        text: not applicable
-      other:
-        text: other
-  hc_produced_enum:
-    name: hc_produced_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      Oil:
-        text: Oil
-      Gas-Condensate:
-        text: Gas-Condensate
-      Gas:
-        text: Gas
-      Bitumen:
-        text: Bitumen
-      Coalbed Methane:
-        text: Coalbed Methane
-      other:
-        text: other
-  hcr_enum:
-    name: hcr_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      Oil Reservoir:
-        text: Oil Reservoir
-      Gas Reservoir:
-        text: Gas Reservoir
-      Oil Sand:
-        text: Oil Sand
-      Coalbed:
-        text: Coalbed
-      Shale:
-        text: Shale
-      Tight Oil Reservoir:
-        text: Tight Oil Reservoir
-      Tight Gas Reservoir:
-        text: Tight Gas Reservoir
-      other:
-        text: other
-  samp_collect_point_enum:
-    name: samp_collect_point_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      well:
-        text: well
-      test well:
-        text: test well
-      drilling rig:
-        text: drilling rig
-      wellhead:
-        text: wellhead
-      separator:
-        text: separator
-      storage tank:
-        text: storage tank
-      other:
-        text: other
-  rel_to_oxygen_enum:
-    name: rel_to_oxygen_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      aerobe:
-        text: aerobe
-      anaerobe:
-        text: anaerobe
-      facultative:
-        text: facultative
-      microaerophilic:
-        text: microaerophilic
-      microanaerobe:
-        text: microanaerobe
-      obligate aerobe:
-        text: obligate aerobe
-      obligate anaerobe:
-        text: obligate anaerobe
-  sr_lithology_enum:
-    name: sr_lithology_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      Clastic:
-        text: Clastic
-      Carbonate:
-        text: Carbonate
-      Coal:
-        text: Coal
-      Biosilicieous:
-        text: Biosilicieous
-      other:
-        text: other
-  sr_kerog_type_enum:
-    name: sr_kerog_type_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      Type I:
-        text: Type I
-      Type II:
-        text: Type II
-      Type III:
-        text: Type III
-      Type IV:
-        text: Type IV
       other:
         text: other
   sr_dep_env_enum:
@@ -3037,6 +3009,34 @@ enums:
         text: Triassic
       other:
         text: other
+  sr_kerog_type_enum:
+    name: sr_kerog_type_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Type I:
+        text: Type I
+      Type II:
+        text: Type II
+      Type III:
+        text: Type III
+      Type IV:
+        text: Type IV
+      other:
+        text: other
+  sr_lithology_enum:
+    name: sr_lithology_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Clastic:
+        text: Clastic
+      Carbonate:
+        text: Carbonate
+      Coal:
+        text: Coal
+      Biosilicieous:
+        text: Biosilicieous
+      other:
+        text: other
   drainage_class_enum:
     name: drainage_class_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3053,80 +3053,6 @@ enums:
         text: well
       excessively drained:
         text: excessively drained
-  cur_land_use_enum:
-    name: cur_land_use_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      cities:
-        text: cities
-      farmstead:
-        text: farmstead
-      industrial areas:
-        text: industrial areas
-      roads/railroads:
-        text: roads/railroads
-      rock:
-        text: rock
-      sand:
-        text: sand
-      gravel:
-        text: gravel
-      mudflats:
-        text: mudflats
-      salt flats:
-        text: salt flats
-      badlands:
-        text: badlands
-      permanent snow or ice:
-        text: permanent snow or ice
-      saline seeps:
-        text: saline seeps
-      mines/quarries:
-        text: mines/quarries
-      oil waste areas:
-        text: oil waste areas
-      small grains:
-        text: small grains
-      row crops:
-        text: row crops
-      vegetable crops:
-        text: vegetable crops
-      horticultural plants (e.g. tulips):
-        text: horticultural plants (e.g. tulips)
-      marshlands (grass,sedges,rushes):
-        text: marshlands (grass,sedges,rushes)
-      tundra (mosses,lichens):
-        text: tundra (mosses,lichens)
-      rangeland:
-        text: rangeland
-      pastureland (grasslands used for livestock grazing):
-        text: pastureland (grasslands used for livestock grazing)
-      hayland:
-        text: hayland
-      meadows (grasses,alfalfa,fescue,bromegrass,timothy):
-        text: meadows (grasses,alfalfa,fescue,bromegrass,timothy)
-      shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus):
-        text: shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)
-      successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries):
-        text: successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)
-      shrub crops (blueberries,nursery ornamentals,filberts):
-        text: shrub crops (blueberries,nursery ornamentals,filberts)
-      vine crops (grapes):
-        text: vine crops (grapes)
-      conifers (e.g. pine,spruce,fir,cypress):
-        text: conifers (e.g. pine,spruce,fir,cypress)
-      hardwoods (e.g. oak,hickory,elm,aspen):
-        text: hardwoods (e.g. oak,hickory,elm,aspen)
-      intermixed hardwood and conifers:
-        text: intermixed hardwood and conifers
-      tropical (e.g. mangrove,palms):
-        text: tropical (e.g. mangrove,palms)
-      rainforest (evergreen forest receiving greater than 406 cm annual rainfall):
-        text: rainforest (evergreen forest receiving greater than 406 cm annual rainfall)
-      swamp (permanent or semi-permanent water body dominated by woody plants):
-        text: swamp (permanent or semi-permanent water body dominated by woody plants)
-      crop trees (nuts,fruit,christmas trees,nursery trees):
-        text: crop trees (nuts,fruit,christmas trees,nursery trees)
   fao_class_enum:
     name: fao_class_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3205,18 +3131,6 @@ enums:
         text: mouldboard
       disc plough:
         text: disc plough
-  biotic_relationship_enum:
-    name: biotic_relationship_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      free living:
-        text: free living
-      parasite:
-        text: parasite
-      commensal:
-        text: commensal
-      symbiont:
-        text: symbiont
   profile_position_enum:
     name: profile_position_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3231,6 +3145,80 @@ enums:
         text: footslope
       toeslope:
         text: toeslope
+  cur_land_use_enum:
+    name: cur_land_use_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      cities:
+        text: cities
+      farmstead:
+        text: farmstead
+      industrial areas:
+        text: industrial areas
+      roads/railroads:
+        text: roads/railroads
+      rock:
+        text: rock
+      sand:
+        text: sand
+      gravel:
+        text: gravel
+      mudflats:
+        text: mudflats
+      salt flats:
+        text: salt flats
+      badlands:
+        text: badlands
+      permanent snow or ice:
+        text: permanent snow or ice
+      saline seeps:
+        text: saline seeps
+      mines/quarries:
+        text: mines/quarries
+      oil waste areas:
+        text: oil waste areas
+      small grains:
+        text: small grains
+      row crops:
+        text: row crops
+      vegetable crops:
+        text: vegetable crops
+      horticultural plants (e.g. tulips):
+        text: horticultural plants (e.g. tulips)
+      marshlands (grass,sedges,rushes):
+        text: marshlands (grass,sedges,rushes)
+      tundra (mosses,lichens):
+        text: tundra (mosses,lichens)
+      rangeland:
+        text: rangeland
+      pastureland (grasslands used for livestock grazing):
+        text: pastureland (grasslands used for livestock grazing)
+      hayland:
+        text: hayland
+      meadows (grasses,alfalfa,fescue,bromegrass,timothy):
+        text: meadows (grasses,alfalfa,fescue,bromegrass,timothy)
+      shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus):
+        text: shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)
+      successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries):
+        text: successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)
+      shrub crops (blueberries,nursery ornamentals,filberts):
+        text: shrub crops (blueberries,nursery ornamentals,filberts)
+      vine crops (grapes):
+        text: vine crops (grapes)
+      conifers (e.g. pine,spruce,fir,cypress):
+        text: conifers (e.g. pine,spruce,fir,cypress)
+      hardwoods (e.g. oak,hickory,elm,aspen):
+        text: hardwoods (e.g. oak,hickory,elm,aspen)
+      intermixed hardwood and conifers:
+        text: intermixed hardwood and conifers
+      tropical (e.g. mangrove,palms):
+        text: tropical (e.g. mangrove,palms)
+      rainforest (evergreen forest receiving greater than 406 cm annual rainfall):
+        text: rainforest (evergreen forest receiving greater than 406 cm annual rainfall)
+      swamp (permanent or semi-permanent water body dominated by woody plants):
+        text: swamp (permanent or semi-permanent water body dominated by woody plants)
+      crop trees (nuts,fruit,christmas trees,nursery trees):
+        text: crop trees (nuts,fruit,christmas trees,nursery trees)
   soil_horizon_enum:
     name: soil_horizon_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3249,68 +3237,18 @@ enums:
         text: R layer
       Permafrost:
         text: Permafrost
-  plant_sex_enum:
-    name: plant_sex_enum
+  biotic_relationship_enum:
+    name: biotic_relationship_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      Androdioecious:
-        text: Androdioecious
-      Androecious:
-        text: Androecious
-      Androgynous:
-        text: Androgynous
-      Androgynomonoecious:
-        text: Androgynomonoecious
-      Andromonoecious:
-        text: Andromonoecious
-      Bisexual:
-        text: Bisexual
-      Dichogamous:
-        text: Dichogamous
-      Diclinous:
-        text: Diclinous
-      Dioecious:
-        text: Dioecious
-      Gynodioecious:
-        text: Gynodioecious
-      Gynoecious:
-        text: Gynoecious
-      Gynomonoecious:
-        text: Gynomonoecious
-      Hermaphroditic:
-        text: Hermaphroditic
-      Imperfect:
-        text: Imperfect
-      Monoclinous:
-        text: Monoclinous
-      Monoecious:
-        text: Monoecious
-      Perfect:
-        text: Perfect
-      Polygamodioecious:
-        text: Polygamodioecious
-      Polygamomonoecious:
-        text: Polygamomonoecious
-      Polygamous:
-        text: Polygamous
-      Protandrous:
-        text: Protandrous
-      Protogynous:
-        text: Protogynous
-      Subandroecious:
-        text: Subandroecious
-      Subdioecious:
-        text: Subdioecious
-      Subgynoecious:
-        text: Subgynoecious
-      Synoecious:
-        text: Synoecious
-      Trimonoecious:
-        text: Trimonoecious
-      Trioecious:
-        text: Trioecious
-      Unisexual:
-        text: Unisexual
+      free living:
+        text: free living
+      parasite:
+        text: parasite
+      commensal:
+        text: commensal
+      symbiont:
+        text: symbiont
   growth_habit_enum:
     name: growth_habit_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3373,18 +3311,68 @@ enums:
         text: clonal selection
       mutant:
         text: mutant
-  tidal_stage_enum:
-    name: tidal_stage_enum
+  plant_sex_enum:
+    name: plant_sex_enum
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
-      low tide:
-        text: low tide
-      ebb tide:
-        text: ebb tide
-      flood tide:
-        text: flood tide
-      high tide:
-        text: high tide
+      Androdioecious:
+        text: Androdioecious
+      Androecious:
+        text: Androecious
+      Androgynous:
+        text: Androgynous
+      Androgynomonoecious:
+        text: Androgynomonoecious
+      Andromonoecious:
+        text: Andromonoecious
+      Bisexual:
+        text: Bisexual
+      Dichogamous:
+        text: Dichogamous
+      Diclinous:
+        text: Diclinous
+      Dioecious:
+        text: Dioecious
+      Gynodioecious:
+        text: Gynodioecious
+      Gynoecious:
+        text: Gynoecious
+      Gynomonoecious:
+        text: Gynomonoecious
+      Hermaphroditic:
+        text: Hermaphroditic
+      Imperfect:
+        text: Imperfect
+      Monoclinous:
+        text: Monoclinous
+      Monoecious:
+        text: Monoecious
+      Perfect:
+        text: Perfect
+      Polygamodioecious:
+        text: Polygamodioecious
+      Polygamomonoecious:
+        text: Polygamomonoecious
+      Polygamous:
+        text: Polygamous
+      Protandrous:
+        text: Protandrous
+      Protogynous:
+        text: Protogynous
+      Subandroecious:
+        text: Subandroecious
+      Subdioecious:
+        text: Subdioecious
+      Subgynoecious:
+        text: Subgynoecious
+      Synoecious:
+        text: Synoecious
+      Trimonoecious:
+        text: Trimonoecious
+      Trioecious:
+        text: Trioecious
+      Unisexual:
+        text: Unisexual
   sediment_type_enum:
     name: sediment_type_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3397,6 +3385,18 @@ enums:
         text: hydrogenous
       lithogenous:
         text: lithogenous
+  tidal_stage_enum:
+    name: tidal_stage_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      low tide:
+        text: low tide
+      ebb tide:
+        text: ebb tide
+      flood tide:
+        text: flood tide
+      high tide:
+        text: high tide
   host_sex_enum:
     name: host_sex_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3423,14 +3423,6 @@ enums:
         text: metatranscriptomics
       natural organic matter:
         text: natural organic matter
-  dna_dnase_enum:
-    name: dna_dnase_enum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      'no':
-        text: 'no'
-      'yes':
-        text: 'yes'
   dna_cont_type_enum:
     name: dna_cont_type_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -3439,6 +3431,14 @@ enums:
         text: plate
       tube:
         text: tube
+  dna_dnase_enum:
+    name: dna_dnase_enum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      'no':
+        text: 'no'
+      'yes':
+        text: 'yes'
   dna_sample_format_enum:
     name: dna_sample_format_enum
     from_schema: https://example.com/nmdc_submission_schema
@@ -15023,19 +15023,9 @@ slots:
     is_a: attribute
     range: string
     multivalued: false
-  alternative_identifiers:
-    name: alternative_identifiers
-    description: A list of alternative identifiers for the entity.
-    from_schema: https://example.com/nmdc_submission_schema
-    multivalued: false
-    range: string
-  core field:
-    name: core field
-    description: basic fields
-    from_schema: https://example.com/nmdc_submission_schema
-    abstract: true
-  nucleic acid sequence source field:
-    name: nucleic acid sequence source field
+  environment field:
+    name: environment field
+    description: field describing environmental aspect of a sample
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
   language:
@@ -15043,17 +15033,9 @@ slots:
     description: Should use ISO 639-1 code e.g. "en", "fr"
     from_schema: https://example.com/nmdc_submission_schema
     range: language code
-  gold_path_field:
-    name: gold_path_field
-    description: This is a grouping for any of the gold path fields
-    from_schema: https://example.com/nmdc_submission_schema
-    is_a: attribute
-    abstract: true
-    range: string
-    multivalued: false
-  environment field:
-    name: environment field
-    description: field describing environmental aspect of a sample
+  investigation field:
+    name: investigation field
+    description: field describing aspect of the investigation/study to which the sample belongs
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
   id:
@@ -15069,15 +15051,40 @@ slots:
         description: https://github.com/microbiomedata/nmdc-schema/pull/499#discussion_r1018499248
     from_schema: https://example.com/nmdc_submission_schema
     identifier: true
+  gold_path_field:
+    name: gold_path_field
+    description: This is a grouping for any of the gold path fields
+    from_schema: https://example.com/nmdc_submission_schema
+    is_a: attribute
+    abstract: true
+    range: string
+    multivalued: false
+  core field:
+    name: core field
+    description: basic fields
+    from_schema: https://example.com/nmdc_submission_schema
+    abstract: true
   name:
     name: name
     description: A human readable label for an entity
     from_schema: https://example.com/nmdc_submission_schema
     range: string
     multivalued: false
-  investigation field:
-    name: investigation field
-    description: field describing aspect of the investigation/study to which the sample belongs
+  alternative_identifiers:
+    name: alternative_identifiers
+    description: A list of alternative identifiers for the entity.
+    from_schema: https://example.com/nmdc_submission_schema
+    multivalued: false
+    range: string
+  description:
+    name: description
+    description: a human-readable description of a thing
+    from_schema: https://example.com/nmdc_submission_schema
+    slot_uri: dcterms:description
+    range: string
+    multivalued: false
+  nucleic acid sequence source field:
+    name: nucleic acid sequence source field
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
   attribute:
@@ -15091,13 +15098,6 @@ slots:
       - key
       - characteristic
     abstract: true
-  description:
-    name: description
-    description: a human-readable description of a thing
-    from_schema: https://example.com/nmdc_submission_schema
-    slot_uri: dcterms:description
-    range: string
-    multivalued: false
 classes:
   AirInterface:
     name: AirInterface

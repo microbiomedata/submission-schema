@@ -8,8 +8,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: 0 - 1
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -328,8 +328,8 @@ soil_data:
   ecosystem_subtype: Unclassified
   ecosystem_type: Soil
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   experimental_factor: xxx [ENVO:00000000]
@@ -421,8 +421,8 @@ soil_data:
   ecosystem_subtype: Unclassified
   ecosystem_type: Soil
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Maryland, Bethesda'
@@ -447,8 +447,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: '0'
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -464,8 +464,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: '10'
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -481,8 +481,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: '10.5'
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -498,8 +498,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: '-30.5'
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -515,8 +515,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: 10.4-45.9999
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -532,8 +532,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: 10.4 - 45.9999
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -549,8 +549,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: -10.4 - 45.9999
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -566,8 +566,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: -5--6
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -1036,8 +1036,8 @@ soil_data:
   collection_date: '2022-01-15'
   depth: 0 to 1
   elev: 123
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'
@@ -1182,8 +1182,8 @@ soil_data:
   ecosystem_category: Terrestrial
   ecosystem_subtype: Unclassified
   ecosystem_type: Soil
-  env_broad_scale: ____________urban biome [ENVO:01000249]
-  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
   env_medium: bare soil [ENVO:01001616]
   env_package: soil
   geo_loc_name: 'USA: Nowhere, Oklahoma'

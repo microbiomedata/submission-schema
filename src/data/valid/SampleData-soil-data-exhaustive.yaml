@@ -30,8 +30,8 @@ soil_data:
     ecosystem_subtype: Unclassified
     ecosystem_type: Soil
     elev: 123
-    env_broad_scale: '____________urban biome [ENVO:01000249]'
-    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_broad_scale: '______urban biome [ENVO:01000249]'
+    env_local_scale: '________tunnel [ENVO:00000068]'
     env_medium: 'bare soil [ENVO:01001616]'
     env_package: soil
     experimental_factor: xxx [ENVO:00000000]
@@ -128,8 +128,8 @@ soil_data:
     source_mat_id: x:2
     ecosystem_type: Soil
     collection_date: '2022-01-15'
-    env_broad_scale: '____________urban biome [ENVO:01000249]'
-    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_broad_scale: '______urban biome [ENVO:01000249]'
+    env_local_scale: '________tunnel [ENVO:00000068]'
     samp_store_temp: "-80 Celsius"
     ecosystem_subtype: Unclassified
     ecosystem_category: Terrestrial
