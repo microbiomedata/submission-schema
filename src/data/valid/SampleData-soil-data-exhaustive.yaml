@@ -23,7 +23,7 @@ soil_data:
     cur_land_use: cities
     cur_vegetation: xxx
     cur_vegetation_meth: xxx
-    depth: '111'
+    depth: '0'
     drainage_class: well
     ecosystem: Environmental
     ecosystem_category: Terrestrial
@@ -111,7 +111,7 @@ soil_data:
     water_content: 111 units
     watering_regm: xxx
   - elev: 123
-    depth: "111 to 222"
+    depth: "0 - 1"
     lat_lon: 77 88
     ecosystem: Environmental
     samp_name: b

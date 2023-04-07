@@ -1,0 +1,137 @@
+soil_data:
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "0"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:2
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "10"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:3
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "10.5"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:4
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "-30.5"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:5
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "10.4-45.9999"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:6
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "10.4 - 45.9999"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:7
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "-10.4 - 45.9999"
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:8
+    store_cond: frozen
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "-5--6" # ugly but allowed
+    env_broad_scale: '____________urban biome [ENVO:01000249]'
+    env_local_scale: '___________________tunnel [ENVO:00000068]'
+    env_medium: 'bare soil [ENVO:01001616]'
+    env_package: soil
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    source_mat_id: x:9
+    store_cond: frozen

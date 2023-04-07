@@ -3,7 +3,7 @@ soil_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 111 to 222
+  depth: 0 - 1
   elev: '123.0'
   env_broad_scale: ____________urban biome [ENVO:01000249]
   env_local_scale: ___________________tunnel [ENVO:00000068]

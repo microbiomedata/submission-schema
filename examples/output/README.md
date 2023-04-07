@@ -6,7 +6,7 @@ soil_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 111 to 222
+  depth: 0 - 1
   elev: 123
   env_broad_scale: ____________urban biome [ENVO:01000249]
   env_local_scale: ___________________tunnel [ENVO:00000068]
@@ -321,7 +321,7 @@ soil_data:
   cur_land_use: cities
   cur_vegetation: xxx
   cur_vegetation_meth: xxx
-  depth: '111'
+  depth: '0'
   drainage_class: well
   ecosystem: Environmental
   ecosystem_category: Terrestrial
@@ -415,7 +415,7 @@ soil_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 111 to 222
+  depth: 0 - 1
   ecosystem: Environmental
   ecosystem_category: Terrestrial
   ecosystem_subtype: Unclassified
@@ -434,6 +434,148 @@ soil_data:
   slope_aspect: 100 units
   source_mat_id: x:2
   specific_ecosystem: Unclassified
+  store_cond: frozen
+
+```
+## SampleData-soil-data-depth-formats
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '0'
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:2
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '10'
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:3
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '10.5'
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:4
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '-30.5'
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:5
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 10.4-45.9999
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:6
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 10.4 - 45.9999
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:7
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: -10.4 - 45.9999
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:8
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: -5--6
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:9
   store_cond: frozen
 
 ```
@@ -463,7 +605,7 @@ water_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 1.5 to 2.5
+  depth: 1.5 - 2.5
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
@@ -854,7 +996,7 @@ water_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 1.5-2.5
+  depth: 1.5 to 2.5
   ecosystem: Environmental
   ecosystem_category: Terrestrial
   ecosystem_subtype: Unclassified
@@ -882,6 +1024,29 @@ emsl_data:
   sample_shipped: three buckets
   sample_type: soil
   source_mat_id: x:1
+
+```
+## SampleData-soil-data-depth-formats
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 to 1
+  elev: 123
+  env_broad_scale: ____________urban biome [ENVO:01000249]
+  env_local_scale: ___________________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:2
+  store_cond: frozen
 
 ```
 ## SampleData-water-data-string-depth
@@ -1012,7 +1177,7 @@ soil_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 111 to 222
+  depth: 111 - 222
   ecosystem: Environmental
   ecosystem_category: Terrestrial
   ecosystem_subtype: Unclassified

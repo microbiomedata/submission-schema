@@ -3,7 +3,7 @@ soil_data:
       - metagenomics
       - metatranscriptomics
     collection_date: '2022-01-15'
-    depth: "111 to 222"
+    depth: "111 - 222"
     ecosystem: Environmental
     ecosystem_category: Terrestrial
     ecosystem_subtype: Unclassified

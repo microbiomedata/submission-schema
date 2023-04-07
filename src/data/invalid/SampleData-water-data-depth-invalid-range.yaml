@@ -3,7 +3,7 @@ water_data:
       - metagenomics
       - metatranscriptomics
     collection_date: '2022-01-15'
-    depth: 1.5-2.5
+    depth: 1.5 to 2.5
     ecosystem: Environmental
     ecosystem_category: Terrestrial
     ecosystem_subtype: Unclassified
