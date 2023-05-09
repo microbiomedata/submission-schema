@@ -574,16 +574,16 @@ window_vert_pos		window vertical position		enumeration		1		The vertical position
 window_water_mold		window signs of water/mold		enumeration		1		Signs of the presence of mold or mildew on the window.	no presence of mold visible						false			string			MIXS:0000854	[presence of mold visible|no presence of mold visible]		window signs of water/mold	
 xylene		xylene		measurement value	milligram per liter, parts per million	1		Concentration of xylene in the sample							false			string			MIXS:0000156			xylene	
 zinc		zinc		measurement value	mg/kg (ppm)	1		Concentration of zinc in the sample	2.5 mg/kg						false			string						zinc	
-environment field								field describing environmental aspect of a sample																	
-language								"Should use ISO 639-1 code e.g. ""en"", ""fr"""										language code							
-investigation field								field describing aspect of the investigation/study to which the sample belongs																	
-id								A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI	nmdc:mgmag-00-x012.1_7_c1	true						abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?|a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted|typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions|minting authority shoulders should probably be enumerated and checked in the pattern									
 gold_path_field								This is a grouping for any of the gold path fields							false			string							
-core field								basic fields																	
+language								"Should use ISO 639-1 code e.g. ""en"", ""fr"""										language code							
 name								A human readable label for an entity							false			string							
-alternative_identifiers								A list of alternative identifiers for the entity.							false			string							
+id								A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI	nmdc:mgmag-00-x012.1_7_c1	true						abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?|a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted|typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions|minting authority shoulders should probably be enumerated and checked in the pattern									
 description								a human-readable description of a thing							false			string			dcterms:description				
+investigation field								field describing aspect of the investigation/study to which the sample belongs																	
+alternative_identifiers								A list of alternative identifiers for the entity.							false			string							
+environment field								field describing environmental aspect of a sample																	
 nucleic acid sequence source field																									
+core field								basic fields																	
 attribute		field|property|template field|key|characteristic						A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template																	
 	AirInterface							air dh_interface																Air	
 air_PM_concen	AirInterface	air particulate matter concentration		particulate matter name;measurement value	micrograms per cubic meter	m		Concentration of substances that remain suspended in the air, and comprise mixtures of organic and inorganic substances (PM10 and PM2.5); can report multiple PM's by entering numeric values preceded by name of PM	PM2.5;10 microgram per cubic meter						false		^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$	string			MIXS:0000108	{text};{float} {unit}		air particulate matter concentration	

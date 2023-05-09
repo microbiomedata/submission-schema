@@ -59,3 +59,4 @@ docs = ["linkml", "mkdocs-material"]
 oak-tree-to-pv-list = "src.nmdc_submission_schema.datamodel.oak_tree_to_pv_list:main"
 dh-json2linkml = 'src.nmdc_submission_schema.datamodel.dh_json2linkml:update_json'
 linkml-json2dh = 'src.nmdc_submission_schema.datamodel.linkml_json2dh:extract_lists'
+generate_and_populate_template = 'src.nmdc_submission_schema.datamodel.generate_and_populate_template:generate_and_populate_template'

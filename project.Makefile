@@ -412,3 +412,15 @@ src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for
 	$(RUN) linkml-json2dh \
 		--input-file $< \
 		--output-dir $(dir $@)
+
+schemasheets/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	$(RUN) generate_and_populate_template \
+		 --columns-to-insert slot \
+		 --columns-to-insert class \
+		 --columns-to-remove annotations \
+		 --columns-to-remove name \
+		 --destination-template $@ \
+		 --intermediate-excel-file schemasheets/meta.xlsx \
+		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
+		 --schema-path $< \
+		 --selected-sheet slot_definition
