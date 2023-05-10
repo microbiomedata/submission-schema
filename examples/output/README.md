@@ -156,7 +156,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 1.23
+  dna_volume: 0
   proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
@@ -635,7 +635,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 999
+  dna_volume: 0
   proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
