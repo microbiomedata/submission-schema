@@ -412,3 +412,13 @@ src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for
 	$(RUN) linkml-json2dh \
 		--input-file $< \
 		--output-dir $(dir $@)
+
+.PHONY: bz-one-off-jsonschema-validations
+
+bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.schema.json
+	$(RUN) check-jsonschema \
+		--schemafile $< src/data/valid/SampleData-plant-assoc-min.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-plant-assoc--with-flavor.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-plant-associated-illegally-high-lat.yaml
