@@ -28,7 +28,6 @@ water_data:
 - alkalinity: 100 units
   alkalinity_method: xyz
   alkyl_diethers: 100 units
-  alt: 100 units
   aminopept_act: 100 units
   ammonium: 100 units
   analysis_type:
@@ -184,7 +183,6 @@ water_data:
 - alkalinity: 50 milligram per liter
   alkalinity_method: titration
   alkyl_diethers: 0.005 mole per liter
-  alt: 100 meter
   aminopept_act: 0.269 mole per liter per hour
   ammonium: 1.5 milligram per liter
   analysis_type:
@@ -302,7 +300,6 @@ water_data:
 soil_data:
 - air_temp_regm: xxx
   al_sat_meth: xxx
-  alt: 111 units
   analysis_type:
   - metagenomics
   - metatranscriptomics
