@@ -96,6 +96,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -451,6 +452,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -1143,6 +1145,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "hall_count": {
@@ -2719,6 +2722,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "hc_produced": {
@@ -3265,6 +3269,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "hc_produced": {
@@ -3754,6 +3759,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "gravidity": {
@@ -4130,6 +4136,7 @@
                     "type": "string"
                 },
                 "dna_container_id": {
+                    "pattern": "^.{1,20}$",
                     "type": "string"
                 },
                 "dna_dnase": {
@@ -4501,6 +4508,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "horizon_meth": {
@@ -4840,6 +4848,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "gravity": {
@@ -5719,6 +5728,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "glucosidase_act": {
@@ -6138,14 +6148,17 @@
                 },
                 "collection_date_inc": {
                     "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
+                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
                     "type": "string"
                 },
                 "collection_time": {
                     "description": "The time of sampling, either as an instance (single point) or interval.",
+                    "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
                     "type": "string"
                 },
                 "collection_time_inc": {
                     "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
+                    "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
                     "type": "string"
                 },
                 "crop_rotation": {
@@ -6247,6 +6260,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "growth_facil": {
@@ -6528,10 +6542,12 @@
                 },
                 "start_date_inc": {
                     "description": "Date the incubation was started. Only relevant for incubation samples.",
+                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
                     "type": "string"
                 },
                 "start_time_inc": {
                     "description": "Time the incubation was started. Only relevant for incubation samples.",
+                    "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
                     "type": "string"
                 },
                 "store_cond": {
@@ -7029,6 +7045,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "horizon_meth": {

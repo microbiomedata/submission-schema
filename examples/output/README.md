@@ -761,6 +761,29 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
+## SampleData-soil-data-bad-geo_loc_name
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Brooklyn Bridge'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:2
+  store_cond: frozen
+
+```
 ## SampleData-water-data-broad-label-only
 ### Input
 ```yaml
