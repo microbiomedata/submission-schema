@@ -422,3 +422,5 @@ bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.sch
 		--schemafile $< src/data/invalid/SampleData-plant-assoc--with-flavor.yaml
 	! $(RUN) check-jsonschema \
 		--schemafile $< src/data/invalid/SampleData-plant-associated-illegally-high-lat.yaml
+	$(RUN) check-jsonschema \
+		--schemafile $< src/data/valid/SampleData-jgi_mt_data-minimal.yaml
