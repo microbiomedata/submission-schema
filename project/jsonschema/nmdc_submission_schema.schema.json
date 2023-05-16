@@ -5645,7 +5645,7 @@
                 },
                 "depth": {
                     "description": "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?(\\s*-\\s*[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?)?$",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?\\s*-\\s*[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$",
                     "type": "string"
                 },
                 "diether_lipids": {
@@ -6179,7 +6179,7 @@
                 },
                 "depth": {
                     "description": "The vertical distance below local surface, e.g. for sediment or soil samples depth is measured from sediment or soil surface, respectively. Depth can be reported as an interval for subsurface samples.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?(\\s*-\\s*[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?)?$",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?\\s*-\\s*[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$",
                     "type": "string"
                 },
                 "drainage_class": {

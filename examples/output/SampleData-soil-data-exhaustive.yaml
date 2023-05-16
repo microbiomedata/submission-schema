@@ -19,7 +19,7 @@ soil_data:
   cur_land_use: cities
   cur_vegetation: xxx
   cur_vegetation_meth: xxx
-  depth: '0'
+  depth: 0 - 1
   drainage_class: well
   ecosystem: Environmental
   ecosystem_category: Terrestrial

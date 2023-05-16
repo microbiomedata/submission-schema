@@ -3,7 +3,8 @@ from_val	from_type	to_type	to_val	len
 {float}	MIxS string serialization	DH datatype	float	5
 {float} {float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	79
 {float} {unit}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$	44
-{float}|{float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$	#REF!
+{float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	
+{float}|{float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$	
 {integer}	MIxS string serialization	DH datatype	integer	7
 {lat lon}	linkml string_serialization	DH pattern regex	^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$	86
 {termLabel} {[termID]}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$	
