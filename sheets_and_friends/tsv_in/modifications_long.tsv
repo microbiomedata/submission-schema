@@ -8,7 +8,7 @@ SoilInterface	al_sat_meth	add_attribute	todos			This is no longer matching the l
 SoilInterface	al_sat_meth	overwrite_examples	examples			https://doi.org/10.1371/journal.pone.0176357
 SoilInterface	al_sat_meth	replace_attribute	description			Reference or method used in determining Aluminum saturation
 SoilInterface	al_sat_meth	replace_attribute	title			aluminum saturation method/ extreme unusual properties
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	alt	replace_attribute	recommended			true
+AirInterface|BiofilmInterface|BuiltEnvInterface|HostAssociatedInterface|MiscEnvsInterface	alt	replace_attribute	recommended			true
 DhMultiviewCommonColumnsMixin	analysis_type	replace_attribute	required			true
 SoilInterface	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
 SoilInterface	annual_precpt	overwrite_examples	examples			8.94 inch
@@ -36,7 +36,8 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	overwrite_examples	examples			0 - 0.1|1
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	range			string
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	required			true
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	string_serialization			{float}|{float}-{float}
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	string_serialization			{float}|{float}-{float}
+SedimentInterface|SoilInterface	depth	replace_attribute	string_serialization			{float}-{float}
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
 JgiMgInterface	dna_absorb1	replace_attribute	recommended			true
 JgiMgInterface	dna_absorb2	replace_attribute	recommended			true
@@ -153,7 +154,6 @@ JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
 JgiMtInterface	rna_concentration	replace_attribute	required			true
 JgiMtInterface	rna_container_id	replace_attribute	required			true
 JgiMtInterface	rna_cont_type	replace_attribute	required			true
-JgiMtInterface	rna_cont_well	replace_attribute	required			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
 JgiMtInterface	rna_project_contact	replace_attribute	required			true
 JgiMtInterface	rna_samp_id	replace_attribute	required			true
