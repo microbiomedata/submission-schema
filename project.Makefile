@@ -177,6 +177,13 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
+local/nmdc.yaml:
+	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc.yaml
+
+local/nmdc_biosample_rules.yaml: local/nmdc.yaml
+	# as of 2023-05-16, there are rules in that haven't been merged into main yet
+	yq '.classes.Biosample.rules.[]  | select(.title == "dna_well_requires_plate")' local/nmdc.yaml
+
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
 sheets_and_friends/tsv_in/modifications_long.tsv \

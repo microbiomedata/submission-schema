@@ -7874,44 +7874,44 @@
         {
             "if": {
                 "properties": {
-                    "dna_cont_type": {
+                    "rna_cont_type": {
                         "const": "plate"
                     }
                 },
                 "required": [
-                    "dna_cont_type"
+                    "rna_cont_type"
                 ]
             },
             "then": {
                 "properties": {
-                    "dna_volume": {
+                    "rna_volume": {
                         "maximum": 1
                     }
                 },
                 "required": [
-                    "dna_volume"
+                    "rna_volume"
                 ]
             }
         },
         {
             "if": {
                 "properties": {
-                    "dna_cont_type": {
+                    "rna_cont_type": {
                         "const": "tube"
                     }
                 },
                 "required": [
-                    "dna_cont_type"
+                    "rna_cont_type"
                 ]
             },
             "then": {
                 "properties": {
-                    "dna_volume": {
+                    "rna_volume": {
                         "minimum": 1
                     }
                 },
                 "required": [
-                    "dna_volume"
+                    "rna_volume"
                 ]
             }
         }
