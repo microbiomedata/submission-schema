@@ -680,7 +680,7 @@ CREATE TABLE "JgiMtInterface" (
 	rna_absorb2 FLOAT, 
 	rna_concentration FLOAT NOT NULL, 
 	rna_cont_type VARCHAR(5) NOT NULL, 
-	rna_cont_well TEXT NOT NULL, 
+	rna_cont_well TEXT, 
 	rna_container_id TEXT NOT NULL, 
 	rna_isolate_meth TEXT NOT NULL, 
 	rna_project_contact TEXT NOT NULL, 

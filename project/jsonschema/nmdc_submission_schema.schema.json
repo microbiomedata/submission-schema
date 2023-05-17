@@ -4063,6 +4063,52 @@
         },
         "JgiMgInterface": {
             "additionalProperties": false,
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "dna_cont_well": {
+                                "pattern": ".+"
+                            }
+                        },
+                        "required": [
+                            "dna_cont_well"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "dna_cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "dna_cont_type"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "dna_cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "dna_cont_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "dna_cont_well": {
+                                "pattern": "^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$"
+                            }
+                        },
+                        "required": [
+                            "dna_cont_well"
+                        ]
+                    }
+                }
+            ],
             "description": "jgi_mg dh_interface",
             "properties": {
                 "analysis_type": {
@@ -4168,6 +4214,52 @@
         },
         "JgiMtInterface": {
             "additionalProperties": false,
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "rna_cont_well": {
+                                "pattern": ".+"
+                            }
+                        },
+                        "required": [
+                            "rna_cont_well"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "rna_cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "rna_cont_type"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "rna_cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "rna_cont_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "rna_cont_well": {
+                                "pattern": "^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$"
+                            }
+                        },
+                        "required": [
+                            "rna_cont_well"
+                        ]
+                    }
+                }
+            ],
             "description": "jgi_mt dh_interface",
             "properties": {
                 "analysis_type": {
@@ -4254,7 +4346,6 @@
                 "proposal_rna",
                 "rna_concentration",
                 "rna_cont_type",
-                "rna_cont_well",
                 "rna_container_id",
                 "rna_isolate_meth",
                 "rna_project_contact",
@@ -7870,52 +7961,7 @@
     "$id": "https://example.com/nmdc_submission_schema",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": false,
-    "allOf": [
-        {
-            "if": {
-                "properties": {
-                    "rna_cont_type": {
-                        "const": "plate"
-                    }
-                },
-                "required": [
-                    "rna_cont_type"
-                ]
-            },
-            "then": {
-                "properties": {
-                    "rna_volume": {
-                        "maximum": 1
-                    }
-                },
-                "required": [
-                    "rna_volume"
-                ]
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "rna_cont_type": {
-                        "const": "tube"
-                    }
-                },
-                "required": [
-                    "rna_cont_type"
-                ]
-            },
-            "then": {
-                "properties": {
-                    "rna_volume": {
-                        "minimum": 1
-                    }
-                },
-                "required": [
-                    "rna_volume"
-                ]
-            }
-        }
-    ],
+    "description": "represents data produced by the DataHarmonizer tabs of the submission portal",
     "metamodel_version": "1.7.0",
     "properties": {
         "air_data": {

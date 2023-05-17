@@ -180,24 +180,33 @@ modifications_cleanup:
 local/nmdc.yaml:
 	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc.yaml
 
-local/nmdc_biosample_rules.yaml: local/nmdc.yaml
-	# as of 2023-05-16, there are rules in that haven't been merged into main yet
-	yq '.classes.Biosample.rules.[]  | select(.title == "dna_well_requires_plate")' local/nmdc.yaml
-
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
 sheets_and_friends/tsv_in/modifications_long.tsv \
-sheets_and_friends/tsv_in/validation_converter.tsv
+sheets_and_friends/tsv_in/validation_converter.tsv \
+local/nmdc.yaml
 	$(RUN) modifications_and_validation \
 		--yaml_input $< \
 		--modifications_config_tsv $(word 2,$^) \
 		--validation_config_tsv $(word 3,$^) \
 		--yaml_output $@.raw
 
-	# inserting rule... but rules aren't handled properly in gen jsonschema yet
-	yq -i '(.classes.[] | select(.name == "JgiMgInterface") | .rules) = [{"preconditions":{"slot_conditions":{"dna_cont_type":{"equals_string":"plate"}}},"postconditions":{"slot_conditions":{"dna_volume":{"maximum_value":1}}}},{"preconditions":{"slot_conditions":{"dna_cont_type":{"equals_string":"tube"}}},"postconditions":{"slot_conditions":{"dna_volume":{"minimum_value":1}}}}]' local/with_modifications.yaml.raw
-
-	yq -i '(.classes.[] | select(.name == "JgiMtInterface") | .rules) = [{"preconditions":{"slot_conditions":{"rna_cont_type":{"equals_string":"plate"}}},"postconditions":{"slot_conditions":{"rna_volume":{"maximum_value":1}}}},{"preconditions":{"slot_conditions":{"rna_cont_type":{"equals_string":"tube"}}},"postconditions":{"slot_conditions":{"rna_volume":{"minimum_value":1}}}}]' local/with_modifications.yaml.raw
+	# # having trouble selectively injecting rules based on title pattern
+#	yq eval-all \
+#		'select(fileIndex==1).classes.JgiMtInterface.rules = (select(fileIndex==0).classes.Biosample.rules.[] | select(.title == "rna*")) | select(fileIndex==1)' \
+#		local/nmdc.yaml src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml | cat > ruleswap.yaml
+	# # so just inject all rules...
+	# # using | cat > because yq fails to write to STDOUT (permissions error?!)
+	yq eval-all \
+		'select(fileIndex==1).classes.JgiMgInterface.rules = select(fileIndex==0).classes.Biosample.rules | select(fileIndex==1)' \
+		local/nmdc.yaml $@.raw | cat > $@.raw2
+	yq eval-all \
+		'select(fileIndex==1).classes.JgiMtInterface.rules = select(fileIndex==0).classes.Biosample.rules | select(fileIndex==1)' \
+		local/nmdc.yaml $@.raw2 | cat > $@.raw
+	# # ...then removing rules that aren't relevant to a class
+	# # requires some prior knowledge
+	yq -i 'del(.classes.JgiMgInterface.rules.[] | select(.title == "rna*"))' $@.raw
+	yq -i 'del(.classes.JgiMtInterface.rules.[] | select(.title == "dna*"))' $@.raw
 
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \

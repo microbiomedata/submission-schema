@@ -153,7 +153,7 @@ JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
 JgiMtInterface	rna_concentration	replace_attribute	required			true
 JgiMtInterface	rna_container_id	replace_attribute	required			true
 JgiMtInterface	rna_cont_type	replace_attribute	required			true
-JgiMtInterface	rna_cont_well	replace_attribute	required			true
+JgiMtInterface	rna_cont_well	replace_attribute	recommended			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
 JgiMtInterface	rna_project_contact	replace_attribute	required			true
 JgiMtInterface	rna_samp_id	replace_attribute	required			true
