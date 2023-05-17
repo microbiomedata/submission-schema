@@ -1,5 +1,32 @@
 RUN=poetry run
 
+.PHONY: check-jsonschema-example run-linkml-validation check-all-invalid-examples check-all-valid-examples
+
+JSON_SCHEMA_FILE := project/jsonschema/nmdc_submission_schema.schema.json
+INVALID_EXAMPLES_DIR := src/data/invalid
+INVALID_EXAMPLE_FILES := $(wildcard src/data/invalid/*.yaml)
+VALID_EXAMPLES_DIR := src/data/valid
+VALID_EXAMPLE_FILES := $(wildcard src/data/valid/*.yaml)
+
+# the check-jsonschema utility can be used to check JSON or YAML data
+#  against the JSON schema generated from teh LinkML schema
+# Future versions of LinkML will include reporting of all errors like check-jsonschema
+#  at which time these tests will be rewritten
+# see https://github.com/turbomam/examples-first-cookiecutter/issues/99
+
+jsonschema-check-all-examples: check-all-invalid-examples check-all-valid-examples
+
+check-all-invalid-examples: $(patsubst $(INVALID_EXAMPLES_DIR)/%.yaml,jsonschema-vs-invalid--%,$(INVALID_EXAMPLE_FILES))
+
+jsonschema-vs-invalid--%: $(JSON_SCHEMA_FILE) $(INVALID_EXAMPLES_DIR)/%.yaml
+	! $(RUN) check-jsonschema --schemafile $^
+
+check-all-valid-examples: $(patsubst $(VALID_EXAMPLES_DIR)/%.yaml,jsonschema-vs-valid-%,$(VALID_EXAMPLE_FILES))
+
+jsonschema-vs-valid-%: $(JSON_SCHEMA_FILE) $(VALID_EXAMPLES_DIR)/%.yaml
+	$(RUN) check-jsonschema --schemafile $^
+
+
 schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cleanup
 	rm -rf examples/*.yaml
 	rm -rf examples/output/*.db
@@ -242,7 +269,12 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
 
 	yq -i '(.slots.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"' $@
-	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"' $@
+
+run-examples: examples_cleanup examples/output/README.md
+
+examples_cleanup:
+	rm -rf examples/output
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
@@ -430,3 +462,16 @@ src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for
 	$(RUN) linkml-json2dh \
 		--input-file $< \
 		--output-dir $(dir $@)
+
+local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	mkdir -p $(@D)
+	$(RUN) generate_and_populate_template \
+		 --base-class slot_definition \
+		 --columns-to-insert class \
+		 --columns-to-insert enum \
+		 --columns-to-insert permissible_value \
+		 --columns-to-insert slot \
+		 --destination-template $@ \
+		 --meta-model-excel-file local/meta.xlsx \
+		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
+		 --source-schema-path $<

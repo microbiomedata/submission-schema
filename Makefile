@@ -95,8 +95,8 @@ update-linkml:
 all: site
 site: clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 gen-project gendoc \
-schemasheets/populated_tsv/slot_usage_minimal.tsv examples/output/SampleData-water-data-exhaustive.regen.yaml local/SampleData-water-data-exhaustive.db \
-examples/output/README.md
+examples/output/SampleData-water-data-exhaustive.regen.yaml \
+local/SampleData-water-data-exhaustive.db \
 
 %.yaml: gen-project
 # make deploy has been depricated by an updated .github/workflows/deploy-docs.yaml
@@ -129,7 +129,7 @@ gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema
 		--generator-arguments '{jsonschema: {not_closed: false}, excel: {output: local/submission_schema.xlsx}, sqlddl: {output: local/submission_schema.sql}}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: site test-python check-valid-vs-json-schema check-invalid-vs-json-schema
+test: jsonschema-check-all-examples test-python run-examples
 test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
