@@ -1,0 +1,21 @@
+jgi_mt_data:
+  - analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    rna_concentration: 1.23
+    rna_cont_type: plate
+    rna_container_id: xxx
+    dnase_rna: "no"
+    rna_isolate_meth: xxx
+    rna_project_contact: xxx
+    rna_samp_id: xxx
+    rna_sample_format: DNAStable
+    rna_sample_name: xxx
+    rna_seq_project: xxx
+    rna_seq_project_name: xxx
+    rna_seq_project_pi: xxx
+    rna_volume: 999
+    proposal_rna: xxx
+    samp_name: xxx
+    source_mat_id: x:1
+
