@@ -11,8 +11,7 @@ include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 python = "^3.9"
 # = 1.4.5 for merged SchemaViews from URLs
 linkml-runtime = "^1.4.0"
-exhaustion-check = "^0.1.3"
-gen-pop-linkml2sheets = "^0.1.8"
+
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
@@ -37,14 +36,16 @@ patterns = [
 ]
 
 [tool.poetry.dev-dependencies]
-check-jsonschema = "^0.22.0"
+check-jsonschema = "^0.22.0" # https://pypi.org/project/check-jsonschema/0.23.0/
+exhaustion-check = "^0.1.3"
+gen-pop-linkml2sheets = "^0.1.8"
 linkml = "^1.4.0"
 mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
-oaklib = "^0.3.1"
+oaklib = "^0.3.1" # https://pypi.org/project/oaklib/0.5.6/
 schemasheets = "^0.1.21"
-
 sheets-and-friends = "^0.5.0"
+
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
 ## /home/mark/gitrepos/sheets_and_friends
 #sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
