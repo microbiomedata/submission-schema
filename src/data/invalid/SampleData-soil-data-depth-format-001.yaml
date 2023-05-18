@@ -14,5 +14,4 @@ soil_data:
     lat_lon: 35.211445 -98.464612
     samp_name: b
     samp_store_temp: "-80 Celsius"
-    source_mat_id: x:2
     store_cond: frozen

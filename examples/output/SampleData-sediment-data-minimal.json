@@ -15,8 +15,7 @@
       "geo_loc_name": "USA: Nowhere, Oklahoma",
       "lat_lon": "35.211445 -98.464612",
       "samp_store_temp": "-80 Celsius",
-      "samp_name": "a",
-      "source_mat_id": "x:1"
+      "samp_name": "a"
     }
   ],
   "@type": "SampleData"
