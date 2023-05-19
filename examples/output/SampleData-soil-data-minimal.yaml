@@ -15,4 +15,3 @@ soil_data:
   samp_store_temp: -80 Celsius
   store_cond: frozen
   samp_name: b
-  source_mat_id: x:2

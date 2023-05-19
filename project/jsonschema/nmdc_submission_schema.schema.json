@@ -253,8 +253,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "AirInterface",
             "type": "object"
@@ -715,8 +714,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "BiofilmInterface",
             "type": "object"
@@ -1620,8 +1618,7 @@
                 "geo_loc_name",
                 "lat_lon",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "BuiltEnvInterface",
             "type": "object"
@@ -2051,8 +2048,7 @@
                 "sample_shipped",
                 "sample_type",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "EmslInterface",
             "type": "object"
@@ -3057,8 +3053,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "HcrCoresInterface",
             "type": "object"
@@ -3607,8 +3602,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "HcrFluidsSwabsInterface",
             "type": "object"
@@ -3989,8 +3983,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "HostAssociatedInterface",
             "type": "object"
@@ -4203,8 +4196,7 @@
                 "dna_volume",
                 "proposal_dna",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "JgiMgInterface",
             "type": "object"
@@ -4354,8 +4346,7 @@
                 "rna_seq_project_pi",
                 "rna_volume",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "JgiMtInterface",
             "type": "object"
@@ -4748,8 +4739,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "MiscEnvsInterface",
             "type": "object"
@@ -5207,8 +5197,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "PlantAssociatedInterface",
             "type": "object"
@@ -6059,8 +6048,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "SedimentInterface",
             "type": "object"
@@ -6672,8 +6660,7 @@
                 "samp_store_temp",
                 "store_cond",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "SoilInterface",
             "type": "object"
@@ -7298,8 +7285,7 @@
                 "lat_lon",
                 "samp_store_temp",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "WastewaterSludgeInterface",
             "type": "object"
@@ -7833,8 +7819,7 @@
                 "env_package",
                 "geo_loc_name",
                 "analysis_type",
-                "samp_name",
-                "source_mat_id"
+                "samp_name"
             ],
             "title": "WaterInterface",
             "type": "object"

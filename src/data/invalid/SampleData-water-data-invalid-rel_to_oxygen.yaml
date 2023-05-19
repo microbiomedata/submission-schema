@@ -15,5 +15,4 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     rel_to_oxygen: xyz
     samp_name: xyz
-    source_mat_id: x:1
     specific_ecosystem: Unclassified

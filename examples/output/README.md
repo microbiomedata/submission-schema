@@ -1,27 +1,160 @@
-## SampleData-jgi_mt_data-in-plate-valid-well-val
+## SampleData-jgi_mg_data-in-tube
 ### Input
 ```yaml
-jgi_mt_data:
+jgi_mg_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  dnase_rna: 'no'
-  proposal_rna: xxx
-  rna_concentration: 1.23
-  rna_cont_type: plate
-  rna_cont_well: B2
-  rna_container_id: xxx
-  rna_isolate_meth: xxx
-  rna_project_contact: xxx
-  rna_samp_id: xxx
-  rna_sample_format: DNAStable
-  rna_sample_name: xxx
-  rna_seq_project: xxx
-  rna_seq_project_name: xxx
-  rna_seq_project_pi: xxx
-  rna_volume: 999
+  dna_concentration: 1.23
+  dna_cont_type: tube
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 999
+  proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
+
+```
+## SampleData-soil-data-minimal
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+
+```
+## SampleData-water-data-exhaustive-max-generic
+### Input
+```yaml
+water_data:
+- alkalinity: 100 units
+  alkalinity_method: xyz
+  alkyl_diethers: 100 units
+  aminopept_act: 100 units
+  ammonium: 100 units
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  atmospheric_data: xyz;100 units
+  bac_prod: 100 units
+  bac_resp: 100 units
+  bacteria_carb_prod: 100 units
+  biomass: xyz;100 units
+  bishomohopanol: 100 units
+  bromide: 100 units
+  calcium: 100 units
+  carb_nitro_ratio: 1.5
+  chem_administration: xyz [XYZ:123];2111-11-11
+  chloride: 100 units
+  chlorophyll: 100 units
+  collection_date: '2021-01-01'
+  conduc: 100 units
+  density: 100 units
+  depth: '1.5'
+  diether_lipids: xyz;100 units
+  diss_carb_dioxide: 100 units
+  diss_hydrogen: 100 units
+  diss_inorg_carb: 100 units
+  diss_inorg_nitro: 100 units
+  diss_inorg_phosp: 100 units
+  diss_org_carb: 100 units
+  diss_org_nitro: 100 units
+  diss_oxygen: 100 units
+  down_par: 100 units
+  ecosystem: xyz
+  ecosystem_category: xyz
+  ecosystem_subtype: xyz
+  ecosystem_type: xyz
+  elev: 1.5
+  env_broad_scale: xyz xyz xyz [XYZ:123]
+  env_local_scale: xyz xyz xyz [XYZ:123]
+  env_medium: xyz xyz xyz [XYZ:123]
+  env_package: xyz
+  experimental_factor: xyz xyz xyz [XYZ:123]
+  fluor: 100 units
+  geo_loc_name: 'xyz: xyz, xyz'
+  glucosidase_act: 100 units
+  horizon_meth: xyz
+  lat_lon: 78 89
+  light_intensity: 100 units
+  mean_frict_vel: 100 units
+  mean_peak_frict_vel: 100 units
+  misc_param: xyz;100 units
+  n_alkanes: xyz;100 units
+  nitrate: 100 units
+  nitrite: 100 units
+  nitro: 100 units
+  org_carb: 100 units
+  org_matter: 100 units
+  org_nitro: 100 units
+  organism_count: xyz;100 units;qPCR
+  oxy_stat_samp: anaerobe
+  part_org_carb: 100 units
+  part_org_nitro: 100 units
+  perturbation: xyz
+  petroleum_hydrocarb: 100 units
+  ph: 1.5
+  ph_meth: xyz
+  phaeopigments: xyz;100 units
+  phosphate: 100 units
+  phosplipid_fatt_acid: xyz;100 units
+  potassium: 100 units
+  pressure: 100 units
+  primary_prod: 100 units
+  redox_potential: 100 units
+  rel_to_oxygen: anaerobe
+  salinity: 100 units
+  samp_collec_device: xyz
+  samp_collec_method: xyz
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  samp_size: 100 units
+  samp_store_dur: xyz
+  samp_store_loc: xyz
+  samp_store_temp: 100 units
+  sample_link: z:99
+  silicate: 100 units
+  size_frac: xyz
+  size_frac_low: 100 units
+  size_frac_up: 100 units
+  sodium: 100 units
+  soluble_react_phosp: 100 units
+  source_mat_id: x:1
+  specific_ecosystem: xyz
+  sulfate: 100 units
+  sulfide: 100 units
+  suspend_part_matter: 100 units
+  temp: 100 units
+  tidal_stage: high tide
+  tot_depth_water_col: 100 units
+  tot_diss_nitro: 100 units
+  tot_inorg_nitro: 100 units
+  tot_nitro: 100 units
+  tot_part_carb: 100 units
+  turbidity: 100 units
+  water_current: 100 units
 
 ```
 ## SampleData-jgi_mg_data-exhaustive
@@ -52,125 +185,18 @@ jgi_mg_data:
   source_mat_id: x:1
 
 ```
-## SampleData-water-data-1-dim-depth
+## SampleData-emsl_data-minimal
 ### Input
 ```yaml
-water_data:
+emsl_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 1.5 - 2.5
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-depth-formats
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '0'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '-3.333'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 13.4-16.99
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: -99.99 - 38
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: -3--4
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-minimal
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
 
 ```
 ## SampleData-water-data-exhaustive
@@ -289,166 +315,6 @@ water_data:
   tot_part_carb: 35 micromole per liter
   turbidity: 0.3 nephelometric turbidity units
   water_current: 10 cubic meter per second
-
-```
-## SampleData-soil-data-minimal
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 0 - 1
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:2
-  store_cond: frozen
-
-```
-## SampleData-sediment-data-minimal
-### Input
-```yaml
-sediment_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 0-.1
-  elev: 0
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: sediment
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  lat_lon: 35.211445 -98.464612
-  samp_name: a
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:1
-
-```
-## SampleData-emsl_data-exhasutive
-### Input
-```yaml
-emsl_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  emsl_store_temp: -80
-  project_id: xxx
-  replicate_number: 2
-  samp_name: xxx
-  sample_shipped: 100 units
-  sample_type: soil
-  source_mat_id: x:1
-  technical_reps: 3
-
-```
-## SampleData-soil-data-depth-formats
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 10.4-45.9999
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:6
-  store_cond: frozen
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 10.4 - 45.9999
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:7
-  store_cond: frozen
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: -10.4 - 45.9999
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:8
-  store_cond: frozen
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: -5--6
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:9
-  store_cond: frozen
-
-```
-## SampleData-jgi_mg_data-in-tube
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: tube
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 999
-  proposal_dna: xxx
-  samp_name: xxx
-  source_mat_id: x:1
 
 ```
 ## SampleData-soil-data-exhaustive
@@ -591,116 +457,114 @@ soil_data:
   store_cond: frozen
 
 ```
-## SampleData-water-data-exhaustive-max-generic
+## SampleData-soil-data-depth-formats
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 10.4-45.9999
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:6
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 10.4 - 45.9999
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:7
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: -10.4 - 45.9999
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:8
+  store_cond: frozen
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: -5--6
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  source_mat_id: x:9
+  store_cond: frozen
+
+```
+## SampleData-water-data-0-dim-depth
 ### Input
 ```yaml
 water_data:
-- alkalinity: 100 units
-  alkalinity_method: xyz
-  alkyl_diethers: 100 units
-  aminopept_act: 100 units
-  ammonium: 100 units
-  analysis_type:
+- analysis_type:
   - metagenomics
   - metatranscriptomics
-  atmospheric_data: xyz;100 units
-  bac_prod: 100 units
-  bac_resp: 100 units
-  bacteria_carb_prod: 100 units
-  biomass: xyz;100 units
-  bishomohopanol: 100 units
-  bromide: 100 units
-  calcium: 100 units
-  carb_nitro_ratio: 1.5
-  chem_administration: xyz [XYZ:123];2111-11-11
-  chloride: 100 units
-  chlorophyll: 100 units
-  collection_date: '2021-01-01'
-  conduc: 100 units
-  density: 100 units
+  collection_date: '2022-01-15'
   depth: '1.5'
-  diether_lipids: xyz;100 units
-  diss_carb_dioxide: 100 units
-  diss_hydrogen: 100 units
-  diss_inorg_carb: 100 units
-  diss_inorg_nitro: 100 units
-  diss_inorg_phosp: 100 units
-  diss_org_carb: 100 units
-  diss_org_nitro: 100 units
-  diss_oxygen: 100 units
-  down_par: 100 units
-  ecosystem: xyz
-  ecosystem_category: xyz
-  ecosystem_subtype: xyz
-  ecosystem_type: xyz
-  elev: 1.5
-  env_broad_scale: xyz xyz xyz [XYZ:123]
-  env_local_scale: xyz xyz xyz [XYZ:123]
-  env_medium: xyz xyz xyz [XYZ:123]
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
   env_package: xyz
-  experimental_factor: xyz xyz xyz [XYZ:123]
-  fluor: 100 units
-  geo_loc_name: 'xyz: xyz, xyz'
-  glucosidase_act: 100 units
-  horizon_meth: xyz
-  lat_lon: 78 89
-  light_intensity: 100 units
-  mean_frict_vel: 100 units
-  mean_peak_frict_vel: 100 units
-  misc_param: xyz;100 units
-  n_alkanes: xyz;100 units
-  nitrate: 100 units
-  nitrite: 100 units
-  nitro: 100 units
-  org_carb: 100 units
-  org_matter: 100 units
-  org_nitro: 100 units
-  organism_count: xyz;100 units;qPCR
-  oxy_stat_samp: anaerobe
-  part_org_carb: 100 units
-  part_org_nitro: 100 units
-  perturbation: xyz
-  petroleum_hydrocarb: 100 units
-  ph: 1.5
-  ph_meth: xyz
-  phaeopigments: xyz;100 units
-  phosphate: 100 units
-  phosplipid_fatt_acid: xyz;100 units
-  potassium: 100 units
-  pressure: 100 units
-  primary_prod: 100 units
-  redox_potential: 100 units
-  rel_to_oxygen: anaerobe
-  salinity: 100 units
-  samp_collec_device: xyz
-  samp_collec_method: xyz
-  samp_mat_process: text [ONTO:000000000]
+  geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
-  samp_size: 100 units
-  samp_store_dur: xyz
-  samp_store_loc: xyz
-  samp_store_temp: 100 units
-  sample_link: z:99
-  silicate: 100 units
-  size_frac: xyz
-  size_frac_low: 100 units
-  size_frac_up: 100 units
-  sodium: 100 units
-  soluble_react_phosp: 100 units
   source_mat_id: x:1
-  specific_ecosystem: xyz
-  sulfate: 100 units
-  sulfide: 100 units
-  suspend_part_matter: 100 units
-  temp: 100 units
-  tidal_stage: high tide
-  tot_depth_water_col: 100 units
-  tot_diss_nitro: 100 units
-  tot_inorg_nitro: 100 units
-  tot_nitro: 100 units
-  tot_part_carb: 100 units
-  turbidity: 100 units
-  water_current: 100 units
+
+```
+## SampleData-water-data-1-dim-depth
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 1.5 - 2.5
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  source_mat_id: x:1
 
 ```
 ## SampleData-jgi_mg_data-minimal
@@ -726,47 +590,153 @@ jgi_mg_data:
   dna_volume: 0
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
 
 ```
-## SampleData-jgi_mg_data-in-plate-valid-well-val
+## SampleData-sediment-data-minimal
 ### Input
 ```yaml
-jgi_mg_data:
+sediment_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: plate
-  dna_cont_well: B2
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 999
-  proposal_dna: xxx
+  collection_date: '2022-01-15'
+  depth: 0-.1
+  elev: 0
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: sediment
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  lat_lon: 35.211445 -98.464612
+  samp_name: a
+  samp_store_temp: -80 Celsius
+
+```
+## SampleData-water-data-minimal
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+
+```
+## SampleData-jgi_mt_data-in-plate-valid-well-val
+### Input
+```yaml
+jgi_mt_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dnase_rna: 'no'
+  proposal_rna: xxx
+  rna_concentration: 1.23
+  rna_cont_type: plate
+  rna_cont_well: B2
+  rna_container_id: xxx
+  rna_isolate_meth: xxx
+  rna_project_contact: xxx
+  rna_samp_id: xxx
+  rna_sample_format: DNAStable
+  rna_sample_name: xxx
+  rna_seq_project: xxx
+  rna_seq_project_name: xxx
+  rna_seq_project_pi: xxx
+  rna_volume: 999
   samp_name: xxx
   source_mat_id: x:1
 
 ```
-## SampleData-emsl_data-minimal
+## SampleData-water-data-depth-formats
 ### Input
 ```yaml
-emsl_data:
+water_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  emsl_store_temp: -80
-  project_id: xxx
-  samp_name: xxx
-  sample_shipped: 100 units
-  sample_type: soil
+  collection_date: '2022-01-15'
+  depth: '111'
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '0'
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '-3.333'
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 13.4-16.99
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: -99.99 - 38
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
+  source_mat_id: x:1
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: -3--4
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
   source_mat_id: x:1
 
 ```
@@ -846,45 +816,47 @@ sediment_data:
   source_mat_id: x:1
 
 ```
-## SampleData-water-data-0-dim-depth
+## SampleData-emsl_data-exhasutive
 ### Input
 ```yaml
-water_data:
+emsl_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '1.5'
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
+  emsl_store_temp: -80
+  project_id: xxx
+  replicate_number: 2
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
   source_mat_id: x:1
+  technical_reps: 3
 
 ```
-## SampleData-water-data-broad-term-only
+## SampleData-jgi_mg_data-in-plate-valid-well-val
 ### Input
 ```yaml
-water_data:
+jgi_mg_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_local_scale:
-  - ONTO:1234
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: B2
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 999
+  proposal_dna: xxx
+  samp_name: xxx
   source_mat_id: x:1
-  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-jgi_mg_data-bad-dna_cont_well
@@ -910,29 +882,6 @@ jgi_mg_data:
   dna_volume: 1.23
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-no-samp_name
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-jgi_mg_data-in-plate-missing-well
@@ -957,17 +906,29 @@ jgi_mg_data:
   dna_volume: 999
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
 
 ```
-## SampleData-water-data-string-c-n-ratio
+## SampleData-emsl_data-bad-emsl_store_temp
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: ice cold
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
+
+```
+## SampleData-water-data-invalid-rel_to_oxygen
 ### Input
 ```yaml
 water_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  carb_nitro_ratio: really high
   collection_date: '2022-01-15'
   depth: '111'
   ecosystem: Environmental
@@ -979,73 +940,8 @@ water_data:
   env_medium: sand [ONTO:1234]
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
+  rel_to_oxygen: xyz
   samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-sediment-data-depth-format-002
-### Input
-```yaml
-sediment_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '0'
-  elev: 0
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: sediment
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  lat_lon: 35.211445 -98.464612
-  samp_name: a
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-depth-invalid-range
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 1.5 to 2.5
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-scalar-analysis-type
-### Input
-```yaml
-water_data:
-- analysis_type: metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
   specific_ecosystem: Unclassified
 
 ```
@@ -1067,49 +963,7 @@ water_data:
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
-  source_mat_id: x:1
   specific_ecosystem: Unclassified
-
-```
-## SampleData-emsl_data-bad-emsl_store_temp
-### Input
-```yaml
-emsl_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  emsl_store_temp: ice cold
-  project_id: xxx
-  samp_name: xxx
-  sample_shipped: 100 units
-  sample_type: soil
-  source_mat_id: x:1
-
-```
-## SampleData-jgi_mg_data-bad-dna_sample_format
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: plate
-  dna_cont_well: C3
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: red red wine
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 1.23
-  proposal_dna: xxx
-  samp_name: xxx
-  source_mat_id: x:1
 
 ```
 ## SampleData-jgi_mg_data-in-bucket
@@ -1134,7 +988,50 @@ jgi_mg_data:
   dna_volume: 999
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
+
+```
+## SampleData-soil-data-bad-geo_loc_name
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Brooklyn Bridge'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+
+```
+## SampleData-water-data-broad-label-only
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-jgi_mg_data-bad-dna_dnase
@@ -1160,56 +1057,9 @@ jgi_mg_data:
   dna_volume: 1.23
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
 
 ```
-## SampleData-water-data-no-source_mat_id
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-string-alkalinity
-### Input
-```yaml
-water_data:
-- alkalinity: really high
-  analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-soil-data-depth-format-003
+## SampleData-soil-data-depth-format-004
 ### Input
 ```yaml
 soil_data:
@@ -1217,7 +1067,7 @@ soil_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: '-5'
+  depth: '55.22'
   elev: 123
   env_broad_scale: ______urban biome [ENVO:01000249]
   env_local_scale: ________tunnel [ENVO:00000068]
@@ -1228,11 +1078,10 @@ soil_data:
   lat_lon: 35.211445 -98.464612
   samp_name: b
   samp_store_temp: -80 Celsius
-  source_mat_id: x:2
   store_cond: frozen
 
 ```
-## SampleData-water-data-depth-format
+## SampleData-water-data-incomplete-organsim_count
 ### Input
 ```yaml
 water_data:
@@ -1240,57 +1089,19 @@ water_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: really deep
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
+  organism_count: xyz;100 units
   samp_name: xyz
-  source_mat_id: x:1
-
-```
-## SampleData-emsl_data-bad-sample_shipped
-### Input
-```yaml
-emsl_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  emsl_store_temp: -80
-  project_id: xxx
-  samp_name: xxx
-  sample_shipped: three buckets
-  sample_type: soil
-  source_mat_id: x:1
-
-```
-## SampleData-soil-data-missing-elev
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 111 - 222
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:2
   specific_ecosystem: Unclassified
-  store_cond: frozen
 
 ```
 ## SampleData-jgi_mg_data-dna_organisms
@@ -1317,7 +1128,138 @@ jgi_mg_data:
   dna_volume: 999
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
+
+```
+## SampleData-soil-data-depth-format-003
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '-5'
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+
+```
+## SampleData-jgi_mg_data-bad-dna_sample_format
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: red red wine
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23
+  proposal_dna: xxx
+  samp_name: xxx
+
+```
+## SampleData-sediment-data-depth-format-002
+### Input
+```yaml
+sediment_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '0'
+  elev: 0
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: sediment
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  lat_lon: 35.211445 -98.464612
+  samp_name: a
+  samp_store_temp: -80 Celsius
+
+```
+## SampleData-water-data-string-alkalinity
+### Input
+```yaml
+water_data:
+- alkalinity: really high
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-broad-term-only
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_local_scale:
+  - ONTO:1234
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-scalar-analysis-type
+### Input
+```yaml
+water_data:
+- analysis_type: metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
 
 ```
 ## SampleData-emsl_data-bad-sample_type
@@ -1332,10 +1274,60 @@ emsl_data:
   samp_name: xxx
   sample_shipped: 100 units
   sample_type: sandwich
-  source_mat_id: x:1
 
 ```
-## SampleData-soil-data-depth-format-001
+## SampleData-emsl_data-bad-source_mat_id
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
+  source_mat_id: no_colon
+
+```
+## SampleData-water-data-depth-invalid-range
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 1.5 to 2.5
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-emsl_data-bad-sample_shipped
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  samp_name: xxx
+  sample_shipped: three buckets
+  sample_type: soil
+
+```
+## SampleData-soil-data-depth-format-002
 ### Input
 ```yaml
 soil_data:
@@ -1343,7 +1335,7 @@ soil_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: 0 to 1
+  depth: '0'
   elev: 123
   env_broad_scale: ______urban biome [ENVO:01000249]
   env_local_scale: ________tunnel [ENVO:00000068]
@@ -1354,11 +1346,10 @@ soil_data:
   lat_lon: 35.211445 -98.464612
   samp_name: b
   samp_store_temp: -80 Celsius
-  source_mat_id: x:2
   store_cond: frozen
 
 ```
-## SampleData-water-data-invalid-tidal_stage
+## SampleData-water-data-depth-format
 ### Input
 ```yaml
 water_data:
@@ -1366,88 +1357,39 @@ water_data:
   - metagenomics
   - metatranscriptomics
   collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
+  depth: really deep
   env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
   env_local_scale: sand [ONTO:1234]
   env_medium: sand [ONTO:1234]
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
   samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-  tidal_stage: xyz
 
 ```
-## SampleData-water-data-numeric-depth
+## SampleData-jgi_mg_data-in-plate-invalid-well
 ### Input
 ```yaml
-water_data:
+jgi_mg_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 1.5
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-sediment-data-depth-format-001
-### Input
-```yaml
-sediment_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '-5'
-  elev: 0
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: sediment
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  lat_lon: 35.211445 -98.464612
-  samp_name: a
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-incomplete-organsim_count
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  organism_count: xyz;100 units
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: Z99
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 999
+  proposal_dna: xxx
+  samp_name: xxx
 
 ```
 ## SampleData-water-data-string-depth
@@ -1469,7 +1411,264 @@ water_data:
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
-  source_mat_id: x:1
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-soil-data-depth-format-001
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 to 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+
+```
+## SampleData-water-data-string-c-n-ratio
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  carb_nitro_ratio: really high
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-jgi_mg_data-bad-dna_volume
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 1.23 liters
+  proposal_dna: xxx
+  samp_name: xxx
+
+```
+## SampleData-water-data-numeric-depth
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 1.5
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-invalid-tidal_stage
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+  tidal_stage: xyz
+
+```
+## SampleData-soil-data-missing-elev
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 111 - 222
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  specific_ecosystem: Unclassified
+  store_cond: frozen
+
+```
+## SampleData-jgi_mg_data-in-tube-with-well
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: 1.23
+  dna_cont_type: tube
+  dna_cont_well: B2
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 999
+  proposal_dna: xxx
+  samp_name: xxx
+
+```
+## SampleData-water-data-organsim_count-invalid-method
+### Input
+```yaml
+water_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  organism_count: xyz;100 units;xyz
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-sediment-data-depth-format-001
+### Input
+```yaml
+sediment_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '-5'
+  elev: 0
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: sediment
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  lat_lon: 35.211445 -98.464612
+  samp_name: a
+  samp_store_temp: -80 Celsius
+
+```
+## SampleData-water-data-numeric-alkalinity
+### Input
+```yaml
+water_data:
+- alkalinity: 999
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_name: xyz
+  specific_ecosystem: Unclassified
+
+```
+## SampleData-water-data-alkalinity-list
+### Input
+```yaml
+water_data:
+- alkalinity:
+  - 50 milligram per liter
+  - 100 spoons per bucket
+  analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: '111'
+  ecosystem: Environmental
+  ecosystem_category: Terrestrial
+  ecosystem_subtype: Unclassified
+  ecosystem_type: Soil
+  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
+  env_local_scale: sand [ONTO:1234]
+  env_medium: sand [ONTO:1234]
+  env_package: xyz
+  geo_loc_name: 'USA: Crater Lake'
+  samp_mat_process: text [ONTO:000000000]
+  samp_name: xyz
   specific_ecosystem: Unclassified
 
 ```
@@ -1497,39 +1696,15 @@ jgi_mg_data:
   dna_volume: 999
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
 
 ```
-## SampleData-water-data-broad-label-only
+## SampleData-water-data-invalid-analysis-type
 ### Input
 ```yaml
 water_data:
 - analysis_type:
   - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-water-data-invalid-rel_to_oxygen
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
+  - invalid
   collection_date: '2022-01-15'
   depth: '111'
   ecosystem: Environmental
@@ -1541,33 +1716,8 @@ water_data:
   env_medium: sand [ONTO:1234]
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
-  rel_to_oxygen: xyz
   samp_name: xyz
-  source_mat_id: x:1
   specific_ecosystem: Unclassified
-
-```
-## SampleData-soil-data-bad-geo_loc_name
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: 0 - 1
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Brooklyn Bridge'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:2
-  store_cond: frozen
 
 ```
 ## SampleData-jgi_mg_data-bad-dna_cont_type
@@ -1593,223 +1743,9 @@ jgi_mg_data:
   dna_volume: 1.23
   proposal_dna: xxx
   samp_name: xxx
-  source_mat_id: x:1
 
 ```
-## SampleData-jgi_mg_data-in-tube-with-well
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: tube
-  dna_cont_well: B2
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 999
-  proposal_dna: xxx
-  samp_name: xxx
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-invalid-analysis-type
-### Input
-```yaml
-water_data:
-- analysis_type:
-  - metagenomics
-  - invalid
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-emsl_data-bad-source_mat_id
-### Input
-```yaml
-emsl_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  emsl_store_temp: -80
-  project_id: xxx
-  samp_name: xxx
-  sample_shipped: 100 units
-  sample_type: soil
-  source_mat_id: no_colon
-
-```
-## SampleData-soil-data-depth-format-002
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '0'
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:2
-  store_cond: frozen
-
-```
-## SampleData-water-data-numeric-alkalinity
-### Input
-```yaml
-water_data:
-- alkalinity: 999
-  analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-jgi_mg_data-bad-dna_volume
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: plate
-  dna_cont_well: C3
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 1.23 liters
-  proposal_dna: xxx
-  samp_name: xxx
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-alkalinity-list
-### Input
-```yaml
-water_data:
-- alkalinity:
-  - 50 milligram per liter
-  - 100 spoons per bucket
-  analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '111'
-  ecosystem: Environmental
-  ecosystem_category: Terrestrial
-  ecosystem_subtype: Unclassified
-  ecosystem_type: Soil
-  env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-  env_local_scale: sand [ONTO:1234]
-  env_medium: sand [ONTO:1234]
-  env_package: xyz
-  geo_loc_name: 'USA: Crater Lake'
-  samp_mat_process: text [ONTO:000000000]
-  samp_name: xyz
-  source_mat_id: x:1
-  specific_ecosystem: Unclassified
-
-```
-## SampleData-soil-data-depth-format-004
-### Input
-```yaml
-soil_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  collection_date: '2022-01-15'
-  depth: '55.22'
-  elev: 123
-  env_broad_scale: ______urban biome [ENVO:01000249]
-  env_local_scale: ________tunnel [ENVO:00000068]
-  env_medium: bare soil [ENVO:01001616]
-  env_package: soil
-  geo_loc_name: 'USA: Nowhere, Oklahoma'
-  growth_facil: greenhouse
-  lat_lon: 35.211445 -98.464612
-  samp_name: b
-  samp_store_temp: -80 Celsius
-  source_mat_id: x:2
-  store_cond: frozen
-
-```
-## SampleData-jgi_mg_data-in-plate-invalid-well
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: plate
-  dna_cont_well: Z99
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 999
-  proposal_dna: xxx
-  samp_name: xxx
-  source_mat_id: x:1
-
-```
-## SampleData-water-data-organsim_count-invalid-method
+## SampleData-water-data-no-samp_name
 ### Input
 ```yaml
 water_data:
@@ -1827,9 +1763,6 @@ water_data:
   env_medium: sand [ONTO:1234]
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
-  organism_count: xyz;100 units;xyz
-  samp_name: xyz
-  source_mat_id: x:1
   specific_ecosystem: Unclassified
 
 ```
