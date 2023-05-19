@@ -1,0 +1,20 @@
+{
+  "water_data": [
+    {
+      "analysis_type": [
+        "metagenomics",
+        "metatranscriptomics"
+      ],
+      "collection_date": "2022-01-15",
+      "depth": "111",
+      "env_broad_scale": "oceanic epipelagic zone biome [ENVO:01000033]",
+      "env_local_scale": "sand [ONTO:1234]",
+      "env_medium": "sand [ONTO:1234]",
+      "env_package": "xyz",
+      "geo_loc_name": "USA: Crater Lake",
+      "samp_mat_process": "text [ONTO:000000000]",
+      "samp_name": "xyz"
+    }
+  ],
+  "@type": "SampleData"
+}
