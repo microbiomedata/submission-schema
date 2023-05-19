@@ -9,8 +9,7 @@
         "metagenomics",
         "metatranscriptomics"
       ],
-      "samp_name": "xxx",
-      "source_mat_id": "x:1"
+      "samp_name": "xxx"
     }
   ],
   "@type": "SampleData"
