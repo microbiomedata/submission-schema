@@ -463,6 +463,42 @@ src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for
 		--input-file $< \
 		--output-dir $(dir $@)
 
+
+.PHONY: bz-one-off-jsonschema-validations
+
+bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.schema.json
+	$(RUN) check-jsonschema \
+		--schemafile $< src/data/valid/SampleData-plant-assoc-min.yaml
+	$(RUN) check-jsonschema \
+		--schemafile $< src/data/valid/SampleData-jgi_mt_data-minimal.yaml
+	$(RUN) check-jsonschema \
+		--schemafile $< src/data/unexpected_pass/SampleData-jgi_mt_data-inter-slot-violation-rna_cont_well-and-rna_cont_type.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-plant-assoc--with-flavor.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-plant-associated-illegally-high-lat.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-missing-colon-source_mat_id.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-capitalized-dnase_rna.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-string-dnase_rna.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-string-rna_concentration.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-capital-rna_cont_type.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-string-rna_cont_type.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-corner-well-rna_cont_well.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-string-rna_cont_well.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-rna-capital-rna_sample_format.yaml
+	! $(RUN) check-jsonschema \
+		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-rna_sample_format.yaml
+	
+
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
 	$(RUN) generate_and_populate_template \
@@ -475,3 +511,4 @@ local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_sche
 		 --meta-model-excel-file local/meta.xlsx \
 		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
 		 --source-schema-path $<
+
