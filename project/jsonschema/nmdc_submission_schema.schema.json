@@ -1757,24 +1757,6 @@
             "title": "DhInterface",
             "type": "object"
         },
-        "DnaContTypeEnum": {
-            "description": "",
-            "enum": [
-                "plate",
-                "tube"
-            ],
-            "title": "DnaContTypeEnum",
-            "type": "string"
-        },
-        "DnaDnaseEnum": {
-            "description": "",
-            "enum": [
-                "no",
-                "yes"
-            ],
-            "title": "DnaDnaseEnum",
-            "type": "string"
-        },
         "DnaSampleFormatEnum": {
             "description": "",
             "enum": [
@@ -1792,15 +1774,6 @@
                 "Gentegra-RNA"
             ],
             "title": "DnaSampleFormatEnum",
-            "type": "string"
-        },
-        "DnaseRnaEnum": {
-            "description": "",
-            "enum": [
-                "no",
-                "yes"
-            ],
-            "title": "DnaseRnaEnum",
             "type": "string"
         },
         "DoorCompTypeEnum": {
@@ -4042,7 +4015,7 @@
             "type": "string"
         },
         "JgiContTypeEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "plate",
                 "tube"
@@ -4121,7 +4094,7 @@
                     "type": "number"
                 },
                 "dna_cont_type": {
-                    "$ref": "#/$defs/DnaContTypeEnum",
+                    "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
                 "dna_cont_well": {
@@ -4278,7 +4251,7 @@
                     "type": "number"
                 },
                 "rna_cont_type": {
-                    "$ref": "#/$defs/RnaContTypeEnum",
+                    "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
                 "rna_cont_well": {
@@ -4286,6 +4259,7 @@
                     "type": "string"
                 },
                 "rna_container_id": {
+                    "pattern": "^.{1,20}$",
                     "type": "string"
                 },
                 "rna_isolate_meth": {
@@ -5283,15 +5257,6 @@
                 "obligate anaerobe"
             ],
             "title": "RelToOxygenEnum",
-            "type": "string"
-        },
-        "RnaContTypeEnum": {
-            "description": "",
-            "enum": [
-                "plate",
-                "tube"
-            ],
-            "title": "RnaContTypeEnum",
             "type": "string"
         },
         "RnaSampleFormatEnum": {
