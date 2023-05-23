@@ -76,6 +76,10 @@
       "prefix_prefix": "skos",
       "prefix_reference": "http://www.w3.org/2004/02/skos/core#"
     },
+    "NCBITaxon": {
+      "prefix_prefix": "NCBITaxon",
+      "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
+    },
     "jgi": {
       "prefix_prefix": "jgi",
       "prefix_reference": "https://unknown.to.linter.org/"
@@ -2026,180 +2030,6 @@
         }
       }
     },
-    "door_comp_type_enum": {
-      "name": "door_comp_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "metal covered": {
-          "text": "metal covered"
-        },
-        "revolving": {
-          "text": "revolving"
-        },
-        "sliding": {
-          "text": "sliding"
-        },
-        "telescopic": {
-          "text": "telescopic"
-        }
-      }
-    },
-    "window_loc_enum": {
-      "name": "window_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north": {
-          "text": "north"
-        },
-        "south": {
-          "text": "south"
-        },
-        "east": {
-          "text": "east"
-        },
-        "west": {
-          "text": "west"
-        }
-      }
-    },
-    "wall_finish_mat_enum": {
-      "name": "wall_finish_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "plaster": {
-          "text": "plaster"
-        },
-        "gypsum plaster": {
-          "text": "gypsum plaster"
-        },
-        "veneer plaster": {
-          "text": "veneer plaster"
-        },
-        "gypsum board": {
-          "text": "gypsum board"
-        },
-        "tile": {
-          "text": "tile"
-        },
-        "terrazzo": {
-          "text": "terrazzo"
-        },
-        "stone facing": {
-          "text": "stone facing"
-        },
-        "acoustical treatment": {
-          "text": "acoustical treatment"
-        },
-        "wood": {
-          "text": "wood"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "masonry": {
-          "text": "masonry"
-        }
-      }
-    },
-    "room_condt_enum": {
-      "name": "room_condt_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "new": {
-          "text": "new"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "damaged": {
-          "text": "damaged"
-        },
-        "rupture": {
-          "text": "rupture"
-        },
-        "visible signs of mold/mildew": {
-          "text": "visible signs of mold/mildew"
-        }
-      }
-    },
-    "door_type_metal_enum": {
-      "name": "door_type_metal_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "collapsible": {
-          "text": "collapsible"
-        },
-        "corrugated steel": {
-          "text": "corrugated steel"
-        },
-        "hollow": {
-          "text": "hollow"
-        },
-        "rolling shutters": {
-          "text": "rolling shutters"
-        },
-        "steel plate": {
-          "text": "steel plate"
-        }
-      }
-    },
-    "wall_const_type_enum": {
-      "name": "wall_const_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "frame construction": {
-          "text": "frame construction"
-        },
-        "joisted masonry": {
-          "text": "joisted masonry"
-        },
-        "light noncombustible": {
-          "text": "light noncombustible"
-        },
-        "masonry noncombustible": {
-          "text": "masonry noncombustible"
-        },
-        "modified fire resistive": {
-          "text": "modified fire resistive"
-        },
-        "fire resistive": {
-          "text": "fire resistive"
-        }
-      }
-    },
-    "indoor_space_enum": {
-      "name": "indoor_space_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "bedroom": {
-          "text": "bedroom"
-        },
-        "office": {
-          "text": "office"
-        },
-        "bathroom": {
-          "text": "bathroom"
-        },
-        "foyer": {
-          "text": "foyer"
-        },
-        "kitchen": {
-          "text": "kitchen"
-        },
-        "locker room": {
-          "text": "locker room"
-        },
-        "hallway": {
-          "text": "hallway"
-        },
-        "elevator": {
-          "text": "elevator"
-        }
-      }
-    },
     "weekday_enum": {
       "name": "weekday_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -2227,60 +2057,48 @@
         }
       }
     },
-    "shading_device_cond_enum": {
-      "name": "shading_device_cond_enum",
+    "specific_enum": {
+      "name": "specific_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "damaged": {
-          "text": "damaged"
+        "operation": {
+          "text": "operation"
         },
-        "needs repair": {
-          "text": "needs repair"
+        "as built": {
+          "text": "as built"
         },
-        "new": {
-          "text": "new"
+        "construction": {
+          "text": "construction"
         },
-        "rupture": {
-          "text": "rupture"
+        "bid": {
+          "text": "bid"
         },
-        "visible wear": {
-          "text": "visible wear"
+        "design": {
+          "text": "design"
+        },
+        "photos": {
+          "text": "photos"
         }
       }
     },
-    "substructure_type_enum": {
-      "name": "substructure_type_enum",
+    "window_vert_pos_enum": {
+      "name": "window_vert_pos_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "crawlspace": {
-          "text": "crawlspace"
+        "bottom": {
+          "text": "bottom"
         },
-        "slab on grade": {
-          "text": "slab on grade"
+        "middle": {
+          "text": "middle"
         },
-        "basement": {
-          "text": "basement"
-        }
-      }
-    },
-    "window_mat_enum": {
-      "name": "window_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "clad": {
-          "text": "clad"
+        "top": {
+          "text": "top"
         },
-        "fiberglass": {
-          "text": "fiberglass"
+        "low": {
+          "text": "low"
         },
-        "metal": {
-          "text": "metal"
-        },
-        "vinyl": {
-          "text": "vinyl"
-        },
-        "wood": {
-          "text": "wood"
+        "high": {
+          "text": "high"
         }
       }
     },
@@ -2314,27 +2132,306 @@
         }
       }
     },
-    "filter_type_enum": {
-      "name": "filter_type_enum",
+    "occup_document_enum": {
+      "name": "occup_document_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "particulate air filter": {
-          "text": "particulate air filter"
+        "automated count": {
+          "text": "automated count"
         },
-        "chemical air filter": {
-          "text": "chemical air filter"
+        "estimate": {
+          "text": "estimate"
         },
-        "low-MERV pleated media": {
-          "text": "low-MERV pleated media"
+        "manual count": {
+          "text": "manual count"
         },
-        "HEPA": {
-          "text": "HEPA"
+        "videos": {
+          "text": "videos"
+        }
+      }
+    },
+    "drawings_enum": {
+      "name": "drawings_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "operation": {
+          "text": "operation"
         },
-        "electrostatic": {
-          "text": "electrostatic"
+        "as built": {
+          "text": "as built"
         },
-        "gas-phase or ultraviolet air treatments": {
-          "text": "gas-phase or ultraviolet air treatments"
+        "construction": {
+          "text": "construction"
+        },
+        "bid": {
+          "text": "bid"
+        },
+        "design": {
+          "text": "design"
+        },
+        "building navigation map": {
+          "text": "building navigation map"
+        },
+        "diagram": {
+          "text": "diagram"
+        },
+        "sketch": {
+          "text": "sketch"
+        }
+      }
+    },
+    "door_move_enum": {
+      "name": "door_move_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "collapsible": {
+          "text": "collapsible"
+        },
+        "folding": {
+          "text": "folding"
+        },
+        "revolving": {
+          "text": "revolving"
+        },
+        "rolling shutter": {
+          "text": "rolling shutter"
+        },
+        "sliding": {
+          "text": "sliding"
+        },
+        "swinging": {
+          "text": "swinging"
+        }
+      }
+    },
+    "build_occup_type_enum": {
+      "name": "build_occup_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "office": {
+          "text": "office"
+        },
+        "market": {
+          "text": "market"
+        },
+        "restaurant": {
+          "text": "restaurant"
+        },
+        "residence": {
+          "text": "residence"
+        },
+        "school": {
+          "text": "school"
+        },
+        "residential": {
+          "text": "residential"
+        },
+        "commercial": {
+          "text": "commercial"
+        },
+        "low rise": {
+          "text": "low rise"
+        },
+        "high rise": {
+          "text": "high rise"
+        },
+        "wood framed": {
+          "text": "wood framed"
+        },
+        "health care": {
+          "text": "health care"
+        },
+        "airport": {
+          "text": "airport"
+        },
+        "sports complex": {
+          "text": "sports complex"
+        }
+      }
+    },
+    "train_stop_loc_enum": {
+      "name": "train_stop_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "end": {
+          "text": "end"
+        },
+        "mid": {
+          "text": "mid"
+        },
+        "downtown": {
+          "text": "downtown"
+        }
+      }
+    },
+    "door_direct_enum": {
+      "name": "door_direct_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "inward": {
+          "text": "inward"
+        },
+        "outward": {
+          "text": "outward"
+        },
+        "sideways": {
+          "text": "sideways"
+        }
+      }
+    },
+    "door_loc_enum": {
+      "name": "door_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
+        },
+        "south": {
+          "text": "south"
+        },
+        "east": {
+          "text": "east"
+        },
+        "west": {
+          "text": "west"
+        }
+      }
+    },
+    "window_cover_enum": {
+      "name": "window_cover_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "blinds": {
+          "text": "blinds"
+        },
+        "curtains": {
+          "text": "curtains"
+        },
+        "none": {
+          "text": "none"
+        }
+      }
+    },
+    "room_loc_enum": {
+      "name": "room_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "corner room": {
+          "text": "corner room"
+        },
+        "interior room": {
+          "text": "interior room"
+        },
+        "exterior wall": {
+          "text": "exterior wall"
+        }
+      }
+    },
+    "heat_cool_type_enum": {
+      "name": "heat_cool_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "radiant system": {
+          "text": "radiant system"
+        },
+        "heat pump": {
+          "text": "heat pump"
+        },
+        "forced air system": {
+          "text": "forced air system"
+        },
+        "steam forced heat": {
+          "text": "steam forced heat"
+        },
+        "wood stove": {
+          "text": "wood stove"
+        }
+      }
+    },
+    "furniture_enum": {
+      "name": "furniture_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "cabinet": {
+          "text": "cabinet"
+        },
+        "chair": {
+          "text": "chair"
+        },
+        "desks": {
+          "text": "desks"
+        }
+      }
+    },
+    "water_feat_type_enum": {
+      "name": "water_feat_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "fountain": {
+          "text": "fountain"
+        },
+        "pool": {
+          "text": "pool"
+        },
+        "standing feature": {
+          "text": "standing feature"
+        },
+        "stream": {
+          "text": "stream"
+        },
+        "waterfall": {
+          "text": "waterfall"
+        }
+      }
+    },
+    "season_use_enum": {
+      "name": "season_use_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "Spring": {
+          "text": "Spring"
+        },
+        "Summer": {
+          "text": "Summer"
+        },
+        "Fall": {
+          "text": "Fall"
+        },
+        "Winter": {
+          "text": "Winter"
+        }
+      }
+    },
+    "arch_struc_enum": {
+      "name": "arch_struc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "building": {
+          "text": "building"
+        },
+        "shed": {
+          "text": "shed"
+        },
+        "home": {
+          "text": "home"
+        }
+      }
+    },
+    "heat_deliv_loc_enum": {
+      "name": "heat_deliv_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
+        },
+        "south": {
+          "text": "south"
+        },
+        "east": {
+          "text": "east"
+        },
+        "west": {
+          "text": "west"
         }
       }
     },
@@ -2374,138 +2471,6 @@
         }
       }
     },
-    "ext_wall_orient_enum": {
-      "name": "ext_wall_orient_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north": {
-          "text": "north"
-        },
-        "south": {
-          "text": "south"
-        },
-        "east": {
-          "text": "east"
-        },
-        "west": {
-          "text": "west"
-        },
-        "northeast": {
-          "text": "northeast"
-        },
-        "southeast": {
-          "text": "southeast"
-        },
-        "southwest": {
-          "text": "southwest"
-        },
-        "northwest": {
-          "text": "northwest"
-        }
-      }
-    },
-    "ceil_finish_mat_enum": {
-      "name": "ceil_finish_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "drywall": {
-          "text": "drywall"
-        },
-        "mineral fibre": {
-          "text": "mineral fibre"
-        },
-        "tiles": {
-          "text": "tiles"
-        },
-        "PVC": {
-          "text": "PVC"
-        },
-        "plasterboard": {
-          "text": "plasterboard"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "fiberglass": {
-          "text": "fiberglass"
-        },
-        "stucco": {
-          "text": "stucco"
-        },
-        "mineral wool/calcium silicate": {
-          "text": "mineral wool/calcium silicate"
-        },
-        "wood": {
-          "text": "wood"
-        }
-      }
-    },
-    "furniture_enum": {
-      "name": "furniture_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "cabinet": {
-          "text": "cabinet"
-        },
-        "chair": {
-          "text": "chair"
-        },
-        "desks": {
-          "text": "desks"
-        }
-      }
-    },
-    "wall_surf_treatment_enum": {
-      "name": "wall_surf_treatment_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "painted": {
-          "text": "painted"
-        },
-        "wall paper": {
-          "text": "wall paper"
-        },
-        "no treatment": {
-          "text": "no treatment"
-        },
-        "paneling": {
-          "text": "paneling"
-        },
-        "stucco": {
-          "text": "stucco"
-        },
-        "fabric": {
-          "text": "fabric"
-        }
-      }
-    },
-    "vis_media_enum": {
-      "name": "vis_media_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "photos": {
-          "text": "photos"
-        },
-        "videos": {
-          "text": "videos"
-        },
-        "commonly of the building": {
-          "text": "commonly of the building"
-        },
-        "site context (adjacent buildings, vegetation, terrain, streets)": {
-          "text": "site context (adjacent buildings, vegetation, terrain, streets)"
-        },
-        "interiors": {
-          "text": "interiors"
-        },
-        "equipment": {
-          "text": "equipment"
-        },
-        "3D scans": {
-          "text": "3D scans"
-        }
-      }
-    },
     "ceil_cond_enum": {
       "name": "ceil_cond_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -2524,558 +2489,6 @@
         },
         "rupture": {
           "text": "rupture"
-        }
-      }
-    },
-    "int_wall_cond_enum": {
-      "name": "int_wall_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "new": {
-          "text": "new"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "damaged": {
-          "text": "damaged"
-        },
-        "rupture": {
-          "text": "rupture"
-        }
-      }
-    },
-    "floor_water_mold_enum": {
-      "name": "floor_water_mold_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "mold odor": {
-          "text": "mold odor"
-        },
-        "wet floor": {
-          "text": "wet floor"
-        },
-        "water stains": {
-          "text": "water stains"
-        },
-        "wall discoloration": {
-          "text": "wall discoloration"
-        },
-        "floor discoloration": {
-          "text": "floor discoloration"
-        },
-        "ceiling discoloration": {
-          "text": "ceiling discoloration"
-        },
-        "peeling paint or wallpaper": {
-          "text": "peeling paint or wallpaper"
-        },
-        "bulging walls": {
-          "text": "bulging walls"
-        },
-        "condensation": {
-          "text": "condensation"
-        }
-      }
-    },
-    "handidness_enum": {
-      "name": "handidness_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "ambidexterity": {
-          "text": "ambidexterity"
-        },
-        "left handedness": {
-          "text": "left handedness"
-        },
-        "mixed-handedness": {
-          "text": "mixed-handedness"
-        },
-        "right handedness": {
-          "text": "right handedness"
-        }
-      }
-    },
-    "window_type_enum": {
-      "name": "window_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "single-hung sash window": {
-          "text": "single-hung sash window"
-        },
-        "horizontal sash window": {
-          "text": "horizontal sash window"
-        },
-        "fixed window": {
-          "text": "fixed window"
-        }
-      }
-    },
-    "heat_cool_type_enum": {
-      "name": "heat_cool_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "radiant system": {
-          "text": "radiant system"
-        },
-        "heat pump": {
-          "text": "heat pump"
-        },
-        "forced air system": {
-          "text": "forced air system"
-        },
-        "steam forced heat": {
-          "text": "steam forced heat"
-        },
-        "wood stove": {
-          "text": "wood stove"
-        }
-      }
-    },
-    "train_stat_loc_enum": {
-      "name": "train_stat_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "south station above ground": {
-          "text": "south station above ground"
-        },
-        "south station underground": {
-          "text": "south station underground"
-        },
-        "south station amtrak": {
-          "text": "south station amtrak"
-        },
-        "forest hills": {
-          "text": "forest hills"
-        },
-        "riverside": {
-          "text": "riverside"
-        }
-      }
-    },
-    "quad_pos_enum": {
-      "name": "quad_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "North side": {
-          "text": "North side"
-        },
-        "West side": {
-          "text": "West side"
-        },
-        "South side": {
-          "text": "South side"
-        },
-        "East side": {
-          "text": "East side"
-        }
-      }
-    },
-    "ceil_type_enum": {
-      "name": "ceil_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "cathedral": {
-          "text": "cathedral"
-        },
-        "dropped": {
-          "text": "dropped"
-        },
-        "concave": {
-          "text": "concave"
-        },
-        "barrel-shaped": {
-          "text": "barrel-shaped"
-        },
-        "coffered": {
-          "text": "coffered"
-        },
-        "cove": {
-          "text": "cove"
-        },
-        "stretched": {
-          "text": "stretched"
-        }
-      }
-    },
-    "room_samp_pos_enum": {
-      "name": "room_samp_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north corner": {
-          "text": "north corner"
-        },
-        "south corner": {
-          "text": "south corner"
-        },
-        "west corner": {
-          "text": "west corner"
-        },
-        "east corner": {
-          "text": "east corner"
-        },
-        "northeast corner": {
-          "text": "northeast corner"
-        },
-        "northwest corner": {
-          "text": "northwest corner"
-        },
-        "southeast corner": {
-          "text": "southeast corner"
-        },
-        "southwest corner": {
-          "text": "southwest corner"
-        },
-        "center": {
-          "text": "center"
-        }
-      }
-    },
-    "build_docs_enum": {
-      "name": "build_docs_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "building information model": {
-          "text": "building information model"
-        },
-        "commissioning report": {
-          "text": "commissioning report"
-        },
-        "complaint logs": {
-          "text": "complaint logs"
-        },
-        "contract administration": {
-          "text": "contract administration"
-        },
-        "cost estimate": {
-          "text": "cost estimate"
-        },
-        "janitorial schedules or logs": {
-          "text": "janitorial schedules or logs"
-        },
-        "maintenance plans": {
-          "text": "maintenance plans"
-        },
-        "schedule": {
-          "text": "schedule"
-        },
-        "sections": {
-          "text": "sections"
-        },
-        "shop drawings": {
-          "text": "shop drawings"
-        },
-        "submittals": {
-          "text": "submittals"
-        },
-        "ventilation system": {
-          "text": "ventilation system"
-        },
-        "windows": {
-          "text": "windows"
-        }
-      }
-    },
-    "floor_struc_enum": {
-      "name": "floor_struc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "balcony": {
-          "text": "balcony"
-        },
-        "floating floor": {
-          "text": "floating floor"
-        },
-        "glass floor": {
-          "text": "glass floor"
-        },
-        "raised floor": {
-          "text": "raised floor"
-        },
-        "sprung floor": {
-          "text": "sprung floor"
-        },
-        "wood-framed": {
-          "text": "wood-framed"
-        },
-        "concrete": {
-          "text": "concrete"
-        }
-      }
-    },
-    "door_direct_enum": {
-      "name": "door_direct_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "inward": {
-          "text": "inward"
-        },
-        "outward": {
-          "text": "outward"
-        },
-        "sideways": {
-          "text": "sideways"
-        }
-      }
-    },
-    "gender_restroom_enum": {
-      "name": "gender_restroom_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "all gender": {
-          "text": "all gender"
-        },
-        "female": {
-          "text": "female"
-        },
-        "gender neurtral": {
-          "text": "gender neurtral"
-        },
-        "male": {
-          "text": "male"
-        },
-        "male and female": {
-          "text": "male and female"
-        },
-        "unisex": {
-          "text": "unisex"
-        }
-      }
-    },
-    "water_feat_type_enum": {
-      "name": "water_feat_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "fountain": {
-          "text": "fountain"
-        },
-        "pool": {
-          "text": "pool"
-        },
-        "standing feature": {
-          "text": "standing feature"
-        },
-        "stream": {
-          "text": "stream"
-        },
-        "waterfall": {
-          "text": "waterfall"
-        }
-      }
-    },
-    "light_type_enum": {
-      "name": "light_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "natural light": {
-          "text": "natural light"
-        },
-        "electric light": {
-          "text": "electric light"
-        },
-        "desk lamp": {
-          "text": "desk lamp"
-        },
-        "flourescent lights": {
-          "text": "flourescent lights"
-        },
-        "none": {
-          "text": "none"
-        }
-      }
-    },
-    "door_loc_enum": {
-      "name": "door_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north": {
-          "text": "north"
-        },
-        "south": {
-          "text": "south"
-        },
-        "east": {
-          "text": "east"
-        },
-        "west": {
-          "text": "west"
-        }
-      }
-    },
-    "shading_device_type_enum": {
-      "name": "shading_device_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "bahama shutters": {
-          "text": "bahama shutters"
-        },
-        "exterior roll blind": {
-          "text": "exterior roll blind"
-        },
-        "gambrel awning": {
-          "text": "gambrel awning"
-        },
-        "hood awning": {
-          "text": "hood awning"
-        },
-        "porchroller awning": {
-          "text": "porchroller awning"
-        },
-        "sarasota shutters": {
-          "text": "sarasota shutters"
-        },
-        "slatted aluminum": {
-          "text": "slatted aluminum"
-        },
-        "solid aluminum awning": {
-          "text": "solid aluminum awning"
-        },
-        "sun screen": {
-          "text": "sun screen"
-        },
-        "tree": {
-          "text": "tree"
-        },
-        "trellis": {
-          "text": "trellis"
-        },
-        "venetian awning": {
-          "text": "venetian awning"
-        }
-      }
-    },
-    "samp_floor_enum": {
-      "name": "samp_floor_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "1st floor": {
-          "text": "1st floor"
-        },
-        "2nd floor": {
-          "text": "2nd floor"
-        },
-        "basement": {
-          "text": "basement"
-        },
-        "lobby": {
-          "text": "lobby"
-        }
-      }
-    },
-    "wall_loc_enum": {
-      "name": "wall_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north": {
-          "text": "north"
-        },
-        "south": {
-          "text": "south"
-        },
-        "east": {
-          "text": "east"
-        },
-        "west": {
-          "text": "west"
-        }
-      }
-    },
-    "door_cond_enum": {
-      "name": "door_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "damaged": {
-          "text": "damaged"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "new": {
-          "text": "new"
-        },
-        "rupture": {
-          "text": "rupture"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        }
-      }
-    },
-    "ceil_texture_enum": {
-      "name": "ceil_texture_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "crows feet": {
-          "text": "crows feet"
-        },
-        "crows-foot stomp": {
-          "text": "crows-foot stomp"
-        },
-        "double skip": {
-          "text": "double skip"
-        },
-        "hawk and trowel": {
-          "text": "hawk and trowel"
-        },
-        "knockdown": {
-          "text": "knockdown"
-        },
-        "popcorn": {
-          "text": "popcorn"
-        },
-        "orange peel": {
-          "text": "orange peel"
-        },
-        "rosebud stomp": {
-          "text": "rosebud stomp"
-        },
-        "Santa-Fe texture": {
-          "text": "Santa-Fe texture"
-        },
-        "skip trowel": {
-          "text": "skip trowel"
-        },
-        "smooth": {
-          "text": "smooth"
-        },
-        "stomp knockdown": {
-          "text": "stomp knockdown"
-        },
-        "swirl": {
-          "text": "swirl"
-        }
-      }
-    },
-    "window_cover_enum": {
-      "name": "window_cover_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "blinds": {
-          "text": "blinds"
-        },
-        "curtains": {
-          "text": "curtains"
-        },
-        "none": {
-          "text": "none"
-        }
-      }
-    },
-    "window_horiz_pos_enum": {
-      "name": "window_horiz_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "left": {
-          "text": "left"
-        },
-        "middle": {
-          "text": "middle"
-        },
-        "right": {
-          "text": "right"
         }
       }
     },
@@ -3130,18 +2543,261 @@
         }
       }
     },
-    "arch_struc_enum": {
-      "name": "arch_struc_enum",
+    "door_comp_type_enum": {
+      "name": "door_comp_type_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "building": {
-          "text": "building"
+        "metal covered": {
+          "text": "metal covered"
         },
-        "shed": {
-          "text": "shed"
+        "revolving": {
+          "text": "revolving"
         },
-        "home": {
-          "text": "home"
+        "sliding": {
+          "text": "sliding"
+        },
+        "telescopic": {
+          "text": "telescopic"
+        }
+      }
+    },
+    "wall_texture_enum": {
+      "name": "wall_texture_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "crows feet": {
+          "text": "crows feet"
+        },
+        "crows-foot stomp": {
+          "text": "crows-foot stomp"
+        },
+        "": {
+          "text": ""
+        },
+        "double skip": {
+          "text": "double skip"
+        },
+        "hawk and trowel": {
+          "text": "hawk and trowel"
+        },
+        "knockdown": {
+          "text": "knockdown"
+        },
+        "popcorn": {
+          "text": "popcorn"
+        },
+        "orange peel": {
+          "text": "orange peel"
+        },
+        "rosebud stomp": {
+          "text": "rosebud stomp"
+        },
+        "Santa-Fe texture": {
+          "text": "Santa-Fe texture"
+        },
+        "skip trowel": {
+          "text": "skip trowel"
+        },
+        "smooth": {
+          "text": "smooth"
+        },
+        "stomp knockdown": {
+          "text": "stomp knockdown"
+        },
+        "swirl": {
+          "text": "swirl"
+        }
+      }
+    },
+    "wall_loc_enum": {
+      "name": "wall_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
+        },
+        "south": {
+          "text": "south"
+        },
+        "east": {
+          "text": "east"
+        },
+        "west": {
+          "text": "west"
+        }
+      }
+    },
+    "substructure_type_enum": {
+      "name": "substructure_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "crawlspace": {
+          "text": "crawlspace"
+        },
+        "slab on grade": {
+          "text": "slab on grade"
+        },
+        "basement": {
+          "text": "basement"
+        }
+      }
+    },
+    "door_mat_enum": {
+      "name": "door_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "aluminum": {
+          "text": "aluminum"
+        },
+        "cellular PVC": {
+          "text": "cellular PVC"
+        },
+        "engineered plastic": {
+          "text": "engineered plastic"
+        },
+        "fiberboard": {
+          "text": "fiberboard"
+        },
+        "fiberglass": {
+          "text": "fiberglass"
+        },
+        "metal": {
+          "text": "metal"
+        },
+        "thermoplastic alloy": {
+          "text": "thermoplastic alloy"
+        },
+        "vinyl": {
+          "text": "vinyl"
+        },
+        "wood": {
+          "text": "wood"
+        },
+        "wood/plastic composite": {
+          "text": "wood/plastic composite"
+        }
+      }
+    },
+    "ext_wall_orient_enum": {
+      "name": "ext_wall_orient_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
+        },
+        "south": {
+          "text": "south"
+        },
+        "east": {
+          "text": "east"
+        },
+        "west": {
+          "text": "west"
+        },
+        "northeast": {
+          "text": "northeast"
+        },
+        "southeast": {
+          "text": "southeast"
+        },
+        "southwest": {
+          "text": "southwest"
+        },
+        "northwest": {
+          "text": "northwest"
+        }
+      }
+    },
+    "mech_struc_enum": {
+      "name": "mech_struc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "subway": {
+          "text": "subway"
+        },
+        "coach": {
+          "text": "coach"
+        },
+        "carriage": {
+          "text": "carriage"
+        },
+        "elevator": {
+          "text": "elevator"
+        },
+        "escalator": {
+          "text": "escalator"
+        },
+        "boat": {
+          "text": "boat"
+        },
+        "train": {
+          "text": "train"
+        },
+        "car": {
+          "text": "car"
+        },
+        "bus": {
+          "text": "bus"
+        }
+      }
+    },
+    "building_setting_enum": {
+      "name": "building_setting_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "urban": {
+          "text": "urban"
+        },
+        "suburban": {
+          "text": "suburban"
+        },
+        "exurban": {
+          "text": "exurban"
+        },
+        "rural": {
+          "text": "rural"
+        }
+      }
+    },
+    "door_type_metal_enum": {
+      "name": "door_type_metal_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "collapsible": {
+          "text": "collapsible"
+        },
+        "corrugated steel": {
+          "text": "corrugated steel"
+        },
+        "hollow": {
+          "text": "hollow"
+        },
+        "rolling shutters": {
+          "text": "rolling shutters"
+        },
+        "steel plate": {
+          "text": "steel plate"
+        }
+      }
+    },
+    "shading_device_cond_enum": {
+      "name": "shading_device_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "damaged": {
+          "text": "damaged"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "new": {
+          "text": "new"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible wear": {
+          "text": "visible wear"
         }
       }
     },
@@ -3226,132 +2882,6 @@
         }
       }
     },
-    "window_cond_enum": {
-      "name": "window_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "damaged": {
-          "text": "damaged"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "new": {
-          "text": "new"
-        },
-        "rupture": {
-          "text": "rupture"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        }
-      }
-    },
-    "indoor_surf_enum": {
-      "name": "indoor_surf_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "cabinet": {
-          "text": "cabinet"
-        },
-        "ceiling": {
-          "text": "ceiling"
-        },
-        "counter top": {
-          "text": "counter top"
-        },
-        "door": {
-          "text": "door"
-        },
-        "shelving": {
-          "text": "shelving"
-        },
-        "vent cover": {
-          "text": "vent cover"
-        },
-        "window": {
-          "text": "window"
-        },
-        "wall": {
-          "text": "wall"
-        }
-      }
-    },
-    "occup_document_enum": {
-      "name": "occup_document_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "automated count": {
-          "text": "automated count"
-        },
-        "estimate": {
-          "text": "estimate"
-        },
-        "manual count": {
-          "text": "manual count"
-        },
-        "videos": {
-          "text": "videos"
-        }
-      }
-    },
-    "specific_enum": {
-      "name": "specific_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "operation": {
-          "text": "operation"
-        },
-        "as built": {
-          "text": "as built"
-        },
-        "construction": {
-          "text": "construction"
-        },
-        "bid": {
-          "text": "bid"
-        },
-        "design": {
-          "text": "design"
-        },
-        "photos": {
-          "text": "photos"
-        }
-      }
-    },
-    "room_loc_enum": {
-      "name": "room_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "corner room": {
-          "text": "corner room"
-        },
-        "interior room": {
-          "text": "interior room"
-        },
-        "exterior wall": {
-          "text": "exterior wall"
-        }
-      }
-    },
-    "heat_deliv_loc_enum": {
-      "name": "heat_deliv_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north": {
-          "text": "north"
-        },
-        "south": {
-          "text": "south"
-        },
-        "east": {
-          "text": "east"
-        },
-        "west": {
-          "text": "west"
-        }
-      }
-    },
     "rel_samp_loc_enum": {
       "name": "rel_samp_loc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -3367,21 +2897,222 @@
         }
       }
     },
-    "door_mat_enum": {
-      "name": "door_mat_enum",
+    "light_type_enum": {
+      "name": "light_type_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "aluminum": {
-          "text": "aluminum"
+        "natural light": {
+          "text": "natural light"
         },
-        "cellular PVC": {
-          "text": "cellular PVC"
+        "electric light": {
+          "text": "electric light"
         },
-        "engineered plastic": {
-          "text": "engineered plastic"
+        "desk lamp": {
+          "text": "desk lamp"
         },
-        "fiberboard": {
-          "text": "fiberboard"
+        "flourescent lights": {
+          "text": "flourescent lights"
+        },
+        "none": {
+          "text": "none"
+        }
+      }
+    },
+    "filter_type_enum": {
+      "name": "filter_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "particulate air filter": {
+          "text": "particulate air filter"
+        },
+        "chemical air filter": {
+          "text": "chemical air filter"
+        },
+        "low-MERV pleated media": {
+          "text": "low-MERV pleated media"
+        },
+        "HEPA": {
+          "text": "HEPA"
+        },
+        "electrostatic": {
+          "text": "electrostatic"
+        },
+        "gas-phase or ultraviolet air treatments": {
+          "text": "gas-phase or ultraviolet air treatments"
+        }
+      }
+    },
+    "window_horiz_pos_enum": {
+      "name": "window_horiz_pos_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "left": {
+          "text": "left"
+        },
+        "middle": {
+          "text": "middle"
+        },
+        "right": {
+          "text": "right"
+        }
+      }
+    },
+    "indoor_space_enum": {
+      "name": "indoor_space_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "bedroom": {
+          "text": "bedroom"
+        },
+        "office": {
+          "text": "office"
+        },
+        "bathroom": {
+          "text": "bathroom"
+        },
+        "foyer": {
+          "text": "foyer"
+        },
+        "kitchen": {
+          "text": "kitchen"
+        },
+        "locker room": {
+          "text": "locker room"
+        },
+        "hallway": {
+          "text": "hallway"
+        },
+        "elevator": {
+          "text": "elevator"
+        }
+      }
+    },
+    "samp_weather_enum": {
+      "name": "samp_weather_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "clear sky": {
+          "text": "clear sky"
+        },
+        "cloudy": {
+          "text": "cloudy"
+        },
+        "foggy": {
+          "text": "foggy"
+        },
+        "hail": {
+          "text": "hail"
+        },
+        "rain": {
+          "text": "rain"
+        },
+        "snow": {
+          "text": "snow"
+        },
+        "sleet": {
+          "text": "sleet"
+        },
+        "sunny": {
+          "text": "sunny"
+        },
+        "windy": {
+          "text": "windy"
+        }
+      }
+    },
+    "door_type_enum": {
+      "name": "door_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "composite": {
+          "text": "composite"
+        },
+        "metal": {
+          "text": "metal"
+        },
+        "wooden": {
+          "text": "wooden"
+        }
+      }
+    },
+    "wall_finish_mat_enum": {
+      "name": "wall_finish_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "plaster": {
+          "text": "plaster"
+        },
+        "gypsum plaster": {
+          "text": "gypsum plaster"
+        },
+        "veneer plaster": {
+          "text": "veneer plaster"
+        },
+        "gypsum board": {
+          "text": "gypsum board"
+        },
+        "tile": {
+          "text": "tile"
+        },
+        "terrazzo": {
+          "text": "terrazzo"
+        },
+        "stone facing": {
+          "text": "stone facing"
+        },
+        "acoustical treatment": {
+          "text": "acoustical treatment"
+        },
+        "wood": {
+          "text": "wood"
+        },
+        "metal": {
+          "text": "metal"
+        },
+        "masonry": {
+          "text": "masonry"
+        }
+      }
+    },
+    "room_samp_pos_enum": {
+      "name": "room_samp_pos_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north corner": {
+          "text": "north corner"
+        },
+        "south corner": {
+          "text": "south corner"
+        },
+        "west corner": {
+          "text": "west corner"
+        },
+        "east corner": {
+          "text": "east corner"
+        },
+        "northeast corner": {
+          "text": "northeast corner"
+        },
+        "northwest corner": {
+          "text": "northwest corner"
+        },
+        "southeast corner": {
+          "text": "southeast corner"
+        },
+        "southwest corner": {
+          "text": "southwest corner"
+        },
+        "center": {
+          "text": "center"
+        }
+      }
+    },
+    "window_mat_enum": {
+      "name": "window_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "clad": {
+          "text": "clad"
         },
         "fiberglass": {
           "text": "fiberglass"
@@ -3389,22 +3120,163 @@
         "metal": {
           "text": "metal"
         },
-        "thermoplastic alloy": {
-          "text": "thermoplastic alloy"
-        },
         "vinyl": {
           "text": "vinyl"
         },
         "wood": {
           "text": "wood"
-        },
-        "wood/plastic composite": {
-          "text": "wood/plastic composite"
         }
       }
     },
-    "wall_texture_enum": {
-      "name": "wall_texture_enum",
+    "room_condt_enum": {
+      "name": "room_condt_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "new": {
+          "text": "new"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "damaged": {
+          "text": "damaged"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible signs of mold/mildew": {
+          "text": "visible signs of mold/mildew"
+        }
+      }
+    },
+    "wall_surf_treatment_enum": {
+      "name": "wall_surf_treatment_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "painted": {
+          "text": "painted"
+        },
+        "wall paper": {
+          "text": "wall paper"
+        },
+        "no treatment": {
+          "text": "no treatment"
+        },
+        "paneling": {
+          "text": "paneling"
+        },
+        "stucco": {
+          "text": "stucco"
+        },
+        "fabric": {
+          "text": "fabric"
+        }
+      }
+    },
+    "room_connected_enum": {
+      "name": "room_connected_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "attic": {
+          "text": "attic"
+        },
+        "bathroom": {
+          "text": "bathroom"
+        },
+        "closet": {
+          "text": "closet"
+        },
+        "conference room": {
+          "text": "conference room"
+        },
+        "elevator": {
+          "text": "elevator"
+        },
+        "examining room": {
+          "text": "examining room"
+        },
+        "hallway": {
+          "text": "hallway"
+        },
+        "kitchen": {
+          "text": "kitchen"
+        },
+        "mail room": {
+          "text": "mail room"
+        },
+        "office": {
+          "text": "office"
+        },
+        "stairwell": {
+          "text": "stairwell"
+        }
+      }
+    },
+    "samp_floor_enum": {
+      "name": "samp_floor_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "1st floor": {
+          "text": "1st floor"
+        },
+        "2nd floor": {
+          "text": "2nd floor"
+        },
+        "basement": {
+          "text": "basement"
+        },
+        "lobby": {
+          "text": "lobby"
+        }
+      }
+    },
+    "floor_struc_enum": {
+      "name": "floor_struc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "balcony": {
+          "text": "balcony"
+        },
+        "floating floor": {
+          "text": "floating floor"
+        },
+        "glass floor": {
+          "text": "glass floor"
+        },
+        "raised floor": {
+          "text": "raised floor"
+        },
+        "sprung floor": {
+          "text": "sprung floor"
+        },
+        "wood-framed": {
+          "text": "wood-framed"
+        },
+        "concrete": {
+          "text": "concrete"
+        }
+      }
+    },
+    "train_line_enum": {
+      "name": "train_line_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "red": {
+          "text": "red"
+        },
+        "green": {
+          "text": "green"
+        },
+        "orange": {
+          "text": "orange"
+        }
+      }
+    },
+    "ceil_texture_enum": {
+      "name": "ceil_texture_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
         "crows feet": {
@@ -3412,9 +3284,6 @@
         },
         "crows-foot stomp": {
           "text": "crows-foot stomp"
-        },
-        "": {
-          "text": ""
         },
         "double skip": {
           "text": "double skip"
@@ -3451,42 +3320,6 @@
         }
       }
     },
-    "building_setting_enum": {
-      "name": "building_setting_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "urban": {
-          "text": "urban"
-        },
-        "suburban": {
-          "text": "suburban"
-        },
-        "exurban": {
-          "text": "exurban"
-        },
-        "rural": {
-          "text": "rural"
-        }
-      }
-    },
-    "season_use_enum": {
-      "name": "season_use_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Spring": {
-          "text": "Spring"
-        },
-        "Summer": {
-          "text": "Summer"
-        },
-        "Fall": {
-          "text": "Fall"
-        },
-        "Winter": {
-          "text": "Winter"
-        }
-      }
-    },
     "ext_window_orient_enum": {
       "name": "ext_window_orient_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -3517,48 +3350,399 @@
         }
       }
     },
-    "build_occup_type_enum": {
-      "name": "build_occup_type_enum",
+    "handidness_enum": {
+      "name": "handidness_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "office": {
-          "text": "office"
+        "ambidexterity": {
+          "text": "ambidexterity"
         },
-        "market": {
-          "text": "market"
+        "left handedness": {
+          "text": "left handedness"
         },
-        "restaurant": {
-          "text": "restaurant"
+        "mixed-handedness": {
+          "text": "mixed-handedness"
         },
-        "residence": {
-          "text": "residence"
+        "right handedness": {
+          "text": "right handedness"
+        }
+      }
+    },
+    "window_loc_enum": {
+      "name": "window_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
         },
-        "school": {
-          "text": "school"
+        "south": {
+          "text": "south"
         },
-        "residential": {
-          "text": "residential"
+        "east": {
+          "text": "east"
         },
-        "commercial": {
-          "text": "commercial"
+        "west": {
+          "text": "west"
+        }
+      }
+    },
+    "int_wall_cond_enum": {
+      "name": "int_wall_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "new": {
+          "text": "new"
         },
-        "low rise": {
-          "text": "low rise"
+        "visible wear": {
+          "text": "visible wear"
         },
-        "high rise": {
-          "text": "high rise"
+        "needs repair": {
+          "text": "needs repair"
         },
-        "wood framed": {
-          "text": "wood framed"
+        "damaged": {
+          "text": "damaged"
         },
-        "health care": {
-          "text": "health care"
+        "rupture": {
+          "text": "rupture"
+        }
+      }
+    },
+    "quad_pos_enum": {
+      "name": "quad_pos_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "North side": {
+          "text": "North side"
         },
-        "airport": {
-          "text": "airport"
+        "West side": {
+          "text": "West side"
         },
-        "sports complex": {
-          "text": "sports complex"
+        "South side": {
+          "text": "South side"
+        },
+        "East side": {
+          "text": "East side"
+        }
+      }
+    },
+    "window_cond_enum": {
+      "name": "window_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "damaged": {
+          "text": "damaged"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "new": {
+          "text": "new"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        }
+      }
+    },
+    "gender_restroom_enum": {
+      "name": "gender_restroom_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "all gender": {
+          "text": "all gender"
+        },
+        "female": {
+          "text": "female"
+        },
+        "gender neurtral": {
+          "text": "gender neurtral"
+        },
+        "male": {
+          "text": "male"
+        },
+        "male and female": {
+          "text": "male and female"
+        },
+        "unisex": {
+          "text": "unisex"
+        }
+      }
+    },
+    "shading_device_type_enum": {
+      "name": "shading_device_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "bahama shutters": {
+          "text": "bahama shutters"
+        },
+        "exterior roll blind": {
+          "text": "exterior roll blind"
+        },
+        "gambrel awning": {
+          "text": "gambrel awning"
+        },
+        "hood awning": {
+          "text": "hood awning"
+        },
+        "porchroller awning": {
+          "text": "porchroller awning"
+        },
+        "sarasota shutters": {
+          "text": "sarasota shutters"
+        },
+        "slatted aluminum": {
+          "text": "slatted aluminum"
+        },
+        "solid aluminum awning": {
+          "text": "solid aluminum awning"
+        },
+        "sun screen": {
+          "text": "sun screen"
+        },
+        "tree": {
+          "text": "tree"
+        },
+        "trellis": {
+          "text": "trellis"
+        },
+        "venetian awning": {
+          "text": "venetian awning"
+        }
+      }
+    },
+    "floor_cond_enum": {
+      "name": "floor_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "new": {
+          "text": "new"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "damaged": {
+          "text": "damaged"
+        },
+        "rupture": {
+          "text": "rupture"
+        }
+      }
+    },
+    "wall_const_type_enum": {
+      "name": "wall_const_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "frame construction": {
+          "text": "frame construction"
+        },
+        "joisted masonry": {
+          "text": "joisted masonry"
+        },
+        "light noncombustible": {
+          "text": "light noncombustible"
+        },
+        "masonry noncombustible": {
+          "text": "masonry noncombustible"
+        },
+        "modified fire resistive": {
+          "text": "modified fire resistive"
+        },
+        "fire resistive": {
+          "text": "fire resistive"
+        }
+      }
+    },
+    "ceil_type_enum": {
+      "name": "ceil_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "cathedral": {
+          "text": "cathedral"
+        },
+        "dropped": {
+          "text": "dropped"
+        },
+        "concave": {
+          "text": "concave"
+        },
+        "barrel-shaped": {
+          "text": "barrel-shaped"
+        },
+        "coffered": {
+          "text": "coffered"
+        },
+        "cove": {
+          "text": "cove"
+        },
+        "stretched": {
+          "text": "stretched"
+        }
+      }
+    },
+    "window_type_enum": {
+      "name": "window_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "single-hung sash window": {
+          "text": "single-hung sash window"
+        },
+        "horizontal sash window": {
+          "text": "horizontal sash window"
+        },
+        "fixed window": {
+          "text": "fixed window"
+        }
+      }
+    },
+    "floor_water_mold_enum": {
+      "name": "floor_water_mold_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "mold odor": {
+          "text": "mold odor"
+        },
+        "wet floor": {
+          "text": "wet floor"
+        },
+        "water stains": {
+          "text": "water stains"
+        },
+        "wall discoloration": {
+          "text": "wall discoloration"
+        },
+        "floor discoloration": {
+          "text": "floor discoloration"
+        },
+        "ceiling discoloration": {
+          "text": "ceiling discoloration"
+        },
+        "peeling paint or wallpaper": {
+          "text": "peeling paint or wallpaper"
+        },
+        "bulging walls": {
+          "text": "bulging walls"
+        },
+        "condensation": {
+          "text": "condensation"
+        }
+      }
+    },
+    "build_docs_enum": {
+      "name": "build_docs_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "building information model": {
+          "text": "building information model"
+        },
+        "commissioning report": {
+          "text": "commissioning report"
+        },
+        "complaint logs": {
+          "text": "complaint logs"
+        },
+        "contract administration": {
+          "text": "contract administration"
+        },
+        "cost estimate": {
+          "text": "cost estimate"
+        },
+        "janitorial schedules or logs": {
+          "text": "janitorial schedules or logs"
+        },
+        "maintenance plans": {
+          "text": "maintenance plans"
+        },
+        "schedule": {
+          "text": "schedule"
+        },
+        "sections": {
+          "text": "sections"
+        },
+        "shop drawings": {
+          "text": "shop drawings"
+        },
+        "submittals": {
+          "text": "submittals"
+        },
+        "ventilation system": {
+          "text": "ventilation system"
+        },
+        "windows": {
+          "text": "windows"
+        }
+      }
+    },
+    "vis_media_enum": {
+      "name": "vis_media_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "photos": {
+          "text": "photos"
+        },
+        "videos": {
+          "text": "videos"
+        },
+        "commonly of the building": {
+          "text": "commonly of the building"
+        },
+        "site context (adjacent buildings, vegetation, terrain, streets)": {
+          "text": "site context (adjacent buildings, vegetation, terrain, streets)"
+        },
+        "interiors": {
+          "text": "interiors"
+        },
+        "equipment": {
+          "text": "equipment"
+        },
+        "3D scans": {
+          "text": "3D scans"
+        }
+      }
+    },
+    "train_stat_loc_enum": {
+      "name": "train_stat_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "south station above ground": {
+          "text": "south station above ground"
+        },
+        "south station underground": {
+          "text": "south station underground"
+        },
+        "south station amtrak": {
+          "text": "south station amtrak"
+        },
+        "forest hills": {
+          "text": "forest hills"
+        },
+        "riverside": {
+          "text": "riverside"
+        }
+      }
+    },
+    "door_cond_enum": {
+      "name": "door_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "damaged": {
+          "text": "damaged"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "new": {
+          "text": "new"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible wear": {
+          "text": "visible wear"
         }
       }
     },
@@ -3622,315 +3806,69 @@
         }
       }
     },
-    "door_move_enum": {
-      "name": "door_move_enum",
+    "ceil_finish_mat_enum": {
+      "name": "ceil_finish_mat_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "collapsible": {
-          "text": "collapsible"
+        "drywall": {
+          "text": "drywall"
         },
-        "folding": {
-          "text": "folding"
+        "mineral fibre": {
+          "text": "mineral fibre"
         },
-        "revolving": {
-          "text": "revolving"
+        "tiles": {
+          "text": "tiles"
         },
-        "rolling shutter": {
-          "text": "rolling shutter"
+        "PVC": {
+          "text": "PVC"
         },
-        "sliding": {
-          "text": "sliding"
-        },
-        "swinging": {
-          "text": "swinging"
-        }
-      }
-    },
-    "room_connected_enum": {
-      "name": "room_connected_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "attic": {
-          "text": "attic"
-        },
-        "bathroom": {
-          "text": "bathroom"
-        },
-        "closet": {
-          "text": "closet"
-        },
-        "conference room": {
-          "text": "conference room"
-        },
-        "elevator": {
-          "text": "elevator"
-        },
-        "examining room": {
-          "text": "examining room"
-        },
-        "hallway": {
-          "text": "hallway"
-        },
-        "kitchen": {
-          "text": "kitchen"
-        },
-        "mail room": {
-          "text": "mail room"
-        },
-        "office": {
-          "text": "office"
-        },
-        "stairwell": {
-          "text": "stairwell"
-        }
-      }
-    },
-    "samp_weather_enum": {
-      "name": "samp_weather_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "clear sky": {
-          "text": "clear sky"
-        },
-        "cloudy": {
-          "text": "cloudy"
-        },
-        "foggy": {
-          "text": "foggy"
-        },
-        "hail": {
-          "text": "hail"
-        },
-        "rain": {
-          "text": "rain"
-        },
-        "snow": {
-          "text": "snow"
-        },
-        "sleet": {
-          "text": "sleet"
-        },
-        "sunny": {
-          "text": "sunny"
-        },
-        "windy": {
-          "text": "windy"
-        }
-      }
-    },
-    "door_type_enum": {
-      "name": "door_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "composite": {
-          "text": "composite"
+        "plasterboard": {
+          "text": "plasterboard"
         },
         "metal": {
           "text": "metal"
         },
-        "wooden": {
-          "text": "wooden"
+        "fiberglass": {
+          "text": "fiberglass"
+        },
+        "stucco": {
+          "text": "stucco"
+        },
+        "mineral wool/calcium silicate": {
+          "text": "mineral wool/calcium silicate"
+        },
+        "wood": {
+          "text": "wood"
         }
       }
     },
-    "floor_cond_enum": {
-      "name": "floor_cond_enum",
+    "indoor_surf_enum": {
+      "name": "indoor_surf_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "new": {
-          "text": "new"
+        "cabinet": {
+          "text": "cabinet"
         },
-        "visible wear": {
-          "text": "visible wear"
+        "ceiling": {
+          "text": "ceiling"
         },
-        "needs repair": {
-          "text": "needs repair"
+        "counter top": {
+          "text": "counter top"
         },
-        "damaged": {
-          "text": "damaged"
+        "door": {
+          "text": "door"
         },
-        "rupture": {
-          "text": "rupture"
-        }
-      }
-    },
-    "mech_struc_enum": {
-      "name": "mech_struc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "subway": {
-          "text": "subway"
+        "shelving": {
+          "text": "shelving"
         },
-        "coach": {
-          "text": "coach"
+        "vent cover": {
+          "text": "vent cover"
         },
-        "carriage": {
-          "text": "carriage"
+        "window": {
+          "text": "window"
         },
-        "elevator": {
-          "text": "elevator"
-        },
-        "escalator": {
-          "text": "escalator"
-        },
-        "boat": {
-          "text": "boat"
-        },
-        "train": {
-          "text": "train"
-        },
-        "car": {
-          "text": "car"
-        },
-        "bus": {
-          "text": "bus"
-        }
-      }
-    },
-    "window_vert_pos_enum": {
-      "name": "window_vert_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "bottom": {
-          "text": "bottom"
-        },
-        "middle": {
-          "text": "middle"
-        },
-        "top": {
-          "text": "top"
-        },
-        "low": {
-          "text": "low"
-        },
-        "high": {
-          "text": "high"
-        }
-      }
-    },
-    "drawings_enum": {
-      "name": "drawings_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "operation": {
-          "text": "operation"
-        },
-        "as built": {
-          "text": "as built"
-        },
-        "construction": {
-          "text": "construction"
-        },
-        "bid": {
-          "text": "bid"
-        },
-        "design": {
-          "text": "design"
-        },
-        "building navigation map": {
-          "text": "building navigation map"
-        },
-        "diagram": {
-          "text": "diagram"
-        },
-        "sketch": {
-          "text": "sketch"
-        }
-      }
-    },
-    "train_stop_loc_enum": {
-      "name": "train_stop_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "end": {
-          "text": "end"
-        },
-        "mid": {
-          "text": "mid"
-        },
-        "downtown": {
-          "text": "downtown"
-        }
-      }
-    },
-    "train_line_enum": {
-      "name": "train_line_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "red": {
-          "text": "red"
-        },
-        "green": {
-          "text": "green"
-        },
-        "orange": {
-          "text": "orange"
-        }
-      }
-    },
-    "hcr_enum": {
-      "name": "hcr_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Oil Reservoir": {
-          "text": "Oil Reservoir"
-        },
-        "Gas Reservoir": {
-          "text": "Gas Reservoir"
-        },
-        "Oil Sand": {
-          "text": "Oil Sand"
-        },
-        "Coalbed": {
-          "text": "Coalbed"
-        },
-        "Shale": {
-          "text": "Shale"
-        },
-        "Tight Oil Reservoir": {
-          "text": "Tight Oil Reservoir"
-        },
-        "Tight Gas Reservoir": {
-          "text": "Tight Gas Reservoir"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "oxy_stat_samp_enum": {
-      "name": "oxy_stat_samp_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "aerobic": {
-          "text": "aerobic"
-        },
-        "anaerobic": {
-          "text": "anaerobic"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "samp_subtype_enum": {
-      "name": "samp_subtype_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "oil phase": {
-          "text": "oil phase"
-        },
-        "water phase": {
-          "text": "water phase"
-        },
-        "biofilm": {
-          "text": "biofilm"
-        },
-        "not applicable": {
-          "text": "not applicable"
-        },
-        "other": {
-          "text": "other"
+        "wall": {
+          "text": "wall"
         }
       }
     },
@@ -4021,30 +3959,48 @@
         }
       }
     },
-    "rel_to_oxygen_enum": {
-      "name": "rel_to_oxygen_enum",
+    "lithology_enum": {
+      "name": "lithology_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "aerobe": {
-          "text": "aerobe"
+        "Basement": {
+          "text": "Basement"
         },
-        "anaerobe": {
-          "text": "anaerobe"
+        "Chalk": {
+          "text": "Chalk"
         },
-        "facultative": {
-          "text": "facultative"
+        "Chert": {
+          "text": "Chert"
         },
-        "microaerophilic": {
-          "text": "microaerophilic"
+        "Coal": {
+          "text": "Coal"
         },
-        "microanaerobe": {
-          "text": "microanaerobe"
+        "Conglomerate": {
+          "text": "Conglomerate"
         },
-        "obligate aerobe": {
-          "text": "obligate aerobe"
+        "Diatomite": {
+          "text": "Diatomite"
         },
-        "obligate anaerobe": {
-          "text": "obligate anaerobe"
+        "Dolomite": {
+          "text": "Dolomite"
+        },
+        "Limestone": {
+          "text": "Limestone"
+        },
+        "Sandstone": {
+          "text": "Sandstone"
+        },
+        "Shale": {
+          "text": "Shale"
+        },
+        "Siltstone": {
+          "text": "Siltstone"
+        },
+        "Volcanic": {
+          "text": "Volcanic"
+        },
+        "other": {
+          "text": "other"
         }
       }
     },
@@ -4102,45 +4058,66 @@
         }
       }
     },
-    "lithology_enum": {
-      "name": "lithology_enum",
+    "hcr_enum": {
+      "name": "hcr_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "Basement": {
-          "text": "Basement"
+        "Oil Reservoir": {
+          "text": "Oil Reservoir"
         },
-        "Chalk": {
-          "text": "Chalk"
+        "Gas Reservoir": {
+          "text": "Gas Reservoir"
         },
-        "Chert": {
-          "text": "Chert"
+        "Oil Sand": {
+          "text": "Oil Sand"
         },
-        "Coal": {
-          "text": "Coal"
-        },
-        "Conglomerate": {
-          "text": "Conglomerate"
-        },
-        "Diatomite": {
-          "text": "Diatomite"
-        },
-        "Dolomite": {
-          "text": "Dolomite"
-        },
-        "Limestone": {
-          "text": "Limestone"
-        },
-        "Sandstone": {
-          "text": "Sandstone"
+        "Coalbed": {
+          "text": "Coalbed"
         },
         "Shale": {
           "text": "Shale"
         },
-        "Siltstone": {
-          "text": "Siltstone"
+        "Tight Oil Reservoir": {
+          "text": "Tight Oil Reservoir"
         },
-        "Volcanic": {
-          "text": "Volcanic"
+        "Tight Gas Reservoir": {
+          "text": "Tight Gas Reservoir"
+        },
+        "other": {
+          "text": "other"
+        }
+      }
+    },
+    "samp_subtype_enum": {
+      "name": "samp_subtype_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "oil phase": {
+          "text": "oil phase"
+        },
+        "water phase": {
+          "text": "water phase"
+        },
+        "biofilm": {
+          "text": "biofilm"
+        },
+        "not applicable": {
+          "text": "not applicable"
+        },
+        "other": {
+          "text": "other"
+        }
+      }
+    },
+    "oxy_stat_samp_enum": {
+      "name": "oxy_stat_samp_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "aerobic": {
+          "text": "aerobic"
+        },
+        "anaerobic": {
+          "text": "anaerobic"
         },
         "other": {
           "text": "other"
@@ -4168,6 +4145,33 @@
         },
         "other": {
           "text": "other"
+        }
+      }
+    },
+    "rel_to_oxygen_enum": {
+      "name": "rel_to_oxygen_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "aerobe": {
+          "text": "aerobe"
+        },
+        "anaerobe": {
+          "text": "anaerobe"
+        },
+        "facultative": {
+          "text": "facultative"
+        },
+        "microaerophilic": {
+          "text": "microaerophilic"
+        },
+        "microanaerobe": {
+          "text": "microanaerobe"
+        },
+        "obligate aerobe": {
+          "text": "obligate aerobe"
+        },
+        "obligate anaerobe": {
+          "text": "obligate anaerobe"
         }
       }
     },
@@ -4252,27 +4256,6 @@
         }
       }
     },
-    "sr_lithology_enum": {
-      "name": "sr_lithology_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Clastic": {
-          "text": "Clastic"
-        },
-        "Carbonate": {
-          "text": "Carbonate"
-        },
-        "Coal": {
-          "text": "Coal"
-        },
-        "Biosilicieous": {
-          "text": "Biosilicieous"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
     "sr_dep_env_enum": {
       "name": "sr_dep_env_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4294,54 +4277,24 @@
         }
       }
     },
-    "biotic_relationship_enum": {
-      "name": "biotic_relationship_enum",
+    "sr_lithology_enum": {
+      "name": "sr_lithology_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "free living": {
-          "text": "free living"
+        "Clastic": {
+          "text": "Clastic"
         },
-        "parasite": {
-          "text": "parasite"
+        "Carbonate": {
+          "text": "Carbonate"
         },
-        "commensal": {
-          "text": "commensal"
+        "Coal": {
+          "text": "Coal"
         },
-        "symbiont": {
-          "text": "symbiont"
-        }
-      }
-    },
-    "tillage_enum": {
-      "name": "tillage_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "drill": {
-          "text": "drill"
+        "Biosilicieous": {
+          "text": "Biosilicieous"
         },
-        "cutting disc": {
-          "text": "cutting disc"
-        },
-        "ridge till": {
-          "text": "ridge till"
-        },
-        "strip tillage": {
-          "text": "strip tillage"
-        },
-        "zonal tillage": {
-          "text": "zonal tillage"
-        },
-        "chisel": {
-          "text": "chisel"
-        },
-        "tined": {
-          "text": "tined"
-        },
-        "mouldboard": {
-          "text": "mouldboard"
-        },
-        "disc plough": {
-          "text": "disc plough"
+        "other": {
+          "text": "other"
         }
       }
     },
@@ -4369,39 +4322,198 @@
         }
       }
     },
-    "profile_position_enum": {
-      "name": "profile_position_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "summit": {
-          "text": "summit"
-        },
-        "shoulder": {
-          "text": "shoulder"
-        },
-        "backslope": {
-          "text": "backslope"
-        },
-        "footslope": {
-          "text": "footslope"
-        },
-        "toeslope": {
-          "text": "toeslope"
-        }
-      }
-    },
     "cur_land_use_enum": {
       "name": "cur_land_use_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
+        "badlands": {
+          "text": "badlands"
+        },
         "cities": {
           "text": "cities"
+        },
+        "conifers": {
+          "text": "conifers",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "conifers (e.g. pine,spruce,fir,cypress)"
+            }
+          },
+          "examples": [
+            {
+              "value": "cypress"
+            },
+            {
+              "value": "fir"
+            },
+            {
+              "value": "pine"
+            },
+            {
+              "value": "spruce"
+            }
+          ]
+        },
+        "crop trees": {
+          "text": "crop trees",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "crop trees (nuts,fruit,christmas trees,nursery trees)"
+            }
+          },
+          "examples": [
+            {
+              "value": "christmas trees"
+            },
+            {
+              "value": "fruit"
+            },
+            {
+              "value": "nursery trees"
+            },
+            {
+              "value": "nuts"
+            }
+          ]
         },
         "farmstead": {
           "text": "farmstead"
         },
+        "gravel": {
+          "text": "gravel"
+        },
+        "hardwoods": {
+          "text": "hardwoods",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "hardwoods (e.g. oak,hickory,elm,aspen)"
+            }
+          },
+          "examples": [
+            {
+              "value": "aspen"
+            },
+            {
+              "value": "elm"
+            },
+            {
+              "value": "hickory"
+            },
+            {
+              "value": "oak"
+            }
+          ]
+        },
+        "hayland": {
+          "text": "hayland"
+        },
+        "horticultural plants": {
+          "text": "horticultural plants",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "horticultural plants (e.g. tulips)"
+            }
+          },
+          "examples": [
+            {
+              "value": "tulips"
+            }
+          ]
+        },
         "industrial areas": {
           "text": "industrial areas"
+        },
+        "intermixed hardwood and conifers": {
+          "text": "intermixed hardwood and conifers"
+        },
+        "marshlands": {
+          "text": "marshlands",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "marshlands (grass,sedges,rushes)"
+            }
+          },
+          "examples": [
+            {
+              "value": "grass"
+            },
+            {
+              "value": "rushes"
+            },
+            {
+              "value": "sedgees"
+            }
+          ]
+        },
+        "meadows": {
+          "text": "meadows",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "meadows (grasses,alfalfa,fescue,bromegrass,timothy)"
+            }
+          },
+          "examples": [
+            {
+              "value": "alfalfa"
+            },
+            {
+              "value": "bromegrass"
+            },
+            {
+              "value": "fescue"
+            },
+            {
+              "value": "grasses"
+            },
+            {
+              "value": "timothy"
+            }
+          ]
+        },
+        "mines/quarries": {
+          "text": "mines/quarries"
+        },
+        "mudflats": {
+          "text": "mudflats"
+        },
+        "oil waste areas": {
+          "text": "oil waste areas"
+        },
+        "pastureland": {
+          "text": "pastureland",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "pastureland (grasslands used for livestock grazing)"
+            }
+          },
+          "comments": [
+            "grasslands used for livestock grazing"
+          ]
+        },
+        "permanent snow or ice": {
+          "text": "permanent snow or ice"
+        },
+        "rainforest": {
+          "text": "rainforest",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "rainforest (evergreen forest receiving greater than 406 cm annual rainfall)"
+            }
+          },
+          "comments": [
+            "evergreen forest receiving greater than 406 cm annual rainfall"
+          ]
+        },
+        "rangeland": {
+          "text": "rangeland"
         },
         "roads/railroads": {
           "text": "roads/railroads"
@@ -4409,95 +4521,158 @@
         "rock": {
           "text": "rock"
         },
-        "sand": {
-          "text": "sand"
-        },
-        "gravel": {
-          "text": "gravel"
-        },
-        "mudflats": {
-          "text": "mudflats"
-        },
-        "salt flats": {
-          "text": "salt flats"
-        },
-        "badlands": {
-          "text": "badlands"
-        },
-        "permanent snow or ice": {
-          "text": "permanent snow or ice"
+        "row crops": {
+          "text": "row crops"
         },
         "saline seeps": {
           "text": "saline seeps"
         },
-        "mines/quarries": {
-          "text": "mines/quarries"
+        "salt flats": {
+          "text": "salt flats"
         },
-        "oil waste areas": {
-          "text": "oil waste areas"
+        "sand": {
+          "text": "sand"
+        },
+        "shrub crops": {
+          "text": "shrub crops",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "shrub crops (blueberries,nursery ornamentals,filberts)"
+            }
+          },
+          "examples": [
+            {
+              "value": "blueberries"
+            },
+            {
+              "value": "filberts"
+            },
+            {
+              "value": "nursery ornamentals"
+            }
+          ]
+        },
+        "shrub land": {
+          "text": "shrub land",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)"
+            }
+          },
+          "examples": [
+            {
+              "value": "creosote bush"
+            },
+            {
+              "value": "eucalyptus"
+            },
+            {
+              "value": "mesquite"
+            },
+            {
+              "value": "sage-brush"
+            },
+            {
+              "value": "shrub oak"
+            }
+          ]
         },
         "small grains": {
           "text": "small grains"
         },
-        "row crops": {
-          "text": "row crops"
+        "successional shrub land": {
+          "text": "successional shrub land",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)"
+            }
+          },
+          "examples": [
+            {
+              "value": "blackberries"
+            },
+            {
+              "value": "chokecherry"
+            },
+            {
+              "value": "hazels"
+            },
+            {
+              "value": "shrub dogwoods"
+            },
+            {
+              "value": "sumacs"
+            },
+            {
+              "value": "tree saplings"
+            }
+          ]
+        },
+        "swamp": {
+          "text": "swamp",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "swamp (permanent or semi-permanent water body dominated by woody plants)"
+            }
+          },
+          "comments": [
+            "permanent or semi-permanent water body dominated by woody plants"
+          ]
+        },
+        "tropical": {
+          "text": "tropical",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "tropical (e.g. mangrove,palms)"
+            }
+          },
+          "examples": [
+            {
+              "value": "mangrove"
+            },
+            {
+              "value": "palms"
+            }
+          ]
+        },
+        "tundra": {
+          "text": "tundra",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "tundra (mosses,lichens)"
+            }
+          },
+          "examples": [
+            {
+              "value": "lichens"
+            },
+            {
+              "value": "mosses"
+            }
+          ]
         },
         "vegetable crops": {
           "text": "vegetable crops"
         },
-        "horticultural plants (e.g. tulips)": {
-          "text": "horticultural plants (e.g. tulips)"
-        },
-        "marshlands (grass,sedges,rushes)": {
-          "text": "marshlands (grass,sedges,rushes)"
-        },
-        "tundra (mosses,lichens)": {
-          "text": "tundra (mosses,lichens)"
-        },
-        "rangeland": {
-          "text": "rangeland"
-        },
-        "pastureland (grasslands used for livestock grazing)": {
-          "text": "pastureland (grasslands used for livestock grazing)"
-        },
-        "hayland": {
-          "text": "hayland"
-        },
-        "meadows (grasses,alfalfa,fescue,bromegrass,timothy)": {
-          "text": "meadows (grasses,alfalfa,fescue,bromegrass,timothy)"
-        },
-        "shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)": {
-          "text": "shrub land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)"
-        },
-        "successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)": {
-          "text": "successional shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)"
-        },
-        "shrub crops (blueberries,nursery ornamentals,filberts)": {
-          "text": "shrub crops (blueberries,nursery ornamentals,filberts)"
-        },
-        "vine crops (grapes)": {
-          "text": "vine crops (grapes)"
-        },
-        "conifers (e.g. pine,spruce,fir,cypress)": {
-          "text": "conifers (e.g. pine,spruce,fir,cypress)"
-        },
-        "hardwoods (e.g. oak,hickory,elm,aspen)": {
-          "text": "hardwoods (e.g. oak,hickory,elm,aspen)"
-        },
-        "intermixed hardwood and conifers": {
-          "text": "intermixed hardwood and conifers"
-        },
-        "tropical (e.g. mangrove,palms)": {
-          "text": "tropical (e.g. mangrove,palms)"
-        },
-        "rainforest (evergreen forest receiving greater than 406 cm annual rainfall)": {
-          "text": "rainforest (evergreen forest receiving greater than 406 cm annual rainfall)"
-        },
-        "swamp (permanent or semi-permanent water body dominated by woody plants)": {
-          "text": "swamp (permanent or semi-permanent water body dominated by woody plants)"
-        },
-        "crop trees (nuts,fruit,christmas trees,nursery trees)": {
-          "text": "crop trees (nuts,fruit,christmas trees,nursery trees)"
+        "vine crops": {
+          "text": "vine crops",
+          "annotations": {
+            "originally": {
+              "tag": "originally",
+              "value": "vine crops (grapes)"
+            }
+          },
+          "examples": [
+            {
+              "value": "grapes"
+            }
+          ]
         }
       }
     },
@@ -4585,6 +4760,27 @@
         }
       }
     },
+    "profile_position_enum": {
+      "name": "profile_position_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "summit": {
+          "text": "summit"
+        },
+        "shoulder": {
+          "text": "shoulder"
+        },
+        "backslope": {
+          "text": "backslope"
+        },
+        "footslope": {
+          "text": "footslope"
+        },
+        "toeslope": {
+          "text": "toeslope"
+        }
+      }
+    },
     "soil_horizon_enum": {
       "name": "soil_horizon_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4609,57 +4805,60 @@
         },
         "Permafrost": {
           "text": "Permafrost"
+        },
+        "M horizon": {
+          "text": "M horizon"
         }
       }
     },
-    "samp_capt_status_enum": {
-      "name": "samp_capt_status_enum",
+    "biotic_relationship_enum": {
+      "name": "biotic_relationship_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "active surveillance in response to an outbreak": {
-          "text": "active surveillance in response to an outbreak"
+        "free living": {
+          "text": "free living"
         },
-        "active surveillance not initiated by an outbreak": {
-          "text": "active surveillance not initiated by an outbreak"
+        "parasite": {
+          "text": "parasite"
         },
-        "farm sample": {
-          "text": "farm sample"
+        "commensal": {
+          "text": "commensal"
         },
-        "market sample": {
-          "text": "market sample"
-        },
-        "other": {
-          "text": "other"
+        "symbiont": {
+          "text": "symbiont"
         }
       }
     },
-    "biol_stat_enum": {
-      "name": "biol_stat_enum",
+    "tillage_enum": {
+      "name": "tillage_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "wild": {
-          "text": "wild"
+        "drill": {
+          "text": "drill"
         },
-        "natural": {
-          "text": "natural"
+        "cutting disc": {
+          "text": "cutting disc"
         },
-        "semi-natural": {
-          "text": "semi-natural"
+        "ridge till": {
+          "text": "ridge till"
         },
-        "inbred line": {
-          "text": "inbred line"
+        "strip tillage": {
+          "text": "strip tillage"
         },
-        "breeder's line": {
-          "text": "breeder's line"
+        "zonal tillage": {
+          "text": "zonal tillage"
         },
-        "hybrid": {
-          "text": "hybrid"
+        "chisel": {
+          "text": "chisel"
         },
-        "clonal selection": {
-          "text": "clonal selection"
+        "tined": {
+          "text": "tined"
         },
-        "mutant": {
-          "text": "mutant"
+        "mouldboard": {
+          "text": "mouldboard"
+        },
+        "disc plough": {
+          "text": "disc plough"
         }
       }
     },
@@ -4756,6 +4955,27 @@
         }
       }
     },
+    "samp_capt_status_enum": {
+      "name": "samp_capt_status_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "active surveillance in response to an outbreak": {
+          "text": "active surveillance in response to an outbreak"
+        },
+        "active surveillance not initiated by an outbreak": {
+          "text": "active surveillance not initiated by an outbreak"
+        },
+        "farm sample": {
+          "text": "farm sample"
+        },
+        "market sample": {
+          "text": "market sample"
+        },
+        "other": {
+          "text": "other"
+        }
+      }
+    },
     "growth_habit_enum": {
       "name": "growth_habit_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4771,6 +4991,36 @@
         },
         "prostrate": {
           "text": "prostrate"
+        }
+      }
+    },
+    "biol_stat_enum": {
+      "name": "biol_stat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "wild": {
+          "text": "wild"
+        },
+        "natural": {
+          "text": "natural"
+        },
+        "semi-natural": {
+          "text": "semi-natural"
+        },
+        "inbred line": {
+          "text": "inbred line"
+        },
+        "breeder's line": {
+          "text": "breeder's line"
+        },
+        "hybrid": {
+          "text": "hybrid"
+        },
+        "clonal selection": {
+          "text": "clonal selection"
+        },
+        "mutant": {
+          "text": "mutant"
         }
       }
     },
@@ -4798,24 +5048,6 @@
         }
       }
     },
-    "sediment_type_enum": {
-      "name": "sediment_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "biogenous": {
-          "text": "biogenous"
-        },
-        "cosmogenous": {
-          "text": "cosmogenous"
-        },
-        "hydrogenous": {
-          "text": "hydrogenous"
-        },
-        "lithogenous": {
-          "text": "lithogenous"
-        }
-      }
-    },
     "tidal_stage_enum": {
       "name": "tidal_stage_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4831,6 +5063,24 @@
         },
         "high tide": {
           "text": "high tide"
+        }
+      }
+    },
+    "sediment_type_enum": {
+      "name": "sediment_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "biogenous": {
+          "text": "biogenous"
+        },
+        "cosmogenous": {
+          "text": "cosmogenous"
+        },
+        "hydrogenous": {
+          "text": "hydrogenous"
+        },
+        "lithogenous": {
+          "text": "lithogenous"
         }
       }
     },
@@ -11756,17 +12006,14 @@
       },
       "description": "NCBI taxon id of the host, e.g. 9606",
       "title": "host taxid",
-      "examples": [
-        {
-          "value": "7955"
-        }
+      "comments": [
+        "Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value"
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "aliases": [
         "host taxid"
       ],
       "is_a": "core field",
-      "string_serialization": "{NCBI taxid}",
       "slot_uri": "MIXS:0000250",
       "multivalued": false,
       "range": "string"
@@ -20920,46 +21167,8 @@
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "identifier": true,
+      "range": "uriorcurie",
       "required": true
-    },
-    "gold_path_field": {
-      "name": "gold_path_field",
-      "description": "This is a grouping for any of the gold path fields",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "is_a": "attribute",
-      "abstract": true,
-      "multivalued": false,
-      "range": "string"
-    },
-    "nucleic acid sequence source field": {
-      "name": "nucleic acid sequence source field",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "abstract": true
-    },
-    "language": {
-      "name": "language",
-      "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "range": "language code"
-    },
-    "attribute": {
-      "name": "attribute",
-      "description": "A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "aliases": [
-        "field",
-        "property",
-        "template field",
-        "key",
-        "characteristic"
-      ],
-      "abstract": true
-    },
-    "investigation field": {
-      "name": "investigation field",
-      "description": "field describing aspect of the investigation/study to which the sample belongs",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "abstract": true
     },
     "core field": {
       "name": "core field",
@@ -20974,10 +21183,37 @@
       "multivalued": false,
       "range": "string"
     },
+    "attribute": {
+      "name": "attribute",
+      "description": "A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "aliases": [
+        "field",
+        "property",
+        "template field",
+        "key",
+        "characteristic"
+      ],
+      "abstract": true
+    },
+    "nucleic acid sequence source field": {
+      "name": "nucleic acid sequence source field",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "abstract": true
+    },
     "alternative_identifiers": {
       "name": "alternative_identifiers",
       "description": "A list of alternative identifiers for the entity.",
       "from_schema": "https://example.com/nmdc_submission_schema",
+      "multivalued": false,
+      "range": "string"
+    },
+    "gold_path_field": {
+      "name": "gold_path_field",
+      "description": "This is a grouping for any of the gold path fields",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "is_a": "attribute",
+      "abstract": true,
       "multivalued": false,
       "range": "string"
     },
@@ -20986,6 +21222,18 @@
       "description": "field describing environmental aspect of a sample",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "abstract": true
+    },
+    "investigation field": {
+      "name": "investigation field",
+      "description": "field describing aspect of the investigation/study to which the sample belongs",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "abstract": true
+    },
+    "language": {
+      "name": "language",
+      "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "range": "language code"
     },
     "description": {
       "name": "description",
@@ -67220,10 +67468,8 @@
           },
           "description": "NCBI taxon id of the host, e.g. 9606",
           "title": "host taxid",
-          "examples": [
-            {
-              "value": "7955"
-            }
+          "comments": [
+            "Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "aliases": [
@@ -67231,7 +67477,6 @@
           ],
           "rank": 259,
           "is_a": "core field",
-          "string_serialization": "{NCBI taxid}",
           "slot_uri": "MIXS:0000250",
           "multivalued": false,
           "owner": "Biosample",
@@ -69983,10 +70228,8 @@
           },
           "description": "NCBI taxon id of the host, e.g. 9606",
           "title": "host taxid",
-          "examples": [
-            {
-              "value": "7955"
-            }
+          "comments": [
+            "Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "aliases": [
@@ -69994,7 +70237,6 @@
           ],
           "rank": 259,
           "is_a": "core field",
-          "string_serialization": "{NCBI taxid}",
           "slot_uri": "MIXS:0000250",
           "multivalued": false,
           "alias": "host_taxid",
@@ -80960,10 +81202,8 @@
           },
           "description": "NCBI taxon id of the host, e.g. 9606",
           "title": "host taxid",
-          "examples": [
-            {
-              "value": "7955"
-            }
+          "comments": [
+            "Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "aliases": [
@@ -80971,7 +81211,6 @@
           ],
           "rank": 259,
           "is_a": "core field",
-          "string_serialization": "{NCBI taxid}",
           "slot_uri": "MIXS:0000250",
           "multivalued": false,
           "owner": "Biosample",
@@ -84695,10 +84934,8 @@
           },
           "description": "NCBI taxon id of the host, e.g. 9606",
           "title": "host taxid",
-          "examples": [
-            {
-              "value": "7955"
-            }
+          "comments": [
+            "Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "aliases": [
@@ -84706,7 +84943,6 @@
           ],
           "rank": 259,
           "is_a": "core field",
-          "string_serialization": "{NCBI taxid}",
           "slot_uri": "MIXS:0000250",
           "multivalued": false,
           "alias": "host_taxid",
@@ -119847,7 +120083,7 @@
           "domain_of": [
             "NamedThing"
           ],
-          "range": "string",
+          "range": "uriorcurie",
           "required": true
         },
         "name": {

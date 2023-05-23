@@ -996,7 +996,7 @@ CREATE TABLE "SoilInterface" (
 	collection_time TEXT, 
 	collection_time_inc TEXT, 
 	crop_rotation TEXT, 
-	cur_land_use VARCHAR(93), 
+	cur_land_use VARCHAR(32), 
 	cur_vegetation TEXT, 
 	cur_vegetation_meth TEXT, 
 	depth TEXT, 
