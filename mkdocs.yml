@@ -14,6 +14,7 @@ nav:
   - Index: index.md
   - About: about.md
   - 'Submission Schema DH Playground': https://microbiomedata.github.io/submission-schema/_playground/
+  - 'Direct submission of soil samples': https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/SoilInterface
 site_url: https://microbiomedata.github.io/submission-schema
 repo_url: https://github.com/microbiomedata/submission-schema
 
