@@ -205,7 +205,7 @@ modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
 local/nmdc.yaml:
-	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/20ed8a3/src/schema/nmdc.yaml
+	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/3807112/src/schema/nmdc.yaml
 
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
