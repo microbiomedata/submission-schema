@@ -635,6 +635,33 @@ soil_data:
   store_cond: frozen
 
 ```
+## SampleData-jgi_mt_data_exhaustive
+### Input
+```yaml
+jgi_mt_data:
+- analysis_type:
+  - metatranscriptomics
+  dnase_rna: 'no'
+  proposal_rna: '504000'
+  rna_absorb1: 2.02
+  rna_absorb2: 1.4
+  rna_concentration: 100.3
+  rna_cont_type: plate
+  rna_cont_well: H7
+  rna_container_id: cat_ht_1999
+  rna_isolate_meth: phenol/cloroform extraction
+  rna_project_contact: Leslie Ann Levine
+  rna_samp_id: '123456'
+  rna_sample_format: MDA reaction buffer
+  rna_sample_name: JGI_lagoon_14343
+  rna_seq_project: '123456789'
+  rna_seq_project_name: JGI Lagoon metatranscritpomics
+  rna_seq_project_pi: Patty Smith
+  rna_volume: 25.1
+  samp_name: sample name
+  source_mat_id: MPI:012345
+
+```
 ## SampleData-water-data-exhaustive-max-generic
 ### Input
 ```yaml
@@ -1024,6 +1051,31 @@ plant_associated_data:
   samp_name: our first houseplant is dying
   samp_store_temp: 20 C
   source_mat_id: example:plant_associated_data001
+
+```
+## SampleData-jgi_mt_data-illegal-string-rna_volume
+### Input
+```yaml
+jgi_mt_data:
+- analysis_type:
+  - metatranscriptomics
+  dnase_rna: 'no'
+  proposal_rna: '504000'
+  rna_concentration: 100.3
+  rna_cont_type: plate
+  rna_cont_well: H7
+  rna_container_id: cat_ht_1999
+  rna_isolate_meth: phenol/cloroform extraction
+  rna_project_contact: Leslie Ann Levine
+  rna_samp_id: '123456'
+  rna_sample_format: MDA reaction buffer
+  rna_sample_name: JGI_lagoon_14343
+  rna_seq_project: '123456789'
+  rna_seq_project_name: JGI Lagoon metatranscritpomics
+  rna_seq_project_pi: Patty Smith
+  rna_volume: Four hundred uL
+  samp_name: sample name
+  source_mat_id: MPI:012345
 
 ```
 ## SampleData-water-data-no-samp_name
@@ -1494,6 +1546,31 @@ jgi_mg_data:
   samp_name: xxx
 
 ```
+## SampleData-jgi_mt_data-captilized-analysis_type
+### Input
+```yaml
+jgi_mt_data:
+- analysis_type:
+  - Metatranscriptomics
+  dnase_rna: 'no'
+  proposal_rna: '504000'
+  rna_concentration: 100.3
+  rna_cont_type: plate
+  rna_cont_well: H7
+  rna_container_id: cat_ht_1999
+  rna_isolate_meth: phenol/cloroform extraction
+  rna_project_contact: Leslie Ann Levine
+  rna_samp_id: '123456'
+  rna_sample_format: MDA reaction buffer
+  rna_sample_name: JGI_lagoon_14343
+  rna_seq_project: '123456789'
+  rna_seq_project_name: JGI Lagoon metatranscritpomics
+  rna_seq_project_pi: Patty Smith
+  rna_volume: 25.1
+  samp_name: sample name
+  source_mat_id: MPI:012345
+
+```
 ## SampleData-jgi_mt_data-illegal-string-rna_cont_type
 ### Input
 ```yaml
@@ -1716,6 +1793,33 @@ jgi_mg_data:
   samp_name: xxx
 
 ```
+## SampleData-jgi_mt_data-illegal-string-rna_absorb2
+### Input
+```yaml
+jgi_mt_data:
+- analysis_type:
+  - metatranscriptomics
+  dnase_rna: 'no'
+  proposal_rna: '504000'
+  rna_absorb1: 2.02
+  rna_absorb2: two and a half
+  rna_concentration: 100.3
+  rna_cont_type: plate
+  rna_cont_well: H7
+  rna_container_id: cat_ht_1999
+  rna_isolate_meth: phenol/cloroform extraction
+  rna_project_contact: Leslie Ann Levine
+  rna_samp_id: '123456'
+  rna_sample_format: MDA reaction buffer
+  rna_sample_name: JGI_lagoon_14343
+  rna_seq_project: '123456789'
+  rna_seq_project_name: JGI Lagoon metatranscritpomics
+  rna_seq_project_pi: Patty Smith
+  rna_volume: 25.1
+  samp_name: sample name
+  source_mat_id: MPI:012345
+
+```
 ## SampleData-jgi_mt_data-rna-capital-rna_sample_format
 ### Input
 ```yaml
@@ -1811,11 +1915,29 @@ water_data:
   specific_ecosystem: Unclassified
 
 ```
-## SampleData
+## SampleData-jgi_mt_data-illegal-string-anlaysis_type
 ### Input
 ```yaml
-null
-...
+jgi_mt_data:
+- analysis_type:
+  - transcriptomics
+  dnase_rna: 'no'
+  proposal_rna: '504000'
+  rna_concentration: 100.3
+  rna_cont_type: plate
+  rna_cont_well: H7
+  rna_container_id: cat_ht_1999
+  rna_isolate_meth: phenol/cloroform extraction
+  rna_project_contact: Leslie Ann Levine
+  rna_samp_id: '123456'
+  rna_sample_format: MDA reaction buffer
+  rna_sample_name: JGI_lagoon_14343
+  rna_seq_project: '123456789'
+  rna_seq_project_name: JGI Lagoon metatranscritpomics
+  rna_seq_project_pi: Patty Smith
+  rna_volume: 25.1
+  samp_name: sample name
+  source_mat_id: MPI:012345
 
 ```
 ## SampleData-soil-data-bad-geo_loc_name
@@ -2118,6 +2240,32 @@ water_data:
   geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   specific_ecosystem: Unclassified
+
+```
+## SampleData-jgi_mt_data-illlegal-string-rna_absorb1
+### Input
+```yaml
+jgi_mt_data:
+- analysis_type:
+  - metatranscriptomics
+  dnase_rna: 'no'
+  proposal_rna: '504000'
+  rna_absorb1: one
+  rna_concentration: 100.3
+  rna_cont_type: plate
+  rna_cont_well: H7
+  rna_container_id: cat_ht_1999
+  rna_isolate_meth: phenol/cloroform extraction
+  rna_project_contact: Leslie Ann Levine
+  rna_samp_id: '123456'
+  rna_sample_format: MDA reaction buffer
+  rna_sample_name: JGI_lagoon_14343
+  rna_seq_project: '123456789'
+  rna_seq_project_name: JGI Lagoon metatranscritpomics
+  rna_seq_project_pi: Patty Smith
+  rna_volume: 25.1
+  samp_name: sample name
+  source_mat_id: MPI:012345
 
 ```
 ## SampleData-jgi_mg_data-bad-dna_volume
