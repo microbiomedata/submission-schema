@@ -1,10 +1,10 @@
 jgi_mt_data:
-  - samp_name: sample name
-    source_mat_id: MPI:012345
+  - analysis_type:
+      - metatranscriptomics
     dnase_rna: "no"
     proposal_rna: '504000'
     rna_concentration: 100.3
-    rna_cont_type: plate 
+    rna_cont_type: plate
     rna_cont_well: H7
     rna_container_id: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
@@ -16,5 +16,5 @@ jgi_mt_data:
     rna_seq_project_name: RNA Sequencing Project Name # Values will be prefilled by NMDC. Appears to accept any string.
     rna_seq_project_pi: Patty Smith
     rna_volume: 25.1
-    analysis_type: 
-      - metatranscriptomics
+    samp_name: sample name
+    source_mat_id: MPI:012345
