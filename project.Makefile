@@ -500,12 +500,12 @@ bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.sch
 	
 
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+#		 --columns-to-insert enum \
+#		 --columns-to-insert permissible_value
 	mkdir -p $(@D)
 	$(RUN) generate_and_populate_template \
 		 --base-class slot_definition \
 		 --columns-to-insert class \
-		 --columns-to-insert enum \
-		 --columns-to-insert permissible_value \
 		 --columns-to-insert slot \
 		 --destination-template $@ \
 		 --meta-model-excel-file local/meta.xlsx \
