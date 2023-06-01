@@ -2030,75 +2030,166 @@
         }
       }
     },
-    "weekday_enum": {
-      "name": "weekday_enum",
+    "OxyStatSampEnum": {
+      "name": "OxyStatSampEnum",
+      "description": "placeholder enum descr, DO NOT SORT",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "Monday": {
-          "text": "Monday"
+        "aerobic": {
+          "text": "aerobic",
+          "description": "placeholder PV descr, DO NOT SORT"
         },
-        "Tuesday": {
-          "text": "Tuesday"
+        "anaerobic": {
+          "text": "anaerobic",
+          "description": "placeholder PV descr, DO NOT SORT"
         },
-        "Wednesday": {
-          "text": "Wednesday"
-        },
-        "Thursday": {
-          "text": "Thursday"
-        },
-        "Friday": {
-          "text": "Friday"
-        },
-        "Saturday": {
-          "text": "Saturday"
-        },
-        "Sunday": {
-          "text": "Sunday"
+        "other": {
+          "text": "other",
+          "description": "placeholder PV descr, DO NOT SORT"
         }
       }
     },
-    "specific_enum": {
-      "name": "specific_enum",
+    "building_setting_enum": {
+      "name": "building_setting_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "operation": {
-          "text": "operation"
+        "urban": {
+          "text": "urban"
         },
-        "as built": {
-          "text": "as built"
+        "suburban": {
+          "text": "suburban"
         },
-        "construction": {
-          "text": "construction"
+        "exurban": {
+          "text": "exurban"
         },
-        "bid": {
-          "text": "bid"
-        },
-        "design": {
-          "text": "design"
-        },
-        "photos": {
-          "text": "photos"
+        "rural": {
+          "text": "rural"
         }
       }
     },
-    "window_vert_pos_enum": {
-      "name": "window_vert_pos_enum",
+    "samp_floor_enum": {
+      "name": "samp_floor_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "bottom": {
-          "text": "bottom"
+        "1st floor": {
+          "text": "1st floor"
         },
-        "middle": {
-          "text": "middle"
+        "2nd floor": {
+          "text": "2nd floor"
         },
-        "top": {
-          "text": "top"
+        "basement": {
+          "text": "basement"
         },
-        "low": {
-          "text": "low"
+        "lobby": {
+          "text": "lobby"
+        }
+      }
+    },
+    "door_type_enum": {
+      "name": "door_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "composite": {
+          "text": "composite"
         },
-        "high": {
-          "text": "high"
+        "metal": {
+          "text": "metal"
+        },
+        "wooden": {
+          "text": "wooden"
+        }
+      }
+    },
+    "wall_texture_enum": {
+      "name": "wall_texture_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "crows feet": {
+          "text": "crows feet"
+        },
+        "crows-foot stomp": {
+          "text": "crows-foot stomp"
+        },
+        "": {
+          "text": ""
+        },
+        "double skip": {
+          "text": "double skip"
+        },
+        "hawk and trowel": {
+          "text": "hawk and trowel"
+        },
+        "knockdown": {
+          "text": "knockdown"
+        },
+        "popcorn": {
+          "text": "popcorn"
+        },
+        "orange peel": {
+          "text": "orange peel"
+        },
+        "rosebud stomp": {
+          "text": "rosebud stomp"
+        },
+        "Santa-Fe texture": {
+          "text": "Santa-Fe texture"
+        },
+        "skip trowel": {
+          "text": "skip trowel"
+        },
+        "smooth": {
+          "text": "smooth"
+        },
+        "stomp knockdown": {
+          "text": "stomp knockdown"
+        },
+        "swirl": {
+          "text": "swirl"
+        }
+      }
+    },
+    "gender_restroom_enum": {
+      "name": "gender_restroom_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "all gender": {
+          "text": "all gender"
+        },
+        "female": {
+          "text": "female"
+        },
+        "gender neurtral": {
+          "text": "gender neurtral"
+        },
+        "male": {
+          "text": "male"
+        },
+        "male and female": {
+          "text": "male and female"
+        },
+        "unisex": {
+          "text": "unisex"
+        }
+      }
+    },
+    "water_feat_type_enum": {
+      "name": "water_feat_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "fountain": {
+          "text": "fountain"
+        },
+        "pool": {
+          "text": "pool"
+        },
+        "standing feature": {
+          "text": "standing feature"
+        },
+        "stream": {
+          "text": "stream"
+        },
+        "waterfall": {
+          "text": "waterfall"
         }
       }
     },
@@ -2132,26 +2223,74 @@
         }
       }
     },
-    "occup_document_enum": {
-      "name": "occup_document_enum",
+    "wall_surf_treatment_enum": {
+      "name": "wall_surf_treatment_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "automated count": {
-          "text": "automated count"
+        "painted": {
+          "text": "painted"
         },
-        "estimate": {
-          "text": "estimate"
+        "wall paper": {
+          "text": "wall paper"
         },
-        "manual count": {
-          "text": "manual count"
+        "no treatment": {
+          "text": "no treatment"
         },
-        "videos": {
-          "text": "videos"
+        "paneling": {
+          "text": "paneling"
+        },
+        "stucco": {
+          "text": "stucco"
+        },
+        "fabric": {
+          "text": "fabric"
         }
       }
     },
-    "drawings_enum": {
-      "name": "drawings_enum",
+    "shading_device_type_enum": {
+      "name": "shading_device_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "bahama shutters": {
+          "text": "bahama shutters"
+        },
+        "exterior roll blind": {
+          "text": "exterior roll blind"
+        },
+        "gambrel awning": {
+          "text": "gambrel awning"
+        },
+        "hood awning": {
+          "text": "hood awning"
+        },
+        "porchroller awning": {
+          "text": "porchroller awning"
+        },
+        "sarasota shutters": {
+          "text": "sarasota shutters"
+        },
+        "slatted aluminum": {
+          "text": "slatted aluminum"
+        },
+        "solid aluminum awning": {
+          "text": "solid aluminum awning"
+        },
+        "sun screen": {
+          "text": "sun screen"
+        },
+        "tree": {
+          "text": "tree"
+        },
+        "trellis": {
+          "text": "trellis"
+        },
+        "venetian awning": {
+          "text": "venetian awning"
+        }
+      }
+    },
+    "specific_enum": {
+      "name": "specific_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
         "operation": {
@@ -2169,38 +2308,23 @@
         "design": {
           "text": "design"
         },
-        "building navigation map": {
-          "text": "building navigation map"
-        },
-        "diagram": {
-          "text": "diagram"
-        },
-        "sketch": {
-          "text": "sketch"
+        "photos": {
+          "text": "photos"
         }
       }
     },
-    "door_move_enum": {
-      "name": "door_move_enum",
+    "furniture_enum": {
+      "name": "furniture_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "collapsible": {
-          "text": "collapsible"
+        "cabinet": {
+          "text": "cabinet"
         },
-        "folding": {
-          "text": "folding"
+        "chair": {
+          "text": "chair"
         },
-        "revolving": {
-          "text": "revolving"
-        },
-        "rolling shutter": {
-          "text": "rolling shutter"
-        },
-        "sliding": {
-          "text": "sliding"
-        },
-        "swinging": {
-          "text": "swinging"
+        "desks": {
+          "text": "desks"
         }
       }
     },
@@ -2249,18 +2373,198 @@
         }
       }
     },
-    "train_stop_loc_enum": {
-      "name": "train_stop_loc_enum",
+    "floor_struc_enum": {
+      "name": "floor_struc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "end": {
-          "text": "end"
+        "balcony": {
+          "text": "balcony"
         },
-        "mid": {
-          "text": "mid"
+        "floating floor": {
+          "text": "floating floor"
         },
-        "downtown": {
-          "text": "downtown"
+        "glass floor": {
+          "text": "glass floor"
+        },
+        "raised floor": {
+          "text": "raised floor"
+        },
+        "sprung floor": {
+          "text": "sprung floor"
+        },
+        "wood-framed": {
+          "text": "wood-framed"
+        },
+        "concrete": {
+          "text": "concrete"
+        }
+      }
+    },
+    "ceil_type_enum": {
+      "name": "ceil_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "cathedral": {
+          "text": "cathedral"
+        },
+        "dropped": {
+          "text": "dropped"
+        },
+        "concave": {
+          "text": "concave"
+        },
+        "barrel-shaped": {
+          "text": "barrel-shaped"
+        },
+        "coffered": {
+          "text": "coffered"
+        },
+        "cove": {
+          "text": "cove"
+        },
+        "stretched": {
+          "text": "stretched"
+        }
+      }
+    },
+    "room_condt_enum": {
+      "name": "room_condt_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "new": {
+          "text": "new"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "damaged": {
+          "text": "damaged"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible signs of mold/mildew": {
+          "text": "visible signs of mold/mildew"
+        }
+      }
+    },
+    "ext_wall_orient_enum": {
+      "name": "ext_wall_orient_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
+        },
+        "south": {
+          "text": "south"
+        },
+        "east": {
+          "text": "east"
+        },
+        "west": {
+          "text": "west"
+        },
+        "northeast": {
+          "text": "northeast"
+        },
+        "southeast": {
+          "text": "southeast"
+        },
+        "southwest": {
+          "text": "southwest"
+        },
+        "northwest": {
+          "text": "northwest"
+        }
+      }
+    },
+    "arch_struc_enum": {
+      "name": "arch_struc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "building": {
+          "text": "building"
+        },
+        "shed": {
+          "text": "shed"
+        },
+        "home": {
+          "text": "home"
+        }
+      }
+    },
+    "window_horiz_pos_enum": {
+      "name": "window_horiz_pos_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "left": {
+          "text": "left"
+        },
+        "middle": {
+          "text": "middle"
+        },
+        "right": {
+          "text": "right"
+        }
+      }
+    },
+    "wall_finish_mat_enum": {
+      "name": "wall_finish_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "plaster": {
+          "text": "plaster"
+        },
+        "gypsum plaster": {
+          "text": "gypsum plaster"
+        },
+        "veneer plaster": {
+          "text": "veneer plaster"
+        },
+        "gypsum board": {
+          "text": "gypsum board"
+        },
+        "tile": {
+          "text": "tile"
+        },
+        "terrazzo": {
+          "text": "terrazzo"
+        },
+        "stone facing": {
+          "text": "stone facing"
+        },
+        "acoustical treatment": {
+          "text": "acoustical treatment"
+        },
+        "wood": {
+          "text": "wood"
+        },
+        "metal": {
+          "text": "metal"
+        },
+        "masonry": {
+          "text": "masonry"
+        }
+      }
+    },
+    "quad_pos_enum": {
+      "name": "quad_pos_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "North side": {
+          "text": "North side"
+        },
+        "West side": {
+          "text": "West side"
+        },
+        "South side": {
+          "text": "South side"
+        },
+        "East side": {
+          "text": "East side"
         }
       }
     },
@@ -2276,6 +2580,360 @@
         },
         "sideways": {
           "text": "sideways"
+        }
+      }
+    },
+    "weekday_enum": {
+      "name": "weekday_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "Monday": {
+          "text": "Monday"
+        },
+        "Tuesday": {
+          "text": "Tuesday"
+        },
+        "Wednesday": {
+          "text": "Wednesday"
+        },
+        "Thursday": {
+          "text": "Thursday"
+        },
+        "Friday": {
+          "text": "Friday"
+        },
+        "Saturday": {
+          "text": "Saturday"
+        },
+        "Sunday": {
+          "text": "Sunday"
+        }
+      }
+    },
+    "door_move_enum": {
+      "name": "door_move_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "collapsible": {
+          "text": "collapsible"
+        },
+        "folding": {
+          "text": "folding"
+        },
+        "revolving": {
+          "text": "revolving"
+        },
+        "rolling shutter": {
+          "text": "rolling shutter"
+        },
+        "sliding": {
+          "text": "sliding"
+        },
+        "swinging": {
+          "text": "swinging"
+        }
+      }
+    },
+    "samp_weather_enum": {
+      "name": "samp_weather_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "clear sky": {
+          "text": "clear sky"
+        },
+        "cloudy": {
+          "text": "cloudy"
+        },
+        "foggy": {
+          "text": "foggy"
+        },
+        "hail": {
+          "text": "hail"
+        },
+        "rain": {
+          "text": "rain"
+        },
+        "snow": {
+          "text": "snow"
+        },
+        "sleet": {
+          "text": "sleet"
+        },
+        "sunny": {
+          "text": "sunny"
+        },
+        "windy": {
+          "text": "windy"
+        }
+      }
+    },
+    "door_cond_enum": {
+      "name": "door_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "damaged": {
+          "text": "damaged"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "new": {
+          "text": "new"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        }
+      }
+    },
+    "wall_loc_enum": {
+      "name": "wall_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "north": {
+          "text": "north"
+        },
+        "south": {
+          "text": "south"
+        },
+        "east": {
+          "text": "east"
+        },
+        "west": {
+          "text": "west"
+        }
+      }
+    },
+    "vis_media_enum": {
+      "name": "vis_media_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "photos": {
+          "text": "photos"
+        },
+        "videos": {
+          "text": "videos"
+        },
+        "commonly of the building": {
+          "text": "commonly of the building"
+        },
+        "site context (adjacent buildings, vegetation, terrain, streets)": {
+          "text": "site context (adjacent buildings, vegetation, terrain, streets)"
+        },
+        "interiors": {
+          "text": "interiors"
+        },
+        "equipment": {
+          "text": "equipment"
+        },
+        "3D scans": {
+          "text": "3D scans"
+        }
+      }
+    },
+    "door_mat_enum": {
+      "name": "door_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "aluminum": {
+          "text": "aluminum"
+        },
+        "cellular PVC": {
+          "text": "cellular PVC"
+        },
+        "engineered plastic": {
+          "text": "engineered plastic"
+        },
+        "fiberboard": {
+          "text": "fiberboard"
+        },
+        "fiberglass": {
+          "text": "fiberglass"
+        },
+        "metal": {
+          "text": "metal"
+        },
+        "thermoplastic alloy": {
+          "text": "thermoplastic alloy"
+        },
+        "vinyl": {
+          "text": "vinyl"
+        },
+        "wood": {
+          "text": "wood"
+        },
+        "wood/plastic composite": {
+          "text": "wood/plastic composite"
+        }
+      }
+    },
+    "train_line_enum": {
+      "name": "train_line_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "red": {
+          "text": "red"
+        },
+        "green": {
+          "text": "green"
+        },
+        "orange": {
+          "text": "orange"
+        }
+      }
+    },
+    "door_comp_type_enum": {
+      "name": "door_comp_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "metal covered": {
+          "text": "metal covered"
+        },
+        "revolving": {
+          "text": "revolving"
+        },
+        "sliding": {
+          "text": "sliding"
+        },
+        "telescopic": {
+          "text": "telescopic"
+        }
+      }
+    },
+    "ceil_texture_enum": {
+      "name": "ceil_texture_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "crows feet": {
+          "text": "crows feet"
+        },
+        "crows-foot stomp": {
+          "text": "crows-foot stomp"
+        },
+        "double skip": {
+          "text": "double skip"
+        },
+        "hawk and trowel": {
+          "text": "hawk and trowel"
+        },
+        "knockdown": {
+          "text": "knockdown"
+        },
+        "popcorn": {
+          "text": "popcorn"
+        },
+        "orange peel": {
+          "text": "orange peel"
+        },
+        "rosebud stomp": {
+          "text": "rosebud stomp"
+        },
+        "Santa-Fe texture": {
+          "text": "Santa-Fe texture"
+        },
+        "skip trowel": {
+          "text": "skip trowel"
+        },
+        "smooth": {
+          "text": "smooth"
+        },
+        "stomp knockdown": {
+          "text": "stomp knockdown"
+        },
+        "swirl": {
+          "text": "swirl"
+        }
+      }
+    },
+    "ceil_cond_enum": {
+      "name": "ceil_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "new": {
+          "text": "new"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "damaged": {
+          "text": "damaged"
+        },
+        "rupture": {
+          "text": "rupture"
+        }
+      }
+    },
+    "floor_water_mold_enum": {
+      "name": "floor_water_mold_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "mold odor": {
+          "text": "mold odor"
+        },
+        "wet floor": {
+          "text": "wet floor"
+        },
+        "water stains": {
+          "text": "water stains"
+        },
+        "wall discoloration": {
+          "text": "wall discoloration"
+        },
+        "floor discoloration": {
+          "text": "floor discoloration"
+        },
+        "ceiling discoloration": {
+          "text": "ceiling discoloration"
+        },
+        "peeling paint or wallpaper": {
+          "text": "peeling paint or wallpaper"
+        },
+        "bulging walls": {
+          "text": "bulging walls"
+        },
+        "condensation": {
+          "text": "condensation"
+        }
+      }
+    },
+    "door_type_metal_enum": {
+      "name": "door_type_metal_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "collapsible": {
+          "text": "collapsible"
+        },
+        "corrugated steel": {
+          "text": "corrugated steel"
+        },
+        "hollow": {
+          "text": "hollow"
+        },
+        "rolling shutters": {
+          "text": "rolling shutters"
+        },
+        "steel plate": {
+          "text": "steel plate"
+        }
+      }
+    },
+    "rel_samp_loc_enum": {
+      "name": "rel_samp_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "edge of car": {
+          "text": "edge of car"
+        },
+        "center of car": {
+          "text": "center of car"
+        },
+        "under a seat": {
+          "text": "under a seat"
         }
       }
     },
@@ -2297,90 +2955,225 @@
         }
       }
     },
-    "window_cover_enum": {
-      "name": "window_cover_enum",
+    "substructure_type_enum": {
+      "name": "substructure_type_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "blinds": {
-          "text": "blinds"
+        "crawlspace": {
+          "text": "crawlspace"
         },
-        "curtains": {
-          "text": "curtains"
+        "slab on grade": {
+          "text": "slab on grade"
+        },
+        "basement": {
+          "text": "basement"
+        }
+      }
+    },
+    "window_type_enum": {
+      "name": "window_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "single-hung sash window": {
+          "text": "single-hung sash window"
+        },
+        "horizontal sash window": {
+          "text": "horizontal sash window"
+        },
+        "fixed window": {
+          "text": "fixed window"
+        }
+      }
+    },
+    "floor_finish_mat_enum": {
+      "name": "floor_finish_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "tile": {
+          "text": "tile"
+        },
+        "wood strip or parquet": {
+          "text": "wood strip or parquet"
+        },
+        "carpet": {
+          "text": "carpet"
+        },
+        "rug": {
+          "text": "rug"
+        },
+        "laminate wood": {
+          "text": "laminate wood"
+        },
+        "lineoleum": {
+          "text": "lineoleum"
+        },
+        "vinyl composition tile": {
+          "text": "vinyl composition tile"
+        },
+        "sheet vinyl": {
+          "text": "sheet vinyl"
+        },
+        "stone": {
+          "text": "stone"
+        },
+        "bamboo": {
+          "text": "bamboo"
+        },
+        "cork": {
+          "text": "cork"
+        },
+        "terrazo": {
+          "text": "terrazo"
+        },
+        "concrete": {
+          "text": "concrete"
         },
         "none": {
           "text": "none"
+        },
+        "sealed": {
+          "text": "sealed"
+        },
+        "clear finish": {
+          "text": "clear finish"
+        },
+        "paint": {
+          "text": "paint"
+        },
+        "none or unfinished": {
+          "text": "none or unfinished"
         }
       }
     },
-    "room_loc_enum": {
-      "name": "room_loc_enum",
+    "shading_device_cond_enum": {
+      "name": "shading_device_cond_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "corner room": {
-          "text": "corner room"
+        "damaged": {
+          "text": "damaged"
         },
-        "interior room": {
-          "text": "interior room"
+        "needs repair": {
+          "text": "needs repair"
         },
-        "exterior wall": {
-          "text": "exterior wall"
+        "new": {
+          "text": "new"
+        },
+        "rupture": {
+          "text": "rupture"
+        },
+        "visible wear": {
+          "text": "visible wear"
         }
       }
     },
-    "heat_cool_type_enum": {
-      "name": "heat_cool_type_enum",
+    "occup_document_enum": {
+      "name": "occup_document_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "radiant system": {
-          "text": "radiant system"
+        "automated count": {
+          "text": "automated count"
         },
-        "heat pump": {
-          "text": "heat pump"
+        "estimate": {
+          "text": "estimate"
         },
-        "forced air system": {
-          "text": "forced air system"
+        "manual count": {
+          "text": "manual count"
         },
-        "steam forced heat": {
-          "text": "steam forced heat"
-        },
-        "wood stove": {
-          "text": "wood stove"
+        "videos": {
+          "text": "videos"
         }
       }
     },
-    "furniture_enum": {
-      "name": "furniture_enum",
+    "window_mat_enum": {
+      "name": "window_mat_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "cabinet": {
-          "text": "cabinet"
+        "clad": {
+          "text": "clad"
         },
-        "chair": {
-          "text": "chair"
+        "fiberglass": {
+          "text": "fiberglass"
         },
-        "desks": {
-          "text": "desks"
+        "metal": {
+          "text": "metal"
+        },
+        "vinyl": {
+          "text": "vinyl"
+        },
+        "wood": {
+          "text": "wood"
         }
       }
     },
-    "water_feat_type_enum": {
-      "name": "water_feat_type_enum",
+    "room_samp_pos_enum": {
+      "name": "room_samp_pos_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "fountain": {
-          "text": "fountain"
+        "north corner": {
+          "text": "north corner"
         },
-        "pool": {
-          "text": "pool"
+        "south corner": {
+          "text": "south corner"
         },
-        "standing feature": {
-          "text": "standing feature"
+        "west corner": {
+          "text": "west corner"
         },
-        "stream": {
-          "text": "stream"
+        "east corner": {
+          "text": "east corner"
         },
-        "waterfall": {
-          "text": "waterfall"
+        "northeast corner": {
+          "text": "northeast corner"
+        },
+        "northwest corner": {
+          "text": "northwest corner"
+        },
+        "southeast corner": {
+          "text": "southeast corner"
+        },
+        "southwest corner": {
+          "text": "southwest corner"
+        },
+        "center": {
+          "text": "center"
+        }
+      }
+    },
+    "train_stop_loc_enum": {
+      "name": "train_stop_loc_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "end": {
+          "text": "end"
+        },
+        "mid": {
+          "text": "mid"
+        },
+        "downtown": {
+          "text": "downtown"
+        }
+      }
+    },
+    "wall_const_type_enum": {
+      "name": "wall_const_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "frame construction": {
+          "text": "frame construction"
+        },
+        "joisted masonry": {
+          "text": "joisted masonry"
+        },
+        "light noncombustible": {
+          "text": "light noncombustible"
+        },
+        "masonry noncombustible": {
+          "text": "masonry noncombustible"
+        },
+        "modified fire resistive": {
+          "text": "modified fire resistive"
+        },
+        "fire resistive": {
+          "text": "fire resistive"
         }
       }
     },
@@ -2402,23 +3195,41 @@
         }
       }
     },
-    "arch_struc_enum": {
-      "name": "arch_struc_enum",
+    "mech_struc_enum": {
+      "name": "mech_struc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "building": {
-          "text": "building"
+        "subway": {
+          "text": "subway"
         },
-        "shed": {
-          "text": "shed"
+        "coach": {
+          "text": "coach"
         },
-        "home": {
-          "text": "home"
+        "carriage": {
+          "text": "carriage"
+        },
+        "elevator": {
+          "text": "elevator"
+        },
+        "escalator": {
+          "text": "escalator"
+        },
+        "boat": {
+          "text": "boat"
+        },
+        "train": {
+          "text": "train"
+        },
+        "car": {
+          "text": "car"
+        },
+        "bus": {
+          "text": "bus"
         }
       }
     },
-    "heat_deliv_loc_enum": {
-      "name": "heat_deliv_loc_enum",
+    "window_loc_enum": {
+      "name": "window_loc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
         "north": {
@@ -2432,6 +3243,72 @@
         },
         "west": {
           "text": "west"
+        }
+      }
+    },
+    "indoor_space_enum": {
+      "name": "indoor_space_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "bedroom": {
+          "text": "bedroom"
+        },
+        "office": {
+          "text": "office"
+        },
+        "bathroom": {
+          "text": "bathroom"
+        },
+        "foyer": {
+          "text": "foyer"
+        },
+        "kitchen": {
+          "text": "kitchen"
+        },
+        "locker room": {
+          "text": "locker room"
+        },
+        "hallway": {
+          "text": "hallway"
+        },
+        "elevator": {
+          "text": "elevator"
+        }
+      }
+    },
+    "int_wall_cond_enum": {
+      "name": "int_wall_cond_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "new": {
+          "text": "new"
+        },
+        "visible wear": {
+          "text": "visible wear"
+        },
+        "needs repair": {
+          "text": "needs repair"
+        },
+        "damaged": {
+          "text": "damaged"
+        },
+        "rupture": {
+          "text": "rupture"
+        }
+      }
+    },
+    "window_cover_enum": {
+      "name": "window_cover_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "blinds": {
+          "text": "blinds"
+        },
+        "curtains": {
+          "text": "curtains"
+        },
+        "none": {
+          "text": "none"
         }
       }
     },
@@ -2471,24 +3348,48 @@
         }
       }
     },
-    "ceil_cond_enum": {
-      "name": "ceil_cond_enum",
+    "train_stat_loc_enum": {
+      "name": "train_stat_loc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "new": {
-          "text": "new"
+        "south station above ground": {
+          "text": "south station above ground"
         },
-        "visible wear": {
-          "text": "visible wear"
+        "south station underground": {
+          "text": "south station underground"
         },
-        "needs repair": {
-          "text": "needs repair"
+        "south station amtrak": {
+          "text": "south station amtrak"
         },
-        "damaged": {
-          "text": "damaged"
+        "forest hills": {
+          "text": "forest hills"
         },
-        "rupture": {
-          "text": "rupture"
+        "riverside": {
+          "text": "riverside"
+        }
+      }
+    },
+    "filter_type_enum": {
+      "name": "filter_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "particulate air filter": {
+          "text": "particulate air filter"
+        },
+        "chemical air filter": {
+          "text": "chemical air filter"
+        },
+        "low-MERV pleated media": {
+          "text": "low-MERV pleated media"
+        },
+        "HEPA": {
+          "text": "HEPA"
+        },
+        "electrostatic": {
+          "text": "electrostatic"
+        },
+        "gas-phase or ultraviolet air treatments": {
+          "text": "gas-phase or ultraviolet air treatments"
         }
       }
     },
@@ -2543,143 +3444,65 @@
         }
       }
     },
-    "door_comp_type_enum": {
-      "name": "door_comp_type_enum",
+    "window_vert_pos_enum": {
+      "name": "window_vert_pos_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "metal covered": {
-          "text": "metal covered"
+        "bottom": {
+          "text": "bottom"
         },
-        "revolving": {
-          "text": "revolving"
+        "middle": {
+          "text": "middle"
         },
-        "sliding": {
-          "text": "sliding"
+        "top": {
+          "text": "top"
         },
-        "telescopic": {
-          "text": "telescopic"
+        "low": {
+          "text": "low"
+        },
+        "high": {
+          "text": "high"
         }
       }
     },
-    "wall_texture_enum": {
-      "name": "wall_texture_enum",
+    "room_loc_enum": {
+      "name": "room_loc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "crows feet": {
-          "text": "crows feet"
+        "corner room": {
+          "text": "corner room"
         },
-        "crows-foot stomp": {
-          "text": "crows-foot stomp"
+        "interior room": {
+          "text": "interior room"
         },
-        "": {
-          "text": ""
-        },
-        "double skip": {
-          "text": "double skip"
-        },
-        "hawk and trowel": {
-          "text": "hawk and trowel"
-        },
-        "knockdown": {
-          "text": "knockdown"
-        },
-        "popcorn": {
-          "text": "popcorn"
-        },
-        "orange peel": {
-          "text": "orange peel"
-        },
-        "rosebud stomp": {
-          "text": "rosebud stomp"
-        },
-        "Santa-Fe texture": {
-          "text": "Santa-Fe texture"
-        },
-        "skip trowel": {
-          "text": "skip trowel"
-        },
-        "smooth": {
-          "text": "smooth"
-        },
-        "stomp knockdown": {
-          "text": "stomp knockdown"
-        },
-        "swirl": {
-          "text": "swirl"
+        "exterior wall": {
+          "text": "exterior wall"
         }
       }
     },
-    "wall_loc_enum": {
-      "name": "wall_loc_enum",
+    "heat_cool_type_enum": {
+      "name": "heat_cool_type_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "north": {
-          "text": "north"
+        "radiant system": {
+          "text": "radiant system"
         },
-        "south": {
-          "text": "south"
+        "heat pump": {
+          "text": "heat pump"
         },
-        "east": {
-          "text": "east"
+        "forced air system": {
+          "text": "forced air system"
         },
-        "west": {
-          "text": "west"
+        "steam forced heat": {
+          "text": "steam forced heat"
+        },
+        "wood stove": {
+          "text": "wood stove"
         }
       }
     },
-    "substructure_type_enum": {
-      "name": "substructure_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "crawlspace": {
-          "text": "crawlspace"
-        },
-        "slab on grade": {
-          "text": "slab on grade"
-        },
-        "basement": {
-          "text": "basement"
-        }
-      }
-    },
-    "door_mat_enum": {
-      "name": "door_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "aluminum": {
-          "text": "aluminum"
-        },
-        "cellular PVC": {
-          "text": "cellular PVC"
-        },
-        "engineered plastic": {
-          "text": "engineered plastic"
-        },
-        "fiberboard": {
-          "text": "fiberboard"
-        },
-        "fiberglass": {
-          "text": "fiberglass"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "thermoplastic alloy": {
-          "text": "thermoplastic alloy"
-        },
-        "vinyl": {
-          "text": "vinyl"
-        },
-        "wood": {
-          "text": "wood"
-        },
-        "wood/plastic composite": {
-          "text": "wood/plastic composite"
-        }
-      }
-    },
-    "ext_wall_orient_enum": {
-      "name": "ext_wall_orient_enum",
+    "ext_window_orient_enum": {
+      "name": "ext_window_orient_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
         "north": {
@@ -2708,80 +3531,65 @@
         }
       }
     },
-    "mech_struc_enum": {
-      "name": "mech_struc_enum",
+    "heat_deliv_loc_enum": {
+      "name": "heat_deliv_loc_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "subway": {
-          "text": "subway"
+        "north": {
+          "text": "north"
         },
-        "coach": {
-          "text": "coach"
+        "south": {
+          "text": "south"
         },
-        "carriage": {
-          "text": "carriage"
+        "east": {
+          "text": "east"
         },
-        "elevator": {
-          "text": "elevator"
-        },
-        "escalator": {
-          "text": "escalator"
-        },
-        "boat": {
-          "text": "boat"
-        },
-        "train": {
-          "text": "train"
-        },
-        "car": {
-          "text": "car"
-        },
-        "bus": {
-          "text": "bus"
+        "west": {
+          "text": "west"
         }
       }
     },
-    "building_setting_enum": {
-      "name": "building_setting_enum",
+    "handidness_enum": {
+      "name": "handidness_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "urban": {
-          "text": "urban"
+        "ambidexterity": {
+          "text": "ambidexterity"
         },
-        "suburban": {
-          "text": "suburban"
+        "left handedness": {
+          "text": "left handedness"
         },
-        "exurban": {
-          "text": "exurban"
+        "mixed-handedness": {
+          "text": "mixed-handedness"
         },
-        "rural": {
-          "text": "rural"
+        "right handedness": {
+          "text": "right handedness"
         }
       }
     },
-    "door_type_metal_enum": {
-      "name": "door_type_metal_enum",
+    "floor_cond_enum": {
+      "name": "floor_cond_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "collapsible": {
-          "text": "collapsible"
+        "new": {
+          "text": "new"
         },
-        "corrugated steel": {
-          "text": "corrugated steel"
+        "visible wear": {
+          "text": "visible wear"
         },
-        "hollow": {
-          "text": "hollow"
+        "needs repair": {
+          "text": "needs repair"
         },
-        "rolling shutters": {
-          "text": "rolling shutters"
+        "damaged": {
+          "text": "damaged"
         },
-        "steel plate": {
-          "text": "steel plate"
+        "rupture": {
+          "text": "rupture"
         }
       }
     },
-    "shading_device_cond_enum": {
-      "name": "shading_device_cond_enum",
+    "window_cond_enum": {
+      "name": "window_cond_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
         "damaged": {
@@ -2798,6 +3606,108 @@
         },
         "visible wear": {
           "text": "visible wear"
+        }
+      }
+    },
+    "build_docs_enum": {
+      "name": "build_docs_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "building information model": {
+          "text": "building information model"
+        },
+        "commissioning report": {
+          "text": "commissioning report"
+        },
+        "complaint logs": {
+          "text": "complaint logs"
+        },
+        "contract administration": {
+          "text": "contract administration"
+        },
+        "cost estimate": {
+          "text": "cost estimate"
+        },
+        "janitorial schedules or logs": {
+          "text": "janitorial schedules or logs"
+        },
+        "maintenance plans": {
+          "text": "maintenance plans"
+        },
+        "schedule": {
+          "text": "schedule"
+        },
+        "sections": {
+          "text": "sections"
+        },
+        "shop drawings": {
+          "text": "shop drawings"
+        },
+        "submittals": {
+          "text": "submittals"
+        },
+        "ventilation system": {
+          "text": "ventilation system"
+        },
+        "windows": {
+          "text": "windows"
+        }
+      }
+    },
+    "light_type_enum": {
+      "name": "light_type_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "natural light": {
+          "text": "natural light"
+        },
+        "electric light": {
+          "text": "electric light"
+        },
+        "desk lamp": {
+          "text": "desk lamp"
+        },
+        "flourescent lights": {
+          "text": "flourescent lights"
+        },
+        "none": {
+          "text": "none"
+        }
+      }
+    },
+    "ceil_finish_mat_enum": {
+      "name": "ceil_finish_mat_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "drywall": {
+          "text": "drywall"
+        },
+        "mineral fibre": {
+          "text": "mineral fibre"
+        },
+        "tiles": {
+          "text": "tiles"
+        },
+        "PVC": {
+          "text": "PVC"
+        },
+        "plasterboard": {
+          "text": "plasterboard"
+        },
+        "metal": {
+          "text": "metal"
+        },
+        "fiberglass": {
+          "text": "fiberglass"
+        },
+        "stucco": {
+          "text": "stucco"
+        },
+        "mineral wool/calcium silicate": {
+          "text": "mineral wool/calcium silicate"
+        },
+        "wood": {
+          "text": "wood"
         }
       }
     },
@@ -2882,297 +3792,63 @@
         }
       }
     },
-    "rel_samp_loc_enum": {
-      "name": "rel_samp_loc_enum",
+    "indoor_surf_enum": {
+      "name": "indoor_surf_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "edge of car": {
-          "text": "edge of car"
+        "cabinet": {
+          "text": "cabinet"
         },
-        "center of car": {
-          "text": "center of car"
+        "ceiling": {
+          "text": "ceiling"
         },
-        "under a seat": {
-          "text": "under a seat"
+        "counter top": {
+          "text": "counter top"
+        },
+        "door": {
+          "text": "door"
+        },
+        "shelving": {
+          "text": "shelving"
+        },
+        "vent cover": {
+          "text": "vent cover"
+        },
+        "window": {
+          "text": "window"
+        },
+        "wall": {
+          "text": "wall"
         }
       }
     },
-    "light_type_enum": {
-      "name": "light_type_enum",
+    "drawings_enum": {
+      "name": "drawings_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "natural light": {
-          "text": "natural light"
+        "operation": {
+          "text": "operation"
         },
-        "electric light": {
-          "text": "electric light"
+        "as built": {
+          "text": "as built"
         },
-        "desk lamp": {
-          "text": "desk lamp"
+        "construction": {
+          "text": "construction"
         },
-        "flourescent lights": {
-          "text": "flourescent lights"
+        "bid": {
+          "text": "bid"
         },
-        "none": {
-          "text": "none"
-        }
-      }
-    },
-    "filter_type_enum": {
-      "name": "filter_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "particulate air filter": {
-          "text": "particulate air filter"
+        "design": {
+          "text": "design"
         },
-        "chemical air filter": {
-          "text": "chemical air filter"
+        "building navigation map": {
+          "text": "building navigation map"
         },
-        "low-MERV pleated media": {
-          "text": "low-MERV pleated media"
+        "diagram": {
+          "text": "diagram"
         },
-        "HEPA": {
-          "text": "HEPA"
-        },
-        "electrostatic": {
-          "text": "electrostatic"
-        },
-        "gas-phase or ultraviolet air treatments": {
-          "text": "gas-phase or ultraviolet air treatments"
-        }
-      }
-    },
-    "window_horiz_pos_enum": {
-      "name": "window_horiz_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "left": {
-          "text": "left"
-        },
-        "middle": {
-          "text": "middle"
-        },
-        "right": {
-          "text": "right"
-        }
-      }
-    },
-    "indoor_space_enum": {
-      "name": "indoor_space_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "bedroom": {
-          "text": "bedroom"
-        },
-        "office": {
-          "text": "office"
-        },
-        "bathroom": {
-          "text": "bathroom"
-        },
-        "foyer": {
-          "text": "foyer"
-        },
-        "kitchen": {
-          "text": "kitchen"
-        },
-        "locker room": {
-          "text": "locker room"
-        },
-        "hallway": {
-          "text": "hallway"
-        },
-        "elevator": {
-          "text": "elevator"
-        }
-      }
-    },
-    "samp_weather_enum": {
-      "name": "samp_weather_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "clear sky": {
-          "text": "clear sky"
-        },
-        "cloudy": {
-          "text": "cloudy"
-        },
-        "foggy": {
-          "text": "foggy"
-        },
-        "hail": {
-          "text": "hail"
-        },
-        "rain": {
-          "text": "rain"
-        },
-        "snow": {
-          "text": "snow"
-        },
-        "sleet": {
-          "text": "sleet"
-        },
-        "sunny": {
-          "text": "sunny"
-        },
-        "windy": {
-          "text": "windy"
-        }
-      }
-    },
-    "door_type_enum": {
-      "name": "door_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "composite": {
-          "text": "composite"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "wooden": {
-          "text": "wooden"
-        }
-      }
-    },
-    "wall_finish_mat_enum": {
-      "name": "wall_finish_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "plaster": {
-          "text": "plaster"
-        },
-        "gypsum plaster": {
-          "text": "gypsum plaster"
-        },
-        "veneer plaster": {
-          "text": "veneer plaster"
-        },
-        "gypsum board": {
-          "text": "gypsum board"
-        },
-        "tile": {
-          "text": "tile"
-        },
-        "terrazzo": {
-          "text": "terrazzo"
-        },
-        "stone facing": {
-          "text": "stone facing"
-        },
-        "acoustical treatment": {
-          "text": "acoustical treatment"
-        },
-        "wood": {
-          "text": "wood"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "masonry": {
-          "text": "masonry"
-        }
-      }
-    },
-    "room_samp_pos_enum": {
-      "name": "room_samp_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "north corner": {
-          "text": "north corner"
-        },
-        "south corner": {
-          "text": "south corner"
-        },
-        "west corner": {
-          "text": "west corner"
-        },
-        "east corner": {
-          "text": "east corner"
-        },
-        "northeast corner": {
-          "text": "northeast corner"
-        },
-        "northwest corner": {
-          "text": "northwest corner"
-        },
-        "southeast corner": {
-          "text": "southeast corner"
-        },
-        "southwest corner": {
-          "text": "southwest corner"
-        },
-        "center": {
-          "text": "center"
-        }
-      }
-    },
-    "window_mat_enum": {
-      "name": "window_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "clad": {
-          "text": "clad"
-        },
-        "fiberglass": {
-          "text": "fiberglass"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "vinyl": {
-          "text": "vinyl"
-        },
-        "wood": {
-          "text": "wood"
-        }
-      }
-    },
-    "room_condt_enum": {
-      "name": "room_condt_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "new": {
-          "text": "new"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "damaged": {
-          "text": "damaged"
-        },
-        "rupture": {
-          "text": "rupture"
-        },
-        "visible signs of mold/mildew": {
-          "text": "visible signs of mold/mildew"
-        }
-      }
-    },
-    "wall_surf_treatment_enum": {
-      "name": "wall_surf_treatment_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "painted": {
-          "text": "painted"
-        },
-        "wall paper": {
-          "text": "wall paper"
-        },
-        "no treatment": {
-          "text": "no treatment"
-        },
-        "paneling": {
-          "text": "paneling"
-        },
-        "stucco": {
-          "text": "stucco"
-        },
-        "fabric": {
-          "text": "fabric"
+        "sketch": {
+          "text": "sketch"
         }
       }
     },
@@ -3215,660 +3891,219 @@
         }
       }
     },
-    "samp_floor_enum": {
-      "name": "samp_floor_enum",
+    "hcr_enum": {
+      "name": "hcr_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "1st floor": {
-          "text": "1st floor"
+        "Oil Reservoir": {
+          "text": "Oil Reservoir"
         },
-        "2nd floor": {
-          "text": "2nd floor"
+        "Gas Reservoir": {
+          "text": "Gas Reservoir"
         },
-        "basement": {
-          "text": "basement"
+        "Oil Sand": {
+          "text": "Oil Sand"
         },
-        "lobby": {
-          "text": "lobby"
+        "Coalbed": {
+          "text": "Coalbed"
+        },
+        "Shale": {
+          "text": "Shale"
+        },
+        "Tight Oil Reservoir": {
+          "text": "Tight Oil Reservoir"
+        },
+        "Tight Gas Reservoir": {
+          "text": "Tight Gas Reservoir"
+        },
+        "other": {
+          "text": "other"
         }
       }
     },
-    "floor_struc_enum": {
-      "name": "floor_struc_enum",
+    "depos_env_enum": {
+      "name": "depos_env_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "balcony": {
-          "text": "balcony"
+        "Continental - Alluvial": {
+          "text": "Continental - Alluvial"
         },
-        "floating floor": {
-          "text": "floating floor"
+        "Continental - Aeolian": {
+          "text": "Continental - Aeolian"
         },
-        "glass floor": {
-          "text": "glass floor"
+        "Continental - Fluvial": {
+          "text": "Continental - Fluvial"
         },
-        "raised floor": {
-          "text": "raised floor"
+        "Continental - Lacustrine": {
+          "text": "Continental - Lacustrine"
         },
-        "sprung floor": {
-          "text": "sprung floor"
+        "Transitional - Deltaic": {
+          "text": "Transitional - Deltaic"
         },
-        "wood-framed": {
-          "text": "wood-framed"
+        "Transitional - Tidal": {
+          "text": "Transitional - Tidal"
         },
-        "concrete": {
-          "text": "concrete"
+        "Transitional - Lagoonal": {
+          "text": "Transitional - Lagoonal"
+        },
+        "Transitional - Beach": {
+          "text": "Transitional - Beach"
+        },
+        "Transitional - Lake": {
+          "text": "Transitional - Lake"
+        },
+        "Marine - Shallow": {
+          "text": "Marine - Shallow"
+        },
+        "Marine - Deep": {
+          "text": "Marine - Deep"
+        },
+        "Marine - Reef": {
+          "text": "Marine - Reef"
+        },
+        "Other - Evaporite": {
+          "text": "Other - Evaporite"
+        },
+        "Other - Glacial": {
+          "text": "Other - Glacial"
+        },
+        "Other - Volcanic": {
+          "text": "Other - Volcanic"
+        },
+        "other": {
+          "text": "other"
         }
       }
     },
-    "train_line_enum": {
-      "name": "train_line_enum",
+    "lithology_enum": {
+      "name": "lithology_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "red": {
-          "text": "red"
+        "Basement": {
+          "text": "Basement"
         },
-        "green": {
-          "text": "green"
+        "Chalk": {
+          "text": "Chalk"
         },
-        "orange": {
-          "text": "orange"
+        "Chert": {
+          "text": "Chert"
+        },
+        "Coal": {
+          "text": "Coal"
+        },
+        "Conglomerate": {
+          "text": "Conglomerate"
+        },
+        "Diatomite": {
+          "text": "Diatomite"
+        },
+        "Dolomite": {
+          "text": "Dolomite"
+        },
+        "Limestone": {
+          "text": "Limestone"
+        },
+        "Sandstone": {
+          "text": "Sandstone"
+        },
+        "Shale": {
+          "text": "Shale"
+        },
+        "Siltstone": {
+          "text": "Siltstone"
+        },
+        "Volcanic": {
+          "text": "Volcanic"
+        },
+        "other": {
+          "text": "other"
         }
       }
     },
-    "ceil_texture_enum": {
-      "name": "ceil_texture_enum",
+    "samp_collect_point_enum": {
+      "name": "samp_collect_point_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "crows feet": {
-          "text": "crows feet"
+        "well": {
+          "text": "well"
         },
-        "crows-foot stomp": {
-          "text": "crows-foot stomp"
+        "test well": {
+          "text": "test well"
         },
-        "double skip": {
-          "text": "double skip"
+        "drilling rig": {
+          "text": "drilling rig"
         },
-        "hawk and trowel": {
-          "text": "hawk and trowel"
+        "wellhead": {
+          "text": "wellhead"
         },
-        "knockdown": {
-          "text": "knockdown"
+        "separator": {
+          "text": "separator"
         },
-        "popcorn": {
-          "text": "popcorn"
+        "storage tank": {
+          "text": "storage tank"
         },
-        "orange peel": {
-          "text": "orange peel"
-        },
-        "rosebud stomp": {
-          "text": "rosebud stomp"
-        },
-        "Santa-Fe texture": {
-          "text": "Santa-Fe texture"
-        },
-        "skip trowel": {
-          "text": "skip trowel"
-        },
-        "smooth": {
-          "text": "smooth"
-        },
-        "stomp knockdown": {
-          "text": "stomp knockdown"
-        },
-        "swirl": {
-          "text": "swirl"
+        "other": {
+          "text": "other"
         }
       }
     },
-    "ext_window_orient_enum": {
-      "name": "ext_window_orient_enum",
+    "oxy_stat_samp_enum": {
+      "name": "oxy_stat_samp_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "north": {
-          "text": "north"
+        "aerobic": {
+          "text": "aerobic"
         },
-        "south": {
-          "text": "south"
+        "anaerobic": {
+          "text": "anaerobic"
         },
-        "east": {
-          "text": "east"
-        },
-        "west": {
-          "text": "west"
-        },
-        "northeast": {
-          "text": "northeast"
-        },
-        "southeast": {
-          "text": "southeast"
-        },
-        "southwest": {
-          "text": "southwest"
-        },
-        "northwest": {
-          "text": "northwest"
+        "other": {
+          "text": "other"
         }
       }
     },
-    "handidness_enum": {
-      "name": "handidness_enum",
+    "samp_subtype_enum": {
+      "name": "samp_subtype_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "ambidexterity": {
-          "text": "ambidexterity"
+        "oil phase": {
+          "text": "oil phase"
         },
-        "left handedness": {
-          "text": "left handedness"
+        "water phase": {
+          "text": "water phase"
         },
-        "mixed-handedness": {
-          "text": "mixed-handedness"
+        "biofilm": {
+          "text": "biofilm"
         },
-        "right handedness": {
-          "text": "right handedness"
+        "not applicable": {
+          "text": "not applicable"
+        },
+        "other": {
+          "text": "other"
         }
       }
     },
-    "window_loc_enum": {
-      "name": "window_loc_enum",
+    "hc_produced_enum": {
+      "name": "hc_produced_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "north": {
-          "text": "north"
+        "Oil": {
+          "text": "Oil"
         },
-        "south": {
-          "text": "south"
+        "Gas-Condensate": {
+          "text": "Gas-Condensate"
         },
-        "east": {
-          "text": "east"
+        "Gas": {
+          "text": "Gas"
         },
-        "west": {
-          "text": "west"
-        }
-      }
-    },
-    "int_wall_cond_enum": {
-      "name": "int_wall_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "new": {
-          "text": "new"
+        "Bitumen": {
+          "text": "Bitumen"
         },
-        "visible wear": {
-          "text": "visible wear"
+        "Coalbed Methane": {
+          "text": "Coalbed Methane"
         },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "damaged": {
-          "text": "damaged"
-        },
-        "rupture": {
-          "text": "rupture"
-        }
-      }
-    },
-    "quad_pos_enum": {
-      "name": "quad_pos_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "North side": {
-          "text": "North side"
-        },
-        "West side": {
-          "text": "West side"
-        },
-        "South side": {
-          "text": "South side"
-        },
-        "East side": {
-          "text": "East side"
-        }
-      }
-    },
-    "window_cond_enum": {
-      "name": "window_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "damaged": {
-          "text": "damaged"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "new": {
-          "text": "new"
-        },
-        "rupture": {
-          "text": "rupture"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        }
-      }
-    },
-    "gender_restroom_enum": {
-      "name": "gender_restroom_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "all gender": {
-          "text": "all gender"
-        },
-        "female": {
-          "text": "female"
-        },
-        "gender neurtral": {
-          "text": "gender neurtral"
-        },
-        "male": {
-          "text": "male"
-        },
-        "male and female": {
-          "text": "male and female"
-        },
-        "unisex": {
-          "text": "unisex"
-        }
-      }
-    },
-    "shading_device_type_enum": {
-      "name": "shading_device_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "bahama shutters": {
-          "text": "bahama shutters"
-        },
-        "exterior roll blind": {
-          "text": "exterior roll blind"
-        },
-        "gambrel awning": {
-          "text": "gambrel awning"
-        },
-        "hood awning": {
-          "text": "hood awning"
-        },
-        "porchroller awning": {
-          "text": "porchroller awning"
-        },
-        "sarasota shutters": {
-          "text": "sarasota shutters"
-        },
-        "slatted aluminum": {
-          "text": "slatted aluminum"
-        },
-        "solid aluminum awning": {
-          "text": "solid aluminum awning"
-        },
-        "sun screen": {
-          "text": "sun screen"
-        },
-        "tree": {
-          "text": "tree"
-        },
-        "trellis": {
-          "text": "trellis"
-        },
-        "venetian awning": {
-          "text": "venetian awning"
-        }
-      }
-    },
-    "floor_cond_enum": {
-      "name": "floor_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "new": {
-          "text": "new"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "damaged": {
-          "text": "damaged"
-        },
-        "rupture": {
-          "text": "rupture"
-        }
-      }
-    },
-    "wall_const_type_enum": {
-      "name": "wall_const_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "frame construction": {
-          "text": "frame construction"
-        },
-        "joisted masonry": {
-          "text": "joisted masonry"
-        },
-        "light noncombustible": {
-          "text": "light noncombustible"
-        },
-        "masonry noncombustible": {
-          "text": "masonry noncombustible"
-        },
-        "modified fire resistive": {
-          "text": "modified fire resistive"
-        },
-        "fire resistive": {
-          "text": "fire resistive"
-        }
-      }
-    },
-    "ceil_type_enum": {
-      "name": "ceil_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "cathedral": {
-          "text": "cathedral"
-        },
-        "dropped": {
-          "text": "dropped"
-        },
-        "concave": {
-          "text": "concave"
-        },
-        "barrel-shaped": {
-          "text": "barrel-shaped"
-        },
-        "coffered": {
-          "text": "coffered"
-        },
-        "cove": {
-          "text": "cove"
-        },
-        "stretched": {
-          "text": "stretched"
-        }
-      }
-    },
-    "window_type_enum": {
-      "name": "window_type_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "single-hung sash window": {
-          "text": "single-hung sash window"
-        },
-        "horizontal sash window": {
-          "text": "horizontal sash window"
-        },
-        "fixed window": {
-          "text": "fixed window"
-        }
-      }
-    },
-    "floor_water_mold_enum": {
-      "name": "floor_water_mold_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "mold odor": {
-          "text": "mold odor"
-        },
-        "wet floor": {
-          "text": "wet floor"
-        },
-        "water stains": {
-          "text": "water stains"
-        },
-        "wall discoloration": {
-          "text": "wall discoloration"
-        },
-        "floor discoloration": {
-          "text": "floor discoloration"
-        },
-        "ceiling discoloration": {
-          "text": "ceiling discoloration"
-        },
-        "peeling paint or wallpaper": {
-          "text": "peeling paint or wallpaper"
-        },
-        "bulging walls": {
-          "text": "bulging walls"
-        },
-        "condensation": {
-          "text": "condensation"
-        }
-      }
-    },
-    "build_docs_enum": {
-      "name": "build_docs_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "building information model": {
-          "text": "building information model"
-        },
-        "commissioning report": {
-          "text": "commissioning report"
-        },
-        "complaint logs": {
-          "text": "complaint logs"
-        },
-        "contract administration": {
-          "text": "contract administration"
-        },
-        "cost estimate": {
-          "text": "cost estimate"
-        },
-        "janitorial schedules or logs": {
-          "text": "janitorial schedules or logs"
-        },
-        "maintenance plans": {
-          "text": "maintenance plans"
-        },
-        "schedule": {
-          "text": "schedule"
-        },
-        "sections": {
-          "text": "sections"
-        },
-        "shop drawings": {
-          "text": "shop drawings"
-        },
-        "submittals": {
-          "text": "submittals"
-        },
-        "ventilation system": {
-          "text": "ventilation system"
-        },
-        "windows": {
-          "text": "windows"
-        }
-      }
-    },
-    "vis_media_enum": {
-      "name": "vis_media_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "photos": {
-          "text": "photos"
-        },
-        "videos": {
-          "text": "videos"
-        },
-        "commonly of the building": {
-          "text": "commonly of the building"
-        },
-        "site context (adjacent buildings, vegetation, terrain, streets)": {
-          "text": "site context (adjacent buildings, vegetation, terrain, streets)"
-        },
-        "interiors": {
-          "text": "interiors"
-        },
-        "equipment": {
-          "text": "equipment"
-        },
-        "3D scans": {
-          "text": "3D scans"
-        }
-      }
-    },
-    "train_stat_loc_enum": {
-      "name": "train_stat_loc_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "south station above ground": {
-          "text": "south station above ground"
-        },
-        "south station underground": {
-          "text": "south station underground"
-        },
-        "south station amtrak": {
-          "text": "south station amtrak"
-        },
-        "forest hills": {
-          "text": "forest hills"
-        },
-        "riverside": {
-          "text": "riverside"
-        }
-      }
-    },
-    "door_cond_enum": {
-      "name": "door_cond_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "damaged": {
-          "text": "damaged"
-        },
-        "needs repair": {
-          "text": "needs repair"
-        },
-        "new": {
-          "text": "new"
-        },
-        "rupture": {
-          "text": "rupture"
-        },
-        "visible wear": {
-          "text": "visible wear"
-        }
-      }
-    },
-    "floor_finish_mat_enum": {
-      "name": "floor_finish_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "tile": {
-          "text": "tile"
-        },
-        "wood strip or parquet": {
-          "text": "wood strip or parquet"
-        },
-        "carpet": {
-          "text": "carpet"
-        },
-        "rug": {
-          "text": "rug"
-        },
-        "laminate wood": {
-          "text": "laminate wood"
-        },
-        "lineoleum": {
-          "text": "lineoleum"
-        },
-        "vinyl composition tile": {
-          "text": "vinyl composition tile"
-        },
-        "sheet vinyl": {
-          "text": "sheet vinyl"
-        },
-        "stone": {
-          "text": "stone"
-        },
-        "bamboo": {
-          "text": "bamboo"
-        },
-        "cork": {
-          "text": "cork"
-        },
-        "terrazo": {
-          "text": "terrazo"
-        },
-        "concrete": {
-          "text": "concrete"
-        },
-        "none": {
-          "text": "none"
-        },
-        "sealed": {
-          "text": "sealed"
-        },
-        "clear finish": {
-          "text": "clear finish"
-        },
-        "paint": {
-          "text": "paint"
-        },
-        "none or unfinished": {
-          "text": "none or unfinished"
-        }
-      }
-    },
-    "ceil_finish_mat_enum": {
-      "name": "ceil_finish_mat_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "drywall": {
-          "text": "drywall"
-        },
-        "mineral fibre": {
-          "text": "mineral fibre"
-        },
-        "tiles": {
-          "text": "tiles"
-        },
-        "PVC": {
-          "text": "PVC"
-        },
-        "plasterboard": {
-          "text": "plasterboard"
-        },
-        "metal": {
-          "text": "metal"
-        },
-        "fiberglass": {
-          "text": "fiberglass"
-        },
-        "stucco": {
-          "text": "stucco"
-        },
-        "mineral wool/calcium silicate": {
-          "text": "mineral wool/calcium silicate"
-        },
-        "wood": {
-          "text": "wood"
-        }
-      }
-    },
-    "indoor_surf_enum": {
-      "name": "indoor_surf_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "cabinet": {
-          "text": "cabinet"
-        },
-        "ceiling": {
-          "text": "ceiling"
-        },
-        "counter top": {
-          "text": "counter top"
-        },
-        "door": {
-          "text": "door"
-        },
-        "shelving": {
-          "text": "shelving"
-        },
-        "vent cover": {
-          "text": "vent cover"
-        },
-        "window": {
-          "text": "window"
-        },
-        "wall": {
-          "text": "wall"
+        "other": {
+          "text": "other"
         }
       }
     },
@@ -3932,249 +4167,6 @@
         }
       }
     },
-    "samp_collect_point_enum": {
-      "name": "samp_collect_point_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "well": {
-          "text": "well"
-        },
-        "test well": {
-          "text": "test well"
-        },
-        "drilling rig": {
-          "text": "drilling rig"
-        },
-        "wellhead": {
-          "text": "wellhead"
-        },
-        "separator": {
-          "text": "separator"
-        },
-        "storage tank": {
-          "text": "storage tank"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "lithology_enum": {
-      "name": "lithology_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Basement": {
-          "text": "Basement"
-        },
-        "Chalk": {
-          "text": "Chalk"
-        },
-        "Chert": {
-          "text": "Chert"
-        },
-        "Coal": {
-          "text": "Coal"
-        },
-        "Conglomerate": {
-          "text": "Conglomerate"
-        },
-        "Diatomite": {
-          "text": "Diatomite"
-        },
-        "Dolomite": {
-          "text": "Dolomite"
-        },
-        "Limestone": {
-          "text": "Limestone"
-        },
-        "Sandstone": {
-          "text": "Sandstone"
-        },
-        "Shale": {
-          "text": "Shale"
-        },
-        "Siltstone": {
-          "text": "Siltstone"
-        },
-        "Volcanic": {
-          "text": "Volcanic"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "depos_env_enum": {
-      "name": "depos_env_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Continental - Alluvial": {
-          "text": "Continental - Alluvial"
-        },
-        "Continental - Aeolian": {
-          "text": "Continental - Aeolian"
-        },
-        "Continental - Fluvial": {
-          "text": "Continental - Fluvial"
-        },
-        "Continental - Lacustrine": {
-          "text": "Continental - Lacustrine"
-        },
-        "Transitional - Deltaic": {
-          "text": "Transitional - Deltaic"
-        },
-        "Transitional - Tidal": {
-          "text": "Transitional - Tidal"
-        },
-        "Transitional - Lagoonal": {
-          "text": "Transitional - Lagoonal"
-        },
-        "Transitional - Beach": {
-          "text": "Transitional - Beach"
-        },
-        "Transitional - Lake": {
-          "text": "Transitional - Lake"
-        },
-        "Marine - Shallow": {
-          "text": "Marine - Shallow"
-        },
-        "Marine - Deep": {
-          "text": "Marine - Deep"
-        },
-        "Marine - Reef": {
-          "text": "Marine - Reef"
-        },
-        "Other - Evaporite": {
-          "text": "Other - Evaporite"
-        },
-        "Other - Glacial": {
-          "text": "Other - Glacial"
-        },
-        "Other - Volcanic": {
-          "text": "Other - Volcanic"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "hcr_enum": {
-      "name": "hcr_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Oil Reservoir": {
-          "text": "Oil Reservoir"
-        },
-        "Gas Reservoir": {
-          "text": "Gas Reservoir"
-        },
-        "Oil Sand": {
-          "text": "Oil Sand"
-        },
-        "Coalbed": {
-          "text": "Coalbed"
-        },
-        "Shale": {
-          "text": "Shale"
-        },
-        "Tight Oil Reservoir": {
-          "text": "Tight Oil Reservoir"
-        },
-        "Tight Gas Reservoir": {
-          "text": "Tight Gas Reservoir"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "samp_subtype_enum": {
-      "name": "samp_subtype_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "oil phase": {
-          "text": "oil phase"
-        },
-        "water phase": {
-          "text": "water phase"
-        },
-        "biofilm": {
-          "text": "biofilm"
-        },
-        "not applicable": {
-          "text": "not applicable"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "oxy_stat_samp_enum": {
-      "name": "oxy_stat_samp_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "aerobic": {
-          "text": "aerobic"
-        },
-        "anaerobic": {
-          "text": "anaerobic"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "hc_produced_enum": {
-      "name": "hc_produced_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Oil": {
-          "text": "Oil"
-        },
-        "Gas-Condensate": {
-          "text": "Gas-Condensate"
-        },
-        "Gas": {
-          "text": "Gas"
-        },
-        "Bitumen": {
-          "text": "Bitumen"
-        },
-        "Coalbed Methane": {
-          "text": "Coalbed Methane"
-        },
-        "other": {
-          "text": "other"
-        }
-      }
-    },
-    "rel_to_oxygen_enum": {
-      "name": "rel_to_oxygen_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "aerobe": {
-          "text": "aerobe"
-        },
-        "anaerobe": {
-          "text": "anaerobe"
-        },
-        "facultative": {
-          "text": "facultative"
-        },
-        "microaerophilic": {
-          "text": "microaerophilic"
-        },
-        "microanaerobe": {
-          "text": "microanaerobe"
-        },
-        "obligate aerobe": {
-          "text": "obligate aerobe"
-        },
-        "obligate anaerobe": {
-          "text": "obligate anaerobe"
-        }
-      }
-    },
     "sr_geol_age_enum": {
       "name": "sr_geol_age_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4235,6 +4227,27 @@
         }
       }
     },
+    "sr_lithology_enum": {
+      "name": "sr_lithology_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "Clastic": {
+          "text": "Clastic"
+        },
+        "Carbonate": {
+          "text": "Carbonate"
+        },
+        "Coal": {
+          "text": "Coal"
+        },
+        "Biosilicieous": {
+          "text": "Biosilicieous"
+        },
+        "other": {
+          "text": "other"
+        }
+      }
+    },
     "sr_kerog_type_enum": {
       "name": "sr_kerog_type_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4277,24 +4290,159 @@
         }
       }
     },
-    "sr_lithology_enum": {
-      "name": "sr_lithology_enum",
+    "biotic_relationship_enum": {
+      "name": "biotic_relationship_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
-        "Clastic": {
-          "text": "Clastic"
+        "free living": {
+          "text": "free living"
         },
-        "Carbonate": {
-          "text": "Carbonate"
+        "parasite": {
+          "text": "parasite"
         },
-        "Coal": {
-          "text": "Coal"
+        "commensal": {
+          "text": "commensal"
         },
-        "Biosilicieous": {
-          "text": "Biosilicieous"
+        "symbiont": {
+          "text": "symbiont"
+        }
+      }
+    },
+    "tillage_enum": {
+      "name": "tillage_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "drill": {
+          "text": "drill"
         },
-        "other": {
-          "text": "other"
+        "cutting disc": {
+          "text": "cutting disc"
+        },
+        "ridge till": {
+          "text": "ridge till"
+        },
+        "strip tillage": {
+          "text": "strip tillage"
+        },
+        "zonal tillage": {
+          "text": "zonal tillage"
+        },
+        "chisel": {
+          "text": "chisel"
+        },
+        "tined": {
+          "text": "tined"
+        },
+        "mouldboard": {
+          "text": "mouldboard"
+        },
+        "disc plough": {
+          "text": "disc plough"
+        }
+      }
+    },
+    "fao_class_enum": {
+      "name": "fao_class_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "Acrisols": {
+          "text": "Acrisols"
+        },
+        "Andosols": {
+          "text": "Andosols"
+        },
+        "Arenosols": {
+          "text": "Arenosols"
+        },
+        "Cambisols": {
+          "text": "Cambisols"
+        },
+        "Chernozems": {
+          "text": "Chernozems"
+        },
+        "Ferralsols": {
+          "text": "Ferralsols"
+        },
+        "Fluvisols": {
+          "text": "Fluvisols"
+        },
+        "Gleysols": {
+          "text": "Gleysols"
+        },
+        "Greyzems": {
+          "text": "Greyzems"
+        },
+        "Gypsisols": {
+          "text": "Gypsisols"
+        },
+        "Histosols": {
+          "text": "Histosols"
+        },
+        "Kastanozems": {
+          "text": "Kastanozems"
+        },
+        "Lithosols": {
+          "text": "Lithosols"
+        },
+        "Luvisols": {
+          "text": "Luvisols"
+        },
+        "Nitosols": {
+          "text": "Nitosols"
+        },
+        "Phaeozems": {
+          "text": "Phaeozems"
+        },
+        "Planosols": {
+          "text": "Planosols"
+        },
+        "Podzols": {
+          "text": "Podzols"
+        },
+        "Podzoluvisols": {
+          "text": "Podzoluvisols"
+        },
+        "Rankers": {
+          "text": "Rankers"
+        },
+        "Regosols": {
+          "text": "Regosols"
+        },
+        "Rendzinas": {
+          "text": "Rendzinas"
+        },
+        "Solonchaks": {
+          "text": "Solonchaks"
+        },
+        "Solonetz": {
+          "text": "Solonetz"
+        },
+        "Vertisols": {
+          "text": "Vertisols"
+        },
+        "Yermosols": {
+          "text": "Yermosols"
+        }
+      }
+    },
+    "profile_position_enum": {
+      "name": "profile_position_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "summit": {
+          "text": "summit"
+        },
+        "shoulder": {
+          "text": "shoulder"
+        },
+        "backslope": {
+          "text": "backslope"
+        },
+        "footslope": {
+          "text": "footslope"
+        },
+        "toeslope": {
+          "text": "toeslope"
         }
       }
     },
@@ -4676,111 +4824,6 @@
         }
       }
     },
-    "fao_class_enum": {
-      "name": "fao_class_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "Acrisols": {
-          "text": "Acrisols"
-        },
-        "Andosols": {
-          "text": "Andosols"
-        },
-        "Arenosols": {
-          "text": "Arenosols"
-        },
-        "Cambisols": {
-          "text": "Cambisols"
-        },
-        "Chernozems": {
-          "text": "Chernozems"
-        },
-        "Ferralsols": {
-          "text": "Ferralsols"
-        },
-        "Fluvisols": {
-          "text": "Fluvisols"
-        },
-        "Gleysols": {
-          "text": "Gleysols"
-        },
-        "Greyzems": {
-          "text": "Greyzems"
-        },
-        "Gypsisols": {
-          "text": "Gypsisols"
-        },
-        "Histosols": {
-          "text": "Histosols"
-        },
-        "Kastanozems": {
-          "text": "Kastanozems"
-        },
-        "Lithosols": {
-          "text": "Lithosols"
-        },
-        "Luvisols": {
-          "text": "Luvisols"
-        },
-        "Nitosols": {
-          "text": "Nitosols"
-        },
-        "Phaeozems": {
-          "text": "Phaeozems"
-        },
-        "Planosols": {
-          "text": "Planosols"
-        },
-        "Podzols": {
-          "text": "Podzols"
-        },
-        "Podzoluvisols": {
-          "text": "Podzoluvisols"
-        },
-        "Rankers": {
-          "text": "Rankers"
-        },
-        "Regosols": {
-          "text": "Regosols"
-        },
-        "Rendzinas": {
-          "text": "Rendzinas"
-        },
-        "Solonchaks": {
-          "text": "Solonchaks"
-        },
-        "Solonetz": {
-          "text": "Solonetz"
-        },
-        "Vertisols": {
-          "text": "Vertisols"
-        },
-        "Yermosols": {
-          "text": "Yermosols"
-        }
-      }
-    },
-    "profile_position_enum": {
-      "name": "profile_position_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "summit": {
-          "text": "summit"
-        },
-        "shoulder": {
-          "text": "shoulder"
-        },
-        "backslope": {
-          "text": "backslope"
-        },
-        "footslope": {
-          "text": "footslope"
-        },
-        "toeslope": {
-          "text": "toeslope"
-        }
-      }
-    },
     "soil_horizon_enum": {
       "name": "soil_horizon_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -4808,57 +4851,6 @@
         },
         "M horizon": {
           "text": "M horizon"
-        }
-      }
-    },
-    "biotic_relationship_enum": {
-      "name": "biotic_relationship_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "free living": {
-          "text": "free living"
-        },
-        "parasite": {
-          "text": "parasite"
-        },
-        "commensal": {
-          "text": "commensal"
-        },
-        "symbiont": {
-          "text": "symbiont"
-        }
-      }
-    },
-    "tillage_enum": {
-      "name": "tillage_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "drill": {
-          "text": "drill"
-        },
-        "cutting disc": {
-          "text": "cutting disc"
-        },
-        "ridge till": {
-          "text": "ridge till"
-        },
-        "strip tillage": {
-          "text": "strip tillage"
-        },
-        "zonal tillage": {
-          "text": "zonal tillage"
-        },
-        "chisel": {
-          "text": "chisel"
-        },
-        "tined": {
-          "text": "tined"
-        },
-        "mouldboard": {
-          "text": "mouldboard"
-        },
-        "disc plough": {
-          "text": "disc plough"
         }
       }
     },
@@ -5048,24 +5040,6 @@
         }
       }
     },
-    "tidal_stage_enum": {
-      "name": "tidal_stage_enum",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "permissible_values": {
-        "low tide": {
-          "text": "low tide"
-        },
-        "ebb tide": {
-          "text": "ebb tide"
-        },
-        "flood tide": {
-          "text": "flood tide"
-        },
-        "high tide": {
-          "text": "high tide"
-        }
-      }
-    },
     "sediment_type_enum": {
       "name": "sediment_type_enum",
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -5081,6 +5055,24 @@
         },
         "lithogenous": {
           "text": "lithogenous"
+        }
+      }
+    },
+    "tidal_stage_enum": {
+      "name": "tidal_stage_enum",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "permissible_values": {
+        "low tide": {
+          "text": "low tide"
+        },
+        "ebb tide": {
+          "text": "ebb tide"
+        },
+        "flood tide": {
+          "text": "flood tide"
+        },
+        "high tide": {
+          "text": "high tide"
         }
       }
     },
@@ -13971,7 +13963,7 @@
       "is_a": "core field",
       "slot_uri": "MIXS:0000753",
       "multivalued": false,
-      "range": "rel_to_oxygen_enum"
+      "range": "OxyStatSampEnum"
     },
     "oxygen": {
       "name": "oxygen",
@@ -15276,30 +15268,6 @@
       "slot_uri": "MIXS:0000821",
       "multivalued": false,
       "range": "rel_samp_loc_enum"
-    },
-    "rel_to_oxygen": {
-      "name": "rel_to_oxygen",
-      "annotations": {
-        "expected_value": {
-          "tag": "expected_value",
-          "value": "enumeration"
-        }
-      },
-      "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-      "title": "relationship to oxygen",
-      "examples": [
-        {
-          "value": "aerobe"
-        }
-      ],
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "aliases": [
-        "relationship to oxygen"
-      ],
-      "is_a": "nucleic acid sequence source field",
-      "slot_uri": "MIXS:0000015",
-      "multivalued": false,
-      "range": "rel_to_oxygen_enum"
     },
     "replicate_number": {
       "name": "replicate_number",
@@ -21150,6 +21118,55 @@
       "multivalued": false,
       "range": "string"
     },
+    "attribute": {
+      "name": "attribute",
+      "description": "A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "aliases": [
+        "field",
+        "property",
+        "template field",
+        "key",
+        "characteristic"
+      ],
+      "abstract": true
+    },
+    "core field": {
+      "name": "core field",
+      "description": "basic fields",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "abstract": true
+    },
+    "investigation field": {
+      "name": "investigation field",
+      "description": "field describing aspect of the investigation/study to which the sample belongs",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "abstract": true
+    },
+    "environment field": {
+      "name": "environment field",
+      "description": "field describing environmental aspect of a sample",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "abstract": true
+    },
+    "nucleic acid sequence source field": {
+      "name": "nucleic acid sequence source field",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "abstract": true
+    },
+    "alternative_identifiers": {
+      "name": "alternative_identifiers",
+      "description": "A list of alternative identifiers for the entity.",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "multivalued": false,
+      "range": "string"
+    },
+    "language": {
+      "name": "language",
+      "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "range": "language code"
+    },
     "id": {
       "name": "id",
       "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
@@ -21170,44 +21187,6 @@
       "range": "uriorcurie",
       "required": true
     },
-    "core field": {
-      "name": "core field",
-      "description": "basic fields",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "abstract": true
-    },
-    "name": {
-      "name": "name",
-      "description": "A human readable label for an entity",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "multivalued": false,
-      "range": "string"
-    },
-    "attribute": {
-      "name": "attribute",
-      "description": "A attribute of a biosample. Examples: depth, habitat, material. For NMDC, attributes SHOULD be mapped to terms within a MIxS template",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "aliases": [
-        "field",
-        "property",
-        "template field",
-        "key",
-        "characteristic"
-      ],
-      "abstract": true
-    },
-    "nucleic acid sequence source field": {
-      "name": "nucleic acid sequence source field",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "abstract": true
-    },
-    "alternative_identifiers": {
-      "name": "alternative_identifiers",
-      "description": "A list of alternative identifiers for the entity.",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "multivalued": false,
-      "range": "string"
-    },
     "gold_path_field": {
       "name": "gold_path_field",
       "description": "This is a grouping for any of the gold path fields",
@@ -21217,23 +21196,12 @@
       "multivalued": false,
       "range": "string"
     },
-    "environment field": {
-      "name": "environment field",
-      "description": "field describing environmental aspect of a sample",
+    "name": {
+      "name": "name",
+      "description": "A human readable label for an entity",
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "abstract": true
-    },
-    "investigation field": {
-      "name": "investigation field",
-      "description": "field describing aspect of the investigation/study to which the sample belongs",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "abstract": true
-    },
-    "language": {
-      "name": "language",
-      "description": "Should use ISO 639-1 code e.g. \"en\", \"fr\"",
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "range": "language code"
+      "multivalued": false,
+      "range": "string"
     },
     "description": {
       "name": "description",
@@ -21285,7 +21253,6 @@
         "oxygen",
         "perturbation",
         "pollutants",
-        "rel_to_oxygen",
         "salinity",
         "samp_collec_device",
         "samp_collec_method",
@@ -22373,7 +22340,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -22397,7 +22363,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "oxygen": {
           "name": "oxygen",
@@ -22522,47 +22488,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -24439,7 +24364,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -24464,7 +24388,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "oxygen": {
           "name": "oxygen",
@@ -24592,48 +24516,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "AirInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -25612,7 +25494,6 @@
         "potassium",
         "pressure",
         "redox_potential",
-        "rel_to_oxygen",
         "salinity",
         "samp_collec_device",
         "samp_collec_method",
@@ -27803,7 +27684,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -27827,7 +27707,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "part_org_carb": {
           "name": "part_org_carb",
@@ -28304,47 +28184,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -29246,6 +29085,7 @@
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "rank": 39,
           "is_a": "core field",
+          "string_serialization": "{float or pct} {unit}",
           "slot_uri": "MIXS:0000185",
           "multivalued": false,
           "owner": "Biosample",
@@ -29256,7 +29096,8 @@
             "SoilInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "string"
+          "range": "string",
+          "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$"
         }
       },
       "attributes": {
@@ -31477,7 +31318,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -31502,7 +31342,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "part_org_carb": {
           "name": "part_org_carb",
@@ -31990,48 +31830,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "BiofilmInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -32953,6 +32751,7 @@
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "rank": 39,
           "is_a": "core field",
+          "string_serialization": "{float or pct} {unit}",
           "slot_uri": "MIXS:0000185",
           "multivalued": false,
           "alias": "water_content",
@@ -32964,7 +32763,8 @@
             "SoilInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "string"
+          "range": "string",
+          "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -39933,14 +39733,7 @@
         },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
-          "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
-          ],
-          "range": "rel_to_oxygen_enum"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         }
       },
       "attributes": {
@@ -47067,6 +46860,10 @@
           "slot_group": "emsl_section",
           "range": "integer",
           "recommended": true
+        },
+        "oxy_stat_samp": {
+          "name": "oxy_stat_samp",
+          "range": "OxyStatSampEnum"
         }
       },
       "attributes": {
@@ -47404,7 +47201,6 @@
         "potassium",
         "pour_point",
         "pressure",
-        "rel_to_oxygen",
         "reservoir",
         "resins_pc",
         "salinity",
@@ -49593,7 +49389,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -49617,7 +49412,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "permeability": {
           "name": "permeability",
@@ -49915,47 +49710,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "reservoir": {
           "name": "reservoir",
@@ -53945,7 +53699,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -53970,7 +53723,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "permeability": {
           "name": "permeability",
@@ -54275,48 +54028,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "HcrCoresInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "reservoir": {
           "name": "reservoir",
@@ -56345,7 +56056,6 @@
         "pressure",
         "prod_rate",
         "prod_start_date",
-        "rel_to_oxygen",
         "reservoir",
         "resins_pc",
         "salinity",
@@ -58755,7 +58465,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -58779,7 +58488,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "ph": {
           "name": "ph",
@@ -59071,47 +58780,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "reservoir": {
           "name": "reservoir",
@@ -63305,7 +62973,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -63330,7 +62997,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "ph": {
           "name": "ph",
@@ -63629,48 +63296,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "HcrFluidsSwabsInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "reservoir": {
           "name": "reservoir",
@@ -65665,7 +65290,6 @@
         "organism_count",
         "oxy_stat_samp",
         "perturbation",
-        "rel_to_oxygen",
         "salinity",
         "samp_capt_status",
         "samp_collec_device",
@@ -67666,7 +67290,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -67690,7 +67313,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -67734,47 +67357,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -70431,7 +70013,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -70456,7 +70037,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -70501,48 +70082,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "HostAssociatedInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -71763,6 +71302,10 @@
           "range": "string",
           "required": true,
           "recommended": true
+        },
+        "oxy_stat_samp": {
+          "name": "oxy_stat_samp",
+          "range": "OxyStatSampEnum"
         }
       },
       "attributes": {
@@ -72829,6 +72372,10 @@
           "range": "float",
           "required": true,
           "recommended": true
+        },
+        "oxy_stat_samp": {
+          "name": "oxy_stat_samp",
+          "range": "OxyStatSampEnum"
         }
       },
       "attributes": {
@@ -73492,7 +73039,6 @@
         "phosplipid_fatt_acid",
         "potassium",
         "pressure",
-        "rel_to_oxygen",
         "salinity",
         "samp_collec_device",
         "samp_collec_method",
@@ -75218,7 +74764,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -75242,7 +74787,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -75550,47 +75095,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -78106,7 +77610,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -78131,7 +77634,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -78446,48 +77949,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "MiscEnvsInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -79479,7 +78940,6 @@
         "plant_struc",
         "radiation_regm",
         "rainfall_regm",
-        "rel_to_oxygen",
         "root_cond",
         "root_med_carbon",
         "root_med_macronutr",
@@ -81641,7 +81101,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -81665,7 +81124,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -82008,47 +81467,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "root_cond": {
           "name": "root_cond",
@@ -85384,7 +84802,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -85409,7 +84826,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -85761,48 +85178,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "PlantAssociatedInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "root_cond": {
           "name": "root_cond",
@@ -87190,7 +86565,6 @@
         "potassium",
         "pressure",
         "redox_potential",
-        "rel_to_oxygen",
         "salinity",
         "samp_collec_device",
         "samp_collec_method",
@@ -89391,7 +88765,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -89415,7 +88788,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "part_org_carb": {
           "name": "part_org_carb",
@@ -89974,47 +89347,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -91028,6 +90360,7 @@
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "rank": 39,
           "is_a": "core field",
+          "string_serialization": "{float or pct} {unit}",
           "slot_uri": "MIXS:0000185",
           "multivalued": false,
           "owner": "Biosample",
@@ -91038,7 +90371,8 @@
             "SoilInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "string"
+          "range": "string",
+          "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$"
         }
       },
       "attributes": {
@@ -93266,7 +92600,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -93291,7 +92624,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "part_org_carb": {
           "name": "part_org_carb",
@@ -93863,48 +93196,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "SedimentInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -94941,6 +94232,7 @@
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "rank": 39,
           "is_a": "core field",
+          "string_serialization": "{float or pct} {unit}",
           "slot_uri": "MIXS:0000185",
           "multivalued": false,
           "alias": "water_content",
@@ -94952,7 +94244,8 @@
             "SoilInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "string"
+          "range": "string",
+          "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -95185,7 +94478,6 @@
         "prev_land_use_meth",
         "previous_land_use",
         "profile_position",
-        "rel_to_oxygen",
         "salinity",
         "salinity_meth",
         "samp_collec_device",
@@ -97873,7 +97165,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -97897,7 +97188,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "ph": {
           "name": "ph",
@@ -98136,47 +97427,6 @@
           ],
           "slot_group": "mixs_section",
           "range": "profile_position_enum"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -99466,6 +98716,7 @@
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "rank": 39,
           "is_a": "core field",
+          "string_serialization": "{float or pct} {unit}",
           "slot_uri": "MIXS:0000185",
           "multivalued": false,
           "owner": "Biosample",
@@ -99476,7 +98727,8 @@
             "SoilInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "string"
+          "range": "string",
+          "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$"
         },
         "watering_regm": {
           "name": "watering_regm",
@@ -102275,7 +101527,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -102300,7 +101551,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "ph": {
           "name": "ph",
@@ -102545,48 +101796,6 @@
           ],
           "slot_group": "mixs_section",
           "range": "profile_position_enum"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "SoilInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -103909,6 +103118,7 @@
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
           "rank": 39,
           "is_a": "core field",
+          "string_serialization": "{float or pct} {unit}",
           "slot_uri": "MIXS:0000185",
           "multivalued": false,
           "alias": "water_content",
@@ -103920,7 +103130,8 @@
             "SoilInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "string"
+          "range": "string",
+          "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$"
         },
         "watering_regm": {
           "name": "watering_regm",
@@ -104182,7 +103393,6 @@
         "pre_treatment",
         "primary_treatment",
         "reactor_type",
-        "rel_to_oxygen",
         "salinity",
         "samp_collec_device",
         "samp_collec_method",
@@ -105410,7 +104620,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -105434,7 +104643,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -105716,47 +104925,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -107975,7 +107143,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -108000,7 +107167,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "perturbation": {
           "name": "perturbation",
@@ -108289,48 +107456,6 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "WastewaterSludgeInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -109568,7 +108693,6 @@
         "pressure",
         "primary_prod",
         "redox_potential",
-        "rel_to_oxygen",
         "salinity",
         "samp_collec_device",
         "samp_collec_method",
@@ -112032,7 +111156,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -112056,7 +111179,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "part_org_carb": {
           "name": "part_org_carb",
@@ -112646,47 +111769,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "owner": "Biosample",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -113880,37 +112962,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "water_content": {
-          "name": "water_content",
-          "todos": [
-            "value in preferred unit is too limiting. need to change this",
-            "check and correct validation so examples are accepted",
-            "This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot",
-            "how to manage multiple water content methods?"
-          ],
-          "examples": [
-            {
-              "value": "75%"
-            },
-            {
-              "value": "75 %"
-            },
-            {
-              "value": "0.75 g water/g dry soil"
-            },
-            {
-              "value": "75% water holding capacity"
-            },
-            {
-              "value": "1.1 g fresh weight/ dry weight"
-            },
-            {
-              "value": "10% water filled pore space"
-            }
-          ],
-          "multivalued": false,
-          "range": "string"
         }
       },
       "attributes": {
@@ -116405,7 +115456,6 @@
           "description": "Oxygenation status of sample",
           "title": "oxygenation status of sample",
           "notes": [
-            "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration",
             "this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration"
           ],
           "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
@@ -116430,7 +115480,7 @@
             "WaterInterface"
           ],
           "slot_group": "mixs_section",
-          "range": "rel_to_oxygen_enum"
+          "range": "OxyStatSampEnum"
         },
         "part_org_carb": {
           "name": "part_org_carb",
@@ -117034,48 +116084,6 @@
           "slot_group": "mixs_core_section",
           "range": "string",
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$"
-        },
-        "rel_to_oxygen": {
-          "name": "rel_to_oxygen",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "enumeration"
-            }
-          },
-          "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments",
-          "title": "relationship to oxygen",
-          "examples": [
-            {
-              "value": "aerobe"
-            }
-          ],
-          "from_schema": "https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/nmdc",
-          "aliases": [
-            "relationship to oxygen"
-          ],
-          "rank": 23,
-          "is_a": "nucleic acid sequence source field",
-          "slot_uri": "MIXS:0000015",
-          "multivalued": false,
-          "alias": "rel_to_oxygen",
-          "owner": "WaterInterface",
-          "domain_of": [
-            "Biosample",
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_modified_section",
-          "range": "rel_to_oxygen_enum"
         },
         "salinity": {
           "name": "salinity",
@@ -118601,6 +117609,10 @@
           "slot_group": "sample_id_section",
           "range": "string",
           "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+        },
+        "oxy_stat_samp": {
+          "name": "oxy_stat_samp",
+          "range": "OxyStatSampEnum"
         }
       },
       "attributes": {

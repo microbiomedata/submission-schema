@@ -129,7 +129,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "oxygen": {
@@ -145,10 +145,6 @@
                     "description": "Pollutant types and, amount or concentrations measured at the time of sampling; can report multiple pollutants by entering numeric values preceded by name of pollutant",
                     "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -534,7 +530,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "part_org_carb": {
@@ -590,10 +586,6 @@
                     "description": "Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -699,6 +691,7 @@
                 },
                 "water_content": {
                     "description": "Water content measurement",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$",
                     "type": "string"
                 }
             },
@@ -2767,7 +2760,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "permeability": {
@@ -2802,10 +2795,6 @@
                     "description": "Pressure to which the sample is subject to, in atmospheres",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "reservoir": {
                     "description": "Name of the reservoir (e.g. Carapebus)",
@@ -3317,7 +3306,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "ph": {
@@ -3353,10 +3342,6 @@
                 "prod_start_date": {
                     "description": "Date of field's first production",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "reservoir": {
                     "description": "Name of the reservoir (e.g. Carapebus)",
@@ -3862,16 +3847,12 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "perturbation": {
                     "description": "Type of perturbation, e.g. chemical administration, physical disturbance, etc., coupled with perturbation regimen including how many times the perturbation was repeated, how long each perturbation lasted, and the start and end time of the entire perturbation period; can include multiple perturbation types",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -4572,7 +4553,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "perturbation": {
@@ -4608,10 +4589,6 @@
                     "description": "Pressure to which the sample is subject to, in atmospheres",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -4981,7 +4958,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "perturbation": {
@@ -5020,10 +4997,6 @@
                 "rainfall_regm": {
                     "description": "Information about treatment involving an exposure to a given amount of rainfall, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "root_cond": {
                     "description": "Relevant rooting conditions such as field plot size, sowing density, container dimensions, number of plants per container.",
@@ -5246,7 +5219,7 @@
             "type": "string"
         },
         "RelToOxygenEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "aerobe",
                 "anaerobe",
@@ -5811,7 +5784,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "part_org_carb": {
@@ -5876,10 +5849,6 @@
                     "description": "Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -5998,6 +5967,7 @@
                 },
                 "water_content": {
                     "description": "Water content measurement",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$",
                     "type": "string"
                 }
             },
@@ -6400,7 +6370,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "ph": {
@@ -6430,10 +6400,6 @@
                 "profile_position": {
                     "$ref": "#/$defs/ProfilePositionEnum",
                     "description": "Cross-sectional position in the hillslope where sample was collected.sample area position in relation to surrounding areas"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -6600,6 +6566,7 @@
                 },
                 "water_content": {
                     "description": "Water content measurement",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%? \\S.+$",
                     "type": "string"
                 },
                 "watering_regm": {
@@ -7087,7 +7054,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "perturbation": {
@@ -7120,10 +7087,6 @@
                 "reactor_type": {
                     "description": "Anaerobic digesters can be designed and engineered to operate using a number of different process configurations, as batch or continuous, mesophilic, high solid or low solid, and single stage or multistage",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
@@ -7560,7 +7523,7 @@
                     "type": "string"
                 },
                 "oxy_stat_samp": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
+                    "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
                 },
                 "part_org_carb": {
@@ -7629,10 +7592,6 @@
                     "description": "Redox potential, measured relative to a hydrogen cell, indicating oxidation or reduction potential",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": "string"
-                },
-                "rel_to_oxygen": {
-                    "$ref": "#/$defs/RelToOxygenEnum",
-                    "description": "Is this organism an aerobe, anaerobe? Please note that aerobic and anaerobic are valid descriptors for microbial environments"
                 },
                 "salinity": {
                     "description": "The total concentration of all dissolved salts in a liquid or solid sample. While salinity can be measured by a complete chemical analysis, this method is difficult and time consuming. More often, it is instead derived from the conductivity measurement. This is known as practical salinity. These derivations compare the specific conductance of the sample to a salinity standard such as seawater.",
