@@ -10,7 +10,7 @@ include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 [tool.poetry.dependencies]
 python = "^3.9"
 # = 1.4.5 for merged SchemaViews from URLs
-linkml-runtime = "^1.4.0"
+linkml-runtime = "1.5.2"
 
 
 [tool.poetry-dynamic-versioning]
@@ -39,7 +39,7 @@ patterns = [
 check-jsonschema = "^0.23.0" # https://pypi.org/project/check-jsonschema/0.23.0/
 exhaustion-check = "^0.1.3"
 gen-pop-linkml2sheets = "^0.1.8"
-linkml = "^1.4.0"
+linkml = "1.5.2"
 mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^0.6.0"
 oaklib = "^0.5.6" # https://pypi.org/project/oaklib/0.5.6/

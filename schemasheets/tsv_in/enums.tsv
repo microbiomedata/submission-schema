@@ -386,3 +386,7 @@ EnvLocalScaleSoilEnum	______market [ENVO:01000987]	placeholder PV descr, DO NOT 
 EnvLocalScaleSoilEnum	______park [ENVO:00000562]	placeholder PV descr, DO NOT SORT				
 EnvLocalScaleSoilEnum	______well [ENVO:00000026]	placeholder PV descr, DO NOT SORT				
 EnvLocalScaleSoilEnum	______garden [ENVO:00000011]	placeholder PV descr, DO NOT SORT				
+OxyStatSampEnum		placeholder enum descr, DO NOT SORT				
+OxyStatSampEnum	aerobic	placeholder PV descr, DO NOT SORT				
+OxyStatSampEnum	anaerobic	placeholder PV descr, DO NOT SORT				
+OxyStatSampEnum	other	placeholder PV descr, DO NOT SORT				

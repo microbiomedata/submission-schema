@@ -345,7 +345,6 @@ Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/n
 Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	rel_air_humidity	mixs_core_section	146	BuiltEnvInterface
 Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	rel_humidity_out	mixs_core_section	147	BuiltEnvInterface
 Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	rel_samp_loc	mixs_core_section	148	BuiltEnvInterface
-Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	rel_to_oxygen	mixs_modified_section	23	AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface
 Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	replicate_number	emsl_section	6	EmslInterface
 Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	reservoir	mixs_core_section	347	HcrCoresInterface|HcrFluidsSwabsInterface
 Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/60bdb7f/nmdc_schema/nmdc_materialized_patterns.yaml	resins_pc	mixs_core_section	348	HcrCoresInterface|HcrFluidsSwabsInterface

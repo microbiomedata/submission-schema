@@ -265,6 +265,9 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 #	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
 #	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
 
+	yq -i '(.slots.[] | select(.name == "oxy_stat_samp") | .range) = "OxyStatSampEnum"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name == "oxy_stat_samp") | .range) = "OxyStatSampEnum"' $@
+
 	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"' $@
 
