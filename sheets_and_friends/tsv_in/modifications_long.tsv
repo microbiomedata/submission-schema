@@ -134,8 +134,6 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended			true
 SoilInterface|WaterInterface	organism_count	replace_attribute	pattern			^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
 SoilInterface|WaterInterface	organism_count	replace_attribute	range			string
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	add_attribute	notes			this is now a hybrid of the oxy_stat_samp semantics and the rel_to_oxygen enumeration
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	replace_attribute	range			rel_to_oxygen_enum
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	description			pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	maximum_value			14
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	minimum_value		expects int?!	0
@@ -147,7 +145,6 @@ BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|Sed
 EmslInterface	project_id	replace_attribute	required			true
 JgiMgInterface	proposal_dna	replace_attribute	required			true
 JgiMtInterface	proposal_rna	replace_attribute	required			true
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	rel_to_oxygen	replace_attribute	range			rel_to_oxygen_enum
 EmslInterface	replicate_number	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
