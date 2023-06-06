@@ -3,7 +3,8 @@ jgi_mg_data:
       - metagenomics
       - metatranscriptomics
     dna_concentration: 1.23
-    dna_cont_type: tube
+    dna_cont_type: plate
+    dna_cont_well: C3
     dna_container_id: xxx
     dna_dnase: "no"
     dna_isolate_meth: xxx
@@ -14,7 +15,7 @@ jgi_mg_data:
     dna_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
-    dna_volume: 111
+    dna_volume: 0
     proposal_dna: xxx
     samp_name: xxx
-    source_mat_id: x:1
+    dna_absorb1: seven
