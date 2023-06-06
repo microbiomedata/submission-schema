@@ -15,7 +15,7 @@ jgi_mt_data:
     rna_seq_project: xxx
     rna_seq_project_name: xxx
     rna_seq_project_pi: xxx
-    rna_volume: 999
+    rna_volume: 111
     proposal_rna: xxx
     samp_name: xxx
     source_mat_id: x:1
