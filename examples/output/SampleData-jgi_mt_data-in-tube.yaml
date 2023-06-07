@@ -12,7 +12,7 @@ jgi_mt_data:
   rna_seq_project: xxx
   rna_seq_project_name: xxx
   rna_seq_project_pi: xxx
-  rna_volume: 999.0
+  rna_volume: 111.0
   analysis_type:
   - metagenomics
   - metatranscriptomics

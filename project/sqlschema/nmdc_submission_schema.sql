@@ -26,11 +26,10 @@ CREATE TABLE "AirInterface" (
 	methane TEXT, 
 	misc_param TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	oxygen TEXT, 
 	perturbation TEXT, 
 	pollutants TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_collec_device TEXT, 
 	samp_collec_method TEXT, 
@@ -52,7 +51,7 @@ CREATE TABLE "AirInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY ("air_PM_concen", alt, barometric_press, carb_dioxide, carb_monoxide, chem_administration, collection_date, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, horizon_meth, humidity, lat_lon, methane, misc_param, organism_count, oxy_stat_samp, oxygen, perturbation, pollutants, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, size_frac, solar_irradiance, specific_ecosystem, "temp", ventilation_rate, ventilation_type, volatile_org_comp, wind_direction, wind_speed, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY ("air_PM_concen", alt, barometric_press, carb_dioxide, carb_monoxide, chem_administration, collection_date, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, horizon_meth, humidity, lat_lon, methane, misc_param, organism_count, oxy_stat_samp, oxygen, perturbation, pollutants, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, size_frac, solar_irradiance, specific_ecosystem, "temp", ventilation_rate, ventilation_type, volatile_org_comp, wind_direction, wind_speed, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "BiofilmInterface" (
@@ -106,7 +105,7 @@ CREATE TABLE "BiofilmInterface" (
 	org_matter TEXT, 
 	org_nitro TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	part_org_carb TEXT, 
 	perturbation TEXT, 
 	petroleum_hydrocarb TEXT, 
@@ -118,7 +117,6 @@ CREATE TABLE "BiofilmInterface" (
 	potassium TEXT, 
 	pressure TEXT, 
 	redox_potential TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_collec_device TEXT, 
 	samp_collec_method TEXT, 
@@ -143,7 +141,7 @@ CREATE TABLE "BiofilmInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (alkalinity, alkyl_diethers, alt, aminopept_act, ammonium, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, magnesium, mean_frict_vel, mean_peak_frict_vel, methane, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, potassium, pressure, redox_potential, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", tot_carb, tot_nitro_content, tot_org_carb, turbidity, water_content, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (alkalinity, alkyl_diethers, alt, aminopept_act, ammonium, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, magnesium, mean_frict_vel, mean_peak_frict_vel, methane, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, potassium, pressure, redox_potential, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", tot_carb, tot_nitro_content, tot_org_carb, turbidity, water_content, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "BuiltEnvInterface" (
@@ -327,12 +325,11 @@ CREATE TABLE "BuiltEnvInterface" (
 	window_type VARCHAR(23), 
 	window_vert_pos VARCHAR(6), 
 	window_water_mold TEXT, 
-	oxy_stat_samp VARCHAR(17), 
-	rel_to_oxygen VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (abs_air_humidity, address, adj_room, aero_struc, air_temp, alt, amount_light, arch_struc, avg_dew_point, avg_occup, avg_temp, bathroom_count, bedroom_count, build_docs, build_occup_type, building_setting, built_struc_age, built_struc_set, built_struc_type, carb_dioxide, ceil_area, ceil_cond, ceil_finish_mat, ceil_struc, ceil_texture, ceil_thermal_mass, ceil_type, ceil_water_mold, collection_date, cool_syst_id, date_last_rain, depth, dew_point, door_comp_type, door_cond, door_direct, door_loc, door_mat, door_move, door_size, door_type, door_type_metal, door_type_wood, door_water_mold, drawings, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, elevator, env_broad_scale, env_local_scale, env_medium, env_package, escalator, exp_duct, exp_pipe, experimental_factor, ext_door, ext_wall_orient, ext_window_orient, filter_type, fireplace_type, floor_age, floor_area, floor_cond, floor_count, floor_finish_mat, floor_struc, floor_thermal_mass, floor_water_mold, freq_clean, freq_cook, furniture, gender_restroom, geo_loc_name, hall_count, handidness, heat_cool_type, heat_deliv_loc, heat_sys_deliv_meth, heat_system_id, height_carper_fiber, horizon_meth, indoor_space, indoor_surf, inside_lux, int_wall_cond, last_clean, lat_lon, light_type, max_occup, mech_struc, number_pets, number_plants, number_resident, occup_density_samp, occup_document, occup_samp, organism_count, pres_animal_insect, quad_pos, rel_air_humidity, rel_humidity_out, rel_samp_loc, room_air_exch_rate, room_architec_elem, room_condt, room_connected, room_count, room_dim, room_door_dist, room_door_share, room_hallway, room_loc, room_moist_dam_hist, room_net_area, room_occup, room_samp_pos, room_type, room_vol, room_wall_share, room_window_count, samp_floor, samp_room_id, samp_sort_meth, samp_time_out, samp_weather, sample_link, season, season_use, shad_dev_water_mold, shading_device_cond, shading_device_loc, shading_device_mat, shading_device_type, size_frac, space_typ_state, specific, specific_ecosystem, specific_humidity, substructure_type, surf_air_cont, surf_humidity, surf_material, surf_moisture, surf_moisture_ph, surf_temp, "temp", temp_out, train_line, train_stat_loc, train_stop_loc, typ_occup_density, ventilation_type, vis_media, wall_area, wall_const_type, wall_finish_mat, wall_height, wall_loc, wall_surf_treatment, wall_texture, wall_thermal_mass, wall_water_mold, water_feat_size, water_feat_type, weekday, window_cond, window_cover, window_horiz_pos, window_loc, window_mat, window_open_freq, window_size, window_status, window_type, window_vert_pos, window_water_mold, oxy_stat_samp, rel_to_oxygen, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (abs_air_humidity, address, adj_room, aero_struc, air_temp, alt, amount_light, arch_struc, avg_dew_point, avg_occup, avg_temp, bathroom_count, bedroom_count, build_docs, build_occup_type, building_setting, built_struc_age, built_struc_set, built_struc_type, carb_dioxide, ceil_area, ceil_cond, ceil_finish_mat, ceil_struc, ceil_texture, ceil_thermal_mass, ceil_type, ceil_water_mold, collection_date, cool_syst_id, date_last_rain, depth, dew_point, door_comp_type, door_cond, door_direct, door_loc, door_mat, door_move, door_size, door_type, door_type_metal, door_type_wood, door_water_mold, drawings, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, elevator, env_broad_scale, env_local_scale, env_medium, env_package, escalator, exp_duct, exp_pipe, experimental_factor, ext_door, ext_wall_orient, ext_window_orient, filter_type, fireplace_type, floor_age, floor_area, floor_cond, floor_count, floor_finish_mat, floor_struc, floor_thermal_mass, floor_water_mold, freq_clean, freq_cook, furniture, gender_restroom, geo_loc_name, hall_count, handidness, heat_cool_type, heat_deliv_loc, heat_sys_deliv_meth, heat_system_id, height_carper_fiber, horizon_meth, indoor_space, indoor_surf, inside_lux, int_wall_cond, last_clean, lat_lon, light_type, max_occup, mech_struc, number_pets, number_plants, number_resident, occup_density_samp, occup_document, occup_samp, organism_count, pres_animal_insect, quad_pos, rel_air_humidity, rel_humidity_out, rel_samp_loc, room_air_exch_rate, room_architec_elem, room_condt, room_connected, room_count, room_dim, room_door_dist, room_door_share, room_hallway, room_loc, room_moist_dam_hist, room_net_area, room_occup, room_samp_pos, room_type, room_vol, room_wall_share, room_window_count, samp_floor, samp_room_id, samp_sort_meth, samp_time_out, samp_weather, sample_link, season, season_use, shad_dev_water_mold, shading_device_cond, shading_device_loc, shading_device_mat, shading_device_type, size_frac, space_typ_state, specific, specific_ecosystem, specific_humidity, substructure_type, surf_air_cont, surf_humidity, surf_material, surf_moisture, surf_moisture_ph, surf_temp, "temp", temp_out, train_line, train_stat_loc, train_stop_loc, typ_occup_density, ventilation_type, vis_media, wall_area, wall_const_type, wall_finish_mat, wall_height, wall_loc, wall_surf_treatment, wall_texture, wall_thermal_mass, wall_water_mold, water_feat_size, water_feat_type, weekday, window_cond, window_cover, window_horiz_pos, window_loc, window_mat, window_open_freq, window_size, window_status, window_type, window_vert_pos, window_water_mold, oxy_stat_samp, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "EmslInterface" (
@@ -342,10 +339,11 @@ CREATE TABLE "EmslInterface" (
 	sample_shipped TEXT NOT NULL, 
 	sample_type VARCHAR(18) NOT NULL, 
 	technical_reps INTEGER, 
+	oxy_stat_samp VARCHAR(9), 
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (emsl_store_temp, project_id, replicate_number, sample_shipped, sample_type, technical_reps, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (emsl_store_temp, project_id, replicate_number, sample_shipped, sample_type, technical_reps, oxy_stat_samp, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "HcrCoresInterface" (
@@ -400,7 +398,7 @@ CREATE TABLE "HcrCoresInterface" (
 	org_count_qpcr_info TEXT, 
 	organism_count TEXT, 
 	owc_tvdss TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	permeability TEXT, 
 	ph FLOAT, 
 	ph_meth TEXT, 
@@ -408,7 +406,6 @@ CREATE TABLE "HcrCoresInterface" (
 	potassium TEXT, 
 	pour_point TEXT, 
 	pressure TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	reservoir TEXT, 
 	resins_pc TEXT, 
 	salinity TEXT, 
@@ -455,7 +452,7 @@ CREATE TABLE "HcrCoresInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (additional_info, alkalinity, alkalinity_method, ammonium, api, aromatics_pc, asphaltenes_pc, basin, benzene, calcium, chem_administration, chloride, collection_date, density, depos_env, depth, diss_carb_dioxide, diss_inorg_carb, diss_inorg_phosp, diss_iron, diss_org_carb, diss_oxygen_fluid, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, ethylbenzene, experimental_factor, field, geo_loc_name, hc_produced, hcr, hcr_fw_salinity, hcr_geol_age, hcr_pressure, hcr_temp, horizon_meth, lat_lon, lithology, magnesium, misc_param, nitrate, nitrite, org_count_qpcr_info, organism_count, owc_tvdss, oxy_stat_samp, permeability, ph, ph_meth, porosity, potassium, pour_point, pressure, rel_to_oxygen, reservoir, resins_pc, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_md, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, samp_subtype, samp_transport_cond, samp_tvdss, samp_type, samp_well_name, sample_link, saturates_pc, size_frac, sodium, specific_ecosystem, sr_dep_env, sr_geol_age, sr_kerog_type, sr_lithology, sulfate, sulfate_fw, sulfide, suspend_solids, tan, "temp", toluene, tot_iron, tot_nitro, tot_phosp, tot_sulfur, tvdss_of_hcr_press, tvdss_of_hcr_temp, vfa, vfa_fw, viscosity, win, xylene, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (additional_info, alkalinity, alkalinity_method, ammonium, api, aromatics_pc, asphaltenes_pc, basin, benzene, calcium, chem_administration, chloride, collection_date, density, depos_env, depth, diss_carb_dioxide, diss_inorg_carb, diss_inorg_phosp, diss_iron, diss_org_carb, diss_oxygen_fluid, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, ethylbenzene, experimental_factor, field, geo_loc_name, hc_produced, hcr, hcr_fw_salinity, hcr_geol_age, hcr_pressure, hcr_temp, horizon_meth, lat_lon, lithology, magnesium, misc_param, nitrate, nitrite, org_count_qpcr_info, organism_count, owc_tvdss, oxy_stat_samp, permeability, ph, ph_meth, porosity, potassium, pour_point, pressure, reservoir, resins_pc, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_md, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, samp_subtype, samp_transport_cond, samp_tvdss, samp_type, samp_well_name, sample_link, saturates_pc, size_frac, sodium, specific_ecosystem, sr_dep_env, sr_geol_age, sr_kerog_type, sr_lithology, sulfate, sulfate_fw, sulfide, suspend_solids, tan, "temp", toluene, tot_iron, tot_nitro, tot_phosp, tot_sulfur, tvdss_of_hcr_press, tvdss_of_hcr_temp, vfa, vfa_fw, viscosity, win, xylene, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "HcrFluidsSwabsInterface" (
@@ -516,7 +513,7 @@ CREATE TABLE "HcrFluidsSwabsInterface" (
 	nitrite TEXT, 
 	org_count_qpcr_info TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	ph FLOAT, 
 	ph_meth TEXT, 
 	potassium TEXT, 
@@ -524,7 +521,6 @@ CREATE TABLE "HcrFluidsSwabsInterface" (
 	pressure TEXT, 
 	prod_rate TEXT, 
 	prod_start_date TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	reservoir TEXT, 
 	resins_pc TEXT, 
 	salinity TEXT, 
@@ -570,7 +566,7 @@ CREATE TABLE "HcrFluidsSwabsInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (add_recov_method, additional_info, alkalinity, alkalinity_method, ammonium, api, aromatics_pc, asphaltenes_pc, basin, benzene, biocide, biocide_admin_method, calcium, chem_administration, chem_treat_method, chem_treatment, chloride, collection_date, density, depos_env, depth, diss_carb_dioxide, diss_inorg_carb, diss_inorg_phosp, diss_iron, diss_org_carb, diss_oxygen_fluid, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, ethylbenzene, experimental_factor, field, geo_loc_name, hc_produced, hcr, hcr_fw_salinity, hcr_geol_age, hcr_pressure, hcr_temp, horizon_meth, iw_bt_date_well, iwf, lat_lon, lithology, magnesium, misc_param, nitrate, nitrite, org_count_qpcr_info, organism_count, oxy_stat_samp, ph, ph_meth, potassium, pour_point, pressure, prod_rate, prod_start_date, rel_to_oxygen, reservoir, resins_pc, salinity, samp_collec_device, samp_collec_method, samp_collect_point, samp_loc_corr_rate, samp_mat_process, samp_preserv, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, samp_subtype, samp_transport_cond, samp_type, samp_well_name, sample_link, saturates_pc, size_frac, sodium, specific_ecosystem, sulfate, sulfate_fw, sulfide, suspend_solids, tan, "temp", toluene, tot_iron, tot_nitro, tot_phosp, tot_sulfur, tvdss_of_hcr_press, tvdss_of_hcr_temp, vfa, vfa_fw, viscosity, water_cut, water_prod_rate, win, xylene, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (add_recov_method, additional_info, alkalinity, alkalinity_method, ammonium, api, aromatics_pc, asphaltenes_pc, basin, benzene, biocide, biocide_admin_method, calcium, chem_administration, chem_treat_method, chem_treatment, chloride, collection_date, density, depos_env, depth, diss_carb_dioxide, diss_inorg_carb, diss_inorg_phosp, diss_iron, diss_org_carb, diss_oxygen_fluid, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, ethylbenzene, experimental_factor, field, geo_loc_name, hc_produced, hcr, hcr_fw_salinity, hcr_geol_age, hcr_pressure, hcr_temp, horizon_meth, iw_bt_date_well, iwf, lat_lon, lithology, magnesium, misc_param, nitrate, nitrite, org_count_qpcr_info, organism_count, oxy_stat_samp, ph, ph_meth, potassium, pour_point, pressure, prod_rate, prod_start_date, reservoir, resins_pc, salinity, samp_collec_device, samp_collec_method, samp_collect_point, samp_loc_corr_rate, samp_mat_process, samp_preserv, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, samp_subtype, samp_transport_cond, samp_type, samp_well_name, sample_link, saturates_pc, size_frac, sodium, specific_ecosystem, sulfate, sulfate_fw, sulfide, suspend_solids, tan, "temp", toluene, tot_iron, tot_nitro, tot_phosp, tot_sulfur, tvdss_of_hcr_press, tvdss_of_hcr_temp, vfa, vfa_fw, viscosity, water_cut, water_prod_rate, win, xylene, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "HostAssociatedInterface" (
@@ -624,9 +620,8 @@ CREATE TABLE "HostAssociatedInterface" (
 	lat_lon TEXT, 
 	misc_param TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	perturbation TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_capt_status VARCHAR(48), 
 	samp_collec_device TEXT, 
@@ -644,7 +639,7 @@ CREATE TABLE "HostAssociatedInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (alt, ances_data, biol_stat, blood_press_diast, blood_press_syst, chem_administration, collection_date, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, genetic_mod, geo_loc_name, gravidity, horizon_meth, host_age, host_body_habitat, host_body_product, host_body_site, host_body_temp, host_color, host_common_name, host_diet, host_dry_mass, host_family_relation, host_genotype, host_growth_cond, host_height, host_last_meal, host_length, host_life_stage, host_phenotype, host_sex, host_shape, host_subject_id, host_subspecf_genlin, host_substrate, host_symbiont, host_taxid, host_tot_mass, lat_lon, misc_param, organism_count, oxy_stat_samp, perturbation, rel_to_oxygen, salinity, samp_capt_status, samp_collec_device, samp_collec_method, samp_dis_stage, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, size_frac, specific_ecosystem, "temp", analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (alt, ances_data, biol_stat, blood_press_diast, blood_press_syst, chem_administration, collection_date, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, genetic_mod, geo_loc_name, gravidity, horizon_meth, host_age, host_body_habitat, host_body_product, host_body_site, host_body_temp, host_color, host_common_name, host_diet, host_dry_mass, host_family_relation, host_genotype, host_growth_cond, host_height, host_last_meal, host_length, host_life_stage, host_phenotype, host_sex, host_shape, host_subject_id, host_subspecf_genlin, host_substrate, host_symbiont, host_taxid, host_tot_mass, lat_lon, misc_param, organism_count, oxy_stat_samp, perturbation, salinity, samp_capt_status, samp_collec_device, samp_collec_method, samp_dis_stage, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, size_frac, specific_ecosystem, "temp", analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "JgiMgInterface" (
@@ -665,10 +660,11 @@ CREATE TABLE "JgiMgInterface" (
 	dna_seq_project_pi TEXT NOT NULL, 
 	dna_volume FLOAT NOT NULL, 
 	proposal_dna TEXT NOT NULL, 
+	oxy_stat_samp VARCHAR(9), 
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (dna_absorb1, dna_absorb2, dna_concentration, dna_cont_type, dna_cont_well, dna_container_id, dna_dnase, dna_isolate_meth, dna_project_contact, dna_samp_id, dna_sample_format, dna_sample_name, dna_seq_project, dna_seq_project_name, dna_seq_project_pi, dna_volume, proposal_dna, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (dna_absorb1, dna_absorb2, dna_concentration, dna_cont_type, dna_cont_well, dna_container_id, dna_dnase, dna_isolate_meth, dna_project_contact, dna_samp_id, dna_sample_format, dna_sample_name, dna_seq_project, dna_seq_project_name, dna_seq_project_pi, dna_volume, proposal_dna, oxy_stat_samp, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "JgiMtInterface" (
@@ -689,10 +685,11 @@ CREATE TABLE "JgiMtInterface" (
 	rna_seq_project_name TEXT NOT NULL, 
 	rna_seq_project_pi TEXT NOT NULL, 
 	rna_volume FLOAT NOT NULL, 
+	oxy_stat_samp VARCHAR(9), 
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (dnase_rna, proposal_rna, rna_absorb1, rna_absorb2, rna_concentration, rna_cont_type, rna_cont_well, rna_container_id, rna_isolate_meth, rna_project_contact, rna_samp_id, rna_sample_format, rna_sample_name, rna_seq_project, rna_seq_project_name, rna_seq_project_pi, rna_volume, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (dnase_rna, proposal_rna, rna_absorb1, rna_absorb2, rna_concentration, rna_cont_type, rna_cont_well, rna_container_id, rna_isolate_meth, rna_project_contact, rna_samp_id, rna_sample_format, rna_sample_name, rna_seq_project, rna_seq_project_name, rna_seq_project_pi, rna_volume, oxy_stat_samp, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "MiscEnvsInterface" (
@@ -735,7 +732,7 @@ CREATE TABLE "MiscEnvsInterface" (
 	org_matter TEXT, 
 	org_nitro TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	perturbation TEXT, 
 	ph FLOAT, 
 	ph_meth TEXT, 
@@ -743,7 +740,6 @@ CREATE TABLE "MiscEnvsInterface" (
 	phosplipid_fatt_acid TEXT, 
 	potassium TEXT, 
 	pressure TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_collec_device TEXT, 
 	samp_collec_method TEXT, 
@@ -764,7 +760,7 @@ CREATE TABLE "MiscEnvsInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (alkalinity, alt, ammonium, biomass, bromide, calcium, chem_administration, chloride, chlorophyll, collection_date, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, horizon_meth, lat_lon, misc_param, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, perturbation, ph, ph_meth, phosphate, phosplipid_fatt_acid, potassium, pressure, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", water_current, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (alkalinity, alt, ammonium, biomass, bromide, calcium, chem_administration, chloride, chlorophyll, collection_date, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, horizon_meth, lat_lon, misc_param, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, perturbation, ph, ph_meth, phosphate, phosplipid_fatt_acid, potassium, pressure, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", water_current, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "PlantAssociatedInterface" (
@@ -821,7 +817,7 @@ CREATE TABLE "PlantAssociatedInterface" (
 	misc_param TEXT, 
 	non_min_nutr_regm TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	perturbation TEXT, 
 	pesticide_regm TEXT, 
 	ph_regm TEXT, 
@@ -831,7 +827,6 @@ CREATE TABLE "PlantAssociatedInterface" (
 	plant_struc TEXT, 
 	radiation_regm TEXT, 
 	rainfall_regm TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	root_cond TEXT, 
 	root_med_carbon TEXT, 
 	root_med_macronutr TEXT, 
@@ -863,7 +858,7 @@ CREATE TABLE "PlantAssociatedInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (air_temp_regm, ances_data, antibiotic_regm, biol_stat, biotic_regm, chem_administration, chem_mutagen, climate_environment, collection_date, cult_root_med, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, fertilizer_regm, fungicide_regm, gaseous_environment, genetic_mod, geo_loc_name, gravity, growth_facil, growth_habit, growth_hormone_regm, herbicide_regm, horizon_meth, host_age, host_common_name, host_dry_mass, host_genotype, host_height, host_length, host_life_stage, host_phenotype, host_subspecf_genlin, host_symbiont, host_taxid, host_tot_mass, host_wet_mass, humidity_regm, lat_lon, light_regm, mechanical_damage, mineral_nutr_regm, misc_param, non_min_nutr_regm, organism_count, oxy_stat_samp, perturbation, pesticide_regm, ph_regm, plant_growth_med, plant_product, plant_sex, plant_struc, radiation_regm, rainfall_regm, rel_to_oxygen, root_cond, root_med_carbon, root_med_macronutr, root_med_micronutr, root_med_ph, root_med_regl, root_med_solid, root_med_suppl, salinity, salt_regm, samp_capt_status, samp_collec_device, samp_collec_method, samp_dis_stage, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, season_environment, size_frac, specific_ecosystem, standing_water_regm, "temp", tiss_cult_growth_med, water_temp_regm, watering_regm, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (air_temp_regm, ances_data, antibiotic_regm, biol_stat, biotic_regm, chem_administration, chem_mutagen, climate_environment, collection_date, cult_root_med, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, fertilizer_regm, fungicide_regm, gaseous_environment, genetic_mod, geo_loc_name, gravity, growth_facil, growth_habit, growth_hormone_regm, herbicide_regm, horizon_meth, host_age, host_common_name, host_dry_mass, host_genotype, host_height, host_length, host_life_stage, host_phenotype, host_subspecf_genlin, host_symbiont, host_taxid, host_tot_mass, host_wet_mass, humidity_regm, lat_lon, light_regm, mechanical_damage, mineral_nutr_regm, misc_param, non_min_nutr_regm, organism_count, oxy_stat_samp, perturbation, pesticide_regm, ph_regm, plant_growth_med, plant_product, plant_sex, plant_struc, radiation_regm, rainfall_regm, root_cond, root_med_carbon, root_med_macronutr, root_med_micronutr, root_med_ph, root_med_regl, root_med_solid, root_med_suppl, salinity, salt_regm, samp_capt_status, samp_collec_device, samp_collec_method, samp_dis_stage, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, season_environment, size_frac, specific_ecosystem, standing_water_regm, "temp", tiss_cult_growth_med, water_temp_regm, watering_regm, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "SampleData" (
@@ -933,7 +928,7 @@ CREATE TABLE "SedimentInterface" (
 	org_matter TEXT, 
 	org_nitro TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	part_org_carb TEXT, 
 	particle_class TEXT, 
 	perturbation TEXT, 
@@ -947,7 +942,6 @@ CREATE TABLE "SedimentInterface" (
 	potassium TEXT, 
 	pressure TEXT, 
 	redox_potential TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_collec_device TEXT, 
 	samp_collec_method TEXT, 
@@ -975,7 +969,7 @@ CREATE TABLE "SedimentInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (alkalinity, alkyl_diethers, aminopept_act, ammonium, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, magnesium, mean_frict_vel, mean_peak_frict_vel, methane, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, particle_class, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, porosity, potassium, pressure, redox_potential, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, sediment_type, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", tidal_stage, tot_carb, tot_depth_water_col, tot_nitro_content, tot_org_carb, turbidity, water_content, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (alkalinity, alkyl_diethers, aminopept_act, ammonium, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_org_carb, diss_org_nitro, diss_oxygen, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, magnesium, mean_frict_vel, mean_peak_frict_vel, methane, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, particle_class, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, porosity, potassium, pressure, redox_potential, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, sediment_type, silicate, size_frac, sodium, specific_ecosystem, sulfate, sulfide, "temp", tidal_stage, tot_carb, tot_depth_water_col, tot_nitro_content, tot_org_carb, turbidity, water_content, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "SoilInterface" (
@@ -1049,14 +1043,13 @@ CREATE TABLE "SoilInterface" (
 	org_nitro TEXT, 
 	org_nitro_method TEXT, 
 	other_treatment TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	ph FLOAT, 
 	ph_meth TEXT, 
 	phosphate TEXT, 
 	prev_land_use_meth TEXT, 
 	previous_land_use TEXT, 
 	profile_position VARCHAR(9), 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	salinity_meth TEXT, 
 	samp_collec_device TEXT, 
@@ -1097,7 +1090,7 @@ CREATE TABLE "SoilInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (agrochem_addition, air_temp_regm, al_sat, al_sat_meth, ammonium_nitrogen, annual_precpt, annual_temp, biotic_regm, biotic_relationship, carb_nitro_ratio, chem_administration, climate_environment, collection_date, collection_date_inc, collection_time, collection_time_inc, crop_rotation, cur_land_use, cur_vegetation, cur_vegetation_meth, depth, drainage_class, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, experimental_factor_other, extreme_event, fao_class, filter_method, fire, flooding, gaseous_environment, geo_loc_name, growth_facil, heavy_metals, heavy_metals_meth, horizon_meth, humidity_regm, isotope_exposure, lat_lon, lbc_thirty, lbceq, light_regm, link_class_info, link_climate_info, local_class, local_class_meth, manganese, micro_biomass_c_meth, micro_biomass_meth, micro_biomass_n_meth, microbial_biomass, microbial_biomass_c, microbial_biomass_n, misc_param, nitrate_nitrogen, nitrite_nitrogen, non_microb_biomass, non_microb_biomass_method, org_matter, org_nitro, org_nitro_method, other_treatment, oxy_stat_samp, ph, ph_meth, phosphate, prev_land_use_meth, previous_land_use, profile_position, rel_to_oxygen, salinity, salinity_meth, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_temp, sample_link, season_precpt, season_temp, sieving, size_frac_low, size_frac_up, slope_aspect, slope_gradient, soil_horizon, soil_text_measure, soil_texture_meth, soil_type, soil_type_meth, specific_ecosystem, start_date_inc, start_time_inc, store_cond, "temp", tillage, tot_carb, tot_nitro_cont_meth, tot_nitro_content, tot_org_c_meth, tot_org_carb, tot_phosp, water_cont_soil_meth, water_content, watering_regm, zinc, organism_count, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (agrochem_addition, air_temp_regm, al_sat, al_sat_meth, ammonium_nitrogen, annual_precpt, annual_temp, biotic_regm, biotic_relationship, carb_nitro_ratio, chem_administration, climate_environment, collection_date, collection_date_inc, collection_time, collection_time_inc, crop_rotation, cur_land_use, cur_vegetation, cur_vegetation_meth, depth, drainage_class, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, experimental_factor_other, extreme_event, fao_class, filter_method, fire, flooding, gaseous_environment, geo_loc_name, growth_facil, heavy_metals, heavy_metals_meth, horizon_meth, humidity_regm, isotope_exposure, lat_lon, lbc_thirty, lbceq, light_regm, link_class_info, link_climate_info, local_class, local_class_meth, manganese, micro_biomass_c_meth, micro_biomass_meth, micro_biomass_n_meth, microbial_biomass, microbial_biomass_c, microbial_biomass_n, misc_param, nitrate_nitrogen, nitrite_nitrogen, non_microb_biomass, non_microb_biomass_method, org_matter, org_nitro, org_nitro_method, other_treatment, oxy_stat_samp, ph, ph_meth, phosphate, prev_land_use_meth, previous_land_use, profile_position, salinity, salinity_meth, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_temp, sample_link, season_precpt, season_temp, sieving, size_frac_low, size_frac_up, slope_aspect, slope_gradient, soil_horizon, soil_text_measure, soil_texture_meth, soil_type, soil_type_meth, specific_ecosystem, start_date_inc, start_time_inc, store_cond, "temp", tillage, tot_carb, tot_nitro_cont_meth, tot_nitro_content, tot_org_c_meth, tot_org_carb, tot_phosp, water_cont_soil_meth, water_content, watering_regm, zinc, organism_count, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "WastewaterSludgeInterface" (
@@ -1129,7 +1122,7 @@ CREATE TABLE "WastewaterSludgeInterface" (
 	nitrate TEXT, 
 	org_particles TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	perturbation TEXT, 
 	ph FLOAT, 
 	ph_meth TEXT, 
@@ -1137,7 +1130,6 @@ CREATE TABLE "WastewaterSludgeInterface" (
 	pre_treatment TEXT, 
 	primary_treatment TEXT, 
 	reactor_type TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_collec_device TEXT, 
 	samp_collec_method TEXT, 
@@ -1164,7 +1156,7 @@ CREATE TABLE "WastewaterSludgeInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (alkalinity, biochem_oxygen_dem, chem_administration, chem_oxygen_dem, collection_date, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, efficiency_percent, elev, emulsions, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, gaseous_substances, geo_loc_name, horizon_meth, indust_eff_percent, inorg_particles, lat_lon, misc_param, nitrate, org_particles, organism_count, oxy_stat_samp, perturbation, ph, ph_meth, phosphate, pre_treatment, primary_treatment, reactor_type, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, secondary_treatment, sewage_type, size_frac, sludge_retent_time, sodium, soluble_inorg_mat, soluble_org_mat, specific_ecosystem, suspend_solids, "temp", tertiary_treatment, tot_nitro, tot_phosphate, wastewater_type, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (alkalinity, biochem_oxygen_dem, chem_administration, chem_oxygen_dem, collection_date, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, efficiency_percent, elev, emulsions, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, gaseous_substances, geo_loc_name, horizon_meth, indust_eff_percent, inorg_particles, lat_lon, misc_param, nitrate, org_particles, organism_count, oxy_stat_samp, perturbation, ph, ph_meth, phosphate, pre_treatment, primary_treatment, reactor_type, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, secondary_treatment, sewage_type, size_frac, sludge_retent_time, sodium, soluble_inorg_mat, soluble_org_mat, specific_ecosystem, suspend_solids, "temp", tertiary_treatment, tot_nitro, tot_phosphate, wastewater_type, analysis_type, samp_name, source_mat_id)
 );
 
 CREATE TABLE "WaterInterface" (
@@ -1226,7 +1218,7 @@ CREATE TABLE "WaterInterface" (
 	org_matter TEXT, 
 	org_nitro TEXT, 
 	organism_count TEXT, 
-	oxy_stat_samp VARCHAR(17), 
+	oxy_stat_samp VARCHAR(9), 
 	part_org_carb TEXT, 
 	part_org_nitro TEXT, 
 	perturbation TEXT, 
@@ -1241,7 +1233,6 @@ CREATE TABLE "WaterInterface" (
 	pressure TEXT, 
 	primary_prod TEXT, 
 	redox_potential TEXT, 
-	rel_to_oxygen VARCHAR(17), 
 	salinity TEXT, 
 	samp_collec_device TEXT, 
 	samp_collec_method TEXT, 
@@ -1274,5 +1265,5 @@ CREATE TABLE "WaterInterface" (
 	analysis_type VARCHAR(22) NOT NULL, 
 	samp_name TEXT, 
 	source_mat_id TEXT, 
-	PRIMARY KEY (alkalinity, alkalinity_method, alkyl_diethers, aminopept_act, ammonium, atmospheric_data, bac_prod, bac_resp, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, conduc, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_inorg_nitro, diss_inorg_phosp, diss_org_carb, diss_org_nitro, diss_oxygen, down_par, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, fluor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, light_intensity, mean_frict_vel, mean_peak_frict_vel, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, part_org_nitro, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, photon_flux, potassium, pressure, primary_prod, redox_potential, rel_to_oxygen, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, size_frac_low, size_frac_up, sodium, soluble_react_phosp, specific_ecosystem, sulfate, sulfide, suspend_part_matter, "temp", tidal_stage, tot_depth_water_col, tot_diss_nitro, tot_inorg_nitro, tot_nitro, tot_part_carb, turbidity, water_current, water_content, analysis_type, samp_name, source_mat_id)
+	PRIMARY KEY (alkalinity, alkalinity_method, alkyl_diethers, aminopept_act, ammonium, atmospheric_data, bac_prod, bac_resp, bacteria_carb_prod, biomass, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, collection_date, conduc, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_inorg_nitro, diss_inorg_phosp, diss_org_carb, diss_org_nitro, diss_oxygen, down_par, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, env_package, experimental_factor, fluor, geo_loc_name, glucosidase_act, horizon_meth, lat_lon, light_intensity, mean_frict_vel, mean_peak_frict_vel, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, part_org_nitro, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, photon_flux, potassium, pressure, primary_prod, redox_potential, salinity, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, size_frac_low, size_frac_up, sodium, soluble_react_phosp, specific_ecosystem, sulfate, sulfide, suspend_part_matter, "temp", tidal_stage, tot_depth_water_col, tot_diss_nitro, tot_inorg_nitro, tot_nitro, tot_part_carb, turbidity, water_current, water_content, analysis_type, samp_name, source_mat_id)
 );
