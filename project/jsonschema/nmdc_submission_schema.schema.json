@@ -4118,7 +4118,7 @@
                 },
                 "dna_volume": {
                     "maximum": 1000,
-                    "minimum": 0,
+                    "minimum": 25,
                     "type": "number"
                 },
                 "proposal_dna": {
@@ -4273,6 +4273,8 @@
                     "type": "string"
                 },
                 "rna_volume": {
+                    "maximum": 1000,
+                    "minimum": 25,
                     "type": "number"
                 },
                 "samp_name": {

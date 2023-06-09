@@ -17,7 +17,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 999
+  dna_volume: 111
   proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
@@ -205,7 +205,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 0
+  dna_volume: 33
   proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
@@ -658,7 +658,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 0
+  dna_volume: 33
   proposal_dna: xxx
   samp_name: xxx
 
@@ -722,7 +722,7 @@ jgi_mt_data:
   rna_seq_project: xxx
   rna_seq_project_name: xxx
   rna_seq_project_pi: xxx
-  rna_volume: 999
+  rna_volume: 111
   samp_name: xxx
   source_mat_id: x:1
 
@@ -888,7 +888,7 @@ jgi_mt_data:
   rna_seq_project: xxx
   rna_seq_project_name: xxx
   rna_seq_project_pi: xxx
-  rna_volume: 999
+  rna_volume: 111
   samp_name: xxx
   source_mat_id: x:1
 
@@ -981,7 +981,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 999
+  dna_volume: 111
   proposal_dna: xxx
   samp_name: xxx
   source_mat_id: x:1
@@ -1087,15 +1087,16 @@ jgi_mt_data:
   source_mat_id: x:1
 
 ```
-## SampleData-jgi_mg_data-in-plate-missing-well
+## SampleData-jgi_mg_data-high-dna_concentration
 ### Input
 ```yaml
 jgi_mg_data:
 - analysis_type:
   - metagenomics
   - metatranscriptomics
-  dna_concentration: 1.23
+  dna_concentration: 2001
   dna_cont_type: plate
+  dna_cont_well: C3
   dna_container_id: xxx
   dna_dnase: 'no'
   dna_isolate_meth: xxx
@@ -1106,7 +1107,7 @@ jgi_mg_data:
   dna_seq_project: xxx
   dna_seq_project_name: xxx
   dna_seq_project_pi: xxx
-  dna_volume: 999
+  dna_volume: 0
   proposal_dna: xxx
   samp_name: xxx
 
@@ -1196,6 +1197,32 @@ jgi_mt_data:
   rna_volume: 25.1
   samp_name: sample name
   source_mat_id: MPI:012345
+
+```
+## SampleData-jgi_mg_data-illegal-string-dna_absorb1
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_absorb1: seven
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 0
+  proposal_dna: xxx
+  samp_name: xxx
 
 ```
 ## SampleData-jgi_mt_data-illlegal-string-rna_absorb1
@@ -1458,6 +1485,31 @@ jgi_mt_data:
   source_mat_id: MPI:012345
 
 ```
+## SampleData-jgi_mg_data-negative-dna_concenctration
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: -1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 0
+  proposal_dna: xxx
+  samp_name: xxx
+
+```
 ## SampleData-soil-data-depth-format-003
 ### Input
 ```yaml
@@ -1478,6 +1530,31 @@ soil_data:
   samp_name: b
   samp_store_temp: -80 Celsius
   store_cond: frozen
+
+```
+## SampleData-jgi_mg_data-illegal-string-dna_concentration
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: five hundred
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 0
+  proposal_dna: xxx
+  samp_name: xxx
 
 ```
 ## SampleData-jgi_mg_data-bad-dna_sample_format
@@ -1582,31 +1659,6 @@ jgi_mt_data:
   rna_concentration: 100.3
   rna_cont_type: plate
   rna_cont_well: A2-A11
-  rna_container_id: cat_ht_1999
-  rna_isolate_meth: phenol/cloroform extraction
-  rna_project_contact: Leslie Ann Levine
-  rna_samp_id: '123456'
-  rna_sample_format: MDA reaction buffer
-  rna_sample_name: JGI_lagoon_14343
-  rna_seq_project: '123456789'
-  rna_seq_project_name: JGI Lagoon metatranscritpomics
-  rna_seq_project_pi: Patty Smith
-  rna_volume: 25.1
-  samp_name: sample name
-  source_mat_id: MPI:012345
-
-```
-## SampleData-jgi_mt_data-inter-slot-violation-rna_cont_well-and-rna_cont_type
-### Input
-```yaml
-jgi_mt_data:
-- analysis_type:
-  - metatranscriptomics
-  dnase_rna: 'no'
-  proposal_rna: '504000'
-  rna_concentration: 100.3
-  rna_cont_type: tube
-  rna_cont_well: H7
   rna_container_id: cat_ht_1999
   rna_isolate_meth: phenol/cloroform extraction
   rna_project_contact: Leslie Ann Levine
@@ -1749,6 +1801,31 @@ emsl_data:
   sample_type: sandwich
 
 ```
+## SampleData-jgi_mg_data-capital-dna_dnase
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'No'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 0
+  proposal_dna: xxx
+  samp_name: xxx
+
+```
 ## SampleData-emsl_data-bad-source_mat_id
 ### Input
 ```yaml
@@ -1762,32 +1839,6 @@ emsl_data:
   sample_shipped: 100 units
   sample_type: soil
   source_mat_id: no_colon
-
-```
-## SampleData-jgi_mt_data-in-tube-with-well-val
-### Input
-```yaml
-jgi_mt_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dnase_rna: 'no'
-  proposal_rna: xxx
-  rna_concentration: 1.23
-  rna_cont_type: tube
-  rna_cont_well: B2
-  rna_container_id: xxx
-  rna_isolate_meth: xxx
-  rna_project_contact: xxx
-  rna_samp_id: xxx
-  rna_sample_format: DNAStable
-  rna_sample_name: xxx
-  rna_seq_project: xxx
-  rna_seq_project_name: xxx
-  rna_seq_project_pi: xxx
-  rna_volume: 999
-  samp_name: xxx
-  source_mat_id: x:1
 
 ```
 ## SampleData-water-data-depth-invalid-range
@@ -1810,31 +1861,6 @@ water_data:
   geo_loc_name: 'USA: Crater Lake'
   samp_name: xyz
   specific_ecosystem: Unclassified
-
-```
-## SampleData-jgi_mt_data-in-plate-missing-well-val
-### Input
-```yaml
-jgi_mt_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dnase_rna: 'no'
-  proposal_rna: xxx
-  rna_concentration: 1.23
-  rna_cont_type: plate
-  rna_container_id: xxx
-  rna_isolate_meth: xxx
-  rna_project_contact: xxx
-  rna_samp_id: xxx
-  rna_sample_format: DNAStable
-  rna_sample_name: xxx
-  rna_seq_project: xxx
-  rna_seq_project_name: xxx
-  rna_seq_project_pi: xxx
-  rna_volume: 999
-  samp_name: xxx
-  source_mat_id: x:1
 
 ```
 ## SampleData-emsl_data-bad-sample_shipped
@@ -1889,31 +1915,6 @@ water_data:
   geo_loc_name: 'USA: Crater Lake'
   samp_mat_process: text [ONTO:000000000]
   samp_name: xyz
-
-```
-## SampleData-jgi_mg_data-in-plate-invalid-well
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: plate
-  dna_cont_well: Z99
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 999
-  proposal_dna: xxx
-  samp_name: xxx
 
 ```
 ## SampleData-soil-data-water-content-003
@@ -2058,6 +2059,32 @@ jgi_mt_data:
   source_mat_id: MPI012345
 
 ```
+## SampleData-jgi_mg_data-string-dna_absorb2
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_absorb2: four
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: xxx
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 0
+  proposal_dna: xxx
+  samp_name: xxx
+
+```
 ## SampleData-jgi_mt_data-corner-well-rna_cont_well
 ### Input
 ```yaml
@@ -2177,57 +2204,6 @@ soil_data:
   samp_store_temp: -80 Celsius
   specific_ecosystem: Unclassified
   store_cond: frozen
-
-```
-## SampleData-jgi_mg_data-in-tube-with-well
-### Input
-```yaml
-jgi_mg_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dna_concentration: 1.23
-  dna_cont_type: tube
-  dna_cont_well: B2
-  dna_container_id: xxx
-  dna_dnase: 'no'
-  dna_isolate_meth: xxx
-  dna_project_contact: xxx
-  dna_samp_id: xxx
-  dna_sample_format: DNAStable
-  dna_sample_name: xxx
-  dna_seq_project: xxx
-  dna_seq_project_name: xxx
-  dna_seq_project_pi: xxx
-  dna_volume: 999
-  proposal_dna: xxx
-  samp_name: xxx
-
-```
-## SampleData-jgi_mt_data-in-plate-invalid-well-val
-### Input
-```yaml
-jgi_mt_data:
-- analysis_type:
-  - metagenomics
-  - metatranscriptomics
-  dnase_rna: 'no'
-  proposal_rna: xxx
-  rna_concentration: 1.23
-  rna_cont_type: plate
-  rna_cont_well: Z99
-  rna_container_id: xxx
-  rna_isolate_meth: xxx
-  rna_project_contact: xxx
-  rna_samp_id: xxx
-  rna_sample_format: DNAStable
-  rna_sample_name: xxx
-  rna_seq_project: xxx
-  rna_seq_project_name: xxx
-  rna_seq_project_pi: xxx
-  rna_volume: 999
-  samp_name: xxx
-  source_mat_id: x:1
 
 ```
 ## SampleData-water-data-organsim_count-invalid-method
@@ -2392,6 +2368,31 @@ plant_associated_data:
   samp_name: our first houseplant is dying
   samp_store_temp: 20 C
   source_mat_id: example:plant_associated_data001
+
+```
+## SampleData-jgi_mg_data-long-dna_container_id
+### Input
+```yaml
+jgi_mg_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  dna_concentration: 1.23
+  dna_cont_type: plate
+  dna_cont_well: C3
+  dna_container_id: mount_mordor_012356789
+  dna_dnase: 'no'
+  dna_isolate_meth: xxx
+  dna_project_contact: xxx
+  dna_samp_id: xxx
+  dna_sample_format: DNAStable
+  dna_sample_name: xxx
+  dna_seq_project: xxx
+  dna_seq_project_name: xxx
+  dna_seq_project_pi: xxx
+  dna_volume: 0
+  proposal_dna: xxx
+  samp_name: xxx
 
 ```
 ## SampleData-water-data-numeric-alkalinity
