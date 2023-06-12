@@ -727,6 +727,63 @@ jgi_mt_data:
   source_mat_id: x:1
 
 ```
+## SampleData-soil-data-water-content
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+  water_content: 75% dry weight
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: c
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+  water_content: 5 g water / g dry soil
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: d
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+  water_content: .75 g water per g soil WHC
+
+```
 ## SampleData-water-data-depth-formats
 ### Input
 ```yaml
@@ -1545,6 +1602,29 @@ sediment_data:
   samp_store_temp: -80 Celsius
 
 ```
+## SampleData-soil-data-water-content-001
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+  water_content: 3
+
+```
 ## SampleData-water-data-string-alkalinity
 ### Input
 ```yaml
@@ -1835,6 +1915,29 @@ water_data:
   geo_loc_name: 'USA: Crater Lake'
   samp_mat_process: text [ONTO:000000000]
   samp_name: xyz
+
+```
+## SampleData-soil-data-water-content-003
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+  water_content: just some water
 
 ```
 ## SampleData-jgi_mt_data-illegal-string-rna_absorb2
@@ -2144,6 +2247,29 @@ sediment_data:
   lat_lon: 35.211445 -98.464612
   samp_name: a
   samp_store_temp: -80 Celsius
+
+```
+## SampleData-soil-data-water-content-002
+### Input
+```yaml
+soil_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  collection_date: '2022-01-15'
+  depth: 0 - 1
+  elev: 123
+  env_broad_scale: ______urban biome [ENVO:01000249]
+  env_local_scale: ________tunnel [ENVO:00000068]
+  env_medium: bare soil [ENVO:01001616]
+  env_package: soil
+  geo_loc_name: 'USA: Nowhere, Oklahoma'
+  growth_facil: greenhouse
+  lat_lon: 35.211445 -98.464612
+  samp_name: b
+  samp_store_temp: -80 Celsius
+  store_cond: frozen
+  water_content: 3%
 
 ```
 ## SampleData-jgi_mt_data-rna-capital-rna_sample_format

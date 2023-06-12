@@ -3,6 +3,7 @@ from_val	from_type	to_type	to_val	len
 {float}	MIxS string serialization	DH datatype	float	5
 {float} {float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	79
 {float} {unit}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$	44
+{float or pct} {unit}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%? \S.+$
 {float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	
 {float}|{float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$	
 {integer}	MIxS string serialization	DH datatype	integer	7
