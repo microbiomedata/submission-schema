@@ -1436,6 +1436,21 @@ jgi_mg_data:
   samp_name: xxx
 
 ```
+## SampleData-emsl_data-capital-sample_type
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  replicate_number: 5
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: Water_extract_soil
+
+```
 ## SampleData-jgi_mg_data-missing-dna_cont_type
 ### Input
 ```yaml
@@ -1671,6 +1686,21 @@ jgi_mt_data:
   rna_volume: 25.1
   samp_name: sample name
   source_mat_id: MPI:012345
+
+```
+## SampleData-emsl_data-string-replicate_number
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  replicate_number: hello
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: soil
 
 ```
 ## SampleData-water-data-broad-term-only
@@ -2561,5 +2591,21 @@ water_data:
   env_package: xyz
   geo_loc_name: 'USA: Crater Lake'
   specific_ecosystem: Unclassified
+
+```
+## SampleData-emsl_data-string-technical_reps
+### Input
+```yaml
+emsl_data:
+- analysis_type:
+  - metagenomics
+  - metatranscriptomics
+  emsl_store_temp: -80
+  project_id: xxx
+  replicate_number: 5
+  samp_name: xxx
+  sample_shipped: 100 units
+  sample_type: water_extract_soil
+  technical_reps: turkey_sub
 
 ```
