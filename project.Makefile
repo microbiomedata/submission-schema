@@ -205,7 +205,7 @@ modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
 local/nmdc.yaml:
-	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.6.0/nmdc_schema/nmdc_materialized_patterns.yaml
+	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.6.5/nmdc_schema/nmdc_materialized_patterns.yaml
 
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
@@ -292,16 +292,17 @@ src/data/invalid src/data/valid
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-# target was was local/slot_usage.tsv,
-#   but I changed the destination to a checked-in directory
-#   so collaborators can sort and filter the slot attributes
-#   and I switched to a smaller template
-schemasheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-schemasheets/templates/slot_usage_minimal.tsv
-	$(RUN) linkml2sheets \
-		--output-directory $(dir $@) \
-		--schema $< $(word 2,$^)
-# WARNING:root:Not implemented: slot
+# see local/usage_template.tsv
+## target was was local/slot_usage.tsv,
+##   but I changed the destination to a checked-in directory
+##   so collaborators can sort and filter the slot attributes
+##   and I switched to a smaller template
+#schemasheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+#schemasheets/templates/slot_usage_minimal.tsv
+#	$(RUN) linkml2sheets \
+#		--output-directory $(dir $@) \
+#		--schema $< $(word 2,$^)
+## WARNING:root:Not implemented: slot
 
 local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
@@ -502,13 +503,14 @@ bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.sch
 		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-rna_sample_format.yaml
 	
 
+# 		 --columns-to-insert enum \
+  #		 --columns-to-insert permissible_value \
+
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
 	$(RUN) generate_and_populate_template \
 		 --base-class slot_definition \
 		 --columns-to-insert class \
-		 --columns-to-insert enum \
-		 --columns-to-insert permissible_value \
 		 --columns-to-insert slot \
 		 --destination-template $@ \
 		 --meta-model-excel-file local/meta.xlsx \
