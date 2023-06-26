@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2023-06-12T11:35:34
+# Generation date: 2023-06-12T16:46:13
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -7,7 +7,6 @@
 # license:
 
 import dataclasses
-import sys
 import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
@@ -33,12 +32,12 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHMO = CurieNamespace('CHMO', 'http://purl.obolibrary.org/obo/CHMO_')
-COG = CurieNamespace('COG', 'https://unknown.to.linter.org/')
-EC = CurieNamespace('EC', 'https://unknown.to.linter.org/')
-EFO = CurieNamespace('EFO', 'http://identifiers.org/efo/')
+COG = CurieNamespace('COG', 'https://bioregistry.io/cog:')
+EC = CurieNamespace('EC', 'https://bioregistry.io/eccode:')
+EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 GOLD = CurieNamespace('GOLD', 'http://identifiers.org/gold/')
-ISA = CurieNamespace('ISA', 'https://unknown.to.linter.org/')
+ISA = CurieNamespace('ISA', 'http://example.com/isa/')
 KEGG_COMPOUND = CurieNamespace('KEGG_COMPOUND', 'http://identifiers.org/kegg.compound/')
 KEGG_ORTHOLOGY = CurieNamespace('KEGG_ORTHOLOGY', 'http://identifiers.org/kegg.orthology/')
 KEGG_REACTION = CurieNamespace('KEGG_REACTION', 'http://identifiers.org/kegg.reaction/')
@@ -46,24 +45,28 @@ KEGG_PATHWAY = CurieNamespace('KEGG_PATHWAY', 'http://identifiers.org/kegg.pathw
 MIXS = CurieNamespace('MIXS', 'https://w3id.org/mixs/')
 MIXS_YAML = CurieNamespace('MIXS_yaml', 'https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/')
 METACYC = CurieNamespace('MetaCyc', 'https://identifiers.org/metacyc.reaction/')
-METANETX = CurieNamespace('MetaNetX', 'https://unknown.to.linter.org/')
-NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
-NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
+METANETX = CurieNamespace('MetaNetX', 'http://example.com/metanetx/')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 RHEA = CurieNamespace('RHEA', 'http://identifiers.org/rhea/')
-RETRORULES = CurieNamespace('RetroRules', 'https://unknown.to.linter.org/')
+RETRORULES = CurieNamespace('RetroRules', 'http://example.com/retrorules/')
 SEED = CurieNamespace('SEED', 'http://identifiers.org/seed/')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UNIPROTKB = CurieNamespace('UniProtKB', 'https://identifiers.org/uniprot/')
-BARE = CurieNamespace('bare', 'https://unknown.to.linter.org/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
-GTPO = CurieNamespace('gtpo', 'https://unknown.to.linter.org/')
-JGI = CurieNamespace('jgi', 'https://unknown.to.linter.org/')
+EMSL_PROJECT = CurieNamespace('emsl_project', 'https://bioregistry.io/emsl.project:')
+GENERIC = CurieNamespace('generic', 'https://example.com/generic/')
+GNPS_TASK = CurieNamespace('gnps_task', 'https://bioregistry.io/gnps.task:')
+GTPO = CurieNamespace('gtpo', 'http://example.com/gtpo/')
+IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
+JGI = CurieNamespace('jgi', 'http://example.com/jgi/')
+JGI_PROPOSAL = CurieNamespace('jgi_proposal', 'https://bioregistry.io/jgi.proposal:')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+MGNIFY_PROJ = CurieNamespace('mgnify_proj', 'https://identifiers.org/mgnify.proj:')
+NEON_IDENTIFIER = CurieNamespace('neon_identifier', 'http://example.org/neon/identifier/')
+NEON_SCHEMA = CurieNamespace('neon_schema', 'http://example.org/neon/schema/')
 NMDC = CurieNamespace('nmdc', 'https://w3id.org/nmdc/')
 NMDC_SUB_SCHEMA = CurieNamespace('nmdc_sub_schema', 'https://example.com/nmdc_sub_schema/')
-NMDC_YAML = CurieNamespace('nmdc_yaml', 'https://raw.githubusercontent.com/microbiomedata/nmdc-schema/main/src/schema/')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
@@ -5106,6 +5109,12 @@ class JgiMgInterface(DhInterface):
         if self.proposal_dna is not None and not isinstance(self.proposal_dna, str):
             self.proposal_dna = str(self.proposal_dna)
 
+        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
+            self.dna_absorb1 = float(self.dna_absorb1)
+
+        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
+            self.dna_absorb2 = float(self.dna_absorb2)
+
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
 
@@ -5288,6 +5297,12 @@ class JgiMtInterface(DhInterface):
 
         if self.rna_volume is not None and not isinstance(self.rna_volume, float):
             self.rna_volume = float(self.rna_volume)
+
+        if self.rna_absorb1 is not None and not isinstance(self.rna_absorb1, float):
+            self.rna_absorb1 = float(self.rna_absorb1)
+
+        if self.rna_absorb2 is not None and not isinstance(self.rna_absorb2, float):
+            self.rna_absorb2 = float(self.rna_absorb2)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -9269,7 +9284,7 @@ class NamedThing(YAMLRoot):
     id: Union[str, NamedThingId] = None
     name: Optional[str] = None
     description: Optional[str] = None
-    alternative_identifiers: Optional[str] = None
+    alternative_identifiers: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
@@ -9283,8 +9298,9 @@ class NamedThing(YAMLRoot):
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
 
-        if self.alternative_identifiers is not None and not isinstance(self.alternative_identifiers, str):
-            self.alternative_identifiers = str(self.alternative_identifiers)
+        if not isinstance(self.alternative_identifiers, list):
+            self.alternative_identifiers = [self.alternative_identifiers] if self.alternative_identifiers is not None else []
+        self.alternative_identifiers = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.alternative_identifiers]
 
         super().__post_init__(**kwargs)
 
@@ -9294,14 +9310,18 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    metabolomics = PermissibleValue(text="metabolomics",
-                                               description="placeholder PV descr")
-    metagenomics = PermissibleValue(text="metagenomics",
-                                               description="placeholder PV descr")
-    metaproteomics = PermissibleValue(text="metaproteomics",
-                                                   description="placeholder PV descr")
-    metatranscriptomics = PermissibleValue(text="metatranscriptomics",
-                                                             description="placeholder PV descr")
+    metabolomics = PermissibleValue(
+        text="metabolomics",
+        description="placeholder PV descr")
+    metagenomics = PermissibleValue(
+        text="metagenomics",
+        description="placeholder PV descr")
+    metaproteomics = PermissibleValue(
+        text="metaproteomics",
+        description="placeholder PV descr")
+    metatranscriptomics = PermissibleValue(
+        text="metatranscriptomics",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="AnalysisTypeEnum",
@@ -9311,21 +9331,26 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "natural organic matter",
-                PermissibleValue(text="natural organic matter",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="natural organic matter",
+                description="placeholder PV descr"))
 
 class BioticRelationshipEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    commensalism = PermissibleValue(text="commensalism",
-                                               description="placeholder PV descr")
-    mutualism = PermissibleValue(text="mutualism",
-                                         description="placeholder PV descr")
-    parasitism = PermissibleValue(text="parasitism",
-                                           description="placeholder PV descr")
-    symbiotic = PermissibleValue(text="symbiotic",
-                                         description="placeholder enum descr")
+    commensalism = PermissibleValue(
+        text="commensalism",
+        description="placeholder PV descr")
+    mutualism = PermissibleValue(
+        text="mutualism",
+        description="placeholder PV descr")
+    parasitism = PermissibleValue(
+        text="parasitism",
+        description="placeholder PV descr")
+    symbiotic = PermissibleValue(
+        text="symbiotic",
+        description="placeholder enum descr")
 
     _defn = EnumDefinition(
         name="BioticRelationshipEnum",
@@ -9335,8 +9360,9 @@ class BioticRelationshipEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "free living",
-                PermissibleValue(text="free living",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="free living",
+                description="placeholder PV descr"))
 
 class JgiContTypeEnum(EnumDefinitionImpl):
 
@@ -9351,20 +9377,27 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    DNAStable = PermissibleValue(text="DNAStable",
-                                         description="placeholder PV descr")
-    Ethanol = PermissibleValue(text="Ethanol",
-                                     description="placeholder PV descr")
-    PBS = PermissibleValue(text="PBS",
-                             description="placeholder PV descr")
-    Pellet = PermissibleValue(text="Pellet",
-                                   description="placeholder PV descr")
-    RNAStable = PermissibleValue(text="RNAStable",
-                                         description="placeholder PV descr")
-    TE = PermissibleValue(text="TE",
-                           description="placeholder PV descr")
-    Water = PermissibleValue(text="Water",
-                                 description="placeholder PV descr")
+    DNAStable = PermissibleValue(
+        text="DNAStable",
+        description="placeholder PV descr")
+    Ethanol = PermissibleValue(
+        text="Ethanol",
+        description="placeholder PV descr")
+    PBS = PermissibleValue(
+        text="PBS",
+        description="placeholder PV descr")
+    Pellet = PermissibleValue(
+        text="Pellet",
+        description="placeholder PV descr")
+    RNAStable = PermissibleValue(
+        text="RNAStable",
+        description="placeholder PV descr")
+    TE = PermissibleValue(
+        text="TE",
+        description="placeholder PV descr")
+    Water = PermissibleValue(
+        text="Water",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="DnaSampleFormatEnum",
@@ -9374,21 +9407,25 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "10 mM Tris-HCl",
-                PermissibleValue(text="10 mM Tris-HCl",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="10 mM Tris-HCl",
+                description="placeholder PV descr"))
         setattr(cls, "Low EDTA TE",
-                PermissibleValue(text="Low EDTA TE",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Low EDTA TE",
+                description="placeholder PV descr"))
         setattr(cls, "MDA reaction buffer",
-                PermissibleValue(text="MDA reaction buffer",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="MDA reaction buffer",
+                description="placeholder PV descr"))
 
 class EcosystemCategoryEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    Terrestrial = PermissibleValue(text="Terrestrial",
-                                             description="placeholder PV descr")
+    Terrestrial = PermissibleValue(
+        text="Terrestrial",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="EcosystemCategoryEnum",
@@ -9399,8 +9436,9 @@ class EcosystemEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    Environmental = PermissibleValue(text="Environmental",
-                                                 description="placeholder PV descr")
+    Environmental = PermissibleValue(
+        text="Environmental",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="EcosystemEnum",
@@ -9411,36 +9449,51 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    Biocrust = PermissibleValue(text="Biocrust",
-                                       description="placeholder PV descr")
-    Biofilm = PermissibleValue(text="Biofilm",
-                                     description="placeholder PV descr")
-    Clay = PermissibleValue(text="Clay",
-                               description="placeholder PV descr")
-    Floodplain = PermissibleValue(text="Floodplain",
-                                           description="placeholder PV descr")
-    Fossil = PermissibleValue(text="Fossil",
-                                   description="placeholder PV descr")
-    Glacier = PermissibleValue(text="Glacier",
-                                     description="placeholder PV descr")
-    Loam = PermissibleValue(text="Loam",
-                               description="placeholder PV descr")
-    Pasture = PermissibleValue(text="Pasture",
-                                     description="placeholder PV descr")
-    Peat = PermissibleValue(text="Peat",
-                               description="placeholder PV descr")
-    Ranch = PermissibleValue(text="Ranch",
-                                 description="placeholder PV descr")
-    Sand = PermissibleValue(text="Sand",
-                               description="placeholder PV descr")
-    Silt = PermissibleValue(text="Silt",
-                               description="placeholder PV descr")
-    Unclassified = PermissibleValue(text="Unclassified",
-                                               description="placeholder PV descr")
-    Watershed = PermissibleValue(text="Watershed",
-                                         description="placeholder PV descr")
-    Wetlands = PermissibleValue(text="Wetlands",
-                                       description="placeholder PV descr")
+    Biocrust = PermissibleValue(
+        text="Biocrust",
+        description="placeholder PV descr")
+    Biofilm = PermissibleValue(
+        text="Biofilm",
+        description="placeholder PV descr")
+    Clay = PermissibleValue(
+        text="Clay",
+        description="placeholder PV descr")
+    Floodplain = PermissibleValue(
+        text="Floodplain",
+        description="placeholder PV descr")
+    Fossil = PermissibleValue(
+        text="Fossil",
+        description="placeholder PV descr")
+    Glacier = PermissibleValue(
+        text="Glacier",
+        description="placeholder PV descr")
+    Loam = PermissibleValue(
+        text="Loam",
+        description="placeholder PV descr")
+    Pasture = PermissibleValue(
+        text="Pasture",
+        description="placeholder PV descr")
+    Peat = PermissibleValue(
+        text="Peat",
+        description="placeholder PV descr")
+    Ranch = PermissibleValue(
+        text="Ranch",
+        description="placeholder PV descr")
+    Sand = PermissibleValue(
+        text="Sand",
+        description="placeholder PV descr")
+    Silt = PermissibleValue(
+        text="Silt",
+        description="placeholder PV descr")
+    Unclassified = PermissibleValue(
+        text="Unclassified",
+        description="placeholder PV descr")
+    Watershed = PermissibleValue(
+        text="Watershed",
+        description="placeholder PV descr")
+    Wetlands = PermissibleValue(
+        text="Wetlands",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="EcosystemSubtypeEnum",
@@ -9450,30 +9503,37 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "Bulk soil",
-                PermissibleValue(text="Bulk soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Bulk soil",
+                description="placeholder PV descr"))
         setattr(cls, "Mineral horizon",
-                PermissibleValue(text="Mineral horizon",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Mineral horizon",
+                description="placeholder PV descr"))
         setattr(cls, "Nature reserve",
-                PermissibleValue(text="Nature reserve",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Nature reserve",
+                description="placeholder PV descr"))
         setattr(cls, "Organic layer",
-                PermissibleValue(text="Organic layer",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Organic layer",
+                description="placeholder PV descr"))
         setattr(cls, "Paddy field/soil",
-                PermissibleValue(text="Paddy field/soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Paddy field/soil",
+                description="placeholder PV descr"))
         setattr(cls, "Soil crust",
-                PermissibleValue(text="Soil crust",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Soil crust",
+                description="placeholder PV descr"))
 
 class EcosystemTypeEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    Soil = PermissibleValue(text="Soil",
-                               description="placeholder PV descr")
+    Soil = PermissibleValue(
+        text="Soil",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="EcosystemTypeEnum",
@@ -9484,8 +9544,9 @@ class EnvPackageEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    soil = PermissibleValue(text="soil",
-                               description="placeholder PV descr")
+    soil = PermissibleValue(
+        text="soil",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="EnvPackageEnum",
@@ -9496,24 +9557,33 @@ class GrowthFacilEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    experimental_garden = PermissibleValue(text="experimental_garden",
-                                                             description="placeholder PV descr")
-    field = PermissibleValue(text="field",
-                                 description="placeholder PV descr")
-    field_incubation = PermissibleValue(text="field_incubation",
-                                                       description="placeholder PV descr")
-    glasshouse = PermissibleValue(text="glasshouse",
-                                           description="placeholder PV descr")
-    greenhouse = PermissibleValue(text="greenhouse",
-                                           description="placeholder PV descr")
-    growth_chamber = PermissibleValue(text="growth_chamber",
-                                                   description="placeholder PV descr")
-    lab_incubation = PermissibleValue(text="lab_incubation",
-                                                   description="placeholder PV descr")
-    open_top_chamber = PermissibleValue(text="open_top_chamber",
-                                                       description="placeholder PV descr")
-    other = PermissibleValue(text="other",
-                                 description="placeholder PV descr")
+    experimental_garden = PermissibleValue(
+        text="experimental_garden",
+        description="placeholder PV descr")
+    field = PermissibleValue(
+        text="field",
+        description="placeholder PV descr")
+    field_incubation = PermissibleValue(
+        text="field_incubation",
+        description="placeholder PV descr")
+    glasshouse = PermissibleValue(
+        text="glasshouse",
+        description="placeholder PV descr")
+    greenhouse = PermissibleValue(
+        text="greenhouse",
+        description="placeholder PV descr")
+    growth_chamber = PermissibleValue(
+        text="growth_chamber",
+        description="placeholder PV descr")
+    lab_incubation = PermissibleValue(
+        text="lab_incubation",
+        description="placeholder PV descr")
+    open_top_chamber = PermissibleValue(
+        text="open_top_chamber",
+        description="placeholder PV descr")
+    other = PermissibleValue(
+        text="other",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="GrowthFacilEnum",
@@ -9524,16 +9594,21 @@ class RelToOxygenEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    aerobe = PermissibleValue(text="aerobe",
-                                   description="placeholder PV descr")
-    anaerobe = PermissibleValue(text="anaerobe",
-                                       description="placeholder PV descr")
-    facultative = PermissibleValue(text="facultative",
-                                             description="placeholder PV descr")
-    microaerophilic = PermissibleValue(text="microaerophilic",
-                                                     description="placeholder PV descr")
-    microanaerobe = PermissibleValue(text="microanaerobe",
-                                                 description="placeholder PV descr")
+    aerobe = PermissibleValue(
+        text="aerobe",
+        description="placeholder PV descr")
+    anaerobe = PermissibleValue(
+        text="anaerobe",
+        description="placeholder PV descr")
+    facultative = PermissibleValue(
+        text="facultative",
+        description="placeholder PV descr")
+    microaerophilic = PermissibleValue(
+        text="microaerophilic",
+        description="placeholder PV descr")
+    microanaerobe = PermissibleValue(
+        text="microanaerobe",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="RelToOxygenEnum",
@@ -9543,30 +9618,39 @@ class RelToOxygenEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "obligate aerobe",
-                PermissibleValue(text="obligate aerobe",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="obligate aerobe",
+                description="placeholder PV descr"))
         setattr(cls, "obligate anaerobe",
-                PermissibleValue(text="obligate anaerobe",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="obligate anaerobe",
+                description="placeholder PV descr"))
 
 class RnaSampleFormatEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    DNAStable = PermissibleValue(text="DNAStable",
-                                         description="placeholder PV descr")
-    Ethanol = PermissibleValue(text="Ethanol",
-                                     description="placeholder PV descr")
-    PBS = PermissibleValue(text="PBS",
-                             description="placeholder PV descr")
-    Pellet = PermissibleValue(text="Pellet",
-                                   description="placeholder PV descr")
-    RNAStable = PermissibleValue(text="RNAStable",
-                                         description="placeholder PV descr")
-    TE = PermissibleValue(text="TE",
-                           description="placeholder PV descr")
-    Water = PermissibleValue(text="Water",
-                                 description="placeholder PV descr")
+    DNAStable = PermissibleValue(
+        text="DNAStable",
+        description="placeholder PV descr")
+    Ethanol = PermissibleValue(
+        text="Ethanol",
+        description="placeholder PV descr")
+    PBS = PermissibleValue(
+        text="PBS",
+        description="placeholder PV descr")
+    Pellet = PermissibleValue(
+        text="Pellet",
+        description="placeholder PV descr")
+    RNAStable = PermissibleValue(
+        text="RNAStable",
+        description="placeholder PV descr")
+    TE = PermissibleValue(
+        text="TE",
+        description="placeholder PV descr")
+    Water = PermissibleValue(
+        text="Water",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="RnaSampleFormatEnum",
@@ -9576,23 +9660,28 @@ class RnaSampleFormatEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "10 mM Tris-HCl",
-                PermissibleValue(text="10 mM Tris-HCl",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="10 mM Tris-HCl",
+                description="placeholder PV descr"))
         setattr(cls, "Low EDTA TE",
-                PermissibleValue(text="Low EDTA TE",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Low EDTA TE",
+                description="placeholder PV descr"))
         setattr(cls, "MDA reaction buffer",
-                PermissibleValue(text="MDA reaction buffer",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="MDA reaction buffer",
+                description="placeholder PV descr"))
 
 class SampleTypeEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    soil = PermissibleValue(text="soil",
-                               description="placeholder PV descr")
-    water_extract_soil = PermissibleValue(text="water_extract_soil",
-                                                           description="placeholder PV descr")
+    soil = PermissibleValue(
+        text="soil",
+        description="placeholder PV descr")
+    water_extract_soil = PermissibleValue(
+        text="water_extract_soil",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="SampleTypeEnum",
@@ -9603,32 +9692,45 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    Agricultural = PermissibleValue(text="Agricultural",
-                                               description="placeholder PV descr")
-    Alpine = PermissibleValue(text="Alpine",
-                                   description="placeholder PV descr")
-    Bog = PermissibleValue(text="Bog",
-                             description="placeholder PV descr")
-    Contaminated = PermissibleValue(text="Contaminated",
-                                               description="placeholder PV descr")
-    Desert = PermissibleValue(text="Desert",
-                                   description="placeholder PV descr")
-    Farm = PermissibleValue(text="Farm",
-                               description="placeholder PV descr")
-    Grasslands = PermissibleValue(text="Grasslands",
-                                           description="placeholder PV descr")
-    Meadow = PermissibleValue(text="Meadow",
-                                   description="placeholder PV descr")
-    Mine = PermissibleValue(text="Mine",
-                               description="placeholder PV descr")
-    Permafrost = PermissibleValue(text="Permafrost",
-                                           description="placeholder PV descr")
-    River = PermissibleValue(text="River",
-                                 description="placeholder PV descr")
-    Shrubland = PermissibleValue(text="Shrubland",
-                                         description="placeholder PV descr")
-    Unclassified = PermissibleValue(text="Unclassified",
-                                               description="placeholder PV descr")
+    Agricultural = PermissibleValue(
+        text="Agricultural",
+        description="placeholder PV descr")
+    Alpine = PermissibleValue(
+        text="Alpine",
+        description="placeholder PV descr")
+    Bog = PermissibleValue(
+        text="Bog",
+        description="placeholder PV descr")
+    Contaminated = PermissibleValue(
+        text="Contaminated",
+        description="placeholder PV descr")
+    Desert = PermissibleValue(
+        text="Desert",
+        description="placeholder PV descr")
+    Farm = PermissibleValue(
+        text="Farm",
+        description="placeholder PV descr")
+    Grasslands = PermissibleValue(
+        text="Grasslands",
+        description="placeholder PV descr")
+    Meadow = PermissibleValue(
+        text="Meadow",
+        description="placeholder PV descr")
+    Mine = PermissibleValue(
+        text="Mine",
+        description="placeholder PV descr")
+    Permafrost = PermissibleValue(
+        text="Permafrost",
+        description="placeholder PV descr")
+    River = PermissibleValue(
+        text="River",
+        description="placeholder PV descr")
+    Shrubland = PermissibleValue(
+        text="Shrubland",
+        description="placeholder PV descr")
+    Unclassified = PermissibleValue(
+        text="Unclassified",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="SpecificEcosystemEnum",
@@ -9638,51 +9740,66 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "Agricultural land",
-                PermissibleValue(text="Agricultural land",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Agricultural land",
+                description="placeholder PV descr"))
         setattr(cls, "Agricultural soil",
-                PermissibleValue(text="Agricultural soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Agricultural soil",
+                description="placeholder PV descr"))
         setattr(cls, "Boreal forest",
-                PermissibleValue(text="Boreal forest",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Boreal forest",
+                description="placeholder PV descr"))
         setattr(cls, "Forest soil",
-                PermissibleValue(text="Forest soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Forest soil",
+                description="placeholder PV descr"))
         setattr(cls, "Forest Soil",
-                PermissibleValue(text="Forest Soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Forest Soil",
+                description="placeholder PV descr"))
         setattr(cls, "Mine drainage",
-                PermissibleValue(text="Mine drainage",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Mine drainage",
+                description="placeholder PV descr"))
         setattr(cls, "Oil-contaminated",
-                PermissibleValue(text="Oil-contaminated",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Oil-contaminated",
+                description="placeholder PV descr"))
         setattr(cls, "Orchard soil",
-                PermissibleValue(text="Orchard soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Orchard soil",
+                description="placeholder PV descr"))
         setattr(cls, "Riparian soil",
-                PermissibleValue(text="Riparian soil",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Riparian soil",
+                description="placeholder PV descr"))
         setattr(cls, "Tropical rainforest",
-                PermissibleValue(text="Tropical rainforest",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Tropical rainforest",
+                description="placeholder PV descr"))
         setattr(cls, "Uranium contaminated",
-                PermissibleValue(text="Uranium contaminated",
-                                 description="placeholder PV descr") )
+            PermissibleValue(
+                text="Uranium contaminated",
+                description="placeholder PV descr"))
 
 class StoreCondEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
     """
-    fresh = PermissibleValue(text="fresh",
-                                 description="placeholder PV descr")
-    frozen = PermissibleValue(text="frozen",
-                                   description="placeholder PV descr")
-    lyophilized = PermissibleValue(text="lyophilized",
-                                             description="placeholder PV descr")
-    other = PermissibleValue(text="other",
-                                 description="placeholder PV descr")
+    fresh = PermissibleValue(
+        text="fresh",
+        description="placeholder PV descr")
+    frozen = PermissibleValue(
+        text="frozen",
+        description="placeholder PV descr")
+    lyophilized = PermissibleValue(
+        text="lyophilized",
+        description="placeholder PV descr")
+    other = PermissibleValue(
+        text="other",
+        description="placeholder PV descr")
 
     _defn = EnumDefinition(
         name="StoreCondEnum",
@@ -9713,167 +9830,221 @@ class EnvBroadScaleSoilEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "arid biome [ENVO:01001838]",
-                PermissibleValue(text="arid biome [ENVO:01001838]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="arid biome [ENVO:01001838]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "subalpine biome [ENVO:01001837]",
-                PermissibleValue(text="subalpine biome [ENVO:01001837]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="subalpine biome [ENVO:01001837]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "montane biome [ENVO:01001836]",
-                PermissibleValue(text="montane biome [ENVO:01001836]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="montane biome [ENVO:01001836]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__montane savanna biome [ENVO:01000223]",
-                PermissibleValue(text="__montane savanna biome [ENVO:01000223]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__montane savanna biome [ENVO:01000223]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__montane shrubland biome [ENVO:01000216]",
-                PermissibleValue(text="__montane shrubland biome [ENVO:01000216]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__montane shrubland biome [ENVO:01000216]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "alpine biome [ENVO:01001835]",
-                PermissibleValue(text="alpine biome [ENVO:01001835]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="alpine biome [ENVO:01001835]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__alpine tundra biome [ENVO:01001505]",
-                PermissibleValue(text="__alpine tundra biome [ENVO:01001505]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__alpine tundra biome [ENVO:01001505]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "subpolar biome [ENVO:01001834]",
-                PermissibleValue(text="subpolar biome [ENVO:01001834]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="subpolar biome [ENVO:01001834]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "subtropical biome [ENVO:01001832]",
-                PermissibleValue(text="subtropical biome [ENVO:01001832]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="subtropical biome [ENVO:01001832]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__mediterranean biome [ENVO:01001833]",
-                PermissibleValue(text="__mediterranean biome [ENVO:01001833]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__mediterranean biome [ENVO:01001833]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____mediterranean savanna biome [ENVO:01000229]",
-                PermissibleValue(text="____mediterranean savanna biome [ENVO:01000229]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____mediterranean savanna biome [ENVO:01000229]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____mediterranean shrubland biome [ENVO:01000217]",
-                PermissibleValue(text="____mediterranean shrubland biome [ENVO:01000217]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____mediterranean shrubland biome [ENVO:01000217]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____mediterranean woodland biome [ENVO:01000208]",
-                PermissibleValue(text="____mediterranean woodland biome [ENVO:01000208]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____mediterranean woodland biome [ENVO:01000208]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__subtropical woodland biome [ENVO:01000222]",
-                PermissibleValue(text="__subtropical woodland biome [ENVO:01000222]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__subtropical woodland biome [ENVO:01000222]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__subtropical shrubland biome [ENVO:01000213]",
-                PermissibleValue(text="__subtropical shrubland biome [ENVO:01000213]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__subtropical shrubland biome [ENVO:01000213]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__subtropical savanna biome [ENVO:01000187]",
-                PermissibleValue(text="__subtropical savanna biome [ENVO:01000187]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__subtropical savanna biome [ENVO:01000187]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "temperate biome [ENVO:01001831]",
-                PermissibleValue(text="temperate biome [ENVO:01001831]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="temperate biome [ENVO:01001831]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__temperate woodland biome [ENVO:01000221]",
-                PermissibleValue(text="__temperate woodland biome [ENVO:01000221]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__temperate woodland biome [ENVO:01000221]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__temperate shrubland biome [ENVO:01000215]",
-                PermissibleValue(text="__temperate shrubland biome [ENVO:01000215]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__temperate shrubland biome [ENVO:01000215]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__temperate savanna biome [ENVO:01000189]",
-                PermissibleValue(text="__temperate savanna biome [ENVO:01000189]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__temperate savanna biome [ENVO:01000189]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "tropical biome [ENVO:01001830]",
-                PermissibleValue(text="tropical biome [ENVO:01001830]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="tropical biome [ENVO:01001830]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__tropical woodland biome [ENVO:01000220]",
-                PermissibleValue(text="__tropical woodland biome [ENVO:01000220]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__tropical woodland biome [ENVO:01000220]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__tropical shrubland biome [ENVO:01000214]",
-                PermissibleValue(text="__tropical shrubland biome [ENVO:01000214]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__tropical shrubland biome [ENVO:01000214]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__tropical savanna biome [ENVO:01000188]",
-                PermissibleValue(text="__tropical savanna biome [ENVO:01000188]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__tropical savanna biome [ENVO:01000188]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "polar biome [ENVO:01000339]",
-                PermissibleValue(text="polar biome [ENVO:01000339]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="polar biome [ENVO:01000339]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "terrestrial biome [ENVO:00000446]",
-                PermissibleValue(text="terrestrial biome [ENVO:00000446]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="terrestrial biome [ENVO:00000446]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__anthropogenic terrestrial biome [ENVO:01000219]",
-                PermissibleValue(text="__anthropogenic terrestrial biome [ENVO:01000219]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__anthropogenic terrestrial biome [ENVO:01000219]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____dense settlement biome [ENVO:01000248]",
-                PermissibleValue(text="____dense settlement biome [ENVO:01000248]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____dense settlement biome [ENVO:01000248]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______urban biome [ENVO:01000249]",
-                PermissibleValue(text="______urban biome [ENVO:01000249]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______urban biome [ENVO:01000249]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____rangeland biome [ENVO:01000247]",
-                PermissibleValue(text="____rangeland biome [ENVO:01000247]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____rangeland biome [ENVO:01000247]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____village biome [ENVO:01000246]",
-                PermissibleValue(text="____village biome [ENVO:01000246]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____village biome [ENVO:01000246]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__mangrove biome [ENVO:01000181]",
-                PermissibleValue(text="__mangrove biome [ENVO:01000181]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__mangrove biome [ENVO:01000181]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__tundra biome [ENVO:01000180]",
-                PermissibleValue(text="__tundra biome [ENVO:01000180]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__tundra biome [ENVO:01000180]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____alpine tundra biome [ENVO:01001505]",
-                PermissibleValue(text="____alpine tundra biome [ENVO:01001505]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____alpine tundra biome [ENVO:01001505]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__shrubland biome [ENVO:01000176]",
-                PermissibleValue(text="__shrubland biome [ENVO:01000176]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__shrubland biome [ENVO:01000176]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____tidal mangrove shrubland [ENVO:01001369]",
-                PermissibleValue(text="____tidal mangrove shrubland [ENVO:01001369]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____tidal mangrove shrubland [ENVO:01001369]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____xeric shrubland biome [ENVO:01000218]",
-                PermissibleValue(text="____xeric shrubland biome [ENVO:01000218]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____xeric shrubland biome [ENVO:01000218]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____montane shrubland biome [ENVO:01000216]",
-                PermissibleValue(text="____montane shrubland biome [ENVO:01000216]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____montane shrubland biome [ENVO:01000216]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____temperate shrubland biome [ENVO:01000215]",
-                PermissibleValue(text="____temperate shrubland biome [ENVO:01000215]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____temperate shrubland biome [ENVO:01000215]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____tropical shrubland biome [ENVO:01000214]",
-                PermissibleValue(text="____tropical shrubland biome [ENVO:01000214]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____tropical shrubland biome [ENVO:01000214]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____subtropical shrubland biome [ENVO:01000213]",
-                PermissibleValue(text="____subtropical shrubland biome [ENVO:01000213]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____subtropical shrubland biome [ENVO:01000213]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______mediterranean shrubland biome [ENVO:01000217]",
-                PermissibleValue(text="______mediterranean shrubland biome [ENVO:01000217]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______mediterranean shrubland biome [ENVO:01000217]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__woodland biome [ENVO:01000175]",
-                PermissibleValue(text="__woodland biome [ENVO:01000175]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__woodland biome [ENVO:01000175]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____subtropical woodland biome [ENVO:01000222]",
-                PermissibleValue(text="____subtropical woodland biome [ENVO:01000222]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____subtropical woodland biome [ENVO:01000222]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______mediterranean woodland biome [ENVO:01000208]",
-                PermissibleValue(text="______mediterranean woodland biome [ENVO:01000208]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______mediterranean woodland biome [ENVO:01000208]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____temperate woodland biome [ENVO:01000221]",
-                PermissibleValue(text="____temperate woodland biome [ENVO:01000221]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____temperate woodland biome [ENVO:01000221]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____tropical woodland biome [ENVO:01000220]",
-                PermissibleValue(text="____tropical woodland biome [ENVO:01000220]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____tropical woodland biome [ENVO:01000220]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____savanna biome [ENVO:01000178]",
-                PermissibleValue(text="____savanna biome [ENVO:01000178]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____savanna biome [ENVO:01000178]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______montane savanna biome [ENVO:01000223]",
-                PermissibleValue(text="______montane savanna biome [ENVO:01000223]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______montane savanna biome [ENVO:01000223]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______flooded savanna biome [ENVO:01000190]",
-                PermissibleValue(text="______flooded savanna biome [ENVO:01000190]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______flooded savanna biome [ENVO:01000190]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______temperate savanna biome [ENVO:01000189]",
-                PermissibleValue(text="______temperate savanna biome [ENVO:01000189]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______temperate savanna biome [ENVO:01000189]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______tropical savanna biome [ENVO:01000188]",
-                PermissibleValue(text="______tropical savanna biome [ENVO:01000188]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______tropical savanna biome [ENVO:01000188]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______subtropical savanna biome [ENVO:01000187]",
-                PermissibleValue(text="______subtropical savanna biome [ENVO:01000187]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______subtropical savanna biome [ENVO:01000187]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________mediterranean savanna biome [ENVO:01000229]",
-                PermissibleValue(text="________mediterranean savanna biome [ENVO:01000229]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________mediterranean savanna biome [ENVO:01000229]",
+                description="placeholder PV descr, DO NOT SORT"))
 
 class EnvMediumSoilEnum(EnumDefinitionImpl):
     """
@@ -9887,311 +10058,413 @@ class EnvMediumSoilEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "pathogen-suppressive soil [ENVO:03600036]",
-                PermissibleValue(text="pathogen-suppressive soil [ENVO:03600036]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="pathogen-suppressive soil [ENVO:03600036]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "mangrove biome soil [ENVO:02000138]",
-                PermissibleValue(text="mangrove biome soil [ENVO:02000138]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="mangrove biome soil [ENVO:02000138]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "surface soil [ENVO:02000059]",
-                PermissibleValue(text="surface soil [ENVO:02000059]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="surface soil [ENVO:02000059]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "frost-susceptible soil [ENVO:01001638]",
-                PermissibleValue(text="frost-susceptible soil [ENVO:01001638]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="frost-susceptible soil [ENVO:01001638]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "bare soil [ENVO:01001616]",
-                PermissibleValue(text="bare soil [ENVO:01001616]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="bare soil [ENVO:01001616]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "frozen soil [ENVO:01001526]",
-                PermissibleValue(text="frozen soil [ENVO:01001526]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="frozen soil [ENVO:01001526]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__friable-frozen soil [ENVO:01001528]",
-                PermissibleValue(text="__friable-frozen soil [ENVO:01001528]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__friable-frozen soil [ENVO:01001528]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__plastic-frozen soil [ENVO:01001527]",
-                PermissibleValue(text="__plastic-frozen soil [ENVO:01001527]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__plastic-frozen soil [ENVO:01001527]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__hard-frozen soil [ENVO:01001525]",
-                PermissibleValue(text="__hard-frozen soil [ENVO:01001525]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__hard-frozen soil [ENVO:01001525]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__frozen compost soil [ENVO:00005765]",
-                PermissibleValue(text="__frozen compost soil [ENVO:00005765]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__frozen compost soil [ENVO:00005765]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__cryosol [ENVO:00002236]",
-                PermissibleValue(text="__cryosol [ENVO:00002236]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__cryosol [ENVO:00002236]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "ultisol [ENVO:01001397]",
-                PermissibleValue(text="ultisol [ENVO:01001397]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="ultisol [ENVO:01001397]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__acrisol [ENVO:00002234]",
-                PermissibleValue(text="__acrisol [ENVO:00002234]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__acrisol [ENVO:00002234]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "acidic soil [ENVO:01001185]",
-                PermissibleValue(text="acidic soil [ENVO:01001185]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="acidic soil [ENVO:01001185]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "bulk soil [ENVO:00005802]",
-                PermissibleValue(text="bulk soil [ENVO:00005802]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="bulk soil [ENVO:00005802]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "red soil [ENVO:00005790]",
-                PermissibleValue(text="red soil [ENVO:00005790]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="red soil [ENVO:00005790]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "upland soil [ENVO:00005786]",
-                PermissibleValue(text="upland soil [ENVO:00005786]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="upland soil [ENVO:00005786]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__mountain forest soil [ENVO:00005769]",
-                PermissibleValue(text="__mountain forest soil [ENVO:00005769]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__mountain forest soil [ENVO:00005769]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__dune soil [ENVO:00002260]",
-                PermissibleValue(text="__dune soil [ENVO:00002260]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__dune soil [ENVO:00002260]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "ornithogenic soil [ENVO:00005782]",
-                PermissibleValue(text="ornithogenic soil [ENVO:00005782]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="ornithogenic soil [ENVO:00005782]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "heat stressed soil [ENVO:00005781]",
-                PermissibleValue(text="heat stressed soil [ENVO:00005781]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="heat stressed soil [ENVO:00005781]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "greenhouse soil [ENVO:00005780]",
-                PermissibleValue(text="greenhouse soil [ENVO:00005780]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="greenhouse soil [ENVO:00005780]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "tropical soil [ENVO:00005778]",
-                PermissibleValue(text="tropical soil [ENVO:00005778]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="tropical soil [ENVO:00005778]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "pasture soil [ENVO:00005773]",
-                PermissibleValue(text="pasture soil [ENVO:00005773]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="pasture soil [ENVO:00005773]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "muddy soil [ENVO:00005771]",
-                PermissibleValue(text="muddy soil [ENVO:00005771]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="muddy soil [ENVO:00005771]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "orchid soil [ENVO:00005768]",
-                PermissibleValue(text="orchid soil [ENVO:00005768]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="orchid soil [ENVO:00005768]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "manured soil [ENVO:00005767]",
-                PermissibleValue(text="manured soil [ENVO:00005767]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="manured soil [ENVO:00005767]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "limed soil [ENVO:00005766]",
-                PermissibleValue(text="limed soil [ENVO:00005766]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="limed soil [ENVO:00005766]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "pond soil [ENVO:00005764]",
-                PermissibleValue(text="pond soil [ENVO:00005764]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="pond soil [ENVO:00005764]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "meadow soil [ENVO:00005761]",
-                PermissibleValue(text="meadow soil [ENVO:00005761]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="meadow soil [ENVO:00005761]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "burned soil [ENVO:00005760]",
-                PermissibleValue(text="burned soil [ENVO:00005760]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="burned soil [ENVO:00005760]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "lawn soil [ENVO:00005756]",
-                PermissibleValue(text="lawn soil [ENVO:00005756]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="lawn soil [ENVO:00005756]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "field soil [ENVO:00005755]",
-                PermissibleValue(text="field soil [ENVO:00005755]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="field soil [ENVO:00005755]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__paddy field soil [ENVO:00005740]",
-                PermissibleValue(text="__paddy field soil [ENVO:00005740]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__paddy field soil [ENVO:00005740]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____peaty paddy field soil [ENVO:00005776]",
-                PermissibleValue(text="____peaty paddy field soil [ENVO:00005776]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____peaty paddy field soil [ENVO:00005776]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____alluvial paddy field soil [ENVO:00005759]",
-                PermissibleValue(text="____alluvial paddy field soil [ENVO:00005759]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____alluvial paddy field soil [ENVO:00005759]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "fertilized soil [ENVO:00005754]",
-                PermissibleValue(text="fertilized soil [ENVO:00005754]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="fertilized soil [ENVO:00005754]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "sawah soil [ENVO:00005752]",
-                PermissibleValue(text="sawah soil [ENVO:00005752]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="sawah soil [ENVO:00005752]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "jungle soil [ENVO:00005751]",
-                PermissibleValue(text="jungle soil [ENVO:00005751]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="jungle soil [ENVO:00005751]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "grassland soil [ENVO:00005750]",
-                PermissibleValue(text="grassland soil [ENVO:00005750]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="grassland soil [ENVO:00005750]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__steppe soil [ENVO:00005777]",
-                PermissibleValue(text="__steppe soil [ENVO:00005777]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__steppe soil [ENVO:00005777]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__savanna soil [ENVO:00005746]",
-                PermissibleValue(text="__savanna soil [ENVO:00005746]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__savanna soil [ENVO:00005746]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "farm soil [ENVO:00005749]",
-                PermissibleValue(text="farm soil [ENVO:00005749]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="farm soil [ENVO:00005749]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__rubber plantation soil [ENVO:00005788]",
-                PermissibleValue(text="__rubber plantation soil [ENVO:00005788]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__rubber plantation soil [ENVO:00005788]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__orchard soil [ENVO:00005772]",
-                PermissibleValue(text="__orchard soil [ENVO:00005772]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__orchard soil [ENVO:00005772]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "dry soil [ENVO:00005748]",
-                PermissibleValue(text="dry soil [ENVO:00005748]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="dry soil [ENVO:00005748]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "compost soil [ENVO:00005747]",
-                PermissibleValue(text="compost soil [ENVO:00005747]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="compost soil [ENVO:00005747]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "roadside soil [ENVO:00005743]",
-                PermissibleValue(text="roadside soil [ENVO:00005743]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="roadside soil [ENVO:00005743]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "arable soil [ENVO:00005742]",
-                PermissibleValue(text="arable soil [ENVO:00005742]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="arable soil [ENVO:00005742]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "alpine soil [ENVO:00005741]",
-                PermissibleValue(text="alpine soil [ENVO:00005741]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="alpine soil [ENVO:00005741]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "alluvial soil [ENVO:00002871]",
-                PermissibleValue(text="alluvial soil [ENVO:00002871]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="alluvial soil [ENVO:00002871]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__alluvial paddy field soil [ENVO:00005759]",
-                PermissibleValue(text="__alluvial paddy field soil [ENVO:00005759]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__alluvial paddy field soil [ENVO:00005759]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__alluvial swamp soil [ENVO:00005758]",
-                PermissibleValue(text="__alluvial swamp soil [ENVO:00005758]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__alluvial swamp soil [ENVO:00005758]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "technosol [ENVO:00002275]",
-                PermissibleValue(text="technosol [ENVO:00002275]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="technosol [ENVO:00002275]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "stagnosol [ENVO:00002274]",
-                PermissibleValue(text="stagnosol [ENVO:00002274]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="stagnosol [ENVO:00002274]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "fluvisol [ENVO:00002273]",
-                PermissibleValue(text="fluvisol [ENVO:00002273]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="fluvisol [ENVO:00002273]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "garden soil [ENVO:00002263]",
-                PermissibleValue(text="garden soil [ENVO:00002263]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="garden soil [ENVO:00002263]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__vegetable garden soil [ENVO:00005779]",
-                PermissibleValue(text="__vegetable garden soil [ENVO:00005779]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__vegetable garden soil [ENVO:00005779]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__allotment garden soil [ENVO:00005744]",
-                PermissibleValue(text="__allotment garden soil [ENVO:00005744]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__allotment garden soil [ENVO:00005744]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "clay soil [ENVO:00002262]",
-                PermissibleValue(text="clay soil [ENVO:00002262]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="clay soil [ENVO:00002262]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "forest soil [ENVO:00002261]",
-                PermissibleValue(text="forest soil [ENVO:00002261]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="forest soil [ENVO:00002261]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__eucalyptus forest soil [ENVO:00005787]",
-                PermissibleValue(text="__eucalyptus forest soil [ENVO:00005787]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__eucalyptus forest soil [ENVO:00005787]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__spruce forest soil [ENVO:00005784]",
-                PermissibleValue(text="__spruce forest soil [ENVO:00005784]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__spruce forest soil [ENVO:00005784]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__leafy wood soil [ENVO:00005783]",
-                PermissibleValue(text="__leafy wood soil [ENVO:00005783]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__leafy wood soil [ENVO:00005783]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__beech forest soil [ENVO:00005770]",
-                PermissibleValue(text="__beech forest soil [ENVO:00005770]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__beech forest soil [ENVO:00005770]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "agricultural soil [ENVO:00002259]",
-                PermissibleValue(text="agricultural soil [ENVO:00002259]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="agricultural soil [ENVO:00002259]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__bluegrass field soil [ENVO:00005789]",
-                PermissibleValue(text="__bluegrass field soil [ENVO:00005789]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__bluegrass field soil [ENVO:00005789]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "loam [ENVO:00002258]",
-                PermissibleValue(text="loam [ENVO:00002258]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="loam [ENVO:00002258]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__clay loam [ENVO:06105277]",
-                PermissibleValue(text="__clay loam [ENVO:06105277]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__clay loam [ENVO:06105277]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____silty clay loam [ENVO:06105278]",
-                PermissibleValue(text="____silty clay loam [ENVO:06105278]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____silty clay loam [ENVO:06105278]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____sandy clay loam [ENVO:06105276]",
-                PermissibleValue(text="____sandy clay loam [ENVO:06105276]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____sandy clay loam [ENVO:06105276]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__silty loam [ENVO:06105275]",
-                PermissibleValue(text="__silty loam [ENVO:06105275]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__silty loam [ENVO:06105275]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__sandy loam [ENVO:06105274]",
-                PermissibleValue(text="__sandy loam [ENVO:06105274]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__sandy loam [ENVO:06105274]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "podzol [ENVO:00002257]",
-                PermissibleValue(text="podzol [ENVO:00002257]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="podzol [ENVO:00002257]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "regosol [ENVO:00002256]",
-                PermissibleValue(text="regosol [ENVO:00002256]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="regosol [ENVO:00002256]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "solonetz [ENVO:00002255]",
-                PermissibleValue(text="solonetz [ENVO:00002255]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="solonetz [ENVO:00002255]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "vertisol [ENVO:00002254]",
-                PermissibleValue(text="vertisol [ENVO:00002254]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="vertisol [ENVO:00002254]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "umbrisol [ENVO:00002253]",
-                PermissibleValue(text="umbrisol [ENVO:00002253]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="umbrisol [ENVO:00002253]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "solonchak [ENVO:00002252]",
-                PermissibleValue(text="solonchak [ENVO:00002252]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="solonchak [ENVO:00002252]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "planosol [ENVO:00002251]",
-                PermissibleValue(text="planosol [ENVO:00002251]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="planosol [ENVO:00002251]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "plinthosol [ENVO:00002250]",
-                PermissibleValue(text="plinthosol [ENVO:00002250]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="plinthosol [ENVO:00002250]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "phaeozem [ENVO:00002249]",
-                PermissibleValue(text="phaeozem [ENVO:00002249]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="phaeozem [ENVO:00002249]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "luvisol [ENVO:00002248]",
-                PermissibleValue(text="luvisol [ENVO:00002248]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="luvisol [ENVO:00002248]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "nitisol [ENVO:00002247]",
-                PermissibleValue(text="nitisol [ENVO:00002247]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="nitisol [ENVO:00002247]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "ferralsol [ENVO:00002246]",
-                PermissibleValue(text="ferralsol [ENVO:00002246]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="ferralsol [ENVO:00002246]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "gypsisol [ENVO:00002245]",
-                PermissibleValue(text="gypsisol [ENVO:00002245]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="gypsisol [ENVO:00002245]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "gleysol [ENVO:00002244]",
-                PermissibleValue(text="gleysol [ENVO:00002244]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="gleysol [ENVO:00002244]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "histosol [ENVO:00002243]",
-                PermissibleValue(text="histosol [ENVO:00002243]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="histosol [ENVO:00002243]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__peat soil [ENVO:00005774]",
-                PermissibleValue(text="__peat soil [ENVO:00005774]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__peat soil [ENVO:00005774]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "lixisol [ENVO:00002242]",
-                PermissibleValue(text="lixisol [ENVO:00002242]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="lixisol [ENVO:00002242]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "leptosol [ENVO:00002241]",
-                PermissibleValue(text="leptosol [ENVO:00002241]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="leptosol [ENVO:00002241]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "kastanozem [ENVO:00002240]",
-                PermissibleValue(text="kastanozem [ENVO:00002240]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="kastanozem [ENVO:00002240]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "calcisol [ENVO:00002239]",
-                PermissibleValue(text="calcisol [ENVO:00002239]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="calcisol [ENVO:00002239]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "durisol [ENVO:00002238]",
-                PermissibleValue(text="durisol [ENVO:00002238]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="durisol [ENVO:00002238]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "chernozem [ENVO:00002237]",
-                PermissibleValue(text="chernozem [ENVO:00002237]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="chernozem [ENVO:00002237]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "cambisol [ENVO:00002235]",
-                PermissibleValue(text="cambisol [ENVO:00002235]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="cambisol [ENVO:00002235]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "albeluvisol [ENVO:00002233]",
-                PermissibleValue(text="albeluvisol [ENVO:00002233]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="albeluvisol [ENVO:00002233]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "andosol [ENVO:00002232]",
-                PermissibleValue(text="andosol [ENVO:00002232]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="andosol [ENVO:00002232]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__volcanic soil [ENVO:01001841]",
-                PermissibleValue(text="__volcanic soil [ENVO:01001841]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__volcanic soil [ENVO:01001841]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "alisol [ENVO:00002231]",
-                PermissibleValue(text="alisol [ENVO:00002231]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="alisol [ENVO:00002231]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "anthrosol [ENVO:00002230]",
-                PermissibleValue(text="anthrosol [ENVO:00002230]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="anthrosol [ENVO:00002230]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "arenosol [ENVO:00002229]",
-                PermissibleValue(text="arenosol [ENVO:00002229]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="arenosol [ENVO:00002229]",
+                description="placeholder PV descr, DO NOT SORT"))
 
 class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
     """
@@ -10205,323 +10478,392 @@ class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "astronomical body part [ENVO:01000813]",
-                PermissibleValue(text="astronomical body part [ENVO:01000813]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="astronomical body part [ENVO:01000813]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__coast [ENVO:01000687]",
-                PermissibleValue(text="__coast [ENVO:01000687]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__coast [ENVO:01000687]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__solid astronomical body part [ENVO:00000191]",
-                PermissibleValue(text="__solid astronomical body part [ENVO:00000191]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__solid astronomical body part [ENVO:00000191]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______landform [ENVO:01001886]",
-                PermissibleValue(text="______landform [ENVO:01001886]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______landform [ENVO:01001886]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______channel [ENVO:03000117]",
-                PermissibleValue(text="______channel [ENVO:03000117]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______channel [ENVO:03000117]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________tunnel [ENVO:00000068]",
-                PermissibleValue(text="________tunnel [ENVO:00000068]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________tunnel [ENVO:00000068]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______surface landform [ENVO:01001884]",
-                PermissibleValue(text="______surface landform [ENVO:01001884]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______surface landform [ENVO:01001884]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________desert [ENVO:01001357]",
-                PermissibleValue(text="________desert [ENVO:01001357]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________desert [ENVO:01001357]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________outcrop [ENVO:01000302]",
-                PermissibleValue(text="________outcrop [ENVO:01000302]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________outcrop [ENVO:01000302]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________boulder field [ENVO:00000537]",
-                PermissibleValue(text="________boulder field [ENVO:00000537]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________boulder field [ENVO:00000537]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________landfill [ENVO:00000533]",
-                PermissibleValue(text="________landfill [ENVO:00000533]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________landfill [ENVO:00000533]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________hummock [ENVO:00000516]",
-                PermissibleValue(text="________hummock [ENVO:00000516]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________hummock [ENVO:00000516]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________terrace [ENVO:00000508]",
-                PermissibleValue(text="________terrace [ENVO:00000508]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________terrace [ENVO:00000508]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________peninsula [ENVO:00000305]",
-                PermissibleValue(text="________peninsula [ENVO:00000305]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________peninsula [ENVO:00000305]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________shore [ENVO:00000304]",
-                PermissibleValue(text="________shore [ENVO:00000304]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________shore [ENVO:00000304]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________lake shore [ENVO:00000382]",
-                PermissibleValue(text="__________lake shore [ENVO:00000382]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________lake shore [ENVO:00000382]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________dry lake [ENVO:00000277]",
-                PermissibleValue(text="________dry lake [ENVO:00000277]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________dry lake [ENVO:00000277]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________karst [ENVO:00000175]",
-                PermissibleValue(text="________karst [ENVO:00000175]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________karst [ENVO:00000175]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________isthmus [ENVO:00000174]",
-                PermissibleValue(text="________isthmus [ENVO:00000174]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________isthmus [ENVO:00000174]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________badland [ENVO:00000127]",
-                PermissibleValue(text="________badland [ENVO:00000127]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________badland [ENVO:00000127]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________volcanic feature [ENVO:00000094]",
-                PermissibleValue(text="________volcanic feature [ENVO:00000094]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________volcanic feature [ENVO:00000094]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________volcanic cone [ENVO:00000398]",
-                PermissibleValue(text="__________volcanic cone [ENVO:00000398]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________volcanic cone [ENVO:00000398]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________tuff cone [ENVO:01000664]",
-                PermissibleValue(text="____________tuff cone [ENVO:01000664]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________tuff cone [ENVO:01000664]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________beach [ENVO:00000091]",
-                PermissibleValue(text="________beach [ENVO:00000091]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________beach [ENVO:00000091]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________plain [ENVO:00000086]",
-                PermissibleValue(text="________plain [ENVO:00000086]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________plain [ENVO:00000086]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________cave [ENVO:00000067]",
-                PermissibleValue(text="________cave [ENVO:00000067]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________cave [ENVO:00000067]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________spring [ENVO:00000027]",
-                PermissibleValue(text="________spring [ENVO:00000027]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________spring [ENVO:00000027]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______slope [ENVO:00002000]",
-                PermissibleValue(text="______slope [ENVO:00002000]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______slope [ENVO:00002000]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________talus slope [ENVO:01000334]",
-                PermissibleValue(text="________talus slope [ENVO:01000334]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________talus slope [ENVO:01000334]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________hillside [ENVO:01000333]",
-                PermissibleValue(text="________hillside [ENVO:01000333]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________hillside [ENVO:01000333]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________levee [ENVO:00000178]",
-                PermissibleValue(text="________levee [ENVO:00000178]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________levee [ENVO:00000178]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________bank [ENVO:00000141]",
-                PermissibleValue(text="________bank [ENVO:00000141]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________bank [ENVO:00000141]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________cliff [ENVO:00000087]",
-                PermissibleValue(text="________cliff [ENVO:00000087]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________cliff [ENVO:00000087]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______peak [ENVO:00000480]",
-                PermissibleValue(text="______peak [ENVO:00000480]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______peak [ENVO:00000480]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______depressed landform [ENVO:00000309]",
-                PermissibleValue(text="______depressed landform [ENVO:00000309]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______depressed landform [ENVO:00000309]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________geographic basin [ENVO:03000015]",
-                PermissibleValue(text="________geographic basin [ENVO:03000015]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________geographic basin [ENVO:03000015]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________valley [ENVO:00000100]",
-                PermissibleValue(text="__________valley [ENVO:00000100]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________valley [ENVO:00000100]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________canyon [ENVO:00000169]",
-                PermissibleValue(text="____________canyon [ENVO:00000169]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________canyon [ENVO:00000169]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________dry valley [ENVO:00000128]",
-                PermissibleValue(text="____________dry valley [ENVO:00000128]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________dry valley [ENVO:00000128]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________glacial valley [ENVO:00000248]",
-                PermissibleValue(text="____________glacial valley [ENVO:00000248]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________glacial valley [ENVO:00000248]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________pit [ENVO:01001871]",
-                PermissibleValue(text="________pit [ENVO:01001871]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________pit [ENVO:01001871]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________trench [ENVO:01000649]",
-                PermissibleValue(text="________trench [ENVO:01000649]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________trench [ENVO:01000649]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________swale [ENVO:00000543]",
-                PermissibleValue(text="________swale [ENVO:00000543]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________swale [ENVO:00000543]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________crater [ENVO:00000514]",
-                PermissibleValue(text="________crater [ENVO:00000514]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________crater [ENVO:00000514]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________impact crater [ENVO:01001071]",
-                PermissibleValue(text="__________impact crater [ENVO:01001071]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________impact crater [ENVO:01001071]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________volcanic crater [ENVO:00000246]",
-                PermissibleValue(text="__________volcanic crater [ENVO:00000246]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________volcanic crater [ENVO:00000246]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________caldera [ENVO:00000096]",
-                PermissibleValue(text="__________caldera [ENVO:00000096]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________caldera [ENVO:00000096]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________channel of a watercourse [ENVO:00000395]",
-                PermissibleValue(text="________channel of a watercourse [ENVO:00000395]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________channel of a watercourse [ENVO:00000395]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________strait [ENVO:00000394]",
-                PermissibleValue(text="__________strait [ENVO:00000394]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________strait [ENVO:00000394]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________dry stream [ENVO:00000278]",
-                PermissibleValue(text="__________dry stream [ENVO:00000278]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________dry stream [ENVO:00000278]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________dry river [ENVO:01000995]",
-                PermissibleValue(text="____________dry river [ENVO:01000995]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________dry river [ENVO:01000995]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________artificial channel [ENVO:00000121]",
-                PermissibleValue(text="__________artificial channel [ENVO:00000121]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________artificial channel [ENVO:00000121]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________plumbing drain [ENVO:01000924]",
-                PermissibleValue(text="____________plumbing drain [ENVO:01000924]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________plumbing drain [ENVO:01000924]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________ditch [ENVO:00000037]",
-                PermissibleValue(text="____________ditch [ENVO:00000037]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________ditch [ENVO:00000037]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________sinkhole [ENVO:00000195]",
-                PermissibleValue(text="________sinkhole [ENVO:00000195]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________sinkhole [ENVO:00000195]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______elevated landform [ENVO:00000176]",
-                PermissibleValue(text="______elevated landform [ENVO:00000176]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______elevated landform [ENVO:00000176]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________flattened elevation [ENVO:01001491]",
-                PermissibleValue(text="________flattened elevation [ENVO:01001491]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________flattened elevation [ENVO:01001491]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________butte [ENVO:00000287]",
-                PermissibleValue(text="__________butte [ENVO:00000287]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________butte [ENVO:00000287]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________plateau [ENVO:00000182]",
-                PermissibleValue(text="__________plateau [ENVO:00000182]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________plateau [ENVO:00000182]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________mesa [ENVO:00000179]",
-                PermissibleValue(text="__________mesa [ENVO:00000179]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________mesa [ENVO:00000179]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________pinnacle [ENVO:00000481]",
-                PermissibleValue(text="________pinnacle [ENVO:00000481]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________pinnacle [ENVO:00000481]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________mount [ENVO:00000477]",
-                PermissibleValue(text="________mount [ENVO:00000477]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________mount [ENVO:00000477]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________hill [ENVO:00000083]",
-                PermissibleValue(text="__________hill [ENVO:00000083]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________hill [ENVO:00000083]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____________dune [ENVO:00000170]",
-                PermissibleValue(text="____________dune [ENVO:00000170]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____________dune [ENVO:00000170]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__________mountain [ENVO:00000081]",
-                PermissibleValue(text="__________mountain [ENVO:00000081]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__________mountain [ENVO:00000081]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________ridge [ENVO:00000283]",
-                PermissibleValue(text="________ridge [ENVO:00000283]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________ridge [ENVO:00000283]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____part of a landmass [ENVO:01001781]",
-                PermissibleValue(text="____part of a landmass [ENVO:01001781]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____part of a landmass [ENVO:01001781]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______peninsula [ENVO:00000305]",
-                PermissibleValue(text="______peninsula [ENVO:00000305]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______peninsula [ENVO:00000305]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____geological fracture [ENVO:01000667]",
-                PermissibleValue(text="____geological fracture [ENVO:01000667]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____geological fracture [ENVO:01000667]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______vein [ENVO:01000670]",
-                PermissibleValue(text="______vein [ENVO:01000670]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______vein [ENVO:01000670]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______geological fault [ENVO:01000668]",
-                PermissibleValue(text="______geological fault [ENVO:01000668]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______geological fault [ENVO:01000668]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________active geological fault [ENVO:01000669]",
-                PermissibleValue(text="________active geological fault [ENVO:01000669]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________active geological fault [ENVO:01000669]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______volcano [ENVO:00000247]",
-                PermissibleValue(text="______volcano [ENVO:00000247]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______volcano [ENVO:00000247]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__field [ENVO:01000352]",
-                PermissibleValue(text="__field [ENVO:01000352]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__field [ENVO:01000352]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____lava field [ENVO:01000437]",
-                PermissibleValue(text="____lava field [ENVO:01000437]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____lava field [ENVO:01000437]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____gravel field [ENVO:00000548]",
-                PermissibleValue(text="____gravel field [ENVO:00000548]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____gravel field [ENVO:00000548]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____woodland clearing [ENVO:00000444]",
-                PermissibleValue(text="____woodland clearing [ENVO:00000444]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____woodland clearing [ENVO:00000444]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____agricultural field [ENVO:00000114]",
-                PermissibleValue(text="____agricultural field [ENVO:00000114]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____agricultural field [ENVO:00000114]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____snow field [ENVO:00000146]",
-                PermissibleValue(text="____snow field [ENVO:00000146]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____snow field [ENVO:00000146]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "__geographic feature [ENVO:00000000]",
-                PermissibleValue(text="__geographic feature [ENVO:00000000]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="__geographic feature [ENVO:00000000]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____hydrographic feature [ENVO:00000012]",
-                PermissibleValue(text="____hydrographic feature [ENVO:00000012]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____hydrographic feature [ENVO:00000012]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______reef [ENVO:01001899]",
-                PermissibleValue(text="______reef [ENVO:01001899]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______reef [ENVO:01001899]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______inlet [ENVO:00000475]",
-                PermissibleValue(text="______inlet [ENVO:00000475]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______inlet [ENVO:00000475]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______bar [ENVO:00000167]",
-                PermissibleValue(text="______bar [ENVO:00000167]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______bar [ENVO:00000167]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________tombolo [ENVO:00000420]",
-                PermissibleValue(text="________tombolo [ENVO:00000420]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________tombolo [ENVO:00000420]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "____anthropogenic geographic feature [ENVO:00000002]",
-                PermissibleValue(text="____anthropogenic geographic feature [ENVO:00000002]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="____anthropogenic geographic feature [ENVO:00000002]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______yard [ENVO:03600053]",
-                PermissibleValue(text="______yard [ENVO:03600053]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______yard [ENVO:03600053]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "________residential backyard [ENVO:03600033]",
-                PermissibleValue(text="________residential backyard [ENVO:03600033]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="________residential backyard [ENVO:03600033]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______market [ENVO:01000987]",
-                PermissibleValue(text="______market [ENVO:01000987]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______market [ENVO:01000987]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______park [ENVO:00000562]",
-                PermissibleValue(text="______park [ENVO:00000562]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______park [ENVO:00000562]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______well [ENVO:00000026]",
-                PermissibleValue(text="______well [ENVO:00000026]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______well [ENVO:00000026]",
+                description="placeholder PV descr, DO NOT SORT"))
         setattr(cls, "______garden [ENVO:00000011]",
-                PermissibleValue(text="______garden [ENVO:00000011]",
-                                 description="placeholder PV descr, DO NOT SORT") )
+            PermissibleValue(
+                text="______garden [ENVO:00000011]",
+                description="placeholder PV descr, DO NOT SORT"))
 
 class OxyStatSampEnum(EnumDefinitionImpl):
     """
     placeholder enum descr, DO NOT SORT
     """
-    aerobic = PermissibleValue(text="aerobic",
-                                     description="placeholder PV descr, DO NOT SORT")
-    anaerobic = PermissibleValue(text="anaerobic",
-                                         description="placeholder PV descr, DO NOT SORT")
-    other = PermissibleValue(text="other",
-                                 description="placeholder PV descr, DO NOT SORT")
+    aerobic = PermissibleValue(
+        text="aerobic",
+        description="placeholder PV descr, DO NOT SORT")
+    anaerobic = PermissibleValue(
+        text="anaerobic",
+        description="placeholder PV descr, DO NOT SORT")
+    other = PermissibleValue(
+        text="other",
+        description="placeholder PV descr, DO NOT SORT")
 
     _defn = EnumDefinition(
         name="OxyStatSampEnum",
         description="placeholder enum descr, DO NOT SORT",
     )
-
-class WindowMatEnum(EnumDefinitionImpl):
-
-    clad = PermissibleValue(text="clad")
-    fiberglass = PermissibleValue(text="fiberglass")
-    metal = PermissibleValue(text="metal")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="WindowMatEnum",
-    )
-
-class SubstructureTypeEnum(EnumDefinitionImpl):
-
-    crawlspace = PermissibleValue(text="crawlspace")
-    basement = PermissibleValue(text="basement")
-
-    _defn = EnumDefinition(
-        name="SubstructureTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "slab on grade",
-                PermissibleValue(text="slab on grade") )
 
 class FilterTypeEnum(EnumDefinitionImpl):
 
@@ -10535,73 +10877,56 @@ class FilterTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "particulate air filter",
-                PermissibleValue(text="particulate air filter") )
+            PermissibleValue(text="particulate air filter"))
         setattr(cls, "chemical air filter",
-                PermissibleValue(text="chemical air filter") )
+            PermissibleValue(text="chemical air filter"))
         setattr(cls, "low-MERV pleated media",
-                PermissibleValue(text="low-MERV pleated media") )
+            PermissibleValue(text="low-MERV pleated media"))
         setattr(cls, "gas-phase or ultraviolet air treatments",
-                PermissibleValue(text="gas-phase or ultraviolet air treatments") )
+            PermissibleValue(text="gas-phase or ultraviolet air treatments"))
 
-class WeekdayEnum(EnumDefinitionImpl):
+class WindowCondEnum(EnumDefinitionImpl):
 
-    Monday = PermissibleValue(text="Monday")
-    Tuesday = PermissibleValue(text="Tuesday")
-    Wednesday = PermissibleValue(text="Wednesday")
-    Thursday = PermissibleValue(text="Thursday")
-    Friday = PermissibleValue(text="Friday")
-    Saturday = PermissibleValue(text="Saturday")
-    Sunday = PermissibleValue(text="Sunday")
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="WeekdayEnum",
-    )
-
-class TrainLineEnum(EnumDefinitionImpl):
-
-    red = PermissibleValue(text="red")
-    green = PermissibleValue(text="green")
-    orange = PermissibleValue(text="orange")
-
-    _defn = EnumDefinition(
-        name="TrainLineEnum",
-    )
-
-class DoorDirectEnum(EnumDefinitionImpl):
-
-    inward = PermissibleValue(text="inward")
-    outward = PermissibleValue(text="outward")
-    sideways = PermissibleValue(text="sideways")
-
-    _defn = EnumDefinition(
-        name="DoorDirectEnum",
-    )
-
-class FurnitureEnum(EnumDefinitionImpl):
-
-    cabinet = PermissibleValue(text="cabinet")
-    chair = PermissibleValue(text="chair")
-    desks = PermissibleValue(text="desks")
-
-    _defn = EnumDefinition(
-        name="FurnitureEnum",
-    )
-
-class OccupDocumentEnum(EnumDefinitionImpl):
-
-    estimate = PermissibleValue(text="estimate")
-    videos = PermissibleValue(text="videos")
-
-    _defn = EnumDefinition(
-        name="OccupDocumentEnum",
+        name="WindowCondEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "automated count",
-                PermissibleValue(text="automated count") )
-        setattr(cls, "manual count",
-                PermissibleValue(text="manual count") )
+        setattr(cls, "needs repair",
+            PermissibleValue(text="needs repair"))
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
+
+class WallFinishMatEnum(EnumDefinitionImpl):
+
+    plaster = PermissibleValue(text="plaster")
+    tile = PermissibleValue(text="tile")
+    terrazzo = PermissibleValue(text="terrazzo")
+    wood = PermissibleValue(text="wood")
+    metal = PermissibleValue(text="metal")
+    masonry = PermissibleValue(text="masonry")
+
+    _defn = EnumDefinition(
+        name="WallFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "gypsum plaster",
+            PermissibleValue(text="gypsum plaster"))
+        setattr(cls, "veneer plaster",
+            PermissibleValue(text="veneer plaster"))
+        setattr(cls, "gypsum board",
+            PermissibleValue(text="gypsum board"))
+        setattr(cls, "stone facing",
+            PermissibleValue(text="stone facing"))
+        setattr(cls, "acoustical treatment",
+            PermissibleValue(text="acoustical treatment"))
 
 class WindowHorizPosEnum(EnumDefinitionImpl):
 
@@ -10612,69 +10937,6 @@ class WindowHorizPosEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="WindowHorizPosEnum",
     )
-
-class WindowCoverEnum(EnumDefinitionImpl):
-
-    blinds = PermissibleValue(text="blinds")
-    curtains = PermissibleValue(text="curtains")
-    none = PermissibleValue(text="none")
-
-    _defn = EnumDefinition(
-        name="WindowCoverEnum",
-    )
-
-class ShadingDeviceCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="ShadingDeviceCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-
-class IntWallCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="IntWallCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class LightTypeEnum(EnumDefinitionImpl):
-
-    none = PermissibleValue(text="none")
-
-    _defn = EnumDefinition(
-        name="LightTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "natural light",
-                PermissibleValue(text="natural light") )
-        setattr(cls, "electric light",
-                PermissibleValue(text="electric light") )
-        setattr(cls, "desk lamp",
-                PermissibleValue(text="desk lamp") )
-        setattr(cls, "flourescent lights",
-                PermissibleValue(text="flourescent lights") )
 
 class ExtWindowOrientEnum(EnumDefinitionImpl):
 
@@ -10691,345 +10953,25 @@ class ExtWindowOrientEnum(EnumDefinitionImpl):
         name="ExtWindowOrientEnum",
     )
 
-class ArchStrucEnum(EnumDefinitionImpl):
+class SampWeatherEnum(EnumDefinitionImpl):
 
-    building = PermissibleValue(text="building")
-    shed = PermissibleValue(text="shed")
-    home = PermissibleValue(text="home")
-
-    _defn = EnumDefinition(
-        name="ArchStrucEnum",
-    )
-
-class FloorStrucEnum(EnumDefinitionImpl):
-
-    balcony = PermissibleValue(text="balcony")
-    concrete = PermissibleValue(text="concrete")
+    cloudy = PermissibleValue(text="cloudy")
+    foggy = PermissibleValue(text="foggy")
+    hail = PermissibleValue(text="hail")
+    rain = PermissibleValue(text="rain")
+    snow = PermissibleValue(text="snow")
+    sleet = PermissibleValue(text="sleet")
+    sunny = PermissibleValue(text="sunny")
+    windy = PermissibleValue(text="windy")
 
     _defn = EnumDefinition(
-        name="FloorStrucEnum",
+        name="SampWeatherEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "floating floor",
-                PermissibleValue(text="floating floor") )
-        setattr(cls, "glass floor",
-                PermissibleValue(text="glass floor") )
-        setattr(cls, "raised floor",
-                PermissibleValue(text="raised floor") )
-        setattr(cls, "sprung floor",
-                PermissibleValue(text="sprung floor") )
-        setattr(cls, "wood-framed",
-                PermissibleValue(text="wood-framed") )
-
-class HandidnessEnum(EnumDefinitionImpl):
-
-    ambidexterity = PermissibleValue(text="ambidexterity")
-
-    _defn = EnumDefinition(
-        name="HandidnessEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "left handedness",
-                PermissibleValue(text="left handedness") )
-        setattr(cls, "mixed-handedness",
-                PermissibleValue(text="mixed-handedness") )
-        setattr(cls, "right handedness",
-                PermissibleValue(text="right handedness") )
-
-class WallSurfTreatmentEnum(EnumDefinitionImpl):
-
-    painted = PermissibleValue(text="painted")
-    paneling = PermissibleValue(text="paneling")
-    stucco = PermissibleValue(text="stucco")
-    fabric = PermissibleValue(text="fabric")
-
-    _defn = EnumDefinition(
-        name="WallSurfTreatmentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "wall paper",
-                PermissibleValue(text="wall paper") )
-        setattr(cls, "no treatment",
-                PermissibleValue(text="no treatment") )
-
-class SpecificEnum(EnumDefinitionImpl):
-
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
-    bid = PermissibleValue(text="bid")
-    design = PermissibleValue(text="design")
-    photos = PermissibleValue(text="photos")
-
-    _defn = EnumDefinition(
-        name="SpecificEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "as built",
-                PermissibleValue(text="as built") )
-
-class WindowLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WindowLocEnum",
-    )
-
-class BuildingSettingEnum(EnumDefinitionImpl):
-
-    urban = PermissibleValue(text="urban")
-    suburban = PermissibleValue(text="suburban")
-    exurban = PermissibleValue(text="exurban")
-    rural = PermissibleValue(text="rural")
-
-    _defn = EnumDefinition(
-        name="BuildingSettingEnum",
-    )
-
-class SampFloorEnum(EnumDefinitionImpl):
-
-    basement = PermissibleValue(text="basement")
-    lobby = PermissibleValue(text="lobby")
-
-    _defn = EnumDefinition(
-        name="SampFloorEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "1st floor",
-                PermissibleValue(text="1st floor") )
-        setattr(cls, "2nd floor",
-                PermissibleValue(text="2nd floor") )
-
-class VisMediaEnum(EnumDefinitionImpl):
-
-    photos = PermissibleValue(text="photos")
-    videos = PermissibleValue(text="videos")
-    interiors = PermissibleValue(text="interiors")
-    equipment = PermissibleValue(text="equipment")
-
-    _defn = EnumDefinition(
-        name="VisMediaEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "commonly of the building",
-                PermissibleValue(text="commonly of the building") )
-        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
-                PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)") )
-        setattr(cls, "3D scans",
-                PermissibleValue(text="3D scans") )
-
-class IndoorSpaceEnum(EnumDefinitionImpl):
-
-    bedroom = PermissibleValue(text="bedroom")
-    office = PermissibleValue(text="office")
-    bathroom = PermissibleValue(text="bathroom")
-    foyer = PermissibleValue(text="foyer")
-    kitchen = PermissibleValue(text="kitchen")
-    hallway = PermissibleValue(text="hallway")
-    elevator = PermissibleValue(text="elevator")
-
-    _defn = EnumDefinition(
-        name="IndoorSpaceEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "locker room",
-                PermissibleValue(text="locker room") )
-
-class CeilTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="CeilTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-                PermissibleValue(text="crows feet") )
-        setattr(cls, "crows-foot stomp",
-                PermissibleValue(text="crows-foot stomp") )
-        setattr(cls, "double skip",
-                PermissibleValue(text="double skip") )
-        setattr(cls, "hawk and trowel",
-                PermissibleValue(text="hawk and trowel") )
-        setattr(cls, "orange peel",
-                PermissibleValue(text="orange peel") )
-        setattr(cls, "rosebud stomp",
-                PermissibleValue(text="rosebud stomp") )
-        setattr(cls, "Santa-Fe texture",
-                PermissibleValue(text="Santa-Fe texture") )
-        setattr(cls, "skip trowel",
-                PermissibleValue(text="skip trowel") )
-        setattr(cls, "stomp knockdown",
-                PermissibleValue(text="stomp knockdown") )
-
-class DoorMoveEnum(EnumDefinitionImpl):
-
-    collapsible = PermissibleValue(text="collapsible")
-    folding = PermissibleValue(text="folding")
-    revolving = PermissibleValue(text="revolving")
-    sliding = PermissibleValue(text="sliding")
-    swinging = PermissibleValue(text="swinging")
-
-    _defn = EnumDefinition(
-        name="DoorMoveEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "rolling shutter",
-                PermissibleValue(text="rolling shutter") )
-
-class DoorCompTypeEnum(EnumDefinitionImpl):
-
-    revolving = PermissibleValue(text="revolving")
-    sliding = PermissibleValue(text="sliding")
-    telescopic = PermissibleValue(text="telescopic")
-
-    _defn = EnumDefinition(
-        name="DoorCompTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "metal covered",
-                PermissibleValue(text="metal covered") )
-
-class WallTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="WallTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-                PermissibleValue(text="crows feet") )
-        setattr(cls, "crows-foot stomp",
-                PermissibleValue(text="crows-foot stomp") )
-        setattr(cls, "",
-                PermissibleValue(text="") )
-        setattr(cls, "double skip",
-                PermissibleValue(text="double skip") )
-        setattr(cls, "hawk and trowel",
-                PermissibleValue(text="hawk and trowel") )
-        setattr(cls, "orange peel",
-                PermissibleValue(text="orange peel") )
-        setattr(cls, "rosebud stomp",
-                PermissibleValue(text="rosebud stomp") )
-        setattr(cls, "Santa-Fe texture",
-                PermissibleValue(text="Santa-Fe texture") )
-        setattr(cls, "skip trowel",
-                PermissibleValue(text="skip trowel") )
-        setattr(cls, "stomp knockdown",
-                PermissibleValue(text="stomp knockdown") )
-
-class WallLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WallLocEnum",
-    )
-
-class FloorWaterMoldEnum(EnumDefinitionImpl):
-
-    condensation = PermissibleValue(text="condensation")
-
-    _defn = EnumDefinition(
-        name="FloorWaterMoldEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "mold odor",
-                PermissibleValue(text="mold odor") )
-        setattr(cls, "wet floor",
-                PermissibleValue(text="wet floor") )
-        setattr(cls, "water stains",
-                PermissibleValue(text="water stains") )
-        setattr(cls, "wall discoloration",
-                PermissibleValue(text="wall discoloration") )
-        setattr(cls, "floor discoloration",
-                PermissibleValue(text="floor discoloration") )
-        setattr(cls, "ceiling discoloration",
-                PermissibleValue(text="ceiling discoloration") )
-        setattr(cls, "peeling paint or wallpaper",
-                PermissibleValue(text="peeling paint or wallpaper") )
-        setattr(cls, "bulging walls",
-                PermissibleValue(text="bulging walls") )
-
-class DoorTypeEnum(EnumDefinitionImpl):
-
-    composite = PermissibleValue(text="composite")
-    metal = PermissibleValue(text="metal")
-    wooden = PermissibleValue(text="wooden")
-
-    _defn = EnumDefinition(
-        name="DoorTypeEnum",
-    )
-
-class WindowCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="WindowCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-
-class WaterFeatTypeEnum(EnumDefinitionImpl):
-
-    fountain = PermissibleValue(text="fountain")
-    pool = PermissibleValue(text="pool")
-    stream = PermissibleValue(text="stream")
-    waterfall = PermissibleValue(text="waterfall")
-
-    _defn = EnumDefinition(
-        name="WaterFeatTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "standing feature",
-                PermissibleValue(text="standing feature") )
+        setattr(cls, "clear sky",
+            PermissibleValue(text="clear sky"))
 
 class FloorCondEnum(EnumDefinitionImpl):
 
@@ -11044,29 +10986,21 @@ class FloorCondEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
+            PermissibleValue(text="visible wear"))
         setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
+            PermissibleValue(text="needs repair"))
 
-class IndoorSurfEnum(EnumDefinitionImpl):
+class WindowMatEnum(EnumDefinitionImpl):
 
-    cabinet = PermissibleValue(text="cabinet")
-    ceiling = PermissibleValue(text="ceiling")
-    door = PermissibleValue(text="door")
-    shelving = PermissibleValue(text="shelving")
-    window = PermissibleValue(text="window")
-    wall = PermissibleValue(text="wall")
+    clad = PermissibleValue(text="clad")
+    fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
 
     _defn = EnumDefinition(
-        name="IndoorSurfEnum",
+        name="WindowMatEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "counter top",
-                PermissibleValue(text="counter top") )
-        setattr(cls, "vent cover",
-                PermissibleValue(text="vent cover") )
 
 class ExtWallOrientEnum(EnumDefinitionImpl):
 
@@ -11083,59 +11017,96 @@ class ExtWallOrientEnum(EnumDefinitionImpl):
         name="ExtWallOrientEnum",
     )
 
-class BuildOccupTypeEnum(EnumDefinitionImpl):
+class FloorWaterMoldEnum(EnumDefinitionImpl):
 
-    office = PermissibleValue(text="office")
-    market = PermissibleValue(text="market")
-    restaurant = PermissibleValue(text="restaurant")
-    residence = PermissibleValue(text="residence")
-    school = PermissibleValue(text="school")
-    residential = PermissibleValue(text="residential")
-    commercial = PermissibleValue(text="commercial")
-    airport = PermissibleValue(text="airport")
+    condensation = PermissibleValue(text="condensation")
 
     _defn = EnumDefinition(
-        name="BuildOccupTypeEnum",
+        name="FloorWaterMoldEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "low rise",
-                PermissibleValue(text="low rise") )
-        setattr(cls, "high rise",
-                PermissibleValue(text="high rise") )
-        setattr(cls, "wood framed",
-                PermissibleValue(text="wood framed") )
-        setattr(cls, "health care",
-                PermissibleValue(text="health care") )
-        setattr(cls, "sports complex",
-                PermissibleValue(text="sports complex") )
+        setattr(cls, "mold odor",
+            PermissibleValue(text="mold odor"))
+        setattr(cls, "wet floor",
+            PermissibleValue(text="wet floor"))
+        setattr(cls, "water stains",
+            PermissibleValue(text="water stains"))
+        setattr(cls, "wall discoloration",
+            PermissibleValue(text="wall discoloration"))
+        setattr(cls, "floor discoloration",
+            PermissibleValue(text="floor discoloration"))
+        setattr(cls, "ceiling discoloration",
+            PermissibleValue(text="ceiling discoloration"))
+        setattr(cls, "peeling paint or wallpaper",
+            PermissibleValue(text="peeling paint or wallpaper"))
+        setattr(cls, "bulging walls",
+            PermissibleValue(text="bulging walls"))
 
-class DoorMatEnum(EnumDefinitionImpl):
+class WeekdayEnum(EnumDefinitionImpl):
 
-    aluminum = PermissibleValue(text="aluminum")
-    fiberboard = PermissibleValue(text="fiberboard")
-    fiberglass = PermissibleValue(text="fiberglass")
-    metal = PermissibleValue(text="metal")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
+    Monday = PermissibleValue(text="Monday")
+    Tuesday = PermissibleValue(text="Tuesday")
+    Wednesday = PermissibleValue(text="Wednesday")
+    Thursday = PermissibleValue(text="Thursday")
+    Friday = PermissibleValue(text="Friday")
+    Saturday = PermissibleValue(text="Saturday")
+    Sunday = PermissibleValue(text="Sunday")
 
     _defn = EnumDefinition(
-        name="DoorMatEnum",
+        name="WeekdayEnum",
+    )
+
+class WindowCoverEnum(EnumDefinitionImpl):
+
+    blinds = PermissibleValue(text="blinds")
+    curtains = PermissibleValue(text="curtains")
+    none = PermissibleValue(text="none")
+
+    _defn = EnumDefinition(
+        name="WindowCoverEnum",
+    )
+
+class LightTypeEnum(EnumDefinitionImpl):
+
+    none = PermissibleValue(text="none")
+
+    _defn = EnumDefinition(
+        name="LightTypeEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "cellular PVC",
-                PermissibleValue(text="cellular PVC") )
-        setattr(cls, "engineered plastic",
-                PermissibleValue(text="engineered plastic") )
-        setattr(cls, "thermoplastic alloy",
-                PermissibleValue(text="thermoplastic alloy") )
-        setattr(cls, "wood/plastic composite",
-                PermissibleValue(text="wood/plastic composite") )
+        setattr(cls, "natural light",
+            PermissibleValue(text="natural light"))
+        setattr(cls, "electric light",
+            PermissibleValue(text="electric light"))
+        setattr(cls, "desk lamp",
+            PermissibleValue(text="desk lamp"))
+        setattr(cls, "flourescent lights",
+            PermissibleValue(text="flourescent lights"))
 
-class DoorLocEnum(EnumDefinitionImpl):
+class HeatCoolTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="HeatCoolTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "radiant system",
+            PermissibleValue(text="radiant system"))
+        setattr(cls, "heat pump",
+            PermissibleValue(text="heat pump"))
+        setattr(cls, "forced air system",
+            PermissibleValue(text="forced air system"))
+        setattr(cls, "steam forced heat",
+            PermissibleValue(text="steam forced heat"))
+        setattr(cls, "wood stove",
+            PermissibleValue(text="wood stove"))
+
+class WindowLocEnum(EnumDefinitionImpl):
 
     north = PermissibleValue(text="north")
     south = PermissibleValue(text="south")
@@ -11143,46 +11114,29 @@ class DoorLocEnum(EnumDefinitionImpl):
     west = PermissibleValue(text="west")
 
     _defn = EnumDefinition(
-        name="DoorLocEnum",
+        name="WindowLocEnum",
     )
 
-class MechStrucEnum(EnumDefinitionImpl):
+class DoorTypeEnum(EnumDefinitionImpl):
 
-    subway = PermissibleValue(text="subway")
-    coach = PermissibleValue(text="coach")
-    carriage = PermissibleValue(text="carriage")
-    elevator = PermissibleValue(text="elevator")
-    escalator = PermissibleValue(text="escalator")
-    boat = PermissibleValue(text="boat")
-    train = PermissibleValue(text="train")
-    car = PermissibleValue(text="car")
-    bus = PermissibleValue(text="bus")
+    composite = PermissibleValue(text="composite")
+    metal = PermissibleValue(text="metal")
+    wooden = PermissibleValue(text="wooden")
 
     _defn = EnumDefinition(
-        name="MechStrucEnum",
+        name="DoorTypeEnum",
     )
 
-class SurfAirContEnum(EnumDefinitionImpl):
+class WallLocEnum(EnumDefinitionImpl):
 
-    dust = PermissibleValue(text="dust")
-    radon = PermissibleValue(text="radon")
-    nutrients = PermissibleValue(text="nutrients")
-    biocides = PermissibleValue(text="biocides")
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
 
     _defn = EnumDefinition(
-        name="SurfAirContEnum",
+        name="WallLocEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "organic matter",
-                PermissibleValue(text="organic matter") )
-        setattr(cls, "particulate matter",
-                PermissibleValue(text="particulate matter") )
-        setattr(cls, "volatile organic compounds",
-                PermissibleValue(text="volatile organic compounds") )
-        setattr(cls, "biological contaminants",
-                PermissibleValue(text="biological contaminants") )
 
 class ShadingDeviceTypeEnum(EnumDefinitionImpl):
 
@@ -11196,166 +11150,25 @@ class ShadingDeviceTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "bahama shutters",
-                PermissibleValue(text="bahama shutters") )
+            PermissibleValue(text="bahama shutters"))
         setattr(cls, "exterior roll blind",
-                PermissibleValue(text="exterior roll blind") )
+            PermissibleValue(text="exterior roll blind"))
         setattr(cls, "gambrel awning",
-                PermissibleValue(text="gambrel awning") )
+            PermissibleValue(text="gambrel awning"))
         setattr(cls, "hood awning",
-                PermissibleValue(text="hood awning") )
+            PermissibleValue(text="hood awning"))
         setattr(cls, "porchroller awning",
-                PermissibleValue(text="porchroller awning") )
+            PermissibleValue(text="porchroller awning"))
         setattr(cls, "sarasota shutters",
-                PermissibleValue(text="sarasota shutters") )
+            PermissibleValue(text="sarasota shutters"))
         setattr(cls, "slatted aluminum",
-                PermissibleValue(text="slatted aluminum") )
+            PermissibleValue(text="slatted aluminum"))
         setattr(cls, "solid aluminum awning",
-                PermissibleValue(text="solid aluminum awning") )
+            PermissibleValue(text="solid aluminum awning"))
         setattr(cls, "sun screen",
-                PermissibleValue(text="sun screen") )
+            PermissibleValue(text="sun screen"))
         setattr(cls, "venetian awning",
-                PermissibleValue(text="venetian awning") )
-
-class RoomLocEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="RoomLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "corner room",
-                PermissibleValue(text="corner room") )
-        setattr(cls, "interior room",
-                PermissibleValue(text="interior room") )
-        setattr(cls, "exterior wall",
-                PermissibleValue(text="exterior wall") )
-
-class RoomCondtEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="RoomCondtEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible signs of mold/mildew",
-                PermissibleValue(text="visible signs of mold/mildew") )
-
-class SurfMaterialEnum(EnumDefinitionImpl):
-
-    adobe = PermissibleValue(text="adobe")
-    carpet = PermissibleValue(text="carpet")
-    concrete = PermissibleValue(text="concrete")
-    glass = PermissibleValue(text="glass")
-    metal = PermissibleValue(text="metal")
-    paint = PermissibleValue(text="paint")
-    plastic = PermissibleValue(text="plastic")
-    stone = PermissibleValue(text="stone")
-    stucco = PermissibleValue(text="stucco")
-    tile = PermissibleValue(text="tile")
-    vinyl = PermissibleValue(text="vinyl")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="SurfMaterialEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "cinder blocks",
-                PermissibleValue(text="cinder blocks") )
-        setattr(cls, "hay bales",
-                PermissibleValue(text="hay bales") )
-        setattr(cls, "stainless steel",
-                PermissibleValue(text="stainless steel") )
-
-class CeilFinishMatEnum(EnumDefinitionImpl):
-
-    drywall = PermissibleValue(text="drywall")
-    tiles = PermissibleValue(text="tiles")
-    PVC = PermissibleValue(text="PVC")
-    plasterboard = PermissibleValue(text="plasterboard")
-    metal = PermissibleValue(text="metal")
-    fiberglass = PermissibleValue(text="fiberglass")
-    stucco = PermissibleValue(text="stucco")
-    wood = PermissibleValue(text="wood")
-
-    _defn = EnumDefinition(
-        name="CeilFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "mineral fibre",
-                PermissibleValue(text="mineral fibre") )
-        setattr(cls, "mineral wool/calcium silicate",
-                PermissibleValue(text="mineral wool/calcium silicate") )
-
-class DoorTypeWoodEnum(EnumDefinitionImpl):
-
-    battened = PermissibleValue(text="battened")
-    flush = PermissibleValue(text="flush")
-    louvered = PermissibleValue(text="louvered")
-
-    _defn = EnumDefinition(
-        name="DoorTypeWoodEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "bettened and ledged",
-                PermissibleValue(text="bettened and ledged") )
-        setattr(cls, "ledged and braced",
-                PermissibleValue(text="ledged and braced") )
-        setattr(cls, "ledged and framed",
-                PermissibleValue(text="ledged and framed") )
-        setattr(cls, "ledged, braced and frame",
-                PermissibleValue(text="ledged, braced and frame") )
-        setattr(cls, "framed and paneled",
-                PermissibleValue(text="framed and paneled") )
-        setattr(cls, "glashed or sash",
-                PermissibleValue(text="glashed or sash") )
-        setattr(cls, "wire gauged",
-                PermissibleValue(text="wire gauged") )
-
-class HeatDelivLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="HeatDelivLocEnum",
-    )
-
-class TrainStatLocEnum(EnumDefinitionImpl):
-
-    riverside = PermissibleValue(text="riverside")
-
-    _defn = EnumDefinition(
-        name="TrainStatLocEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "south station above ground",
-                PermissibleValue(text="south station above ground") )
-        setattr(cls, "south station underground",
-                PermissibleValue(text="south station underground") )
-        setattr(cls, "south station amtrak",
-                PermissibleValue(text="south station amtrak") )
-        setattr(cls, "forest hills",
-                PermissibleValue(text="forest hills") )
+            PermissibleValue(text="venetian awning"))
 
 class FloorFinishMatEnum(EnumDefinitionImpl):
 
@@ -11379,164 +11192,31 @@ class FloorFinishMatEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "wood strip or parquet",
-                PermissibleValue(text="wood strip or parquet") )
+            PermissibleValue(text="wood strip or parquet"))
         setattr(cls, "laminate wood",
-                PermissibleValue(text="laminate wood") )
+            PermissibleValue(text="laminate wood"))
         setattr(cls, "vinyl composition tile",
-                PermissibleValue(text="vinyl composition tile") )
+            PermissibleValue(text="vinyl composition tile"))
         setattr(cls, "sheet vinyl",
-                PermissibleValue(text="sheet vinyl") )
+            PermissibleValue(text="sheet vinyl"))
         setattr(cls, "clear finish",
-                PermissibleValue(text="clear finish") )
+            PermissibleValue(text="clear finish"))
         setattr(cls, "none or unfinished",
-                PermissibleValue(text="none or unfinished") )
+            PermissibleValue(text="none or unfinished"))
 
-class WindowTypeEnum(EnumDefinitionImpl):
+class SubstructureTypeEnum(EnumDefinitionImpl):
+
+    crawlspace = PermissibleValue(text="crawlspace")
+    basement = PermissibleValue(text="basement")
 
     _defn = EnumDefinition(
-        name="WindowTypeEnum",
+        name="SubstructureTypeEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "single-hung sash window",
-                PermissibleValue(text="single-hung sash window") )
-        setattr(cls, "horizontal sash window",
-                PermissibleValue(text="horizontal sash window") )
-        setattr(cls, "fixed window",
-                PermissibleValue(text="fixed window") )
-
-class DrawingsEnum(EnumDefinitionImpl):
-
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
-    bid = PermissibleValue(text="bid")
-    design = PermissibleValue(text="design")
-    diagram = PermissibleValue(text="diagram")
-    sketch = PermissibleValue(text="sketch")
-
-    _defn = EnumDefinition(
-        name="DrawingsEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "as built",
-                PermissibleValue(text="as built") )
-        setattr(cls, "building navigation map",
-                PermissibleValue(text="building navigation map") )
-
-class WallConstTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="WallConstTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "frame construction",
-                PermissibleValue(text="frame construction") )
-        setattr(cls, "joisted masonry",
-                PermissibleValue(text="joisted masonry") )
-        setattr(cls, "light noncombustible",
-                PermissibleValue(text="light noncombustible") )
-        setattr(cls, "masonry noncombustible",
-                PermissibleValue(text="masonry noncombustible") )
-        setattr(cls, "modified fire resistive",
-                PermissibleValue(text="modified fire resistive") )
-        setattr(cls, "fire resistive",
-                PermissibleValue(text="fire resistive") )
-
-class WallFinishMatEnum(EnumDefinitionImpl):
-
-    plaster = PermissibleValue(text="plaster")
-    tile = PermissibleValue(text="tile")
-    terrazzo = PermissibleValue(text="terrazzo")
-    wood = PermissibleValue(text="wood")
-    metal = PermissibleValue(text="metal")
-    masonry = PermissibleValue(text="masonry")
-
-    _defn = EnumDefinition(
-        name="WallFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "gypsum plaster",
-                PermissibleValue(text="gypsum plaster") )
-        setattr(cls, "veneer plaster",
-                PermissibleValue(text="veneer plaster") )
-        setattr(cls, "gypsum board",
-                PermissibleValue(text="gypsum board") )
-        setattr(cls, "stone facing",
-                PermissibleValue(text="stone facing") )
-        setattr(cls, "acoustical treatment",
-                PermissibleValue(text="acoustical treatment") )
-
-class HeatCoolTypeEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="HeatCoolTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "radiant system",
-                PermissibleValue(text="radiant system") )
-        setattr(cls, "heat pump",
-                PermissibleValue(text="heat pump") )
-        setattr(cls, "forced air system",
-                PermissibleValue(text="forced air system") )
-        setattr(cls, "steam forced heat",
-                PermissibleValue(text="steam forced heat") )
-        setattr(cls, "wood stove",
-                PermissibleValue(text="wood stove") )
-
-class WindowVertPosEnum(EnumDefinitionImpl):
-
-    bottom = PermissibleValue(text="bottom")
-    middle = PermissibleValue(text="middle")
-    top = PermissibleValue(text="top")
-    low = PermissibleValue(text="low")
-    high = PermissibleValue(text="high")
-
-    _defn = EnumDefinition(
-        name="WindowVertPosEnum",
-    )
-
-class CeilCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="CeilCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-
-class DoorCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="DoorCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-                PermissibleValue(text="needs repair") )
-        setattr(cls, "visible wear",
-                PermissibleValue(text="visible wear") )
+        setattr(cls, "slab on grade",
+            PermissibleValue(text="slab on grade"))
 
 class RelSampLocEnum(EnumDefinitionImpl):
 
@@ -11547,112 +11227,11 @@ class RelSampLocEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "edge of car",
-                PermissibleValue(text="edge of car") )
+            PermissibleValue(text="edge of car"))
         setattr(cls, "center of car",
-                PermissibleValue(text="center of car") )
+            PermissibleValue(text="center of car"))
         setattr(cls, "under a seat",
-                PermissibleValue(text="under a seat") )
-
-class RoomConnectedEnum(EnumDefinitionImpl):
-
-    attic = PermissibleValue(text="attic")
-    bathroom = PermissibleValue(text="bathroom")
-    closet = PermissibleValue(text="closet")
-    elevator = PermissibleValue(text="elevator")
-    hallway = PermissibleValue(text="hallway")
-    kitchen = PermissibleValue(text="kitchen")
-    office = PermissibleValue(text="office")
-    stairwell = PermissibleValue(text="stairwell")
-
-    _defn = EnumDefinition(
-        name="RoomConnectedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "conference room",
-                PermissibleValue(text="conference room") )
-        setattr(cls, "examining room",
-                PermissibleValue(text="examining room") )
-        setattr(cls, "mail room",
-                PermissibleValue(text="mail room") )
-
-class TrainStopLocEnum(EnumDefinitionImpl):
-
-    end = PermissibleValue(text="end")
-    mid = PermissibleValue(text="mid")
-    downtown = PermissibleValue(text="downtown")
-
-    _defn = EnumDefinition(
-        name="TrainStopLocEnum",
-    )
-
-class QuadPosEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="QuadPosEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "North side",
-                PermissibleValue(text="North side") )
-        setattr(cls, "West side",
-                PermissibleValue(text="West side") )
-        setattr(cls, "South side",
-                PermissibleValue(text="South side") )
-        setattr(cls, "East side",
-                PermissibleValue(text="East side") )
-
-class CeilTypeEnum(EnumDefinitionImpl):
-
-    cathedral = PermissibleValue(text="cathedral")
-    dropped = PermissibleValue(text="dropped")
-    concave = PermissibleValue(text="concave")
-    coffered = PermissibleValue(text="coffered")
-    cove = PermissibleValue(text="cove")
-    stretched = PermissibleValue(text="stretched")
-
-    _defn = EnumDefinition(
-        name="CeilTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "barrel-shaped",
-                PermissibleValue(text="barrel-shaped") )
-
-class BuildDocsEnum(EnumDefinitionImpl):
-
-    schedule = PermissibleValue(text="schedule")
-    sections = PermissibleValue(text="sections")
-    submittals = PermissibleValue(text="submittals")
-    windows = PermissibleValue(text="windows")
-
-    _defn = EnumDefinition(
-        name="BuildDocsEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "building information model",
-                PermissibleValue(text="building information model") )
-        setattr(cls, "commissioning report",
-                PermissibleValue(text="commissioning report") )
-        setattr(cls, "complaint logs",
-                PermissibleValue(text="complaint logs") )
-        setattr(cls, "contract administration",
-                PermissibleValue(text="contract administration") )
-        setattr(cls, "cost estimate",
-                PermissibleValue(text="cost estimate") )
-        setattr(cls, "janitorial schedules or logs",
-                PermissibleValue(text="janitorial schedules or logs") )
-        setattr(cls, "maintenance plans",
-                PermissibleValue(text="maintenance plans") )
-        setattr(cls, "shop drawings",
-                PermissibleValue(text="shop drawings") )
-        setattr(cls, "ventilation system",
-                PermissibleValue(text="ventilation system") )
+            PermissibleValue(text="under a seat"))
 
 class RoomTypeEnum(EnumDefinitionImpl):
 
@@ -11681,97 +11260,171 @@ class RoomTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "conference room",
-                PermissibleValue(text="conference room") )
+            PermissibleValue(text="conference room"))
         setattr(cls, "examining room",
-                PermissibleValue(text="examining room") )
+            PermissibleValue(text="examining room"))
         setattr(cls, "mail room",
-                PermissibleValue(text="mail room") )
+            PermissibleValue(text="mail room"))
         setattr(cls, "private office",
-                PermissibleValue(text="private office") )
+            PermissibleValue(text="private office"))
         setattr(cls, "open office",
-                PermissibleValue(text="open office") )
+            PermissibleValue(text="open office"))
         setattr(cls, ",restroom",
-                PermissibleValue(text=",restroom") )
+            PermissibleValue(text=",restroom"))
         setattr(cls, "mechanical or electrical room",
-                PermissibleValue(text="mechanical or electrical room") )
+            PermissibleValue(text="mechanical or electrical room"))
         setattr(cls, "data center",
-                PermissibleValue(text="data center") )
+            PermissibleValue(text="data center"))
 
-class SeasonUseEnum(EnumDefinitionImpl):
+class HeatDelivLocEnum(EnumDefinitionImpl):
 
-    Spring = PermissibleValue(text="Spring")
-    Summer = PermissibleValue(text="Summer")
-    Fall = PermissibleValue(text="Fall")
-    Winter = PermissibleValue(text="Winter")
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
 
     _defn = EnumDefinition(
-        name="SeasonUseEnum",
+        name="HeatDelivLocEnum",
     )
 
-class DoorTypeMetalEnum(EnumDefinitionImpl):
+class WallTextureEnum(EnumDefinitionImpl):
 
-    collapsible = PermissibleValue(text="collapsible")
-    hollow = PermissibleValue(text="hollow")
-
-    _defn = EnumDefinition(
-        name="DoorTypeMetalEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "corrugated steel",
-                PermissibleValue(text="corrugated steel") )
-        setattr(cls, "rolling shutters",
-                PermissibleValue(text="rolling shutters") )
-        setattr(cls, "steel plate",
-                PermissibleValue(text="steel plate") )
-
-class RoomSampPosEnum(EnumDefinitionImpl):
-
-    center = PermissibleValue(text="center")
+    knockdown = PermissibleValue(text="knockdown")
+    popcorn = PermissibleValue(text="popcorn")
+    smooth = PermissibleValue(text="smooth")
+    swirl = PermissibleValue(text="swirl")
 
     _defn = EnumDefinition(
-        name="RoomSampPosEnum",
+        name="WallTextureEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "north corner",
-                PermissibleValue(text="north corner") )
-        setattr(cls, "south corner",
-                PermissibleValue(text="south corner") )
-        setattr(cls, "west corner",
-                PermissibleValue(text="west corner") )
-        setattr(cls, "east corner",
-                PermissibleValue(text="east corner") )
-        setattr(cls, "northeast corner",
-                PermissibleValue(text="northeast corner") )
-        setattr(cls, "northwest corner",
-                PermissibleValue(text="northwest corner") )
-        setattr(cls, "southeast corner",
-                PermissibleValue(text="southeast corner") )
-        setattr(cls, "southwest corner",
-                PermissibleValue(text="southwest corner") )
+        setattr(cls, "crows feet",
+            PermissibleValue(text="crows feet"))
+        setattr(cls, "crows-foot stomp",
+            PermissibleValue(text="crows-foot stomp"))
+        setattr(cls, "",
+            PermissibleValue(text=""))
+        setattr(cls, "double skip",
+            PermissibleValue(text="double skip"))
+        setattr(cls, "hawk and trowel",
+            PermissibleValue(text="hawk and trowel"))
+        setattr(cls, "orange peel",
+            PermissibleValue(text="orange peel"))
+        setattr(cls, "rosebud stomp",
+            PermissibleValue(text="rosebud stomp"))
+        setattr(cls, "Santa-Fe texture",
+            PermissibleValue(text="Santa-Fe texture"))
+        setattr(cls, "skip trowel",
+            PermissibleValue(text="skip trowel"))
+        setattr(cls, "stomp knockdown",
+            PermissibleValue(text="stomp knockdown"))
 
-class SampWeatherEnum(EnumDefinitionImpl):
+class TrainLineEnum(EnumDefinitionImpl):
 
-    cloudy = PermissibleValue(text="cloudy")
-    foggy = PermissibleValue(text="foggy")
-    hail = PermissibleValue(text="hail")
-    rain = PermissibleValue(text="rain")
-    snow = PermissibleValue(text="snow")
-    sleet = PermissibleValue(text="sleet")
-    sunny = PermissibleValue(text="sunny")
-    windy = PermissibleValue(text="windy")
+    red = PermissibleValue(text="red")
+    green = PermissibleValue(text="green")
+    orange = PermissibleValue(text="orange")
 
     _defn = EnumDefinition(
-        name="SampWeatherEnum",
+        name="TrainLineEnum",
+    )
+
+class ArchStrucEnum(EnumDefinitionImpl):
+
+    building = PermissibleValue(text="building")
+    shed = PermissibleValue(text="shed")
+    home = PermissibleValue(text="home")
+
+    _defn = EnumDefinition(
+        name="ArchStrucEnum",
+    )
+
+class DoorCondEnum(EnumDefinitionImpl):
+
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="DoorCondEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "clear sky",
-                PermissibleValue(text="clear sky") )
+        setattr(cls, "needs repair",
+            PermissibleValue(text="needs repair"))
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
+
+class BuildingSettingEnum(EnumDefinitionImpl):
+
+    urban = PermissibleValue(text="urban")
+    suburban = PermissibleValue(text="suburban")
+    exurban = PermissibleValue(text="exurban")
+    rural = PermissibleValue(text="rural")
+
+    _defn = EnumDefinition(
+        name="BuildingSettingEnum",
+    )
+
+class SpecificEnum(EnumDefinitionImpl):
+
+    operation = PermissibleValue(text="operation")
+    construction = PermissibleValue(text="construction")
+    bid = PermissibleValue(text="bid")
+    design = PermissibleValue(text="design")
+    photos = PermissibleValue(text="photos")
+
+    _defn = EnumDefinition(
+        name="SpecificEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "as built",
+            PermissibleValue(text="as built"))
+
+class WallConstTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="WallConstTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "frame construction",
+            PermissibleValue(text="frame construction"))
+        setattr(cls, "joisted masonry",
+            PermissibleValue(text="joisted masonry"))
+        setattr(cls, "light noncombustible",
+            PermissibleValue(text="light noncombustible"))
+        setattr(cls, "masonry noncombustible",
+            PermissibleValue(text="masonry noncombustible"))
+        setattr(cls, "modified fire resistive",
+            PermissibleValue(text="modified fire resistive"))
+        setattr(cls, "fire resistive",
+            PermissibleValue(text="fire resistive"))
+
+class IndoorSpaceEnum(EnumDefinitionImpl):
+
+    bedroom = PermissibleValue(text="bedroom")
+    office = PermissibleValue(text="office")
+    bathroom = PermissibleValue(text="bathroom")
+    foyer = PermissibleValue(text="foyer")
+    kitchen = PermissibleValue(text="kitchen")
+    hallway = PermissibleValue(text="hallway")
+    elevator = PermissibleValue(text="elevator")
+
+    _defn = EnumDefinition(
+        name="IndoorSpaceEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "locker room",
+            PermissibleValue(text="locker room"))
 
 class GenderRestroomEnum(EnumDefinitionImpl):
 
@@ -11786,11 +11439,767 @@ class GenderRestroomEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "all gender",
-                PermissibleValue(text="all gender") )
+            PermissibleValue(text="all gender"))
         setattr(cls, "gender neurtral",
-                PermissibleValue(text="gender neurtral") )
+            PermissibleValue(text="gender neurtral"))
         setattr(cls, "male and female",
-                PermissibleValue(text="male and female") )
+            PermissibleValue(text="male and female"))
+
+class WindowTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="WindowTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "single-hung sash window",
+            PermissibleValue(text="single-hung sash window"))
+        setattr(cls, "horizontal sash window",
+            PermissibleValue(text="horizontal sash window"))
+        setattr(cls, "fixed window",
+            PermissibleValue(text="fixed window"))
+
+class MechStrucEnum(EnumDefinitionImpl):
+
+    subway = PermissibleValue(text="subway")
+    coach = PermissibleValue(text="coach")
+    carriage = PermissibleValue(text="carriage")
+    elevator = PermissibleValue(text="elevator")
+    escalator = PermissibleValue(text="escalator")
+    boat = PermissibleValue(text="boat")
+    train = PermissibleValue(text="train")
+    car = PermissibleValue(text="car")
+    bus = PermissibleValue(text="bus")
+
+    _defn = EnumDefinition(
+        name="MechStrucEnum",
+    )
+
+class DoorTypeWoodEnum(EnumDefinitionImpl):
+
+    battened = PermissibleValue(text="battened")
+    flush = PermissibleValue(text="flush")
+    louvered = PermissibleValue(text="louvered")
+
+    _defn = EnumDefinition(
+        name="DoorTypeWoodEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "bettened and ledged",
+            PermissibleValue(text="bettened and ledged"))
+        setattr(cls, "ledged and braced",
+            PermissibleValue(text="ledged and braced"))
+        setattr(cls, "ledged and framed",
+            PermissibleValue(text="ledged and framed"))
+        setattr(cls, "ledged, braced and frame",
+            PermissibleValue(text="ledged, braced and frame"))
+        setattr(cls, "framed and paneled",
+            PermissibleValue(text="framed and paneled"))
+        setattr(cls, "glashed or sash",
+            PermissibleValue(text="glashed or sash"))
+        setattr(cls, "wire gauged",
+            PermissibleValue(text="wire gauged"))
+
+class WaterFeatTypeEnum(EnumDefinitionImpl):
+
+    fountain = PermissibleValue(text="fountain")
+    pool = PermissibleValue(text="pool")
+    stream = PermissibleValue(text="stream")
+    waterfall = PermissibleValue(text="waterfall")
+
+    _defn = EnumDefinition(
+        name="WaterFeatTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "standing feature",
+            PermissibleValue(text="standing feature"))
+
+class DoorTypeMetalEnum(EnumDefinitionImpl):
+
+    collapsible = PermissibleValue(text="collapsible")
+    hollow = PermissibleValue(text="hollow")
+
+    _defn = EnumDefinition(
+        name="DoorTypeMetalEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "corrugated steel",
+            PermissibleValue(text="corrugated steel"))
+        setattr(cls, "rolling shutters",
+            PermissibleValue(text="rolling shutters"))
+        setattr(cls, "steel plate",
+            PermissibleValue(text="steel plate"))
+
+class RoomConnectedEnum(EnumDefinitionImpl):
+
+    attic = PermissibleValue(text="attic")
+    bathroom = PermissibleValue(text="bathroom")
+    closet = PermissibleValue(text="closet")
+    elevator = PermissibleValue(text="elevator")
+    hallway = PermissibleValue(text="hallway")
+    kitchen = PermissibleValue(text="kitchen")
+    office = PermissibleValue(text="office")
+    stairwell = PermissibleValue(text="stairwell")
+
+    _defn = EnumDefinition(
+        name="RoomConnectedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "conference room",
+            PermissibleValue(text="conference room"))
+        setattr(cls, "examining room",
+            PermissibleValue(text="examining room"))
+        setattr(cls, "mail room",
+            PermissibleValue(text="mail room"))
+
+class DoorLocEnum(EnumDefinitionImpl):
+
+    north = PermissibleValue(text="north")
+    south = PermissibleValue(text="south")
+    east = PermissibleValue(text="east")
+    west = PermissibleValue(text="west")
+
+    _defn = EnumDefinition(
+        name="DoorLocEnum",
+    )
+
+class RoomLocEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="RoomLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "corner room",
+            PermissibleValue(text="corner room"))
+        setattr(cls, "interior room",
+            PermissibleValue(text="interior room"))
+        setattr(cls, "exterior wall",
+            PermissibleValue(text="exterior wall"))
+
+class WindowVertPosEnum(EnumDefinitionImpl):
+
+    bottom = PermissibleValue(text="bottom")
+    middle = PermissibleValue(text="middle")
+    top = PermissibleValue(text="top")
+    low = PermissibleValue(text="low")
+    high = PermissibleValue(text="high")
+
+    _defn = EnumDefinition(
+        name="WindowVertPosEnum",
+    )
+
+class HandidnessEnum(EnumDefinitionImpl):
+
+    ambidexterity = PermissibleValue(text="ambidexterity")
+
+    _defn = EnumDefinition(
+        name="HandidnessEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "left handedness",
+            PermissibleValue(text="left handedness"))
+        setattr(cls, "mixed-handedness",
+            PermissibleValue(text="mixed-handedness"))
+        setattr(cls, "right handedness",
+            PermissibleValue(text="right handedness"))
+
+class DoorMatEnum(EnumDefinitionImpl):
+
+    aluminum = PermissibleValue(text="aluminum")
+    fiberboard = PermissibleValue(text="fiberboard")
+    fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="DoorMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cellular PVC",
+            PermissibleValue(text="cellular PVC"))
+        setattr(cls, "engineered plastic",
+            PermissibleValue(text="engineered plastic"))
+        setattr(cls, "thermoplastic alloy",
+            PermissibleValue(text="thermoplastic alloy"))
+        setattr(cls, "wood/plastic composite",
+            PermissibleValue(text="wood/plastic composite"))
+
+class QuadPosEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="QuadPosEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "North side",
+            PermissibleValue(text="North side"))
+        setattr(cls, "West side",
+            PermissibleValue(text="West side"))
+        setattr(cls, "South side",
+            PermissibleValue(text="South side"))
+        setattr(cls, "East side",
+            PermissibleValue(text="East side"))
+
+class SeasonUseEnum(EnumDefinitionImpl):
+
+    Spring = PermissibleValue(text="Spring")
+    Summer = PermissibleValue(text="Summer")
+    Fall = PermissibleValue(text="Fall")
+    Winter = PermissibleValue(text="Winter")
+
+    _defn = EnumDefinition(
+        name="SeasonUseEnum",
+    )
+
+class SampFloorEnum(EnumDefinitionImpl):
+
+    basement = PermissibleValue(text="basement")
+    lobby = PermissibleValue(text="lobby")
+
+    _defn = EnumDefinition(
+        name="SampFloorEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "1st floor",
+            PermissibleValue(text="1st floor"))
+        setattr(cls, "2nd floor",
+            PermissibleValue(text="2nd floor"))
+
+class DoorDirectEnum(EnumDefinitionImpl):
+
+    inward = PermissibleValue(text="inward")
+    outward = PermissibleValue(text="outward")
+    sideways = PermissibleValue(text="sideways")
+
+    _defn = EnumDefinition(
+        name="DoorDirectEnum",
+    )
+
+class SurfAirContEnum(EnumDefinitionImpl):
+
+    dust = PermissibleValue(text="dust")
+    radon = PermissibleValue(text="radon")
+    nutrients = PermissibleValue(text="nutrients")
+    biocides = PermissibleValue(text="biocides")
+
+    _defn = EnumDefinition(
+        name="SurfAirContEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "organic matter",
+            PermissibleValue(text="organic matter"))
+        setattr(cls, "particulate matter",
+            PermissibleValue(text="particulate matter"))
+        setattr(cls, "volatile organic compounds",
+            PermissibleValue(text="volatile organic compounds"))
+        setattr(cls, "biological contaminants",
+            PermissibleValue(text="biological contaminants"))
+
+class OccupDocumentEnum(EnumDefinitionImpl):
+
+    estimate = PermissibleValue(text="estimate")
+    videos = PermissibleValue(text="videos")
+
+    _defn = EnumDefinition(
+        name="OccupDocumentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "automated count",
+            PermissibleValue(text="automated count"))
+        setattr(cls, "manual count",
+            PermissibleValue(text="manual count"))
+
+class RoomCondtEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="RoomCondtEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
+        setattr(cls, "needs repair",
+            PermissibleValue(text="needs repair"))
+        setattr(cls, "visible signs of mold/mildew",
+            PermissibleValue(text="visible signs of mold/mildew"))
+
+class CeilCondEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="CeilCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
+        setattr(cls, "needs repair",
+            PermissibleValue(text="needs repair"))
+
+class ShadingDeviceCondEnum(EnumDefinitionImpl):
+
+    damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="ShadingDeviceCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "needs repair",
+            PermissibleValue(text="needs repair"))
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
+
+class CeilFinishMatEnum(EnumDefinitionImpl):
+
+    drywall = PermissibleValue(text="drywall")
+    tiles = PermissibleValue(text="tiles")
+    PVC = PermissibleValue(text="PVC")
+    plasterboard = PermissibleValue(text="plasterboard")
+    metal = PermissibleValue(text="metal")
+    fiberglass = PermissibleValue(text="fiberglass")
+    stucco = PermissibleValue(text="stucco")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="CeilFinishMatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "mineral fibre",
+            PermissibleValue(text="mineral fibre"))
+        setattr(cls, "mineral wool/calcium silicate",
+            PermissibleValue(text="mineral wool/calcium silicate"))
+
+class WallSurfTreatmentEnum(EnumDefinitionImpl):
+
+    painted = PermissibleValue(text="painted")
+    paneling = PermissibleValue(text="paneling")
+    stucco = PermissibleValue(text="stucco")
+    fabric = PermissibleValue(text="fabric")
+
+    _defn = EnumDefinition(
+        name="WallSurfTreatmentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "wall paper",
+            PermissibleValue(text="wall paper"))
+        setattr(cls, "no treatment",
+            PermissibleValue(text="no treatment"))
+
+class FurnitureEnum(EnumDefinitionImpl):
+
+    cabinet = PermissibleValue(text="cabinet")
+    chair = PermissibleValue(text="chair")
+    desks = PermissibleValue(text="desks")
+
+    _defn = EnumDefinition(
+        name="FurnitureEnum",
+    )
+
+class CeilTextureEnum(EnumDefinitionImpl):
+
+    knockdown = PermissibleValue(text="knockdown")
+    popcorn = PermissibleValue(text="popcorn")
+    smooth = PermissibleValue(text="smooth")
+    swirl = PermissibleValue(text="swirl")
+
+    _defn = EnumDefinition(
+        name="CeilTextureEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "crows feet",
+            PermissibleValue(text="crows feet"))
+        setattr(cls, "crows-foot stomp",
+            PermissibleValue(text="crows-foot stomp"))
+        setattr(cls, "double skip",
+            PermissibleValue(text="double skip"))
+        setattr(cls, "hawk and trowel",
+            PermissibleValue(text="hawk and trowel"))
+        setattr(cls, "orange peel",
+            PermissibleValue(text="orange peel"))
+        setattr(cls, "rosebud stomp",
+            PermissibleValue(text="rosebud stomp"))
+        setattr(cls, "Santa-Fe texture",
+            PermissibleValue(text="Santa-Fe texture"))
+        setattr(cls, "skip trowel",
+            PermissibleValue(text="skip trowel"))
+        setattr(cls, "stomp knockdown",
+            PermissibleValue(text="stomp knockdown"))
+
+class FloorStrucEnum(EnumDefinitionImpl):
+
+    balcony = PermissibleValue(text="balcony")
+    concrete = PermissibleValue(text="concrete")
+
+    _defn = EnumDefinition(
+        name="FloorStrucEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "floating floor",
+            PermissibleValue(text="floating floor"))
+        setattr(cls, "glass floor",
+            PermissibleValue(text="glass floor"))
+        setattr(cls, "raised floor",
+            PermissibleValue(text="raised floor"))
+        setattr(cls, "sprung floor",
+            PermissibleValue(text="sprung floor"))
+        setattr(cls, "wood-framed",
+            PermissibleValue(text="wood-framed"))
+
+class IndoorSurfEnum(EnumDefinitionImpl):
+
+    cabinet = PermissibleValue(text="cabinet")
+    ceiling = PermissibleValue(text="ceiling")
+    door = PermissibleValue(text="door")
+    shelving = PermissibleValue(text="shelving")
+    window = PermissibleValue(text="window")
+    wall = PermissibleValue(text="wall")
+
+    _defn = EnumDefinition(
+        name="IndoorSurfEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "counter top",
+            PermissibleValue(text="counter top"))
+        setattr(cls, "vent cover",
+            PermissibleValue(text="vent cover"))
+
+class TrainStopLocEnum(EnumDefinitionImpl):
+
+    end = PermissibleValue(text="end")
+    mid = PermissibleValue(text="mid")
+    downtown = PermissibleValue(text="downtown")
+
+    _defn = EnumDefinition(
+        name="TrainStopLocEnum",
+    )
+
+class VisMediaEnum(EnumDefinitionImpl):
+
+    photos = PermissibleValue(text="photos")
+    videos = PermissibleValue(text="videos")
+    interiors = PermissibleValue(text="interiors")
+    equipment = PermissibleValue(text="equipment")
+
+    _defn = EnumDefinition(
+        name="VisMediaEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "commonly of the building",
+            PermissibleValue(text="commonly of the building"))
+        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
+            PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)"))
+        setattr(cls, "3D scans",
+            PermissibleValue(text="3D scans"))
+
+class DoorMoveEnum(EnumDefinitionImpl):
+
+    collapsible = PermissibleValue(text="collapsible")
+    folding = PermissibleValue(text="folding")
+    revolving = PermissibleValue(text="revolving")
+    sliding = PermissibleValue(text="sliding")
+    swinging = PermissibleValue(text="swinging")
+
+    _defn = EnumDefinition(
+        name="DoorMoveEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "rolling shutter",
+            PermissibleValue(text="rolling shutter"))
+
+class RoomSampPosEnum(EnumDefinitionImpl):
+
+    center = PermissibleValue(text="center")
+
+    _defn = EnumDefinition(
+        name="RoomSampPosEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "north corner",
+            PermissibleValue(text="north corner"))
+        setattr(cls, "south corner",
+            PermissibleValue(text="south corner"))
+        setattr(cls, "west corner",
+            PermissibleValue(text="west corner"))
+        setattr(cls, "east corner",
+            PermissibleValue(text="east corner"))
+        setattr(cls, "northeast corner",
+            PermissibleValue(text="northeast corner"))
+        setattr(cls, "northwest corner",
+            PermissibleValue(text="northwest corner"))
+        setattr(cls, "southeast corner",
+            PermissibleValue(text="southeast corner"))
+        setattr(cls, "southwest corner",
+            PermissibleValue(text="southwest corner"))
+
+class SurfMaterialEnum(EnumDefinitionImpl):
+
+    adobe = PermissibleValue(text="adobe")
+    carpet = PermissibleValue(text="carpet")
+    concrete = PermissibleValue(text="concrete")
+    glass = PermissibleValue(text="glass")
+    metal = PermissibleValue(text="metal")
+    paint = PermissibleValue(text="paint")
+    plastic = PermissibleValue(text="plastic")
+    stone = PermissibleValue(text="stone")
+    stucco = PermissibleValue(text="stucco")
+    tile = PermissibleValue(text="tile")
+    vinyl = PermissibleValue(text="vinyl")
+    wood = PermissibleValue(text="wood")
+
+    _defn = EnumDefinition(
+        name="SurfMaterialEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cinder blocks",
+            PermissibleValue(text="cinder blocks"))
+        setattr(cls, "hay bales",
+            PermissibleValue(text="hay bales"))
+        setattr(cls, "stainless steel",
+            PermissibleValue(text="stainless steel"))
+
+class BuildOccupTypeEnum(EnumDefinitionImpl):
+
+    office = PermissibleValue(text="office")
+    market = PermissibleValue(text="market")
+    restaurant = PermissibleValue(text="restaurant")
+    residence = PermissibleValue(text="residence")
+    school = PermissibleValue(text="school")
+    residential = PermissibleValue(text="residential")
+    commercial = PermissibleValue(text="commercial")
+    airport = PermissibleValue(text="airport")
+
+    _defn = EnumDefinition(
+        name="BuildOccupTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "low rise",
+            PermissibleValue(text="low rise"))
+        setattr(cls, "high rise",
+            PermissibleValue(text="high rise"))
+        setattr(cls, "wood framed",
+            PermissibleValue(text="wood framed"))
+        setattr(cls, "health care",
+            PermissibleValue(text="health care"))
+        setattr(cls, "sports complex",
+            PermissibleValue(text="sports complex"))
+
+class DoorCompTypeEnum(EnumDefinitionImpl):
+
+    revolving = PermissibleValue(text="revolving")
+    sliding = PermissibleValue(text="sliding")
+    telescopic = PermissibleValue(text="telescopic")
+
+    _defn = EnumDefinition(
+        name="DoorCompTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "metal covered",
+            PermissibleValue(text="metal covered"))
+
+class DrawingsEnum(EnumDefinitionImpl):
+
+    operation = PermissibleValue(text="operation")
+    construction = PermissibleValue(text="construction")
+    bid = PermissibleValue(text="bid")
+    design = PermissibleValue(text="design")
+    diagram = PermissibleValue(text="diagram")
+    sketch = PermissibleValue(text="sketch")
+
+    _defn = EnumDefinition(
+        name="DrawingsEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "as built",
+            PermissibleValue(text="as built"))
+        setattr(cls, "building navigation map",
+            PermissibleValue(text="building navigation map"))
+
+class TrainStatLocEnum(EnumDefinitionImpl):
+
+    riverside = PermissibleValue(text="riverside")
+
+    _defn = EnumDefinition(
+        name="TrainStatLocEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "south station above ground",
+            PermissibleValue(text="south station above ground"))
+        setattr(cls, "south station underground",
+            PermissibleValue(text="south station underground"))
+        setattr(cls, "south station amtrak",
+            PermissibleValue(text="south station amtrak"))
+        setattr(cls, "forest hills",
+            PermissibleValue(text="forest hills"))
+
+class BuildDocsEnum(EnumDefinitionImpl):
+
+    schedule = PermissibleValue(text="schedule")
+    sections = PermissibleValue(text="sections")
+    submittals = PermissibleValue(text="submittals")
+    windows = PermissibleValue(text="windows")
+
+    _defn = EnumDefinition(
+        name="BuildDocsEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "building information model",
+            PermissibleValue(text="building information model"))
+        setattr(cls, "commissioning report",
+            PermissibleValue(text="commissioning report"))
+        setattr(cls, "complaint logs",
+            PermissibleValue(text="complaint logs"))
+        setattr(cls, "contract administration",
+            PermissibleValue(text="contract administration"))
+        setattr(cls, "cost estimate",
+            PermissibleValue(text="cost estimate"))
+        setattr(cls, "janitorial schedules or logs",
+            PermissibleValue(text="janitorial schedules or logs"))
+        setattr(cls, "maintenance plans",
+            PermissibleValue(text="maintenance plans"))
+        setattr(cls, "shop drawings",
+            PermissibleValue(text="shop drawings"))
+        setattr(cls, "ventilation system",
+            PermissibleValue(text="ventilation system"))
+
+class CeilTypeEnum(EnumDefinitionImpl):
+
+    cathedral = PermissibleValue(text="cathedral")
+    dropped = PermissibleValue(text="dropped")
+    concave = PermissibleValue(text="concave")
+    coffered = PermissibleValue(text="coffered")
+    cove = PermissibleValue(text="cove")
+    stretched = PermissibleValue(text="stretched")
+
+    _defn = EnumDefinition(
+        name="CeilTypeEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "barrel-shaped",
+            PermissibleValue(text="barrel-shaped"))
+
+class IntWallCondEnum(EnumDefinitionImpl):
+
+    new = PermissibleValue(text="new")
+    damaged = PermissibleValue(text="damaged")
+    rupture = PermissibleValue(text="rupture")
+
+    _defn = EnumDefinition(
+        name="IntWallCondEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
+        setattr(cls, "needs repair",
+            PermissibleValue(text="needs repair"))
+
+class DeposEnvEnum(EnumDefinitionImpl):
+
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="DeposEnvEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Continental - Alluvial",
+            PermissibleValue(text="Continental - Alluvial"))
+        setattr(cls, "Continental - Aeolian",
+            PermissibleValue(text="Continental - Aeolian"))
+        setattr(cls, "Continental - Fluvial",
+            PermissibleValue(text="Continental - Fluvial"))
+        setattr(cls, "Continental - Lacustrine",
+            PermissibleValue(text="Continental - Lacustrine"))
+        setattr(cls, "Transitional - Deltaic",
+            PermissibleValue(text="Transitional - Deltaic"))
+        setattr(cls, "Transitional - Tidal",
+            PermissibleValue(text="Transitional - Tidal"))
+        setattr(cls, "Transitional - Lagoonal",
+            PermissibleValue(text="Transitional - Lagoonal"))
+        setattr(cls, "Transitional - Beach",
+            PermissibleValue(text="Transitional - Beach"))
+        setattr(cls, "Transitional - Lake",
+            PermissibleValue(text="Transitional - Lake"))
+        setattr(cls, "Marine - Shallow",
+            PermissibleValue(text="Marine - Shallow"))
+        setattr(cls, "Marine - Deep",
+            PermissibleValue(text="Marine - Deep"))
+        setattr(cls, "Marine - Reef",
+            PermissibleValue(text="Marine - Reef"))
+        setattr(cls, "Other - Evaporite",
+            PermissibleValue(text="Other - Evaporite"))
+        setattr(cls, "Other - Glacial",
+            PermissibleValue(text="Other - Glacial"))
+        setattr(cls, "Other - Volcanic",
+            PermissibleValue(text="Other - Volcanic"))
 
 class HcProducedEnum(EnumDefinitionImpl):
 
@@ -11806,32 +12215,19 @@ class HcProducedEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "Gas-Condensate",
-                PermissibleValue(text="Gas-Condensate") )
+            PermissibleValue(text="Gas-Condensate"))
         setattr(cls, "Coalbed Methane",
-                PermissibleValue(text="Coalbed Methane") )
+            PermissibleValue(text="Coalbed Methane"))
 
-class HcrEnum(EnumDefinitionImpl):
+class OxyStatSampEnum(EnumDefinitionImpl):
 
-    Coalbed = PermissibleValue(text="Coalbed")
-    Shale = PermissibleValue(text="Shale")
+    aerobic = PermissibleValue(text="aerobic")
+    anaerobic = PermissibleValue(text="anaerobic")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="HcrEnum",
+        name="OxyStatSampEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Oil Reservoir",
-                PermissibleValue(text="Oil Reservoir") )
-        setattr(cls, "Gas Reservoir",
-                PermissibleValue(text="Gas Reservoir") )
-        setattr(cls, "Oil Sand",
-                PermissibleValue(text="Oil Sand") )
-        setattr(cls, "Tight Oil Reservoir",
-                PermissibleValue(text="Tight Oil Reservoir") )
-        setattr(cls, "Tight Gas Reservoir",
-                PermissibleValue(text="Tight Gas Reservoir") )
 
 class LithologyEnum(EnumDefinitionImpl):
 
@@ -11852,77 +12248,6 @@ class LithologyEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="LithologyEnum",
     )
-
-class SampCollectPointEnum(EnumDefinitionImpl):
-
-    well = PermissibleValue(text="well")
-    wellhead = PermissibleValue(text="wellhead")
-    separator = PermissibleValue(text="separator")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SampCollectPointEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "test well",
-                PermissibleValue(text="test well") )
-        setattr(cls, "drilling rig",
-                PermissibleValue(text="drilling rig") )
-        setattr(cls, "storage tank",
-                PermissibleValue(text="storage tank") )
-
-class OxyStatSampEnum(EnumDefinitionImpl):
-
-    aerobic = PermissibleValue(text="aerobic")
-    anaerobic = PermissibleValue(text="anaerobic")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="OxyStatSampEnum",
-    )
-
-class DeposEnvEnum(EnumDefinitionImpl):
-
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="DeposEnvEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Continental - Alluvial",
-                PermissibleValue(text="Continental - Alluvial") )
-        setattr(cls, "Continental - Aeolian",
-                PermissibleValue(text="Continental - Aeolian") )
-        setattr(cls, "Continental - Fluvial",
-                PermissibleValue(text="Continental - Fluvial") )
-        setattr(cls, "Continental - Lacustrine",
-                PermissibleValue(text="Continental - Lacustrine") )
-        setattr(cls, "Transitional - Deltaic",
-                PermissibleValue(text="Transitional - Deltaic") )
-        setattr(cls, "Transitional - Tidal",
-                PermissibleValue(text="Transitional - Tidal") )
-        setattr(cls, "Transitional - Lagoonal",
-                PermissibleValue(text="Transitional - Lagoonal") )
-        setattr(cls, "Transitional - Beach",
-                PermissibleValue(text="Transitional - Beach") )
-        setattr(cls, "Transitional - Lake",
-                PermissibleValue(text="Transitional - Lake") )
-        setattr(cls, "Marine - Shallow",
-                PermissibleValue(text="Marine - Shallow") )
-        setattr(cls, "Marine - Deep",
-                PermissibleValue(text="Marine - Deep") )
-        setattr(cls, "Marine - Reef",
-                PermissibleValue(text="Marine - Reef") )
-        setattr(cls, "Other - Evaporite",
-                PermissibleValue(text="Other - Evaporite") )
-        setattr(cls, "Other - Glacial",
-                PermissibleValue(text="Other - Glacial") )
-        setattr(cls, "Other - Volcanic",
-                PermissibleValue(text="Other - Volcanic") )
 
 class HcrGeolAgeEnum(EnumDefinitionImpl):
 
@@ -11949,6 +12274,29 @@ class HcrGeolAgeEnum(EnumDefinitionImpl):
         name="HcrGeolAgeEnum",
     )
 
+class HcrEnum(EnumDefinitionImpl):
+
+    Coalbed = PermissibleValue(text="Coalbed")
+    Shale = PermissibleValue(text="Shale")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="HcrEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Oil Reservoir",
+            PermissibleValue(text="Oil Reservoir"))
+        setattr(cls, "Gas Reservoir",
+            PermissibleValue(text="Gas Reservoir"))
+        setattr(cls, "Oil Sand",
+            PermissibleValue(text="Oil Sand"))
+        setattr(cls, "Tight Oil Reservoir",
+            PermissibleValue(text="Tight Oil Reservoir"))
+        setattr(cls, "Tight Gas Reservoir",
+            PermissibleValue(text="Tight Gas Reservoir"))
+
 class SampSubtypeEnum(EnumDefinitionImpl):
 
     biofilm = PermissibleValue(text="biofilm")
@@ -11961,11 +12309,43 @@ class SampSubtypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "oil phase",
-                PermissibleValue(text="oil phase") )
+            PermissibleValue(text="oil phase"))
         setattr(cls, "water phase",
-                PermissibleValue(text="water phase") )
+            PermissibleValue(text="water phase"))
         setattr(cls, "not applicable",
-                PermissibleValue(text="not applicable") )
+            PermissibleValue(text="not applicable"))
+
+class SampCollectPointEnum(EnumDefinitionImpl):
+
+    well = PermissibleValue(text="well")
+    wellhead = PermissibleValue(text="wellhead")
+    separator = PermissibleValue(text="separator")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SampCollectPointEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "test well",
+            PermissibleValue(text="test well"))
+        setattr(cls, "drilling rig",
+            PermissibleValue(text="drilling rig"))
+        setattr(cls, "storage tank",
+            PermissibleValue(text="storage tank"))
+
+class SrDepEnvEnum(EnumDefinitionImpl):
+
+    Lacustine = PermissibleValue(text="Lacustine")
+    Fluvioldeltaic = PermissibleValue(text="Fluvioldeltaic")
+    Fluviomarine = PermissibleValue(text="Fluviomarine")
+    Marine = PermissibleValue(text="Marine")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SrDepEnvEnum",
+    )
 
 class SrLithologyEnum(EnumDefinitionImpl):
 
@@ -11990,25 +12370,13 @@ class SrKerogTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "Type I",
-                PermissibleValue(text="Type I") )
+            PermissibleValue(text="Type I"))
         setattr(cls, "Type II",
-                PermissibleValue(text="Type II") )
+            PermissibleValue(text="Type II"))
         setattr(cls, "Type III",
-                PermissibleValue(text="Type III") )
+            PermissibleValue(text="Type III"))
         setattr(cls, "Type IV",
-                PermissibleValue(text="Type IV") )
-
-class SrDepEnvEnum(EnumDefinitionImpl):
-
-    Lacustine = PermissibleValue(text="Lacustine")
-    Fluvioldeltaic = PermissibleValue(text="Fluvioldeltaic")
-    Fluviomarine = PermissibleValue(text="Fluviomarine")
-    Marine = PermissibleValue(text="Marine")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SrDepEnvEnum",
-    )
+            PermissibleValue(text="Type IV"))
 
 class SrGeolAgeEnum(EnumDefinitionImpl):
 
@@ -12035,6 +12403,18 @@ class SrGeolAgeEnum(EnumDefinitionImpl):
         name="SrGeolAgeEnum",
     )
 
+class ProfilePositionEnum(EnumDefinitionImpl):
+
+    summit = PermissibleValue(text="summit")
+    shoulder = PermissibleValue(text="shoulder")
+    backslope = PermissibleValue(text="backslope")
+    footslope = PermissibleValue(text="footslope")
+    toeslope = PermissibleValue(text="toeslope")
+
+    _defn = EnumDefinition(
+        name="ProfilePositionEnum",
+    )
+
 class BioticRelationshipEnum(EnumDefinitionImpl):
 
     parasite = PermissibleValue(text="parasite")
@@ -12048,7 +12428,138 @@ class BioticRelationshipEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "free living",
-                PermissibleValue(text="free living") )
+            PermissibleValue(text="free living"))
+
+class SoilHorizonEnum(EnumDefinitionImpl):
+
+    Permafrost = PermissibleValue(text="Permafrost")
+
+    _defn = EnumDefinition(
+        name="SoilHorizonEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "O horizon",
+            PermissibleValue(text="O horizon"))
+        setattr(cls, "A horizon",
+            PermissibleValue(text="A horizon"))
+        setattr(cls, "E horizon",
+            PermissibleValue(text="E horizon"))
+        setattr(cls, "B horizon",
+            PermissibleValue(text="B horizon"))
+        setattr(cls, "C horizon",
+            PermissibleValue(text="C horizon"))
+        setattr(cls, "R layer",
+            PermissibleValue(text="R layer"))
+        setattr(cls, "M horizon",
+            PermissibleValue(text="M horizon"))
+
+class DrainageClassEnum(EnumDefinitionImpl):
+
+    poorly = PermissibleValue(text="poorly")
+    well = PermissibleValue(text="well")
+
+    _defn = EnumDefinition(
+        name="DrainageClassEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "very poorly",
+            PermissibleValue(text="very poorly"))
+        setattr(cls, "somewhat poorly",
+            PermissibleValue(text="somewhat poorly"))
+        setattr(cls, "moderately well",
+            PermissibleValue(text="moderately well"))
+        setattr(cls, "excessively drained",
+            PermissibleValue(text="excessively drained"))
+
+class TillageEnum(EnumDefinitionImpl):
+
+    drill = PermissibleValue(text="drill")
+    chisel = PermissibleValue(text="chisel")
+    tined = PermissibleValue(text="tined")
+    mouldboard = PermissibleValue(text="mouldboard")
+
+    _defn = EnumDefinition(
+        name="TillageEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "cutting disc",
+            PermissibleValue(text="cutting disc"))
+        setattr(cls, "ridge till",
+            PermissibleValue(text="ridge till"))
+        setattr(cls, "strip tillage",
+            PermissibleValue(text="strip tillage"))
+        setattr(cls, "zonal tillage",
+            PermissibleValue(text="zonal tillage"))
+        setattr(cls, "disc plough",
+            PermissibleValue(text="disc plough"))
+
+class CurLandUseEnum(EnumDefinitionImpl):
+
+    badlands = PermissibleValue(text="badlands")
+    cities = PermissibleValue(text="cities")
+    conifers = PermissibleValue(text="conifers")
+    farmstead = PermissibleValue(text="farmstead")
+    gravel = PermissibleValue(text="gravel")
+    hardwoods = PermissibleValue(text="hardwoods")
+    hayland = PermissibleValue(text="hayland")
+    marshlands = PermissibleValue(text="marshlands")
+    meadows = PermissibleValue(text="meadows")
+    mudflats = PermissibleValue(text="mudflats")
+    pastureland = PermissibleValue(text="pastureland")
+    rainforest = PermissibleValue(text="rainforest")
+    rangeland = PermissibleValue(text="rangeland")
+    rock = PermissibleValue(text="rock")
+    sand = PermissibleValue(text="sand")
+    swamp = PermissibleValue(text="swamp")
+    tropical = PermissibleValue(text="tropical")
+    tundra = PermissibleValue(text="tundra")
+
+    _defn = EnumDefinition(
+        name="CurLandUseEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "crop trees",
+            PermissibleValue(text="crop trees"))
+        setattr(cls, "horticultural plants",
+            PermissibleValue(text="horticultural plants"))
+        setattr(cls, "industrial areas",
+            PermissibleValue(text="industrial areas"))
+        setattr(cls, "intermixed hardwood and conifers",
+            PermissibleValue(text="intermixed hardwood and conifers"))
+        setattr(cls, "mines/quarries",
+            PermissibleValue(text="mines/quarries"))
+        setattr(cls, "oil waste areas",
+            PermissibleValue(text="oil waste areas"))
+        setattr(cls, "permanent snow or ice",
+            PermissibleValue(text="permanent snow or ice"))
+        setattr(cls, "roads/railroads",
+            PermissibleValue(text="roads/railroads"))
+        setattr(cls, "row crops",
+            PermissibleValue(text="row crops"))
+        setattr(cls, "saline seeps",
+            PermissibleValue(text="saline seeps"))
+        setattr(cls, "salt flats",
+            PermissibleValue(text="salt flats"))
+        setattr(cls, "shrub crops",
+            PermissibleValue(text="shrub crops"))
+        setattr(cls, "shrub land",
+            PermissibleValue(text="shrub land"))
+        setattr(cls, "small grains",
+            PermissibleValue(text="small grains"))
+        setattr(cls, "successional shrub land",
+            PermissibleValue(text="successional shrub land"))
+        setattr(cls, "vegetable crops",
+            PermissibleValue(text="vegetable crops"))
+        setattr(cls, "vine crops",
+            PermissibleValue(text="vine crops"))
 
 class FaoClassEnum(EnumDefinitionImpl):
 
@@ -12082,222 +12593,6 @@ class FaoClassEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="FaoClassEnum",
     )
-
-class CurLandUseEnum(EnumDefinitionImpl):
-
-    badlands = PermissibleValue(text="badlands")
-    cities = PermissibleValue(text="cities")
-    conifers = PermissibleValue(text="conifers")
-    farmstead = PermissibleValue(text="farmstead")
-    gravel = PermissibleValue(text="gravel")
-    hardwoods = PermissibleValue(text="hardwoods")
-    hayland = PermissibleValue(text="hayland")
-    marshlands = PermissibleValue(text="marshlands")
-    meadows = PermissibleValue(text="meadows")
-    mudflats = PermissibleValue(text="mudflats")
-    pastureland = PermissibleValue(text="pastureland")
-    rainforest = PermissibleValue(text="rainforest")
-    rangeland = PermissibleValue(text="rangeland")
-    rock = PermissibleValue(text="rock")
-    sand = PermissibleValue(text="sand")
-    swamp = PermissibleValue(text="swamp")
-    tropical = PermissibleValue(text="tropical")
-    tundra = PermissibleValue(text="tundra")
-
-    _defn = EnumDefinition(
-        name="CurLandUseEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crop trees",
-                PermissibleValue(text="crop trees") )
-        setattr(cls, "horticultural plants",
-                PermissibleValue(text="horticultural plants") )
-        setattr(cls, "industrial areas",
-                PermissibleValue(text="industrial areas") )
-        setattr(cls, "intermixed hardwood and conifers",
-                PermissibleValue(text="intermixed hardwood and conifers") )
-        setattr(cls, "mines/quarries",
-                PermissibleValue(text="mines/quarries") )
-        setattr(cls, "oil waste areas",
-                PermissibleValue(text="oil waste areas") )
-        setattr(cls, "permanent snow or ice",
-                PermissibleValue(text="permanent snow or ice") )
-        setattr(cls, "roads/railroads",
-                PermissibleValue(text="roads/railroads") )
-        setattr(cls, "row crops",
-                PermissibleValue(text="row crops") )
-        setattr(cls, "saline seeps",
-                PermissibleValue(text="saline seeps") )
-        setattr(cls, "salt flats",
-                PermissibleValue(text="salt flats") )
-        setattr(cls, "shrub crops",
-                PermissibleValue(text="shrub crops") )
-        setattr(cls, "shrub land",
-                PermissibleValue(text="shrub land") )
-        setattr(cls, "small grains",
-                PermissibleValue(text="small grains") )
-        setattr(cls, "successional shrub land",
-                PermissibleValue(text="successional shrub land") )
-        setattr(cls, "vegetable crops",
-                PermissibleValue(text="vegetable crops") )
-        setattr(cls, "vine crops",
-                PermissibleValue(text="vine crops") )
-
-class SoilHorizonEnum(EnumDefinitionImpl):
-
-    Permafrost = PermissibleValue(text="Permafrost")
-
-    _defn = EnumDefinition(
-        name="SoilHorizonEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "O horizon",
-                PermissibleValue(text="O horizon") )
-        setattr(cls, "A horizon",
-                PermissibleValue(text="A horizon") )
-        setattr(cls, "E horizon",
-                PermissibleValue(text="E horizon") )
-        setattr(cls, "B horizon",
-                PermissibleValue(text="B horizon") )
-        setattr(cls, "C horizon",
-                PermissibleValue(text="C horizon") )
-        setattr(cls, "R layer",
-                PermissibleValue(text="R layer") )
-        setattr(cls, "M horizon",
-                PermissibleValue(text="M horizon") )
-
-class ProfilePositionEnum(EnumDefinitionImpl):
-
-    summit = PermissibleValue(text="summit")
-    shoulder = PermissibleValue(text="shoulder")
-    backslope = PermissibleValue(text="backslope")
-    footslope = PermissibleValue(text="footslope")
-    toeslope = PermissibleValue(text="toeslope")
-
-    _defn = EnumDefinition(
-        name="ProfilePositionEnum",
-    )
-
-class TillageEnum(EnumDefinitionImpl):
-
-    drill = PermissibleValue(text="drill")
-    chisel = PermissibleValue(text="chisel")
-    tined = PermissibleValue(text="tined")
-    mouldboard = PermissibleValue(text="mouldboard")
-
-    _defn = EnumDefinition(
-        name="TillageEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "cutting disc",
-                PermissibleValue(text="cutting disc") )
-        setattr(cls, "ridge till",
-                PermissibleValue(text="ridge till") )
-        setattr(cls, "strip tillage",
-                PermissibleValue(text="strip tillage") )
-        setattr(cls, "zonal tillage",
-                PermissibleValue(text="zonal tillage") )
-        setattr(cls, "disc plough",
-                PermissibleValue(text="disc plough") )
-
-class DrainageClassEnum(EnumDefinitionImpl):
-
-    poorly = PermissibleValue(text="poorly")
-    well = PermissibleValue(text="well")
-
-    _defn = EnumDefinition(
-        name="DrainageClassEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "very poorly",
-                PermissibleValue(text="very poorly") )
-        setattr(cls, "somewhat poorly",
-                PermissibleValue(text="somewhat poorly") )
-        setattr(cls, "moderately well",
-                PermissibleValue(text="moderately well") )
-        setattr(cls, "excessively drained",
-                PermissibleValue(text="excessively drained") )
-
-class SampCaptStatusEnum(EnumDefinitionImpl):
-
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SampCaptStatusEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "active surveillance in response to an outbreak",
-                PermissibleValue(text="active surveillance in response to an outbreak") )
-        setattr(cls, "active surveillance not initiated by an outbreak",
-                PermissibleValue(text="active surveillance not initiated by an outbreak") )
-        setattr(cls, "farm sample",
-                PermissibleValue(text="farm sample") )
-        setattr(cls, "market sample",
-                PermissibleValue(text="market sample") )
-
-class SampDisStageEnum(EnumDefinitionImpl):
-
-    dissemination = PermissibleValue(text="dissemination")
-    infection = PermissibleValue(text="infection")
-    inoculation = PermissibleValue(text="inoculation")
-    penetration = PermissibleValue(text="penetration")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SampDisStageEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "growth and reproduction",
-                PermissibleValue(text="growth and reproduction") )
-
-class BiolStatEnum(EnumDefinitionImpl):
-
-    wild = PermissibleValue(text="wild")
-    natural = PermissibleValue(text="natural")
-    hybrid = PermissibleValue(text="hybrid")
-    mutant = PermissibleValue(text="mutant")
-
-    _defn = EnumDefinition(
-        name="BiolStatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "semi-natural",
-                PermissibleValue(text="semi-natural") )
-        setattr(cls, "inbred line",
-                PermissibleValue(text="inbred line") )
-        setattr(cls, "breeder's line",
-                PermissibleValue(text="breeder's line") )
-        setattr(cls, "clonal selection",
-                PermissibleValue(text="clonal selection") )
-
-class GrowthHabitEnum(EnumDefinitionImpl):
-
-    erect = PermissibleValue(text="erect")
-    spreading = PermissibleValue(text="spreading")
-    prostrate = PermissibleValue(text="prostrate")
-
-    _defn = EnumDefinition(
-        name="GrowthHabitEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "semi-erect",
-                PermissibleValue(text="semi-erect") )
 
 class PlantSexEnum(EnumDefinitionImpl):
 
@@ -12335,16 +12630,78 @@ class PlantSexEnum(EnumDefinitionImpl):
         name="PlantSexEnum",
     )
 
-class SedimentTypeEnum(EnumDefinitionImpl):
+class SampDisStageEnum(EnumDefinitionImpl):
 
-    biogenous = PermissibleValue(text="biogenous")
-    cosmogenous = PermissibleValue(text="cosmogenous")
-    hydrogenous = PermissibleValue(text="hydrogenous")
-    lithogenous = PermissibleValue(text="lithogenous")
+    dissemination = PermissibleValue(text="dissemination")
+    infection = PermissibleValue(text="infection")
+    inoculation = PermissibleValue(text="inoculation")
+    penetration = PermissibleValue(text="penetration")
+    other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="SedimentTypeEnum",
+        name="SampDisStageEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "growth and reproduction",
+            PermissibleValue(text="growth and reproduction"))
+
+class GrowthHabitEnum(EnumDefinitionImpl):
+
+    erect = PermissibleValue(text="erect")
+    spreading = PermissibleValue(text="spreading")
+    prostrate = PermissibleValue(text="prostrate")
+
+    _defn = EnumDefinition(
+        name="GrowthHabitEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "semi-erect",
+            PermissibleValue(text="semi-erect"))
+
+class SampCaptStatusEnum(EnumDefinitionImpl):
+
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="SampCaptStatusEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "active surveillance in response to an outbreak",
+            PermissibleValue(text="active surveillance in response to an outbreak"))
+        setattr(cls, "active surveillance not initiated by an outbreak",
+            PermissibleValue(text="active surveillance not initiated by an outbreak"))
+        setattr(cls, "farm sample",
+            PermissibleValue(text="farm sample"))
+        setattr(cls, "market sample",
+            PermissibleValue(text="market sample"))
+
+class BiolStatEnum(EnumDefinitionImpl):
+
+    wild = PermissibleValue(text="wild")
+    natural = PermissibleValue(text="natural")
+    hybrid = PermissibleValue(text="hybrid")
+    mutant = PermissibleValue(text="mutant")
+
+    _defn = EnumDefinition(
+        name="BiolStatEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "semi-natural",
+            PermissibleValue(text="semi-natural"))
+        setattr(cls, "inbred line",
+            PermissibleValue(text="inbred line"))
+        setattr(cls, "breeder's line",
+            PermissibleValue(text="breeder's line"))
+        setattr(cls, "clonal selection",
+            PermissibleValue(text="clonal selection"))
 
 class TidalStageEnum(EnumDefinitionImpl):
 
@@ -12355,13 +12712,24 @@ class TidalStageEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "low tide",
-                PermissibleValue(text="low tide") )
+            PermissibleValue(text="low tide"))
         setattr(cls, "ebb tide",
-                PermissibleValue(text="ebb tide") )
+            PermissibleValue(text="ebb tide"))
         setattr(cls, "flood tide",
-                PermissibleValue(text="flood tide") )
+            PermissibleValue(text="flood tide"))
         setattr(cls, "high tide",
-                PermissibleValue(text="high tide") )
+            PermissibleValue(text="high tide"))
+
+class SedimentTypeEnum(EnumDefinitionImpl):
+
+    biogenous = PermissibleValue(text="biogenous")
+    cosmogenous = PermissibleValue(text="cosmogenous")
+    hydrogenous = PermissibleValue(text="hydrogenous")
+    lithogenous = PermissibleValue(text="lithogenous")
+
+    _defn = EnumDefinition(
+        name="SedimentTypeEnum",
+    )
 
 class HostSexEnum(EnumDefinitionImpl):
 
@@ -12388,7 +12756,7 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "natural organic matter",
-                PermissibleValue(text="natural organic matter") )
+            PermissibleValue(text="natural organic matter"))
 
 class DnaSampleFormatEnum(EnumDefinitionImpl):
 
@@ -12407,15 +12775,15 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "10 mM Tris-HCl",
-                PermissibleValue(text="10 mM Tris-HCl") )
+            PermissibleValue(text="10 mM Tris-HCl"))
         setattr(cls, "Low EDTA TE",
-                PermissibleValue(text="Low EDTA TE") )
+            PermissibleValue(text="Low EDTA TE"))
         setattr(cls, "MDA reaction buffer",
-                PermissibleValue(text="MDA reaction buffer") )
+            PermissibleValue(text="MDA reaction buffer"))
         setattr(cls, "Gentegra-DNA",
-                PermissibleValue(text="Gentegra-DNA") )
+            PermissibleValue(text="Gentegra-DNA"))
         setattr(cls, "Gentegra-RNA",
-                PermissibleValue(text="Gentegra-RNA") )
+            PermissibleValue(text="Gentegra-RNA"))
 
 class RnaSampleFormatEnum(EnumDefinitionImpl):
 
@@ -12434,15 +12802,15 @@ class RnaSampleFormatEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "10 mM Tris-HCl",
-                PermissibleValue(text="10 mM Tris-HCl") )
+            PermissibleValue(text="10 mM Tris-HCl"))
         setattr(cls, "Low EDTA TE",
-                PermissibleValue(text="Low EDTA TE") )
+            PermissibleValue(text="Low EDTA TE"))
         setattr(cls, "MDA reaction buffer",
-                PermissibleValue(text="MDA reaction buffer") )
+            PermissibleValue(text="MDA reaction buffer"))
         setattr(cls, "Gentegra-DNA",
-                PermissibleValue(text="Gentegra-DNA") )
+            PermissibleValue(text="Gentegra-DNA"))
         setattr(cls, "Gentegra-RNA",
-                PermissibleValue(text="Gentegra-RNA") )
+            PermissibleValue(text="Gentegra-RNA"))
 
 class SampleTypeEnum(EnumDefinitionImpl):
 
@@ -14176,14 +14544,24 @@ slots.xylene = Slot(uri=MIXS['0000156'], name="xylene", curie=MIXS.curie('000015
 slots.zinc = Slot(uri=NMDC_SUB_SCHEMA.zinc, name="zinc", curie=NMDC_SUB_SCHEMA.curie('zinc'),
                    model_uri=NMDC_SUB_SCHEMA.zinc, domain=None, range=Optional[str])
 
-slots.gold_path_field = Slot(uri=NMDC_SUB_SCHEMA.gold_path_field, name="gold_path_field", curie=NMDC_SUB_SCHEMA.curie('gold_path_field'),
-                   model_uri=NMDC_SUB_SCHEMA.gold_path_field, domain=None, range=Optional[str])
+slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
+                   model_uri=NMDC_SUB_SCHEMA.description, domain=None, range=Optional[str])
 
-slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
-                   model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
+slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('id'),
+                   model_uri=NMDC_SUB_SCHEMA.id, domain=None, range=URIRef)
 
 slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]],
+                   pattern=re.compile(r'^[a-zA-Z_][a-zA-Z0-9_]*:[a-zA-Z_][a-zA-Z0-9_]*$'))
+
+slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
+                   model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
+
+slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
+                   model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
+
+slots.gold_path_field = Slot(uri=NMDC_SUB_SCHEMA.gold_path_field, name="gold_path_field", curie=NMDC_SUB_SCHEMA.curie('gold_path_field'),
+                   model_uri=NMDC_SUB_SCHEMA.gold_path_field, domain=None, range=Optional[str])
 
 slots.attribute = Slot(uri=NMDC_SUB_SCHEMA.attribute, name="attribute", curie=NMDC_SUB_SCHEMA.curie('attribute'),
                    model_uri=NMDC_SUB_SCHEMA.attribute, domain=None, range=Optional[str])
@@ -14191,23 +14569,17 @@ slots.attribute = Slot(uri=NMDC_SUB_SCHEMA.attribute, name="attribute", curie=NM
 slots.environment_field = Slot(uri=NMDC_SUB_SCHEMA.environment_field, name="environment field", curie=NMDC_SUB_SCHEMA.curie('environment_field'),
                    model_uri=NMDC_SUB_SCHEMA.environment_field, domain=None, range=Optional[str])
 
-slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
-                   model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
-
-slots.description = Slot(uri=DCTERMS.description, name="description", curie=DCTERMS.curie('description'),
-                   model_uri=NMDC_SUB_SCHEMA.description, domain=None, range=Optional[str])
-
-slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
-                   model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
-
-slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
-                   model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
+slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
+                   model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
 
 slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
                    model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
 
-slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('id'),
-                   model_uri=NMDC_SUB_SCHEMA.id, domain=None, range=URIRef)
+slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
+                   model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
+
+slots.biomaterial_purity = Slot(uri=NMDC_SUB_SCHEMA.biomaterial_purity, name="biomaterial_purity", curie=NMDC_SUB_SCHEMA.curie('biomaterial_purity'),
+                   model_uri=NMDC_SUB_SCHEMA.biomaterial_purity, domain=None, range=Optional[str])
 
 slots.AirInterface_air_PM_concen = Slot(uri=MIXS['0000108'], name="AirInterface_air_PM_concen", curie=MIXS.curie('0000108'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_air_PM_concen, domain=AirInterface, range=Optional[str],
@@ -14241,16 +14613,16 @@ slots.AirInterface_depth = Slot(uri=MIXS['0000018'], name="AirInterface_depth", 
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_depth, domain=AirInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$'))
 
-slots.AirInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="AirInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.AirInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="AirInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem, domain=AirInterface, range=Optional[str])
 
-slots.AirInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="AirInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.AirInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="AirInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem_category, domain=AirInterface, range=Optional[str])
 
-slots.AirInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="AirInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.AirInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="AirInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem_subtype, domain=AirInterface, range=Optional[str])
 
-slots.AirInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="AirInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.AirInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="AirInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem_type, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_elev = Slot(uri=MIXS['0000093'], name="AirInterface_elev", curie=MIXS.curie('0000093'),
@@ -14268,7 +14640,7 @@ slots.AirInterface_env_medium = Slot(uri=MIXS['0000014'], name="AirInterface_env
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_medium, domain=AirInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.AirInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="AirInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.AirInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="AirInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_package, domain=AirInterface, range=str)
 
 slots.AirInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="AirInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -14342,7 +14714,7 @@ slots.AirInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="AirInterfac
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_temp, domain=AirInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.AirInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="AirInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.AirInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="AirInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_sample_link, domain=AirInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -14353,7 +14725,7 @@ slots.AirInterface_solar_irradiance = Slot(uri=MIXS['0000112'], name="AirInterfa
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_solar_irradiance, domain=AirInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.AirInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="AirInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.AirInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="AirInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_specific_ecosystem, domain=AirInterface, range=Optional[str])
 
 slots.AirInterface_temp = Slot(uri=MIXS['0000113'], name="AirInterface_temp", curie=MIXS.curie('0000113'),
@@ -14470,16 +14842,16 @@ slots.BiofilmInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="BiofilmInte
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_diss_oxygen, domain=BiofilmInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.BiofilmInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="BiofilmInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.BiofilmInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="BiofilmInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem, domain=BiofilmInterface, range=Optional[str])
 
-slots.BiofilmInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="BiofilmInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.BiofilmInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="BiofilmInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem_category, domain=BiofilmInterface, range=Optional[str])
 
-slots.BiofilmInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="BiofilmInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.BiofilmInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="BiofilmInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem_subtype, domain=BiofilmInterface, range=Optional[str])
 
-slots.BiofilmInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="BiofilmInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.BiofilmInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="BiofilmInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem_type, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_elev = Slot(uri=MIXS['0000093'], name="BiofilmInterface_elev", curie=MIXS.curie('0000093'),
@@ -14497,7 +14869,7 @@ slots.BiofilmInterface_env_medium = Slot(uri=MIXS['0000014'], name="BiofilmInter
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_medium, domain=BiofilmInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.BiofilmInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="BiofilmInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.BiofilmInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="BiofilmInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_package, domain=BiofilmInterface, range=str)
 
 slots.BiofilmInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="BiofilmInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -14641,7 +15013,7 @@ slots.BiofilmInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="Biofilm
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_temp, domain=BiofilmInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.BiofilmInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="BiofilmInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.BiofilmInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="BiofilmInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sample_link, domain=BiofilmInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -14656,7 +15028,7 @@ slots.BiofilmInterface_sodium = Slot(uri=MIXS['0000428'], name="BiofilmInterface
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sodium, domain=BiofilmInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.BiofilmInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="BiofilmInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.BiofilmInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="BiofilmInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_specific_ecosystem, domain=BiofilmInterface, range=Optional[str])
 
 slots.BiofilmInterface_sulfate = Slot(uri=MIXS['0000423'], name="BiofilmInterface_sulfate", curie=MIXS.curie('0000423'),
@@ -14840,16 +15212,16 @@ slots.BuiltEnvInterface_door_water_mold = Slot(uri=MIXS['0000793'], name="BuiltE
 slots.BuiltEnvInterface_drawings = Slot(uri=MIXS['0000798'], name="BuiltEnvInterface_drawings", curie=MIXS.curie('0000798'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_drawings, domain=BuiltEnvInterface, range=Optional[Union[str, "DrawingsEnum"]])
 
-slots.BuiltEnvInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="BuiltEnvInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.BuiltEnvInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="BuiltEnvInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ecosystem, domain=BuiltEnvInterface, range=Optional[str])
 
-slots.BuiltEnvInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="BuiltEnvInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.BuiltEnvInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="BuiltEnvInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ecosystem_category, domain=BuiltEnvInterface, range=Optional[str])
 
-slots.BuiltEnvInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="BuiltEnvInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.BuiltEnvInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="BuiltEnvInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ecosystem_subtype, domain=BuiltEnvInterface, range=Optional[str])
 
-slots.BuiltEnvInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="BuiltEnvInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.BuiltEnvInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="BuiltEnvInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ecosystem_type, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_elev = Slot(uri=MIXS['0000093'], name="BuiltEnvInterface_elev", curie=MIXS.curie('0000093'),
@@ -14870,7 +15242,7 @@ slots.BuiltEnvInterface_env_medium = Slot(uri=MIXS['0000014'], name="BuiltEnvInt
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_medium, domain=BuiltEnvInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.BuiltEnvInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="BuiltEnvInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.BuiltEnvInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="BuiltEnvInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_package, domain=BuiltEnvInterface, range=str)
 
 slots.BuiltEnvInterface_escalator = Slot(uri=MIXS['0000800'], name="BuiltEnvInterface_escalator", curie=MIXS.curie('0000800'),
@@ -15118,7 +15490,7 @@ slots.BuiltEnvInterface_samp_time_out = Slot(uri=MIXS['0000196'], name="BuiltEnv
 slots.BuiltEnvInterface_samp_weather = Slot(uri=MIXS['0000827'], name="BuiltEnvInterface_samp_weather", curie=MIXS.curie('0000827'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_samp_weather, domain=BuiltEnvInterface, range=Optional[Union[str, "SampWeatherEnum"]])
 
-slots.BuiltEnvInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="BuiltEnvInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.BuiltEnvInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="BuiltEnvInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_sample_link, domain=BuiltEnvInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -15153,7 +15525,7 @@ slots.BuiltEnvInterface_space_typ_state = Slot(uri=MIXS['0000770'], name="BuiltE
 slots.BuiltEnvInterface_specific = Slot(uri=MIXS['0000836'], name="BuiltEnvInterface_specific", curie=MIXS.curie('0000836'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific, domain=BuiltEnvInterface, range=Optional[Union[str, "SpecificEnum"]])
 
-slots.BuiltEnvInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="BuiltEnvInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.BuiltEnvInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="BuiltEnvInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific_ecosystem, domain=BuiltEnvInterface, range=Optional[str])
 
 slots.BuiltEnvInterface_specific_humidity = Slot(uri=MIXS['0000214'], name="BuiltEnvInterface_specific_humidity", curie=MIXS.curie('0000214'),
@@ -15286,23 +15658,23 @@ slots.BuiltEnvInterface_window_water_mold = Slot(uri=MIXS['0000854'], name="Buil
 slots.BuiltEnvInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="BuiltEnvInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_oxy_stat_samp, domain=BuiltEnvInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
 
-slots.EmslInterface_emsl_store_temp = Slot(uri=NMDC_YAML['nmdc/emsl_store_temp'], name="EmslInterface_emsl_store_temp", curie=NMDC_YAML.curie('nmdc/emsl_store_temp'),
+slots.EmslInterface_emsl_store_temp = Slot(uri=NMDC['nmdc/emsl_store_temp'], name="EmslInterface_emsl_store_temp", curie=NMDC.curie('nmdc/emsl_store_temp'),
                    model_uri=NMDC_SUB_SCHEMA.EmslInterface_emsl_store_temp, domain=EmslInterface, range=float)
 
-slots.EmslInterface_project_id = Slot(uri=NMDC_YAML['nmdc/project_id'], name="EmslInterface_project_id", curie=NMDC_YAML.curie('nmdc/project_id'),
+slots.EmslInterface_project_id = Slot(uri=NMDC['nmdc/project_id'], name="EmslInterface_project_id", curie=NMDC.curie('nmdc/project_id'),
                    model_uri=NMDC_SUB_SCHEMA.EmslInterface_project_id, domain=EmslInterface, range=str)
 
-slots.EmslInterface_replicate_number = Slot(uri=NMDC_YAML['nmdc/replicate_number'], name="EmslInterface_replicate_number", curie=NMDC_YAML.curie('nmdc/replicate_number'),
+slots.EmslInterface_replicate_number = Slot(uri=NMDC['nmdc/replicate_number'], name="EmslInterface_replicate_number", curie=NMDC.curie('nmdc/replicate_number'),
                    model_uri=NMDC_SUB_SCHEMA.EmslInterface_replicate_number, domain=EmslInterface, range=Optional[int])
 
-slots.EmslInterface_sample_shipped = Slot(uri=NMDC_YAML['nmdc/sample_shipped'], name="EmslInterface_sample_shipped", curie=NMDC_YAML.curie('nmdc/sample_shipped'),
+slots.EmslInterface_sample_shipped = Slot(uri=NMDC['nmdc/sample_shipped'], name="EmslInterface_sample_shipped", curie=NMDC.curie('nmdc/sample_shipped'),
                    model_uri=NMDC_SUB_SCHEMA.EmslInterface_sample_shipped, domain=EmslInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
-slots.EmslInterface_sample_type = Slot(uri=NMDC_YAML['nmdc/sample_type'], name="EmslInterface_sample_type", curie=NMDC_YAML.curie('nmdc/sample_type'),
+slots.EmslInterface_sample_type = Slot(uri=NMDC['nmdc/sample_type'], name="EmslInterface_sample_type", curie=NMDC.curie('nmdc/sample_type'),
                    model_uri=NMDC_SUB_SCHEMA.EmslInterface_sample_type, domain=EmslInterface, range=Union[str, "SampleTypeEnum"])
 
-slots.EmslInterface_technical_reps = Slot(uri=NMDC_YAML['nmdc/technical_reps'], name="EmslInterface_technical_reps", curie=NMDC_YAML.curie('nmdc/technical_reps'),
+slots.EmslInterface_technical_reps = Slot(uri=NMDC['nmdc/technical_reps'], name="EmslInterface_technical_reps", curie=NMDC.curie('nmdc/technical_reps'),
                    model_uri=NMDC_SUB_SCHEMA.EmslInterface_technical_reps, domain=EmslInterface, range=Optional[int])
 
 slots.EmslInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="EmslInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
@@ -15392,16 +15764,16 @@ slots.HcrCoresInterface_diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="HcrC
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_diss_oxygen_fluid, domain=HcrCoresInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.HcrCoresInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="HcrCoresInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.HcrCoresInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="HcrCoresInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem, domain=HcrCoresInterface, range=Optional[str])
 
-slots.HcrCoresInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="HcrCoresInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.HcrCoresInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="HcrCoresInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem_category, domain=HcrCoresInterface, range=Optional[str])
 
-slots.HcrCoresInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="HcrCoresInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.HcrCoresInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="HcrCoresInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem_subtype, domain=HcrCoresInterface, range=Optional[str])
 
-slots.HcrCoresInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="HcrCoresInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.HcrCoresInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="HcrCoresInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem_type, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_elev = Slot(uri=MIXS['0000093'], name="HcrCoresInterface_elev", curie=MIXS.curie('0000093'),
@@ -15419,7 +15791,7 @@ slots.HcrCoresInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrCoresInt
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_medium, domain=HcrCoresInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.HcrCoresInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="HcrCoresInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.HcrCoresInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="HcrCoresInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_package, domain=HcrCoresInterface, range=str)
 
 slots.HcrCoresInterface_ethylbenzene = Slot(uri=MIXS['0000155'], name="HcrCoresInterface_ethylbenzene", curie=MIXS.curie('0000155'),
@@ -15573,7 +15945,7 @@ slots.HcrCoresInterface_samp_type = Slot(uri=MIXS['0000998'], name="HcrCoresInte
 slots.HcrCoresInterface_samp_well_name = Slot(uri=MIXS['0000296'], name="HcrCoresInterface_samp_well_name", curie=MIXS.curie('0000296'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_well_name, domain=HcrCoresInterface, range=Optional[str])
 
-slots.HcrCoresInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="HcrCoresInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.HcrCoresInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="HcrCoresInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sample_link, domain=HcrCoresInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -15588,7 +15960,7 @@ slots.HcrCoresInterface_sodium = Slot(uri=MIXS['0000428'], name="HcrCoresInterfa
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sodium, domain=HcrCoresInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.HcrCoresInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="HcrCoresInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.HcrCoresInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="HcrCoresInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_specific_ecosystem, domain=HcrCoresInterface, range=Optional[str])
 
 slots.HcrCoresInterface_sr_dep_env = Slot(uri=MIXS['0000996'], name="HcrCoresInterface_sr_dep_env", curie=MIXS.curie('0000996'),
@@ -15772,16 +16144,16 @@ slots.HcrFluidsSwabsInterface_diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_diss_oxygen_fluid, domain=HcrFluidsSwabsInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.HcrFluidsSwabsInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="HcrFluidsSwabsInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.HcrFluidsSwabsInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="HcrFluidsSwabsInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
-slots.HcrFluidsSwabsInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="HcrFluidsSwabsInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.HcrFluidsSwabsInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="HcrFluidsSwabsInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem_category, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
-slots.HcrFluidsSwabsInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="HcrFluidsSwabsInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.HcrFluidsSwabsInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="HcrFluidsSwabsInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem_subtype, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
-slots.HcrFluidsSwabsInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="HcrFluidsSwabsInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.HcrFluidsSwabsInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="HcrFluidsSwabsInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem_type, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_elev = Slot(uri=MIXS['0000093'], name="HcrFluidsSwabsInterface_elev", curie=MIXS.curie('0000093'),
@@ -15799,7 +16171,7 @@ slots.HcrFluidsSwabsInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrFl
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_medium, domain=HcrFluidsSwabsInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.HcrFluidsSwabsInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="HcrFluidsSwabsInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.HcrFluidsSwabsInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="HcrFluidsSwabsInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_package, domain=HcrFluidsSwabsInterface, range=str)
 
 slots.HcrFluidsSwabsInterface_ethylbenzene = Slot(uri=MIXS['0000155'], name="HcrFluidsSwabsInterface_ethylbenzene", curie=MIXS.curie('0000155'),
@@ -15960,7 +16332,7 @@ slots.HcrFluidsSwabsInterface_samp_type = Slot(uri=MIXS['0000998'], name="HcrFlu
 slots.HcrFluidsSwabsInterface_samp_well_name = Slot(uri=MIXS['0000296'], name="HcrFluidsSwabsInterface_samp_well_name", curie=MIXS.curie('0000296'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_well_name, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
-slots.HcrFluidsSwabsInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="HcrFluidsSwabsInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.HcrFluidsSwabsInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="HcrFluidsSwabsInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sample_link, domain=HcrFluidsSwabsInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -15975,7 +16347,7 @@ slots.HcrFluidsSwabsInterface_sodium = Slot(uri=MIXS['0000428'], name="HcrFluids
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sodium, domain=HcrFluidsSwabsInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.HcrFluidsSwabsInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="HcrFluidsSwabsInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.HcrFluidsSwabsInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="HcrFluidsSwabsInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_specific_ecosystem, domain=HcrFluidsSwabsInterface, range=Optional[str])
 
 slots.HcrFluidsSwabsInterface_sulfate = Slot(uri=MIXS['0000423'], name="HcrFluidsSwabsInterface_sulfate", curie=MIXS.curie('0000423'),
@@ -16086,16 +16458,16 @@ slots.HostAssociatedInterface_depth = Slot(uri=MIXS['0000018'], name="HostAssoci
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_depth, domain=HostAssociatedInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$'))
 
-slots.HostAssociatedInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="HostAssociatedInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.HostAssociatedInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="HostAssociatedInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem, domain=HostAssociatedInterface, range=Optional[str])
 
-slots.HostAssociatedInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="HostAssociatedInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.HostAssociatedInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="HostAssociatedInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem_category, domain=HostAssociatedInterface, range=Optional[str])
 
-slots.HostAssociatedInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="HostAssociatedInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.HostAssociatedInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="HostAssociatedInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem_subtype, domain=HostAssociatedInterface, range=Optional[str])
 
-slots.HostAssociatedInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="HostAssociatedInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.HostAssociatedInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="HostAssociatedInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem_type, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="HostAssociatedInterface_elev", curie=MIXS.curie('0000093'),
@@ -16113,7 +16485,7 @@ slots.HostAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="HostA
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_medium, domain=HostAssociatedInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.HostAssociatedInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="HostAssociatedInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.HostAssociatedInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="HostAssociatedInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_package, domain=HostAssociatedInterface, range=str)
 
 slots.HostAssociatedInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="HostAssociatedInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -16267,127 +16639,127 @@ slots.HostAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_temp, domain=HostAssociatedInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.HostAssociatedInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="HostAssociatedInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.HostAssociatedInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="HostAssociatedInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_sample_link, domain=HostAssociatedInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.HostAssociatedInterface_size_frac = Slot(uri=MIXS['0000017'], name="HostAssociatedInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_size_frac, domain=HostAssociatedInterface, range=Optional[str])
 
-slots.HostAssociatedInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="HostAssociatedInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.HostAssociatedInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="HostAssociatedInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_specific_ecosystem, domain=HostAssociatedInterface, range=Optional[str])
 
 slots.HostAssociatedInterface_temp = Slot(uri=MIXS['0000113'], name="HostAssociatedInterface_temp", curie=MIXS.curie('0000113'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_temp, domain=HostAssociatedInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.JgiMgInterface_dna_absorb1 = Slot(uri=NMDC_YAML['nmdc/dna_absorb1'], name="JgiMgInterface_dna_absorb1", curie=NMDC_YAML.curie('nmdc/dna_absorb1'),
+slots.JgiMgInterface_dna_absorb1 = Slot(uri=NMDC['nmdc/dna_absorb1'], name="JgiMgInterface_dna_absorb1", curie=NMDC.curie('nmdc/dna_absorb1'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_absorb1, domain=JgiMgInterface, range=Optional[float])
 
-slots.JgiMgInterface_dna_absorb2 = Slot(uri=NMDC_YAML['nmdc/dna_absorb2'], name="JgiMgInterface_dna_absorb2", curie=NMDC_YAML.curie('nmdc/dna_absorb2'),
+slots.JgiMgInterface_dna_absorb2 = Slot(uri=NMDC['nmdc/dna_absorb2'], name="JgiMgInterface_dna_absorb2", curie=NMDC.curie('nmdc/dna_absorb2'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_absorb2, domain=JgiMgInterface, range=Optional[float])
 
-slots.JgiMgInterface_dna_concentration = Slot(uri=NMDC_YAML['nmdc/dna_concentration'], name="JgiMgInterface_dna_concentration", curie=NMDC_YAML.curie('nmdc/dna_concentration'),
+slots.JgiMgInterface_dna_concentration = Slot(uri=NMDC['nmdc/dna_concentration'], name="JgiMgInterface_dna_concentration", curie=NMDC.curie('nmdc/dna_concentration'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_concentration, domain=JgiMgInterface, range=float)
 
-slots.JgiMgInterface_dna_cont_type = Slot(uri=NMDC_YAML['nmdc/dna_cont_type'], name="JgiMgInterface_dna_cont_type", curie=NMDC_YAML.curie('nmdc/dna_cont_type'),
+slots.JgiMgInterface_dna_cont_type = Slot(uri=NMDC['nmdc/dna_cont_type'], name="JgiMgInterface_dna_cont_type", curie=NMDC.curie('nmdc/dna_cont_type'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_cont_type, domain=JgiMgInterface, range=Union[str, "JgiContTypeEnum"])
 
-slots.JgiMgInterface_dna_cont_well = Slot(uri=NMDC_YAML['nmdc/dna_cont_well'], name="JgiMgInterface_dna_cont_well", curie=NMDC_YAML.curie('nmdc/dna_cont_well'),
+slots.JgiMgInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name="JgiMgInterface_dna_cont_well", curie=NMDC.curie('nmdc/dna_cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_cont_well, domain=JgiMgInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMgInterface_dna_container_id = Slot(uri=NMDC_YAML['nmdc/dna_container_id'], name="JgiMgInterface_dna_container_id", curie=NMDC_YAML.curie('nmdc/dna_container_id'),
+slots.JgiMgInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_container_id, domain=JgiMgInterface, range=str,
                    pattern=re.compile(r'^.{1,20}$'))
 
-slots.JgiMgInterface_dna_dnase = Slot(uri=NMDC_YAML['nmdc/dna_dnase'], name="JgiMgInterface_dna_dnase", curie=NMDC_YAML.curie('nmdc/dna_dnase'),
+slots.JgiMgInterface_dna_dnase = Slot(uri=NMDC['nmdc/dna_dnase'], name="JgiMgInterface_dna_dnase", curie=NMDC.curie('nmdc/dna_dnase'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_dnase, domain=JgiMgInterface, range=Union[str, "YesNoEnum"])
 
-slots.JgiMgInterface_dna_isolate_meth = Slot(uri=NMDC_YAML['nmdc/dna_isolate_meth'], name="JgiMgInterface_dna_isolate_meth", curie=NMDC_YAML.curie('nmdc/dna_isolate_meth'),
+slots.JgiMgInterface_dna_isolate_meth = Slot(uri=NMDC['nmdc/dna_isolate_meth'], name="JgiMgInterface_dna_isolate_meth", curie=NMDC.curie('nmdc/dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_isolate_meth, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_project_contact = Slot(uri=NMDC_YAML['nmdc/dna_project_contact'], name="JgiMgInterface_dna_project_contact", curie=NMDC_YAML.curie('nmdc/dna_project_contact'),
+slots.JgiMgInterface_dna_project_contact = Slot(uri=NMDC['nmdc/dna_project_contact'], name="JgiMgInterface_dna_project_contact", curie=NMDC.curie('nmdc/dna_project_contact'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_project_contact, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_samp_id = Slot(uri=NMDC_YAML['nmdc/dna_samp_id'], name="JgiMgInterface_dna_samp_id", curie=NMDC_YAML.curie('nmdc/dna_samp_id'),
+slots.JgiMgInterface_dna_samp_id = Slot(uri=NMDC['nmdc/dna_samp_id'], name="JgiMgInterface_dna_samp_id", curie=NMDC.curie('nmdc/dna_samp_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_samp_id, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_sample_format = Slot(uri=NMDC_YAML['nmdc/dna_sample_format'], name="JgiMgInterface_dna_sample_format", curie=NMDC_YAML.curie('nmdc/dna_sample_format'),
+slots.JgiMgInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format'], name="JgiMgInterface_dna_sample_format", curie=NMDC.curie('nmdc/dna_sample_format'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_format, domain=JgiMgInterface, range=Union[str, "DnaSampleFormatEnum"])
 
-slots.JgiMgInterface_dna_sample_name = Slot(uri=NMDC_YAML['nmdc/dna_sample_name'], name="JgiMgInterface_dna_sample_name", curie=NMDC_YAML.curie('nmdc/dna_sample_name'),
+slots.JgiMgInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_name, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_seq_project = Slot(uri=NMDC_YAML['nmdc/dna_seq_project'], name="JgiMgInterface_dna_seq_project", curie=NMDC_YAML.curie('nmdc/dna_seq_project'),
+slots.JgiMgInterface_dna_seq_project = Slot(uri=NMDC['nmdc/dna_seq_project'], name="JgiMgInterface_dna_seq_project", curie=NMDC.curie('nmdc/dna_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_seq_project_name = Slot(uri=NMDC_YAML['nmdc/dna_seq_project_name'], name="JgiMgInterface_dna_seq_project_name", curie=NMDC_YAML.curie('nmdc/dna_seq_project_name'),
+slots.JgiMgInterface_dna_seq_project_name = Slot(uri=NMDC['nmdc/dna_seq_project_name'], name="JgiMgInterface_dna_seq_project_name", curie=NMDC.curie('nmdc/dna_seq_project_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project_name, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_seq_project_pi = Slot(uri=NMDC_YAML['nmdc/dna_seq_project_pi'], name="JgiMgInterface_dna_seq_project_pi", curie=NMDC_YAML.curie('nmdc/dna_seq_project_pi'),
+slots.JgiMgInterface_dna_seq_project_pi = Slot(uri=NMDC['nmdc/dna_seq_project_pi'], name="JgiMgInterface_dna_seq_project_pi", curie=NMDC.curie('nmdc/dna_seq_project_pi'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project_pi, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_volume = Slot(uri=NMDC_YAML['nmdc/dna_volume'], name="JgiMgInterface_dna_volume", curie=NMDC_YAML.curie('nmdc/dna_volume'),
+slots.JgiMgInterface_dna_volume = Slot(uri=NMDC['nmdc/dna_volume'], name="JgiMgInterface_dna_volume", curie=NMDC.curie('nmdc/dna_volume'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_volume, domain=JgiMgInterface, range=float)
 
-slots.JgiMgInterface_proposal_dna = Slot(uri=NMDC_YAML['nmdc/proposal_dna'], name="JgiMgInterface_proposal_dna", curie=NMDC_YAML.curie('nmdc/proposal_dna'),
+slots.JgiMgInterface_proposal_dna = Slot(uri=NMDC['nmdc/proposal_dna'], name="JgiMgInterface_proposal_dna", curie=NMDC.curie('nmdc/proposal_dna'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_proposal_dna, domain=JgiMgInterface, range=str)
 
 slots.JgiMgInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMgInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_oxy_stat_samp, domain=JgiMgInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
 
-slots.JgiMtInterface_dnase_rna = Slot(uri=NMDC_YAML['nmdc/dnase_rna'], name="JgiMtInterface_dnase_rna", curie=NMDC_YAML.curie('nmdc/dnase_rna'),
+slots.JgiMtInterface_dnase_rna = Slot(uri=NMDC['nmdc/dnase_rna'], name="JgiMtInterface_dnase_rna", curie=NMDC.curie('nmdc/dnase_rna'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_dnase_rna, domain=JgiMtInterface, range=Union[str, "YesNoEnum"])
 
-slots.JgiMtInterface_proposal_rna = Slot(uri=NMDC_YAML['nmdc/proposal_rna'], name="JgiMtInterface_proposal_rna", curie=NMDC_YAML.curie('nmdc/proposal_rna'),
+slots.JgiMtInterface_proposal_rna = Slot(uri=NMDC['nmdc/proposal_rna'], name="JgiMtInterface_proposal_rna", curie=NMDC.curie('nmdc/proposal_rna'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_proposal_rna, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_absorb1 = Slot(uri=NMDC_YAML['nmdc/rna_absorb1'], name="JgiMtInterface_rna_absorb1", curie=NMDC_YAML.curie('nmdc/rna_absorb1'),
+slots.JgiMtInterface_rna_absorb1 = Slot(uri=NMDC['nmdc/rna_absorb1'], name="JgiMtInterface_rna_absorb1", curie=NMDC.curie('nmdc/rna_absorb1'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_absorb1, domain=JgiMtInterface, range=Optional[float])
 
-slots.JgiMtInterface_rna_absorb2 = Slot(uri=NMDC_YAML['nmdc/rna_absorb2'], name="JgiMtInterface_rna_absorb2", curie=NMDC_YAML.curie('nmdc/rna_absorb2'),
+slots.JgiMtInterface_rna_absorb2 = Slot(uri=NMDC['nmdc/rna_absorb2'], name="JgiMtInterface_rna_absorb2", curie=NMDC.curie('nmdc/rna_absorb2'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_absorb2, domain=JgiMtInterface, range=Optional[float])
 
-slots.JgiMtInterface_rna_concentration = Slot(uri=NMDC_YAML['nmdc/rna_concentration'], name="JgiMtInterface_rna_concentration", curie=NMDC_YAML.curie('nmdc/rna_concentration'),
+slots.JgiMtInterface_rna_concentration = Slot(uri=NMDC['nmdc/rna_concentration'], name="JgiMtInterface_rna_concentration", curie=NMDC.curie('nmdc/rna_concentration'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_concentration, domain=JgiMtInterface, range=float)
 
-slots.JgiMtInterface_rna_cont_type = Slot(uri=NMDC_YAML['nmdc/rna_cont_type'], name="JgiMtInterface_rna_cont_type", curie=NMDC_YAML.curie('nmdc/rna_cont_type'),
+slots.JgiMtInterface_rna_cont_type = Slot(uri=NMDC['nmdc/rna_cont_type'], name="JgiMtInterface_rna_cont_type", curie=NMDC.curie('nmdc/rna_cont_type'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_cont_type, domain=JgiMtInterface, range=Union[str, "JgiContTypeEnum"])
 
-slots.JgiMtInterface_rna_cont_well = Slot(uri=NMDC_YAML['nmdc/rna_cont_well'], name="JgiMtInterface_rna_cont_well", curie=NMDC_YAML.curie('nmdc/rna_cont_well'),
+slots.JgiMtInterface_rna_cont_well = Slot(uri=NMDC['nmdc/rna_cont_well'], name="JgiMtInterface_rna_cont_well", curie=NMDC.curie('nmdc/rna_cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_cont_well, domain=JgiMtInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMtInterface_rna_container_id = Slot(uri=NMDC_YAML['nmdc/rna_container_id'], name="JgiMtInterface_rna_container_id", curie=NMDC_YAML.curie('nmdc/rna_container_id'),
+slots.JgiMtInterface_rna_container_id = Slot(uri=NMDC['nmdc/rna_container_id'], name="JgiMtInterface_rna_container_id", curie=NMDC.curie('nmdc/rna_container_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_container_id, domain=JgiMtInterface, range=str,
                    pattern=re.compile(r'^.{1,20}$'))
 
-slots.JgiMtInterface_rna_isolate_meth = Slot(uri=NMDC_YAML['nmdc/rna_isolate_meth'], name="JgiMtInterface_rna_isolate_meth", curie=NMDC_YAML.curie('nmdc/rna_isolate_meth'),
+slots.JgiMtInterface_rna_isolate_meth = Slot(uri=NMDC['nmdc/rna_isolate_meth'], name="JgiMtInterface_rna_isolate_meth", curie=NMDC.curie('nmdc/rna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_isolate_meth, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_project_contact = Slot(uri=NMDC_YAML['nmdc/rna_project_contact'], name="JgiMtInterface_rna_project_contact", curie=NMDC_YAML.curie('nmdc/rna_project_contact'),
+slots.JgiMtInterface_rna_project_contact = Slot(uri=NMDC['nmdc/rna_project_contact'], name="JgiMtInterface_rna_project_contact", curie=NMDC.curie('nmdc/rna_project_contact'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_project_contact, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_samp_id = Slot(uri=NMDC_YAML['nmdc/rna_samp_id'], name="JgiMtInterface_rna_samp_id", curie=NMDC_YAML.curie('nmdc/rna_samp_id'),
+slots.JgiMtInterface_rna_samp_id = Slot(uri=NMDC['nmdc/rna_samp_id'], name="JgiMtInterface_rna_samp_id", curie=NMDC.curie('nmdc/rna_samp_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_samp_id, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_sample_format = Slot(uri=NMDC_YAML['nmdc/rna_sample_format'], name="JgiMtInterface_rna_sample_format", curie=NMDC_YAML.curie('nmdc/rna_sample_format'),
+slots.JgiMtInterface_rna_sample_format = Slot(uri=NMDC['nmdc/rna_sample_format'], name="JgiMtInterface_rna_sample_format", curie=NMDC.curie('nmdc/rna_sample_format'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_format, domain=JgiMtInterface, range=Union[str, "RnaSampleFormatEnum"])
 
-slots.JgiMtInterface_rna_sample_name = Slot(uri=NMDC_YAML['nmdc/rna_sample_name'], name="JgiMtInterface_rna_sample_name", curie=NMDC_YAML.curie('nmdc/rna_sample_name'),
+slots.JgiMtInterface_rna_sample_name = Slot(uri=NMDC['nmdc/rna_sample_name'], name="JgiMtInterface_rna_sample_name", curie=NMDC.curie('nmdc/rna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_name, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_seq_project = Slot(uri=NMDC_YAML['nmdc/rna_seq_project'], name="JgiMtInterface_rna_seq_project", curie=NMDC_YAML.curie('nmdc/rna_seq_project'),
+slots.JgiMtInterface_rna_seq_project = Slot(uri=NMDC['nmdc/rna_seq_project'], name="JgiMtInterface_rna_seq_project", curie=NMDC.curie('nmdc/rna_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_seq_project_name = Slot(uri=NMDC_YAML['nmdc/rna_seq_project_name'], name="JgiMtInterface_rna_seq_project_name", curie=NMDC_YAML.curie('nmdc/rna_seq_project_name'),
+slots.JgiMtInterface_rna_seq_project_name = Slot(uri=NMDC['nmdc/rna_seq_project_name'], name="JgiMtInterface_rna_seq_project_name", curie=NMDC.curie('nmdc/rna_seq_project_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project_name, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_seq_project_pi = Slot(uri=NMDC_YAML['nmdc/rna_seq_project_pi'], name="JgiMtInterface_rna_seq_project_pi", curie=NMDC_YAML.curie('nmdc/rna_seq_project_pi'),
+slots.JgiMtInterface_rna_seq_project_pi = Slot(uri=NMDC['nmdc/rna_seq_project_pi'], name="JgiMtInterface_rna_seq_project_pi", curie=NMDC.curie('nmdc/rna_seq_project_pi'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project_pi, domain=JgiMtInterface, range=str)
 
-slots.JgiMtInterface_rna_volume = Slot(uri=NMDC_YAML['nmdc/rna_volume'], name="JgiMtInterface_rna_volume", curie=NMDC_YAML.curie('nmdc/rna_volume'),
+slots.JgiMtInterface_rna_volume = Slot(uri=NMDC['nmdc/rna_volume'], name="JgiMtInterface_rna_volume", curie=NMDC.curie('nmdc/rna_volume'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_volume, domain=JgiMtInterface, range=float)
 
 slots.JgiMtInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMtInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
@@ -16465,16 +16837,16 @@ slots.MiscEnvsInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="MiscEnvsIn
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_diss_oxygen, domain=MiscEnvsInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.MiscEnvsInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="MiscEnvsInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.MiscEnvsInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="MiscEnvsInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem, domain=MiscEnvsInterface, range=Optional[str])
 
-slots.MiscEnvsInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="MiscEnvsInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.MiscEnvsInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="MiscEnvsInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem_category, domain=MiscEnvsInterface, range=Optional[str])
 
-slots.MiscEnvsInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="MiscEnvsInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.MiscEnvsInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="MiscEnvsInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem_subtype, domain=MiscEnvsInterface, range=Optional[str])
 
-slots.MiscEnvsInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="MiscEnvsInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.MiscEnvsInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="MiscEnvsInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem_type, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_elev = Slot(uri=MIXS['0000093'], name="MiscEnvsInterface_elev", curie=MIXS.curie('0000093'),
@@ -16492,7 +16864,7 @@ slots.MiscEnvsInterface_env_medium = Slot(uri=MIXS['0000014'], name="MiscEnvsInt
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_medium, domain=MiscEnvsInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.MiscEnvsInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="MiscEnvsInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.MiscEnvsInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="MiscEnvsInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_package, domain=MiscEnvsInterface, range=str)
 
 slots.MiscEnvsInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="MiscEnvsInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -16596,7 +16968,7 @@ slots.MiscEnvsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="MiscEn
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_temp, domain=MiscEnvsInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.MiscEnvsInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="MiscEnvsInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.MiscEnvsInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="MiscEnvsInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sample_link, domain=MiscEnvsInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -16611,7 +16983,7 @@ slots.MiscEnvsInterface_sodium = Slot(uri=MIXS['0000428'], name="MiscEnvsInterfa
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sodium, domain=MiscEnvsInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.MiscEnvsInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="MiscEnvsInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.MiscEnvsInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="MiscEnvsInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_specific_ecosystem, domain=MiscEnvsInterface, range=Optional[str])
 
 slots.MiscEnvsInterface_sulfate = Slot(uri=MIXS['0000423'], name="MiscEnvsInterface_sulfate", curie=MIXS.curie('0000423'),
@@ -16666,16 +17038,16 @@ slots.PlantAssociatedInterface_depth = Slot(uri=MIXS['0000018'], name="PlantAsso
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_depth, domain=PlantAssociatedInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$'))
 
-slots.PlantAssociatedInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="PlantAssociatedInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.PlantAssociatedInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="PlantAssociatedInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem, domain=PlantAssociatedInterface, range=Optional[str])
 
-slots.PlantAssociatedInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="PlantAssociatedInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.PlantAssociatedInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="PlantAssociatedInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem_category, domain=PlantAssociatedInterface, range=Optional[str])
 
-slots.PlantAssociatedInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="PlantAssociatedInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.PlantAssociatedInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="PlantAssociatedInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem_subtype, domain=PlantAssociatedInterface, range=Optional[str])
 
-slots.PlantAssociatedInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="PlantAssociatedInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.PlantAssociatedInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="PlantAssociatedInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem_type, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="PlantAssociatedInterface_elev", curie=MIXS.curie('0000093'),
@@ -16693,7 +17065,7 @@ slots.PlantAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="Plan
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_medium, domain=PlantAssociatedInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.PlantAssociatedInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="PlantAssociatedInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.PlantAssociatedInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="PlantAssociatedInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_package, domain=PlantAssociatedInterface, range=str)
 
 slots.PlantAssociatedInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="PlantAssociatedInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -16904,7 +17276,7 @@ slots.PlantAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name=
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_temp, domain=PlantAssociatedInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.PlantAssociatedInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="PlantAssociatedInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.PlantAssociatedInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="PlantAssociatedInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_sample_link, domain=PlantAssociatedInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -16914,7 +17286,7 @@ slots.PlantAssociatedInterface_season_environment = Slot(uri=MIXS['0001068'], na
 slots.PlantAssociatedInterface_size_frac = Slot(uri=MIXS['0000017'], name="PlantAssociatedInterface_size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_size_frac, domain=PlantAssociatedInterface, range=Optional[str])
 
-slots.PlantAssociatedInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="PlantAssociatedInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.PlantAssociatedInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="PlantAssociatedInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_specific_ecosystem, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_standing_water_regm = Slot(uri=MIXS['0001069'], name="PlantAssociatedInterface_standing_water_regm", curie=MIXS.curie('0001069'),
@@ -17025,16 +17397,16 @@ slots.SedimentInterface_diss_oxygen = Slot(uri=MIXS['0000119'], name="SedimentIn
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_diss_oxygen, domain=SedimentInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SedimentInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="SedimentInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.SedimentInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="SedimentInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem, domain=SedimentInterface, range=Optional[str])
 
-slots.SedimentInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="SedimentInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.SedimentInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="SedimentInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem_category, domain=SedimentInterface, range=Optional[str])
 
-slots.SedimentInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="SedimentInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.SedimentInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="SedimentInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem_subtype, domain=SedimentInterface, range=Optional[str])
 
-slots.SedimentInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="SedimentInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.SedimentInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="SedimentInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem_type, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_elev = Slot(uri=MIXS['0000093'], name="SedimentInterface_elev", curie=MIXS.curie('0000093'),
@@ -17052,7 +17424,7 @@ slots.SedimentInterface_env_medium = Slot(uri=MIXS['0000014'], name="SedimentInt
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_medium, domain=SedimentInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.SedimentInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="SedimentInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.SedimentInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="SedimentInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_package, domain=SedimentInterface, range=str)
 
 slots.SedimentInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SedimentInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -17203,7 +17575,7 @@ slots.SedimentInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="Sedime
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_temp, domain=SedimentInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SedimentInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="SedimentInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.SedimentInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="SedimentInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sample_link, domain=SedimentInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -17221,7 +17593,7 @@ slots.SedimentInterface_sodium = Slot(uri=MIXS['0000428'], name="SedimentInterfa
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sodium, domain=SedimentInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SedimentInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="SedimentInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.SedimentInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="SedimentInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_specific_ecosystem, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_sulfate = Slot(uri=MIXS['0000423'], name="SedimentInterface_sulfate", curie=MIXS.curie('0000423'),
@@ -17277,7 +17649,7 @@ slots.SoilInterface_al_sat = Slot(uri=MIXS['0000607'], name="SoilInterface_al_sa
 slots.SoilInterface_al_sat_meth = Slot(uri=MIXS['0000324'], name="SoilInterface_al_sat_meth", curie=MIXS.curie('0000324'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_al_sat_meth, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_ammonium_nitrogen = Slot(uri=NMDC_YAML['nmdc/ammonium_nitrogen'], name="SoilInterface_ammonium_nitrogen", curie=NMDC_YAML.curie('nmdc/ammonium_nitrogen'),
+slots.SoilInterface_ammonium_nitrogen = Slot(uri=NMDC['nmdc/ammonium_nitrogen'], name="SoilInterface_ammonium_nitrogen", curie=NMDC.curie('nmdc/ammonium_nitrogen'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ammonium_nitrogen, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
@@ -17310,15 +17682,15 @@ slots.SoilInterface_collection_date = Slot(uri=MIXS['0000011'], name="SoilInterf
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_collection_date, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
-slots.SoilInterface_collection_date_inc = Slot(uri=NMDC_YAML['nmdc/collection_date_inc'], name="SoilInterface_collection_date_inc", curie=NMDC_YAML.curie('nmdc/collection_date_inc'),
+slots.SoilInterface_collection_date_inc = Slot(uri=NMDC['nmdc/collection_date_inc'], name="SoilInterface_collection_date_inc", curie=NMDC.curie('nmdc/collection_date_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_collection_date_inc, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
-slots.SoilInterface_collection_time = Slot(uri=NMDC_YAML['nmdc/collection_time'], name="SoilInterface_collection_time", curie=NMDC_YAML.curie('nmdc/collection_time'),
+slots.SoilInterface_collection_time = Slot(uri=NMDC['nmdc/collection_time'], name="SoilInterface_collection_time", curie=NMDC.curie('nmdc/collection_time'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_collection_time, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
 
-slots.SoilInterface_collection_time_inc = Slot(uri=NMDC_YAML['nmdc/collection_time_inc'], name="SoilInterface_collection_time_inc", curie=NMDC_YAML.curie('nmdc/collection_time_inc'),
+slots.SoilInterface_collection_time_inc = Slot(uri=NMDC['nmdc/collection_time_inc'], name="SoilInterface_collection_time_inc", curie=NMDC.curie('nmdc/collection_time_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_collection_time_inc, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
 
@@ -17341,16 +17713,16 @@ slots.SoilInterface_depth = Slot(uri=MIXS['0000018'], name="SoilInterface_depth"
 slots.SoilInterface_drainage_class = Slot(uri=MIXS['0001085'], name="SoilInterface_drainage_class", curie=MIXS.curie('0001085'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_drainage_class, domain=SoilInterface, range=Optional[Union[str, "DrainageClassEnum"]])
 
-slots.SoilInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="SoilInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.SoilInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="SoilInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ecosystem, domain=SoilInterface, range=Optional[Union[str, "EcosystemEnum"]])
 
-slots.SoilInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="SoilInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.SoilInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="SoilInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ecosystem_category, domain=SoilInterface, range=Optional[Union[str, "EcosystemCategoryEnum"]])
 
-slots.SoilInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="SoilInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.SoilInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="SoilInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ecosystem_subtype, domain=SoilInterface, range=Optional[Union[str, "EcosystemSubtypeEnum"]])
 
-slots.SoilInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="SoilInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.SoilInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="SoilInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ecosystem_type, domain=SoilInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.SoilInterface_elev = Slot(uri=MIXS['0000093'], name="SoilInterface_elev", curie=MIXS.curie('0000093'),
@@ -17368,13 +17740,13 @@ slots.SoilInterface_env_medium = Slot(uri=MIXS['0000014'], name="SoilInterface_e
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=Union[str, "EnvMediumSoilEnum"],
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.SoilInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="SoilInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.SoilInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="SoilInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_package, domain=SoilInterface, range=str)
 
 slots.SoilInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SoilInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_experimental_factor, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_experimental_factor_other = Slot(uri=NMDC_YAML['nmdc/experimental_factor_other'], name="SoilInterface_experimental_factor_other", curie=NMDC_YAML.curie('nmdc/experimental_factor_other'),
+slots.SoilInterface_experimental_factor_other = Slot(uri=NMDC['nmdc/experimental_factor_other'], name="SoilInterface_experimental_factor_other", curie=NMDC.curie('nmdc/experimental_factor_other'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_experimental_factor_other, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_extreme_event = Slot(uri=MIXS['0000320'], name="SoilInterface_extreme_event", curie=MIXS.curie('0000320'),
@@ -17383,7 +17755,7 @@ slots.SoilInterface_extreme_event = Slot(uri=MIXS['0000320'], name="SoilInterfac
 slots.SoilInterface_fao_class = Slot(uri=MIXS['0001083'], name="SoilInterface_fao_class", curie=MIXS.curie('0001083'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_fao_class, domain=SoilInterface, range=Optional[Union[str, "FaoClassEnum"]])
 
-slots.SoilInterface_filter_method = Slot(uri=NMDC_YAML['nmdc/filter_method'], name="SoilInterface_filter_method", curie=NMDC_YAML.curie('nmdc/filter_method'),
+slots.SoilInterface_filter_method = Slot(uri=NMDC['nmdc/filter_method'], name="SoilInterface_filter_method", curie=NMDC.curie('nmdc/filter_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_filter_method, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_fire = Slot(uri=MIXS['0001086'], name="SoilInterface_fire", curie=MIXS.curie('0001086'),
@@ -17416,7 +17788,7 @@ slots.SoilInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="SoilInterface
 slots.SoilInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="SoilInterface_humidity_regm", curie=MIXS.curie('0000568'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_humidity_regm, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_isotope_exposure = Slot(uri=NMDC_YAML['nmdc/isotope_exposure'], name="SoilInterface_isotope_exposure", curie=NMDC_YAML.curie('nmdc/isotope_exposure'),
+slots.SoilInterface_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="SoilInterface_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_isotope_exposure, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
 
@@ -17424,11 +17796,11 @@ slots.SoilInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SoilInterface_lat_
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_lat_lon, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$'))
 
-slots.SoilInterface_lbc_thirty = Slot(uri=NMDC_YAML['nmdc/lbc_thirty'], name="SoilInterface_lbc_thirty", curie=NMDC_YAML.curie('nmdc/lbc_thirty'),
+slots.SoilInterface_lbc_thirty = Slot(uri=NMDC['nmdc/lbc_thirty'], name="SoilInterface_lbc_thirty", curie=NMDC.curie('nmdc/lbc_thirty'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_lbc_thirty, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_lbceq = Slot(uri=NMDC_YAML['nmdc/lbceq'], name="SoilInterface_lbceq", curie=NMDC_YAML.curie('nmdc/lbceq'),
+slots.SoilInterface_lbceq = Slot(uri=NMDC['nmdc/lbceq'], name="SoilInterface_lbceq", curie=NMDC.curie('nmdc/lbceq'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_lbceq, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
@@ -17448,28 +17820,28 @@ slots.SoilInterface_local_class = Slot(uri=MIXS['0000330'], name="SoilInterface_
 slots.SoilInterface_local_class_meth = Slot(uri=MIXS['0000331'], name="SoilInterface_local_class_meth", curie=MIXS.curie('0000331'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_local_class_meth, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_manganese = Slot(uri=NMDC_YAML['nmdc/manganese'], name="SoilInterface_manganese", curie=NMDC_YAML.curie('nmdc/manganese'),
+slots.SoilInterface_manganese = Slot(uri=NMDC['nmdc/manganese'], name="SoilInterface_manganese", curie=NMDC.curie('nmdc/manganese'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_manganese, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_micro_biomass_c_meth = Slot(uri=NMDC_YAML['nmdc/micro_biomass_c_meth'], name="SoilInterface_micro_biomass_c_meth", curie=NMDC_YAML.curie('nmdc/micro_biomass_c_meth'),
+slots.SoilInterface_micro_biomass_c_meth = Slot(uri=NMDC['nmdc/micro_biomass_c_meth'], name="SoilInterface_micro_biomass_c_meth", curie=NMDC.curie('nmdc/micro_biomass_c_meth'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_micro_biomass_c_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_micro_biomass_meth = Slot(uri=MIXS['0000339'], name="SoilInterface_micro_biomass_meth", curie=MIXS.curie('0000339'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_micro_biomass_meth, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_micro_biomass_n_meth = Slot(uri=NMDC_YAML['nmdc/micro_biomass_n_meth'], name="SoilInterface_micro_biomass_n_meth", curie=NMDC_YAML.curie('nmdc/micro_biomass_n_meth'),
+slots.SoilInterface_micro_biomass_n_meth = Slot(uri=NMDC['nmdc/micro_biomass_n_meth'], name="SoilInterface_micro_biomass_n_meth", curie=NMDC.curie('nmdc/micro_biomass_n_meth'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_micro_biomass_n_meth, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_microbial_biomass = Slot(uri=MIXS['0000650'], name="SoilInterface_microbial_biomass", curie=MIXS.curie('0000650'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_microbial_biomass_c = Slot(uri=NMDC_YAML['nmdc/microbial_biomass_c'], name="SoilInterface_microbial_biomass_c", curie=NMDC_YAML.curie('nmdc/microbial_biomass_c'),
+slots.SoilInterface_microbial_biomass_c = Slot(uri=NMDC['nmdc/microbial_biomass_c'], name="SoilInterface_microbial_biomass_c", curie=NMDC.curie('nmdc/microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass_c, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
-slots.SoilInterface_microbial_biomass_n = Slot(uri=NMDC_YAML['nmdc/microbial_biomass_n'], name="SoilInterface_microbial_biomass_n", curie=NMDC_YAML.curie('nmdc/microbial_biomass_n'),
+slots.SoilInterface_microbial_biomass_n = Slot(uri=NMDC['nmdc/microbial_biomass_n'], name="SoilInterface_microbial_biomass_n", curie=NMDC.curie('nmdc/microbial_biomass_n'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass_n, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
@@ -17477,19 +17849,19 @@ slots.SoilInterface_misc_param = Slot(uri=MIXS['0000752'], name="SoilInterface_m
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_misc_param, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
-slots.SoilInterface_nitrate_nitrogen = Slot(uri=NMDC_YAML['nmdc/nitrate_nitrogen'], name="SoilInterface_nitrate_nitrogen", curie=NMDC_YAML.curie('nmdc/nitrate_nitrogen'),
+slots.SoilInterface_nitrate_nitrogen = Slot(uri=NMDC['nmdc/nitrate_nitrogen'], name="SoilInterface_nitrate_nitrogen", curie=NMDC.curie('nmdc/nitrate_nitrogen'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_nitrate_nitrogen, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_nitrite_nitrogen = Slot(uri=NMDC_YAML['nmdc/nitrite_nitrogen'], name="SoilInterface_nitrite_nitrogen", curie=NMDC_YAML.curie('nmdc/nitrite_nitrogen'),
+slots.SoilInterface_nitrite_nitrogen = Slot(uri=NMDC['nmdc/nitrite_nitrogen'], name="SoilInterface_nitrite_nitrogen", curie=NMDC.curie('nmdc/nitrite_nitrogen'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_nitrite_nitrogen, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_non_microb_biomass = Slot(uri=NMDC_YAML['nmdc/non_microb_biomass'], name="SoilInterface_non_microb_biomass", curie=NMDC_YAML.curie('nmdc/non_microb_biomass'),
+slots.SoilInterface_non_microb_biomass = Slot(uri=NMDC['nmdc/non_microb_biomass'], name="SoilInterface_non_microb_biomass", curie=NMDC.curie('nmdc/non_microb_biomass'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_non_microb_biomass, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
-slots.SoilInterface_non_microb_biomass_method = Slot(uri=NMDC_YAML['nmdc/non_microb_biomass_method'], name="SoilInterface_non_microb_biomass_method", curie=NMDC_YAML.curie('nmdc/non_microb_biomass_method'),
+slots.SoilInterface_non_microb_biomass_method = Slot(uri=NMDC['nmdc/non_microb_biomass_method'], name="SoilInterface_non_microb_biomass_method", curie=NMDC.curie('nmdc/non_microb_biomass_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_non_microb_biomass_method, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_org_matter = Slot(uri=MIXS['0000204'], name="SoilInterface_org_matter", curie=MIXS.curie('0000204'),
@@ -17500,10 +17872,10 @@ slots.SoilInterface_org_nitro = Slot(uri=MIXS['0000205'], name="SoilInterface_or
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_org_nitro, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_org_nitro_method = Slot(uri=NMDC_YAML['nmdc/org_nitro_method'], name="SoilInterface_org_nitro_method", curie=NMDC_YAML.curie('nmdc/org_nitro_method'),
+slots.SoilInterface_org_nitro_method = Slot(uri=NMDC['nmdc/org_nitro_method'], name="SoilInterface_org_nitro_method", curie=NMDC.curie('nmdc/org_nitro_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_org_nitro_method, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_other_treatment = Slot(uri=NMDC_YAML['nmdc/other_treatment'], name="SoilInterface_other_treatment", curie=NMDC_YAML.curie('nmdc/other_treatment'),
+slots.SoilInterface_other_treatment = Slot(uri=NMDC['nmdc/other_treatment'], name="SoilInterface_other_treatment", curie=NMDC.curie('nmdc/other_treatment'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_other_treatment, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="SoilInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
@@ -17553,7 +17925,7 @@ slots.SoilInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SoilInterf
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_store_temp, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.SoilInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="SoilInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.SoilInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="SoilInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_sample_link, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -17601,14 +17973,14 @@ slots.SoilInterface_soil_type = Slot(uri=MIXS['0000332'], name="SoilInterface_so
 slots.SoilInterface_soil_type_meth = Slot(uri=MIXS['0000334'], name="SoilInterface_soil_type_meth", curie=MIXS.curie('0000334'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_type_meth, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="SoilInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.SoilInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="SoilInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_specific_ecosystem, domain=SoilInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
-slots.SoilInterface_start_date_inc = Slot(uri=NMDC_YAML['nmdc/start_date_inc'], name="SoilInterface_start_date_inc", curie=NMDC_YAML.curie('nmdc/start_date_inc'),
+slots.SoilInterface_start_date_inc = Slot(uri=NMDC['nmdc/start_date_inc'], name="SoilInterface_start_date_inc", curie=NMDC.curie('nmdc/start_date_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_start_date_inc, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
-slots.SoilInterface_start_time_inc = Slot(uri=NMDC_YAML['nmdc/start_time_inc'], name="SoilInterface_start_time_inc", curie=NMDC_YAML.curie('nmdc/start_time_inc'),
+slots.SoilInterface_start_time_inc = Slot(uri=NMDC['nmdc/start_time_inc'], name="SoilInterface_start_time_inc", curie=NMDC.curie('nmdc/start_time_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_start_time_inc, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
 
@@ -17654,7 +18026,7 @@ slots.SoilInterface_water_content = Slot(uri=MIXS['0000185'], name="SoilInterfac
 slots.SoilInterface_watering_regm = Slot(uri=MIXS['0000591'], name="SoilInterface_watering_regm", curie=MIXS.curie('0000591'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_watering_regm, domain=SoilInterface, range=Optional[str])
 
-slots.SoilInterface_zinc = Slot(uri=NMDC_YAML['nmdc/zinc'], name="SoilInterface_zinc", curie=NMDC_YAML.curie('nmdc/zinc'),
+slots.SoilInterface_zinc = Slot(uri=NMDC['nmdc/zinc'], name="SoilInterface_zinc", curie=NMDC.curie('nmdc/zinc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_zinc, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
@@ -17686,16 +18058,16 @@ slots.WastewaterSludgeInterface_depth = Slot(uri=MIXS['0000018'], name="Wastewat
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_depth, domain=WastewaterSludgeInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$'))
 
-slots.WastewaterSludgeInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="WastewaterSludgeInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.WastewaterSludgeInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="WastewaterSludgeInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem, domain=WastewaterSludgeInterface, range=Optional[str])
 
-slots.WastewaterSludgeInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="WastewaterSludgeInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.WastewaterSludgeInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="WastewaterSludgeInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem_category, domain=WastewaterSludgeInterface, range=Optional[str])
 
-slots.WastewaterSludgeInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="WastewaterSludgeInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.WastewaterSludgeInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="WastewaterSludgeInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem_subtype, domain=WastewaterSludgeInterface, range=Optional[str])
 
-slots.WastewaterSludgeInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="WastewaterSludgeInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.WastewaterSludgeInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="WastewaterSludgeInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem_type, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_efficiency_percent = Slot(uri=MIXS['0000657'], name="WastewaterSludgeInterface_efficiency_percent", curie=MIXS.curie('0000657'),
@@ -17721,7 +18093,7 @@ slots.WastewaterSludgeInterface_env_medium = Slot(uri=MIXS['0000014'], name="Was
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_medium, domain=WastewaterSludgeInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.WastewaterSludgeInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="WastewaterSludgeInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.WastewaterSludgeInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="WastewaterSludgeInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_package, domain=WastewaterSludgeInterface, range=str)
 
 slots.WastewaterSludgeInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="WastewaterSludgeInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -17818,7 +18190,7 @@ slots.WastewaterSludgeInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_temp, domain=WastewaterSludgeInterface, range=str,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.WastewaterSludgeInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="WastewaterSludgeInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.WastewaterSludgeInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="WastewaterSludgeInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_sample_link, domain=WastewaterSludgeInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -17847,7 +18219,7 @@ slots.WastewaterSludgeInterface_soluble_org_mat = Slot(uri=MIXS['0000673'], name
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_soluble_org_mat, domain=WastewaterSludgeInterface, range=Optional[str],
                    pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
-slots.WastewaterSludgeInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="WastewaterSludgeInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.WastewaterSludgeInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="WastewaterSludgeInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_specific_ecosystem, domain=WastewaterSludgeInterface, range=Optional[str])
 
 slots.WastewaterSludgeInterface_suspend_solids = Slot(uri=MIXS['0000150'], name="WastewaterSludgeInterface_suspend_solids", curie=MIXS.curie('0000150'),
@@ -17995,16 +18367,16 @@ slots.WaterInterface_down_par = Slot(uri=MIXS['0000703'], name="WaterInterface_d
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_down_par, domain=WaterInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.WaterInterface_ecosystem = Slot(uri=NMDC_YAML['nmdc/ecosystem'], name="WaterInterface_ecosystem", curie=NMDC_YAML.curie('nmdc/ecosystem'),
+slots.WaterInterface_ecosystem = Slot(uri=NMDC['nmdc/ecosystem'], name="WaterInterface_ecosystem", curie=NMDC.curie('nmdc/ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem, domain=WaterInterface, range=Optional[str])
 
-slots.WaterInterface_ecosystem_category = Slot(uri=NMDC_YAML['nmdc/ecosystem_category'], name="WaterInterface_ecosystem_category", curie=NMDC_YAML.curie('nmdc/ecosystem_category'),
+slots.WaterInterface_ecosystem_category = Slot(uri=NMDC['nmdc/ecosystem_category'], name="WaterInterface_ecosystem_category", curie=NMDC.curie('nmdc/ecosystem_category'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_category, domain=WaterInterface, range=Optional[str])
 
-slots.WaterInterface_ecosystem_subtype = Slot(uri=NMDC_YAML['nmdc/ecosystem_subtype'], name="WaterInterface_ecosystem_subtype", curie=NMDC_YAML.curie('nmdc/ecosystem_subtype'),
+slots.WaterInterface_ecosystem_subtype = Slot(uri=NMDC['nmdc/ecosystem_subtype'], name="WaterInterface_ecosystem_subtype", curie=NMDC.curie('nmdc/ecosystem_subtype'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_subtype, domain=WaterInterface, range=Optional[str])
 
-slots.WaterInterface_ecosystem_type = Slot(uri=NMDC_YAML['nmdc/ecosystem_type'], name="WaterInterface_ecosystem_type", curie=NMDC_YAML.curie('nmdc/ecosystem_type'),
+slots.WaterInterface_ecosystem_type = Slot(uri=NMDC['nmdc/ecosystem_type'], name="WaterInterface_ecosystem_type", curie=NMDC.curie('nmdc/ecosystem_type'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_ecosystem_type, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_elev = Slot(uri=MIXS['0000093'], name="WaterInterface_elev", curie=MIXS.curie('0000093'),
@@ -18022,7 +18394,7 @@ slots.WaterInterface_env_medium = Slot(uri=MIXS['0000014'], name="WaterInterface
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_medium, domain=WaterInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
-slots.WaterInterface_env_package = Slot(uri=NMDC_YAML['nmdc/env_package'], name="WaterInterface_env_package", curie=NMDC_YAML.curie('nmdc/env_package'),
+slots.WaterInterface_env_package = Slot(uri=NMDC['nmdc/env_package'], name="WaterInterface_env_package", curie=NMDC.curie('nmdc/env_package'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_package, domain=WaterInterface, range=str)
 
 slots.WaterInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="WaterInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -18177,7 +18549,7 @@ slots.WaterInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WaterInte
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_temp, domain=WaterInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.WaterInterface_sample_link = Slot(uri=NMDC_YAML['nmdc/sample_link'], name="WaterInterface_sample_link", curie=NMDC_YAML.curie('nmdc/sample_link'),
+slots.WaterInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="WaterInterface_sample_link", curie=NMDC.curie('nmdc/sample_link'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_sample_link, domain=WaterInterface, range=Optional[str],
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
@@ -18204,7 +18576,7 @@ slots.WaterInterface_soluble_react_phosp = Slot(uri=MIXS['0000738'], name="Water
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_soluble_react_phosp, domain=WaterInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.WaterInterface_specific_ecosystem = Slot(uri=NMDC_YAML['nmdc/specific_ecosystem'], name="WaterInterface_specific_ecosystem", curie=NMDC_YAML.curie('nmdc/specific_ecosystem'),
+slots.WaterInterface_specific_ecosystem = Slot(uri=NMDC['nmdc/specific_ecosystem'], name="WaterInterface_specific_ecosystem", curie=NMDC.curie('nmdc/specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_specific_ecosystem, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_sulfate = Slot(uri=MIXS['0000423'], name="WaterInterface_sulfate", curie=MIXS.curie('0000423'),
@@ -18254,7 +18626,7 @@ slots.WaterInterface_water_current = Slot(uri=MIXS['0000203'], name="WaterInterf
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_water_current, domain=WaterInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
-slots.DhMultiviewCommonColumnsMixin_analysis_type = Slot(uri=NMDC_YAML['nmdc/analysis_type'], name="DhMultiviewCommonColumnsMixin_analysis_type", curie=NMDC_YAML.curie('nmdc/analysis_type'),
+slots.DhMultiviewCommonColumnsMixin_analysis_type = Slot(uri=NMDC['nmdc/analysis_type'], name="DhMultiviewCommonColumnsMixin_analysis_type", curie=NMDC.curie('nmdc/analysis_type'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_analysis_type, domain=None, range=Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]])
 
 slots.DhMultiviewCommonColumnsMixin_samp_name = Slot(uri=MIXS['0001107'], name="DhMultiviewCommonColumnsMixin_samp_name", curie=MIXS.curie('0001107'),
@@ -18267,59 +18639,59 @@ slots.DhMultiviewCommonColumnsMixin_source_mat_id = Slot(uri=MIXS['0000026'], na
 slots.DhMultiviewCommonColumnsMixin_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="DhMultiviewCommonColumnsMixin_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_oxy_stat_samp, domain=None, range=Optional[Union[str, "OxyStatSampEnum"]])
 
-slots.SoilMixsInspiredMixin_collection_date_inc = Slot(uri=NMDC_YAML['nmdc/collection_date_inc'], name="SoilMixsInspiredMixin_collection_date_inc", curie=NMDC_YAML.curie('nmdc/collection_date_inc'),
+slots.SoilMixsInspiredMixin_collection_date_inc = Slot(uri=NMDC['nmdc/collection_date_inc'], name="SoilMixsInspiredMixin_collection_date_inc", curie=NMDC.curie('nmdc/collection_date_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_collection_date_inc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
-slots.SoilMixsInspiredMixin_collection_time = Slot(uri=NMDC_YAML['nmdc/collection_time'], name="SoilMixsInspiredMixin_collection_time", curie=NMDC_YAML.curie('nmdc/collection_time'),
+slots.SoilMixsInspiredMixin_collection_time = Slot(uri=NMDC['nmdc/collection_time'], name="SoilMixsInspiredMixin_collection_time", curie=NMDC.curie('nmdc/collection_time'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_collection_time, domain=None, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
 
-slots.SoilMixsInspiredMixin_collection_time_inc = Slot(uri=NMDC_YAML['nmdc/collection_time_inc'], name="SoilMixsInspiredMixin_collection_time_inc", curie=NMDC_YAML.curie('nmdc/collection_time_inc'),
+slots.SoilMixsInspiredMixin_collection_time_inc = Slot(uri=NMDC['nmdc/collection_time_inc'], name="SoilMixsInspiredMixin_collection_time_inc", curie=NMDC.curie('nmdc/collection_time_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_collection_time_inc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
 
-slots.SoilMixsInspiredMixin_experimental_factor_other = Slot(uri=NMDC_YAML['nmdc/experimental_factor_other'], name="SoilMixsInspiredMixin_experimental_factor_other", curie=NMDC_YAML.curie('nmdc/experimental_factor_other'),
+slots.SoilMixsInspiredMixin_experimental_factor_other = Slot(uri=NMDC['nmdc/experimental_factor_other'], name="SoilMixsInspiredMixin_experimental_factor_other", curie=NMDC.curie('nmdc/experimental_factor_other'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_experimental_factor_other, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_filter_method = Slot(uri=NMDC_YAML['nmdc/filter_method'], name="SoilMixsInspiredMixin_filter_method", curie=NMDC_YAML.curie('nmdc/filter_method'),
+slots.SoilMixsInspiredMixin_filter_method = Slot(uri=NMDC['nmdc/filter_method'], name="SoilMixsInspiredMixin_filter_method", curie=NMDC.curie('nmdc/filter_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_filter_method, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_isotope_exposure = Slot(uri=NMDC_YAML['nmdc/isotope_exposure'], name="SoilMixsInspiredMixin_isotope_exposure", curie=NMDC_YAML.curie('nmdc/isotope_exposure'),
+slots.SoilMixsInspiredMixin_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="SoilMixsInspiredMixin_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_isotope_exposure, domain=None, range=Optional[str],
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
 
-slots.SoilMixsInspiredMixin_micro_biomass_c_meth = Slot(uri=NMDC_YAML['nmdc/micro_biomass_c_meth'], name="SoilMixsInspiredMixin_micro_biomass_c_meth", curie=NMDC_YAML.curie('nmdc/micro_biomass_c_meth'),
+slots.SoilMixsInspiredMixin_micro_biomass_c_meth = Slot(uri=NMDC['nmdc/micro_biomass_c_meth'], name="SoilMixsInspiredMixin_micro_biomass_c_meth", curie=NMDC.curie('nmdc/micro_biomass_c_meth'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_micro_biomass_c_meth, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_micro_biomass_n_meth = Slot(uri=NMDC_YAML['nmdc/micro_biomass_n_meth'], name="SoilMixsInspiredMixin_micro_biomass_n_meth", curie=NMDC_YAML.curie('nmdc/micro_biomass_n_meth'),
+slots.SoilMixsInspiredMixin_micro_biomass_n_meth = Slot(uri=NMDC['nmdc/micro_biomass_n_meth'], name="SoilMixsInspiredMixin_micro_biomass_n_meth", curie=NMDC.curie('nmdc/micro_biomass_n_meth'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_micro_biomass_n_meth, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_microbial_biomass_c = Slot(uri=NMDC_YAML['nmdc/microbial_biomass_c'], name="SoilMixsInspiredMixin_microbial_biomass_c", curie=NMDC_YAML.curie('nmdc/microbial_biomass_c'),
+slots.SoilMixsInspiredMixin_microbial_biomass_c = Slot(uri=NMDC['nmdc/microbial_biomass_c'], name="SoilMixsInspiredMixin_microbial_biomass_c", curie=NMDC.curie('nmdc/microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_microbial_biomass_c, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
-slots.SoilMixsInspiredMixin_microbial_biomass_n = Slot(uri=NMDC_YAML['nmdc/microbial_biomass_n'], name="SoilMixsInspiredMixin_microbial_biomass_n", curie=NMDC_YAML.curie('nmdc/microbial_biomass_n'),
+slots.SoilMixsInspiredMixin_microbial_biomass_n = Slot(uri=NMDC['nmdc/microbial_biomass_n'], name="SoilMixsInspiredMixin_microbial_biomass_n", curie=NMDC.curie('nmdc/microbial_biomass_n'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_microbial_biomass_n, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
-slots.SoilMixsInspiredMixin_non_microb_biomass = Slot(uri=NMDC_YAML['nmdc/non_microb_biomass'], name="SoilMixsInspiredMixin_non_microb_biomass", curie=NMDC_YAML.curie('nmdc/non_microb_biomass'),
+slots.SoilMixsInspiredMixin_non_microb_biomass = Slot(uri=NMDC['nmdc/non_microb_biomass'], name="SoilMixsInspiredMixin_non_microb_biomass", curie=NMDC.curie('nmdc/non_microb_biomass'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_non_microb_biomass, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
-slots.SoilMixsInspiredMixin_non_microb_biomass_method = Slot(uri=NMDC_YAML['nmdc/non_microb_biomass_method'], name="SoilMixsInspiredMixin_non_microb_biomass_method", curie=NMDC_YAML.curie('nmdc/non_microb_biomass_method'),
+slots.SoilMixsInspiredMixin_non_microb_biomass_method = Slot(uri=NMDC['nmdc/non_microb_biomass_method'], name="SoilMixsInspiredMixin_non_microb_biomass_method", curie=NMDC.curie('nmdc/non_microb_biomass_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_non_microb_biomass_method, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_org_nitro_method = Slot(uri=NMDC_YAML['nmdc/org_nitro_method'], name="SoilMixsInspiredMixin_org_nitro_method", curie=NMDC_YAML.curie('nmdc/org_nitro_method'),
+slots.SoilMixsInspiredMixin_org_nitro_method = Slot(uri=NMDC['nmdc/org_nitro_method'], name="SoilMixsInspiredMixin_org_nitro_method", curie=NMDC.curie('nmdc/org_nitro_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_org_nitro_method, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_other_treatment = Slot(uri=NMDC_YAML['nmdc/other_treatment'], name="SoilMixsInspiredMixin_other_treatment", curie=NMDC_YAML.curie('nmdc/other_treatment'),
+slots.SoilMixsInspiredMixin_other_treatment = Slot(uri=NMDC['nmdc/other_treatment'], name="SoilMixsInspiredMixin_other_treatment", curie=NMDC.curie('nmdc/other_treatment'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_other_treatment, domain=None, range=Optional[str])
 
-slots.SoilMixsInspiredMixin_start_date_inc = Slot(uri=NMDC_YAML['nmdc/start_date_inc'], name="SoilMixsInspiredMixin_start_date_inc", curie=NMDC_YAML.curie('nmdc/start_date_inc'),
+slots.SoilMixsInspiredMixin_start_date_inc = Slot(uri=NMDC['nmdc/start_date_inc'], name="SoilMixsInspiredMixin_start_date_inc", curie=NMDC.curie('nmdc/start_date_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_start_date_inc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
-slots.SoilMixsInspiredMixin_start_time_inc = Slot(uri=NMDC_YAML['nmdc/start_time_inc'], name="SoilMixsInspiredMixin_start_time_inc", curie=NMDC_YAML.curie('nmdc/start_time_inc'),
+slots.SoilMixsInspiredMixin_start_time_inc = Slot(uri=NMDC['nmdc/start_time_inc'], name="SoilMixsInspiredMixin_start_time_inc", curie=NMDC.curie('nmdc/start_time_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_start_time_inc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))

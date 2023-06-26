@@ -205,7 +205,7 @@ modifications_cleanup:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
 local/nmdc.yaml:
-	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.6.0/nmdc_schema/nmdc_materialized_patterns.yaml
+	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.6.5/nmdc_schema/nmdc_materialized_patterns.yaml
 
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
@@ -292,6 +292,7 @@ src/data/invalid src/data/valid
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
+# see local/usage_template.tsv
 ## target was was local/slot_usage.tsv,
 ##   but I changed the destination to a checked-in directory
 ##   so collaborators can sort and filter the slot attributes
@@ -503,6 +504,7 @@ bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.sch
 	
 #		 --columns-to-insert enum \
 #		 --columns-to-insert permissible_value
+
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
 	$(RUN) generate_and_populate_template \
@@ -513,4 +515,3 @@ local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_sche
 		 --meta-model-excel-file local/meta.xlsx \
 		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
 		 --source-schema-path $<
-
