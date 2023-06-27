@@ -18,6 +18,7 @@ linkml-runtime = "^1.5.4"
 # then generate project artifacts from that schema with the real version populated,
 # and then perform any build or publish actions. Since this requires running
 # `poetry dynamic-versioning` manually before `poetry build`, we set enable = false.
+# similar dynamic versioning doesn't seem to be working for nmdc-schema right now
 enable = false
 vcs = "git"
 style = "pep440"
@@ -36,7 +37,14 @@ patterns = [
 ]
 
 [tool.poetry.dev-dependencies]
-check-jsonschema = "^0.23.0" # https://pypi.org/project/check-jsonschema/0.23.0/
+
+# note that the nmdc-schema is not imported as  amodule,
+#   but one file from the nmdc-schema is accessed via sheets_and_friends/tsv_in/import_slots_regardless.tsv
+#   and project.Makefile
+#   look for strings like
+#   https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.7.1/nmdc_schema/nmdc_materialized_patterns.yaml
+
+check-jsonschema = "^0.23.0"
 exhaustion-check = "^0.1.3"
 gen-pop-linkml2sheets = "^0.1.8"
 
