@@ -502,9 +502,8 @@ bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.sch
 	! $(RUN) check-jsonschema \
 		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-rna_sample_format.yaml
 	
-
-# 		 --columns-to-insert enum \
-  #		 --columns-to-insert permissible_value \
+#		 --columns-to-insert enum \
+#		 --columns-to-insert permissible_value
 
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
@@ -516,4 +515,3 @@ local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_sche
 		 --meta-model-excel-file local/meta.xlsx \
 		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
 		 --source-schema-path $<
-
