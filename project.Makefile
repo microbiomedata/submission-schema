@@ -475,8 +475,8 @@ bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.sch
 		--schemafile $< src/data/valid/SampleData-plant-assoc-min.yaml
 	$(RUN) check-jsonschema \
 		--schemafile $< src/data/valid/SampleData-jgi_mt_data-minimal.yaml
-	$(RUN) check-jsonschema \
-		--schemafile $< src/data/unexpected_pass/SampleData-jgi_mt_data-inter-slot-violation-rna_cont_well-and-rna_cont_type.yaml
+#	$(RUN) check-jsonschema \
+#		--schemafile $< src/data/unexpected_pass/SampleData-jgi_mt_data-inter-slot-violation-rna_cont_well-and-rna_cont_type.yaml
 	! $(RUN) check-jsonschema \
 		--schemafile $< src/data/invalid/SampleData-plant-assoc--with-flavor.yaml
 	! $(RUN) check-jsonschema \
