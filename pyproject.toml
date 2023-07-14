@@ -42,7 +42,7 @@ patterns = [
 #   but one file from the nmdc-schema is accessed via sheets_and_friends/tsv_in/import_slots_regardless.tsv
 #   and project.Makefile
 #   look for strings like
-#   https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.7.1/nmdc_schema/nmdc_materialized_patterns.yaml
+#   https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.7.2/nmdc_schema/nmdc_materialized_patterns.yaml
 
 check-jsonschema = "^0.23.0"
 exhaustion-check = "^0.1.3"
