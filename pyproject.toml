@@ -56,6 +56,8 @@ oaklib = "^0.5.6" # https://pypi.org/project/oaklib/0.5.6/
 schemasheets = "^0.1.21"
 sheets-and-friends = "^0.5.0"
 
+rdflib = "^6.2.0"
+
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
 ## /home/mark/gitrepos/sheets_and_friends
 #sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
