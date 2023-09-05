@@ -34,16 +34,8 @@ endif
 
 
 # basename of a YAML file in model/
-.PHONY: all clean \
-check-invalid-vs-json-schema \
-check-valid-vs-json-schema \
-clean \
-gen-project \
-gendoc \
-schema_cleanup  \
-site \
-test \
-test-python
+.PHONY: all \
+clean gen-project gendoc schema-clean site test test-python
 
 # note: "help" MUST be the first target in the file,
 # when the user types "make" they should get help info
@@ -65,7 +57,7 @@ status: check-config
 	@echo "Source: $(SOURCE_SCHEMA_PATH)"
 
 # generate products and add everything to github
-setup: install gen-project gen-examples gendoc git-init-add
+setup: install gen-project gendoc git-init-add
 
 # install any dependencies required for building
 install:
@@ -93,7 +85,7 @@ update-linkml:
 	poetry add -D linkml@latest
 
 all: site
-site: clean schema_cleanup src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 gen-project gendoc \
 examples/output/SampleData-water-data-exhaustive.regen.yaml \
 local/SampleData-water-data-exhaustive.db \
@@ -105,13 +97,9 @@ local/SampleData-water-data-exhaustive.db \
 compile-sheets:
 	$(RUN) sheets2linkml --gsheet-id $(SHEET_ID) $(SHEET_TABS) > $(SHEET_MODULE_PATH).tmp && mv $(SHEET_MODULE_PATH).tmp $(SHEET_MODULE_PATH)
 
-# In future this will be done by conversion
-gen-examples:
-	cp src/data/examples/* $(EXAMPLEDIR)
-
 # generates all project files
 
-gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml project/json/nmdc_submission_schema.json
+gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) gen-project ${GEN_PARGS}  \
 		--exclude graphql \
 		--exclude jsonld \
@@ -129,7 +117,7 @@ gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema
 		--generator-arguments '{jsonschema: {not_closed: false}, excel: {output: local/submission_schema.xlsx}, sqlddl: {output: local/submission_schema.sql}}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
-test: jsonschema-check-all-examples test-python run-examples
+test: test-python run-examples
 test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
@@ -141,16 +129,6 @@ lint:
 
 check-config:
 	@(grep my-datamodel about.yaml > /dev/null && printf "\n**Project not configured**:\n\n  - Remember to edit 'about.yaml'\n\n" || exit 0)
-
-convert-examples-to-%:
-	$(patsubst %, $(RUN) linkml-convert  % -s $(SOURCE_SCHEMA_PATH) -C Person, $(shell ${SHELL} find src/data/examples -name "*.yaml"))
-
-examples/%.yaml: src/data/examples/%.yaml
-	$(RUN) linkml-convert -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
-examples/%.json: src/data/examples/%.yaml
-	$(RUN) linkml-convert -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
-examples/%.ttl: src/data/examples/%.yaml
-	$(RUN) linkml-convert -P EXAMPLE=http://example.org/ -s $(SOURCE_SCHEMA_PATH) -C Person $< -o $@
 
 # Test documentation locally
 serve: mkd-serve
@@ -195,24 +173,5 @@ clean:
 	rm -rf $(DEST)
 	rm -rf tmp
 	rm -fr docs/*
-
-project/jsonschema/nmdc_submission_schema.schema.json: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) gen-json-schema \
-		--closed $< > $@
-
-
-# these each re-trigger all linkml schema generation steps
-# could just make a pure jsonschema generation step, or refactor the explict ordering or targets
-check-valid-vs-json-schema: project/jsonschema/nmdc_submission_schema.schema.json \
-src/data/valid/SampleData-water-data-exhaustive.yaml
-	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
-
-check-valid-soil-vs-json-schema: project/jsonschema/nmdc_submission_schema.schema.json \
-src/data/valid/SampleData-soil-data-exhaustive.yaml
-	$(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
-
-check-invalid-vs-json-schema: project/jsonschema/nmdc_submission_schema.schema.json \
-src/data/invalid/SampleData-water-data-alkalinity-list.yaml
-	! $(RUN) check-jsonschema --schemafile $(word 1,$^) $(word 2,$^)
 
 include project.Makefile

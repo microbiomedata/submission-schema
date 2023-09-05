@@ -1,33 +1,11 @@
 RUN=poetry run
 
-.PHONY: check-jsonschema-example run-linkml-validation check-all-invalid-examples check-all-valid-examples
+.PHONY:  modifications-clean run-linkml-validation schema-clean schema_all schemasheets-clean schemasheets_all \
+sheets_and_friends-clean sheets_and_friends_all
 
-JSON_SCHEMA_FILE := project/jsonschema/nmdc_submission_schema.schema.json
-INVALID_EXAMPLES_DIR := src/data/invalid
-INVALID_EXAMPLE_FILES := $(wildcard src/data/invalid/*.yaml)
-VALID_EXAMPLES_DIR := src/data/valid
-VALID_EXAMPLE_FILES := $(wildcard src/data/valid/*.yaml)
+squeaky-clean: clean schema-clean examples-clean
 
-# the check-jsonschema utility can be used to check JSON or YAML data
-#  against the JSON schema generated from teh LinkML schema
-# Future versions of LinkML will include reporting of all errors like check-jsonschema
-#  at which time these tests will be rewritten
-# see https://github.com/turbomam/examples-first-cookiecutter/issues/99
-
-jsonschema-check-all-examples: check-all-invalid-examples check-all-valid-examples
-
-check-all-invalid-examples: $(patsubst $(INVALID_EXAMPLES_DIR)/%.yaml,jsonschema-vs-invalid--%,$(INVALID_EXAMPLE_FILES))
-
-jsonschema-vs-invalid--%: $(JSON_SCHEMA_FILE) $(INVALID_EXAMPLES_DIR)/%.yaml
-	! $(RUN) check-jsonschema --schemafile $^
-
-check-all-valid-examples: $(patsubst $(VALID_EXAMPLES_DIR)/%.yaml,jsonschema-vs-valid-%,$(VALID_EXAMPLE_FILES))
-
-jsonschema-vs-valid-%: $(JSON_SCHEMA_FILE) $(VALID_EXAMPLES_DIR)/%.yaml
-	$(RUN) check-jsonschema --schemafile $^
-
-
-schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cleanup
+schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
 	rm -rf examples/*.yaml
 	rm -rf examples/output/*.db
 	rm -rf examples/output/*.json
@@ -36,7 +14,6 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	rm -rf examples/output/*.yaml
 	rm -rf examples/output/README.md
 	rm -rf from_schemasheets.lint_report.txt
-	rm -rf project/jsonschema/nmdc_submission_schema.schema.json
 	rm -rf schemasheets/from_schemasheets.lint_report.txt
 	rm -rf schemasheets/populated_tsv/*.tsv
 	rm -rf schemasheets/populated_tsv/*.txt
@@ -55,17 +32,7 @@ schema_cleanup: modifications_cleanup schemasheets_cleanup sheets_and_friends_cl
 	cp placeholder.md local
 	mkdir -p examples/output
 
-.PHONY: check-invalid-vs-json-schema \
-check-valid-vs-json-schema \
-modifications_cleanup \
-schema_all \
-schema_cleanup \
-schemasheets_all \
-schemasheets_cleanup \
-sheets_and_friends_all \
-sheets_and_friends_cleanup
-
-schemasheets_cleanup:
+schemasheets-clean:
 	rm -rf schemasheets/yaml_out/*.yaml
 
 local/from_schemasheets.yaml: schemasheets/tsv_in/prefixes.tsv \
@@ -88,7 +55,7 @@ schemasheets/tsv_in/types.tsv
 # todo: some numbers appear as strings in the schema (just examples? check for minimum value etc)
 # todo maximum value for pH has to be an int?
 
-sheets_and_friends_cleanup:
+sheets_and_friends-clean:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
 local/with_shuttles.yaml: local/from_schemasheets.yaml \
@@ -201,7 +168,7 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
 
 
-modifications_cleanup:
+modifications-clean:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
 local/nmdc.yaml:
@@ -274,9 +241,9 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 	yq -i '(.slots.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"' $@
 
-run-examples: examples_cleanup examples/output/README.md
+run-examples: examples-clean examples/output/README.md
 
-examples_cleanup:
+examples-clean:
 	rm -rf examples/output
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
@@ -466,44 +433,6 @@ src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for
 	$(RUN) linkml-json2dh \
 		--input-file $< \
 		--output-dir $(dir $@)
-
-
-.PHONY: bz-one-off-jsonschema-validations
-
-bz-one-off-jsonschema-validations: project/jsonschema/nmdc_submission_schema.schema.json
-	$(RUN) check-jsonschema \
-		--schemafile $< src/data/valid/SampleData-plant-assoc-min.yaml
-	$(RUN) check-jsonschema \
-		--schemafile $< src/data/valid/SampleData-jgi_mt_data-minimal.yaml
-#	$(RUN) check-jsonschema \
-#		--schemafile $< src/data/unexpected_pass/SampleData-jgi_mt_data-inter-slot-violation-rna_cont_well-and-rna_cont_type.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-plant-assoc--with-flavor.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-plant-associated-illegally-high-lat.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-missing-colon-source_mat_id.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-capitalized-dnase_rna.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-string-dnase_rna.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-string-rna_concentration.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-capital-rna_cont_type.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-string-rna_cont_type.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-corner-well-rna_cont_well.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-string-rna_cont_well.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-rna-capital-rna_sample_format.yaml
-	! $(RUN) check-jsonschema \
-		--schemafile $< src/data/invalid/SampleData-jgi_mt_data-illegal-rna_sample_format.yaml
-	
-#		 --columns-to-insert enum \
-#		 --columns-to-insert permissible_value
 
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
