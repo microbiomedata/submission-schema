@@ -1,0 +1,17 @@
+soil_data:
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: "2022-01-15"
+    depth: "0 - 1"
+    env_broad_scale: "______urban biome [ENVO:01000249]"
+    env_local_scale: shore
+    env_medium: "bare soil [ENVO:01001616]"
+    env_package: soil
+    geo_loc_name: "USA: Nowhere, Oklahoma"
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    store_cond: frozen
