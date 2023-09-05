@@ -11,6 +11,7 @@ include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 python = "^3.9"
 
 linkml-runtime = "^1.5.4"
+xmltodict = "^0.13.0"
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
