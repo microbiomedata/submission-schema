@@ -1,3 +1,4 @@
+import csv
 import os
 import pprint
 import time
@@ -18,7 +19,7 @@ schema_file = "../src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 
 fetch_base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 search_base = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
-retmax = 100  # todo would probably have to write iterative searches for > 300
+retmax = 3  # todo would probably have to write iterative searches for > 300
 
 biosample_id = "SAMN27723301"
 
@@ -32,6 +33,8 @@ excused_slots = [
     'samp_store_temp',
     'store_cond',
 ]
+
+TSV_OUT = "entrez.tsv"
 
 
 class TestBiosampleFromEfetch(unittest.TestCase):
@@ -151,6 +154,7 @@ class TestBiosampleFromEfetch(unittest.TestCase):
         biosample_etetch_initial_parse = xmltodict.parse(biosample_efetch_xml.text)
         returned_biosamples = biosample_etetch_initial_parse['BioSampleSet']['BioSample']
 
+        biosample_dict_list = []
         for returned_biosample in returned_biosamples:
             current_dict = {}
             # pprint.pprint(returned_biosample)
@@ -158,12 +162,13 @@ class TestBiosampleFromEfetch(unittest.TestCase):
                 model_tokens = returned_biosample["Models"]["Model"].split(".")
                 current_extension = model_tokens[-1]
                 current_dict['env_package'] = current_extension
+            current_dict['samp_name'] = biosample_id
             current_attributes = returned_biosample['Attributes']['Attribute']
             for current_attribute in current_attributes:
                 if current_attribute['@harmonized_name'] == "project_name":
                     continue
-                elif current_attribute['@harmonized_name'] == "sample_name":
-                    current_dict['samp_name'] = current_attribute['#text']
+                # elif current_attribute['@harmonized_name'] == "sample_name":
+                #     current_dict['samp_name'] = current_attribute['#text']
                 elif current_attribute['@harmonized_name'] == "elev":
                     try:
                         current_dict['elev'] = float(current_attribute['#text'])
@@ -188,6 +193,27 @@ class TestBiosampleFromEfetch(unittest.TestCase):
                 print(f"{error} from {biosample_id}")
             if not error_count:
                 print(f"No errors found in {biosample_id}")
+
+            biosample_dict_list.append(current_dict)
+
+        fieldnames = set()
+        for i in biosample_dict_list:
+            for k, _ in i.items():
+                fieldnames.add(k)
+        fieldnames = list(fieldnames)
+        fieldnames.sort()
+        if "samp_name" in fieldnames:
+            fieldnames.remove("samp_name")
+            fieldnames.insert(0, "samp_name")
+
+        # pprint.pprint(biosample_dict_list)
+        with open(TSV_OUT, "w") as tsvfile:
+            # fieldnames = ["name", "age", "occupation"]
+            writer = csv.DictWriter(tsvfile, fieldnames=fieldnames, delimiter="\t")
+            writer.writeheader()
+            for dict_data in biosample_dict_list:
+                writer.writerow(dict_data)
+            # writer.writerow(biosample_dict_list)
 
         #     self.assertEquals(returned_package, desired_package)
         #
