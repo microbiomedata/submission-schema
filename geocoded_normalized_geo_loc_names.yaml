@@ -1,8 +1,3 @@
-? ''
-: error_message: Invalid request. Missing the 'address', 'components', 'latlng' or
-    'place_id' parameter.
-  results: []
-  status: INVALID_REQUEST
 '3':
   results: []
   status: ZERO_RESULTS
@@ -6762,13 +6757,17 @@ usa hawaii kilauea volcano:
 usa hawaii makaala natural area reserve:
   results:
   - address_components:
-    - long_name: "M\u0101kaha"
-      short_name: "M\u0101kaha"
+    - long_name: Makaala Street
+      short_name: Makaala St
+      types:
+      - route
+    - long_name: Hilo
+      short_name: Hilo
       types:
       - locality
       - political
-    - long_name: Honolulu County
-      short_name: Honolulu County
+    - long_name: Hawaii County
+      short_name: Hawaii County
       types:
       - administrative_area_level_2
       - political
@@ -6782,35 +6781,34 @@ usa hawaii makaala natural area reserve:
       types:
       - country
       - political
-    - long_name: '96792'
-      short_name: '96792'
+    - long_name: '96720'
+      short_name: '96720'
       types:
       - postal_code
-    formatted_address: "M\u0101kaha, HI 96792, USA"
+    formatted_address: Makaala St, Hilo, HI 96720, USA
     geometry:
       bounds:
         northeast:
-          lat: 21.489921
-          lng: -158.19655
+          lat: 19.7058972
+          lng: -155.0583249
         southwest:
-          lat: 21.44334
-          lng: -158.241239
+          lat: 19.6977694
+          lng: -155.0690787
       location:
-        lat: 21.4664372
-        lng: -158.2100098
-      location_type: APPROXIMATE
+        lat: 19.6992847
+        lng: -155.0627123
+      location_type: GEOMETRIC_CENTER
       viewport:
         northeast:
-          lat: 21.489921
-          lng: -158.19655
+          lat: 19.7058972
+          lng: -155.0583249
         southwest:
-          lat: 21.44334
-          lng: -158.241239
+          lat: 19.6977694
+          lng: -155.0690787
     partial_match: true
-    place_id: ChIJCUefd3WLAHwRxoafiKuXR9A
+    place_id: ChIJTcfrAW1LUnkRj-oWUUgdjRU
     types:
-    - locality
-    - political
+    - route
   status: OK
 usa hawaii puu makaala natural area reserve:
   results:
@@ -10839,46 +10837,6 @@ usa newton georgia:
 usa nh carroll:
   results:
   - address_components:
-    - long_name: Carroll County
-      short_name: Carroll County
-      types:
-      - administrative_area_level_2
-      - political
-    - long_name: New Hampshire
-      short_name: NH
-      types:
-      - administrative_area_level_1
-      - political
-    - long_name: United States
-      short_name: US
-      types:
-      - country
-      - political
-    formatted_address: Carroll County, NH, USA
-    geometry:
-      bounds:
-        northeast:
-          lat: 44.2848967
-          lng: -70.9508379
-        southwest:
-          lat: 43.482913
-          lng: -71.56460310000001
-      location:
-        lat: 43.8128209
-        lng: -71.25060669999999
-      location_type: APPROXIMATE
-      viewport:
-        northeast:
-          lat: 44.2848967
-          lng: -70.9508379
-        southwest:
-          lat: 43.482913
-          lng: -71.56460310000001
-    place_id: ChIJL4j8uf0Ss0wR-WWdErh_dF8
-    types:
-    - administrative_area_level_2
-    - political
-  - address_components:
     - long_name: Carroll
       short_name: Carroll
       types:
@@ -10922,6 +10880,46 @@ usa nh carroll:
     place_id: ChIJKazTWj92tEwRQykYlwhDADU
     types:
     - locality
+    - political
+  - address_components:
+    - long_name: Carroll County
+      short_name: Carroll County
+      types:
+      - administrative_area_level_2
+      - political
+    - long_name: New Hampshire
+      short_name: NH
+      types:
+      - administrative_area_level_1
+      - political
+    - long_name: United States
+      short_name: US
+      types:
+      - country
+      - political
+    formatted_address: Carroll County, NH, USA
+    geometry:
+      bounds:
+        northeast:
+          lat: 44.2848967
+          lng: -70.9508379
+        southwest:
+          lat: 43.482913
+          lng: -71.56460310000001
+      location:
+        lat: 43.8128209
+        lng: -71.25060669999999
+      location_type: APPROXIMATE
+      viewport:
+        northeast:
+          lat: 44.2848967
+          lng: -70.9508379
+        southwest:
+          lat: 43.482913
+          lng: -71.56460310000001
+    place_id: ChIJL4j8uf0Ss0wR-WWdErh_dF8
+    types:
+    - administrative_area_level_2
     - political
   status: OK
 usa nm dona ana:
@@ -15743,15 +15741,23 @@ usa washington clark:
 usa washington fluxtower location a3:
   results:
   - address_components:
+    - long_name: '1300'
+      short_name: '1300'
+      types:
+      - street_number
+    - long_name: I Street Northwest
+      short_name: I St NW
+      types:
+      - route
+    - long_name: Northwest Washington
+      short_name: Northwest Washington
+      types:
+      - neighborhood
+      - political
     - long_name: Washington
       short_name: Washington
       types:
       - locality
-      - political
-    - long_name: District of Columbia
-      short_name: District of Columbia
-      types:
-      - administrative_area_level_2
       - political
     - long_name: District of Columbia
       short_name: DC
@@ -15763,31 +15769,28 @@ usa washington fluxtower location a3:
       types:
       - country
       - political
-    formatted_address: Washington, DC, USA
+    - long_name: '20005'
+      short_name: '20005'
+      types:
+      - postal_code
+    formatted_address: 1300 I St NW, Washington, DC 20005, USA
     geometry:
-      bounds:
-        northeast:
-          lat: 38.9958641
-          lng: -76.909393
-        southwest:
-          lat: 38.7916449
-          lng: -77.119759
       location:
-        lat: 38.9071923
-        lng: -77.0368707
-      location_type: APPROXIMATE
+        lat: 38.9010633
+        lng: -77.03009879999999
+      location_type: ROOFTOP
       viewport:
         northeast:
-          lat: 38.9958641
-          lng: -76.909393
+          lat: 38.9025470302915
+          lng: -77.0286998697085
         southwest:
-          lat: 38.7916449
-          lng: -77.119759
+          lat: 38.8998490697085
+          lng: -77.03139783029151
     partial_match: true
-    place_id: ChIJW-T2Wt7Gt4kRKl2I1CJFUsI
+    place_id: ChIJw1sWLpS3t4kRqDRWDyL1K9o
     types:
-    - locality
-    - political
+    - establishment
+    - point_of_interest
   status: OK
 usa washington fluxtower location a5:
   results:

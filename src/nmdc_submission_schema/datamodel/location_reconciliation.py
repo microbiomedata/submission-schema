@@ -29,6 +29,38 @@ def load_lines_from_file(file_path):
     return lines
 
 
+def replace_punctuation(text):
+    punctuation = string.punctuation
+    for char in punctuation:
+        text = text.replace(char, ' ')
+    return text
+
+
+def replace_multiple_whitespace(text):
+    return " ".join(text.split())
+
+
+def normalize_address(raw_address):
+    temp = raw_address.lower()
+    temp = replace_punctuation(temp)
+    temp = replace_multiple_whitespace(temp)
+    temp = temp.strip()
+    return temp
+
+
+def convert_escaped_hex_to_utf8(escaped_hex_string):
+    bytes_object = escaped_hex_string.encode('unicode_escape')
+    utf8_string = bytes_object.decode('utf-8')
+    return utf8_string
+
+
+def get_unique_dict_vals(the_dict):
+    the_set = set()
+    for k, v in the_dict.items():
+        the_set.add(v)
+    return the_set
+
+
 def get_biosamples_from_mongo_via_api(nmdc_runtime_api_address="https://api.microbiomedata.org/nmdcschema/",
                                       mongo_max_biosamples=1000,
                                       mongo_biosample_geospatial_data_tsv='mongo_biosample_geospatial_data.tsv'):
@@ -71,6 +103,7 @@ def get_biosamples_from_mongo_via_api(nmdc_runtime_api_address="https://api.micr
         temp = {}
         temp['id'] = v['id']
         temp['geo_loc_name'] = v['geo_loc_name']['has_raw_value']
+        temp['geo_loc_name_normalized'] = normalize_address(v['geo_loc_name']['has_raw_value'])
         temp['latitude'] = v['lat_lon']['latitude']
         temp['latitude_decimal_len'] = len(str(v['lat_lon']['latitude']).split('.')[1])  # todo trim off trailing zeros
         temp['longitude'] = v['lat_lon']['longitude']
@@ -86,6 +119,7 @@ def get_biosamples_from_mongo_via_api(nmdc_runtime_api_address="https://api.micr
     fieldnames = ['id',
                   'elev',
                   'geo_loc_name',
+                  'geo_loc_name_normalized',
                   'latitude',
                   "latitude_decimal_len",
                   'longitude',
@@ -157,6 +191,11 @@ def get_biosample_geospatial_data_from_portal(
                                     else:
                                         print(
                                             f"{desired_field} of {biosample[desired_field]} has {len(parts)} part(s) in {result['id']}")
+                                elif desired_field == 'geo_loc_name':
+                                    temp_portal_submitted_geospatial_data[desired_field] = biosample[desired_field]
+                                    temp_portal_submitted_geospatial_data[
+                                        'geo_loc_name_normalized'] = normalize_address(
+                                        biosample[desired_field])
                                 else:
                                     temp_portal_submitted_geospatial_data[desired_field] = biosample[desired_field]
                         temp_portal_submitted_geospatial_data['submission_id'] = result['id']
@@ -186,6 +225,7 @@ def get_biosample_geospatial_data_from_portal(
     useful_fields.append("elev_1")
     useful_fields.append("lat_lon_0")
     useful_fields.append("lat_lon_1")
+    useful_fields.append("geo_loc_name_normalized")
     useful_fields.sort()
 
     portal_submitted_biosample_fields = ['submission_id', 'author_name'] + useful_fields
@@ -199,38 +239,6 @@ def get_biosample_geospatial_data_from_portal(
             writer.writerow(row)
 
 
-def replace_punctuation(text):
-    punctuation = string.punctuation
-    for char in punctuation:
-        text = text.replace(char, ' ')
-    return text
-
-
-def replace_multiple_whitespace(text):
-    return " ".join(text.split())
-
-
-def normalize_address(raw_address):
-    temp = raw_address.lower()
-    temp = replace_punctuation(temp)
-    temp = replace_multiple_whitespace(temp)
-    temp = temp.strip()
-    return temp
-
-
-def convert_escaped_hex_to_utf8(escaped_hex_string):
-    bytes_object = escaped_hex_string.encode('unicode_escape')
-    utf8_string = bytes_object.decode('utf-8')
-    return utf8_string
-
-
-def get_unique_dict_vals(the_dict):
-    the_set = set()
-    for k, v in the_dict.items():
-        the_set.add(v)
-    return the_set
-
-
 def normalize_and_geocode_mongo_geo_loc_names(mongo_biosample_geospatial_data_tsv,
                                               portal_biosample_geospatial_data_tsv,
                                               geocoding_base_url,
@@ -240,15 +248,17 @@ def normalize_and_geocode_mongo_geo_loc_names(mongo_biosample_geospatial_data_ts
     dotenv.load_dotenv(dotenv_path)
     google_maps_key_val = os.environ.get('GOOGLE_MAPS_API_KEY')
 
-    normalized_addresses = {}
+    # normalized_addresses = {}
+    unique_normalized_geo_loc_names = set()
     with open(mongo_biosample_geospatial_data_tsv, 'r', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile, delimiter='\t')
 
         for row in reader:
             if 'geo_loc_name' in row:
-                glv = row['geo_loc_name']
-                glv_norm = normalize_address(glv)
-                normalized_addresses[glv] = glv_norm
+                unique_normalized_geo_loc_names.add(row['geo_loc_name_normalized'])
+                # glv = row['geo_loc_name_normalized']
+                # glv_norm = normalize_address(glv)
+                # normalized_addresses[glv] = glv_norm
             else:
                 print(f"no geo_loc_name for {row['id']}")
 
@@ -257,13 +267,15 @@ def normalize_and_geocode_mongo_geo_loc_names(mongo_biosample_geospatial_data_ts
 
         for row in reader:
             if 'geo_loc_name' in row:
-                glv = row['geo_loc_name']
-                glv_norm = normalize_address(glv)
-                normalized_addresses[glv] = glv_norm
+                unique_normalized_geo_loc_names.add(row['geo_loc_name_normalized'])
+                # glv = row['geo_loc_name_normalized']
+                # glv_norm = normalize_address(glv)
+                # normalized_addresses[glv] = glv_norm
             else:
                 print(f"no geo_loc_name for {row['id']}")
 
-    unique_normalized_geo_loc_names = list(get_unique_dict_vals(normalized_addresses))
+    # unique_normalized_geo_loc_names = list(get_unique_dict_vals(normalized_addresses))
+    unique_normalized_geo_loc_names = list(unique_normalized_geo_loc_names)
     unique_normalized_geo_loc_names.sort()
     print(len(unique_normalized_geo_loc_names))  # 264
 
@@ -271,14 +283,15 @@ def normalize_and_geocode_mongo_geo_loc_names(mongo_biosample_geospatial_data_ts
 
     geocoded = {}
     for address_val in unique_normalized_geo_loc_names:
-        print(address_val)
-        params = {
-            "address": address_val,
-            "key": google_maps_key_val,
-        }
-        response = requests.get(url=url_with_format, params=params)
-        result = response.json()
-        geocoded[address_val] = result
+        if address_val:
+            print(address_val)
+            params = {
+                "address": address_val,
+                "key": google_maps_key_val,
+            }
+            response = requests.get(url=url_with_format, params=params)
+            result = response.json()
+            geocoded[address_val] = result
 
     with open(output_yaml, 'w') as yamlfile:
         yaml.dump(geocoded, yamlfile, default_flow_style=False)
