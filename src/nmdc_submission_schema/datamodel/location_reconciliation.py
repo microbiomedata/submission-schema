@@ -1,24 +1,77 @@
 import csv
+import math
 import os
 import pprint
 import string
 
 import dotenv
+import pandas as pd
 import requests
 import yaml
 
+dotenv_path = "../../../local/.env"
+dotenv.load_dotenv(dotenv_path)
+google_maps_key_val = os.environ.get('GOOGLE_MAPS_API_KEY')
 
-# 'sample_collection_site': 'ONAQ',
-# https://microbiomedata.github.io/nmdc-schema/sample_collection_site/
-# https://microbiomedata.github.io/nmdc-schema/Site/
-# https://microbiomedata.github.io/nmdc-schema/FieldResearchSite/
-#   Biosample	collected_from	range	FieldResearchSite
-# https://microbiomedata.github.io/nmdc-schema/CollectingBiosamplesFromSite/
 
-# todo want slot name included in DH help screens
-# todo want structured pattern and string serialization included
+def get_elevation_from_google_maps_api(lat, lon, google_maps_key_val, geocoding_base_url):
+    params = {
+        "locations": f"{lat},{lon}",  # process multiple locations?
+        "key": google_maps_key_val,
+    }
+    elev = requests.get(url=geocoding_base_url, params=params)
+    print(elev.json())
 
-# lat lon decimal places significance : https://support.garmin.com/en-US/?faq=hRMBoCTy5a7HqVkxukhHd8
+
+def haversine(lat1, lon1, lat2, lon2):
+    # Convert latitude and longitude from degrees to radians
+    lat1 = math.radians(lat1)
+    lon1 = math.radians(lon1)
+    lat2 = math.radians(lat2)
+    lon2 = math.radians(lon2)
+
+    # Radius of the Earth in kilometers
+    radius = 6371.0  # Earth's radius in kilometers
+
+    # Haversine formula
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    # Calculate the distance
+    distance = radius * c
+
+    return distance
+
+
+def read_yaml_file(filename):
+    with open(filename, 'r') as f:
+        data = yaml.safe_load(f)
+    return data
+
+
+def read_tsv_file(filename):
+    with open(filename, 'r', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile, delimiter='\t')
+        rows = []
+        for row in reader:
+            rows.append(row)
+    return rows
+
+
+def dump_dict_to_tsv(tsv_file, lod_to_dump, fieldnames):
+    with open(tsv_file, 'w', encoding='utf-8') as csvfile:
+        # Create a DictWriter object
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter='\t')
+
+        # Write the header row
+        writer.writeheader()
+
+        # Write the data rows
+        for row in lod_to_dump:
+            writer.writerow(row)
 
 
 def load_lines_from_file(file_path):
@@ -243,10 +296,11 @@ def normalize_and_geocode_mongo_geo_loc_names(mongo_biosample_geospatial_data_ts
                                               portal_biosample_geospatial_data_tsv,
                                               geocoding_base_url,
                                               desired_format,
-                                              output_yaml='geocoded_normalized_geo_loc_names.yaml',
-                                              dotenv_path="../../../local/.env"):
-    dotenv.load_dotenv(dotenv_path)
-    google_maps_key_val = os.environ.get('GOOGLE_MAPS_API_KEY')
+                                              output_yaml,
+                                              # dotenv_path="../../../local/.env"
+                                              ):
+    # dotenv.load_dotenv(dotenv_path)
+    # google_maps_key_val = os.environ.get('GOOGLE_MAPS_API_KEY')
 
     # normalized_addresses = {}
     unique_normalized_geo_loc_names = set()
@@ -297,25 +351,89 @@ def normalize_and_geocode_mongo_geo_loc_names(mongo_biosample_geospatial_data_ts
         yaml.dump(geocoded, yamlfile, default_flow_style=False)
 
 
-get_biosample_geospatial_data_from_portal(
-    ret_max=100,
-    desired_fields=[
-        'collection_date',
-        'elev',
-        'env_package',
-        'geo_loc_name',
-        'lat_lon',
-        'samp_name',
-        'source_mat_id',
-    ],
-)
+def make_geolocation_table_with_diags(input_yaml):
+    geolocation_dict = read_yaml_file(input_yaml)
+    rows = []
+    for k, v in geolocation_dict.items():
+        if "results" in v:
+            for i in v['results']:
+                location = i['geometry']['location']
+                temp_dict = {
+                    'normalized_address': k,
+                    "lat": location['lat'],
+                    'lon': location['lng'],
+                }
+                if "formatted_address" in i:
+                    temp_dict['formatted_address'] = i['formatted_address']
+                if "bounds" in i['geometry']:
+                    bounds = i['geometry']['bounds']
+                    pprint.pprint(bounds)
+                    ne_bound = bounds['northeast']
+                    sw_bound = bounds['southwest']
+                    dist = haversine(ne_bound['lat'], ne_bound['lng'], sw_bound['lat'], sw_bound['lng'])
+                    temp_dict['ne_lat'] = ne_bound['lat']
+                    temp_dict['ne_lon'] = ne_bound['lng']
+                    temp_dict['sw_lat'] = sw_bound['lat']
+                    temp_dict['sw_lon'] = sw_bound['lng']
+                    temp_dict['distance_between_corners'] = dist
+                rows.append(temp_dict)
+    pprint.pprint(rows)
+    fieldnames = [
+        'normalized_address',
+        'formatted_address',
+        'lat',
+        'lon',
+        'distance_between_corners',
+        'ne_lat',
+        'ne_lon',
+        'sw_lat',
+        'sw_lon',
+    ]
+    dump_dict_to_tsv("geocoding_table.tsv", rows, fieldnames)
 
-mongo_biosample_geospatial_data_tsv_fp = 'mongo_biosample_geospatial_data.tsv'
 
-get_biosamples_from_mongo_via_api(mongo_biosample_geospatial_data_tsv=mongo_biosample_geospatial_data_tsv_fp)
+def mongodb_lat_lon_diff(mongodb_biosample_geospatial_data_tsv, geocoding_table_tsv):  # todo output_tsv
+    mongodb_frame = pd.read_csv(mongodb_biosample_geospatial_data_tsv, sep='\t')
+    geocoding_rows = pd.read_csv(geocoding_table_tsv, sep='\t')
+    merged = pd.merge(mongodb_frame, geocoding_rows, how='left', left_on='geo_loc_name_normalized',
+                      right_on='normalized_address')
+    merged_lod = merged.to_dict('records')
+    for i in merged_lod:
+        i['lat_lon_diff'] = haversine(i['latitude'], i['longitude'], i['lat'], i['lon'])
+    merged_frame = pd.DataFrame(merged_lod)
+    merged_frame.to_csv("mongodb_lat_lon_diff.tsv", sep='\t')
 
-normalize_and_geocode_mongo_geo_loc_names(geocoding_base_url="https://maps.googleapis.com/maps/api/geocode/",
-                                          desired_format="json",
-                                          mongo_biosample_geospatial_data_tsv=mongo_biosample_geospatial_data_tsv_fp,
-                                          portal_biosample_geospatial_data_tsv='portal_submitted_biosample_data.tsv',
-                                          )
+
+# "MAIN" BELOW
+
+
+# get_biosample_geospatial_data_from_portal(
+#     ret_max=100,
+#     desired_fields=[
+#         'collection_date',
+#         'elev',
+#         'env_package',
+#         'geo_loc_name',
+#         'lat_lon',
+#         'samp_name',
+#         'source_mat_id',
+#     ],
+# )
+#
+# mongo_biosample_geospatial_data_tsv_fp = 'mongo_biosample_geospatial_data.tsv'
+#
+# get_biosamples_from_mongo_via_api(mongo_biosample_geospatial_data_tsv=mongo_biosample_geospatial_data_tsv_fp)
+#
+# normalize_and_geocode_mongo_geo_loc_names(geocoding_base_url="https://maps.googleapis.com/maps/api/geocode/",
+#                                           desired_format="json",
+#                                           mongo_biosample_geospatial_data_tsv=mongo_biosample_geospatial_data_tsv_fp,
+#                                           portal_biosample_geospatial_data_tsv='portal_submitted_biosample_data.tsv',
+#                                           output_yaml='geocoded_normalized_geo_loc_names.yaml'
+#                                           )
+
+# make_geolocation_table_with_diags('geocoded_normalized_geo_loc_names.yaml')
+
+# get_elevation_from_google_maps_api(lat=38.889248, lon=-77.050636, google_maps_key_val=google_maps_key_val,
+#                                    geocoding_base_url="https://maps.googleapis.com/maps/api/elevation/json")
+
+mongodb_lat_lon_diff("mongo_biosample_geospatial_data.tsv", "geocoding_table.tsv")
