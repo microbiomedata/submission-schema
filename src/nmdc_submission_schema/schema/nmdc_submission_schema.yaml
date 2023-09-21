@@ -43469,7 +43469,6 @@ classes:
       - fluor
       - geo_loc_name
       - glucosidase_act
-      - horizon_meth
       - lat_lon
       - light_intensity
       - mean_frict_vel
