@@ -99,10 +99,6 @@
                     "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
                 "humidity": {
                     "description": "Amount of water vapour in the air, at the time of sampling",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
@@ -453,10 +449,6 @@
                 "glucosidase_act": {
                     "description": "Measurement of glucosidase activity",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
-                    "type": "string"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "lat_lon": {
@@ -1169,10 +1161,6 @@
                 "height_carper_fiber": {
                     "description": "The average carpet fiber height in the indoor environment",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
-                    "type": "string"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "indoor_space": {
@@ -2712,10 +2700,6 @@
                     "description": "Original temperature of the hydrocarbon resource",
                     "type": "string"
                 },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
@@ -3254,10 +3238,6 @@
                     "description": "Original temperature of the hydrocarbon resource",
                     "type": "string"
                 },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
                 "iw_bt_date_well": {
                     "description": "Injection water breakthrough date per well following a secondary and/or tertiary recovery",
                     "type": "string"
@@ -3716,10 +3696,6 @@
                 },
                 "gravidity": {
                     "description": "Whether or not subject is gravid, and if yes date due or date post-conception, specifying which is used",
-                    "type": "string"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "host_age": {
@@ -4505,10 +4481,6 @@
                     "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
                 "lat_lon": {
                     "description": "This is currently a required field but it's not clear if this should be required for human hosts",
                     "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
@@ -4858,10 +4830,6 @@
                 },
                 "herbicide_regm": {
                     "description": "Information about treatment involving use of herbicides; information about treatment involving use of growth hormones; should include the name of herbicide, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens",
-                    "type": "string"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "host_age": {
@@ -5709,10 +5677,6 @@
                 "glucosidase_act": {
                     "description": "Measurement of glucosidase activity",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
-                    "type": "string"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "lat_lon": {
@@ -7016,10 +6980,6 @@
                     "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
-                    "type": "string"
-                },
                 "indust_eff_percent": {
                     "description": "Percentage of industrial effluents received by wastewater treatment plant",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
@@ -7453,10 +7413,6 @@
                 "glucosidase_act": {
                     "description": "Measurement of glucosidase activity",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
-                    "type": "string"
-                },
-                "horizon_meth": {
-                    "description": "Reference or method used in determining the horizon",
                     "type": "string"
                 },
                 "lat_lon": {

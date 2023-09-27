@@ -46,7 +46,6 @@ water_data:
     fluor: 100 units
     geo_loc_name: 'xyz: xyz, xyz'
     glucosidase_act: 100 units
-    horizon_meth: xyz
     lat_lon: 78 89
     light_intensity: 100 units
     mean_frict_vel: 100 units
