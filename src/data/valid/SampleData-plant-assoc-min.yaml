@@ -8,7 +8,6 @@ plant_associated_data: # this is linking a SampleData instance to a PlantAssocia
     env_broad_scale: Code Generation [OP:8888]
     env_local_scale: Code Generation [OP:8888]
     env_medium: Code Generation [OP:8888]
-    env_package: plant-associated
     geo_loc_name: "USA: Philadelphia, Pennsylvania"
     growth_facil: field
     lat_lon: 77 88

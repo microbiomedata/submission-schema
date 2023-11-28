@@ -32,7 +32,6 @@ soil_data:
     env_broad_scale: '______urban biome [ENVO:01000249]'
     env_local_scale: '________tunnel [ENVO:00000068]'
     env_medium: 'bare soil [ENVO:01001616]'
-    env_package: soil
     experimental_factor: xxx [ENVO:00000000]
     experimental_factor_other: xxx
     extreme_event: xxx
@@ -116,7 +115,6 @@ soil_data:
     samp_name: b
     env_medium: bare soil [ENVO:01001616]
     store_cond: frozen
-    env_package: soil
     sample_link: z:99
     geo_loc_name: 'USA: Maryland, Bethesda'
     growth_facil: greenhouse
