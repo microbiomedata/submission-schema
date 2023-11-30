@@ -7,10 +7,25 @@ license = "MIT"
 readme = "README.md"
 include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
 
+# note that the nmdc-schema is not imported as a module,
+#   but one file from the nmdc-schema is accessed via sheets_and_friends/tsv_in/import_slots_regardless.tsv
+#   and project.Makefile
+#   look for strings like
+#   https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.7.2/nmdc_schema/nmdc_materialized_patterns.yaml
 [tool.poetry.dependencies]
 python = "^3.9"
+linkml-runtime = "^1.6.2"
 
-linkml-runtime = "^1.5.4"
+[tool.poetry.group.dev.dependencies]
+exhaustion-check = "^0.1.3"
+gen-pop-linkml2sheets = "^0.1.8"
+linkml = "^1.6.3"
+mkdocs-material = "^9.1.2"
+mkdocs-mermaid2-plugin = "^0.6.0"
+oaklib = "^0.5.6" # https://pypi.org/project/oaklib/0.5.6/
+rdflib = "^6.2.0"
+schemasheets = "^0.1.21"
+sheets-and-friends = "^0.5.0"
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
@@ -35,23 +50,6 @@ patterns = [
     "(^version:\\s*['\\\"]?)[^'\\\"]*?(['\\\"]?)$"
 ]
 
-[tool.poetry.dev-dependencies]
-
-# note that the nmdc-schema is not imported as a module,
-#   but one file from the nmdc-schema is accessed via sheets_and_friends/tsv_in/import_slots_regardless.tsv
-#   and project.Makefile
-#   look for strings like
-#   https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v7.7.2/nmdc_schema/nmdc_materialized_patterns.yaml
-
-exhaustion-check = "^0.1.3"
-gen-pop-linkml2sheets = "^0.1.8"
-linkml = "^1.5.6"
-mkdocs-material = "^9.1.2"
-mkdocs-mermaid2-plugin = "^0.6.0"
-oaklib = "^0.5.6" # https://pypi.org/project/oaklib/0.5.6/
-rdflib = "^6.2.0"
-schemasheets = "^0.1.21"
-sheets-and-friends = "^0.5.0"
 
 ## /Users/MAM/Documents/gitrepos/sheets_and_friends
 ## /home/mark/gitrepos/sheets_and_friends

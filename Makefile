@@ -98,7 +98,8 @@ compile-sheets:
 	$(RUN) sheets2linkml --gsheet-id $(SHEET_ID) $(SHEET_TABS) > $(SHEET_MODULE_PATH).tmp && mv $(SHEET_MODULE_PATH).tmp $(SHEET_MODULE_PATH)
 
 # generates all project files
-
+# gen-owl fails with LinkML 1.6.x; needs further investigation
+# See https://github.com/microbiomedata/issues/issues/542
 gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) gen-project ${GEN_PARGS}  \
 		--exclude graphql \
@@ -111,7 +112,7 @@ gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema
 		--exclude shex \
 		--include excel \
 		--include jsonschema \
-		--include owl \
+		--exclude owl \
 		--include python \
 		--include sqlddl \
 		--generator-arguments '{jsonschema: {not_closed: false}, excel: {output: local/submission_schema.xlsx}, sqlddl: {output: local/submission_schema.sql}}' \

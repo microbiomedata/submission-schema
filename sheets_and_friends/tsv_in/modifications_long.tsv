@@ -216,11 +216,9 @@ BiofilmInterface|SedimentInterface|SoilInterface	tot_org_carb	overwrite_examples
 BiofilmInterface|SedimentInterface|SoilInterface	tot_org_carb	add_attribute	todos			check description. How are they different?
 SoilInterface	water_cont_soil_meth	overwrite_examples	examples			J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503|https://dec.alaska.gov/applications/spar/webcalc/definitions.htm
 SoilInterface	water_cont_soil_meth	add_attribute	todos			Why is it soil water content method in the name but not the title? Is this slot used in other samples?|Soil water content can be measure MANY ways and often, multiple ways are used in one experiment (gravimetric water content and water holding capacity and water filled pore space, to name a few).|Should this be multi valued? How to we manage and validate this?
-BiofilmInterface|SedimentInterface|SoilInterface	water_content	overwrite_examples	examples			75%|75 %|0.75 g water/g dry soil|75% water holding capacity|1.1 g fresh weight/ dry weight|10% water filled pore space
 BiofilmInterface|SedimentInterface|SoilInterface	water_content		expected_value			string
 BiofilmInterface|SedimentInterface|SoilInterface	water_content		preferred_unit			gram per gram or cubic centimeter per cubic centimeter
 BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_attribute	string_serialization			{float or pct} {unit}
-BiofilmInterface|SedimentInterface|SoilInterface	water_content	add_attribute	todos			value in preferred unit is too limiting. need to change this|check and correct validation so examples are accepted|This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|how to manage multiple water content methods?
 PlantAssociatedInterface|SoilInterface	watering_regm	overwrite_examples	examples			1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M|75% water holding capacity; constant
 PlantAssociatedInterface|SoilInterface	watering_regm	replace_attribute	recommended			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|DhMultiviewCommonColumnsMixin|EmslInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|JgiMgInterface|JgiMtInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	replace_attribute	range			OxyStatSampEnum
