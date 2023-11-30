@@ -86,10 +86,6 @@
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
-                },
                 "experimental_factor": {
                     "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
                     "type": "string"
@@ -240,7 +236,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -431,10 +426,6 @@
                 "env_medium": {
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": "string"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -694,7 +685,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -1026,10 +1016,6 @@
                 "env_medium": {
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": "string"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "escalator": {
@@ -1595,7 +1581,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "analysis_type",
@@ -2653,10 +2638,6 @@
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
-                },
                 "ethylbenzene": {
                     "description": "Concentration of ethylbenzene in the sample",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
@@ -2994,7 +2975,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -3189,10 +3169,6 @@
                 "env_medium": {
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": "string"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "ethylbenzene": {
@@ -3535,7 +3511,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -3675,10 +3650,6 @@
                 "env_medium": {
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": "string"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -3908,7 +3879,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -4468,10 +4438,6 @@
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
-                },
                 "experimental_factor": {
                     "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
                     "type": "string"
@@ -4659,7 +4625,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -4781,10 +4746,6 @@
                 "env_medium": {
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": "string"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -5108,7 +5069,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "growth_facil",
                 "lat_lon",
@@ -5661,10 +5621,6 @@
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
-                },
                 "experimental_factor": {
                     "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
                     "type": "string"
@@ -5944,7 +5900,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -6156,10 +6111,6 @@
                     "$ref": "#/$defs/EnvMediumSoilEnum",
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
                 },
                 "experimental_factor": {
                     "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
@@ -6552,7 +6503,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "growth_facil",
                 "lat_lon",
@@ -6962,10 +6912,6 @@
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
-                    "type": "string"
-                },
                 "experimental_factor": {
                     "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
                     "type": "string"
@@ -7171,7 +7117,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "lat_lon",
                 "samp_store_temp",
@@ -7391,10 +7336,6 @@
                 "env_medium": {
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": "string"
-                },
-                "env_package": {
-                    "description": "Select the MIxS enviromental package that best describes the environment from which your sample was collected.",
                     "type": "string"
                 },
                 "experimental_factor": {
@@ -7699,7 +7640,6 @@
                 "env_broad_scale",
                 "env_local_scale",
                 "env_medium",
-                "env_package",
                 "geo_loc_name",
                 "analysis_type",
                 "samp_name"
