@@ -25,7 +25,7 @@ mkdocs-mermaid2-plugin = "^0.6.0"
 oaklib = "^0.5.6" # https://pypi.org/project/oaklib/0.5.6/
 rdflib = "^6.2.0"
 schemasheets = "^0.1.21"
-sheets-and-friends = "^0.5.0"
+sheets-and-friends = "^0.5.1"
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
