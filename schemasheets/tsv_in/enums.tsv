@@ -6,6 +6,7 @@ AnalysisTypeEnum	metagenomics	placeholder PV descr
 AnalysisTypeEnum	metaproteomics	placeholder PV descr				
 AnalysisTypeEnum	metatranscriptomics	placeholder PV descr				
 AnalysisTypeEnum	natural organic matter	placeholder PV descr				
+AnalysisTypeEnum	none	placeholder PV descr				
 AnalysisTypeEnum		placeholder enum descr				
 BioticRelationshipEnum	commensalism	placeholder PV descr		samp_biotic_relationship	https://genomicsstandardsconsortium.github.io/mixs/biotic_relationship_enum/	biotic_relationship_enum: free living|parasitism|commensalism|symbiotic|mutualism
 BioticRelationshipEnum	free living	placeholder PV descr				
