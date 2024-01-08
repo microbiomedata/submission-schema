@@ -2,7 +2,8 @@ DH pulldown column	DH pulldown option	description	term_id	old SNTC name	MIxS see
 > enum	permissible_value	description	ignore	annotations	see_also	notes
 >				inner_key: sntc_name	"internal_separator: ""|"""	"internal_separator: ""|"""
 AnalysisTypeEnum	metabolomics	placeholder PV descr				
-AnalysisTypeEnum	metagenomics	placeholder PV descr				
+AnalysisTypeEnum	metagenomics - short read	placeholder PV descr				
+AnalysisTypeEnum	metagenomics - long read	placeholder PV descr				
 AnalysisTypeEnum	metaproteomics	placeholder PV descr				
 AnalysisTypeEnum	metatranscriptomics	placeholder PV descr				
 AnalysisTypeEnum	natural organic matter	placeholder PV descr				
