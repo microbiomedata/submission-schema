@@ -207,8 +207,8 @@ local/nmdc.yaml
 		--format yaml $@.raw > $@
 	- $(RUN) linkml-lint $@ > local/with_modifications.lint_report.txt
 
-src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml
-	cp $< $@
+src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
+	inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $@
 # remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert
 #   esp to tsv? and dumping to SQLite?
 # follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
@@ -309,6 +309,10 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)
 	$(RUN) gen-linkml $< --format json --materialize-patterns --materialize-attributes > $@
+
+project/thirdparty/GoldEcosystemTree.json:
+	mkdir -p $(@D)
+	wget https://gold.jgi.doe.gov/download?mode=biosampleEcosystemsJson -O $@
 
 dh-dev: project/json/nmdc_submission_schema.json
 	cd data_harmonizer && npm run dev
