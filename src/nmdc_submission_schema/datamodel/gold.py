@@ -57,7 +57,7 @@ def inject_gold_pathway_terms(gold_ecosystem_tree_path: Path, input_schema_path:
 
     for term_set in term_sets:
         for level in levels:
-            pvs = [PermissibleValue(text=term) for term in term_set.terms[level]]
+            pvs = [PermissibleValue(text=term) for term in sorted(term_set.terms[level])]
             schemaview.add_enum(EnumDefinition(
                 name=level.value + term_set.schema_enum_suffix + 'Enum',
                 permissible_values=pvs
