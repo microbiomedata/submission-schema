@@ -123,6 +123,9 @@ SoilInterface	heavy_metals_meth	replace_attribute	title			heavy metals method/ e
 SoilInterface	heavy_metals_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface	horizon_meth	replace_attribute	title			horizon method
 PlantAssociatedInterface|SoilInterface	humidity_regm	replace_attribute	recommended			true
+SoilInterface	infiltrations	overwrite_examples	examples			00:01:32;00:00:53
+SoilInterface	infiltrations	replace_attribute	multivalued			FALSE
+SoilInterface	infiltrations	replace_attribute	pattern			^(?:(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])(?:;(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])*$
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	range			string
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	string_serialization			{lat lon}
