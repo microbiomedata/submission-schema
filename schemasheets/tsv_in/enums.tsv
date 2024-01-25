@@ -27,34 +27,6 @@ DnaSampleFormatEnum	RNAStable	placeholder PV descr
 DnaSampleFormatEnum	TE	placeholder PV descr				
 DnaSampleFormatEnum	Water	placeholder PV descr				
 DnaSampleFormatEnum		placeholder enum descr				
-EcosystemCategoryEnum	Terrestrial	placeholder PV descr			https://github.com/microbiomedata/sheets_and_friends/issues/22	
-EcosystemCategoryEnum		placeholder enum descr				
-EcosystemEnum	Environmental	placeholder PV descr				
-EcosystemEnum		placeholder enum descr				
-EcosystemSubtypeEnum	Biocrust	placeholder PV descr				
-EcosystemSubtypeEnum	Biofilm	placeholder PV descr				
-EcosystemSubtypeEnum	Bulk soil	placeholder PV descr				
-EcosystemSubtypeEnum	Clay	placeholder PV descr				
-EcosystemSubtypeEnum	Floodplain	placeholder PV descr				
-EcosystemSubtypeEnum	Fossil	placeholder PV descr				
-EcosystemSubtypeEnum	Glacier	placeholder PV descr				
-EcosystemSubtypeEnum	Loam	placeholder PV descr				
-EcosystemSubtypeEnum	Mineral horizon	placeholder PV descr				
-EcosystemSubtypeEnum	Nature reserve	placeholder PV descr				
-EcosystemSubtypeEnum	Organic layer	placeholder PV descr				
-EcosystemSubtypeEnum	Paddy field/soil	placeholder PV descr				
-EcosystemSubtypeEnum	Pasture	placeholder PV descr				
-EcosystemSubtypeEnum	Peat	placeholder PV descr				
-EcosystemSubtypeEnum	Ranch	placeholder PV descr				
-EcosystemSubtypeEnum	Sand	placeholder PV descr				
-EcosystemSubtypeEnum	Silt	placeholder PV descr				
-EcosystemSubtypeEnum	Soil crust	placeholder PV descr				
-EcosystemSubtypeEnum	Unclassified	placeholder PV descr				
-EcosystemSubtypeEnum	Watershed	placeholder PV descr				
-EcosystemSubtypeEnum	Wetlands	placeholder PV descr				
-EcosystemSubtypeEnum		placeholder enum descr				
-EcosystemTypeEnum	Soil	placeholder PV descr				
-EcosystemTypeEnum		placeholder enum descr				
 EnvPackageEnum	soil	placeholder PV descr				I don't think this is a MIxS term anymore, so it make sense to define it here
 EnvPackageEnum		placeholder enum descr				
 GrowthFacilEnum	experimental_garden	placeholder PV descr		growth_facility	https://genomicsstandardsconsortium.github.io/mixs/growth_facil/	string range according to MIxS
@@ -89,31 +61,6 @@ RnaSampleFormatEnum		placeholder enum descr
 SampleTypeEnum	soil	placeholder PV descr				
 SampleTypeEnum	water_extract_soil	placeholder PV descr				
 SampleTypeEnum		placeholder enum descr				
-SpecificEcosystemEnum	Agricultural	placeholder PV descr				
-SpecificEcosystemEnum	Agricultural land	placeholder PV descr				
-SpecificEcosystemEnum	Agricultural soil	placeholder PV descr				
-SpecificEcosystemEnum	Alpine	placeholder PV descr				
-SpecificEcosystemEnum	Bog	placeholder PV descr				
-SpecificEcosystemEnum	Boreal forest	placeholder PV descr				
-SpecificEcosystemEnum	Contaminated	placeholder PV descr				
-SpecificEcosystemEnum	Desert	placeholder PV descr				
-SpecificEcosystemEnum	Farm	placeholder PV descr				
-SpecificEcosystemEnum	Forest soil	placeholder PV descr				
-SpecificEcosystemEnum	Forest Soil	placeholder PV descr				
-SpecificEcosystemEnum	Grasslands	placeholder PV descr				
-SpecificEcosystemEnum	Meadow	placeholder PV descr				
-SpecificEcosystemEnum	Mine	placeholder PV descr				
-SpecificEcosystemEnum	Mine drainage	placeholder PV descr				
-SpecificEcosystemEnum	Oil-contaminated	placeholder PV descr				
-SpecificEcosystemEnum	Orchard soil	placeholder PV descr				
-SpecificEcosystemEnum	Permafrost	placeholder PV descr				
-SpecificEcosystemEnum	Riparian soil	placeholder PV descr				
-SpecificEcosystemEnum	River	placeholder PV descr				
-SpecificEcosystemEnum	Shrubland	placeholder PV descr				
-SpecificEcosystemEnum	Tropical rainforest	placeholder PV descr				
-SpecificEcosystemEnum	Unclassified	placeholder PV descr				
-SpecificEcosystemEnum	Uranium contaminated	placeholder PV descr				
-SpecificEcosystemEnum		placeholder enum descr				
 StoreCondEnum	fresh	placeholder PV descr		storage_condt		see samp_store_dur, samp_store_loc, samp_store_temp and store_cond (which takes a string range according to mixs-source).
 StoreCondEnum	frozen	placeholder PV descr				
 StoreCondEnum	lyophilized	placeholder PV descr				
