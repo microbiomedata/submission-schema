@@ -15,7 +15,4 @@ soil_data:
     samp_store_temp: "-80 Celsius"
     store_cond: frozen
     bulk_elect_conductivity: '0.017 mS'
-    infiltrations: 
-      - 01:24:03
-      - 00:02:33
-      - 00:02:02
+    infiltrations: "01:24:03;00:02:33;00:02:02"
