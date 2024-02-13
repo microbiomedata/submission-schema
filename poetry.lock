@@ -129,13 +129,13 @@ web = ["bootstrap-flask (<=2.0.0)", "flasgger", "flask", "markdown", "pyyaml", "
 
 [[package]]
 name = "boltons"
-version = "23.1.1"
+version = "23.0.0"
 description = "When they're not builtins, they're boltons."
 optional = false
 python-versions = "*"
 files = [
-    {file = "boltons-23.1.1-py2.py3-none-any.whl", hash = "sha256:80a8cd930ff21fbf03545b9863e5799d0c3e7e0e3b2546bdaf2efccd7b3708cc"},
-    {file = "boltons-23.1.1.tar.gz", hash = "sha256:d2cb2fa83cf2ebe791be1e284183e8a43a1031355156a968f8e0a333ad2448fc"},
+    {file = "boltons-23.0.0-py2.py3-none-any.whl", hash = "sha256:f716a1b57698a5b19062f3146cb5ce3549904028a2f267c2c0cf584eea3ad75b"},
+    {file = "boltons-23.0.0.tar.gz", hash = "sha256:8c50a71829525835ca3c849c7ed2511610c972b4dddfcd41a4a5447222beb4b0"},
 ]
 
 [[package]]
@@ -629,13 +629,13 @@ dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
 name = "glom"
-version = "23.5.0"
+version = "23.3.0"
 description = "A declarative object transformer and formatter, for conglomerating nested data."
 optional = false
 python-versions = "*"
 files = [
-    {file = "glom-23.5.0-py3-none-any.whl", hash = "sha256:fe4e9be4dc93c11a99f8277042e4bee95419c02cda4b969f504508b0a1aa6a66"},
-    {file = "glom-23.5.0.tar.gz", hash = "sha256:06af5e3486aacc59382ba34e53ebeabd7a9345d78f7dbcbee26f03baa4b83bac"},
+    {file = "glom-23.3.0-py3-none-any.whl", hash = "sha256:b6883b686ab6cab3e4f081bb4a5502e9a997024f08c5fecf59214e75a62c8f4b"},
+    {file = "glom-23.3.0.tar.gz", hash = "sha256:031699280fa4666048e43d2eab68be1044ffcd487ab74acb792de2eeb0bc2515"},
 ]
 
 [package.dependencies]
@@ -644,7 +644,6 @@ boltons = ">=19.3.0"
 face = "20.1.1"
 
 [package.extras]
-toml = ["tomli"]
 yaml = ["PyYAML"]
 
 [[package]]
@@ -3093,13 +3092,13 @@ testing-integration = ["build[virtualenv]", "filelock (>=3.4.0)", "jaraco.envs (
 
 [[package]]
 name = "sheets-and-friends"
-version = "0.5.1"
+version = "0.5.2"
 description = "Enhance a LinkML model with imported and optionally modified slots"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "sheets_and_friends-0.5.1-py3-none-any.whl", hash = "sha256:860fe594a0b7441ed63adb5b4877b68920e64d2e270790e69ff3943ba0389f26"},
-    {file = "sheets_and_friends-0.5.1.tar.gz", hash = "sha256:155677cc77abe89abf295d1fc21e7079cd91eb54f2624fddbdc0a65d55880a85"},
+    {file = "sheets_and_friends-0.5.2-py3-none-any.whl", hash = "sha256:a9c93829a032367d3a88a06e0c89f3625cde32d2c92d7de5fac511f9033605c5"},
+    {file = "sheets_and_friends-0.5.2.tar.gz", hash = "sha256:89979c6131d0b05617344a714d9c7fdb238a4ec8ad9ef1f64c2ff83112bbf42e"},
 ]
 
 [package.dependencies]
@@ -3652,4 +3651,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "a58ac67e5fc03d2e221212fa82b0e874297ac937c8eebdcd868ab26541ef81e9"
+content-hash = "78d80f1e497b357910931eae4cdf9fb2234f81c9bc45fbf2364a70ff8933e3af"
