@@ -1,13 +1,6 @@
 DH pulldown column	DH pulldown option	description	term_id	old SNTC name	MIxS see also	notes
 > enum	permissible_value	description	ignore	annotations	see_also	notes
 >				inner_key: sntc_name	"internal_separator: ""|"""	"internal_separator: ""|"""
-AnalysisTypeEnum	metabolomics	placeholder PV descr				
-AnalysisTypeEnum	metagenomics	placeholder PV descr
-AnalysisTypeEnum	metagenomics_long_read	placeholder PV descr
-AnalysisTypeEnum	metaproteomics	placeholder PV descr				
-AnalysisTypeEnum	metatranscriptomics	placeholder PV descr				
-AnalysisTypeEnum	natural organic matter	placeholder PV descr				
-AnalysisTypeEnum		placeholder enum descr				
 BioticRelationshipEnum	commensalism	placeholder PV descr		samp_biotic_relationship	https://genomicsstandardsconsortium.github.io/mixs/biotic_relationship_enum/	biotic_relationship_enum: free living|parasitism|commensalism|symbiotic|mutualism
 BioticRelationshipEnum	free living	placeholder PV descr				
 BioticRelationshipEnum	mutualism	placeholder PV descr				
