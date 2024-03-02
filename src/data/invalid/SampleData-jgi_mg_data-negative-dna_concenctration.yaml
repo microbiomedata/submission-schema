@@ -1,8 +1,8 @@
-jgi_mg_sr_data:
+jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    dna_concentration: 1.23
+    dna_concentration: -1.23
     dna_cont_type: plate
     dna_cont_well: C3
     dna_container_id: xxx
@@ -18,4 +18,3 @@ jgi_mg_sr_data:
     dna_volume: 0
     proposal_dna: xxx
     samp_name: xxx
-    dna_absorb1: seven

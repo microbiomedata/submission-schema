@@ -1,9 +1,11 @@
-jgi_mg_sr_data:
+jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
     dna_concentration: 1.23
-    dna_container_id: xxx
+    dna_cont_type: plate
+    dna_cont_well: C3
+    dna_container_id: mount_mordor_012356789
     dna_dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx
@@ -16,5 +18,3 @@ jgi_mg_sr_data:
     dna_volume: 0
     proposal_dna: xxx
     samp_name: xxx
-    source_mat_id: x:1
-

@@ -1,4 +1,4 @@
-jgi_mg_sr_data:
+jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -15,7 +15,7 @@ jgi_mg_sr_data:
     dna_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
-    dna_volume: 0
+    dna_volume: 1.23 liters
     proposal_dna: xxx
     samp_name: xxx
-    dna_absorb2: four
+

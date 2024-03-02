@@ -1,12 +1,13 @@
-jgi_mg_sr_data:
+jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
+    dna_collect_site: xxx
     dna_concentration: 1.23
     dna_cont_type: plate
     dna_cont_well: C3
     dna_container_id: xxx
-    dna_dnase: false
+    dna_dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx
     dna_samp_id: xxx
@@ -15,7 +16,7 @@ jgi_mg_sr_data:
     dna_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
-    dna_volume: 1.23
+    dna_volume: 999
     proposal_dna: xxx
     samp_name: xxx
 

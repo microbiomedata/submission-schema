@@ -1,4 +1,4 @@
-jgi_mg_sr_data:
+jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -10,12 +10,12 @@ jgi_mg_sr_data:
     dna_isolate_meth: xxx
     dna_project_contact: xxx
     dna_samp_id: xxx
-    dna_sample_format: red red wine
+    dna_sample_format: DNAStable
     dna_sample_name: xxx
     dna_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
-    dna_volume: 1.23
+    dna_volume: 999
     proposal_dna: xxx
     samp_name: xxx
-
+    dna_organisms: xxx
