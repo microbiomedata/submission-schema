@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-05T10:55:22
+# Generation date: 2024-03-05T15:47:21
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -9981,11 +9981,19 @@ class RnaSampleFormatEnum(EnumDefinitionImpl):
 class SampleTypeEnum(EnumDefinitionImpl):
 
     soil = PermissibleValue(text="soil")
-    water_extract_soil = PermissibleValue(text="water_extract_soil")
+    sediment = PermissibleValue(text="sediment")
+    water = PermissibleValue(text="water")
 
     _defn = EnumDefinition(
         name="SampleTypeEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "soil - water extract",
+            PermissibleValue(text="soil - water extract"))
+        setattr(cls, "plant associated",
+            PermissibleValue(text="plant associated"))
 
 class StoreCondEnum(EnumDefinitionImpl):
     """

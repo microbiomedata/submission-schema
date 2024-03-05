@@ -334,7 +334,7 @@ CREATE TABLE "EmslInterface" (
 	project_id TEXT NOT NULL, 
 	replicate_number INTEGER, 
 	sample_shipped TEXT NOT NULL, 
-	sample_type VARCHAR(18) NOT NULL, 
+	sample_type VARCHAR(20) NOT NULL, 
 	technical_reps INTEGER, 
 	oxy_stat_samp VARCHAR(9), 
 	analysis_type VARCHAR(22) NOT NULL, 
