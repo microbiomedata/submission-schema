@@ -55,6 +55,12 @@
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Fish tank&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
+				{"name": "Freshwater RAS" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Freshwater RAS"  , "children" : [  
+				{"name": "Biofilter" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Freshwater RAS&Biosample.Specific Ecosystem=Biofilter" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Freshwater RAS&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Marine fish farm" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Marine fish farm"  , "children" : [  
 				{"name": "Sediment" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Marine fish farm&Biosample.Specific Ecosystem=Sediment" },
   
@@ -81,6 +87,12 @@
   
 				{"name": "Photobioreactor (PBR)" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Photobioreactor (PBR)"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Photobioreactor (PBR)&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Seawater RAS" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Seawater RAS"  , "children" : [  
+				{"name": "Biofilter" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Seawater RAS&Biosample.Specific Ecosystem=Biofilter" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Seawater RAS&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Artificial ecosystem&Biosample.Ecosystem+Type=Aquaculture&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
@@ -373,6 +385,12 @@
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=MBR (Membrane bioreactor)&Biosample.Ecosystem+Subtype=Activated sludge&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
+				{"name": "Anaerobic" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=MBR (Membrane bioreactor)&Biosample.Ecosystem+Subtype=Anaerobic"  , "children" : [  
+				{"name": "Sludge" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=MBR (Membrane bioreactor)&Biosample.Ecosystem+Subtype=Anaerobic&Biosample.Specific Ecosystem=Sludge" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=MBR (Membrane bioreactor)&Biosample.Ecosystem+Subtype=Anaerobic&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Mixed liquor" , "count": "3" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=MBR (Membrane bioreactor)&Biosample.Ecosystem+Subtype=Mixed liquor"  , "children" : [  
 				{"name": "Unclassified" , "count": "3" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=MBR (Membrane bioreactor)&Biosample.Ecosystem+Subtype=Mixed liquor&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -625,6 +643,16 @@
 },
   
 			{"name": "Building" , "count": "75" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building"  , "children" : [  
+				{"name": "Hotel" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Hotel"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Hotel&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Sink" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Sink"  , "children" : [  
+				{"name": "Kitchen sink" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Sink&Biosample.Specific Ecosystem=Kitchen sink" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Sink&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Unclassified" , "count": "75" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "75" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Building&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
@@ -653,6 +681,12 @@
 			{"name": "City" , "count": "1464" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City"  , "children" : [  
 				{"name": "Park" , "count": "8" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City&Biosample.Ecosystem+Subtype=Park"  , "children" : [  
 				{"name": "Unclassified" , "count": "8" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City&Biosample.Ecosystem+Subtype=Park&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Stadium" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City&Biosample.Ecosystem+Subtype=Stadium"  , "children" : [  
+				{"name": "Seat surface" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City&Biosample.Ecosystem+Subtype=Stadium&Biosample.Specific Ecosystem=Seat surface" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City&Biosample.Ecosystem+Subtype=Stadium&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Subway" , "count": "1453" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=City&Biosample.Ecosystem+Subtype=Subway"  , "children" : [  
@@ -735,12 +769,12 @@
 },
   
 			{"name": "Mine" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine"  , "children" : [  
-				{"name": "Coal mine" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine&Biosample.Ecosystem+Subtype=Coal mine"  , "children" : [  
-				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine&Biosample.Ecosystem+Subtype=Coal mine&Biosample.Specific Ecosystem=Unclassified" }]
-},
-  
 				{"name": "Oil sands" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine&Biosample.Ecosystem+Subtype=Oil sands"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine&Biosample.Ecosystem+Subtype=Oil sands&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Mine&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -808,6 +842,18 @@
 }]
 },
   
+			{"name": "Poultry confinement building" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Poultry confinement building"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Poultry confinement building&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Poultry confinement building&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+}]
+},
+  
+			{"name": "Slaughterhouse/Abattoir" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Slaughterhouse/Abattoir"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Slaughterhouse/Abattoir&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Slaughterhouse/Abattoir&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+}]
+},
+  
 			{"name": "Solar panel" , "count": "5" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Solar panel"  , "children" : [  
 				{"name": "Unclassified" , "count": "5" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Solar panel&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "5" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Solar panel&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
@@ -825,6 +871,12 @@
   
 				{"name": "Gowning room" , "count": "33" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Spacecraft Assembly Cleanrooms&Biosample.Ecosystem+Subtype=Gowning room"  , "children" : [  
 				{"name": "Floor" , "count": "33" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Spacecraft Assembly Cleanrooms&Biosample.Ecosystem+Subtype=Gowning room&Biosample.Specific Ecosystem=Floor" }]
+},
+  
+				{"name": "Spacecraft" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Spacecraft Assembly Cleanrooms&Biosample.Ecosystem+Subtype=Spacecraft"  , "children" : [  
+				{"name": "External surfaces" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Spacecraft Assembly Cleanrooms&Biosample.Ecosystem+Subtype=Spacecraft&Biosample.Specific Ecosystem=External surfaces" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Spacecraft Assembly Cleanrooms&Biosample.Ecosystem+Subtype=Spacecraft&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Unclassified" , "count": "11" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Spacecraft Assembly Cleanrooms&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
@@ -873,6 +925,22 @@
   
 				{"name": "Wastewater" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Water treatment plant&Biosample.Ecosystem+Subtype=Wastewater"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Built environment&Biosample.Ecosystem+Type=Water treatment plant&Biosample.Ecosystem+Subtype=Wastewater&Biosample.Specific Ecosystem=Unclassified" }]
+}]
+}]
+},
+  
+		{"name": "Drugs production" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production"  , "children" : [  
+			{"name": "Drugs/Supplements" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements"  , "children" : [  
+				{"name": "Probiotics" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements&Biosample.Ecosystem+Subtype=Probiotics"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements&Biosample.Ecosystem+Subtype=Probiotics&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Vaccine" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements&Biosample.Ecosystem+Subtype=Vaccine"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Drugs production&Biosample.Ecosystem+Type=Drugs/Supplements&Biosample.Ecosystem+Subtype=Vaccine&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 }]
 },
@@ -945,6 +1013,12 @@
 			{"name": "Egg products" , "count": "20" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Egg products"  , "children" : [  
 				{"name": "Unclassified" , "count": "20" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Egg products&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "20" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Egg products&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+}]
+},
+  
+			{"name": "Equipment/Utensils" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Equipment/Utensils"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Equipment/Utensils&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Equipment/Utensils&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -1087,6 +1161,10 @@
 			{"name": "Salt" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Salt"  , "children" : [  
 				{"name": "Solar salt" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Salt&Biosample.Ecosystem+Subtype=Solar salt"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Salt&Biosample.Ecosystem+Subtype=Solar salt&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Salt&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Food production&Biosample.Ecosystem+Type=Salt&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -1145,6 +1223,10 @@
 				{"name": "Unclassified" , "count": "7" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Buffer&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
+				{"name": "Cosmetic products" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Cosmetic products"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Cosmetic products&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Distilled water" , "count": "45" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Distilled water"  , "children" : [  
 				{"name": "Unclassified" , "count": "45" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Distilled water&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -1155,6 +1237,10 @@
   
 				{"name": "Lab-grade water" , "count": "283" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Lab-grade water"  , "children" : [  
 				{"name": "Unclassified" , "count": "283" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Lab-grade water&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Metalworking fluids" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Metalworking fluids"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Metalworking fluids&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "PCR blank control" , "count": "5" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=PCR blank control"  , "children" : [  
@@ -1189,6 +1275,22 @@
 				{"name": "Biofilm" , "count": "2" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Biocathode&Biosample.Specific Ecosystem=Biofilm" },
   
 				{"name": "Unclassified" , "count": "7" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Biocathode&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Material" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Material"  , "children" : [  
+				{"name": "Fabric" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Material&Biosample.Specific Ecosystem=Fabric" },
+  
+				{"name": "Paper" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Material&Biosample.Specific Ecosystem=Paper" },
+  
+				{"name": "Plastic" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Material&Biosample.Specific Ecosystem=Plastic" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Material&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Optical Instruments" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Optical Instruments"  , "children" : [  
+				{"name": "Optical Lens" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Optical Instruments&Biosample.Specific Ecosystem=Optical Lens" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Optical Instruments&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Tobacco product" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Engineered product&Biosample.Ecosystem+Subtype=Tobacco product"  , "children" : [  
@@ -1488,6 +1590,24 @@
 }]
 },
   
+			{"name": "Debries" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries"  , "children" : [  
+				{"name": "Freshwater debries" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Freshwater debries"  , "children" : [  
+				{"name": "Plastic debries" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Freshwater debries&Biosample.Specific Ecosystem=Plastic debries" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Freshwater debries&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Marine debries" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Marine debries"  , "children" : [  
+				{"name": "Plastic debries" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Marine debries&Biosample.Specific Ecosystem=Plastic debries" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Marine debries&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Debries&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+}]
+},
+  
 			{"name": "Feedstock" , "count": "6" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Feedstock"  , "children" : [  
 				{"name": "Composting" , "count": "6" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Feedstock&Biosample.Ecosystem+Subtype=Composting"  , "children" : [  
 				{"name": "Unclassified" , "count": "6" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Feedstock&Biosample.Ecosystem+Subtype=Composting&Biosample.Specific Ecosystem=Unclassified" }]
@@ -1541,6 +1661,10 @@
 			{"name": "Industrial waste" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Industrial waste"  , "children" : [  
 				{"name": "Composting" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Industrial waste&Biosample.Ecosystem+Subtype=Composting"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Industrial waste&Biosample.Ecosystem+Subtype=Composting&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Radioactive waste" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Industrial waste&Biosample.Ecosystem+Subtype=Radioactive waste"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Industrial waste&Biosample.Ecosystem+Subtype=Radioactive waste&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Solid waste&Biosample.Ecosystem+Type=Industrial waste&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
@@ -1781,6 +1905,10 @@
 				{"name": "Produced water" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Wastewater&Biosample.Ecosystem+Type=Industrial wastewater&Biosample.Ecosystem+Subtype=Petroleum reservoir&Biosample.Specific Ecosystem=Produced water" }]
 },
   
+				{"name": "Poultry farm" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Wastewater&Biosample.Ecosystem+Type=Industrial wastewater&Biosample.Ecosystem+Subtype=Poultry farm"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Wastewater&Biosample.Ecosystem+Type=Industrial wastewater&Biosample.Ecosystem+Subtype=Poultry farm&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Pulp and paper wastewater" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Wastewater&Biosample.Ecosystem+Type=Industrial wastewater&Biosample.Ecosystem+Subtype=Pulp and paper wastewater"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Wastewater&Biosample.Ecosystem+Type=Industrial wastewater&Biosample.Ecosystem+Subtype=Pulp and paper wastewater&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -1878,7 +2006,7 @@
 }]
 }
 ,  
-{"name": "Environmental", "count": "92344" , "url": "search?Biosample.Ecosystem=Environmental"  , "children" : [  
+{"name": "Environmental", "count": "92654" , "url": "search?Biosample.Ecosystem=Environmental"  , "children" : [  
 		{"name": "Air" , "count": "1638" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Air"  , "children" : [  
 			{"name": "Indoor Air" , "count": "349" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Air&Biosample.Ecosystem+Type=Indoor Air"  , "children" : [  
 				{"name": "Air scrubber" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Air&Biosample.Ecosystem+Type=Indoor Air&Biosample.Ecosystem+Subtype=Air scrubber"  , "children" : [  
@@ -1921,7 +2049,7 @@
 }]
 },
   
-		{"name": "Aquatic" , "count": "53479" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic"  , "children" : [  
+		{"name": "Aquatic" , "count": "53757" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic"  , "children" : [  
 			{"name": "Acidic" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Acidic"  , "children" : [  
 				{"name": "Acidic hypersaline lake" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Acidic&Biosample.Ecosystem+Subtype=Acidic hypersaline lake"  , "children" : [  
 				{"name": "Microbial mat" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Acidic&Biosample.Ecosystem+Subtype=Acidic hypersaline lake&Biosample.Specific Ecosystem=Microbial mat" },
@@ -1970,6 +2098,8 @@
   
 				{"name": "Alkaline spring" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Groundwater&Biosample.Specific Ecosystem=Alkaline spring" },
   
+				{"name": "Biofouling" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Groundwater&Biosample.Specific Ecosystem=Biofouling" },
+  
 				{"name": "Cave lake" , "count": "2" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Groundwater&Biosample.Specific Ecosystem=Cave lake" },
   
 				{"name": "Cave microbial mat" , "count": "3" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Groundwater&Biosample.Specific Ecosystem=Cave microbial mat" },
@@ -2017,8 +2147,10 @@
 				{"name": "Well sediment" , "count": "2" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Groundwater&Biosample.Specific Ecosystem=Well sediment" }]
 },
   
-				{"name": "Shale gas reservoir" , "count": "86" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Shale gas reservoir"  , "children" : [  
-				{"name": "Produced water/Flow back" , "count": "86" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Shale gas reservoir&Biosample.Specific Ecosystem=Produced water/Flow back" }]
+				{"name": "Shale gas/oil reservoir" , "count": "86" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Shale gas/oil reservoir"  , "children" : [  
+				{"name": "Produced water/Flow back" , "count": "86" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Shale gas/oil reservoir&Biosample.Specific Ecosystem=Produced water/Flow back" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Shale gas/oil reservoir&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Subglacial lake" , "count": "6" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Subglacial lake"  , "children" : [  
@@ -2031,6 +2163,10 @@
 				{"name": "Sediment" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Subterranean lake&Biosample.Specific Ecosystem=Sediment" },
   
 				{"name": "Unclassified" , "count": "97" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Subterranean lake&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Deep subsurface&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -2040,7 +2176,7 @@
 }]
 },
   
-			{"name": "Freshwater" , "count": "19105" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater"  , "children" : [  
+			{"name": "Freshwater" , "count": "19258" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater"  , "children" : [  
 				{"name": "Agricultural field" , "count": "1" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Agricultural field"  , "children" : [  
 				{"name": "Unclassified" , "count": "1" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Agricultural field&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -2049,6 +2185,12 @@
 				{"name": "Biofilm" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Aquifer&Biosample.Specific Ecosystem=Biofilm" },
   
 				{"name": "Sediment" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Aquifer&Biosample.Specific Ecosystem=Sediment" }]
+},
+  
+				{"name": "Biofouling" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Biofouling"  , "children" : [  
+				{"name": "Microfouling/Biofilm" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Biofouling&Biosample.Specific Ecosystem=Microfouling/Biofilm" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Biofouling&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Bog lake" , "count": "1" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Bog lake"  , "children" : [  
@@ -2157,7 +2299,7 @@
 				{"name": "Unclassified" , "count": "98" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Kettle hole&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Lake" , "count": "9035" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake"  , "children" : [  
+				{"name": "Lake" , "count": "9130" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake"  , "children" : [  
 				{"name": "Algal bloom" , "count": "8" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Algal bloom" },
   
 				{"name": "Anoxic zone" , "count": "27" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Anoxic zone" },
@@ -2186,9 +2328,9 @@
   
 				{"name": "Microbial mats" , "count": "29" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Microbial mats" },
   
-				{"name": "Sediment" , "count": "1498" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Sediment" },
+				{"name": "Sediment" , "count": "1520" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Sediment" },
   
-				{"name": "Unclassified" , "count": "6518" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "6591" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lake&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Lentic" , "count": "105" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Lentic"  , "children" : [  
@@ -2217,16 +2359,16 @@
 				{"name": "Unclassified" , "count": "14" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Microbialites&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Pond" , "count": "588" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Pond"  , "children" : [  
+				{"name": "Pond" , "count": "620" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Pond"  , "children" : [  
 				{"name": "Sediment" , "count": "305" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Pond&Biosample.Specific Ecosystem=Sediment" },
   
-				{"name": "Unclassified" , "count": "283" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Pond&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "315" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Pond&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Puddle" , "count": "1" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Puddle"  , "children" : [  
+				{"name": "Puddle" , "count": "4" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Puddle"  , "children" : [  
 				{"name": "Microbial mats" , "count": "1" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Puddle&Biosample.Specific Ecosystem=Microbial mats" },
   
-				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Puddle&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "3" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Puddle&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Rainwater" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Rainwater"  , "children" : [  
@@ -2239,7 +2381,7 @@
 				{"name": "Unclassified" , "count": "292" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Reservoir&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "River" , "count": "3795" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River"  , "children" : [  
+				{"name": "River" , "count": "3811" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River"  , "children" : [  
 				{"name": "Microbial mats" , "count": "94" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=Microbial mats" },
   
 				{"name": "Periphyton" , "count": "9" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=Periphyton" },
@@ -2248,9 +2390,9 @@
   
 				{"name": "River biofilm" , "count": "17" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=River biofilm" },
   
-				{"name": "Sediment" , "count": "822" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=Sediment" },
+				{"name": "Sediment" , "count": "835" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=Sediment" },
   
-				{"name": "Unclassified" , "count": "2741" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "2744" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=River&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Sediment" , "count": "95" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Sediment"  , "children" : [  
@@ -2291,6 +2433,12 @@
 				{"name": "Unclassified" , "count": "26" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Tap water&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
+				{"name": "Transient pool" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Transient pool"  , "children" : [  
+				{"name": "Microbial mat" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Transient pool&Biosample.Specific Ecosystem=Microbial mat" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Transient pool&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Unclassified" , "count": "1360" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "1360" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -2299,8 +2447,8 @@
 				{"name": "Unclassified" , "count": "54" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Water tank&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Wetlands" , "count": "746" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands"  , "children" : [  
-				{"name": "Bog" , "count": "12" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Bog" },
+				{"name": "Wetlands" , "count": "753" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands"  , "children" : [  
+				{"name": "Bog" , "count": "15" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Bog" },
   
 				{"name": "Fen" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Fen" },
   
@@ -2310,15 +2458,15 @@
   
 				{"name": "Sediment" , "count": "542" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Sediment" },
   
-				{"name": "Soil" , "count": "110" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Soil" },
+				{"name": "Soil" , "count": "113" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Soil" },
   
-				{"name": "Swamp" , "count": "3" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Swamp" },
+				{"name": "Swamp" , "count": "4" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Swamp" },
   
 				{"name": "Unclassified" , "count": "79" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Freshwater&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
-			{"name": "Marine" , "count": "26489" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine"  , "children" : [  
+			{"name": "Marine" , "count": "26613" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine"  , "children" : [  
 				{"name": "Abyssopelagic" , "count": "7" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Abyssopelagic"  , "children" : [  
 				{"name": "Unclassified" , "count": "7" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Abyssopelagic&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -2347,6 +2495,12 @@
 				{"name": "Sediment" , "count": "6" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Benthic zone&Biosample.Specific Ecosystem=Sediment" },
   
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Benthic zone&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
+				{"name": "Biofouling" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Biofouling"  , "children" : [  
+				{"name": "Microfouling/Biofilm" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Biofouling&Biosample.Specific Ecosystem=Microfouling/Biofilm" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Biofouling&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Coastal" , "count": "4278" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Coastal"  , "children" : [  
@@ -2440,7 +2594,9 @@
   
 				{"name": "Tubeworm bush" , "count": "13" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Hydrothermal vents&Biosample.Specific Ecosystem=Tubeworm bush" },
   
-				{"name": "Unclassified" , "count": "349" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Hydrothermal vents&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "349" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Hydrothermal vents&Biosample.Specific Ecosystem=Unclassified" },
+  
+				{"name": "White smokers" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Hydrothermal vents&Biosample.Specific Ecosystem=White smokers" }]
 },
   
 				{"name": "Hypoxic zone" , "count": "137" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Hypoxic zone"  , "children" : [  
@@ -2451,7 +2607,7 @@
 				{"name": "Unclassified" , "count": "1278" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Inlet&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Intertidal zone" , "count": "3286" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone"  , "children" : [  
+				{"name": "Intertidal zone" , "count": "3410" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone"  , "children" : [  
 				{"name": "Beach/Shore" , "count": "750" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific Ecosystem=Beach/Shore" },
   
 				{"name": "Coral reef" , "count": "229" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific Ecosystem=Coral reef" },
@@ -2474,7 +2630,7 @@
   
 				{"name": "Oil-contaminated sediment" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific Ecosystem=Oil-contaminated sediment" },
   
-				{"name": "Salt marsh" , "count": "387" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific Ecosystem=Salt marsh" },
+				{"name": "Salt marsh" , "count": "511" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific Ecosystem=Salt marsh" },
   
 				{"name": "Salt marsh sediment" , "count": "139" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific Ecosystem=Salt marsh sediment" },
   
@@ -2687,6 +2843,12 @@
 				{"name": "Unclassified" , "count": "25" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Alkaline&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
+				{"name": "Biofouling" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Biofouling"  , "children" : [  
+				{"name": "Microfouling/Biofilm" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Biofouling&Biosample.Specific Ecosystem=Microfouling/Biofilm" },
+  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Biofouling&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Fracking water" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Fracking water"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Fracking water&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -2828,7 +2990,7 @@
 }]
 },
   
-			{"name": "Thermal springs" , "count": "3473" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs"  , "children" : [  
+			{"name": "Thermal springs" , "count": "3474" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs"  , "children" : [  
 				{"name": "Acid lake" , "count": "2" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Acid lake"  , "children" : [  
 				{"name": "Sediment" , "count": "1" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Acid lake&Biosample.Specific Ecosystem=Sediment" },
   
@@ -2875,8 +3037,8 @@
 				{"name": "Unclassified" , "count": "36" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Runoff channel&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Sediment" , "count": "15" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Sediment"  , "children" : [  
-				{"name": "Unclassified" , "count": "15" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Sediment&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Sediment" , "count": "16" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Sediment"  , "children" : [  
+				{"name": "Unclassified" , "count": "16" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Sediment&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Tepid (25-34C)" , "count": "106" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Tepid (25-34C)"  , "children" : [  
@@ -2907,7 +3069,7 @@
 }]
 },
   
-		{"name": "Terrestrial" , "count": "37227" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial"  , "children" : [  
+		{"name": "Terrestrial" , "count": "37259" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial"  , "children" : [  
 			{"name": "Agricultural field" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Agricultural field"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Agricultural field&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Agricultural field&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
@@ -3137,6 +3299,10 @@
 },
   
 			{"name": "Rock-dwelling (endoliths)" , "count": "314" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Rock-dwelling (endoliths)"  , "children" : [  
+				{"name": "Evaporite" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Rock-dwelling (endoliths)&Biosample.Ecosystem+Subtype=Evaporite"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Rock-dwelling (endoliths)&Biosample.Ecosystem+Subtype=Evaporite&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Halite" , "count": "16" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Rock-dwelling (endoliths)&Biosample.Ecosystem+Subtype=Halite"  , "children" : [  
 				{"name": "Unclassified" , "count": "16" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Rock-dwelling (endoliths)&Biosample.Ecosystem+Subtype=Halite&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -3164,11 +3330,11 @@
 }]
 },
   
-			{"name": "Soil" , "count": "34260" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil"  , "children" : [  
-				{"name": "Agricultural land" , "count": "7232" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Agricultural land"  , "children" : [  
+			{"name": "Soil" , "count": "34292" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil"  , "children" : [  
+				{"name": "Agricultural land" , "count": "7256" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Agricultural land"  , "children" : [  
 				{"name": "Bulk soil" , "count": "4149" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Agricultural land&Biosample.Specific Ecosystem=Bulk soil" },
   
-				{"name": "Unclassified" , "count": "3083" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Agricultural land&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "3107" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Agricultural land&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Alpine" , "count": "15" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Alpine"  , "children" : [  
@@ -3289,8 +3455,8 @@
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Geothermal field&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Glacial till" , "count": "140" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Glacial till"  , "children" : [  
-				{"name": "Unclassified" , "count": "140" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Glacial till&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Glacial till" , "count": "141" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Glacial till"  , "children" : [  
+				{"name": "Unclassified" , "count": "141" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Glacial till&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Glacier" , "count": "125" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Glacier"  , "children" : [  
@@ -3581,7 +3747,7 @@
 				{"name": "Unclassified" , "count": "455" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Tundra&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Unclassified" , "count": "9983" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "9989" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Agricultural land" , "count": "1325" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Agricultural land" },
   
 				{"name": "Alpine" , "count": "46" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Alpine" },
@@ -3620,7 +3786,7 @@
   
 				{"name": "Tropical rainforest" , "count": "86" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Tropical rainforest" },
   
-				{"name": "Unclassified" , "count": "6398" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "6404" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Vadose zone" , "count": "65" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Vadose zone"  , "children" : [  
@@ -3641,14 +3807,14 @@
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetland-upland transition&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Wetlands" , "count": "2243" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands"  , "children" : [  
+				{"name": "Wetlands" , "count": "2244" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands"  , "children" : [  
 				{"name": "Peat" , "count": "1097" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Peat" },
   
 				{"name": "Permafrost" , "count": "389" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Permafrost" },
   
 				{"name": "Salt marsh" , "count": "0" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Salt marsh" },
   
-				{"name": "Unclassified" , "count": "757" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "758" , "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Wetlands&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -3692,8 +3858,8 @@
 }]
 }
 ,  
-{"name": "Host-associated", "count": "94313" , "url": "search?Biosample.Ecosystem=Host-associated"  , "children" : [  
-		{"name": "Algae" , "count": "552" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae"  , "children" : [  
+{"name": "Host-associated", "count": "94621" , "url": "search?Biosample.Ecosystem=Host-associated"  , "children" : [  
+		{"name": "Algae" , "count": "630" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae"  , "children" : [  
 			{"name": "Biocrust" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Biocrust"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Biocrust&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Biocrust&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
@@ -3740,19 +3906,19 @@
 }]
 },
   
-			{"name": "Green algae" , "count": "97" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae"  , "children" : [  
+			{"name": "Green algae" , "count": "103" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae"  , "children" : [  
 				{"name": "Ectosymbionts" , "count": "45" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae&Biosample.Ecosystem+Subtype=Ectosymbionts"  , "children" : [  
 				{"name": "Unclassified" , "count": "45" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae&Biosample.Ecosystem+Subtype=Ectosymbionts&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Unclassified" , "count": "52" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "52" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "58" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "58" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Green algae&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
-			{"name": "Haptophytes" , "count": "78" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Haptophytes"  , "children" : [  
-				{"name": "Unclassified" , "count": "78" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Haptophytes&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "78" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Haptophytes&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+			{"name": "Haptophytes" , "count": "150" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Haptophytes"  , "children" : [  
+				{"name": "Unclassified" , "count": "150" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Haptophytes&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "150" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Algae&Biosample.Ecosystem+Type=Haptophytes&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -4931,6 +5097,10 @@
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fish&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Gill rakers&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
+				{"name": "Hindgut" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fish&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Hindgut"  , "children" : [  
+				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fish&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Hindgut&Biosample.Specific Ecosystem=Unclassified" }]
+},
+  
 				{"name": "Intestine" , "count": "204" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fish&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Intestine"  , "children" : [  
 				{"name": "Fecal" , "count": "4" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fish&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Intestine&Biosample.Specific Ecosystem=Fecal" },
   
@@ -5177,7 +5347,7 @@
 }]
 },
   
-		{"name": "Fungi" , "count": "1112" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi"  , "children" : [  
+		{"name": "Fungi" , "count": "1120" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi"  , "children" : [  
 			{"name": "Appressorium" , "count": "3" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Appressorium"  , "children" : [  
 				{"name": "Unclassified" , "count": "3" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Appressorium&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
 				{"name": "Unclassified" , "count": "3" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Appressorium&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
@@ -5206,9 +5376,9 @@
 }]
 },
   
-			{"name": "Mycelium" , "count": "968" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium"  , "children" : [  
-				{"name": "Unclassified" , "count": "968" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "968" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+			{"name": "Mycelium" , "count": "973" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium"  , "children" : [  
+				{"name": "Unclassified" , "count": "973" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "973" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -5224,9 +5394,9 @@
 }]
 },
   
-			{"name": "Spore" , "count": "3" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Spore"  , "children" : [  
-				{"name": "Unclassified" , "count": "3" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Spore&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "3" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Spore&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+			{"name": "Spore" , "count": "6" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Spore"  , "children" : [  
+				{"name": "Unclassified" , "count": "6" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Spore&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "6" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Spore&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -7471,7 +7641,7 @@
 }]
 },
   
-		{"name": "Plants" , "count": "22386" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants"  , "children" : [  
+		{"name": "Plants" , "count": "22496" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants"  , "children" : [  
 			{"name": "Bryophytes" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Bryophytes"  , "children" : [  
 				{"name": "Hornworts" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Bryophytes&Biosample.Ecosystem+Subtype=Hornworts"  , "children" : [  
 				{"name": "Rhizoids" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Bryophytes&Biosample.Ecosystem+Subtype=Hornworts&Biosample.Specific Ecosystem=Rhizoids" },
@@ -7538,9 +7708,9 @@
 }]
 },
   
-			{"name": "Peat moss" , "count": "704" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Peat moss"  , "children" : [  
-				{"name": "Unclassified" , "count": "704" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Peat moss&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "704" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Peat moss&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+			{"name": "Peat moss" , "count": "711" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Peat moss"  , "children" : [  
+				{"name": "Unclassified" , "count": "711" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Peat moss&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "711" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Peat moss&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -7660,7 +7830,7 @@
 }]
 },
   
-			{"name": "Roots" , "count": "16903" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots"  , "children" : [  
+			{"name": "Roots" , "count": "17006" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots"  , "children" : [  
 				{"name": "Aerial root" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Aerial root"  , "children" : [  
 				{"name": "Mucilage" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Aerial root&Biosample.Specific Ecosystem=Mucilage" },
   
@@ -7689,8 +7859,8 @@
 				{"name": "Unclassified" , "count": "112" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizoplane&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Rhizosphere" , "count": "11186" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere"  , "children" : [  
-				{"name": "Soil" , "count": "2213" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere&Biosample.Specific Ecosystem=Soil" },
+				{"name": "Rhizosphere" , "count": "11193" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere"  , "children" : [  
+				{"name": "Soil" , "count": "2220" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere&Biosample.Specific Ecosystem=Soil" },
   
 				{"name": "Unclassified" , "count": "8973" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere&Biosample.Specific Ecosystem=Unclassified" }]
 },
@@ -7699,8 +7869,8 @@
 				{"name": "Unclassified" , "count": "71" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Taproot&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Unclassified" , "count": "5235" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "5235" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Unclassified" , "count": "5331" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "5331" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -7765,10 +7935,10 @@
 }]
 },
   
-		{"name": "Protists" , "count": "55" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists"  , "children" : [  
-			{"name": "Amoebozoa" , "count": "8" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Amoebozoa"  , "children" : [  
-				{"name": "Unclassified" , "count": "8" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Amoebozoa&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
-				{"name": "Unclassified" , "count": "8" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Amoebozoa&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
+		{"name": "Protists" , "count": "167" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists"  , "children" : [  
+			{"name": "Amoebozoa" , "count": "78" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Amoebozoa"  , "children" : [  
+				{"name": "Unclassified" , "count": "78" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Amoebozoa&Biosample.Ecosystem+Subtype=Unclassified"  , "children" : [  
+				{"name": "Unclassified" , "count": "78" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Amoebozoa&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific Ecosystem=Unclassified" }]
 }]
 },
   
@@ -7798,13 +7968,13 @@
 }]
 },
   
-			{"name": "Nanoflagellates" , "count": "5" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates"  , "children" : [  
+			{"name": "Nanoflagellates" , "count": "47" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates"  , "children" : [  
 				{"name": "Autotrophic (ANF)" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Autotrophic (ANF)"  , "children" : [  
 				{"name": "Unclassified" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Autotrophic (ANF)&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
-				{"name": "Heterotrophic (HNF)" , "count": "5" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Heterotrophic (HNF)"  , "children" : [  
-				{"name": "Unclassified" , "count": "5" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Heterotrophic (HNF)&Biosample.Specific Ecosystem=Unclassified" }]
+				{"name": "Heterotrophic (HNF)" , "count": "47" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Heterotrophic (HNF)"  , "children" : [  
+				{"name": "Unclassified" , "count": "47" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Heterotrophic (HNF)&Biosample.Specific Ecosystem=Unclassified" }]
 },
   
 				{"name": "Mixotrophic (MNF)" , "count": "0" , "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Protists&Biosample.Ecosystem+Type=Nanoflagellates&Biosample.Ecosystem+Subtype=Mixotrophic (MNF)"  , "children" : [  

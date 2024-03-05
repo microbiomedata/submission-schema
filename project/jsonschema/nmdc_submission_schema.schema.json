@@ -249,6 +249,7 @@
             "enum": [
                 "metabolomics",
                 "metagenomics",
+                "metagenomics_long_read",
                 "metaproteomics",
                 "metatranscriptomics",
                 "natural organic matter"
@@ -1691,6 +1692,25 @@
             "title": "CurLandUseEnum",
             "type": "string"
         },
+        "DNASampleFormatEnum": {
+            "description": "",
+            "enum": [
+                "10 mM Tris-HCl",
+                "DNAStable",
+                "Ethanol",
+                "Low EDTA TE",
+                "MDA reaction buffer",
+                "PBS",
+                "Pellet",
+                "RNAStable",
+                "TE",
+                "Water",
+                "Gentegra-DNA",
+                "Gentegra-RNA"
+            ],
+            "title": "DNASampleFormatEnum",
+            "type": "string"
+        },
         "DeposEnvEnum": {
             "description": "",
             "enum": [
@@ -1721,7 +1741,7 @@
             "type": "object"
         },
         "DnaSampleFormatEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "10 mM Tris-HCl",
                 "DNAStable",
@@ -1732,9 +1752,7 @@
                 "Pellet",
                 "RNAStable",
                 "TE",
-                "Water",
-                "Gentegra-DNA",
-                "Gentegra-RNA"
+                "Water"
             ],
             "title": "DnaSampleFormatEnum",
             "type": "string"
@@ -1903,6 +1921,7 @@
                 "Built environment",
                 "Cephalochordata",
                 "Cnidaria",
+                "Drugs production",
                 "Endosymbionts",
                 "Feedstock",
                 "Fish",
@@ -2031,6 +2050,7 @@
                 "Biochar",
                 "Biocrust",
                 "Biofilm",
+                "Biofouling",
                 "Biogas",
                 "Biological phosphorus removal",
                 "Biomass",
@@ -2071,7 +2091,6 @@
                 "Claws",
                 "Claws/Talon",
                 "Clay",
-                "Coal mine",
                 "Coalbed methane well",
                 "Coastal",
                 "Coastal area",
@@ -2091,6 +2110,7 @@
                 "Cooling water",
                 "Coral",
                 "Cortex",
+                "Cosmetic products",
                 "Creek",
                 "Crop",
                 "Crude oil sludge",
@@ -2140,6 +2160,7 @@
                 "Epipelagic",
                 "Epithelial lining fluid",
                 "Esophagus",
+                "Evaporite",
                 "External genitalia",
                 "External genitalia/Vulva",
                 "External organs",
@@ -2168,7 +2189,9 @@
                 "Fracking water",
                 "Fresh manure",
                 "Freshwater",
+                "Freshwater RAS",
                 "Freshwater aquarium",
+                "Freshwater debries",
                 "Frozen remains",
                 "Frozen seafood",
                 "Fumaroles",
@@ -2219,6 +2242,7 @@
                 "Hospital bedroom",
                 "Hospital wastewater",
                 "Hot (42-90C)",
+                "Hotel",
                 "HuSC",
                 "Hydroponic media",
                 "Hydrothermal vents",
@@ -2290,16 +2314,19 @@
                 "Manure-fertilized",
                 "Marginal Sea",
                 "Marine basin floor",
+                "Marine debries",
                 "Marine fish farm",
                 "Marine lake",
                 "Marine media",
                 "Marine sediment inoculum",
+                "Material",
                 "Maxillary glands",
                 "Meadow",
                 "Meat/Poultry processing plant",
                 "Meibomian glands",
                 "Melanoma",
                 "Mesopelagic",
+                "Metalworking fluids",
                 "Metasoma",
                 "Methane",
                 "Microbial mats",
@@ -2354,6 +2381,7 @@
                 "Oil-contaminated sediment",
                 "Oil/Gas pipeline",
                 "Olfactory pit",
+                "Optical Instruments",
                 "Oral cavity",
                 "Oral/Buccal cavity",
                 "Orchard",
@@ -2406,6 +2434,7 @@
                 "Potting soil",
                 "Poultry farm",
                 "Poultry litter",
+                "Probiotics",
                 "Processed milk",
                 "Produced water",
                 "Proglacial area",
@@ -2417,6 +2446,7 @@
                 "Pyloric ceca",
                 "Pyogenic granuloma",
                 "R2A agar",
+                "Radioactive waste",
                 "Rainwater",
                 "Ranch",
                 "Rat myeloma",
@@ -2460,6 +2490,7 @@
                 "Sea ice",
                 "Seat surface",
                 "Seawater",
+                "Seawater RAS",
                 "Seawater aquarium",
                 "Seaweed",
                 "Sebaceous glands",
@@ -2470,6 +2501,7 @@
                 "Settled granule",
                 "Settling tank",
                 "Shale gas reservoir",
+                "Shale gas/oil reservoir",
                 "Sheath fluid",
                 "Shell",
                 "Shipwreck",
@@ -2477,6 +2509,7 @@
                 "Shrubland",
                 "Silt",
                 "Simulated rainfall",
+                "Sink",
                 "Sinkhole",
                 "Skeletal muscle",
                 "Skeletonized remains",
@@ -2496,6 +2529,7 @@
                 "Solar solterns",
                 "Soy sauce",
                 "Soybean paste",
+                "Spacecraft",
                 "Spat",
                 "Spent mushroom substrate",
                 "Spermathecae",
@@ -2504,6 +2538,7 @@
                 "Spleen",
                 "Sporeling",
                 "Sputum/Phlegm",
+                "Stadium",
                 "Stem",
                 "Stem tuber",
                 "Sterile water",
@@ -2544,6 +2579,7 @@
                 "Tobacco product",
                 "Tonsils",
                 "Trachea",
+                "Transient pool",
                 "Tree plantation",
                 "Trophosome",
                 "Tropical forest",
@@ -2556,6 +2592,7 @@
                 "Urine",
                 "Uropygial/Preen gland",
                 "Uterus",
+                "Vaccine",
                 "Vadose zone",
                 "Vagina",
                 "Vas deferens",
@@ -2722,6 +2759,7 @@
                 "DHS reactor",
                 "Dairy processing facility",
                 "Dairy products",
+                "Debries",
                 "Deep subsurface",
                 "Defined media",
                 "Denitrification",
@@ -2731,6 +2769,7 @@
                 "Dinoflagellata",
                 "Dinoflagellates",
                 "Drinking water treatment plant",
+                "Drugs/Supplements",
                 "EBPR",
                 "Echinodermata",
                 "Effluent",
@@ -2739,6 +2778,7 @@
                 "Endocrine system",
                 "Endosphere",
                 "Engineered product",
+                "Equipment/Utensils",
                 "Excavata",
                 "Excretory system",
                 "Fat body",
@@ -2857,6 +2897,7 @@
                 "Plant products",
                 "Platyhelminthes",
                 "Post-larva",
+                "Poultry confinement building",
                 "Prepupa",
                 "Pupa",
                 "Reclaimed/Recycled wastewater",
@@ -2893,6 +2934,7 @@
                 "Simulated communities (microbial mixture)",
                 "Simulated communities (sequence read mixture)",
                 "Skeletal system",
+                "Slaughterhouse/Abattoir",
                 "Sludge",
                 "Soil",
                 "Soil microcosm",
@@ -5018,7 +5060,7 @@
                     }
                 }
             ],
-            "description": "jgi_mg dh_interface",
+            "description": "Metadata for samples sent to JGI for standard metagenome sequencing",
             "properties": {
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
@@ -5045,7 +5087,7 @@
                     "description": "Tube or plate (96-well)"
                 },
                 "dna_cont_well": {
-                    "pattern": "^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$",
+                    "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
                     "type": "string"
                 },
                 "dna_container_id": {
@@ -5066,7 +5108,7 @@
                     "type": "string"
                 },
                 "dna_sample_format": {
-                    "$ref": "#/$defs/DnaSampleFormatEnum",
+                    "$ref": "#/$defs/DNASampleFormatEnum",
                     "description": "Solution in which the DNA sample has been suspended"
                 },
                 "dna_sample_name": {
@@ -5119,6 +5161,113 @@
                 "samp_name"
             ],
             "title": "JgiMgInterface",
+            "type": "object"
+        },
+        "JgiMgLrInterface": {
+            "additionalProperties": false,
+            "description": "Metadata for samples sent to JGI for long read metagenome sequecning",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "dna_absorb1": {
+                    "description": "260/280 measurement of DNA sample purity",
+                    "type": "number"
+                },
+                "dna_absorb2": {
+                    "description": "260/230 measurement of DNA sample purity",
+                    "type": "number"
+                },
+                "dna_concentration": {
+                    "maximum": 2000,
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "dna_cont_type": {
+                    "$ref": "#/$defs/JgiContTypeEnum",
+                    "description": "Tube or plate (96-well)"
+                },
+                "dna_cont_well": {
+                    "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
+                    "type": "string"
+                },
+                "dna_container_id": {
+                    "pattern": "^.{1,20}$",
+                    "type": "string"
+                },
+                "dna_dnase": {
+                    "$ref": "#/$defs/YesNoEnum"
+                },
+                "dna_isolate_meth": {
+                    "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+                    "type": "string"
+                },
+                "dna_project_contact": {
+                    "type": "string"
+                },
+                "dna_samp_id": {
+                    "type": "string"
+                },
+                "dna_sample_format": {
+                    "$ref": "#/$defs/DNASampleFormatEnum",
+                    "description": "Solution in which the DNA sample has been suspended"
+                },
+                "dna_sample_name": {
+                    "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "type": "string"
+                },
+                "dna_seq_project": {
+                    "type": "string"
+                },
+                "dna_seq_project_name": {
+                    "type": "string"
+                },
+                "dna_seq_project_pi": {
+                    "type": "string"
+                },
+                "dna_volume": {
+                    "maximum": 1000,
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "proposal_dna": {
+                    "type": "string"
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "dna_absorb1",
+                "dna_absorb2",
+                "dna_concentration",
+                "dna_cont_type",
+                "dna_container_id",
+                "dna_dnase",
+                "dna_isolate_meth",
+                "dna_project_contact",
+                "dna_samp_id",
+                "dna_sample_format",
+                "dna_sample_name",
+                "dna_seq_project",
+                "dna_seq_project_name",
+                "dna_seq_project_pi",
+                "dna_volume",
+                "proposal_dna",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "JgiMgLrInterface",
             "type": "object"
         },
         "JgiMtInterface": {
@@ -5202,7 +5351,7 @@
                     "description": "Tube or plate (96-well)"
                 },
                 "rna_cont_well": {
-                    "pattern": "^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$",
+                    "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
                     "type": "string"
                 },
                 "rna_container_id": {
@@ -5220,7 +5369,7 @@
                     "type": "string"
                 },
                 "rna_sample_format": {
-                    "$ref": "#/$defs/RnaSampleFormatEnum",
+                    "$ref": "#/$defs/RNASampleFormatEnum",
                     "description": "Solution in which the RNA sample has been suspended"
                 },
                 "rna_sample_name": {
@@ -6240,6 +6389,25 @@
             "title": "QuadPosEnum",
             "type": "string"
         },
+        "RNASampleFormatEnum": {
+            "description": "",
+            "enum": [
+                "10 mM Tris-HCl",
+                "DNAStable",
+                "Ethanol",
+                "Low EDTA TE",
+                "MDA reaction buffer",
+                "PBS",
+                "Pellet",
+                "RNAStable",
+                "TE",
+                "Water",
+                "Gentegra-DNA",
+                "Gentegra-RNA"
+            ],
+            "title": "RNASampleFormatEnum",
+            "type": "string"
+        },
         "RelSampLocEnum": {
             "description": "",
             "enum": [
@@ -6265,7 +6433,7 @@
             "type": "string"
         },
         "RnaSampleFormatEnum": {
-            "description": "",
+            "description": "placeholder enum descr",
             "enum": [
                 "10 mM Tris-HCl",
                 "DNAStable",
@@ -6276,9 +6444,7 @@
                 "Pellet",
                 "RNAStable",
                 "TE",
-                "Water",
-                "Gentegra-DNA",
-                "Gentegra-RNA"
+                "Water"
             ],
             "title": "RnaSampleFormatEnum",
             "type": "string"
@@ -6493,6 +6659,13 @@
                     "description": "aggregation slot relating jgi_mg data collections to a SampleData container",
                     "items": {
                         "$ref": "#/$defs/JgiMgInterface"
+                    },
+                    "type": "array"
+                },
+                "jgi_mg_lr_data": {
+                    "description": "aggregation slot relating jgi_mg_lr data collections to a SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/JgiMgLrInterface"
                     },
                     "type": "array"
                 },
@@ -7832,6 +8005,8 @@
                 "Bile ducts",
                 "Bile ducts: Bile",
                 "Biofilm",
+                "Biofilter",
+                "Biofouling",
                 "Biological",
                 "Biomass",
                 "Bioreactor",
@@ -7981,8 +8156,10 @@
                 "Estuary: Sediment",
                 "Eustachian tube",
                 "Eutric",
+                "External surfaces",
                 "Extracellular",
                 "Extracellular symbionts",
+                "Fabric",
                 "Farm",
                 "Feathers",
                 "Fecal",
@@ -8090,6 +8267,7 @@
                 "Keratoacanthoma",
                 "Kidney abscess",
                 "Kidney stones",
+                "Kitchen sink",
                 "Lacrimal canaliculus",
                 "Lacrimal fluids",
                 "Lacrimal glands",
@@ -8142,6 +8320,7 @@
                 "Microbial mat",
                 "Microbial mats",
                 "Microbialites",
+                "Microfouling/Biofilm",
                 "Middle lobe",
                 "Midpoint",
                 "Milk",
@@ -8186,6 +8365,7 @@
                 "Oil-contaminated sediment",
                 "Olfactory mucosa",
                 "Omasum",
+                "Optical Lens",
                 "Oral cavity cancer",
                 "Oral fluids",
                 "Oral herpes",
@@ -8207,6 +8387,7 @@
                 "Paleofeces",
                 "Palsa",
                 "Pancreatic duct",
+                "Paper",
                 "Papillate region",
                 "Paranasal sinuses",
                 "Paranasal sinuses: Catarrh",
@@ -8243,6 +8424,8 @@
                 "Plankton",
                 "Plantar warts",
                 "Plasma",
+                "Plastic",
+                "Plastic debries",
                 "Plastic surface",
                 "Pleural effusion",
                 "Pleural fluid",
@@ -8328,6 +8511,7 @@
                 "Sea-ice brine",
                 "Seagrass bed",
                 "Seagrass bed sediment",
+                "Seat surface",
                 "Sebum",
                 "Secondary",
                 "Sediment",
@@ -8465,6 +8649,7 @@
                 "Whale fall",
                 "Wheat straw",
                 "White",
+                "White smokers",
                 "Whole blood",
                 "Whole body",
                 "Wood decay",
@@ -9866,6 +10051,13 @@
             "description": "aggregation slot relating jgi_mg data collections to a SampleData container",
             "items": {
                 "$ref": "#/$defs/JgiMgInterface"
+            },
+            "type": "array"
+        },
+        "jgi_mg_lr_data": {
+            "description": "aggregation slot relating jgi_mg_lr data collections to a SampleData container",
+            "items": {
+                "$ref": "#/$defs/JgiMgLrInterface"
             },
             "type": "array"
         },

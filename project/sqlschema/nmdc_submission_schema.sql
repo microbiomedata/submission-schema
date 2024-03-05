@@ -662,6 +662,31 @@ CREATE TABLE "JgiMgInterface" (
 	PRIMARY KEY (dna_absorb1, dna_absorb2, dna_concentration, dna_cont_type, dna_cont_well, dna_container_id, dna_dnase, dna_isolate_meth, dna_project_contact, dna_samp_id, dna_sample_format, dna_sample_name, dna_seq_project, dna_seq_project_name, dna_seq_project_pi, dna_volume, proposal_dna, oxy_stat_samp, analysis_type, samp_name, source_mat_id)
 );
 
+CREATE TABLE "JgiMgLrInterface" (
+	dna_absorb1 FLOAT, 
+	dna_absorb2 FLOAT, 
+	dna_concentration FLOAT NOT NULL, 
+	dna_cont_type VARCHAR(5) NOT NULL, 
+	dna_cont_well TEXT, 
+	dna_container_id TEXT NOT NULL, 
+	dna_dnase VARCHAR(3) NOT NULL, 
+	dna_isolate_meth TEXT NOT NULL, 
+	dna_project_contact TEXT NOT NULL, 
+	dna_samp_id TEXT NOT NULL, 
+	dna_sample_format VARCHAR(19) NOT NULL, 
+	dna_sample_name TEXT NOT NULL, 
+	dna_seq_project TEXT NOT NULL, 
+	dna_seq_project_name TEXT NOT NULL, 
+	dna_seq_project_pi TEXT NOT NULL, 
+	dna_volume FLOAT NOT NULL, 
+	proposal_dna TEXT NOT NULL, 
+	oxy_stat_samp VARCHAR(9), 
+	analysis_type VARCHAR(22) NOT NULL, 
+	samp_name TEXT, 
+	source_mat_id TEXT, 
+	PRIMARY KEY (dna_absorb1, dna_absorb2, dna_concentration, dna_cont_type, dna_cont_well, dna_container_id, dna_dnase, dna_isolate_meth, dna_project_contact, dna_samp_id, dna_sample_format, dna_sample_name, dna_seq_project, dna_seq_project_name, dna_seq_project_pi, dna_volume, proposal_dna, oxy_stat_samp, analysis_type, samp_name, source_mat_id)
+);
+
 CREATE TABLE "JgiMtInterface" (
 	dnase_rna VARCHAR(3) NOT NULL, 
 	proposal_rna TEXT NOT NULL, 
@@ -882,9 +907,10 @@ CREATE TABLE "SampleData" (
 	wastewater_sludge_data TEXT, 
 	water_data TEXT, 
 	emsl_data TEXT, 
+	jgi_mg_lr_data TEXT, 
 	jgi_mg_data TEXT, 
 	jgi_mt_data TEXT, 
-	PRIMARY KEY (air_data, biofilm_data, built_env_data, host_associated_data, plant_associated_data, sediment_data, soil_data, wastewater_sludge_data, water_data, emsl_data, jgi_mg_data, jgi_mt_data)
+	PRIMARY KEY (air_data, biofilm_data, built_env_data, host_associated_data, plant_associated_data, sediment_data, soil_data, wastewater_sludge_data, water_data, emsl_data, jgi_mg_lr_data, jgi_mg_data, jgi_mt_data)
 );
 
 CREATE TABLE "SedimentInterface" (
