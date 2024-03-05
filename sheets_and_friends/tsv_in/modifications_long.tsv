@@ -43,19 +43,21 @@ SedimentInterface|SoilInterface	depth	replace_attribute	string_serialization			{
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
 JgiMgInterface	dna_absorb1	replace_attribute	recommended			true
 JgiMgInterface	dna_absorb2	replace_attribute	recommended			true
-JgiMgInterface	dna_concentration	replace_attribute	required			true
-JgiMgInterface	dna_cont_type	replace_attribute	required			true
-JgiMgInterface	dna_container_id	replace_attribute	required			true
-JgiMgInterface	dna_dnase	replace_attribute	required			true
-JgiMgInterface	dna_isolate_meth	replace_attribute	required			true
-JgiMgInterface	dna_project_contact	replace_attribute	required			true
-JgiMgInterface	dna_samp_id	replace_attribute	required			true
-JgiMgInterface	dna_sample_format	replace_attribute	required			true
-JgiMgInterface	dna_sample_name	replace_attribute	required			true
-JgiMgInterface	dna_seq_project	replace_attribute	required			true
-JgiMgInterface	dna_seq_project_name	replace_attribute	required			true
-JgiMgInterface	dna_seq_project_pi	replace_attribute	required			true
-JgiMgInterface	dna_volume	replace_attribute	required			true
+JgiMgLrInterface	dna_absorb1	replace_attribute	required			true
+JgiMgLrInterface	dna_absorb2	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_cont_type	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_container_id	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_project_contact	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_samp_id	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_seq_project	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_seq_project_name	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_seq_project_pi	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_volume	replace_attribute	required			true
 JgiMtInterface	dnase_rna	replace_attribute	required			true
 SoilInterface	ecosystem	replace_attribute	range			EcosystemForSoilEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface	ecosystem	replace_attribute	range			EcosystemEnum
@@ -139,14 +141,14 @@ BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|Sed
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	string_serialization			{float}
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
 EmslInterface	project_id	replace_attribute	required			true
-JgiMgInterface	proposal_dna	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	required			true
 JgiMtInterface	proposal_rna	replace_attribute	required			true
 EmslInterface	replicate_number	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
 JgiMtInterface	rna_concentration	replace_attribute	required			true
 JgiMtInterface	rna_cont_type	replace_attribute	required			true
-JgiMgInterface	dna_cont_well	replace_attribute	recommended			true
+JgiMgInterface|JgiMgLrInterface	dna_cont_well	replace_attribute	recommended			true
 JgiMtInterface	rna_cont_well	replace_attribute	recommended			true
 JgiMtInterface	rna_container_id	replace_attribute	required			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
@@ -221,4 +223,4 @@ BiofilmInterface|SedimentInterface|SoilInterface	water_content		preferred_unit		
 BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_attribute	string_serialization			{float or pct} {unit}
 PlantAssociatedInterface|SoilInterface	watering_regm	overwrite_examples	examples			1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M|75% water holding capacity; constant
 PlantAssociatedInterface|SoilInterface	watering_regm	replace_attribute	recommended			true
-AirInterface|BiofilmInterface|BuiltEnvInterface|DhMultiviewCommonColumnsMixin|EmslInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|JgiMgInterface|JgiMtInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	replace_attribute	range			OxyStatSampEnum
+AirInterface|BiofilmInterface|BuiltEnvInterface|DhMultiviewCommonColumnsMixin|EmslInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|JgiMgInterface|JgiMgLrInterface|JgiMtInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	replace_attribute	range			OxyStatSampEnum
