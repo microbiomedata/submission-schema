@@ -40,6 +40,7 @@ jobs:
         poetry dynamic-versioning
         make gen-project
         make project/json/nmdc_submission_schema.json
+        cp -r project src/nmdc_submission_schema
 
     - name: Build source and wheel archives
       run: poetry build

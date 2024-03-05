@@ -5,7 +5,12 @@ description = "The home of the NMDC submission schema. *Not* the home of sheets_
 authors = ["Mark Andrew Miller <mam@lbl.gov>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/nmdc_submission_schema/schema", "project"]
+include = [
+    # These files are copied from the top-level project folder at build time. Without
+    # the copy step they end up in a weird location when installed via wheel.
+    # See: https://github.com/python-poetry/poetry/issues/7153
+    { path = "src/nmdc_submission_schema/project/**/*", format = [ "sdist", "wheel" ] }
+]
 
 # note that the nmdc-schema is not imported as a module,
 #   but one file from the nmdc-schema is accessed via sheets_and_friends/tsv_in/import_slots_regardless.tsv

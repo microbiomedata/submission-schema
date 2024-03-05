@@ -139,3 +139,8 @@ dmypy.json
 .pyre/
 
 /examples/output
+
+# A copy of the project directory is moved here
+# temporarily before `poetry build`. This is to
+# make sure we don't commit the copy.
+src/nmdc_submission_schema/project
