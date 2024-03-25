@@ -8,7 +8,7 @@ sediment_data:
     env_broad_scale: "______urban biome [ENVO:01000249]"
     env_local_scale: "________tunnel [ENVO:00000068]"
     env_medium: "bare soil [ENVO:01001616]"
-    geo_loc_name: "USA: Nowhere, Oklahoma"
+    geo_loc_name: "USA: Oklahoma, Nowhere"
     lat_lon: 35.2114459 -98.4646126787809678678
     samp_name: a
     samp_store_temp: "-80 Celsius"
