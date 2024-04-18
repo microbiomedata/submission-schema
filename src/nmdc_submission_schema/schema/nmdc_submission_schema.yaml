@@ -3556,6 +3556,8 @@ enums:
         text: metatranscriptomics
       natural organic matter:
         text: natural organic matter
+      bulk chemistry:
+        text: bulk chemistry
   DNASampleFormatEnum:
     name: DNASampleFormatEnum
     from_schema: https://example.com/nmdc_submission_schema
@@ -4121,6 +4123,8 @@ enums:
         text: Plant litter
       Plant products:
         text: Plant products
+      Plastic waste:
+        text: Plastic waste
       Platyhelminthes:
         text: Platyhelminthes
       Post-larva:
@@ -4686,6 +4690,8 @@ enums:
         text: Fetal tissue
       Fibroma:
         text: Fibroma
+      Filter:
+        text: Filter
       Fish pond:
         text: Fish pond
       Fish tank:
@@ -5863,6 +5869,8 @@ enums:
         text: Coalbed methane well water
       Coalbed water:
         text: Coalbed water
+      Cold methane seep:
+        text: Cold methane seep
       Colon:
         text: Colon
       Colon cancer:
@@ -35159,7 +35167,7 @@ classes:
           slot_conditions:
             dna_cont_well:
               name: dna_cont_well
-              pattern: ^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$
+              pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
         description: DNA samples in plates must have a plate position that matches the regex. Note the requirement for an empty string in the tube case. Waiting for value_present validation to be added to runtime
         title: dna_plate_requires_well
   JgiMgLrInterface:
@@ -35905,7 +35913,7 @@ classes:
           slot_conditions:
             rna_cont_well:
               name: rna_cont_well
-              pattern: ^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$
+              pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
         description: RNA samples in plates must have a plate position that matches the regex. Note the requirement for an empty string in the tube case. Waiting for value_present validation to be added to runtime
         title: rna_plate_requires_well
   MiscEnvsInterface:

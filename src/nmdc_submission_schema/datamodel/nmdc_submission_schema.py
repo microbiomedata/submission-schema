@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-05T15:47:21
+# Generation date: 2024-04-18T09:18:15
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -12973,6 +12973,8 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "natural organic matter",
             PermissibleValue(text="natural organic matter"))
+        setattr(cls, "bulk chemistry",
+            PermissibleValue(text="bulk chemistry"))
 
 class DNASampleFormatEnum(EnumDefinitionImpl):
 
@@ -13477,6 +13479,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Plant litter"))
         setattr(cls, "Plant products",
             PermissibleValue(text="Plant products"))
+        setattr(cls, "Plastic waste",
+            PermissibleValue(text="Plastic waste"))
         setattr(cls, "Post-larva",
             PermissibleValue(text="Post-larva"))
         setattr(cls, "Poultry confinement building",
@@ -13679,6 +13683,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Feedlot = PermissibleValue(text="Feedlot")
     Fermentation = PermissibleValue(text="Fermentation")
     Fibroma = PermissibleValue(text="Fibroma")
+    Filter = PermissibleValue(text="Filter")
     Fjord = PermissibleValue(text="Fjord")
     Floodplain = PermissibleValue(text="Floodplain")
     Floor = PermissibleValue(text="Floor")
@@ -15041,6 +15046,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Coalbed methane well water"))
         setattr(cls, "Coalbed water",
             PermissibleValue(text="Coalbed water"))
+        setattr(cls, "Cold methane seep",
+            PermissibleValue(text="Cold methane seep"))
         setattr(cls, "Colon cancer",
             PermissibleValue(text="Colon cancer"))
         setattr(cls, "Colon mucosa",

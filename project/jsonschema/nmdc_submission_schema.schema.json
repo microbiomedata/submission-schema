@@ -252,7 +252,8 @@
                 "metagenomics_long_read",
                 "metaproteomics",
                 "metatranscriptomics",
-                "natural organic matter"
+                "natural organic matter",
+                "bulk chemistry"
             ],
             "title": "AnalysisTypeEnum",
             "type": "string"
@@ -2176,6 +2177,7 @@
                 "Fermented meat products",
                 "Fetal tissue",
                 "Fibroma",
+                "Filter",
                 "Fish pond",
                 "Fish tank",
                 "Fjord",
@@ -2895,6 +2897,7 @@
                 "Plant growth chamber",
                 "Plant litter",
                 "Plant products",
+                "Plastic waste",
                 "Platyhelminthes",
                 "Post-larva",
                 "Poultry confinement building",
@@ -5051,7 +5054,7 @@
                     "then": {
                         "properties": {
                             "dna_cont_well": {
-                                "pattern": "^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$"
+                                "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
                             }
                         },
                         "required": [
@@ -5309,7 +5312,7 @@
                     "then": {
                         "properties": {
                             "rna_cont_well": {
-                                "pattern": "^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$"
+                                "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
                             }
                         },
                         "required": [
@@ -8076,6 +8079,7 @@
                 "Coal slurry",
                 "Coalbed methane well water",
                 "Coalbed water",
+                "Cold methane seep",
                 "Colon",
                 "Colon cancer",
                 "Colon mucosa",
