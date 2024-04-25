@@ -10,6 +10,7 @@ SoilInterface	al_sat_meth	replace_attribute	title			aluminum saturation method/ 
 SoilInterface	al_sat_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
 AirInterface|BiofilmInterface|BuiltEnvInterface|HostAssociatedInterface|MiscEnvsInterface	alt	replace_attribute	recommended			true
 DhMultiviewCommonColumnsMixin	analysis_type	replace_attribute	required			true
+DhMultiviewCommonColumnsMixin	analysis_type	replace_attribute	recommended			false
 SoilInterface	annual_precpt	overwrite_examples	examples			8.94 inch
 SoilInterface	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
 PlantAssociatedInterface|SoilInterface	biotic_regm	replace_attribute	recommended			true
@@ -44,21 +45,37 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 JgiMgInterface	dna_absorb1	replace_attribute	recommended			true
 JgiMgInterface	dna_absorb2	replace_attribute	recommended			true
 JgiMgLrInterface	dna_absorb1	replace_attribute	required			true
+JgiMgLrInterface	dna_absorb1	replace_attribute	recommended			false
 JgiMgLrInterface	dna_absorb2	replace_attribute	required			true
+JgiMgLrInterface	dna_absorb2	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_cont_type	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_cont_type	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_container_id	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_container_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_project_contact	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_project_contact	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_samp_id	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_samp_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_seq_project	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_seq_project	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_seq_project_name	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_seq_project_name	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_seq_project_pi	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_seq_project_pi	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_volume	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	dna_volume	replace_attribute	recommended			false
 JgiMtInterface	dnase_rna	replace_attribute	required			true
+JgiMtInterface	dnase_rna	replace_attribute	recommended			false
 SoilInterface	ecosystem	replace_attribute	range			EcosystemForSoilEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface	ecosystem	replace_attribute	range			EcosystemEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem	replace_attribute	recommended			true
@@ -76,6 +93,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	elev	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	elev	replace_attribute	title			elevation, meters
 EmslInterface	emsl_store_temp	replace_attribute	required			true
+EmslInterface	emsl_store_temp	replace_attribute	recommended			false
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_broad_scale	replace_attribute	description			In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_broad_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
 SoilInterface	env_broad_scale	replace_attribute	range			EnvBroadScaleSoilEnum
@@ -141,25 +159,40 @@ BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|Sed
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	string_serialization			{float}
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
 EmslInterface	project_id	replace_attribute	required			true
+EmslInterface	project_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	recommended			false
 JgiMtInterface	proposal_rna	replace_attribute	required			true
+JgiMtInterface	proposal_rna	replace_attribute	recommended			false
 EmslInterface	replicate_number	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
 JgiMtInterface	rna_concentration	replace_attribute	required			true
+JgiMtInterface	rna_concentration	replace_attribute	recommended			false
 JgiMtInterface	rna_cont_type	replace_attribute	required			true
+JgiMtInterface	rna_cont_type	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_cont_well	replace_attribute	recommended			true
 JgiMtInterface	rna_cont_well	replace_attribute	recommended			true
 JgiMtInterface	rna_container_id	replace_attribute	required			true
+JgiMtInterface	rna_container_id	replace_attribute	recommended			false
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
+JgiMtInterface	rna_isolate_meth	replace_attribute	recommended			false
 JgiMtInterface	rna_project_contact	replace_attribute	required			true
+JgiMtInterface	rna_project_contact	replace_attribute	recommended			false
 JgiMtInterface	rna_samp_id	replace_attribute	required			true
+JgiMtInterface	rna_samp_id	replace_attribute	recommended			false
 JgiMtInterface	rna_sample_format	replace_attribute	required			true
+JgiMtInterface	rna_sample_format	replace_attribute	recommended			false
 JgiMtInterface	rna_sample_name	replace_attribute	required			true
+JgiMtInterface	rna_sample_name	replace_attribute	recommended			false
 JgiMtInterface	rna_seq_project	replace_attribute	required			true
+JgiMtInterface	rna_seq_project	replace_attribute	recommended			false
 JgiMtInterface	rna_seq_project_name	replace_attribute	required			true
+JgiMtInterface	rna_seq_project_name	replace_attribute	recommended			false
 JgiMtInterface	rna_seq_project_pi	replace_attribute	required			true
+JgiMtInterface	rna_seq_project_pi	replace_attribute	recommended			false
 JgiMtInterface	rna_volume	replace_attribute	required			true
+JgiMtInterface	rna_volume	replace_attribute	recommended			false
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	replace_attribute	recommended			true
@@ -181,7 +214,9 @@ AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAsso
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	sample_link	add_attribute	notes			"also tempted to include SampIdNewTermsMixin but if len(slot_usage.keys()) > 1 and ""placeholder"" in slot_usage.keys():AttributeError: 'list' object has no attribute 'keys'"
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	sample_link	replace_attribute	range			string
 EmslInterface	sample_shipped	replace_attribute	required			true
+EmslInterface	sample_shipped	replace_attribute	recommended			false
 EmslInterface	sample_type	replace_attribute	required			true
+EmslInterface	sample_type	replace_attribute	recommended			false
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
 SoilInterface	season_precpt	add_attribute	notes			mean and average are the same thing, but it seems like bad practice to not be consistent. Changed mean to average
 SoilInterface	season_precpt	replace_attribute	title			average seasonal precipitation
