@@ -225,15 +225,6 @@ prefixes:
   wgs84:
     prefix_prefix: wgs84
     prefix_reference: http://www.w3.org/2003/01/geo/wgs84_pos#
-  gold:
-    prefix_prefix: gold
-    prefix_reference: 'https://bioregistry.io/gold:'
-  MIXS:
-    prefix_prefix: MIXS
-    prefix_reference: https://w3id.org/mixs/
-  MIXS_yaml:
-    prefix_prefix: MIXS_yaml
-    prefix_reference: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
   COG:
     prefix_prefix: COG
     prefix_reference: 'https://bioregistry.io/cog:'
@@ -252,6 +243,15 @@ prefixes:
   SEED:
     prefix_prefix: SEED
     prefix_reference: 'https://bioregistry.io/seed:'
+  MIXS:
+    prefix_prefix: MIXS
+    prefix_reference: https://w3id.org/mixs/
+  MIXS_yaml:
+    prefix_prefix: MIXS_yaml
+    prefix_reference: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
+  gold:
+    prefix_prefix: gold
+    prefix_reference: 'https://bioregistry.io/gold:'
 default_prefix: nmdc_sub_schema
 default_range: string
 subsets:
@@ -269,10 +269,6 @@ subsets:
     comments:
       - Schema authors are responsible for alerting and supporting Kitware and nmdc-server authors about changes they will have to make if entities labeled with data_portal_subset are modified.
       - Assignment of the data_portal_subset is incomplete in the schema.
-    from_schema: https://example.com/nmdc_submission_schema
-  workflow subset:
-    name: workflow subset
-    description: Subset consisting of just the workflow execution activities
     from_schema: https://example.com/nmdc_submission_schema
   environment:
     name: environment
@@ -304,6 +300,10 @@ subsets:
   checklist_package_combination:
     name: checklist_package_combination
     description: A combination of a checklist and a package
+    from_schema: https://example.com/nmdc_submission_schema
+  workflow subset:
+    name: workflow subset
+    description: Subset consisting of just the workflow execution activities
     from_schema: https://example.com/nmdc_submission_schema
 types:
   unit:
@@ -4227,6 +4227,8 @@ enums:
         text: Spore
       Sporozoa:
         text: Sporozoa
+      Stroma:
+        text: Stroma
       Subsurface:
         text: Subsurface
       Sulphur Autotrophic Denitrification:

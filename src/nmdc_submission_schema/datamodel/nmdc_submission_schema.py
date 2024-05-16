@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-04-18T09:18:15
+# Generation date: 2024-05-15T17:30:57
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -13228,6 +13228,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Sponge = PermissibleValue(text="Sponge")
     Spore = PermissibleValue(text="Spore")
     Sporozoa = PermissibleValue(text="Sporozoa")
+    Stroma = PermissibleValue(text="Stroma")
     Subsurface = PermissibleValue(text="Subsurface")
     Sweets = PermissibleValue(text="Sweets")
     Terephthalate = PermissibleValue(text="Terephthalate")
