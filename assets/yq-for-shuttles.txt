@@ -1,0 +1,96 @@
+# using \x0A to represent a line feed
+# double $ gets reduced to one by make
+
+# .string_serialization=="{text};{float} {unit}": what about multivalueds? don't see any at this time
+# ControlledTermValue: experiential factor has string_serialization: '{termLabel} {[termID]}|{text}'
+# ControlledTermValue: what about multivalued CTVs? don't see any besides chem_administration above at this time
+# for water, can depth be a point, a range, or both?
+
+
+# globally replace structured ranges with strings.
+# undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
+# future versions of the nmdc-schema might just use strings, too
+
+# there's still more to do. see schemasheets/populated_tsv/slot_usage.tsv
+# to some degree this should be handled globally by sheets_and_friends/tsv_in/validation_converter.tsv
+# and on a slot-by-slot basic by sheets_and_friends/tsv_in/modifications_long.tsv
+
+# we should be consistent about the following things in patterns
+# single or multiple whitespace?
+# [0-9] or \d?
+# include scientific notation? (eg quantity value)
+# what whitespace to exclude?
+
+# be careful about strings that look like numbers with quotes in YAML
+#   impact on other serializations?
+
+# escape pipes that are going to be used literally as future delimiters ?
+
+#	 should add a remove attribute option to sheets and friend's modify and validate
+#	  currently have nan string serializations
+
+# scrutinize the slots that currently accept xyz or 100 units. how could they be better constrained?
+
+# synchronize between guidance, examples and validation
+#   cross-reference MIxS' values for those aspects
+
+# use yq to add examples when the examples themselves include the packed value separator |
+#   good reason for using ! instead of |
+
+'(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .examples) = [{"value": "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"}, {"value": "agar [CHEBI:2509];2018-05"}]'
+
+# use yq to add patterns with a secondary condition like mutivalued
+'(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .pattern) = "^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$$"'
+'(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .range) = "string"'
+
+'(.classes.[].slot_usage.[] | select(.range == "QuantityValue") | .pattern) = "^[-+]?[0-9]*\.?[0-9]+ +\S.*$$"'
+'(.classes.[].slot_usage.[] | select(.range == "QuantityValue" and .multivalued == true)  | .pattern) = "^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$$"'
+
+# add a pattern for {termLabel} {[termID]} in teh validation configuration
+# need more invalid examples
+#yq -i '(.classes.[].slot_usage.[] | select(.string_serialization=="{termLabel} {[termID]}") | .range) = "string"' $@
+
+'(.classes.[].slot_usage.[] | select(.string_serialization=="{text};{float} {unit}") | .pattern) = "^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$$"'
+'(.classes.[].slot_usage.[] | select(.string_serialization=="{text};{float} {unit}" and .multivalued == true ) | .pattern) = "^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$$"'
+
+'(.slots.[] | select(.domain == "Activity") | .domain ) = "NamedThing"'
+'(.slots.[] | select(.domain == "Agent") | .domain ) = "NamedThing"'
+'(.slots.[] | select(.domain == "AttributeValue") | .domain ) = "NamedThing"'
+'(.slots.[] | select(.domain == "AttributeValue") | .domain ) = "NamedThing"'
+'(.slots.[] | select(.domain == "ControlledTermValue") | .domain ) = "NamedThing"'
+'(.slots.[] | select(.domain == "GeolocationValue") | .domain ) = "NamedThing"'
+
+'del(.classes.Activity)'
+'del(.classes.Agent)'
+'del(.classes.AttributeValue)'
+'del(.classes.ControlledIdentifiedTermValue)'
+'del(.classes.ControlledTermValue)'
+'del(.classes.GeolocationValue)'
+'del(.classes.OntologyClass)'
+'del(.classes.QuantityValue)'
+'del(.classes.TextValue)'
+'del(.classes.TimestampValue)'
+
+# use yq for global modifications
+# rel_to_oxygen / oxy_stat_samp
+'(.slots.[] | select(.name == "rel_to_oxygen") | .range) = "rel_to_oxygen_enum"'
+'(.slots.[] | select(.name == "oxy_stat_samp") | .range) = "rel_to_oxygen_enum"'
+
+# remove slots that are no longer necessary due to removal of classes above
+'del(.slots.[] | select(.name == "acted_on_behalf_of"))'
+'del(.slots.[] | select(.name == "ended_at_time"))'
+'del(.slots.[] | select(.name == "has_maximum_numeric_value"))'
+'del(.slots.[] | select(.name == "has_minimum_numeric_value"))'
+'del(.slots.[] | select(.name == "has_numeric_value"))'
+'del(.slots.[] | select(.name == "has_raw_value"))'
+'del(.slots.[] | select(.name == "has_unit"))'
+'del(.slots.[] | select(.name == "latitude"))'
+'del(.slots.[] | select(.name == "longitude"))'
+'del(.slots.[] | select(.name == "started_at_time"))'
+'del(.slots.[] | select(.name == "term"))'
+'del(.slots.[] | select(.name == "used"))'
+'del(.slots.[] | select(.name == "was_associated_with"))'
+'del(.slots.[] | select(.name == "was_generated_by"))'
+'del(.slots.[] | select(.name == "was_informed_by"))'
+
+'del(.slots.[] | select(.name == "was_informed_by"))'

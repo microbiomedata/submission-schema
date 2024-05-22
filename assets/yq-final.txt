@@ -1,0 +1,29 @@
+# remove the multivalued true annotation from these global slot definitions for the sake of linkml-convert
+#   esp to tsv? and dumping to SQLite?
+
+# follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
+
+'(.slots.[] | select(.range == "ControlledIdentifiedTermValue") | .range) = "string"'
+'(.slots.[] | select(.range == "ControlledTermValue") | .range) = "string"'
+'(.slots.[] | select(.range == "GeolocationValue") | .range) = "string"'
+'(.slots.[] | select(.range == "OntologyClass") | .range) = "string"'
+'(.slots.[] | select(.range == "QuantityValue") | .range) = "string"'
+'(.slots.[] | select(.range == "TextValue") | .range) = "string"'
+'(.slots.[] | select(.range == "TimestampValue") | .range) = "string"'
+
+#	yq -i '(.slots.[] | select(has("range") | not  ) | .range ) = "string"'
+#	yq -i '(.classes.[].slot_usage.[] | select(has("range") | not  ) | .range ) = "string"'
+
+'(.slots.[] | select(.name == "sample_link") | .range ) = "string"'
+'(.slots.[] | select(.range == "string") | .multivalued ) = false'
+'(.classes.[].slot_usage.[] | select(.range=="string") | .multivalued) = false'
+
+#	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "boolean"'
+#	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "boolean"'
+
+'(.slots.[] | select(.name == "oxy_stat_samp") | .range) = "OxyStatSampEnum"'
+'(.classes.[].slot_usage.[] | select(.name == "oxy_stat_samp") | .range) = "OxyStatSampEnum"'
+'(.slots.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"'
+'(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "YesNoEnum"'
+'(.slots.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"'
+'(.classes.[].slot_usage.[] | select(.name == "dnase_rna") | .range) = "YesNoEnum"'
