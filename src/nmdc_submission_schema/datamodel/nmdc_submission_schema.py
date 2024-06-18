@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-05-15T17:30:57
+# Generation date: 2024-06-18T15:31:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -550,7 +550,7 @@ class AirInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -670,8 +670,8 @@ class AirInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -929,7 +929,7 @@ class BiofilmInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -1115,8 +1115,8 @@ class BiofilmInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -1567,7 +1567,7 @@ class BuiltEnvInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     elevator: Optional[str] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
@@ -1891,8 +1891,8 @@ class BuiltEnvInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.elevator is not None and not isinstance(self.elevator, str):
             self.elevator = str(self.elevator)
@@ -2939,7 +2939,7 @@ class HcrCoresInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -3142,8 +3142,8 @@ class HcrCoresInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -3693,7 +3693,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -3911,8 +3911,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -4458,7 +4458,7 @@ class HostAssociatedInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -4598,8 +4598,8 @@ class HostAssociatedInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -5543,7 +5543,7 @@ class MiscEnvsInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -5700,8 +5700,8 @@ class MiscEnvsInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -6022,7 +6022,7 @@ class PlantAssociatedInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -6210,8 +6210,8 @@ class PlantAssociatedInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -6749,7 +6749,7 @@ class SedimentInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -6987,8 +6987,8 @@ class SedimentInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -7564,7 +7564,7 @@ class SoilInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -7674,18 +7674,18 @@ class SoilInterface(DhInterface):
 
         if self._is_empty(self.env_broad_scale):
             self.MissingRequiredField("env_broad_scale")
-        if not isinstance(self.env_broad_scale, EnvBroadScaleSoilEnum):
-            self.env_broad_scale = EnvBroadScaleSoilEnum(self.env_broad_scale)
+        if not isinstance(self.env_broad_scale, str):
+            self.env_broad_scale = str(self.env_broad_scale)
 
         if self._is_empty(self.env_local_scale):
             self.MissingRequiredField("env_local_scale")
-        if not isinstance(self.env_local_scale, EnvLocalScaleSoilEnum):
-            self.env_local_scale = EnvLocalScaleSoilEnum(self.env_local_scale)
+        if not isinstance(self.env_local_scale, str):
+            self.env_local_scale = str(self.env_local_scale)
 
         if self._is_empty(self.env_medium):
             self.MissingRequiredField("env_medium")
-        if not isinstance(self.env_medium, EnvMediumSoilEnum):
-            self.env_medium = EnvMediumSoilEnum(self.env_medium)
+        if not isinstance(self.env_medium, str):
+            self.env_medium = str(self.env_medium)
 
         if self._is_empty(self.geo_loc_name):
             self.MissingRequiredField("geo_loc_name")
@@ -7799,8 +7799,8 @@ class SoilInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -8347,7 +8347,7 @@ class WastewaterSludgeInterface(DhInterface):
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
     efficiency_percent: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     emulsions: Optional[str] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
@@ -8477,8 +8477,8 @@ class WastewaterSludgeInterface(DhInterface):
         if self.efficiency_percent is not None and not isinstance(self.efficiency_percent, str):
             self.efficiency_percent = str(self.efficiency_percent)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.emulsions is not None and not isinstance(self.emulsions, str):
             self.emulsions = str(self.emulsions)
@@ -8824,7 +8824,7 @@ class WaterInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -9058,8 +9058,8 @@ class WaterInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -16551,7 +16551,7 @@ slots.efficiency_percent = Slot(uri=MIXS['0000657'], name="efficiency_percent", 
                    model_uri=NMDC_SUB_SCHEMA.efficiency_percent, domain=None, range=Optional[str])
 
 slots.elev = Slot(uri=MIXS['0000093'], name="elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.elev, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.elev, domain=None, range=Optional[float])
 
 slots.elevator = Slot(uri=MIXS['0000799'], name="elevator", curie=MIXS.curie('0000799'),
                    model_uri=NMDC_SUB_SCHEMA.elevator, domain=None, range=Optional[str])
@@ -21115,15 +21115,15 @@ slots.SoilInterface_elev = Slot(uri=MIXS['0000093'], name="SoilInterface_elev", 
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_elev, domain=SoilInterface, range=float)
 
 slots.SoilInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SoilInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=Union[str, "EnvBroadScaleSoilEnum"],
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SoilInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=Union[str, "EnvLocalScaleSoilEnum"],
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_env_medium = Slot(uri=MIXS['0000014'], name="SoilInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=Union[str, "EnvMediumSoilEnum"],
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SoilInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -22131,4 +22131,4 @@ slots.SoilMixsInspiredMixin_start_time_inc = Slot(uri=NMDC['nmdc/start_time_inc'
 
 slots.ProcessedSample_id = Slot(uri=NMDC_SUB_SCHEMA.id, name="ProcessedSample_id", curie=NMDC_SUB_SCHEMA.curie('id'),
                    model_uri=NMDC_SUB_SCHEMA.ProcessedSample_id, domain=ProcessedSample, range=Union[str, ProcessedSampleId],
-                   pattern=re.compile(r'^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})(\.[A-Za-z0-9]{1,})*(_[A-Za-z0-9_\.-]+)?$'))
+                   pattern=re.compile(r'^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$'))

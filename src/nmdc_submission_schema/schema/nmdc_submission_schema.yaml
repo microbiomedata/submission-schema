@@ -7884,6 +7884,31 @@ slots:
     is_a: environment field
     slot_uri: MIXS:0000094
     multivalued: false
+    domain_of:
+      - agriculture
+      - air
+      - built environment
+      - core
+      - food-animal and animal feed
+      - food-farm environment
+      - food-food production facility
+      - food-human foods
+      - host-associated
+      - human-associated
+      - human-gut
+      - human-oral
+      - human-skin
+      - human-vaginal
+      - hydrocarbon resources-cores
+      - hydrocarbon resources-fluids_swabs
+      - microbial mat_biofilm
+      - miscellaneous natural or artificial environment
+      - plant-associated
+      - sediment
+      - soil
+      - symbiont-associated
+      - wastewater_sludge
+      - water
     range: string
   aminopept_act:
     name: aminopept_act
@@ -10410,7 +10435,7 @@ slots:
     is_a: environment field
     slot_uri: MIXS:0000093
     multivalued: false
-    range: string
+    range: float
   elevator:
     name: elevator
     annotations:
@@ -10476,6 +10501,9 @@ slots:
       expected_value:
         tag: expected_value
         value: The major environment type(s) where the sample was collected. Recommend subclasses of biome [ENVO:00000428]. Multiple terms can be separated by one or more pipes.
+      tooltip:
+        tag: tooltip
+        value: The biome or major environmental system where the sample or specimen originated. Choose values from subclasses of the 'biome' class [ENVO:00000428] in the Environment Ontology (ENVO). For host-associated or plant-associated samples, use terms from the UBERON or Plant Ontology to describe the broad anatomical or morphological context
     description: 'Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO’s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
     title: broad-scale environmental context
     examples:
@@ -10494,6 +10522,9 @@ slots:
       expected_value:
         tag: expected_value
         value: Environmental entities having causal influences upon the entity at time of sampling.
+      tooltip:
+        tag: tooltip
+        value: The specific environmental entities or features near the sample or specimen that significantly influence its characteristics or composition. These entities are typically smaller in scale than the broad environmental context. Values for this field should be countable, material nouns and must be chosen from subclasses of BFO:0000040 (material entity) that appear in the Environment Ontology (ENVO). For host-associated or plant-associated samples, use terms from the UBERON or Plant Ontology to describe specific anatomical structures or plant parts.
     description: 'Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
     title: local environmental context
     examples:
@@ -10512,6 +10543,9 @@ slots:
       expected_value:
         tag: expected_value
         value: The material displaced by the entity at time of sampling. Recommend subclasses of environmental material [ENVO:00010483].
+      tooltip:
+        tag: tooltip
+        value: The predominant environmental material or substrate that directly surrounds or hosts the sample or specimen at the time of sampling. Choose values from subclasses of the 'environmental material' class [ENVO:00010483] in the Environment Ontology (ENVO). Values for this field should be measurable or mass material nouns, representing continuous environmental materials. For host-associated or plant-associated samples, use terms from the UBERON or Plant Ontology to indicate a tissue, organ, or plant structure
     description: 'Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).'
     title: environmental medium
     examples:
@@ -19092,6 +19126,30 @@ classes:
         multivalued: false
         owner: Biosample
         domain_of:
+          - agriculture
+          - air
+          - built environment
+          - core
+          - food-animal and animal feed
+          - food-farm environment
+          - food-food production facility
+          - food-human foods
+          - host-associated
+          - human-associated
+          - human-gut
+          - human-oral
+          - human-skin
+          - human-vaginal
+          - hydrocarbon resources-cores
+          - hydrocarbon resources-fluids_swabs
+          - microbial mat_biofilm
+          - miscellaneous natural or artificial environment
+          - plant-associated
+          - sediment
+          - soil
+          - symbiont-associated
+          - wastewater_sludge
+          - water
           - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -19614,9 +19672,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -20355,6 +20424,30 @@ classes:
         multivalued: false
         owner: Biosample
         domain_of:
+          - agriculture
+          - air
+          - built environment
+          - core
+          - food-animal and animal feed
+          - food-farm environment
+          - food-food production facility
+          - food-human foods
+          - host-associated
+          - human-associated
+          - human-gut
+          - human-oral
+          - human-skin
+          - human-vaginal
+          - hydrocarbon resources-cores
+          - hydrocarbon resources-fluids_swabs
+          - microbial mat_biofilm
+          - miscellaneous natural or artificial environment
+          - plant-associated
+          - sediment
+          - soil
+          - symbiont-associated
+          - wastewater_sludge
+          - water
           - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -21573,9 +21666,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -22782,6 +22886,30 @@ classes:
         multivalued: false
         owner: Biosample
         domain_of:
+          - agriculture
+          - air
+          - built environment
+          - core
+          - food-animal and animal feed
+          - food-farm environment
+          - food-food production facility
+          - food-human foods
+          - host-associated
+          - human-associated
+          - human-gut
+          - human-oral
+          - human-skin
+          - human-vaginal
+          - hydrocarbon resources-cores
+          - hydrocarbon resources-fluids_swabs
+          - microbial mat_biofilm
+          - miscellaneous natural or artificial environment
+          - plant-associated
+          - sediment
+          - soil
+          - symbiont-associated
+          - wastewater_sludge
+          - water
           - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -27247,7 +27375,7 @@ classes:
         slot_group: emsl_section
         range: float
         required: true
-        recommended: true
+        recommended: false
       project_id:
         name: project_id
         description: Proposal IDs or names associated with dataset
@@ -27261,7 +27389,7 @@ classes:
         slot_group: emsl_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       replicate_number:
         name: replicate_number
@@ -27297,7 +27425,7 @@ classes:
         slot_group: emsl_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         pattern: ^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$
         multivalued: false
       sample_type:
@@ -27316,7 +27444,7 @@ classes:
         slot_group: emsl_section
         range: SampleTypeEnum
         required: true
-        recommended: true
+        recommended: false
       technical_reps:
         name: technical_reps
         description: If sending technical replicates of the same sample, indicate the replicate count.
@@ -28746,9 +28874,20 @@ classes:
         pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -31705,9 +31844,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -33165,6 +33315,30 @@ classes:
         multivalued: false
         owner: Biosample
         domain_of:
+          - agriculture
+          - air
+          - built environment
+          - core
+          - food-animal and animal feed
+          - food-farm environment
+          - food-food production facility
+          - food-human foods
+          - host-associated
+          - human-associated
+          - human-gut
+          - human-oral
+          - human-skin
+          - human-vaginal
+          - hydrocarbon resources-cores
+          - hydrocarbon resources-fluids_swabs
+          - microbial mat_biofilm
+          - miscellaneous natural or artificial environment
+          - plant-associated
+          - sediment
+          - soil
+          - symbiont-associated
+          - wastewater_sludge
+          - water
           - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -34395,9 +34569,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -34888,7 +35073,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 2000
       dna_cont_type:
@@ -34905,7 +35090,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: JgiContTypeEnum
         required: true
-        recommended: true
+        recommended: false
       dna_cont_well:
         name: dna_cont_well
         title: DNA plate position
@@ -34943,7 +35128,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         pattern: ^.{1,20}$
         multivalued: false
       dna_dnase:
@@ -34961,7 +35146,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: YesNoEnum
         required: true
-        recommended: true
+        recommended: false
       dna_isolate_meth:
         name: dna_isolate_meth
         description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -34979,7 +35164,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_project_contact:
         name: dna_project_contact
@@ -34997,7 +35182,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_samp_id:
         name: dna_samp_id
@@ -35017,7 +35202,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_sample_format:
         name: dna_sample_format
@@ -35033,7 +35218,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: DNASampleFormatEnum
         required: true
-        recommended: true
+        recommended: false
       dna_sample_name:
         name: dna_sample_name
         description: Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
@@ -35049,7 +35234,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_seq_project:
         name: dna_seq_project
@@ -35069,7 +35254,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_seq_project_name:
         name: dna_seq_project_name
@@ -35087,7 +35272,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_seq_project_pi:
         name: dna_seq_project_pi
@@ -35105,7 +35290,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_volume:
         name: dna_volume
@@ -35123,7 +35308,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 1000
       proposal_dna:
@@ -35142,7 +35327,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -35235,7 +35420,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
       dna_absorb2:
         name: dna_absorb2
         description: 260/230 measurement of DNA sample purity
@@ -35254,7 +35439,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
       dna_concentration:
         name: dna_concentration
         title: DNA concentration in ng/ul
@@ -35273,7 +35458,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 2000
       dna_cont_type:
@@ -35290,7 +35475,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: JgiContTypeEnum
         required: true
-        recommended: true
+        recommended: false
       dna_cont_well:
         name: dna_cont_well
         title: DNA plate position
@@ -35328,7 +35513,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         pattern: ^.{1,20}$
         multivalued: false
       dna_dnase:
@@ -35346,7 +35531,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: YesNoEnum
         required: true
-        recommended: true
+        recommended: false
       dna_isolate_meth:
         name: dna_isolate_meth
         description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -35364,7 +35549,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_project_contact:
         name: dna_project_contact
@@ -35382,7 +35567,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_samp_id:
         name: dna_samp_id
@@ -35402,7 +35587,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_sample_format:
         name: dna_sample_format
@@ -35418,7 +35603,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: DNASampleFormatEnum
         required: true
-        recommended: true
+        recommended: false
       dna_sample_name:
         name: dna_sample_name
         description: Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
@@ -35434,7 +35619,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_seq_project:
         name: dna_seq_project
@@ -35454,7 +35639,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_seq_project_name:
         name: dna_seq_project_name
@@ -35472,7 +35657,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_seq_project_pi:
         name: dna_seq_project_pi
@@ -35490,7 +35675,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       dna_volume:
         name: dna_volume
@@ -35508,7 +35693,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 1000
       proposal_dna:
@@ -35527,7 +35712,7 @@ classes:
         slot_group: jgi_metagenomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -35593,7 +35778,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: YesNoEnum
         required: true
-        recommended: true
+        recommended: false
       proposal_rna:
         name: proposal_rna
         title: RNA proposal ID
@@ -35610,7 +35795,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_absorb1:
         name: rna_absorb1
@@ -35668,7 +35853,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 1000
       rna_cont_type:
@@ -35685,7 +35870,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: JgiContTypeEnum
         required: true
-        recommended: true
+        recommended: false
       rna_cont_well:
         name: rna_cont_well
         title: RNA plate position
@@ -35723,7 +35908,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         pattern: ^.{1,20}$
         multivalued: false
       rna_isolate_meth:
@@ -35743,7 +35928,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_project_contact:
         name: rna_project_contact
@@ -35761,7 +35946,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_samp_id:
         name: rna_samp_id
@@ -35779,7 +35964,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_sample_format:
         name: rna_sample_format
@@ -35795,7 +35980,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: RNASampleFormatEnum
         required: true
-        recommended: true
+        recommended: false
       rna_sample_name:
         name: rna_sample_name
         description: Give the RNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
@@ -35811,7 +35996,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 2000
         multivalued: false
@@ -35833,7 +36018,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_seq_project_name:
         name: rna_seq_project_name
@@ -35851,7 +36036,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_seq_project_pi:
         name: rna_seq_project_pi
@@ -35869,7 +36054,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: string
         required: true
-        recommended: true
+        recommended: false
         multivalued: false
       rna_volume:
         name: rna_volume
@@ -35887,7 +36072,7 @@ classes:
         slot_group: jgi_metatranscriptomics_section
         range: float
         required: true
-        recommended: true
+        recommended: false
         minimum_value: 0
         maximum_value: 1000
       oxy_stat_samp:
@@ -36038,6 +36223,30 @@ classes:
         multivalued: false
         owner: Biosample
         domain_of:
+          - agriculture
+          - air
+          - built environment
+          - core
+          - food-animal and animal feed
+          - food-farm environment
+          - food-food production facility
+          - food-human foods
+          - host-associated
+          - human-associated
+          - human-gut
+          - human-oral
+          - human-skin
+          - human-vaginal
+          - hydrocarbon resources-cores
+          - hydrocarbon resources-fluids_swabs
+          - microbial mat_biofilm
+          - miscellaneous natural or artificial environment
+          - plant-associated
+          - sediment
+          - soil
+          - symbiont-associated
+          - wastewater_sludge
+          - water
           - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -36968,9 +37177,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -39182,9 +39402,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -42141,9 +42372,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -44106,9 +44348,11 @@ classes:
         domain_of:
           - Biosample
         slot_group: sample_id_section
-        range: EnvBroadScaleSoilEnum
         required: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+          - range: EnvBroadScaleSoilEnum
+          - range: string
       env_local_scale:
         name: env_local_scale
         description: 'Report the entity or entities which are in the sample or specimen’s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
@@ -44131,9 +44375,11 @@ classes:
         domain_of:
           - Biosample
         slot_group: sample_id_section
-        range: EnvLocalScaleSoilEnum
         required: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+          - range: EnvLocalScaleSoilEnum
+          - range: string
       env_medium:
         name: env_medium
         description: 'Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).'
@@ -44152,9 +44398,11 @@ classes:
         domain_of:
           - Biosample
         slot_group: sample_id_section
-        range: EnvMediumSoilEnum
         required: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+          - range: EnvMediumSoilEnum
+          - range: string
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -45199,9 +45447,20 @@ classes:
         multivalued: false
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -45684,7 +45943,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
-        recommended: true
+        recommended: false
         pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       size_frac_up:
         name: size_frac_up
@@ -45714,7 +45973,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
-        recommended: true
+        recommended: false
         pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       slope_aspect:
         name: slope_aspect
@@ -47000,9 +47259,20 @@ classes:
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -49722,9 +49992,20 @@ classes:
         pattern: ^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
       oxy_stat_samp:
         name: oxy_stat_samp
+        annotations:
+          expected_value:
+            tag: expected_value
+            value: enumeration
+          occurrence:
+            tag: occurrence
+            value: '1'
         description: Oxygenation status of sample
         title: oxygenation status of sample
+        examples:
+          - value: aerobic
         from_schema: https://w3id.org/nmdc/nmdc
+        aliases:
+          - oxygenation status of sample
         rank: 25
         is_a: core field
         slot_uri: MIXS:0000753
@@ -50995,7 +51276,7 @@ classes:
         slot_group: sample_id_section
         range: AnalysisTypeEnum
         required: true
-        recommended: true
+        recommended: false
       samp_name:
         name: samp_name
         annotations:
@@ -51513,8 +51794,8 @@ classes:
           - NamedThing
           - Activity
         required: true
-        pattern: ^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})(\.[A-Za-z0-9]{1,})*(_[A-Za-z0-9_\.-]+)?$
+        pattern: ^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$
         structured_pattern:
-          syntax: '{id_nmdc_prefix}:procsm-{id_shoulder}-{id_blade}{id_version}{id_locus}'
+          syntax: '{id_nmdc_prefix}:procsm-{id_shoulder}-{id_blade}$'
           interpolated: true
 source_file: local/with_modifications.yaml.raw

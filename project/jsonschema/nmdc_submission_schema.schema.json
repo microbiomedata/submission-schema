@@ -6356,7 +6356,7 @@
                 },
                 "id": {
                     "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-                    "pattern": "^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})(\\.[A-Za-z0-9]{1,})*(_[A-Za-z0-9_\\.-]+)?$",
+                    "pattern": "^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$",
                     "type": "string"
                 },
                 "name": {
@@ -7506,19 +7506,43 @@
                     "type": "number"
                 },
                 "env_broad_scale": {
-                    "$ref": "#/$defs/EnvBroadScaleSoilEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvBroadScaleSoilEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
+                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
+                    "type": "string"
                 },
                 "env_local_scale": {
-                    "$ref": "#/$defs/EnvLocalScaleSoilEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvLocalScaleSoilEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the entity or entities which are in the sample or specimen\u2019s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
+                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
+                    "type": "string"
                 },
                 "env_medium": {
-                    "$ref": "#/$defs/EnvMediumSoilEnum",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvMediumSoilEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
+                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
+                    "type": "string"
                 },
                 "experimental_factor": {
                     "description": "Experimental factors are essentially the variable aspects of an experiment design which can be used to describe an experiment, or set of experiments, in an increasingly detailed manner. This field accepts ontology terms from Experimental Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO; for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI",
