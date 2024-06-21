@@ -5929,6 +5929,8 @@ enums:
         text: Cyanobacterial aggregates
       Cyanobacterial bloom:
         text: Cyanobacterial bloom
+      Deglaciated soil:
+        text: Deglaciated soil
       Delivery networks:
         text: Delivery networks
       Dental abscess:
@@ -7228,6 +7230,8 @@ enums:
         text: Creek
       Cryoconite:
         text: Cryoconite
+      Deglaciated soil:
+        text: Deglaciated soil
       Desert:
         text: Desert
       Dry permafrost:

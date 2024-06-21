@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-06-18T15:31:35
+# Generation date: 2024-06-21T11:27:20
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -15083,6 +15083,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Cyanobacterial aggregates"))
         setattr(cls, "Cyanobacterial bloom",
             PermissibleValue(text="Cyanobacterial bloom"))
+        setattr(cls, "Deglaciated soil",
+            PermissibleValue(text="Deglaciated soil"))
         setattr(cls, "Delivery networks",
             PermissibleValue(text="Delivery networks"))
         setattr(cls, "Dental abscess",
@@ -15975,6 +15977,8 @@ class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="C horizon/Substratum"))
         setattr(cls, "Cover soil",
             PermissibleValue(text="Cover soil"))
+        setattr(cls, "Deglaciated soil",
+            PermissibleValue(text="Deglaciated soil"))
         setattr(cls, "Dry permafrost",
             PermissibleValue(text="Dry permafrost"))
         setattr(cls, "E horizon/Subsurface",
