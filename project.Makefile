@@ -281,6 +281,7 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 
 examples/output/SampleData-water-data-exhaustive.regen.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 local/SampleData-water-data-exhaustive.tsv
+	mkdir -p $(dir $@)
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
