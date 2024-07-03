@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-01-24T16:56:07
+# Generation date: 2024-06-21T11:27:20
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -550,7 +550,7 @@ class AirInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -670,8 +670,8 @@ class AirInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -929,7 +929,7 @@ class BiofilmInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -1115,8 +1115,8 @@ class BiofilmInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -1567,7 +1567,7 @@ class BuiltEnvInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     elevator: Optional[str] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
@@ -1891,8 +1891,8 @@ class BuiltEnvInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.elevator is not None and not isinstance(self.elevator, str):
             self.elevator = str(self.elevator)
@@ -2939,7 +2939,7 @@ class HcrCoresInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -3142,8 +3142,8 @@ class HcrCoresInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -3693,7 +3693,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -3911,8 +3911,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -4458,7 +4458,7 @@ class HostAssociatedInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -4598,8 +4598,8 @@ class HostAssociatedInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -4940,7 +4940,7 @@ class HostAssociatedInterface(DhInterface):
 @dataclass
 class JgiMgInterface(DhInterface):
     """
-    jgi_mg dh_interface
+    Metadata for samples sent to JGI for standard metagenome sequencing
     """
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4956,7 +4956,7 @@ class JgiMgInterface(DhInterface):
     dna_isolate_meth: str = None
     dna_project_contact: str = None
     dna_samp_id: str = None
-    dna_sample_format: Union[str, "DnaSampleFormatEnum"] = None
+    dna_sample_format: Union[str, "DNASampleFormatEnum"] = None
     dna_sample_name: str = None
     dna_seq_project: str = None
     dna_seq_project_name: str = None
@@ -5009,8 +5009,8 @@ class JgiMgInterface(DhInterface):
 
         if self._is_empty(self.dna_sample_format):
             self.MissingRequiredField("dna_sample_format")
-        if not isinstance(self.dna_sample_format, DnaSampleFormatEnum):
-            self.dna_sample_format = DnaSampleFormatEnum(self.dna_sample_format)
+        if not isinstance(self.dna_sample_format, DNASampleFormatEnum):
+            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
 
         if self._is_empty(self.dna_sample_name):
             self.MissingRequiredField("dna_sample_name")
@@ -5087,8 +5087,8 @@ class JgiMgInterface(DhInterface):
         if self.dna_samp_id is not None and not isinstance(self.dna_samp_id, str):
             self.dna_samp_id = str(self.dna_samp_id)
 
-        if self.dna_sample_format is not None and not isinstance(self.dna_sample_format, DnaSampleFormatEnum):
-            self.dna_sample_format = DnaSampleFormatEnum(self.dna_sample_format)
+        if self.dna_sample_format is not None and not isinstance(self.dna_sample_format, DNASampleFormatEnum):
+            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
 
         if self.dna_sample_name is not None and not isinstance(self.dna_sample_name, str):
             self.dna_sample_name = str(self.dna_sample_name)
@@ -5127,6 +5127,199 @@ class JgiMgInterface(DhInterface):
 
 
 @dataclass
+class JgiMgLrInterface(DhInterface):
+    """
+    Metadata for samples sent to JGI for long read metagenome sequecning
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["JgiMgLrInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:JgiMgLrInterface"
+    class_name: ClassVar[str] = "JgiMgLrInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiMgLrInterface
+
+    dna_concentration: float = None
+    dna_cont_type: Union[str, "JgiContTypeEnum"] = None
+    dna_container_id: str = None
+    dna_dnase: Union[str, "YesNoEnum"] = None
+    dna_isolate_meth: str = None
+    dna_project_contact: str = None
+    dna_samp_id: str = None
+    dna_sample_format: Union[str, "DNASampleFormatEnum"] = None
+    dna_sample_name: str = None
+    dna_seq_project: str = None
+    dna_seq_project_name: str = None
+    dna_seq_project_pi: str = None
+    dna_volume: float = None
+    proposal_dna: str = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    dna_absorb1: Optional[float] = None
+    dna_absorb2: Optional[float] = None
+    dna_cont_well: Optional[str] = None
+    oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
+    samp_name: Optional[str] = None
+    source_mat_id: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.dna_concentration):
+            self.MissingRequiredField("dna_concentration")
+        if not isinstance(self.dna_concentration, float):
+            self.dna_concentration = float(self.dna_concentration)
+
+        if self._is_empty(self.dna_cont_type):
+            self.MissingRequiredField("dna_cont_type")
+        if not isinstance(self.dna_cont_type, JgiContTypeEnum):
+            self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
+
+        if self._is_empty(self.dna_container_id):
+            self.MissingRequiredField("dna_container_id")
+        if not isinstance(self.dna_container_id, str):
+            self.dna_container_id = str(self.dna_container_id)
+
+        if self._is_empty(self.dna_dnase):
+            self.MissingRequiredField("dna_dnase")
+        if not isinstance(self.dna_dnase, YesNoEnum):
+            self.dna_dnase = YesNoEnum(self.dna_dnase)
+
+        if self._is_empty(self.dna_isolate_meth):
+            self.MissingRequiredField("dna_isolate_meth")
+        if not isinstance(self.dna_isolate_meth, str):
+            self.dna_isolate_meth = str(self.dna_isolate_meth)
+
+        if self._is_empty(self.dna_project_contact):
+            self.MissingRequiredField("dna_project_contact")
+        if not isinstance(self.dna_project_contact, str):
+            self.dna_project_contact = str(self.dna_project_contact)
+
+        if self._is_empty(self.dna_samp_id):
+            self.MissingRequiredField("dna_samp_id")
+        if not isinstance(self.dna_samp_id, str):
+            self.dna_samp_id = str(self.dna_samp_id)
+
+        if self._is_empty(self.dna_sample_format):
+            self.MissingRequiredField("dna_sample_format")
+        if not isinstance(self.dna_sample_format, DNASampleFormatEnum):
+            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
+
+        if self._is_empty(self.dna_sample_name):
+            self.MissingRequiredField("dna_sample_name")
+        if not isinstance(self.dna_sample_name, str):
+            self.dna_sample_name = str(self.dna_sample_name)
+
+        if self._is_empty(self.dna_seq_project):
+            self.MissingRequiredField("dna_seq_project")
+        if not isinstance(self.dna_seq_project, str):
+            self.dna_seq_project = str(self.dna_seq_project)
+
+        if self._is_empty(self.dna_seq_project_name):
+            self.MissingRequiredField("dna_seq_project_name")
+        if not isinstance(self.dna_seq_project_name, str):
+            self.dna_seq_project_name = str(self.dna_seq_project_name)
+
+        if self._is_empty(self.dna_seq_project_pi):
+            self.MissingRequiredField("dna_seq_project_pi")
+        if not isinstance(self.dna_seq_project_pi, str):
+            self.dna_seq_project_pi = str(self.dna_seq_project_pi)
+
+        if self._is_empty(self.dna_volume):
+            self.MissingRequiredField("dna_volume")
+        if not isinstance(self.dna_volume, float):
+            self.dna_volume = float(self.dna_volume)
+
+        if self._is_empty(self.proposal_dna):
+            self.MissingRequiredField("proposal_dna")
+        if not isinstance(self.proposal_dna, str):
+            self.proposal_dna = str(self.proposal_dna)
+
+        if self._is_empty(self.dna_absorb1):
+            self.MissingRequiredField("dna_absorb1")
+        if not isinstance(self.dna_absorb1, float):
+            self.dna_absorb1 = float(self.dna_absorb1)
+
+        if self._is_empty(self.dna_absorb2):
+            self.MissingRequiredField("dna_absorb2")
+        if not isinstance(self.dna_absorb2, float):
+            self.dna_absorb2 = float(self.dna_absorb2)
+
+        if self._is_empty(self.analysis_type):
+            self.MissingRequiredField("analysis_type")
+        if not isinstance(self.analysis_type, list):
+            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
+        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
+
+        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
+            self.dna_absorb1 = float(self.dna_absorb1)
+
+        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
+            self.dna_absorb2 = float(self.dna_absorb2)
+
+        if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
+            self.dna_cont_well = str(self.dna_cont_well)
+
+        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
+            self.dna_absorb1 = float(self.dna_absorb1)
+
+        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
+            self.dna_absorb2 = float(self.dna_absorb2)
+
+        if self.dna_concentration is not None and not isinstance(self.dna_concentration, float):
+            self.dna_concentration = float(self.dna_concentration)
+
+        if self.dna_cont_type is not None and not isinstance(self.dna_cont_type, JgiContTypeEnum):
+            self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
+
+        if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
+            self.dna_cont_well = str(self.dna_cont_well)
+
+        if self.dna_container_id is not None and not isinstance(self.dna_container_id, str):
+            self.dna_container_id = str(self.dna_container_id)
+
+        if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
+            self.dna_dnase = YesNoEnum(self.dna_dnase)
+
+        if self.dna_isolate_meth is not None and not isinstance(self.dna_isolate_meth, str):
+            self.dna_isolate_meth = str(self.dna_isolate_meth)
+
+        if self.dna_project_contact is not None and not isinstance(self.dna_project_contact, str):
+            self.dna_project_contact = str(self.dna_project_contact)
+
+        if self.dna_samp_id is not None and not isinstance(self.dna_samp_id, str):
+            self.dna_samp_id = str(self.dna_samp_id)
+
+        if self.dna_sample_format is not None and not isinstance(self.dna_sample_format, DNASampleFormatEnum):
+            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
+
+        if self.dna_sample_name is not None and not isinstance(self.dna_sample_name, str):
+            self.dna_sample_name = str(self.dna_sample_name)
+
+        if self.dna_seq_project is not None and not isinstance(self.dna_seq_project, str):
+            self.dna_seq_project = str(self.dna_seq_project)
+
+        if self.dna_seq_project_name is not None and not isinstance(self.dna_seq_project_name, str):
+            self.dna_seq_project_name = str(self.dna_seq_project_name)
+
+        if self.dna_seq_project_pi is not None and not isinstance(self.dna_seq_project_pi, str):
+            self.dna_seq_project_pi = str(self.dna_seq_project_pi)
+
+        if self.dna_volume is not None and not isinstance(self.dna_volume, float):
+            self.dna_volume = float(self.dna_volume)
+
+        if self.proposal_dna is not None and not isinstance(self.proposal_dna, str):
+            self.proposal_dna = str(self.proposal_dna)
+
+        if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
+            self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
+
+        if self.samp_name is not None and not isinstance(self.samp_name, str):
+            self.samp_name = str(self.samp_name)
+
+        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
+            self.source_mat_id = str(self.source_mat_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class JgiMtInterface(DhInterface):
     """
     jgi_mt dh_interface
@@ -5146,7 +5339,7 @@ class JgiMtInterface(DhInterface):
     rna_isolate_meth: str = None
     rna_project_contact: str = None
     rna_samp_id: str = None
-    rna_sample_format: Union[str, "RnaSampleFormatEnum"] = None
+    rna_sample_format: Union[str, "RNASampleFormatEnum"] = None
     rna_sample_name: str = None
     rna_seq_project: str = None
     rna_seq_project_name: str = None
@@ -5203,8 +5396,8 @@ class JgiMtInterface(DhInterface):
 
         if self._is_empty(self.rna_sample_format):
             self.MissingRequiredField("rna_sample_format")
-        if not isinstance(self.rna_sample_format, RnaSampleFormatEnum):
-            self.rna_sample_format = RnaSampleFormatEnum(self.rna_sample_format)
+        if not isinstance(self.rna_sample_format, RNASampleFormatEnum):
+            self.rna_sample_format = RNASampleFormatEnum(self.rna_sample_format)
 
         if self._is_empty(self.rna_sample_name):
             self.MissingRequiredField("rna_sample_name")
@@ -5279,8 +5472,8 @@ class JgiMtInterface(DhInterface):
         if self.rna_samp_id is not None and not isinstance(self.rna_samp_id, str):
             self.rna_samp_id = str(self.rna_samp_id)
 
-        if self.rna_sample_format is not None and not isinstance(self.rna_sample_format, RnaSampleFormatEnum):
-            self.rna_sample_format = RnaSampleFormatEnum(self.rna_sample_format)
+        if self.rna_sample_format is not None and not isinstance(self.rna_sample_format, RNASampleFormatEnum):
+            self.rna_sample_format = RNASampleFormatEnum(self.rna_sample_format)
 
         if self.rna_sample_name is not None and not isinstance(self.rna_sample_name, str):
             self.rna_sample_name = str(self.rna_sample_name)
@@ -5350,7 +5543,7 @@ class MiscEnvsInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -5507,8 +5700,8 @@ class MiscEnvsInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -5829,7 +6022,7 @@ class PlantAssociatedInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -6017,8 +6210,8 @@ class PlantAssociatedInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -6556,7 +6749,7 @@ class SedimentInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -6794,8 +6987,8 @@ class SedimentInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -7371,7 +7564,7 @@ class SoilInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -7481,18 +7674,18 @@ class SoilInterface(DhInterface):
 
         if self._is_empty(self.env_broad_scale):
             self.MissingRequiredField("env_broad_scale")
-        if not isinstance(self.env_broad_scale, EnvBroadScaleSoilEnum):
-            self.env_broad_scale = EnvBroadScaleSoilEnum(self.env_broad_scale)
+        if not isinstance(self.env_broad_scale, str):
+            self.env_broad_scale = str(self.env_broad_scale)
 
         if self._is_empty(self.env_local_scale):
             self.MissingRequiredField("env_local_scale")
-        if not isinstance(self.env_local_scale, EnvLocalScaleSoilEnum):
-            self.env_local_scale = EnvLocalScaleSoilEnum(self.env_local_scale)
+        if not isinstance(self.env_local_scale, str):
+            self.env_local_scale = str(self.env_local_scale)
 
         if self._is_empty(self.env_medium):
             self.MissingRequiredField("env_medium")
-        if not isinstance(self.env_medium, EnvMediumSoilEnum):
-            self.env_medium = EnvMediumSoilEnum(self.env_medium)
+        if not isinstance(self.env_medium, str):
+            self.env_medium = str(self.env_medium)
 
         if self._is_empty(self.geo_loc_name):
             self.MissingRequiredField("geo_loc_name")
@@ -7606,8 +7799,8 @@ class SoilInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -8154,7 +8347,7 @@ class WastewaterSludgeInterface(DhInterface):
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
     efficiency_percent: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     emulsions: Optional[str] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
@@ -8284,8 +8477,8 @@ class WastewaterSludgeInterface(DhInterface):
         if self.efficiency_percent is not None and not isinstance(self.efficiency_percent, str):
             self.efficiency_percent = str(self.efficiency_percent)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.emulsions is not None and not isinstance(self.emulsions, str):
             self.emulsions = str(self.emulsions)
@@ -8631,7 +8824,7 @@ class WaterInterface(DhInterface):
     ecosystem_category: Optional[str] = None
     ecosystem_subtype: Optional[str] = None
     ecosystem_type: Optional[str] = None
-    elev: Optional[str] = None
+    elev: Optional[float] = None
     env_broad_scale: Optional[str] = None
     env_local_scale: Optional[str] = None
     env_medium: Optional[str] = None
@@ -8865,8 +9058,8 @@ class WaterInterface(DhInterface):
         if self.ecosystem_type is not None and not isinstance(self.ecosystem_type, str):
             self.ecosystem_type = str(self.ecosystem_type)
 
-        if self.elev is not None and not isinstance(self.elev, str):
-            self.elev = str(self.elev)
+        if self.elev is not None and not isinstance(self.elev, float):
+            self.elev = float(self.elev)
 
         if self.env_broad_scale is not None and not isinstance(self.env_broad_scale, str):
             self.env_broad_scale = str(self.env_broad_scale)
@@ -9424,6 +9617,7 @@ class SampleData(YAMLRoot):
     wastewater_sludge_data: Optional[Union[Union[dict, WastewaterSludgeInterface], List[Union[dict, WastewaterSludgeInterface]]]] = empty_list()
     water_data: Optional[Union[Union[dict, WaterInterface], List[Union[dict, WaterInterface]]]] = empty_list()
     emsl_data: Optional[Union[Union[dict, EmslInterface], List[Union[dict, EmslInterface]]]] = empty_list()
+    jgi_mg_lr_data: Optional[Union[Union[dict, JgiMgLrInterface], List[Union[dict, JgiMgLrInterface]]]] = empty_list()
     jgi_mg_data: Optional[Union[Union[dict, JgiMgInterface], List[Union[dict, JgiMgInterface]]]] = empty_list()
     jgi_mt_data: Optional[Union[Union[dict, JgiMtInterface], List[Union[dict, JgiMtInterface]]]] = empty_list()
 
@@ -9467,6 +9661,10 @@ class SampleData(YAMLRoot):
         if not isinstance(self.emsl_data, list):
             self.emsl_data = [self.emsl_data] if self.emsl_data is not None else []
         self.emsl_data = [v if isinstance(v, EmslInterface) else EmslInterface(**as_dict(v)) for v in self.emsl_data]
+
+        if not isinstance(self.jgi_mg_lr_data, list):
+            self.jgi_mg_lr_data = [self.jgi_mg_lr_data] if self.jgi_mg_lr_data is not None else []
+        self.jgi_mg_lr_data = [v if isinstance(v, JgiMgLrInterface) else JgiMgLrInterface(**as_dict(v)) for v in self.jgi_mg_lr_data]
 
         if not isinstance(self.jgi_mg_data, list):
             self.jgi_mg_data = [self.jgi_mg_data] if self.jgi_mg_data is not None else []
@@ -9564,35 +9762,6 @@ class ProcessedSample(MaterialEntity):
 
 
 # Enumerations
-class AnalysisTypeEnum(EnumDefinitionImpl):
-    """
-    placeholder enum descr
-    """
-    metabolomics = PermissibleValue(
-        text="metabolomics",
-        description="placeholder PV descr")
-    metagenomics = PermissibleValue(
-        text="metagenomics",
-        description="placeholder PV descr")
-    metaproteomics = PermissibleValue(
-        text="metaproteomics",
-        description="placeholder PV descr")
-    metatranscriptomics = PermissibleValue(
-        text="metatranscriptomics",
-        description="placeholder PV descr")
-
-    _defn = EnumDefinition(
-        name="AnalysisTypeEnum",
-        description="placeholder enum descr",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "natural organic matter",
-            PermissibleValue(
-                text="natural organic matter",
-                description="placeholder PV descr"))
-
 class BioticRelationshipEnum(EnumDefinitionImpl):
     """
     placeholder enum descr
@@ -9810,20 +9979,21 @@ class RnaSampleFormatEnum(EnumDefinitionImpl):
                 description="placeholder PV descr"))
 
 class SampleTypeEnum(EnumDefinitionImpl):
-    """
-    placeholder enum descr
-    """
-    soil = PermissibleValue(
-        text="soil",
-        description="placeholder PV descr")
-    water_extract_soil = PermissibleValue(
-        text="water_extract_soil",
-        description="placeholder PV descr")
+
+    soil = PermissibleValue(text="soil")
+    sediment = PermissibleValue(text="sediment")
+    water = PermissibleValue(text="water")
 
     _defn = EnumDefinition(
         name="SampleTypeEnum",
-        description="placeholder enum descr",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "soil - water extract",
+            PermissibleValue(text="soil - water extract"))
+        setattr(cls, "plant associated",
+            PermissibleValue(text="plant associated"))
 
 class StoreCondEnum(EnumDefinitionImpl):
     """
@@ -12786,7 +12956,12 @@ class HostSexEnum(EnumDefinitionImpl):
 class AnalysisTypeEnum(EnumDefinitionImpl):
 
     metabolomics = PermissibleValue(text="metabolomics")
-    metagenomics = PermissibleValue(text="metagenomics")
+    metagenomics = PermissibleValue(
+        text="metagenomics",
+        description="Standard short-read metagenomic sequencing")
+    metagenomics_long_read = PermissibleValue(
+        text="metagenomics_long_read",
+        description="Long-read metagenomic sequencing")
     metaproteomics = PermissibleValue(text="metaproteomics")
     metatranscriptomics = PermissibleValue(text="metatranscriptomics")
 
@@ -12798,8 +12973,10 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "natural organic matter",
             PermissibleValue(text="natural organic matter"))
+        setattr(cls, "bulk chemistry",
+            PermissibleValue(text="bulk chemistry"))
 
-class DnaSampleFormatEnum(EnumDefinitionImpl):
+class DNASampleFormatEnum(EnumDefinitionImpl):
 
     DNAStable = PermissibleValue(text="DNAStable")
     Ethanol = PermissibleValue(text="Ethanol")
@@ -12810,7 +12987,7 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
     Water = PermissibleValue(text="Water")
 
     _defn = EnumDefinition(
-        name="DnaSampleFormatEnum",
+        name="DNASampleFormatEnum",
     )
 
     @classmethod
@@ -12826,7 +13003,7 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
         setattr(cls, "Gentegra-RNA",
             PermissibleValue(text="Gentegra-RNA"))
 
-class RnaSampleFormatEnum(EnumDefinitionImpl):
+class RNASampleFormatEnum(EnumDefinitionImpl):
 
     DNAStable = PermissibleValue(text="DNAStable")
     Ethanol = PermissibleValue(text="Ethanol")
@@ -12837,7 +13014,7 @@ class RnaSampleFormatEnum(EnumDefinitionImpl):
     Water = PermissibleValue(text="Water")
 
     _defn = EnumDefinition(
-        name="RnaSampleFormatEnum",
+        name="RNASampleFormatEnum",
     )
 
     @classmethod
@@ -12852,15 +13029,6 @@ class RnaSampleFormatEnum(EnumDefinitionImpl):
             PermissibleValue(text="Gentegra-DNA"))
         setattr(cls, "Gentegra-RNA",
             PermissibleValue(text="Gentegra-RNA"))
-
-class SampleTypeEnum(EnumDefinitionImpl):
-
-    soil = PermissibleValue(text="soil")
-    water_extract_soil = PermissibleValue(text="water_extract_soil")
-
-    _defn = EnumDefinition(
-        name="SampleTypeEnum",
-    )
 
 class EcosystemEnum(EnumDefinitionImpl):
 
@@ -12932,6 +13100,8 @@ class EcosystemCategoryEnum(EnumDefinitionImpl):
             PermissibleValue(text="Artificial ecosystem"))
         setattr(cls, "Built environment",
             PermissibleValue(text="Built environment"))
+        setattr(cls, "Drugs production",
+            PermissibleValue(text="Drugs production"))
         setattr(cls, "Food production",
             PermissibleValue(text="Food production"))
         setattr(cls, "Industrial production",
@@ -12980,6 +13150,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Coal = PermissibleValue(text="Coal")
     Composting = PermissibleValue(text="Composting")
     Ctenophora = PermissibleValue(text="Ctenophora")
+    Debries = PermissibleValue(text="Debries")
     Denitrification = PermissibleValue(text="Denitrification")
     Desert = PermissibleValue(text="Desert")
     Diatoms = PermissibleValue(text="Diatoms")
@@ -13057,6 +13228,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Sponge = PermissibleValue(text="Sponge")
     Spore = PermissibleValue(text="Spore")
     Sporozoa = PermissibleValue(text="Sporozoa")
+    Stroma = PermissibleValue(text="Stroma")
     Subsurface = PermissibleValue(text="Subsurface")
     Sweets = PermissibleValue(text="Sweets")
     Terephthalate = PermissibleValue(text="Terephthalate")
@@ -13154,12 +13326,16 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Digestive system"))
         setattr(cls, "Drinking water treatment plant",
             PermissibleValue(text="Drinking water treatment plant"))
+        setattr(cls, "Drugs/Supplements",
+            PermissibleValue(text="Drugs/Supplements"))
         setattr(cls, "Egg products",
             PermissibleValue(text="Egg products"))
         setattr(cls, "Endocrine system",
             PermissibleValue(text="Endocrine system"))
         setattr(cls, "Engineered product",
             PermissibleValue(text="Engineered product"))
+        setattr(cls, "Equipment/Utensils",
+            PermissibleValue(text="Equipment/Utensils"))
         setattr(cls, "Excretory system",
             PermissibleValue(text="Excretory system"))
         setattr(cls, "Fat body",
@@ -13304,8 +13480,12 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Plant litter"))
         setattr(cls, "Plant products",
             PermissibleValue(text="Plant products"))
+        setattr(cls, "Plastic waste",
+            PermissibleValue(text="Plastic waste"))
         setattr(cls, "Post-larva",
             PermissibleValue(text="Post-larva"))
+        setattr(cls, "Poultry confinement building",
+            PermissibleValue(text="Poultry confinement building"))
         setattr(cls, "Reclaimed/Recycled wastewater",
             PermissibleValue(text="Reclaimed/Recycled wastewater"))
         setattr(cls, "Red algae",
@@ -13348,6 +13528,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Simulated communities (sequence read mixture)"))
         setattr(cls, "Skeletal system",
             PermissibleValue(text="Skeletal system"))
+        setattr(cls, "Slaughterhouse/Abattoir",
+            PermissibleValue(text="Slaughterhouse/Abattoir"))
         setattr(cls, "Soil microcosm",
             PermissibleValue(text="Soil microcosm"))
         setattr(cls, "Soil-bedrock interface",
@@ -13438,6 +13620,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Biochar = PermissibleValue(text="Biochar")
     Biocrust = PermissibleValue(text="Biocrust")
     Biofilm = PermissibleValue(text="Biofilm")
+    Biofouling = PermissibleValue(text="Biofouling")
     Biogas = PermissibleValue(text="Biogas")
     Biomass = PermissibleValue(text="Biomass")
     Blade = PermissibleValue(text="Blade")
@@ -13495,11 +13678,13 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Epidermoid = PermissibleValue(text="Epidermoid")
     Epipelagic = PermissibleValue(text="Epipelagic")
     Esophagus = PermissibleValue(text="Esophagus")
+    Evaporite = PermissibleValue(text="Evaporite")
     Eye = PermissibleValue(text="Eye")
     Fascia = PermissibleValue(text="Fascia")
     Feedlot = PermissibleValue(text="Feedlot")
     Fermentation = PermissibleValue(text="Fermentation")
     Fibroma = PermissibleValue(text="Fibroma")
+    Filter = PermissibleValue(text="Filter")
     Fjord = PermissibleValue(text="Fjord")
     Floodplain = PermissibleValue(text="Floodplain")
     Floor = PermissibleValue(text="Floor")
@@ -13540,6 +13725,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Hoof = PermissibleValue(text="Hoof")
     Horn = PermissibleValue(text="Horn")
     Hornworts = PermissibleValue(text="Hornworts")
+    Hotel = PermissibleValue(text="Hotel")
     HuSC = PermissibleValue(text="HuSC")
     Hypersaline = PermissibleValue(text="Hypersaline")
     ICU = PermissibleValue(text="ICU")
@@ -13569,6 +13755,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Lymphoma = PermissibleValue(text="Lymphoma")
     Mantle = PermissibleValue(text="Mantle")
     Manure = PermissibleValue(text="Manure")
+    Material = PermissibleValue(text="Material")
     Meadow = PermissibleValue(text="Meadow")
     Melanoma = PermissibleValue(text="Melanoma")
     Mesopelagic = PermissibleValue(text="Mesopelagic")
@@ -13612,6 +13799,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Pilomatrixoma = PermissibleValue(text="Pilomatrixoma")
     Polyps = PermissibleValue(text="Polyps")
     Pond = PermissibleValue(text="Pond")
+    Probiotics = PermissibleValue(text="Probiotics")
     Pronghorn = PermissibleValue(text="Pronghorn")
     Prostate = PermissibleValue(text="Prostate")
     Prothorax = PermissibleValue(text="Prothorax")
@@ -13638,15 +13826,18 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Shipwreck = PermissibleValue(text="Shipwreck")
     Shrubland = PermissibleValue(text="Shrubland")
     Silt = PermissibleValue(text="Silt")
+    Sink = PermissibleValue(text="Sink")
     Sinkhole = PermissibleValue(text="Sinkhole")
     Skin = PermissibleValue(text="Skin")
     Sludge = PermissibleValue(text="Sludge")
     Soil = PermissibleValue(text="Soil")
+    Spacecraft = PermissibleValue(text="Spacecraft")
     Spat = PermissibleValue(text="Spat")
     Spermathecae = PermissibleValue(text="Spermathecae")
     Spiracles = PermissibleValue(text="Spiracles")
     Spleen = PermissibleValue(text="Spleen")
     Sporeling = PermissibleValue(text="Sporeling")
+    Stadium = PermissibleValue(text="Stadium")
     Stem = PermissibleValue(text="Stem")
     Stomach = PermissibleValue(text="Stomach")
     Stone = PermissibleValue(text="Stone")
@@ -13671,6 +13862,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Urethra = PermissibleValue(text="Urethra")
     Urine = PermissibleValue(text="Urine")
     Uterus = PermissibleValue(text="Uterus")
+    Vaccine = PermissibleValue(text="Vaccine")
     Vagina = PermissibleValue(text="Vagina")
     Verrucas = PermissibleValue(text="Verrucas")
     Vinegar = PermissibleValue(text="Vinegar")
@@ -13781,8 +13973,6 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="City park"))
         setattr(cls, "Claws/Talon",
             PermissibleValue(text="Claws/Talon"))
-        setattr(cls, "Coal mine",
-            PermissibleValue(text="Coal mine"))
         setattr(cls, "Coalbed methane well",
             PermissibleValue(text="Coalbed methane well"))
         setattr(cls, "Coastal area",
@@ -13805,6 +13995,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Cooked meat"))
         setattr(cls, "Cooling water",
             PermissibleValue(text="Cooling water"))
+        setattr(cls, "Cosmetic products",
+            PermissibleValue(text="Cosmetic products"))
         setattr(cls, "Crude oil sludge",
             PermissibleValue(text="Crude oil sludge"))
         setattr(cls, "Crustaceans pond",
@@ -13895,8 +14087,12 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Fracking water"))
         setattr(cls, "Fresh manure",
             PermissibleValue(text="Fresh manure"))
+        setattr(cls, "Freshwater RAS",
+            PermissibleValue(text="Freshwater RAS"))
         setattr(cls, "Freshwater aquarium",
             PermissibleValue(text="Freshwater aquarium"))
+        setattr(cls, "Freshwater debries",
+            PermissibleValue(text="Freshwater debries"))
         setattr(cls, "Frozen remains",
             PermissibleValue(text="Frozen remains"))
         setattr(cls, "Frozen seafood",
@@ -14015,6 +14211,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Marginal Sea"))
         setattr(cls, "Marine basin floor",
             PermissibleValue(text="Marine basin floor"))
+        setattr(cls, "Marine debries",
+            PermissibleValue(text="Marine debries"))
         setattr(cls, "Marine fish farm",
             PermissibleValue(text="Marine fish farm"))
         setattr(cls, "Marine lake",
@@ -14029,6 +14227,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Meat/Poultry processing plant"))
         setattr(cls, "Meibomian glands",
             PermissibleValue(text="Meibomian glands"))
+        setattr(cls, "Metalworking fluids",
+            PermissibleValue(text="Metalworking fluids"))
         setattr(cls, "Microbial mats",
             PermissibleValue(text="Microbial mats"))
         setattr(cls, "Middle ear",
@@ -14101,6 +14301,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Oil/Gas pipeline"))
         setattr(cls, "Olfactory pit",
             PermissibleValue(text="Olfactory pit"))
+        setattr(cls, "Optical Instruments",
+            PermissibleValue(text="Optical Instruments"))
         setattr(cls, "Oral cavity",
             PermissibleValue(text="Oral cavity"))
         setattr(cls, "Oral/Buccal cavity",
@@ -14175,6 +14377,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Pyogenic granuloma"))
         setattr(cls, "R2A agar",
             PermissibleValue(text="R2A agar"))
+        setattr(cls, "Radioactive waste",
+            PermissibleValue(text="Radioactive waste"))
         setattr(cls, "Rat myeloma",
             PermissibleValue(text="Rat myeloma"))
         setattr(cls, "Raw meat",
@@ -14229,6 +14433,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Sea ice"))
         setattr(cls, "Seat surface",
             PermissibleValue(text="Seat surface"))
+        setattr(cls, "Seawater RAS",
+            PermissibleValue(text="Seawater RAS"))
         setattr(cls, "Seawater aquarium",
             PermissibleValue(text="Seawater aquarium"))
         setattr(cls, "Sebaceous glands",
@@ -14245,6 +14451,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Settling tank"))
         setattr(cls, "Shale gas reservoir",
             PermissibleValue(text="Shale gas reservoir"))
+        setattr(cls, "Shale gas/oil reservoir",
+            PermissibleValue(text="Shale gas/oil reservoir"))
         setattr(cls, "Sheath fluid",
             PermissibleValue(text="Sheath fluid"))
         setattr(cls, "Shrimp pond",
@@ -14333,6 +14541,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Thorax/Pereon"))
         setattr(cls, "Tobacco product",
             PermissibleValue(text="Tobacco product"))
+        setattr(cls, "Transient pool",
+            PermissibleValue(text="Transient pool"))
         setattr(cls, "Tree plantation",
             PermissibleValue(text="Tree plantation"))
         setattr(cls, "Tropical forest",
@@ -14393,6 +14603,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Benthic = PermissibleValue(text="Benthic")
     Bile = PermissibleValue(text="Bile")
     Biofilm = PermissibleValue(text="Biofilm")
+    Biofilter = PermissibleValue(text="Biofilter")
+    Biofouling = PermissibleValue(text="Biofouling")
     Biological = PermissibleValue(text="Biological")
     Biomass = PermissibleValue(text="Biomass")
     Bioreactor = PermissibleValue(text="Bioreactor")
@@ -14456,6 +14668,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Estuary = PermissibleValue(text="Estuary")
     Eutric = PermissibleValue(text="Eutric")
     Extracellular = PermissibleValue(text="Extracellular")
+    Fabric = PermissibleValue(text="Fabric")
     Farm = PermissibleValue(text="Farm")
     Feathers = PermissibleValue(text="Feathers")
     Fecal = PermissibleValue(text="Fecal")
@@ -14531,6 +14744,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     PBMC = PermissibleValue(text="PBMC")
     Paleofeces = PermissibleValue(text="Paleofeces")
     Palsa = PermissibleValue(text="Palsa")
+    Paper = PermissibleValue(text="Paper")
     Parathyroid = PermissibleValue(text="Parathyroid")
     Pasture = PermissibleValue(text="Pasture")
     Peat = PermissibleValue(text="Peat")
@@ -14545,6 +14759,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Placenta = PermissibleValue(text="Placenta")
     Plankton = PermissibleValue(text="Plankton")
     Plasma = PermissibleValue(text="Plasma")
+    Plastic = PermissibleValue(text="Plastic")
     Podotheca = PermissibleValue(text="Podotheca")
     Pollen = PermissibleValue(text="Pollen")
     Porewater = PermissibleValue(text="Porewater")
@@ -14832,6 +15047,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Coalbed methane well water"))
         setattr(cls, "Coalbed water",
             PermissibleValue(text="Coalbed water"))
+        setattr(cls, "Cold methane seep",
+            PermissibleValue(text="Cold methane seep"))
         setattr(cls, "Colon cancer",
             PermissibleValue(text="Colon cancer"))
         setattr(cls, "Colon mucosa",
@@ -14866,6 +15083,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Cyanobacterial aggregates"))
         setattr(cls, "Cyanobacterial bloom",
             PermissibleValue(text="Cyanobacterial bloom"))
+        setattr(cls, "Deglaciated soil",
+            PermissibleValue(text="Deglaciated soil"))
         setattr(cls, "Delivery networks",
             PermissibleValue(text="Delivery networks"))
         setattr(cls, "Dental abscess",
@@ -14926,6 +15145,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Estuary: Sediment"))
         setattr(cls, "Eustachian tube",
             PermissibleValue(text="Eustachian tube"))
+        setattr(cls, "External surfaces",
+            PermissibleValue(text="External surfaces"))
         setattr(cls, "Extracellular symbionts",
             PermissibleValue(text="Extracellular symbionts"))
         setattr(cls, "Filiform warts",
@@ -15064,6 +15285,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Kidney abscess"))
         setattr(cls, "Kidney stones",
             PermissibleValue(text="Kidney stones"))
+        setattr(cls, "Kitchen sink",
+            PermissibleValue(text="Kitchen sink"))
         setattr(cls, "Lacrimal canaliculus",
             PermissibleValue(text="Lacrimal canaliculus"))
         setattr(cls, "Lacrimal fluids",
@@ -15136,6 +15359,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Microbial mat"))
         setattr(cls, "Microbial mats",
             PermissibleValue(text="Microbial mats"))
+        setattr(cls, "Microfouling/Biofilm",
+            PermissibleValue(text="Microfouling/Biofilm"))
         setattr(cls, "Middle lobe",
             PermissibleValue(text="Middle lobe"))
         setattr(cls, "Mine drainage",
@@ -15196,6 +15421,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Oil-contaminated sediment"))
         setattr(cls, "Olfactory mucosa",
             PermissibleValue(text="Olfactory mucosa"))
+        setattr(cls, "Optical Lens",
+            PermissibleValue(text="Optical Lens"))
         setattr(cls, "Oral cavity cancer",
             PermissibleValue(text="Oral cavity cancer"))
         setattr(cls, "Oral fluids",
@@ -15270,6 +15497,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Pitcher fluid"))
         setattr(cls, "Plantar warts",
             PermissibleValue(text="Plantar warts"))
+        setattr(cls, "Plastic debries",
+            PermissibleValue(text="Plastic debries"))
         setattr(cls, "Plastic surface",
             PermissibleValue(text="Plastic surface"))
         setattr(cls, "Pleural effusion",
@@ -15382,6 +15611,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Seagrass bed"))
         setattr(cls, "Seagrass bed sediment",
             PermissibleValue(text="Seagrass bed sediment"))
+        setattr(cls, "Seat surface",
+            PermissibleValue(text="Seat surface"))
         setattr(cls, "Sediment core",
             PermissibleValue(text="Sediment core"))
         setattr(cls, "Sediment–water interface",
@@ -15542,6 +15773,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Whale fall"))
         setattr(cls, "Wheat straw",
             PermissibleValue(text="Wheat straw"))
+        setattr(cls, "White smokers",
+            PermissibleValue(text="White smokers"))
         setattr(cls, "Whole blood",
             PermissibleValue(text="Whole blood"))
         setattr(cls, "Whole body",
@@ -15744,6 +15977,8 @@ class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="C horizon/Substratum"))
         setattr(cls, "Cover soil",
             PermissibleValue(text="Cover soil"))
+        setattr(cls, "Deglaciated soil",
+            PermissibleValue(text="Deglaciated soil"))
         setattr(cls, "Dry permafrost",
             PermissibleValue(text="Dry permafrost"))
         setattr(cls, "E horizon/Subsurface",
@@ -15834,6 +16069,9 @@ slots.host_associated_data = Slot(uri=NMDC_SUB_SCHEMA.host_associated_data, name
 
 slots.jgi_mg_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_mg_data, name="jgi_mg_data", curie=NMDC_SUB_SCHEMA.curie('jgi_mg_data'),
                    model_uri=NMDC_SUB_SCHEMA.jgi_mg_data, domain=None, range=Optional[Union[Union[dict, JgiMgInterface], List[Union[dict, JgiMgInterface]]]])
+
+slots.jgi_mg_lr_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_mg_lr_data, name="jgi_mg_lr_data", curie=NMDC_SUB_SCHEMA.curie('jgi_mg_lr_data'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_mg_lr_data, domain=None, range=Optional[Union[Union[dict, JgiMgLrInterface], List[Union[dict, JgiMgLrInterface]]]])
 
 slots.jgi_mt_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_mt_data, name="jgi_mt_data", curie=NMDC_SUB_SCHEMA.curie('jgi_mt_data'),
                    model_uri=NMDC_SUB_SCHEMA.jgi_mt_data, domain=None, range=Optional[Union[Union[dict, JgiMtInterface], List[Union[dict, JgiMtInterface]]]])
@@ -16221,7 +16459,7 @@ slots.dna_cont_type = Slot(uri=NMDC_SUB_SCHEMA.dna_cont_type, name="dna_cont_typ
 
 slots.dna_cont_well = Slot(uri=NMDC_SUB_SCHEMA.dna_cont_well, name="dna_cont_well", curie=NMDC_SUB_SCHEMA.curie('dna_cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.dna_cont_well, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$'))
+                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
 slots.dna_container_id = Slot(uri=NMDC_SUB_SCHEMA.dna_container_id, name="dna_container_id", curie=NMDC_SUB_SCHEMA.curie('dna_container_id'),
                    model_uri=NMDC_SUB_SCHEMA.dna_container_id, domain=None, range=Optional[str])
@@ -16239,7 +16477,7 @@ slots.dna_samp_id = Slot(uri=NMDC_SUB_SCHEMA.dna_samp_id, name="dna_samp_id", cu
                    model_uri=NMDC_SUB_SCHEMA.dna_samp_id, domain=None, range=Optional[str])
 
 slots.dna_sample_format = Slot(uri=NMDC_SUB_SCHEMA.dna_sample_format, name="dna_sample_format", curie=NMDC_SUB_SCHEMA.curie('dna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_sample_format, domain=None, range=Optional[Union[str, "DnaSampleFormatEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.dna_sample_format, domain=None, range=Optional[Union[str, "DNASampleFormatEnum"]])
 
 slots.dna_sample_name = Slot(uri=NMDC_SUB_SCHEMA.dna_sample_name, name="dna_sample_name", curie=NMDC_SUB_SCHEMA.curie('dna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.dna_sample_name, domain=None, range=Optional[str])
@@ -16317,7 +16555,7 @@ slots.efficiency_percent = Slot(uri=MIXS['0000657'], name="efficiency_percent", 
                    model_uri=NMDC_SUB_SCHEMA.efficiency_percent, domain=None, range=Optional[str])
 
 slots.elev = Slot(uri=MIXS['0000093'], name="elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.elev, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.elev, domain=None, range=Optional[float])
 
 slots.elevator = Slot(uri=MIXS['0000799'], name="elevator", curie=MIXS.curie('0000799'),
                    model_uri=NMDC_SUB_SCHEMA.elevator, domain=None, range=Optional[str])
@@ -16950,7 +17188,7 @@ slots.rna_cont_type = Slot(uri=NMDC_SUB_SCHEMA.rna_cont_type, name="rna_cont_typ
 
 slots.rna_cont_well = Slot(uri=NMDC_SUB_SCHEMA.rna_cont_well, name="rna_cont_well", curie=NMDC_SUB_SCHEMA.curie('rna_cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.rna_cont_well, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$'))
+                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
 slots.rna_container_id = Slot(uri=NMDC_SUB_SCHEMA.rna_container_id, name="rna_container_id", curie=NMDC_SUB_SCHEMA.curie('rna_container_id'),
                    model_uri=NMDC_SUB_SCHEMA.rna_container_id, domain=None, range=Optional[str])
@@ -16965,7 +17203,7 @@ slots.rna_samp_id = Slot(uri=NMDC_SUB_SCHEMA.rna_samp_id, name="rna_samp_id", cu
                    model_uri=NMDC_SUB_SCHEMA.rna_samp_id, domain=None, range=Optional[str])
 
 slots.rna_sample_format = Slot(uri=NMDC_SUB_SCHEMA.rna_sample_format, name="rna_sample_format", curie=NMDC_SUB_SCHEMA.curie('rna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_sample_format, domain=None, range=Optional[Union[str, "RnaSampleFormatEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.rna_sample_format, domain=None, range=Optional[Union[str, "RNASampleFormatEnum"]])
 
 slots.rna_sample_name = Slot(uri=NMDC_SUB_SCHEMA.rna_sample_name, name="rna_sample_name", curie=NMDC_SUB_SCHEMA.curie('rna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.rna_sample_name, domain=None, range=Optional[str])
@@ -19650,7 +19888,7 @@ slots.JgiMgInterface_dna_cont_type = Slot(uri=NMDC['nmdc/dna_cont_type'], name="
 
 slots.JgiMgInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name="JgiMgInterface_dna_cont_well", curie=NMDC.curie('nmdc/dna_cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_cont_well, domain=JgiMgInterface, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$'))
+                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
 slots.JgiMgInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_container_id, domain=JgiMgInterface, range=str,
@@ -19669,7 +19907,7 @@ slots.JgiMgInterface_dna_samp_id = Slot(uri=NMDC['nmdc/dna_samp_id'], name="JgiM
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_samp_id, domain=JgiMgInterface, range=str)
 
 slots.JgiMgInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format'], name="JgiMgInterface_dna_sample_format", curie=NMDC.curie('nmdc/dna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_format, domain=JgiMgInterface, range=Union[str, "DnaSampleFormatEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_format, domain=JgiMgInterface, range=Union[str, "DNASampleFormatEnum"])
 
 slots.JgiMgInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_name, domain=JgiMgInterface, range=str)
@@ -19692,6 +19930,62 @@ slots.JgiMgInterface_proposal_dna = Slot(uri=NMDC['nmdc/proposal_dna'], name="Jg
 slots.JgiMgInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMgInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_oxy_stat_samp, domain=JgiMgInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
 
+slots.JgiMgLrInterface_dna_absorb1 = Slot(uri=NMDC['nmdc/dna_absorb1'], name="JgiMgLrInterface_dna_absorb1", curie=NMDC.curie('nmdc/dna_absorb1'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_absorb1, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_dna_absorb2 = Slot(uri=NMDC['nmdc/dna_absorb2'], name="JgiMgLrInterface_dna_absorb2", curie=NMDC.curie('nmdc/dna_absorb2'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_absorb2, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_dna_concentration = Slot(uri=NMDC['nmdc/dna_concentration'], name="JgiMgLrInterface_dna_concentration", curie=NMDC.curie('nmdc/dna_concentration'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_concentration, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_dna_cont_type = Slot(uri=NMDC['nmdc/dna_cont_type'], name="JgiMgLrInterface_dna_cont_type", curie=NMDC.curie('nmdc/dna_cont_type'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_cont_type, domain=JgiMgLrInterface, range=Union[str, "JgiContTypeEnum"])
+
+slots.JgiMgLrInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name="JgiMgLrInterface_dna_cont_well", curie=NMDC.curie('nmdc/dna_cont_well'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_cont_well, domain=JgiMgLrInterface, range=Optional[str],
+                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
+
+slots.JgiMgLrInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgLrInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_container_id, domain=JgiMgLrInterface, range=str,
+                   pattern=re.compile(r'^.{1,20}$'))
+
+slots.JgiMgLrInterface_dna_dnase = Slot(uri=NMDC['nmdc/dna_dnase'], name="JgiMgLrInterface_dna_dnase", curie=NMDC.curie('nmdc/dna_dnase'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_dnase, domain=JgiMgLrInterface, range=Union[str, "YesNoEnum"])
+
+slots.JgiMgLrInterface_dna_isolate_meth = Slot(uri=NMDC['nmdc/dna_isolate_meth'], name="JgiMgLrInterface_dna_isolate_meth", curie=NMDC.curie('nmdc/dna_isolate_meth'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_isolate_meth, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_project_contact = Slot(uri=NMDC['nmdc/dna_project_contact'], name="JgiMgLrInterface_dna_project_contact", curie=NMDC.curie('nmdc/dna_project_contact'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_project_contact, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_samp_id = Slot(uri=NMDC['nmdc/dna_samp_id'], name="JgiMgLrInterface_dna_samp_id", curie=NMDC.curie('nmdc/dna_samp_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_samp_id, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format'], name="JgiMgLrInterface_dna_sample_format", curie=NMDC.curie('nmdc/dna_sample_format'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_sample_format, domain=JgiMgLrInterface, range=Union[str, "DNASampleFormatEnum"])
+
+slots.JgiMgLrInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgLrInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_sample_name, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_seq_project = Slot(uri=NMDC['nmdc/dna_seq_project'], name="JgiMgLrInterface_dna_seq_project", curie=NMDC.curie('nmdc/dna_seq_project'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_seq_project_name = Slot(uri=NMDC['nmdc/dna_seq_project_name'], name="JgiMgLrInterface_dna_seq_project_name", curie=NMDC.curie('nmdc/dna_seq_project_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project_name, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_seq_project_pi = Slot(uri=NMDC['nmdc/dna_seq_project_pi'], name="JgiMgLrInterface_dna_seq_project_pi", curie=NMDC.curie('nmdc/dna_seq_project_pi'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project_pi, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_dna_volume = Slot(uri=NMDC['nmdc/dna_volume'], name="JgiMgLrInterface_dna_volume", curie=NMDC.curie('nmdc/dna_volume'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_volume, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_proposal_dna = Slot(uri=NMDC['nmdc/proposal_dna'], name="JgiMgLrInterface_proposal_dna", curie=NMDC.curie('nmdc/proposal_dna'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_proposal_dna, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMgLrInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_oxy_stat_samp, domain=JgiMgLrInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
+
 slots.JgiMtInterface_dnase_rna = Slot(uri=NMDC['nmdc/dnase_rna'], name="JgiMtInterface_dnase_rna", curie=NMDC.curie('nmdc/dnase_rna'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_dnase_rna, domain=JgiMtInterface, range=Union[str, "YesNoEnum"])
 
@@ -19712,7 +20006,7 @@ slots.JgiMtInterface_rna_cont_type = Slot(uri=NMDC['nmdc/rna_cont_type'], name="
 
 slots.JgiMtInterface_rna_cont_well = Slot(uri=NMDC['nmdc/rna_cont_well'], name="JgiMtInterface_rna_cont_well", curie=NMDC.curie('nmdc/rna_cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_cont_well, domain=JgiMtInterface, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1|A12|H1|H12)(([A-H][1-9])|([A-H]1[0-2]))$'))
+                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
 slots.JgiMtInterface_rna_container_id = Slot(uri=NMDC['nmdc/rna_container_id'], name="JgiMtInterface_rna_container_id", curie=NMDC.curie('nmdc/rna_container_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_container_id, domain=JgiMtInterface, range=str,
@@ -19728,7 +20022,7 @@ slots.JgiMtInterface_rna_samp_id = Slot(uri=NMDC['nmdc/rna_samp_id'], name="JgiM
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_samp_id, domain=JgiMtInterface, range=str)
 
 slots.JgiMtInterface_rna_sample_format = Slot(uri=NMDC['nmdc/rna_sample_format'], name="JgiMtInterface_rna_sample_format", curie=NMDC.curie('nmdc/rna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_format, domain=JgiMtInterface, range=Union[str, "RnaSampleFormatEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_format, domain=JgiMtInterface, range=Union[str, "RNASampleFormatEnum"])
 
 slots.JgiMtInterface_rna_sample_name = Slot(uri=NMDC['nmdc/rna_sample_name'], name="JgiMtInterface_rna_sample_name", curie=NMDC.curie('nmdc/rna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_name, domain=JgiMtInterface, range=str)
@@ -20825,15 +21119,15 @@ slots.SoilInterface_elev = Slot(uri=MIXS['0000093'], name="SoilInterface_elev", 
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_elev, domain=SoilInterface, range=float)
 
 slots.SoilInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SoilInterface_env_broad_scale", curie=MIXS.curie('0000012'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=Union[str, "EnvBroadScaleSoilEnum"],
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SoilInterface_env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=Union[str, "EnvLocalScaleSoilEnum"],
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_env_medium = Slot(uri=MIXS['0000014'], name="SoilInterface_env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=Union[str, "EnvMediumSoilEnum"],
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=str,
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.SoilInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SoilInterface_experimental_factor", curie=MIXS.curie('0000008'),
@@ -21841,4 +22135,4 @@ slots.SoilMixsInspiredMixin_start_time_inc = Slot(uri=NMDC['nmdc/start_time_inc'
 
 slots.ProcessedSample_id = Slot(uri=NMDC_SUB_SCHEMA.id, name="ProcessedSample_id", curie=NMDC_SUB_SCHEMA.curie('id'),
                    model_uri=NMDC_SUB_SCHEMA.ProcessedSample_id, domain=ProcessedSample, range=Union[str, ProcessedSampleId],
-                   pattern=re.compile(r'^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})(\.[A-Za-z0-9]{1,})*(_[A-Za-z0-9_\.-]+)?$'))
+                   pattern=re.compile(r'^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$'))
