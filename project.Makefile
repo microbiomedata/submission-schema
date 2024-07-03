@@ -279,9 +279,10 @@ src/data/valid/SampleData-water-data-exhaustive.yaml
 		--index-slot water_data \
 		--schema $(word 1,$^) $(word 2,$^)
 
+# todo temporary soltuion to get build and test to complete MAM 2024-07-03
 examples/output/SampleData-water-data-exhaustive.regen.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 local/SampleData-water-data-exhaustive.tsv
-	mkdir -p $(dir $@)
+	mkdir -p $(dir $@) # shouldn't need to do this each time
 	$(RUN) linkml-convert \
 		--output $@ \
 		--target-class SampleData \
