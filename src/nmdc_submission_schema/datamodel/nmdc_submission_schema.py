@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-06-21T11:27:20
+# Generation date: 2024-07-23T10:27:46
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema

@@ -18962,6 +18962,14 @@ slots:
     abstract: true
   gold_path_field:
     name: gold_path_field
+    annotations:
+      tooltip:
+        tag: tooltip
+        value: GOLD Ecosystem Classification paths describe the surroundings from which an environmental sample or an organism is collected.
+        annotations:
+          source:
+            tag: source
+            value: https://gold.jgi.doe.gov/ecosystem_classification
     description: This is a grouping for any of the gold path fields
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
@@ -19027,6 +19035,10 @@ slots:
 classes:
   AirInterface:
     name: AirInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: air
     description: air dh_interface
     title: Air
     from_schema: https://example.com/nmdc_submission_schema
@@ -20261,6 +20273,10 @@ classes:
         title: horizon method
   BiofilmInterface:
     name: BiofilmInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: microbial mat_biofilm
     description: biofilm dh_interface
     title: Biofilm
     from_schema: https://example.com/nmdc_submission_schema
@@ -22548,6 +22564,10 @@ classes:
         title: horizon method
   BuiltEnvInterface:
     name: BuiltEnvInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: built environment
     description: built_env dh_interface
     title: Built Env
     from_schema: https://example.com/nmdc_submission_schema
@@ -27342,6 +27362,10 @@ classes:
         range: OxyStatSampEnum
   EmslInterface:
     name: EmslInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: EMSL
     description: emsl dh_interface
     title: Emsl
     from_schema: https://example.com/nmdc_submission_schema
@@ -27471,6 +27495,10 @@ classes:
         range: OxyStatSampEnum
   HcrCoresInterface:
     name: HcrCoresInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: hcr core
     description: hcr_cores dh_interface
     title: Hcr Cores
     from_schema: https://example.com/nmdc_submission_schema
@@ -30276,6 +30304,10 @@ classes:
         title: horizon method
   HcrFluidsSwabsInterface:
     name: HcrFluidsSwabsInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: hcr fluids swab
     description: hcr_fluids_swabs dh_interface
     title: Hcr Fluids Swabs
     from_schema: https://example.com/nmdc_submission_schema
@@ -33226,6 +33258,10 @@ classes:
         title: horizon method
   HostAssociatedInterface:
     name: HostAssociatedInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: host-associated
     description: host_associated dh_interface
     title: Host Associated
     from_schema: https://example.com/nmdc_submission_schema
@@ -34980,6 +35016,10 @@ classes:
         title: horizon method
   JgiMgInterface:
     name: JgiMgInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: JGI MG
     description: Metadata for samples sent to JGI for standard metagenome sequencing
     title: JGI MG
     from_schema: https://example.com/nmdc_submission_schema
@@ -35363,6 +35403,10 @@ classes:
         title: dna_plate_requires_well
   JgiMgLrInterface:
     name: JgiMgLrInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: JGI MG (Long Read)
     description: Metadata for samples sent to JGI for long read metagenome sequecning
     title: JGI MG (Long Read)
     from_schema: https://example.com/nmdc_submission_schema
@@ -35723,6 +35767,10 @@ classes:
         range: OxyStatSampEnum
   JgiMtInterface:
     name: JgiMtInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: JGI MT
     description: jgi_mt dh_interface
     title: JGI MT
     from_schema: https://example.com/nmdc_submission_schema
@@ -36109,6 +36157,10 @@ classes:
         title: rna_plate_requires_well
   MiscEnvsInterface:
     name: MiscEnvsInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: misc natural or artificial
     description: misc_envs dh_interface
     title: Misc Envs
     from_schema: https://example.com/nmdc_submission_schema
@@ -37851,6 +37903,10 @@ classes:
         title: horizon method
   PlantAssociatedInterface:
     name: PlantAssociatedInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: plant-associated
     description: plant_associated dh_interface
     title: Plant Associated
     from_schema: https://example.com/nmdc_submission_schema
@@ -40452,6 +40508,10 @@ classes:
         title: horizon method
   SedimentInterface:
     name: SedimentInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: sediment
     description: sediment dh_interface
     title: Sediment
     from_schema: https://example.com/nmdc_submission_schema
@@ -43533,6 +43593,10 @@ classes:
         title: horizon method
   SoilInterface:
     name: SoilInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: soil
     description: soil dh_interface
     title: Soil
     from_schema: https://example.com/nmdc_submission_schema
@@ -46531,6 +46595,10 @@ classes:
         multivalued: false
   WastewaterSludgeInterface:
     name: WastewaterSludgeInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: wastewater sludge
     description: wastewater_sludge dh_interface
     title: Wastewater Sludge
     from_schema: https://example.com/nmdc_submission_schema
@@ -48088,6 +48156,10 @@ classes:
         title: horizon method
   WaterInterface:
     name: WaterInterface
+    annotations:
+      excel_worksheet_name:
+        tag: excel_worksheet_name
+        value: water
     description: water dh_interface
     title: Water
     from_schema: https://example.com/nmdc_submission_schema
