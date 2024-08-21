@@ -8,7 +8,15 @@ theme:
     - content.tabs.link
 plugins:
   - search
-  - mermaid2
+  - mermaid2:
+      version: 10.9.0
+markdown_extensions:
+  - admonition
+  - tables
+  - pymdownx.magiclink
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
 nav:
 #  - Home: home.md
   - Index: index.md
