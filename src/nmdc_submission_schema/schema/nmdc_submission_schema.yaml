@@ -102,6 +102,9 @@ prefixes:
   PFAM:
     prefix_prefix: PFAM
     prefix_reference: 'https://bioregistry.io/pfam:'
+  PFAM.CLAN:
+    prefix_prefix: PFAM.CLAN
+    prefix_reference: 'https://bioregistry.io/pfam.clan:'
   PO:
     prefix_prefix: PO
     prefix_reference: http://purl.obolibrary.org/obo/PO_
