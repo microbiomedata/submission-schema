@@ -33,6 +33,9 @@ prefixes:
   CHEMBL.COMPOUND:
     prefix_prefix: CHEMBL.COMPOUND
     prefix_reference: 'https://bioregistry.io/chembl.compound:'
+  CHMO:
+    prefix_prefix: CHMO
+    prefix_reference: http://purl.obolibrary.org/obo/CHMO_
   Contaminant:
     prefix_prefix: Contaminant
     prefix_reference: http://example.org/contaminant/
@@ -102,9 +105,6 @@ prefixes:
   PFAM:
     prefix_prefix: PFAM
     prefix_reference: 'https://bioregistry.io/pfam:'
-  PFAM.CLAN:
-    prefix_prefix: PFAM.CLAN
-    prefix_reference: 'https://bioregistry.io/pfam.clan:'
   PO:
     prefix_prefix: PO
     prefix_reference: http://purl.obolibrary.org/obo/PO_
@@ -120,6 +120,9 @@ prefixes:
   RetroRules:
     prefix_prefix: RetroRules
     prefix_reference: http://example.org/retrorules/
+  SO:
+    prefix_prefix: SO
+    prefix_reference: http://purl.obolibrary.org/obo/SO_
   SUPFAM:
     prefix_prefix: SUPFAM
     prefix_reference: 'https://bioregistry.io/supfam:'
@@ -168,6 +171,9 @@ prefixes:
   img.taxon:
     prefix_prefix: img.taxon
     prefix_reference: 'https://bioregistry.io/img.taxon:'
+  jgi.analysis:
+    prefix_prefix: jgi.analysis
+    prefix_reference: https://data.jgi.doe.gov/search?q=
   jgi.proposal:
     prefix_prefix: jgi.proposal
     prefix_reference: 'https://bioregistry.io/jgi.proposal:'
@@ -180,6 +186,9 @@ prefixes:
   mgnify.proj:
     prefix_prefix: mgnify.proj
     prefix_reference: 'https://bioregistry.io/mgnify.proj:'
+  my_emsl:
+    prefix_prefix: my_emsl
+    prefix_reference: https://release.my.emsl.pnnl.gov/released_data/
   neon.identifier:
     prefix_prefix: neon.identifier
     prefix_reference: http://example.org/neon/identifier/
@@ -201,15 +210,9 @@ prefixes:
   skos:
     prefix_prefix: skos
     prefix_reference: http://www.w3.org/2004/02/skos/core#
-  CHMO:
-    prefix_prefix: CHMO
-    prefix_reference: http://purl.obolibrary.org/obo/CHMO_
   wikidata:
     prefix_prefix: wikidata
     prefix_reference: http://www.wikidata.org/entity/
-  my_emsl:
-    prefix_prefix: my_emsl
-    prefix_reference: https://release.my.emsl.pnnl.gov/released_data/
   KEGG.COMPOUND:
     prefix_prefix: KEGG.COMPOUND
     prefix_reference: 'https://bioregistry.io/kegg.compound:'
@@ -228,6 +231,9 @@ prefixes:
   wgs84:
     prefix_prefix: wgs84
     prefix_reference: http://www.w3.org/2003/01/geo/wgs84_pos#
+  MISO:
+    prefix_prefix: MISO
+    prefix_reference: http://purl.obolibrary.org/obo/MISO_
   COG:
     prefix_prefix: COG
     prefix_reference: 'https://bioregistry.io/cog:'
@@ -246,21 +252,36 @@ prefixes:
   SEED:
     prefix_prefix: SEED
     prefix_reference: 'https://bioregistry.io/seed:'
+  gold:
+    prefix_prefix: gold
+    prefix_reference: 'https://bioregistry.io/gold:'
   MIXS:
     prefix_prefix: MIXS
     prefix_reference: https://w3id.org/mixs/
   MIXS_yaml:
     prefix_prefix: MIXS_yaml
     prefix_reference: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
-  gold:
-    prefix_prefix: gold
-    prefix_reference: 'https://bioregistry.io/gold:'
 default_prefix: nmdc_sub_schema
 default_range: string
 subsets:
-  sample subset:
-    name: sample subset
-    description: Subset consisting of entities linked to the processing of samples.  Currently, this subset consists of study, omics process, and biosample.
+  mixs_environmental_triad:
+    name: mixs_environmental_triad
+    title: MIxS Environmental Triad
+    from_schema: https://example.com/nmdc_submission_schema
+  mixs extension:
+    name: mixs extension
+    from_schema: https://example.com/nmdc_submission_schema
+  checklist:
+    name: checklist
+    description: A MIxS checklist. These can be combined with packages
+    from_schema: https://example.com/nmdc_submission_schema
+  package:
+    name: package
+    description: A MIxS package. These can be combined with checklists
+    from_schema: https://example.com/nmdc_submission_schema
+  checklist_package_combination:
+    name: checklist_package_combination
+    description: A combination of a checklist and a package
     from_schema: https://example.com/nmdc_submission_schema
   data object subset:
     name: data object subset
@@ -282,27 +303,15 @@ subsets:
   nucleic acid sequence source:
     name: nucleic acid sequence source
     from_schema: https://example.com/nmdc_submission_schema
+  proteases:
+    name: proteases
+    from_schema: https://example.com/nmdc_submission_schema
+  sample subset:
+    name: sample subset
+    description: Subset consisting of entities linked to the processing of samples.  Currently, this subset consists of study, omics process, and biosample.
+    from_schema: https://example.com/nmdc_submission_schema
   sequencing:
     name: sequencing
-    from_schema: https://example.com/nmdc_submission_schema
-  mixs_environmental_triad:
-    name: mixs_environmental_triad
-    title: MIxS Environmental Triad
-    from_schema: https://example.com/nmdc_submission_schema
-  mixs extension:
-    name: mixs extension
-    from_schema: https://example.com/nmdc_submission_schema
-  checklist:
-    name: checklist
-    description: A MIxS checklist. These can be combined with packages
-    from_schema: https://example.com/nmdc_submission_schema
-  package:
-    name: package
-    description: A MIxS package. These can be combined with checklists
-    from_schema: https://example.com/nmdc_submission_schema
-  checklist_package_combination:
-    name: checklist_package_combination
-    description: A combination of a checklist and a package
     from_schema: https://example.com/nmdc_submission_schema
   workflow subset:
     name: workflow subset
@@ -532,15 +541,6 @@ types:
     base: str
     uri: xsd:string
     repr: str
-  external_identifier:
-    name: external_identifier
-    description: A CURIE representing an external identifier
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-      - https://microbiomedata.github.io/nmdc-schema/identifiers/
-    typeof: uriorcurie
-    uri: xsd:anyURI
-    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
 enums:
   BioticRelationshipEnum:
     name: BioticRelationshipEnum
@@ -3559,8 +3559,6 @@ enums:
         text: metatranscriptomics
       natural organic matter:
         text: natural organic matter
-      bulk chemistry:
-        text: bulk chemistry
   DNASampleFormatEnum:
     name: DNASampleFormatEnum
     from_schema: https://example.com/nmdc_submission_schema
@@ -7693,6 +7691,8 @@ slots:
     slot_uri: MIXS:0000639
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   air_PM_concen:
     name: air_PM_concen
     annotations:
@@ -7717,6 +7717,8 @@ slots:
     slot_uri: MIXS:0000108
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   air_temp:
     name: air_temp
     annotations:
@@ -7764,6 +7766,8 @@ slots:
     slot_uri: MIXS:0000551
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   al_sat:
     name: al_sat
     annotations:
@@ -8115,6 +8119,8 @@ slots:
     slot_uri: MIXS:0000553
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   api:
     name: api
     annotations:
@@ -8227,6 +8233,8 @@ slots:
     slot_uri: MIXS:0001097
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   avg_dew_point:
     name: avg_dew_point
     annotations:
@@ -8581,6 +8589,8 @@ slots:
     slot_uri: MIXS:0000174
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   biotic_regm:
     name: biotic_regm
     annotations:
@@ -9126,6 +9136,8 @@ slots:
     slot_uri: MIXS:0000751
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   chem_mutagen:
     name: chem_mutagen
     annotations:
@@ -9150,6 +9162,8 @@ slots:
     slot_uri: MIXS:0000555
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   chem_oxygen_dem:
     name: chem_oxygen_dem
     annotations:
@@ -9285,6 +9299,8 @@ slots:
     slot_uri: MIXS:0001040
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   collection_date:
     name: collection_date
     annotations:
@@ -9627,6 +9643,8 @@ slots:
     slot_uri: MIXS:0000178
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   diss_carb_dioxide:
     name: diss_carb_dioxide
     annotations:
@@ -10502,6 +10520,8 @@ slots:
     slot_uri: MIXS:0000660
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   env_broad_scale:
     name: env_broad_scale
     annotations:
@@ -10811,6 +10831,8 @@ slots:
     slot_uri: MIXS:0000556
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   field:
     name: field
     annotations:
@@ -11185,6 +11207,8 @@ slots:
     slot_uri: MIXS:0000557
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   furniture:
     name: furniture
     annotations:
@@ -11229,6 +11253,8 @@ slots:
     slot_uri: MIXS:0000558
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   gaseous_substances:
     name: gaseous_substances
     annotations:
@@ -11253,6 +11279,8 @@ slots:
     slot_uri: MIXS:0000661
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   gender_restroom:
     name: gender_restroom
     annotations:
@@ -11380,6 +11408,8 @@ slots:
     slot_uri: MIXS:0000559
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   growth_facil:
     name: growth_facil
     annotations:
@@ -11445,6 +11475,8 @@ slots:
     slot_uri: MIXS:0000560
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   hall_count:
     name: hall_count
     annotations:
@@ -11721,6 +11753,8 @@ slots:
     slot_uri: MIXS:0000652
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   heavy_metals_meth:
     name: heavy_metals_meth
     annotations:
@@ -11789,6 +11823,8 @@ slots:
     slot_uri: MIXS:0000561
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   horizon_meth:
     name: horizon_meth
     annotations:
@@ -11982,6 +12018,8 @@ slots:
     slot_uri: MIXS:0000869
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   host_disease_stat:
     name: host_disease_stat
     annotations:
@@ -12130,6 +12168,8 @@ slots:
     slot_uri: MIXS:0000870
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   host_length:
     name: host_length
     annotations:
@@ -12433,6 +12473,8 @@ slots:
     slot_uri: MIXS:0000568
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   indoor_space:
     name: indoor_space
     annotations:
@@ -12535,6 +12577,8 @@ slots:
     slot_uri: MIXS:0000664
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   inside_lux:
     name: inside_lux
     annotations:
@@ -13076,6 +13120,8 @@ slots:
     slot_uri: MIXS:0001052
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   methane:
     name: methane
     annotations:
@@ -13228,6 +13274,8 @@ slots:
     slot_uri: MIXS:0000570
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   misc_param:
     name: misc_param
     annotations:
@@ -13249,6 +13297,8 @@ slots:
     slot_uri: MIXS:0000752
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   n_alkanes:
     name: n_alkanes
     annotations:
@@ -13273,6 +13323,8 @@ slots:
     slot_uri: MIXS:0000503
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   nitrate:
     name: nitrate
     annotations:
@@ -13695,6 +13747,8 @@ slots:
     slot_uri: MIXS:0000665
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   organism_count:
     name: organism_count
     annotations:
@@ -13718,6 +13772,8 @@ slots:
     slot_uri: MIXS:0000103
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   other_treatment:
     name: other_treatment
     description: Other treatments applied to your samples that are not applicable to the provided fields
@@ -13869,6 +13925,8 @@ slots:
     slot_uri: MIXS:0000206
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   permeability:
     name: permeability
     annotations:
@@ -13914,6 +13972,8 @@ slots:
     slot_uri: MIXS:0000754
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   pesticide_regm:
     name: pesticide_regm
     annotations:
@@ -13938,6 +13998,8 @@ slots:
     slot_uri: MIXS:0000573
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   petroleum_hydrocarb:
     name: petroleum_hydrocarb
     annotations:
@@ -14023,6 +14085,8 @@ slots:
     slot_uri: MIXS:0001056
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   phaeopigments:
     name: phaeopigments
     annotations:
@@ -14047,6 +14111,8 @@ slots:
     slot_uri: MIXS:0000180
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   phosphate:
     name: phosphate
     annotations:
@@ -14094,6 +14160,8 @@ slots:
     slot_uri: MIXS:0000181
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   photon_flux:
     name: photon_flux
     annotations:
@@ -14223,6 +14291,8 @@ slots:
     slot_uri: MIXS:0000107
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   porosity:
     name: porosity
     annotations:
@@ -14584,6 +14654,8 @@ slots:
     slot_uri: MIXS:0000575
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   rainfall_regm:
     name: rainfall_regm
     annotations:
@@ -14608,6 +14680,8 @@ slots:
     slot_uri: MIXS:0000576
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   reactor_type:
     name: reactor_type
     annotations:
@@ -14784,7 +14858,6 @@ slots:
       - value: '2.02'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 7
-    is_a: biomaterial_purity
     string_serialization: '{float}'
     slot_group: JGI-Metatranscriptomics
     range: float
@@ -14799,7 +14872,6 @@ slots:
       - value: '2.02'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 8
-    is_a: biomaterial_purity
     string_serialization: '{float}'
     slot_group: JGI-Metatranscriptomics
     range: float
@@ -15607,6 +15679,8 @@ slots:
     slot_uri: MIXS:0000582
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   samp_capt_status:
     name: samp_capt_status
     annotations:
@@ -15891,6 +15965,8 @@ slots:
     slot_uri: MIXS:0000216
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   samp_store_dur:
     name: samp_store_dur
     annotations:
@@ -16122,8 +16198,8 @@ slots:
     string_serialization: '{text}:{text}'
     multivalued: false
     slot_group: Sample ID
-    range: string
     recommended: true
+    range: string
   sample_shipped:
     name: sample_shipped
     description: The total amount or size (volume (ml), mass (g) or area (m2) ) of sample sent to EMSL.
@@ -16218,6 +16294,8 @@ slots:
     slot_uri: MIXS:0001068
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   season_precpt:
     name: season_precpt
     annotations:
@@ -16799,6 +16877,8 @@ slots:
     slot_uri: MIXS:0000672
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   soluble_org_mat:
     name: soluble_org_mat
     annotations:
@@ -16823,6 +16903,8 @@ slots:
     slot_uri: MIXS:0000673
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   soluble_react_phosp:
     name: soluble_react_phosp
     annotations:
@@ -17038,6 +17120,8 @@ slots:
     slot_uri: MIXS:0001069
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   start_date_inc:
     name: start_date_inc
     description: Date the incubation was started. Only relevant for incubation samples.
@@ -17358,6 +17442,8 @@ slots:
     slot_uri: MIXS:0000150
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   tan:
     name: tan
     annotations:
@@ -18167,6 +18253,8 @@ slots:
     slot_uri: MIXS:0000115
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   wall_area:
     name: wall_area
     annotations:
@@ -18558,6 +18646,8 @@ slots:
     slot_uri: MIXS:0000590
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   watering_regm:
     name: watering_regm
     annotations:
@@ -18582,6 +18672,8 @@ slots:
     slot_uri: MIXS:0000591
     multivalued: false
     range: string
+    inlined: true
+    inlined_as_list: true
   weekday:
     name: weekday
     annotations:
@@ -18965,14 +19057,6 @@ slots:
     abstract: true
   gold_path_field:
     name: gold_path_field
-    annotations:
-      tooltip:
-        tag: tooltip
-        value: GOLD Ecosystem Classification paths describe the surroundings from which an environmental sample or an organism is collected.
-        annotations:
-          source:
-            tag: source
-            value: https://gold.jgi.doe.gov/ecosystem_classification
     description: This is a grouping for any of the gold path fields
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
@@ -19014,27 +19098,30 @@ slots:
     name: nucleic acid sequence source field
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
+  type:
+    name: type
+    description: the class_uri of the class that has been instantiated
+    notes:
+      - replaces legacy nmdc:type slot
+      - makes it easier to read example data files
+      - required for polymorphic MongoDB collections
+    examples:
+      - value: nmdc:Biosample
+      - value: nmdc:Study
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+      - https://github.com/microbiomedata/nmdc-schema/issues/1048
+      - https://github.com/microbiomedata/nmdc-schema/issues/1233
+      - https://github.com/microbiomedata/nmdc-schema/issues/248
+    slot_uri: rdf:type
+    designates_type: true
+    range: uriorcurie
+    required: true
   biomaterial_purity:
     name: biomaterial_purity
     from_schema: https://example.com/nmdc_submission_schema
-    domain: ProcessedSample
     range: string
     multivalued: false
-  external_database_identifiers:
-    name: external_database_identifiers
-    description: Link to corresponding identifier in external database
-    notes:
-      - had tried ranges of external identifier and string
-    comments:
-      - The value of this field is always a registered CURIE
-    from_schema: https://example.com/nmdc_submission_schema
-    close_mappings:
-      - skos:closeMatch
-    is_a: alternative_identifiers
-    abstract: true
-    multivalued: true
-    range: external_identifier
-    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
 classes:
   AirInterface:
     name: AirInterface
@@ -19125,6 +19212,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       alt:
         name: alt
@@ -19289,6 +19377,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       collection_date:
         name: collection_date
@@ -19659,6 +19748,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       organism_count:
         name: organism_count
@@ -19688,6 +19778,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -19769,6 +19860,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       pollutants:
         name: pollutants
         annotations:
@@ -19798,6 +19890,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       salinity:
         name: salinity
@@ -20215,6 +20308,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       wind_direction:
         name: wind_direction
@@ -20592,6 +20686,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       bishomohopanol:
         name: bishomohopanol
@@ -20734,6 +20829,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chloride:
         name: chloride
@@ -20882,6 +20978,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       diss_carb_dioxide:
         name: diss_carb_dioxide
@@ -21453,6 +21550,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       n_alkanes:
         name: n_alkanes
@@ -21483,6 +21581,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -21686,6 +21785,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -21767,6 +21867,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       petroleum_hydrocarb:
         name: petroleum_hydrocarb
         annotations:
@@ -21876,6 +21977,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       phosphate:
         name: phosphate
@@ -21935,6 +22037,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       potassium:
         name: potassium
@@ -25306,6 +25409,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       pres_animal_insect:
         name: pres_animal_insect
@@ -25992,6 +26096,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       samp_time_out:
         name: samp_time_out
         annotations:
@@ -27921,6 +28026,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chloride:
         name: chloride
@@ -28761,6 +28867,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -28877,6 +28984,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       owc_tvdss:
         name: owc_tvdss
@@ -29901,6 +30009,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       tan:
         name: tan
@@ -30815,6 +30924,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chem_treat_method:
         name: chem_treat_method
@@ -31764,6 +31874,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -31880,6 +31991,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -32797,6 +32909,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       tan:
         name: tan
@@ -33524,6 +33637,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       collection_date:
         name: collection_date
@@ -34058,6 +34172,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       host_disease_stat:
         name: host_disease_stat
         annotations:
@@ -34243,6 +34358,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       host_length:
         name: host_length
         annotations:
@@ -34580,6 +34696,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       organism_count:
         name: organism_count
@@ -34609,6 +34726,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -34661,6 +34779,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       salinity:
         name: salinity
         annotations:
@@ -35076,7 +35195,6 @@ classes:
         from_schema: https://w3id.org/nmdc/nmdc
         rank: 7
         is_a: biomaterial_purity
-        domain: ProcessedSample
         owner: Biosample
         domain_of:
           - Biosample
@@ -35095,7 +35213,6 @@ classes:
         from_schema: https://w3id.org/nmdc/nmdc
         rank: 8
         is_a: biomaterial_purity
-        domain: ProcessedSample
         owner: Biosample
         domain_of:
           - Biosample
@@ -35463,7 +35580,6 @@ classes:
         from_schema: https://w3id.org/nmdc/nmdc
         rank: 7
         is_a: biomaterial_purity
-        domain: ProcessedSample
         owner: Biosample
         domain_of:
           - Biosample
@@ -35483,7 +35599,6 @@ classes:
         from_schema: https://w3id.org/nmdc/nmdc
         rank: 8
         is_a: biomaterial_purity
-        domain: ProcessedSample
         owner: Biosample
         domain_of:
           - Biosample
@@ -35862,9 +35977,7 @@ classes:
           - value: '2.02'
         from_schema: https://w3id.org/nmdc/nmdc
         rank: 7
-        is_a: biomaterial_purity
         string_serialization: '{float}'
-        domain: ProcessedSample
         owner: Biosample
         domain_of:
           - Biosample
@@ -35881,9 +35994,7 @@ classes:
           - value: '2.02'
         from_schema: https://w3id.org/nmdc/nmdc
         rank: 8
-        is_a: biomaterial_purity
         string_serialization: '{float}'
-        domain: ProcessedSample
         owner: Biosample
         domain_of:
           - Biosample
@@ -36369,6 +36480,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       bromide:
         name: bromide
@@ -36456,6 +36568,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chloride:
         name: chloride
@@ -36633,6 +36746,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       diss_carb_dioxide:
         name: diss_carb_dioxide
@@ -37030,6 +37144,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -37233,6 +37348,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -37285,6 +37401,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       ph:
         name: ph
         annotations:
@@ -37394,6 +37511,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       potassium:
         name: potassium
@@ -38045,6 +38163,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       ances_data:
         name: ances_data
         annotations:
@@ -38100,6 +38219,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       biol_stat:
         name: biol_stat
         annotations:
@@ -38202,6 +38322,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chem_mutagen:
         name: chem_mutagen
@@ -38232,6 +38353,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       climate_environment:
         name: climate_environment
         description: Treatment involving an exposure to a particular climate; treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple climates
@@ -38253,6 +38375,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       collection_date:
         name: collection_date
         annotations:
@@ -38593,6 +38716,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       fungicide_regm:
         name: fungicide_regm
         annotations:
@@ -38622,6 +38746,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       gaseous_environment:
         name: gaseous_environment
         description: Use of conditions with differing gaseous environments; should include the name of gaseous compound, amount administered, treatment duration, interval and total experimental duration; can include multiple gaseous environment regimens
@@ -38646,6 +38771,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       genetic_mod:
         name: genetic_mod
         annotations:
@@ -38727,6 +38853,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       growth_facil:
         name: growth_facil
         annotations:
@@ -38810,6 +38937,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       herbicide_regm:
         name: herbicide_regm
         annotations:
@@ -38839,6 +38967,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       host_age:
         name: host_age
         annotations:
@@ -39248,6 +39377,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       isotope_exposure:
         name: isotope_exposure
         description: List isotope exposure or addition applied to your sample.
@@ -39349,6 +39479,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       mineral_nutr_regm:
         name: mineral_nutr_regm
         annotations:
@@ -39378,6 +39509,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       misc_param:
         name: misc_param
         annotations:
@@ -39404,6 +39536,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       non_min_nutr_regm:
         name: non_min_nutr_regm
@@ -39462,6 +39595,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -39514,6 +39648,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       pesticide_regm:
         name: pesticide_regm
         annotations:
@@ -39543,6 +39678,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       ph_regm:
         name: ph_regm
         annotations:
@@ -39569,6 +39705,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       plant_growth_med:
         name: plant_growth_med
         annotations:
@@ -39701,6 +39838,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       rainfall_regm:
         name: rainfall_regm
         annotations:
@@ -39730,6 +39868,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       root_cond:
         name: root_cond
         annotations:
@@ -40033,6 +40172,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       samp_capt_status:
         name: samp_capt_status
         annotations:
@@ -40317,6 +40457,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       size_frac:
         name: size_frac
         annotations:
@@ -40383,6 +40524,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       start_date_inc:
         name: start_date_inc
         description: Date the incubation was started. Only relevant for incubation samples.
@@ -40487,6 +40629,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       watering_regm:
         name: watering_regm
         description: Information about treatment involving an exposure to watering frequencies, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple regimens
@@ -40506,6 +40649,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       horizon_meth:
         name: horizon_meth
         title: horizon method
@@ -40667,6 +40811,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       alkalinity:
         name: alkalinity
         annotations:
@@ -40867,6 +41012,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       biotic_regm:
         name: biotic_regm
@@ -41057,6 +41203,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chloride:
         name: chloride
@@ -41134,6 +41281,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       collection_date:
         name: collection_date
         annotations:
@@ -41298,6 +41446,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       diss_carb_dioxide:
         name: diss_carb_dioxide
@@ -41745,6 +41894,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       geo_loc_name:
         name: geo_loc_name
         annotations:
@@ -41829,6 +41979,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       isotope_exposure:
         name: isotope_exposure
         description: List isotope exposure or addition applied to your sample.
@@ -42183,6 +42334,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       n_alkanes:
         name: n_alkanes
@@ -42213,6 +42365,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -42436,6 +42589,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -42520,6 +42674,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       perturbation:
         name: perturbation
@@ -42547,6 +42702,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       petroleum_hydrocarb:
         name: petroleum_hydrocarb
         annotations:
@@ -42656,6 +42812,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       phosphate:
         name: phosphate
@@ -42715,6 +42872,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       porosity:
         name: porosity
@@ -43591,6 +43749,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       horizon_meth:
         name: horizon_meth
         title: horizon method
@@ -43758,6 +43917,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: .*
       air_temp_regm:
         name: air_temp_regm
@@ -43789,6 +43949,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       al_sat:
         name: al_sat
         description: The relative abundance of aluminum in the sample
@@ -44035,6 +44196,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       climate_environment:
         name: climate_environment
@@ -44057,6 +44219,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       collection_date:
         name: collection_date
         annotations:
@@ -44669,6 +44832,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       geo_loc_name:
         name: geo_loc_name
         annotations:
@@ -44752,6 +44916,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       heavy_metals_meth:
         name: heavy_metals_meth
@@ -44832,6 +44997,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       infiltrations:
         name: infiltrations
         description: The amount of time it takes to complete each infiltration activity
@@ -45317,6 +45483,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate_nitrogen:
         name: nitrate_nitrogen
@@ -46562,6 +46729,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
       zinc:
         name: zinc
         annotations:
@@ -46754,6 +46922,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chem_oxygen_dem:
         name: chem_oxygen_dem
@@ -46993,6 +47162,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       env_broad_scale:
         name: env_broad_scale
@@ -47111,6 +47281,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       geo_loc_name:
         name: geo_loc_name
@@ -47196,6 +47367,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       lat_lon:
         name: lat_lon
@@ -47243,6 +47415,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -47302,6 +47475,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       organism_count:
         name: organism_count
@@ -47331,6 +47505,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -47383,6 +47558,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       ph:
         name: ph
         annotations:
@@ -47940,6 +48116,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       soluble_org_mat:
         name: soluble_org_mat
@@ -47970,6 +48147,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       specific_ecosystem:
         name: specific_ecosystem
@@ -48017,6 +48195,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       temp:
         name: temp
@@ -48315,6 +48494,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       alkalinity:
         name: alkalinity
         annotations:
@@ -48483,6 +48663,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       bac_prod:
         name: bac_prod
@@ -48600,6 +48781,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       biotic_regm:
         name: biotic_regm
@@ -48768,6 +48950,7 @@ classes:
         slot_group: mixs_modified_section
         range: string
         recommended: true
+        inlined_as_list: true
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       chloride:
         name: chloride
@@ -48845,6 +49028,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       collection_date:
         name: collection_date
         annotations:
@@ -49038,6 +49222,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       diss_carb_dioxide:
         name: diss_carb_dioxide
@@ -49537,6 +49722,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       geo_loc_name:
         name: geo_loc_name
         annotations:
@@ -49620,6 +49806,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
       isotope_exposure:
         name: isotope_exposure
         description: List isotope exposure or addition applied to your sample.
@@ -49835,6 +50022,7 @@ classes:
           - Biosample
         slot_group: mixs_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       n_alkanes:
         name: n_alkanes
@@ -49865,6 +50053,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       nitrate:
         name: nitrate
@@ -50068,6 +50257,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
       oxy_stat_samp:
         name: oxy_stat_samp
@@ -50178,6 +50368,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
       petroleum_hydrocarb:
         name: petroleum_hydrocarb
         annotations:
@@ -50281,6 +50472,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       phosphate:
         name: phosphate
@@ -50340,6 +50532,7 @@ classes:
           - Biosample
         slot_group: mixs_core_section
         range: string
+        inlined_as_list: true
         pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
       photon_flux:
         name: photon_flux
@@ -51327,6 +51520,7 @@ classes:
           - Biosample
         slot_group: mixs_modified_section
         range: string
+        inlined_as_list: true
   DhMultiviewCommonColumnsMixin:
     name: DhMultiviewCommonColumnsMixin
     description: Mixin with DhMutliviewCommon Columns
@@ -51843,38 +52037,7 @@ classes:
       - name
       - description
       - alternative_identifiers
+      - type
+    class_uri: nmdc:NamedThing
     slot_usage: []
-  MaterialEntity:
-    name: MaterialEntity
-    title: Material Entity
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-      - Material
-      - Physical entity
-    is_a: NamedThing
-    abstract: true
-    slot_usage: []
-  ProcessedSample:
-    name: ProcessedSample
-    title: Processed Sample
-    from_schema: https://example.com/nmdc_submission_schema
-    is_a: MaterialEntity
-    slots:
-      - biomaterial_purity
-      - dna_absorb1
-      - dna_concentration
-      - external_database_identifiers
-    slot_usage:
-      id:
-        name: id
-        domain_of:
-          - Biosample
-          - Study
-          - NamedThing
-          - Activity
-        required: true
-        pattern: ^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$
-        structured_pattern:
-          syntax: '{id_nmdc_prefix}:procsm-{id_shoulder}-{id_blade}$'
-          interpolated: true
 source_file: local/with_modifications.yaml.raw

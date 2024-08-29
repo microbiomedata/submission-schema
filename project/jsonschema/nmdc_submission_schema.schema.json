@@ -252,8 +252,7 @@
                 "metagenomics_long_read",
                 "metaproteomics",
                 "metatranscriptomics",
-                "natural organic matter",
-                "bulk chemistry"
+                "natural organic matter"
             ],
             "title": "AnalysisTypeEnum",
             "type": "string"
@@ -6317,58 +6316,6 @@
             ],
             "title": "PlantSexEnum",
             "type": "string"
-        },
-        "ProcessedSample": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "alternative_identifiers": {
-                    "description": "A list of alternative identifiers for the entity.",
-                    "items": {
-                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\\-\\/\\.,]*$",
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "biomaterial_purity": {
-                    "type": "string"
-                },
-                "description": {
-                    "description": "a human-readable description of a thing",
-                    "type": "string"
-                },
-                "dna_absorb1": {
-                    "description": "260/280 measurement of DNA sample purity",
-                    "type": "number"
-                },
-                "dna_concentration": {
-                    "maximum": 2000,
-                    "minimum": 0,
-                    "type": "number"
-                },
-                "external_database_identifiers": {
-                    "description": "Link to corresponding identifier in external database",
-                    "items": {
-                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\\-\\/\\.,]*$",
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "id": {
-                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
-                    "pattern": "^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$",
-                    "type": "string"
-                },
-                "name": {
-                    "description": "A human readable label for an entity",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "id"
-            ],
-            "title": "ProcessedSample",
-            "type": "object"
         },
         "ProfilePositionEnum": {
             "description": "",

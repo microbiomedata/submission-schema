@@ -886,16 +886,6 @@ CREATE TABLE "PlantAssociatedInterface" (
 	PRIMARY KEY (air_temp_regm, ances_data, antibiotic_regm, biol_stat, biotic_regm, biotic_relationship, chem_administration, chem_mutagen, climate_environment, collection_date, collection_date_inc, collection_time, cult_root_med, depth, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, experimental_factor, fertilizer_regm, fungicide_regm, gaseous_environment, genetic_mod, geo_loc_name, gravity, growth_facil, growth_habit, growth_hormone_regm, herbicide_regm, host_age, host_common_name, host_disease_stat, host_dry_mass, host_genotype, host_height, host_length, host_life_stage, host_phenotype, host_subspecf_genlin, host_symbiont, host_taxid, host_tot_mass, host_wet_mass, humidity_regm, isotope_exposure, lat_lon, light_regm, mechanical_damage, mineral_nutr_regm, misc_param, non_min_nutr_regm, organism_count, oxy_stat_samp, perturbation, pesticide_regm, ph_regm, plant_growth_med, plant_product, plant_sex, plant_struc, radiation_regm, rainfall_regm, root_cond, root_med_carbon, root_med_macronutr, root_med_micronutr, root_med_ph, root_med_regl, root_med_solid, root_med_suppl, salinity, salinity_meth, salt_regm, samp_capt_status, samp_collec_device, samp_collec_method, samp_dis_stage, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, season_environment, size_frac, specific_ecosystem, standing_water_regm, start_date_inc, "temp", tiss_cult_growth_med, water_temp_regm, watering_regm, horizon_meth, analysis_type, samp_name, source_mat_id)
 );
 
-CREATE TABLE "ProcessedSample" (
-	name TEXT, 
-	description TEXT, 
-	biomaterial_purity TEXT, 
-	dna_absorb1 FLOAT, 
-	dna_concentration FLOAT, 
-	id TEXT NOT NULL, 
-	PRIMARY KEY (id)
-);
-
 CREATE TABLE "SampleData" (
 	air_data TEXT, 
 	biofilm_data TEXT, 
@@ -1342,18 +1332,4 @@ CREATE TABLE "WaterInterface" (
 	samp_name TEXT, 
 	source_mat_id TEXT, 
 	PRIMARY KEY (air_temp_regm, alkalinity, alkalinity_method, alkyl_diethers, aminopept_act, ammonium, atmospheric_data, bac_prod, bac_resp, bacteria_carb_prod, biomass, biotic_regm, bishomohopanol, bromide, calcium, carb_nitro_ratio, chem_administration, chloride, chlorophyll, climate_environment, collection_date, collection_date_inc, collection_time, conduc, density, depth, diether_lipids, diss_carb_dioxide, diss_hydrogen, diss_inorg_carb, diss_inorg_nitro, diss_inorg_phosp, diss_org_carb, diss_org_nitro, diss_oxygen, down_par, ecosystem, ecosystem_category, ecosystem_subtype, ecosystem_type, elev, env_broad_scale, env_local_scale, env_medium, experimental_factor, filter_method, fluor, gaseous_environment, geo_loc_name, glucosidase_act, humidity_regm, isotope_exposure, lat_lon, light_intensity, light_regm, magnesium, mean_frict_vel, mean_peak_frict_vel, misc_param, n_alkanes, nitrate, nitrite, nitro, org_carb, org_matter, org_nitro, organism_count, oxy_stat_samp, part_org_carb, part_org_nitro, perturbation, petroleum_hydrocarb, ph, ph_meth, phaeopigments, phosphate, phosplipid_fatt_acid, photon_flux, potassium, pressure, primary_prod, redox_potential, salinity, salinity_meth, samp_collec_device, samp_collec_method, samp_mat_process, samp_size, samp_store_dur, samp_store_loc, samp_store_temp, sample_link, silicate, size_frac, size_frac_low, size_frac_up, sodium, soluble_react_phosp, specific_ecosystem, start_date_inc, sulfate, sulfide, suspend_part_matter, "temp", tidal_stage, tot_depth_water_col, tot_diss_nitro, tot_inorg_nitro, tot_nitro, tot_part_carb, tot_phosp, turbidity, water_current, watering_regm, analysis_type, samp_name, source_mat_id)
-);
-
-CREATE TABLE "ProcessedSample_alternative_identifiers" (
-	backref_id TEXT, 
-	alternative_identifiers TEXT, 
-	PRIMARY KEY (backref_id, alternative_identifiers), 
-	FOREIGN KEY(backref_id) REFERENCES "ProcessedSample" (id)
-);
-
-CREATE TABLE "ProcessedSample_external_database_identifiers" (
-	backref_id TEXT, 
-	external_database_identifiers TEXT, 
-	PRIMARY KEY (backref_id, external_database_identifiers), 
-	FOREIGN KEY(backref_id) REFERENCES "ProcessedSample" (id)
 );
