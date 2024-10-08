@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-08-21T16:24:13
+# Generation date: 2024-10-08T12:54:01
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -11,6 +11,7 @@ import re
 from jsonasobj2 import JsonObj, as_dict
 from typing import Optional, List, Union, Dict, ClassVar, Any
 from dataclasses import dataclass
+from datetime import date, datetime, time
 from linkml_runtime.linkml_model.meta import EnumDefinition, PermissibleValue, PvFormulaOptions
 
 from linkml_runtime.utils.slot import Slot
@@ -52,11 +53,13 @@ KEGG_REACTION = CurieNamespace('KEGG_REACTION', 'https://bioregistry.io/kegg.rea
 KEGG_PATHWAY = CurieNamespace('KEGG_PATHWAY', 'https://bioregistry.io/kegg.pathway:')
 MASSIVE = CurieNamespace('MASSIVE', 'https://bioregistry.io/reference/massive:')
 MESH = CurieNamespace('MESH', 'https://bioregistry.io/mesh:')
+MISO = CurieNamespace('MISO', 'http://purl.obolibrary.org/obo/MISO_')
 MIXS = CurieNamespace('MIXS', 'https://w3id.org/mixs/')
 MIXS_YAML = CurieNamespace('MIXS_yaml', 'https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/')
 MS = CurieNamespace('MS', 'http://purl.obolibrary.org/obo/MS_')
 METACYC = CurieNamespace('MetaCyc', 'https://bioregistry.io/metacyc.compound:')
 METANETX = CurieNamespace('MetaNetX', 'http://example.org/metanetx/')
+NCBI = CurieNamespace('NCBI', 'http://example.com/ncbitaxon/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
@@ -73,6 +76,7 @@ RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 RETRORULES = CurieNamespace('RetroRules', 'http://example.org/retrorules/')
 SEED = CurieNamespace('SEED', 'https://bioregistry.io/seed:')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
+SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
 SUPFAM = CurieNamespace('SUPFAM', 'https://bioregistry.io/supfam:')
 TIGRFAM = CurieNamespace('TIGRFAM', 'https://bioregistry.io/tigrfam:')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
@@ -95,6 +99,7 @@ GTPO = CurieNamespace('gtpo', 'http://example.org/gtpo/')
 IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
 IMG_TAXON = CurieNamespace('img_taxon', 'https://bioregistry.io/img.taxon:')
 JGI = CurieNamespace('jgi', 'http://example.org/jgi/')
+JGI_ANALYSIS = CurieNamespace('jgi_analysis', 'https://data.jgi.doe.gov/search?q=')
 JGI_PROPOSAL = CurieNamespace('jgi_proposal', 'https://bioregistry.io/jgi.proposal:')
 KEGG = CurieNamespace('kegg', 'https://bioregistry.io/kegg:')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
@@ -294,14 +299,6 @@ class Sparqlpath(str):
     type_model_uri = NMDC_SUB_SCHEMA.Sparqlpath
 
 
-class ExternalIdentifier(Uriorcurie):
-    """ A CURIE representing an external identifier """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "external_identifier"
-    type_model_uri = NMDC_SUB_SCHEMA.ExternalIdentifier
-
-
 # Class references
 class DhMultiviewCommonColumnsMixinSampName(extended_str):
     pass
@@ -311,15 +308,7 @@ class NamedThingId(URIorCURIE):
     pass
 
 
-class MaterialEntityId(NamedThingId):
-    pass
-
-
-class ProcessedSampleId(MaterialEntityId):
-    pass
-
-
-@dataclass
+@dataclass(repr=False)
 class DhMultiviewCommonColumnsMixin(YAMLRoot):
     """
     Mixin with DhMutliviewCommon Columns
@@ -363,7 +352,7 @@ class DhMultiviewCommonColumnsMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SampIdNewTermsMixin(YAMLRoot):
     """
     Mixin with SampIdNew Terms
@@ -384,7 +373,7 @@ class SampIdNewTermsMixin(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SoilMixsInspiredMixin(YAMLRoot):
     """
     Mixin with SoilMixsInspired Terms
@@ -526,7 +515,7 @@ class DhInterface(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.DhInterface
 
 
-@dataclass
+@dataclass(repr=False)
 class AirInterface(DhInterface):
     """
     air dh_interface
@@ -890,7 +879,7 @@ class AirInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BiofilmInterface(DhInterface):
     """
     biofilm dh_interface
@@ -1506,7 +1495,7 @@ class BiofilmInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class BuiltEnvInterface(DhInterface):
     """
     built_env dh_interface
@@ -2815,7 +2804,7 @@ class BuiltEnvInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class EmslInterface(DhInterface):
     """
     emsl dh_interface
@@ -2901,7 +2890,7 @@ class EmslInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HcrCoresInterface(DhInterface):
     """
     hcr_cores dh_interface
@@ -3650,7 +3639,7 @@ class HcrCoresInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HcrFluidsSwabsInterface(DhInterface):
     """
     hcr_fluids_swabs dh_interface
@@ -4434,7 +4423,7 @@ class HcrFluidsSwabsInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class HostAssociatedInterface(DhInterface):
     """
     host_associated dh_interface
@@ -4938,7 +4927,7 @@ class HostAssociatedInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class JgiMgInterface(DhInterface):
     """
     Metadata for samples sent to JGI for standard metagenome sequencing
@@ -5127,7 +5116,7 @@ class JgiMgInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class JgiMgLrInterface(DhInterface):
     """
     Metadata for samples sent to JGI for long read metagenome sequecning
@@ -5320,7 +5309,7 @@ class JgiMgLrInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class JgiMtInterface(DhInterface):
     """
     jgi_mt dh_interface
@@ -5491,12 +5480,6 @@ class JgiMtInterface(DhInterface):
         if self.rna_volume is not None and not isinstance(self.rna_volume, float):
             self.rna_volume = float(self.rna_volume)
 
-        if self.rna_absorb1 is not None and not isinstance(self.rna_absorb1, float):
-            self.rna_absorb1 = float(self.rna_absorb1)
-
-        if self.rna_absorb2 is not None and not isinstance(self.rna_absorb2, float):
-            self.rna_absorb2 = float(self.rna_absorb2)
-
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
 
@@ -5509,7 +5492,7 @@ class JgiMtInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class MiscEnvsInterface(DhInterface):
     """
     misc_envs dh_interface
@@ -5992,7 +5975,7 @@ class MiscEnvsInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class PlantAssociatedInterface(DhInterface):
     """
     plant_associated dh_interface
@@ -6703,7 +6686,7 @@ class PlantAssociatedInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SedimentInterface(DhInterface):
     """
     sediment dh_interface
@@ -7525,7 +7508,7 @@ class SedimentInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SoilInterface(DhInterface):
     """
     soil dh_interface
@@ -8324,7 +8307,7 @@ class SoilInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class WastewaterSludgeInterface(DhInterface):
     """
     wastewater_sludge dh_interface
@@ -8772,7 +8755,7 @@ class WastewaterSludgeInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class WaterInterface(DhInterface):
     """
     water dh_interface
@@ -9596,7 +9579,7 @@ class WaterInterface(DhInterface):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class SampleData(YAMLRoot):
     """
     represents data produced by the DataHarmonizer tabs of the submission portal
@@ -9678,19 +9661,20 @@ class SampleData(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
-@dataclass
+@dataclass(repr=False)
 class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["NamedThing"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:NamedThing"
+    class_class_uri: ClassVar[URIRef] = NMDC["NamedThing"]
+    class_class_curie: ClassVar[str] = "nmdc:NamedThing"
     class_name: ClassVar[str] = "NamedThing"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.NamedThing
 
     id: Union[str, NamedThingId] = None
+    type: Union[str, URIorCURIE] = None
     name: Optional[str] = None
     description: Optional[str] = None
     alternative_identifiers: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
@@ -9701,6 +9685,10 @@ class NamedThing(YAMLRoot):
         if not isinstance(self.id, NamedThingId):
             self.id = NamedThingId(self.id)
 
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_class_curie)
+
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
 
@@ -9710,54 +9698,6 @@ class NamedThing(YAMLRoot):
         if not isinstance(self.alternative_identifiers, list):
             self.alternative_identifiers = [self.alternative_identifiers] if self.alternative_identifiers is not None else []
         self.alternative_identifiers = [v if isinstance(v, URIorCURIE) else URIorCURIE(v) for v in self.alternative_identifiers]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass
-class MaterialEntity(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MaterialEntity"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MaterialEntity"
-    class_name: ClassVar[str] = "MaterialEntity"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MaterialEntity
-
-    id: Union[str, MaterialEntityId] = None
-
-@dataclass
-class ProcessedSample(MaterialEntity):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["ProcessedSample"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:ProcessedSample"
-    class_name: ClassVar[str] = "ProcessedSample"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.ProcessedSample
-
-    id: Union[str, ProcessedSampleId] = None
-    biomaterial_purity: Optional[str] = None
-    dna_absorb1: Optional[float] = None
-    dna_concentration: Optional[float] = None
-    external_database_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ProcessedSampleId):
-            self.id = ProcessedSampleId(self.id)
-
-        if self.biomaterial_purity is not None and not isinstance(self.biomaterial_purity, str):
-            self.biomaterial_purity = str(self.biomaterial_purity)
-
-        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
-
-        if self.dna_concentration is not None and not isinstance(self.dna_concentration, float):
-            self.dna_concentration = float(self.dna_concentration)
-
-        if not isinstance(self.external_database_identifiers, list):
-            self.external_database_identifiers = [self.external_database_identifiers] if self.external_database_identifiers is not None else []
-        self.external_database_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.external_database_identifiers]
 
         super().__post_init__(**kwargs)
 
@@ -13309,6 +13249,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Connective tissue"))
         setattr(cls, "Continuous culture",
             PermissibleValue(text="Continuous culture"))
+        setattr(cls, "Cryptomonads/Cryptophytes",
+            PermissibleValue(text="Cryptomonads/Cryptophytes"))
         setattr(cls, "Culture media",
             PermissibleValue(text="Culture media"))
         setattr(cls, "Currency notes",
@@ -14550,6 +14492,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Tropical forest"))
         setattr(cls, "Unspecified organ",
             PermissibleValue(text="Unspecified organ"))
+        setattr(cls, "Urban forest",
+            PermissibleValue(text="Urban forest"))
         setattr(cls, "Urinary bladder",
             PermissibleValue(text="Urinary bladder"))
         setattr(cls, "Uropygial/Preen gland",
@@ -15274,6 +15218,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Ileum-cecum"))
         setattr(cls, "Inferior lobe",
             PermissibleValue(text="Inferior lobe"))
+        setattr(cls, "Insect burrows",
+            PermissibleValue(text="Insect burrows"))
         setattr(cls, "Intertidal zone",
             PermissibleValue(text="Intertidal zone"))
         setattr(cls, "Intestinal mucosa",
@@ -15336,6 +15282,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Lymphoid follicles"))
         setattr(cls, "Malignant ascites",
             PermissibleValue(text="Malignant ascites"))
+        setattr(cls, "Mangrove area",
+            PermissibleValue(text="Mangrove area"))
         setattr(cls, "Mangrove sediment",
             PermissibleValue(text="Mangrove sediment"))
         setattr(cls, "Mangrove soil",
@@ -15918,6 +15866,8 @@ class EcosystemSubtypeForSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="Tree plantation"))
         setattr(cls, "Tropical forest",
             PermissibleValue(text="Tropical forest"))
+        setattr(cls, "Urban forest",
+            PermissibleValue(text="Urban forest"))
         setattr(cls, "Vadose zone",
             PermissibleValue(text="Vadose zone"))
         setattr(cls, "Wetland-upland transition",
@@ -16447,10 +16397,10 @@ slots.diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="diss_oxygen_fluid", cu
                    model_uri=NMDC_SUB_SCHEMA.diss_oxygen_fluid, domain=None, range=Optional[str])
 
 slots.dna_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.dna_absorb1, name="dna_absorb1", curie=NMDC_SUB_SCHEMA.curie('dna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_absorb1, domain=ProcessedSample, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.dna_absorb1, domain=None, range=Optional[float])
 
 slots.dna_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.dna_absorb2, name="dna_absorb2", curie=NMDC_SUB_SCHEMA.curie('dna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_absorb2, domain=ProcessedSample, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.dna_absorb2, domain=None, range=Optional[float])
 
 slots.dna_concentration = Slot(uri=NMDC_SUB_SCHEMA.dna_concentration, name="dna_concentration", curie=NMDC_SUB_SCHEMA.curie('dna_concentration'),
                    model_uri=NMDC_SUB_SCHEMA.dna_concentration, domain=None, range=Optional[float])
@@ -17176,10 +17126,10 @@ slots.resins_pc = Slot(uri=MIXS['0000134'], name="resins_pc", curie=MIXS.curie('
                    model_uri=NMDC_SUB_SCHEMA.resins_pc, domain=None, range=Optional[str])
 
 slots.rna_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.rna_absorb1, name="rna_absorb1", curie=NMDC_SUB_SCHEMA.curie('rna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_absorb1, domain=ProcessedSample, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.rna_absorb1, domain=None, range=Optional[float])
 
 slots.rna_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.rna_absorb2, name="rna_absorb2", curie=NMDC_SUB_SCHEMA.curie('rna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_absorb2, domain=ProcessedSample, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.rna_absorb2, domain=None, range=Optional[float])
 
 slots.rna_concentration = Slot(uri=NMDC_SUB_SCHEMA.rna_concentration, name="rna_concentration", curie=NMDC_SUB_SCHEMA.curie('rna_concentration'),
                    model_uri=NMDC_SUB_SCHEMA.rna_concentration, domain=None, range=Optional[float])
@@ -17811,12 +17761,11 @@ slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.c
 slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
                    model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
 
-slots.biomaterial_purity = Slot(uri=NMDC_SUB_SCHEMA.biomaterial_purity, name="biomaterial_purity", curie=NMDC_SUB_SCHEMA.curie('biomaterial_purity'),
-                   model_uri=NMDC_SUB_SCHEMA.biomaterial_purity, domain=ProcessedSample, range=Optional[str])
+slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
+                   model_uri=NMDC_SUB_SCHEMA.type, domain=None, range=Union[str, URIorCURIE])
 
-slots.external_database_identifiers = Slot(uri=NMDC_SUB_SCHEMA.external_database_identifiers, name="external_database_identifiers", curie=NMDC_SUB_SCHEMA.curie('external_database_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.external_database_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
-                   pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
+slots.biomaterial_purity = Slot(uri=NMDC_SUB_SCHEMA.biomaterial_purity, name="biomaterial_purity", curie=NMDC_SUB_SCHEMA.curie('biomaterial_purity'),
+                   model_uri=NMDC_SUB_SCHEMA.biomaterial_purity, domain=None, range=Optional[str])
 
 slots.AirInterface_air_PM_concen = Slot(uri=MIXS['0000108'], name="AirInterface_air_PM_concen", curie=MIXS.curie('0000108'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_air_PM_concen, domain=AirInterface, range=Optional[str],
@@ -22133,7 +22082,3 @@ slots.SoilMixsInspiredMixin_start_date_inc = Slot(uri=NMDC['nmdc/start_date_inc'
 slots.SoilMixsInspiredMixin_start_time_inc = Slot(uri=NMDC['nmdc/start_time_inc'], name="SoilMixsInspiredMixin_start_time_inc", curie=NMDC.curie('nmdc/start_time_inc'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_start_time_inc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
-
-slots.ProcessedSample_id = Slot(uri=NMDC_SUB_SCHEMA.id, name="ProcessedSample_id", curie=NMDC_SUB_SCHEMA.curie('id'),
-                   model_uri=NMDC_SUB_SCHEMA.ProcessedSample_id, domain=ProcessedSample, range=Union[str, ProcessedSampleId],
-                   pattern=re.compile(r'^(nmdc):procsm-([0-9][a-z]{0,6}[0-9])-([A-Za-z0-9]{1,})$'))
