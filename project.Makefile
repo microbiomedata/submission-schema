@@ -13,12 +13,8 @@ schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
 	rm -rf examples/output/*.ttl
 	rm -rf examples/output/*.yaml
 	rm -rf examples/output/README.md
-	rm -rf from_schemasheets.lint_report.txt
-	rm -rf schemasheets/from_schemasheets.lint_report.txt
 	rm -rf schemasheets/populated_tsv/*.tsv
 	rm -rf schemasheets/populated_tsv/*.txt
-	rm -rf schemasheets/yaml_out/from_schemasheets.yaml
-	rm -rf schemasheets/yaml_out/from_schemasheets.yaml.raw
 	rm -rf sheets_and_friends/with_modifications.lint_report.txt
 	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
@@ -35,21 +31,6 @@ schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
 schemasheets-clean:
 	rm -rf schemasheets/yaml_out/*.yaml
 
-local/from_schemasheets.yaml: schemasheets/tsv_in/prefixes.tsv \
-schemasheets/tsv_in/classes.tsv \
-schemasheets/tsv_in/enums.tsv \
-schemasheets/tsv_in/schema_only.tsv \
-schemasheets/tsv_in/slots.tsv \
-schemasheets/tsv_in/types.tsv
-	$(RUN) sheets2linkml \
-		--output $@.raw $^
-		# would prefer to discover TSV inputs instead of enumerating them
-	$(RUN) gen-linkml \
-		--no-materialize-attributes \
-		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > local/from_schemasheets.lint_report.txt
-
-
 # todo: fewer enums
 # todo: use booleans for yes/no enumerations
 # todo: some numbers appear as strings in the schema (just examples? check for minimum value etc)
@@ -58,7 +39,7 @@ schemasheets/tsv_in/types.tsv
 sheets_and_friends-clean:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
-local/with_shuttles.yaml: local/from_schemasheets.yaml \
+local/with_shuttles.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema_base.yaml \
 sheets_and_friends/tsv_in/import_slots_regardless.tsv
 		$(RUN) do_shuttle \
 			--config_tsv  $(word 2,$^) \

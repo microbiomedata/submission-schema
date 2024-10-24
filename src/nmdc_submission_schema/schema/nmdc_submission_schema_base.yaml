@@ -1,0 +1,1297 @@
+name: nmdc_submission_schema
+description: Schema for creating Data Harmonizer interfaces for biosamples based on MIxS and other standards
+id: https://example.com/nmdc_submission_schema
+version: 0.0.0
+prefixes:
+  UO: http://purl.obolibrary.org/obo/UO_
+  qud: http://example.org/qud/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  nmdc_sub_schema: https://example.com/nmdc_sub_schema/
+  linkml: https://w3id.org/linkml/
+  shex: http://www.w3.org/ns/shex#
+  schema: http://schema.org/
+default_prefix: nmdc_sub_schema
+default_range: string
+types:
+  unit:
+    name: unit
+    description: a string representation of a unit
+    notes:
+      - why isn't this picked up from the nmdc.yaml import?
+    mappings:
+      - qud:Unit
+      - UO:0000000
+    base: str
+    uri: xsd:string
+  decimal degree:
+    name: decimal degree
+    description: a float representation of a degree of rotation
+    base: float
+    uri: xsd:decimal
+  language code:
+    name: language code
+    description: a string representation of a language
+    base: str
+    uri: xsd:language
+  string:
+    name: string
+    description: A character string
+    notes:
+      - In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "string".
+    exact_mappings:
+      - schema:Text
+    base: str
+    uri: xsd:string
+  integer:
+    name: integer
+    description: An integer
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "integer".
+    exact_mappings:
+      - schema:Integer
+    base: int
+    uri: xsd:integer
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "boolean".
+    exact_mappings:
+      - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "float".
+    exact_mappings:
+      - schema:Float
+    base: float
+    uri: xsd:float
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "double".
+    close_mappings:
+      - schema:Float
+    base: float
+    uri: xsd:double
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal specification
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "decimal".
+    broad_mappings:
+      - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  time:
+    name: time
+    description: A time object represents a (local) time of day, independent of any particular day
+    notes:
+      - URI is dateTime because OWL reasoners do not work with straight date or time
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "time".
+    exact_mappings:
+      - schema:Time
+    base: XSDTime
+    uri: xsd:time
+    repr: str
+  date:
+    name: date
+    description: a date (year, month and day) in an idealized calendar
+    notes:
+      - URI is dateTime because OWL reasoners don't work with straight date or time
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "date".
+    exact_mappings:
+      - schema:Date
+    base: XSDDate
+    uri: xsd:date
+    repr: str
+  datetime:
+    name: datetime
+    description: The combination of a date and time
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "datetime".
+    exact_mappings:
+      - schema:DateTime
+    base: XSDDateTime
+    uri: xsd:dateTime
+    repr: str
+  date_or_datetime:
+    name: date_or_datetime
+    description: Either a date or a datetime
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "date_or_datetime".
+    base: str
+    uri: linkml:DateOrDatetime
+    repr: str
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uriorcurie".
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  curie:
+    name: curie
+    conforms_to: https://www.w3.org/TR/curie/
+    description: a compact URI
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "curie".
+    comments:
+      - in RDF serializations this MUST be expanded to a URI
+      - in non-RDF serializations MAY be serialized as the compact representation
+    base: Curie
+    uri: xsd:string
+    repr: str
+  uri:
+    name: uri
+    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
+    description: a complete URI
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uri".
+    comments:
+      - in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node
+    close_mappings:
+      - schema:URL
+    base: URI
+    uri: xsd:anyURI
+    repr: str
+  ncname:
+    name: ncname
+    description: Prefix part of CURIE
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
+    base: NCName
+    uri: xsd:string
+    repr: str
+  objectidentifier:
+    name: objectidentifier
+    description: A URI or CURIE that represents an object in the model.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "objectidentifier".
+    comments:
+      - Used for inheritance and type checking
+    base: ElementIdentifier
+    uri: shex:iri
+    repr: str
+  nodeidentifier:
+    name: nodeidentifier
+    description: A URI, CURIE or BNODE that represents a node in a model.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "nodeidentifier".
+    base: NodeIdentifier
+    uri: shex:nonLiteral
+    repr: str
+  jsonpointer:
+    name: jsonpointer
+    conforms_to: https://datatracker.ietf.org/doc/html/rfc6901
+    description: A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "jsonpointer".
+    base: str
+    uri: xsd:string
+    repr: str
+  jsonpath:
+    name: jsonpath
+    conforms_to: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
+    description: A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "jsonpath".
+    base: str
+    uri: xsd:string
+    repr: str
+  sparqlpath:
+    name: sparqlpath
+    conforms_to: https://www.w3.org/TR/sparql11-query/#propertypaths
+    description: A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.
+    notes:
+      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "sparqlpath".
+    base: str
+    uri: xsd:string
+    repr: str
+enums:
+  BioticRelationshipEnum:
+    description: placeholder enum descr
+    permissible_values:
+      commensalism:
+        description: placeholder PV descr
+        annotations:
+          sntc_name:
+            tag: sntc_name
+            value: samp_biotic_relationship
+        notes:
+          - 'biotic_relationship_enum: free living'
+          - parasitism
+          - commensalism
+          - symbiotic
+          - mutualism
+        see_also:
+          - https://genomicsstandardsconsortium.github.io/mixs/biotic_relationship_enum/
+      free living:
+        description: placeholder PV descr
+      mutualism:
+        description: placeholder PV descr
+      parasitism:
+        description: placeholder PV descr
+      symbiotic:
+        description: placeholder enum descr
+  JgiContTypeEnum:
+    description: placeholder enum descr
+    permissible_values:
+      plate:
+        description: placeholder PV descr
+      tube:
+        description: placeholder PV descr
+  DnaSampleFormatEnum:
+    description: placeholder enum descr
+    permissible_values:
+      10 mM Tris-HCl:
+        description: placeholder PV descr
+      DNAStable:
+        description: placeholder PV descr
+      Ethanol:
+        description: placeholder PV descr
+      Low EDTA TE:
+        description: placeholder PV descr
+      MDA reaction buffer:
+        description: placeholder PV descr
+      PBS:
+        description: placeholder PV descr
+      Pellet:
+        description: placeholder PV descr
+      RNAStable:
+        description: placeholder PV descr
+      TE:
+        description: placeholder PV descr
+      Water:
+        description: placeholder PV descr
+  EnvPackageEnum:
+    description: placeholder enum descr
+    permissible_values:
+      soil:
+        description: placeholder PV descr
+        notes:
+          - I don't think this is a MIxS term anymore, so it make sense to define it here
+  GrowthFacilEnum:
+    description: placeholder enum descr
+    permissible_values:
+      experimental_garden:
+        description: placeholder PV descr
+        annotations:
+          sntc_name:
+            tag: sntc_name
+            value: growth_facility
+        notes:
+          - string range according to MIxS
+        see_also:
+          - https://genomicsstandardsconsortium.github.io/mixs/growth_facil/
+      field:
+        description: placeholder PV descr
+      field_incubation:
+        description: placeholder PV descr
+      glasshouse:
+        description: placeholder PV descr
+      greenhouse:
+        description: placeholder PV descr
+      growth_chamber:
+        description: placeholder PV descr
+      lab_incubation:
+        description: placeholder PV descr
+      open_top_chamber:
+        description: placeholder PV descr
+      other:
+        description: placeholder PV descr
+  RelToOxygenEnum:
+    description: placeholder enum descr
+    permissible_values:
+      aerobe:
+        description: placeholder PV descr
+        annotations:
+          sntc_name:
+            tag: sntc_name
+            value: oxygen_relationship
+        see_also:
+          - https://genomicsstandardsconsortium.github.io/mixs/rel_to_oxygen_enum/
+      anaerobe:
+        description: placeholder PV descr
+      facultative:
+        description: placeholder PV descr
+      microaerophilic:
+        description: placeholder PV descr
+      microanaerobe:
+        description: placeholder PV descr
+      obligate aerobe:
+        description: placeholder PV descr
+      obligate anaerobe:
+        description: placeholder PV descr
+  RnaSampleFormatEnum:
+    description: placeholder enum descr
+    permissible_values:
+      10 mM Tris-HCl:
+        description: placeholder PV descr
+      DNAStable:
+        description: placeholder PV descr
+      Ethanol:
+        description: placeholder PV descr
+      Low EDTA TE:
+        description: placeholder PV descr
+      MDA reaction buffer:
+        description: placeholder PV descr
+      PBS:
+        description: placeholder PV descr
+      Pellet:
+        description: placeholder PV descr
+      RNAStable:
+        description: placeholder PV descr
+      TE:
+        description: placeholder PV descr
+      Water:
+        description: placeholder PV descr
+  SampleTypeEnum:
+    description: placeholder enum descr
+    permissible_values:
+      soil:
+        description: placeholder PV descr
+      water_extract_soil:
+        description: placeholder PV descr
+  StoreCondEnum:
+    description: placeholder enum descr
+    permissible_values:
+      fresh:
+        description: placeholder PV descr
+        annotations:
+          sntc_name:
+            tag: sntc_name
+            value: storage_condt
+        notes:
+          - see samp_store_dur, samp_store_loc, samp_store_temp and store_cond (which takes a string range according to mixs-source).
+      frozen:
+        description: placeholder PV descr
+      lyophilized:
+        description: placeholder PV descr
+      other:
+        description: placeholder PV descr
+  YesNoEnum:
+    description: replaces DnaDnaseEnum and DnaseRnaEnum
+    permissible_values:
+      'no': {}
+      'yes': {}
+  EnvBroadScaleSoilEnum:
+    description: placeholder enum descr, DO NOT SORT
+    permissible_values:
+      arid biome [ENVO:01001838]:
+        description: placeholder PV descr, DO NOT SORT
+      subalpine biome [ENVO:01001837]:
+        description: placeholder PV descr, DO NOT SORT
+      montane biome [ENVO:01001836]:
+        description: placeholder PV descr, DO NOT SORT
+      __montane savanna biome [ENVO:01000223]:
+        description: placeholder PV descr, DO NOT SORT
+      __montane shrubland biome [ENVO:01000216]:
+        description: placeholder PV descr, DO NOT SORT
+      alpine biome [ENVO:01001835]:
+        description: placeholder PV descr, DO NOT SORT
+      __alpine tundra biome [ENVO:01001505]:
+        description: placeholder PV descr, DO NOT SORT
+      subpolar biome [ENVO:01001834]:
+        description: placeholder PV descr, DO NOT SORT
+      subtropical biome [ENVO:01001832]:
+        description: placeholder PV descr, DO NOT SORT
+      __mediterranean biome [ENVO:01001833]:
+        description: placeholder PV descr, DO NOT SORT
+      ____mediterranean savanna biome [ENVO:01000229]:
+        description: placeholder PV descr, DO NOT SORT
+      ____mediterranean shrubland biome [ENVO:01000217]:
+        description: placeholder PV descr, DO NOT SORT
+      ____mediterranean woodland biome [ENVO:01000208]:
+        description: placeholder PV descr, DO NOT SORT
+      __subtropical woodland biome [ENVO:01000222]:
+        description: placeholder PV descr, DO NOT SORT
+      __subtropical shrubland biome [ENVO:01000213]:
+        description: placeholder PV descr, DO NOT SORT
+      __subtropical savanna biome [ENVO:01000187]:
+        description: placeholder PV descr, DO NOT SORT
+      temperate biome [ENVO:01001831]:
+        description: placeholder PV descr, DO NOT SORT
+      __temperate woodland biome [ENVO:01000221]:
+        description: placeholder PV descr, DO NOT SORT
+      __temperate shrubland biome [ENVO:01000215]:
+        description: placeholder PV descr, DO NOT SORT
+      __temperate savanna biome [ENVO:01000189]:
+        description: placeholder PV descr, DO NOT SORT
+      tropical biome [ENVO:01001830]:
+        description: placeholder PV descr, DO NOT SORT
+      __tropical woodland biome [ENVO:01000220]:
+        description: placeholder PV descr, DO NOT SORT
+      __tropical shrubland biome [ENVO:01000214]:
+        description: placeholder PV descr, DO NOT SORT
+      __tropical savanna biome [ENVO:01000188]:
+        description: placeholder PV descr, DO NOT SORT
+      polar biome [ENVO:01000339]:
+        description: placeholder PV descr, DO NOT SORT
+      terrestrial biome [ENVO:00000446]:
+        description: placeholder PV descr, DO NOT SORT
+      __anthropogenic terrestrial biome [ENVO:01000219]:
+        description: placeholder PV descr, DO NOT SORT
+      ____dense settlement biome [ENVO:01000248]:
+        description: placeholder PV descr, DO NOT SORT
+      ______urban biome [ENVO:01000249]:
+        description: placeholder PV descr, DO NOT SORT
+      ____rangeland biome [ENVO:01000247]:
+        description: placeholder PV descr, DO NOT SORT
+      ____village biome [ENVO:01000246]:
+        description: placeholder PV descr, DO NOT SORT
+      __mangrove biome [ENVO:01000181]:
+        description: placeholder PV descr, DO NOT SORT
+      __tundra biome [ENVO:01000180]:
+        description: placeholder PV descr, DO NOT SORT
+      ____alpine tundra biome [ENVO:01001505]:
+        description: placeholder PV descr, DO NOT SORT
+      __shrubland biome [ENVO:01000176]:
+        description: placeholder PV descr, DO NOT SORT
+      ____tidal mangrove shrubland [ENVO:01001369]:
+        description: placeholder PV descr, DO NOT SORT
+      ____xeric shrubland biome [ENVO:01000218]:
+        description: placeholder PV descr, DO NOT SORT
+      ____montane shrubland biome [ENVO:01000216]:
+        description: placeholder PV descr, DO NOT SORT
+      ____temperate shrubland biome [ENVO:01000215]:
+        description: placeholder PV descr, DO NOT SORT
+      ____tropical shrubland biome [ENVO:01000214]:
+        description: placeholder PV descr, DO NOT SORT
+      ____subtropical shrubland biome [ENVO:01000213]:
+        description: placeholder PV descr, DO NOT SORT
+      ______mediterranean shrubland biome [ENVO:01000217]:
+        description: placeholder PV descr, DO NOT SORT
+      __woodland biome [ENVO:01000175]:
+        description: placeholder PV descr, DO NOT SORT
+      ____subtropical woodland biome [ENVO:01000222]:
+        description: placeholder PV descr, DO NOT SORT
+      ______mediterranean woodland biome [ENVO:01000208]:
+        description: placeholder PV descr, DO NOT SORT
+      ____temperate woodland biome [ENVO:01000221]:
+        description: placeholder PV descr, DO NOT SORT
+      ____tropical woodland biome [ENVO:01000220]:
+        description: placeholder PV descr, DO NOT SORT
+      ____savanna biome [ENVO:01000178]:
+        description: placeholder PV descr, DO NOT SORT
+      ______montane savanna biome [ENVO:01000223]:
+        description: placeholder PV descr, DO NOT SORT
+      ______flooded savanna biome [ENVO:01000190]:
+        description: placeholder PV descr, DO NOT SORT
+      ______temperate savanna biome [ENVO:01000189]:
+        description: placeholder PV descr, DO NOT SORT
+      ______tropical savanna biome [ENVO:01000188]:
+        description: placeholder PV descr, DO NOT SORT
+      ______subtropical savanna biome [ENVO:01000187]:
+        description: placeholder PV descr, DO NOT SORT
+      ________mediterranean savanna biome [ENVO:01000229]:
+        description: placeholder PV descr, DO NOT SORT
+  EnvMediumSoilEnum:
+    description: placeholder enum descr, DO NOT SORT
+    permissible_values:
+      pathogen-suppressive soil [ENVO:03600036]:
+        description: placeholder PV descr, DO NOT SORT
+      mangrove biome soil [ENVO:02000138]:
+        description: placeholder PV descr, DO NOT SORT
+      surface soil [ENVO:02000059]:
+        description: placeholder PV descr, DO NOT SORT
+      frost-susceptible soil [ENVO:01001638]:
+        description: placeholder PV descr, DO NOT SORT
+      bare soil [ENVO:01001616]:
+        description: placeholder PV descr, DO NOT SORT
+      frozen soil [ENVO:01001526]:
+        description: placeholder PV descr, DO NOT SORT
+      __friable-frozen soil [ENVO:01001528]:
+        description: placeholder PV descr, DO NOT SORT
+      __plastic-frozen soil [ENVO:01001527]:
+        description: placeholder PV descr, DO NOT SORT
+      __hard-frozen soil [ENVO:01001525]:
+        description: placeholder PV descr, DO NOT SORT
+      __frozen compost soil [ENVO:00005765]:
+        description: placeholder PV descr, DO NOT SORT
+      __cryosol [ENVO:00002236]:
+        description: placeholder PV descr, DO NOT SORT
+      ultisol [ENVO:01001397]:
+        description: placeholder PV descr, DO NOT SORT
+      __acrisol [ENVO:00002234]:
+        description: placeholder PV descr, DO NOT SORT
+      acidic soil [ENVO:01001185]:
+        description: placeholder PV descr, DO NOT SORT
+      bulk soil [ENVO:00005802]:
+        description: placeholder PV descr, DO NOT SORT
+      red soil [ENVO:00005790]:
+        description: placeholder PV descr, DO NOT SORT
+      upland soil [ENVO:00005786]:
+        description: placeholder PV descr, DO NOT SORT
+      __mountain forest soil [ENVO:00005769]:
+        description: placeholder PV descr, DO NOT SORT
+      __dune soil [ENVO:00002260]:
+        description: placeholder PV descr, DO NOT SORT
+      ornithogenic soil [ENVO:00005782]:
+        description: placeholder PV descr, DO NOT SORT
+      heat stressed soil [ENVO:00005781]:
+        description: placeholder PV descr, DO NOT SORT
+      greenhouse soil [ENVO:00005780]:
+        description: placeholder PV descr, DO NOT SORT
+      tropical soil [ENVO:00005778]:
+        description: placeholder PV descr, DO NOT SORT
+      pasture soil [ENVO:00005773]:
+        description: placeholder PV descr, DO NOT SORT
+      muddy soil [ENVO:00005771]:
+        description: placeholder PV descr, DO NOT SORT
+      orchid soil [ENVO:00005768]:
+        description: placeholder PV descr, DO NOT SORT
+      manured soil [ENVO:00005767]:
+        description: placeholder PV descr, DO NOT SORT
+      limed soil [ENVO:00005766]:
+        description: placeholder PV descr, DO NOT SORT
+      pond soil [ENVO:00005764]:
+        description: placeholder PV descr, DO NOT SORT
+      meadow soil [ENVO:00005761]:
+        description: placeholder PV descr, DO NOT SORT
+      burned soil [ENVO:00005760]:
+        description: placeholder PV descr, DO NOT SORT
+      lawn soil [ENVO:00005756]:
+        description: placeholder PV descr, DO NOT SORT
+      field soil [ENVO:00005755]:
+        description: placeholder PV descr, DO NOT SORT
+      __paddy field soil [ENVO:00005740]:
+        description: placeholder PV descr, DO NOT SORT
+      ____peaty paddy field soil [ENVO:00005776]:
+        description: placeholder PV descr, DO NOT SORT
+      ____alluvial paddy field soil [ENVO:00005759]:
+        description: placeholder PV descr, DO NOT SORT
+      fertilized soil [ENVO:00005754]:
+        description: placeholder PV descr, DO NOT SORT
+      sawah soil [ENVO:00005752]:
+        description: placeholder PV descr, DO NOT SORT
+      jungle soil [ENVO:00005751]:
+        description: placeholder PV descr, DO NOT SORT
+      grassland soil [ENVO:00005750]:
+        description: placeholder PV descr, DO NOT SORT
+      __steppe soil [ENVO:00005777]:
+        description: placeholder PV descr, DO NOT SORT
+      __savanna soil [ENVO:00005746]:
+        description: placeholder PV descr, DO NOT SORT
+      farm soil [ENVO:00005749]:
+        description: placeholder PV descr, DO NOT SORT
+      __rubber plantation soil [ENVO:00005788]:
+        description: placeholder PV descr, DO NOT SORT
+      __orchard soil [ENVO:00005772]:
+        description: placeholder PV descr, DO NOT SORT
+      dry soil [ENVO:00005748]:
+        description: placeholder PV descr, DO NOT SORT
+      compost soil [ENVO:00005747]:
+        description: placeholder PV descr, DO NOT SORT
+      roadside soil [ENVO:00005743]:
+        description: placeholder PV descr, DO NOT SORT
+      arable soil [ENVO:00005742]:
+        description: placeholder PV descr, DO NOT SORT
+      alpine soil [ENVO:00005741]:
+        description: placeholder PV descr, DO NOT SORT
+      alluvial soil [ENVO:00002871]:
+        description: placeholder PV descr, DO NOT SORT
+      __alluvial paddy field soil [ENVO:00005759]:
+        description: placeholder PV descr, DO NOT SORT
+      __alluvial swamp soil [ENVO:00005758]:
+        description: placeholder PV descr, DO NOT SORT
+      technosol [ENVO:00002275]:
+        description: placeholder PV descr, DO NOT SORT
+      stagnosol [ENVO:00002274]:
+        description: placeholder PV descr, DO NOT SORT
+      fluvisol [ENVO:00002273]:
+        description: placeholder PV descr, DO NOT SORT
+      garden soil [ENVO:00002263]:
+        description: placeholder PV descr, DO NOT SORT
+      __vegetable garden soil [ENVO:00005779]:
+        description: placeholder PV descr, DO NOT SORT
+      __allotment garden soil [ENVO:00005744]:
+        description: placeholder PV descr, DO NOT SORT
+      clay soil [ENVO:00002262]:
+        description: placeholder PV descr, DO NOT SORT
+      forest soil [ENVO:00002261]:
+        description: placeholder PV descr, DO NOT SORT
+      __eucalyptus forest soil [ENVO:00005787]:
+        description: placeholder PV descr, DO NOT SORT
+      __spruce forest soil [ENVO:00005784]:
+        description: placeholder PV descr, DO NOT SORT
+      __leafy wood soil [ENVO:00005783]:
+        description: placeholder PV descr, DO NOT SORT
+      __beech forest soil [ENVO:00005770]:
+        description: placeholder PV descr, DO NOT SORT
+      agricultural soil [ENVO:00002259]:
+        description: placeholder PV descr, DO NOT SORT
+      __bluegrass field soil [ENVO:00005789]:
+        description: placeholder PV descr, DO NOT SORT
+      loam [ENVO:00002258]:
+        description: placeholder PV descr, DO NOT SORT
+      __clay loam [ENVO:06105277]:
+        description: placeholder PV descr, DO NOT SORT
+      ____silty clay loam [ENVO:06105278]:
+        description: placeholder PV descr, DO NOT SORT
+      ____sandy clay loam [ENVO:06105276]:
+        description: placeholder PV descr, DO NOT SORT
+      __silty loam [ENVO:06105275]:
+        description: placeholder PV descr, DO NOT SORT
+      __sandy loam [ENVO:06105274]:
+        description: placeholder PV descr, DO NOT SORT
+      podzol [ENVO:00002257]:
+        description: placeholder PV descr, DO NOT SORT
+      regosol [ENVO:00002256]:
+        description: placeholder PV descr, DO NOT SORT
+      solonetz [ENVO:00002255]:
+        description: placeholder PV descr, DO NOT SORT
+      vertisol [ENVO:00002254]:
+        description: placeholder PV descr, DO NOT SORT
+      umbrisol [ENVO:00002253]:
+        description: placeholder PV descr, DO NOT SORT
+      solonchak [ENVO:00002252]:
+        description: placeholder PV descr, DO NOT SORT
+      planosol [ENVO:00002251]:
+        description: placeholder PV descr, DO NOT SORT
+      plinthosol [ENVO:00002250]:
+        description: placeholder PV descr, DO NOT SORT
+      phaeozem [ENVO:00002249]:
+        description: placeholder PV descr, DO NOT SORT
+      luvisol [ENVO:00002248]:
+        description: placeholder PV descr, DO NOT SORT
+      nitisol [ENVO:00002247]:
+        description: placeholder PV descr, DO NOT SORT
+      ferralsol [ENVO:00002246]:
+        description: placeholder PV descr, DO NOT SORT
+      gypsisol [ENVO:00002245]:
+        description: placeholder PV descr, DO NOT SORT
+      gleysol [ENVO:00002244]:
+        description: placeholder PV descr, DO NOT SORT
+      histosol [ENVO:00002243]:
+        description: placeholder PV descr, DO NOT SORT
+      __peat soil [ENVO:00005774]:
+        description: placeholder PV descr, DO NOT SORT
+      lixisol [ENVO:00002242]:
+        description: placeholder PV descr, DO NOT SORT
+      leptosol [ENVO:00002241]:
+        description: placeholder PV descr, DO NOT SORT
+      kastanozem [ENVO:00002240]:
+        description: placeholder PV descr, DO NOT SORT
+      calcisol [ENVO:00002239]:
+        description: placeholder PV descr, DO NOT SORT
+      durisol [ENVO:00002238]:
+        description: placeholder PV descr, DO NOT SORT
+      chernozem [ENVO:00002237]:
+        description: placeholder PV descr, DO NOT SORT
+      cambisol [ENVO:00002235]:
+        description: placeholder PV descr, DO NOT SORT
+      albeluvisol [ENVO:00002233]:
+        description: placeholder PV descr, DO NOT SORT
+      andosol [ENVO:00002232]:
+        description: placeholder PV descr, DO NOT SORT
+      __volcanic soil [ENVO:01001841]:
+        description: placeholder PV descr, DO NOT SORT
+      alisol [ENVO:00002231]:
+        description: placeholder PV descr, DO NOT SORT
+      anthrosol [ENVO:00002230]:
+        description: placeholder PV descr, DO NOT SORT
+      arenosol [ENVO:00002229]:
+        description: placeholder PV descr, DO NOT SORT
+  EnvLocalScaleSoilEnum:
+    description: placeholder enum descr, DO NOT SORT
+    permissible_values:
+      astronomical body part [ENVO:01000813]:
+        description: placeholder PV descr, DO NOT SORT
+      __coast [ENVO:01000687]:
+        description: placeholder PV descr, DO NOT SORT
+      __solid astronomical body part [ENVO:00000191]:
+        description: placeholder PV descr, DO NOT SORT
+      ______landform [ENVO:01001886]:
+        description: placeholder PV descr, DO NOT SORT
+      ______channel [ENVO:03000117]:
+        description: placeholder PV descr, DO NOT SORT
+      ________tunnel [ENVO:00000068]:
+        description: placeholder PV descr, DO NOT SORT
+      ______surface landform [ENVO:01001884]:
+        description: placeholder PV descr, DO NOT SORT
+      ________desert [ENVO:01001357]:
+        description: placeholder PV descr, DO NOT SORT
+      ________outcrop [ENVO:01000302]:
+        description: placeholder PV descr, DO NOT SORT
+      ________boulder field [ENVO:00000537]:
+        description: placeholder PV descr, DO NOT SORT
+      ________landfill [ENVO:00000533]:
+        description: placeholder PV descr, DO NOT SORT
+      ________hummock [ENVO:00000516]:
+        description: placeholder PV descr, DO NOT SORT
+      ________terrace [ENVO:00000508]:
+        description: placeholder PV descr, DO NOT SORT
+      ________peninsula [ENVO:00000305]:
+        description: placeholder PV descr, DO NOT SORT
+      ________shore [ENVO:00000304]:
+        description: placeholder PV descr, DO NOT SORT
+      __________lake shore [ENVO:00000382]:
+        description: placeholder PV descr, DO NOT SORT
+      ________dry lake [ENVO:00000277]:
+        description: placeholder PV descr, DO NOT SORT
+      ________karst [ENVO:00000175]:
+        description: placeholder PV descr, DO NOT SORT
+      ________isthmus [ENVO:00000174]:
+        description: placeholder PV descr, DO NOT SORT
+      ________badland [ENVO:00000127]:
+        description: placeholder PV descr, DO NOT SORT
+      ________volcanic feature [ENVO:00000094]:
+        description: placeholder PV descr, DO NOT SORT
+      __________volcanic cone [ENVO:00000398]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________tuff cone [ENVO:01000664]:
+        description: placeholder PV descr, DO NOT SORT
+      ________beach [ENVO:00000091]:
+        description: placeholder PV descr, DO NOT SORT
+      ________plain [ENVO:00000086]:
+        description: placeholder PV descr, DO NOT SORT
+      ________cave [ENVO:00000067]:
+        description: placeholder PV descr, DO NOT SORT
+      ________spring [ENVO:00000027]:
+        description: placeholder PV descr, DO NOT SORT
+      ______slope [ENVO:00002000]:
+        description: placeholder PV descr, DO NOT SORT
+      ________talus slope [ENVO:01000334]:
+        description: placeholder PV descr, DO NOT SORT
+      ________hillside [ENVO:01000333]:
+        description: placeholder PV descr, DO NOT SORT
+      ________levee [ENVO:00000178]:
+        description: placeholder PV descr, DO NOT SORT
+      ________bank [ENVO:00000141]:
+        description: placeholder PV descr, DO NOT SORT
+      ________cliff [ENVO:00000087]:
+        description: placeholder PV descr, DO NOT SORT
+      ______peak [ENVO:00000480]:
+        description: placeholder PV descr, DO NOT SORT
+      ______depressed landform [ENVO:00000309]:
+        description: placeholder PV descr, DO NOT SORT
+      ________geographic basin [ENVO:03000015]:
+        description: placeholder PV descr, DO NOT SORT
+      __________valley [ENVO:00000100]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________canyon [ENVO:00000169]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________dry valley [ENVO:00000128]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________glacial valley [ENVO:00000248]:
+        description: placeholder PV descr, DO NOT SORT
+      ________pit [ENVO:01001871]:
+        description: placeholder PV descr, DO NOT SORT
+      ________trench [ENVO:01000649]:
+        description: placeholder PV descr, DO NOT SORT
+      ________swale [ENVO:00000543]:
+        description: placeholder PV descr, DO NOT SORT
+      ________crater [ENVO:00000514]:
+        description: placeholder PV descr, DO NOT SORT
+      __________impact crater [ENVO:01001071]:
+        description: placeholder PV descr, DO NOT SORT
+      __________volcanic crater [ENVO:00000246]:
+        description: placeholder PV descr, DO NOT SORT
+      __________caldera [ENVO:00000096]:
+        description: placeholder PV descr, DO NOT SORT
+      ________channel of a watercourse [ENVO:00000395]:
+        description: placeholder PV descr, DO NOT SORT
+      __________strait [ENVO:00000394]:
+        description: placeholder PV descr, DO NOT SORT
+      __________dry stream [ENVO:00000278]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________dry river [ENVO:01000995]:
+        description: placeholder PV descr, DO NOT SORT
+      __________artificial channel [ENVO:00000121]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________plumbing drain [ENVO:01000924]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________ditch [ENVO:00000037]:
+        description: placeholder PV descr, DO NOT SORT
+      ________sinkhole [ENVO:00000195]:
+        description: placeholder PV descr, DO NOT SORT
+      ______elevated landform [ENVO:00000176]:
+        description: placeholder PV descr, DO NOT SORT
+      ________flattened elevation [ENVO:01001491]:
+        description: placeholder PV descr, DO NOT SORT
+      __________butte [ENVO:00000287]:
+        description: placeholder PV descr, DO NOT SORT
+      __________plateau [ENVO:00000182]:
+        description: placeholder PV descr, DO NOT SORT
+      __________mesa [ENVO:00000179]:
+        description: placeholder PV descr, DO NOT SORT
+      ________pinnacle [ENVO:00000481]:
+        description: placeholder PV descr, DO NOT SORT
+      ________mount [ENVO:00000477]:
+        description: placeholder PV descr, DO NOT SORT
+      __________hill [ENVO:00000083]:
+        description: placeholder PV descr, DO NOT SORT
+      ____________dune [ENVO:00000170]:
+        description: placeholder PV descr, DO NOT SORT
+      __________mountain [ENVO:00000081]:
+        description: placeholder PV descr, DO NOT SORT
+      ________ridge [ENVO:00000283]:
+        description: placeholder PV descr, DO NOT SORT
+      ____part of a landmass [ENVO:01001781]:
+        description: placeholder PV descr, DO NOT SORT
+      ______peninsula [ENVO:00000305]:
+        description: placeholder PV descr, DO NOT SORT
+      ____geological fracture [ENVO:01000667]:
+        description: placeholder PV descr, DO NOT SORT
+      ______vein [ENVO:01000670]:
+        description: placeholder PV descr, DO NOT SORT
+      ______geological fault [ENVO:01000668]:
+        description: placeholder PV descr, DO NOT SORT
+      ________active geological fault [ENVO:01000669]:
+        description: placeholder PV descr, DO NOT SORT
+      ______volcano [ENVO:00000247]:
+        description: placeholder PV descr, DO NOT SORT
+      __field [ENVO:01000352]:
+        description: placeholder PV descr, DO NOT SORT
+      ____lava field [ENVO:01000437]:
+        description: placeholder PV descr, DO NOT SORT
+      ____gravel field [ENVO:00000548]:
+        description: placeholder PV descr, DO NOT SORT
+      ____woodland clearing [ENVO:00000444]:
+        description: placeholder PV descr, DO NOT SORT
+      ____agricultural field [ENVO:00000114]:
+        description: placeholder PV descr, DO NOT SORT
+      ____snow field [ENVO:00000146]:
+        description: placeholder PV descr, DO NOT SORT
+      __geographic feature [ENVO:00000000]:
+        description: placeholder PV descr, DO NOT SORT
+      ____hydrographic feature [ENVO:00000012]:
+        description: placeholder PV descr, DO NOT SORT
+      ______reef [ENVO:01001899]:
+        description: placeholder PV descr, DO NOT SORT
+      ______inlet [ENVO:00000475]:
+        description: placeholder PV descr, DO NOT SORT
+      ______bar [ENVO:00000167]:
+        description: placeholder PV descr, DO NOT SORT
+      ________tombolo [ENVO:00000420]:
+        description: placeholder PV descr, DO NOT SORT
+      ____anthropogenic geographic feature [ENVO:00000002]:
+        description: placeholder PV descr, DO NOT SORT
+      ______yard [ENVO:03600053]:
+        description: placeholder PV descr, DO NOT SORT
+      ________residential backyard [ENVO:03600033]:
+        description: placeholder PV descr, DO NOT SORT
+      ______market [ENVO:01000987]:
+        description: placeholder PV descr, DO NOT SORT
+      ______park [ENVO:00000562]:
+        description: placeholder PV descr, DO NOT SORT
+      ______well [ENVO:00000026]:
+        description: placeholder PV descr, DO NOT SORT
+      ______garden [ENVO:00000011]:
+        description: placeholder PV descr, DO NOT SORT
+  OxyStatSampEnum:
+    description: placeholder enum descr, DO NOT SORT
+    permissible_values:
+      aerobic:
+        description: placeholder PV descr, DO NOT SORT
+      anaerobic:
+        description: placeholder PV descr, DO NOT SORT
+      other:
+        description: placeholder PV descr, DO NOT SORT
+slots:
+  air_data:
+    description: aggregation slot relating air data collections to a SampleData container
+    multivalued: true
+    range: AirInterface
+    inlined: true
+    inlined_as_list: true
+  biofilm_data:
+    description: aggregation slot relating biofilm data collections to a SampleData container
+    multivalued: true
+    range: BiofilmInterface
+    inlined: true
+    inlined_as_list: true
+  built_env_data:
+    description: aggregation slot relating built_env data collections to a SampleData container
+    multivalued: true
+    range: BuiltEnvInterface
+    inlined: true
+    inlined_as_list: true
+  emsl_data:
+    description: aggregation slot relating emsl data collections to a SampleData container
+    multivalued: true
+    range: EmslInterface
+    inlined: true
+    inlined_as_list: true
+  hcr_cores_data:
+    description: aggregation slot relating hcr_cores data collections to a SampleData container
+    multivalued: true
+    range: HcrCoresInterface
+    inlined: true
+    inlined_as_list: true
+  hcr_fluids_swabs_data:
+    description: aggregation slot relating hcr_fluids_swabs data collections to a SampleData container
+    multivalued: true
+    range: HcrFluidsSwabsInterface
+    inlined: true
+    inlined_as_list: true
+  host_associated_data:
+    description: aggregation slot relating host_associated data collections to a SampleData container
+    multivalued: true
+    range: HostAssociatedInterface
+    inlined: true
+    inlined_as_list: true
+  jgi_mg_data:
+    description: aggregation slot relating jgi_mg data collections to a SampleData container
+    multivalued: true
+    range: JgiMgInterface
+    inlined: true
+    inlined_as_list: true
+  jgi_mg_lr_data:
+    description: aggregation slot relating jgi_mg_lr data collections to a SampleData container
+    multivalued: true
+    range: JgiMgLrInterface
+    inlined: true
+    inlined_as_list: true
+  jgi_mt_data:
+    description: aggregation slot relating jgi_mt data collections to a SampleData container
+    multivalued: true
+    range: JgiMtInterface
+    inlined: true
+    inlined_as_list: true
+  misc_envs_data:
+    description: aggregation slot relating misc_envs data collections to a SampleData container
+    multivalued: true
+    range: MiscEnvsInterface
+    inlined: true
+    inlined_as_list: true
+  plant_associated_data:
+    description: aggregation slot relating plant_associated data collections to a SampleData container
+    multivalued: true
+    range: PlantAssociatedInterface
+    inlined: true
+    inlined_as_list: true
+  sediment_data:
+    description: aggregation slot relating sediment data collections to a SampleData container
+    multivalued: true
+    range: SedimentInterface
+    inlined: true
+    inlined_as_list: true
+  soil_data:
+    description: aggregation slot relating soil data collections to a SampleData container
+    multivalued: true
+    range: SoilInterface
+    inlined: true
+    inlined_as_list: true
+  wastewater_sludge_data:
+    description: aggregation slot relating wastewater_sludge data collections to a SampleData container
+    multivalued: true
+    range: WastewaterSludgeInterface
+    inlined: true
+    inlined_as_list: true
+  water_data:
+    description: aggregation slot relating water data collections to a SampleData container
+    multivalued: true
+    range: WaterInterface
+    inlined: true
+    inlined_as_list: true
+  dh_section:
+    description: dh_section grouping slot
+  emsl_section:
+    description: placeholder
+    title: EMSL
+    rank: 2
+    is_a: dh_section
+  jgi_metagenomics_section:
+    description: placeholder
+    title: JGI-Metagenomics
+    rank: 3
+    is_a: dh_section
+  jgi_metatranscriptomics_section:
+    description: placeholder
+    title: JGI-Metatranscriptomics
+    rank: 4
+    is_a: dh_section
+  mixs_core_section:
+    description: placeholder
+    title: MIxS Core
+    rank: 10
+    is_a: dh_section
+  mixs_inspired_section:
+    description: placeholder
+    title: MIxS Inspired
+    rank: 7
+    is_a: dh_section
+  mixs_investigation_section:
+    description: placeholder
+    rank: 8
+    is_a: dh_section
+  mixs_modified_section:
+    description: placeholder
+    title: MIxS (modified)
+    rank: 6
+    is_a: dh_section
+  mixs_nassf_section:
+    description: placeholder
+    rank: 9
+    is_a: dh_section
+  mixs_section:
+    description: placeholder
+    title: MIxS
+    rank: 5
+    is_a: dh_section
+  sample_id_section:
+    description: placeholder
+    title: Sample ID
+    rank: 1
+    is_a: dh_section
+classes:
+  AirInterface:
+    annotations:
+      excel_worksheet_name: air
+    description: air dh_interface
+    title: Air
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  BiofilmInterface:
+    annotations:
+      excel_worksheet_name: microbial mat_biofilm
+    description: biofilm dh_interface
+    title: Biofilm
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  BuiltEnvInterface:
+    annotations:
+      excel_worksheet_name: built environment
+    description: built_env dh_interface
+    title: Built Env
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  EmslInterface:
+    annotations:
+      excel_worksheet_name: EMSL
+    description: emsl dh_interface
+    title: Emsl
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - emsl_store_temp
+      - project_id
+      - replicate_number
+      - sample_shipped
+      - sample_type
+      - technical_reps
+  HcrCoresInterface:
+    annotations:
+      excel_worksheet_name: hcr core
+    description: hcr_cores dh_interface
+    title: Hcr Cores
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+  HcrFluidsSwabsInterface:
+    annotations:
+      excel_worksheet_name: hcr fluids swab
+    description: hcr_fluids_swabs dh_interface
+    title: Hcr Fluids Swabs
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+  HostAssociatedInterface:
+    annotations:
+      excel_worksheet_name: host-associated
+    description: host_associated dh_interface
+    title: Host Associated
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  JgiMgInterface:
+    annotations:
+      excel_worksheet_name: JGI MG
+    description: Metadata for samples sent to JGI for standard metagenome sequencing
+    title: JGI MG
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - dna_absorb1
+      - dna_absorb2
+      - dna_concentration
+      - dna_cont_type
+      - dna_cont_well
+      - dna_container_id
+      - dna_dnase
+      - dna_isolate_meth
+      - dna_project_contact
+      - dna_samp_id
+      - dna_sample_format
+      - dna_sample_name
+      - dna_seq_project
+      - dna_seq_project_name
+      - dna_seq_project_pi
+      - dna_volume
+      - proposal_dna
+  JgiMgLrInterface:
+    annotations:
+      excel_worksheet_name: JGI MG (Long Read)
+    description: Metadata for samples sent to JGI for long read metagenome sequecning
+    title: JGI MG (Long Read)
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - dna_absorb1
+      - dna_absorb2
+      - dna_concentration
+      - dna_cont_type
+      - dna_cont_well
+      - dna_container_id
+      - dna_dnase
+      - dna_isolate_meth
+      - dna_project_contact
+      - dna_samp_id
+      - dna_sample_format
+      - dna_sample_name
+      - dna_seq_project
+      - dna_seq_project_name
+      - dna_seq_project_pi
+      - dna_volume
+      - proposal_dna
+  JgiMtInterface:
+    annotations:
+      excel_worksheet_name: JGI MT
+    description: jgi_mt dh_interface
+    title: JGI MT
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - dnase_rna
+      - proposal_rna
+      - rna_absorb1
+      - rna_absorb2
+      - rna_concentration
+      - rna_cont_type
+      - rna_cont_well
+      - rna_container_id
+      - rna_isolate_meth
+      - rna_project_contact
+      - rna_samp_id
+      - rna_sample_format
+      - rna_sample_name
+      - rna_seq_project
+      - rna_seq_project_name
+      - rna_seq_project_pi
+      - rna_volume
+  MiscEnvsInterface:
+    annotations:
+      excel_worksheet_name: misc natural or artificial
+    description: misc_envs dh_interface
+    title: Misc Envs
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+  PlantAssociatedInterface:
+    annotations:
+      excel_worksheet_name: plant-associated
+    description: plant_associated dh_interface
+    title: Plant Associated
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  SedimentInterface:
+    annotations:
+      excel_worksheet_name: sediment
+    description: sediment dh_interface
+    title: Sediment
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  SoilInterface:
+    annotations:
+      excel_worksheet_name: soil
+    description: soil dh_interface
+    title: Soil
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+      - SoilMixsInspiredMixin
+  WastewaterSludgeInterface:
+    annotations:
+      excel_worksheet_name: wastewater sludge
+    description: wastewater_sludge dh_interface
+    title: Wastewater Sludge
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  WaterInterface:
+    annotations:
+      excel_worksheet_name: water
+    description: water dh_interface
+    title: Water
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - SampIdNewTermsMixin
+  DhMultiviewCommonColumnsMixin:
+    description: Mixin with DhMutliviewCommon Columns
+    title: Dh Mutliview Common Columns
+    mixin: true
+  SampIdNewTermsMixin:
+    description: Mixin with SampIdNew Terms
+    title: SampId New Terms
+    mixin: true
+    slots:
+      - sample_link
+  SoilMixsInspiredMixin:
+    description: Mixin with SoilMixsInspired Terms
+    title: Soil MIxS Inspired Mixin
+    mixin: true
+    slots:
+      - collection_date_inc
+      - collection_time
+      - collection_time_inc
+      - experimental_factor_other
+      - filter_method
+      - isotope_exposure
+      - micro_biomass_c_meth
+      - micro_biomass_n_meth
+      - microbial_biomass_c
+      - microbial_biomass_n
+      - non_microb_biomass
+      - non_microb_biomass_method
+      - org_nitro_method
+      - other_treatment
+      - start_date_inc
+      - start_time_inc
+  DhInterface:
+    description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
+    title: Dh Root Interface
+  SampleData:
+    description: represents data produced by the DataHarmonizer tabs of the submission portal
+    title: SampleData
+    slots:
+      - air_data
+      - biofilm_data
+      - built_env_data
+      - host_associated_data
+      - plant_associated_data
+      - sediment_data
+      - soil_data
+      - wastewater_sludge_data
+      - water_data
+      - emsl_data
+      - jgi_mg_lr_data
+      - jgi_mg_data
+      - jgi_mt_data
+    tree_root: true
+settings: []
