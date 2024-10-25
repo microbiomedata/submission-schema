@@ -1,6 +1,0 @@
-prefix	URI
-> prefix	prefix_reference
-UO	http://purl.obolibrary.org/obo/UO_
-qud	http://example.org/qud/
-xsd	http://www.w3.org/2001/XMLSchema#
-nmdc_sub_schema	https://example.com/nmdc_sub_schema/
