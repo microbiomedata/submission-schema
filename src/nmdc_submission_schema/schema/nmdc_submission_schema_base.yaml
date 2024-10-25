@@ -12,6 +12,8 @@ prefixes:
   schema: http://schema.org/
 default_prefix: nmdc_sub_schema
 default_range: string
+imports:
+  - linkml:types
 types:
   unit:
     name: unit
@@ -33,187 +35,6 @@ types:
     description: a string representation of a language
     base: str
     uri: xsd:language
-  string:
-    name: string
-    description: A character string
-    notes:
-      - In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "string".
-    exact_mappings:
-      - schema:Text
-    base: str
-    uri: xsd:string
-  integer:
-    name: integer
-    description: An integer
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "integer".
-    exact_mappings:
-      - schema:Integer
-    base: int
-    uri: xsd:integer
-  boolean:
-    name: boolean
-    description: A binary (true or false) value
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "boolean".
-    exact_mappings:
-      - schema:Boolean
-    base: Bool
-    uri: xsd:boolean
-    repr: bool
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "float".
-    exact_mappings:
-      - schema:Float
-    base: float
-    uri: xsd:float
-  double:
-    name: double
-    description: A real number that conforms to the xsd:double specification
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "double".
-    close_mappings:
-      - schema:Float
-    base: float
-    uri: xsd:double
-  decimal:
-    name: decimal
-    description: A real number with arbitrary precision that conforms to the xsd:decimal specification
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "decimal".
-    broad_mappings:
-      - schema:Number
-    base: Decimal
-    uri: xsd:decimal
-  time:
-    name: time
-    description: A time object represents a (local) time of day, independent of any particular day
-    notes:
-      - URI is dateTime because OWL reasoners do not work with straight date or time
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "time".
-    exact_mappings:
-      - schema:Time
-    base: XSDTime
-    uri: xsd:time
-    repr: str
-  date:
-    name: date
-    description: a date (year, month and day) in an idealized calendar
-    notes:
-      - URI is dateTime because OWL reasoners don't work with straight date or time
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "date".
-    exact_mappings:
-      - schema:Date
-    base: XSDDate
-    uri: xsd:date
-    repr: str
-  datetime:
-    name: datetime
-    description: The combination of a date and time
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "datetime".
-    exact_mappings:
-      - schema:DateTime
-    base: XSDDateTime
-    uri: xsd:dateTime
-    repr: str
-  date_or_datetime:
-    name: date_or_datetime
-    description: Either a date or a datetime
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "date_or_datetime".
-    base: str
-    uri: linkml:DateOrDatetime
-    repr: str
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uriorcurie".
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
-  curie:
-    name: curie
-    conforms_to: https://www.w3.org/TR/curie/
-    description: a compact URI
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "curie".
-    comments:
-      - in RDF serializations this MUST be expanded to a URI
-      - in non-RDF serializations MAY be serialized as the compact representation
-    base: Curie
-    uri: xsd:string
-    repr: str
-  uri:
-    name: uri
-    conforms_to: https://www.ietf.org/rfc/rfc3987.txt
-    description: a complete URI
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "uri".
-    comments:
-      - in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node
-    close_mappings:
-      - schema:URL
-    base: URI
-    uri: xsd:anyURI
-    repr: str
-  ncname:
-    name: ncname
-    description: Prefix part of CURIE
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "ncname".
-    base: NCName
-    uri: xsd:string
-    repr: str
-  objectidentifier:
-    name: objectidentifier
-    description: A URI or CURIE that represents an object in the model.
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "objectidentifier".
-    comments:
-      - Used for inheritance and type checking
-    base: ElementIdentifier
-    uri: shex:iri
-    repr: str
-  nodeidentifier:
-    name: nodeidentifier
-    description: A URI, CURIE or BNODE that represents a node in a model.
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "nodeidentifier".
-    base: NodeIdentifier
-    uri: shex:nonLiteral
-    repr: str
-  jsonpointer:
-    name: jsonpointer
-    conforms_to: https://datatracker.ietf.org/doc/html/rfc6901
-    description: A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "jsonpointer".
-    base: str
-    uri: xsd:string
-    repr: str
-  jsonpath:
-    name: jsonpath
-    conforms_to: https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html
-    description: A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "jsonpath".
-    base: str
-    uri: xsd:string
-    repr: str
-  sparqlpath:
-    name: sparqlpath
-    conforms_to: https://www.w3.org/TR/sparql11-query/#propertypaths
-    description: A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.
-    notes:
-      - If you are authoring schemas in LinkML YAML, the type is referenced with the lower case "sparqlpath".
-    base: str
-    uri: xsd:string
-    repr: str
 enums:
   BioticRelationshipEnum:
     description: placeholder enum descr
@@ -221,9 +42,7 @@ enums:
       commensalism:
         description: placeholder PV descr
         annotations:
-          sntc_name:
-            tag: sntc_name
-            value: samp_biotic_relationship
+          sntc_name: samp_biotic_relationship
         notes:
           - 'biotic_relationship_enum: free living'
           - parasitism
@@ -283,9 +102,7 @@ enums:
       experimental_garden:
         description: placeholder PV descr
         annotations:
-          sntc_name:
-            tag: sntc_name
-            value: growth_facility
+          sntc_name: growth_facility
         notes:
           - string range according to MIxS
         see_also:
@@ -312,9 +129,7 @@ enums:
       aerobe:
         description: placeholder PV descr
         annotations:
-          sntc_name:
-            tag: sntc_name
-            value: oxygen_relationship
+          sntc_name: oxygen_relationship
         see_also:
           - https://genomicsstandardsconsortium.github.io/mixs/rel_to_oxygen_enum/
       anaerobe:
@@ -365,9 +180,7 @@ enums:
       fresh:
         description: placeholder PV descr
         annotations:
-          sntc_name:
-            tag: sntc_name
-            value: storage_condt
+          sntc_name: storage_condt
         notes:
           - see samp_store_dur, samp_store_loc, samp_store_temp and store_cond (which takes a string range according to mixs-source).
       frozen:
@@ -379,8 +192,8 @@ enums:
   YesNoEnum:
     description: replaces DnaDnaseEnum and DnaseRnaEnum
     permissible_values:
-      'no': {}
-      'yes': {}
+      'no': { }
+      'yes': { }
   EnvBroadScaleSoilEnum:
     description: placeholder enum descr, DO NOT SORT
     permissible_values:
@@ -1294,4 +1107,4 @@ classes:
       - jgi_mg_data
       - jgi_mt_data
     tree_root: true
-settings: []
+settings: [ ]
