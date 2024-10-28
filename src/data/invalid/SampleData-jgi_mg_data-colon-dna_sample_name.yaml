@@ -11,7 +11,7 @@ jgi_mg_data:
     dna_project_contact: xxx
     dna_samp_id: xxx
     dna_sample_format: DNAStable
-    dna_sample_name: DNA:0546789 # contains colon and should not be allowed 'a-z, A-Z, 0-9, - and _ only'
+    dna_sample_name: DNA:0546789 # description says "Sample names must ... contain a-z, A-Z, 0-9, - and _ only." but there's no patten constraint
     dna_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
