@@ -172,7 +172,7 @@ modifications-clean:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
 local/nmdc.yaml:
-	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v10.5.5/nmdc_schema/nmdc_materialized_patterns.yaml
+	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.0.1/nmdc_schema/nmdc_materialized_patterns.yaml
 
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
@@ -228,6 +228,10 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 
 	yq -i '(.slots.[] | select(.range == "string") | .multivalued ) = false' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range=="string") | .multivalued) = false' $@
+	yq -i 'del(.slots.[] | select(.multivalued == "false").inlined)' $@
+	yq -i 'del(.slots.[] | select(.multivalued == "false").inlined_as_list)' $@
+	yq -i 'del(.classes.[].slot_usage.[] | select(.multivalued == "false").inlined)' $@
+	yq -i 'del(.classes.[].slot_usage.[] | select(.multivalued == "false").inlined_as_list)' $@
 
 #	yq -i '(.slots.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
 #	yq -i '(.classes.[].slot_usage.[] | select(.name == "dna_dnase") | .range) = "boolean"' $@
