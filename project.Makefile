@@ -1,11 +1,11 @@
 RUN=poetry run
 
-.PHONY:  modifications-clean run-linkml-validation schema-clean schema_all schemasheets-clean schemasheets_all \
+.PHONY:  modifications-clean run-linkml-validation schema-clean schema_all \
 sheets_and_friends-clean sheets_and_friends_all
 
 squeaky-clean: clean schema-clean examples-clean
 
-schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
+schema-clean: modifications-clean sheets_and_friends-clean
 	rm -rf examples/*.yaml
 	rm -rf examples/output/*.db
 	rm -rf examples/output/*.json
@@ -13,8 +13,6 @@ schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
 	rm -rf examples/output/*.ttl
 	rm -rf examples/output/*.yaml
 	rm -rf examples/output/README.md
-	rm -rf schemasheets/populated_tsv/*.tsv
-	rm -rf schemasheets/populated_tsv/*.txt
 	rm -rf sheets_and_friends/with_modifications.lint_report.txt
 	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
@@ -27,9 +25,6 @@ schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
 	mkdir -p local
 	cp placeholder.md local
 	mkdir -p examples/output
-
-schemasheets-clean:
-	rm -rf schemasheets/yaml_out/*.yaml
 
 # todo: fewer enums
 # todo: use booleans for yes/no enumerations
