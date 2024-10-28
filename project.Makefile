@@ -3,16 +3,19 @@ RUN=poetry run
 .PHONY:  modifications-clean run-linkml-validation schema-clean schema_all schemasheets-clean schemasheets_all \
 sheets_and_friends-clean sheets_and_friends_all
 
-squeaky-clean: clean schema-clean examples-clean
+squeaky-clean: clean schema-clean
 
-schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
-	rm -rf examples/*.yaml
-	rm -rf examples/output/*.db
-	rm -rf examples/output/*.json
-	rm -rf examples/output/*.tsv
-	rm -rf examples/output/*.ttl
-	rm -rf examples/output/*.yaml
-	rm -rf examples/output/README.md
+post-clean:
+	rm -rf local/*
+	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
+	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
+	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
+	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
+	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
+	cp placeholder.md local
+
+
+schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean examples-clean post-clean
 	rm -rf from_schemasheets.lint_report.txt
 	rm -rf schemasheets/from_schemasheets.lint_report.txt
 	rm -rf schemasheets/populated_tsv/*.tsv
@@ -21,13 +24,7 @@ schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
 	rm -rf schemasheets/yaml_out/from_schemasheets.yaml.raw
 	rm -rf sheets_and_friends/with_modifications.lint_report.txt
 	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
-	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
-	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
-	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
-	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
-	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
 	rm -rf src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	rm -rf local/*
 	mkdir -p local
 	cp placeholder.md local
 	mkdir -p examples/output
@@ -248,7 +245,9 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 run-examples: examples-clean examples/output/README.md
 
 examples-clean:
+	rm -rf examples/*.yaml
 	rm -rf examples/output
+	cp placeholder.md examples
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
