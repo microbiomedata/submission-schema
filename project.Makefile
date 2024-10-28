@@ -239,18 +239,6 @@ src/data/invalid src/data/valid
 		--output-directory $(dir $@) \
 		--schema $< > $@
 
-# see local/usage_template.tsv
-## target was was local/slot_usage.tsv,
-##   but I changed the destination to a checked-in directory
-##   so collaborators can sort and filter the slot attributes
-##   and I switched to a smaller template
-#schemasheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-#schemasheets/templates/slot_usage_minimal.tsv
-#	$(RUN) linkml2sheets \
-#		--output-directory $(dir $@) \
-#		--schema $< $(word 2,$^)
-## WARNING:root:Not implemented: slot
-
 local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
 	$(RUN) linkml-convert \
