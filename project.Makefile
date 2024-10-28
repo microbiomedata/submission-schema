@@ -182,7 +182,6 @@ local/nmdc.yaml
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
 	$(RUN) inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $@
 # remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert
-#   esp to tsv? and dumping to SQLite?
 # follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
 
 	yq -i '(.slots.[] | select(.range == "ControlledIdentifiedTermValue") | .range) = "string"' $@
@@ -236,43 +235,6 @@ src/data/invalid src/data/valid
 		--input-directory $(word 3,$^) \
 		--output-directory $(dir $@) \
 		--schema $< > $@
-
-local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-src/data/valid/SampleData-water-data-exhaustive.yaml
-	$(RUN) linkml-convert \
-		--output $@ \
-		--target-class SampleData \
-		--index-slot water_data \
-		--schema $(word 1,$^) $(word 2,$^)
-
-# todo temporary soltuion to get build and test to complete MAM 2024-07-03
-examples/output/SampleData-water-data-exhaustive.regen.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-local/SampleData-water-data-exhaustive.tsv
-	mkdir -p $(dir $@) # shouldn't need to do this each time
-	$(RUN) linkml-convert \
-		--output $@ \
-		--target-class SampleData \
-		--index-slot water_data \
-		--schema $(word 1,$^) $(word 2,$^)
-
-local/SampleData-water-data-exhaustive.db: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-src/data/valid/SampleData-water-data-exhaustive.yaml
-	$(RUN)  linkml-sqldb dump \
-		--db $@ \
-		--target-class SampleData \
-		--index-slot water_data \
-		--schema $(word 1,$^) $(word 2,$^)
-
-
-# # could run these inbetween every step
-# #  but should probably save output into a .gitignored dir like local
-# #  but check if it is .gitignored!
-#
-#	$(RUN) gen-linkml \
-#		--no-materialize-attributes \
-#		--format yaml $@.raw > $@
-#
-#	- $(RUN) linkml-lint $@ > sheets_and_friends/with_modifications.lint_report.txt
 
 project/json/nmdc_submission_schema.json: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)

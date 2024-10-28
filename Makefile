@@ -86,9 +86,7 @@ update-linkml:
 
 all: site
 site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-gen-project gendoc project/json/nmdc_submission_schema.json \
-examples/output/SampleData-water-data-exhaustive.regen.yaml \
-local/SampleData-water-data-exhaustive.db
+gen-project gendoc project/json/nmdc_submission_schema.json
 
 %.yaml: gen-project
 # make deploy has been depricated by an updated .github/workflows/deploy-docs.yaml
