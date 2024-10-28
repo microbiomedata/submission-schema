@@ -3,25 +3,22 @@ RUN=poetry run
 .PHONY:  modifications-clean run-linkml-validation schema-clean schema_all \
 sheets_and_friends-clean sheets_and_friends_all
 
-squeaky-clean: clean schema-clean examples-clean
+squeaky-clean: clean schema-clean
 
-schema-clean: modifications-clean sheets_and_friends-clean
-	rm -rf examples/*.yaml
-	rm -rf examples/output/*.db
-	rm -rf examples/output/*.json
-	rm -rf examples/output/*.tsv
-	rm -rf examples/output/*.ttl
-	rm -rf examples/output/*.yaml
-	rm -rf examples/output/README.md
-	rm -rf sheets_and_friends/with_modifications.lint_report.txt
-	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
+post-clean:
+	rm -rf local/*
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
+	cp placeholder.md local
+
+
+schema-clean: modifications-clean sheets_and_friends-clean examples-clean post-clean
+	rm -rf sheets_and_friends/with_modifications.lint_report.txt
+	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
 	rm -rf src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	rm -rf local/*
 	mkdir -p local
 	cp placeholder.md local
 	mkdir -p examples/output
@@ -60,7 +57,6 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 # undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
 # future versions of the nmdc-schema might just use strings, too
 
-# there's still more to do. see schemasheets/populated_tsv/slot_usage.tsv
 # to some degree this should be handled globally by sheets_and_friends/tsv_in/validation_converter.tsv
 # and on a slot-by-slot basic by sheets_and_friends/tsv_in/modifications_long.tsv
 
@@ -224,7 +220,9 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 run-examples: examples-clean examples/output/README.md
 
 examples-clean:
+	rm -rf examples/*.yaml
 	rm -rf examples/output
+	cp placeholder.md examples
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
