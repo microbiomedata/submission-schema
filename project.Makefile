@@ -1,54 +1,27 @@
 RUN=poetry run
 
-.PHONY:  modifications-clean run-linkml-validation schema-clean schema_all schemasheets-clean schemasheets_all \
+.PHONY:  modifications-clean run-linkml-validation schema-clean schema_all \
 sheets_and_friends-clean sheets_and_friends_all
 
-squeaky-clean: clean schema-clean examples-clean
+squeaky-clean: clean schema-clean
 
-schema-clean: modifications-clean schemasheets-clean sheets_and_friends-clean
-	rm -rf examples/*.yaml
-	rm -rf examples/output/*.db
-	rm -rf examples/output/*.json
-	rm -rf examples/output/*.tsv
-	rm -rf examples/output/*.ttl
-	rm -rf examples/output/*.yaml
-	rm -rf examples/output/README.md
-	rm -rf from_schemasheets.lint_report.txt
-	rm -rf schemasheets/from_schemasheets.lint_report.txt
-	rm -rf schemasheets/populated_tsv/*.tsv
-	rm -rf schemasheets/populated_tsv/*.txt
-	rm -rf schemasheets/yaml_out/from_schemasheets.yaml
-	rm -rf schemasheets/yaml_out/from_schemasheets.yaml.raw
-	rm -rf sheets_and_friends/with_modifications.lint_report.txt
-	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
+post-clean:
+	rm -rf local/*
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml.raw
 	rm -rf sheets_and_friends/yaml_out/with_shuttles_yq.yaml
+	cp placeholder.md local
+
+
+schema-clean: modifications-clean sheets_and_friends-clean examples-clean post-clean
+	rm -rf sheets_and_friends/with_modifications.lint_report.txt
+	rm -rf sheets_and_friends/with_shuttles.lint_report.txt
 	rm -rf src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	rm -rf local/*
 	mkdir -p local
 	cp placeholder.md local
 	mkdir -p examples/output
-
-schemasheets-clean:
-	rm -rf schemasheets/yaml_out/*.yaml
-
-local/from_schemasheets.yaml: schemasheets/tsv_in/prefixes.tsv \
-schemasheets/tsv_in/classes.tsv \
-schemasheets/tsv_in/enums.tsv \
-schemasheets/tsv_in/schema_only.tsv \
-schemasheets/tsv_in/slots.tsv \
-schemasheets/tsv_in/types.tsv
-	$(RUN) sheets2linkml \
-		--output $@.raw $^
-		# would prefer to discover TSV inputs instead of enumerating them
-	$(RUN) gen-linkml \
-		--no-materialize-attributes \
-		--format yaml $@.raw > $@
-	- $(RUN) linkml-lint $@ > local/from_schemasheets.lint_report.txt
-
 
 # todo: fewer enums
 # todo: use booleans for yes/no enumerations
@@ -58,7 +31,7 @@ schemasheets/tsv_in/types.tsv
 sheets_and_friends-clean:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
-local/with_shuttles.yaml: local/from_schemasheets.yaml \
+local/with_shuttles.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema_base.yaml \
 sheets_and_friends/tsv_in/import_slots_regardless.tsv
 		$(RUN) do_shuttle \
 			--config_tsv  $(word 2,$^) \
@@ -84,7 +57,6 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 # undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
 # future versions of the nmdc-schema might just use strings, too
 
-# there's still more to do. see schemasheets/populated_tsv/slot_usage.tsv
 # to some degree this should be handled globally by sheets_and_friends/tsv_in/validation_converter.tsv
 # and on a slot-by-slot basic by sheets_and_friends/tsv_in/modifications_long.tsv
 
@@ -250,7 +222,9 @@ src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifi
 run-examples: examples-clean examples/output/README.md
 
 examples-clean:
+	rm -rf examples/*.yaml
 	rm -rf examples/output
+	cp placeholder.md examples
 
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
@@ -264,18 +238,6 @@ src/data/invalid src/data/valid
 		--input-directory $(word 3,$^) \
 		--output-directory $(dir $@) \
 		--schema $< > $@
-
-# see local/usage_template.tsv
-## target was was local/slot_usage.tsv,
-##   but I changed the destination to a checked-in directory
-##   so collaborators can sort and filter the slot attributes
-##   and I switched to a smaller template
-#schemasheets/populated_tsv/slot_usage_minimal.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-#schemasheets/templates/slot_usage_minimal.tsv
-#	$(RUN) linkml2sheets \
-#		--output-directory $(dir $@) \
-#		--schema $< $(word 2,$^)
-## WARNING:root:Not implemented: slot
 
 local/SampleData-water-data-exhaustive.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/valid/SampleData-water-data-exhaustive.yaml
