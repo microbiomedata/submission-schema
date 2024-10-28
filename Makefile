@@ -92,9 +92,6 @@ gen-project gendoc project/json/nmdc_submission_schema.json
 # make deploy has been depricated by an updated .github/workflows/deploy-docs.yaml
 #deploy: all mkd-gh-deploy
 
-compile-sheets:
-	$(RUN) sheets2linkml --gsheet-id $(SHEET_ID) $(SHEET_TABS) > $(SHEET_MODULE_PATH).tmp && mv $(SHEET_MODULE_PATH).tmp $(SHEET_MODULE_PATH)
-
 # generates all project files
 # gen-owl fails with LinkML 1.6.x; needs further investigation
 # See https://github.com/microbiomedata/issues/issues/542
