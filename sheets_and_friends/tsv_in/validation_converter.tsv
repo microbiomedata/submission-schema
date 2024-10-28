@@ -7,7 +7,7 @@ from_val	from_type	to_type	to_val	len
 {float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$	
 {float}|{float}-{float}	MIxS string serialization	DH pattern regex	^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?)?$	
 {integer}	MIxS string serialization	DH datatype	integer	7
-{lat lon}	linkml string_serialization	DH pattern regex	^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$	86
+{lat lon}	linkml string_serialization	DH pattern regex	^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$	86
 {termLabel} {[termID]}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$	
 {termLabel} {[termID]}; {timestamp}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$	314
 {termLabel} {[termID]};{timestamp}	MIxS string serialization	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\];([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$	313
@@ -24,7 +24,7 @@ ControlledIdentifiedTermValue	linkml range	DH datatype	string
 ControlledTermValue	linkml range	DH datatype	string	
 ControlledTermValue	linkml range	DH pattern regex	^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$	
 GeolocationValue	linkml range	DH datatype	string	
-GeolocationValue	linkml range	DH pattern regex	^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$	
+GeolocationValue	linkml range	DH pattern regex	^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$	
 OntologyClass	linkml range	DH datatype	string	
 QuantityValue	linkml range	DH datatype	string	
 TextValue	linkml range	DH datatype	string	

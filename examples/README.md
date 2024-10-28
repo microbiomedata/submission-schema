@@ -2,4 +2,4 @@
 
 This folder contains example data conforming to nmdc_submission_schema
 
-The source for these is in [src/data](../src/data/examples)
+The source for these is in [src/data](../src/data/)

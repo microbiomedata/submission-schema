@@ -84,7 +84,7 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .examples) = [{"value": "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"}, {"value": "agar [CHEBI:2509];2018-05"}]' $@
 
 # use yq to add patterns with a secondary condition like mutivalued
-	yq -i '(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .pattern) = "^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)\s[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$$"' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .pattern) = "^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$$"' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .range) = "string"' $@
 
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "QuantityValue") | .pattern) = "^[-+]?[0-9]*\.?[0-9]+ +\S.*$$"' $@
@@ -181,6 +181,8 @@ local/nmdc.yaml
 
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
 	$(RUN) inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $@
+	#cp $< $@
+
 # remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert
 # follow the .string_serialization=="{text};{float} {unit}" and .multivalued == true pattern?
 
@@ -356,17 +358,18 @@ local/abp_pvs.txt: local/abp_tree_down.txt
 # human construction
 # astronomical body part
 
-src/data/data_harmonizer_io/soil_for_linkml.json: src/data/data_harmonizer_io/soil_from_dh.json
-	$(RUN) dh-json2linkml \
-		--input-file $< \
-		--output-file $@ \
-		--key soil_data
+#src/data/data_harmonizer_io/soil_for_linkml.json: src/data/data_harmonizer_io/soil_from_dh.json
+#	$(RUN) dh-json2linkml \
+#		--input-file $< \
+#		--output-file $@ \
+#		--key soil_data
 
-
-src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for_linkml.json
-	$(RUN) linkml-json2dh \
-		--input-file $< \
-		--output-dir $(dir $@)
+## todo frozen content in src/data/data_harmonizer_io has been removed
+## todo find a better home for the se scripts if they are still of any use
+#src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for_linkml.json
+#	$(RUN) linkml-json2dh \
+#		--input-file $< \
+#		--output-dir $(dir $@)
 
 local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	mkdir -p $(@D)

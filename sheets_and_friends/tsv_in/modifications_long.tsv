@@ -66,6 +66,7 @@ JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	required			t
 JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	recommended			false
+JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	pattern			^[_a-zA-Z0-9-]*$
 JgiMgInterface|JgiMgLrInterface	dna_seq_project	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_seq_project	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_seq_project_name	replace_attribute	required			true
@@ -191,6 +192,7 @@ JgiMtInterface	rna_sample_format	replace_attribute	required			true
 JgiMtInterface	rna_sample_format	replace_attribute	recommended			false
 JgiMtInterface	rna_sample_name	replace_attribute	required			true
 JgiMtInterface	rna_sample_name	replace_attribute	recommended			false
+JgiMtInterface	rna_sample_name	replace_attribute	pattern			^[_a-zA-Z0-9-]*$
 JgiMtInterface	rna_seq_project	replace_attribute	required			true
 JgiMtInterface	rna_seq_project	replace_attribute	recommended			false
 JgiMtInterface	rna_seq_project_name	replace_attribute	required			true
