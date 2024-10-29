@@ -105,12 +105,12 @@ gen-project: $(PYMODEL) src/nmdc_submission_schema/schema/nmdc_submission_schema
 		--exclude proto \
 		--exclude shacl \
 		--exclude shex \
-		--include excel \
+		--exclude excel \
 		--include jsonschema \
 		--exclude owl \
 		--include python \
 		--include sqlddl \
-		--generator-arguments '{jsonschema: {not_closed: false}, excel: {output: local/submission_schema.xlsx}, sqlddl: {output: local/submission_schema.sql}}' \
+		--generator-arguments '{jsonschema: {not_closed: false}, sqlddl: {output: local/submission_schema.sql}}' \
 		-d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 test: test-python run-examples
@@ -147,7 +147,6 @@ MKDOCS = $(RUN) mkdocs
 mkd-%:
 	$(MKDOCS) $*
 
-#PROJECT_FOLDERS = sqlschema shex shacl protobuf prefixmap owl jsonschema jsonld graphql excel
 PROJECT_FOLDERS = sqlschema owl jsonschema
 git-init-add: git-init git-add git-commit git-status
 git-init:
