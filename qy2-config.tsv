@@ -1,50 +1,44 @@
-rank	active	scope	criterion_field	criterion_value	criterion_in_set	element_key	operation	target_field	target_value	success
-1	true	slot_or_usage	range	TimestampValue			set	range	string	true
-2	true	slot_or_usage	range	TextValue			set	range	string	true
-3	true	slot_or_usage	range	QuantityValue			set	range	string	true
-4	true	slot_or_usage	range	OntologyClass			set	range	string	true
-5	true	slot_or_usage	range	GeolocationValue			set	range	string	true
-6	true	slot_or_usage	range	ControlledTermValue			set	range	string	true
-7	true	slot_or_usage	range	ControlledIdentifiedTermValue			set	range	string	true
-8	true	slot_or_usage	range		enum_keys		delete_field	multivalued		true except for oxy_stat_samp
-9	true	slot_or_usage	range		type_keys		delete_field	multivalued		true
-11	true	slot_or_usage				dna_dnase	set	range	YesNoEnum	not in usages
-12	true	slot_or_usage				dnase_rna	set	range	YesNoEnum	not in usages
-13	true	slot_or_usage				oxy_stat_samp	set	range	rel_to_oxygen_enum	not in usages
-14	true	slot_or_usage				oxy_stat_samp	delete_field	multivalued
-15	true	slot_or_usage				sample_link	set	range	string	true
-16	true	slot_or_usage					delete_element	latitude		true
-17	true	slot_or_usage					delete_element	longitude		true
-18	true	slot_or_usage					delete_element	has_maximum_numeric_value		true
-19	true	slot_or_usage					delete_element	has_minimum_numeric_value		true
-20	true	slot_or_usage					delete_element	has_numeric_value		true except for some examples
-21	true	slot_or_usage					delete_element	has_raw_value		true except for some examples and comments
-22	true	slot_or_usage					delete_element	has_unit		true except for some examples
-23	true	slot_or_usage					delete_element	term		true
-24	true	class					delete_element	AttributeValue		true
-25	true	class					delete_element	ControlledIdentifiedTermValue		true
-26	true	class					delete_element	ControlledTermValue		true
-27	true	class					delete_element	GeolocationValue		true
-28	true	class					delete_element	OntologyClass		true
-29	true	class					delete_element	QuantityValue		true
-30	true	class					delete_element	TextValue		true
-31	true	class					delete_element	TimestampValue		true
-32	true	all_elements					delete_field	domain_of		true
-33	true	all_elements					delete_field	from_schema		true
-34	true	all_elements					delete_field	domain		true
-36		slot_or_usage	range		class_keys		set	range	string
-37		slot_or_usage	range	string			delete_field	multivalued
-38		slot_or_usage	range	float			delete_field	multivalued
-39		slot_or_usage	range	double			delete_field	multivalued
-40		slot_or_usage	range	integer			delete_field	multivalued
-41		slot_or_usage	range	uriorcurie			delete_field	multivalued
-42	true	all_elements					delete_field	name
-34.2	true	all_elements					delete_field	owner		true
-33	true	all_elements					delete_field	from_schema		""
-33	true	all_elements					delete_field	from_schema		""
-33	true	all_elements					delete_field	from_schema		""
-24	true	class					delete_element	NamedThing		true
-24	true	slot_or_usage					delete_element	name		true
-24	true	slot_or_usage	range	string			delete_field	inlined		true
-24	true	slot_or_usage	range	string			delete_field	inlined_as_list		true
-24	true	all_elements	""	""			delete_field	text		true
+active	scope	criterion_field	criterion_in_set	criterion_value	element_key	operation	target_field	target_value
+true	slot_or_usage	range		TimestampValue		set	range	string
+true	slot_or_usage	range		TextValue		set	range	string
+true	slot_or_usage	range		QuantityValue		set	range	string
+true	slot_or_usage	range		OntologyClass		set	range	string
+true	slot_or_usage	range		GeolocationValue		set	range	string
+true	slot_or_usage	range		ControlledTermValue		set	range	string
+true	slot_or_usage	range		ControlledIdentifiedTermValue		set	range	string
+true	slot_or_usage	range	enum_keys			delete_field	multivalued	NULL
+true	slot_or_usage	range	type_keys			delete_field	multivalued	NULL
+true	slot_or_usage				dna_dnase	set	range	YesNoEnum
+true	slot_or_usage				dnase_rna	set	range	YesNoEnum
+true	slot_or_usage				oxy_stat_samp	set	range	rel_to_oxygen_enum
+true	slot_or_usage				oxy_stat_samp	delete_field	multivalued	""
+true	slot_or_usage				sample_link	set	range	string
+true	slot_or_usage					delete_element	latitude	NULL
+true	slot_or_usage					delete_element	longitude	NULL
+true	slot_or_usage					delete_element	has_maximum_numeric_value	NULL
+true	slot_or_usage					delete_element	has_minimum_numeric_value	NULL
+true	slot_or_usage					delete_element	has_numeric_value	NULL
+true	slot_or_usage					delete_element	has_raw_value	NULL
+true	slot_or_usage					delete_element	has_unit	NULL
+true	slot_or_usage					delete_element	term	NULL
+true	class					delete_element	AttributeValue	NULL
+true	class					delete_element	ControlledIdentifiedTermValue	NULL
+true	class					delete_element	ControlledTermValue	NULL
+true	class					delete_element	GeolocationValue	NULL
+true	class					delete_element	OntologyClass	NULL
+true	class					delete_element	QuantityValue	NULL
+true	class					delete_element	TextValue	NULL
+true	class					delete_element	TimestampValue	NULL
+true	all_elements					delete_field	domain_of	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	all_elements					delete_field	domain	NULL
+true	all_elements					delete_field	name	""
+true	all_elements					delete_field	owner	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	class					delete_element	NamedThing	NULL
+true	slot_or_usage					delete_element	name	NULL
+true	slot_or_usage	range		string		delete_field	inlined	NULL
+true	slot_or_usage	range		string		delete_field	inlined_as_list	NULL
+true	all_elements	""		""		delete_field	text	NULL

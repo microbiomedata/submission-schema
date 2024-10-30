@@ -1,4 +1,5 @@
 import csv
+import pprint
 
 import yaml
 from glom import glom, assign
@@ -7,6 +8,8 @@ from typing import Dict, Any, Optional, List
 import re
 from typing import Dict, Any
 import click
+
+emptyish = ["", "NULL", None]  # standardize the config values to just one of these
 
 
 def load_yaml(file_path: str) -> Dict[str, Any]:
@@ -59,9 +62,95 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
     sets['enum_keys'] = enum_keys
     sets['type_keys'] = type_keys
     sets['class_keys'] = class_keys
-    sets_keys = set(sets.keys())
+    # sets_keys = set(sets.keys())
 
     raw_config = load_tsv(config)
+
+    # pprint.pprint(raw_config)
+
+    for sk, sv in schema['slots'].items():
+        if collapse_annotations and 'annotations' in sv:  # pull out of rc loop
+            for ak, av in sv['annotations'].items():
+                if 'tag' in av and 'value' in av:
+                    # click.echo(f"setting {ak} to {av['value']} for {sk}")
+                    sv['annotations'][ak] = av['value']
+        if drop_redundant_aliases and 'aliases' in sv:
+            current_aliases = sv['aliases']
+            for alias in sv['aliases']:
+                if 'title' in sv and alias == sv['title']:
+                    # click.echo(f"removing redundant alias {alias} from slot {sk}")
+                    current_aliases.remove(alias)
+            if len(current_aliases) == 0:
+                del sv['aliases']
+            else:
+                sv['aliases'] = current_aliases
+    for ck, cv in schema['classes'].items():
+        if collapse_annotations and 'annotations' in cv:
+            for ak, av in cv['annotations'].items():
+                if 'tag' in av and 'value' in av:
+                    # click.echo(f"setting {ak} to {av['value']} for {ck}")
+                    cv['annotations'][ak] = av['value']
+        if drop_redundant_aliases and 'aliases' in cv:
+            current_aliases = cv['aliases']
+            for alias in cv['aliases']:
+                if 'title' in cv and alias == cv['title']:
+                    click.echo(f"removing redundant alias {alias} from {ck}")
+                    current_aliases.remove(alias)
+            if len(current_aliases) == 0:
+                del cv['aliases']
+            else:
+                cv['aliases'] = current_aliases
+        if 'slot_usage' in cv:
+            for sk, sv in cv['slot_usage'].items():
+                if collapse_annotations and 'annotations' in sv:
+                    for ak, av in sv['annotations'].items():
+                        if 'tag' in av and 'value' in av:
+                            # click.echo(f"setting {ak} to {av['value']} for {sk} in {ck}")
+                            sv['annotations'][ak] = av['value']
+                if drop_redundant_aliases and 'aliases' in sv:
+                    current_aliases = sv['aliases']
+                    for alias in sv['aliases']:
+                        if 'title' in sv and alias == sv['title']:
+                            # click.echo(f"removing redundant alias {alias} from slot {sk} in {ck}")
+                            current_aliases.remove(alias)
+                    if len(current_aliases) == 0:
+                        del sv['aliases']
+                    else:
+                        sv['aliases'] = current_aliases
+
+    for ek, ev in schema['enums'].items():
+        if collapse_annotations and 'annotations' in ev:
+            for ak, av in ev['annotations'].items():
+                if 'tag' in av and 'value' in av:
+                    click.echo(f"setting {ak} to {av['value']} for {ek}")
+                    ev['annotations'][ak] = av['value']
+        if drop_redundant_aliases and 'aliases' in ev:
+            current_aliases = ev['aliases']
+            for alias in ev['aliases']:
+                if 'title' in ev and alias == ev['title']:
+                    click.echo(f"removing redundant alias {alias} from {ek}")
+                    current_aliases.remove(alias)
+            if len(current_aliases) == 0:
+                del ev['aliases']
+            else:
+                ev['aliases'] = current_aliases
+        if 'permissible_values' in ev:
+            for vk, vv in ev['permissible_values'].items():
+                if collapse_annotations and 'annotations' in vv:
+                    for ak, av in vv['annotations'].items():
+                        if 'tag' in av and 'value' in av:
+                            # click.echo(f"setting {ak} to {av['value']} for {vk} in {ek}")
+                            vv['annotations'][ak] = av['value']
+                if drop_redundant_aliases and 'aliases' in vv:
+                    current_aliases = vv['aliases']
+                    for alias in vv['aliases']:
+                        if 'title' in vv and alias == vv['title']:
+                            click.echo(f"removing redundant alias {alias} from {vk} in {ek}")
+                            current_aliases.remove(alias)
+                    if len(current_aliases) == 0:
+                        del vv['aliases']
+                    else:
+                        vv['aliases'] = current_aliases
 
     for rc in raw_config:
         scope = rc.get('scope')
@@ -78,19 +167,19 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
             continue
 
         if operation == 'set' \
-                and criterion_field == "" \
-                and criterion_in_set == "" \
-                and criterion_value == "" \
+                and criterion_field in emptyish \
+                and criterion_in_set in emptyish \
+                and criterion_value in emptyish \
                 and element_key in schema['slots'] \
                 and scope in ['slot', 'slot_or_usage'] \
                 and target_field in schema['slots'][element_key]:
             schema['slots'][element_key][target_field] = target_value
 
         if operation == 'delete_element' \
-                and criterion_field == "" \
-                and criterion_in_set == "" \
-                and criterion_value == "" \
-                and element_key == "" \
+                and criterion_field in emptyish \
+                and criterion_in_set in emptyish \
+                and criterion_value in emptyish \
+                and element_key in emptyish \
                 and scope in ['slot', 'slot_or_usage'] \
                 and target_field in schema['slots']:
             del schema['slots'][target_field]
@@ -99,36 +188,36 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
             if 'slots' in cv:
                 slots_list = cv['slots']
                 if operation == 'delete_element' \
-                        and criterion_field == "" \
-                        and criterion_in_set == "" \
-                        and criterion_value == "" \
-                        and element_key == "" \
+                        and criterion_field in emptyish \
+                        and criterion_in_set in emptyish \
+                        and criterion_value in emptyish \
+                        and element_key in emptyish \
                         and scope in ['usage', 'slot_or_usage'] \
                         and target_field in slots_list:
                     slots_list.remove(target_field)
             if 'slot_usage' in cv:
                 if operation == 'delete_element' \
-                        and criterion_field == "" \
-                        and criterion_in_set == "" \
-                        and criterion_value == "" \
-                        and element_key == "" \
+                        and criterion_field in emptyish \
+                        and criterion_in_set in emptyish \
+                        and criterion_value in emptyish \
+                        and element_key in emptyish \
                         and scope in ['usage', 'slot_or_usage'] \
                         and target_field in cv['slot_usage']:
                     del cv['slot_usage'][target_field]
                 if operation == 'set' \
-                        and criterion_field == "" \
-                        and criterion_in_set == "" \
-                        and criterion_value == "" \
+                        and criterion_field in emptyish \
+                        and criterion_in_set in emptyish \
+                        and criterion_value in emptyish \
                         and element_key in cv['slot_usage'] \
                         and scope in ['usage', 'slot_or_usage'] \
                         and target_field in cv['slot_usage'][element_key]:
                     cv['slot_usage'][element_key][target_field] = target_value
 
         if operation == 'delete_element' \
-                and criterion_field == "" \
-                and criterion_in_set == "" \
-                and criterion_value == "" \
-                and element_key == "" \
+                and criterion_field in emptyish \
+                and criterion_in_set in emptyish \
+                and criterion_value in emptyish \
+                and element_key in emptyish \
                 and scope in ['class'] \
                 and target_field in schema['classes']:
             del schema['classes'][target_field]
@@ -146,278 +235,459 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                     and scope in ['slot', 'slot_or_usage', 'all_elements']:
                 for sk, sv in ov.items():  # s for slot
                     if criterion_field in sv \
-                            and criterion_in_set == "" \
-                            and element_key == "" \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'set' \
-                            and sv[criterion_field] == criterion_value:
+                            and sv[criterion_field] == criterion_value \
+                            and target_field not in emptyish:
                         # click.echo(
                         #     f"setting {target_field} to {target_value} in slot {sk} because {criterion_field} == {criterion_value}")
                         sv[target_field] = target_value
+                    if sk == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and operation == 'set' \
+                            and target_field not in emptyish \
+                            and target_value not in emptyish:
+                        # click.echo(f"setting {target_field} to {target_value} in slot {sk}")
+                        sv[target_field] = target_value
                     if criterion_field in sv \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set not in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
                             and sv[criterion_field] in sets[criterion_in_set] \
                             and target_field in sv \
-                            and target_value == "":
+                            and target_value in emptyish:
                         # click.echo(
                         #     f"deleting {target_field} in slot {sk} because {sv[criterion_field]} is in {criterion_in_set}")
                         del sv[target_field]
-                    if criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and element_key == "" \
-                            and operation == 'delete_field' \
-                            and target_field in sv:
-                        # click.echo(f"globally deleting {target_field} in slot {sk}")
-                        del sv[target_field]
-                    if sk == element_key \
-                            and criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and operation == 'set':
-                        # click.echo(f"setting {target_field} to {target_value} in slot {sk}")
-                        sv[target_field] = target_value
-                    if sk == element_key \
-                            and criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and operation == 'delete_field' \
-                            and target_field in sv:
-                        click.echo(f"deleting {target_field} in slot {sk}")
-                        del sv[target_field]
                     if criterion_field in sv \
-                            and element_key == "" \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
                             and sv[criterion_field] == criterion_value \
                             and target_field in sv \
-                            and target_value == "":
+                            and target_value in emptyish:
                         # click.echo(
-                        #     f"deleting {target_field} in slot {sk} because {criterion_field} == {criterion_value}")
+                        # f"deleting {target_field} in slot {sk} because {criterion_field} == {criterion_value}")
                         del sv[target_field]
-                    if collapse_annotations and 'annotations' in sv:
-                        # click.echo(f"collapsing annotations for slot {sk}")
-                        for ak, av in sv['annotations'].items():
-                            # click.echo(f"setting {ak} to {av}")
-                            if 'tag' in av and 'value' in av:
-                                # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                sv['annotations'][ak] = av['value']
-                    if drop_redundant_aliases and 'aliases' in sv:
-                        current_aliases = sv['aliases']
-                        for alias in sv['aliases']:
-                            if 'title' in sv and alias == sv['title']:
-                                current_aliases.remove(alias)
-                        if len(current_aliases) == 0:
-                            del sv['aliases']
-                        else:
-                            sv['aliases'] = current_aliases
+                    if criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in sv \
+                            and target_value in emptyish:
+                        # click.echo(f"globally deleting {target_field} in slot {sk}")
+                        del sv[target_field]
+                    if sk == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key not in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in sv \
+                            and target_value in emptyish:
+                        # click.echo(f"deleting {target_field} in slot {sk}")
+                        del sv[target_field]
+
             if ok == 'classes' \
                     and scope in ['class', 'all_elements']:
                 for ck, cv in ov.items():  # c for class
                     if criterion_field in cv \
-                            and criterion_in_set == "" \
-                            and element_key == "" \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'set' \
-                            and cv[criterion_field] == criterion_value:
+                            and cv[criterion_field] == criterion_value \
+                            and target_field not in emptyish:
                         click.echo(
                             f"setting {target_field} to {target_value} in class {ck} because {criterion_field} == {criterion_value}")
                         cv[target_field] = target_value
+                    if ck == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and operation == 'set' \
+                            and target_field not in emptyish \
+                            and target_value not in emptyish:
+                        click.echo(f"setting {target_field} to {target_value} in class {ck}")
+                        cv[target_field] = target_value
                     if criterion_field in cv \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set not in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
                             and cv[criterion_field] in sets[criterion_in_set] \
                             and target_field in cv \
-                            and target_value == "":
-                        # click.echo(
-                        #     f"deleting {target_field} in class {ck}  because {cv[criterion_field]} is in {criterion_in_set}")
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in class {ck} because {cv[criterion_field]} is in {criterion_in_set}")
                         del cv[target_field]
-                    if criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                    if criterion_field in cv \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
-                            and target_field in cv:
+                            and cv[criterion_field] == criterion_value \
+                            and target_field in cv \
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in class {ck} because {criterion_field} == {criterion_value}")
+                        del cv[target_field]
+                    if criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in cv \
+                            and target_value in emptyish:
                         # click.echo(f"globally deleting {target_field} in class {ck}")
                         del cv[target_field]
-                    if collapse_annotations and 'annotations' in cv:
-                        # click.echo(f"collapsing annotations for slot {sk}")
-                        for ak, av in cv['annotations'].items():
-                            # click.echo(f"setting {ak} to {av}")
-                            if 'tag' in av and 'value' in av:
-                                # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                cv['annotations'][ak] = av['value']
+                    if ck == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key not in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in cv \
+                            and target_value in emptyish:
+                        click.echo(f"deleting {target_field} in class {ck}")
+                        del cv[target_field]
+
             if ok == 'classes' \
                     and scope in ['usage', 'slot_or_usage', 'all_elements']:
                 for ck, cv in ov.items():  # c for class
                     if 'slot_usage' in cv:
                         for sk, sv in cv['slot_usage'].items():
-                            # click.echo(f"checking slot_usage in class {ck} slot {sk}")
                             if criterion_field in sv \
-                                    and criterion_in_set == "" \
-                                    and element_key == "" \
+                                    and criterion_in_set in emptyish \
+                                    and criterion_value not in emptyish \
+                                    and element_key in emptyish \
                                     and operation == 'set' \
-                                    and sv[criterion_field] == criterion_value:
-                                # click.echo(
-                                #     f"setting {target_field} to {target_value} in class {ck} usage of slot {sk} because {criterion_field} == {criterion_value}")
+                                    and sv[criterion_field] == criterion_value \
+                                    and target_field not in emptyish:
+                                click.echo(
+                                    f"setting {target_field} to {target_value} in class {ck} usage {sk} because {criterion_field} == {criterion_value}")
+                                sv[target_field] = target_value
+                            if sk == element_key \
+                                    and criterion_field in emptyish \
+                                    and criterion_in_set in emptyish \
+                                    and criterion_value in emptyish \
+                                    and operation == 'set' \
+                                    and target_field not in emptyish \
+                                    and target_value not in emptyish:
+                                # click.echo(f"setting {target_field} to {target_value} in class {ck} usage {sk}")
                                 sv[target_field] = target_value
                             if criterion_field in sv \
-                                    and criterion_value == "" \
-                                    and element_key == "" \
+                                    and criterion_field not in emptyish \
+                                    and criterion_in_set not in emptyish \
+                                    and criterion_value in emptyish \
+                                    and element_key in emptyish \
                                     and operation == 'delete_field' \
                                     and sv[criterion_field] in sets[criterion_in_set] \
                                     and target_field in sv \
-                                    and target_value == "":
+                                    and target_value in emptyish:
                                 # click.echo(
                                 #     f"deleting {target_field} in class {ck} usage {sk} because {sv[criterion_field]} is in {criterion_in_set}")
                                 del sv[target_field]
-                            if criterion_field == "" \
-                                    and criterion_in_set == "" \
-                                    and criterion_value == "" \
-                                    and element_key == "" \
-                                    and operation == 'delete_field' \
-                                    and target_field in sv:
-                                # click.echo(f"globally deleting {target_field} in class {ck} usage {sk}")
-                                del sv[target_field]
                             if criterion_field in sv \
-                                    and element_key == "" \
+                                    and criterion_field not in emptyish \
+                                    and criterion_in_set in emptyish \
+                                    and criterion_value not in emptyish \
+                                    and element_key in emptyish \
                                     and operation == 'delete_field' \
                                     and sv[criterion_field] == criterion_value \
                                     and target_field in sv \
-                                    and target_value == "":
+                                    and target_value in emptyish:
                                 # click.echo(
-                                #     f"deleting {target_field} in {ck} usage {sk} because {criterion_field} == {criterion_value}")
+                                #     f"deleting {target_field} in class {ck} usage {sk} because {criterion_field} == {criterion_value}")
                                 del sv[target_field]
-                            if collapse_annotations and 'annotations' in sv:
-                                # click.echo(f"collapsing annotations for slot {sk}")
-                                for ak, av in sv['annotations'].items():
-                                    # click.echo(f"setting {ak} to {av}")
-                                    if 'tag' in av and 'value' in av:
-                                        # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                        sv['annotations'][ak] = av['value']
-                            if drop_redundant_aliases and 'aliases' in sv:
-                                current_aliases = sv['aliases']
-                                for alias in sv['aliases']:
-                                    if 'title' in sv and alias == sv['title']:
-                                        current_aliases.remove(alias)
-                                if len(current_aliases) == 0:
-                                    del sv['aliases']
-                                else:
-                                    sv['aliases'] = current_aliases
+                            if criterion_field in emptyish \
+                                    and criterion_in_set in emptyish \
+                                    and criterion_value in emptyish \
+                                    and element_key in emptyish \
+                                    and operation == 'delete_field' \
+                                    and target_field in sv \
+                                    and target_value in emptyish:
+                                # click.echo(f"globally deleting {target_field} in class {ck} usage {sk}")
+                                del sv[target_field]
+                            if sk == element_key \
+                                    and criterion_field in emptyish \
+                                    and criterion_in_set in emptyish \
+                                    and criterion_value in emptyish \
+                                    and element_key not in emptyish \
+                                    and operation == 'delete_field' \
+                                    and target_field in sv \
+                                    and target_value in emptyish:
+                                click.echo(f"deleting {target_field} class {ck} usage {sk}")
+                                del sv[target_field]
             if ok == 'enums' \
                     and scope in ['enum', 'all_elements']:
                 for ek, ev in ov.items():
-                    # click.echo(f"checking enum {ek}")
                     if criterion_field in ev \
-                            and criterion_in_set == "" \
-                            and element_key == "" \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'set' \
-                            and ev[criterion_field] == criterion_value:
+                            and ev[criterion_field] == criterion_value \
+                            and target_field not in emptyish:
                         click.echo(
                             f"setting {target_field} to {target_value} in enum {ek} because {criterion_field} == {criterion_value}")
                         ev[target_field] = target_value
+                    if ek == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and operation == 'set' \
+                            and target_field not in emptyish \
+                            and target_value not in emptyish:
+                        click.echo(f"setting {target_field} to {target_value} in enum {ek}")
+                        ev[target_field] = target_value
                     if criterion_field in ev \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set not in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
                             and ev[criterion_field] in sets[criterion_in_set] \
                             and target_field in ev \
-                            and target_value == "":
-                        # click.echo(
-                        #     f"deleting {target_field} in enum {ek} because {ek[criterion_field]} is in {criterion_in_set}")
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in enum {ek} because {ev[criterion_field]} is in {criterion_in_set}")
                         del ev[target_field]
-                    if criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                    if criterion_field in ev \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
-                            and target_field in ev:
+                            and ev[criterion_field] == criterion_value \
+                            and target_field in ev \
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in enum {ek} because {criterion_field} == {criterion_value}")
+                        del ev[target_field]
+                    if criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in ev \
+                            and target_value in emptyish:
                         # click.echo(f"globally deleting {target_field} in enum {ek}")
                         del ev[target_field]
-                    if collapse_annotations and 'annotations' in ev:
-                        # click.echo(f"collapsing annotations for enum {ev}")
-                        for ak, av in ev['annotations'].items():
-                            # click.echo(f"setting {ak} to {av}")
-                            if 'tag' in av and 'value' in av:
-                                # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                ev['annotations'][ak] = av['value']
-                    if 'permissible_values' in ev:
-                        for vk, vv in ev['permissible_values'].items():
-                            # click.echo(f"checking permissible value {vk} in enum {ek}")
-                            if collapse_annotations and 'annotations' in vv:
-                                # click.echo(f"collapsing annotations for permissible value {vk} in enum {ek}")
-                                for ak, av in vv['annotations'].items():
-                                    # click.echo(f"setting {ak} to {av}")
-                                    if 'tag' in av and 'value' in av:
-                                        # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                        vv['annotations'][ak] = av['value']
-                            if criterion_field == "" \
-                                    and criterion_in_set == "" \
-                                    and criterion_value == "" \
-                                    and element_key == "" \
-                                    and operation == 'delete_field' \
-                                    and target_field in vv:
-                                # click.echo(f"globally deleting {target_field} in permissible value {vk} of enum {ek}")
-                                del vv[target_field]
+                    if ek == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key not in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in ev \
+                            and target_value in emptyish:
+                        click.echo(f"deleting {target_field} in enum {ek}")
+                        del ev[target_field]
+                    for vk, vv in ev.get('permissible_values', {}).items():
+                        if criterion_field in vv \
+                                and criterion_in_set in emptyish \
+                                and criterion_value not in emptyish \
+                                and element_key in emptyish \
+                                and operation == 'set' \
+                                and vv[criterion_field] == criterion_value \
+                                and target_field not in emptyish:
+                            click.echo(
+                                f"setting {target_field} to {target_value} in PV {vk} from enum {ek} because {criterion_field} == {criterion_value}")
+                            vv[target_field] = target_value
+                        if vk == element_key \
+                                and criterion_field in emptyish \
+                                and criterion_in_set in emptyish \
+                                and criterion_value in emptyish \
+                                and operation == 'set' \
+                                and target_field not in emptyish \
+                                and target_value not in emptyish:
+                            click.echo(f"setting {target_field} to {target_value} in PV {vk} from enum {ek}")
+                            vv[target_field] = target_value
+                        if criterion_field in vv \
+                                and criterion_field not in emptyish \
+                                and criterion_in_set not in emptyish \
+                                and criterion_value in emptyish \
+                                and element_key in emptyish \
+                                and operation == 'delete_field' \
+                                and vv[criterion_field] in sets[criterion_in_set] \
+                                and target_field in vv \
+                                and target_value in emptyish:
+                            click.echo(
+                                f"deleting {target_field} in PV {vk} from enum {ek} because {vv[criterion_field]} is in {criterion_in_set}")
+                            del vv[target_field]
+                        if criterion_field in vv \
+                                and criterion_field not in emptyish \
+                                and criterion_in_set in emptyish \
+                                and criterion_value not in emptyish \
+                                and element_key in emptyish \
+                                and operation == 'delete_field' \
+                                and vv[criterion_field] == criterion_value \
+                                and target_field in vv \
+                                and target_value in emptyish:
+                            click.echo(
+                                f"deleting {target_field} in PV {vk} from enum {ek} because {criterion_field} == {criterion_value}")
+                            del vv[target_field]
+                        if criterion_field in emptyish \
+                                and criterion_in_set in emptyish \
+                                and criterion_value in emptyish \
+                                and element_key in emptyish \
+                                and operation == 'delete_field' \
+                                and target_field in vv \
+                                and target_value in emptyish:
+                            # click.echo(f"globally deleting {target_field} in PV {vk} from enum {ek}")
+                            del vv[target_field]
+                        if vk == element_key \
+                                and criterion_field in emptyish \
+                                and criterion_in_set in emptyish \
+                                and criterion_value in emptyish \
+                                and element_key not in emptyish \
+                                and operation == 'delete_field' \
+                                and target_field in vv \
+                                and target_value in emptyish:
+                            click.echo(f"deleting {target_field} in PV {vk} from enum {ek}")
+                            del vv[target_field]
+
             if ok == 'subsets' \
                     and scope in ['all_elements']:
                 for uk, uv in ov.items():
-                    # click.echo(f"checking subset {uk}")
                     if criterion_field in uv \
-                            and criterion_in_set == "" \
-                            and element_key == "" \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'set' \
-                            and uv[criterion_field] == criterion_value:
+                            and uv[criterion_field] == criterion_value \
+                            and target_field not in emptyish:
                         click.echo(
                             f"setting {target_field} to {target_value} in subset {uk} because {criterion_field} == {criterion_value}")
                         uv[target_field] = target_value
+                    if uk == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and operation == 'set' \
+                            and target_field not in emptyish \
+                            and target_value not in emptyish:
+                        click.echo(f"setting {target_field} to {target_value} in subset {uk}")
+                        uv[target_field] = target_value
                     if criterion_field in uv \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set not in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
                             and uv[criterion_field] in sets[criterion_in_set] \
                             and target_field in uv \
-                            and target_value == "":
-                        # click.echo(
-                        #     f"deleting {target_field} in subset {uk} because {uk[criterion_field]} is in {criterion_in_set}")
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in subset {uk} because {uv[criterion_field]} is in {criterion_in_set}")
                         del uv[target_field]
-                    if criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                    if criterion_field in uv \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
-                            and target_field in uv:
+                            and uv[criterion_field] == criterion_value \
+                            and target_field in uv \
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in subset {uk} because {criterion_field} == {criterion_value}")
+                        del uv[target_field]
+                    if criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in uv \
+                            and target_value in emptyish:
                         # click.echo(f"globally deleting {target_field} in subset {uk}")
+                        del uv[target_field]
+                    if uk == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key not in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in uv \
+                            and target_value in emptyish:
+                        click.echo(f"deleting {target_field} in subset {uk}")
                         del uv[target_field]
             if ok == 'types' \
                     and scope in ['all_elements']:  # or might want to remove all linkml types and add an import
                 for tk, tv in ov.items():
-                    # click.echo(f"checking type {tk}")
                     if criterion_field in tv \
-                            and criterion_in_set == "" \
-                            and element_key == "" \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'set' \
-                            and tv[criterion_field] == criterion_value:
+                            and tv[criterion_field] == criterion_value \
+                            and target_field not in emptyish:
                         click.echo(
                             f"setting {target_field} to {target_value} in type {tk} because {criterion_field} == {criterion_value}")
                         tv[target_field] = target_value
+                    if tk == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and operation == 'set' \
+                            and target_field not in emptyish \
+                            and target_value not in emptyish:
+                        click.echo(f"setting {target_field} to {target_value} in type {tk}")
+                        tv[target_field] = target_value
                     if criterion_field in tv \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set not in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
                             and tv[criterion_field] in sets[criterion_in_set] \
                             and target_field in tv \
-                            and target_value == "":
-                        # click.echo(
-                        #     f"deleting {target_field} in type {tk} because {tk[criterion_field]} is in {criterion_in_set}")
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in type {tk} because {tv[criterion_field]} is in {criterion_in_set}")
                         del tv[target_field]
-                    if criterion_field == "" \
-                            and criterion_in_set == "" \
-                            and criterion_value == "" \
-                            and element_key == "" \
+                    if criterion_field in tv \
+                            and criterion_field not in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value not in emptyish \
+                            and element_key in emptyish \
                             and operation == 'delete_field' \
-                            and target_field in tv:
+                            and tv[criterion_field] == criterion_value \
+                            and target_field in tv \
+                            and target_value in emptyish:
+                        click.echo(
+                            f"deleting {target_field} in type {tk} because {criterion_field} == {criterion_value}")
+                        del tv[target_field]
+                    if criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in tv \
+                            and target_value in emptyish:
                         # click.echo(f"globally deleting {target_field} in type {tk}")
+                        del tv[target_field]
+                    if tk == element_key \
+                            and criterion_field in emptyish \
+                            and criterion_in_set in emptyish \
+                            and criterion_value in emptyish \
+                            and element_key not in emptyish \
+                            and operation == 'delete_field' \
+                            and target_field in tv \
+                            and target_value in emptyish:
+                        click.echo(f"deleting {target_field} in type {tk}")
                         del tv[target_field]
 
     # Save the modified data to the output file
