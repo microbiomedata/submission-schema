@@ -1,3 +1,6 @@
+# todo: handle any_of (optionally?)
+#  deduplicate lists like comments or slots
+
 import csv
 import pprint
 
@@ -77,7 +80,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
         if drop_redundant_aliases and 'aliases' in sv:
             current_aliases = sv['aliases']
             for alias in sv['aliases']:
-                if 'title' in sv and alias == sv['title']:
+                if ('title' in sv and alias == sv['title']) or alias == sk:
                     # click.echo(f"removing redundant alias {alias} from slot {sk}")
                     current_aliases.remove(alias)
             if len(current_aliases) == 0:
@@ -93,8 +96,10 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
         if drop_redundant_aliases and 'aliases' in cv:
             current_aliases = cv['aliases']
             for alias in cv['aliases']:
-                if 'title' in cv and alias == cv['title']:
+                if ('title' in cv and alias == sv['title']) or alias == ck:
                     click.echo(f"removing redundant alias {alias} from {ck}")
+                    current_aliases.remove(alias)
+                if alias == ck:
                     current_aliases.remove(alias)
             if len(current_aliases) == 0:
                 del cv['aliases']
@@ -110,9 +115,11 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                 if drop_redundant_aliases and 'aliases' in sv:
                     current_aliases = sv['aliases']
                     for alias in sv['aliases']:
-                        if 'title' in sv and alias == sv['title']:
+                        if ('title' in sv and alias == sv['title']) or alias == sk:
                             # click.echo(f"removing redundant alias {alias} from slot {sk} in {ck}")
                             current_aliases.remove(alias)
+                        # if alias == sk:
+                        #     current_aliases.remove(alias)
                     if len(current_aliases) == 0:
                         del sv['aliases']
                     else:
@@ -127,9 +134,11 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
         if drop_redundant_aliases and 'aliases' in ev:
             current_aliases = ev['aliases']
             for alias in ev['aliases']:
-                if 'title' in ev and alias == ev['title']:
+                if ('title' in ev and alias == sv['title']) or alias == ek:
                     click.echo(f"removing redundant alias {alias} from {ek}")
                     current_aliases.remove(alias)
+                # if alias == ek:
+                #     current_aliases.remove(alias)
             if len(current_aliases) == 0:
                 del ev['aliases']
             else:
@@ -144,9 +153,11 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                 if drop_redundant_aliases and 'aliases' in vv:
                     current_aliases = vv['aliases']
                     for alias in vv['aliases']:
-                        if 'title' in vv and alias == vv['title']:
+                        if ('title' in vv and alias == sv['title']) or alias == vk:
                             click.echo(f"removing redundant alias {alias} from {vk} in {ek}")
                             current_aliases.remove(alias)
+                        # if alias == vk:
+                        #     current_aliases.remove(alias)
                     if len(current_aliases) == 0:
                         del vv['aliases']
                     else:
@@ -223,7 +234,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
             del schema['classes'][target_field]
 
         for ok, ov in schema.items():  # o for outer
-            # print(ok)
+            # click.echo(ok)
             #
             # types
             #
@@ -375,8 +386,8 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                                     and operation == 'set' \
                                     and sv[criterion_field] == criterion_value \
                                     and target_field not in emptyish:
-                                click.echo(
-                                    f"setting {target_field} to {target_value} in class {ck} usage {sk} because {criterion_field} == {criterion_value}")
+                                # click.echo(
+                                #     f"setting {target_field} to {target_value} in class {ck} usage {sk} because {criterion_field} == {criterion_value}")
                                 sv[target_field] = target_value
                             if sk == element_key \
                                     and criterion_field in emptyish \

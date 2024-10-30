@@ -42,3 +42,6 @@ true	slot_or_usage					delete_element	name	NULL
 true	slot_or_usage	range		string		delete_field	inlined	NULL
 true	slot_or_usage	range		string		delete_field	inlined_as_list	NULL
 true	all_elements	""		""		delete_field	text	NULL
+true	slot_or_usage	""		""	lat_lon	set	pattern	^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$
+true	slot_or_usage	range		QuantityValue			pattern	^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
+true	slot_or_usage	string_serialization		{text};{float} {unit}			pattern	^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$
