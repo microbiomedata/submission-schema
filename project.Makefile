@@ -25,11 +25,6 @@ schema-clean: modifications-clean sheets_and_friends-clean examples-clean post-c
 	cp placeholder.md local
 	mkdir -p examples/output
 
-# todo: fewer enums
-# todo: use booleans for yes/no enumerations
-# todo: some numbers appear as strings in the schema (just examples? check for minimum value etc)
-# todo maximum value for pH has to be an int?
-
 sheets_and_friends-clean:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
@@ -53,7 +48,6 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	# ControlledTermValue: experiential factor has string_serialization: '{termLabel} {[termID]}|{text}'
 	# ControlledTermValue: what about multivalued CTVs? don't see any besides chem_administration above at this time
 	# for water, can depth be a point, a range, or both?
-
 
 # globally replace structured ranges with strings.
 # undoes some of the range alterations that nmdc-schema makes when importing MIxS terms
@@ -140,7 +134,6 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
 
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
-
 
 modifications-clean:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
@@ -230,8 +223,6 @@ examples-clean:
 examples/output/README.md: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
 src/data/invalid src/data/valid
 	mkdir -p $(dir $@)
-	# RDF/TTL generation is failing
-	# https://github.com/microbiomedata/submission-schema/issues/13
 	$(RUN) linkml-run-examples \
 		--output-formats json \
 		--output-formats yaml \
@@ -256,20 +247,20 @@ dh-build: project/json/nmdc_submission_schema.json
 
 ###
 
-## todo frozen content in src/data/data_harmonizer_io has been removed
-## todo find a better home for the se scripts if they are still of any use
 #src/data/data_harmonizer_io/soil_data.json: src/data/data_harmonizer_io/soil_for_linkml.json
 #	$(RUN) linkml-json2dh \
 #		--input-file $< \
 #		--output-dir $(dir $@)
 
-local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	mkdir -p $(@D)
-	$(RUN) generate_and_populate_template \
-		 --base-class slot_definition \
-		 --columns-to-insert class \
-		 --columns-to-insert slot \
-		 --destination-template $@ \
-		 --meta-model-excel-file local/meta.xlsx \
-		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
-		 --source-schema-path $<
+## depends on an old version of schemasheets?
+## could be replaced with https://github.com/linkml/schemasheets/blob/bdde85d74637ae116fb5fd64a2e47999a1aebdfb/pyproject.toml#L36C1-L36C20
+#local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+#	mkdir -p $(@D)
+#	$(RUN) generate_and_populate_template \
+#		 --base-class slot_definition \
+#		 --columns-to-insert class \
+#		 --columns-to-insert slot \
+#		 --destination-template $@ \
+#		 --meta-model-excel-file local/meta.xlsx \
+#		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
+#		 --source-schema-path $<
