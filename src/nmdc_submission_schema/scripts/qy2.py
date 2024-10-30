@@ -201,7 +201,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                             # click.echo(f"setting {ak} to {av}")
                             if 'tag' in av and 'value' in av:
                                 # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                sv['annotations'][ak] = av['tag']
+                                sv['annotations'][ak] = av['value']
                     if drop_redundant_aliases and 'aliases' in sv:
                         current_aliases = sv['aliases']
                         for alias in sv['aliases']:
@@ -246,7 +246,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                             # click.echo(f"setting {ak} to {av}")
                             if 'tag' in av and 'value' in av:
                                 # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                cv['annotations'][ak] = av['tag']
+                                cv['annotations'][ak] = av['value']
             if ok == 'classes' \
                     and scope in ['usage', 'slot_or_usage', 'all_elements']:
                 for ck, cv in ov.items():  # c for class
@@ -294,7 +294,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                                     # click.echo(f"setting {ak} to {av}")
                                     if 'tag' in av and 'value' in av:
                                         # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                        sv['annotations'][ak] = av['tag']
+                                        sv['annotations'][ak] = av['value']
                             if drop_redundant_aliases and 'aliases' in sv:
                                 current_aliases = sv['aliases']
                                 for alias in sv['aliases']:
@@ -340,7 +340,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                             # click.echo(f"setting {ak} to {av}")
                             if 'tag' in av and 'value' in av:
                                 # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                ev['annotations'][ak] = av['tag']
+                                ev['annotations'][ak] = av['value']
                     if 'permissible_values' in ev:
                         for vk, vv in ev['permissible_values'].items():
                             # click.echo(f"checking permissible value {vk} in enum {ek}")
@@ -350,7 +350,7 @@ def main(schema: str, config: str, output: str, collapse_annotations: bool, drop
                                     # click.echo(f"setting {ak} to {av}")
                                     if 'tag' in av and 'value' in av:
                                         # click.echo(f"setting {ak} to {av['value']} for {sk}")
-                                        vv['annotations'][ak] = av['tag']
+                                        vv['annotations'][ak] = av['value']
                             if criterion_field == "" \
                                     and criterion_in_set == "" \
                                     and criterion_value == "" \
