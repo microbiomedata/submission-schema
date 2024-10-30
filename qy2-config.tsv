@@ -47,3 +47,4 @@ rank	active	scope	criterion_field	criterion_value	criterion_in_set	element_key	o
 24	true	slot_or_usage					delete_element	name		true
 24	true	slot_or_usage	range	string			delete_field	inlined		true
 24	true	slot_or_usage	range	string			delete_field	inlined_as_list		true
+24	true	all_elements	""	""			delete_field	text		true

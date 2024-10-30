@@ -33,7 +33,11 @@ def save_yaml(data: Dict[str, Any], file_path: str) -> None:
 @click.option("--config", required=True, type=click.Path(exists=True),
               help="Path to the TSV configuration file specifying modifications.")
 @click.option("--output", required=True, type=click.Path(), help="Path to save the modified YAML file.")
-def main(schema: str, config: str, output: str) -> None:
+@click.option('--collapse-annotations/--no-collapse-annotations', default=True,
+              help="convert annotations to simple dict form.")
+@click.option('--drop-redundant-aliases/--no-drop-redundant-aliases', default=True,
+              help="drop aliases that are the same as the title.")
+def main(schema: str, config: str, output: str, collapse_annotations: bool, drop_redundant_aliases: bool) -> None:
     """
     Modify the input YAML based on rules in the config file and save the result to the output file.
 
@@ -156,8 +160,8 @@ def main(schema: str, config: str, output: str) -> None:
                             and sv[criterion_field] in sets[criterion_in_set] \
                             and target_field in sv \
                             and target_value == "":
-                        click.echo(
-                            f"deleting {target_field} in slot {sk} because {sv[criterion_field]} is in {criterion_in_set}")
+                        # click.echo(
+                        #     f"deleting {target_field} in slot {sk} because {sv[criterion_field]} is in {criterion_in_set}")
                         del sv[target_field]
                     if criterion_field == "" \
                             and criterion_in_set == "" \
@@ -188,9 +192,25 @@ def main(schema: str, config: str, output: str) -> None:
                             and sv[criterion_field] == criterion_value \
                             and target_field in sv \
                             and target_value == "":
-                        click.echo(
-                            f"deleting {target_field} in slot {sk} because {sv[criterion_field]} == {criterion_value}")
+                        # click.echo(
+                        #     f"deleting {target_field} in slot {sk} because {criterion_field} == {criterion_value}")
                         del sv[target_field]
+                    if collapse_annotations and 'annotations' in sv:
+                        # click.echo(f"collapsing annotations for slot {sk}")
+                        for ak, av in sv['annotations'].items():
+                            # click.echo(f"setting {ak} to {av}")
+                            if 'tag' in av and 'value' in av:
+                                # click.echo(f"setting {ak} to {av['value']} for {sk}")
+                                sv['annotations'][ak] = av['tag']
+                    if drop_redundant_aliases and 'aliases' in sv:
+                        current_aliases = sv['aliases']
+                        for alias in sv['aliases']:
+                            if 'title' in sv and alias == sv['title']:
+                                current_aliases.remove(alias)
+                        if len(current_aliases) == 0:
+                            del sv['aliases']
+                        else:
+                            sv['aliases'] = current_aliases
             if ok == 'classes' \
                     and scope in ['class', 'all_elements']:
                 for ck, cv in ov.items():  # c for class
@@ -209,8 +229,8 @@ def main(schema: str, config: str, output: str) -> None:
                             and cv[criterion_field] in sets[criterion_in_set] \
                             and target_field in cv \
                             and target_value == "":
-                        click.echo(
-                            f"deleting {target_field} in class {ck}  because {cv[criterion_field]} is in {criterion_in_set}")
+                        # click.echo(
+                        #     f"deleting {target_field} in class {ck}  because {cv[criterion_field]} is in {criterion_in_set}")
                         del cv[target_field]
                     if criterion_field == "" \
                             and criterion_in_set == "" \
@@ -220,6 +240,13 @@ def main(schema: str, config: str, output: str) -> None:
                             and target_field in cv:
                         # click.echo(f"globally deleting {target_field} in class {ck}")
                         del cv[target_field]
+                    if collapse_annotations and 'annotations' in cv:
+                        # click.echo(f"collapsing annotations for slot {sk}")
+                        for ak, av in cv['annotations'].items():
+                            # click.echo(f"setting {ak} to {av}")
+                            if 'tag' in av and 'value' in av:
+                                # click.echo(f"setting {ak} to {av['value']} for {sk}")
+                                cv['annotations'][ak] = av['tag']
             if ok == 'classes' \
                     and scope in ['usage', 'slot_or_usage', 'all_elements']:
                 for ck, cv in ov.items():  # c for class
@@ -259,8 +286,24 @@ def main(schema: str, config: str, output: str) -> None:
                                     and target_field in sv \
                                     and target_value == "":
                                 # click.echo(
-                                #     f"deleting {target_field} in {ck} usage {sk} because {sv[criterion_field]} == {criterion_value}")
+                                #     f"deleting {target_field} in {ck} usage {sk} because {criterion_field} == {criterion_value}")
                                 del sv[target_field]
+                            if collapse_annotations and 'annotations' in sv:
+                                # click.echo(f"collapsing annotations for slot {sk}")
+                                for ak, av in sv['annotations'].items():
+                                    # click.echo(f"setting {ak} to {av}")
+                                    if 'tag' in av and 'value' in av:
+                                        # click.echo(f"setting {ak} to {av['value']} for {sk}")
+                                        sv['annotations'][ak] = av['tag']
+                            if drop_redundant_aliases and 'aliases' in sv:
+                                current_aliases = sv['aliases']
+                                for alias in sv['aliases']:
+                                    if 'title' in sv and alias == sv['title']:
+                                        current_aliases.remove(alias)
+                                if len(current_aliases) == 0:
+                                    del sv['aliases']
+                                else:
+                                    sv['aliases'] = current_aliases
             if ok == 'enums' \
                     and scope in ['enum', 'all_elements']:
                 for ek, ev in ov.items():
@@ -280,8 +323,8 @@ def main(schema: str, config: str, output: str) -> None:
                             and ev[criterion_field] in sets[criterion_in_set] \
                             and target_field in ev \
                             and target_value == "":
-                        click.echo(
-                            f"deleting {target_field} in enum {ek} because {ek[criterion_field]} is in {criterion_in_set}")
+                        # click.echo(
+                        #     f"deleting {target_field} in enum {ek} because {ek[criterion_field]} is in {criterion_in_set}")
                         del ev[target_field]
                     if criterion_field == "" \
                             and criterion_in_set == "" \
@@ -291,6 +334,31 @@ def main(schema: str, config: str, output: str) -> None:
                             and target_field in ev:
                         # click.echo(f"globally deleting {target_field} in enum {ek}")
                         del ev[target_field]
+                    if collapse_annotations and 'annotations' in ev:
+                        # click.echo(f"collapsing annotations for enum {ev}")
+                        for ak, av in ev['annotations'].items():
+                            # click.echo(f"setting {ak} to {av}")
+                            if 'tag' in av and 'value' in av:
+                                # click.echo(f"setting {ak} to {av['value']} for {sk}")
+                                ev['annotations'][ak] = av['tag']
+                    if 'permissible_values' in ev:
+                        for vk, vv in ev['permissible_values'].items():
+                            # click.echo(f"checking permissible value {vk} in enum {ek}")
+                            if collapse_annotations and 'annotations' in vv:
+                                # click.echo(f"collapsing annotations for permissible value {vk} in enum {ek}")
+                                for ak, av in vv['annotations'].items():
+                                    # click.echo(f"setting {ak} to {av}")
+                                    if 'tag' in av and 'value' in av:
+                                        # click.echo(f"setting {ak} to {av['value']} for {sk}")
+                                        vv['annotations'][ak] = av['tag']
+                            if criterion_field == "" \
+                                    and criterion_in_set == "" \
+                                    and criterion_value == "" \
+                                    and element_key == "" \
+                                    and operation == 'delete_field' \
+                                    and target_field in vv:
+                                # click.echo(f"globally deleting {target_field} in permissible value {vk} of enum {ek}")
+                                del vv[target_field]
             if ok == 'subsets' \
                     and scope in ['all_elements']:
                 for uk, uv in ov.items():
@@ -310,8 +378,8 @@ def main(schema: str, config: str, output: str) -> None:
                             and uv[criterion_field] in sets[criterion_in_set] \
                             and target_field in uv \
                             and target_value == "":
-                        click.echo(
-                            f"deleting {target_field} in subset {uk} because {uk[criterion_field]} is in {criterion_in_set}")
+                        # click.echo(
+                        #     f"deleting {target_field} in subset {uk} because {uk[criterion_field]} is in {criterion_in_set}")
                         del uv[target_field]
                     if criterion_field == "" \
                             and criterion_in_set == "" \
@@ -340,8 +408,8 @@ def main(schema: str, config: str, output: str) -> None:
                             and tv[criterion_field] in sets[criterion_in_set] \
                             and target_field in tv \
                             and target_value == "":
-                        click.echo(
-                            f"deleting {target_field} in type {tk} because {tk[criterion_field]} is in {criterion_in_set}")
+                        # click.echo(
+                        #     f"deleting {target_field} in type {tk} because {tk[criterion_field]} is in {criterion_in_set}")
                         del tv[target_field]
                     if criterion_field == "" \
                             and criterion_in_set == "" \
