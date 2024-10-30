@@ -1,7 +1,9 @@
 RUN=poetry run
 
-.PHONY:  modifications-clean run-linkml-validation schema-clean schema_all \
-sheets_and_friends-clean sheets_and_friends_all
+.PHONY:  modifications-clean schema-clean sheets_and_friends-clean dh-build dh-dev examples-clean post-clean \
+run-examples squeaky-clean
+
+# .PHONY clean # from Makefile
 
 squeaky-clean: clean schema-clean
 

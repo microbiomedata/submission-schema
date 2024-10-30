@@ -32,10 +32,16 @@ ifdef LINKML_COOKIECUTTER_GEN_DOC_ARGS
 GEN_DARGS = ${LINKML_COOKIECUTTER_GEN_DOC_ARGS}
 endif
 
+.PHONY: all clean gen-project gendoc site test test-python
 
-# basename of a YAML file in model/
-.PHONY: all \
-clean gen-project gendoc schema-clean site test test-python
+# from project.Makefile
+.PHONY: schema-clean
+
+# not declared phony by the cookiecutter this repo was bootstrapped from
+.PHONY: check check-config cruft-check cruft-diff git-add git-commit git-init git-init-add git-status help  \
+lint run-examples serve setup status test-schema testdoc update  update-linkml update-template
+
+# .PHONY: mkd-% # ???
 
 # note: "help" MUST be the first target in the file,
 # when the user types "make" they should get help info
