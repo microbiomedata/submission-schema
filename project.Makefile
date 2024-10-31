@@ -257,3 +257,28 @@ dh-build: project/json/nmdc_submission_schema.json
 #		 --meta-model-excel-file local/meta.xlsx \
 #		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
 #		 --source-schema-path $<
+
+local/soil-env-broad-scale-oak-only.txt:
+	$(RUN) runoak --input sqlite:obo:envo descendants --predicates i "terrestrial biome" > $@
+
+local/soil-env-medium-oak-only.txt:
+	$(RUN) runoak --input sqlite:obo:envo info .desc//p=i "soil" .not  .desc//p=i "enriched soil" > $@ # also subtract "soils whose differential could appear  in the env_local_scale slot # https://incatools.github.io/ontology-access-kit/> $@  https://incatools.github.io/ontology-access-kit/howtos/use-oak-expression-language.html
+
+local/soil-env-medium-oak-only-relations.tsv:
+	$(RUN) runoak --input sqlite:obo:envo relationships .desc//p=i "soil" .not  .desc//p=i "enriched soil" > $@
+
+local/soil-env-medium-oak-only-relations-no-sco.tsv: local/soil-env-medium-oak-only-relations.tsv
+	awk -F'\t' '$$3 != "rdfs:subClassOf"' $< > $@
+
+local/soil-env-medium-oak-only-relations-no-sco-with-dist.tsv: local/soil-env-medium-oak-only-relations-no-sco.tsv
+	$(RUN) python tsv_text_diff.py \
+		--input-file $< \
+		--output-file $@ \
+		--left-column "subject_label" \
+		--right-column "object_label"
+
+local/soil-env-medium-oak-only-relation-label-counts.txt: local/soil-env-medium-oak-only-relations.tsv
+	awk -F'\t' '{print $$4}' $< | sort | uniq -c | sort -nr > $@
+
+local/soil-env-medium-oak-only-relation-id-counts.txt: local/soil-env-medium-oak-only-relations.tsv
+	awk -F'\t' '{print $$3}' $< | sort | uniq -c | sort -nr > $@

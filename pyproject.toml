@@ -20,6 +20,7 @@ include = [
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = "^1.6.2"
+textdistance = "^4.6.3"
 
 [tool.poetry.group.dev.dependencies]
 exhaustion-check = "^0.1.3"
