@@ -1,4 +1,4 @@
-	rdfs:label	mixs:env_broad	mixs:env_local	mixs:env_medium	mixs:host_taxon	mixs:mixs_extension	mixs:other	mixs:env_broad	mixs:env_local	mixs:env_medium	mixs:host_taxon	mixs:other
+gold_id	rdfs:label	mixs:env_broad	mixs:env_local	mixs:env_medium	mixs:host_taxon	mixs:mixs_extension	mixs:other	mixs:env_broad	mixs:env_local	mixs:env_medium	mixs:host_taxon	mixs:other
 GOLDTERMS:5768	Environmental > Terrestrial > Soil > Arable > Agricultural land	ENVO:00000077	ENVO:01001177	ENVO:00005742		mixs:Soil		agricultural ecosystem	arable land	arable soil		
 GOLDTERMS:5776	Environmental > Terrestrial > Soil > Biochar > Agricultural land	ENVO:00000077	ENVO:00000446	ENVO:2000007		mixs:Soil		agricultural ecosystem	terrestrial biome	biochar		
 GOLDTERMS:Environmental-Terrestrial-Soil-Biochar	Environmental > Terrestrial > Soil > Biochar	ENVO:01000254	ENVO:00000446	ENVO:2000007		mixs:Soil		environmental system	terrestrial biome	biochar		
