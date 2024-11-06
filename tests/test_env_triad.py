@@ -4,7 +4,7 @@ import pytest
 from pathlib import Path
 from linkml_runtime import SchemaView
 from linkml_runtime.linkml_model import PermissibleValue
-from src.nmdc_submission_schema.scripts.generate_env_triad_enums import parse_tsv_to_dict, inject_terms_into_schema, main  # Replace 'your_module' with your script filename
+from src.nmdc_submission_schema.scripts.generate_env_triad_enums import parse_tsv_to_dict, inject_terms_into_schema, ingest  # Replace 'your_module' with your script filename
 
 
 repo_root = Path(__file__).resolve().parent.parent
@@ -50,7 +50,7 @@ def test_inject_terms_into_schema(sample_schema_view):
         assert pv in enum_def.permissible_values.keys()
 
 
-def test_main(tmp_path):
+def test_ingest(tmp_path):
     # Define paths to the TSV files and expected enums
 
     file_enum_mappings = [
@@ -61,7 +61,10 @@ def test_main(tmp_path):
 
     # Run `main` with real file paths
     for tsv_path, enum_name in file_enum_mappings:
-        main(enum_name, tsv_path, BASE_SCHEMA_PATH, BASE_SCHEMA_PATH)
+        ingest(enum_name=enum_name,
+               values_file_path=tsv_path,
+               source_schema_yaml_path=BASE_SCHEMA_PATH,
+               target_schema_yaml_path=BASE_SCHEMA_PATH)
 
     # Verify that the output schema file contains the injected enums with the correct permissible values
     output_schema_view = SchemaView(str(BASE_SCHEMA_PATH))

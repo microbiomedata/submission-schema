@@ -58,10 +58,10 @@ def inject_terms_into_schema(values_file_path: Path,
     return sv.schema
 
 
-def main(enum_name: str,
-         values_file_path: Path,
-         source_schema_yaml_path: Path = SOURCE_SCHEMA_YAML_PATH,
-         target_schema_yaml_path: Path = TARGET_SCHEMA_YAML_PATH) -> None:
+def ingest(enum_name: str,
+           values_file_path: Path,
+           source_schema_yaml_path: Path = SOURCE_SCHEMA_YAML_PATH,
+           target_schema_yaml_path: Path = TARGET_SCHEMA_YAML_PATH) -> None:
     """
     Inject terms from multiple TSV files into the schema, each under a specified enumeration name.
 
@@ -71,17 +71,14 @@ def main(enum_name: str,
     :param target_schema_yaml_path: Path to the target schema YAML file.
     """
     # Define files and corresponding enumeration names
-    schemaview = SchemaView(source_schema_yaml_path)
+
+    sv = SchemaView(source_schema_yaml_path)
     # Load, inject terms, and save the updated schema for each file
     schema = inject_terms_into_schema(values_file_path,
                                       enum_name,
-                                      schemaview)
+                                      sv)
 
     # Dump the updated schema to the specified output file
     with target_schema_yaml_path.open("w", encoding="utf-8") as file:
         file.write(yaml_dumper.dumps(schema))
-
-
-if __name__ == "__main__":
-    main()
 
