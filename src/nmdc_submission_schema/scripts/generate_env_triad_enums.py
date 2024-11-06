@@ -1,59 +1,88 @@
-import json
-from collections import defaultdict
-from enum import Enum
 from pathlib import Path
-from typing import Dict, Set, Iterable, Optional
-
-import click
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
-from linkml_runtime.linkml_model import EnumDefinition, PermissibleValue, SchemaDefinition
-from linkml_runtime.loaders import yaml_loader
+from linkml_runtime.linkml_model import EnumDefinition, EnumDefinitionName, PermissibleValue, SchemaDefinition
 import csv
+
+repo_root = Path(__file__).resolve().parent.parent.parent.parent
+
+# Paths to the source and target schema files
+SOURCE_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
+TARGET_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
+
+# Paths to the TSV files
+SOIL_ENV_LOCAL_PATH = repo_root / "notebooks/post_google_sheets_soil_env_local_scale.tsv"
+SOIL_ENV_MEDIUM_PATH = repo_root / "notebooks/post_google_sheets_soil_env_medium_scale.tsv"
+SOIL_ENV_BROAD_PATH = repo_root / "notebooks/post_google_sheets_soil_env_broad_scale.tsv"
 
 
 def parse_tsv_to_dict(file_path):
     """
-    Parse a TSV file into a dictionary.
-    Assumes the first column is the key, and the rest are values.
+    Parse a TSV file into a list of dictionaries representing each row in the file.
 
-    :param file_path: Path to the TSV file.
-    :return: Dictionary with the first column as keys and rows as values.
+    :param file_path: Path to the TSV file to parse.
+    :return: A list of dictionaries representing each row in the file.
     """
-    data_dict = {}
+    data_dict = []
 
     with open(file_path, mode='r', newline='', encoding='utf-8') as file:
         reader = csv.reader(file, delimiter='\t')
+        next(reader, None)  # Skip the header
         for row in reader:
             if row:
-                # Use the first column as the key and the rest as values
-                key = row[0]
-                values = row[1:] if len(row) > 1 else []
-                data_dict[key] = values
+                data_dict.append({"term_id": row[0], "term_name": row[1]})
 
     return data_dict
 
 
-def inject_env_local_scale_terms (env_local_path: Path, input_schema_path: SchemaDefinition) -> SchemaDefinition:
-    """Inject gold pathway terms into the schema."""
-    data = parse_tsv_to_dict(env_local_path)
-    print(data)
-    schemaview = SchemaView(input_schema_path)
+def inject_terms_into_schema(env_path: Path, enum_name: str, sv: SchemaView) -> SchemaDefinition:
+    """
+    Inject terms from a TSV file into the schema under a specified enumeration name.
 
-    for term in data:
-        pvs = [PermissibleValue(text=term_id) for term in data]
-        schemaview.add_enum(EnumDefinition(
-            name='EnvironmentalTriadLocalEnum',
-            permissible_values=pvs
-        ))
+    :param env_path: Path to the TSV file containing the terms to inject.
+    :param schema_yaml_path: Path to the schema YAML file to inject the terms into.
+    :param enum_name: Name of the enumeration to add or update in the schema.
+    :param sv: SchemaView object representing the schema.
+    :return: The updated schema.
+    """
+    data = parse_tsv_to_dict(env_path)
+    sorted_data = sorted(data, key=lambda x: x["term_name"])
 
-    return schemaview.schema
+    pvs = [PermissibleValue(text=f"{term['term_name']} [{term['term_id']}]") for term in sorted_data]
 
-@click.command()
-@click.option('--env-local-file', '-g', type=click.Path(exists=True))
-@click.option('--schema-input-file', '-i', type=click.File('r'), default="-")
-@click.option('--schema-output-file', '-o', type=click.File('w'), default="-")
-def main(env_local_file, input_file, output_file):
-    schema = yaml_loader.loads(input_file.read(), SchemaDefinition)
-    output = inject_env_local_scale_terms(Path(env_local_file), schema)
-    print(yaml_dumper.dumps(output), file=output_file)
+    enum_def = EnumDefinition(
+        name=enum_name,
+        permissible_values=pvs
+    )
+
+    # Check if the enum already exists; if so, delete it before adding the new one
+    if sv.schema.enums.get(enum_name):
+        sv.delete_enum(EnumDefinitionName(enum_name))
+
+    sv.add_enum(enum_def)
+    return sv.schema
+
+
+def main():
+    """
+    Inject terms from multiple TSV files into the schema, each under a specified enumeration name.
+    """
+    # Define files and corresponding enumeration names
+    file_enum_mappings = [
+        (SOIL_ENV_LOCAL_PATH, "EnvLocalScaleSoilEnum"),
+        (SOIL_ENV_MEDIUM_PATH, "EnvMediumScaleSoilEnum"),
+        (SOIL_ENV_BROAD_PATH, "EnvBroadScaleSoilEnum")
+    ]
+    schemaview = SchemaView(SOURCE_SCHEMA_YAML_PATH)
+    # Load, inject terms, and save the updated schema for each file
+    schema = None
+    for env_path, enum_name in file_enum_mappings:
+        schema = inject_terms_into_schema(env_path, enum_name, schemaview)
+
+    # Dump the updated schema to the specified output file
+    with TARGET_SCHEMA_YAML_PATH.open("w", encoding="utf-8") as file:
+        file.write(yaml_dumper.dumps(schema))
+
+
+if __name__ == "__main__":
+    main()

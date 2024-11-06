@@ -4,6 +4,8 @@ from click.testing import CliRunner
 from src.nmdc_submission_schema.scripts.generate_env_triad_enums import main
 from linkml_runtime.loaders import yaml_loader
 
+SCHEMA_YAML_PATH = Path(__file__).parent / "../src/nmdc_submission_schema/schema/nmdc_submission_schema_base.yaml"
+
 def test_inject_env_local_scale_terms_cli():
     runner = CliRunner()
 
