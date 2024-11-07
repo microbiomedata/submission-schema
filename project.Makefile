@@ -181,10 +181,25 @@ local/nmdc.yaml
 		--format yaml $@.raw > $@
 	- $(RUN) linkml-lint $@ > local/with_modifications.lint_report.txt
 
-ingest_triad: notebooks/*.tsv
+
+########### ENV Triad PV generation ##########
+# Specify that 'ingest-triad' is a phony target, meaning it doesn't correspond to an actual file
+.PHONY: ingest-triad
+
+# Define an intermediate target to prevent re-triggering
+.INTERMEDIATE: temp_target
+
+# Main target to run ingestion commands, depending on the intermediate target
+ingest-triad: temp_target
+
+# Intermediate target that has all dependencies
+temp_target: notebooks/*.tsv src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) inject-env-triad-terms -f notebooks/post_google_sheets_soil_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) inject-env-triad-terms -f notebooks/post_google_sheets_soil_env_medium_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) inject-env-triad-terms -f notebooks/post_google_sheets_soil_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	touch temp_target
+
+################################################
 
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
 	$(RUN) inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $@

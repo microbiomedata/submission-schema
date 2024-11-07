@@ -91,7 +91,7 @@ update-linkml:
 	poetry add -D linkml@latest
 
 all: site
-site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad \
 gen-project gendoc project/json/nmdc_submission_schema.json
 
 %.yaml: gen-project
