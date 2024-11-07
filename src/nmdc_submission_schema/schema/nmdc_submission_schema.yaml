@@ -7297,8 +7297,8 @@ enums:
         text: subpolar coniferous forest biome [ENVO:01000250]
       subtropical broadleaf forest biome [ENVO:01000201]:
         text: subtropical broadleaf forest biome [ENVO:01000201]
-      subtropical coniferous forest biome [ENVO:01000209]:
-        text: subtropical coniferous forest biome [ENVO:01000209]
+      subtropical coniferous forest biome [ENVO:s01000209]:
+        text: subtropical coniferous forest biome [ENVO:s01000209]
       subtropical dry broadleaf forest biome [ENVO:01000225]:
         text: subtropical dry broadleaf forest biome [ENVO:01000225]
       subtropical grassland biome [ENVO:01000191]:
@@ -57047,4 +57047,4 @@ classes:
     - alternative_identifiers
     - type
     class_uri: nmdc:NamedThing
-source_file: /Users/SMoxon/Documents/src/submission-schema/src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+source_file: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml

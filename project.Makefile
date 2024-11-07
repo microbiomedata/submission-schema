@@ -181,6 +181,11 @@ local/nmdc.yaml
 		--format yaml $@.raw > $@
 	- $(RUN) linkml-lint $@ > local/with_modifications.lint_report.txt
 
+ingest_triad: notebooks/*.tsv
+	$(RUN) inject-env-triad-terms -f notebooks/post_google_sheets_soil_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	$(RUN) inject-env-triad-terms -f notebooks/post_google_sheets_soil_env_medium_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	$(RUN) inject-env-triad-terms -f notebooks/post_google_sheets_soil_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
 	$(RUN) inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $@
 	#cp $< $@

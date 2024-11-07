@@ -3,12 +3,23 @@ from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.linkml_model import EnumDefinition, EnumDefinitionName, PermissibleValue, SchemaDefinition
 import csv
+import click
 
 repo_root = Path(__file__).resolve().parent.parent.parent.parent
 
 # Paths to the source and target schema files
 SOURCE_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 TARGET_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
+SOIL_ENV_LOCAL_PATH = "post_google_sheets_soil_env_local_scale.tsv"
+SOIL_ENV_MEDIUM_PATH = "post_google_sheets_soil_env_medium_scale.tsv"
+SOIL_ENV_BROAD_PATH = "post_google_sheets_soil_env_broad_scale.tsv"
+
+
+enum_file_mappings = {
+    SOIL_ENV_LOCAL_PATH: "EnvLocalScaleSoilEnum",
+    SOIL_ENV_MEDIUM_PATH: "EnvMediumScaleSoilEnum",
+    SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum"
+}
 
 
 def parse_tsv_to_dict(file_path):
@@ -57,9 +68,7 @@ def inject_terms_into_schema(values_file_path: Path,
     sv.add_enum(enum_def)
     return sv.schema
 
-
-def ingest(enum_name: str,
-           values_file_path: Path,
+def ingest(values_file_path: Path,
            source_schema_yaml_path: Path = SOURCE_SCHEMA_YAML_PATH,
            target_schema_yaml_path: Path = TARGET_SCHEMA_YAML_PATH) -> None:
     """
@@ -72,6 +81,10 @@ def ingest(enum_name: str,
     """
     # Define files and corresponding enumeration names
 
+    enum_name = enum_file_mappings.get(values_file_path.name)
+    if enum_name is None:
+        raise ValueError(f"Enumeration name not found for file: {values_file_path}")
+
     sv = SchemaView(source_schema_yaml_path)
     # Load, inject terms, and save the updated schema for each file
     schema = inject_terms_into_schema(values_file_path,
@@ -82,3 +95,23 @@ def ingest(enum_name: str,
     with target_schema_yaml_path.open("w", encoding="utf-8") as file:
         file.write(yaml_dumper.dumps(schema))
 
+
+@click.command()
+@click.option("-f", "--values-file-path",
+              type=click.Path(exists=True, path_type=Path), required=True,
+              help="Path to the TSV file containing the terms to replace the Enum PVs with.")
+@click.option("-i", "--source-schema-yaml-path",
+              type=click.Path(exists=True, path_type=Path),
+              default=SOURCE_SCHEMA_YAML_PATH,
+              help="Path to the source schema YAML file.")
+@click.option("-o", "--target-schema-yaml-path",
+              type=click.Path(path_type=Path),
+              default=TARGET_SCHEMA_YAML_PATH,
+              help="Path to the target schema YAML file.")
+def main(values_file_path, source_schema_yaml_path, target_schema_yaml_path):
+    """CLI to inject terms from a TSV file into the schema."""
+
+    ingest(values_file_path, source_schema_yaml_path, target_schema_yaml_path)
+
+if __name__ == "__main__":
+    main()
