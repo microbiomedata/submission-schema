@@ -1,4 +1,4 @@
-The following files in the `submission-schema` repo's `notebooks/environmental_context_value_sets` directory are
+The files in the `submission-schema` repo's `notebooks/environmental_context_value_sets` directory are
 provided as a one step in adding `Extension`-specific environmental context enumerations to the NMDC submission schema.
 
 The `Extensions` (also called Environments, Packages, etc.) are defined in
@@ -15,29 +15,9 @@ those context fields, but the guidance is only specific to what classes would re
 address what subsets of classes could go in the fields on an Extension-byExtension basis. For example, it would not make
 sense to say the ten env_broad_scale of a soil samples was 'ocean biome [ENVO:01000048]'.
 
-* sediment/env_medium/post_google_sheets_sediment_env_medium.ipynb
-* sediment/env_medium/post_google_sheets_sediment_env_medium.tsv
-*
-* soil/discover_excludable_soils_curated.tsv
-* soil/discover_excludable_soils.ipynb
-* soil/discover_excludable_soils.tsv
-*
-* soil/env_local_scale/post_google_sheets_soil_env_local_scale_initial.tsv
-* soil/env_local_scale/post_google_sheets_soil_env_local_scale.ipynb
-* soil/env_local_scale/post_google_sheets_soil_env_local_scale.tsv
-* soil/env_medium/post_google_sheets_soil_env_medium.ipynb
-* soil/env_medium/post_google_sheets_soil_env_medium_retention_justification.tsv
-* soil/env_medium/post_google_sheets_soil_env_medium.tsv
-* soil/gold/gold-soils-by-sparql.rq
-* soil/gold/gold-soils-by-sparql.tsv
-* soil/gold/gold-soils.tsv
-* soil/gold/goldterms-with-support-graphs.png
-* soil/gold/wide_gold_soils.py
-* soil/gold/wide_gold_soils.tsv
-* soil/notebooks.Makefile
-* water/env_broad_scale/post_google_sheets_water_env_broad_scale.ipynb
-* water/env_broad_scale/post_google_sheets_water_env_broad_scale.tsv
-* water/env_broad_scale/post_google_sheets_water_env_medium.ipynb
+We assume that some exploration may have already been done with other tools, followed by human review may have been
+performed, but these notebooks do not yet consult voting sheets. They do not inject the value sets into LinkML YAML
+files as enumerations either.
 
 ## Generating the env_broad_scale value set for soil samples:
 
