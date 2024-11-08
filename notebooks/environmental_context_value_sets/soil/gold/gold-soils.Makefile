@@ -1,4 +1,8 @@
-notebooks/gold-soils.tsv: local/goldterms.db local/envo.db
+TASK_ROOT=notebooks/environmental_context_value_sets/soil/gold/
+
+UP_FOUR=../../../..
+
+gold-soils-by-semsql.tsv: $(UP_FOUR)/local/goldterms.db $(UP_FOUR)/local/envo.db
 	poetry run sqlite3 -header -separator '	' $(word 1, $^) "\
 	ATTACH DATABASE '$(word 2, $^)' AS envo; \
 	select \
@@ -13,3 +17,8 @@ notebooks/gold-soils.tsv: local/goldterms.db local/envo.db
 	s.predicate not in ('rdf:type', 'rdfs:subClassOf', 'oio:hasExactSynonym', 'owl:equivalentClass' ) \
 	and \
 	ee.object = 'GOLDTERMS:4212'" > $@
+
+gold-soils-by-semsql-wide.tsv: gold-soils-by-semsql.tsv
+	poetry run python gold_soils_by_semsql_wide.py \
+		--input-file $< \
+		--output-file $@
