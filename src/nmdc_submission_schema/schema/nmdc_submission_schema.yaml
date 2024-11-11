@@ -353,28 +353,16 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  integer:
-    name: integer
-    description: An integer
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
     notes:
     - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
+      lower case "uriorcurie".
     from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
-  double:
-    name: double
-    description: A real number that conforms to the xsd:double specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "double".
-    from_schema: https://example.com/nmdc_submission_schema
-    close_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:double
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
@@ -398,16 +386,6 @@ types:
     - schema:Number
     base: Decimal
     uri: xsd:decimal
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
-    from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
   string:
     name: string
     description: A character string
@@ -420,6 +398,28 @@ types:
     - schema:Text
     base: str
     uri: xsd:string
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
+    from_schema: https://example.com/nmdc_submission_schema
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
   boolean:
     name: boolean
     description: A binary (true or false) value
@@ -6797,54 +6797,22 @@ enums:
   EnvLocalScaleSoilEnum:
     name: EnvLocalScaleSoilEnum
     permissible_values:
-      abandoned watercourse [ENVO:00000524]:
-        text: abandoned watercourse [ENVO:00000524]
       active permafrost layer [ENVO:04000009]:
         text: active permafrost layer [ENVO:04000009]
-      agricultural ecosystem [ENVO:00000077]:
-        text: agricultural ecosystem [ENVO:00000077]
-      agricultural field [ENVO:00000114]:
-        text: agricultural field [ENVO:00000114]
       alas [ENVO:00000438]:
         text: alas [ENVO:00000438]
-      apron [ENVO:00000530]:
-        text: apron [ENVO:00000530]
-      arable land [ENVO:01001177]:
-        text: arable land [ENVO:01001177]
-      arete [ENVO:00000429]:
-        text: arete [ENVO:00000429]
       badland [ENVO:00000127]:
         text: badland [ENVO:00000127]
       beach [ENVO:00000091]:
         text: beach [ENVO:00000091]
-      beach ridge [ENVO:00000529]:
-        text: beach ridge [ENVO:00000529]
-      biochar [ENVO:2000007]:
-        text: biochar [ENVO:2000007]
-      blowout [ENVO:00000313]:
-        text: blowout [ENVO:00000313]
-      booth [ENVO:03501309]:
-        text: booth [ENVO:03501309]
-      borehole [ENVO:00002226]:
-        text: borehole [ENVO:00002226]
-      boundary wall [ENVO:01000466]:
-        text: boundary wall [ENVO:01000466]
-      bridge [ENVO:00000075]:
-        text: bridge [ENVO:00000075]
-      burrow [ENVO:01000429]:
-        text: burrow [ENVO:01000429]
       butte [ENVO:00000287]:
         text: butte [ENVO:00000287]
-      calanque [ENVO:00000567]:
-        text: calanque [ENVO:00000567]
       caldera [ENVO:00000096]:
         text: caldera [ENVO:00000096]
       campground [ENVO:01000935]:
         text: campground [ENVO:01000935]
       canyon [ENVO:00000169]:
         text: canyon [ENVO:00000169]
-      causeway [ENVO:00000158]:
-        text: causeway [ENVO:00000158]
       cave [ENVO:00000067]:
         text: cave [ENVO:00000067]
       channel [ENVO:03000117]:
@@ -6853,110 +6821,68 @@ enums:
         text: cirque [ENVO:00000155]
       cliff [ENVO:00000087]:
         text: cliff [ENVO:00000087]
-      continental divide [ENVO:00000293]:
-        text: continental divide [ENVO:00000293]
       crater [ENVO:00000514]:
         text: crater [ENVO:00000514]
       crevasse [ENVO:00000320]:
         text: crevasse [ENVO:00000320]
-      crevice [ENVO:01000294]:
-        text: crevice [ENVO:01000294]
       cryosphere [ENVO:03000143]:
         text: cryosphere [ENVO:03000143]
       dam [ENVO:00000074]:
         text: dam [ENVO:00000074]
-      dell [ENVO:00000439]:
-        text: dell [ENVO:00000439]
       desert [ENVO:01001357]:
         text: desert [ENVO:01001357]
       drainage basin [ENVO:00000291]:
         text: drainage basin [ENVO:00000291]
-      drawbridge [ENVO:03501245]:
-        text: drawbridge [ENVO:03501245]
-      driveway [ENVO:01001280]:
-        text: driveway [ENVO:01001280]
       drumlin [ENVO:00000276]:
         text: drumlin [ENVO:00000276]
       dry lake [ENVO:00000277]:
         text: dry lake [ENVO:00000277]
       dune [ENVO:00000170]:
         text: dune [ENVO:00000170]
+      endorheic basin [ENVO:00000551]:
+        text: endorheic basin [ENVO:00000551]
       escarpment [ENVO:00000280]:
         text: escarpment [ENVO:00000280]
       esker [ENVO:00000282]:
         text: esker [ENVO:00000282]
-      fairground [ENVO:01000985]:
-        text: fairground [ENVO:01000985]
       farm [ENVO:00000078]:
         text: farm [ENVO:00000078]
       fen [ENVO:00000232]:
         text: fen [ENVO:00000232]
-      fence [ENVO:01000468]:
-        text: fence [ENVO:01000468]
-      firebreak [ENVO:03000132]:
-        text: firebreak [ENVO:03000132]
       fjord [ENVO:00000039]:
         text: fjord [ENVO:00000039]
       flood plain [ENVO:00000255]:
         text: flood plain [ENVO:00000255]
-      floodway [ENVO:00000256]:
-        text: floodway [ENVO:00000256]
-      fomite [ENVO:00010358]:
-        text: fomite [ENVO:00010358]
-      ford [ENVO:00000411]:
-        text: ford [ENVO:00000411]
-      forest ecosystem [ENVO:01001243]:
-        text: forest ecosystem [ENVO:01001243]
-      forested area [ENVO:00000111]:
-        text: forested area [ENVO:00000111]
       frost heave [ENVO:01001568]:
         text: frost heave [ENVO:01001568]
-      frost-formed hummock [ENVO:01001538]:
-        text: frost-formed hummock [ENVO:01001538]
-      frozen land [ENVO:01001524]:
-        text: frozen land [ENVO:01001524]
       fumarole [ENVO:00000216]:
         text: fumarole [ENVO:00000216]
       garden [ENVO:00000011]:
         text: garden [ENVO:00000011]
-      gas well [ENVO:01001870]:
-        text: gas well [ENVO:01001870]
       glacier [ENVO:00000133]:
         text: glacier [ENVO:00000133]
-      graben [ENVO:00000290]:
-        text: graben [ENVO:00000290]
-      grassland area [ENVO:00000106]:
-        text: grassland area [ENVO:00000106]
       greenhouse [ENVO:03600087]:
         text: greenhouse [ENVO:03600087]
       harbour [ENVO:00000463]:
         text: harbour [ENVO:00000463]
-      hedge [ENVO:00000046]:
-        text: hedge [ENVO:00000046]
       hill [ENVO:00000083]:
         text: hill [ENVO:00000083]
-      hillock [ENVO:03501238]:
-        text: hillock [ENVO:03501238]
-      hillside [ENVO:01000333]:
-        text: hillside [ENVO:01000333]
-      horst [ENVO:00000289]:
-        text: horst [ENVO:00000289]
       hummock [ENVO:00000516]:
         text: hummock [ENVO:00000516]
-      ice wedge [ENVO:03600068]:
-        text: ice wedge [ENVO:03600068]
       isthmus [ENVO:00000174]:
         text: isthmus [ENVO:00000174]
+      kame [ENVO:00000542]:
+        text: kame [ENVO:00000542]
+      karst [ENVO:00000175]:
+        text: karst [ENVO:00000175]
+      kipuka [ENVO:00000410]:
+        text: kipuka [ENVO:00000410]
       landfill [ENVO:00000533]:
         text: landfill [ENVO:00000533]
-      landslide [ENVO:00000520]:
-        text: landslide [ENVO:00000520]
-      lock [ENVO:00000357]:
-        text: lock [ENVO:00000357]
+      machair [ENVO:00000417]:
+        text: machair [ENVO:00000417]
       marsh [ENVO:00000035]:
         text: marsh [ENVO:00000035]
-      massif [ENVO:00000381]:
-        text: massif [ENVO:00000381]
       meadow ecosystem [ENVO:00000108]:
         text: meadow ecosystem [ENVO:00000108]
       mesa [ENVO:00000179]:
@@ -6969,42 +6895,28 @@ enums:
         text: monadnock [ENVO:00000432]
       moraine [ENVO:00000177]:
         text: moraine [ENVO:00000177]
-      mound [ENVO:00000180]:
-        text: mound [ENVO:00000180]
       mountain [ENVO:00000081]:
         text: mountain [ENVO:00000081]
+      nunatak [ENVO:00000181]:
+        text: nunatak [ENVO:00000181]
       oil spill [ENVO:00002061]:
         text: oil spill [ENVO:00002061]
-      orchard [ENVO:00000115]:
-        text: orchard [ENVO:00000115]
-      outcrop [ENVO:01000302]:
-        text: outcrop [ENVO:01000302]
-      overpass [ENVO:03501248]:
-        text: overpass [ENVO:03501248]
+      palsa [ENVO:00000489]:
+        text: palsa [ENVO:00000489]
       park [ENVO:00000562]:
         text: park [ENVO:00000562]
       pasture [ENVO:00000266]:
         text: pasture [ENVO:00000266]
       peatland [ENVO:00000044]:
         text: peatland [ENVO:00000044]
-      permafrost [ENVO:00000134]:
-        text: permafrost [ENVO:00000134]
-      pier [ENVO:00000563]:
-        text: pier [ENVO:00000563]
-      pinnacle [ENVO:00000481]:
-        text: pinnacle [ENVO:00000481]
       pit [ENVO:01001871]:
         text: pit [ENVO:01001871]
       plain [ENVO:00000086]:
         text: plain [ENVO:00000086]
       plateau [ENVO:00000182]:
         text: plateau [ENVO:00000182]
-      playground [ENVO:03500001]:
-        text: playground [ENVO:03500001]
       polje [ENVO:00000325]:
         text: polje [ENVO:00000325]
-      pond [ENVO:00000033]:
-        text: pond [ENVO:00000033]
       prairie [ENVO:00000260]:
         text: prairie [ENVO:00000260]
       quarry [ENVO:00000284]:
@@ -7015,28 +6927,26 @@ enums:
         text: ravine [ENVO:01000446]
       refinery [ENVO:02000141]:
         text: refinery [ENVO:02000141]
-      residential backyard [ENVO:03600033]:
-        text: residential backyard [ENVO:03600033]
       rhizosphere [ENVO:00005801]:
         text: rhizosphere [ENVO:00005801]
+      ria [ENVO:00000418]:
+        text: ria [ENVO:00000418]
       ridge [ENVO:00000283]:
         text: ridge [ENVO:00000283]
+      rill [ENVO:00000496]:
+        text: rill [ENVO:00000496]
       river [ENVO:00000022]:
         text: river [ENVO:00000022]
       riverfront [ENVO:03501239]:
         text: riverfront [ENVO:03501239]
       road [ENVO:00000064]:
         text: road [ENVO:00000064]
-      roadside [ENVO:01000447]:
-        text: roadside [ENVO:01000447]
-      rockfall [ENVO:00000521]:
-        text: rockfall [ENVO:00000521]
-      savanna [ENVO:00000261]:
-        text: savanna [ENVO:00000261]
+      scrubland area [ENVO:00000300]:
+        text: scrubland area [ENVO:00000300]
+      shingle beach [ENVO:00000545]:
+        text: shingle beach [ENVO:00000545]
       shore [ENVO:00000304]:
         text: shore [ENVO:00000304]
-      sidewalk [ENVO:01001279]:
-        text: sidewalk [ENVO:01001279]
       sinkhole [ENVO:00000195]:
         text: sinkhole [ENVO:00000195]
       slope [ENVO:00002000]:
@@ -7045,6 +6955,8 @@ enums:
         text: soil cryoturbate [ENVO:01001665]
       spring [ENVO:00000027]:
         text: spring [ENVO:00000027]
+      spur [ENVO:01001489]:
+        text: spur [ENVO:01001489]
       stack [ENVO:00000419]:
         text: stack [ENVO:00000419]
       steppe [ENVO:00000262]:
@@ -7055,34 +6967,24 @@ enums:
         text: swale [ENVO:00000543]
       terrace [ENVO:00000508]:
         text: terrace [ENVO:00000508]
-      terracette [ENVO:00000441]:
-        text: terracette [ENVO:00000441]
       thermokarst [ENVO:03000085]:
         text: thermokarst [ENVO:03000085]
       trench [ENVO:01000649]:
         text: trench [ENVO:01000649]
       tunnel [ENVO:00000068]:
         text: tunnel [ENVO:00000068]
+      tuya [ENVO:00000370]:
+        text: tuya [ENVO:00000370]
       valley [ENVO:00000100]:
         text: valley [ENVO:00000100]
-      vein [ENVO:01000670]:
-        text: vein [ENVO:01000670]
       volcano [ENVO:00000247]:
         text: volcano [ENVO:00000247]
       wadi [ENVO:00000031]:
         text: wadi [ENVO:00000031]
       watershed [ENVO:00000292]:
         text: watershed [ENVO:00000292]
-      wave-cut platform [ENVO:00000421]:
-        text: wave-cut platform [ENVO:00000421]
-      weir [ENVO:00000535]:
-        text: weir [ENVO:00000535]
       well [ENVO:00000026]:
         text: well [ENVO:00000026]
-      wetland ecosystem [ENVO:01001209]:
-        text: wetland ecosystem [ENVO:01001209]
-      woodland area [ENVO:00000109]:
-        text: woodland area [ENVO:00000109]
       woodland clearing [ENVO:00000444]:
         text: woodland clearing [ENVO:00000444]
   EnvMediumScaleSoilEnum:
@@ -7092,6 +6994,8 @@ enums:
         text: acidic soil [ENVO:01001185]
       acrisol [ENVO:00002234]:
         text: acrisol [ENVO:00002234]
+      agricultural soil [ENVO:00002259]:
+        text: agricultural soil [ENVO:00002259]
       albeluvisol [ENVO:00002233]:
         text: albeluvisol [ENVO:00002233]
       alisol [ENVO:00002231]:
@@ -7148,16 +7052,24 @@ enums:
         text: ferralsol [ENVO:00002246]
       fertilized soil [ENVO:00005754]:
         text: fertilized soil [ENVO:00005754]
+      field soil [ENVO:00005755]:
+        text: field soil [ENVO:00005755]
       fluvisol [ENVO:00002273]:
         text: fluvisol [ENVO:00002273]
+      forest soil [ENVO:00002261]:
+        text: forest soil [ENVO:00002261]
       friable-frozen soil [ENVO:01001528]:
         text: friable-frozen soil [ENVO:01001528]
       frost-susceptible soil [ENVO:01001638]:
         text: frost-susceptible soil [ENVO:01001638]
       frozen compost soil [ENVO:00005765]:
         text: frozen compost soil [ENVO:00005765]
+      frozen soil [ENVO:01001526]:
+        text: frozen soil [ENVO:01001526]
       gleysol [ENVO:00002244]:
         text: gleysol [ENVO:00002244]
+      grassland soil [ENVO:00005750]:
+        text: grassland soil [ENVO:00005750]
       gypsisol [ENVO:00002245]:
         text: gypsisol [ENVO:00002245]
       hard-frozen soil [ENVO:01001525]:
@@ -7210,12 +7122,18 @@ enums:
         text: plinthosol [ENVO:00002250]
       podzol [ENVO:00002257]:
         text: podzol [ENVO:00002257]
+      pond soil [ENVO:00005764]:
+        text: pond soil [ENVO:00005764]
       red soil [ENVO:00005790]:
         text: red soil [ENVO:00005790]
       regosol [ENVO:00002256]:
         text: regosol [ENVO:00002256]
+      roadside soil [ENVO:00005743]:
+        text: roadside soil [ENVO:00005743]
       rubber plantation soil [ENVO:00005788]:
         text: rubber plantation soil [ENVO:00005788]
+      savanna soil [ENVO:00005746]:
+        text: savanna soil [ENVO:00005746]
       sawah soil [ENVO:00005752]:
         text: sawah soil [ENVO:00005752]
       soil [ENVO:00001998]:

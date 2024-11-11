@@ -31,4 +31,4 @@ enums:
         text: subtropical coniferous forest biome [ENVO:01000209]
       tidal mangrove shrubland [ENVO:01001369]:
         text: tidal mangrove shrubland [ENVO:01001369]
-source_file: /Users/SMoxon/Documents/src/submission-schema/tests/inputs/base_schema.yaml
+source_file: /home/mark/gitrepos/submission-schema/tests/inputs/base_schema.yaml
