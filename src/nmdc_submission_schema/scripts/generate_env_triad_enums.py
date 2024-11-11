@@ -68,22 +68,25 @@ def inject_terms_into_schema(values_file_path: Path,
     sv.add_enum(enum_def)
     return sv.schema
 
+
 def ingest(values_file_path: Path,
            source_schema_yaml_path: Path = SOURCE_SCHEMA_YAML_PATH,
-           target_schema_yaml_path: Path = TARGET_SCHEMA_YAML_PATH) -> None:
+           target_schema_yaml_path: Path = TARGET_SCHEMA_YAML_PATH,
+           enum_name: str = None) -> None:
     """
     Inject terms from multiple TSV files into the schema, each under a specified enumeration name.
 
-    :param enum_name : Name of the enumeration to add or update in the schema.
     :param values_file_path: Path to the TSV file containing the terms to replace the Enum PVs with
     :param source_schema_yaml_path: Path to the source schema YAML file.
     :param target_schema_yaml_path: Path to the target schema YAML file.
+    :param enum_name: Dictionary mapping TSV file paths to enumeration names.
     """
     # Define files and corresponding enumeration names
 
-    enum_name = enum_file_mappings.get(values_file_path.name)
     if enum_name is None:
-        raise ValueError(f"Enumeration name not found for file: {values_file_path}")
+        enum_name = enum_file_mappings.get(values_file_path)
+    if enum_name is None:
+        raise ValueError(f"Enumeration name not found for file: {values_file_path.name}")
 
     sv = SchemaView(source_schema_yaml_path)
     # Load, inject terms, and save the updated schema for each file

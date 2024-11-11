@@ -8,11 +8,12 @@ from src.nmdc_submission_schema.scripts.generate_env_triad_enums import parse_ts
 
 
 repo_root = Path(__file__).resolve().parent.parent
+test_files_root = repo_root / "tests" / "inputs"
 
 # Define the paths to the test input files
-SOIL_ENV_LOCAL_PATH = repo_root / "tests/inputs/soil_env_local_test.tsv"
-SOIL_ENV_MEDIUM_PATH = repo_root / "tests/inputs/soil_env_medium_test.tsv"
-SOIL_ENV_BROAD_PATH = repo_root / "tests/inputs/soil_env_broad_test.tsv"
+SOIL_ENV_LOCAL_PATH = test_files_root / "soil_env_local_test.tsv"
+SOIL_ENV_MEDIUM_PATH = test_files_root / "soil_env_medium_test.tsv"
+SOIL_ENV_BROAD_PATH = test_files_root / "soil_env_broad_test.tsv"
 BASE_SCHEMA_PATH = repo_root / "tests/inputs/base_schema.yaml"
 OUTPUT_SCHEMA_PATH = repo_root / "tests/inputs/output_schema.yaml"  # Location for output schema
 
@@ -52,31 +53,33 @@ def test_inject_terms_into_schema(sample_schema_view):
 
 def test_ingest(tmp_path):
     # Define paths to the TSV files and expected enums
-
     file_enum_mappings = [
-        (SOIL_ENV_LOCAL_PATH, "EnvLocalScaleSoilEnum"),
-        (SOIL_ENV_MEDIUM_PATH, "EnvMediumScaleSoilEnum"),
-        (SOIL_ENV_BROAD_PATH, "EnvBroadScaleSoilEnum")
+        {SOIL_ENV_LOCAL_PATH: "EnvLocalScaleSoilEnum"},
+        {SOIL_ENV_MEDIUM_PATH: "EnvMediumScaleSoilEnum"},
+        {SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum"}
     ]
 
-    # Run `main` with real file paths
-    for tsv_path, enum_name in file_enum_mappings:
-        ingest(enum_name=enum_name,
-               values_file_path=tsv_path,
-               source_schema_yaml_path=BASE_SCHEMA_PATH,
-               target_schema_yaml_path=BASE_SCHEMA_PATH)
-
+    # Run `ingest` with real file paths
+    for mapping in file_enum_mappings:
+        for tsv_path, enum_name in mapping.items():  # Iterate over each dictionary and get path and enum name
+            ingest(
+                values_file_path=tsv_path,
+                source_schema_yaml_path=BASE_SCHEMA_PATH,
+                target_schema_yaml_path=BASE_SCHEMA_PATH,
+                enum_name=enum_name  # Pass the specific enum name
+            )
     # Verify that the output schema file contains the injected enums with the correct permissible values
     output_schema_view = SchemaView(str(BASE_SCHEMA_PATH))
 
     # Check that each enum exists with expected permissible values
-    for tsv_path, enum_name in file_enum_mappings:
-        assert enum_name in output_schema_view.schema.enums, f"Enum '{enum_name}' not found in output schema"
+    for mapping in file_enum_mappings:
+        for tsv_path, enum_name in mapping.items():
+            assert enum_name in output_schema_view.schema.enums, f"Enum '{enum_name}' not found in output schema"
 
-        # Load and check permissible values
-        expected_data = parse_tsv_to_dict(tsv_path)
-        sorted_data = sorted(expected_data, key=lambda x: x["term_name"])
-        expected_pvs = [PermissibleValue(text=f"{term['term_name']} [{term['term_id']}]") for term in sorted_data]
+            # Load and check permissible values
+            expected_data = parse_tsv_to_dict(tsv_path)
+            sorted_data = sorted(expected_data, key=lambda x: x["term_name"])
+            expected_pvs = [PermissibleValue(text=f"{term['term_name']} [{term['term_id']}]") for term in sorted_data]
 
-        enum_def = output_schema_view.schema.enums[enum_name]
-        assert list(enum_def.permissible_values.values()) == expected_pvs, f"Permissible values for '{enum_name}' do not match expected data"
+            enum_def = output_schema_view.schema.enums[enum_name]
+            assert list(enum_def.permissible_values.values()) == expected_pvs, f"Permissible values for '{enum_name}' do not match expected data"
