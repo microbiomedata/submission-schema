@@ -15,9 +15,11 @@ those context fields, but the guidance is only specific to what classes would re
 address what subsets of classes could go in the fields on an Extension-byExtension basis. For example, it would not make
 sense to say the ten env_broad_scale of a soil samples was 'ocean biome [ENVO:01000048]'.
 
-We assume that some exploration may have already been done with other tools, followed by human review may have been
-performed, but these notebooks do not yet consult voting sheets. They do not inject the value sets into LinkML YAML
-files as enumerations either.
+We assume that some exploration may have already been done with other tools, followed by human review, 
+but these notebooks do not yet consult voting sheets,
+such as those created in the external-metadata-awareness repo, like [soil-env_medium.Makefile](https://github.com/microbiomedata/external-metadata-awareness/blob/main/Makefiles/soil-env_medium.Makefile),
+which have been [shared as Google Sheets](https://docs.google.com/spreadsheets/d/1qYrUvWK6toajWpadaEJ66X05MjiZ7YAB/edit?gid=502854718#gid=502854718) at times.
+They do not [inject the value sets into LinkML YAML files as enumerations](https://github.com/microbiomedata/submission-schema/pull/260) either.
 
 ## Generating the env_broad_scale value set for soil samples:
 
