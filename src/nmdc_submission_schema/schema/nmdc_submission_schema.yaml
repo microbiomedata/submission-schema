@@ -7295,8 +7295,8 @@ enums:
         text: subpolar coniferous forest biome [ENVO:01000250]
       subtropical broadleaf forest biome [ENVO:01000201]:
         text: subtropical broadleaf forest biome [ENVO:01000201]
-      subtropical coniferous forest biome [ENVO:s01000209]:
-        text: subtropical coniferous forest biome [ENVO:s01000209]
+      subtropical coniferous forest biome [ENVO:01000209]:
+        text: subtropical coniferous forest biome [ENVO:01000209]
       subtropical dry broadleaf forest biome [ENVO:01000225]:
         text: subtropical dry broadleaf forest biome [ENVO:01000225]
       subtropical grassland biome [ENVO:01000191]:
