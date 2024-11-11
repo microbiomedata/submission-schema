@@ -129,7 +129,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "methane": {
@@ -613,7 +613,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "magnesium": {
@@ -1616,7 +1616,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "light_type": {
@@ -2351,7 +2351,7 @@
             "type": "object"
         },
         "DnaSampleFormatEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "10 mM Tris-HCl",
                 "DNAStable",
@@ -2744,7 +2744,6 @@
                 "Digestate",
                 "Digestive system",
                 "Digestive tube",
-                "Dinoflagellates",
                 "Dissolved organics (aerobic)",
                 "Dissolved organics (anaerobic)",
                 "Distilled water",
@@ -2805,6 +2804,7 @@
                 "Freshwater debries",
                 "Frozen remains",
                 "Frozen seafood",
+                "Fruit processing",
                 "Fumaroles",
                 "Fungi",
                 "Galls",
@@ -3131,6 +3131,7 @@
                 "Small intestine",
                 "Smooth muscle",
                 "Smooth muscles",
+                "Snow",
                 "Soda lake",
                 "Soft tissue",
                 "Soft tissues",
@@ -3679,7 +3680,7 @@
             "type": "object"
         },
         "EnvBroadScaleSoilEnum": {
-            "description": "placeholder enum descr, DO NOT SORT",
+            "description": "",
             "enum": [
                 "arid biome [ENVO:01001838]",
                 "subalpine biome [ENVO:01001837]",
@@ -3740,7 +3741,7 @@
             "type": "string"
         },
         "EnvLocalScaleSoilEnum": {
-            "description": "placeholder enum descr, DO NOT SORT",
+            "description": "",
             "enum": [
                 "astronomical body part [ENVO:01000813]",
                 "__coast [ENVO:01000687]",
@@ -3839,7 +3840,7 @@
             "type": "string"
         },
         "EnvMediumSoilEnum": {
-            "description": "placeholder enum descr, DO NOT SORT",
+            "description": "",
             "enum": [
                 "pathogen-suppressive soil [ENVO:03600036]",
                 "mangrove biome soil [ENVO:02000138]",
@@ -3948,7 +3949,7 @@
             "type": "string"
         },
         "EnvPackageEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "soil"
             ],
@@ -4122,7 +4123,7 @@
             "type": "string"
         },
         "GrowthFacilEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "experimental_garden",
                 "field",
@@ -4447,7 +4448,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "lithology": {
@@ -5240,7 +5241,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "lithology": {
@@ -6056,7 +6057,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "misc_param": {
@@ -6377,6 +6378,7 @@
                 },
                 "dna_sample_name": {
                     "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "pattern": "^[_a-zA-Z0-9-]*$",
                     "type": "string"
                 },
                 "dna_seq_project": {
@@ -6488,6 +6490,7 @@
                 },
                 "dna_sample_name": {
                     "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "pattern": "^[_a-zA-Z0-9-]*$",
                     "type": "string"
                 },
                 "dna_seq_project": {
@@ -6658,6 +6661,7 @@
                     "description": "Give the RNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
                     "maximum": 2000,
                     "minimum": 0,
+                    "pattern": "^[_a-zA-Z0-9-]*$",
                     "type": "string"
                 },
                 "rna_seq_project": {
@@ -6957,7 +6961,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "misc_param": {
@@ -7586,7 +7590,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "light_regm": {
@@ -8027,7 +8031,7 @@
             "type": "string"
         },
         "RelToOxygenEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "aerobe",
                 "anaerobe",
@@ -8041,7 +8045,7 @@
             "type": "string"
         },
         "RnaSampleFormatEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "10 mM Tris-HCl",
                 "DNAStable",
@@ -8723,7 +8727,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "light_regm": {
@@ -9642,7 +9646,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "lbc_thirty": {
@@ -10806,6 +10810,7 @@
                 "Spring",
                 "Spring sediment",
                 "Squamous cell carcinoma",
+                "Stolon",
                 "Stomach",
                 "Stomach content",
                 "Stomach: Cardiac",
@@ -11061,7 +11066,7 @@
             "type": "string"
         },
         "StoreCondEnum": {
-            "description": "placeholder enum descr",
+            "description": "",
             "enum": [
                 "fresh",
                 "frozen",
@@ -11412,7 +11417,7 @@
                 },
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
-                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)\\s[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)$",
+                    "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
                 "misc_param": {

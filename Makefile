@@ -91,7 +91,7 @@ update-linkml:
 	poetry add -D linkml@latest
 
 all: site
-site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad \
 gen-project gendoc project/json/nmdc_submission_schema.json
 
 %.yaml: gen-project
@@ -124,7 +124,7 @@ test-schema:
 	$(RUN) gen-project ${GEN_PARGS} -d tmp $(SOURCE_SCHEMA_PATH)
 
 test-python:
-	$(RUN) python -m unittest discover
+	$(RUN) pytest
 
 lint:
 	$(RUN) linkml-lint $(SOURCE_SCHEMA_PATH)

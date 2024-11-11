@@ -1,0 +1,34 @@
+name: nmdc_submission_schema_test
+description: nmdc_submission_schema_test
+id: https://example.com/nmdc_submission_schema_test
+version: 0.0.0
+default_prefix: https://example.com/nmdc_submission_schema_test/
+enums:
+  EnvLocalScaleSoilEnum:
+    name: EnvLocalScaleSoilEnum
+    permissible_values:
+      agricultural soil [ENVO:00000077]:
+        text: agricultural soil [ENVO:00000077]
+      dune soil [ENVO:00000170]:
+        text: dune soil [ENVO:00000170]
+      forest soil [ENVO:00000111]:
+        text: forest soil [ENVO:00000111]
+  EnvMediumScaleSoilEnum:
+    name: EnvMediumScaleSoilEnum
+    permissible_values:
+      alluvial paddy field soil [ENVO:00005759]:
+        text: alluvial paddy field soil [ENVO:00005759]
+      fertilized soil [ENVO:00005754]:
+        text: fertilized soil [ENVO:00005754]
+      gypsisol [ENVO:00002245]:
+        text: gypsisol [ENVO:00002245]
+  EnvBroadScaleSoilEnum:
+    name: EnvBroadScaleSoilEnum
+    permissible_values:
+      savanna biome [ENVO:01000178]:
+        text: savanna biome [ENVO:01000178]
+      subtropical coniferous forest biome [ENVO:01000209]:
+        text: subtropical coniferous forest biome [ENVO:01000209]
+      tidal mangrove shrubland [ENVO:01001369]:
+        text: tidal mangrove shrubland [ENVO:01001369]
+source_file: /Users/SMoxon/Documents/src/submission-schema/tests/inputs/base_schema.yaml
