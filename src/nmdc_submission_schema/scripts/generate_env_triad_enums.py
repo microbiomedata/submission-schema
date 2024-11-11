@@ -84,7 +84,7 @@ def ingest(values_file_path: Path,
     # Define files and corresponding enumeration names
 
     if enum_name is None:
-        enum_name = enum_file_mappings.get(values_file_path)
+        enum_name = enum_file_mappings.get(values_file_path.name)
     if enum_name is None:
         raise ValueError(f"Enumeration name not found for file: {values_file_path.name}")
 
