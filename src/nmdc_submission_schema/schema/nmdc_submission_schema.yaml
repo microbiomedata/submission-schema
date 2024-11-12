@@ -363,29 +363,6 @@ types:
     base: URIorCURIE
     uri: xsd:anyURI
     repr: str
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "float".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:float
-  decimal:
-    name: decimal
-    description: A real number with arbitrary precision that conforms to the xsd:decimal
-      specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "decimal".
-    from_schema: https://example.com/nmdc_submission_schema
-    broad_mappings:
-    - schema:Number
-    base: Decimal
-    uri: xsd:decimal
   string:
     name: string
     description: A character string
@@ -398,6 +375,29 @@ types:
     - schema:Text
     base: str
     uri: xsd:string
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "decimal".
+    from_schema: https://example.com/nmdc_submission_schema
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
   integer:
     name: integer
     description: An integer

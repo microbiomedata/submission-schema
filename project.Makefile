@@ -201,6 +201,8 @@ temp_target: $(WATCHED_FILES) src/nmdc_submission_schema/schema/nmdc_submission_
 	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_broad_scale/post_google_sheets_soil_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	touch temp_target
 
+test_deploy_docs_action: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad project/json/nmdc_submission_schema.json testdoc
+
 ################################################
 
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
