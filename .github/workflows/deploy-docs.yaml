@@ -52,6 +52,7 @@ jobs:
           clean \
           schema-clean \
           src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+          ingest-triad \
           project/json/nmdc_submission_schema.json
     
     - name: Build documentation.
