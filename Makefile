@@ -147,7 +147,7 @@ gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
 
-testdoc: gendoc serve
+testdoc: test_deploy_docs_action gendoc serve
 
 MKDOCS = $(RUN) mkdocs
 mkd-%:
