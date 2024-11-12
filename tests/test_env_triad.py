@@ -55,7 +55,7 @@ def test_ingest(tmp_path):
     # Define paths to the TSV files and expected enums
     file_enum_mappings = [
         {SOIL_ENV_LOCAL_PATH: "EnvLocalScaleSoilEnum"},
-        {SOIL_ENV_MEDIUM_PATH: "EnvMediumScaleSoilEnum"},
+        {SOIL_ENV_MEDIUM_PATH: "EnvMediumSoilEnum"},
         {SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum"}
     ]
 

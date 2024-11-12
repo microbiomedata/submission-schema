@@ -197,7 +197,7 @@ ingest-triad: temp_target
 # Intermediate target that has all dependencies
 temp_target: $(WATCHED_FILES) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_local_scale/post_google_sheets_soil_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_medium/post_google_sheets_soil_env_medium_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_medium/post_google_sheets_soil_env_medium.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_broad_scale/post_google_sheets_soil_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 	touch temp_target
 

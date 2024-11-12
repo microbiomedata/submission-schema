@@ -11,13 +11,13 @@ repo_root = Path(__file__).resolve().parent.parent.parent.parent
 SOURCE_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 TARGET_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 SOIL_ENV_LOCAL_PATH = "post_google_sheets_soil_env_local_scale.tsv"
-SOIL_ENV_MEDIUM_PATH = "post_google_sheets_soil_env_medium_scale.tsv"
+SOIL_ENV_MEDIUM_PATH = "post_google_sheets_soil_env_medium.tsv"
 SOIL_ENV_BROAD_PATH = "post_google_sheets_soil_env_broad_scale.tsv"
 
 
 enum_file_mappings = {
     SOIL_ENV_LOCAL_PATH: "EnvLocalScaleSoilEnum",
-    SOIL_ENV_MEDIUM_PATH: "EnvMediumScaleSoilEnum",
+    SOIL_ENV_MEDIUM_PATH: "EnvMediumSoilEnum",
     SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum"
 }
 
