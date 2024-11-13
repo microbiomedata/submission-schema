@@ -10,6 +10,7 @@ repo_root = Path(__file__).resolve().parent.parent.parent.parent
 # Paths to the source and target schema files
 SOURCE_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
 TARGET_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
+
 SOIL_ENV_LOCAL_PATH = "post_google_sheets_soil_env_local_scale.tsv"
 SOIL_ENV_MEDIUM_PATH = "post_google_sheets_soil_env_medium.tsv"
 SOIL_ENV_BROAD_PATH = "post_google_sheets_soil_env_broad_scale.tsv"
@@ -19,6 +20,9 @@ WATER_ENV_BROAD_PATH = "post_google_sheets_water_env_broad_scale.tsv"
 SEDIMENT_ENV_LOCAL_PATH = "post_google_sheets_sediment_env_local_scale.tsv"
 SEDIMENT_ENV_MEDIUM_PATH = "post_google_sheets_sediment_env_medium.tsv"
 SEDIMENT_ENV_BROAD_PATH = "post_google_sheets_sediment_env_broad_scale.tsv"
+PLANT_ASSOCIATED_ENV_LOCAL_PATH = "post_google_sheets_plant_associated_env_local_scale.tsv"
+PLANT_ASSOCIATED_ENV_MEDIUM_PATH = "post_google_sheets_plant_associated_env_medium.tsv"
+PLANT_ASSOCIATED__ENV_BROAD_PATH = "post_google_sheets_plant_associated_env_broad_scale.tsv"
 
 enum_file_mappings = {
     SOIL_ENV_LOCAL_PATH: "EnvLocalScaleSoilEnum",
@@ -29,7 +33,10 @@ enum_file_mappings = {
     WATER_ENV_BROAD_PATH: "EnvBroadScaleWaterEnum",
     SEDIMENT_ENV_LOCAL_PATH: "EnvLocalScaleSedimentEnum",
     SEDIMENT_ENV_MEDIUM_PATH: "EnvMediumSedimentEnum",
-    SEDIMENT_ENV_BROAD_PATH: "EnvBroadScaleSedimentEnum"
+    SEDIMENT_ENV_BROAD_PATH: "EnvBroadScaleSedimentEnum",
+    PLANT_ASSOCIATED_ENV_LOCAL_PATH: "EnvLocalScalePlantAssociatedEnum",
+    PLANT_ASSOCIATED_ENV_MEDIUM_PATH: "EnvMediumPlantAssociatedEnum",
+    PLANT_ASSOCIATED__ENV_BROAD_PATH: "EnvBroadScalePlantAssociatedEnum"
 }
 
 
