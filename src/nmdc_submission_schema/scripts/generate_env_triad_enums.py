@@ -13,12 +13,23 @@ TARGET_SCHEMA_YAML_PATH = repo_root / "src/nmdc_submission_schema/schema/nmdc_su
 SOIL_ENV_LOCAL_PATH = "post_google_sheets_soil_env_local_scale.tsv"
 SOIL_ENV_MEDIUM_PATH = "post_google_sheets_soil_env_medium.tsv"
 SOIL_ENV_BROAD_PATH = "post_google_sheets_soil_env_broad_scale.tsv"
-
+WATER_ENV_LOCAL_PATH = "post_google_sheets_water_env_local_scale.tsv"
+WATER_ENV_MEDIUM_PATH = "post_google_sheets_water_env_medium.tsv"
+WATER_ENV_BROAD_PATH = "post_google_sheets_water_env_broad_scale.tsv"
+SEDIMENT_ENV_LOCAL_PATH = "post_google_sheets_sediment_env_local_scale.tsv"
+SEDIMENT_ENV_MEDIUM_PATH = "post_google_sheets_sediment_env_medium.tsv"
+SEDIMENT_ENV_BROAD_PATH = "post_google_sheets_sediment_env_broad_scale.tsv"
 
 enum_file_mappings = {
     SOIL_ENV_LOCAL_PATH: "EnvLocalScaleSoilEnum",
     SOIL_ENV_MEDIUM_PATH: "EnvMediumSoilEnum",
-    SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum"
+    SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum",
+    WATER_ENV_LOCAL_PATH: "EnvLocalScaleWaterEnum",
+    WATER_ENV_MEDIUM_PATH: "EnvMediumWaterEnum",
+    WATER_ENV_BROAD_PATH: "EnvBroadScaleWaterEnum",
+    SEDIMENT_ENV_LOCAL_PATH: "EnvLocalScaleSedimentEnum",
+    SEDIMENT_ENV_MEDIUM_PATH: "EnvMediumSedimentEnum",
+    SEDIMENT_ENV_BROAD_PATH: "EnvBroadScaleSedimentEnum"
 }
 
 
@@ -101,7 +112,7 @@ def ingest(values_file_path: Path,
 
 @click.command()
 @click.option("-f", "--values-file-path",
-              type=click.Path(exists=True, path_type=Path), required=True,
+              type=click.Path(path_type=Path), required=True,
               help="Path to the TSV file containing the terms to replace the Enum PVs with.")
 @click.option("-i", "--source-schema-yaml-path",
               type=click.Path(exists=True, path_type=Path),
@@ -113,6 +124,11 @@ def ingest(values_file_path: Path,
               help="Path to the target schema YAML file.")
 def main(values_file_path, source_schema_yaml_path, target_schema_yaml_path):
     """CLI to inject terms from a TSV file into the schema."""
+
+    # Check if the required files exist
+    if not values_file_path.exists():
+        click.echo(f"Warning: Values file '{values_file_path}' not implemented yet.")
+        return
 
     ingest(values_file_path, source_schema_yaml_path, target_schema_yaml_path)
 
