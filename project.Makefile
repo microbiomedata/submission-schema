@@ -209,8 +209,7 @@ temp_target: $(WATCHED_FILES) src/nmdc_submission_schema/schema/nmdc_submission_
 	done
 	@touch temp_target
 
-test_deploy_docs_action: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad project/json/nmdc_submission_schema.json
-
+test-deploy-docs-gh-action: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad project/json/nmdc_submission_schema.json
 ################################################
 
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
