@@ -6586,6 +6586,214 @@ enums:
         text: Uranium contaminated
       Wetland zone:
         text: Wetland zone
+  EnvMediumWaterEnum:
+    name: EnvMediumWaterEnum
+    permissible_values:
+      acidic water [ENVO:01000358]:
+        text: acidic water [ENVO:01000358]
+      alkaline water [ENVO:01000357]:
+        text: alkaline water [ENVO:01000357]
+      anoxic water [ENVO:01000173]:
+        text: anoxic water [ENVO:01000173]
+      bacon curing brine [ENVO:00003045]:
+        text: bacon curing brine [ENVO:00003045]
+      ballast water [ENVO:01000872]:
+        text: ballast water [ENVO:01000872]
+      borax leachate [ENVO:00002142]:
+        text: borax leachate [ENVO:00002142]
+      brackish water [ENVO:00002019]:
+        text: brackish water [ENVO:00002019]
+      brine [ENVO:00003044]:
+        text: brine [ENVO:00003044]
+      cloud water [ENVO:03600081]:
+        text: cloud water [ENVO:03600081]
+      coastal sea water [ENVO:00002150]:
+        text: coastal sea water [ENVO:00002150]
+      cooling water [ENVO:03600002]:
+        text: cooling water [ENVO:03600002]
+      desalinated water [ENVO:06105269]:
+        text: desalinated water [ENVO:06105269]
+      distilled water [ENVO:00003065]:
+        text: distilled water [ENVO:00003065]
+      ditch water [ENVO:00002158]:
+        text: ditch water [ENVO:00002158]
+      drilling bore water [ENVO:00002159]:
+        text: drilling bore water [ENVO:00002159]
+      drinking water [ENVO:00003064]:
+        text: drinking water [ENVO:00003064]
+      estuarine water [ENVO:01000301]:
+        text: estuarine water [ENVO:01000301]
+      eutrophic water [ENVO:00002224]:
+        text: eutrophic water [ENVO:00002224]
+      fresh water [ENVO:00002011]:
+        text: fresh water [ENVO:00002011]
+      groundwater [ENVO:01001004]:
+        text: groundwater [ENVO:01001004]
+      highly saline water [ENVO:01001039]:
+        text: highly saline water [ENVO:01001039]
+      hydrothermal fluid [ENVO:01000134]:
+        text: hydrothermal fluid [ENVO:01000134]
+      hypereutrophic water [ENVO:01001018]:
+        text: hypereutrophic water [ENVO:01001018]
+      hypersaline water [ENVO:00002012]:
+        text: hypersaline water [ENVO:00002012]
+      hypoxic water [ENVO:01001064]:
+        text: hypoxic water [ENVO:01001064]
+      interstitial water [ENVO:03600009]:
+        text: interstitial water [ENVO:03600009]
+      leachate [ENVO:00002141]:
+        text: leachate [ENVO:00002141]
+      liquid water [ENVO:00002006]:
+        text: liquid water [ENVO:00002006]
+      meltwater [ENVO:01000722]:
+        text: meltwater [ENVO:01000722]
+      mesotrophic water [ENVO:00002225]:
+        text: mesotrophic water [ENVO:00002225]
+      moderately saline water [ENVO:01001038]:
+        text: moderately saline water [ENVO:01001038]
+      muddy water [ENVO:00005793]:
+        text: muddy water [ENVO:00005793]
+      oligotrophic water [ENVO:00002223]:
+        text: oligotrophic water [ENVO:00002223]
+      oxic water [ENVO:01001063]:
+        text: oxic water [ENVO:01001063]
+      pond water [ENVO:00002228]:
+        text: pond water [ENVO:00002228]
+      rainwater [ENVO:01000600]:
+        text: rainwater [ENVO:01000600]
+      rural stormwater [ENVO:01001270]:
+        text: rural stormwater [ENVO:01001270]
+      saline shrimp pond water [ENVO:01001257]:
+        text: saline shrimp pond water [ENVO:01001257]
+      saline water [ENVO:00002010]:
+        text: saline water [ENVO:00002010]
+      sea water [ENVO:00002149]:
+        text: sea water [ENVO:00002149]
+      slightly saline water [ENVO:01001037]:
+        text: slightly saline water [ENVO:01001037]
+      stagnant water [ENVO:03501370]:
+        text: stagnant water [ENVO:03501370]
+      sterile water [ENVO:00005791]:
+        text: sterile water [ENVO:00005791]
+      stormwater [ENVO:01001267]:
+        text: stormwater [ENVO:01001267]
+      subterranean lake [ENVO:02000145]:
+        text: subterranean lake [ENVO:02000145]
+      surface water [ENVO:00002042]:
+        text: surface water [ENVO:00002042]
+      tap water [ENVO:00003096]:
+        text: tap water [ENVO:00003096]
+      underground water [ENVO:00005792]:
+        text: underground water [ENVO:00005792]
+      urban stormwater [ENVO:01001268]:
+        text: urban stormwater [ENVO:01001268]
+  EnvBroadScaleSoilEnum:
+    name: EnvBroadScaleSoilEnum
+    permissible_values:
+      alpine tundra biome [ENVO:01001505]:
+        text: alpine tundra biome [ENVO:01001505]
+      anthropogenic terrestrial biome [ENVO:01000219]:
+        text: anthropogenic terrestrial biome [ENVO:01000219]
+      broadleaf forest biome [ENVO:01000197]:
+        text: broadleaf forest biome [ENVO:01000197]
+      coniferous forest biome [ENVO:01000196]:
+        text: coniferous forest biome [ENVO:01000196]
+      cropland biome [ENVO:01000245]:
+        text: cropland biome [ENVO:01000245]
+      flooded grassland biome [ENVO:01000195]:
+        text: flooded grassland biome [ENVO:01000195]
+      flooded savanna biome [ENVO:01000190]:
+        text: flooded savanna biome [ENVO:01000190]
+      forest biome [ENVO:01000174]:
+        text: forest biome [ENVO:01000174]
+      grassland biome [ENVO:01000177]:
+        text: grassland biome [ENVO:01000177]
+      mangrove biome [ENVO:01000181]:
+        text: mangrove biome [ENVO:01000181]
+      mediterranean forest biome [ENVO:01000199]:
+        text: mediterranean forest biome [ENVO:01000199]
+      mediterranean grassland biome [ENVO:01000224]:
+        text: mediterranean grassland biome [ENVO:01000224]
+      mediterranean savanna biome [ENVO:01000229]:
+        text: mediterranean savanna biome [ENVO:01000229]
+      mediterranean shrubland biome [ENVO:01000217]:
+        text: mediterranean shrubland biome [ENVO:01000217]
+      mediterranean woodland biome [ENVO:01000208]:
+        text: mediterranean woodland biome [ENVO:01000208]
+      mixed forest biome [ENVO:01000198]:
+        text: mixed forest biome [ENVO:01000198]
+      montane grassland biome [ENVO:01000194]:
+        text: montane grassland biome [ENVO:01000194]
+      montane savanna biome [ENVO:01000223]:
+        text: montane savanna biome [ENVO:01000223]
+      montane shrubland biome [ENVO:01000216]:
+        text: montane shrubland biome [ENVO:01000216]
+      rangeland biome [ENVO:01000247]:
+        text: rangeland biome [ENVO:01000247]
+      savanna biome [ENVO:01000178]:
+        text: savanna biome [ENVO:01000178]
+      shrubland biome [ENVO:01000176]:
+        text: shrubland biome [ENVO:01000176]
+      subpolar coniferous forest biome [ENVO:01000250]:
+        text: subpolar coniferous forest biome [ENVO:01000250]
+      subtropical broadleaf forest biome [ENVO:01000201]:
+        text: subtropical broadleaf forest biome [ENVO:01000201]
+      subtropical coniferous forest biome [ENVO:01000209]:
+        text: subtropical coniferous forest biome [ENVO:01000209]
+      subtropical dry broadleaf forest biome [ENVO:01000225]:
+        text: subtropical dry broadleaf forest biome [ENVO:01000225]
+      subtropical grassland biome [ENVO:01000191]:
+        text: subtropical grassland biome [ENVO:01000191]
+      subtropical moist broadleaf forest biome [ENVO:01000226]:
+        text: subtropical moist broadleaf forest biome [ENVO:01000226]
+      subtropical savanna biome [ENVO:01000187]:
+        text: subtropical savanna biome [ENVO:01000187]
+      subtropical shrubland biome [ENVO:01000213]:
+        text: subtropical shrubland biome [ENVO:01000213]
+      subtropical woodland biome [ENVO:01000222]:
+        text: subtropical woodland biome [ENVO:01000222]
+      temperate broadleaf forest biome [ENVO:01000202]:
+        text: temperate broadleaf forest biome [ENVO:01000202]
+      temperate coniferous forest biome [ENVO:01000211]:
+        text: temperate coniferous forest biome [ENVO:01000211]
+      temperate grassland biome [ENVO:01000193]:
+        text: temperate grassland biome [ENVO:01000193]
+      temperate mixed forest biome [ENVO:01000212]:
+        text: temperate mixed forest biome [ENVO:01000212]
+      temperate savanna biome [ENVO:01000189]:
+        text: temperate savanna biome [ENVO:01000189]
+      temperate shrubland biome [ENVO:01000215]:
+        text: temperate shrubland biome [ENVO:01000215]
+      temperate woodland biome [ENVO:01000221]:
+        text: temperate woodland biome [ENVO:01000221]
+      terrestrial biome [ENVO:00000446]:
+        text: terrestrial biome [ENVO:00000446]
+      tidal mangrove shrubland [ENVO:01001369]:
+        text: tidal mangrove shrubland [ENVO:01001369]
+      tropical broadleaf forest biome [ENVO:01000200]:
+        text: tropical broadleaf forest biome [ENVO:01000200]
+      tropical coniferous forest biome [ENVO:01000210]:
+        text: tropical coniferous forest biome [ENVO:01000210]
+      tropical dry broadleaf forest biome [ENVO:01000227]:
+        text: tropical dry broadleaf forest biome [ENVO:01000227]
+      tropical grassland biome [ENVO:01000192]:
+        text: tropical grassland biome [ENVO:01000192]
+      tropical mixed forest biome [ENVO:01001798]:
+        text: tropical mixed forest biome [ENVO:01001798]
+      tropical moist broadleaf forest biome [ENVO:01000228]:
+        text: tropical moist broadleaf forest biome [ENVO:01000228]
+      tropical savanna biome [ENVO:01000188]:
+        text: tropical savanna biome [ENVO:01000188]
+      tropical shrubland biome [ENVO:01000214]:
+        text: tropical shrubland biome [ENVO:01000214]
+      tropical woodland biome [ENVO:01000220]:
+        text: tropical woodland biome [ENVO:01000220]
+      tundra biome [ENVO:01000180]:
+        text: tundra biome [ENVO:01000180]
+      woodland biome [ENVO:01000175]:
+        text: woodland biome [ENVO:01000175]
+      xeric shrubland biome [ENVO:01000218]:
+        text: xeric shrubland biome [ENVO:01000218]
   EnvLocalScaleSoilEnum:
     name: EnvLocalScaleSoilEnum
     permissible_values:
@@ -6954,214 +7162,6 @@ enums:
         text: vegetable garden soil [ENVO:00005779]
       vertisol [ENVO:00002254]:
         text: vertisol [ENVO:00002254]
-  EnvBroadScaleSoilEnum:
-    name: EnvBroadScaleSoilEnum
-    permissible_values:
-      alpine tundra biome [ENVO:01001505]:
-        text: alpine tundra biome [ENVO:01001505]
-      anthropogenic terrestrial biome [ENVO:01000219]:
-        text: anthropogenic terrestrial biome [ENVO:01000219]
-      broadleaf forest biome [ENVO:01000197]:
-        text: broadleaf forest biome [ENVO:01000197]
-      coniferous forest biome [ENVO:01000196]:
-        text: coniferous forest biome [ENVO:01000196]
-      cropland biome [ENVO:01000245]:
-        text: cropland biome [ENVO:01000245]
-      flooded grassland biome [ENVO:01000195]:
-        text: flooded grassland biome [ENVO:01000195]
-      flooded savanna biome [ENVO:01000190]:
-        text: flooded savanna biome [ENVO:01000190]
-      forest biome [ENVO:01000174]:
-        text: forest biome [ENVO:01000174]
-      grassland biome [ENVO:01000177]:
-        text: grassland biome [ENVO:01000177]
-      mangrove biome [ENVO:01000181]:
-        text: mangrove biome [ENVO:01000181]
-      mediterranean forest biome [ENVO:01000199]:
-        text: mediterranean forest biome [ENVO:01000199]
-      mediterranean grassland biome [ENVO:01000224]:
-        text: mediterranean grassland biome [ENVO:01000224]
-      mediterranean savanna biome [ENVO:01000229]:
-        text: mediterranean savanna biome [ENVO:01000229]
-      mediterranean shrubland biome [ENVO:01000217]:
-        text: mediterranean shrubland biome [ENVO:01000217]
-      mediterranean woodland biome [ENVO:01000208]:
-        text: mediterranean woodland biome [ENVO:01000208]
-      mixed forest biome [ENVO:01000198]:
-        text: mixed forest biome [ENVO:01000198]
-      montane grassland biome [ENVO:01000194]:
-        text: montane grassland biome [ENVO:01000194]
-      montane savanna biome [ENVO:01000223]:
-        text: montane savanna biome [ENVO:01000223]
-      montane shrubland biome [ENVO:01000216]:
-        text: montane shrubland biome [ENVO:01000216]
-      rangeland biome [ENVO:01000247]:
-        text: rangeland biome [ENVO:01000247]
-      savanna biome [ENVO:01000178]:
-        text: savanna biome [ENVO:01000178]
-      shrubland biome [ENVO:01000176]:
-        text: shrubland biome [ENVO:01000176]
-      subpolar coniferous forest biome [ENVO:01000250]:
-        text: subpolar coniferous forest biome [ENVO:01000250]
-      subtropical broadleaf forest biome [ENVO:01000201]:
-        text: subtropical broadleaf forest biome [ENVO:01000201]
-      subtropical coniferous forest biome [ENVO:01000209]:
-        text: subtropical coniferous forest biome [ENVO:01000209]
-      subtropical dry broadleaf forest biome [ENVO:01000225]:
-        text: subtropical dry broadleaf forest biome [ENVO:01000225]
-      subtropical grassland biome [ENVO:01000191]:
-        text: subtropical grassland biome [ENVO:01000191]
-      subtropical moist broadleaf forest biome [ENVO:01000226]:
-        text: subtropical moist broadleaf forest biome [ENVO:01000226]
-      subtropical savanna biome [ENVO:01000187]:
-        text: subtropical savanna biome [ENVO:01000187]
-      subtropical shrubland biome [ENVO:01000213]:
-        text: subtropical shrubland biome [ENVO:01000213]
-      subtropical woodland biome [ENVO:01000222]:
-        text: subtropical woodland biome [ENVO:01000222]
-      temperate broadleaf forest biome [ENVO:01000202]:
-        text: temperate broadleaf forest biome [ENVO:01000202]
-      temperate coniferous forest biome [ENVO:01000211]:
-        text: temperate coniferous forest biome [ENVO:01000211]
-      temperate grassland biome [ENVO:01000193]:
-        text: temperate grassland biome [ENVO:01000193]
-      temperate mixed forest biome [ENVO:01000212]:
-        text: temperate mixed forest biome [ENVO:01000212]
-      temperate savanna biome [ENVO:01000189]:
-        text: temperate savanna biome [ENVO:01000189]
-      temperate shrubland biome [ENVO:01000215]:
-        text: temperate shrubland biome [ENVO:01000215]
-      temperate woodland biome [ENVO:01000221]:
-        text: temperate woodland biome [ENVO:01000221]
-      terrestrial biome [ENVO:00000446]:
-        text: terrestrial biome [ENVO:00000446]
-      tidal mangrove shrubland [ENVO:01001369]:
-        text: tidal mangrove shrubland [ENVO:01001369]
-      tropical broadleaf forest biome [ENVO:01000200]:
-        text: tropical broadleaf forest biome [ENVO:01000200]
-      tropical coniferous forest biome [ENVO:01000210]:
-        text: tropical coniferous forest biome [ENVO:01000210]
-      tropical dry broadleaf forest biome [ENVO:01000227]:
-        text: tropical dry broadleaf forest biome [ENVO:01000227]
-      tropical grassland biome [ENVO:01000192]:
-        text: tropical grassland biome [ENVO:01000192]
-      tropical mixed forest biome [ENVO:01001798]:
-        text: tropical mixed forest biome [ENVO:01001798]
-      tropical moist broadleaf forest biome [ENVO:01000228]:
-        text: tropical moist broadleaf forest biome [ENVO:01000228]
-      tropical savanna biome [ENVO:01000188]:
-        text: tropical savanna biome [ENVO:01000188]
-      tropical shrubland biome [ENVO:01000214]:
-        text: tropical shrubland biome [ENVO:01000214]
-      tropical woodland biome [ENVO:01000220]:
-        text: tropical woodland biome [ENVO:01000220]
-      tundra biome [ENVO:01000180]:
-        text: tundra biome [ENVO:01000180]
-      woodland biome [ENVO:01000175]:
-        text: woodland biome [ENVO:01000175]
-      xeric shrubland biome [ENVO:01000218]:
-        text: xeric shrubland biome [ENVO:01000218]
-  EnvMediumWaterEnum:
-    name: EnvMediumWaterEnum
-    permissible_values:
-      acidic water [ENVO:01000358]:
-        text: acidic water [ENVO:01000358]
-      alkaline water [ENVO:01000357]:
-        text: alkaline water [ENVO:01000357]
-      anoxic water [ENVO:01000173]:
-        text: anoxic water [ENVO:01000173]
-      bacon curing brine [ENVO:00003045]:
-        text: bacon curing brine [ENVO:00003045]
-      ballast water [ENVO:01000872]:
-        text: ballast water [ENVO:01000872]
-      borax leachate [ENVO:00002142]:
-        text: borax leachate [ENVO:00002142]
-      brackish water [ENVO:00002019]:
-        text: brackish water [ENVO:00002019]
-      brine [ENVO:00003044]:
-        text: brine [ENVO:00003044]
-      cloud water [ENVO:03600081]:
-        text: cloud water [ENVO:03600081]
-      coastal sea water [ENVO:00002150]:
-        text: coastal sea water [ENVO:00002150]
-      cooling water [ENVO:03600002]:
-        text: cooling water [ENVO:03600002]
-      desalinated water [ENVO:06105269]:
-        text: desalinated water [ENVO:06105269]
-      distilled water [ENVO:00003065]:
-        text: distilled water [ENVO:00003065]
-      ditch water [ENVO:00002158]:
-        text: ditch water [ENVO:00002158]
-      drilling bore water [ENVO:00002159]:
-        text: drilling bore water [ENVO:00002159]
-      drinking water [ENVO:00003064]:
-        text: drinking water [ENVO:00003064]
-      estuarine water [ENVO:01000301]:
-        text: estuarine water [ENVO:01000301]
-      eutrophic water [ENVO:00002224]:
-        text: eutrophic water [ENVO:00002224]
-      fresh water [ENVO:00002011]:
-        text: fresh water [ENVO:00002011]
-      groundwater [ENVO:01001004]:
-        text: groundwater [ENVO:01001004]
-      highly saline water [ENVO:01001039]:
-        text: highly saline water [ENVO:01001039]
-      hydrothermal fluid [ENVO:01000134]:
-        text: hydrothermal fluid [ENVO:01000134]
-      hypereutrophic water [ENVO:01001018]:
-        text: hypereutrophic water [ENVO:01001018]
-      hypersaline water [ENVO:00002012]:
-        text: hypersaline water [ENVO:00002012]
-      hypoxic water [ENVO:01001064]:
-        text: hypoxic water [ENVO:01001064]
-      interstitial water [ENVO:03600009]:
-        text: interstitial water [ENVO:03600009]
-      leachate [ENVO:00002141]:
-        text: leachate [ENVO:00002141]
-      liquid water [ENVO:00002006]:
-        text: liquid water [ENVO:00002006]
-      meltwater [ENVO:01000722]:
-        text: meltwater [ENVO:01000722]
-      mesotrophic water [ENVO:00002225]:
-        text: mesotrophic water [ENVO:00002225]
-      moderately saline water [ENVO:01001038]:
-        text: moderately saline water [ENVO:01001038]
-      muddy water [ENVO:00005793]:
-        text: muddy water [ENVO:00005793]
-      oligotrophic water [ENVO:00002223]:
-        text: oligotrophic water [ENVO:00002223]
-      oxic water [ENVO:01001063]:
-        text: oxic water [ENVO:01001063]
-      pond water [ENVO:00002228]:
-        text: pond water [ENVO:00002228]
-      rainwater [ENVO:01000600]:
-        text: rainwater [ENVO:01000600]
-      rural stormwater [ENVO:01001270]:
-        text: rural stormwater [ENVO:01001270]
-      saline shrimp pond water [ENVO:01001257]:
-        text: saline shrimp pond water [ENVO:01001257]
-      saline water [ENVO:00002010]:
-        text: saline water [ENVO:00002010]
-      sea water [ENVO:00002149]:
-        text: sea water [ENVO:00002149]
-      slightly saline water [ENVO:01001037]:
-        text: slightly saline water [ENVO:01001037]
-      stagnant water [ENVO:03501370]:
-        text: stagnant water [ENVO:03501370]
-      sterile water [ENVO:00005791]:
-        text: sterile water [ENVO:00005791]
-      stormwater [ENVO:01001267]:
-        text: stormwater [ENVO:01001267]
-      subterranean lake [ENVO:02000145]:
-        text: subterranean lake [ENVO:02000145]
-      surface water [ENVO:00002042]:
-        text: surface water [ENVO:00002042]
-      tap water [ENVO:00003096]:
-        text: tap water [ENVO:00003096]
-      underground water [ENVO:00005792]:
-        text: underground water [ENVO:00005792]
-      urban stormwater [ENVO:01001268]:
-        text: urban stormwater [ENVO:01001268]
 slots:
   air_data:
     name: air_data

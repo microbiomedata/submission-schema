@@ -186,7 +186,11 @@ local/nmdc.yaml
 # Specify that 'ingest-triad' is a phony target, meaning it doesn't correspond to an actual file
 .PHONY: ingest-triad
 WATCHED_DIR := notebooks/environmental_context_value_sets
-WATCHED_FILES := $(shell find $(WATCHED_DIR) -type f)
+# Match only .tsv files with the specific naming convention
+WATCHED_FILES := $(shell find $(WATCHED_DIR) -type f \( \
+    -name 'post_google_sheets_*_local_scale.tsv' -o \
+    -name 'post_google_sheets_*_broad_scale.tsv' -o \
+    -name 'post_google_sheets_*_medium.tsv' \))
 
 # Define an intermediate target to prevent re-triggering
 .INTERMEDIATE: temp_target
@@ -194,21 +198,16 @@ WATCHED_FILES := $(shell find $(WATCHED_DIR) -type f)
 # Main target to run ingestion commands, depending on the intermediate target
 ingest-triad: temp_target
 
-# Intermediate target that has all dependencies
+# Intermediate target that dynamically processes matching TSV files
 temp_target: $(WATCHED_FILES) src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_local_scale/post_google_sheets_soil_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_medium/post_google_sheets_soil_env_medium.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/soil/env_broad_scale/post_google_sheets_soil_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/water/env_local_scale/post_google_sheets_water_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/water/env_medium/post_google_sheets_water_env_medium.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/water/env_broad_scale/post_google_sheets_water_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/sediment/env_local_scale/post_google_sheets_water_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/sediment/env_medium/post_google_sheets_water_env_medium.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/sediment/env_broad_scale/post_google_sheets_water_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/plant_associated/env_local_scale/post_google_sheets_plant_associated_env_local_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/plant_associated/env_medium/post_google_sheets_plant_associated_env_medium.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	$(RUN) inject-env-triad-terms -f notebooks/environmental_context_value_sets/plant_associated/env_broad_scale/post_google_sheets_plant_associated_env_broad_scale.tsv -i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml -o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
-	touch temp_target
+	@echo "Processing all matching TSV files in $(WATCHED_DIR)..."
+	@for tsv_file in $(WATCHED_FILES); do \
+		echo "Processing $$tsv_file..."; \
+		$(RUN) inject-env-triad-terms -f $$tsv_file \
+			-i src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
+			-o src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml || exit 1; \
+	done
+	@touch temp_target
 
 test_deploy_docs_action: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad project/json/nmdc_submission_schema.json
 
