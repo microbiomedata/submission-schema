@@ -184,7 +184,7 @@ local/nmdc.yaml
 
 ########### ENV Triad PV generation ##########
 # Specify that 'ingest-triad' is a phony target, meaning it doesn't correspond to an actual file
-.PHONY: ingest-triad
+.PHONY: ingest-triad temp_target
 WATCHED_DIR := notebooks/environmental_context_value_sets
 # Match only .tsv files with the specific naming convention
 WATCHED_FILES := $(shell find $(WATCHED_DIR) -type f \( \
