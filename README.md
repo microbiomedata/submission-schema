@@ -76,21 +76,21 @@ Here's how you can generate the submission schema release artifacts:
 ##### Prerequisites
 
 - `yq` is installed on your computer, such that the following command shows a version number instead of an error message.
-    ```shell
-    bash -c 'yq --version'
-    ```
-    If `yq` is not installed, you can install it by running this, assuming you're using macOS:
-    ```shell
-    brew install yq
-    ```
+  ```shell
+  bash -c 'yq --version'
+  ```
+  If `yq` is not installed, you can install it by running this, assuming you're using macOS:
+  ```shell
+  brew install yq
+  ```
 - `wget` is installed on your computer, such that the following command shows a version number instead of an error message.
-    ```shell
-    bash -c 'wget --version'
-    ```
-    If `wget` is not installed, you can install it by running this, assuming you're using macOS:
-    ```shell
-    brew install wget
-    ```
+  ```shell
+  bash -c 'wget --version'
+  ```
+  If `wget` is not installed, you can install it by running this, assuming you're using macOS:
+  ```shell
+  brew install wget
+  ```
 
 ##### Procedure
 
