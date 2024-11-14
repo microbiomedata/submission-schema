@@ -190,6 +190,9 @@ prefixes:
   kegg:
     prefix_prefix: kegg
     prefix_reference: 'https://bioregistry.io/kegg:'
+  KEGG.MODULE:
+    prefix_prefix: KEGG.MODULE
+    prefix_reference: 'https://bioregistry.io/kegg.module:'
   mgnify.proj:
     prefix_prefix: mgnify.proj
     prefix_reference: 'https://bioregistry.io/mgnify.proj:'
@@ -353,28 +356,6 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
-    from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
-  string:
-    name: string
-    description: A character string
-    notes:
-    - In RDF serializations, a slot with range of string is treated as a literal or
-      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
-      referenced with the lower case "string".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Text
-    base: str
-    uri: xsd:string
   decimal:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
@@ -387,28 +368,6 @@ types:
     - schema:Number
     base: Decimal
     uri: xsd:decimal
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "float".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:float
-  integer:
-    name: integer
-    description: An integer
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
   double:
     name: double
     description: A real number that conforms to the xsd:double specification
@@ -420,6 +379,50 @@ types:
     - schema:Float
     base: float
     uri: xsd:double
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
+    from_schema: https://example.com/nmdc_submission_schema
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
   boolean:
     name: boolean
     description: A binary (true or false) value
