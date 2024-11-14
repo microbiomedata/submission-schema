@@ -1,4 +1,7 @@
 local
+*.db
+*.duckdb
+*.gz
 .idea
 .~*#
 .DS_Store
