@@ -59,17 +59,19 @@ def test_ingest(tmp_path):
         {SOIL_ENV_BROAD_PATH: "EnvBroadScaleSoilEnum"}
     ]
 
+    target_path = tmp_path / "output_schema.yaml"
+
     # Run `ingest` with real file paths
     for mapping in file_enum_mappings:
         for tsv_path, enum_name in mapping.items():  # Iterate over each dictionary and get path and enum name
             ingest(
                 values_file_path=tsv_path,
                 source_schema_yaml_path=BASE_SCHEMA_PATH,
-                target_schema_yaml_path=BASE_SCHEMA_PATH,
+                target_schema_yaml_path=target_path,
                 enum_name=enum_name  # Pass the specific enum name
             )
     # Verify that the output schema file contains the injected enums with the correct permissible values
-    output_schema_view = SchemaView(str(BASE_SCHEMA_PATH))
+    output_schema_view = SchemaView(str(target_path))
 
     # Check that each enum exists with expected permissible values
     for mapping in file_enum_mappings:
