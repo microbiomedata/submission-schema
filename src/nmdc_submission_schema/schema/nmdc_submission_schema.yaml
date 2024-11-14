@@ -771,214 +771,6 @@ enums:
         text: 'no'
       'yes':
         text: 'yes'
-  EnvMediumSoilEnum:
-    name: EnvMediumSoilEnum
-    from_schema: https://example.com/nmdc_submission_schema
-    permissible_values:
-      pathogen-suppressive soil [ENVO:03600036]:
-        text: pathogen-suppressive soil [ENVO:03600036]
-      mangrove biome soil [ENVO:02000138]:
-        text: mangrove biome soil [ENVO:02000138]
-      surface soil [ENVO:02000059]:
-        text: surface soil [ENVO:02000059]
-      frost-susceptible soil [ENVO:01001638]:
-        text: frost-susceptible soil [ENVO:01001638]
-      bare soil [ENVO:01001616]:
-        text: bare soil [ENVO:01001616]
-      frozen soil [ENVO:01001526]:
-        text: frozen soil [ENVO:01001526]
-      __friable-frozen soil [ENVO:01001528]:
-        text: __friable-frozen soil [ENVO:01001528]
-      __plastic-frozen soil [ENVO:01001527]:
-        text: __plastic-frozen soil [ENVO:01001527]
-      __hard-frozen soil [ENVO:01001525]:
-        text: __hard-frozen soil [ENVO:01001525]
-      __frozen compost soil [ENVO:00005765]:
-        text: __frozen compost soil [ENVO:00005765]
-      __cryosol [ENVO:00002236]:
-        text: __cryosol [ENVO:00002236]
-      ultisol [ENVO:01001397]:
-        text: ultisol [ENVO:01001397]
-      __acrisol [ENVO:00002234]:
-        text: __acrisol [ENVO:00002234]
-      acidic soil [ENVO:01001185]:
-        text: acidic soil [ENVO:01001185]
-      bulk soil [ENVO:00005802]:
-        text: bulk soil [ENVO:00005802]
-      red soil [ENVO:00005790]:
-        text: red soil [ENVO:00005790]
-      upland soil [ENVO:00005786]:
-        text: upland soil [ENVO:00005786]
-      __mountain forest soil [ENVO:00005769]:
-        text: __mountain forest soil [ENVO:00005769]
-      __dune soil [ENVO:00002260]:
-        text: __dune soil [ENVO:00002260]
-      ornithogenic soil [ENVO:00005782]:
-        text: ornithogenic soil [ENVO:00005782]
-      heat stressed soil [ENVO:00005781]:
-        text: heat stressed soil [ENVO:00005781]
-      greenhouse soil [ENVO:00005780]:
-        text: greenhouse soil [ENVO:00005780]
-      tropical soil [ENVO:00005778]:
-        text: tropical soil [ENVO:00005778]
-      pasture soil [ENVO:00005773]:
-        text: pasture soil [ENVO:00005773]
-      muddy soil [ENVO:00005771]:
-        text: muddy soil [ENVO:00005771]
-      orchid soil [ENVO:00005768]:
-        text: orchid soil [ENVO:00005768]
-      manured soil [ENVO:00005767]:
-        text: manured soil [ENVO:00005767]
-      limed soil [ENVO:00005766]:
-        text: limed soil [ENVO:00005766]
-      pond soil [ENVO:00005764]:
-        text: pond soil [ENVO:00005764]
-      meadow soil [ENVO:00005761]:
-        text: meadow soil [ENVO:00005761]
-      burned soil [ENVO:00005760]:
-        text: burned soil [ENVO:00005760]
-      lawn soil [ENVO:00005756]:
-        text: lawn soil [ENVO:00005756]
-      field soil [ENVO:00005755]:
-        text: field soil [ENVO:00005755]
-      __paddy field soil [ENVO:00005740]:
-        text: __paddy field soil [ENVO:00005740]
-      ____peaty paddy field soil [ENVO:00005776]:
-        text: ____peaty paddy field soil [ENVO:00005776]
-      ____alluvial paddy field soil [ENVO:00005759]:
-        text: ____alluvial paddy field soil [ENVO:00005759]
-      fertilized soil [ENVO:00005754]:
-        text: fertilized soil [ENVO:00005754]
-      sawah soil [ENVO:00005752]:
-        text: sawah soil [ENVO:00005752]
-      jungle soil [ENVO:00005751]:
-        text: jungle soil [ENVO:00005751]
-      grassland soil [ENVO:00005750]:
-        text: grassland soil [ENVO:00005750]
-      __steppe soil [ENVO:00005777]:
-        text: __steppe soil [ENVO:00005777]
-      __savanna soil [ENVO:00005746]:
-        text: __savanna soil [ENVO:00005746]
-      farm soil [ENVO:00005749]:
-        text: farm soil [ENVO:00005749]
-      __rubber plantation soil [ENVO:00005788]:
-        text: __rubber plantation soil [ENVO:00005788]
-      __orchard soil [ENVO:00005772]:
-        text: __orchard soil [ENVO:00005772]
-      dry soil [ENVO:00005748]:
-        text: dry soil [ENVO:00005748]
-      compost soil [ENVO:00005747]:
-        text: compost soil [ENVO:00005747]
-      roadside soil [ENVO:00005743]:
-        text: roadside soil [ENVO:00005743]
-      arable soil [ENVO:00005742]:
-        text: arable soil [ENVO:00005742]
-      alpine soil [ENVO:00005741]:
-        text: alpine soil [ENVO:00005741]
-      alluvial soil [ENVO:00002871]:
-        text: alluvial soil [ENVO:00002871]
-      __alluvial paddy field soil [ENVO:00005759]:
-        text: __alluvial paddy field soil [ENVO:00005759]
-      __alluvial swamp soil [ENVO:00005758]:
-        text: __alluvial swamp soil [ENVO:00005758]
-      technosol [ENVO:00002275]:
-        text: technosol [ENVO:00002275]
-      stagnosol [ENVO:00002274]:
-        text: stagnosol [ENVO:00002274]
-      fluvisol [ENVO:00002273]:
-        text: fluvisol [ENVO:00002273]
-      garden soil [ENVO:00002263]:
-        text: garden soil [ENVO:00002263]
-      __vegetable garden soil [ENVO:00005779]:
-        text: __vegetable garden soil [ENVO:00005779]
-      __allotment garden soil [ENVO:00005744]:
-        text: __allotment garden soil [ENVO:00005744]
-      clay soil [ENVO:00002262]:
-        text: clay soil [ENVO:00002262]
-      forest soil [ENVO:00002261]:
-        text: forest soil [ENVO:00002261]
-      __eucalyptus forest soil [ENVO:00005787]:
-        text: __eucalyptus forest soil [ENVO:00005787]
-      __spruce forest soil [ENVO:00005784]:
-        text: __spruce forest soil [ENVO:00005784]
-      __leafy wood soil [ENVO:00005783]:
-        text: __leafy wood soil [ENVO:00005783]
-      __beech forest soil [ENVO:00005770]:
-        text: __beech forest soil [ENVO:00005770]
-      agricultural soil [ENVO:00002259]:
-        text: agricultural soil [ENVO:00002259]
-      __bluegrass field soil [ENVO:00005789]:
-        text: __bluegrass field soil [ENVO:00005789]
-      loam [ENVO:00002258]:
-        text: loam [ENVO:00002258]
-      __clay loam [ENVO:06105277]:
-        text: __clay loam [ENVO:06105277]
-      ____silty clay loam [ENVO:06105278]:
-        text: ____silty clay loam [ENVO:06105278]
-      ____sandy clay loam [ENVO:06105276]:
-        text: ____sandy clay loam [ENVO:06105276]
-      __silty loam [ENVO:06105275]:
-        text: __silty loam [ENVO:06105275]
-      __sandy loam [ENVO:06105274]:
-        text: __sandy loam [ENVO:06105274]
-      podzol [ENVO:00002257]:
-        text: podzol [ENVO:00002257]
-      regosol [ENVO:00002256]:
-        text: regosol [ENVO:00002256]
-      solonetz [ENVO:00002255]:
-        text: solonetz [ENVO:00002255]
-      vertisol [ENVO:00002254]:
-        text: vertisol [ENVO:00002254]
-      umbrisol [ENVO:00002253]:
-        text: umbrisol [ENVO:00002253]
-      solonchak [ENVO:00002252]:
-        text: solonchak [ENVO:00002252]
-      planosol [ENVO:00002251]:
-        text: planosol [ENVO:00002251]
-      plinthosol [ENVO:00002250]:
-        text: plinthosol [ENVO:00002250]
-      phaeozem [ENVO:00002249]:
-        text: phaeozem [ENVO:00002249]
-      luvisol [ENVO:00002248]:
-        text: luvisol [ENVO:00002248]
-      nitisol [ENVO:00002247]:
-        text: nitisol [ENVO:00002247]
-      ferralsol [ENVO:00002246]:
-        text: ferralsol [ENVO:00002246]
-      gypsisol [ENVO:00002245]:
-        text: gypsisol [ENVO:00002245]
-      gleysol [ENVO:00002244]:
-        text: gleysol [ENVO:00002244]
-      histosol [ENVO:00002243]:
-        text: histosol [ENVO:00002243]
-      __peat soil [ENVO:00005774]:
-        text: __peat soil [ENVO:00005774]
-      lixisol [ENVO:00002242]:
-        text: lixisol [ENVO:00002242]
-      leptosol [ENVO:00002241]:
-        text: leptosol [ENVO:00002241]
-      kastanozem [ENVO:00002240]:
-        text: kastanozem [ENVO:00002240]
-      calcisol [ENVO:00002239]:
-        text: calcisol [ENVO:00002239]
-      durisol [ENVO:00002238]:
-        text: durisol [ENVO:00002238]
-      chernozem [ENVO:00002237]:
-        text: chernozem [ENVO:00002237]
-      cambisol [ENVO:00002235]:
-        text: cambisol [ENVO:00002235]
-      albeluvisol [ENVO:00002233]:
-        text: albeluvisol [ENVO:00002233]
-      andosol [ENVO:00002232]:
-        text: andosol [ENVO:00002232]
-      __volcanic soil [ENVO:01001841]:
-        text: __volcanic soil [ENVO:01001841]
-      alisol [ENVO:00002231]:
-        text: alisol [ENVO:00002231]
-      anthrosol [ENVO:00002230]:
-        text: anthrosol [ENVO:00002230]
-      arenosol [ENVO:00002229]:
-        text: arenosol [ENVO:00002229]
   OxyStatSampEnum:
     name: OxyStatSampEnum
     from_schema: https://example.com/nmdc_submission_schema
@@ -6794,6 +6586,214 @@ enums:
         text: Uranium contaminated
       Wetland zone:
         text: Wetland zone
+  EnvMediumWaterEnum:
+    name: EnvMediumWaterEnum
+    permissible_values:
+      acidic water [ENVO:01000358]:
+        text: acidic water [ENVO:01000358]
+      alkaline water [ENVO:01000357]:
+        text: alkaline water [ENVO:01000357]
+      anoxic water [ENVO:01000173]:
+        text: anoxic water [ENVO:01000173]
+      bacon curing brine [ENVO:00003045]:
+        text: bacon curing brine [ENVO:00003045]
+      ballast water [ENVO:01000872]:
+        text: ballast water [ENVO:01000872]
+      borax leachate [ENVO:00002142]:
+        text: borax leachate [ENVO:00002142]
+      brackish water [ENVO:00002019]:
+        text: brackish water [ENVO:00002019]
+      brine [ENVO:00003044]:
+        text: brine [ENVO:00003044]
+      cloud water [ENVO:03600081]:
+        text: cloud water [ENVO:03600081]
+      coastal sea water [ENVO:00002150]:
+        text: coastal sea water [ENVO:00002150]
+      cooling water [ENVO:03600002]:
+        text: cooling water [ENVO:03600002]
+      desalinated water [ENVO:06105269]:
+        text: desalinated water [ENVO:06105269]
+      distilled water [ENVO:00003065]:
+        text: distilled water [ENVO:00003065]
+      ditch water [ENVO:00002158]:
+        text: ditch water [ENVO:00002158]
+      drilling bore water [ENVO:00002159]:
+        text: drilling bore water [ENVO:00002159]
+      drinking water [ENVO:00003064]:
+        text: drinking water [ENVO:00003064]
+      estuarine water [ENVO:01000301]:
+        text: estuarine water [ENVO:01000301]
+      eutrophic water [ENVO:00002224]:
+        text: eutrophic water [ENVO:00002224]
+      fresh water [ENVO:00002011]:
+        text: fresh water [ENVO:00002011]
+      groundwater [ENVO:01001004]:
+        text: groundwater [ENVO:01001004]
+      highly saline water [ENVO:01001039]:
+        text: highly saline water [ENVO:01001039]
+      hydrothermal fluid [ENVO:01000134]:
+        text: hydrothermal fluid [ENVO:01000134]
+      hypereutrophic water [ENVO:01001018]:
+        text: hypereutrophic water [ENVO:01001018]
+      hypersaline water [ENVO:00002012]:
+        text: hypersaline water [ENVO:00002012]
+      hypoxic water [ENVO:01001064]:
+        text: hypoxic water [ENVO:01001064]
+      interstitial water [ENVO:03600009]:
+        text: interstitial water [ENVO:03600009]
+      leachate [ENVO:00002141]:
+        text: leachate [ENVO:00002141]
+      liquid water [ENVO:00002006]:
+        text: liquid water [ENVO:00002006]
+      meltwater [ENVO:01000722]:
+        text: meltwater [ENVO:01000722]
+      mesotrophic water [ENVO:00002225]:
+        text: mesotrophic water [ENVO:00002225]
+      moderately saline water [ENVO:01001038]:
+        text: moderately saline water [ENVO:01001038]
+      muddy water [ENVO:00005793]:
+        text: muddy water [ENVO:00005793]
+      oligotrophic water [ENVO:00002223]:
+        text: oligotrophic water [ENVO:00002223]
+      oxic water [ENVO:01001063]:
+        text: oxic water [ENVO:01001063]
+      pond water [ENVO:00002228]:
+        text: pond water [ENVO:00002228]
+      rainwater [ENVO:01000600]:
+        text: rainwater [ENVO:01000600]
+      rural stormwater [ENVO:01001270]:
+        text: rural stormwater [ENVO:01001270]
+      saline shrimp pond water [ENVO:01001257]:
+        text: saline shrimp pond water [ENVO:01001257]
+      saline water [ENVO:00002010]:
+        text: saline water [ENVO:00002010]
+      sea water [ENVO:00002149]:
+        text: sea water [ENVO:00002149]
+      slightly saline water [ENVO:01001037]:
+        text: slightly saline water [ENVO:01001037]
+      stagnant water [ENVO:03501370]:
+        text: stagnant water [ENVO:03501370]
+      sterile water [ENVO:00005791]:
+        text: sterile water [ENVO:00005791]
+      stormwater [ENVO:01001267]:
+        text: stormwater [ENVO:01001267]
+      subterranean lake [ENVO:02000145]:
+        text: subterranean lake [ENVO:02000145]
+      surface water [ENVO:00002042]:
+        text: surface water [ENVO:00002042]
+      tap water [ENVO:00003096]:
+        text: tap water [ENVO:00003096]
+      underground water [ENVO:00005792]:
+        text: underground water [ENVO:00005792]
+      urban stormwater [ENVO:01001268]:
+        text: urban stormwater [ENVO:01001268]
+  EnvBroadScaleSoilEnum:
+    name: EnvBroadScaleSoilEnum
+    permissible_values:
+      alpine tundra biome [ENVO:01001505]:
+        text: alpine tundra biome [ENVO:01001505]
+      anthropogenic terrestrial biome [ENVO:01000219]:
+        text: anthropogenic terrestrial biome [ENVO:01000219]
+      broadleaf forest biome [ENVO:01000197]:
+        text: broadleaf forest biome [ENVO:01000197]
+      coniferous forest biome [ENVO:01000196]:
+        text: coniferous forest biome [ENVO:01000196]
+      cropland biome [ENVO:01000245]:
+        text: cropland biome [ENVO:01000245]
+      flooded grassland biome [ENVO:01000195]:
+        text: flooded grassland biome [ENVO:01000195]
+      flooded savanna biome [ENVO:01000190]:
+        text: flooded savanna biome [ENVO:01000190]
+      forest biome [ENVO:01000174]:
+        text: forest biome [ENVO:01000174]
+      grassland biome [ENVO:01000177]:
+        text: grassland biome [ENVO:01000177]
+      mangrove biome [ENVO:01000181]:
+        text: mangrove biome [ENVO:01000181]
+      mediterranean forest biome [ENVO:01000199]:
+        text: mediterranean forest biome [ENVO:01000199]
+      mediterranean grassland biome [ENVO:01000224]:
+        text: mediterranean grassland biome [ENVO:01000224]
+      mediterranean savanna biome [ENVO:01000229]:
+        text: mediterranean savanna biome [ENVO:01000229]
+      mediterranean shrubland biome [ENVO:01000217]:
+        text: mediterranean shrubland biome [ENVO:01000217]
+      mediterranean woodland biome [ENVO:01000208]:
+        text: mediterranean woodland biome [ENVO:01000208]
+      mixed forest biome [ENVO:01000198]:
+        text: mixed forest biome [ENVO:01000198]
+      montane grassland biome [ENVO:01000194]:
+        text: montane grassland biome [ENVO:01000194]
+      montane savanna biome [ENVO:01000223]:
+        text: montane savanna biome [ENVO:01000223]
+      montane shrubland biome [ENVO:01000216]:
+        text: montane shrubland biome [ENVO:01000216]
+      rangeland biome [ENVO:01000247]:
+        text: rangeland biome [ENVO:01000247]
+      savanna biome [ENVO:01000178]:
+        text: savanna biome [ENVO:01000178]
+      shrubland biome [ENVO:01000176]:
+        text: shrubland biome [ENVO:01000176]
+      subpolar coniferous forest biome [ENVO:01000250]:
+        text: subpolar coniferous forest biome [ENVO:01000250]
+      subtropical broadleaf forest biome [ENVO:01000201]:
+        text: subtropical broadleaf forest biome [ENVO:01000201]
+      subtropical coniferous forest biome [ENVO:01000209]:
+        text: subtropical coniferous forest biome [ENVO:01000209]
+      subtropical dry broadleaf forest biome [ENVO:01000225]:
+        text: subtropical dry broadleaf forest biome [ENVO:01000225]
+      subtropical grassland biome [ENVO:01000191]:
+        text: subtropical grassland biome [ENVO:01000191]
+      subtropical moist broadleaf forest biome [ENVO:01000226]:
+        text: subtropical moist broadleaf forest biome [ENVO:01000226]
+      subtropical savanna biome [ENVO:01000187]:
+        text: subtropical savanna biome [ENVO:01000187]
+      subtropical shrubland biome [ENVO:01000213]:
+        text: subtropical shrubland biome [ENVO:01000213]
+      subtropical woodland biome [ENVO:01000222]:
+        text: subtropical woodland biome [ENVO:01000222]
+      temperate broadleaf forest biome [ENVO:01000202]:
+        text: temperate broadleaf forest biome [ENVO:01000202]
+      temperate coniferous forest biome [ENVO:01000211]:
+        text: temperate coniferous forest biome [ENVO:01000211]
+      temperate grassland biome [ENVO:01000193]:
+        text: temperate grassland biome [ENVO:01000193]
+      temperate mixed forest biome [ENVO:01000212]:
+        text: temperate mixed forest biome [ENVO:01000212]
+      temperate savanna biome [ENVO:01000189]:
+        text: temperate savanna biome [ENVO:01000189]
+      temperate shrubland biome [ENVO:01000215]:
+        text: temperate shrubland biome [ENVO:01000215]
+      temperate woodland biome [ENVO:01000221]:
+        text: temperate woodland biome [ENVO:01000221]
+      terrestrial biome [ENVO:00000446]:
+        text: terrestrial biome [ENVO:00000446]
+      tidal mangrove shrubland [ENVO:01001369]:
+        text: tidal mangrove shrubland [ENVO:01001369]
+      tropical broadleaf forest biome [ENVO:01000200]:
+        text: tropical broadleaf forest biome [ENVO:01000200]
+      tropical coniferous forest biome [ENVO:01000210]:
+        text: tropical coniferous forest biome [ENVO:01000210]
+      tropical dry broadleaf forest biome [ENVO:01000227]:
+        text: tropical dry broadleaf forest biome [ENVO:01000227]
+      tropical grassland biome [ENVO:01000192]:
+        text: tropical grassland biome [ENVO:01000192]
+      tropical mixed forest biome [ENVO:01001798]:
+        text: tropical mixed forest biome [ENVO:01001798]
+      tropical moist broadleaf forest biome [ENVO:01000228]:
+        text: tropical moist broadleaf forest biome [ENVO:01000228]
+      tropical savanna biome [ENVO:01000188]:
+        text: tropical savanna biome [ENVO:01000188]
+      tropical shrubland biome [ENVO:01000214]:
+        text: tropical shrubland biome [ENVO:01000214]
+      tropical woodland biome [ENVO:01000220]:
+        text: tropical woodland biome [ENVO:01000220]
+      tundra biome [ENVO:01000180]:
+        text: tundra biome [ENVO:01000180]
+      woodland biome [ENVO:01000175]:
+        text: woodland biome [ENVO:01000175]
+      xeric shrubland biome [ENVO:01000218]:
+        text: xeric shrubland biome [ENVO:01000218]
   EnvLocalScaleSoilEnum:
     name: EnvLocalScaleSoilEnum
     permissible_values:
@@ -6987,113 +6987,181 @@ enums:
         text: well [ENVO:00000026]
       woodland clearing [ENVO:00000444]:
         text: woodland clearing [ENVO:00000444]
-  EnvBroadScaleSoilEnum:
-    name: EnvBroadScaleSoilEnum
+  EnvMediumSoilEnum:
+    name: EnvMediumSoilEnum
     permissible_values:
-      alpine tundra biome [ENVO:01001505]:
-        text: alpine tundra biome [ENVO:01001505]
-      anthropogenic terrestrial biome [ENVO:01000219]:
-        text: anthropogenic terrestrial biome [ENVO:01000219]
-      broadleaf forest biome [ENVO:01000197]:
-        text: broadleaf forest biome [ENVO:01000197]
-      coniferous forest biome [ENVO:01000196]:
-        text: coniferous forest biome [ENVO:01000196]
-      cropland biome [ENVO:01000245]:
-        text: cropland biome [ENVO:01000245]
-      flooded grassland biome [ENVO:01000195]:
-        text: flooded grassland biome [ENVO:01000195]
-      flooded savanna biome [ENVO:01000190]:
-        text: flooded savanna biome [ENVO:01000190]
-      forest biome [ENVO:01000174]:
-        text: forest biome [ENVO:01000174]
-      grassland biome [ENVO:01000177]:
-        text: grassland biome [ENVO:01000177]
-      mangrove biome [ENVO:01000181]:
-        text: mangrove biome [ENVO:01000181]
-      mediterranean forest biome [ENVO:01000199]:
-        text: mediterranean forest biome [ENVO:01000199]
-      mediterranean grassland biome [ENVO:01000224]:
-        text: mediterranean grassland biome [ENVO:01000224]
-      mediterranean savanna biome [ENVO:01000229]:
-        text: mediterranean savanna biome [ENVO:01000229]
-      mediterranean shrubland biome [ENVO:01000217]:
-        text: mediterranean shrubland biome [ENVO:01000217]
-      mediterranean woodland biome [ENVO:01000208]:
-        text: mediterranean woodland biome [ENVO:01000208]
-      mixed forest biome [ENVO:01000198]:
-        text: mixed forest biome [ENVO:01000198]
-      montane grassland biome [ENVO:01000194]:
-        text: montane grassland biome [ENVO:01000194]
-      montane savanna biome [ENVO:01000223]:
-        text: montane savanna biome [ENVO:01000223]
-      montane shrubland biome [ENVO:01000216]:
-        text: montane shrubland biome [ENVO:01000216]
-      rangeland biome [ENVO:01000247]:
-        text: rangeland biome [ENVO:01000247]
-      savanna biome [ENVO:01000178]:
-        text: savanna biome [ENVO:01000178]
-      shrubland biome [ENVO:01000176]:
-        text: shrubland biome [ENVO:01000176]
-      subpolar coniferous forest biome [ENVO:01000250]:
-        text: subpolar coniferous forest biome [ENVO:01000250]
-      subtropical broadleaf forest biome [ENVO:01000201]:
-        text: subtropical broadleaf forest biome [ENVO:01000201]
-      subtropical coniferous forest biome [ENVO:01000209]:
-        text: subtropical coniferous forest biome [ENVO:01000209]
-      subtropical dry broadleaf forest biome [ENVO:01000225]:
-        text: subtropical dry broadleaf forest biome [ENVO:01000225]
-      subtropical grassland biome [ENVO:01000191]:
-        text: subtropical grassland biome [ENVO:01000191]
-      subtropical moist broadleaf forest biome [ENVO:01000226]:
-        text: subtropical moist broadleaf forest biome [ENVO:01000226]
-      subtropical savanna biome [ENVO:01000187]:
-        text: subtropical savanna biome [ENVO:01000187]
-      subtropical shrubland biome [ENVO:01000213]:
-        text: subtropical shrubland biome [ENVO:01000213]
-      subtropical woodland biome [ENVO:01000222]:
-        text: subtropical woodland biome [ENVO:01000222]
-      temperate broadleaf forest biome [ENVO:01000202]:
-        text: temperate broadleaf forest biome [ENVO:01000202]
-      temperate coniferous forest biome [ENVO:01000211]:
-        text: temperate coniferous forest biome [ENVO:01000211]
-      temperate grassland biome [ENVO:01000193]:
-        text: temperate grassland biome [ENVO:01000193]
-      temperate mixed forest biome [ENVO:01000212]:
-        text: temperate mixed forest biome [ENVO:01000212]
-      temperate savanna biome [ENVO:01000189]:
-        text: temperate savanna biome [ENVO:01000189]
-      temperate shrubland biome [ENVO:01000215]:
-        text: temperate shrubland biome [ENVO:01000215]
-      temperate woodland biome [ENVO:01000221]:
-        text: temperate woodland biome [ENVO:01000221]
-      terrestrial biome [ENVO:00000446]:
-        text: terrestrial biome [ENVO:00000446]
-      tidal mangrove shrubland [ENVO:01001369]:
-        text: tidal mangrove shrubland [ENVO:01001369]
-      tropical broadleaf forest biome [ENVO:01000200]:
-        text: tropical broadleaf forest biome [ENVO:01000200]
-      tropical coniferous forest biome [ENVO:01000210]:
-        text: tropical coniferous forest biome [ENVO:01000210]
-      tropical dry broadleaf forest biome [ENVO:01000227]:
-        text: tropical dry broadleaf forest biome [ENVO:01000227]
-      tropical grassland biome [ENVO:01000192]:
-        text: tropical grassland biome [ENVO:01000192]
-      tropical mixed forest biome [ENVO:01001798]:
-        text: tropical mixed forest biome [ENVO:01001798]
-      tropical moist broadleaf forest biome [ENVO:01000228]:
-        text: tropical moist broadleaf forest biome [ENVO:01000228]
-      tropical savanna biome [ENVO:01000188]:
-        text: tropical savanna biome [ENVO:01000188]
-      tropical shrubland biome [ENVO:01000214]:
-        text: tropical shrubland biome [ENVO:01000214]
-      tropical woodland biome [ENVO:01000220]:
-        text: tropical woodland biome [ENVO:01000220]
-      tundra biome [ENVO:01000180]:
-        text: tundra biome [ENVO:01000180]
-      woodland biome [ENVO:01000175]:
-        text: woodland biome [ENVO:01000175]
-      xeric shrubland biome [ENVO:01000218]:
-        text: xeric shrubland biome [ENVO:01000218]
+      acidic soil [ENVO:01001185]:
+        text: acidic soil [ENVO:01001185]
+      acrisol [ENVO:00002234]:
+        text: acrisol [ENVO:00002234]
+      agricultural soil [ENVO:00002259]:
+        text: agricultural soil [ENVO:00002259]
+      albeluvisol [ENVO:00002233]:
+        text: albeluvisol [ENVO:00002233]
+      alisol [ENVO:00002231]:
+        text: alisol [ENVO:00002231]
+      allotment garden soil [ENVO:00005744]:
+        text: allotment garden soil [ENVO:00005744]
+      alluvial paddy field soil [ENVO:00005759]:
+        text: alluvial paddy field soil [ENVO:00005759]
+      alluvial soil [ENVO:00002871]:
+        text: alluvial soil [ENVO:00002871]
+      alluvial swamp soil [ENVO:00005758]:
+        text: alluvial swamp soil [ENVO:00005758]
+      alpine soil [ENVO:00005741]:
+        text: alpine soil [ENVO:00005741]
+      andosol [ENVO:00002232]:
+        text: andosol [ENVO:00002232]
+      anthrosol [ENVO:00002230]:
+        text: anthrosol [ENVO:00002230]
+      arable soil [ENVO:00005742]:
+        text: arable soil [ENVO:00005742]
+      arenosol [ENVO:00002229]:
+        text: arenosol [ENVO:00002229]
+      bare soil [ENVO:01001616]:
+        text: bare soil [ENVO:01001616]
+      beech forest soil [ENVO:00005770]:
+        text: beech forest soil [ENVO:00005770]
+      bluegrass field soil [ENVO:00005789]:
+        text: bluegrass field soil [ENVO:00005789]
+      bulk soil [ENVO:00005802]:
+        text: bulk soil [ENVO:00005802]
+      burned soil [ENVO:00005760]:
+        text: burned soil [ENVO:00005760]
+      calcisol [ENVO:00002239]:
+        text: calcisol [ENVO:00002239]
+      cambisol [ENVO:00002235]:
+        text: cambisol [ENVO:00002235]
+      chernozem [ENVO:00002237]:
+        text: chernozem [ENVO:00002237]
+      clay soil [ENVO:00002262]:
+        text: clay soil [ENVO:00002262]
+      compacted soil [ENVO:06105205]:
+        text: compacted soil [ENVO:06105205]
+      compost soil [ENVO:00005747]:
+        text: compost soil [ENVO:00005747]
+      cryosol [ENVO:00002236]:
+        text: cryosol [ENVO:00002236]
+      dry soil [ENVO:00005748]:
+        text: dry soil [ENVO:00005748]
+      durisol [ENVO:00002238]:
+        text: durisol [ENVO:00002238]
+      eucalyptus forest soil [ENVO:00005787]:
+        text: eucalyptus forest soil [ENVO:00005787]
+      ferralsol [ENVO:00002246]:
+        text: ferralsol [ENVO:00002246]
+      fertilized soil [ENVO:00005754]:
+        text: fertilized soil [ENVO:00005754]
+      field soil [ENVO:00005755]:
+        text: field soil [ENVO:00005755]
+      fluvisol [ENVO:00002273]:
+        text: fluvisol [ENVO:00002273]
+      forest soil [ENVO:00002261]:
+        text: forest soil [ENVO:00002261]
+      friable-frozen soil [ENVO:01001528]:
+        text: friable-frozen soil [ENVO:01001528]
+      frost-susceptible soil [ENVO:01001638]:
+        text: frost-susceptible soil [ENVO:01001638]
+      frozen compost soil [ENVO:00005765]:
+        text: frozen compost soil [ENVO:00005765]
+      frozen soil [ENVO:01001526]:
+        text: frozen soil [ENVO:01001526]
+      gleysol [ENVO:00002244]:
+        text: gleysol [ENVO:00002244]
+      grassland soil [ENVO:00005750]:
+        text: grassland soil [ENVO:00005750]
+      gypsisol [ENVO:00002245]:
+        text: gypsisol [ENVO:00002245]
+      hard-frozen soil [ENVO:01001525]:
+        text: hard-frozen soil [ENVO:01001525]
+      heat stressed soil [ENVO:00005781]:
+        text: heat stressed soil [ENVO:00005781]
+      histosol [ENVO:00002243]:
+        text: histosol [ENVO:00002243]
+      jungle soil [ENVO:00005751]:
+        text: jungle soil [ENVO:00005751]
+      kastanozem [ENVO:00002240]:
+        text: kastanozem [ENVO:00002240]
+      lawn soil [ENVO:00005756]:
+        text: lawn soil [ENVO:00005756]
+      leafy wood soil [ENVO:00005783]:
+        text: leafy wood soil [ENVO:00005783]
+      leptosol [ENVO:00002241]:
+        text: leptosol [ENVO:00002241]
+      limed soil [ENVO:00005766]:
+        text: limed soil [ENVO:00005766]
+      lixisol [ENVO:00002242]:
+        text: lixisol [ENVO:00002242]
+      loam [ENVO:00002258]:
+        text: loam [ENVO:00002258]
+      luvisol [ENVO:00002248]:
+        text: luvisol [ENVO:00002248]
+      manured soil [ENVO:00005767]:
+        text: manured soil [ENVO:00005767]
+      mountain forest soil [ENVO:00005769]:
+        text: mountain forest soil [ENVO:00005769]
+      muddy soil [ENVO:00005771]:
+        text: muddy soil [ENVO:00005771]
+      nitisol [ENVO:00002247]:
+        text: nitisol [ENVO:00002247]
+      orchid soil [ENVO:00005768]:
+        text: orchid soil [ENVO:00005768]
+      ornithogenic soil [ENVO:00005782]:
+        text: ornithogenic soil [ENVO:00005782]
+      paddy field soil [ENVO:00005740]:
+        text: paddy field soil [ENVO:00005740]
+      pathogen-suppressive soil [ENVO:03600036]:
+        text: pathogen-suppressive soil [ENVO:03600036]
+      phaeozem [ENVO:00002249]:
+        text: phaeozem [ENVO:00002249]
+      planosol [ENVO:00002251]:
+        text: planosol [ENVO:00002251]
+      plastic-frozen soil [ENVO:01001527]:
+        text: plastic-frozen soil [ENVO:01001527]
+      plinthosol [ENVO:00002250]:
+        text: plinthosol [ENVO:00002250]
+      podzol [ENVO:00002257]:
+        text: podzol [ENVO:00002257]
+      pond soil [ENVO:00005764]:
+        text: pond soil [ENVO:00005764]
+      red soil [ENVO:00005790]:
+        text: red soil [ENVO:00005790]
+      regosol [ENVO:00002256]:
+        text: regosol [ENVO:00002256]
+      roadside soil [ENVO:00005743]:
+        text: roadside soil [ENVO:00005743]
+      rubber plantation soil [ENVO:00005788]:
+        text: rubber plantation soil [ENVO:00005788]
+      savanna soil [ENVO:00005746]:
+        text: savanna soil [ENVO:00005746]
+      sawah soil [ENVO:00005752]:
+        text: sawah soil [ENVO:00005752]
+      soil [ENVO:00001998]:
+        text: soil [ENVO:00001998]
+      solonchak [ENVO:00002252]:
+        text: solonchak [ENVO:00002252]
+      solonetz [ENVO:00002255]:
+        text: solonetz [ENVO:00002255]
+      spruce forest soil [ENVO:00005784]:
+        text: spruce forest soil [ENVO:00005784]
+      stagnosol [ENVO:00002274]:
+        text: stagnosol [ENVO:00002274]
+      surface soil [ENVO:02000059]:
+        text: surface soil [ENVO:02000059]
+      technosol [ENVO:00002275]:
+        text: technosol [ENVO:00002275]
+      tropical soil [ENVO:00005778]:
+        text: tropical soil [ENVO:00005778]
+      ultisol [ENVO:01001397]:
+        text: ultisol [ENVO:01001397]
+      umbrisol [ENVO:00002253]:
+        text: umbrisol [ENVO:00002253]
+      upland soil [ENVO:00005786]:
+        text: upland soil [ENVO:00005786]
+      vegetable garden soil [ENVO:00005779]:
+        text: vegetable garden soil [ENVO:00005779]
+      vertisol [ENVO:00002254]:
+        text: vertisol [ENVO:00002254]
 slots:
   air_data:
     name: air_data

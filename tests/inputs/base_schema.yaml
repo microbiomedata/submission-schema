@@ -13,8 +13,8 @@ enums:
         text: dune soil [ENVO:00000170]
       forest soil [ENVO:00000111]:
         text: forest soil [ENVO:00000111]
-  EnvMediumScaleSoilEnum:
-    name: EnvMediumScaleSoilEnum
+  EnvMediumSoilEnum:
+    name: EnvMediumSoilEnum
     permissible_values:
       alluvial paddy field soil [ENVO:00005759]:
         text: alluvial paddy field soil [ENVO:00005759]
@@ -31,4 +31,4 @@ enums:
         text: subtropical coniferous forest biome [ENVO:01000209]
       tidal mangrove shrubland [ENVO:01001369]:
         text: tidal mangrove shrubland [ENVO:01001369]
-source_file: /home/mark/gitrepos/submission-schema/tests/inputs/base_schema.yaml
+source_file: /Users/SMoxon/Documents/src/submission-schema/tests/inputs/base_schema.yaml
