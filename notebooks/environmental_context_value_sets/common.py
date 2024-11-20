@@ -1,33 +1,14 @@
-from operator import index
 
-from oaklib import get_adapter
-from oaklib.datamodels.vocabulary import IS_A, PART_OF
 import pandas as pd
 from linkml_runtime import SchemaView
-from linkml_runtime.dumpers import yaml_dumper
 import requests
-import pprint
 
 from typing import Dict, Any
 import csv
 
 from sklearn.feature_extraction.text import CountVectorizer  # from scikit-learn
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-from scipy.sparse import hstack
 
 import re
-
-import os
-
-import duckdb
-import sqlite3
-
-import gzip
-import shutil
-
-from urllib.parse import urlparse
 
 
 
@@ -35,9 +16,9 @@ from urllib.parse import urlparse
 # todo is filling memory with things like this a good idea? for understandability? or performance?
 # todo they should be aggregated somewhere, as specified by the config.yaml
 # todo or should we going straight to data frames? in which case a dlist of dicts might be preferable
-def get_curie_descendants_label_dict(curie, predicates, adapter):
+def get_curie_descendants_label_dict(my_curie, predicates, adapter):
     curie_label_dict = {}
-    for descendant in adapter.descendants(curie, predicates=predicates):
+    for descendant in adapter.descendants(my_curie, predicates=predicates):
         curie_label_dict[descendant] = adapter.label(descendant)
     return curie_label_dict
 
@@ -54,18 +35,15 @@ def get_schemaview_from_source(source):
     return SchemaView(source)
 
 
-# def get_schema_from_schemaview(schemaview):
-#     return schemaview.schema
-
 def parse_hierarchically_underscored_strings(hierarchically_underscored_string_list):
     result = []
     for item in hierarchically_underscored_string_list:
         # Remove leading underscores for label, split on '[' to separate curie
-        label, curie = item.lstrip('_').split(' [')
+        label, my_curie = item.lstrip('_').split(' [')
         # Remove the trailing ']' from curie
-        curie = curie.rstrip(']')
+        my_curie = my_curie.rstrip(']')
         # Append dictionary with label and curie
-        result.append({'label': label.strip(), 'curie': curie.strip()})
+        result.append({'label': label.strip(), 'curie': my_curie.strip()})
     return result
 
 
@@ -74,30 +52,30 @@ def dedupe_underscoreless_pvs(underscoreless_pvs):
     curie_to_labels = {}
 
     for item in underscoreless_pvs:
-        curie = item['curie']
+        my_curie = item['curie']
         label = item['label']
 
         # Initialize the list if curie is not yet a key
-        if curie not in curie_to_labels:
-            curie_to_labels[curie] = []
+        if my_curie not in curie_to_labels:
+            curie_to_labels[my_curie] = []
 
         # Add label if it is not already in the list for this curie
-        if label not in curie_to_labels[curie]:
-            curie_to_labels[curie].append(label)
+        if label not in curie_to_labels[my_curie]:
+            curie_to_labels[my_curie].append(label)
     return curie_to_labels
 
 
 def validate_curie_label_list_dict(curie_label_dict, adapter, print_flag=False):
     problem_curies = []
     valid_curies = []
-    for curie, labels in curie_label_dict.items():
-        true_label = adapter.label(curie)
+    for my_curie, labels in curie_label_dict.items():
+        true_label = adapter.label(my_curie)
         if true_label not in labels:
-            problem_curies.append(curie)
+            problem_curies.append(my_curie)
             if print_flag:
-                print(f"Error: {curie} has true label {true_label} which doesn't appear in {labels}")
+                print(f"Error: {my_curie} has true label {true_label} which doesn't appear in {labels}")
         else:
-            valid_curies.append({"curie": curie, "label": true_label})
+            valid_curies.append({"curie": my_curie, "label": true_label})
     return {"problems": problem_curies, "valids": valid_curies}
 
 
@@ -186,14 +164,14 @@ def tsv_to_dict_of_dicts(tsv_file, outer_key_column):
     :param outer_key_column: The column name or index to be used as the key for the outer dictionary.
     :return: A dictionary of dictionaries, with outer keys being the values from the specified column.
     """
-    with open(tsv_file, newline='', encoding='utf-8') as f:
-        reader = csv.DictReader(f, delimiter='\t')
+    with open(tsv_file, newline='', encoding='utf-8') as my_f:
+        reader = csv.DictReader(my_f, delimiter='\t')
 
         result = {}
 
-        for row in reader:
-            outer_key = row[outer_key_column]
-            result[outer_key] = {key: value for key, value in row.items() if key != outer_key_column}
+        for my_row in reader:
+            outer_key = my_row[outer_key_column]
+            result[outer_key] = {key: value for key, value in my_row.items() if key != outer_key_column}
 
     return result
 
@@ -201,7 +179,7 @@ def tsv_to_dict_of_dicts(tsv_file, outer_key_column):
 # todo only gets authoritative labels from the passed adapter, which is presumably EnvO only
 # todo would benefit from caching of labels
 
-def biosamples_lod_context_extractor(biosamples_lod, adapter, env_pacakge_overrides=None):
+def biosamples_lod_context_extractor(biosamples_lod, adapter, my_env_pacakge_overrides=None):
     new_lod = []
     for biosample in biosamples_lod:
         insdc_identifiers = biosample.get('insdc_biosample_identifiers', [])
@@ -216,7 +194,7 @@ def biosamples_lod_context_extractor(biosamples_lod, adapter, env_pacakge_overri
         # Extracting required multivalued part_of
         associated_studies = '|'.join(biosample.get('associated_studies', []))  # Assuming part_of is a list of strings
 
-        row: Dict[str, str] = {
+        my_row: Dict[str, str] = {
             'id': biosample['id'],
             'insdc_biosample_identifiers': '|'.join(insdc_identifiers) if insdc_identifiers else '',
 
@@ -239,51 +217,13 @@ def biosamples_lod_context_extractor(biosamples_lod, adapter, env_pacakge_overri
             'associated_studies': associated_studies
         }
 
-        if env_pacakge_overrides and biosample['id'] in env_pacakge_overrides:
+        if my_env_pacakge_overrides and biosample['id'] in my_env_pacakge_overrides:
             print(
-                f"Overriding env_package for biosample {biosample['id']} from {row['normalized_env_package']} to {env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']}")
-            row['normalized_env_package'] = env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']
+                f"Overriding env_package for biosample {biosample['id']} from {my_row['normalized_env_package']} to {my_env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']}")
+            my_row['normalized_env_package'] = my_env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']
 
-        new_lod.append(row)
+        new_lod.append(my_row)
     return new_lod
-
-
-def get_hierarchy_terms(curie: str, adapter) -> dict:
-    """
-    Extract ancestor and descendant terms from the ontology for a given CURIE,
-    using caching to improve performance and filtering by 'is_a' relationships.
-
-    Args:
-        curie (str): CURIE identifier for the ontology term.
-        adapter: Ontology adapter.
-
-    Returns:
-        dict: Dictionary containing lists of ancestor and descendant terms.
-    """
-    if curie in ancestor_cache:
-        ancestors = ancestor_cache[curie]
-    else:
-        try:
-            ancestors = list(adapter.ancestors(curie, predicates=[IS_A]))
-            ancestor_cache[curie] = [adapter.label(ancestor) for ancestor in ancestors if ancestor]
-        except Exception as e:
-            print(f"Error retrieving ancestors for {curie}: {e}")
-            ancestor_cache[curie] = []
-
-    if curie in descendant_cache:
-        descendants = descendant_cache[curie]
-    else:
-        try:
-            descendants = list(adapter.descendants(curie, predicates=[IS_A]))
-            descendant_cache[curie] = [adapter.label(descendant) for descendant in descendants if descendant]
-        except Exception as e:
-            print(f"Error retrieving descendants for {curie}: {e}")
-            descendant_cache[curie] = []
-
-    return {
-        'ancestors': ancestor_cache[curie],
-        'descendants': descendant_cache[curie],
-    }
 
 
 def vectorize_terms(df, column):
@@ -303,95 +243,96 @@ def vectorize_terms(df, column):
     )
 
 
-def predict_from_normalized_env_packages(df_raw, adapter):
-    # Apply the function to the relevant columns
-
-    df = df_raw.copy()
-    for column in ['env_broad_scale_id', 'env_local_scale_id', 'env_medium_id']:
-        df[f'{column}_ancestors'] = df[column].apply(lambda x: get_hierarchy_terms(x, adapter)['ancestors'])
-        df[f'{column}_descendants'] = df[column].apply(lambda x: get_hierarchy_terms(x, adapter)['descendants'])
-
-    # Vectorize each set of terms separately
-    broad_scale_ancestors = vectorize_terms(df, 'env_broad_scale_id_ancestors')
-    broad_scale_descendants = vectorize_terms(df, 'env_broad_scale_id_descendants')
-
-    local_scale_ancestors = vectorize_terms(df, 'env_local_scale_id_ancestors')
-    local_scale_descendants = vectorize_terms(df, 'env_local_scale_id_descendants')
-
-    medium_ancestors = vectorize_terms(df, 'env_medium_id_ancestors')
-    medium_descendants = vectorize_terms(df, 'env_medium_id_descendants')
-
-    # Combine all feature matrices
-    X = hstack([
-        broad_scale_ancestors,
-        broad_scale_descendants,
-        local_scale_ancestors,
-        local_scale_descendants,
-        medium_ancestors,
-        medium_descendants
-    ])
-
-    # Filter the DataFrame to only include non-null rows for the target column
-    df_filtered = df[df['normalized_env_package'].notnull() & (df['normalized_env_package'] != "")]
-
-    # Extract the target variable
-    y = df_filtered['normalized_env_package']
-
-    # Ensure X corresponds to the filtered rows
-    X_filtered = X[df_filtered.index]
-
-    # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X_filtered, y, test_size=0.3, random_state=42)
-
-    # Train a Random Forest Classifier
-    clf = RandomForestClassifier(n_estimators=100, random_state=42)
-    clf.fit(X_train, y_train)
-
-    # Make predictions on the test set
-    y_pred = clf.predict(X_test)
-
-    # Evaluate the model
-    print(classification_report(y_test, y_pred))
-
-    # # Predict the normalized_env_package for all rows
-    # df['predicted_normalized_env_package'] = clf.predict(X)
-
-    # # If you want to add confidence scores for each class
-    # class_probabilities = clf.predict_proba(X)
-    # 
-    # # Get the class labels from the model
-    # class_labels = clf.classes_
-    # 
-    # # Add a column for each class with the corresponding confidence score
-    # for i, class_label in enumerate(class_labels):
-    #     df[f'confidence_{class_label}'] = class_probabilities[:, i]
-    # 
-    # return df
-
-    return clf.predict(X)
-
-
-def parse_curie_label(text, approved_prefixes=['ENVO']):
+def parse_curie_label(text, my_approved_prefixes=['ENVO']):
     # Case-insensitive pattern for matching approved prefixes followed by an ID
-    pattern = r'\b(?:' + '|'.join(approved_prefixes) + r')\s*[:_]\s*(\d+)\b'
+    pattern = r'\b(?:' + '|'.join(my_approved_prefixes) + r')\s*[:_]\s*(\d+)\b'
     curie_match = re.search(pattern, text, re.IGNORECASE)
 
     if curie_match:
-        curie = f"{approved_prefixes[0].upper()}:{curie_match.group(1)}"  # standardize prefix to 'ENVO:ID'
+        my_curie = f"{my_approved_prefixes[0].upper()}:{curie_match.group(1)}"  # standardize prefix to 'ENVO:ID'
         label = re.sub(pattern, "", text).strip("[]() ")
         # replace any colons in the label with a whitespace
-        return pd.Series([label, curie])
+        return pd.Series([label, my_curie])
     else:
         label = re.sub(r':', ' ', text)
         return pd.Series([label, None])  # No CURIE found, return original label and None for CURIE
 
 
-def get_longest_annotation_curie(text, adapter):
+def get_longest_annotation_curie(text, adapter, min_annotation_len):
     annotations = adapter.annotate_text(text)
     if not annotations:  # Check if annotations list is empty
         return None
     try:
         longest_annotation = max(annotations, key=lambda x: x.subject_end - x.subject_start)
+
+        if longest_annotation.subject_end - longest_annotation.subject_start < min_annotation_len:
+            return None
         return longest_annotation.object_id
     except ValueError:
         return None  # Return None if there's an unexpected issue with finding the max
+
+
+# Create a new DataFrame summarizing each stretch_id with the most common longest_annotation_curie
+def summarize_stretch_groups(df):
+    summary_rows = []
+
+    # Iterate through each group of rows by stretch_id
+    for stretch_id, group in df.dropna(subset=['stretch_id']).groupby('stretch_id'):
+        # Calculate the most common longest_annotation_curie and its fraction
+        most_common_curie = group['longest_annotation_curie'].value_counts().idxmax()
+        fraction = group['longest_annotation_curie'].value_counts(normalize=True).max()
+
+        # Append the summary row
+        summary_rows.append({
+            'stretch_id': stretch_id,
+            'most_common_longest_annotation_curie': most_common_curie,
+            'fraction': fraction
+        })
+
+    # Convert the summary rows into a new DataFrame
+    return pd.DataFrame(summary_rows)
+
+
+def find_consecutive_stretches_dict(series):
+    """
+    Detect consecutive stretches of integer values in a pandas Series.
+    Returns a dictionary where the keys are serial numbers (starting at 0),
+    and the values are lists of consecutive integers.
+    """
+    # Ensure the series is clean: drop NaN, duplicates, and non-integer values
+    series = series.dropna().drop_duplicates()
+    series = series[series.apply(lambda x: isinstance(x, (int, float)) and (x == int(x)))].astype(int)
+    series = series.sort_values()
+
+    my_stretches_dict = {}
+    current_stretch = []
+    stretch_index = 1
+
+    for i in range(len(series)):
+        if i == 0 or series.iloc[i] - series.iloc[i - 1] == 1:
+            current_stretch.append(series.iloc[i])
+        else:
+            if len(current_stretch) >= 3:
+                my_stretches_dict[stretch_index] = current_stretch
+                stretch_index += 1
+            current_stretch = [series.iloc[i]]
+
+    if len(current_stretch) >= 3:
+        my_stretches_dict[stretch_index] = current_stretch
+
+    return my_stretches_dict
+
+
+# Function to convert stretches dict to long-format DataFrame
+def stretches_dict_to_long_dataframe(my_stretches_dict):
+    """
+    Convert a dictionary of consecutive stretches into a long-format DataFrame.
+    Each row corresponds to an individual integer value in a stretch, with:
+    - 'stretch_id': The key from the dictionary.
+    - 'value': The integer value within the stretch.
+    """
+    rows = []
+    for stretch_id, stretch_values in my_stretches_dict.items():
+        for value in stretch_values:
+            rows.append({'stretch_id': stretch_id, 'value': int(value)})  # Ensure integers only
+    return pd.DataFrame(rows)
