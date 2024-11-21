@@ -7,6 +7,8 @@ local
 .DS_Store
 sub_schema_dh/
 
+notebooks/environmental_context_value_sets/goldData.xlsx
+
 /docs/
 /project/docs/
 /tmp/
