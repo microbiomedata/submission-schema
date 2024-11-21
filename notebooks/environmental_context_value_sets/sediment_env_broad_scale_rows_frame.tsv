@@ -1,0 +1,327 @@
+curie	label	envo_native	obsolete	legacy_pv	abp	env_sys	biome	terrestrial_biome	aquatic_biome	env_mat	nmdc_scoped_count	gold_scoped_count	ncbi_scoped_count
+ENVO:03600074	aquaculture farm	True	False	False	False	True	False	False	False	False			8.0
+ENVO:01000031	obsolete marine feature	True	True	False	False	False	False	False	False	False			1.0
+OBI:0100026	organism	False	False	False	False	False	False	False	False	False			161.0
+ENVO:01000022	marine salt marsh biome	True	False	False	True	True	True	False	True	False			26.0
+ENVO:01001836	montane biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000040	oceanic benthopelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000907		False	False	False	False	False	False	False	False	False			1.0
+PATO:0045093	south	False	False	False	False	False	False	False	False	False			8.0
+ENVO:01000246	village biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000046	marginal sea biome	True	False	False	True	True	True	False	True	False			2.0
+ENVO:00000045	estuary	True	False	False	True	False	False	False	False	False			323.0
+ENVO:01000325	aquatic layer	True	False	False	False	False	False	False	False	False			1.0
+CHEBI:16134	ammonia	False	False	False	False	False	False	False	False	False			2.0
+ENVO:00000894	obsolete polar biome	True	True	False	False	False	False	False	False	False			1.0
+ENVO:01000685	water mass	True	False	False	True	False	False	False	False	False			72.0
+ENVO:00002199	sandy beach	True	False	False	True	False	False	False	False	False			5.0
+ENVO:00000909		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00002875	oil contaminated soil	True	False	False	True	False	False	False	False	True			7.0
+ENVO:00001996	mine drainage	True	False	False	True	False	False	False	False	False			1.0
+ENVO:01000192	tropical grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01001020	hypersaline lake	True	False	False	True	False	False	False	False	False			13.0
+ENVO:03000143	cryosphere	True	False	False	True	False	False	False	False	False			14.0
+ENVO:00000067	cave	True	False	False	True	False	False	False	False	False			12.0
+ENVO:01001004	groundwater	True	False	False	False	False	False	False	False	True			1.0
+ENVO:01000860	temperate marine upwelling biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000248	dense settlement biome	True	False	False	True	True	True	False	False	False			32.0
+ENVO:03000033	marine sediment	True	False	False	False	False	False	False	False	True			701.0
+ENVO:01000621	microcosm	True	False	False	False	False	False	False	False	False			62.0
+ENVO:01000214	tropical shrubland biome	True	False	False	True	True	True	True	False	False			24.0
+ENVO:00002030	aquatic biome	True	False	False	True	True	True	False	True	False			56.0
+ENVO:01000215	temperate shrubland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000179	desert biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000009	national geopolitical entity	True	False	False	False	False	False	False	False	False			1.0
+ENVO:01000213	subtropical shrubland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01001641	glaciation	True	False	False	False	False	False	False	False	False			3.0
+ENVO:01000187	subtropical savanna biome	True	False	False	True	True	True	True	False	False			
+ENVO:00012408	aquifer	True	False	False	False	False	False	False	False	False			22.0
+ENVO:00000895	obsolete temperate shelf and sea biome	True	True	False	False	False	False	False	False	False			1.0
+ENVO:01001833	mediterranean biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000172	sandy desert	True	False	False	True	False	False	False	False	False			3.0
+ENVO:00000299	ice field	True	False	False	True	False	False	False	False	False			1.0
+ENVO:01001209	wetland ecosystem	True	False	False	False	True	False	False	False	False			10.0
+ENVO:00000916		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000273	continental slope	True	False	False	True	False	False	False	False	False			9.0
+ENVO:01000039	oceanic hadal pelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000912		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000212	temperate mixed forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:03000034	shallow marine sediment	True	False	False	False	False	False	False	False	True			24.0
+ENVO:00000899		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000339	polar biome	True	False	False	True	True	True	False	False	False			129.0
+ENVO:01001832	subtropical biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000908		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000251	subpolar	True	False	False	False	False	False	False	False	False			4.0
+ENVO:01000252	freshwater lake biome	True	False	False	True	True	True	False	True	False			272.0
+ENVO:01000127	marine cold seep biome	True	False	False	True	True	True	False	True	False			46.0
+ENVO:00000114	agricultural field	True	False	False	True	False	False	False	False	False			9.0
+ENVO:00000297	paddy field	True	False	False	True	False	False	False	False	False			12.0
+ENVO:01000182	temperate desert biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000104	undersea feature	True	False	False	True	False	False	False	False	False			153.0
+ENVO:00000021	freshwater lake	True	False	False	True	False	False	False	False	False			214.0
+ENVO:01000263	cold seep	True	False	False	True	False	False	False	False	False			265.0
+ENVO:01000323	atmospheric boundary layer	True	False	False	False	False	False	False	False	False			2.0
+ENVO:01000253	freshwater river biome	True	False	False	True	True	True	False	True	False			68.0
+ENVO:01000221	temperate woodland biome	True	False	False	True	True	True	True	False	False			40.0
+ENVO:01000223	montane savanna biome	True	False	False	True	True	True	True	False	False			
+ENVO:00002034	biofilm	True	False	False	False	False	False	False	False	False			6.0
+ENVO:01001835	alpine biome	True	False	False	True	True	True	False	False	False			
+ENVO:00010483	environmental material	True	False	False	False	False	False	False	False	True			21.0
+ENVO:00000406	mid-ocean ridge	True	False	False	True	False	False	False	False	False			1.0
+ENVO:00000020	lake	True	False	False	True	False	False	False	False	False			244.0
+ENVO:00000918		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000891	large freshwater lake biome	True	False	False	True	True	True	False	True	False			37.0
+ENVO:01000185	montane desert biome	True	False	False	True	True	True	False	False	False			12.0
+ENVO:00000032	bay	True	False	False	True	False	False	False	False	False			4.0
+ENVO:00000906		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000223	continental shelf	True	False	False	True	False	False	False	False	False			2.0
+ENVO:00000887	large river biome	True	False	False	True	True	True	False	True	False			3.0
+PCO:1000004	microbial community	False	False	False	False	False	False	False	False	False			43.0
+ENVO:00000247	volcano	True	False	False	True	False	False	False	False	False			4.0
+ENVO:01000053	marine ultramafic hydrothermal vent biome	True	False	False	True	True	True	False	True	False			
+ENVO:00000369	brine pool	True	False	False	True	False	False	False	False	False			32.0
+ENVO:00000003	mine tailing	True	False	False	False	False	False	False	False	True			42.0
+ENVO:00000230	coastal wetland ecosystem	True	False	False	False	True	False	False	False	False			15.0
+ENVO:00002138	beach sand	True	False	False	True	False	False	False	False	True			1.0
+ENVO:01001048	sediment environment	True	False	False	False	True	False	False	False	False			81.0
+ENVO:01000245	cropland biome	True	False	False	True	True	True	True	False	False			6.0
+ENVO:00000546	lake sediment	True	False	False	False	False	False	False	False	True			257.0
+ENVO:00002196	aquarium	True	False	False	False	False	False	False	False	False			13.0
+ENVO:01000030	marine hydrothermal vent biome	True	False	False	True	True	True	False	True	False			41.0
+ENVO:01000204	tropical	True	False	False	False	False	False	False	False	False			168.0
+ENVO:00000911		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000213	marine mesopelagic zone	True	False	False	True	False	False	False	False	False			6.0
+ENVO:00000482	sea floor	True	False	False	True	False	False	False	False	False			2.0
+ENVO:01000201	subtropical broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000128	dilution basin mediterranean sea biome	True	False	False	True	True	True	False	True	False			
+ENVO:00000917		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000220	tropical woodland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000888	large river headwater biome	True	False	False	True	True	True	False	True	False			
+ENVO:01001192	sediment surface	True	False	False	False	False	False	False	False	False			40.0
+ENVO:01000857	temperate mediterranean sea biome	True	False	False	True	True	True	False	True	False			44.0
+ENVO:01000209	subtropical coniferous forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000873	freshwater biome	True	False	False	True	True	True	False	True	False			102.0
+ENVO:01000042	neritic epipelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000020	estuarine biome	True	False	False	True	True	True	False	True	False			1325.0
+ENVO:00000215	hydrothermal vent	True	False	False	True	False	False	False	False	False			20.0
+ENVO:00000035	marsh	True	False	False	False	True	False	False	False	False			498.0
+ENVO:00002007	sediment	True	False	False	False	False	False	False	False	True			2625.0
+ENVO:01000208	mediterranean woodland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000192	mudflat	True	False	False	False	True	False	False	False	False			5.0
+ENVO:01000122	marine hydrothermal vent	True	False	False	True	False	False	False	False	False			11.0
+ENVO:01000280	ecozone	True	False	False	True	True	False	False	False	False			15.0
+ENVO:01000043	neritic mesopelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000066	marine anoxic zone	True	False	False	True	False	False	False	False	False			2.0
+CHEBI:15377	water	False	False	False	False	False	False	False	False	False			113.0
+ENVO:01000774	oligotrophic lake	True	False	False	True	False	False	False	False	False			15.0
+ENVO:00000275	ocean trench	True	False	False	True	False	False	False	False	False			32.0
+ENVO:03605008	freshwater stream biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000227	tropical dry broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000322	brackish water environment	True	False	False	False	True	False	False	False	False			2.0
+ENVO:00000053	freshwater marsh	True	False	False	False	True	False	False	False	False			1.0
+ENVO:01000320	marine environment	True	False	False	True	True	False	False	False	False			2.0
+ENVO:01000035	oceanic epipelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000178	savanna biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000048	ocean biome	True	False	False	True	True	True	False	True	False			291.0
+ENVO:01000047	mediterranean sea biome	True	False	False	True	True	True	False	True	False			818.0
+ENVO:03000082	thermokarst lake	True	False	False	True	False	False	False	False	False			7.0
+ENVO:00000109	woodland area	True	False	False	True	False	False	False	False	False			4.0
+ENVO:01000218	xeric shrubland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000049	marine coral reef biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000044	obsolete marine pelagic feature	True	True	False	False	False	False	False	False	False			1.0
+ENVO:00000039	fjord	True	False	False	True	False	False	False	False	False			2.0
+ENVO:01000216	montane shrubland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000919		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000858	marine upwelling biome	True	False	False	True	True	True	False	True	False			19.0
+ENVO:01000249	urban biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000229	mediterranean savanna biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000238	polar	True	False	False	False	False	False	False	False	False			21.0
+ENVO:04000007	lake water	True	False	False	True	False	False	False	False	True			1.0
+ENVO:00000078	farm	True	False	False	False	True	False	False	False	False			31.0
+ENVO:00002010	saline water	True	False	False	False	False	False	False	False	True			4.0
+ENVO:01000818	obsolete cryosphere	True	True	False	False	False	False	False	False	False			14.0
+ENVO:00000255	flood plain	True	False	False	True	False	False	False	False	False			1.0
+ENVO:01000202	temperate broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000206	temperate	True	False	False	False	False	False	False	False	False			25.0
+ENVO:01001203	alluvial sediment	True	False	False	False	False	False	False	False	True			1.0
+NCBITaxon:1117	Cyanobacteria	False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000426	ocean floor	True	False	False	True	False	False	False	False	False			24.0
+ENVO:00000057	mangrove swamp	True	False	False	False	True	False	False	False	False			27.0
+ENVO:01000228	tropical moist broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000024	marine benthic biome	True	False	False	True	True	True	False	True	False			273.0
+ENVO:00000893	xeric basin biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000900		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000016	silt	True	False	False	False	False	False	False	False	True			1.0
+ENVO:00000902		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000126	sulfur spring	True	False	False	True	False	False	False	False	False			7.0
+ENVO:01000023	marine pelagic biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000059	sea grass bed	True	False	False	True	False	False	False	False	False			18.0
+ENVO:01000174	forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000034	oceanic sea surface microlayer biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000317	aquatic environment	True	False	False	False	True	False	False	False	False			91.0
+ENVO:00000889	large river delta biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000739	habitat	True	False	False	True	True	False	False	False	False			14.0
+ENVO:00000316	intertidal zone	True	False	False	True	False	False	False	False	False			17.0
+ENVO:00000903		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000096	caldera	True	False	False	True	False	False	False	False	False			2.0
+ENVO:01000199	mediterranean forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000225	subtropical dry broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000428	biome	True	False	False	True	True	True	False	False	False			703.0
+ENVO:01000226	subtropical moist broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:02000008	cell culture	True	False	False	False	False	False	False	False	True			4.0
+ENVO:01000181	mangrove biome	True	False	False	True	True	True	True	False	False			1048.0
+ENVO:01000687	coast	True	False	False	True	False	False	False	False	False			630.0
+ENVO:01000197	broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:00002149	sea water	True	False	False	False	False	False	False	False	True			12.0
+ENVO:01000324	planetary surface	True	False	False	True	False	False	False	False	False			1.0
+PATO:0001360	filamentous	False	False	False	False	False	False	False	False	False			7.0
+ENVO:00000892	small freshwater lake biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000081	mountain	True	False	False	True	False	False	False	False	False			46.0
+ENVO:00000027	spring	True	False	False	True	False	False	False	False	False			1.0
+ENVO:00000134	permafrost	True	False	False	False	False	False	False	False	True			26.0
+ENVO:00000914		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000190	flooded savanna biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000250	subpolar coniferous forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000245	maar	True	False	False	True	False	False	False	False	False			2.0
+ENVO:00000111	forested area	True	False	False	True	False	False	False	False	False			23.0
+ENVO:01000041	neritic sea surface microlayer biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000904		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00005795	marine mud	True	False	False	True	False	False	False	False	True			3.0
+ENVO:01000051	marine black smoker biome	True	False	False	True	True	True	False	True	False			
+ENVO:00000901		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000915		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000446	terrestrial biome	True	False	False	True	True	True	True	False	False			70.0
+ENVO:01000217	mediterranean shrubland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000316	alkaline environment	True	False	False	False	True	False	False	False	False			3.0
+PATO:0000689	continuous	False	False	False	False	False	False	False	False	False			22.0
+ENVO:01000017	sand	True	False	False	False	False	False	False	False	True			37.0
+ENVO:00000022	river	True	False	False	True	False	False	False	False	False			132.0
+ENVO:00000132	ice sheet	True	False	False	False	False	False	False	False	False			58.0
+ENVO:00000091	beach	True	False	False	True	False	False	False	False	False			4.0
+ENVO:02000152	mangrove biome sediment	True	False	False	True	False	False	False	False	True			102.0
+ENVO:01001838	arid biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000183	tropical desert biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000898	obsolete tropical coral biome	True	True	False	False	False	False	False	False	False			1.0
+NCBITaxon:2	Bacteria	False	False	False	False	False	False	False	False	False			81.0
+ENVO:01001803	tropical forest	True	False	False	True	True	False	False	False	False			3.0
+PATO:0001456	anaerobic	False	False	False	False	False	False	False	False	False			236.0
+ENVO:00002011	fresh water	True	False	False	False	False	False	False	False	True			358.0
+ENVO:00000367	IUCN national park	True	False	False	False	False	False	False	False	False			2.0
+ENVO:01000123	marine sponge reef biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000859	tropical marine upwelling biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000856	temperate marginal sea biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000254	environmental system	True	False	False	False	True	False	False	False	False			71.0
+ENVO:01001854	hydrothermal field	True	False	False	True	False	False	False	False	False			4.0
+ENVO:00000241	tidal mudflat	True	False	False	False	True	False	False	False	False			35.0
+ENVO:03600017	slurry	True	False	False	False	False	False	False	False	True			4.0
+ENVO:01001837	subalpine biome	True	False	False	True	True	True	False	False	False			
+ENVO:00002179	intertidal sediment	True	False	False	False	False	False	False	False	True			2.0
+ENVO:01000026	marine bathyal zone biome	True	False	False	True	True	True	False	True	False			65.0
+ENVO:01001369	tidal mangrove shrubland	True	False	False	True	True	True	True	False	False			
+ENVO:00002116	contaminated soil	True	False	False	True	False	False	False	False	True			7.0
+PATO:0001323	area	False	False	False	False	False	False	False	False	False			188.0
+ENVO:00000905		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000194	montane grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000189	temperate savanna biome	True	False	False	True	True	True	True	False	False			
+NCBITaxon:2157	Archaea	False	False	False	False	False	False	False	False	False			40.0
+ENVO:01000219	anthropogenic terrestrial biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000910		False	False	False	False	False	False	False	False	False			1.0
+ENVO:01000854	tropical marine coral reef biome	True	False	False	True	True	True	False	True	False			
+ENVO:00000897	obsolete tropical upwelling biome	True	True	False	False	False	False	False	False	False			1.0
+ENVO:01000210	tropical coniferous forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000100	valley	True	False	False	True	False	False	False	False	False			68.0
+ENVO:01000177	grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000021	obsolete mangrove biome	True	True	False	False	False	False	False	False	False			1.0
+ENVO:01000306	freshwater environment	True	False	False	False	True	False	False	False	False			1.0
+ENVO:01000037	oceanic bathypelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000184	subtropical desert biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000186	polar desert biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000188	tropical savanna biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000211	temperate coniferous forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:00002123	bioreactor	True	False	False	False	False	False	False	False	False			1.0
+ENVO:01000191	subtropical grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01001788	marine ecosystem	True	False	False	True	True	False	False	False	False			8.0
+ENVO:00000013	cave system	True	False	False	True	False	False	False	False	False			1.0
+ENVO:01000196	coniferous forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000817	biosphere	True	False	False	True	False	False	False	False	False			12.0
+ENVO:01000321	sea water environment	True	False	False	False	True	False	False	False	False			2.0
+ENVO:01000028	marine hadal zone biome	True	False	False	True	True	True	False	True	False			5.0
+ENVO:01001049	non-saline sediment environment	True	False	False	False	True	False	False	False	False			1.0
+ENVO:01000200	tropical broadleaf forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000352	field	True	False	False	True	False	False	False	False	False			5.0
+ENVO:01001830	tropical biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000150	coral reef	True	False	False	True	False	False	False	False	False			1.0
+ENVO:00000043	wetland area	True	False	False	True	False	False	False	False	False			3.0
+ENVO:01000025	marine neritic benthic zone biome	True	False	False	True	True	True	False	True	False			23.0
+ENVO:01000205	subtropical	True	False	False	False	False	False	False	False	False			29.0
+CHEBI:22695	base	False	False	False	False	False	False	False	False	False			14.0
+ENVO:00000054	saline marsh	True	False	False	False	True	False	False	False	False			81.0
+ENVO:01001505	alpine tundra biome	True	False	False	True	True	True	True	False	False			
+ENVO:01001110	ecosystem	True	False	False	False	True	False	False	False	False			131.0
+ENVO:01000052	marine white smoker biome	True	False	False	True	True	True	False	True	False			
+ENVO:01000029	marine reef biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000180	tundra biome	True	False	False	True	True	True	True	False	False			
+ENVO:01001798	tropical mixed forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:03500005	anthropogenic litter	True	False	False	False	False	False	False	False	False			48.0
+ENVO:01001831	temperate biome	True	False	False	True	True	True	False	False	False			
+ENVO:01000298	continental margin	True	False	False	True	False	False	False	False	False			3.0
+CHEBI:15379	dioxygen	False	False	False	False	False	False	False	False	False			7.0
+ENVO:00000051	hot spring	True	False	False	True	False	False	False	False	False			248.0
+ENVO:00002127	stream sediment	True	False	False	False	False	False	False	False	True			10.0
+ENVO:00000402	mud volcano	True	False	False	True	False	False	False	False	False			111.0
+ENVO:01000193	temperate grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000036	oceanic mesopelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000027	marine abyssal zone biome	True	False	False	True	True	True	False	True	False			21.0
+ENVO:01000004	concentration basin mediterranean sea biome	True	False	False	True	True	True	False	True	False			
+ENVO:00000015	ocean	True	False	False	True	False	False	False	False	False			100.0
+ENVO:00002129	anaerobic sludge	True	False	False	False	False	False	False	False	True			6.0
+ENVO:01000175	woodland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01001230	tropical marginal sea biome	True	False	False	True	True	True	False	True	False			
+ENVO:00002113	deep marine sediment	True	False	False	False	False	False	False	False	True			162.0
+ENVO:00000063	water body	True	False	False	True	False	False	False	False	False			18.0
+ENVO:01001834	subpolar biome	True	False	False	True	True	True	False	False	False			
+ENVO:00000913		False	False	False	False	False	False	False	False	False			1.0
+ENVO:00005801	rhizosphere	True	False	False	True	True	False	False	False	False			80.0
+ENVO:00002124	anaerobic bioreactor	True	False	False	False	False	False	False	False	False			41.0
+ENVO:00000386	river mouth	True	False	False	True	False	False	False	False	False			2.0
+ENVO:01000222	subtropical woodland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000033	pond	True	False	False	True	False	False	False	False	False			12.0
+UBERON:0001988	feces	False	False	False	False	False	False	False	False	False			3.0
+ENVO:01000050	marine subtidal rocky reef biome	True	False	False	True	True	True	False	True	False			
+ENVO:00001998	soil	True	False	False	True	False	False	False	False	True			11.0
+PATO:0001657	increased osmolarity	False	False	False	False	False	False	False	False	False			1.0
+ENVO:00000023	stream	True	False	False	True	False	False	False	False	False			722.0
+ENVO:01001804	subtropical forest	True	False	False	True	True	False	False	False	False			150.0
+ENVO:00002120	acidic hot spring	True	False	False	True	False	False	False	False	False			2.0
+ENVO:00002045	anaerobic sediment	True	False	False	False	False	False	False	False	True			2.0
+ENVO:00000896	obsolete temperate upwelling biome	True	True	False	False	False	False	False	False	False			1.0
+ENVO:01000033	oceanic pelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000019	saline lake	True	False	False	True	False	False	False	False	False			242.0
+ENVO:01000224	mediterranean grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000141	bank	True	False	False	True	False	False	False	False	False			3.0
+ENVO:01001468	intertidal ecosystem	True	False	False	True	True	False	False	False	False			1.0
+ENVO:02000091	coal	True	False	False	False	False	False	False	False	True			1.0
+ENVO:01000038	oceanic abyssopelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:01000195	flooded grassland biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000198	mixed forest biome	True	False	False	True	True	True	True	False	False			
+ENVO:01000173	anoxic water	True	False	False	False	False	False	False	False	True			2.0
+ENVO:01000297	freshwater river	True	False	False	True	False	False	False	False	False			1.0
+ENVO:00000016	sea	True	False	False	True	False	False	False	False	False			1.0
+ENVO:00000038	lagoon	True	False	False	False	False	False	False	False	False			74.0
+ENVO:01000176	shrubland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00000133	glacier	True	False	False	False	False	False	False	False	False			16.0
+ENVO:01000045	epeiric sea biome	True	False	False	True	True	True	False	True	False			2.0
+ENVO:00002209	saline lake sediment	True	False	False	False	False	False	False	False	True			1.0
+ENVO:00005750	grassland soil	True	False	False	True	False	False	False	False	True			4.0
+ENVO:01000054	marine basaltic hydrothermal vent biome	True	False	False	True	True	True	False	True	False			
+ENVO:00000447	marine biome	True	False	False	True	True	True	False	True	False			1920.0
+ENVO:00000055	saline evaporation pond	True	False	False	True	False	False	False	False	False			1.0
+ENVO:01000032	neritic pelagic zone biome	True	False	False	True	True	True	False	True	False			1.0
+ENVO:00000156	desert oasis	True	False	False	True	False	False	False	False	False			225.0
+ENVO:00002018	sewage	True	False	False	False	False	False	False	False	True			1.0
+ENVO:01001669	mariculture process	True	False	False	False	False	False	False	False	False			23.0
+ENVO:00000153	headwater	True	False	False	True	False	False	False	False	False			262.0
+ENVO:00000881	obsolete Tropical and subtropical grasslands, savannas, and shrubland biome	True	True	False	False	False	False	False	False	False			137.0
+ENVO:00000890	small river biome	True	False	False	True	True	True	False	True	False			1819.0
+ENVO:01000247	rangeland biome	True	False	False	True	True	True	True	False	False			
+ENVO:00002044	sludge	True	False	False	False	False	False	False	False	True			200.0
