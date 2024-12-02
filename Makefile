@@ -72,7 +72,7 @@ install:
 .PHONY: install
 
 # ---
-# Project Syncronization
+# Project Synchronization
 # ---
 #
 # check we are up to date
@@ -95,7 +95,7 @@ site: clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schem
 gen-project gendoc project/json/nmdc_submission_schema.json
 
 %.yaml: gen-project
-# make deploy has been depricated by an updated .github/workflows/deploy-docs.yaml
+# make deploy has been deprecated by an updated .github/workflows/deploy-docs.yaml
 #deploy: all mkd-gh-deploy
 
 # generates all project files
