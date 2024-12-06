@@ -35,8 +35,8 @@ Here's how you can update the submission schema to use a new version of `nmdc-sc
 2. Update all the `nmdc-schema` version numbers in `sheets_and_friends/tsv_in/import_slots_regardless.tsv`
 
     ```diff
-    - schema_fp: https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.0.1/nmdc_schema/nmdc_materialized_patterns.yaml; source_class: Biosample; destination_class: BuiltEnvInterface
-    + schema_fp: https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.1.0/nmdc_schema/nmdc_materialized_patterns.yaml; source_class: Biosample; destination_class: BuiltEnvInterface
+    - Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.0.1/nmdc_schema/nmdc_materialized_patterns.yaml	abs_air_humidity ...
+    + Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.1.0/nmdc_schema/nmdc_materialized_patterns.yaml	abs_air_humidity ...
     ```
     > That is one of the _many_ occurrences in that file.
     >
