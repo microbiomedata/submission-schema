@@ -113,6 +113,7 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i 'del(.classes.ControlledTermValue)'  $@
 	yq -i 'del(.classes.GeolocationValue)'  $@
 	yq -i 'del(.classes.OntologyClass)'  $@
+	yq -i 'del(.classes.OntologyRelation)'  $@
 	yq -i 'del(.classes.QuantityValue)'  $@
 	yq -i 'del(.classes.TextValue)'  $@
 	yq -i 'del(.classes.TimestampValue)'  $@
@@ -124,6 +125,7 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 
 # remove slots that are no longer necessary due to removal of classes above
 	yq -i 'del(.slots.[] | select(.name == "acted_on_behalf_of"))' $@
+	yq -i 'del(.slots.[] | select(.name == "definition"))' $@
 	yq -i 'del(.slots.[] | select(.name == "ended_at_time"))' $@
 	yq -i 'del(.slots.[] | select(.name == "has_maximum_numeric_value"))' $@
 	yq -i 'del(.slots.[] | select(.name == "has_minimum_numeric_value"))' $@
@@ -132,13 +134,12 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 	yq -i 'del(.slots.[] | select(.name == "has_unit"))' $@
 	yq -i 'del(.slots.[] | select(.name == "latitude"))' $@
 	yq -i 'del(.slots.[] | select(.name == "longitude"))' $@
+	yq -i 'del(.slots.[] | select(.name == "relations"))' $@
 	yq -i 'del(.slots.[] | select(.name == "started_at_time"))' $@
 	yq -i 'del(.slots.[] | select(.name == "term"))' $@
 	yq -i 'del(.slots.[] | select(.name == "used"))' $@
 	yq -i 'del(.slots.[] | select(.name == "was_associated_with"))' $@
 	yq -i 'del(.slots.[] | select(.name == "was_generated_by"))' $@
-	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
-
 	yq -i 'del(.slots.[] | select(.name == "was_informed_by"))' $@
 
 
