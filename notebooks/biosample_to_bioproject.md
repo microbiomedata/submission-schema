@@ -26,8 +26,6 @@ where
 	and id = 17124288 ;
 ```
 
-```sql
-
 ```xml
 <DocumentSummary uid="686344">
     <Project>
