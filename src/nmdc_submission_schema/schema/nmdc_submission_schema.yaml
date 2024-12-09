@@ -271,67 +271,14 @@ prefixes:
   MIXS_yaml:
     prefix_prefix: MIXS_yaml
     prefix_reference: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
+  BFO:
+    prefix_prefix: BFO
+    prefix_reference: http://purl.obolibrary.org/obo/BFO_
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
 default_prefix: nmdc_sub_schema
 default_range: string
-subsets:
-  mixs_environmental_triad:
-    name: mixs_environmental_triad
-    title: MIxS Environmental Triad
-    from_schema: https://example.com/nmdc_submission_schema
-  mixs extension:
-    name: mixs extension
-    from_schema: https://example.com/nmdc_submission_schema
-  checklist:
-    name: checklist
-    description: A MIxS checklist. These can be combined with packages
-    from_schema: https://example.com/nmdc_submission_schema
-  package:
-    name: package
-    description: A MIxS package. These can be combined with checklists
-    from_schema: https://example.com/nmdc_submission_schema
-  checklist_package_combination:
-    name: checklist_package_combination
-    description: A combination of a checklist and a package
-    from_schema: https://example.com/nmdc_submission_schema
-  data object subset:
-    name: data object subset
-    description: Subset consisting of the data objects that either inputs or outputs
-      of processes or workflows.
-    from_schema: https://example.com/nmdc_submission_schema
-  data_portal_subset:
-    name: data_portal_subset
-    description: Subset consisting of entities that Kitware/nmdc-server use to populate
-      the data portal.
-    comments:
-    - Schema authors are responsible for alerting and supporting Kitware and nmdc-server
-      authors about changes they will have to make if entities labeled with data_portal_subset
-      are modified.
-    - Assignment of the data_portal_subset is incomplete in the schema.
-    from_schema: https://example.com/nmdc_submission_schema
-  environment:
-    name: environment
-    from_schema: https://example.com/nmdc_submission_schema
-  investigation:
-    name: investigation
-    from_schema: https://example.com/nmdc_submission_schema
-  nucleic acid sequence source:
-    name: nucleic acid sequence source
-    from_schema: https://example.com/nmdc_submission_schema
-  proteases:
-    name: proteases
-    from_schema: https://example.com/nmdc_submission_schema
-  sample subset:
-    name: sample subset
-    description: Subset consisting of entities linked to the processing of samples.  Currently,
-      this subset consists of study, omics process, and biosample.
-    from_schema: https://example.com/nmdc_submission_schema
-  sequencing:
-    name: sequencing
-    from_schema: https://example.com/nmdc_submission_schema
-  workflow subset:
-    name: workflow subset
-    description: Subset consisting of just the workflow execution activities
-    from_schema: https://example.com/nmdc_submission_schema
 types:
   unit:
     name: unit
@@ -356,18 +303,6 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  decimal:
-    name: decimal
-    description: A real number with arbitrary precision that conforms to the xsd:decimal
-      specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "decimal".
-    from_schema: https://example.com/nmdc_submission_schema
-    broad_mappings:
-    - schema:Number
-    base: Decimal
-    uri: xsd:decimal
   double:
     name: double
     description: A real number that conforms to the xsd:double specification
@@ -379,6 +314,35 @@ types:
     - schema:Float
     base: float
     uri: xsd:double
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/Decimal_degrees
+    base: float
+    uri: xsd:decimal
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
+    from_schema: https://example.com/nmdc_submission_schema
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
   integer:
     name: integer
     description: An integer
@@ -390,6 +354,14 @@ types:
     - schema:Integer
     base: int
     uri: xsd:integer
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
   string:
     name: string
     description: A character string
@@ -402,27 +374,18 @@ types:
     - schema:Text
     base: str
     uri: xsd:string
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
     notes:
     - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "float".
+      lower case "decimal".
     from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:float
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
-    from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
   boolean:
     name: boolean
     description: A binary (true or false) value
@@ -2769,10 +2732,18 @@ enums:
         text: female
       hermaphrodite:
         text: hermaphrodite
+      non-binary:
+        text: non-binary
       male:
         text: male
-      neuter:
-        text: neuter
+      transgender:
+        text: transgender
+      transgender (female to male):
+        text: transgender (female to male)
+      transgender (male to female):
+        text: transgender (male to female)
+      undeclared:
+        text: undeclared
   AnalysisTypeEnum:
     name: AnalysisTypeEnum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2795,6 +2766,10 @@ enums:
         text: natural organic matter
       bulk chemistry:
         text: bulk chemistry
+      amplicon sequencing assay:
+        text: amplicon sequencing assay
+        meaning: OBI:0002767
+        title: Amplicon sequencing assay
   DNASampleFormatEnum:
     name: DNASampleFormatEnum
     from_schema: https://example.com/nmdc_submission_schema
@@ -2907,8 +2882,6 @@ enums:
         text: Drugs production
       Endosymbionts:
         text: Endosymbionts
-      Feedstock:
-        text: Feedstock
       Fish:
         text: Fish
       Food production:
@@ -3016,8 +2989,6 @@ enums:
         text: Baby formula
       Bacteria:
         text: Bacteria
-      Bacterivore:
-        text: Bacterivore
       Bagasse:
         text: Bagasse
       Beans:
@@ -3328,6 +3299,8 @@ enums:
         text: Oomycetes
       Ootheca/Egg mass:
         text: Ootheca/Egg mass
+      Organic waste:
+        text: Organic waste
       Outdoor Air:
         text: Outdoor Air
       Oxymonads:
@@ -4791,6 +4764,8 @@ enums:
         text: Warm (34-42C)
       Wart:
         text: Wart
+      Waste:
+        text: Waste
       Wastewater:
         text: Wastewater
       Wastewater effluent:
@@ -4842,8 +4817,6 @@ enums:
         text: Abyssopelagic/Abyssal zone
       Acid Mine Drainage:
         text: Acid Mine Drainage
-      Acid mine drainage:
-        text: Acid mine drainage
       Acid sulfate soil:
         text: Acid sulfate soil
       Acid-saline drainage:
@@ -5922,6 +5895,8 @@ enums:
         text: Rosacea
       Royal jelly:
         text: Royal jelly
+      Rubber:
+        text: Rubber
       Rumen:
         text: Rumen
       Rumen fluid:
@@ -6318,8 +6293,6 @@ enums:
         text: Alpine
       Arable:
         text: Arable
-      Biochar:
-        text: Biochar
       Biocrust:
         text: Biocrust
       Biofilm:
@@ -7767,30 +7740,6 @@ slots:
     is_a: environment field
     slot_uri: MIXS:0000094
     domain_of:
-    - agriculture
-    - air
-    - built environment
-    - core
-    - food-animal and animal feed
-    - food-farm environment
-    - food-food production facility
-    - food-human foods
-    - host-associated
-    - human-associated
-    - human-gut
-    - human-oral
-    - human-skin
-    - human-vaginal
-    - hydrocarbon resources-cores
-    - hydrocarbon resources-fluids_swabs
-    - microbial mat_biofilm
-    - miscellaneous natural or artificial environment
-    - plant-associated
-    - sediment
-    - soil
-    - symbiont-associated
-    - wastewater_sludge
-    - water
     - Biosample
     range: string
     multivalued: false
@@ -7901,7 +7850,7 @@ slots:
     description: Select all the data types associated or available for this biosample
     title: analysis/data type
     examples:
-    - value: metagenomics; metabolomics; proteomics
+    - value: metagenomics; metabolomics; metaproteomics
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIxS:investigation_type
@@ -9380,7 +9329,9 @@ slots:
     - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021
       are all acceptable.
     examples:
-    - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIXS:0000011
@@ -9400,7 +9351,8 @@ slots:
     comments:
     - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
     examples:
-    - value: 13:33 or 13:33:55
+    - value: '813'
+    - value: '48835'
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIXS:0000011
@@ -9421,7 +9373,8 @@ slots:
     comments:
     - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
     examples:
-    - value: 13:33 or 13:33:55
+    - value: '813'
+    - value: '48835'
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIXS:0000011
@@ -10794,8 +10747,7 @@ slots:
       EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
     title: broad-scale environmental context
     examples:
-    - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-        sample from the photic zone in middle of the Atlantic Ocean
+    - value: oceanic epipelagic zone biome [ENVO:01000035]
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - broad-scale environmental context
@@ -10831,10 +10783,7 @@ slots:
       are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
     title: local environmental context
     examples:
-    - value: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from
-        various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb
-        and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub
-        layer [ENVO:01000336].'
+    - value: litter layer [ENVO:01000338]
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - local environmental context
@@ -10870,9 +10819,7 @@ slots:
       (e.g. a tree, a leaf, a table top).'
     title: environmental medium
     examples:
-    - value: 'soil [ENVO:00001998]; Annotating a fish swimming in the upper 100 m
-        of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example: Annotating
-        a duck on a pond consider: pond water [ENVO:00002228]|air [ENVO_00002005]'
+    - value: soil [ENVO:00001998]
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - environmental medium
@@ -12366,7 +12313,7 @@ slots:
       or https://www.ebi.ac.uk/ols/ontologies/uberon
     title: host body product
     examples:
-    - value: Portion of mucus [fma66938]
+    - value: mucus [UBERON:0000912]
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - host body product
@@ -13182,12 +13129,11 @@ slots:
       labeled compounds
     examples:
     - value: 13C glucose
-    - value: H218O
+    - value: 18O water
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIXS:0000751
     rank: 16
-    string_serialization: '{termLabel} {[termID]}; {timestamp}'
     domain_of:
     - Biosample
     slot_group: MIxS Inspired
@@ -18317,7 +18263,9 @@ slots:
     - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021
       are all acceptable.
     examples:
-    - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIXS:0000011
@@ -18337,7 +18285,8 @@ slots:
     comments:
     - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
     examples:
-    - value: 13:33 or 13:33:55
+    - value: '813'
+    - value: '48835'
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - MIXS:0000011
@@ -20431,7 +20380,20 @@ slots:
     - NamedThing
     range: uriorcurie
     multivalued: true
-    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,\(\)\=\#]*$
+  alternative_names:
+    name: alternative_names
+    description: A list of alternative names used to refer to the entity. The distinction
+      between name and alternative names is application-specific.
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - dcterms:alternative
+    - skos:altLabel
+    domain_of:
+    - OntologyClass
+    - Study
+    range: string
+    multivalued: false
   core field:
     name: core field
     description: basic fields
@@ -20508,7 +20470,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     domain_of:
     - TextValue
-    range: language code
+    range: language_code
   name:
     name: name
     description: A human readable label for an entity
@@ -20525,6 +20487,28 @@ slots:
     abstract: true
     domain_of:
     - Biosample
+  object:
+    name: object
+    from_schema: https://example.com/nmdc_submission_schema
+    owner: OntologyRelation
+    domain_of:
+    - OntologyRelation
+    range: string
+    required: true
+    multivalued: false
+  predicate:
+    name: predicate
+    from_schema: https://example.com/nmdc_submission_schema
+    owner: OntologyRelation
+    domain_of:
+    - OntologyRelation
+    range: string
+    required: true
+    multivalued: false
+  subject:
+    name: subject
+    from_schema: https://example.com/nmdc_submission_schema
+    range: GeneProduct
   type:
     name: type
     description: the class_uri of the class that has been instantiated
@@ -20549,12 +20533,11 @@ slots:
     - PortionOfSubstance
     - MagBin
     - MetaboliteIdentification
-    - PeptideQuantification
-    - ProteinQuantification
     - GenomeFeature
     - FunctionalAnnotation
     - AttributeValue
     - NamedThing
+    - OntologyRelation
     - FailureCategorization
     - Protocol
     - CreditAssociation
@@ -20684,30 +20667,6 @@ classes:
         slot_uri: MIXS:0000094
         owner: Biosample
         domain_of:
-        - agriculture
-        - air
-        - built environment
-        - core
-        - food-animal and animal feed
-        - food-farm environment
-        - food-food production facility
-        - food-human foods
-        - host-associated
-        - human-associated
-        - human-gut
-        - human-oral
-        - human-skin
-        - human-vaginal
-        - hydrocarbon resources-cores
-        - hydrocarbon resources-fluids_swabs
-        - microbial mat_biofilm
-        - miscellaneous natural or artificial environment
-        - plant-associated
-        - sediment
-        - soil
-        - symbiont-associated
-        - wastewater_sludge
-        - water
         - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -21056,8 +21015,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -22173,30 +22131,6 @@ classes:
         slot_uri: MIXS:0000094
         owner: Biosample
         domain_of:
-        - agriculture
-        - air
-        - built environment
-        - core
-        - food-animal and animal feed
-        - food-farm environment
-        - food-food production facility
-        - food-human foods
-        - host-associated
-        - human-associated
-        - human-gut
-        - human-oral
-        - human-skin
-        - human-vaginal
-        - hydrocarbon resources-cores
-        - hydrocarbon resources-fluids_swabs
-        - microbial mat_biofilm
-        - miscellaneous natural or artificial environment
-        - plant-associated
-        - sediment
-        - soil
-        - symbiont-associated
-        - wastewater_sludge
-        - water
         - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -22956,8 +22890,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -24887,30 +24820,6 @@ classes:
         slot_uri: MIXS:0000094
         owner: Biosample
         domain_of:
-        - agriculture
-        - air
-        - built environment
-        - core
-        - food-animal and animal feed
-        - food-farm environment
-        - food-food production facility
-        - food-human foods
-        - host-associated
-        - human-associated
-        - human-gut
-        - human-oral
-        - human-skin
-        - human-vaginal
-        - hydrocarbon resources-cores
-        - hydrocarbon resources-fluids_swabs
-        - microbial mat_biofilm
-        - miscellaneous natural or artificial environment
-        - plant-associated
-        - sediment
-        - soil
-        - symbiont-associated
-        - wastewater_sludge
-        - water
         - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -26146,8 +26055,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -30609,8 +30517,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -33838,8 +33745,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -36092,30 +35998,6 @@ classes:
         slot_uri: MIXS:0000094
         owner: Biosample
         domain_of:
-        - agriculture
-        - air
-        - built environment
-        - core
-        - food-animal and animal feed
-        - food-farm environment
-        - food-food production facility
-        - food-human foods
-        - host-associated
-        - human-associated
-        - human-gut
-        - human-oral
-        - human-skin
-        - human-vaginal
-        - hydrocarbon resources-cores
-        - hydrocarbon resources-fluids_swabs
-        - microbial mat_biofilm
-        - miscellaneous natural or artificial environment
-        - plant-associated
-        - sediment
-        - soil
-        - symbiont-associated
-        - wastewater_sludge
-        - water
         - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -36486,8 +36368,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -36780,7 +36661,7 @@ classes:
           or https://www.ebi.ac.uk/ols/ontologies/uberon
         title: host body product
         examples:
-        - value: Portion of mucus [fma66938]
+        - value: mucus [UBERON:0000912]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - host body product
@@ -39267,30 +39148,6 @@ classes:
         slot_uri: MIXS:0000094
         owner: Biosample
         domain_of:
-        - agriculture
-        - air
-        - built environment
-        - core
-        - food-animal and animal feed
-        - food-farm environment
-        - food-food production facility
-        - food-human foods
-        - host-associated
-        - human-associated
-        - human-gut
-        - human-oral
-        - human-skin
-        - human-vaginal
-        - hydrocarbon resources-cores
-        - hydrocarbon resources-fluids_swabs
-        - microbial mat_biofilm
-        - miscellaneous natural or artificial environment
-        - plant-associated
-        - sediment
-        - soil
-        - symbiont-associated
-        - wastewater_sludge
-        - water
         - Biosample
         slot_group: mixs_modified_section
         range: string
@@ -39937,8 +39794,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -41508,7 +41364,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -41534,7 +41392,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -41767,8 +41626,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -42666,12 +42524,11 @@ classes:
           labeled compounds
         examples:
         - value: 13C glucose
-        - value: H218O
+        - value: 18O water
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000751
         rank: 16
-        string_serialization: '{termLabel} {[termID]}; {timestamp}'
         owner: Biosample
         domain_of:
         - Biosample
@@ -42679,7 +42536,6 @@ classes:
         range: string
         recommended: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       lat_lon:
         name: lat_lon
         annotations:
@@ -43914,7 +43770,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -44746,7 +44604,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -44772,7 +44632,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -45216,8 +45077,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -45576,12 +45436,11 @@ classes:
           labeled compounds
         examples:
         - value: 13C glucose
-        - value: H218O
+        - value: 18O water
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000751
         rank: 16
-        string_serialization: '{termLabel} {[termID]}; {timestamp}'
         owner: Biosample
         domain_of:
         - Biosample
@@ -45589,7 +45448,6 @@ classes:
         range: string
         recommended: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       lat_lon:
         name: lat_lon
         annotations:
@@ -47074,7 +46932,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -48099,7 +47959,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -48125,7 +47987,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -48151,7 +48014,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -48506,8 +48370,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -49091,12 +48954,11 @@ classes:
           labeled compounds
         examples:
         - value: 13C glucose
-        - value: H218O
+        - value: 18O water
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000751
         rank: 16
-        string_serialization: '{termLabel} {[termID]}; {timestamp}'
         owner: Biosample
         domain_of:
         - Biosample
@@ -49104,7 +48966,6 @@ classes:
         range: string
         recommended: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       lat_lon:
         name: lat_lon
         annotations:
@@ -50617,7 +50478,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -50643,7 +50506,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -51543,8 +51407,7 @@ classes:
         - range changed to enumeration late in makefile, so this is modified (but
           "sample ID" anyway)
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -53597,7 +53460,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -53623,7 +53488,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -54178,8 +54044,7 @@ classes:
           about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
         title: broad-scale environmental context
         examples:
-        - value: oceanic epipelagic zone biome [ENVO:01000033] for annotating a water
-            sample from the photic zone in middle of the Atlantic Ocean
+        - value: oceanic epipelagic zone biome [ENVO:01000035]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - broad-scale environmental context
@@ -54221,10 +54086,7 @@ classes:
           the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
         title: local environmental context
         examples:
-        - value: 'litter layer [ENVO:01000338]; Annotating a pooled sample taken from
-            various vegetation layers in a forest consider: canopy [ENVO:00000047]|herb
-            and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory
-            [01000335]|shrub layer [ENVO:01000336].'
+        - value: litter layer [ENVO:01000338]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - local environmental context
@@ -54266,9 +54128,7 @@ classes:
           (e.g. a tree, a leaf, a table top).'
         title: environmental medium
         examples:
-        - value: 'soil [ENVO:00001998]; Annotating a fish swimming in the upper 100
-            m of the Atlantic Ocean, consider: ocean water [ENVO:00002151]. Example:
-            Annotating a duck on a pond consider: pond water [ENVO:00002228]|air [ENVO_00002005]'
+        - value: soil [ENVO:00001998]
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - environmental medium
@@ -54502,12 +54362,11 @@ classes:
           labeled compounds
         examples:
         - value: 13C glucose
-        - value: H218O
+        - value: 18O water
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000751
         rank: 16
-        string_serialization: '{termLabel} {[termID]}; {timestamp}'
         owner: Biosample
         domain_of:
         - Biosample
@@ -54515,7 +54374,6 @@ classes:
         range: string
         recommended: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       lat_lon:
         name: lat_lon
         annotations:
@@ -55874,7 +55732,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -56313,7 +56173,7 @@ classes:
         description: Select all the data types associated or available for this biosample
         title: analysis/data type
         examples:
-        - value: metagenomics; metabolomics; proteomics
+        - value: metagenomics; metabolomics; metaproteomics
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIxS:investigation_type
@@ -56464,7 +56324,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -56490,7 +56352,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -56516,7 +56379,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -56587,12 +56451,11 @@ classes:
           labeled compounds
         examples:
         - value: 13C glucose
-        - value: H218O
+        - value: 18O water
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000751
         rank: 16
-        string_serialization: '{termLabel} {[termID]}; {timestamp}'
         owner: Biosample
         domain_of:
         - Biosample
@@ -56600,7 +56463,6 @@ classes:
         range: string
         recommended: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
       micro_biomass_c_meth:
         name: micro_biomass_c_meth
         description: Reference or method used in determining microbial biomass carbon
@@ -56782,7 +56644,9 @@ classes:
         - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and
           2021 are all acceptable.
         examples:
-        - value: 2021-04-15, 2021-04 and 2021 are all acceptable.
+        - value: '2021-04-15'
+        - value: 2021-04
+        - value: '2021'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -56808,7 +56672,8 @@ classes:
         - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter:
           https://www.worldtimebuddy.com/pst-to-gmt-converter'
         examples:
-        - value: 13:33 or 13:33:55
+        - value: '813'
+        - value: '48835'
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - MIXS:0000011
@@ -56850,6 +56715,21 @@ classes:
     - jgi_mg_data
     - jgi_mt_data
     tree_root: true
+  GeneProduct:
+    name: GeneProduct
+    id_prefixes:
+    - PR
+    - UniProtKB
+    - gtpo
+    description: A molecule encoded by a gene that has an evolved function
+    notes:
+    - we may include a more general gene product class in future to allow for ncRNA
+      annotation
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - biolink:GeneProduct
+    is_a: NamedThing
+    class_uri: nmdc:GeneProduct
   NamedThing:
     name: NamedThing
     description: a databased entity or concept/class

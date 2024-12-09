@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-11-14T12:57:10
+# Generation date: 2024-12-09T10:01:01
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -66,6 +66,7 @@ version = "0.0.0"
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 CATH = CurieNamespace('CATH', 'https://bioregistry.io/cath:')
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'https://bioregistry.io/chembl.compound:')
@@ -145,6 +146,7 @@ NEON_IDENTIFIER = CurieNamespace('neon_identifier', 'http://example.org/neon/ide
 NEON_SCHEMA = CurieNamespace('neon_schema', 'http://example.org/neon/schema/')
 NMDC = CurieNamespace('nmdc', 'https://w3id.org/nmdc/')
 NMDC_SUB_SCHEMA = CurieNamespace('nmdc_sub_schema', 'https://example.com/nmdc_sub_schema/')
+OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
@@ -183,14 +185,6 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
-
-
 class Double(float):
     """ A real number that conforms to the xsd:double specification """
     type_class_uri = XSD["double"]
@@ -199,20 +193,20 @@ class Double(float):
     type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Float(float):
@@ -223,12 +217,36 @@ class Float(float):
     type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
+
+
+class LanguageCode(str):
+    """ A language code conforming to ISO_639-1 """
+    type_class_uri = XSD["language"]
+    type_class_curie = "xsd:language"
+    type_name = "language_code"
+    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
+
+
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
 class Boolean(Bool):
@@ -341,6 +359,10 @@ class DhMultiviewCommonColumnsMixinSampName(extended_str):
 
 
 class NamedThingId(URIorCURIE):
+    pass
+
+
+class GeneProductId(NamedThingId):
     pass
 
 
@@ -9738,6 +9760,58 @@ class NamedThing(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls,*args,**kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_class_curie", type_designator_value)
+
+
+            if target_cls is None:
+                target_cls = cls._class_for("class_class_uri", type_designator_value)
+
+
+            if target_cls is None:
+                target_cls = cls._class_for("class_model_uri", type_designator_value)
+
+
+            if target_cls is None:
+                raise ValueError(f"Wrong type designator value: class {cls.__name__} "
+                                 f"has no subclass with ['class_class_curie', 'class_class_uri', 'class_model_uri']='{kwargs[type_designator]}'")
+            return super().__new__(target_cls,*args,**kwargs)
+
+
+
+@dataclass(repr=False)
+class GeneProduct(NamedThing):
+    """
+    A molecule encoded by a gene that has an evolved function
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC["GeneProduct"]
+    class_class_curie: ClassVar[str] = "nmdc:GeneProduct"
+    class_name: ClassVar[str] = "GeneProduct"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.GeneProduct
+
+    id: Union[str, GeneProductId] = None
+    type: Union[str, URIorCURIE] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, GeneProductId):
+            self.id = GeneProductId(self.id)
+
+        super().__post_init__(**kwargs)
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_class_curie)
+
+
 # Enumerations
 class BioticRelationshipEnum(EnumDefinitionImpl):
 
@@ -11774,11 +11848,21 @@ class HostSexEnum(EnumDefinitionImpl):
     female = PermissibleValue(text="female")
     hermaphrodite = PermissibleValue(text="hermaphrodite")
     male = PermissibleValue(text="male")
-    neuter = PermissibleValue(text="neuter")
+    transgender = PermissibleValue(text="transgender")
+    undeclared = PermissibleValue(text="undeclared")
 
     _defn = EnumDefinition(
         name="HostSexEnum",
     )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "non-binary",
+            PermissibleValue(text="non-binary"))
+        setattr(cls, "transgender (female to male)",
+            PermissibleValue(text="transgender (female to male)"))
+        setattr(cls, "transgender (male to female)",
+            PermissibleValue(text="transgender (male to female)"))
 
 class AnalysisTypeEnum(EnumDefinitionImpl):
 
@@ -11802,6 +11886,10 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="natural organic matter"))
         setattr(cls, "bulk chemistry",
             PermissibleValue(text="bulk chemistry"))
+        setattr(cls, "amplicon sequencing assay",
+            PermissibleValue(
+                text="amplicon sequencing assay",
+                meaning=OBI["0002767"]))
 
 class DNASampleFormatEnum(EnumDefinitionImpl):
 
@@ -11887,7 +11975,6 @@ class EcosystemCategoryEnum(EnumDefinitionImpl):
     Cephalochordata = PermissibleValue(text="Cephalochordata")
     Cnidaria = PermissibleValue(text="Cnidaria")
     Endosymbionts = PermissibleValue(text="Endosymbionts")
-    Feedstock = PermissibleValue(text="Feedstock")
     Fish = PermissibleValue(text="Fish")
     Fungi = PermissibleValue(text="Fungi")
     Invertebrates = PermissibleValue(text="Invertebrates")
@@ -11959,7 +12046,6 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Aquaculture = PermissibleValue(text="Aquaculture")
     Ascidians = PermissibleValue(text="Ascidians")
     Bacteria = PermissibleValue(text="Bacteria")
-    Bacterivore = PermissibleValue(text="Bacterivore")
     Bagasse = PermissibleValue(text="Bagasse")
     Beans = PermissibleValue(text="Beans")
     Beverages = PermissibleValue(text="Beverages")
@@ -12291,6 +12377,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Olfactory system"))
         setattr(cls, "Ootheca/Egg mass",
             PermissibleValue(text="Ootheca/Egg mass"))
+        setattr(cls, "Organic waste",
+            PermissibleValue(text="Organic waste"))
         setattr(cls, "Outdoor Air",
             PermissibleValue(text="Outdoor Air"))
         setattr(cls, "Peat moss",
@@ -12698,6 +12786,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Volcanic = PermissibleValue(text="Volcanic")
     Wall = PermissibleValue(text="Wall")
     Wart = PermissibleValue(text="Wart")
+    Waste = PermissibleValue(text="Waste")
     Wastewater = PermissibleValue(text="Wastewater")
     Water = PermissibleValue(text="Water")
     Watershed = PermissibleValue(text="Watershed")
@@ -13612,6 +13701,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Rock = PermissibleValue(text="Rock")
     Rocks = PermissibleValue(text="Rocks")
     Rosacea = PermissibleValue(text="Rosacea")
+    Rubber = PermissibleValue(text="Rubber")
     Rumen = PermissibleValue(text="Rumen")
     Runoff = PermissibleValue(text="Runoff")
     Sabkha = PermissibleValue(text="Sabkha")
@@ -13701,8 +13791,6 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Abyssopelagic/Abyssal zone"))
         setattr(cls, "Acid Mine Drainage",
             PermissibleValue(text="Acid Mine Drainage"))
-        setattr(cls, "Acid mine drainage",
-            PermissibleValue(text="Acid mine drainage"))
         setattr(cls, "Acid sulfate soil",
             PermissibleValue(text="Acid sulfate soil"))
         setattr(cls, "Acid-saline drainage",
@@ -14658,7 +14746,6 @@ class EcosystemSubtypeForSoilEnum(EnumDefinitionImpl):
 
     Alpine = PermissibleValue(text="Alpine")
     Arable = PermissibleValue(text="Arable")
-    Biochar = PermissibleValue(text="Biochar")
     Biocrust = PermissibleValue(text="Biocrust")
     Biofilm = PermissibleValue(text="Biofilm")
     Chaparral = PermissibleValue(text="Chaparral")
@@ -17220,7 +17307,10 @@ slots.zinc = Slot(uri=NMDC_SUB_SCHEMA.zinc, name="zinc", curie=NMDC_SUB_SCHEMA.c
 
 slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]],
-                   pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
+                   pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,\(\)\=\#]*$'))
+
+slots.alternative_names = Slot(uri=NMDC_SUB_SCHEMA.alternative_names, name="alternative_names", curie=NMDC_SUB_SCHEMA.curie('alternative_names'),
+                   model_uri=NMDC_SUB_SCHEMA.alternative_names, domain=None, range=Optional[str])
 
 slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
                    model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
@@ -17249,6 +17339,15 @@ slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.c
 
 slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
                    model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
+
+slots.object = Slot(uri=NMDC_SUB_SCHEMA.object, name="object", curie=NMDC_SUB_SCHEMA.curie('object'),
+                   model_uri=NMDC_SUB_SCHEMA.object, domain=None, range=str)
+
+slots.predicate = Slot(uri=NMDC_SUB_SCHEMA.predicate, name="predicate", curie=NMDC_SUB_SCHEMA.curie('predicate'),
+                   model_uri=NMDC_SUB_SCHEMA.predicate, domain=None, range=str)
+
+slots.subject = Slot(uri=NMDC_SUB_SCHEMA.subject, name="subject", curie=NMDC_SUB_SCHEMA.curie('subject'),
+                   model_uri=NMDC_SUB_SCHEMA.subject, domain=None, range=Optional[Union[str, GeneProductId]])
 
 slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
                    model_uri=NMDC_SUB_SCHEMA.type, domain=None, range=Union[str, URIorCURIE])
@@ -19879,8 +19978,7 @@ slots.PlantAssociatedInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="P
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_humidity_regm, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="PlantAssociatedInterface_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_isotope_exposure, domain=PlantAssociatedInterface, range=Optional[str],
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_isotope_exposure, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_lat_lon = Slot(uri=MIXS['0000009'], name="PlantAssociatedInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_lat_lon, domain=PlantAssociatedInterface, range=str,
@@ -20213,8 +20311,7 @@ slots.SedimentInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="Sediment
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_humidity_regm, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="SedimentInterface_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_isotope_exposure, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_isotope_exposure, domain=SedimentInterface, range=Optional[str])
 
 slots.SedimentInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SedimentInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_lat_lon, domain=SedimentInterface, range=str,
@@ -20622,8 +20719,7 @@ slots.SoilInterface_infiltrations = Slot(uri=NMDC['nmdc/infiltrations'], name="S
                    pattern=re.compile(r'^(?:(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])(?:;(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])*$'))
 
 slots.SoilInterface_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="SoilInterface_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_isotope_exposure, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_isotope_exposure, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SoilInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_lat_lon, domain=SoilInterface, range=str,
@@ -21268,8 +21364,7 @@ slots.WaterInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="WaterInterf
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_humidity_regm, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="WaterInterface_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_isotope_exposure, domain=WaterInterface, range=Optional[str],
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_isotope_exposure, domain=WaterInterface, range=Optional[str])
 
 slots.WaterInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WaterInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=Optional[str],
@@ -21537,8 +21632,7 @@ slots.SoilMixsInspiredMixin_filter_method = Slot(uri=NMDC['nmdc/filter_method'],
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_filter_method, domain=None, range=Optional[str])
 
 slots.SoilMixsInspiredMixin_isotope_exposure = Slot(uri=NMDC['nmdc/isotope_exposure'], name="SoilMixsInspiredMixin_isotope_exposure", curie=NMDC.curie('nmdc/isotope_exposure'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_isotope_exposure, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]; ([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
+                   model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_isotope_exposure, domain=None, range=Optional[str])
 
 slots.SoilMixsInspiredMixin_micro_biomass_c_meth = Slot(uri=NMDC['nmdc/micro_biomass_c_meth'], name="SoilMixsInspiredMixin_micro_biomass_c_meth", curie=NMDC.curie('nmdc/micro_biomass_c_meth'),
                    model_uri=NMDC_SUB_SCHEMA.SoilMixsInspiredMixin_micro_biomass_c_meth, domain=None, range=Optional[str])

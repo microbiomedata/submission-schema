@@ -349,7 +349,8 @@
                 "metaproteomics",
                 "metatranscriptomics",
                 "natural organic matter",
-                "bulk chemistry"
+                "bulk chemistry",
+                "amplicon sequencing assay"
             ],
             "title": "AnalysisTypeEnum",
             "type": "string"
@@ -2533,7 +2534,6 @@
                 "Cnidaria",
                 "Drugs production",
                 "Endosymbionts",
-                "Feedstock",
                 "Fish",
                 "Food production",
                 "Fungi",
@@ -3216,6 +3216,7 @@
                 "Wall",
                 "Warm (34-42C)",
                 "Wart",
+                "Waste",
                 "Wastewater",
                 "Wastewater effluent",
                 "Water",
@@ -3240,7 +3241,6 @@
                 "Agricultural land",
                 "Alpine",
                 "Arable",
-                "Biochar",
                 "Biocrust",
                 "Biofilm",
                 "Boreal forest/Taiga",
@@ -3337,7 +3337,6 @@
                 "Auditory/Hearing system",
                 "Baby formula",
                 "Bacteria",
-                "Bacterivore",
                 "Bagasse",
                 "Beans",
                 "Benign tumor",
@@ -3493,6 +3492,7 @@
                 "Olfactory system",
                 "Oomycetes",
                 "Ootheca/Egg mass",
+                "Organic waste",
                 "Outdoor Air",
                 "Oxymonads",
                 "Oyster",
@@ -4162,6 +4162,55 @@
             ],
             "title": "GenderRestroomEnum",
             "type": "string"
+        },
+        "GeneProduct": {
+            "additionalProperties": false,
+            "description": "A molecule encoded by a gene that has an evolved function",
+            "properties": {
+                "alternative_identifiers": {
+                    "description": "A list of alternative identifiers for the entity.",
+                    "items": {
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\\-\\/\\.,\\(\\)\\=\\#]*$",
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "a human-readable description of a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "id": {
+                    "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_\\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\\-\\/\\.,]*$",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human readable label for an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "the class_uri of the class that has been instantiated",
+                    "enum": [
+                        "nmdc:GeneProduct"
+                    ],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "title": "GeneProduct",
+            "type": "object"
         },
         "GrowthFacilEnum": {
             "description": "",
@@ -6252,8 +6301,12 @@
             "enum": [
                 "female",
                 "hermaphrodite",
+                "non-binary",
                 "male",
-                "neuter"
+                "transgender",
+                "transgender (female to male)",
+                "transgender (male to female)",
+                "undeclared"
             ],
             "title": "HostSexEnum",
             "type": "string"
@@ -7623,7 +7676,6 @@
                 },
                 "isotope_exposure": {
                     "description": "List isotope exposure or addition applied to your sample.",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]; ([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$",
                     "type": [
                         "string",
                         "null"
@@ -8760,7 +8812,6 @@
                 },
                 "isotope_exposure": {
                     "description": "List isotope exposure or addition applied to your sample.",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]; ([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$",
                     "type": [
                         "string",
                         "null"
@@ -9679,7 +9730,6 @@
                 },
                 "isotope_exposure": {
                     "description": "List isotope exposure or addition applied to your sample.",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]; ([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$",
                     "type": [
                         "string",
                         "null"
@@ -10226,7 +10276,6 @@
                 "Abyssal plane",
                 "Abyssopelagic/Abyssal zone",
                 "Acid Mine Drainage",
-                "Acid mine drainage",
                 "Acid sulfate soil",
                 "Acid-saline drainage",
                 "Acidic",
@@ -10766,6 +10815,7 @@
                 "Room surface",
                 "Rosacea",
                 "Royal jelly",
+                "Rubber",
                 "Rumen",
                 "Rumen fluid",
                 "Rumen mucosa",
@@ -12145,7 +12195,6 @@
                 },
                 "isotope_exposure": {
                     "description": "List isotope exposure or addition applied to your sample.",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]; ([\\+-]?\\d{4}(?!\\d{2}\\b))((-?)((0[1-9]|1[0-2])(\\3([12]\\d|0[1-9]|3[01]))?|W([0-4]\\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\\d|[12]\\d{2}|3([0-5]\\d|6[1-6])))([T\\s]((([01]\\d|2[0-3])((:?)[0-5]\\d)?|24\\:?00)([\\.,]\\d+(?!:))?)?(\\17[0-5]\\d([\\.,]\\d+)?)?([zZ]|([\\+-])([01]\\d|2[0-3]):?([0-5]\\d)?)?)?)?$",
                     "type": [
                         "string",
                         "null"
