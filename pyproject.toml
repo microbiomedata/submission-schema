@@ -23,6 +23,8 @@ linkml-runtime = "^1.6.2"
 scikit-learn = "^1.5.2"
 duckdb = "^1.1.3"
 jupyter = "^1.1.1"
+pymongo = "^4.10.1"
+inflection = "^0.5.1"
 
 [tool.poetry.group.dev.dependencies]
 exhaustion-check = "^0.1.3"
