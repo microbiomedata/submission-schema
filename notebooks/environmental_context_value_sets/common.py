@@ -1,4 +1,3 @@
-
 import pandas as pd
 from linkml_runtime import SchemaView
 import requests
@@ -9,8 +8,6 @@ import csv
 from sklearn.feature_extraction.text import CountVectorizer  # from scikit-learn
 
 import re
-
-
 
 
 # todo is filling memory with things like this a good idea? for understandability? or performance?
@@ -218,8 +215,8 @@ def biosamples_lod_context_extractor(biosamples_lod, adapter, my_env_pacakge_ove
         }
 
         if my_env_pacakge_overrides and biosample['id'] in my_env_pacakge_overrides:
-            print(
-                f"Overriding env_package for biosample {biosample['id']} from {my_row['normalized_env_package']} to {my_env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']}")
+            # print(
+            #     f"Overriding env_package for biosample {biosample['id']} from {my_row['normalized_env_package']} to {my_env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']}")
             my_row['normalized_env_package'] = my_env_pacakge_overrides[biosample['id']]['mam_inferred_env_package']
 
         new_lod.append(my_row)
