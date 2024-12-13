@@ -1,0 +1,213 @@
+subject	subject_label	predicate	content	content_label
+GOLDTERMS:3943	Host-associated > Plants > Rhizome	mixs:anatomical_site	PO:0004542	
+GOLDTERMS:3944	Host-associated > Plants > Rhizome > Epiphytes	mixs:anatomical_site	PO:0004542	
+GOLDTERMS:4450	Host-associated > Plants > Nodule	mixs:anatomical_site	PO:0003023	
+GOLDTERMS:4466	Host-associated > Plants > Roots	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:4523	Host-associated > Plants > Roots > Nodule	mixs:anatomical_site	PO:0003023	
+GOLDTERMS:4525	Host-associated > Plants > Phyllosphere > Caulosphere	mixs:anatomical_site	PO:0009047	
+GOLDTERMS:4538	Host-associated > Plants > Phyllosphere > Anthosphere	mixs:anatomical_site	PO:0009046	
+GOLDTERMS:4560	Host-associated > Plants > Wood	mixs:anatomical_site	PO:0005848	
+GOLDTERMS:4572	Host-associated > Plants > Seeds	mixs:anatomical_site	PO:0009010	
+GOLDTERMS:4600	Host-associated > Plants > Phyllosphere > Carposphere	mixs:anatomical_site	PO:0009001	
+GOLDTERMS:4621	Host-associated > Plants > Phyllosphere > Anthosphere > Pollen	mixs:anatomical_site	PO:0025281	
+GOLDTERMS:4994	Host-associated > Plants > Rhizome > Stem tuber	mixs:anatomical_site	PO:0025522	
+GOLDTERMS:5264	Host-associated > Plants > Phyllosphere > Carposphere > Epiphytes	mixs:anatomical_site	PO:0009001	
+GOLDTERMS:5265	Host-associated > Plants > Phyllosphere > Carposphere > Endophytes	mixs:anatomical_site	PO:0009001	
+GOLDTERMS:5268	Host-associated > Plants > Phyllosphere > Leaf > Endophytes	mixs:anatomical_site	PO:0025034	leaf
+GOLDTERMS:5269	Host-associated > Plants > Phyllosphere > Leaf	mixs:anatomical_site	PO:0025034	leaf
+GOLDTERMS:5270	Host-associated > Plants > Phyllosphere > Leaf > Xylem vessels	mixs:anatomical_site	PO:0025417	
+GOLDTERMS:5273	Host-associated > Plants > Tissue	mixs:anatomical_site	UBERON:0000479	tissue
+GOLDTERMS:5274	Host-associated > Plants > Phyllosphere > Leaf > Leaf nodule	mixs:anatomical_site	PO:0025034	leaf
+GOLDTERMS:5277	Host-associated > Plants > Plant callus	mixs:anatomical_site	PO:0005052	
+GOLDTERMS:5301	Host-associated > Plants > Roots > Rhizosphere	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5302	Host-associated > Plants > Roots > Rhizosphere > Soil	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5304	Host-associated > Plants > Roots > Endosphere	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5306	Host-associated > Plants > Roots > Epiphytes	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5318	Host-associated > Plants > Roots > Bulk soil	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5320	Host-associated > Plants > Phyllosphere > Petiole	mixs:anatomical_site	PO:0020038	
+GOLDTERMS:5321	Host-associated > Plants > Phyllosphere > Leaf > Leaf lesion	mixs:anatomical_site	PO:0025034	leaf
+GOLDTERMS:5416	Host-associated > Plants > Rhizome > Bulb	mixs:anatomical_site	PO:0025356	
+GOLDTERMS:5448	Host-associated > Plants > Seeds > Seed radicle	mixs:anatomical_site	PO:0020031	
+GOLDTERMS:5449	Host-associated > Plants > Roots > Rhizoplane > Endophytes	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5740	Host-associated > Plants > Phyllosphere > Cob	mixs:anatomical_site	PO:0025623	
+GOLDTERMS:5752	Host-associated > Plants > Phyllosphere > Caulosphere > Bark	mixs:anatomical_site	PO:0004518	
+GOLDTERMS:5782	Host-associated > Plants > Tissue > Bark	mixs:anatomical_site	PO:0004518	
+GOLDTERMS:5784	Host-associated > Plants > Roots > Rhizoplane	mixs:anatomical_site	PO:0009005	root
+GOLDTERMS:5786	Host-associated > Plants > Roots > Galls	mixs:anatomical_site	PO:0025626	
+GOLDTERMS:5793	Host-associated > Plants > Rhizome > Stem tuber > Soil	mixs:anatomical_site	PO:0025522	
+GOLDTERMS:5796	Host-associated > Plants > Rhizoid	mixs:anatomical_site	PO:0030078	
+GOLDTERMS:5826	Host-associated > Plants > Phyllosphere > Anthosphere > Nectar	mixs:anatomical_site	PO:0009046	
+GOLDTERMS:Engineered-Artificial-ecosystem-Plant-growth-chamber	Engineered > Artificial ecosystem > Plant growth chamber	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:Engineered-Artificial-ecosystem-Plant-growth-chamber-Defined-media	Engineered > Artificial ecosystem > Plant growth chamber > Defined media	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:Engineered-Built-environment-Drinking-water-treatment-plant	Engineered > Built environment > Drinking water treatment plant	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:Engineered-Sewage-treatment-plant	Engineered > Sewage treatment plant	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:4407	Engineered > Built environment > Water treatment plant	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:4541	Environmental > Terrestrial > Plant litter	mixs:env_broad	ENVO:00000446	terrestrial biome
+GOLDTERMS:5493	Engineered > Built environment > Drinking water treatment plant > Drinking water filter	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5500	Engineered > Built environment > Drinking water treatment plant > Drinking water	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5520	Engineered > Sewage treatment plant > Sludge	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5523	Engineered > Sewage treatment plant > Wastewater	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5527	Engineered > Built environment > Water treatment plant > Wastewater	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5552	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Enriched plant cells	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5553	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Bulk soil	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5554	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Soil (non-planted)	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5568	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Rhizosphere	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5593	Engineered > Sewage treatment plant > Wastewater > Activated sludge	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5624	Engineered > Sewage treatment plant > Activated sludge	mixs:env_broad	ENVO:01000313	anthropogenic environment
+GOLDTERMS:5823	Environmental > Terrestrial > Soil > Bulk soil > Plant pot	mixs:env_broad	ENVO:00000446	terrestrial biome
+GOLDTERMS:Engineered-Built-environment-Drinking-water-treatment-plant	Engineered > Built environment > Drinking water treatment plant	mixs:env_local	ENVO:03600004	drinking water treatment plant
+GOLDTERMS:Engineered-Sewage-treatment-plant	Engineered > Sewage treatment plant	mixs:env_local	ENVO:00003043	sewage plant
+GOLDTERMS:5301	Host-associated > Plants > Roots > Rhizosphere	mixs:env_local	ENVO:00005801	rhizosphere
+GOLDTERMS:5302	Host-associated > Plants > Roots > Rhizosphere > Soil	mixs:env_local	ENVO:00005801	rhizosphere
+GOLDTERMS:5493	Engineered > Built environment > Drinking water treatment plant > Drinking water filter	mixs:env_local	ENVO:03600004	drinking water treatment plant
+GOLDTERMS:5500	Engineered > Built environment > Drinking water treatment plant > Drinking water	mixs:env_local	ENVO:03600004	drinking water treatment plant
+GOLDTERMS:5520	Engineered > Sewage treatment plant > Sludge	mixs:env_local	ENVO:00003043	sewage plant
+GOLDTERMS:5523	Engineered > Sewage treatment plant > Wastewater	mixs:env_local	ENVO:00003043	sewage plant
+GOLDTERMS:5568	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Rhizosphere	mixs:env_local	ENVO:00005801	rhizosphere
+GOLDTERMS:5593	Engineered > Sewage treatment plant > Wastewater > Activated sludge	mixs:env_local	ENVO:00003043	sewage plant
+GOLDTERMS:5624	Engineered > Sewage treatment plant > Activated sludge	mixs:env_local	ENVO:00003043	sewage plant
+GOLDTERMS:4523	Host-associated > Plants > Roots > Nodule	mixs:env_medium	ENVO:01000164	root nodule
+GOLDTERMS:4541	Environmental > Terrestrial > Plant litter	mixs:env_medium	ENVO:01000628	plant litter
+GOLDTERMS:4560	Host-associated > Plants > Wood	mixs:env_medium	ENVO:00002040	wood
+GOLDTERMS:5302	Host-associated > Plants > Roots > Rhizosphere > Soil	mixs:env_medium	ENVO:00001998	soil
+GOLDTERMS:5318	Host-associated > Plants > Roots > Bulk soil	mixs:env_medium	ENVO:00005802	bulk soil
+GOLDTERMS:5322	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Biofilm	mixs:env_medium	ENVO:00002034	biofilm
+GOLDTERMS:5500	Engineered > Built environment > Drinking water treatment plant > Drinking water	mixs:env_medium	ENVO:00003064	drinking water
+GOLDTERMS:5520	Engineered > Sewage treatment plant > Sludge	mixs:env_medium	ENVO:00002044	sludge
+GOLDTERMS:5523	Engineered > Sewage treatment plant > Wastewater	mixs:env_medium	ENVO:00002001	waste water
+GOLDTERMS:5527	Engineered > Built environment > Water treatment plant > Wastewater	mixs:env_medium	ENVO:00002001	waste water
+GOLDTERMS:5553	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Bulk soil	mixs:env_medium	ENVO:00005802	bulk soil
+GOLDTERMS:5593	Engineered > Sewage treatment plant > Wastewater > Activated sludge	mixs:env_medium	ENVO:00002001	waste water
+GOLDTERMS:5793	Host-associated > Plants > Rhizome > Stem tuber > Soil	mixs:env_medium	ENVO:00001998	soil
+GOLDTERMS:5823	Environmental > Terrestrial > Soil > Bulk soil > Plant pot	mixs:env_medium	ENVO:00005802	bulk soil
+GOLDTERMS:5826	Host-associated > Plants > Phyllosphere > Anthosphere > Nectar	mixs:env_medium	FOODON:03315553	
+GOLDTERMS:Host-associated-Plants-Macrophytes	Host-associated > Plants > Macrophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:3938	Host-associated > Plants	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:3943	Host-associated > Plants > Rhizome	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:3944	Host-associated > Plants > Rhizome > Epiphytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:3945	Host-associated > Plants > Endosphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4433	Host-associated > Plants > Peat moss	mixs:host_taxon	NCBITaxon:13804	
+GOLDTERMS:4450	Host-associated > Plants > Nodule	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4460	Host-associated > Plants > Phyllosphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4466	Host-associated > Plants > Roots	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4523	Host-associated > Plants > Roots > Nodule	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4525	Host-associated > Plants > Phyllosphere > Caulosphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4538	Host-associated > Plants > Phyllosphere > Anthosphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4560	Host-associated > Plants > Wood	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4572	Host-associated > Plants > Seeds	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4600	Host-associated > Plants > Phyllosphere > Carposphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4621	Host-associated > Plants > Phyllosphere > Anthosphere > Pollen	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4865	Host-associated > Plants > Mixed parts	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:4994	Host-associated > Plants > Rhizome > Stem tuber	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5262	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Epiphytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5263	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5264	Host-associated > Plants > Phyllosphere > Carposphere > Epiphytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5265	Host-associated > Plants > Phyllosphere > Carposphere > Endophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5266	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Endophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5268	Host-associated > Plants > Phyllosphere > Leaf > Endophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5269	Host-associated > Plants > Phyllosphere > Leaf	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5270	Host-associated > Plants > Phyllosphere > Leaf > Xylem vessels	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5273	Host-associated > Plants > Tissue	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5274	Host-associated > Plants > Phyllosphere > Leaf > Leaf nodule	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5277	Host-associated > Plants > Plant callus	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5301	Host-associated > Plants > Roots > Rhizosphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5302	Host-associated > Plants > Roots > Rhizosphere > Soil	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5304	Host-associated > Plants > Roots > Endosphere	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5306	Host-associated > Plants > Roots > Epiphytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5318	Host-associated > Plants > Roots > Bulk soil	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5320	Host-associated > Plants > Phyllosphere > Petiole	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5321	Host-associated > Plants > Phyllosphere > Leaf > Leaf lesion	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5322	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Biofilm	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5405	Host-associated > Plants > Macrophytes > Submerged macrophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5407	Host-associated > Plants > Macrophytes > Emergent macrophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5416	Host-associated > Plants > Rhizome > Bulb	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5448	Host-associated > Plants > Seeds > Seed radicle	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5449	Host-associated > Plants > Roots > Rhizoplane > Endophytes	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5740	Host-associated > Plants > Phyllosphere > Cob	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5752	Host-associated > Plants > Phyllosphere > Caulosphere > Bark	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5782	Host-associated > Plants > Tissue > Bark	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5784	Host-associated > Plants > Roots > Rhizoplane	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5786	Host-associated > Plants > Roots > Galls	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5793	Host-associated > Plants > Rhizome > Stem tuber > Soil	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5796	Host-associated > Plants > Rhizoid	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5812	Host-associated > Plants > Biocrust	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:5826	Host-associated > Plants > Phyllosphere > Anthosphere > Nectar	mixs:host_taxon	NCBITaxon:3193	Embryophyta
+GOLDTERMS:Engineered-Artificial-ecosystem-Plant-growth-chamber	Engineered > Artificial ecosystem > Plant growth chamber	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:Engineered-Artificial-ecosystem-Plant-growth-chamber-Defined-media	Engineered > Artificial ecosystem > Plant growth chamber > Defined media	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:Engineered-Built-environment-Drinking-water-treatment-plant	Engineered > Built environment > Drinking water treatment plant	mixs:mixs_extension	mixs:BuiltEnvironment	
+GOLDTERMS:Engineered-Sewage-treatment-plant	Engineered > Sewage treatment plant	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:Host-associated-Plants-Macrophytes	Host-associated > Plants > Macrophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:3938	Host-associated > Plants	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:3943	Host-associated > Plants > Rhizome	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:3944	Host-associated > Plants > Rhizome > Epiphytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:3945	Host-associated > Plants > Endosphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4407	Engineered > Built environment > Water treatment plant	mixs:mixs_extension	mixs:BuiltEnvironment	
+GOLDTERMS:4433	Host-associated > Plants > Peat moss	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4450	Host-associated > Plants > Nodule	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4460	Host-associated > Plants > Phyllosphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4466	Host-associated > Plants > Roots	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4523	Host-associated > Plants > Roots > Nodule	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4525	Host-associated > Plants > Phyllosphere > Caulosphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4538	Host-associated > Plants > Phyllosphere > Anthosphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4560	Host-associated > Plants > Wood	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4572	Host-associated > Plants > Seeds	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4600	Host-associated > Plants > Phyllosphere > Carposphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4621	Host-associated > Plants > Phyllosphere > Anthosphere > Pollen	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4865	Host-associated > Plants > Mixed parts	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:4994	Host-associated > Plants > Rhizome > Stem tuber	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5262	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Epiphytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5263	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5264	Host-associated > Plants > Phyllosphere > Carposphere > Epiphytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5265	Host-associated > Plants > Phyllosphere > Carposphere > Endophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5266	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Endophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5268	Host-associated > Plants > Phyllosphere > Leaf > Endophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5269	Host-associated > Plants > Phyllosphere > Leaf	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5270	Host-associated > Plants > Phyllosphere > Leaf > Xylem vessels	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5273	Host-associated > Plants > Tissue	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5274	Host-associated > Plants > Phyllosphere > Leaf > Leaf nodule	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5277	Host-associated > Plants > Plant callus	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5301	Host-associated > Plants > Roots > Rhizosphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5302	Host-associated > Plants > Roots > Rhizosphere > Soil	mixs:mixs_extension	mixs:Soil	
+GOLDTERMS:5304	Host-associated > Plants > Roots > Endosphere	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5306	Host-associated > Plants > Roots > Epiphytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5318	Host-associated > Plants > Roots > Bulk soil	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5320	Host-associated > Plants > Phyllosphere > Petiole	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5321	Host-associated > Plants > Phyllosphere > Leaf > Leaf lesion	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5322	Host-associated > Plants > Phyllosphere > Phylloplane/Leaf surface > Biofilm	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5405	Host-associated > Plants > Macrophytes > Submerged macrophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5407	Host-associated > Plants > Macrophytes > Emergent macrophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5416	Host-associated > Plants > Rhizome > Bulb	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5448	Host-associated > Plants > Seeds > Seed radicle	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5449	Host-associated > Plants > Roots > Rhizoplane > Endophytes	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5493	Engineered > Built environment > Drinking water treatment plant > Drinking water filter	mixs:mixs_extension	mixs:BuiltEnvironment	
+GOLDTERMS:5500	Engineered > Built environment > Drinking water treatment plant > Drinking water	mixs:mixs_extension	mixs:BuiltEnvironment	
+GOLDTERMS:5520	Engineered > Sewage treatment plant > Sludge	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5523	Engineered > Sewage treatment plant > Wastewater	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5527	Engineered > Built environment > Water treatment plant > Wastewater	mixs:mixs_extension	mixs:BuiltEnvironment	
+GOLDTERMS:5552	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Enriched plant cells	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5553	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Bulk soil	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5554	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Soil (non-planted)	mixs:mixs_extension	mixs:Soil	
+GOLDTERMS:5568	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Rhizosphere	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5593	Engineered > Sewage treatment plant > Wastewater > Activated sludge	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5624	Engineered > Sewage treatment plant > Activated sludge	mixs:mixs_extension	mixs:MiscellaneousNaturalOrArtificialEnvironment	
+GOLDTERMS:5740	Host-associated > Plants > Phyllosphere > Cob	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5752	Host-associated > Plants > Phyllosphere > Caulosphere > Bark	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5782	Host-associated > Plants > Tissue > Bark	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5784	Host-associated > Plants > Roots > Rhizoplane	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5786	Host-associated > Plants > Roots > Galls	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5793	Host-associated > Plants > Rhizome > Stem tuber > Soil	mixs:mixs_extension	mixs:Soil	
+GOLDTERMS:5796	Host-associated > Plants > Rhizoid	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5812	Host-associated > Plants > Biocrust	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:5823	Environmental > Terrestrial > Soil > Bulk soil > Plant pot	mixs:mixs_extension	mixs:Soil	
+GOLDTERMS:5826	Host-associated > Plants > Phyllosphere > Anthosphere > Nectar	mixs:mixs_extension	mixs:PlantAssociated	
+GOLDTERMS:Engineered-Artificial-ecosystem-Plant-growth-chamber	Engineered > Artificial ecosystem > Plant growth chamber	mixs:other	ENVO:00010622	vivarium
+GOLDTERMS:Engineered-Artificial-ecosystem-Plant-growth-chamber-Defined-media	Engineered > Artificial ecosystem > Plant growth chamber > Defined media	mixs:other	ENVO:00010622	vivarium
+GOLDTERMS:5449	Host-associated > Plants > Roots > Rhizoplane > Endophytes	mixs:other	ENVO:01001181	rhizoplane
+GOLDTERMS:5500	Engineered > Built environment > Drinking water treatment plant > Drinking water	mixs:other	FOODON:03301647	
+GOLDTERMS:5552	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Enriched plant cells	mixs:other	ENVO:00010622	vivarium
+GOLDTERMS:5553	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Bulk soil	mixs:other	ENVO:00010622	vivarium
+GOLDTERMS:5554	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Soil (non-planted)	mixs:other	ENVO:00010622	vivarium
+GOLDTERMS:5568	Engineered > Artificial ecosystem > Plant growth chamber > Defined media > Rhizosphere	mixs:other	ENVO:00010622	vivarium
+GOLDTERMS:5784	Host-associated > Plants > Roots > Rhizoplane	mixs:other	ENVO:01001181	rhizoplane
+GOLDTERMS:5812	Host-associated > Plants > Biocrust	mixs:other	ENVO:01000909	biocrust
+GOLDTERMS:5823	Environmental > Terrestrial > Soil > Bulk soil > Plant pot	mixs:other	ENVO:03600045	plant pot
