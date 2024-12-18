@@ -1,96 +1,84 @@
 id	label
-ENVO:00000067	cave
-ENVO:00000463	harbour
-ENVO:00000169	canyon
-ENVO:00000292	watershed
-ENVO:00001996	mine drainage
-ENVO:00000304	shore
-ENVO:00000068	tunnel
-ENVO:00000081	mountain
-ENVO:00000026	well
-ENVO:01001357	desert
 ENVO:00000011	garden
-ENVO:00000418	ria
-ENVO:00000282	esker
-ENVO:00000078	farm
-ENVO:00000370	tuya
-ENVO:00000179	mesa
-ENVO:00000175	karst
-ENVO:00000533	landfill
-ENVO:00000260	prairie
-ENVO:00000096	caldera
-ENVO:00000325	polje
-ENVO:00000508	terrace
-ENVO:00000266	pasture
-ENVO:01001489	spur
-ENVO:00000320	crevasse
-ENVO:00000127	badland
-ENVO:00000417	machair
-ENVO:01001871	pit
-ENVO:01001665	soil cryoturbate
-ENVO:00000291	drainage basin
-ENVO:00005801	rhizosphere
-ENVO:00000086	plain
-ENVO:00000280	escarpment
-ENVO:00000276	drumlin
-ENVO:00000543	swale
-ENVO:00000108	meadow ecosystem
-ENVO:00000044	peatland
-ENVO:00000410	kipuka
-ENVO:00000516	hummock
-ENVO:00000489	palsa
-ENVO:00000255	flood plain
-ENVO:00000027	spring
-ENVO:02000141	refinery
-ENVO:00000076	mine
-ENVO:00000023	stream
-ENVO:00002061	oil spill
-ENVO:00000444	woodland clearing
-ENVO:00000514	crater
-ENVO:00000031	wadi
-ENVO:00000091	beach
-ENVO:01000649	trench
-ENVO:00000087	cliff
-ENVO:00000496	rill
-ENVO:00000287	butte
-ENVO:03000085	thermokarst
-ENVO:00000155	cirque
-ENVO:00000174	isthmus
-ENVO:00000284	quarry
-ENVO:01001207	ranch
-ENVO:03000117	channel
-ENVO:00000035	marsh
-ENVO:00000170	dune
-ENVO:00000419	stack
-ENVO:00000300	scrubland area
-ENVO:00000039	fjord
-ENVO:04000009	active permafrost layer
-ENVO:00002000	slope
-ENVO:01000446	ravine
-ENVO:00000133	glacier
-ENVO:03600087	greenhouse
-ENVO:00000283	ridge
+ENVO:00000014	canal
+ENVO:00000020	lake
 ENVO:00000022	river
-ENVO:00000216	fumarole
-ENVO:00000542	kame
-ENVO:00000232	fen
-ENVO:00000100	valley
-ENVO:03000143	cryosphere
-ENVO:01000935	campground
-ENVO:00000277	dry lake
-ENVO:01001568	frost heave
-ENVO:00000182	plateau
-ENVO:00000262	steppe
-ENVO:00000432	monadnock
-ENVO:00000545	shingle beach
-ENVO:00000438	alas
-ENVO:00000195	sinkhole
-ENVO:00000562	park
-ENVO:03501239	riverfront
-ENVO:00000074	dam
-ENVO:00000181	nunatak
+ENVO:00000023	stream
+ENVO:00000025	reservoir
+ENVO:00000026	well
+ENVO:00000027	spring
+ENVO:00000031	wadi
+ENVO:00000035	marsh
+ENVO:00000037	ditch
+ENVO:00000039	fjord
+ENVO:00000043	wetland area
+ENVO:00000044	peatland
+ENVO:00000045	estuary
+ENVO:00000051	hot spring
+ENVO:00000057	mangrove swamp
+ENVO:00000067	cave
+ENVO:00000068	tunnel
+ENVO:00000076	mine
+ENVO:00000078	farm
+ENVO:00000081	mountain
 ENVO:00000083	hill
-ENVO:00000177	moraine
-ENVO:00000551	endorheic basin
-ENVO:00000064	road
+ENVO:00000086	plain
+ENVO:00000087	cliff
+ENVO:00000091	beach
+ENVO:00000096	caldera
+ENVO:00000101	delta
+ENVO:00000109	woodland area
+ENVO:00000114	agricultural field
+ENVO:00000133	glacier
+ENVO:00000141	bank
+ENVO:00000155	cirque
+ENVO:00000170	dune
+ENVO:00000174	isthmus
+ENVO:00000175	karst
+ENVO:00000178	levee
+ENVO:00000179	mesa
+ENVO:00000182	plateau
+ENVO:00000189	peat swamp
+ENVO:00000192	mudflat
+ENVO:00000195	sinkhole
+ENVO:00000216	fumarole
+ENVO:00000232	fen
 ENVO:00000247	volcano
+ENVO:00000255	flood plain
+ENVO:00000260	prairie
+ENVO:00000262	steppe
+ENVO:00000266	pasture
+ENVO:00000283	ridge
+ENVO:00000284	quarry
+ENVO:00000287	butte
+ENVO:00000291	drainage basin
+ENVO:00000292	watershed
+ENVO:00000305	peninsula
+ENVO:00000316	intertidal zone
+ENVO:00000328	vadose zone
+ENVO:00000463	harbour
+ENVO:00000486	shoreline
+ENVO:00000489	palsa
+ENVO:00000514	crater
+ENVO:00000516	hummock
+ENVO:00000533	landfill
+ENVO:00000562	park
+ENVO:00002000	slope
+ENVO:00002061	oil spill
+ENVO:00005801	rhizosphere
+ENVO:00005803	animal habitation
+ENVO:00012408	aquifer
+ENVO:01000433	needleleaf forest
+ENVO:01000447	roadside
+ENVO:01000671	dike
+ENVO:01000816	area of deciduous forest
+ENVO:01000843	area of evergreen forest
+ENVO:01000861	area of dwarf scrub
+ENVO:01000891	area of pastureland or hayfields
+ENVO:01000892	area of cropland
+ENVO:01001357	desert
+ENVO:01001568	frost heave
+ENVO:01001803	tropical forest
+ENVO:03000117	channel
+ENVO:03500005	anthropogenic litter
+ENVO:04000009	active permafrost layer
