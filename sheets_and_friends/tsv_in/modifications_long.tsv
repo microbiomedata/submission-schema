@@ -143,7 +143,6 @@ PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	range			Gr
 PlantAssociatedInterface|SoilInterface	growth_facil	overwrite_examples	examples			growth_chamber
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	required			true
 SoilInterface	heavy_metals	replace_attribute	description			Heavy metals present in the sample and their concentrations.
-SoilInterface	heavy_metals	overwrite_examples	examples			mercury 0.09 micrograms per gram|mercury 0.09 ug/g; chromium 0.03 ug/g
 SoilInterface	heavy_metals	add_attribute	notes			Changed to multi-valued. In MIxS, you add another column to denote multiple heavy metals. We don't have that ability in the submission portal.
 SoilInterface	heavy_metals	replace_attribute	title			heavy metals/ extreme unusual properties
 SoilInterface	heavy_metals	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
