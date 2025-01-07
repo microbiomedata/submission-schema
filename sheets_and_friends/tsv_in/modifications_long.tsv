@@ -44,6 +44,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	string_serialization			{float}|{float}-{float}
 SedimentInterface|SoilInterface	depth	replace_attribute	string_serialization			{float}-{float}
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	diether_lipids	overwrite_examples	examples			archaeol;0.2 ng/L
 JgiMgInterface	dna_absorb1	replace_attribute	recommended			true
 JgiMgInterface	dna_absorb2	replace_attribute	recommended			true
 JgiMgLrInterface	dna_absorb1	replace_attribute	required			true
