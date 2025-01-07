@@ -139,6 +139,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	description			Type of facility/location where the sample was harvested; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field.
 PlantAssociatedInterface|SoilInterface	growth_facil	add_attribute	notes			Removed from description: Alternatively use Crop Ontology (CO) terms
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	range			GrowthFacilEnum
+PlantAssociatedInterface|SoilInterface	growth_facil	overwrite_examples	examples			growth_chamber
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	required			true
 SoilInterface	heavy_metals	replace_attribute	description			Heavy metals present in the sample and their concentrations.
 SoilInterface	heavy_metals	overwrite_examples	examples			mercury 0.09 micrograms per gram|mercury 0.09 ug/g; chromium 0.03 ug/g
