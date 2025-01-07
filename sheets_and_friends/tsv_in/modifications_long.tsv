@@ -14,6 +14,7 @@ DhMultiviewCommonColumnsMixin	analysis_type	replace_attribute	recommended			fals
 SoilInterface	annual_precpt	overwrite_examples	examples			8.94 inch
 SoilInterface	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
 PlantAssociatedInterface|SoilInterface	biotic_regm	replace_attribute	recommended			true
+BuiltEnvInterface	built_struc_age	overwrite_examples	examples			15 years
 SoilInterface	bulk_elect_conductivity	overwrite_examples	examples			0.017 mS/cm
 BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface	carb_nitro_ratio	replace_attribute	range			float
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	chem_administration	replace_attribute	pattern			^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$
