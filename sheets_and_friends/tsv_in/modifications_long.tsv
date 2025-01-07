@@ -176,6 +176,10 @@ BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|Sed
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	string_serialization			{float}
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
 BiofilmInterface|SedimentInterface|WaterInterface	phaeopigments	overwrite_examples	examples			phaeophytin;2.5 mg/m3
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	description			Concentration of phospholipid fatty acids
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	string_serialization			{float} {unit}
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	overwrite_examples	examples			2.98 mg/L
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	multivalued			false
 EmslInterface	project_id	replace_attribute	required			true
 EmslInterface	project_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	required			true
