@@ -1,7 +1,7 @@
 class	slot	action	target	path	LinkML implementation notes	value
 PlantAssociatedInterface|SoilInterface	air_temp_regm	replace_attribute	recommended			true
 SoilInterface	al_sat	replace_attribute	description			The relative abundance of aluminum in the sample
-SoilInterface	al_sat	replace_attribute	pattern			[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%
+SoilInterface	al_sat	replace_attribute	string_serialization			{percentage}
 SoilInterface	al_sat	overwrite_examples	examples			27%
 SoilInterface	al_sat	replace_attribute	title			aluminum saturation/ extreme unusual properties
 SoilInterface	al_sat	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
@@ -186,6 +186,7 @@ JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	recommended			false
 JgiMtInterface	proposal_rna	replace_attribute	required			true
 JgiMtInterface	proposal_rna	replace_attribute	recommended			false
+BuiltEnvInterface	rel_air_humidity	replace_attribute	string_serialization			{percentage}
 EmslInterface	replicate_number	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
