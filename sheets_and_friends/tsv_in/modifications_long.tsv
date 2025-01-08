@@ -247,6 +247,7 @@ SoilInterface	season_precpt	add_attribute	notes			mean and average are the same 
 SoilInterface	season_precpt	replace_attribute	title			average seasonal precipitation
 SoilInterface	season_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|check validation & examples. always mm? so value only? Or value + unit
 SoilInterface	sieving	overwrite_examples	examples			combined 2 cores|4mm sieved|4 mm sieved and homogenized|50 g| 5 cores|2 mm sieved
+BuiltEnvInterface	shading_device_type	overwrite_examples	examples			slatted aluminum
 SoilInterface	sieving	replace_attribute	recommended			true
 SoilInterface	sieving	add_attribute	todos			check validation and examples
 SoilInterface	size_frac_low	replace_attribute	recommended			false
