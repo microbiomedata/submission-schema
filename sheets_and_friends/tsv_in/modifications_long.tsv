@@ -220,6 +220,9 @@ JgiMtInterface	rna_volume	replace_attribute	recommended			false
 PlantAssociatedInterface	root_med_carbon	overwrite_examples	examples			sucrose;50 mg/L
 PlantAssociatedInterface	root_med_macronutr	overwrite_examples	examples			KH2PO4;170 mg/L
 PlantAssociatedInterface	root_med_micronutr	overwrite_examples	examples			H3BO3;6.2 mg/L
+PlantAssociatedInterface	root_med_ph	replace_attribute	range			float
+PlantAssociatedInterface	root_med_ph	replace_attribute	minimum_value			1
+PlantAssociatedInterface	root_med_ph	replace_attribute	maximum_value			14
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	replace_attribute	recommended			true
