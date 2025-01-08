@@ -267,6 +267,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 SoilInterface	store_cond	replace_attribute	description			Explain how the soil sample is stored (fresh/frozen/other).
 SoilInterface	store_cond	replace_attribute	range			StoreCondEnum
 SoilInterface	store_cond	replace_attribute	required			true
+SoilInterface	store_cond	overwrite_examples	examples			frozen
 BuiltEnvInterface	surf_humidity	replace_attribute	string_serialization			{percentage}
 EmslInterface	technical_reps	replace_attribute	recommended			true
 BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	overwrite_examples	examples			1 ug/L
