@@ -67,7 +67,7 @@ water_data:
     ph_meth: xyz
     phaeopigments: "phaeopigment 1;1.5 parts per million|phaeopigment 2;1.5 parts per million"
     phosphate: 0.7 micromole per liter
-    phosplipid_fatt_acid: "Tuberculostearic acid;1.5 parts per million|Palmitoleic acid;1.5 parts per million"
+    phosplipid_fatt_acid: "1.5 ppm"
     photon_flux: 3.926 micromole photons per second per square meter
     potassium: 463 milligram per liter
     pressure: 50 atmosphere
