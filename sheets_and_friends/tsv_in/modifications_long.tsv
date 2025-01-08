@@ -253,8 +253,8 @@ SoilInterface	size_frac_up	replace_attribute	recommended			false
 SoilInterface	slope_aspect	replace_attribute	description			The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.
 SoilInterface	slope_aspect	overwrite_examples	examples			35
 SoilInterface	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
-SoilInterface	slope_gradient	overwrite_examples	examples			10%|10 %|0.1
-SoilInterface	slope_gradient	add_attribute	todos			Slope is a percent. How does the validation work? Check to correct examples
+SoilInterface	slope_gradient	replace_attribute	string_serialization			{percentage}
+SoilInterface	slope_gradient	overwrite_examples	examples			10%
 DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
 DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
