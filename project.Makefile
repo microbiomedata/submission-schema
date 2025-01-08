@@ -85,6 +85,7 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 #   good reason for using ! instead of |
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="chem_administration") | .examples) = [{"value": "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"}, {"value": "agar [CHEBI:2509];2018-05"}]' $@
 	yq -i '(.classes.[].slot_usage.[] | select(.name=="heavy_metals") | .examples) = [{"value": "mercury;0.09 ug/g"}, {"value": "mercury;0.09 ug/g|chromium;0.03 ug/g"}]' $@
+	yq -i '(.classes.[].slot_usage.[] | select(.name=="non_microb_biomass") | .examples) = [{"value": "insect;0.23 ug"}, {"value": "insect;0.23 ug|plant;1 g"}]' $@
 
 # use yq to add patterns with a secondary condition like mutivalued
 	yq -i '(.classes.[].slot_usage.[] | select(.range == "GeolocationValue")  | .pattern) = "^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$$"' $@
