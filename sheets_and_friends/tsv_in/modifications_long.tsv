@@ -262,7 +262,7 @@ SoilInterface	sieving	add_attribute	todos			check validation and examples
 SoilInterface	size_frac_low	replace_attribute	recommended			false
 SoilInterface	size_frac_up	replace_attribute	recommended			false
 SoilInterface	slope_aspect	replace_attribute	description			The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.
-SoilInterface	slope_aspect	overwrite_examples	examples			35
+SoilInterface	slope_aspect	overwrite_examples	examples			35 degrees
 SoilInterface	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
 SoilInterface	slope_gradient	replace_attribute	string_serialization			{percentage}
 SoilInterface	slope_gradient	overwrite_examples	examples			10%
