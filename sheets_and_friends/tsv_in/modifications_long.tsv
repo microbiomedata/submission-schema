@@ -241,6 +241,7 @@ EmslInterface	sample_shipped	replace_attribute	required			true
 EmslInterface	sample_shipped	replace_attribute	recommended			false
 EmslInterface	sample_type	replace_attribute	required			true
 EmslInterface	sample_type	replace_attribute	recommended			false
+EmslInterface	sample_type	overwrite_examples	examples			soil - water extract
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
 SoilInterface	season_precpt	add_attribute	notes			mean and average are the same thing, but it seems like bad practice to not be consistent. Changed mean to average
 SoilInterface	season_precpt	replace_attribute	title			average seasonal precipitation
