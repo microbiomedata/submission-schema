@@ -394,6 +394,16 @@ enums:
       aerobic:
       anaerobic:
       other:
+  SeasonEnum:
+    permissible_values:
+      spring:
+        meaning: NCIT:C94731
+      summer:
+        meaning: NCIT:C94732
+      autumn:
+        meaning: NCIT:C94733
+      winter:
+        meaning: NCIT:C94730
 slots:
   air_data:
     description: aggregation slot relating air data collections to a SampleData container

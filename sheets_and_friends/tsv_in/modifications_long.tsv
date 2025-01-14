@@ -1,7 +1,8 @@
 class	slot	action	target	path	LinkML implementation notes	value
 PlantAssociatedInterface|SoilInterface	air_temp_regm	replace_attribute	recommended			true
 SoilInterface	al_sat	replace_attribute	description			The relative abundance of aluminum in the sample
-SoilInterface	al_sat	overwrite_examples	examples			0.27
+SoilInterface	al_sat	replace_attribute	string_serialization			{percentage}
+SoilInterface	al_sat	overwrite_examples	examples			27%
 SoilInterface	al_sat	replace_attribute	title			aluminum saturation/ extreme unusual properties
 SoilInterface	al_sat	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
 SoilInterface	al_sat_meth	replace_attribute	description			Reference or method used in determining Aluminum saturation
@@ -14,6 +15,7 @@ DhMultiviewCommonColumnsMixin	analysis_type	replace_attribute	recommended			fals
 SoilInterface	annual_precpt	overwrite_examples	examples			8.94 inch
 SoilInterface	annual_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC, added example. When NMDC has its own slots, map this to the MIxS slot
 PlantAssociatedInterface|SoilInterface	biotic_regm	replace_attribute	recommended			true
+BuiltEnvInterface	built_struc_age	overwrite_examples	examples			15 years
 SoilInterface	bulk_elect_conductivity	overwrite_examples	examples			0.017 mS/cm
 BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface	carb_nitro_ratio	replace_attribute	range			float
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	chem_administration	replace_attribute	pattern			^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$
@@ -34,7 +36,8 @@ SoilInterface	cur_vegetation	add_attribute	todos			This is no longer matching th
 SoilInterface	cur_vegetation_meth	overwrite_examples	examples			https://doi.org/10.1111/j.1654-109X.2011.01154.x
 SoilInterface	cur_vegetation_meth	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|I'm not sure this is a DOI, PMID, or URI. Should pool the community and find out how they accomplish this if provided.
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	add_attribute	comments			All depths must be reported in meters. Provide the numerical portion only.
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	overwrite_examples	examples			0 - 0.1|1
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|WastewaterSludgeInterface|WaterInterface	depth	overwrite_examples	examples			0 - 0.1|1
+SedimentInterface|SoilInterface	depth	overwrite_examples	examples			0 - 0.1|1 - 1.5
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	add_attribute	notes			Use modified term
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	range			string
 SedimentInterface|SoilInterface|WaterInterface	depth	replace_attribute	required			true
@@ -42,6 +45,7 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	string_serialization			{float}|{float}-{float}
 SedimentInterface|SoilInterface	depth	replace_attribute	string_serialization			{float}-{float}
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	diether_lipids	overwrite_examples	examples			archaeol;0.2 ng/L
 JgiMgInterface	dna_absorb1	replace_attribute	recommended			true
 JgiMgInterface	dna_absorb2	replace_attribute	recommended			true
 JgiMgLrInterface	dna_absorb1	replace_attribute	required			true
@@ -101,7 +105,7 @@ SoilInterface	env_broad_scale	remove_attribute	range
 SoilInterface	env_broad_scale	replace_attribute	any_of.0.range			EnvBroadScaleSoilEnum
 SoilInterface	env_broad_scale	replace_attribute	any_of.1.range			string
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	replace_attribute	required			true
-AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_local_scale	overwrite_examples	examples			canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [01000335]|shrub layer [ENVO:01000336]
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_local_scale	overwrite_examples	examples			canopy [ENVO:00000047]|herb and fern layer [ENVO:01000337]|litter layer [ENVO:01000338]|understory [ENVO:01000335]|shrub layer [ENVO:01000336]
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	env_local_scale	add_attribute	notes			"range changed to enumeration late in makefile, so this is modified (but ""sample ID"" anyway)"
 SoilInterface	env_local_scale	remove_attribute	range			
 SoilInterface	env_local_scale	replace_attribute	any_of.0.range			EnvLocalScaleSoilEnum
@@ -137,9 +141,9 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	description			Type of facility/location where the sample was harvested; controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental garden, field.
 PlantAssociatedInterface|SoilInterface	growth_facil	add_attribute	notes			Removed from description: Alternatively use Crop Ontology (CO) terms
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	range			GrowthFacilEnum
+PlantAssociatedInterface|SoilInterface	growth_facil	overwrite_examples	examples			growth_chamber
 PlantAssociatedInterface|SoilInterface	growth_facil	replace_attribute	required			true
 SoilInterface	heavy_metals	replace_attribute	description			Heavy metals present in the sample and their concentrations.
-SoilInterface	heavy_metals	overwrite_examples	examples			mercury 0.09 micrograms per gram|mercury 0.09 ug/g; chromium 0.03 ug/g
 SoilInterface	heavy_metals	add_attribute	notes			Changed to multi-valued. In MIxS, you add another column to denote multiple heavy metals. We don't have that ability in the submission portal.
 SoilInterface	heavy_metals	replace_attribute	title			heavy metals/ extreme unusual properties
 SoilInterface	heavy_metals	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|Example & validation. Can we make rules that 27% & 27 % & 0.27 will validate?|I think it's weird the way GSC writes the title. I recommend this change. Thoughts? I would argue this isn't an extreme unusual property. It's just a biogeochemical measurement.
@@ -155,8 +159,16 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	string_serialization			{lat lon}
 PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended			true
-SoilInterface|WaterInterface	organism_count	replace_attribute	pattern			^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
-SoilInterface|WaterInterface	organism_count	replace_attribute	range			string
+SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization
+SedimentInterface|SoilInterface	microbial_biomass_c	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
+SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization
+SedimentInterface|SoilInterface	microbial_biomass_n	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
+SoilInterface	non_microb_biomass	remove_attribute	string_serialization
+SoilInterface	non_microb_biomass	replace_attribute	pattern			^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
+BuiltEnvInterface	occup_samp	replace_attribute	range			integer
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	replace_attribute	pattern			^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	replace_attribute	range			string
+AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	overwrite_examples	examples			total prokaryotes;3.5e7 cells/mL;qPCR
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	description			pH measurement of the sample, or liquid portion of sample, or aqueous phase of the fluid
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	maximum_value			14
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	minimum_value		expects int?!	0
@@ -165,12 +177,18 @@ BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|Sed
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	recommended			true
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph	replace_attribute	string_serialization			{float}
 BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	ph_meth	overwrite_examples	examples			https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB|https://doi.org/10.2136/sssabookser5.3.c16
+BiofilmInterface|SedimentInterface|WaterInterface	phaeopigments	overwrite_examples	examples			phaeophytin;2.5 mg/m3
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	description			Concentration of phospholipid fatty acids
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	string_serialization			{float} {unit}
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	overwrite_examples	examples			2.98 mg/L
+BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	multivalued			false
 EmslInterface	project_id	replace_attribute	required			true
 EmslInterface	project_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	recommended			false
 JgiMtInterface	proposal_rna	replace_attribute	required			true
 JgiMtInterface	proposal_rna	replace_attribute	recommended			false
+BuiltEnvInterface	rel_air_humidity	replace_attribute	string_serialization			{percentage}
 EmslInterface	replicate_number	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
@@ -201,10 +219,17 @@ JgiMtInterface	rna_seq_project_pi	replace_attribute	required			true
 JgiMtInterface	rna_seq_project_pi	replace_attribute	recommended			false
 JgiMtInterface	rna_volume	replace_attribute	required			true
 JgiMtInterface	rna_volume	replace_attribute	recommended			false
+PlantAssociatedInterface	root_med_carbon	overwrite_examples	examples			sucrose;50 mg/L
+PlantAssociatedInterface	root_med_macronutr	overwrite_examples	examples			KH2PO4;170 mg/L
+PlantAssociatedInterface	root_med_micronutr	overwrite_examples	examples			H3BO3;6.2 mg/L
+PlantAssociatedInterface	root_med_ph	replace_attribute	range			float
+PlantAssociatedInterface	root_med_ph	replace_attribute	minimum_value			1
+PlantAssociatedInterface	root_med_ph	replace_attribute	maximum_value			14
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	add_attribute	comments			Report dimensions and details when applicable
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_device	replace_attribute	recommended			true
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	samp_collec_method	add_attribute	comments			This can be a citation or description
+BuiltEnvInterface	samp_floor	overwrite_examples	examples			basement
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_mat_process	overwrite_examples	examples			filtering of seawater|storing samples in ethanol
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	samp_mat_process	replace_attribute	range			string
 DhMultiviewCommonColumnsMixin	samp_name	add_attribute	comments			It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
@@ -225,20 +250,25 @@ EmslInterface	sample_shipped	replace_attribute	required			true
 EmslInterface	sample_shipped	replace_attribute	recommended			false
 EmslInterface	sample_type	replace_attribute	required			true
 EmslInterface	sample_type	replace_attribute	recommended			false
+EmslInterface	sample_type	overwrite_examples	examples			soil - water extract
+BuiltEnvInterface	season	remove_attribute	string_serialization
+BuiltEnvInterface	season	replace_attribute	range			SeasonEnum
+BuiltEnvInterface	season	overwrite_examples	examples			autumn
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
 SoilInterface	season_precpt	add_attribute	notes			mean and average are the same thing, but it seems like bad practice to not be consistent. Changed mean to average
 SoilInterface	season_precpt	replace_attribute	title			average seasonal precipitation
 SoilInterface	season_precpt	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot|check validation & examples. always mm? so value only? Or value + unit
 SoilInterface	sieving	overwrite_examples	examples			combined 2 cores|4mm sieved|4 mm sieved and homogenized|50 g| 5 cores|2 mm sieved
+BuiltEnvInterface	shading_device_type	overwrite_examples	examples			slatted aluminum
 SoilInterface	sieving	replace_attribute	recommended			true
 SoilInterface	sieving	add_attribute	todos			check validation and examples
 SoilInterface	size_frac_low	replace_attribute	recommended			false
 SoilInterface	size_frac_up	replace_attribute	recommended			false
 SoilInterface	slope_aspect	replace_attribute	description			The direction a slope faces. While looking down a slope use a compass to record the direction you are facing (direction or degrees). - This measure provides an indication of sun and wind exposure that will influence soil temperature and evapotranspiration.
-SoilInterface	slope_aspect	overwrite_examples	examples			35
+SoilInterface	slope_aspect	overwrite_examples	examples			35 degrees
 SoilInterface	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
-SoilInterface	slope_gradient	overwrite_examples	examples			10%|10 %|0.1
-SoilInterface	slope_gradient	add_attribute	todos			Slope is a percent. How does the validation work? Check to correct examples
+SoilInterface	slope_gradient	replace_attribute	string_serialization			{percentage}
+SoilInterface	slope_gradient	overwrite_examples	examples			10%
 DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
 DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
@@ -251,6 +281,8 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 SoilInterface	store_cond	replace_attribute	description			Explain how the soil sample is stored (fresh/frozen/other).
 SoilInterface	store_cond	replace_attribute	range			StoreCondEnum
 SoilInterface	store_cond	replace_attribute	required			true
+SoilInterface	store_cond	overwrite_examples	examples			frozen
+BuiltEnvInterface	surf_humidity	replace_attribute	string_serialization			{percentage}
 EmslInterface	technical_reps	replace_attribute	recommended			true
 BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	overwrite_examples	examples			1 ug/L
 BiofilmInterface|SedimentInterface|SoilInterface	tot_carb	add_attribute	todos			is this inorganic and organic? both? could use some clarification.|ug/L doesn't seem like the right units. Should check this slots usage in databases and re-evaluate. I couldn't find any references that provided this data in this format

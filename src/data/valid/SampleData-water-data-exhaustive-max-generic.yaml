@@ -67,7 +67,7 @@ water_data:
     ph_meth: xyz
     phaeopigments: xyz;100 units
     phosphate: 100 units
-    phosplipid_fatt_acid: xyz;100 units
+    phosplipid_fatt_acid: 100 units
     potassium: 100 units
     pressure: 100 units
     primary_prod: 100 units
