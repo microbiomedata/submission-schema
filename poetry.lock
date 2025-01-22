@@ -1727,21 +1727,6 @@ docs = ["sphinx (>=5)", "sphinx-rtd-theme"]
 test = ["mock (>=4)", "pytest (>=7)", "pytest-cov", "pytest-mock (>=3)"]
 
 [[package]]
-name = "gspread"
-version = "6.1.4"
-description = "Google Spreadsheets Python API"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "gspread-6.1.4-py3-none-any.whl", hash = "sha256:c34781c426031a243ad154952b16f21ac56a5af90687885fbee3d1fba5280dcd"},
-    {file = "gspread-6.1.4.tar.gz", hash = "sha256:b8eec27de7cadb338bb1b9f14a9be168372dee8965c0da32121816b5050ac1de"},
-]
-
-[package.dependencies]
-google-auth = ">=1.12.0"
-google-auth-oauthlib = ">=0.4.1"
-
-[[package]]
 name = "h11"
 version = "0.14.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
@@ -6609,4 +6594,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "8645aa82e0cd0cbe9c3723111785869a475f712e28c508b754519c75534a276c"
+content-hash = "973eb57ef06ba4ad6f7205cd18f97039257565193c96e1718c7c425c73129939"
