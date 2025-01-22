@@ -20,6 +20,7 @@ include = [
 [tool.poetry.dependencies]
 python = "^3.9"
 linkml-runtime = "^1.6.2"
+gspread = "^6.1.4"
 
 [tool.poetry.group.dev.dependencies]
 db-dtypes = "^1.3.1"

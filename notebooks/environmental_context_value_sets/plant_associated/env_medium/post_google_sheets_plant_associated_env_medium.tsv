@@ -1,0 +1,29 @@
+id	label
+PO:0004518	bark
+PO:0025356	bulb
+PO:0025355	corm
+PO:0025623	ear infructescence axis
+PO:0020103	flag leaf
+PO:0009046	flower
+PO:0009001	fruit
+PO:0025034	leaf
+PO:0020038	petiole
+PO:0006001	phyllome
+PO:0006109	pith
+PO:0005052	plant callus
+PO:0025626	plant gall
+ENVO:01000628	plant litter
+PO:0025281	pollen
+PO:0020031	radicle
+PO:0030078	rhizoid
+PO:0004542	rhizome
+ENVO:00005801	rhizosphere
+PO:0009005	root
+PO:0003023	root nodule
+PO:0004513	sapwood
+PO:0005848	secondary xylem
+PO:0009010	seed
+PO:0008037	seedling
+PO:0009047	stem
+PO:0025522	tuber
+PO:0025417	xylem vessel
