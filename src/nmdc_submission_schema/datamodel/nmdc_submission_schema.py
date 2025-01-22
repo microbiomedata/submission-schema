@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-09T10:01:01
+# Generation date: 2025-01-22T02:30:58
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -185,20 +185,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
-
-
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+class Float(float):
+    """ A real number that conforms to the xsd:float specification """
+    type_class_uri = XSD["float"]
+    type_class_curie = "xsd:float"
+    type_name = "float"
+    type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
 class Uriorcurie(URIorCURIE):
@@ -209,12 +201,20 @@ class Uriorcurie(URIorCURIE):
     type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
-class Float(float):
-    """ A real number that conforms to the xsd:float specification """
-    type_class_uri = XSD["float"]
-    type_class_curie = "xsd:float"
-    type_name = "float"
-    type_model_uri = NMDC_SUB_SCHEMA.Float
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+
+
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class Integer(int):
@@ -2605,8 +2605,8 @@ class BuiltEnvInterface(DhInterface):
         if self.occup_document is not None and not isinstance(self.occup_document, OccupDocumentEnum):
             self.occup_document = OccupDocumentEnum(self.occup_document)
 
-        if self.occup_samp is not None and not isinstance(self.occup_samp, str):
-            self.occup_samp = str(self.occup_samp)
+        if self.occup_samp is not None and not isinstance(self.occup_samp, int):
+            self.occup_samp = int(self.occup_samp)
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
@@ -2695,8 +2695,8 @@ class BuiltEnvInterface(DhInterface):
         if self.samp_weather is not None and not isinstance(self.samp_weather, SampWeatherEnum):
             self.samp_weather = SampWeatherEnum(self.samp_weather)
 
-        if self.season is not None and not isinstance(self.season, str):
-            self.season = str(self.season)
+        if self.season is not None and not isinstance(self.season, SeasonEnum):
+            self.season = SeasonEnum(self.season)
 
         if self.season_use is not None and not isinstance(self.season_use, SeasonUseEnum):
             self.season_use = SeasonUseEnum(self.season_use)
@@ -6663,8 +6663,8 @@ class PlantAssociatedInterface(DhInterface):
         if self.root_med_micronutr is not None and not isinstance(self.root_med_micronutr, str):
             self.root_med_micronutr = str(self.root_med_micronutr)
 
-        if self.root_med_ph is not None and not isinstance(self.root_med_ph, str):
-            self.root_med_ph = str(self.root_med_ph)
+        if self.root_med_ph is not None and not isinstance(self.root_med_ph, float):
+            self.root_med_ph = float(self.root_med_ph)
 
         if self.root_med_regl is not None and not isinstance(self.root_med_regl, str):
             self.root_med_regl = str(self.root_med_regl)
@@ -9977,6 +9977,25 @@ class OxyStatSampEnum(EnumDefinitionImpl):
         name="OxyStatSampEnum",
     )
 
+class SeasonEnum(EnumDefinitionImpl):
+
+    spring = PermissibleValue(
+        text="spring",
+        meaning=NCIT["C94731"])
+    summer = PermissibleValue(
+        text="summer",
+        meaning=NCIT["C94732"])
+    autumn = PermissibleValue(
+        text="autumn",
+        meaning=NCIT["C94733"])
+    winter = PermissibleValue(
+        text="winter",
+        meaning=NCIT["C94730"])
+
+    _defn = EnumDefinition(
+        name="SeasonEnum",
+    )
+
 class ArchStrucEnum(EnumDefinitionImpl):
 
     building = PermissibleValue(text="building")
@@ -11973,6 +11992,7 @@ class EcosystemCategoryEnum(EnumDefinitionImpl):
     Birds = PermissibleValue(text="Birds")
     Bryozoa = PermissibleValue(text="Bryozoa")
     Cephalochordata = PermissibleValue(text="Cephalochordata")
+    Ciliophora = PermissibleValue(text="Ciliophora")
     Cnidaria = PermissibleValue(text="Cnidaria")
     Endosymbionts = PermissibleValue(text="Endosymbionts")
     Fish = PermissibleValue(text="Fish")
@@ -12058,9 +12078,11 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Building = PermissibleValue(text="Building")
     Canal = PermissibleValue(text="Canal")
     Cave = PermissibleValue(text="Cave")
+    Ciliates = PermissibleValue(text="Ciliates")
     City = PermissibleValue(text="City")
     Cnidaria = PermissibleValue(text="Cnidaria")
     Coal = PermissibleValue(text="Coal")
+    Coelom = PermissibleValue(text="Coelom")
     Composting = PermissibleValue(text="Composting")
     Ctenophora = PermissibleValue(text="Ctenophora")
     Debries = PermissibleValue(text="Debries")
@@ -12091,6 +12113,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Hydrocarbon = PermissibleValue(text="Hydrocarbon")
     Influent = PermissibleValue(text="Influent")
     Integument = PermissibleValue(text="Integument")
+    Lancelets = PermissibleValue(text="Lancelets")
     Landfill = PermissibleValue(text="Landfill")
     Larva = PermissibleValue(text="Larva")
     Larvae = PermissibleValue(text="Larvae")
@@ -12104,6 +12127,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Monument = PermissibleValue(text="Monument")
     Mycelium = PermissibleValue(text="Mycelium")
     Mycorrhiza = PermissibleValue(text="Mycorrhiza")
+    Myzozoa = PermissibleValue(text="Myzozoa")
     Nanoflagellates = PermissibleValue(text="Nanoflagellates")
     Nematoda = PermissibleValue(text="Nematoda")
     Nest = PermissibleValue(text="Nest")
@@ -12121,6 +12145,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Platyhelminthes = PermissibleValue(text="Platyhelminthes")
     Prepupa = PermissibleValue(text="Prepupa")
     Pupa = PermissibleValue(text="Pupa")
+    Regolith = PermissibleValue(text="Regolith")
     Remains = PermissibleValue(text="Remains")
     Rhizoid = PermissibleValue(text="Rhizoid")
     Rhizome = PermissibleValue(text="Rhizome")
@@ -12149,6 +12174,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Thorax = PermissibleValue(text="Thorax")
     Tissue = PermissibleValue(text="Tissue")
     Tumor = PermissibleValue(text="Tumor")
+    Tunicates = PermissibleValue(text="Tunicates")
     Unclassified = PermissibleValue(text="Unclassified")
     Vegetable = PermissibleValue(text="Vegetable")
     Vermicompost = PermissibleValue(text="Vermicompost")
@@ -12473,6 +12499,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Thiocyanate-remediating"))
         setattr(cls, "Thoracic cavity",
             PermissibleValue(text="Thoracic cavity"))
+        setattr(cls, "Tobacco production",
+            PermissibleValue(text="Tobacco production"))
         setattr(cls, "Train car",
             PermissibleValue(text="Train car"))
         setattr(cls, "UASB (Upflow anaerobic sludge blanket)",
@@ -12551,6 +12579,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Bulb = PermissibleValue(text="Bulb")
     CHO = PermissibleValue(text="CHO")
     CaSki = PermissibleValue(text="CaSki")
+    Canal = PermissibleValue(text="Canal")
     Canthus = PermissibleValue(text="Canthus")
     Carcinoid = PermissibleValue(text="Carcinoid")
     Carcinoma = PermissibleValue(text="Carcinoma")
@@ -12738,6 +12767,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Seawater = PermissibleValue(text="Seawater")
     Seaweed = PermissibleValue(text="Seaweed")
     Sediment = PermissibleValue(text="Sediment")
+    Seeds = PermissibleValue(text="Seeds")
     Shell = PermissibleValue(text="Shell")
     Shipwreck = PermissibleValue(text="Shipwreck")
     Shrubland = PermissibleValue(text="Shrubland")
@@ -12747,6 +12777,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Skin = PermissibleValue(text="Skin")
     Sludge = PermissibleValue(text="Sludge")
     Snow = PermissibleValue(text="Snow")
+    Snuff = PermissibleValue(text="Snuff")
     Soil = PermissibleValue(text="Soil")
     Spacecraft = PermissibleValue(text="Spacecraft")
     Spat = PermissibleValue(text="Spat")
@@ -13730,6 +13761,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Soil = PermissibleValue(text="Soil")
     Speleothems = PermissibleValue(text="Speleothems")
     Sperm = PermissibleValue(text="Sperm")
+    Spicules = PermissibleValue(text="Spicules")
     Sporangium = PermissibleValue(text="Sporangium")
     Spores = PermissibleValue(text="Spores")
     Sporophytes = PermissibleValue(text="Sporophytes")
@@ -14969,6 +15001,292 @@ class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
         setattr(cls, "Wetland zone",
             PermissibleValue(text="Wetland zone"))
 
+class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScaleWaterEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "aquatic biome [ENVO:00002030]",
+            PermissibleValue(text="aquatic biome [ENVO:00002030]"))
+        setattr(cls, "concentration basin mediterranean sea biome [ENVO:01000004]",
+            PermissibleValue(text="concentration basin mediterranean sea biome [ENVO:01000004]"))
+        setattr(cls, "dilution basin mediterranean sea biome [ENVO:01000128]",
+            PermissibleValue(text="dilution basin mediterranean sea biome [ENVO:01000128]"))
+        setattr(cls, "epeiric sea biome [ENVO:01000045]",
+            PermissibleValue(text="epeiric sea biome [ENVO:01000045]"))
+        setattr(cls, "estuarine biome [ENVO:01000020]",
+            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
+        setattr(cls, "freshwater biome [ENVO:00000873]",
+            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
+        setattr(cls, "freshwater lake biome [ENVO:01000252]",
+            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
+        setattr(cls, "freshwater river biome [ENVO:01000253]",
+            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
+        setattr(cls, "freshwater stream biome [ENVO:03605008]",
+            PermissibleValue(text="freshwater stream biome [ENVO:03605008]"))
+        setattr(cls, "large freshwater lake biome [ENVO:00000891]",
+            PermissibleValue(text="large freshwater lake biome [ENVO:00000891]"))
+        setattr(cls, "large river biome [ENVO:00000887]",
+            PermissibleValue(text="large river biome [ENVO:00000887]"))
+        setattr(cls, "large river delta biome [ENVO:00000889]",
+            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
+        setattr(cls, "large river headwater biome [ENVO:00000888]",
+            PermissibleValue(text="large river headwater biome [ENVO:00000888]"))
+        setattr(cls, "marginal sea biome [ENVO:01000046]",
+            PermissibleValue(text="marginal sea biome [ENVO:01000046]"))
+        setattr(cls, "marine abyssal zone biome [ENVO:01000027]",
+            PermissibleValue(text="marine abyssal zone biome [ENVO:01000027]"))
+        setattr(cls, "marine basaltic hydrothermal vent biome [ENVO:01000054]",
+            PermissibleValue(text="marine basaltic hydrothermal vent biome [ENVO:01000054]"))
+        setattr(cls, "marine bathyal zone biome [ENVO:01000026]",
+            PermissibleValue(text="marine bathyal zone biome [ENVO:01000026]"))
+        setattr(cls, "marine benthic biome [ENVO:01000024]",
+            PermissibleValue(text="marine benthic biome [ENVO:01000024]"))
+        setattr(cls, "marine biome [ENVO:00000447]",
+            PermissibleValue(text="marine biome [ENVO:00000447]"))
+        setattr(cls, "marine black smoker biome [ENVO:01000051]",
+            PermissibleValue(text="marine black smoker biome [ENVO:01000051]"))
+        setattr(cls, "marine cold seep biome [ENVO:01000127]",
+            PermissibleValue(text="marine cold seep biome [ENVO:01000127]"))
+        setattr(cls, "marine coral reef biome [ENVO:01000049]",
+            PermissibleValue(text="marine coral reef biome [ENVO:01000049]"))
+        setattr(cls, "marine hadal zone biome [ENVO:01000028]",
+            PermissibleValue(text="marine hadal zone biome [ENVO:01000028]"))
+        setattr(cls, "marine hydrothermal vent biome [ENVO:01000030]",
+            PermissibleValue(text="marine hydrothermal vent biome [ENVO:01000030]"))
+        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
+            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
+        setattr(cls, "marine pelagic biome [ENVO:01000023]",
+            PermissibleValue(text="marine pelagic biome [ENVO:01000023]"))
+        setattr(cls, "marine reef biome [ENVO:01000029]",
+            PermissibleValue(text="marine reef biome [ENVO:01000029]"))
+        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
+            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
+        setattr(cls, "marine sponge reef biome [ENVO:01000123]",
+            PermissibleValue(text="marine sponge reef biome [ENVO:01000123]"))
+        setattr(cls, "marine subtidal rocky reef biome [ENVO:01000050]",
+            PermissibleValue(text="marine subtidal rocky reef biome [ENVO:01000050]"))
+        setattr(cls, "marine ultramafic hydrothermal vent biome [ENVO:01000053]",
+            PermissibleValue(text="marine ultramafic hydrothermal vent biome [ENVO:01000053]"))
+        setattr(cls, "marine upwelling biome [ENVO:01000858]",
+            PermissibleValue(text="marine upwelling biome [ENVO:01000858]"))
+        setattr(cls, "marine white smoker biome [ENVO:01000052]",
+            PermissibleValue(text="marine white smoker biome [ENVO:01000052]"))
+        setattr(cls, "mediterranean sea biome [ENVO:01000047]",
+            PermissibleValue(text="mediterranean sea biome [ENVO:01000047]"))
+        setattr(cls, "neritic epipelagic zone biome [ENVO:01000042]",
+            PermissibleValue(text="neritic epipelagic zone biome [ENVO:01000042]"))
+        setattr(cls, "neritic mesopelagic zone biome [ENVO:01000043]",
+            PermissibleValue(text="neritic mesopelagic zone biome [ENVO:01000043]"))
+        setattr(cls, "neritic pelagic zone biome [ENVO:01000032]",
+            PermissibleValue(text="neritic pelagic zone biome [ENVO:01000032]"))
+        setattr(cls, "neritic sea surface microlayer biome [ENVO:01000041]",
+            PermissibleValue(text="neritic sea surface microlayer biome [ENVO:01000041]"))
+        setattr(cls, "ocean biome [ENVO:01000048]",
+            PermissibleValue(text="ocean biome [ENVO:01000048]"))
+        setattr(cls, "oceanic abyssopelagic zone biome [ENVO:01000038]",
+            PermissibleValue(text="oceanic abyssopelagic zone biome [ENVO:01000038]"))
+        setattr(cls, "oceanic bathypelagic zone biome [ENVO:01000037]",
+            PermissibleValue(text="oceanic bathypelagic zone biome [ENVO:01000037]"))
+        setattr(cls, "oceanic benthopelagic zone biome [ENVO:01000040]",
+            PermissibleValue(text="oceanic benthopelagic zone biome [ENVO:01000040]"))
+        setattr(cls, "oceanic epipelagic zone biome [ENVO:01000035]",
+            PermissibleValue(text="oceanic epipelagic zone biome [ENVO:01000035]"))
+        setattr(cls, "oceanic hadal pelagic zone biome [ENVO:01000039]",
+            PermissibleValue(text="oceanic hadal pelagic zone biome [ENVO:01000039]"))
+        setattr(cls, "oceanic mesopelagic zone biome [ENVO:01000036]",
+            PermissibleValue(text="oceanic mesopelagic zone biome [ENVO:01000036]"))
+        setattr(cls, "oceanic pelagic zone biome [ENVO:01000033]",
+            PermissibleValue(text="oceanic pelagic zone biome [ENVO:01000033]"))
+        setattr(cls, "oceanic sea surface microlayer biome [ENVO:01000034]",
+            PermissibleValue(text="oceanic sea surface microlayer biome [ENVO:01000034]"))
+        setattr(cls, "small freshwater lake biome [ENVO:00000892]",
+            PermissibleValue(text="small freshwater lake biome [ENVO:00000892]"))
+        setattr(cls, "small river biome [ENVO:00000890]",
+            PermissibleValue(text="small river biome [ENVO:00000890]"))
+        setattr(cls, "temperate marginal sea biome [ENVO:01000856]",
+            PermissibleValue(text="temperate marginal sea biome [ENVO:01000856]"))
+        setattr(cls, "temperate marine upwelling biome [ENVO:01000860]",
+            PermissibleValue(text="temperate marine upwelling biome [ENVO:01000860]"))
+        setattr(cls, "temperate mediterranean sea biome [ENVO:01000857]",
+            PermissibleValue(text="temperate mediterranean sea biome [ENVO:01000857]"))
+        setattr(cls, "tropical marginal sea biome [ENVO:01001230]",
+            PermissibleValue(text="tropical marginal sea biome [ENVO:01001230]"))
+        setattr(cls, "tropical marine coral reef biome [ENVO:01000854]",
+            PermissibleValue(text="tropical marine coral reef biome [ENVO:01000854]"))
+        setattr(cls, "tropical marine upwelling biome [ENVO:01000859]",
+            PermissibleValue(text="tropical marine upwelling biome [ENVO:01000859]"))
+        setattr(cls, "xeric basin biome [ENVO:00000893]",
+            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
+
+class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvLocalScaleWaterEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "abyssal plain [ENVO:00000244]",
+            PermissibleValue(text="abyssal plain [ENVO:00000244]"))
+        setattr(cls, "acid mine drainage [ENVO:00001997]",
+            PermissibleValue(text="acid mine drainage [ENVO:00001997]"))
+        setattr(cls, "agricultural field [ENVO:00000114]",
+            PermissibleValue(text="agricultural field [ENVO:00000114]"))
+        setattr(cls, "algal bloom [ENVO:2000004]",
+            PermissibleValue(text="algal bloom [ENVO:2000004]"))
+        setattr(cls, "anoxic lake [ENVO:01001072]",
+            PermissibleValue(text="anoxic lake [ENVO:01001072]"))
+        setattr(cls, "aquaculture farm [ENVO:03600074]",
+            PermissibleValue(text="aquaculture farm [ENVO:03600074]"))
+        setattr(cls, "archipelago [ENVO:00000220]",
+            PermissibleValue(text="archipelago [ENVO:00000220]"))
+        setattr(cls, "beach [ENVO:00000091]",
+            PermissibleValue(text="beach [ENVO:00000091]"))
+        setattr(cls, "biofilm [ENVO:00002034]",
+            PermissibleValue(text="biofilm [ENVO:00002034]"))
+        setattr(cls, "black smoker [ENVO:00000218]",
+            PermissibleValue(text="black smoker [ENVO:00000218]"))
+        setattr(cls, "coast [ENVO:01000687]",
+            PermissibleValue(text="coast [ENVO:01000687]"))
+        setattr(cls, "cold seep [ENVO:01000263]",
+            PermissibleValue(text="cold seep [ENVO:01000263]"))
+        setattr(cls, "continental margin [ENVO:01000298]",
+            PermissibleValue(text="continental margin [ENVO:01000298]"))
+        setattr(cls, "coral reef [ENVO:00000150]",
+            PermissibleValue(text="coral reef [ENVO:00000150]"))
+        setattr(cls, "cyanobacterial bloom [ENVO:03600071]",
+            PermissibleValue(text="cyanobacterial bloom [ENVO:03600071]"))
+        setattr(cls, "desert spring [ENVO:02000139]",
+            PermissibleValue(text="desert spring [ENVO:02000139]"))
+        setattr(cls, "epilimnion [ENVO:00002131]",
+            PermissibleValue(text="epilimnion [ENVO:00002131]"))
+        setattr(cls, "estuary [ENVO:00000045]",
+            PermissibleValue(text="estuary [ENVO:00000045]"))
+        setattr(cls, "fen [ENVO:00000232]",
+            PermissibleValue(text="fen [ENVO:00000232]"))
+        setattr(cls, "fjord [ENVO:00000039]",
+            PermissibleValue(text="fjord [ENVO:00000039]"))
+        setattr(cls, "flood plain [ENVO:00000255]",
+            PermissibleValue(text="flood plain [ENVO:00000255]"))
+        setattr(cls, "freshwater lake [ENVO:00000021]",
+            PermissibleValue(text="freshwater lake [ENVO:00000021]"))
+        setattr(cls, "freshwater littoral zone [ENVO:01000409]",
+            PermissibleValue(text="freshwater littoral zone [ENVO:01000409]"))
+        setattr(cls, "freshwater river [ENVO:01000297]",
+            PermissibleValue(text="freshwater river [ENVO:01000297]"))
+        setattr(cls, "freshwater stream [ENVO:03605007]",
+            PermissibleValue(text="freshwater stream [ENVO:03605007]"))
+        setattr(cls, "glacial lake [ENVO:00000488]",
+            PermissibleValue(text="glacial lake [ENVO:00000488]"))
+        setattr(cls, "glacier [ENVO:00000133]",
+            PermissibleValue(text="glacier [ENVO:00000133]"))
+        setattr(cls, "hadalpelagic zone [ENVO:00000214]",
+            PermissibleValue(text="hadalpelagic zone [ENVO:00000214]"))
+        setattr(cls, "harbour [ENVO:00000463]",
+            PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "hot spring [ENVO:00000051]",
+            PermissibleValue(text="hot spring [ENVO:00000051]"))
+        setattr(cls, "hydrothermal vent [ENVO:00000215]",
+            PermissibleValue(text="hydrothermal vent [ENVO:00000215]"))
+        setattr(cls, "hypolimnion [ENVO:00002130]",
+            PermissibleValue(text="hypolimnion [ENVO:00002130]"))
+        setattr(cls, "inlet [ENVO:00000475]",
+            PermissibleValue(text="inlet [ENVO:00000475]"))
+        setattr(cls, "intertidal zone [ENVO:00000316]",
+            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
+        setattr(cls, "lake [ENVO:00000020]",
+            PermissibleValue(text="lake [ENVO:00000020]"))
+        setattr(cls, "lentic water body [ENVO:01000617]",
+            PermissibleValue(text="lentic water body [ENVO:01000617]"))
+        setattr(cls, "littoral zone [ENVO:01000407]",
+            PermissibleValue(text="littoral zone [ENVO:01000407]"))
+        setattr(cls, "lotic water body [ENVO:01000618]",
+            PermissibleValue(text="lotic water body [ENVO:01000618]"))
+        setattr(cls, "mangrove swamp [ENVO:00000057]",
+            PermissibleValue(text="mangrove swamp [ENVO:00000057]"))
+        setattr(cls, "marine aphotic zone [ENVO:00000210]",
+            PermissibleValue(text="marine aphotic zone [ENVO:00000210]"))
+        setattr(cls, "marine bathypelagic zone [ENVO:00000211]",
+            PermissibleValue(text="marine bathypelagic zone [ENVO:00000211]"))
+        setattr(cls, "marine lake [ENVO:03600041]",
+            PermissibleValue(text="marine lake [ENVO:03600041]"))
+        setattr(cls, "marine mesopelagic zone [ENVO:00000213]",
+            PermissibleValue(text="marine mesopelagic zone [ENVO:00000213]"))
+        setattr(cls, "marine neritic zone [ENVO:00000206]",
+            PermissibleValue(text="marine neritic zone [ENVO:00000206]"))
+        setattr(cls, "marine pelagic zone [ENVO:00000208]",
+            PermissibleValue(text="marine pelagic zone [ENVO:00000208]"))
+        setattr(cls, "marine photic zone [ENVO:00000209]",
+            PermissibleValue(text="marine photic zone [ENVO:00000209]"))
+        setattr(cls, "marsh [ENVO:00000035]",
+            PermissibleValue(text="marsh [ENVO:00000035]"))
+        setattr(cls, "melt pond [ENVO:03000040]",
+            PermissibleValue(text="melt pond [ENVO:03000040]"))
+        setattr(cls, "metalimnion [ENVO:00002132]",
+            PermissibleValue(text="metalimnion [ENVO:00002132]"))
+        setattr(cls, "microbial mat [ENVO:01000008]",
+            PermissibleValue(text="microbial mat [ENVO:01000008]"))
+        setattr(cls, "mine drainage [ENVO:00001996]",
+            PermissibleValue(text="mine drainage [ENVO:00001996]"))
+        setattr(cls, "mud volcano [ENVO:00000402]",
+            PermissibleValue(text="mud volcano [ENVO:00000402]"))
+        setattr(cls, "ocean [ENVO:00000015]",
+            PermissibleValue(text="ocean [ENVO:00000015]"))
+        setattr(cls, "ocean trench [ENVO:00000275]",
+            PermissibleValue(text="ocean trench [ENVO:00000275]"))
+        setattr(cls, "oceanic crust [ENVO:01000749]",
+            PermissibleValue(text="oceanic crust [ENVO:01000749]"))
+        setattr(cls, "oil seep [ENVO:00002063]",
+            PermissibleValue(text="oil seep [ENVO:00002063]"))
+        setattr(cls, "oil spill [ENVO:00002061]",
+            PermissibleValue(text="oil spill [ENVO:00002061]"))
+        setattr(cls, "pond [ENVO:00000033]",
+            PermissibleValue(text="pond [ENVO:00000033]"))
+        setattr(cls, "puddle of water [ENVO:01000871]",
+            PermissibleValue(text="puddle of water [ENVO:01000871]"))
+        setattr(cls, "riffle [ENVO:00000148]",
+            PermissibleValue(text="riffle [ENVO:00000148]"))
+        setattr(cls, "river [ENVO:00000022]",
+            PermissibleValue(text="river [ENVO:00000022]"))
+        setattr(cls, "river bed [ENVO:00000384]",
+            PermissibleValue(text="river bed [ENVO:00000384]"))
+        setattr(cls, "saline marsh [ENVO:00000054]",
+            PermissibleValue(text="saline marsh [ENVO:00000054]"))
+        setattr(cls, "sea [ENVO:00000016]",
+            PermissibleValue(text="sea [ENVO:00000016]"))
+        setattr(cls, "shrimp pond [ENVO:01000905]",
+            PermissibleValue(text="shrimp pond [ENVO:01000905]"))
+        setattr(cls, "sinkhole [ENVO:00000195]",
+            PermissibleValue(text="sinkhole [ENVO:00000195]"))
+        setattr(cls, "spring [ENVO:00000027]",
+            PermissibleValue(text="spring [ENVO:00000027]"))
+        setattr(cls, "step pool [ENVO:03600096]",
+            PermissibleValue(text="step pool [ENVO:03600096]"))
+        setattr(cls, "strait [ENVO:00000394]",
+            PermissibleValue(text="strait [ENVO:00000394]"))
+        setattr(cls, "stream [ENVO:00000023]",
+            PermissibleValue(text="stream [ENVO:00000023]"))
+        setattr(cls, "stream pool [ENVO:03600094]",
+            PermissibleValue(text="stream pool [ENVO:03600094]"))
+        setattr(cls, "stream run [ENVO:03600095]",
+            PermissibleValue(text="stream run [ENVO:03600095]"))
+        setattr(cls, "subglacial lake [ENVO:03000120]",
+            PermissibleValue(text="subglacial lake [ENVO:03000120]"))
+        setattr(cls, "swamp ecosystem [ENVO:00000233]",
+            PermissibleValue(text="swamp ecosystem [ENVO:00000233]"))
+        setattr(cls, "thermocline [ENVO:00002269]",
+            PermissibleValue(text="thermocline [ENVO:00002269]"))
+        setattr(cls, "volcano [ENVO:00000247]",
+            PermissibleValue(text="volcano [ENVO:00000247]"))
+        setattr(cls, "water surface [ENVO:01001191]",
+            PermissibleValue(text="water surface [ENVO:01001191]"))
+        setattr(cls, "wetland ecosystem [ENVO:01001209]",
+            PermissibleValue(text="wetland ecosystem [ENVO:01001209]"))
+
 class EnvMediumWaterEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -14987,16 +15305,28 @@ class EnvMediumWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="bacon curing brine [ENVO:00003045]"))
         setattr(cls, "ballast water [ENVO:01000872]",
             PermissibleValue(text="ballast water [ENVO:01000872]"))
+        setattr(cls, "blue ice [ENVO:03000007]",
+            PermissibleValue(text="blue ice [ENVO:03000007]"))
         setattr(cls, "borax leachate [ENVO:00002142]",
             PermissibleValue(text="borax leachate [ENVO:00002142]"))
+        setattr(cls, "bore hole water [ENVO:00003097]",
+            PermissibleValue(text="bore hole water [ENVO:00003097]"))
         setattr(cls, "brackish water [ENVO:00002019]",
             PermissibleValue(text="brackish water [ENVO:00002019]"))
         setattr(cls, "brine [ENVO:00003044]",
             PermissibleValue(text="brine [ENVO:00003044]"))
+        setattr(cls, "brown sea ice [ENVO:01001190]",
+            PermissibleValue(text="brown sea ice [ENVO:01001190]"))
         setattr(cls, "cloud water [ENVO:03600081]",
             PermissibleValue(text="cloud water [ENVO:03600081]"))
         setattr(cls, "coastal sea water [ENVO:00002150]",
             PermissibleValue(text="coastal sea water [ENVO:00002150]"))
+        setattr(cls, "congelation ice in a fresh water body [ENVO:01001514]",
+            PermissibleValue(text="congelation ice in a fresh water body [ENVO:01001514]"))
+        setattr(cls, "congelation sea ice [ENVO:01001512]",
+            PermissibleValue(text="congelation sea ice [ENVO:01001512]"))
+        setattr(cls, "contaminated water [ENVO:00002186]",
+            PermissibleValue(text="contaminated water [ENVO:00002186]"))
         setattr(cls, "cooling water [ENVO:03600002]",
             PermissibleValue(text="cooling water [ENVO:03600002]"))
         setattr(cls, "desalinated water [ENVO:06105269]",
@@ -15009,14 +15339,44 @@ class EnvMediumWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="drilling bore water [ENVO:00002159]"))
         setattr(cls, "drinking water [ENVO:00003064]",
             PermissibleValue(text="drinking water [ENVO:00003064]"))
+        setattr(cls, "epilithon [ENVO:03605001]",
+            PermissibleValue(text="epilithon [ENVO:03605001]"))
+        setattr(cls, "epipelon [ENVO:03605002]",
+            PermissibleValue(text="epipelon [ENVO:03605002]"))
+        setattr(cls, "epiphyton [ENVO:03605003]",
+            PermissibleValue(text="epiphyton [ENVO:03605003]"))
+        setattr(cls, "epipsammon [ENVO:03605004]",
+            PermissibleValue(text="epipsammon [ENVO:03605004]"))
+        setattr(cls, "epixylon [ENVO:03605005]",
+            PermissibleValue(text="epixylon [ENVO:03605005]"))
+        setattr(cls, "erosionally enriched glacial ice [ENVO:03000005]",
+            PermissibleValue(text="erosionally enriched glacial ice [ENVO:03000005]"))
+        setattr(cls, "erosionally enriched ice [ENVO:03000025]",
+            PermissibleValue(text="erosionally enriched ice [ENVO:03000025]"))
         setattr(cls, "estuarine water [ENVO:01000301]",
             PermissibleValue(text="estuarine water [ENVO:01000301]"))
         setattr(cls, "eutrophic water [ENVO:00002224]",
             PermissibleValue(text="eutrophic water [ENVO:00002224]"))
+        setattr(cls, "first year ice [ENVO:03000071]",
+            PermissibleValue(text="first year ice [ENVO:03000071]"))
+        setattr(cls, "fissure water [ENVO:01000940]",
+            PermissibleValue(text="fissure water [ENVO:01000940]"))
+        setattr(cls, "frazil [ENVO:01001523]",
+            PermissibleValue(text="frazil [ENVO:01001523]"))
+        setattr(cls, "frazil ice [ENVO:03000046]",
+            PermissibleValue(text="frazil ice [ENVO:03000046]"))
         setattr(cls, "fresh water [ENVO:00002011]",
             PermissibleValue(text="fresh water [ENVO:00002011]"))
+        setattr(cls, "freshwater congelation ice [ENVO:01001515]",
+            PermissibleValue(text="freshwater congelation ice [ENVO:01001515]"))
+        setattr(cls, "freshwater ice [ENVO:01001511]",
+            PermissibleValue(text="freshwater ice [ENVO:01001511]"))
+        setattr(cls, "glacial ice [ENVO:03000004]",
+            PermissibleValue(text="glacial ice [ENVO:03000004]"))
         setattr(cls, "groundwater [ENVO:01001004]",
             PermissibleValue(text="groundwater [ENVO:01001004]"))
+        setattr(cls, "hair ice [ENVO:01000847]",
+            PermissibleValue(text="hair ice [ENVO:01000847]"))
         setattr(cls, "highly saline water [ENVO:01001039]",
             PermissibleValue(text="highly saline water [ENVO:01001039]"))
         setattr(cls, "hydrothermal fluid [ENVO:01000134]",
@@ -15027,12 +15387,22 @@ class EnvMediumWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="hypersaline water [ENVO:00002012]"))
         setattr(cls, "hypoxic water [ENVO:01001064]",
             PermissibleValue(text="hypoxic water [ENVO:01001064]"))
+        setattr(cls, "ice cave congelation ice [ENVO:01001516]",
+            PermissibleValue(text="ice cave congelation ice [ENVO:01001516]"))
+        setattr(cls, "industrial wastewater [ENVO:01000964]",
+            PermissibleValue(text="industrial wastewater [ENVO:01000964]"))
         setattr(cls, "interstitial water [ENVO:03600009]",
             PermissibleValue(text="interstitial water [ENVO:03600009]"))
+        setattr(cls, "lake water [ENVO:04000007]",
+            PermissibleValue(text="lake water [ENVO:04000007]"))
         setattr(cls, "leachate [ENVO:00002141]",
             PermissibleValue(text="leachate [ENVO:00002141]"))
         setattr(cls, "liquid water [ENVO:00002006]",
             PermissibleValue(text="liquid water [ENVO:00002006]"))
+        setattr(cls, "marine lake water [ENVO:03600042]",
+            PermissibleValue(text="marine lake water [ENVO:03600042]"))
+        setattr(cls, "marine snow [ENVO:01000158]",
+            PermissibleValue(text="marine snow [ENVO:01000158]"))
         setattr(cls, "meltwater [ENVO:01000722]",
             PermissibleValue(text="meltwater [ENVO:01000722]"))
         setattr(cls, "mesotrophic water [ENVO:00002225]",
@@ -15041,40 +15411,82 @@ class EnvMediumWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="moderately saline water [ENVO:01001038]"))
         setattr(cls, "muddy water [ENVO:00005793]",
             PermissibleValue(text="muddy water [ENVO:00005793]"))
+        setattr(cls, "multiyear ice [ENVO:03000073]",
+            PermissibleValue(text="multiyear ice [ENVO:03000073]"))
+        setattr(cls, "new ice [ENVO:03000063]",
+            PermissibleValue(text="new ice [ENVO:03000063]"))
+        setattr(cls, "oil field production water [ENVO:00002194]",
+            PermissibleValue(text="oil field production water [ENVO:00002194]"))
         setattr(cls, "oligotrophic water [ENVO:00002223]",
             PermissibleValue(text="oligotrophic water [ENVO:00002223]"))
         setattr(cls, "oxic water [ENVO:01001063]",
             PermissibleValue(text="oxic water [ENVO:01001063]"))
+        setattr(cls, "permafrost congelation ice [ENVO:01001513]",
+            PermissibleValue(text="permafrost congelation ice [ENVO:01001513]"))
         setattr(cls, "pond water [ENVO:00002228]",
             PermissibleValue(text="pond water [ENVO:00002228]"))
+        setattr(cls, "powdery snow [ENVO:03000027]",
+            PermissibleValue(text="powdery snow [ENVO:03000027]"))
+        setattr(cls, "pulp-bleaching waste water [ENVO:00002193]",
+            PermissibleValue(text="pulp-bleaching waste water [ENVO:00002193]"))
         setattr(cls, "rainwater [ENVO:01000600]",
             PermissibleValue(text="rainwater [ENVO:01000600]"))
+        setattr(cls, "residual water in soil [ENVO:06105238]",
+            PermissibleValue(text="residual water in soil [ENVO:06105238]"))
+        setattr(cls, "river water [ENVO:01000599]",
+            PermissibleValue(text="river water [ENVO:01000599]"))
+        setattr(cls, "runoff [ENVO:06105211]",
+            PermissibleValue(text="runoff [ENVO:06105211]"))
         setattr(cls, "rural stormwater [ENVO:01001270]",
             PermissibleValue(text="rural stormwater [ENVO:01001270]"))
         setattr(cls, "saline shrimp pond water [ENVO:01001257]",
             PermissibleValue(text="saline shrimp pond water [ENVO:01001257]"))
         setattr(cls, "saline water [ENVO:00002010]",
             PermissibleValue(text="saline water [ENVO:00002010]"))
+        setattr(cls, "sea ice [ENVO:00002200]",
+            PermissibleValue(text="sea ice [ENVO:00002200]"))
         setattr(cls, "sea water [ENVO:00002149]",
             PermissibleValue(text="sea water [ENVO:00002149]"))
+        setattr(cls, "second year ice [ENVO:03000072]",
+            PermissibleValue(text="second year ice [ENVO:03000072]"))
+        setattr(cls, "sewage [ENVO:00002018]",
+            PermissibleValue(text="sewage [ENVO:00002018]"))
+        setattr(cls, "shuga [ENVO:03000075]",
+            PermissibleValue(text="shuga [ENVO:03000075]"))
+        setattr(cls, "slab snow [ENVO:03000108]",
+            PermissibleValue(text="slab snow [ENVO:03000108]"))
         setattr(cls, "slightly saline water [ENVO:01001037]",
             PermissibleValue(text="slightly saline water [ENVO:01001037]"))
+        setattr(cls, "snow [ENVO:01000406]",
+            PermissibleValue(text="snow [ENVO:01000406]"))
+        setattr(cls, "spring water [ENVO:03600065]",
+            PermissibleValue(text="spring water [ENVO:03600065]"))
         setattr(cls, "stagnant water [ENVO:03501370]",
             PermissibleValue(text="stagnant water [ENVO:03501370]"))
         setattr(cls, "sterile water [ENVO:00005791]",
             PermissibleValue(text="sterile water [ENVO:00005791]"))
         setattr(cls, "stormwater [ENVO:01001267]",
             PermissibleValue(text="stormwater [ENVO:01001267]"))
+        setattr(cls, "stream water [ENVO:03605006]",
+            PermissibleValue(text="stream water [ENVO:03605006]"))
         setattr(cls, "subterranean lake [ENVO:02000145]",
             PermissibleValue(text="subterranean lake [ENVO:02000145]"))
         setattr(cls, "surface water [ENVO:00002042]",
             PermissibleValue(text="surface water [ENVO:00002042]"))
         setattr(cls, "tap water [ENVO:00003096]",
             PermissibleValue(text="tap water [ENVO:00003096]"))
+        setattr(cls, "treated wastewater [ENVO:06105268]",
+            PermissibleValue(text="treated wastewater [ENVO:06105268]"))
         setattr(cls, "underground water [ENVO:00005792]",
             PermissibleValue(text="underground water [ENVO:00005792]"))
         setattr(cls, "urban stormwater [ENVO:01001268]",
             PermissibleValue(text="urban stormwater [ENVO:01001268]"))
+        setattr(cls, "waste water [ENVO:00002001]",
+            PermissibleValue(text="waste water [ENVO:00002001]"))
+        setattr(cls, "water ice [ENVO:01000277]",
+            PermissibleValue(text="water ice [ENVO:01000277]"))
+        setattr(cls, "water-body-derived ice [ENVO:01001557]",
+            PermissibleValue(text="water-body-derived ice [ENVO:01001557]"))
 
 class EnvBroadScaleSoilEnum(EnumDefinitionImpl):
 
@@ -15199,20 +15611,34 @@ class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "active permafrost layer [ENVO:04000009]",
             PermissibleValue(text="active permafrost layer [ENVO:04000009]"))
-        setattr(cls, "alas [ENVO:00000438]",
-            PermissibleValue(text="alas [ENVO:00000438]"))
-        setattr(cls, "badland [ENVO:00000127]",
-            PermissibleValue(text="badland [ENVO:00000127]"))
+        setattr(cls, "agricultural field [ENVO:00000114]",
+            PermissibleValue(text="agricultural field [ENVO:00000114]"))
+        setattr(cls, "animal habitation [ENVO:00005803]",
+            PermissibleValue(text="animal habitation [ENVO:00005803]"))
+        setattr(cls, "anthropogenic litter [ENVO:03500005]",
+            PermissibleValue(text="anthropogenic litter [ENVO:03500005]"))
+        setattr(cls, "aquifer [ENVO:00012408]",
+            PermissibleValue(text="aquifer [ENVO:00012408]"))
+        setattr(cls, "area of cropland [ENVO:01000892]",
+            PermissibleValue(text="area of cropland [ENVO:01000892]"))
+        setattr(cls, "area of deciduous forest [ENVO:01000816]",
+            PermissibleValue(text="area of deciduous forest [ENVO:01000816]"))
+        setattr(cls, "area of dwarf scrub [ENVO:01000861]",
+            PermissibleValue(text="area of dwarf scrub [ENVO:01000861]"))
+        setattr(cls, "area of evergreen forest [ENVO:01000843]",
+            PermissibleValue(text="area of evergreen forest [ENVO:01000843]"))
+        setattr(cls, "area of pastureland or hayfields [ENVO:01000891]",
+            PermissibleValue(text="area of pastureland or hayfields [ENVO:01000891]"))
+        setattr(cls, "bank [ENVO:00000141]",
+            PermissibleValue(text="bank [ENVO:00000141]"))
         setattr(cls, "beach [ENVO:00000091]",
             PermissibleValue(text="beach [ENVO:00000091]"))
         setattr(cls, "butte [ENVO:00000287]",
             PermissibleValue(text="butte [ENVO:00000287]"))
         setattr(cls, "caldera [ENVO:00000096]",
             PermissibleValue(text="caldera [ENVO:00000096]"))
-        setattr(cls, "campground [ENVO:01000935]",
-            PermissibleValue(text="campground [ENVO:01000935]"))
-        setattr(cls, "canyon [ENVO:00000169]",
-            PermissibleValue(text="canyon [ENVO:00000169]"))
+        setattr(cls, "canal [ENVO:00000014]",
+            PermissibleValue(text="canal [ENVO:00000014]"))
         setattr(cls, "cave [ENVO:00000067]",
             PermissibleValue(text="cave [ENVO:00000067]"))
         setattr(cls, "channel [ENVO:03000117]",
@@ -15223,28 +15649,20 @@ class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="cliff [ENVO:00000087]"))
         setattr(cls, "crater [ENVO:00000514]",
             PermissibleValue(text="crater [ENVO:00000514]"))
-        setattr(cls, "crevasse [ENVO:00000320]",
-            PermissibleValue(text="crevasse [ENVO:00000320]"))
-        setattr(cls, "cryosphere [ENVO:03000143]",
-            PermissibleValue(text="cryosphere [ENVO:03000143]"))
-        setattr(cls, "dam [ENVO:00000074]",
-            PermissibleValue(text="dam [ENVO:00000074]"))
+        setattr(cls, "delta [ENVO:00000101]",
+            PermissibleValue(text="delta [ENVO:00000101]"))
         setattr(cls, "desert [ENVO:01001357]",
             PermissibleValue(text="desert [ENVO:01001357]"))
+        setattr(cls, "dike [ENVO:01000671]",
+            PermissibleValue(text="dike [ENVO:01000671]"))
+        setattr(cls, "ditch [ENVO:00000037]",
+            PermissibleValue(text="ditch [ENVO:00000037]"))
         setattr(cls, "drainage basin [ENVO:00000291]",
             PermissibleValue(text="drainage basin [ENVO:00000291]"))
-        setattr(cls, "drumlin [ENVO:00000276]",
-            PermissibleValue(text="drumlin [ENVO:00000276]"))
-        setattr(cls, "dry lake [ENVO:00000277]",
-            PermissibleValue(text="dry lake [ENVO:00000277]"))
         setattr(cls, "dune [ENVO:00000170]",
             PermissibleValue(text="dune [ENVO:00000170]"))
-        setattr(cls, "endorheic basin [ENVO:00000551]",
-            PermissibleValue(text="endorheic basin [ENVO:00000551]"))
-        setattr(cls, "escarpment [ENVO:00000280]",
-            PermissibleValue(text="escarpment [ENVO:00000280]"))
-        setattr(cls, "esker [ENVO:00000282]",
-            PermissibleValue(text="esker [ENVO:00000282]"))
+        setattr(cls, "estuary [ENVO:00000045]",
+            PermissibleValue(text="estuary [ENVO:00000045]"))
         setattr(cls, "farm [ENVO:00000078]",
             PermissibleValue(text="farm [ENVO:00000078]"))
         setattr(cls, "fen [ENVO:00000232]",
@@ -15261,44 +15679,40 @@ class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="garden [ENVO:00000011]"))
         setattr(cls, "glacier [ENVO:00000133]",
             PermissibleValue(text="glacier [ENVO:00000133]"))
-        setattr(cls, "greenhouse [ENVO:03600087]",
-            PermissibleValue(text="greenhouse [ENVO:03600087]"))
         setattr(cls, "harbour [ENVO:00000463]",
             PermissibleValue(text="harbour [ENVO:00000463]"))
         setattr(cls, "hill [ENVO:00000083]",
             PermissibleValue(text="hill [ENVO:00000083]"))
+        setattr(cls, "hot spring [ENVO:00000051]",
+            PermissibleValue(text="hot spring [ENVO:00000051]"))
         setattr(cls, "hummock [ENVO:00000516]",
             PermissibleValue(text="hummock [ENVO:00000516]"))
+        setattr(cls, "intertidal zone [ENVO:00000316]",
+            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
         setattr(cls, "isthmus [ENVO:00000174]",
             PermissibleValue(text="isthmus [ENVO:00000174]"))
-        setattr(cls, "kame [ENVO:00000542]",
-            PermissibleValue(text="kame [ENVO:00000542]"))
         setattr(cls, "karst [ENVO:00000175]",
             PermissibleValue(text="karst [ENVO:00000175]"))
-        setattr(cls, "kipuka [ENVO:00000410]",
-            PermissibleValue(text="kipuka [ENVO:00000410]"))
+        setattr(cls, "lake [ENVO:00000020]",
+            PermissibleValue(text="lake [ENVO:00000020]"))
         setattr(cls, "landfill [ENVO:00000533]",
             PermissibleValue(text="landfill [ENVO:00000533]"))
-        setattr(cls, "machair [ENVO:00000417]",
-            PermissibleValue(text="machair [ENVO:00000417]"))
+        setattr(cls, "levee [ENVO:00000178]",
+            PermissibleValue(text="levee [ENVO:00000178]"))
+        setattr(cls, "mangrove swamp [ENVO:00000057]",
+            PermissibleValue(text="mangrove swamp [ENVO:00000057]"))
         setattr(cls, "marsh [ENVO:00000035]",
             PermissibleValue(text="marsh [ENVO:00000035]"))
-        setattr(cls, "meadow ecosystem [ENVO:00000108]",
-            PermissibleValue(text="meadow ecosystem [ENVO:00000108]"))
         setattr(cls, "mesa [ENVO:00000179]",
             PermissibleValue(text="mesa [ENVO:00000179]"))
         setattr(cls, "mine [ENVO:00000076]",
             PermissibleValue(text="mine [ENVO:00000076]"))
-        setattr(cls, "mine drainage [ENVO:00001996]",
-            PermissibleValue(text="mine drainage [ENVO:00001996]"))
-        setattr(cls, "monadnock [ENVO:00000432]",
-            PermissibleValue(text="monadnock [ENVO:00000432]"))
-        setattr(cls, "moraine [ENVO:00000177]",
-            PermissibleValue(text="moraine [ENVO:00000177]"))
         setattr(cls, "mountain [ENVO:00000081]",
             PermissibleValue(text="mountain [ENVO:00000081]"))
-        setattr(cls, "nunatak [ENVO:00000181]",
-            PermissibleValue(text="nunatak [ENVO:00000181]"))
+        setattr(cls, "mudflat [ENVO:00000192]",
+            PermissibleValue(text="mudflat [ENVO:00000192]"))
+        setattr(cls, "needleleaf forest [ENVO:01000433]",
+            PermissibleValue(text="needleleaf forest [ENVO:01000433]"))
         setattr(cls, "oil spill [ENVO:00002061]",
             PermissibleValue(text="oil spill [ENVO:00002061]"))
         setattr(cls, "palsa [ENVO:00000489]",
@@ -15307,76 +15721,48 @@ class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="park [ENVO:00000562]"))
         setattr(cls, "pasture [ENVO:00000266]",
             PermissibleValue(text="pasture [ENVO:00000266]"))
+        setattr(cls, "peat swamp [ENVO:00000189]",
+            PermissibleValue(text="peat swamp [ENVO:00000189]"))
         setattr(cls, "peatland [ENVO:00000044]",
             PermissibleValue(text="peatland [ENVO:00000044]"))
-        setattr(cls, "pit [ENVO:01001871]",
-            PermissibleValue(text="pit [ENVO:01001871]"))
+        setattr(cls, "peninsula [ENVO:00000305]",
+            PermissibleValue(text="peninsula [ENVO:00000305]"))
         setattr(cls, "plain [ENVO:00000086]",
             PermissibleValue(text="plain [ENVO:00000086]"))
         setattr(cls, "plateau [ENVO:00000182]",
             PermissibleValue(text="plateau [ENVO:00000182]"))
-        setattr(cls, "polje [ENVO:00000325]",
-            PermissibleValue(text="polje [ENVO:00000325]"))
         setattr(cls, "prairie [ENVO:00000260]",
             PermissibleValue(text="prairie [ENVO:00000260]"))
         setattr(cls, "quarry [ENVO:00000284]",
             PermissibleValue(text="quarry [ENVO:00000284]"))
-        setattr(cls, "ranch [ENVO:01001207]",
-            PermissibleValue(text="ranch [ENVO:01001207]"))
-        setattr(cls, "ravine [ENVO:01000446]",
-            PermissibleValue(text="ravine [ENVO:01000446]"))
-        setattr(cls, "refinery [ENVO:02000141]",
-            PermissibleValue(text="refinery [ENVO:02000141]"))
+        setattr(cls, "reservoir [ENVO:00000025]",
+            PermissibleValue(text="reservoir [ENVO:00000025]"))
         setattr(cls, "rhizosphere [ENVO:00005801]",
             PermissibleValue(text="rhizosphere [ENVO:00005801]"))
-        setattr(cls, "ria [ENVO:00000418]",
-            PermissibleValue(text="ria [ENVO:00000418]"))
         setattr(cls, "ridge [ENVO:00000283]",
             PermissibleValue(text="ridge [ENVO:00000283]"))
-        setattr(cls, "rill [ENVO:00000496]",
-            PermissibleValue(text="rill [ENVO:00000496]"))
         setattr(cls, "river [ENVO:00000022]",
             PermissibleValue(text="river [ENVO:00000022]"))
-        setattr(cls, "riverfront [ENVO:03501239]",
-            PermissibleValue(text="riverfront [ENVO:03501239]"))
-        setattr(cls, "road [ENVO:00000064]",
-            PermissibleValue(text="road [ENVO:00000064]"))
-        setattr(cls, "scrubland area [ENVO:00000300]",
-            PermissibleValue(text="scrubland area [ENVO:00000300]"))
-        setattr(cls, "shingle beach [ENVO:00000545]",
-            PermissibleValue(text="shingle beach [ENVO:00000545]"))
-        setattr(cls, "shore [ENVO:00000304]",
-            PermissibleValue(text="shore [ENVO:00000304]"))
+        setattr(cls, "roadside [ENVO:01000447]",
+            PermissibleValue(text="roadside [ENVO:01000447]"))
+        setattr(cls, "shoreline [ENVO:00000486]",
+            PermissibleValue(text="shoreline [ENVO:00000486]"))
         setattr(cls, "sinkhole [ENVO:00000195]",
             PermissibleValue(text="sinkhole [ENVO:00000195]"))
         setattr(cls, "slope [ENVO:00002000]",
             PermissibleValue(text="slope [ENVO:00002000]"))
-        setattr(cls, "soil cryoturbate [ENVO:01001665]",
-            PermissibleValue(text="soil cryoturbate [ENVO:01001665]"))
         setattr(cls, "spring [ENVO:00000027]",
             PermissibleValue(text="spring [ENVO:00000027]"))
-        setattr(cls, "spur [ENVO:01001489]",
-            PermissibleValue(text="spur [ENVO:01001489]"))
-        setattr(cls, "stack [ENVO:00000419]",
-            PermissibleValue(text="stack [ENVO:00000419]"))
         setattr(cls, "steppe [ENVO:00000262]",
             PermissibleValue(text="steppe [ENVO:00000262]"))
         setattr(cls, "stream [ENVO:00000023]",
             PermissibleValue(text="stream [ENVO:00000023]"))
-        setattr(cls, "swale [ENVO:00000543]",
-            PermissibleValue(text="swale [ENVO:00000543]"))
-        setattr(cls, "terrace [ENVO:00000508]",
-            PermissibleValue(text="terrace [ENVO:00000508]"))
-        setattr(cls, "thermokarst [ENVO:03000085]",
-            PermissibleValue(text="thermokarst [ENVO:03000085]"))
-        setattr(cls, "trench [ENVO:01000649]",
-            PermissibleValue(text="trench [ENVO:01000649]"))
+        setattr(cls, "tropical forest [ENVO:01001803]",
+            PermissibleValue(text="tropical forest [ENVO:01001803]"))
         setattr(cls, "tunnel [ENVO:00000068]",
             PermissibleValue(text="tunnel [ENVO:00000068]"))
-        setattr(cls, "tuya [ENVO:00000370]",
-            PermissibleValue(text="tuya [ENVO:00000370]"))
-        setattr(cls, "valley [ENVO:00000100]",
-            PermissibleValue(text="valley [ENVO:00000100]"))
+        setattr(cls, "vadose zone [ENVO:00000328]",
+            PermissibleValue(text="vadose zone [ENVO:00000328]"))
         setattr(cls, "volcano [ENVO:00000247]",
             PermissibleValue(text="volcano [ENVO:00000247]"))
         setattr(cls, "wadi [ENVO:00000031]",
@@ -15385,8 +15771,10 @@ class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="watershed [ENVO:00000292]"))
         setattr(cls, "well [ENVO:00000026]",
             PermissibleValue(text="well [ENVO:00000026]"))
-        setattr(cls, "woodland clearing [ENVO:00000444]",
-            PermissibleValue(text="woodland clearing [ENVO:00000444]"))
+        setattr(cls, "wetland area [ENVO:00000043]",
+            PermissibleValue(text="wetland area [ENVO:00000043]"))
+        setattr(cls, "woodland area [ENVO:00000109]",
+            PermissibleValue(text="woodland area [ENVO:00000109]"))
 
 class EnvMediumSoilEnum(EnumDefinitionImpl):
 
@@ -15458,8 +15846,6 @@ class EnvMediumSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="ferralsol [ENVO:00002246]"))
         setattr(cls, "fertilized soil [ENVO:00005754]",
             PermissibleValue(text="fertilized soil [ENVO:00005754]"))
-        setattr(cls, "field soil [ENVO:00005755]",
-            PermissibleValue(text="field soil [ENVO:00005755]"))
         setattr(cls, "fluvisol [ENVO:00002273]",
             PermissibleValue(text="fluvisol [ENVO:00002273]"))
         setattr(cls, "forest soil [ENVO:00002261]",
@@ -15504,6 +15890,8 @@ class EnvMediumSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="luvisol [ENVO:00002248]"))
         setattr(cls, "manured soil [ENVO:00005767]",
             PermissibleValue(text="manured soil [ENVO:00005767]"))
+        setattr(cls, "meadow soil [ENVO:00005761]",
+            PermissibleValue(text="meadow soil [ENVO:00005761]"))
         setattr(cls, "mountain forest soil [ENVO:00005769]",
             PermissibleValue(text="mountain forest soil [ENVO:00005769]"))
         setattr(cls, "muddy soil [ENVO:00005771]",
@@ -15534,8 +15922,6 @@ class EnvMediumSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="red soil [ENVO:00005790]"))
         setattr(cls, "regosol [ENVO:00002256]",
             PermissibleValue(text="regosol [ENVO:00002256]"))
-        setattr(cls, "roadside soil [ENVO:00005743]",
-            PermissibleValue(text="roadside soil [ENVO:00005743]"))
         setattr(cls, "rubber plantation soil [ENVO:00005788]",
             PermissibleValue(text="rubber plantation soil [ENVO:00005788]"))
         setattr(cls, "savanna soil [ENVO:00005746]",
@@ -17439,7 +17825,7 @@ slots.AirInterface_misc_param = Slot(uri=MIXS['0000752'], name="AirInterface_mis
 
 slots.AirInterface_organism_count = Slot(uri=MIXS['0000103'], name="AirInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_organism_count, domain=AirInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.AirInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="AirInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_oxy_stat_samp, domain=AirInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -17705,7 +18091,7 @@ slots.BiofilmInterface_org_nitro = Slot(uri=MIXS['0000205'], name="BiofilmInterf
 
 slots.BiofilmInterface_organism_count = Slot(uri=MIXS['0000103'], name="BiofilmInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_organism_count, domain=BiofilmInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.BiofilmInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="BiofilmInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_oxy_stat_samp, domain=BiofilmInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -17737,7 +18123,7 @@ slots.BiofilmInterface_phosphate = Slot(uri=MIXS['0000505'], name="BiofilmInterf
 
 slots.BiofilmInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="BiofilmInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_phosplipid_fatt_acid, domain=BiofilmInterface, range=Optional[str],
-                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
 slots.BiofilmInterface_potassium = Slot(uri=MIXS['0000430'], name="BiofilmInterface_potassium", curie=MIXS.curie('0000430'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_potassium, domain=BiofilmInterface, range=Optional[str],
@@ -18156,12 +18542,12 @@ slots.BuiltEnvInterface_occup_document = Slot(uri=MIXS['0000816'], name="BuiltEn
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_document, domain=BuiltEnvInterface, range=Optional[Union[str, "OccupDocumentEnum"]])
 
 slots.BuiltEnvInterface_occup_samp = Slot(uri=MIXS['0000772'], name="BuiltEnvInterface_occup_samp", curie=MIXS.curie('0000772'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_samp, domain=BuiltEnvInterface, range=Optional[str],
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_samp, domain=BuiltEnvInterface, range=Optional[int],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_organism_count = Slot(uri=MIXS['0000103'], name="BuiltEnvInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_organism_count, domain=BuiltEnvInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.BuiltEnvInterface_pres_animal_insect = Slot(uri=MIXS['0000819'], name="BuiltEnvInterface_pres_animal_insect", curie=MIXS.curie('0000819'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_pres_animal_insect, domain=BuiltEnvInterface, range=Optional[str],
@@ -18172,7 +18558,7 @@ slots.BuiltEnvInterface_quad_pos = Slot(uri=MIXS['0000820'], name="BuiltEnvInter
 
 slots.BuiltEnvInterface_rel_air_humidity = Slot(uri=MIXS['0000121'], name="BuiltEnvInterface_rel_air_humidity", curie=MIXS.curie('0000121'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_air_humidity, domain=BuiltEnvInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%$'))
 
 slots.BuiltEnvInterface_rel_humidity_out = Slot(uri=MIXS['0000188'], name="BuiltEnvInterface_rel_humidity_out", curie=MIXS.curie('0000188'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_rel_humidity_out, domain=BuiltEnvInterface, range=Optional[str],
@@ -18257,8 +18643,7 @@ slots.BuiltEnvInterface_sample_link = Slot(uri=NMDC['nmdc/sample_link'], name="B
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.BuiltEnvInterface_season = Slot(uri=MIXS['0000829'], name="BuiltEnvInterface_season", curie=MIXS.curie('0000829'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_season, domain=BuiltEnvInterface, range=Optional[str],
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_season, domain=BuiltEnvInterface, range=Optional[Union[str, "SeasonEnum"]])
 
 slots.BuiltEnvInterface_season_use = Slot(uri=MIXS['0000830'], name="BuiltEnvInterface_season_use", curie=MIXS.curie('0000830'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_season_use, domain=BuiltEnvInterface, range=Optional[Union[str, "SeasonUseEnum"]])
@@ -18302,7 +18687,7 @@ slots.BuiltEnvInterface_surf_air_cont = Slot(uri=MIXS['0000759'], name="BuiltEnv
 
 slots.BuiltEnvInterface_surf_humidity = Slot(uri=MIXS['0000123'], name="BuiltEnvInterface_surf_humidity", curie=MIXS.curie('0000123'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_humidity, domain=BuiltEnvInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%$'))
 
 slots.BuiltEnvInterface_surf_material = Slot(uri=MIXS['0000758'], name="BuiltEnvInterface_surf_material", curie=MIXS.curie('0000758'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_material, domain=BuiltEnvInterface, range=Optional[Union[str, "SurfMaterialEnum"]])
@@ -18617,7 +19002,7 @@ slots.HcrCoresInterface_org_count_qpcr_info = Slot(uri=MIXS['0000099'], name="Hc
 
 slots.HcrCoresInterface_organism_count = Slot(uri=MIXS['0000103'], name="HcrCoresInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_organism_count, domain=HcrCoresInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.HcrCoresInterface_owc_tvdss = Slot(uri=MIXS['0000405'], name="HcrCoresInterface_owc_tvdss", curie=MIXS.curie('0000405'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_owc_tvdss, domain=HcrCoresInterface, range=Optional[str],
@@ -19001,7 +19386,7 @@ slots.HcrFluidsSwabsInterface_org_count_qpcr_info = Slot(uri=MIXS['0000099'], na
 
 slots.HcrFluidsSwabsInterface_organism_count = Slot(uri=MIXS['0000103'], name="HcrFluidsSwabsInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_organism_count, domain=HcrFluidsSwabsInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.HcrFluidsSwabsInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="HcrFluidsSwabsInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_oxy_stat_samp, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -19354,7 +19739,7 @@ slots.HostAssociatedInterface_misc_param = Slot(uri=MIXS['0000752'], name="HostA
 
 slots.HostAssociatedInterface_organism_count = Slot(uri=MIXS['0000103'], name="HostAssociatedInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_organism_count, domain=HostAssociatedInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.HostAssociatedInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="HostAssociatedInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_oxy_stat_samp, domain=HostAssociatedInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -19723,7 +20108,7 @@ slots.MiscEnvsInterface_org_nitro = Slot(uri=MIXS['0000205'], name="MiscEnvsInte
 
 slots.MiscEnvsInterface_organism_count = Slot(uri=MIXS['0000103'], name="MiscEnvsInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_organism_count, domain=MiscEnvsInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.MiscEnvsInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="MiscEnvsInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_oxy_stat_samp, domain=MiscEnvsInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -19743,7 +20128,7 @@ slots.MiscEnvsInterface_phosphate = Slot(uri=MIXS['0000505'], name="MiscEnvsInte
 
 slots.MiscEnvsInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="MiscEnvsInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_phosplipid_fatt_acid, domain=MiscEnvsInterface, range=Optional[str],
-                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
 slots.MiscEnvsInterface_potassium = Slot(uri=MIXS['0000430'], name="MiscEnvsInterface_potassium", curie=MIXS.curie('0000430'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_potassium, domain=MiscEnvsInterface, range=Optional[str],
@@ -20003,7 +20388,7 @@ slots.PlantAssociatedInterface_non_min_nutr_regm = Slot(uri=MIXS['0000571'], nam
 
 slots.PlantAssociatedInterface_organism_count = Slot(uri=MIXS['0000103'], name="PlantAssociatedInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_organism_count, domain=PlantAssociatedInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.PlantAssociatedInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="PlantAssociatedInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_oxy_stat_samp, domain=PlantAssociatedInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -20052,7 +20437,7 @@ slots.PlantAssociatedInterface_root_med_micronutr = Slot(uri=MIXS['0000579'], na
                    pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_root_med_ph = Slot(uri=MIXS['0001062'], name="PlantAssociatedInterface_root_med_ph", curie=MIXS.curie('0001062'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_ph, domain=PlantAssociatedInterface, range=Optional[str],
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_ph, domain=PlantAssociatedInterface, range=Optional[float],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.PlantAssociatedInterface_root_med_regl = Slot(uri=MIXS['0000581'], name="PlantAssociatedInterface_root_med_regl", curie=MIXS.curie('0000581'),
@@ -20352,11 +20737,11 @@ slots.SedimentInterface_microbial_biomass = Slot(uri=MIXS['0000650'], name="Sedi
 
 slots.SedimentInterface_microbial_biomass_c = Slot(uri=NMDC['nmdc/microbial_biomass_c'], name="SedimentInterface_microbial_biomass_c", curie=NMDC.curie('nmdc/microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_microbial_biomass_c, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
 
 slots.SedimentInterface_microbial_biomass_n = Slot(uri=NMDC['nmdc/microbial_biomass_n'], name="SedimentInterface_microbial_biomass_n", curie=NMDC.curie('nmdc/microbial_biomass_n'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_microbial_biomass_n, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
 
 slots.SedimentInterface_misc_param = Slot(uri=MIXS['0000752'], name="SedimentInterface_misc_param", curie=MIXS.curie('0000752'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_misc_param, domain=SedimentInterface, range=Optional[str],
@@ -20395,7 +20780,7 @@ slots.SedimentInterface_org_nitro_method = Slot(uri=NMDC['nmdc/org_nitro_method'
 
 slots.SedimentInterface_organism_count = Slot(uri=MIXS['0000103'], name="SedimentInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_organism_count, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.SedimentInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="SedimentInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_oxy_stat_samp, domain=SedimentInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -20431,7 +20816,7 @@ slots.SedimentInterface_phosphate = Slot(uri=MIXS['0000505'], name="SedimentInte
 
 slots.SedimentInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="SedimentInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_phosplipid_fatt_acid, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
 slots.SedimentInterface_porosity = Slot(uri=MIXS['0000211'], name="SedimentInterface_porosity", curie=MIXS.curie('0000211'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_porosity, domain=SedimentInterface, range=Optional[str])
@@ -20569,7 +20954,7 @@ slots.SoilInterface_air_temp_regm = Slot(uri=MIXS['0000551'], name="SoilInterfac
 
 slots.SoilInterface_al_sat = Slot(uri=MIXS['0000607'], name="SoilInterface_al_sat", curie=MIXS.curie('0000607'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_al_sat, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%$'))
 
 slots.SoilInterface_al_sat_meth = Slot(uri=MIXS['0000324'], name="SoilInterface_al_sat_meth", curie=MIXS.curie('0000324'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_al_sat_meth, domain=SoilInterface, range=Optional[str])
@@ -20771,11 +21156,11 @@ slots.SoilInterface_microbial_biomass = Slot(uri=MIXS['0000650'], name="SoilInte
 
 slots.SoilInterface_microbial_biomass_c = Slot(uri=NMDC['nmdc/microbial_biomass_c'], name="SoilInterface_microbial_biomass_c", curie=NMDC.curie('nmdc/microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass_c, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
 
 slots.SoilInterface_microbial_biomass_n = Slot(uri=NMDC['nmdc/microbial_biomass_n'], name="SoilInterface_microbial_biomass_n", curie=NMDC.curie('nmdc/microbial_biomass_n'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass_n, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
 
 slots.SoilInterface_misc_param = Slot(uri=MIXS['0000752'], name="SoilInterface_misc_param", curie=MIXS.curie('0000752'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_misc_param, domain=SoilInterface, range=Optional[str],
@@ -20791,7 +21176,7 @@ slots.SoilInterface_nitrite_nitrogen = Slot(uri=NMDC['nmdc/nitrite_nitrogen'], n
 
 slots.SoilInterface_non_microb_biomass = Slot(uri=NMDC['nmdc/non_microb_biomass'], name="SoilInterface_non_microb_biomass", curie=NMDC.curie('nmdc/non_microb_biomass'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_non_microb_biomass, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
+                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SoilInterface_non_microb_biomass_method = Slot(uri=NMDC['nmdc/non_microb_biomass_method'], name="SoilInterface_non_microb_biomass_method", curie=NMDC.curie('nmdc/non_microb_biomass_method'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_non_microb_biomass_method, domain=SoilInterface, range=Optional[str])
@@ -20886,7 +21271,7 @@ slots.SoilInterface_slope_aspect = Slot(uri=MIXS['0000647'], name="SoilInterface
 
 slots.SoilInterface_slope_gradient = Slot(uri=MIXS['0000646'], name="SoilInterface_slope_gradient", curie=MIXS.curie('0000646'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_slope_gradient, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%$'))
 
 slots.SoilInterface_soil_horizon = Slot(uri=MIXS['0001082'], name="SoilInterface_soil_horizon", curie=MIXS.curie('0001082'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_soil_horizon, domain=SoilInterface, range=Optional[Union[str, "SoilHorizonEnum"]])
@@ -21062,7 +21447,7 @@ slots.WastewaterSludgeInterface_org_particles = Slot(uri=MIXS['0000665'], name="
 
 slots.WastewaterSludgeInterface_organism_count = Slot(uri=MIXS['0000103'], name="WastewaterSludgeInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_organism_count, domain=WastewaterSludgeInterface, range=Optional[str],
-                   pattern=re.compile(r'^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$'))
+                   pattern=re.compile(r'^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$'))
 
 slots.WastewaterSludgeInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="WastewaterSludgeInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_oxy_stat_samp, domain=WastewaterSludgeInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
@@ -21460,7 +21845,7 @@ slots.WaterInterface_phosphate = Slot(uri=MIXS['0000505'], name="WaterInterface_
 
 slots.WaterInterface_phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="WaterInterface_phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_phosplipid_fatt_acid, domain=WaterInterface, range=Optional[str],
-                   pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
 
 slots.WaterInterface_photon_flux = Slot(uri=MIXS['0000725'], name="WaterInterface_photon_flux", curie=MIXS.curie('0000725'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_photon_flux, domain=WaterInterface, range=Optional[str],
