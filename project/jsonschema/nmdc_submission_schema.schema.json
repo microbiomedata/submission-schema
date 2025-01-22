@@ -150,7 +150,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -715,7 +715,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -781,8 +781,8 @@
                     ]
                 },
                 "phosplipid_fatt_acid": {
-                    "description": "Concentration of phospholipid fatty acids; can include multiple values",
-                    "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$",
+                    "description": "Concentration of phospholipid fatty acids",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
                     "type": [
                         "string",
                         "null"
@@ -1682,13 +1682,13 @@
                     "description": "Number of occupants present at time of sample within the given space",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -1708,7 +1708,7 @@
                 },
                 "rel_air_humidity": {
                     "description": "Partial vapor and air pressure, density of the vapor and air, or by the actual mass of the vapor and air",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
+                    "pattern": "^[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%$",
                     "type": [
                         "string",
                         "null"
@@ -1881,12 +1881,8 @@
                     ]
                 },
                 "season": {
-                    "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729).",
-                    "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/SeasonEnum",
+                    "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)."
                 },
                 "season_use": {
                     "$ref": "#/$defs/SeasonUseEnum",
@@ -1981,7 +1977,7 @@
                 },
                 "surf_humidity": {
                     "description": "Surfaces: water activity as a function of air and material moisture",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
+                    "pattern": "^[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%$",
                     "type": [
                         "string",
                         "null"
@@ -2531,6 +2527,7 @@
                 "Bryozoa",
                 "Built environment",
                 "Cephalochordata",
+                "Ciliophora",
                 "Cnidaria",
                 "Drugs production",
                 "Endosymbionts",
@@ -2679,6 +2676,7 @@
                 "Bursa of Fabricius",
                 "CHO",
                 "CaSki",
+                "Canal",
                 "Canthus",
                 "Carcinoid",
                 "Carcinoma",
@@ -3107,6 +3105,7 @@
                 "Sebaceous glands",
                 "Sediment",
                 "Seed radicle",
+                "Seeds",
                 "Semen/Seminal fluid",
                 "Seminal glands",
                 "Settled granule",
@@ -3132,6 +3131,7 @@
                 "Smooth muscle",
                 "Smooth muscles",
                 "Snow",
+                "Snuff",
                 "Soda lake",
                 "Soft tissue",
                 "Soft tissues",
@@ -3359,10 +3359,12 @@
                 "Cellulose associated waste",
                 "Cement wall",
                 "Chemical products",
+                "Ciliates",
                 "Circulatory system",
                 "City",
                 "Cnidaria",
                 "Coal",
+                "Coelom",
                 "Composting",
                 "Connective tissue",
                 "Continuous culture",
@@ -3439,6 +3441,7 @@
                 "Integumentary system",
                 "International Space Station",
                 "Intracellular endosymbionts",
+                "Lancelets",
                 "Landfill",
                 "Larva",
                 "Larva: Nauplius",
@@ -3475,6 +3478,7 @@
                 "Mushroom farm",
                 "Mycelium",
                 "Mycorrhiza",
+                "Myzozoa",
                 "Nanoflagellates",
                 "Nematoda",
                 "Nervous system",
@@ -3518,6 +3522,7 @@
                 "Pupa",
                 "Reclaimed/Recycled wastewater",
                 "Red algae",
+                "Regolith",
                 "Remains",
                 "Reproductive system",
                 "Respiratory system",
@@ -3578,8 +3583,10 @@
                 "Thoracic cavity",
                 "Thorax",
                 "Tissue",
+                "Tobacco production",
                 "Train car",
                 "Tumor",
+                "Tunicates",
                 "UASB (Upflow anaerobic sludge blanket)",
                 "Unclassified",
                 "Undefined media",
@@ -3738,33 +3745,99 @@
             "title": "EnvBroadScaleSoilEnum",
             "type": "string"
         },
+        "EnvBroadScaleWaterEnum": {
+            "description": "",
+            "enum": [
+                "aquatic biome [ENVO:00002030]",
+                "concentration basin mediterranean sea biome [ENVO:01000004]",
+                "dilution basin mediterranean sea biome [ENVO:01000128]",
+                "epeiric sea biome [ENVO:01000045]",
+                "estuarine biome [ENVO:01000020]",
+                "freshwater biome [ENVO:00000873]",
+                "freshwater lake biome [ENVO:01000252]",
+                "freshwater river biome [ENVO:01000253]",
+                "freshwater stream biome [ENVO:03605008]",
+                "large freshwater lake biome [ENVO:00000891]",
+                "large river biome [ENVO:00000887]",
+                "large river delta biome [ENVO:00000889]",
+                "large river headwater biome [ENVO:00000888]",
+                "marginal sea biome [ENVO:01000046]",
+                "marine abyssal zone biome [ENVO:01000027]",
+                "marine basaltic hydrothermal vent biome [ENVO:01000054]",
+                "marine bathyal zone biome [ENVO:01000026]",
+                "marine benthic biome [ENVO:01000024]",
+                "marine biome [ENVO:00000447]",
+                "marine black smoker biome [ENVO:01000051]",
+                "marine cold seep biome [ENVO:01000127]",
+                "marine coral reef biome [ENVO:01000049]",
+                "marine hadal zone biome [ENVO:01000028]",
+                "marine hydrothermal vent biome [ENVO:01000030]",
+                "marine neritic benthic zone biome [ENVO:01000025]",
+                "marine pelagic biome [ENVO:01000023]",
+                "marine reef biome [ENVO:01000029]",
+                "marine salt marsh biome [ENVO:01000022]",
+                "marine sponge reef biome [ENVO:01000123]",
+                "marine subtidal rocky reef biome [ENVO:01000050]",
+                "marine ultramafic hydrothermal vent biome [ENVO:01000053]",
+                "marine upwelling biome [ENVO:01000858]",
+                "marine white smoker biome [ENVO:01000052]",
+                "mediterranean sea biome [ENVO:01000047]",
+                "neritic epipelagic zone biome [ENVO:01000042]",
+                "neritic mesopelagic zone biome [ENVO:01000043]",
+                "neritic pelagic zone biome [ENVO:01000032]",
+                "neritic sea surface microlayer biome [ENVO:01000041]",
+                "ocean biome [ENVO:01000048]",
+                "oceanic abyssopelagic zone biome [ENVO:01000038]",
+                "oceanic bathypelagic zone biome [ENVO:01000037]",
+                "oceanic benthopelagic zone biome [ENVO:01000040]",
+                "oceanic epipelagic zone biome [ENVO:01000035]",
+                "oceanic hadal pelagic zone biome [ENVO:01000039]",
+                "oceanic mesopelagic zone biome [ENVO:01000036]",
+                "oceanic pelagic zone biome [ENVO:01000033]",
+                "oceanic sea surface microlayer biome [ENVO:01000034]",
+                "small freshwater lake biome [ENVO:00000892]",
+                "small river biome [ENVO:00000890]",
+                "temperate marginal sea biome [ENVO:01000856]",
+                "temperate marine upwelling biome [ENVO:01000860]",
+                "temperate mediterranean sea biome [ENVO:01000857]",
+                "tropical marginal sea biome [ENVO:01001230]",
+                "tropical marine coral reef biome [ENVO:01000854]",
+                "tropical marine upwelling biome [ENVO:01000859]",
+                "xeric basin biome [ENVO:00000893]"
+            ],
+            "title": "EnvBroadScaleWaterEnum",
+            "type": "string"
+        },
         "EnvLocalScaleSoilEnum": {
             "description": "",
             "enum": [
                 "active permafrost layer [ENVO:04000009]",
-                "alas [ENVO:00000438]",
-                "badland [ENVO:00000127]",
+                "agricultural field [ENVO:00000114]",
+                "animal habitation [ENVO:00005803]",
+                "anthropogenic litter [ENVO:03500005]",
+                "aquifer [ENVO:00012408]",
+                "area of cropland [ENVO:01000892]",
+                "area of deciduous forest [ENVO:01000816]",
+                "area of dwarf scrub [ENVO:01000861]",
+                "area of evergreen forest [ENVO:01000843]",
+                "area of pastureland or hayfields [ENVO:01000891]",
+                "bank [ENVO:00000141]",
                 "beach [ENVO:00000091]",
                 "butte [ENVO:00000287]",
                 "caldera [ENVO:00000096]",
-                "campground [ENVO:01000935]",
-                "canyon [ENVO:00000169]",
+                "canal [ENVO:00000014]",
                 "cave [ENVO:00000067]",
                 "channel [ENVO:03000117]",
                 "cirque [ENVO:00000155]",
                 "cliff [ENVO:00000087]",
                 "crater [ENVO:00000514]",
-                "crevasse [ENVO:00000320]",
-                "cryosphere [ENVO:03000143]",
-                "dam [ENVO:00000074]",
+                "delta [ENVO:00000101]",
                 "desert [ENVO:01001357]",
+                "dike [ENVO:01000671]",
+                "ditch [ENVO:00000037]",
                 "drainage basin [ENVO:00000291]",
-                "drumlin [ENVO:00000276]",
-                "dry lake [ENVO:00000277]",
                 "dune [ENVO:00000170]",
-                "endorheic basin [ENVO:00000551]",
-                "escarpment [ENVO:00000280]",
-                "esker [ENVO:00000282]",
+                "estuary [ENVO:00000045]",
                 "farm [ENVO:00000078]",
                 "fen [ENVO:00000232]",
                 "fjord [ENVO:00000039]",
@@ -3773,71 +3846,141 @@
                 "fumarole [ENVO:00000216]",
                 "garden [ENVO:00000011]",
                 "glacier [ENVO:00000133]",
-                "greenhouse [ENVO:03600087]",
                 "harbour [ENVO:00000463]",
                 "hill [ENVO:00000083]",
+                "hot spring [ENVO:00000051]",
                 "hummock [ENVO:00000516]",
+                "intertidal zone [ENVO:00000316]",
                 "isthmus [ENVO:00000174]",
-                "kame [ENVO:00000542]",
                 "karst [ENVO:00000175]",
-                "kipuka [ENVO:00000410]",
+                "lake [ENVO:00000020]",
                 "landfill [ENVO:00000533]",
-                "machair [ENVO:00000417]",
+                "levee [ENVO:00000178]",
+                "mangrove swamp [ENVO:00000057]",
                 "marsh [ENVO:00000035]",
-                "meadow ecosystem [ENVO:00000108]",
                 "mesa [ENVO:00000179]",
                 "mine [ENVO:00000076]",
-                "mine drainage [ENVO:00001996]",
-                "monadnock [ENVO:00000432]",
-                "moraine [ENVO:00000177]",
                 "mountain [ENVO:00000081]",
-                "nunatak [ENVO:00000181]",
+                "mudflat [ENVO:00000192]",
+                "needleleaf forest [ENVO:01000433]",
                 "oil spill [ENVO:00002061]",
                 "palsa [ENVO:00000489]",
                 "park [ENVO:00000562]",
                 "pasture [ENVO:00000266]",
+                "peat swamp [ENVO:00000189]",
                 "peatland [ENVO:00000044]",
-                "pit [ENVO:01001871]",
+                "peninsula [ENVO:00000305]",
                 "plain [ENVO:00000086]",
                 "plateau [ENVO:00000182]",
-                "polje [ENVO:00000325]",
                 "prairie [ENVO:00000260]",
                 "quarry [ENVO:00000284]",
-                "ranch [ENVO:01001207]",
-                "ravine [ENVO:01000446]",
-                "refinery [ENVO:02000141]",
+                "reservoir [ENVO:00000025]",
                 "rhizosphere [ENVO:00005801]",
-                "ria [ENVO:00000418]",
                 "ridge [ENVO:00000283]",
-                "rill [ENVO:00000496]",
                 "river [ENVO:00000022]",
-                "riverfront [ENVO:03501239]",
-                "road [ENVO:00000064]",
-                "scrubland area [ENVO:00000300]",
-                "shingle beach [ENVO:00000545]",
-                "shore [ENVO:00000304]",
+                "roadside [ENVO:01000447]",
+                "shoreline [ENVO:00000486]",
                 "sinkhole [ENVO:00000195]",
                 "slope [ENVO:00002000]",
-                "soil cryoturbate [ENVO:01001665]",
                 "spring [ENVO:00000027]",
-                "spur [ENVO:01001489]",
-                "stack [ENVO:00000419]",
                 "steppe [ENVO:00000262]",
                 "stream [ENVO:00000023]",
-                "swale [ENVO:00000543]",
-                "terrace [ENVO:00000508]",
-                "thermokarst [ENVO:03000085]",
-                "trench [ENVO:01000649]",
+                "tropical forest [ENVO:01001803]",
                 "tunnel [ENVO:00000068]",
-                "tuya [ENVO:00000370]",
-                "valley [ENVO:00000100]",
+                "vadose zone [ENVO:00000328]",
                 "volcano [ENVO:00000247]",
                 "wadi [ENVO:00000031]",
                 "watershed [ENVO:00000292]",
                 "well [ENVO:00000026]",
-                "woodland clearing [ENVO:00000444]"
+                "wetland area [ENVO:00000043]",
+                "woodland area [ENVO:00000109]"
             ],
             "title": "EnvLocalScaleSoilEnum",
+            "type": "string"
+        },
+        "EnvLocalScaleWaterEnum": {
+            "description": "",
+            "enum": [
+                "abyssal plain [ENVO:00000244]",
+                "acid mine drainage [ENVO:00001997]",
+                "agricultural field [ENVO:00000114]",
+                "algal bloom [ENVO:2000004]",
+                "anoxic lake [ENVO:01001072]",
+                "aquaculture farm [ENVO:03600074]",
+                "archipelago [ENVO:00000220]",
+                "beach [ENVO:00000091]",
+                "biofilm [ENVO:00002034]",
+                "black smoker [ENVO:00000218]",
+                "coast [ENVO:01000687]",
+                "cold seep [ENVO:01000263]",
+                "continental margin [ENVO:01000298]",
+                "coral reef [ENVO:00000150]",
+                "cyanobacterial bloom [ENVO:03600071]",
+                "desert spring [ENVO:02000139]",
+                "epilimnion [ENVO:00002131]",
+                "estuary [ENVO:00000045]",
+                "fen [ENVO:00000232]",
+                "fjord [ENVO:00000039]",
+                "flood plain [ENVO:00000255]",
+                "freshwater lake [ENVO:00000021]",
+                "freshwater littoral zone [ENVO:01000409]",
+                "freshwater river [ENVO:01000297]",
+                "freshwater stream [ENVO:03605007]",
+                "glacial lake [ENVO:00000488]",
+                "glacier [ENVO:00000133]",
+                "hadalpelagic zone [ENVO:00000214]",
+                "harbour [ENVO:00000463]",
+                "hot spring [ENVO:00000051]",
+                "hydrothermal vent [ENVO:00000215]",
+                "hypolimnion [ENVO:00002130]",
+                "inlet [ENVO:00000475]",
+                "intertidal zone [ENVO:00000316]",
+                "lake [ENVO:00000020]",
+                "lentic water body [ENVO:01000617]",
+                "littoral zone [ENVO:01000407]",
+                "lotic water body [ENVO:01000618]",
+                "mangrove swamp [ENVO:00000057]",
+                "marine aphotic zone [ENVO:00000210]",
+                "marine bathypelagic zone [ENVO:00000211]",
+                "marine lake [ENVO:03600041]",
+                "marine mesopelagic zone [ENVO:00000213]",
+                "marine neritic zone [ENVO:00000206]",
+                "marine pelagic zone [ENVO:00000208]",
+                "marine photic zone [ENVO:00000209]",
+                "marsh [ENVO:00000035]",
+                "melt pond [ENVO:03000040]",
+                "metalimnion [ENVO:00002132]",
+                "microbial mat [ENVO:01000008]",
+                "mine drainage [ENVO:00001996]",
+                "mud volcano [ENVO:00000402]",
+                "ocean [ENVO:00000015]",
+                "ocean trench [ENVO:00000275]",
+                "oceanic crust [ENVO:01000749]",
+                "oil seep [ENVO:00002063]",
+                "oil spill [ENVO:00002061]",
+                "pond [ENVO:00000033]",
+                "puddle of water [ENVO:01000871]",
+                "riffle [ENVO:00000148]",
+                "river [ENVO:00000022]",
+                "river bed [ENVO:00000384]",
+                "saline marsh [ENVO:00000054]",
+                "sea [ENVO:00000016]",
+                "shrimp pond [ENVO:01000905]",
+                "sinkhole [ENVO:00000195]",
+                "spring [ENVO:00000027]",
+                "step pool [ENVO:03600096]",
+                "strait [ENVO:00000394]",
+                "stream [ENVO:00000023]",
+                "stream pool [ENVO:03600094]",
+                "stream run [ENVO:03600095]",
+                "subglacial lake [ENVO:03000120]",
+                "swamp ecosystem [ENVO:00000233]",
+                "thermocline [ENVO:00002269]",
+                "volcano [ENVO:00000247]",
+                "water surface [ENVO:01001191]",
+                "wetland ecosystem [ENVO:01001209]"
+            ],
+            "title": "EnvLocalScaleWaterEnum",
             "type": "string"
         },
         "EnvMediumSoilEnum": {
@@ -3874,7 +4017,6 @@
                 "eucalyptus forest soil [ENVO:00005787]",
                 "ferralsol [ENVO:00002246]",
                 "fertilized soil [ENVO:00005754]",
-                "field soil [ENVO:00005755]",
                 "fluvisol [ENVO:00002273]",
                 "forest soil [ENVO:00002261]",
                 "friable-frozen soil [ENVO:01001528]",
@@ -3897,6 +4039,7 @@
                 "loam [ENVO:00002258]",
                 "luvisol [ENVO:00002248]",
                 "manured soil [ENVO:00005767]",
+                "meadow soil [ENVO:00005761]",
                 "mountain forest soil [ENVO:00005769]",
                 "muddy soil [ENVO:00005771]",
                 "nitisol [ENVO:00002247]",
@@ -3912,7 +4055,6 @@
                 "pond soil [ENVO:00005764]",
                 "red soil [ENVO:00005790]",
                 "regosol [ENVO:00002256]",
-                "roadside soil [ENVO:00005743]",
                 "rubber plantation soil [ENVO:00005788]",
                 "savanna soil [ENVO:00005746]",
                 "sawah soil [ENVO:00005752]",
@@ -3941,50 +4083,97 @@
                 "anoxic water [ENVO:01000173]",
                 "bacon curing brine [ENVO:00003045]",
                 "ballast water [ENVO:01000872]",
+                "blue ice [ENVO:03000007]",
                 "borax leachate [ENVO:00002142]",
+                "bore hole water [ENVO:00003097]",
                 "brackish water [ENVO:00002019]",
                 "brine [ENVO:00003044]",
+                "brown sea ice [ENVO:01001190]",
                 "cloud water [ENVO:03600081]",
                 "coastal sea water [ENVO:00002150]",
+                "congelation ice in a fresh water body [ENVO:01001514]",
+                "congelation sea ice [ENVO:01001512]",
+                "contaminated water [ENVO:00002186]",
                 "cooling water [ENVO:03600002]",
                 "desalinated water [ENVO:06105269]",
                 "distilled water [ENVO:00003065]",
                 "ditch water [ENVO:00002158]",
                 "drilling bore water [ENVO:00002159]",
                 "drinking water [ENVO:00003064]",
+                "epilithon [ENVO:03605001]",
+                "epipelon [ENVO:03605002]",
+                "epiphyton [ENVO:03605003]",
+                "epipsammon [ENVO:03605004]",
+                "epixylon [ENVO:03605005]",
+                "erosionally enriched glacial ice [ENVO:03000005]",
+                "erosionally enriched ice [ENVO:03000025]",
                 "estuarine water [ENVO:01000301]",
                 "eutrophic water [ENVO:00002224]",
+                "first year ice [ENVO:03000071]",
+                "fissure water [ENVO:01000940]",
+                "frazil [ENVO:01001523]",
+                "frazil ice [ENVO:03000046]",
                 "fresh water [ENVO:00002011]",
+                "freshwater congelation ice [ENVO:01001515]",
+                "freshwater ice [ENVO:01001511]",
+                "glacial ice [ENVO:03000004]",
                 "groundwater [ENVO:01001004]",
+                "hair ice [ENVO:01000847]",
                 "highly saline water [ENVO:01001039]",
                 "hydrothermal fluid [ENVO:01000134]",
                 "hypereutrophic water [ENVO:01001018]",
                 "hypersaline water [ENVO:00002012]",
                 "hypoxic water [ENVO:01001064]",
+                "ice cave congelation ice [ENVO:01001516]",
+                "industrial wastewater [ENVO:01000964]",
                 "interstitial water [ENVO:03600009]",
+                "lake water [ENVO:04000007]",
                 "leachate [ENVO:00002141]",
                 "liquid water [ENVO:00002006]",
+                "marine lake water [ENVO:03600042]",
+                "marine snow [ENVO:01000158]",
                 "meltwater [ENVO:01000722]",
                 "mesotrophic water [ENVO:00002225]",
                 "moderately saline water [ENVO:01001038]",
                 "muddy water [ENVO:00005793]",
+                "multiyear ice [ENVO:03000073]",
+                "new ice [ENVO:03000063]",
+                "oil field production water [ENVO:00002194]",
                 "oligotrophic water [ENVO:00002223]",
                 "oxic water [ENVO:01001063]",
+                "permafrost congelation ice [ENVO:01001513]",
                 "pond water [ENVO:00002228]",
+                "powdery snow [ENVO:03000027]",
+                "pulp-bleaching waste water [ENVO:00002193]",
                 "rainwater [ENVO:01000600]",
+                "residual water in soil [ENVO:06105238]",
+                "river water [ENVO:01000599]",
+                "runoff [ENVO:06105211]",
                 "rural stormwater [ENVO:01001270]",
                 "saline shrimp pond water [ENVO:01001257]",
                 "saline water [ENVO:00002010]",
+                "sea ice [ENVO:00002200]",
                 "sea water [ENVO:00002149]",
+                "second year ice [ENVO:03000072]",
+                "sewage [ENVO:00002018]",
+                "shuga [ENVO:03000075]",
+                "slab snow [ENVO:03000108]",
                 "slightly saline water [ENVO:01001037]",
+                "snow [ENVO:01000406]",
+                "spring water [ENVO:03600065]",
                 "stagnant water [ENVO:03501370]",
                 "sterile water [ENVO:00005791]",
                 "stormwater [ENVO:01001267]",
+                "stream water [ENVO:03605006]",
                 "subterranean lake [ENVO:02000145]",
                 "surface water [ENVO:00002042]",
                 "tap water [ENVO:00003096]",
+                "treated wastewater [ENVO:06105268]",
                 "underground water [ENVO:00005792]",
-                "urban stormwater [ENVO:01001268]"
+                "urban stormwater [ENVO:01001268]",
+                "waste water [ENVO:00002001]",
+                "water ice [ENVO:01000277]",
+                "water-body-derived ice [ENVO:01001557]"
             ],
             "title": "EnvMediumWaterEnum",
             "type": "string"
@@ -4586,7 +4775,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -5379,7 +5568,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -6160,7 +6349,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -7116,7 +7305,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -7158,8 +7347,8 @@
                     ]
                 },
                 "phosplipid_fatt_acid": {
-                    "description": "Concentration of phospholipid fatty acids; can include multiple values",
-                    "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$",
+                    "description": "Concentration of phospholipid fatty acids",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
                     "type": [
                         "string",
                         "null"
@@ -7725,7 +7914,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -7829,9 +8018,11 @@
                 },
                 "root_med_ph": {
                     "description": "pH measurement of the culture rooting medium; e.g. 5.5.",
+                    "maximum": 14,
+                    "minimum": 1,
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -8471,6 +8662,17 @@
             "title": "SampleTypeEnum",
             "type": "string"
         },
+        "SeasonEnum": {
+            "description": "",
+            "enum": [
+                "spring",
+                "summer",
+                "autumn",
+                "winter"
+            ],
+            "title": "SeasonEnum",
+            "type": "string"
+        },
         "SeasonUseEnum": {
             "description": "",
             "enum": [
@@ -8893,7 +9095,7 @@
                 },
                 "microbial_biomass_c": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\\t\\r\\n]+$",
                     "type": [
                         "string",
                         "null"
@@ -8901,7 +9103,7 @@
                 },
                 "microbial_biomass_n": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\\t\\r\\n]+$",
                     "type": [
                         "string",
                         "null"
@@ -8980,7 +9182,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -9054,8 +9256,8 @@
                     ]
                 },
                 "phosplipid_fatt_acid": {
-                    "description": "Concentration of phospholipid fatty acids; can include multiple values",
-                    "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$",
+                    "description": "Concentration of phospholipid fatty acids",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
                     "type": [
                         "string",
                         "null"
@@ -9420,7 +9622,7 @@
                 },
                 "al_sat": {
                     "description": "The relative abundance of aluminum in the sample",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
+                    "pattern": "^[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%$",
                     "type": [
                         "string",
                         "null"
@@ -9838,7 +10040,7 @@
                 },
                 "microbial_biomass_c": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\\t\\r\\n]+$",
                     "type": [
                         "string",
                         "null"
@@ -9846,7 +10048,7 @@
                 },
                 "microbial_biomass_n": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\\t\\r\\n]+$",
                     "type": [
                         "string",
                         "null"
@@ -9878,7 +10080,7 @@
                 },
                 "non_microb_biomass": {
                     "description": "Amount of biomass; should include the name for the part of biomass measured, e.g.insect, plant, total. Can include multiple measurements separated by ;",
-                    "pattern": "^[^;\\t\\r\\x0A\\|]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A\\|]+$",
+                    "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$",
                     "type": [
                         "string",
                         "null"
@@ -10078,7 +10280,7 @@
                 },
                 "slope_gradient": {
                     "description": "Commonly called 'slope'. The angle between ground surface and a horizontal line (in percent). This is the direction that overland water would flow. This measure is usually taken with a hand level meter or clinometer",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
+                    "pattern": "^[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?%$",
                     "type": [
                         "string",
                         "null"
@@ -10891,6 +11093,7 @@
                 "Sonicate fluid",
                 "Speleothems",
                 "Sperm",
+                "Spicules",
                 "Spider web",
                 "Splenic aspirate",
                 "Splenic flexure",
@@ -11537,7 +11740,7 @@
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
-                    "pattern": "^([-+]?[0-9]*\\.?[0-9]+ +\\S.*\\|)*([-+]?[0-9]*\\.?[0-9]+ +\\S.*)$",
+                    "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
                     "type": [
                         "string",
                         "null"
@@ -12386,8 +12589,8 @@
                     ]
                 },
                 "phosplipid_fatt_acid": {
-                    "description": "Concentration of phospholipid fatty acids; can include multiple values",
-                    "pattern": "^([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+\\|)*([^;\\t\\r\\x0A]+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? [^;\\t\\r\\x0A]+)$",
+                    "description": "Concentration of phospholipid fatty acids",
+                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
                     "type": [
                         "string",
                         "null"
