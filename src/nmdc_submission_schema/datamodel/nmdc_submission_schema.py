@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-22T02:30:58
+# Generation date: 2025-01-22T09:09:30
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -185,20 +185,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Float(float):
-    """ A real number that conforms to the xsd:float specification """
-    type_class_uri = XSD["float"]
-    type_class_curie = "xsd:float"
-    type_name = "float"
-    type_model_uri = NMDC_SUB_SCHEMA.Float
-
-
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
 
 
 class DecimalDegree(float):
@@ -217,12 +209,28 @@ class Double(float):
     type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
+class Float(float):
+    """ A real number that conforms to the xsd:float specification """
+    type_class_uri = XSD["float"]
+    type_class_curie = "xsd:float"
+    type_name = "float"
+    type_model_uri = NMDC_SUB_SCHEMA.Float
+
+
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+
+
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class LanguageCode(str):
@@ -233,20 +241,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
-
-
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
 class Boolean(Bool):
