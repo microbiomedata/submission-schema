@@ -307,3 +307,9 @@ local/usage_template.tsv: src/nmdc_submission_schema/schema/nmdc_submission_sche
 		 --meta-model-excel-file local/meta.xlsx \
 		 --meta-path https://raw.githubusercontent.com/linkml/linkml-model/main/linkml_model/model/schema/meta.yaml \
 		 --source-schema-path $<
+
+notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.tsv: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
+	$(RUN) python src/nmdc_submission_schema/scripts/create_env_context_robot_template.py \
+		--envo-owl-path notebooks/environmental_context_value_sets/envo.owl \
+		--schema-path $< \
+		--output-file $@
