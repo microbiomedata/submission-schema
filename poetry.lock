@@ -3470,6 +3470,20 @@ requests = "*"
 setuptools = ">=18.5"
 
 [[package]]
+name = "mkdocs-redirects"
+version = "1.2.2"
+description = "A MkDocs plugin for dynamic page redirects to prevent broken links"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mkdocs_redirects-1.2.2-py3-none-any.whl", hash = "sha256:7dbfa5647b79a3589da4401403d69494bd1f4ad03b9c15136720367e1f340ed5"},
+    {file = "mkdocs_redirects-1.2.2.tar.gz", hash = "sha256:3094981b42ffab29313c2c1b8ac3969861109f58b2dd58c45fc81cd44bfa0095"},
+]
+
+[package.dependencies]
+mkdocs = ">=1.1.1"
+
+[[package]]
 name = "more-click"
 version = "0.1.2"
 description = "More click."
@@ -3616,6 +3630,29 @@ developer = ["changelist (==0.4)", "mypy (>=1.1)", "pre-commit (>=3.2)", "rtoml"
 doc = ["nb2plots (>=0.7)", "nbconvert (<7.9)", "numpydoc (>=1.6)", "pillow (>=9.4)", "pydata-sphinx-theme (>=0.14)", "sphinx (>=7)", "sphinx-gallery (>=0.14)", "texext (>=0.6.7)"]
 extra = ["lxml (>=4.6)", "pydot (>=1.4.2)", "pygraphviz (>=1.11)", "sympy (>=1.10)"]
 test = ["pytest (>=7.2)", "pytest-cov (>=4.0)"]
+
+[[package]]
+name = "nmdc-schema"
+version = "11.3.0"
+description = "Schema resources for the National Microbiome Data Collaborative (NMDC)"
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "nmdc_schema-11.3.0-py3-none-any.whl", hash = "sha256:94815b7b375e0960407db8a214f57a1e99c3312d97685e023878c89c0be66f8c"},
+    {file = "nmdc_schema-11.3.0.tar.gz", hash = "sha256:c58b29ff4482857dba6ffc991d67bec12e4eaa3a49f86215c87b480f9aca2477"},
+]
+
+[package.dependencies]
+linkml = ">=1.7.10,<2.0.0"
+linkml-runtime = ">=1.7.7,<2.0.0"
+mkdocs = ">=1.4.2,<2.0.0"
+mkdocs-mermaid2-plugin = ">=0.6.0,<0.7.0"
+mkdocs-redirects = ">=1.2.1,<2.0.0"
+pymongo = ">=4.7.2,<5.0.0"
+ruamel-yaml = ">=0.18.6,<0.19.0"
+
+[package.extras]
+docs = ["mkdocs-material (>=9.0.12,<10.0.0)"]
 
 [[package]]
 name = "notebook"
@@ -6589,4 +6626,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "973eb57ef06ba4ad6f7205cd18f97039257565193c96e1718c7c425c73129939"
+content-hash = "11457ac51f37c14cae82521c43d70dc7d28045b7e7d723e2f5451d73072e4fff"
