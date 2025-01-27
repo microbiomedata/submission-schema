@@ -364,6 +364,17 @@ local/plant_associated_env_local_scale_curies.txt: local/aggregate_value_sets.ts
 local/plant_associated_env_medium_curies.txt: local/aggregate_value_sets.tsv
 	egrep 'Plant	env_medium' $< | cut -f 3 > $@
 
+local/sediment_env_broad_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Sediment	env_broad_scale' $< | cut -f 3 > $@
+
+local/sediment_env_local_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Sediment	env_local_scale' $< | cut -f 3 > $@
+
+local/sediment_env_medium_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Sediment	env_medium' $< | cut -f 3 > $@
+
+local/env_medium_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'env_medium' $< | cut -f 3 > $@
 
 local/soil_env_broad_scale_enrichment.tsv: local/soil_env_broad_scale_curies.txt
 	$(RUN) runoak -i sqlite:obo:envo enrichment \
@@ -436,4 +447,30 @@ local/plant_associated_env_medium_enrichment_by_po.tsv: local/plant_associated_e
 		-O tsv \
 		-o $@ .idfile $<
 
+local/sediment_env_medium_enrichment.tsv: local/sediment_env_medium_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
 
+local/sediment_env_broad_scale_enrichment.tsv: local/sediment_env_broad_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/sediment_env_local_scale_enrichment.tsv: local/sediment_env_local_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/env_medium_enrichment.tsv: local/env_medium_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
