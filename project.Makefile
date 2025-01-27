@@ -320,3 +320,20 @@ notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.ts
 		--envo-owl-path notebooks/environmental_context_value_sets/envo.owl \
 		--schema-path $< \
 		--output-file $@
+
+local/aggregate_value_sets.tsv:
+	$(RUN) python src/nmdc_submission_schema/scripts/aggregate_value_sets.py \
+		--output $@ \
+		--file notebooks/environmental_context_value_sets/water/env_local_scale/post_google_sheets_water_env_local_scale.tsv
+
+# notebooks/environmental_context_value_sets/plant_associated/env_broad_scale/post_google_sheets_plant_associated_env_broad_scale.tsv
+  #notebooks/environmental_context_value_sets/plant_associated/env_medium/post_google_sheets_plant_associated_env_medium.tsv
+  #notebooks/environmental_context_value_sets/soil/env_local_scale/post_google_sheets_soil_env_local_scale.tsv
+  #notebooks/environmental_context_value_sets/soil/env_broad_scale/post_google_sheets_soil_env_broad_scale.tsv
+  #notebooks/environmental_context_value_sets/soil/env_medium/discover_excludable_soils_curated.tsv
+  #notebooks/environmental_context_value_sets/soil/env_medium/post_google_sheets_soil_env_medium.tsv
+  #notebooks/environmental_context_value_sets/soil/env_medium/discover_excludable_soils.tsv
+  #notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.tsv
+  #notebooks/environmental_context_value_sets/water/env_local_scale/post_google_sheets_water_env_local_scale.tsv
+  #notebooks/environmental_context_value_sets/water/env_broad_scale/post_google_sheets_water_env_broad_scale.tsv
+  #notebooks/environmental_context_value_sets/water/env_medium/post_google_sheets_water_env_medium.tsv
