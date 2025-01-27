@@ -324,16 +324,116 @@ notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.ts
 local/aggregate_value_sets.tsv:
 	$(RUN) python src/nmdc_submission_schema/scripts/aggregate_value_sets.py \
 		--output $@ \
-		--file notebooks/environmental_context_value_sets/water/env_local_scale/post_google_sheets_water_env_local_scale.tsv
+		--file notebooks/environmental_context_value_sets/plant_associated/env_broad_scale/post_google_sheets_plant_associated_env_broad_scale.tsv \
+		--file notebooks/environmental_context_value_sets/plant_associated/env_local_scale/post_google_sheets_plant_associated_env_local_scale.tsv \
+		--file notebooks/environmental_context_value_sets/plant_associated/env_medium/post_google_sheets_plant_associated_env_medium.tsv \
+		--file notebooks/environmental_context_value_sets/sediment/env_broad_scale/post_google_sheets_sediment_env_broad_scale.tsv \
+		--file notebooks/environmental_context_value_sets/sediment/env_local_scale/post_google_sheets_sediment_env_local_scale.tsv \
+		--file notebooks/environmental_context_value_sets/sediment/env_medium/post_google_sheets_sediment_env_medium.tsv \
+		--file notebooks/environmental_context_value_sets/soil/env_broad_scale/post_google_sheets_soil_env_broad_scale.tsv \
+		--file notebooks/environmental_context_value_sets/soil/env_local_scale/post_google_sheets_soil_env_local_scale.tsv \
+		--file notebooks/environmental_context_value_sets/soil/env_medium/post_google_sheets_soil_env_medium.tsv \
+		--file notebooks/environmental_context_value_sets/water/env_broad_scale/post_google_sheets_water_env_broad_scale.tsv \
+		--file notebooks/environmental_context_value_sets/water/env_local_scale/post_google_sheets_water_env_local_scale.tsv \
+		--file notebooks/environmental_context_value_sets/water/env_medium/post_google_sheets_water_env_medium.tsv
 
-# notebooks/environmental_context_value_sets/plant_associated/env_broad_scale/post_google_sheets_plant_associated_env_broad_scale.tsv
-  #notebooks/environmental_context_value_sets/plant_associated/env_medium/post_google_sheets_plant_associated_env_medium.tsv
-  #notebooks/environmental_context_value_sets/soil/env_local_scale/post_google_sheets_soil_env_local_scale.tsv
-  #notebooks/environmental_context_value_sets/soil/env_broad_scale/post_google_sheets_soil_env_broad_scale.tsv
-  #notebooks/environmental_context_value_sets/soil/env_medium/discover_excludable_soils_curated.tsv
-  #notebooks/environmental_context_value_sets/soil/env_medium/post_google_sheets_soil_env_medium.tsv
-  #notebooks/environmental_context_value_sets/soil/env_medium/discover_excludable_soils.tsv
-  #notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.tsv
-  #notebooks/environmental_context_value_sets/water/env_local_scale/post_google_sheets_water_env_local_scale.tsv
-  #notebooks/environmental_context_value_sets/water/env_broad_scale/post_google_sheets_water_env_broad_scale.tsv
-  #notebooks/environmental_context_value_sets/water/env_medium/post_google_sheets_water_env_medium.tsv
+local/soil_env_broad_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Soil	env_broad_scale' $< | cut -f 3 > $@
+
+local/soil_env_local_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Soil	env_local_scale' $< | cut -f 3 > $@
+
+local/soil_env_medium_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Soil	env_medium' $< | cut -f 3 > $@
+
+local/water_env_broad_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Water	env_broad_scale' $< | cut -f 3 > $@
+
+local/water_env_local_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Water	env_local_scale' $< | cut -f 3 > $@
+
+local/water_env_medium_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Water	env_medium' $< | cut -f 3 > $@
+
+local/plant_associated_env_broad_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Plant	env_broad_scale' $< | cut -f 3 > $@
+
+local/plant_associated_env_local_scale_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Plant	env_local_scale' $< | cut -f 3 > $@
+
+local/plant_associated_env_medium_curies.txt: local/aggregate_value_sets.tsv
+	egrep 'Plant	env_medium' $< | cut -f 3 > $@
+
+
+local/soil_env_broad_scale_enrichment.tsv: local/soil_env_broad_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/soil_env_local_scale_enrichment.tsv: local/soil_env_local_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/soil_env_medium_enrichment.tsv: local/soil_env_medium_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/water_env_broad_scale_enrichment.tsv: local/water_env_broad_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/water_env_local_scale_enrichment.tsv: local/water_env_local_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/water_env_medium_enrichment.tsv: local/water_env_medium_curies.txt
+	# --filter-redundant limits this to liquid water
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/plant_associated_env_broad_scale_enrichment.tsv: local/plant_associated_env_broad_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/plant_associated_env_local_scale_enrichment.tsv: local/plant_associated_env_local_scale_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/plant_associated_env_medium_enrichment_by_envo.tsv: local/plant_associated_env_medium_curies.txt
+	$(RUN) runoak -i sqlite:obo:envo enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+local/plant_associated_env_medium_enrichment_by_po.tsv: local/plant_associated_env_medium_curies.txt
+	$(RUN) runoak -i sqlite:obo:po enrichment \
+		--ontology-only \
+		-p i \
+		-O tsv \
+		-o $@ .idfile $<
+
+
