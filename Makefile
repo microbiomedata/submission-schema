@@ -146,6 +146,8 @@ $(DOCDIR):
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
 	$(RUN) gen-doc ${GEN_DARGS} -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
+	mkdir -p $(DOCDIR)/javascripts
+	$(RUN) cp $(SRC)/scripts/*.js $(DOCDIR)/javascripts/
 
 testdoc: test_deploy_docs_action gendoc serve
 
