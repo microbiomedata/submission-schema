@@ -780,19 +780,19 @@
 </tr>
 <tr>
 <td><a href="../env_broad_scale/">env_broad_scale</a></td>
-<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvMediumWaterEnum/">EnvMediumWaterEnum</a> or <br/><a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvBroadScaleWaterEnum/">EnvBroadScaleWaterEnum</a> or <br/><a href="../String/">String</a></td>
 <td>Report the major environmental system the sample or specimen came from</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../env_local_scale/">env_local_scale</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvLocalScaleWaterEnum/">EnvLocalScaleWaterEnum</a> or <br/><a href="../String/">String</a></td>
 <td>Report the entity or entities which are in the sample or specimen’s local vic...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../env_medium/">env_medium</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvMediumWaterEnum/">EnvMediumWaterEnum</a> or <br/><a href="../String/">String</a></td>
 <td>Report the environmental material(s) immediately surrounding the sample or sp...</td>
 <td>direct</td>
 </tr>
@@ -2880,7 +2880,7 @@ slot_usage:
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
     any_of:
-    - range: EnvMediumWaterEnum
+    - range: EnvBroadScaleWaterEnum
     - range: string
   env_local_scale:
     name: env_local_scale
@@ -2935,6 +2935,9 @@ slot_usage:
     required: true
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    any_of:
+    - range: EnvLocalScaleWaterEnum
+    - range: string
   env_medium:
     name: env_medium
     annotations:
@@ -2988,6 +2991,9 @@ slot_usage:
     required: true
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    any_of:
+    - range: EnvMediumWaterEnum
+    - range: string
   experimental_factor:
     name: experimental_factor
     annotations:
@@ -6859,7 +6865,7 @@ slot_usage:
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
     any_of:
-    - range: EnvMediumWaterEnum
+    - range: EnvBroadScaleWaterEnum
     - range: string
   env_local_scale:
     name: env_local_scale
@@ -6914,6 +6920,9 @@ slot_usage:
     required: true
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    any_of:
+    - range: EnvLocalScaleWaterEnum
+    - range: string
   env_medium:
     name: env_medium
     annotations:
@@ -6967,6 +6976,9 @@ slot_usage:
     required: true
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    any_of:
+    - range: EnvMediumWaterEnum
+    - range: string
   experimental_factor:
     name: experimental_factor
     annotations:
@@ -10863,7 +10875,7 @@ attributes:
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
     any_of:
-    - range: EnvMediumWaterEnum
+    - range: EnvBroadScaleWaterEnum
     - range: string
   env_local_scale:
     name: env_local_scale
@@ -10919,6 +10931,9 @@ attributes:
     required: true
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    any_of:
+    - range: EnvLocalScaleWaterEnum
+    - range: string
   env_medium:
     name: env_medium
     annotations:
@@ -10973,6 +10988,9 @@ attributes:
     required: true
     multivalued: false
     pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    any_of:
+    - range: EnvMediumWaterEnum
+    - range: string
   experimental_factor:
     name: experimental_factor
     annotations:
