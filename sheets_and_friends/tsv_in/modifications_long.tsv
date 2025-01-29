@@ -159,11 +159,11 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	string_serialization			{lat lon}
 PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended			true
-SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization
+SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization			
 SedimentInterface|SoilInterface	microbial_biomass_c	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
-SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization
+SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization			
 SedimentInterface|SoilInterface	microbial_biomass_n	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
-SoilInterface	non_microb_biomass	remove_attribute	string_serialization
+SoilInterface	non_microb_biomass	remove_attribute	string_serialization			
 SoilInterface	non_microb_biomass	replace_attribute	pattern			^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
 BuiltEnvInterface	occup_samp	replace_attribute	range			integer
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	replace_attribute	pattern			^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
@@ -251,7 +251,7 @@ EmslInterface	sample_shipped	replace_attribute	recommended			false
 EmslInterface	sample_type	replace_attribute	required			true
 EmslInterface	sample_type	replace_attribute	recommended			false
 EmslInterface	sample_type	overwrite_examples	examples			soil - water extract
-BuiltEnvInterface	season	remove_attribute	string_serialization
+BuiltEnvInterface	season	remove_attribute	string_serialization			
 BuiltEnvInterface	season	replace_attribute	range			SeasonEnum
 BuiltEnvInterface	season	overwrite_examples	examples			autumn
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
@@ -299,3 +299,21 @@ BiofilmInterface|SedimentInterface|SoilInterface	water_content	replace_attribute
 PlantAssociatedInterface|SoilInterface	watering_regm	overwrite_examples	examples			1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M|75% water holding capacity; constant
 PlantAssociatedInterface|SoilInterface	watering_regm	replace_attribute	recommended			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|DhMultiviewCommonColumnsMixin|EmslInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|JgiMgInterface|JgiMgLrInterface|JgiMtInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	oxy_stat_samp	replace_attribute	range			OxyStatSampEnum
+PlantAssociatedInterface	env_broad_scale	replace_attribute	any_of.0.range			EnvBroadScalePlantAssociatedEnum
+PlantAssociatedInterface	env_broad_scale	replace_attribute	any_of.1.range			string
+PlantAssociatedInterface	env_local_scale	replace_attribute	any_of.0.range			EnvLocalScalePlantAssociatedEnum
+PlantAssociatedInterface	env_local_scale	replace_attribute	any_of.1.range			string
+PlantAssociatedInterface	env_medium	replace_attribute	any_of.0.range			EnvMediumPlantAssociatedEnum
+PlantAssociatedInterface	env_medium	replace_attribute	any_of.1.range			string
+SedimentInterface	env_broad_scale	replace_attribute	any_of.0.range			EnvBroadScaleSedimentEnum
+SedimentInterface	env_broad_scale	replace_attribute	any_of.1.range			string
+SedimentInterface	env_local_scale	replace_attribute	any_of.0.range			EnvLocalScaleSedimentEnum
+SedimentInterface	env_local_scale	replace_attribute	any_of.1.range			string
+SedimentInterface	env_medium	replace_attribute	any_of.0.range			EnvMediumSedimentEnum
+SedimentInterface	env_medium	replace_attribute	any_of.1.range			string
+WaterInterface	env_broad_scale	replace_attribute	any_of.0.range			EnvBroadScaleWaterEnum
+WaterInterface	env_broad_scale	replace_attribute	any_of.1.range			string
+WaterInterface	env_local_scale	replace_attribute	any_of.0.range			EnvLocalScaleWaterEnum
+WaterInterface	env_local_scale	replace_attribute	any_of.1.range			string
+WaterInterface	env_medium	replace_attribute	any_of.0.range			EnvMediumWaterEnum
+WaterInterface	env_medium	replace_attribute	any_of.1.range			string

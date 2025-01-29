@@ -135,260 +135,54 @@ enums:
     permissible_values:
       'no': { }
       'yes': { }
+  EnvBroadScalePlantAssociatedEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvMediumPlantAssociatedEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvLocalScalePlantAssociatedEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvBroadScaleSedimentEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvMediumSedimentEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvLocalScaleSedimentEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
   EnvBroadScaleSoilEnum:
-    permissible_values:
-      arid biome [ENVO:01001838]:
-      subalpine biome [ENVO:01001837]:
-      montane biome [ENVO:01001836]:
-      __montane savanna biome [ENVO:01000223]:
-      __montane shrubland biome [ENVO:01000216]:
-      alpine biome [ENVO:01001835]:
-      __alpine tundra biome [ENVO:01001505]:
-      subpolar biome [ENVO:01001834]:
-      subtropical biome [ENVO:01001832]:
-      __mediterranean biome [ENVO:01001833]:
-      ____mediterranean savanna biome [ENVO:01000229]:
-      ____mediterranean shrubland biome [ENVO:01000217]:
-      ____mediterranean woodland biome [ENVO:01000208]:
-      __subtropical woodland biome [ENVO:01000222]:
-      __subtropical shrubland biome [ENVO:01000213]:
-      __subtropical savanna biome [ENVO:01000187]:
-      temperate biome [ENVO:01001831]:
-      __temperate woodland biome [ENVO:01000221]:
-      __temperate shrubland biome [ENVO:01000215]:
-      __temperate savanna biome [ENVO:01000189]:
-      tropical biome [ENVO:01001830]:
-      __tropical woodland biome [ENVO:01000220]:
-      __tropical shrubland biome [ENVO:01000214]:
-      __tropical savanna biome [ENVO:01000188]:
-      polar biome [ENVO:01000339]:
-      terrestrial biome [ENVO:00000446]:
-      __anthropogenic terrestrial biome [ENVO:01000219]:
-      ____dense settlement biome [ENVO:01000248]:
-      ______urban biome [ENVO:01000249]:
-      ____rangeland biome [ENVO:01000247]:
-      ____village biome [ENVO:01000246]:
-      __mangrove biome [ENVO:01000181]:
-      __tundra biome [ENVO:01000180]:
-      ____alpine tundra biome [ENVO:01001505]:
-      __shrubland biome [ENVO:01000176]:
-      ____tidal mangrove shrubland [ENVO:01001369]:
-      ____xeric shrubland biome [ENVO:01000218]:
-      ____montane shrubland biome [ENVO:01000216]:
-      ____temperate shrubland biome [ENVO:01000215]:
-      ____tropical shrubland biome [ENVO:01000214]:
-      ____subtropical shrubland biome [ENVO:01000213]:
-      ______mediterranean shrubland biome [ENVO:01000217]:
-      __woodland biome [ENVO:01000175]:
-      ____subtropical woodland biome [ENVO:01000222]:
-      ______mediterranean woodland biome [ENVO:01000208]:
-      ____temperate woodland biome [ENVO:01000221]:
-      ____tropical woodland biome [ENVO:01000220]:
-      ____savanna biome [ENVO:01000178]:
-      ______montane savanna biome [ENVO:01000223]:
-      ______flooded savanna biome [ENVO:01000190]:
-      ______temperate savanna biome [ENVO:01000189]:
-      ______tropical savanna biome [ENVO:01000188]:
-      ______subtropical savanna biome [ENVO:01000187]:
-      ________mediterranean savanna biome [ENVO:01000229]:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
   EnvMediumSoilEnum:
-    permissible_values:
-      pathogen-suppressive soil [ENVO:03600036]:
-      mangrove biome soil [ENVO:02000138]:
-      surface soil [ENVO:02000059]:
-      frost-susceptible soil [ENVO:01001638]:
-      bare soil [ENVO:01001616]:
-      frozen soil [ENVO:01001526]:
-      __friable-frozen soil [ENVO:01001528]:
-      __plastic-frozen soil [ENVO:01001527]:
-      __hard-frozen soil [ENVO:01001525]:
-      __frozen compost soil [ENVO:00005765]:
-      __cryosol [ENVO:00002236]:
-      ultisol [ENVO:01001397]:
-      __acrisol [ENVO:00002234]:
-      acidic soil [ENVO:01001185]:
-      bulk soil [ENVO:00005802]:
-      red soil [ENVO:00005790]:
-      upland soil [ENVO:00005786]:
-      __mountain forest soil [ENVO:00005769]:
-      __dune soil [ENVO:00002260]:
-      ornithogenic soil [ENVO:00005782]:
-      heat stressed soil [ENVO:00005781]:
-      greenhouse soil [ENVO:00005780]:
-      tropical soil [ENVO:00005778]:
-      pasture soil [ENVO:00005773]:
-      muddy soil [ENVO:00005771]:
-      orchid soil [ENVO:00005768]:
-      manured soil [ENVO:00005767]:
-      limed soil [ENVO:00005766]:
-      pond soil [ENVO:00005764]:
-      meadow soil [ENVO:00005761]:
-      burned soil [ENVO:00005760]:
-      lawn soil [ENVO:00005756]:
-      field soil [ENVO:00005755]:
-      __paddy field soil [ENVO:00005740]:
-      ____peaty paddy field soil [ENVO:00005776]:
-      ____alluvial paddy field soil [ENVO:00005759]:
-      fertilized soil [ENVO:00005754]:
-      sawah soil [ENVO:00005752]:
-      jungle soil [ENVO:00005751]:
-      grassland soil [ENVO:00005750]:
-      __steppe soil [ENVO:00005777]:
-      __savanna soil [ENVO:00005746]:
-      farm soil [ENVO:00005749]:
-      __rubber plantation soil [ENVO:00005788]:
-      __orchard soil [ENVO:00005772]:
-      dry soil [ENVO:00005748]:
-      compost soil [ENVO:00005747]:
-      roadside soil [ENVO:00005743]:
-      arable soil [ENVO:00005742]:
-      alpine soil [ENVO:00005741]:
-      alluvial soil [ENVO:00002871]:
-      __alluvial paddy field soil [ENVO:00005759]:
-      __alluvial swamp soil [ENVO:00005758]:
-      technosol [ENVO:00002275]:
-      stagnosol [ENVO:00002274]:
-      fluvisol [ENVO:00002273]:
-      garden soil [ENVO:00002263]:
-      __vegetable garden soil [ENVO:00005779]:
-      __allotment garden soil [ENVO:00005744]:
-      clay soil [ENVO:00002262]:
-      forest soil [ENVO:00002261]:
-      __eucalyptus forest soil [ENVO:00005787]:
-      __spruce forest soil [ENVO:00005784]:
-      __leafy wood soil [ENVO:00005783]:
-      __beech forest soil [ENVO:00005770]:
-      agricultural soil [ENVO:00002259]:
-      __bluegrass field soil [ENVO:00005789]:
-      loam [ENVO:00002258]:
-      __clay loam [ENVO:06105277]:
-      ____silty clay loam [ENVO:06105278]:
-      ____sandy clay loam [ENVO:06105276]:
-      __silty loam [ENVO:06105275]:
-      __sandy loam [ENVO:06105274]:
-      podzol [ENVO:00002257]:
-      regosol [ENVO:00002256]:
-      solonetz [ENVO:00002255]:
-      vertisol [ENVO:00002254]:
-      umbrisol [ENVO:00002253]:
-      solonchak [ENVO:00002252]:
-      planosol [ENVO:00002251]:
-      plinthosol [ENVO:00002250]:
-      phaeozem [ENVO:00002249]:
-      luvisol [ENVO:00002248]:
-      nitisol [ENVO:00002247]:
-      ferralsol [ENVO:00002246]:
-      gypsisol [ENVO:00002245]:
-      gleysol [ENVO:00002244]:
-      histosol [ENVO:00002243]:
-      __peat soil [ENVO:00005774]:
-      lixisol [ENVO:00002242]:
-      leptosol [ENVO:00002241]:
-      kastanozem [ENVO:00002240]:
-      calcisol [ENVO:00002239]:
-      durisol [ENVO:00002238]:
-      chernozem [ENVO:00002237]:
-      cambisol [ENVO:00002235]:
-      albeluvisol [ENVO:00002233]:
-      andosol [ENVO:00002232]:
-      __volcanic soil [ENVO:01001841]:
-      alisol [ENVO:00002231]:
-      anthrosol [ENVO:00002230]:
-      arenosol [ENVO:00002229]:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
   EnvLocalScaleSoilEnum:
-    permissible_values:
-      astronomical body part [ENVO:01000813]:
-      __coast [ENVO:01000687]:
-      __solid astronomical body part [ENVO:00000191]:
-      ______landform [ENVO:01001886]:
-      ______channel [ENVO:03000117]:
-      ________tunnel [ENVO:00000068]:
-      ______surface landform [ENVO:01001884]:
-      ________desert [ENVO:01001357]:
-      ________outcrop [ENVO:01000302]:
-      ________boulder field [ENVO:00000537]:
-      ________landfill [ENVO:00000533]:
-      ________hummock [ENVO:00000516]:
-      ________terrace [ENVO:00000508]:
-      ________peninsula [ENVO:00000305]:
-      ________shore [ENVO:00000304]:
-      __________lake shore [ENVO:00000382]:
-      ________dry lake [ENVO:00000277]:
-      ________karst [ENVO:00000175]:
-      ________isthmus [ENVO:00000174]:
-      ________badland [ENVO:00000127]:
-      ________volcanic feature [ENVO:00000094]:
-      __________volcanic cone [ENVO:00000398]:
-      ____________tuff cone [ENVO:01000664]:
-      ________beach [ENVO:00000091]:
-      ________plain [ENVO:00000086]:
-      ________cave [ENVO:00000067]:
-      ________spring [ENVO:00000027]:
-      ______slope [ENVO:00002000]:
-      ________talus slope [ENVO:01000334]:
-      ________hillside [ENVO:01000333]:
-      ________levee [ENVO:00000178]:
-      ________bank [ENVO:00000141]:
-      ________cliff [ENVO:00000087]:
-      ______peak [ENVO:00000480]:
-      ______depressed landform [ENVO:00000309]:
-      ________geographic basin [ENVO:03000015]:
-      __________valley [ENVO:00000100]:
-      ____________canyon [ENVO:00000169]:
-      ____________dry valley [ENVO:00000128]:
-      ____________glacial valley [ENVO:00000248]:
-      ________pit [ENVO:01001871]:
-      ________trench [ENVO:01000649]:
-      ________swale [ENVO:00000543]:
-      ________crater [ENVO:00000514]:
-      __________impact crater [ENVO:01001071]:
-      __________volcanic crater [ENVO:00000246]:
-      __________caldera [ENVO:00000096]:
-      ________channel of a watercourse [ENVO:00000395]:
-      __________strait [ENVO:00000394]:
-      __________dry stream [ENVO:00000278]:
-      ____________dry river [ENVO:01000995]:
-      __________artificial channel [ENVO:00000121]:
-      ____________plumbing drain [ENVO:01000924]:
-      ____________ditch [ENVO:00000037]:
-      ________sinkhole [ENVO:00000195]:
-      ______elevated landform [ENVO:00000176]:
-      ________flattened elevation [ENVO:01001491]:
-      __________butte [ENVO:00000287]:
-      __________plateau [ENVO:00000182]:
-      __________mesa [ENVO:00000179]:
-      ________pinnacle [ENVO:00000481]:
-      ________mount [ENVO:00000477]:
-      __________hill [ENVO:00000083]:
-      ____________dune [ENVO:00000170]:
-      __________mountain [ENVO:00000081]:
-      ________ridge [ENVO:00000283]:
-      ____part of a landmass [ENVO:01001781]:
-      ______peninsula [ENVO:00000305]:
-      ____geological fracture [ENVO:01000667]:
-      ______vein [ENVO:01000670]:
-      ______geological fault [ENVO:01000668]:
-      ________active geological fault [ENVO:01000669]:
-      ______volcano [ENVO:00000247]:
-      __field [ENVO:01000352]:
-      ____lava field [ENVO:01000437]:
-      ____gravel field [ENVO:00000548]:
-      ____woodland clearing [ENVO:00000444]:
-      ____agricultural field [ENVO:00000114]:
-      ____snow field [ENVO:00000146]:
-      __geographic feature [ENVO:00000000]:
-      ____hydrographic feature [ENVO:00000012]:
-      ______reef [ENVO:01001899]:
-      ______inlet [ENVO:00000475]:
-      ______bar [ENVO:00000167]:
-      ________tombolo [ENVO:00000420]:
-      ____anthropogenic geographic feature [ENVO:00000002]:
-      ______yard [ENVO:03600053]:
-      ________residential backyard [ENVO:03600033]:
-      ______market [ENVO:01000987]:
-      ______park [ENVO:00000562]:
-      ______well [ENVO:00000026]:
-      ______garden [ENVO:00000011]:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvBroadScaleWaterEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvMediumWaterEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
+  EnvLocalScaleWaterEnum:
+    in_subset:
+      - nmdc_env_triad_enums
+    permissible_values: {}
   OxyStatSampEnum:
     permissible_values:
       aerobic:
@@ -794,3 +588,10 @@ classes:
       - jgi_mt_data
     tree_root: true
 settings: [ ]
+subsets:
+  nmdc_env_triad_enums:
+    todos:
+      - replace membership in this subset with mappings between the individual environmental triad/context enums and the EnvO subProperties
+    see_also:
+      - https://github.com/EnvironmentOntology/envo/blob/1598-try-creating-the-new-see_also-from-pr-1597-with-protege-564/src/envo/envo-edit.owl
+      - http://purl.obolibrary.org/obo/ENVO_03605010
