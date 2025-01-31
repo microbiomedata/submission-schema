@@ -22,28 +22,14 @@ Note that the while this repo is named `submission-schema`, the generated artifa
 
 ### Updating the submission schema
 
-Here's how you can update the submission schema to use a new version of `nmdc-schema`:
+The version of `nmdc-schema` used as a basis when building the submission schema is controlled by a dependency in the `dev` group, specified in `pyproject.toml`. You can update the version used by running:
 
-1. Update the one occurrence of the `nmdc-schema` version number in `project.Makefile`:
+```shell
+poetry add nmdc-schema==X.Y.Z --group dev  # replace X.Y.Z with the desired version
+```
 
-    ```diff
-    local/nmdc.yaml:
-    -        wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.0.1/nmdc_schema/nmdc_materialized_patterns.yaml
-    +        wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.1.0/nmdc_schema/nmdc_materialized_patterns.yaml
-    ```
-
-2. Update all the `nmdc-schema` version numbers in `sheets_and_friends/tsv_in/import_slots_regardless.tsv`
-
-    ```diff
-    - Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.0.1/nmdc_schema/nmdc_materialized_patterns.yaml	abs_air_humidity ...
-    + Biosample	https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.1.0/nmdc_schema/nmdc_materialized_patterns.yaml	abs_air_humidity ...
-    ```
-    > That is one of the _many_ occurrences in that file.
-    >
-    > **Note:** The above search-and-replacement (of all occurrences in that file) can be done inside Vim via:
-    > ```vim
-    > :%s/nmdc-schema\/v11.0.1/nmdc-schema\/v11.1.0/g
-    > ```
+> [!NOTE]  
+> It is important to use the `==` version constraint to ensure the exact version is installed. 
 
 ### Building the submission schema
 

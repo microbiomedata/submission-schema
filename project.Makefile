@@ -34,7 +34,7 @@ sheets_and_friends-clean:
 	rm -rf sheets_and_friends/yaml_out/with_shuttles.yaml
 
 local/with_shuttles.yaml: src/nmdc_submission_schema/schema/nmdc_submission_schema_base.yaml \
-sheets_and_friends/tsv_in/import_slots_regardless.tsv
+sheets_and_friends/tsv_in/import_slots_regardless.tsv local/nmdc.yaml
 		$(RUN) do_shuttle \
 			--config_tsv  $(word 2,$^) \
 			--recipient_model $(word 1,$^) \
@@ -148,8 +148,8 @@ local/with_shuttles_yq.yaml: local/with_shuttles.yaml
 modifications-clean:
 	rm -rf sheets_and_friends/yaml_out/with_modifications.yaml
 
-local/nmdc.yaml:
-	wget -O $@ https://raw.githubusercontent.com/microbiomedata/nmdc-schema/v11.3.0/nmdc_schema/nmdc_materialized_patterns.yaml
+local/nmdc.yaml: poetry.lock
+	$(RUN) python src/nmdc_submission_schema/scripts/export_nmdc_schema.py -o $@
 
 # sheets-for-nmdc-submission-schema_validation_converter_empty.tsv
 local/with_modifications.yaml: local/with_shuttles_yq.yaml \
