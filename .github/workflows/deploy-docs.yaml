@@ -68,7 +68,7 @@ jobs:
         npm run build -- --outDir ../dist/_playground --base /${{ github.event.repository.name }}/_playground/
 
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+      uses: actions/upload-pages-artifact@v3
       with:
         path: dist
 
