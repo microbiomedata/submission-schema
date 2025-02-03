@@ -216,7 +216,8 @@ test-deploy-docs-gh-action: clean schema-clean src/nmdc_submission_schema/schema
 ################################################
 
 src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml: local/with_modifications.yaml project/thirdparty/GoldEcosystemTree.json
-	$(RUN) inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $@
+	$(RUN) inject-gold-pathway-terms -g $(word 2,$^) -i $< -o $<.tmp1
+	$(RUN) python src/nmdc_submission_schema/scripts/instrument_enums.py -i $<.tmp1 -o $@
 	#cp $< $@
 
 # remove the multivalued true annotation from these gloabl slot definitions for the sake of linkml-convert

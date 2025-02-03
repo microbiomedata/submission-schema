@@ -1,6 +1,6 @@
-import importlib.resources
-
 import click
+
+from nmdc_submission_schema.scripts import nmdc_schema_yaml_path
 
 
 @click.command()
@@ -9,8 +9,7 @@ def main(output_file):
     r"""
     Dumps a YAML representation of the NMDC Schema to the specified file.
     """
-    schema_file_name = 'nmdc_materialized_patterns.yaml'
-    with importlib.resources.open_text('nmdc_schema', schema_file_name) as input_file:
+    with open(nmdc_schema_yaml_path) as input_file:
         for line in input_file:
             output_file.write(line)
 
