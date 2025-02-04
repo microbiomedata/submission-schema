@@ -159,11 +159,11 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	required			true
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface	lat_lon	replace_attribute	string_serialization			{lat lon}
 PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended			true
-SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization			
+SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization
 SedimentInterface|SoilInterface	microbial_biomass_c	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
-SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization			
+SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization
 SedimentInterface|SoilInterface	microbial_biomass_n	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
-SoilInterface	non_microb_biomass	remove_attribute	string_serialization			
+SoilInterface	non_microb_biomass	remove_attribute	string_serialization
 SoilInterface	non_microb_biomass	replace_attribute	pattern			^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
 BuiltEnvInterface	occup_samp	replace_attribute	range			integer
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	replace_attribute	pattern			^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
@@ -251,7 +251,7 @@ EmslInterface	sample_shipped	replace_attribute	recommended			false
 EmslInterface	sample_type	replace_attribute	required			true
 EmslInterface	sample_type	replace_attribute	recommended			false
 EmslInterface	sample_type	overwrite_examples	examples			soil - water extract
-BuiltEnvInterface	season	remove_attribute	string_serialization			
+BuiltEnvInterface	season	remove_attribute	string_serialization
 BuiltEnvInterface	season	replace_attribute	range			SeasonEnum
 BuiltEnvInterface	season	overwrite_examples	examples			autumn
 SoilInterface	season_precpt	overwrite_examples	examples			0.4 inch|10.16 mm
@@ -317,3 +317,19 @@ WaterInterface	env_local_scale	replace_attribute	any_of.0.range			EnvLocalScaleW
 WaterInterface	env_local_scale	replace_attribute	any_of.1.range			string
 WaterInterface	env_medium	replace_attribute	any_of.0.range			EnvMediumWaterEnum
 WaterInterface	env_medium	replace_attribute	any_of.1.range			string
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	model	replace_attribute	required			true
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	model	replace_attribute	title			instrument model
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	model	replace_attribute	description			The model of the Illumina sequencing instrument used to generate the data.
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	model	replace_attribute	range			IlluminaInstrumentModelEnum
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	processing_institution	replace_attribute	title			processing institution
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	protocol_link	replace_attribute	title			protocol
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	protocol_link	replace_attribute	description			A URL to a description of the sequencing protocol used to generate the data.
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	protocol_link	replace_attribute	range			string
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_bioproject_identifiers	replace_attribute	title			INSDC bioproject identifier
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_bioproject_identifiers	replace_attribute	range			string
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_bioproject_identifiers	replace_attribute	multivalued			false
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_bioproject_identifiers	overwrite_examples	examples			bioproject:PRJNA366857
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_experiment_identifiers	replace_attribute	title			INSDC experiment identifiers
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_experiment_identifiers	replace_attribute	range			string
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_experiment_identifiers	replace_attribute	multivalued			false
+MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedDataInterface|MetatranscriptomeSequencingNonInterleavedDataInterface|MetatranscriptomeSequencingInterleavedDataInterface	insdc_experiment_identifiers	replace_attribute	description			If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.

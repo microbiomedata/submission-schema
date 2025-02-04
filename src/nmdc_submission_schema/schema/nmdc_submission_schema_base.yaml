@@ -335,6 +335,68 @@ slots:
     title: Sample ID
     rank: 1
     is_a: dh_section
+  sequencing_section:
+    title: Sequencing Details
+    rank: 11
+    is_a: dh_section
+  data_files_section:
+    title: Data Files
+    rank: 12
+    is_a: dh_section
+  read_1_url:
+    title: read 1 FASTQ
+    description: >-
+      URL for FASTQ file of read 1 of a pair of reads. If multiple runs were performed, separate 
+      each URL with a semi-colon.
+    range: string
+    required: true
+    slot_group: data_files_section
+    rank: 10
+  read_1_md5_checksum:
+    title: read 1 FASTQ MD5
+    description: >-
+      MD5 checksum of file in "read 1 FASTQ". If multiple runs were performed, separate each 
+      checksum with a semi-colon. The number of checksums should match the number of URLs in "read 
+      1 FASTQ".
+    range: string
+    slot_group: data_files_section
+    rank: 11
+  read_2_url:
+    title: read 2 FASTQ
+    description: >-
+      URL for FASTQ file of read 2 of a pair of reads. If multiple runs were performed, separate 
+      each URL with a semi-colon.
+    range: string
+    required: true
+    slot_group: data_files_section
+    rank: 12
+  read_2_md5_checksum:
+    title: read 2 FASTQ MD5
+    description: >-
+      MD5 checksum of file in "read 2 FASTQ". If multiple runs were performed, separate each 
+      checksum with a semi-colon. The number of checksums should match the number of URLs in "read 
+      2 FASTQ".
+    range: string
+    slot_group: data_files_section
+    rank: 13
+  interleaved_url:
+    title: interleaved FASTQ
+    description: >-
+      URL for FASTQ file of interleaved reads If multiple runs were performed, separate each URL 
+      with a semi-colon.
+    range: string
+    required: true
+    slot_group: data_files_section
+    rank: 14
+  interleaved_md5_checksum:
+    title: interleaved FASTQ MD5
+    description: >-
+      MD5 checksum of file in "interleaved FASTQ". If multiple runs were performed, separate each 
+      checksum with a semi-colon. The number of checksums should match the number of URLs in 
+      "interleaved FASTQ".
+    range: string
+    slot_group: data_files_section
+    rank: 15
 classes:
   AirInterface:
     annotations:
@@ -535,6 +597,42 @@ classes:
     mixins:
       - DhMultiviewCommonColumnsMixin
       - SampIdNewTermsMixin
+  MetagenomeSequencingNonInterleavedDataInterface:
+    description: Interface for non-interleaved metagenome sequencing data
+    title: Metagenome Sequence Data (Non-Interleaved)
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - read_1_url
+      - read_1_md5_checksum
+      - read_2_url
+      - read_2_md5_checksum
+  MetagenomeSequencingInterleavedDataInterface:
+    description: Interface for interleaved metagenome sequencing data
+    title: Metagenome Sequence Data (Interleaved)
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - interleaved_url
+      - interleaved_md5_checksum
+  MetatranscriptomeSequencingNonInterleavedDataInterface:
+    description: Interface for non-interleaved metatranscriptome sequencing data
+    title: Metatranscriptome Sequence Data (Non-Interleaved)
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - read_1_url
+      - read_1_md5_checksum
+      - read_2_url
+      - read_2_md5_checksum
+  MetatranscriptomeSequencingInterleavedDataInterface:
+    description: Interface for interleaved metatranscriptome sequencing data
+    title: Metatranscriptome Sequence Data (Interleaved)
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - interleaved_url
+      - interleaved_md5_checksum
   DhMultiviewCommonColumnsMixin:
     description: Mixin with DhMutliviewCommon Columns
     title: Dh Mutliview Common Columns
