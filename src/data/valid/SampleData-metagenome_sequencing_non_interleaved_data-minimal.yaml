@@ -1,0 +1,7 @@
+metagenome_sequencing_non_interleaved_data:
+  - samp_name: sample name
+    analysis_type:
+      - metagenomics
+    model: novaseq_6000
+    read_1_url: https://example.com/read1.fastq
+    read_2_url: https://example.com/read2.fastq

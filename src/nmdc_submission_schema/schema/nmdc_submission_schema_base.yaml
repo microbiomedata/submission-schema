@@ -295,6 +295,38 @@ slots:
     range: WaterInterface
     inlined: true
     inlined_as_list: true
+  metagenome_sequencing_non_interleaved_data:
+    description: >-
+      aggregation slot relating non-interleaved metagenome sequencing data collections to a 
+      SampleData container
+    multivalued: true
+    range: MetagenomeSequencingNonInterleavedDataInterface
+    inlined: true
+    inlined_as_list: true
+  metagenome_sequencing_interleaved_data:
+    description: >-
+      aggregation slot relating interleaved metagenome sequencing data collections to a SampleData 
+      container
+    multivalued: true
+    range: MetagenomeSequencingInterleavedDataInterface
+    inlined: true
+    inlined_as_list: true
+  metatranscriptome_sequencing_non_interleaved_data:
+    description: >-
+      aggregation slot relating non-interleaved metatranscriptome sequencing data collections to a 
+      SampleData container
+    multivalued: true
+    range: MetatranscriptomeSequencingNonInterleavedDataInterface
+    inlined: true
+    inlined_as_list: true
+  metatranscriptome_sequencing_interleaved_data:
+    description: >-
+      aggregation slot relating interleaved metatranscriptome sequencing data collections to a 
+      SampleData container
+    multivalued: true
+    range: MetatranscriptomeSequencingInterleavedDataInterface
+    inlined: true
+    inlined_as_list: true
   dh_section:
     description: dh_section grouping slot
   emsl_section:
@@ -684,6 +716,10 @@ classes:
       - jgi_mg_lr_data
       - jgi_mg_data
       - jgi_mt_data
+      - metagenome_sequencing_non_interleaved_data
+      - metagenome_sequencing_interleaved_data
+      - metatranscriptome_sequencing_non_interleaved_data
+      - metatranscriptome_sequencing_interleaved_data
     tree_root: true
 settings: [ ]
 subsets:

@@ -1,0 +1,7 @@
+metatranscriptome_sequencing_non_interleaved_data:
+  - samp_name: sample name
+    analysis_type:
+      - metatranscriptomics
+    model: solarix_7T
+    read_1_url: https://example.com/read1.fastq
+    read_2_url: https://example.com/read2.fastq
