@@ -1,0 +1,14 @@
+metatranscriptome_sequencing_non_interleaved_data:
+  - samp_name: sample name
+    analysis_type:
+      - metatranscriptomics
+    model: novaseq_6000
+    processing_institution: UCSD
+    protocol_link: https://example.com/protocol.html
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_experiment_identifiers: insdc.sra:ERX012345
+    read_1_url: https://example.com/read1.fastq
+    read_1_md5_checksum: 0123456789abcdef0123456789abcdef
+    read_2_url: https://example.com/read2.fastq
+    read_2_md5_checksum: 0123456789abcdef0123456789abcdef
+

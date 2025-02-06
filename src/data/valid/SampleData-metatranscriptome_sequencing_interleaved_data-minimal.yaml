@@ -1,0 +1,6 @@
+metatranscriptome_sequencing_interleaved_data:
+  - samp_name: sample name
+    analysis_type:
+      - metatranscriptomics
+    model: novaseq_6000
+    interleaved_url: https://example.com/data.fastq

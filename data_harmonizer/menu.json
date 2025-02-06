@@ -74,6 +74,26 @@
       "name": "WaterInterface",
       "status": "published",
       "display": true
+    },
+    "MetagenomeSequencingNonInterleavedDataInterface": {
+      "name": "MetagenomeSequencingNonInterleavedDataInterface",
+      "status": "published",
+      "display": true
+    },
+    "MetagenomeSequencingInterleavedDataInterface": {
+      "name": "MetagenomeSequencingInterleavedDataInterface",
+      "status": "published",
+      "display": true
+    },
+    "MetatranscriptomeSequencingNonInterleavedDataInterface": {
+      "name": "MetatranscriptomeSequencingNonInterleavedDataInterface",
+      "status": "published",
+      "display": true
+    },
+    "MetatranscriptomeSequencingInterleavedDataInterface": {
+      "name": "MetatranscriptomeSequencingInterleavedDataInterface",
+      "status": "published",
+      "display": true
     }
   }
 }
