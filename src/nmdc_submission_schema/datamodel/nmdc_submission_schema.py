@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-22T09:09:30
+# Generation date: 2025-02-13T10:55:18
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -185,12 +185,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class DecimalDegree(float):
@@ -201,12 +201,28 @@ class DecimalDegree(float):
     type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
 
 
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+
+
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
+
+
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
 
 
 class Float(float):
@@ -217,22 +233,6 @@ class Float(float):
     type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
-
-
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
-
-
 class LanguageCode(str):
     """ A language code conforming to ISO_639-1 """
     type_class_uri = XSD["language"]
@@ -241,12 +241,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Boolean(Bool):
@@ -353,6 +353,14 @@ class Sparqlpath(str):
     type_model_uri = NMDC_SUB_SCHEMA.Sparqlpath
 
 
+class ExternalIdentifier(Uriorcurie):
+    """ A CURIE representing an external identifier """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "external_identifier"
+    type_model_uri = NMDC_SUB_SCHEMA.ExternalIdentifier
+
+
 # Class references
 class DhMultiviewCommonColumnsMixinSampName(extended_str):
     pass
@@ -364,6 +372,338 @@ class NamedThingId(URIorCURIE):
 
 class GeneProductId(NamedThingId):
     pass
+
+
+@dataclass(repr=False)
+class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
+    """
+    Interface for non-interleaved metagenome sequencing data
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetagenomeSequencingNonInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetagenomeSequencingNonInterleavedDataInterface"
+    class_name: ClassVar[str] = "MetagenomeSequencingNonInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface
+
+    read_1_url: str = None
+    read_2_url: str = None
+    model: Union[str, "IlluminaInstrumentModelEnum"] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    read_1_md5_checksum: Optional[str] = None
+    read_2_md5_checksum: Optional[str] = None
+    processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
+    protocol_link: Optional[str] = None
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    samp_name: Optional[str] = None
+    source_mat_id: Optional[str] = None
+    oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.read_1_url):
+            self.MissingRequiredField("read_1_url")
+        if not isinstance(self.read_1_url, str):
+            self.read_1_url = str(self.read_1_url)
+
+        if self._is_empty(self.read_2_url):
+            self.MissingRequiredField("read_2_url")
+        if not isinstance(self.read_2_url, str):
+            self.read_2_url = str(self.read_2_url)
+
+        if self._is_empty(self.model):
+            self.MissingRequiredField("model")
+        if not isinstance(self.model, IlluminaInstrumentModelEnum):
+            self.model = IlluminaInstrumentModelEnum(self.model)
+
+        if self._is_empty(self.analysis_type):
+            self.MissingRequiredField("analysis_type")
+        if not isinstance(self.analysis_type, list):
+            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
+        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
+
+        if self.read_1_md5_checksum is not None and not isinstance(self.read_1_md5_checksum, str):
+            self.read_1_md5_checksum = str(self.read_1_md5_checksum)
+
+        if self.read_2_md5_checksum is not None and not isinstance(self.read_2_md5_checksum, str):
+            self.read_2_md5_checksum = str(self.read_2_md5_checksum)
+
+        if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
+            self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
+
+        if self.protocol_link is not None and not isinstance(self.protocol_link, str):
+            self.protocol_link = str(self.protocol_link)
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_experiment_identifiers]
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_experiment_identifiers]
+
+        if self.samp_name is not None and not isinstance(self.samp_name, str):
+            self.samp_name = str(self.samp_name)
+
+        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
+            self.source_mat_id = str(self.source_mat_id)
+
+        if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
+            self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
+    """
+    Interface for interleaved metagenome sequencing data
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetagenomeSequencingInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetagenomeSequencingInterleavedDataInterface"
+    class_name: ClassVar[str] = "MetagenomeSequencingInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface
+
+    interleaved_url: str = None
+    model: Union[str, "IlluminaInstrumentModelEnum"] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    interleaved_md5_checksum: Optional[str] = None
+    processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
+    protocol_link: Optional[str] = None
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    samp_name: Optional[str] = None
+    source_mat_id: Optional[str] = None
+    oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.interleaved_url):
+            self.MissingRequiredField("interleaved_url")
+        if not isinstance(self.interleaved_url, str):
+            self.interleaved_url = str(self.interleaved_url)
+
+        if self._is_empty(self.model):
+            self.MissingRequiredField("model")
+        if not isinstance(self.model, IlluminaInstrumentModelEnum):
+            self.model = IlluminaInstrumentModelEnum(self.model)
+
+        if self._is_empty(self.analysis_type):
+            self.MissingRequiredField("analysis_type")
+        if not isinstance(self.analysis_type, list):
+            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
+        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
+
+        if self.interleaved_md5_checksum is not None and not isinstance(self.interleaved_md5_checksum, str):
+            self.interleaved_md5_checksum = str(self.interleaved_md5_checksum)
+
+        if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
+            self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
+
+        if self.protocol_link is not None and not isinstance(self.protocol_link, str):
+            self.protocol_link = str(self.protocol_link)
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_experiment_identifiers]
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_experiment_identifiers]
+
+        if self.samp_name is not None and not isinstance(self.samp_name, str):
+            self.samp_name = str(self.samp_name)
+
+        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
+            self.source_mat_id = str(self.source_mat_id)
+
+        if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
+            self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
+    """
+    Interface for non-interleaved metatranscriptome sequencing data
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetatranscriptomeSequencingNonInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetatranscriptomeSequencingNonInterleavedDataInterface"
+    class_name: ClassVar[str] = "MetatranscriptomeSequencingNonInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface
+
+    read_1_url: str = None
+    read_2_url: str = None
+    model: Union[str, "IlluminaInstrumentModelEnum"] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    read_1_md5_checksum: Optional[str] = None
+    read_2_md5_checksum: Optional[str] = None
+    processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
+    protocol_link: Optional[str] = None
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    samp_name: Optional[str] = None
+    source_mat_id: Optional[str] = None
+    oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.read_1_url):
+            self.MissingRequiredField("read_1_url")
+        if not isinstance(self.read_1_url, str):
+            self.read_1_url = str(self.read_1_url)
+
+        if self._is_empty(self.read_2_url):
+            self.MissingRequiredField("read_2_url")
+        if not isinstance(self.read_2_url, str):
+            self.read_2_url = str(self.read_2_url)
+
+        if self._is_empty(self.model):
+            self.MissingRequiredField("model")
+        if not isinstance(self.model, IlluminaInstrumentModelEnum):
+            self.model = IlluminaInstrumentModelEnum(self.model)
+
+        if self._is_empty(self.analysis_type):
+            self.MissingRequiredField("analysis_type")
+        if not isinstance(self.analysis_type, list):
+            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
+        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
+
+        if self.read_1_md5_checksum is not None and not isinstance(self.read_1_md5_checksum, str):
+            self.read_1_md5_checksum = str(self.read_1_md5_checksum)
+
+        if self.read_2_md5_checksum is not None and not isinstance(self.read_2_md5_checksum, str):
+            self.read_2_md5_checksum = str(self.read_2_md5_checksum)
+
+        if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
+            self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
+
+        if self.protocol_link is not None and not isinstance(self.protocol_link, str):
+            self.protocol_link = str(self.protocol_link)
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_experiment_identifiers]
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_experiment_identifiers]
+
+        if self.samp_name is not None and not isinstance(self.samp_name, str):
+            self.samp_name = str(self.samp_name)
+
+        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
+            self.source_mat_id = str(self.source_mat_id)
+
+        if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
+            self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
+    """
+    Interface for interleaved metatranscriptome sequencing data
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetatranscriptomeSequencingInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetatranscriptomeSequencingInterleavedDataInterface"
+    class_name: ClassVar[str] = "MetatranscriptomeSequencingInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface
+
+    interleaved_url: str = None
+    model: Union[str, "IlluminaInstrumentModelEnum"] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    interleaved_md5_checksum: Optional[str] = None
+    processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
+    protocol_link: Optional[str] = None
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    samp_name: Optional[str] = None
+    source_mat_id: Optional[str] = None
+    oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.interleaved_url):
+            self.MissingRequiredField("interleaved_url")
+        if not isinstance(self.interleaved_url, str):
+            self.interleaved_url = str(self.interleaved_url)
+
+        if self._is_empty(self.model):
+            self.MissingRequiredField("model")
+        if not isinstance(self.model, IlluminaInstrumentModelEnum):
+            self.model = IlluminaInstrumentModelEnum(self.model)
+
+        if self._is_empty(self.analysis_type):
+            self.MissingRequiredField("analysis_type")
+        if not isinstance(self.analysis_type, list):
+            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
+        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
+
+        if self.interleaved_md5_checksum is not None and not isinstance(self.interleaved_md5_checksum, str):
+            self.interleaved_md5_checksum = str(self.interleaved_md5_checksum)
+
+        if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
+            self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
+
+        if self.protocol_link is not None and not isinstance(self.protocol_link, str):
+            self.protocol_link = str(self.protocol_link)
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, ExternalIdentifier) else ExternalIdentifier(v) for v in self.insdc_experiment_identifiers]
+
+        if not isinstance(self.insdc_bioproject_identifiers, list):
+            self.insdc_bioproject_identifiers = [self.insdc_bioproject_identifiers] if self.insdc_bioproject_identifiers is not None else []
+        self.insdc_bioproject_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_bioproject_identifiers]
+
+        if not isinstance(self.insdc_experiment_identifiers, list):
+            self.insdc_experiment_identifiers = [self.insdc_experiment_identifiers] if self.insdc_experiment_identifiers is not None else []
+        self.insdc_experiment_identifiers = [v if isinstance(v, str) else str(v) for v in self.insdc_experiment_identifiers]
+
+        if self.samp_name is not None and not isinstance(self.samp_name, str):
+            self.samp_name = str(self.samp_name)
+
+        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
+            self.source_mat_id = str(self.source_mat_id)
+
+        if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
+            self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -9662,6 +10002,10 @@ class SampleData(YAMLRoot):
     jgi_mg_lr_data: Optional[Union[Union[dict, JgiMgLrInterface], List[Union[dict, JgiMgLrInterface]]]] = empty_list()
     jgi_mg_data: Optional[Union[Union[dict, JgiMgInterface], List[Union[dict, JgiMgInterface]]]] = empty_list()
     jgi_mt_data: Optional[Union[Union[dict, JgiMtInterface], List[Union[dict, JgiMtInterface]]]] = empty_list()
+    metagenome_sequencing_non_interleaved_data: Optional[Union[Union[dict, MetagenomeSequencingNonInterleavedDataInterface], List[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]] = empty_list()
+    metagenome_sequencing_interleaved_data: Optional[Union[Union[dict, MetagenomeSequencingInterleavedDataInterface], List[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]] = empty_list()
+    metatranscriptome_sequencing_non_interleaved_data: Optional[Union[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]] = empty_list()
+    metatranscriptome_sequencing_interleaved_data: Optional[Union[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.air_data, list):
@@ -9715,6 +10059,22 @@ class SampleData(YAMLRoot):
         if not isinstance(self.jgi_mt_data, list):
             self.jgi_mt_data = [self.jgi_mt_data] if self.jgi_mt_data is not None else []
         self.jgi_mt_data = [v if isinstance(v, JgiMtInterface) else JgiMtInterface(**as_dict(v)) for v in self.jgi_mt_data]
+
+        if not isinstance(self.metagenome_sequencing_non_interleaved_data, list):
+            self.metagenome_sequencing_non_interleaved_data = [self.metagenome_sequencing_non_interleaved_data] if self.metagenome_sequencing_non_interleaved_data is not None else []
+        self.metagenome_sequencing_non_interleaved_data = [v if isinstance(v, MetagenomeSequencingNonInterleavedDataInterface) else MetagenomeSequencingNonInterleavedDataInterface(**as_dict(v)) for v in self.metagenome_sequencing_non_interleaved_data]
+
+        if not isinstance(self.metagenome_sequencing_interleaved_data, list):
+            self.metagenome_sequencing_interleaved_data = [self.metagenome_sequencing_interleaved_data] if self.metagenome_sequencing_interleaved_data is not None else []
+        self.metagenome_sequencing_interleaved_data = [v if isinstance(v, MetagenomeSequencingInterleavedDataInterface) else MetagenomeSequencingInterleavedDataInterface(**as_dict(v)) for v in self.metagenome_sequencing_interleaved_data]
+
+        if not isinstance(self.metatranscriptome_sequencing_non_interleaved_data, list):
+            self.metatranscriptome_sequencing_non_interleaved_data = [self.metatranscriptome_sequencing_non_interleaved_data] if self.metatranscriptome_sequencing_non_interleaved_data is not None else []
+        self.metatranscriptome_sequencing_non_interleaved_data = [v if isinstance(v, MetatranscriptomeSequencingNonInterleavedDataInterface) else MetatranscriptomeSequencingNonInterleavedDataInterface(**as_dict(v)) for v in self.metatranscriptome_sequencing_non_interleaved_data]
+
+        if not isinstance(self.metatranscriptome_sequencing_interleaved_data, list):
+            self.metatranscriptome_sequencing_interleaved_data = [self.metatranscriptome_sequencing_interleaved_data] if self.metatranscriptome_sequencing_interleaved_data is not None else []
+        self.metatranscriptome_sequencing_interleaved_data = [v if isinstance(v, MetatranscriptomeSequencingInterleavedDataInterface) else MetatranscriptomeSequencingInterleavedDataInterface(**as_dict(v)) for v in self.metatranscriptome_sequencing_interleaved_data]
 
         super().__post_init__(**kwargs)
 
@@ -9810,6 +10170,33 @@ class GeneProduct(NamedThing):
         if self._is_empty(self.type):
             self.MissingRequiredField("type")
         self.type = str(self.class_class_curie)
+
+
+@dataclass(repr=False)
+class Protocol(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = NMDC["Protocol"]
+    class_class_curie: ClassVar[str] = "nmdc:Protocol"
+    class_name: ClassVar[str] = "Protocol"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.Protocol
+
+    type: Union[str, URIorCURIE] = None
+    url: Optional[str] = None
+    name: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.type):
+            self.MissingRequiredField("type")
+        self.type = str(self.class_class_curie)
+
+        if self.url is not None and not isinstance(self.url, str):
+            self.url = str(self.url)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        super().__post_init__(**kwargs)
 
 
 # Enumerations
@@ -11963,6 +12350,116 @@ class RNASampleFormatEnum(EnumDefinitionImpl):
             PermissibleValue(text="Gentegra-DNA"))
         setattr(cls, "Gentegra-RNA",
             PermissibleValue(text="Gentegra-RNA"))
+
+class InstrumentModelEnum(EnumDefinitionImpl):
+
+    exploris_21T = PermissibleValue(text="exploris_21T")
+    exploris_240 = PermissibleValue(text="exploris_240")
+    exploris_480 = PermissibleValue(text="exploris_480")
+    ltq_orbitrap_velos = PermissibleValue(text="ltq_orbitrap_velos")
+    orbitrap_fusion_lumos = PermissibleValue(text="orbitrap_fusion_lumos")
+    orbitrap_eclipse_tribid = PermissibleValue(text="orbitrap_eclipse_tribid")
+    orbitrap_q_exactive = PermissibleValue(text="orbitrap_q_exactive")
+    solarix_7T = PermissibleValue(text="solarix_7T")
+    solarix_12T = PermissibleValue(text="solarix_12T")
+    solarix_15T = PermissibleValue(text="solarix_15T")
+    agilent_8890A = PermissibleValue(text="agilent_8890A")
+    agilent_7980A = PermissibleValue(text="agilent_7980A")
+    vortex_genie_2 = PermissibleValue(text="vortex_genie_2")
+    novaseq = PermissibleValue(text="novaseq")
+    novaseq_6000 = PermissibleValue(
+        text="novaseq_6000",
+        meaning=OBI["0002630"])
+    novaseq_x = PermissibleValue(text="novaseq_x")
+    hiseq = PermissibleValue(text="hiseq")
+    hiseq_1000 = PermissibleValue(
+        text="hiseq_1000",
+        meaning=OBI["0002022"])
+    hiseq_1500 = PermissibleValue(
+        text="hiseq_1500",
+        meaning=OBI["0003386"])
+    hiseq_2000 = PermissibleValue(
+        text="hiseq_2000",
+        meaning=OBI["0002001"])
+    hiseq_2500 = PermissibleValue(
+        text="hiseq_2500",
+        meaning=OBI["0002002"])
+    hiseq_3000 = PermissibleValue(
+        text="hiseq_3000",
+        meaning=OBI["0002048"])
+    hiseq_4000 = PermissibleValue(
+        text="hiseq_4000",
+        meaning=OBI["0002049"])
+    hiseq_x_ten = PermissibleValue(
+        text="hiseq_x_ten",
+        meaning=OBI["0002129"])
+    miniseq = PermissibleValue(
+        text="miniseq",
+        meaning=OBI["0003114"])
+    miseq = PermissibleValue(
+        text="miseq",
+        meaning=OBI["0002003"])
+    nextseq_1000 = PermissibleValue(
+        text="nextseq_1000",
+        meaning=OBI["0003606"])
+    nextseq = PermissibleValue(text="nextseq")
+    nextseq_500 = PermissibleValue(
+        text="nextseq_500",
+        meaning=OBI["0002021"])
+    nextseq_550 = PermissibleValue(
+        text="nextseq_550",
+        meaning=OBI["0003387"])
+    gridion = PermissibleValue(
+        text="gridion",
+        meaning=OBI["0002751"])
+    minion = PermissibleValue(
+        text="minion",
+        meaning=OBI["0002750"])
+    promethion = PermissibleValue(
+        text="promethion",
+        meaning=OBI["0002752"])
+    rs_II = PermissibleValue(
+        text="rs_II",
+        meaning=OBI["0002012"])
+    sequel = PermissibleValue(
+        text="sequel",
+        meaning=OBI["0002632"])
+    sequel_II = PermissibleValue(
+        text="sequel_II",
+        meaning=OBI["0002633"])
+    revio = PermissibleValue(text="revio")
+
+    _defn = EnumDefinition(
+        name="InstrumentModelEnum",
+    )
+
+class ProcessingInstitutionEnum(EnumDefinitionImpl):
+
+    UCSD = PermissibleValue(
+        text="UCSD",
+        meaning=None)
+    JGI = PermissibleValue(
+        text="JGI",
+        meaning=None)
+    EMSL = PermissibleValue(
+        text="EMSL",
+        meaning=None)
+    Battelle = PermissibleValue(
+        text="Battelle",
+        meaning=None)
+    ANL = PermissibleValue(
+        text="ANL",
+        meaning=None)
+    UCD_Genome_Center = PermissibleValue(
+        text="UCD_Genome_Center",
+        meaning=None)
+    Azenta = PermissibleValue(
+        text="Azenta",
+        meaning=None)
+
+    _defn = EnumDefinition(
+        name="ProcessingInstitutionEnum",
+    )
 
 class EcosystemEnum(EnumDefinitionImpl):
 
@@ -14259,6 +14756,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Large intestine content"))
         setattr(cls, "Lateral fornices",
             PermissibleValue(text="Lateral fornices"))
+        setattr(cls, "Lava tube",
+            PermissibleValue(text="Lava tube"))
         setattr(cls, "Leaf lesion",
             PermissibleValue(text="Leaf lesion"))
         setattr(cls, "Leaf nodule",
@@ -15001,6 +15500,59 @@ class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
         setattr(cls, "Wetland zone",
             PermissibleValue(text="Wetland zone"))
 
+class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
+    """
+    Derived from InstrumentModelEnum by filtering for Illumina models
+    """
+    novaseq = PermissibleValue(text="novaseq")
+    novaseq_6000 = PermissibleValue(
+        text="novaseq_6000",
+        meaning=OBI["0002630"])
+    novaseq_x = PermissibleValue(text="novaseq_x")
+    hiseq = PermissibleValue(text="hiseq")
+    hiseq_1000 = PermissibleValue(
+        text="hiseq_1000",
+        meaning=OBI["0002022"])
+    hiseq_1500 = PermissibleValue(
+        text="hiseq_1500",
+        meaning=OBI["0003386"])
+    hiseq_2000 = PermissibleValue(
+        text="hiseq_2000",
+        meaning=OBI["0002001"])
+    hiseq_2500 = PermissibleValue(
+        text="hiseq_2500",
+        meaning=OBI["0002002"])
+    hiseq_3000 = PermissibleValue(
+        text="hiseq_3000",
+        meaning=OBI["0002048"])
+    hiseq_4000 = PermissibleValue(
+        text="hiseq_4000",
+        meaning=OBI["0002049"])
+    hiseq_x_ten = PermissibleValue(
+        text="hiseq_x_ten",
+        meaning=OBI["0002129"])
+    miniseq = PermissibleValue(
+        text="miniseq",
+        meaning=OBI["0003114"])
+    miseq = PermissibleValue(
+        text="miseq",
+        meaning=OBI["0002003"])
+    nextseq_1000 = PermissibleValue(
+        text="nextseq_1000",
+        meaning=OBI["0003606"])
+    nextseq = PermissibleValue(text="nextseq")
+    nextseq_500 = PermissibleValue(
+        text="nextseq_500",
+        meaning=OBI["0002021"])
+    nextseq_550 = PermissibleValue(
+        text="nextseq_550",
+        meaning=OBI["0003387"])
+
+    _defn = EnumDefinition(
+        name="IlluminaInstrumentModelEnum",
+        description="Derived from InstrumentModelEnum by filtering for Illumina models",
+    )
+
 class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -15136,12 +15688,12 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="acid mine drainage [ENVO:00001997]"))
         setattr(cls, "agricultural field [ENVO:00000114]",
             PermissibleValue(text="agricultural field [ENVO:00000114]"))
-        setattr(cls, "algal bloom [ENVO:2000004]",
-            PermissibleValue(text="algal bloom [ENVO:2000004]"))
         setattr(cls, "anoxic lake [ENVO:01001072]",
             PermissibleValue(text="anoxic lake [ENVO:01001072]"))
         setattr(cls, "aquaculture farm [ENVO:03600074]",
             PermissibleValue(text="aquaculture farm [ENVO:03600074]"))
+        setattr(cls, "aquifer [ENVO:00012408]",
+            PermissibleValue(text="aquifer [ENVO:00012408]"))
         setattr(cls, "archipelago [ENVO:00000220]",
             PermissibleValue(text="archipelago [ENVO:00000220]"))
         setattr(cls, "beach [ENVO:00000091]",
@@ -15150,6 +15702,8 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="biofilm [ENVO:00002034]"))
         setattr(cls, "black smoker [ENVO:00000218]",
             PermissibleValue(text="black smoker [ENVO:00000218]"))
+        setattr(cls, "cave [ENVO:00000067]",
+            PermissibleValue(text="cave [ENVO:00000067]"))
         setattr(cls, "coast [ENVO:01000687]",
             PermissibleValue(text="coast [ENVO:01000687]"))
         setattr(cls, "cold seep [ENVO:01000263]",
@@ -15188,6 +15742,8 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="hadalpelagic zone [ENVO:00000214]"))
         setattr(cls, "harbour [ENVO:00000463]",
             PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "headwater [ENVO:00000153]",
+            PermissibleValue(text="headwater [ENVO:00000153]"))
         setattr(cls, "hot spring [ENVO:00000051]",
             PermissibleValue(text="hot spring [ENVO:00000051]"))
         setattr(cls, "hydrothermal vent [ENVO:00000215]",
@@ -15200,12 +15756,8 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="intertidal zone [ENVO:00000316]"))
         setattr(cls, "lake [ENVO:00000020]",
             PermissibleValue(text="lake [ENVO:00000020]"))
-        setattr(cls, "lentic water body [ENVO:01000617]",
-            PermissibleValue(text="lentic water body [ENVO:01000617]"))
         setattr(cls, "littoral zone [ENVO:01000407]",
             PermissibleValue(text="littoral zone [ENVO:01000407]"))
-        setattr(cls, "lotic water body [ENVO:01000618]",
-            PermissibleValue(text="lotic water body [ENVO:01000618]"))
         setattr(cls, "mangrove swamp [ENVO:00000057]",
             PermissibleValue(text="mangrove swamp [ENVO:00000057]"))
         setattr(cls, "marine aphotic zone [ENVO:00000210]",
@@ -15230,6 +15782,8 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="metalimnion [ENVO:00002132]"))
         setattr(cls, "microbial mat [ENVO:01000008]",
             PermissibleValue(text="microbial mat [ENVO:01000008]"))
+        setattr(cls, "mine [ENVO:00000076]",
+            PermissibleValue(text="mine [ENVO:00000076]"))
         setattr(cls, "mine drainage [ENVO:00001996]",
             PermissibleValue(text="mine drainage [ENVO:00001996]"))
         setattr(cls, "mud volcano [ENVO:00000402]",
@@ -15244,16 +15798,22 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="oil seep [ENVO:00002063]"))
         setattr(cls, "oil spill [ENVO:00002061]",
             PermissibleValue(text="oil spill [ENVO:00002061]"))
+        setattr(cls, "peatland [ENVO:00000044]",
+            PermissibleValue(text="peatland [ENVO:00000044]"))
+        setattr(cls, "pit [ENVO:01001871]",
+            PermissibleValue(text="pit [ENVO:01001871]"))
         setattr(cls, "pond [ENVO:00000033]",
             PermissibleValue(text="pond [ENVO:00000033]"))
         setattr(cls, "puddle of water [ENVO:01000871]",
             PermissibleValue(text="puddle of water [ENVO:01000871]"))
+        setattr(cls, "reservoir [ENVO:00000025]",
+            PermissibleValue(text="reservoir [ENVO:00000025]"))
         setattr(cls, "riffle [ENVO:00000148]",
             PermissibleValue(text="riffle [ENVO:00000148]"))
         setattr(cls, "river [ENVO:00000022]",
             PermissibleValue(text="river [ENVO:00000022]"))
-        setattr(cls, "river bed [ENVO:00000384]",
-            PermissibleValue(text="river bed [ENVO:00000384]"))
+        setattr(cls, "saline evaporation pond [ENVO:00000055]",
+            PermissibleValue(text="saline evaporation pond [ENVO:00000055]"))
         setattr(cls, "saline marsh [ENVO:00000054]",
             PermissibleValue(text="saline marsh [ENVO:00000054]"))
         setattr(cls, "sea [ENVO:00000016]",
@@ -15276,16 +15836,24 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="stream run [ENVO:03600095]"))
         setattr(cls, "subglacial lake [ENVO:03000120]",
             PermissibleValue(text="subglacial lake [ENVO:03000120]"))
+        setattr(cls, "subterranean lake [ENVO:02000145]",
+            PermissibleValue(text="subterranean lake [ENVO:02000145]"))
         setattr(cls, "swamp ecosystem [ENVO:00000233]",
             PermissibleValue(text="swamp ecosystem [ENVO:00000233]"))
-        setattr(cls, "thermocline [ENVO:00002269]",
-            PermissibleValue(text="thermocline [ENVO:00002269]"))
         setattr(cls, "volcano [ENVO:00000247]",
             PermissibleValue(text="volcano [ENVO:00000247]"))
         setattr(cls, "water surface [ENVO:01001191]",
             PermissibleValue(text="water surface [ENVO:01001191]"))
+        setattr(cls, "water tap [ENVO:03600052]",
+            PermissibleValue(text="water tap [ENVO:03600052]"))
+        setattr(cls, "water well [ENVO:01000002]",
+            PermissibleValue(text="water well [ENVO:01000002]"))
         setattr(cls, "wetland ecosystem [ENVO:01001209]",
             PermissibleValue(text="wetland ecosystem [ENVO:01001209]"))
+        setattr(cls, "whale fall [ENVO:01000140]",
+            PermissibleValue(text="whale fall [ENVO:01000140]"))
+        setattr(cls, "wood fall [ENVO:01000142]",
+            PermissibleValue(text="wood fall [ENVO:01000142]"))
 
 class EnvMediumWaterEnum(EnumDefinitionImpl):
 
@@ -15955,6 +16523,542 @@ class EnvMediumSoilEnum(EnumDefinitionImpl):
         setattr(cls, "vertisol [ENVO:00002254]",
             PermissibleValue(text="vertisol [ENVO:00002254]"))
 
+class EnvBroadScaleSedimentEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScaleSedimentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "estuarine biome [ENVO:01000020]",
+            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
+        setattr(cls, "freshwater biome [ENVO:00000873]",
+            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
+        setattr(cls, "freshwater lake biome [ENVO:01000252]",
+            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
+        setattr(cls, "freshwater river biome [ENVO:01000253]",
+            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
+        setattr(cls, "large river delta biome [ENVO:00000889]",
+            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
+        setattr(cls, "mangrove biome [ENVO:01000181]",
+            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
+        setattr(cls, "marginal sea biome [ENVO:01000046]",
+            PermissibleValue(text="marginal sea biome [ENVO:01000046]"))
+        setattr(cls, "marine benthic biome [ENVO:01000024]",
+            PermissibleValue(text="marine benthic biome [ENVO:01000024]"))
+        setattr(cls, "marine biome [ENVO:00000447]",
+            PermissibleValue(text="marine biome [ENVO:00000447]"))
+        setattr(cls, "marine cold seep biome [ENVO:01000127]",
+            PermissibleValue(text="marine cold seep biome [ENVO:01000127]"))
+        setattr(cls, "marine coral reef biome [ENVO:01000049]",
+            PermissibleValue(text="marine coral reef biome [ENVO:01000049]"))
+        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
+            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
+        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
+            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
+        setattr(cls, "marine subtidal rocky reef biome [ENVO:01000050]",
+            PermissibleValue(text="marine subtidal rocky reef biome [ENVO:01000050]"))
+        setattr(cls, "xeric basin biome [ENVO:00000893]",
+            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
+
+class EnvLocalScaleSedimentEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvLocalScaleSedimentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "archipelago [ENVO:00000220]",
+            PermissibleValue(text="archipelago [ENVO:00000220]"))
+        setattr(cls, "bank [ENVO:00000141]",
+            PermissibleValue(text="bank [ENVO:00000141]"))
+        setattr(cls, "bar [ENVO:00000167]",
+            PermissibleValue(text="bar [ENVO:00000167]"))
+        setattr(cls, "bay [ENVO:00000032]",
+            PermissibleValue(text="bay [ENVO:00000032]"))
+        setattr(cls, "beach [ENVO:00000091]",
+            PermissibleValue(text="beach [ENVO:00000091]"))
+        setattr(cls, "brackish estuary [ENVO:00002137]",
+            PermissibleValue(text="brackish estuary [ENVO:00002137]"))
+        setattr(cls, "brackish lake [ENVO:00000540]",
+            PermissibleValue(text="brackish lake [ENVO:00000540]"))
+        setattr(cls, "cave [ENVO:00000067]",
+            PermissibleValue(text="cave [ENVO:00000067]"))
+        setattr(cls, "coast [ENVO:01000687]",
+            PermissibleValue(text="coast [ENVO:01000687]"))
+        setattr(cls, "coastal water body [ENVO:02000049]",
+            PermissibleValue(text="coastal water body [ENVO:02000049]"))
+        setattr(cls, "cold seep [ENVO:01000263]",
+            PermissibleValue(text="cold seep [ENVO:01000263]"))
+        setattr(cls, "continental margin [ENVO:01000298]",
+            PermissibleValue(text="continental margin [ENVO:01000298]"))
+        setattr(cls, "continental shelf [ENVO:00000223]",
+            PermissibleValue(text="continental shelf [ENVO:00000223]"))
+        setattr(cls, "cryoconite hole [ENVO:03000039]",
+            PermissibleValue(text="cryoconite hole [ENVO:03000039]"))
+        setattr(cls, "eutrophic lake [ENVO:01000548]",
+            PermissibleValue(text="eutrophic lake [ENVO:01000548]"))
+        setattr(cls, "fjord [ENVO:00000039]",
+            PermissibleValue(text="fjord [ENVO:00000039]"))
+        setattr(cls, "flood plain [ENVO:00000255]",
+            PermissibleValue(text="flood plain [ENVO:00000255]"))
+        setattr(cls, "fumarole [ENVO:00000216]",
+            PermissibleValue(text="fumarole [ENVO:00000216]"))
+        setattr(cls, "geyser [ENVO:00000050]",
+            PermissibleValue(text="geyser [ENVO:00000050]"))
+        setattr(cls, "hadalpelagic zone [ENVO:00000214]",
+            PermissibleValue(text="hadalpelagic zone [ENVO:00000214]"))
+        setattr(cls, "harbour [ENVO:00000463]",
+            PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "hot spring [ENVO:00000051]",
+            PermissibleValue(text="hot spring [ENVO:00000051]"))
+        setattr(cls, "hydrothermal seep [ENVO:01000265]",
+            PermissibleValue(text="hydrothermal seep [ENVO:01000265]"))
+        setattr(cls, "hydrothermal vent [ENVO:00000215]",
+            PermissibleValue(text="hydrothermal vent [ENVO:00000215]"))
+        setattr(cls, "hypersaline lake [ENVO:01001020]",
+            PermissibleValue(text="hypersaline lake [ENVO:01001020]"))
+        setattr(cls, "intertidal zone [ENVO:00000316]",
+            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
+        setattr(cls, "irrigation canal [ENVO:00000036]",
+            PermissibleValue(text="irrigation canal [ENVO:00000036]"))
+        setattr(cls, "lake bed [ENVO:00000268]",
+            PermissibleValue(text="lake bed [ENVO:00000268]"))
+        setattr(cls, "lentic water body [ENVO:01000617]",
+            PermissibleValue(text="lentic water body [ENVO:01000617]"))
+        setattr(cls, "littoral zone [ENVO:01000407]",
+            PermissibleValue(text="littoral zone [ENVO:01000407]"))
+        setattr(cls, "marine anoxic zone [ENVO:01000066]",
+            PermissibleValue(text="marine anoxic zone [ENVO:01000066]"))
+        setattr(cls, "marine hydrothermal vent [ENVO:01000122]",
+            PermissibleValue(text="marine hydrothermal vent [ENVO:01000122]"))
+        setattr(cls, "marine neritic zone [ENVO:00000206]",
+            PermissibleValue(text="marine neritic zone [ENVO:00000206]"))
+        setattr(cls, "marine sub-littoral zone [ENVO:01000126]",
+            PermissibleValue(text="marine sub-littoral zone [ENVO:01000126]"))
+        setattr(cls, "mid-ocean ridge [ENVO:00000406]",
+            PermissibleValue(text="mid-ocean ridge [ENVO:00000406]"))
+        setattr(cls, "mud volcano [ENVO:00000402]",
+            PermissibleValue(text="mud volcano [ENVO:00000402]"))
+        setattr(cls, "ocean floor [ENVO:00000426]",
+            PermissibleValue(text="ocean floor [ENVO:00000426]"))
+        setattr(cls, "oil reservoir [ENVO:00002185]",
+            PermissibleValue(text="oil reservoir [ENVO:00002185]"))
+        setattr(cls, "oil spill [ENVO:00002061]",
+            PermissibleValue(text="oil spill [ENVO:00002061]"))
+        setattr(cls, "pond [ENVO:00000033]",
+            PermissibleValue(text="pond [ENVO:00000033]"))
+        setattr(cls, "river [ENVO:00000022]",
+            PermissibleValue(text="river [ENVO:00000022]"))
+        setattr(cls, "river bank [ENVO:00000143]",
+            PermissibleValue(text="river bank [ENVO:00000143]"))
+        setattr(cls, "river bed [ENVO:00000384]",
+            PermissibleValue(text="river bed [ENVO:00000384]"))
+        setattr(cls, "saline evaporation pond [ENVO:00000055]",
+            PermissibleValue(text="saline evaporation pond [ENVO:00000055]"))
+        setattr(cls, "saline lake [ENVO:00000019]",
+            PermissibleValue(text="saline lake [ENVO:00000019]"))
+        setattr(cls, "saline pan [ENVO:00000279]",
+            PermissibleValue(text="saline pan [ENVO:00000279]"))
+        setattr(cls, "sea floor [ENVO:00000482]",
+            PermissibleValue(text="sea floor [ENVO:00000482]"))
+        setattr(cls, "sea grass bed [ENVO:01000059]",
+            PermissibleValue(text="sea grass bed [ENVO:01000059]"))
+        setattr(cls, "shore [ENVO:00000304]",
+            PermissibleValue(text="shore [ENVO:00000304]"))
+        setattr(cls, "spring [ENVO:00000027]",
+            PermissibleValue(text="spring [ENVO:00000027]"))
+        setattr(cls, "stream [ENVO:00000023]",
+            PermissibleValue(text="stream [ENVO:00000023]"))
+        setattr(cls, "stream bed [ENVO:00000383]",
+            PermissibleValue(text="stream bed [ENVO:00000383]"))
+        setattr(cls, "submerged bed [ENVO:00000501]",
+            PermissibleValue(text="submerged bed [ENVO:00000501]"))
+
+class EnvMediumSedimentEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvMediumSedimentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "anaerobic sediment [ENVO:00002045]",
+            PermissibleValue(text="anaerobic sediment [ENVO:00002045]"))
+        setattr(cls, "chemically contaminated sediment [ENVO:03600001]",
+            PermissibleValue(text="chemically contaminated sediment [ENVO:03600001]"))
+        setattr(cls, "estuarine mud [ENVO:00002160]",
+            PermissibleValue(text="estuarine mud [ENVO:00002160]"))
+        setattr(cls, "granular sediment [ENVO:01000117]",
+            PermissibleValue(text="granular sediment [ENVO:01000117]"))
+        setattr(cls, "hyperthermophilic sediment [ENVO:01000133]",
+            PermissibleValue(text="hyperthermophilic sediment [ENVO:01000133]"))
+        setattr(cls, "petroleum enriched sediment [ENVO:00002115]",
+            PermissibleValue(text="petroleum enriched sediment [ENVO:00002115]"))
+        setattr(cls, "radioactive sediment [ENVO:00002154]",
+            PermissibleValue(text="radioactive sediment [ENVO:00002154]"))
+        setattr(cls, "sediment [ENVO:00002007]",
+            PermissibleValue(text="sediment [ENVO:00002007]"))
+        setattr(cls, "sediment permeated by saline water [ENVO:01001036]",
+            PermissibleValue(text="sediment permeated by saline water [ENVO:01001036]"))
+        setattr(cls, "sludge [ENVO:00002044]",
+            PermissibleValue(text="sludge [ENVO:00002044]"))
+        setattr(cls, "thermophilic sediment [ENVO:01000132]",
+            PermissibleValue(text="thermophilic sediment [ENVO:01000132]"))
+
+class EnvBroadScalePlantAssociatedEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScalePlantAssociatedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "alpine tundra biome [ENVO:01001505]",
+            PermissibleValue(text="alpine tundra biome [ENVO:01001505]"))
+        setattr(cls, "anthropogenic terrestrial biome [ENVO:01000219]",
+            PermissibleValue(text="anthropogenic terrestrial biome [ENVO:01000219]"))
+        setattr(cls, "aquatic biome [ENVO:00002030]",
+            PermissibleValue(text="aquatic biome [ENVO:00002030]"))
+        setattr(cls, "broadleaf forest biome [ENVO:01000197]",
+            PermissibleValue(text="broadleaf forest biome [ENVO:01000197]"))
+        setattr(cls, "coniferous forest biome [ENVO:01000196]",
+            PermissibleValue(text="coniferous forest biome [ENVO:01000196]"))
+        setattr(cls, "cropland biome [ENVO:01000245]",
+            PermissibleValue(text="cropland biome [ENVO:01000245]"))
+        setattr(cls, "estuarine biome [ENVO:01000020]",
+            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
+        setattr(cls, "flooded grassland biome [ENVO:01000195]",
+            PermissibleValue(text="flooded grassland biome [ENVO:01000195]"))
+        setattr(cls, "flooded savanna biome [ENVO:01000190]",
+            PermissibleValue(text="flooded savanna biome [ENVO:01000190]"))
+        setattr(cls, "forest biome [ENVO:01000174]",
+            PermissibleValue(text="forest biome [ENVO:01000174]"))
+        setattr(cls, "freshwater biome [ENVO:00000873]",
+            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
+        setattr(cls, "freshwater lake biome [ENVO:01000252]",
+            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
+        setattr(cls, "freshwater river biome [ENVO:01000253]",
+            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
+        setattr(cls, "freshwater stream biome [ENVO:03605008]",
+            PermissibleValue(text="freshwater stream biome [ENVO:03605008]"))
+        setattr(cls, "grassland biome [ENVO:01000177]",
+            PermissibleValue(text="grassland biome [ENVO:01000177]"))
+        setattr(cls, "large freshwater lake biome [ENVO:00000891]",
+            PermissibleValue(text="large freshwater lake biome [ENVO:00000891]"))
+        setattr(cls, "large river biome [ENVO:00000887]",
+            PermissibleValue(text="large river biome [ENVO:00000887]"))
+        setattr(cls, "large river delta biome [ENVO:00000889]",
+            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
+        setattr(cls, "large river headwater biome [ENVO:00000888]",
+            PermissibleValue(text="large river headwater biome [ENVO:00000888]"))
+        setattr(cls, "mangrove biome [ENVO:01000181]",
+            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
+        setattr(cls, "marine biome [ENVO:00000447]",
+            PermissibleValue(text="marine biome [ENVO:00000447]"))
+        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
+            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
+        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
+            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
+        setattr(cls, "mediterranean forest biome [ENVO:01000199]",
+            PermissibleValue(text="mediterranean forest biome [ENVO:01000199]"))
+        setattr(cls, "mediterranean grassland biome [ENVO:01000224]",
+            PermissibleValue(text="mediterranean grassland biome [ENVO:01000224]"))
+        setattr(cls, "mediterranean savanna biome [ENVO:01000229]",
+            PermissibleValue(text="mediterranean savanna biome [ENVO:01000229]"))
+        setattr(cls, "mediterranean shrubland biome [ENVO:01000217]",
+            PermissibleValue(text="mediterranean shrubland biome [ENVO:01000217]"))
+        setattr(cls, "mediterranean woodland biome [ENVO:01000208]",
+            PermissibleValue(text="mediterranean woodland biome [ENVO:01000208]"))
+        setattr(cls, "mixed forest biome [ENVO:01000198]",
+            PermissibleValue(text="mixed forest biome [ENVO:01000198]"))
+        setattr(cls, "montane grassland biome [ENVO:01000194]",
+            PermissibleValue(text="montane grassland biome [ENVO:01000194]"))
+        setattr(cls, "montane savanna biome [ENVO:01000223]",
+            PermissibleValue(text="montane savanna biome [ENVO:01000223]"))
+        setattr(cls, "montane shrubland biome [ENVO:01000216]",
+            PermissibleValue(text="montane shrubland biome [ENVO:01000216]"))
+        setattr(cls, "neritic epipelagic zone biome [ENVO:01000042]",
+            PermissibleValue(text="neritic epipelagic zone biome [ENVO:01000042]"))
+        setattr(cls, "neritic mesopelagic zone biome [ENVO:01000043]",
+            PermissibleValue(text="neritic mesopelagic zone biome [ENVO:01000043]"))
+        setattr(cls, "neritic pelagic zone biome [ENVO:01000032]",
+            PermissibleValue(text="neritic pelagic zone biome [ENVO:01000032]"))
+        setattr(cls, "neritic sea surface microlayer biome [ENVO:01000041]",
+            PermissibleValue(text="neritic sea surface microlayer biome [ENVO:01000041]"))
+        setattr(cls, "rangeland biome [ENVO:01000247]",
+            PermissibleValue(text="rangeland biome [ENVO:01000247]"))
+        setattr(cls, "savanna biome [ENVO:01000178]",
+            PermissibleValue(text="savanna biome [ENVO:01000178]"))
+        setattr(cls, "shrubland biome [ENVO:01000176]",
+            PermissibleValue(text="shrubland biome [ENVO:01000176]"))
+        setattr(cls, "small freshwater lake biome [ENVO:00000892]",
+            PermissibleValue(text="small freshwater lake biome [ENVO:00000892]"))
+        setattr(cls, "small river biome [ENVO:00000890]",
+            PermissibleValue(text="small river biome [ENVO:00000890]"))
+        setattr(cls, "subpolar coniferous forest biome [ENVO:01000250]",
+            PermissibleValue(text="subpolar coniferous forest biome [ENVO:01000250]"))
+        setattr(cls, "subtropical broadleaf forest biome [ENVO:01000201]",
+            PermissibleValue(text="subtropical broadleaf forest biome [ENVO:01000201]"))
+        setattr(cls, "subtropical coniferous forest biome [ENVO:01000209]",
+            PermissibleValue(text="subtropical coniferous forest biome [ENVO:01000209]"))
+        setattr(cls, "subtropical dry broadleaf forest biome [ENVO:01000225]",
+            PermissibleValue(text="subtropical dry broadleaf forest biome [ENVO:01000225]"))
+        setattr(cls, "subtropical grassland biome [ENVO:01000191]",
+            PermissibleValue(text="subtropical grassland biome [ENVO:01000191]"))
+        setattr(cls, "subtropical moist broadleaf forest biome [ENVO:01000226]",
+            PermissibleValue(text="subtropical moist broadleaf forest biome [ENVO:01000226]"))
+        setattr(cls, "subtropical savanna biome [ENVO:01000187]",
+            PermissibleValue(text="subtropical savanna biome [ENVO:01000187]"))
+        setattr(cls, "subtropical shrubland biome [ENVO:01000213]",
+            PermissibleValue(text="subtropical shrubland biome [ENVO:01000213]"))
+        setattr(cls, "subtropical woodland biome [ENVO:01000222]",
+            PermissibleValue(text="subtropical woodland biome [ENVO:01000222]"))
+        setattr(cls, "temperate broadleaf forest biome [ENVO:01000202]",
+            PermissibleValue(text="temperate broadleaf forest biome [ENVO:01000202]"))
+        setattr(cls, "temperate coniferous forest biome [ENVO:01000211]",
+            PermissibleValue(text="temperate coniferous forest biome [ENVO:01000211]"))
+        setattr(cls, "temperate grassland biome [ENVO:01000193]",
+            PermissibleValue(text="temperate grassland biome [ENVO:01000193]"))
+        setattr(cls, "temperate mixed forest biome [ENVO:01000212]",
+            PermissibleValue(text="temperate mixed forest biome [ENVO:01000212]"))
+        setattr(cls, "temperate savanna biome [ENVO:01000189]",
+            PermissibleValue(text="temperate savanna biome [ENVO:01000189]"))
+        setattr(cls, "temperate shrubland biome [ENVO:01000215]",
+            PermissibleValue(text="temperate shrubland biome [ENVO:01000215]"))
+        setattr(cls, "temperate woodland biome [ENVO:01000221]",
+            PermissibleValue(text="temperate woodland biome [ENVO:01000221]"))
+        setattr(cls, "terrestrial biome [ENVO:00000446]",
+            PermissibleValue(text="terrestrial biome [ENVO:00000446]"))
+        setattr(cls, "tidal mangrove shrubland [ENVO:01001369]",
+            PermissibleValue(text="tidal mangrove shrubland [ENVO:01001369]"))
+        setattr(cls, "tropical broadleaf forest biome [ENVO:01000200]",
+            PermissibleValue(text="tropical broadleaf forest biome [ENVO:01000200]"))
+        setattr(cls, "tropical coniferous forest biome [ENVO:01000210]",
+            PermissibleValue(text="tropical coniferous forest biome [ENVO:01000210]"))
+        setattr(cls, "tropical dry broadleaf forest biome [ENVO:01000227]",
+            PermissibleValue(text="tropical dry broadleaf forest biome [ENVO:01000227]"))
+        setattr(cls, "tropical grassland biome [ENVO:01000192]",
+            PermissibleValue(text="tropical grassland biome [ENVO:01000192]"))
+        setattr(cls, "tropical mixed forest biome [ENVO:01001798]",
+            PermissibleValue(text="tropical mixed forest biome [ENVO:01001798]"))
+        setattr(cls, "tropical moist broadleaf forest biome [ENVO:01000228]",
+            PermissibleValue(text="tropical moist broadleaf forest biome [ENVO:01000228]"))
+        setattr(cls, "tropical savanna biome [ENVO:01000188]",
+            PermissibleValue(text="tropical savanna biome [ENVO:01000188]"))
+        setattr(cls, "tropical shrubland biome [ENVO:01000214]",
+            PermissibleValue(text="tropical shrubland biome [ENVO:01000214]"))
+        setattr(cls, "tropical woodland biome [ENVO:01000220]",
+            PermissibleValue(text="tropical woodland biome [ENVO:01000220]"))
+        setattr(cls, "tundra biome [ENVO:01000180]",
+            PermissibleValue(text="tundra biome [ENVO:01000180]"))
+        setattr(cls, "woodland biome [ENVO:01000175]",
+            PermissibleValue(text="woodland biome [ENVO:01000175]"))
+        setattr(cls, "xeric basin biome [ENVO:00000893]",
+            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
+        setattr(cls, "xeric shrubland biome [ENVO:01000218]",
+            PermissibleValue(text="xeric shrubland biome [ENVO:01000218]"))
+
+class EnvLocalScalePlantAssociatedEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvLocalScalePlantAssociatedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "agricultural terrace [ENVO:00000519]",
+            PermissibleValue(text="agricultural terrace [ENVO:00000519]"))
+        setattr(cls, "alluvial plain [ENVO:00000258]",
+            PermissibleValue(text="alluvial plain [ENVO:00000258]"))
+        setattr(cls, "area of barren land [ENVO:01000752]",
+            PermissibleValue(text="area of barren land [ENVO:01000752]"))
+        setattr(cls, "area of cropland [ENVO:01000892]",
+            PermissibleValue(text="area of cropland [ENVO:01000892]"))
+        setattr(cls, "area of deciduous forest [ENVO:01000816]",
+            PermissibleValue(text="area of deciduous forest [ENVO:01000816]"))
+        setattr(cls, "area of developed open space [ENVO:01000883]",
+            PermissibleValue(text="area of developed open space [ENVO:01000883]"))
+        setattr(cls, "area of developed space with high usage intensity [ENVO:01000886]",
+            PermissibleValue(text="area of developed space with high usage intensity [ENVO:01000886]"))
+        setattr(cls, "area of developed space with low usage intensity [ENVO:01000884]",
+            PermissibleValue(text="area of developed space with low usage intensity [ENVO:01000884]"))
+        setattr(cls, "area of developed space with medium usage intensity [ENVO:01000885]",
+            PermissibleValue(text="area of developed space with medium usage intensity [ENVO:01000885]"))
+        setattr(cls, "area of dwarf scrub [ENVO:01000861]",
+            PermissibleValue(text="area of dwarf scrub [ENVO:01000861]"))
+        setattr(cls, "area of emergent herbaceous wetland [ENVO:01000894]",
+            PermissibleValue(text="area of emergent herbaceous wetland [ENVO:01000894]"))
+        setattr(cls, "area of evergreen forest [ENVO:01000843]",
+            PermissibleValue(text="area of evergreen forest [ENVO:01000843]"))
+        setattr(cls, "area of gramanoid or herbaceous vegetation [ENVO:01000888]",
+            PermissibleValue(text="area of gramanoid or herbaceous vegetation [ENVO:01000888]"))
+        setattr(cls, "area of lichen-dominated vegetation [ENVO:01000889]",
+            PermissibleValue(text="area of lichen-dominated vegetation [ENVO:01000889]"))
+        setattr(cls, "area of mixed forest [ENVO:01000855]",
+            PermissibleValue(text="area of mixed forest [ENVO:01000855]"))
+        setattr(cls, "area of moss-dominated vegetation [ENVO:01000890]",
+            PermissibleValue(text="area of moss-dominated vegetation [ENVO:01000890]"))
+        setattr(cls, "area of open water [ENVO:01000666]",
+            PermissibleValue(text="area of open water [ENVO:01000666]"))
+        setattr(cls, "area of perennial ice or snow [ENVO:01000746]",
+            PermissibleValue(text="area of perennial ice or snow [ENVO:01000746]"))
+        setattr(cls, "area of perennial snow [ENVO:01000745]",
+            PermissibleValue(text="area of perennial snow [ENVO:01000745]"))
+        setattr(cls, "area of perennial water ice [ENVO:01000740]",
+            PermissibleValue(text="area of perennial water ice [ENVO:01000740]"))
+        setattr(cls, "area of scrub [ENVO:01000869]",
+            PermissibleValue(text="area of scrub [ENVO:01000869]"))
+        setattr(cls, "area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]",
+            PermissibleValue(text="area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]"))
+        setattr(cls, "area of woody wetland [ENVO:01000893]",
+            PermissibleValue(text="area of woody wetland [ENVO:01000893]"))
+        setattr(cls, "beach [ENVO:00000091]",
+            PermissibleValue(text="beach [ENVO:00000091]"))
+        setattr(cls, "botanical garden [ENVO:00010624]",
+            PermissibleValue(text="botanical garden [ENVO:00010624]"))
+        setattr(cls, "cliff [ENVO:00000087]",
+            PermissibleValue(text="cliff [ENVO:00000087]"))
+        setattr(cls, "coast [ENVO:01000687]",
+            PermissibleValue(text="coast [ENVO:01000687]"))
+        setattr(cls, "crop canopy [ENVO:01001241]",
+            PermissibleValue(text="crop canopy [ENVO:01001241]"))
+        setattr(cls, "desert [ENVO:01001357]",
+            PermissibleValue(text="desert [ENVO:01001357]"))
+        setattr(cls, "dune [ENVO:00000170]",
+            PermissibleValue(text="dune [ENVO:00000170]"))
+        setattr(cls, "farm [ENVO:00000078]",
+            PermissibleValue(text="farm [ENVO:00000078]"))
+        setattr(cls, "forest floor [ENVO:01001582]",
+            PermissibleValue(text="forest floor [ENVO:01001582]"))
+        setattr(cls, "garden [ENVO:00000011]",
+            PermissibleValue(text="garden [ENVO:00000011]"))
+        setattr(cls, "greenhouse [ENVO:03600087]",
+            PermissibleValue(text="greenhouse [ENVO:03600087]"))
+        setattr(cls, "harbour [ENVO:00000463]",
+            PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "herb and fern layer [ENVO:01000337]",
+            PermissibleValue(text="herb and fern layer [ENVO:01000337]"))
+        setattr(cls, "hill [ENVO:00000083]",
+            PermissibleValue(text="hill [ENVO:00000083]"))
+        setattr(cls, "house [ENVO:01000417]",
+            PermissibleValue(text="house [ENVO:01000417]"))
+        setattr(cls, "island [ENVO:00000098]",
+            PermissibleValue(text="island [ENVO:00000098]"))
+        setattr(cls, "laboratory facility [ENVO:01001406]",
+            PermissibleValue(text="laboratory facility [ENVO:01001406]"))
+        setattr(cls, "litter layer [ENVO:01000338]",
+            PermissibleValue(text="litter layer [ENVO:01000338]"))
+        setattr(cls, "market [ENVO:01000987]",
+            PermissibleValue(text="market [ENVO:01000987]"))
+        setattr(cls, "mountain [ENVO:00000081]",
+            PermissibleValue(text="mountain [ENVO:00000081]"))
+        setattr(cls, "oasis [ENVO:01001304]",
+            PermissibleValue(text="oasis [ENVO:01001304]"))
+        setattr(cls, "ocean [ENVO:00000015]",
+            PermissibleValue(text="ocean [ENVO:00000015]"))
+        setattr(cls, "outcrop [ENVO:01000302]",
+            PermissibleValue(text="outcrop [ENVO:01000302]"))
+        setattr(cls, "plantation [ENVO:00000117]",
+            PermissibleValue(text="plantation [ENVO:00000117]"))
+        setattr(cls, "plateau [ENVO:00000182]",
+            PermissibleValue(text="plateau [ENVO:00000182]"))
+        setattr(cls, "pond [ENVO:00000033]",
+            PermissibleValue(text="pond [ENVO:00000033]"))
+        setattr(cls, "prairie [ENVO:00000260]",
+            PermissibleValue(text="prairie [ENVO:00000260]"))
+        setattr(cls, "public park [ENVO:03500002]",
+            PermissibleValue(text="public park [ENVO:03500002]"))
+        setattr(cls, "research facility [ENVO:00000469]",
+            PermissibleValue(text="research facility [ENVO:00000469]"))
+        setattr(cls, "river bank [ENVO:00000143]",
+            PermissibleValue(text="river bank [ENVO:00000143]"))
+        setattr(cls, "river valley [ENVO:00000171]",
+            PermissibleValue(text="river valley [ENVO:00000171]"))
+        setattr(cls, "road [ENVO:00000064]",
+            PermissibleValue(text="road [ENVO:00000064]"))
+        setattr(cls, "sea grass bed [ENVO:01000059]",
+            PermissibleValue(text="sea grass bed [ENVO:01000059]"))
+        setattr(cls, "shore [ENVO:00000304]",
+            PermissibleValue(text="shore [ENVO:00000304]"))
+        setattr(cls, "shrub layer [ENVO:01000336]",
+            PermissibleValue(text="shrub layer [ENVO:01000336]"))
+        setattr(cls, "submerged bed [ENVO:00000501]",
+            PermissibleValue(text="submerged bed [ENVO:00000501]"))
+        setattr(cls, "understory [ENVO:01000335]",
+            PermissibleValue(text="understory [ENVO:01000335]"))
+        setattr(cls, "valley [ENVO:00000100]",
+            PermissibleValue(text="valley [ENVO:00000100]"))
+        setattr(cls, "woodland canopy [ENVO:01001240]",
+            PermissibleValue(text="woodland canopy [ENVO:01001240]"))
+
+class EnvMediumPlantAssociatedEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvMediumPlantAssociatedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "bark [PO:0004518]",
+            PermissibleValue(text="bark [PO:0004518]"))
+        setattr(cls, "bulb [PO:0025356]",
+            PermissibleValue(text="bulb [PO:0025356]"))
+        setattr(cls, "corm [PO:0025355]",
+            PermissibleValue(text="corm [PO:0025355]"))
+        setattr(cls, "ear infructescence axis [PO:0025623]",
+            PermissibleValue(text="ear infructescence axis [PO:0025623]"))
+        setattr(cls, "flag leaf [PO:0020103]",
+            PermissibleValue(text="flag leaf [PO:0020103]"))
+        setattr(cls, "flower [PO:0009046]",
+            PermissibleValue(text="flower [PO:0009046]"))
+        setattr(cls, "fruit [PO:0009001]",
+            PermissibleValue(text="fruit [PO:0009001]"))
+        setattr(cls, "leaf [PO:0025034]",
+            PermissibleValue(text="leaf [PO:0025034]"))
+        setattr(cls, "petiole [PO:0020038]",
+            PermissibleValue(text="petiole [PO:0020038]"))
+        setattr(cls, "phyllome [PO:0006001]",
+            PermissibleValue(text="phyllome [PO:0006001]"))
+        setattr(cls, "pith [PO:0006109]",
+            PermissibleValue(text="pith [PO:0006109]"))
+        setattr(cls, "plant callus [PO:0005052]",
+            PermissibleValue(text="plant callus [PO:0005052]"))
+        setattr(cls, "plant gall [PO:0025626]",
+            PermissibleValue(text="plant gall [PO:0025626]"))
+        setattr(cls, "plant litter [ENVO:01000628]",
+            PermissibleValue(text="plant litter [ENVO:01000628]"))
+        setattr(cls, "pollen [PO:0025281]",
+            PermissibleValue(text="pollen [PO:0025281]"))
+        setattr(cls, "radicle [PO:0020031]",
+            PermissibleValue(text="radicle [PO:0020031]"))
+        setattr(cls, "rhizoid [PO:0030078]",
+            PermissibleValue(text="rhizoid [PO:0030078]"))
+        setattr(cls, "rhizome [PO:0004542]",
+            PermissibleValue(text="rhizome [PO:0004542]"))
+        setattr(cls, "rhizosphere [ENVO:00005801]",
+            PermissibleValue(text="rhizosphere [ENVO:00005801]"))
+        setattr(cls, "root [PO:0009005]",
+            PermissibleValue(text="root [PO:0009005]"))
+        setattr(cls, "root nodule [PO:0003023]",
+            PermissibleValue(text="root nodule [PO:0003023]"))
+        setattr(cls, "sapwood [PO:0004513]",
+            PermissibleValue(text="sapwood [PO:0004513]"))
+        setattr(cls, "secondary xylem [PO:0005848]",
+            PermissibleValue(text="secondary xylem [PO:0005848]"))
+        setattr(cls, "seed [PO:0009010]",
+            PermissibleValue(text="seed [PO:0009010]"))
+        setattr(cls, "seedling [PO:0008037]",
+            PermissibleValue(text="seedling [PO:0008037]"))
+        setattr(cls, "stem [PO:0009047]",
+            PermissibleValue(text="stem [PO:0009047]"))
+        setattr(cls, "tuber [PO:0025522]",
+            PermissibleValue(text="tuber [PO:0025522]"))
+        setattr(cls, "xylem vessel [PO:0025417]",
+            PermissibleValue(text="xylem vessel [PO:0025417]"))
+
 # Slots
 class slots:
     pass
@@ -16007,6 +17111,18 @@ slots.wastewater_sludge_data = Slot(uri=NMDC_SUB_SCHEMA.wastewater_sludge_data, 
 slots.water_data = Slot(uri=NMDC_SUB_SCHEMA.water_data, name="water_data", curie=NMDC_SUB_SCHEMA.curie('water_data'),
                    model_uri=NMDC_SUB_SCHEMA.water_data, domain=None, range=Optional[Union[Union[dict, WaterInterface], List[Union[dict, WaterInterface]]]])
 
+slots.metagenome_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, name="metagenome_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metagenome_sequencing_non_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetagenomeSequencingNonInterleavedDataInterface], List[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]])
+
+slots.metagenome_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, name="metagenome_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metagenome_sequencing_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetagenomeSequencingInterleavedDataInterface], List[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]])
+
+slots.metatranscriptome_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, name="metatranscriptome_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metatranscriptome_sequencing_non_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]])
+
+slots.metatranscriptome_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, name="metatranscriptome_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metatranscriptome_sequencing_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]])
+
 slots.dh_section = Slot(uri=NMDC_SUB_SCHEMA.dh_section, name="dh_section", curie=NMDC_SUB_SCHEMA.curie('dh_section'),
                    model_uri=NMDC_SUB_SCHEMA.dh_section, domain=None, range=Optional[str])
 
@@ -16039,6 +17155,30 @@ slots.mixs_section = Slot(uri=NMDC_SUB_SCHEMA.mixs_section, name="mixs_section",
 
 slots.sample_id_section = Slot(uri=NMDC_SUB_SCHEMA.sample_id_section, name="sample_id_section", curie=NMDC_SUB_SCHEMA.curie('sample_id_section'),
                    model_uri=NMDC_SUB_SCHEMA.sample_id_section, domain=None, range=Optional[str])
+
+slots.sequencing_section = Slot(uri=NMDC_SUB_SCHEMA.sequencing_section, name="sequencing_section", curie=NMDC_SUB_SCHEMA.curie('sequencing_section'),
+                   model_uri=NMDC_SUB_SCHEMA.sequencing_section, domain=None, range=Optional[str])
+
+slots.data_files_section = Slot(uri=NMDC_SUB_SCHEMA.data_files_section, name="data_files_section", curie=NMDC_SUB_SCHEMA.curie('data_files_section'),
+                   model_uri=NMDC_SUB_SCHEMA.data_files_section, domain=None, range=Optional[str])
+
+slots.read_1_url = Slot(uri=NMDC_SUB_SCHEMA.read_1_url, name="read_1_url", curie=NMDC_SUB_SCHEMA.curie('read_1_url'),
+                   model_uri=NMDC_SUB_SCHEMA.read_1_url, domain=None, range=str)
+
+slots.read_1_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, name="read_1_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('read_1_md5_checksum'),
+                   model_uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, domain=None, range=Optional[str])
+
+slots.read_2_url = Slot(uri=NMDC_SUB_SCHEMA.read_2_url, name="read_2_url", curie=NMDC_SUB_SCHEMA.curie('read_2_url'),
+                   model_uri=NMDC_SUB_SCHEMA.read_2_url, domain=None, range=str)
+
+slots.read_2_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, name="read_2_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('read_2_md5_checksum'),
+                   model_uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, domain=None, range=Optional[str])
+
+slots.interleaved_url = Slot(uri=NMDC_SUB_SCHEMA.interleaved_url, name="interleaved_url", curie=NMDC_SUB_SCHEMA.curie('interleaved_url'),
+                   model_uri=NMDC_SUB_SCHEMA.interleaved_url, domain=None, range=str)
+
+slots.interleaved_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, name="interleaved_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('interleaved_md5_checksum'),
+                   model_uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, domain=None, range=Optional[str])
 
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str])
@@ -17691,6 +18831,23 @@ slots.xylene = Slot(uri=MIXS['0000156'], name="xylene", curie=MIXS.curie('000015
 slots.zinc = Slot(uri=NMDC_SUB_SCHEMA.zinc, name="zinc", curie=NMDC_SUB_SCHEMA.curie('zinc'),
                    model_uri=NMDC_SUB_SCHEMA.zinc, domain=None, range=Optional[str])
 
+slots.model = Slot(uri=NMDC_SUB_SCHEMA.model, name="model", curie=NMDC_SUB_SCHEMA.curie('model'),
+                   model_uri=NMDC_SUB_SCHEMA.model, domain=None, range=Optional[Union[str, "InstrumentModelEnum"]])
+
+slots.processing_institution = Slot(uri=NMDC_SUB_SCHEMA.processing_institution, name="processing_institution", curie=NMDC_SUB_SCHEMA.curie('processing_institution'),
+                   model_uri=NMDC_SUB_SCHEMA.processing_institution, domain=None, range=Optional[Union[str, "ProcessingInstitutionEnum"]])
+
+slots.protocol_link = Slot(uri=NMDC_SUB_SCHEMA.protocol_link, name="protocol_link", curie=NMDC_SUB_SCHEMA.curie('protocol_link'),
+                   model_uri=NMDC_SUB_SCHEMA.protocol_link, domain=None, range=Optional[Union[dict, Protocol]])
+
+slots.insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
+
+slots.insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
+
 slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,\(\)\=\#]*$'))
@@ -17740,6 +18897,20 @@ slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
 
 slots.biomaterial_purity = Slot(uri=NMDC_SUB_SCHEMA.biomaterial_purity, name="biomaterial_purity", curie=NMDC_SUB_SCHEMA.curie('biomaterial_purity'),
                    model_uri=NMDC_SUB_SCHEMA.biomaterial_purity, domain=None, range=Optional[str])
+
+slots.external_database_identifiers = Slot(uri=NMDC_SUB_SCHEMA.external_database_identifiers, name="external_database_identifiers", curie=NMDC_SUB_SCHEMA.curie('external_database_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.external_database_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
+
+slots.insdc_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_identifiers, name="insdc_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.insdc_identifiers, domain=None, range=Optional[str])
+
+slots.study_identifiers = Slot(uri=NMDC_SUB_SCHEMA.study_identifiers, name="study_identifiers", curie=NMDC_SUB_SCHEMA.curie('study_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.study_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
+
+slots.url = Slot(uri=NMDC_SUB_SCHEMA.url, name="url", curie=NMDC_SUB_SCHEMA.curie('url'),
+                   model_uri=NMDC_SUB_SCHEMA.url, domain=None, range=Optional[str])
 
 slots.AirInterface_air_PM_concen = Slot(uri=MIXS['0000108'], name="AirInterface_air_PM_concen", curie=MIXS.curie('0000108'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_air_PM_concen, domain=AirInterface, range=Optional[str],
@@ -21984,6 +23155,74 @@ slots.WaterInterface_water_current = Slot(uri=MIXS['0000203'], name="WaterInterf
 
 slots.WaterInterface_watering_regm = Slot(uri=MIXS['0000591'], name="WaterInterface_watering_regm", curie=MIXS.curie('0000591'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_watering_regm, domain=WaterInterface, range=Optional[str])
+
+slots.MetagenomeSequencingNonInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetagenomeSequencingNonInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_model, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Union[str, "IlluminaInstrumentModelEnum"])
+
+slots.MetagenomeSequencingNonInterleavedDataInterface_processing_institution = Slot(uri=NMDC['nmdc/processing_institution'], name="MetagenomeSequencingNonInterleavedDataInterface_processing_institution", curie=NMDC.curie('nmdc/processing_institution'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_processing_institution, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, "ProcessingInstitutionEnum"]])
+
+slots.MetagenomeSequencingNonInterleavedDataInterface_protocol_link = Slot(uri=NMDC['nmdc/protocol_link'], name="MetagenomeSequencingNonInterleavedDataInterface_protocol_link", curie=NMDC.curie('nmdc/protocol_link'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_protocol_link, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[str])
+
+slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
+
+slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
+
+slots.MetagenomeSequencingInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetagenomeSequencingInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_model, domain=MetagenomeSequencingInterleavedDataInterface, range=Union[str, "IlluminaInstrumentModelEnum"])
+
+slots.MetagenomeSequencingInterleavedDataInterface_processing_institution = Slot(uri=NMDC['nmdc/processing_institution'], name="MetagenomeSequencingInterleavedDataInterface_processing_institution", curie=NMDC.curie('nmdc/processing_institution'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_processing_institution, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, "ProcessingInstitutionEnum"]])
+
+slots.MetagenomeSequencingInterleavedDataInterface_protocol_link = Slot(uri=NMDC['nmdc/protocol_link'], name="MetagenomeSequencingInterleavedDataInterface_protocol_link", curie=NMDC.curie('nmdc/protocol_link'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_protocol_link, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[str])
+
+slots.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
+
+slots.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
+
+slots.MetatranscriptomeSequencingNonInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_model, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Union[str, "IlluminaInstrumentModelEnum"])
+
+slots.MetatranscriptomeSequencingNonInterleavedDataInterface_processing_institution = Slot(uri=NMDC['nmdc/processing_institution'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_processing_institution", curie=NMDC.curie('nmdc/processing_institution'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_processing_institution, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, "ProcessingInstitutionEnum"]])
+
+slots.MetatranscriptomeSequencingNonInterleavedDataInterface_protocol_link = Slot(uri=NMDC['nmdc/protocol_link'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_protocol_link", curie=NMDC.curie('nmdc/protocol_link'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_protocol_link, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[str])
+
+slots.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
+
+slots.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
+
+slots.MetatranscriptomeSequencingInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetatranscriptomeSequencingInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_model, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Union[str, "IlluminaInstrumentModelEnum"])
+
+slots.MetatranscriptomeSequencingInterleavedDataInterface_processing_institution = Slot(uri=NMDC['nmdc/processing_institution'], name="MetatranscriptomeSequencingInterleavedDataInterface_processing_institution", curie=NMDC.curie('nmdc/processing_institution'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_processing_institution, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, "ProcessingInstitutionEnum"]])
+
+slots.MetatranscriptomeSequencingInterleavedDataInterface_protocol_link = Slot(uri=NMDC['nmdc/protocol_link'], name="MetatranscriptomeSequencingInterleavedDataInterface_protocol_link", curie=NMDC.curie('nmdc/protocol_link'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_protocol_link, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[str])
+
+slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
+
+slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
 
 slots.DhMultiviewCommonColumnsMixin_analysis_type = Slot(uri=NMDC['nmdc/analysis_type'], name="DhMultiviewCommonColumnsMixin_analysis_type", curie=NMDC.curie('nmdc/analysis_type'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_analysis_type, domain=None, range=Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]])

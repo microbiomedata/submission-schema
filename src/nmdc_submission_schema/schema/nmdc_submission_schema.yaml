@@ -279,6 +279,16 @@ prefixes:
     prefix_reference: http://www.w3.org/2002/07/owl#
 default_prefix: nmdc_sub_schema
 default_range: string
+subsets:
+  nmdc_env_triad_enums:
+    name: nmdc_env_triad_enums
+    todos:
+    - replace membership in this subset with mappings between the individual environmental
+      triad/context enums and the EnvO subProperties
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://github.com/EnvironmentOntology/envo/blob/1598-try-creating-the-new-see_also-from-pr-1597-with-protege-564/src/envo/envo-edit.owl
+    - http://purl.obolibrary.org/obo/ENVO_03605010
 types:
   unit:
     name: unit
@@ -303,26 +313,6 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  string:
-    name: string
-    description: A character string
-    notes:
-    - In RDF serializations, a slot with range of string is treated as a literal or
-      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
-      referenced with the lower case "string".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Text
-    base: str
-    uri: xsd:string
-  decimal_degree:
-    name: decimal_degree
-    description: A decimal degree expresses latitude or longitude as decimal fractions.
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/Decimal_degrees
-    base: float
-    uri: xsd:decimal
   double:
     name: double
     description: A real number that conforms to the xsd:double specification
@@ -334,17 +324,14 @@ types:
     - schema:Float
     base: float
     uri: xsd:double
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "float".
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
     from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Float
+    see_also:
+    - https://en.wikipedia.org/wiki/Decimal_degrees
     base: float
-    uri: xsd:float
+    uri: xsd:decimal
   decimal:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
@@ -357,24 +344,6 @@ types:
     - schema:Number
     base: Decimal
     uri: xsd:decimal
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
-    from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
-    base: str
-    uri: xsd:language
   integer:
     name: integer
     description: An integer
@@ -386,6 +355,56 @@ types:
     - schema:Integer
     base: int
     uri: xsd:integer
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
+    from_schema: https://example.com/nmdc_submission_schema
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  external_identifier:
+    name: external_identifier
+    description: A CURIE representing an external identifier
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://microbiomedata.github.io/nmdc-schema/identifiers/
+    typeof: uriorcurie
+    uri: xsd:anyURI
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
   boolean:
     name: boolean
     description: A binary (true or false) value
@@ -2842,6 +2861,282 @@ enums:
         text: Gentegra-DNA
       Gentegra-RNA:
         text: Gentegra-RNA
+  InstrumentModelEnum:
+    name: InstrumentModelEnum
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      exploris_21T:
+        text: exploris_21T
+        aliases:
+        - Exploris 21T
+      exploris_240:
+        text: exploris_240
+        aliases:
+        - Orbitrap Exploris 240
+      exploris_480:
+        text: exploris_480
+        aliases:
+        - Orbitrap Exploris 480
+      ltq_orbitrap_velos:
+        text: ltq_orbitrap_velos
+        aliases:
+        - LTQ Orbitrap Velos
+        - LTQ Orbitrap Velos ETD
+        - Velos
+      orbitrap_fusion_lumos:
+        text: orbitrap_fusion_lumos
+        aliases:
+        - Orbitrap Fusion Lumos
+        - Fusion
+      orbitrap_eclipse_tribid:
+        text: orbitrap_eclipse_tribid
+        aliases:
+        - Orbitrap Eclipse Tribid
+        - Eclipse
+      orbitrap_q_exactive:
+        text: orbitrap_q_exactive
+        aliases:
+        - Orbitrap Q-Exactive HF
+        - Orbitrap Q-Exactive HF-X
+      solarix_7T:
+        text: solarix_7T
+        aliases:
+        - 7T Solarix
+        - 7T FT-ICR MS
+        - 7T MRMS
+      solarix_12T:
+        text: solarix_12T
+        aliases:
+        - 12T Solarix
+        - 12T FT-ICR MS
+        - 12T MRMS
+      solarix_15T:
+        text: solarix_15T
+        aliases:
+        - 15T Solarix
+        - 15T FT-ICR MS
+        - 15T MRMS
+      agilent_8890A:
+        text: agilent_8890A
+        aliases:
+        - 8890A GC-MS
+        - Agilent GC MS
+      agilent_7980A:
+        text: agilent_7980A
+        aliases:
+        - 7980A GC-MS
+        - Agilent GC MS
+      vortex_genie_2:
+        text: vortex_genie_2
+        aliases:
+        - VortexGenie2
+      novaseq:
+        text: novaseq
+        aliases:
+        - NovaSeq
+        - Illumina NovaSeq
+      novaseq_6000:
+        text: novaseq_6000
+        meaning: OBI:0002630
+        comments:
+        - Possible flowcell versions are SP, S1, S2, S4.
+        see_also:
+        - https://www.illumina.com/systems/sequencing-platforms/novaseq/specifications.html
+        aliases:
+        - NovaSeq 6000
+        - Illumina NovaSeq 6000
+        structured_aliases:
+          Illumina NovaSeq S2:
+            literal_form: Illumina NovaSeq S2
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina NovaSeq S4:
+            literal_form: Illumina NovaSeq S4
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina NovaSeq SP:
+            literal_form: Illumina NovaSeq SP
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+      novaseq_x:
+        text: novaseq_x
+        comments:
+        - Possible flowcell versions are 1.5B, 10B, 25B. Only difference between X
+          and X Plus is 2 flowcells for X Plus versus 1 flowcell for X.
+        see_also:
+        - https://www.illumina.com/systems/sequencing-platforms/novaseq-x-plus/specifications.html
+        aliases:
+        - Illumina NovaSeq X
+        - Illumina NovaSeq X Plus
+      hiseq:
+        text: hiseq
+        aliases:
+        - Illumina HiSeq
+      hiseq_1000:
+        text: hiseq_1000
+        meaning: OBI:0002022
+        aliases:
+        - Illumina HiSeq 1000
+      hiseq_1500:
+        text: hiseq_1500
+        meaning: OBI:0003386
+        aliases:
+        - Illumina HiSeq 1500
+      hiseq_2000:
+        text: hiseq_2000
+        meaning: OBI:0002001
+        aliases:
+        - Illumina HiSeq 2000
+      hiseq_2500:
+        text: hiseq_2500
+        meaning: OBI:0002002
+        aliases:
+        - Illumina HiSeq 2500
+        structured_aliases:
+          Illumina HiSeq 2500-1TB:
+            literal_form: Illumina HiSeq 2500-1TB
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina HiSeq 2500-Rapid:
+            literal_form: Illumina HiSeq 2500-Rapid
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+      hiseq_3000:
+        text: hiseq_3000
+        meaning: OBI:0002048
+        aliases:
+        - Illumina HiSeq 3000
+      hiseq_4000:
+        text: hiseq_4000
+        meaning: OBI:0002049
+        aliases:
+        - Illumina HiSeq 4000
+      hiseq_x_ten:
+        text: hiseq_x_ten
+        meaning: OBI:0002129
+        aliases:
+        - Illumina HiSeq X Ten
+      miniseq:
+        text: miniseq
+        meaning: OBI:0003114
+        aliases:
+        - Illumina MiniSeq
+      miseq:
+        text: miseq
+        meaning: OBI:0002003
+        aliases:
+        - MiSeq
+        - Illumina MiSeq
+      nextseq_1000:
+        text: nextseq_1000
+        meaning: OBI:0003606
+        aliases:
+        - Illumina NextSeq 1000
+      nextseq:
+        text: nextseq
+        aliases:
+        - NextSeq
+        - Illumina NextSeq
+        structured_aliases:
+          Illumina NextSeq-HO:
+            literal_form: Illumina NextSeq-HO
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina NextSeq-MO:
+            literal_form: Illumina NextSeq-MO
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+      nextseq_500:
+        text: nextseq_500
+        meaning: OBI:0002021
+        aliases:
+        - NextSeq 500
+        - Illumina NextSeq 500
+      nextseq_550:
+        text: nextseq_550
+        meaning: OBI:0003387
+        aliases:
+        - NextSeq 550
+        - Illumina NextSeq 550
+      gridion:
+        text: gridion
+        meaning: OBI:0002751
+        aliases:
+        - Oxford Nanopore GridION Mk1
+      minion:
+        text: minion
+        meaning: OBI:0002750
+        aliases:
+        - Oxford Nanopore MinION
+      promethion:
+        text: promethion
+        meaning: OBI:0002752
+        aliases:
+        - Oxford Nanopore PromethION
+      rs_II:
+        text: rs_II
+        meaning: OBI:0002012
+        aliases:
+        - PacBio RS II
+      sequel:
+        text: sequel
+        meaning: OBI:0002632
+        aliases:
+        - PacBio Sequel
+      sequel_II:
+        text: sequel_II
+        meaning: OBI:0002633
+        aliases:
+        - PacBio Sequel II
+      revio:
+        text: revio
+        aliases:
+        - PacBio Revio
+        - Revio
+  ProcessingInstitutionEnum:
+    name: ProcessingInstitutionEnum
+    notes:
+    - use ROR meanings like https://ror.org/0168r3w48 for UCSD
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      UCSD:
+        text: UCSD
+        meaning: https://ror.org/0168r3w48
+        title: University of California, San Diego
+      JGI:
+        text: JGI
+        meaning: https://ror.org/04xm1d337
+        title: Joint Genome Institute
+      EMSL:
+        text: EMSL
+        meaning: https://ror.org/04rc0xn13
+        title: Environmental Molecular Sciences Laboratory
+        aliases:
+        - Environmental Molecular Science Laboratory
+        - Environmental Molecular Sciences Lab
+      Battelle:
+        text: Battelle
+        meaning: https://ror.org/01h5tnr73
+        title: Battelle Memorial Institute
+      ANL:
+        text: ANL
+        meaning: https://ror.org/05gvnxz63
+        title: Argonne National Laboratory
+      UCD_Genome_Center:
+        text: UCD_Genome_Center
+        meaning: https://genomecenter.ucdavis.edu/
+        title: University of California, Davis Genome Center
+      Azenta:
+        text: Azenta
+        meaning: https://www.azenta.com/
+        title: Azenta Life Sciences
   EcosystemEnum:
     name: EcosystemEnum
     permissible_values:
@@ -5541,6 +5836,8 @@ enums:
         text: Laryngopharynx
       Lateral fornices:
         text: Lateral fornices
+      Lava tube:
+        text: Lava tube
       Leaf lesion:
         text: Leaf lesion
       Leaf nodule:
@@ -6602,6 +6899,145 @@ enums:
         text: Uranium contaminated
       Wetland zone:
         text: Wetland zone
+  IlluminaInstrumentModelEnum:
+    name: IlluminaInstrumentModelEnum
+    description: Derived from InstrumentModelEnum by filtering for Illumina models
+    permissible_values:
+      novaseq:
+        text: novaseq
+        aliases:
+        - NovaSeq
+        - Illumina NovaSeq
+      novaseq_6000:
+        text: novaseq_6000
+        meaning: OBI:0002630
+        comments:
+        - Possible flowcell versions are SP, S1, S2, S4.
+        see_also:
+        - https://www.illumina.com/systems/sequencing-platforms/novaseq/specifications.html
+        aliases:
+        - NovaSeq 6000
+        - Illumina NovaSeq 6000
+        structured_aliases:
+          Illumina NovaSeq S2:
+            literal_form: Illumina NovaSeq S2
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina NovaSeq S4:
+            literal_form: Illumina NovaSeq S4
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina NovaSeq SP:
+            literal_form: Illumina NovaSeq SP
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+      novaseq_x:
+        text: novaseq_x
+        comments:
+        - Possible flowcell versions are 1.5B, 10B, 25B. Only difference between X
+          and X Plus is 2 flowcells for X Plus versus 1 flowcell for X.
+        see_also:
+        - https://www.illumina.com/systems/sequencing-platforms/novaseq-x-plus/specifications.html
+        aliases:
+        - Illumina NovaSeq X
+        - Illumina NovaSeq X Plus
+      hiseq:
+        text: hiseq
+        aliases:
+        - Illumina HiSeq
+      hiseq_1000:
+        text: hiseq_1000
+        meaning: OBI:0002022
+        aliases:
+        - Illumina HiSeq 1000
+      hiseq_1500:
+        text: hiseq_1500
+        meaning: OBI:0003386
+        aliases:
+        - Illumina HiSeq 1500
+      hiseq_2000:
+        text: hiseq_2000
+        meaning: OBI:0002001
+        aliases:
+        - Illumina HiSeq 2000
+      hiseq_2500:
+        text: hiseq_2500
+        meaning: OBI:0002002
+        aliases:
+        - Illumina HiSeq 2500
+        structured_aliases:
+          Illumina HiSeq 2500-1TB:
+            literal_form: Illumina HiSeq 2500-1TB
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina HiSeq 2500-Rapid:
+            literal_form: Illumina HiSeq 2500-Rapid
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+      hiseq_3000:
+        text: hiseq_3000
+        meaning: OBI:0002048
+        aliases:
+        - Illumina HiSeq 3000
+      hiseq_4000:
+        text: hiseq_4000
+        meaning: OBI:0002049
+        aliases:
+        - Illumina HiSeq 4000
+      hiseq_x_ten:
+        text: hiseq_x_ten
+        meaning: OBI:0002129
+        aliases:
+        - Illumina HiSeq X Ten
+      miniseq:
+        text: miniseq
+        meaning: OBI:0003114
+        aliases:
+        - Illumina MiniSeq
+      miseq:
+        text: miseq
+        meaning: OBI:0002003
+        aliases:
+        - MiSeq
+        - Illumina MiSeq
+      nextseq_1000:
+        text: nextseq_1000
+        meaning: OBI:0003606
+        aliases:
+        - Illumina NextSeq 1000
+      nextseq:
+        text: nextseq
+        aliases:
+        - NextSeq
+        - Illumina NextSeq
+        structured_aliases:
+          Illumina NextSeq-HO:
+            literal_form: Illumina NextSeq-HO
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+          Illumina NextSeq-MO:
+            literal_form: Illumina NextSeq-MO
+            predicate: NARROW_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
+      nextseq_500:
+        text: nextseq_500
+        meaning: OBI:0002021
+        aliases:
+        - NextSeq 500
+        - Illumina NextSeq 500
+      nextseq_550:
+        text: nextseq_550
+        meaning: OBI:0003387
+        aliases:
+        - NextSeq 550
+        - Illumina NextSeq 550
   EnvBroadScaleWaterEnum:
     name: EnvBroadScaleWaterEnum
     permissible_values:
@@ -6726,12 +7162,12 @@ enums:
         text: acid mine drainage [ENVO:00001997]
       agricultural field [ENVO:00000114]:
         text: agricultural field [ENVO:00000114]
-      algal bloom [ENVO:2000004]:
-        text: algal bloom [ENVO:2000004]
       anoxic lake [ENVO:01001072]:
         text: anoxic lake [ENVO:01001072]
       aquaculture farm [ENVO:03600074]:
         text: aquaculture farm [ENVO:03600074]
+      aquifer [ENVO:00012408]:
+        text: aquifer [ENVO:00012408]
       archipelago [ENVO:00000220]:
         text: archipelago [ENVO:00000220]
       beach [ENVO:00000091]:
@@ -6740,6 +7176,8 @@ enums:
         text: biofilm [ENVO:00002034]
       black smoker [ENVO:00000218]:
         text: black smoker [ENVO:00000218]
+      cave [ENVO:00000067]:
+        text: cave [ENVO:00000067]
       coast [ENVO:01000687]:
         text: coast [ENVO:01000687]
       cold seep [ENVO:01000263]:
@@ -6778,6 +7216,8 @@ enums:
         text: hadalpelagic zone [ENVO:00000214]
       harbour [ENVO:00000463]:
         text: harbour [ENVO:00000463]
+      headwater [ENVO:00000153]:
+        text: headwater [ENVO:00000153]
       hot spring [ENVO:00000051]:
         text: hot spring [ENVO:00000051]
       hydrothermal vent [ENVO:00000215]:
@@ -6790,12 +7230,8 @@ enums:
         text: intertidal zone [ENVO:00000316]
       lake [ENVO:00000020]:
         text: lake [ENVO:00000020]
-      lentic water body [ENVO:01000617]:
-        text: lentic water body [ENVO:01000617]
       littoral zone [ENVO:01000407]:
         text: littoral zone [ENVO:01000407]
-      lotic water body [ENVO:01000618]:
-        text: lotic water body [ENVO:01000618]
       mangrove swamp [ENVO:00000057]:
         text: mangrove swamp [ENVO:00000057]
       marine aphotic zone [ENVO:00000210]:
@@ -6820,6 +7256,8 @@ enums:
         text: metalimnion [ENVO:00002132]
       microbial mat [ENVO:01000008]:
         text: microbial mat [ENVO:01000008]
+      mine [ENVO:00000076]:
+        text: mine [ENVO:00000076]
       mine drainage [ENVO:00001996]:
         text: mine drainage [ENVO:00001996]
       mud volcano [ENVO:00000402]:
@@ -6834,16 +7272,22 @@ enums:
         text: oil seep [ENVO:00002063]
       oil spill [ENVO:00002061]:
         text: oil spill [ENVO:00002061]
+      peatland [ENVO:00000044]:
+        text: peatland [ENVO:00000044]
+      pit [ENVO:01001871]:
+        text: pit [ENVO:01001871]
       pond [ENVO:00000033]:
         text: pond [ENVO:00000033]
       puddle of water [ENVO:01000871]:
         text: puddle of water [ENVO:01000871]
+      reservoir [ENVO:00000025]:
+        text: reservoir [ENVO:00000025]
       riffle [ENVO:00000148]:
         text: riffle [ENVO:00000148]
       river [ENVO:00000022]:
         text: river [ENVO:00000022]
-      river bed [ENVO:00000384]:
-        text: river bed [ENVO:00000384]
+      saline evaporation pond [ENVO:00000055]:
+        text: saline evaporation pond [ENVO:00000055]
       saline marsh [ENVO:00000054]:
         text: saline marsh [ENVO:00000054]
       sea [ENVO:00000016]:
@@ -6866,16 +7310,24 @@ enums:
         text: stream run [ENVO:03600095]
       subglacial lake [ENVO:03000120]:
         text: subglacial lake [ENVO:03000120]
+      subterranean lake [ENVO:02000145]:
+        text: subterranean lake [ENVO:02000145]
       swamp ecosystem [ENVO:00000233]:
         text: swamp ecosystem [ENVO:00000233]
-      thermocline [ENVO:00002269]:
-        text: thermocline [ENVO:00002269]
       volcano [ENVO:00000247]:
         text: volcano [ENVO:00000247]
       water surface [ENVO:01001191]:
         text: water surface [ENVO:01001191]
+      water tap [ENVO:03600052]:
+        text: water tap [ENVO:03600052]
+      water well [ENVO:01000002]:
+        text: water well [ENVO:01000002]
       wetland ecosystem [ENVO:01001209]:
         text: wetland ecosystem [ENVO:01001209]
+      whale fall [ENVO:01000140]:
+        text: whale fall [ENVO:01000140]
+      wood fall [ENVO:01000142]:
+        text: wood fall [ENVO:01000142]
   EnvMediumWaterEnum:
     name: EnvMediumWaterEnum
     permissible_values:
@@ -7520,6 +7972,506 @@ enums:
         text: vegetable garden soil [ENVO:00005779]
       vertisol [ENVO:00002254]:
         text: vertisol [ENVO:00002254]
+  EnvBroadScaleSedimentEnum:
+    name: EnvBroadScaleSedimentEnum
+    permissible_values:
+      estuarine biome [ENVO:01000020]:
+        text: estuarine biome [ENVO:01000020]
+      freshwater biome [ENVO:00000873]:
+        text: freshwater biome [ENVO:00000873]
+      freshwater lake biome [ENVO:01000252]:
+        text: freshwater lake biome [ENVO:01000252]
+      freshwater river biome [ENVO:01000253]:
+        text: freshwater river biome [ENVO:01000253]
+      large river delta biome [ENVO:00000889]:
+        text: large river delta biome [ENVO:00000889]
+      mangrove biome [ENVO:01000181]:
+        text: mangrove biome [ENVO:01000181]
+      marginal sea biome [ENVO:01000046]:
+        text: marginal sea biome [ENVO:01000046]
+      marine benthic biome [ENVO:01000024]:
+        text: marine benthic biome [ENVO:01000024]
+      marine biome [ENVO:00000447]:
+        text: marine biome [ENVO:00000447]
+      marine cold seep biome [ENVO:01000127]:
+        text: marine cold seep biome [ENVO:01000127]
+      marine coral reef biome [ENVO:01000049]:
+        text: marine coral reef biome [ENVO:01000049]
+      marine neritic benthic zone biome [ENVO:01000025]:
+        text: marine neritic benthic zone biome [ENVO:01000025]
+      marine salt marsh biome [ENVO:01000022]:
+        text: marine salt marsh biome [ENVO:01000022]
+      marine subtidal rocky reef biome [ENVO:01000050]:
+        text: marine subtidal rocky reef biome [ENVO:01000050]
+      xeric basin biome [ENVO:00000893]:
+        text: xeric basin biome [ENVO:00000893]
+  EnvLocalScaleSedimentEnum:
+    name: EnvLocalScaleSedimentEnum
+    permissible_values:
+      archipelago [ENVO:00000220]:
+        text: archipelago [ENVO:00000220]
+      bank [ENVO:00000141]:
+        text: bank [ENVO:00000141]
+      bar [ENVO:00000167]:
+        text: bar [ENVO:00000167]
+      bay [ENVO:00000032]:
+        text: bay [ENVO:00000032]
+      beach [ENVO:00000091]:
+        text: beach [ENVO:00000091]
+      brackish estuary [ENVO:00002137]:
+        text: brackish estuary [ENVO:00002137]
+      brackish lake [ENVO:00000540]:
+        text: brackish lake [ENVO:00000540]
+      cave [ENVO:00000067]:
+        text: cave [ENVO:00000067]
+      coast [ENVO:01000687]:
+        text: coast [ENVO:01000687]
+      coastal water body [ENVO:02000049]:
+        text: coastal water body [ENVO:02000049]
+      cold seep [ENVO:01000263]:
+        text: cold seep [ENVO:01000263]
+      continental margin [ENVO:01000298]:
+        text: continental margin [ENVO:01000298]
+      continental shelf [ENVO:00000223]:
+        text: continental shelf [ENVO:00000223]
+      cryoconite hole [ENVO:03000039]:
+        text: cryoconite hole [ENVO:03000039]
+      eutrophic lake [ENVO:01000548]:
+        text: eutrophic lake [ENVO:01000548]
+      fjord [ENVO:00000039]:
+        text: fjord [ENVO:00000039]
+      flood plain [ENVO:00000255]:
+        text: flood plain [ENVO:00000255]
+      fumarole [ENVO:00000216]:
+        text: fumarole [ENVO:00000216]
+      geyser [ENVO:00000050]:
+        text: geyser [ENVO:00000050]
+      hadalpelagic zone [ENVO:00000214]:
+        text: hadalpelagic zone [ENVO:00000214]
+      harbour [ENVO:00000463]:
+        text: harbour [ENVO:00000463]
+      hot spring [ENVO:00000051]:
+        text: hot spring [ENVO:00000051]
+      hydrothermal seep [ENVO:01000265]:
+        text: hydrothermal seep [ENVO:01000265]
+      hydrothermal vent [ENVO:00000215]:
+        text: hydrothermal vent [ENVO:00000215]
+      hypersaline lake [ENVO:01001020]:
+        text: hypersaline lake [ENVO:01001020]
+      intertidal zone [ENVO:00000316]:
+        text: intertidal zone [ENVO:00000316]
+      irrigation canal [ENVO:00000036]:
+        text: irrigation canal [ENVO:00000036]
+      lake bed [ENVO:00000268]:
+        text: lake bed [ENVO:00000268]
+      lentic water body [ENVO:01000617]:
+        text: lentic water body [ENVO:01000617]
+      littoral zone [ENVO:01000407]:
+        text: littoral zone [ENVO:01000407]
+      marine anoxic zone [ENVO:01000066]:
+        text: marine anoxic zone [ENVO:01000066]
+      marine hydrothermal vent [ENVO:01000122]:
+        text: marine hydrothermal vent [ENVO:01000122]
+      marine neritic zone [ENVO:00000206]:
+        text: marine neritic zone [ENVO:00000206]
+      marine sub-littoral zone [ENVO:01000126]:
+        text: marine sub-littoral zone [ENVO:01000126]
+      mid-ocean ridge [ENVO:00000406]:
+        text: mid-ocean ridge [ENVO:00000406]
+      mud volcano [ENVO:00000402]:
+        text: mud volcano [ENVO:00000402]
+      ocean floor [ENVO:00000426]:
+        text: ocean floor [ENVO:00000426]
+      oil reservoir [ENVO:00002185]:
+        text: oil reservoir [ENVO:00002185]
+      oil spill [ENVO:00002061]:
+        text: oil spill [ENVO:00002061]
+      pond [ENVO:00000033]:
+        text: pond [ENVO:00000033]
+      river [ENVO:00000022]:
+        text: river [ENVO:00000022]
+      river bank [ENVO:00000143]:
+        text: river bank [ENVO:00000143]
+      river bed [ENVO:00000384]:
+        text: river bed [ENVO:00000384]
+      saline evaporation pond [ENVO:00000055]:
+        text: saline evaporation pond [ENVO:00000055]
+      saline lake [ENVO:00000019]:
+        text: saline lake [ENVO:00000019]
+      saline pan [ENVO:00000279]:
+        text: saline pan [ENVO:00000279]
+      sea floor [ENVO:00000482]:
+        text: sea floor [ENVO:00000482]
+      sea grass bed [ENVO:01000059]:
+        text: sea grass bed [ENVO:01000059]
+      shore [ENVO:00000304]:
+        text: shore [ENVO:00000304]
+      spring [ENVO:00000027]:
+        text: spring [ENVO:00000027]
+      stream [ENVO:00000023]:
+        text: stream [ENVO:00000023]
+      stream bed [ENVO:00000383]:
+        text: stream bed [ENVO:00000383]
+      submerged bed [ENVO:00000501]:
+        text: submerged bed [ENVO:00000501]
+  EnvMediumSedimentEnum:
+    name: EnvMediumSedimentEnum
+    permissible_values:
+      anaerobic sediment [ENVO:00002045]:
+        text: anaerobic sediment [ENVO:00002045]
+      chemically contaminated sediment [ENVO:03600001]:
+        text: chemically contaminated sediment [ENVO:03600001]
+      estuarine mud [ENVO:00002160]:
+        text: estuarine mud [ENVO:00002160]
+      granular sediment [ENVO:01000117]:
+        text: granular sediment [ENVO:01000117]
+      hyperthermophilic sediment [ENVO:01000133]:
+        text: hyperthermophilic sediment [ENVO:01000133]
+      petroleum enriched sediment [ENVO:00002115]:
+        text: petroleum enriched sediment [ENVO:00002115]
+      radioactive sediment [ENVO:00002154]:
+        text: radioactive sediment [ENVO:00002154]
+      sediment [ENVO:00002007]:
+        text: sediment [ENVO:00002007]
+      sediment permeated by saline water [ENVO:01001036]:
+        text: sediment permeated by saline water [ENVO:01001036]
+      sludge [ENVO:00002044]:
+        text: sludge [ENVO:00002044]
+      thermophilic sediment [ENVO:01000132]:
+        text: thermophilic sediment [ENVO:01000132]
+  EnvBroadScalePlantAssociatedEnum:
+    name: EnvBroadScalePlantAssociatedEnum
+    permissible_values:
+      alpine tundra biome [ENVO:01001505]:
+        text: alpine tundra biome [ENVO:01001505]
+      anthropogenic terrestrial biome [ENVO:01000219]:
+        text: anthropogenic terrestrial biome [ENVO:01000219]
+      aquatic biome [ENVO:00002030]:
+        text: aquatic biome [ENVO:00002030]
+      broadleaf forest biome [ENVO:01000197]:
+        text: broadleaf forest biome [ENVO:01000197]
+      coniferous forest biome [ENVO:01000196]:
+        text: coniferous forest biome [ENVO:01000196]
+      cropland biome [ENVO:01000245]:
+        text: cropland biome [ENVO:01000245]
+      estuarine biome [ENVO:01000020]:
+        text: estuarine biome [ENVO:01000020]
+      flooded grassland biome [ENVO:01000195]:
+        text: flooded grassland biome [ENVO:01000195]
+      flooded savanna biome [ENVO:01000190]:
+        text: flooded savanna biome [ENVO:01000190]
+      forest biome [ENVO:01000174]:
+        text: forest biome [ENVO:01000174]
+      freshwater biome [ENVO:00000873]:
+        text: freshwater biome [ENVO:00000873]
+      freshwater lake biome [ENVO:01000252]:
+        text: freshwater lake biome [ENVO:01000252]
+      freshwater river biome [ENVO:01000253]:
+        text: freshwater river biome [ENVO:01000253]
+      freshwater stream biome [ENVO:03605008]:
+        text: freshwater stream biome [ENVO:03605008]
+      grassland biome [ENVO:01000177]:
+        text: grassland biome [ENVO:01000177]
+      large freshwater lake biome [ENVO:00000891]:
+        text: large freshwater lake biome [ENVO:00000891]
+      large river biome [ENVO:00000887]:
+        text: large river biome [ENVO:00000887]
+      large river delta biome [ENVO:00000889]:
+        text: large river delta biome [ENVO:00000889]
+      large river headwater biome [ENVO:00000888]:
+        text: large river headwater biome [ENVO:00000888]
+      mangrove biome [ENVO:01000181]:
+        text: mangrove biome [ENVO:01000181]
+      marine biome [ENVO:00000447]:
+        text: marine biome [ENVO:00000447]
+      marine neritic benthic zone biome [ENVO:01000025]:
+        text: marine neritic benthic zone biome [ENVO:01000025]
+      marine salt marsh biome [ENVO:01000022]:
+        text: marine salt marsh biome [ENVO:01000022]
+      mediterranean forest biome [ENVO:01000199]:
+        text: mediterranean forest biome [ENVO:01000199]
+      mediterranean grassland biome [ENVO:01000224]:
+        text: mediterranean grassland biome [ENVO:01000224]
+      mediterranean savanna biome [ENVO:01000229]:
+        text: mediterranean savanna biome [ENVO:01000229]
+      mediterranean shrubland biome [ENVO:01000217]:
+        text: mediterranean shrubland biome [ENVO:01000217]
+      mediterranean woodland biome [ENVO:01000208]:
+        text: mediterranean woodland biome [ENVO:01000208]
+      mixed forest biome [ENVO:01000198]:
+        text: mixed forest biome [ENVO:01000198]
+      montane grassland biome [ENVO:01000194]:
+        text: montane grassland biome [ENVO:01000194]
+      montane savanna biome [ENVO:01000223]:
+        text: montane savanna biome [ENVO:01000223]
+      montane shrubland biome [ENVO:01000216]:
+        text: montane shrubland biome [ENVO:01000216]
+      neritic epipelagic zone biome [ENVO:01000042]:
+        text: neritic epipelagic zone biome [ENVO:01000042]
+      neritic mesopelagic zone biome [ENVO:01000043]:
+        text: neritic mesopelagic zone biome [ENVO:01000043]
+      neritic pelagic zone biome [ENVO:01000032]:
+        text: neritic pelagic zone biome [ENVO:01000032]
+      neritic sea surface microlayer biome [ENVO:01000041]:
+        text: neritic sea surface microlayer biome [ENVO:01000041]
+      rangeland biome [ENVO:01000247]:
+        text: rangeland biome [ENVO:01000247]
+      savanna biome [ENVO:01000178]:
+        text: savanna biome [ENVO:01000178]
+      shrubland biome [ENVO:01000176]:
+        text: shrubland biome [ENVO:01000176]
+      small freshwater lake biome [ENVO:00000892]:
+        text: small freshwater lake biome [ENVO:00000892]
+      small river biome [ENVO:00000890]:
+        text: small river biome [ENVO:00000890]
+      subpolar coniferous forest biome [ENVO:01000250]:
+        text: subpolar coniferous forest biome [ENVO:01000250]
+      subtropical broadleaf forest biome [ENVO:01000201]:
+        text: subtropical broadleaf forest biome [ENVO:01000201]
+      subtropical coniferous forest biome [ENVO:01000209]:
+        text: subtropical coniferous forest biome [ENVO:01000209]
+      subtropical dry broadleaf forest biome [ENVO:01000225]:
+        text: subtropical dry broadleaf forest biome [ENVO:01000225]
+      subtropical grassland biome [ENVO:01000191]:
+        text: subtropical grassland biome [ENVO:01000191]
+      subtropical moist broadleaf forest biome [ENVO:01000226]:
+        text: subtropical moist broadleaf forest biome [ENVO:01000226]
+      subtropical savanna biome [ENVO:01000187]:
+        text: subtropical savanna biome [ENVO:01000187]
+      subtropical shrubland biome [ENVO:01000213]:
+        text: subtropical shrubland biome [ENVO:01000213]
+      subtropical woodland biome [ENVO:01000222]:
+        text: subtropical woodland biome [ENVO:01000222]
+      temperate broadleaf forest biome [ENVO:01000202]:
+        text: temperate broadleaf forest biome [ENVO:01000202]
+      temperate coniferous forest biome [ENVO:01000211]:
+        text: temperate coniferous forest biome [ENVO:01000211]
+      temperate grassland biome [ENVO:01000193]:
+        text: temperate grassland biome [ENVO:01000193]
+      temperate mixed forest biome [ENVO:01000212]:
+        text: temperate mixed forest biome [ENVO:01000212]
+      temperate savanna biome [ENVO:01000189]:
+        text: temperate savanna biome [ENVO:01000189]
+      temperate shrubland biome [ENVO:01000215]:
+        text: temperate shrubland biome [ENVO:01000215]
+      temperate woodland biome [ENVO:01000221]:
+        text: temperate woodland biome [ENVO:01000221]
+      terrestrial biome [ENVO:00000446]:
+        text: terrestrial biome [ENVO:00000446]
+      tidal mangrove shrubland [ENVO:01001369]:
+        text: tidal mangrove shrubland [ENVO:01001369]
+      tropical broadleaf forest biome [ENVO:01000200]:
+        text: tropical broadleaf forest biome [ENVO:01000200]
+      tropical coniferous forest biome [ENVO:01000210]:
+        text: tropical coniferous forest biome [ENVO:01000210]
+      tropical dry broadleaf forest biome [ENVO:01000227]:
+        text: tropical dry broadleaf forest biome [ENVO:01000227]
+      tropical grassland biome [ENVO:01000192]:
+        text: tropical grassland biome [ENVO:01000192]
+      tropical mixed forest biome [ENVO:01001798]:
+        text: tropical mixed forest biome [ENVO:01001798]
+      tropical moist broadleaf forest biome [ENVO:01000228]:
+        text: tropical moist broadleaf forest biome [ENVO:01000228]
+      tropical savanna biome [ENVO:01000188]:
+        text: tropical savanna biome [ENVO:01000188]
+      tropical shrubland biome [ENVO:01000214]:
+        text: tropical shrubland biome [ENVO:01000214]
+      tropical woodland biome [ENVO:01000220]:
+        text: tropical woodland biome [ENVO:01000220]
+      tundra biome [ENVO:01000180]:
+        text: tundra biome [ENVO:01000180]
+      woodland biome [ENVO:01000175]:
+        text: woodland biome [ENVO:01000175]
+      xeric basin biome [ENVO:00000893]:
+        text: xeric basin biome [ENVO:00000893]
+      xeric shrubland biome [ENVO:01000218]:
+        text: xeric shrubland biome [ENVO:01000218]
+  EnvLocalScalePlantAssociatedEnum:
+    name: EnvLocalScalePlantAssociatedEnum
+    permissible_values:
+      agricultural terrace [ENVO:00000519]:
+        text: agricultural terrace [ENVO:00000519]
+      alluvial plain [ENVO:00000258]:
+        text: alluvial plain [ENVO:00000258]
+      area of barren land [ENVO:01000752]:
+        text: area of barren land [ENVO:01000752]
+      area of cropland [ENVO:01000892]:
+        text: area of cropland [ENVO:01000892]
+      area of deciduous forest [ENVO:01000816]:
+        text: area of deciduous forest [ENVO:01000816]
+      area of developed open space [ENVO:01000883]:
+        text: area of developed open space [ENVO:01000883]
+      area of developed space with high usage intensity [ENVO:01000886]:
+        text: area of developed space with high usage intensity [ENVO:01000886]
+      area of developed space with low usage intensity [ENVO:01000884]:
+        text: area of developed space with low usage intensity [ENVO:01000884]
+      area of developed space with medium usage intensity [ENVO:01000885]:
+        text: area of developed space with medium usage intensity [ENVO:01000885]
+      area of dwarf scrub [ENVO:01000861]:
+        text: area of dwarf scrub [ENVO:01000861]
+      area of emergent herbaceous wetland [ENVO:01000894]:
+        text: area of emergent herbaceous wetland [ENVO:01000894]
+      area of evergreen forest [ENVO:01000843]:
+        text: area of evergreen forest [ENVO:01000843]
+      area of gramanoid or herbaceous vegetation [ENVO:01000888]:
+        text: area of gramanoid or herbaceous vegetation [ENVO:01000888]
+      area of lichen-dominated vegetation [ENVO:01000889]:
+        text: area of lichen-dominated vegetation [ENVO:01000889]
+      area of mixed forest [ENVO:01000855]:
+        text: area of mixed forest [ENVO:01000855]
+      area of moss-dominated vegetation [ENVO:01000890]:
+        text: area of moss-dominated vegetation [ENVO:01000890]
+      area of open water [ENVO:01000666]:
+        text: area of open water [ENVO:01000666]
+      area of perennial ice or snow [ENVO:01000746]:
+        text: area of perennial ice or snow [ENVO:01000746]
+      area of perennial snow [ENVO:01000745]:
+        text: area of perennial snow [ENVO:01000745]
+      area of perennial water ice [ENVO:01000740]:
+        text: area of perennial water ice [ENVO:01000740]
+      area of scrub [ENVO:01000869]:
+        text: area of scrub [ENVO:01000869]
+      area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]:
+        text: area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]
+      area of woody wetland [ENVO:01000893]:
+        text: area of woody wetland [ENVO:01000893]
+      beach [ENVO:00000091]:
+        text: beach [ENVO:00000091]
+      botanical garden [ENVO:00010624]:
+        text: botanical garden [ENVO:00010624]
+      cliff [ENVO:00000087]:
+        text: cliff [ENVO:00000087]
+      coast [ENVO:01000687]:
+        text: coast [ENVO:01000687]
+      crop canopy [ENVO:01001241]:
+        text: crop canopy [ENVO:01001241]
+      desert [ENVO:01001357]:
+        text: desert [ENVO:01001357]
+      dune [ENVO:00000170]:
+        text: dune [ENVO:00000170]
+      farm [ENVO:00000078]:
+        text: farm [ENVO:00000078]
+      forest floor [ENVO:01001582]:
+        text: forest floor [ENVO:01001582]
+      garden [ENVO:00000011]:
+        text: garden [ENVO:00000011]
+      greenhouse [ENVO:03600087]:
+        text: greenhouse [ENVO:03600087]
+      harbour [ENVO:00000463]:
+        text: harbour [ENVO:00000463]
+      herb and fern layer [ENVO:01000337]:
+        text: herb and fern layer [ENVO:01000337]
+      hill [ENVO:00000083]:
+        text: hill [ENVO:00000083]
+      house [ENVO:01000417]:
+        text: house [ENVO:01000417]
+      island [ENVO:00000098]:
+        text: island [ENVO:00000098]
+      laboratory facility [ENVO:01001406]:
+        text: laboratory facility [ENVO:01001406]
+      litter layer [ENVO:01000338]:
+        text: litter layer [ENVO:01000338]
+      market [ENVO:01000987]:
+        text: market [ENVO:01000987]
+      mountain [ENVO:00000081]:
+        text: mountain [ENVO:00000081]
+      oasis [ENVO:01001304]:
+        text: oasis [ENVO:01001304]
+      ocean [ENVO:00000015]:
+        text: ocean [ENVO:00000015]
+      outcrop [ENVO:01000302]:
+        text: outcrop [ENVO:01000302]
+      plantation [ENVO:00000117]:
+        text: plantation [ENVO:00000117]
+      plateau [ENVO:00000182]:
+        text: plateau [ENVO:00000182]
+      pond [ENVO:00000033]:
+        text: pond [ENVO:00000033]
+      prairie [ENVO:00000260]:
+        text: prairie [ENVO:00000260]
+      public park [ENVO:03500002]:
+        text: public park [ENVO:03500002]
+      research facility [ENVO:00000469]:
+        text: research facility [ENVO:00000469]
+      river bank [ENVO:00000143]:
+        text: river bank [ENVO:00000143]
+      river valley [ENVO:00000171]:
+        text: river valley [ENVO:00000171]
+      road [ENVO:00000064]:
+        text: road [ENVO:00000064]
+      sea grass bed [ENVO:01000059]:
+        text: sea grass bed [ENVO:01000059]
+      shore [ENVO:00000304]:
+        text: shore [ENVO:00000304]
+      shrub layer [ENVO:01000336]:
+        text: shrub layer [ENVO:01000336]
+      submerged bed [ENVO:00000501]:
+        text: submerged bed [ENVO:00000501]
+      understory [ENVO:01000335]:
+        text: understory [ENVO:01000335]
+      valley [ENVO:00000100]:
+        text: valley [ENVO:00000100]
+      woodland canopy [ENVO:01001240]:
+        text: woodland canopy [ENVO:01001240]
+  EnvMediumPlantAssociatedEnum:
+    name: EnvMediumPlantAssociatedEnum
+    permissible_values:
+      bark [PO:0004518]:
+        text: bark [PO:0004518]
+      bulb [PO:0025356]:
+        text: bulb [PO:0025356]
+      corm [PO:0025355]:
+        text: corm [PO:0025355]
+      ear infructescence axis [PO:0025623]:
+        text: ear infructescence axis [PO:0025623]
+      flag leaf [PO:0020103]:
+        text: flag leaf [PO:0020103]
+      flower [PO:0009046]:
+        text: flower [PO:0009046]
+      fruit [PO:0009001]:
+        text: fruit [PO:0009001]
+      leaf [PO:0025034]:
+        text: leaf [PO:0025034]
+      petiole [PO:0020038]:
+        text: petiole [PO:0020038]
+      phyllome [PO:0006001]:
+        text: phyllome [PO:0006001]
+      pith [PO:0006109]:
+        text: pith [PO:0006109]
+      plant callus [PO:0005052]:
+        text: plant callus [PO:0005052]
+      plant gall [PO:0025626]:
+        text: plant gall [PO:0025626]
+      plant litter [ENVO:01000628]:
+        text: plant litter [ENVO:01000628]
+      pollen [PO:0025281]:
+        text: pollen [PO:0025281]
+      radicle [PO:0020031]:
+        text: radicle [PO:0020031]
+      rhizoid [PO:0030078]:
+        text: rhizoid [PO:0030078]
+      rhizome [PO:0004542]:
+        text: rhizome [PO:0004542]
+      rhizosphere [ENVO:00005801]:
+        text: rhizosphere [ENVO:00005801]
+      root [PO:0009005]:
+        text: root [PO:0009005]
+      root nodule [PO:0003023]:
+        text: root nodule [PO:0003023]
+      sapwood [PO:0004513]:
+        text: sapwood [PO:0004513]
+      secondary xylem [PO:0005848]:
+        text: secondary xylem [PO:0005848]
+      seed [PO:0009010]:
+        text: seed [PO:0009010]
+      seedling [PO:0008037]:
+        text: seedling [PO:0008037]
+      stem [PO:0009047]:
+        text: stem [PO:0009047]
+      tuber [PO:0025522]:
+        text: tuber [PO:0025522]
+      xylem vessel [PO:0025417]:
+        text: xylem vessel [PO:0025417]
 slots:
   air_data:
     name: air_data
@@ -7662,6 +8614,42 @@ slots:
     multivalued: true
     inlined: true
     inlined_as_list: true
+  metagenome_sequencing_non_interleaved_data:
+    name: metagenome_sequencing_non_interleaved_data
+    description: aggregation slot relating non-interleaved metagenome sequencing data
+      collections to a  SampleData container
+    from_schema: https://example.com/nmdc_submission_schema
+    range: MetagenomeSequencingNonInterleavedDataInterface
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  metagenome_sequencing_interleaved_data:
+    name: metagenome_sequencing_interleaved_data
+    description: aggregation slot relating interleaved metagenome sequencing data
+      collections to a SampleData  container
+    from_schema: https://example.com/nmdc_submission_schema
+    range: MetagenomeSequencingInterleavedDataInterface
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  metatranscriptome_sequencing_non_interleaved_data:
+    name: metatranscriptome_sequencing_non_interleaved_data
+    description: aggregation slot relating non-interleaved metatranscriptome sequencing
+      data collections to a  SampleData container
+    from_schema: https://example.com/nmdc_submission_schema
+    range: MetatranscriptomeSequencingNonInterleavedDataInterface
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  metatranscriptome_sequencing_interleaved_data:
+    name: metatranscriptome_sequencing_interleaved_data
+    description: aggregation slot relating interleaved metatranscriptome sequencing
+      data collections to a  SampleData container
+    from_schema: https://example.com/nmdc_submission_schema
+    range: MetatranscriptomeSequencingInterleavedDataInterface
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
   dh_section:
     name: dh_section
     description: dh_section grouping slot
@@ -7724,6 +8712,99 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1
     is_a: dh_section
+  sequencing_section:
+    name: sequencing_section
+    title: Sequencing Details
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 11
+    is_a: dh_section
+  data_files_section:
+    name: data_files_section
+    title: Data Files
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 12
+    is_a: dh_section
+  read_1_url:
+    name: read_1_url
+    description: URL for FASTQ file of read 1 of a pair of reads.
+    title: read 1 FASTQ
+    comments:
+    - If multiple runs were performed, separate each URL with a semi-colon.
+    - External data urls should be available for at least a year. If you would like
+      NMDC to submit your data to an appropriate raw data repository on your behalf
+      please contact us at microbiomedata.science@gmail.com.
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 10
+    slot_group: data_files_section
+    range: string
+    required: true
+    multivalued: false
+  read_1_md5_checksum:
+    name: read_1_md5_checksum
+    description: MD5 checksum of file in "read 1 FASTQ".
+    title: read 1 FASTQ MD5
+    comments:
+    - If multiple runs were performed, separate each checksum with a semi-colon. The
+      number of checksums should match the number of URLs in "read 1 FASTQ".
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 11
+    slot_group: data_files_section
+    range: string
+    multivalued: false
+  read_2_url:
+    name: read_2_url
+    description: URL for FASTQ file of read 2 of a pair of reads.
+    title: read 2 FASTQ
+    comments:
+    - If multiple runs were performed, separate each URL with a semi-colon.
+    - External data urls should be available for at least a year. If you would like
+      NMDC to submit your data to an appropriate raw data repository on your behalf
+      please contact us at microbiomedata.science@gmail.com.
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 12
+    slot_group: data_files_section
+    range: string
+    required: true
+    multivalued: false
+  read_2_md5_checksum:
+    name: read_2_md5_checksum
+    description: MD5 checksum of file in "read 2 FASTQ".
+    title: read 2 FASTQ MD5
+    comments:
+    - If multiple runs were performed, separate each checksum with a semi-colon. The
+      number of checksums should match the number of URLs in "read 2 FASTQ".
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 13
+    slot_group: data_files_section
+    range: string
+    multivalued: false
+  interleaved_url:
+    name: interleaved_url
+    description: URL for FASTQ file of interleaved reads.
+    title: interleaved FASTQ
+    comments:
+    - If multiple runs were performed, separate each URL with a semi-colon.
+    - External data urls should be available for at least a year. If you would like
+      NMDC to submit your data to an appropriate raw data repository on your behalf
+      please contact us at microbiomedata.science@gmail.com.
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 14
+    slot_group: data_files_section
+    range: string
+    required: true
+    multivalued: false
+  interleaved_md5_checksum:
+    name: interleaved_md5_checksum
+    description: MD5 checksum of file in "interleaved FASTQ".
+    title: interleaved FASTQ MD5
+    comments:
+    - If multiple runs were performed, separate each checksum with a semi-colon. The
+      number of checksums should match the number of URLs in "interleaved FASTQ".
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 15
+    slot_group: data_files_section
+    range: string
+    multivalued: false
   abs_air_humidity:
     name: abs_air_humidity
     annotations:
@@ -20753,6 +21834,60 @@ slots:
     - Biosample
     range: string
     multivalued: false
+  model:
+    name: model
+    from_schema: https://example.com/nmdc_submission_schema
+    domain_of:
+    - Instrument
+    range: InstrumentModelEnum
+  processing_institution:
+    name: processing_institution
+    description: The organization that processed the sample.
+    from_schema: https://example.com/nmdc_submission_schema
+    domain_of:
+    - PlannedProcess
+    range: ProcessingInstitutionEnum
+  protocol_link:
+    name: protocol_link
+    from_schema: https://example.com/nmdc_submission_schema
+    domain_of:
+    - PlannedProcess
+    - Study
+    range: Protocol
+  insdc_bioproject_identifiers:
+    name: insdc_bioproject_identifiers
+    description: identifiers for corresponding project in INSDC Bioproject
+    comments:
+    - these are distinct IDs from INSDC SRA/ENA project identifiers, but are usually(?)
+      one to one
+    examples:
+    - value: https://bioregistry.io/bioproject:PRJNA366857
+      description: Avena fatua rhizosphere microbial communities - H1_Rhizo_Litter_2
+        metatranscriptome
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ncbi.nlm.nih.gov/bioproject/
+    - https://www.ddbj.nig.ac.jp/bioproject/index-e.html
+    aliases:
+    - NCBI bioproject identifiers
+    - DDBJ bioproject identifiers
+    is_a: study_identifiers
+    mixins:
+    - insdc_identifiers
+    domain_of:
+    - NucleotideSequencing
+    - Study
+    pattern: ^bioproject:PRJ[DEN][A-Z][0-9]+$
+  insdc_experiment_identifiers:
+    name: insdc_experiment_identifiers
+    from_schema: https://example.com/nmdc_submission_schema
+    is_a: external_database_identifiers
+    mixins:
+    - insdc_identifiers
+    domain_of:
+    - NucleotideSequencing
+    - DataObject
+    pattern: ^insdc.sra:(E|D|S)RX[0-9]{6,}$
   alternative_identifiers:
     name: alternative_identifiers
     description: A list of alternative identifiers for the entity.
@@ -20946,6 +22081,55 @@ slots:
   biomaterial_purity:
     name: biomaterial_purity
     from_schema: https://example.com/nmdc_submission_schema
+    range: string
+    multivalued: false
+  external_database_identifiers:
+    name: external_database_identifiers
+    description: Link to corresponding identifier in external database
+    notes:
+    - had tried ranges of external identifier and string
+    comments:
+    - The value of this field is always a registered CURIE
+    from_schema: https://example.com/nmdc_submission_schema
+    close_mappings:
+    - skos:closeMatch
+    is_a: alternative_identifiers
+    abstract: true
+    range: external_identifier
+    multivalued: true
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+  insdc_identifiers:
+    name: insdc_identifiers
+    description: Any identifier covered by the International Nucleotide Sequence Database
+      Collaboration
+    comments:
+    - note that we deliberately abstract over which of the partner databases accepted
+      the initial submission
+    - 'the first letter of the accession indicates which partner accepted the initial
+      submission: E for ENA, D for DDBJ, or S or N for NCBI.'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.insdc.org/
+    - https://ena-docs.readthedocs.io/en/latest/submit/general-guide/accessions.html
+    aliases:
+    - EBI identifiers
+    - NCBI identifiers
+    - DDBJ identifiers
+    mixin: true
+  study_identifiers:
+    name: study_identifiers
+    from_schema: https://example.com/nmdc_submission_schema
+    is_a: external_database_identifiers
+    abstract: true
+  url:
+    name: url
+    notes:
+    - See issue 207 - this clashes with the mixs field
+    from_schema: https://example.com/nmdc_submission_schema
+    domain_of:
+    - ImageValue
+    - Protocol
+    - DataObject
     range: string
     multivalued: false
 classes:
@@ -42044,6 +43228,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvBroadScalePlantAssociatedEnum
+        - range: string
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -42093,6 +43280,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvLocalScalePlantAssociatedEnum
+        - range: string
       env_medium:
         name: env_medium
         annotations:
@@ -42138,6 +43328,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvMediumPlantAssociatedEnum
+        - range: string
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -45498,6 +46691,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvBroadScaleSedimentEnum
+        - range: string
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -45547,6 +46743,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvLocalScaleSedimentEnum
+        - range: string
       env_medium:
         name: env_medium
         annotations:
@@ -45592,6 +46791,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvMediumSedimentEnum
+        - range: string
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -54463,6 +55665,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvBroadScaleWaterEnum
+        - range: string
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -54505,6 +55710,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvLocalScaleWaterEnum
+        - range: string
       env_medium:
         name: env_medium
         annotations:
@@ -54547,6 +55755,9 @@ classes:
         required: true
         multivalued: false
         pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        any_of:
+        - range: EnvMediumWaterEnum
+        - range: string
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -56558,6 +57769,410 @@ classes:
         slot_group: mixs_modified_section
         range: string
         multivalued: false
+  MetagenomeSequencingNonInterleavedDataInterface:
+    name: MetagenomeSequencingNonInterleavedDataInterface
+    description: Interface for non-interleaved metagenome sequencing data
+    title: Metagenome Sequence Data (Non-Interleaved)
+    from_schema: https://example.com/nmdc_submission_schema
+    mixins:
+    - DhMultiviewCommonColumnsMixin
+    slots:
+    - read_1_url
+    - read_1_md5_checksum
+    - read_2_url
+    - read_2_md5_checksum
+    - model
+    - processing_institution
+    - protocol_link
+    - insdc_bioproject_identifiers
+    - insdc_experiment_identifiers
+    slot_usage:
+      model:
+        name: model
+        description: The model of the Illumina sequencing instrument used to generate
+          the data.
+        title: instrument model
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 2
+        owner: Instrument
+        domain_of:
+        - Instrument
+        slot_group: sequencing_section
+        range: IlluminaInstrumentModelEnum
+        required: true
+      processing_institution:
+        name: processing_institution
+        description: The organization that processed the sample.
+        title: processing institution
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 3
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        slot_group: sequencing_section
+        range: ProcessingInstitutionEnum
+      protocol_link:
+        name: protocol_link
+        description: A URL to a description of the sequencing protocol used to generate
+          the data.
+        title: protocol
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 4
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+      insdc_bioproject_identifiers:
+        name: insdc_bioproject_identifiers
+        description: identifiers for corresponding project in INSDC Bioproject
+        title: INSDC bioproject identifier
+        comments:
+        - these are distinct IDs from INSDC SRA/ENA project identifiers, but are usually(?)
+          one to one
+        examples:
+        - value: bioproject:PRJNA366857
+        from_schema: https://w3id.org/nmdc/nmdc
+        see_also:
+        - https://www.ncbi.nlm.nih.gov/bioproject/
+        - https://www.ddbj.nig.ac.jp/bioproject/index-e.html
+        aliases:
+        - NCBI bioproject identifiers
+        - DDBJ bioproject identifiers
+        rank: 5
+        is_a: study_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^bioproject:PRJ[DEN][A-Z][0-9]+$
+      insdc_experiment_identifiers:
+        name: insdc_experiment_identifiers
+        description: If multiple identifiers are provided, separate them with a semicolon.
+          The number of identifiers must match the number of sequencing files.
+        title: INSDC experiment identifiers
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 6
+        is_a: external_database_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - DataObject
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^insdc.sra:(E|D|S)RX[0-9]{6,}$
+  MetagenomeSequencingInterleavedDataInterface:
+    name: MetagenomeSequencingInterleavedDataInterface
+    description: Interface for interleaved metagenome sequencing data
+    title: Metagenome Sequence Data (Interleaved)
+    from_schema: https://example.com/nmdc_submission_schema
+    mixins:
+    - DhMultiviewCommonColumnsMixin
+    slots:
+    - interleaved_url
+    - interleaved_md5_checksum
+    - model
+    - processing_institution
+    - protocol_link
+    - insdc_bioproject_identifiers
+    - insdc_experiment_identifiers
+    slot_usage:
+      model:
+        name: model
+        description: The model of the Illumina sequencing instrument used to generate
+          the data.
+        title: instrument model
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 2
+        owner: Instrument
+        domain_of:
+        - Instrument
+        slot_group: sequencing_section
+        range: IlluminaInstrumentModelEnum
+        required: true
+      processing_institution:
+        name: processing_institution
+        description: The organization that processed the sample.
+        title: processing institution
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 3
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        slot_group: sequencing_section
+        range: ProcessingInstitutionEnum
+      protocol_link:
+        name: protocol_link
+        description: A URL to a description of the sequencing protocol used to generate
+          the data.
+        title: protocol
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 4
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+      insdc_bioproject_identifiers:
+        name: insdc_bioproject_identifiers
+        description: identifiers for corresponding project in INSDC Bioproject
+        title: INSDC bioproject identifier
+        comments:
+        - these are distinct IDs from INSDC SRA/ENA project identifiers, but are usually(?)
+          one to one
+        examples:
+        - value: bioproject:PRJNA366857
+        from_schema: https://w3id.org/nmdc/nmdc
+        see_also:
+        - https://www.ncbi.nlm.nih.gov/bioproject/
+        - https://www.ddbj.nig.ac.jp/bioproject/index-e.html
+        aliases:
+        - NCBI bioproject identifiers
+        - DDBJ bioproject identifiers
+        rank: 5
+        is_a: study_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^bioproject:PRJ[DEN][A-Z][0-9]+$
+      insdc_experiment_identifiers:
+        name: insdc_experiment_identifiers
+        description: If multiple identifiers are provided, separate them with a semicolon.
+          The number of identifiers must match the number of sequencing files.
+        title: INSDC experiment identifiers
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 6
+        is_a: external_database_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - DataObject
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^insdc.sra:(E|D|S)RX[0-9]{6,}$
+  MetatranscriptomeSequencingNonInterleavedDataInterface:
+    name: MetatranscriptomeSequencingNonInterleavedDataInterface
+    description: Interface for non-interleaved metatranscriptome sequencing data
+    title: Metatranscriptome Sequence Data (Non-Interleaved)
+    from_schema: https://example.com/nmdc_submission_schema
+    mixins:
+    - DhMultiviewCommonColumnsMixin
+    slots:
+    - read_1_url
+    - read_1_md5_checksum
+    - read_2_url
+    - read_2_md5_checksum
+    - model
+    - processing_institution
+    - protocol_link
+    - insdc_bioproject_identifiers
+    - insdc_experiment_identifiers
+    slot_usage:
+      model:
+        name: model
+        description: The model of the Illumina sequencing instrument used to generate
+          the data.
+        title: instrument model
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 2
+        owner: Instrument
+        domain_of:
+        - Instrument
+        slot_group: sequencing_section
+        range: IlluminaInstrumentModelEnum
+        required: true
+      processing_institution:
+        name: processing_institution
+        description: The organization that processed the sample.
+        title: processing institution
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 3
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        slot_group: sequencing_section
+        range: ProcessingInstitutionEnum
+      protocol_link:
+        name: protocol_link
+        description: A URL to a description of the sequencing protocol used to generate
+          the data.
+        title: protocol
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 4
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+      insdc_bioproject_identifiers:
+        name: insdc_bioproject_identifiers
+        description: identifiers for corresponding project in INSDC Bioproject
+        title: INSDC bioproject identifier
+        comments:
+        - these are distinct IDs from INSDC SRA/ENA project identifiers, but are usually(?)
+          one to one
+        examples:
+        - value: bioproject:PRJNA366857
+        from_schema: https://w3id.org/nmdc/nmdc
+        see_also:
+        - https://www.ncbi.nlm.nih.gov/bioproject/
+        - https://www.ddbj.nig.ac.jp/bioproject/index-e.html
+        aliases:
+        - NCBI bioproject identifiers
+        - DDBJ bioproject identifiers
+        rank: 5
+        is_a: study_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^bioproject:PRJ[DEN][A-Z][0-9]+$
+      insdc_experiment_identifiers:
+        name: insdc_experiment_identifiers
+        description: If multiple identifiers are provided, separate them with a semicolon.
+          The number of identifiers must match the number of sequencing files.
+        title: INSDC experiment identifiers
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 6
+        is_a: external_database_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - DataObject
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^insdc.sra:(E|D|S)RX[0-9]{6,}$
+  MetatranscriptomeSequencingInterleavedDataInterface:
+    name: MetatranscriptomeSequencingInterleavedDataInterface
+    description: Interface for interleaved metatranscriptome sequencing data
+    title: Metatranscriptome Sequence Data (Interleaved)
+    from_schema: https://example.com/nmdc_submission_schema
+    mixins:
+    - DhMultiviewCommonColumnsMixin
+    slots:
+    - interleaved_url
+    - interleaved_md5_checksum
+    - model
+    - processing_institution
+    - protocol_link
+    - insdc_bioproject_identifiers
+    - insdc_experiment_identifiers
+    slot_usage:
+      model:
+        name: model
+        description: The model of the Illumina sequencing instrument used to generate
+          the data.
+        title: instrument model
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 2
+        owner: Instrument
+        domain_of:
+        - Instrument
+        slot_group: sequencing_section
+        range: IlluminaInstrumentModelEnum
+        required: true
+      processing_institution:
+        name: processing_institution
+        description: The organization that processed the sample.
+        title: processing institution
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 3
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        slot_group: sequencing_section
+        range: ProcessingInstitutionEnum
+      protocol_link:
+        name: protocol_link
+        description: A URL to a description of the sequencing protocol used to generate
+          the data.
+        title: protocol
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 4
+        owner: NucleotideSequencing
+        domain_of:
+        - PlannedProcess
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+      insdc_bioproject_identifiers:
+        name: insdc_bioproject_identifiers
+        description: identifiers for corresponding project in INSDC Bioproject
+        title: INSDC bioproject identifier
+        comments:
+        - these are distinct IDs from INSDC SRA/ENA project identifiers, but are usually(?)
+          one to one
+        examples:
+        - value: bioproject:PRJNA366857
+        from_schema: https://w3id.org/nmdc/nmdc
+        see_also:
+        - https://www.ncbi.nlm.nih.gov/bioproject/
+        - https://www.ddbj.nig.ac.jp/bioproject/index-e.html
+        aliases:
+        - NCBI bioproject identifiers
+        - DDBJ bioproject identifiers
+        rank: 5
+        is_a: study_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - Study
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^bioproject:PRJ[DEN][A-Z][0-9]+$
+      insdc_experiment_identifiers:
+        name: insdc_experiment_identifiers
+        description: If multiple identifiers are provided, separate them with a semicolon.
+          The number of identifiers must match the number of sequencing files.
+        title: INSDC experiment identifiers
+        from_schema: https://w3id.org/nmdc/nmdc
+        rank: 6
+        is_a: external_database_identifiers
+        mixins:
+        - insdc_identifiers
+        owner: NucleotideSequencing
+        domain_of:
+        - NucleotideSequencing
+        - DataObject
+        slot_group: sequencing_section
+        range: string
+        multivalued: false
+        pattern: ^insdc.sra:(E|D|S)RX[0-9]{6,}$
   DhMultiviewCommonColumnsMixin:
     name: DhMultiviewCommonColumnsMixin
     description: Mixin with DhMutliviewCommon Columns
@@ -57116,6 +58731,10 @@ classes:
     - jgi_mg_lr_data
     - jgi_mg_data
     - jgi_mt_data
+    - metagenome_sequencing_non_interleaved_data
+    - metagenome_sequencing_interleaved_data
+    - metatranscriptome_sequencing_non_interleaved_data
+    - metatranscriptome_sequencing_interleaved_data
     tree_root: true
   GeneProduct:
     name: GeneProduct
@@ -57144,4 +58763,12 @@ classes:
     - alternative_identifiers
     - type
     class_uri: nmdc:NamedThing
+  Protocol:
+    name: Protocol
+    from_schema: https://example.com/nmdc_submission_schema
+    slots:
+    - url
+    - name
+    - type
+    class_uri: nmdc:Protocol
 source_file: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml

@@ -3686,6 +3686,107 @@
             "title": "EmslInterface",
             "type": "object"
         },
+        "EnvBroadScalePlantAssociatedEnum": {
+            "description": "",
+            "enum": [
+                "alpine tundra biome [ENVO:01001505]",
+                "anthropogenic terrestrial biome [ENVO:01000219]",
+                "aquatic biome [ENVO:00002030]",
+                "broadleaf forest biome [ENVO:01000197]",
+                "coniferous forest biome [ENVO:01000196]",
+                "cropland biome [ENVO:01000245]",
+                "estuarine biome [ENVO:01000020]",
+                "flooded grassland biome [ENVO:01000195]",
+                "flooded savanna biome [ENVO:01000190]",
+                "forest biome [ENVO:01000174]",
+                "freshwater biome [ENVO:00000873]",
+                "freshwater lake biome [ENVO:01000252]",
+                "freshwater river biome [ENVO:01000253]",
+                "freshwater stream biome [ENVO:03605008]",
+                "grassland biome [ENVO:01000177]",
+                "large freshwater lake biome [ENVO:00000891]",
+                "large river biome [ENVO:00000887]",
+                "large river delta biome [ENVO:00000889]",
+                "large river headwater biome [ENVO:00000888]",
+                "mangrove biome [ENVO:01000181]",
+                "marine biome [ENVO:00000447]",
+                "marine neritic benthic zone biome [ENVO:01000025]",
+                "marine salt marsh biome [ENVO:01000022]",
+                "mediterranean forest biome [ENVO:01000199]",
+                "mediterranean grassland biome [ENVO:01000224]",
+                "mediterranean savanna biome [ENVO:01000229]",
+                "mediterranean shrubland biome [ENVO:01000217]",
+                "mediterranean woodland biome [ENVO:01000208]",
+                "mixed forest biome [ENVO:01000198]",
+                "montane grassland biome [ENVO:01000194]",
+                "montane savanna biome [ENVO:01000223]",
+                "montane shrubland biome [ENVO:01000216]",
+                "neritic epipelagic zone biome [ENVO:01000042]",
+                "neritic mesopelagic zone biome [ENVO:01000043]",
+                "neritic pelagic zone biome [ENVO:01000032]",
+                "neritic sea surface microlayer biome [ENVO:01000041]",
+                "rangeland biome [ENVO:01000247]",
+                "savanna biome [ENVO:01000178]",
+                "shrubland biome [ENVO:01000176]",
+                "small freshwater lake biome [ENVO:00000892]",
+                "small river biome [ENVO:00000890]",
+                "subpolar coniferous forest biome [ENVO:01000250]",
+                "subtropical broadleaf forest biome [ENVO:01000201]",
+                "subtropical coniferous forest biome [ENVO:01000209]",
+                "subtropical dry broadleaf forest biome [ENVO:01000225]",
+                "subtropical grassland biome [ENVO:01000191]",
+                "subtropical moist broadleaf forest biome [ENVO:01000226]",
+                "subtropical savanna biome [ENVO:01000187]",
+                "subtropical shrubland biome [ENVO:01000213]",
+                "subtropical woodland biome [ENVO:01000222]",
+                "temperate broadleaf forest biome [ENVO:01000202]",
+                "temperate coniferous forest biome [ENVO:01000211]",
+                "temperate grassland biome [ENVO:01000193]",
+                "temperate mixed forest biome [ENVO:01000212]",
+                "temperate savanna biome [ENVO:01000189]",
+                "temperate shrubland biome [ENVO:01000215]",
+                "temperate woodland biome [ENVO:01000221]",
+                "terrestrial biome [ENVO:00000446]",
+                "tidal mangrove shrubland [ENVO:01001369]",
+                "tropical broadleaf forest biome [ENVO:01000200]",
+                "tropical coniferous forest biome [ENVO:01000210]",
+                "tropical dry broadleaf forest biome [ENVO:01000227]",
+                "tropical grassland biome [ENVO:01000192]",
+                "tropical mixed forest biome [ENVO:01001798]",
+                "tropical moist broadleaf forest biome [ENVO:01000228]",
+                "tropical savanna biome [ENVO:01000188]",
+                "tropical shrubland biome [ENVO:01000214]",
+                "tropical woodland biome [ENVO:01000220]",
+                "tundra biome [ENVO:01000180]",
+                "woodland biome [ENVO:01000175]",
+                "xeric basin biome [ENVO:00000893]",
+                "xeric shrubland biome [ENVO:01000218]"
+            ],
+            "title": "EnvBroadScalePlantAssociatedEnum",
+            "type": "string"
+        },
+        "EnvBroadScaleSedimentEnum": {
+            "description": "",
+            "enum": [
+                "estuarine biome [ENVO:01000020]",
+                "freshwater biome [ENVO:00000873]",
+                "freshwater lake biome [ENVO:01000252]",
+                "freshwater river biome [ENVO:01000253]",
+                "large river delta biome [ENVO:00000889]",
+                "mangrove biome [ENVO:01000181]",
+                "marginal sea biome [ENVO:01000046]",
+                "marine benthic biome [ENVO:01000024]",
+                "marine biome [ENVO:00000447]",
+                "marine cold seep biome [ENVO:01000127]",
+                "marine coral reef biome [ENVO:01000049]",
+                "marine neritic benthic zone biome [ENVO:01000025]",
+                "marine salt marsh biome [ENVO:01000022]",
+                "marine subtidal rocky reef biome [ENVO:01000050]",
+                "xeric basin biome [ENVO:00000893]"
+            ],
+            "title": "EnvBroadScaleSedimentEnum",
+            "type": "string"
+        },
         "EnvBroadScaleSoilEnum": {
             "description": "",
             "enum": [
@@ -3808,6 +3909,135 @@
             "title": "EnvBroadScaleWaterEnum",
             "type": "string"
         },
+        "EnvLocalScalePlantAssociatedEnum": {
+            "description": "",
+            "enum": [
+                "agricultural terrace [ENVO:00000519]",
+                "alluvial plain [ENVO:00000258]",
+                "area of barren land [ENVO:01000752]",
+                "area of cropland [ENVO:01000892]",
+                "area of deciduous forest [ENVO:01000816]",
+                "area of developed open space [ENVO:01000883]",
+                "area of developed space with high usage intensity [ENVO:01000886]",
+                "area of developed space with low usage intensity [ENVO:01000884]",
+                "area of developed space with medium usage intensity [ENVO:01000885]",
+                "area of dwarf scrub [ENVO:01000861]",
+                "area of emergent herbaceous wetland [ENVO:01000894]",
+                "area of evergreen forest [ENVO:01000843]",
+                "area of gramanoid or herbaceous vegetation [ENVO:01000888]",
+                "area of lichen-dominated vegetation [ENVO:01000889]",
+                "area of mixed forest [ENVO:01000855]",
+                "area of moss-dominated vegetation [ENVO:01000890]",
+                "area of open water [ENVO:01000666]",
+                "area of perennial ice or snow [ENVO:01000746]",
+                "area of perennial snow [ENVO:01000745]",
+                "area of perennial water ice [ENVO:01000740]",
+                "area of scrub [ENVO:01000869]",
+                "area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]",
+                "area of woody wetland [ENVO:01000893]",
+                "beach [ENVO:00000091]",
+                "botanical garden [ENVO:00010624]",
+                "cliff [ENVO:00000087]",
+                "coast [ENVO:01000687]",
+                "crop canopy [ENVO:01001241]",
+                "desert [ENVO:01001357]",
+                "dune [ENVO:00000170]",
+                "farm [ENVO:00000078]",
+                "forest floor [ENVO:01001582]",
+                "garden [ENVO:00000011]",
+                "greenhouse [ENVO:03600087]",
+                "harbour [ENVO:00000463]",
+                "herb and fern layer [ENVO:01000337]",
+                "hill [ENVO:00000083]",
+                "house [ENVO:01000417]",
+                "island [ENVO:00000098]",
+                "laboratory facility [ENVO:01001406]",
+                "litter layer [ENVO:01000338]",
+                "market [ENVO:01000987]",
+                "mountain [ENVO:00000081]",
+                "oasis [ENVO:01001304]",
+                "ocean [ENVO:00000015]",
+                "outcrop [ENVO:01000302]",
+                "plantation [ENVO:00000117]",
+                "plateau [ENVO:00000182]",
+                "pond [ENVO:00000033]",
+                "prairie [ENVO:00000260]",
+                "public park [ENVO:03500002]",
+                "research facility [ENVO:00000469]",
+                "river bank [ENVO:00000143]",
+                "river valley [ENVO:00000171]",
+                "road [ENVO:00000064]",
+                "sea grass bed [ENVO:01000059]",
+                "shore [ENVO:00000304]",
+                "shrub layer [ENVO:01000336]",
+                "submerged bed [ENVO:00000501]",
+                "understory [ENVO:01000335]",
+                "valley [ENVO:00000100]",
+                "woodland canopy [ENVO:01001240]"
+            ],
+            "title": "EnvLocalScalePlantAssociatedEnum",
+            "type": "string"
+        },
+        "EnvLocalScaleSedimentEnum": {
+            "description": "",
+            "enum": [
+                "archipelago [ENVO:00000220]",
+                "bank [ENVO:00000141]",
+                "bar [ENVO:00000167]",
+                "bay [ENVO:00000032]",
+                "beach [ENVO:00000091]",
+                "brackish estuary [ENVO:00002137]",
+                "brackish lake [ENVO:00000540]",
+                "cave [ENVO:00000067]",
+                "coast [ENVO:01000687]",
+                "coastal water body [ENVO:02000049]",
+                "cold seep [ENVO:01000263]",
+                "continental margin [ENVO:01000298]",
+                "continental shelf [ENVO:00000223]",
+                "cryoconite hole [ENVO:03000039]",
+                "eutrophic lake [ENVO:01000548]",
+                "fjord [ENVO:00000039]",
+                "flood plain [ENVO:00000255]",
+                "fumarole [ENVO:00000216]",
+                "geyser [ENVO:00000050]",
+                "hadalpelagic zone [ENVO:00000214]",
+                "harbour [ENVO:00000463]",
+                "hot spring [ENVO:00000051]",
+                "hydrothermal seep [ENVO:01000265]",
+                "hydrothermal vent [ENVO:00000215]",
+                "hypersaline lake [ENVO:01001020]",
+                "intertidal zone [ENVO:00000316]",
+                "irrigation canal [ENVO:00000036]",
+                "lake bed [ENVO:00000268]",
+                "lentic water body [ENVO:01000617]",
+                "littoral zone [ENVO:01000407]",
+                "marine anoxic zone [ENVO:01000066]",
+                "marine hydrothermal vent [ENVO:01000122]",
+                "marine neritic zone [ENVO:00000206]",
+                "marine sub-littoral zone [ENVO:01000126]",
+                "mid-ocean ridge [ENVO:00000406]",
+                "mud volcano [ENVO:00000402]",
+                "ocean floor [ENVO:00000426]",
+                "oil reservoir [ENVO:00002185]",
+                "oil spill [ENVO:00002061]",
+                "pond [ENVO:00000033]",
+                "river [ENVO:00000022]",
+                "river bank [ENVO:00000143]",
+                "river bed [ENVO:00000384]",
+                "saline evaporation pond [ENVO:00000055]",
+                "saline lake [ENVO:00000019]",
+                "saline pan [ENVO:00000279]",
+                "sea floor [ENVO:00000482]",
+                "sea grass bed [ENVO:01000059]",
+                "shore [ENVO:00000304]",
+                "spring [ENVO:00000027]",
+                "stream [ENVO:00000023]",
+                "stream bed [ENVO:00000383]",
+                "submerged bed [ENVO:00000501]"
+            ],
+            "title": "EnvLocalScaleSedimentEnum",
+            "type": "string"
+        },
         "EnvLocalScaleSoilEnum": {
             "description": "",
             "enum": [
@@ -3904,13 +4134,14 @@
                 "abyssal plain [ENVO:00000244]",
                 "acid mine drainage [ENVO:00001997]",
                 "agricultural field [ENVO:00000114]",
-                "algal bloom [ENVO:2000004]",
                 "anoxic lake [ENVO:01001072]",
                 "aquaculture farm [ENVO:03600074]",
+                "aquifer [ENVO:00012408]",
                 "archipelago [ENVO:00000220]",
                 "beach [ENVO:00000091]",
                 "biofilm [ENVO:00002034]",
                 "black smoker [ENVO:00000218]",
+                "cave [ENVO:00000067]",
                 "coast [ENVO:01000687]",
                 "cold seep [ENVO:01000263]",
                 "continental margin [ENVO:01000298]",
@@ -3930,15 +4161,14 @@
                 "glacier [ENVO:00000133]",
                 "hadalpelagic zone [ENVO:00000214]",
                 "harbour [ENVO:00000463]",
+                "headwater [ENVO:00000153]",
                 "hot spring [ENVO:00000051]",
                 "hydrothermal vent [ENVO:00000215]",
                 "hypolimnion [ENVO:00002130]",
                 "inlet [ENVO:00000475]",
                 "intertidal zone [ENVO:00000316]",
                 "lake [ENVO:00000020]",
-                "lentic water body [ENVO:01000617]",
                 "littoral zone [ENVO:01000407]",
-                "lotic water body [ENVO:01000618]",
                 "mangrove swamp [ENVO:00000057]",
                 "marine aphotic zone [ENVO:00000210]",
                 "marine bathypelagic zone [ENVO:00000211]",
@@ -3951,6 +4181,7 @@
                 "melt pond [ENVO:03000040]",
                 "metalimnion [ENVO:00002132]",
                 "microbial mat [ENVO:01000008]",
+                "mine [ENVO:00000076]",
                 "mine drainage [ENVO:00001996]",
                 "mud volcano [ENVO:00000402]",
                 "ocean [ENVO:00000015]",
@@ -3958,11 +4189,14 @@
                 "oceanic crust [ENVO:01000749]",
                 "oil seep [ENVO:00002063]",
                 "oil spill [ENVO:00002061]",
+                "peatland [ENVO:00000044]",
+                "pit [ENVO:01001871]",
                 "pond [ENVO:00000033]",
                 "puddle of water [ENVO:01000871]",
+                "reservoir [ENVO:00000025]",
                 "riffle [ENVO:00000148]",
                 "river [ENVO:00000022]",
-                "river bed [ENVO:00000384]",
+                "saline evaporation pond [ENVO:00000055]",
                 "saline marsh [ENVO:00000054]",
                 "sea [ENVO:00000016]",
                 "shrimp pond [ENVO:01000905]",
@@ -3974,13 +4208,70 @@
                 "stream pool [ENVO:03600094]",
                 "stream run [ENVO:03600095]",
                 "subglacial lake [ENVO:03000120]",
+                "subterranean lake [ENVO:02000145]",
                 "swamp ecosystem [ENVO:00000233]",
-                "thermocline [ENVO:00002269]",
                 "volcano [ENVO:00000247]",
                 "water surface [ENVO:01001191]",
-                "wetland ecosystem [ENVO:01001209]"
+                "water tap [ENVO:03600052]",
+                "water well [ENVO:01000002]",
+                "wetland ecosystem [ENVO:01001209]",
+                "whale fall [ENVO:01000140]",
+                "wood fall [ENVO:01000142]"
             ],
             "title": "EnvLocalScaleWaterEnum",
+            "type": "string"
+        },
+        "EnvMediumPlantAssociatedEnum": {
+            "description": "",
+            "enum": [
+                "bark [PO:0004518]",
+                "bulb [PO:0025356]",
+                "corm [PO:0025355]",
+                "ear infructescence axis [PO:0025623]",
+                "flag leaf [PO:0020103]",
+                "flower [PO:0009046]",
+                "fruit [PO:0009001]",
+                "leaf [PO:0025034]",
+                "petiole [PO:0020038]",
+                "phyllome [PO:0006001]",
+                "pith [PO:0006109]",
+                "plant callus [PO:0005052]",
+                "plant gall [PO:0025626]",
+                "plant litter [ENVO:01000628]",
+                "pollen [PO:0025281]",
+                "radicle [PO:0020031]",
+                "rhizoid [PO:0030078]",
+                "rhizome [PO:0004542]",
+                "rhizosphere [ENVO:00005801]",
+                "root [PO:0009005]",
+                "root nodule [PO:0003023]",
+                "sapwood [PO:0004513]",
+                "secondary xylem [PO:0005848]",
+                "seed [PO:0009010]",
+                "seedling [PO:0008037]",
+                "stem [PO:0009047]",
+                "tuber [PO:0025522]",
+                "xylem vessel [PO:0025417]"
+            ],
+            "title": "EnvMediumPlantAssociatedEnum",
+            "type": "string"
+        },
+        "EnvMediumSedimentEnum": {
+            "description": "",
+            "enum": [
+                "anaerobic sediment [ENVO:00002045]",
+                "chemically contaminated sediment [ENVO:03600001]",
+                "estuarine mud [ENVO:00002160]",
+                "granular sediment [ENVO:01000117]",
+                "hyperthermophilic sediment [ENVO:01000133]",
+                "petroleum enriched sediment [ENVO:00002115]",
+                "radioactive sediment [ENVO:00002154]",
+                "sediment [ENVO:00002007]",
+                "sediment permeated by saline water [ENVO:01001036]",
+                "sludge [ENVO:00002044]",
+                "thermophilic sediment [ENVO:01000132]"
+            ],
+            "title": "EnvMediumSedimentEnum",
             "type": "string"
         },
         "EnvMediumSoilEnum": {
@@ -6500,6 +6791,30 @@
             "title": "HostSexEnum",
             "type": "string"
         },
+        "IlluminaInstrumentModelEnum": {
+            "description": "Derived from InstrumentModelEnum by filtering for Illumina models",
+            "enum": [
+                "novaseq",
+                "novaseq_6000",
+                "novaseq_x",
+                "hiseq",
+                "hiseq_1000",
+                "hiseq_1500",
+                "hiseq_2000",
+                "hiseq_2500",
+                "hiseq_3000",
+                "hiseq_4000",
+                "hiseq_x_ten",
+                "miniseq",
+                "miseq",
+                "nextseq_1000",
+                "nextseq",
+                "nextseq_500",
+                "nextseq_550"
+            ],
+            "title": "IlluminaInstrumentModelEnum",
+            "type": "string"
+        },
         "IndoorSpaceEnum": {
             "description": "",
             "enum": [
@@ -6528,6 +6843,50 @@
                 "wall"
             ],
             "title": "IndoorSurfEnum",
+            "type": "string"
+        },
+        "InstrumentModelEnum": {
+            "description": "",
+            "enum": [
+                "exploris_21T",
+                "exploris_240",
+                "exploris_480",
+                "ltq_orbitrap_velos",
+                "orbitrap_fusion_lumos",
+                "orbitrap_eclipse_tribid",
+                "orbitrap_q_exactive",
+                "solarix_7T",
+                "solarix_12T",
+                "solarix_15T",
+                "agilent_8890A",
+                "agilent_7980A",
+                "vortex_genie_2",
+                "novaseq",
+                "novaseq_6000",
+                "novaseq_x",
+                "hiseq",
+                "hiseq_1000",
+                "hiseq_1500",
+                "hiseq_2000",
+                "hiseq_2500",
+                "hiseq_3000",
+                "hiseq_4000",
+                "hiseq_x_ten",
+                "miniseq",
+                "miseq",
+                "nextseq_1000",
+                "nextseq",
+                "nextseq_500",
+                "nextseq_550",
+                "gridion",
+                "minion",
+                "promethion",
+                "rs_II",
+                "sequel",
+                "sequel_II",
+                "revio"
+            ],
+            "title": "InstrumentModelEnum",
             "type": "string"
         },
         "IntWallCondEnum": {
@@ -7042,6 +7401,330 @@
             ],
             "title": "MechStrucEnum",
             "type": "string"
+        },
+        "MetagenomeSequencingInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for interleaved metagenome sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_experiment_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_md5_checksum": {
+                    "description": "MD5 checksum of file in \"interleaved FASTQ\".",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_url": {
+                    "description": "URL for FASTQ file of interleaved reads.",
+                    "type": "string"
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "interleaved_url",
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "MetagenomeSequencingInterleavedDataInterface",
+            "type": "object"
+        },
+        "MetagenomeSequencingNonInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for non-interleaved metagenome sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_experiment_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 1 FASTQ\".",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_url": {
+                    "description": "URL for FASTQ file of read 1 of a pair of reads.",
+                    "type": "string"
+                },
+                "read_2_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 2 FASTQ\".",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_2_url": {
+                    "description": "URL for FASTQ file of read 2 of a pair of reads.",
+                    "type": "string"
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "read_1_url",
+                "read_2_url",
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "MetagenomeSequencingNonInterleavedDataInterface",
+            "type": "object"
+        },
+        "MetatranscriptomeSequencingInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for interleaved metatranscriptome sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_experiment_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_md5_checksum": {
+                    "description": "MD5 checksum of file in \"interleaved FASTQ\".",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_url": {
+                    "description": "URL for FASTQ file of interleaved reads.",
+                    "type": "string"
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "interleaved_url",
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "MetatranscriptomeSequencingInterleavedDataInterface",
+            "type": "object"
+        },
+        "MetatranscriptomeSequencingNonInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for non-interleaved metatranscriptome sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_experiment_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 1 FASTQ\".",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_url": {
+                    "description": "URL for FASTQ file of read 1 of a pair of reads.",
+                    "type": "string"
+                },
+                "read_2_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 2 FASTQ\".",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_2_url": {
+                    "description": "URL for FASTQ file of read 2 of a pair of reads.",
+                    "type": "string"
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the biological sample.",
+                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "read_1_url",
+                "read_2_url",
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "MetatranscriptomeSequencingNonInterleavedDataInterface",
+            "type": "object"
         },
         "MiscEnvsInterface": {
             "additionalProperties": false,
@@ -7668,16 +8351,40 @@
                     "type": "number"
                 },
                 "env_broad_scale": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvBroadScalePlantAssociatedEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
                 "env_local_scale": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvLocalScalePlantAssociatedEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the entity or entities which are in the sample or specimen\u2019s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
                 "env_medium": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvMediumPlantAssociatedEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
@@ -8262,6 +8969,20 @@
             "title": "PlantSexEnum",
             "type": "string"
         },
+        "ProcessingInstitutionEnum": {
+            "description": "",
+            "enum": [
+                "UCSD",
+                "JGI",
+                "EMSL",
+                "Battelle",
+                "ANL",
+                "UCD_Genome_Center",
+                "Azenta"
+            ],
+            "title": "ProcessingInstitutionEnum",
+            "type": "string"
+        },
         "ProfilePositionEnum": {
             "description": "",
             "enum": [
@@ -8273,6 +8994,37 @@
             ],
             "title": "ProfilePositionEnum",
             "type": "string"
+        },
+        "Protocol": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "name": {
+                    "description": "A human readable label for an entity",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "description": "the class_uri of the class that has been instantiated",
+                    "enum": [
+                        "nmdc:Protocol"
+                    ],
+                    "type": "string"
+                },
+                "url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "title": "Protocol",
+            "type": "object"
         },
         "QuadPosEnum": {
             "description": "",
@@ -8590,6 +9342,46 @@
                     "description": "aggregation slot relating jgi_mt data collections to a SampleData container",
                     "items": {
                         "$ref": "#/$defs/JgiMtInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "metagenome_sequencing_interleaved_data": {
+                    "description": "aggregation slot relating interleaved metagenome sequencing data collections to a SampleData  container",
+                    "items": {
+                        "$ref": "#/$defs/MetagenomeSequencingInterleavedDataInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "metagenome_sequencing_non_interleaved_data": {
+                    "description": "aggregation slot relating non-interleaved metagenome sequencing data collections to a  SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/MetagenomeSequencingNonInterleavedDataInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "metatranscriptome_sequencing_interleaved_data": {
+                    "description": "aggregation slot relating interleaved metatranscriptome sequencing data collections to a  SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/MetatranscriptomeSequencingInterleavedDataInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "metatranscriptome_sequencing_non_interleaved_data": {
+                    "description": "aggregation slot relating non-interleaved metatranscriptome sequencing data collections to a  SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/MetatranscriptomeSequencingNonInterleavedDataInterface"
                     },
                     "type": [
                         "array",
@@ -8942,16 +9734,40 @@
                     "type": "number"
                 },
                 "env_broad_scale": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvBroadScaleSedimentEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "In this field, report which major environmental system your sample or specimen came from. The systems identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. were you in the desert or a rainforest?). We recommend using subclasses of ENVO's biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a water sample from the photic zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider: tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
                 "env_local_scale": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvLocalScaleSedimentEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the entity or entities which are in the sample or specimen\u2019s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
                 "env_medium": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvMediumSedimentEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
@@ -10821,6 +11637,7 @@
                 "Laryngopharyngeal",
                 "Laryngopharynx",
                 "Lateral fornices",
+                "Lava tube",
                 "Leaf lesion",
                 "Leaf nodule",
                 "Leaf surface",
@@ -12334,16 +13151,40 @@
                     ]
                 },
                 "env_broad_scale": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvBroadScaleWaterEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the major environmental system the sample or specimen came from. The system(s) identified should have a coarse spatial grain, to provide the general environmental context of where the sampling was done (e.g. in the desert or a rainforest). We recommend using subclasses of EnvO\u2019s biome class:  http://purl.obolibrary.org/obo/ENVO_00000428. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
                 "env_local_scale": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvLocalScaleWaterEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the entity or entities which are in the sample or specimen\u2019s local vicinity and which you believe have significant causal influences on your sample or specimen. We recommend using EnvO terms which are of smaller spatial grain than your entry for env_broad_scale. Terms, such as anatomical sites, from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON) are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
                 },
                 "env_medium": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/EnvMediumWaterEnum"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
                     "description": "Report the environmental material(s) immediately surrounding the sample or specimen at the time of sampling. We recommend using subclasses of 'environmental material' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS . Terms from other OBO ontologies are permissible as long as they reference mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities (e.g. a tree, a leaf, a table top).",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": "string"
@@ -13086,6 +13927,46 @@
             "description": "aggregation slot relating jgi_mt data collections to a SampleData container",
             "items": {
                 "$ref": "#/$defs/JgiMtInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "metagenome_sequencing_interleaved_data": {
+            "description": "aggregation slot relating interleaved metagenome sequencing data collections to a SampleData  container",
+            "items": {
+                "$ref": "#/$defs/MetagenomeSequencingInterleavedDataInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "metagenome_sequencing_non_interleaved_data": {
+            "description": "aggregation slot relating non-interleaved metagenome sequencing data collections to a  SampleData container",
+            "items": {
+                "$ref": "#/$defs/MetagenomeSequencingNonInterleavedDataInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "metatranscriptome_sequencing_interleaved_data": {
+            "description": "aggregation slot relating interleaved metatranscriptome sequencing data collections to a  SampleData container",
+            "items": {
+                "$ref": "#/$defs/MetatranscriptomeSequencingInterleavedDataInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "metatranscriptome_sequencing_non_interleaved_data": {
+            "description": "aggregation slot relating non-interleaved metatranscriptome sequencing data collections to a  SampleData container",
+            "items": {
+                "$ref": "#/$defs/MetatranscriptomeSequencingNonInterleavedDataInterface"
             },
             "type": [
                 "array",
