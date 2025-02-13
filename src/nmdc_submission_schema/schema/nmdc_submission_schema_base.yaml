@@ -378,8 +378,12 @@ slots:
   read_1_url:
     title: read 1 FASTQ
     description: >-
-      URL for FASTQ file of read 1 of a pair of reads. If multiple runs were performed, separate 
-      each URL with a semi-colon.
+      URL for FASTQ file of read 1 of a pair of reads.
+    comments:
+    - If multiple runs were performed, separate each URL with a semi-colon.
+    - External data urls should be available for at least a year. If you would like NMDC to submit 
+      your data to an appropriate raw data repository on your behalf please contact us at
+      microbiomedata.science@gmail.com.
     range: string
     required: true
     slot_group: data_files_section
@@ -387,17 +391,22 @@ slots:
   read_1_md5_checksum:
     title: read 1 FASTQ MD5
     description: >-
-      MD5 checksum of file in "read 1 FASTQ". If multiple runs were performed, separate each 
-      checksum with a semi-colon. The number of checksums should match the number of URLs in "read 
-      1 FASTQ".
+      MD5 checksum of file in "read 1 FASTQ".
+    comments:
+    - If multiple runs were performed, separate each checksum with a semi-colon. The number of 
+      checksums should match the number of URLs in "read 1 FASTQ".
     range: string
     slot_group: data_files_section
     rank: 11
   read_2_url:
     title: read 2 FASTQ
     description: >-
-      URL for FASTQ file of read 2 of a pair of reads. If multiple runs were performed, separate 
-      each URL with a semi-colon.
+      URL for FASTQ file of read 2 of a pair of reads.
+    comments:
+    - If multiple runs were performed, separate each URL with a semi-colon.
+    - External data urls should be available for at least a year. If you would like NMDC to submit
+      your data to an appropriate raw data repository on your behalf please contact us at
+      microbiomedata.science@gmail.com.
     range: string
     required: true
     slot_group: data_files_section
@@ -405,17 +414,22 @@ slots:
   read_2_md5_checksum:
     title: read 2 FASTQ MD5
     description: >-
-      MD5 checksum of file in "read 2 FASTQ". If multiple runs were performed, separate each 
-      checksum with a semi-colon. The number of checksums should match the number of URLs in "read 
-      2 FASTQ".
+      MD5 checksum of file in "read 2 FASTQ".
+    comments:
+    - If multiple runs were performed, separate each checksum with a semi-colon. The number of 
+      checksums should match the number of URLs in "read 2 FASTQ".
     range: string
     slot_group: data_files_section
     rank: 13
   interleaved_url:
     title: interleaved FASTQ
     description: >-
-      URL for FASTQ file of interleaved reads If multiple runs were performed, separate each URL 
-      with a semi-colon.
+      URL for FASTQ file of interleaved reads.
+    comments:
+    - If multiple runs were performed, separate each URL with a semi-colon.
+    - External data urls should be available for at least a year. If you would like NMDC to submit
+      your data to an appropriate raw data repository on your behalf please contact us at
+      microbiomedata.science@gmail.com.
     range: string
     required: true
     slot_group: data_files_section
@@ -423,9 +437,10 @@ slots:
   interleaved_md5_checksum:
     title: interleaved FASTQ MD5
     description: >-
-      MD5 checksum of file in "interleaved FASTQ". If multiple runs were performed, separate each 
-      checksum with a semi-colon. The number of checksums should match the number of URLs in 
-      "interleaved FASTQ".
+      MD5 checksum of file in "interleaved FASTQ".
+    comments:
+    - If multiple runs were performed, separate each checksum with a semi-colon. The number of 
+      checksums should match the number of URLs in "interleaved FASTQ".
     range: string
     slot_group: data_files_section
     rank: 15
