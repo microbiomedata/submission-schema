@@ -1,0 +1,2172 @@
+name: TEMP
+id: TEMP
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  TEMP: https://example.org/TEMP/
+  PO: http://purl.obolibrary.org/obo/PO_
+  ENVO: http://purl.obolibrary.org/obo/ENVO_
+default_prefix: TEMP
+default_range: string
+classes:
+  intertidal zone:
+    title: intertidal zone
+    from_schema: TEMP
+    class_uri: ENVO:00000316
+  saline lake:
+    title: saline lake
+    from_schema: TEMP
+    class_uri: ENVO:00000019
+  river:
+    title: river
+    from_schema: TEMP
+    class_uri: ENVO:00000022
+  hot spring:
+    title: hot spring
+    from_schema: TEMP
+    class_uri: ENVO:00000051
+  coast:
+    title: coast
+    from_schema: TEMP
+    class_uri: ENVO:01000687
+  cold seep:
+    title: cold seep
+    from_schema: TEMP
+    class_uri: ENVO:01000263
+  sea floor:
+    title: sea floor
+    from_schema: TEMP
+    class_uri: ENVO:00000482
+  spring:
+    title: spring
+    from_schema: TEMP
+    class_uri: ENVO:00000027
+  stream:
+    title: stream
+    from_schema: TEMP
+    class_uri: ENVO:00000023
+  hydrothermal vent:
+    title: hydrothermal vent
+    from_schema: TEMP
+    class_uri: ENVO:00000215
+  continental shelf:
+    title: continental shelf
+    from_schema: TEMP
+    class_uri: ENVO:00000223
+  ocean floor:
+    title: ocean floor
+    from_schema: TEMP
+    class_uri: ENVO:00000426
+  pond:
+    title: pond
+    from_schema: TEMP
+    class_uri: ENVO:00000033
+  beach:
+    title: beach
+    from_schema: TEMP
+    class_uri: ENVO:00000091
+  mud volcano:
+    title: mud volcano
+    from_schema: TEMP
+    class_uri: ENVO:00000402
+  cave:
+    title: cave
+    from_schema: TEMP
+    class_uri: ENVO:00000067
+  harbour:
+    title: harbour
+    from_schema: TEMP
+    class_uri: ENVO:00000463
+  fjord:
+    title: fjord
+    from_schema: TEMP
+    class_uri: ENVO:00000039
+  hypersaline lake:
+    title: hypersaline lake
+    from_schema: TEMP
+    class_uri: ENVO:01001020
+  marine hydrothermal vent:
+    title: marine hydrothermal vent
+    from_schema: TEMP
+    class_uri: ENVO:01000122
+  shore:
+    title: shore
+    from_schema: TEMP
+    class_uri: ENVO:00000304
+  bar:
+    title: bar
+    from_schema: TEMP
+    class_uri: ENVO:00000167
+  mid-ocean ridge:
+    title: mid-ocean ridge
+    from_schema: TEMP
+    class_uri: ENVO:00000406
+  bank:
+    title: bank
+    from_schema: TEMP
+    class_uri: ENVO:00000141
+  bay:
+    title: bay
+    from_schema: TEMP
+    class_uri: ENVO:00000032
+  lake bed:
+    title: lake bed
+    from_schema: TEMP
+    class_uri: ENVO:00000268
+  continental margin:
+    title: continental margin
+    from_schema: TEMP
+    class_uri: ENVO:01000298
+  brackish estuary:
+    title: brackish estuary
+    from_schema: TEMP
+    class_uri: ENVO:00002137
+  brackish lake:
+    title: brackish lake
+    from_schema: TEMP
+    class_uri: ENVO:00000540
+  saline pan:
+    title: saline pan
+    from_schema: TEMP
+    class_uri: ENVO:00000279
+  sea grass bed:
+    title: sea grass bed
+    from_schema: TEMP
+    class_uri: ENVO:01000059
+  stream bed:
+    title: stream bed
+    from_schema: TEMP
+    class_uri: ENVO:00000383
+  submerged bed:
+    title: submerged bed
+    from_schema: TEMP
+    class_uri: ENVO:00000501
+  river bed:
+    title: river bed
+    from_schema: TEMP
+    class_uri: ENVO:00000384
+  fumarole:
+    title: fumarole
+    from_schema: TEMP
+    class_uri: ENVO:00000216
+  oil spill:
+    title: oil spill
+    from_schema: TEMP
+    class_uri: ENVO:00002061
+  saline evaporation pond:
+    title: saline evaporation pond
+    from_schema: TEMP
+    class_uri: ENVO:00000055
+  archipelago:
+    title: archipelago
+    from_schema: TEMP
+    class_uri: ENVO:00000220
+  flood plain:
+    title: flood plain
+    from_schema: TEMP
+    class_uri: ENVO:00000255
+  coastal water body:
+    title: coastal water body
+    from_schema: TEMP
+    class_uri: ENVO:02000049
+  cryoconite hole:
+    title: cryoconite hole
+    from_schema: TEMP
+    class_uri: ENVO:03000039
+  eutrophic lake:
+    title: eutrophic lake
+    from_schema: TEMP
+    class_uri: ENVO:01000548
+  geyser:
+    title: geyser
+    from_schema: TEMP
+    class_uri: ENVO:00000050
+  hadalpelagic zone:
+    title: hadalpelagic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000214
+  hydrothermal seep:
+    title: hydrothermal seep
+    from_schema: TEMP
+    class_uri: ENVO:01000265
+  littoral zone:
+    title: littoral zone
+    from_schema: TEMP
+    class_uri: ENVO:01000407
+  marine anoxic zone:
+    title: marine anoxic zone
+    from_schema: TEMP
+    class_uri: ENVO:01000066
+  marine sub-littoral zone:
+    title: marine sub-littoral zone
+    from_schema: TEMP
+    class_uri: ENVO:01000126
+  river bank:
+    title: river bank
+    from_schema: TEMP
+    class_uri: ENVO:00000143
+  marine neritic zone:
+    title: marine neritic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000206
+  oil reservoir:
+    title: oil reservoir
+    from_schema: TEMP
+    class_uri: ENVO:00002185
+  irrigation canal:
+    title: irrigation canal
+    from_schema: TEMP
+    class_uri: ENVO:00000036
+  lentic water body:
+    title: lentic water body
+    from_schema: TEMP
+    class_uri: ENVO:01000617
+  marine biome:
+    title: marine biome
+    from_schema: TEMP
+    class_uri: ENVO:00000447
+  freshwater biome:
+    title: freshwater biome
+    from_schema: TEMP
+    class_uri: ENVO:00000873
+  marine benthic biome:
+    title: marine benthic biome
+    from_schema: TEMP
+    class_uri: ENVO:01000024
+  mangrove biome:
+    title: mangrove biome
+    from_schema: TEMP
+    class_uri: ENVO:01000181
+  marine neritic benthic zone biome:
+    title: marine neritic benthic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000025
+  marine salt marsh biome:
+    title: marine salt marsh biome
+    from_schema: TEMP
+    class_uri: ENVO:01000022
+  estuarine biome:
+    title: estuarine biome
+    from_schema: TEMP
+    class_uri: ENVO:01000020
+  freshwater lake biome:
+    title: freshwater lake biome
+    from_schema: TEMP
+    class_uri: ENVO:01000252
+  marginal sea biome:
+    title: marginal sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000046
+  marine cold seep biome:
+    title: marine cold seep biome
+    from_schema: TEMP
+    class_uri: ENVO:01000127
+  xeric basin biome:
+    title: xeric basin biome
+    from_schema: TEMP
+    class_uri: ENVO:00000893
+  freshwater river biome:
+    title: freshwater river biome
+    from_schema: TEMP
+    class_uri: ENVO:01000253
+  large river delta biome:
+    title: large river delta biome
+    from_schema: TEMP
+    class_uri: ENVO:00000889
+  marine coral reef biome:
+    title: marine coral reef biome
+    from_schema: TEMP
+    class_uri: ENVO:01000049
+  marine subtidal rocky reef biome:
+    title: marine subtidal rocky reef biome
+    from_schema: TEMP
+    class_uri: ENVO:01000050
+  estuarine mud:
+    title: estuarine mud
+    from_schema: TEMP
+    class_uri: ENVO:00002160
+  sludge:
+    title: sludge
+    from_schema: TEMP
+    class_uri: ENVO:00002044
+  sediment:
+    title: sediment
+    from_schema: TEMP
+    class_uri: ENVO:00002007
+  anaerobic sediment:
+    title: anaerobic sediment
+    from_schema: TEMP
+    class_uri: ENVO:00002045
+  petroleum enriched sediment:
+    title: petroleum enriched sediment
+    from_schema: TEMP
+    class_uri: ENVO:00002115
+  sediment permeated by saline water:
+    title: sediment permeated by saline water
+    from_schema: TEMP
+    class_uri: ENVO:01001036
+  thermophilic sediment:
+    title: thermophilic sediment
+    from_schema: TEMP
+    class_uri: ENVO:01000132
+  hyperthermophilic sediment:
+    title: hyperthermophilic sediment
+    from_schema: TEMP
+    class_uri: ENVO:01000133
+  granular sediment:
+    title: granular sediment
+    from_schema: TEMP
+    class_uri: ENVO:01000117
+  radioactive sediment:
+    title: radioactive sediment
+    from_schema: TEMP
+    class_uri: ENVO:00002154
+  chemically contaminated sediment:
+    title: chemically contaminated sediment
+    from_schema: TEMP
+    class_uri: ENVO:03600001
+  agricultural terrace:
+    title: agricultural terrace
+    from_schema: TEMP
+    class_uri: ENVO:00000519
+  alluvial plain:
+    title: alluvial plain
+    from_schema: TEMP
+    class_uri: ENVO:00000258
+  area of barren land:
+    title: area of barren land
+    from_schema: TEMP
+    class_uri: ENVO:01000752
+  area of cropland:
+    title: area of cropland
+    from_schema: TEMP
+    class_uri: ENVO:01000892
+  area of deciduous forest:
+    title: area of deciduous forest
+    from_schema: TEMP
+    class_uri: ENVO:01000816
+  area of developed open space:
+    title: area of developed open space
+    from_schema: TEMP
+    class_uri: ENVO:01000883
+  area of developed space with high usage intensity:
+    title: area of developed space with high usage intensity
+    from_schema: TEMP
+    class_uri: ENVO:01000886
+  area of developed space with low usage intensity:
+    title: area of developed space with low usage intensity
+    from_schema: TEMP
+    class_uri: ENVO:01000884
+  area of developed space with medium usage intensity:
+    title: area of developed space with medium usage intensity
+    from_schema: TEMP
+    class_uri: ENVO:01000885
+  area of dwarf scrub:
+    title: area of dwarf scrub
+    from_schema: TEMP
+    class_uri: ENVO:01000861
+  area of emergent herbaceous wetland:
+    title: area of emergent herbaceous wetland
+    from_schema: TEMP
+    class_uri: ENVO:01000894
+  area of evergreen forest:
+    title: area of evergreen forest
+    from_schema: TEMP
+    class_uri: ENVO:01000843
+  area of gramanoid or herbaceous vegetation:
+    title: area of gramanoid or herbaceous vegetation
+    from_schema: TEMP
+    class_uri: ENVO:01000888
+  area of lichen-dominated vegetation:
+    title: area of lichen-dominated vegetation
+    from_schema: TEMP
+    class_uri: ENVO:01000889
+  area of mixed forest:
+    title: area of mixed forest
+    from_schema: TEMP
+    class_uri: ENVO:01000855
+  area of moss-dominated vegetation:
+    title: area of moss-dominated vegetation
+    from_schema: TEMP
+    class_uri: ENVO:01000890
+  area of open water:
+    title: area of open water
+    from_schema: TEMP
+    class_uri: ENVO:01000666
+  area of perennial ice or snow:
+    title: area of perennial ice or snow
+    from_schema: TEMP
+    class_uri: ENVO:01000746
+  area of perennial snow:
+    title: area of perennial snow
+    from_schema: TEMP
+    class_uri: ENVO:01000745
+  area of perennial water ice:
+    title: area of perennial water ice
+    from_schema: TEMP
+    class_uri: ENVO:01000740
+  area of scrub:
+    title: area of scrub
+    from_schema: TEMP
+    class_uri: ENVO:01000869
+  area of sedge- and forb-dominated herbaceous vegetation:
+    title: area of sedge- and forb-dominated herbaceous vegetation
+    from_schema: TEMP
+    class_uri: ENVO:01000887
+  area of woody wetland:
+    title: area of woody wetland
+    from_schema: TEMP
+    class_uri: ENVO:01000893
+  botanical garden:
+    title: botanical garden
+    from_schema: TEMP
+    class_uri: ENVO:00010624
+  cliff:
+    title: cliff
+    from_schema: TEMP
+    class_uri: ENVO:00000087
+  crop canopy:
+    title: crop canopy
+    from_schema: TEMP
+    class_uri: ENVO:01001241
+  desert:
+    title: desert
+    from_schema: TEMP
+    class_uri: ENVO:01001357
+  dune:
+    title: dune
+    from_schema: TEMP
+    class_uri: ENVO:00000170
+  farm:
+    title: farm
+    from_schema: TEMP
+    class_uri: ENVO:00000078
+  forest floor:
+    title: forest floor
+    from_schema: TEMP
+    class_uri: ENVO:01001582
+  garden:
+    title: garden
+    from_schema: TEMP
+    class_uri: ENVO:00000011
+  greenhouse:
+    title: greenhouse
+    from_schema: TEMP
+    class_uri: ENVO:03600087
+  herb and fern layer:
+    title: herb and fern layer
+    from_schema: TEMP
+    class_uri: ENVO:01000337
+  hill:
+    title: hill
+    from_schema: TEMP
+    class_uri: ENVO:00000083
+  house:
+    title: house
+    from_schema: TEMP
+    class_uri: ENVO:01000417
+  island:
+    title: island
+    from_schema: TEMP
+    class_uri: ENVO:00000098
+  laboratory facility:
+    title: laboratory facility
+    from_schema: TEMP
+    class_uri: ENVO:01001406
+  litter layer:
+    title: litter layer
+    from_schema: TEMP
+    class_uri: ENVO:01000338
+  market:
+    title: market
+    from_schema: TEMP
+    class_uri: ENVO:01000987
+  mountain:
+    title: mountain
+    from_schema: TEMP
+    class_uri: ENVO:00000081
+  oasis:
+    title: oasis
+    from_schema: TEMP
+    class_uri: ENVO:01001304
+  ocean:
+    title: ocean
+    from_schema: TEMP
+    class_uri: ENVO:00000015
+  outcrop:
+    title: outcrop
+    from_schema: TEMP
+    class_uri: ENVO:01000302
+  plantation:
+    title: plantation
+    from_schema: TEMP
+    class_uri: ENVO:00000117
+  plateau:
+    title: plateau
+    from_schema: TEMP
+    class_uri: ENVO:00000182
+  prairie:
+    title: prairie
+    from_schema: TEMP
+    class_uri: ENVO:00000260
+  public park:
+    title: public park
+    from_schema: TEMP
+    class_uri: ENVO:03500002
+  research facility:
+    title: research facility
+    from_schema: TEMP
+    class_uri: ENVO:00000469
+  river valley:
+    title: river valley
+    from_schema: TEMP
+    class_uri: ENVO:00000171
+  road:
+    title: road
+    from_schema: TEMP
+    class_uri: ENVO:00000064
+  shrub layer:
+    title: shrub layer
+    from_schema: TEMP
+    class_uri: ENVO:01000336
+  understory:
+    title: understory
+    from_schema: TEMP
+    class_uri: ENVO:01000335
+  valley:
+    title: valley
+    from_schema: TEMP
+    class_uri: ENVO:00000100
+  woodland canopy:
+    title: woodland canopy
+    from_schema: TEMP
+    class_uri: ENVO:01001240
+  alpine tundra biome:
+    title: alpine tundra biome
+    from_schema: TEMP
+    class_uri: ENVO:01001505
+  anthropogenic terrestrial biome:
+    title: anthropogenic terrestrial biome
+    from_schema: TEMP
+    class_uri: ENVO:01000219
+  aquatic biome:
+    title: aquatic biome
+    from_schema: TEMP
+    class_uri: ENVO:00002030
+  broadleaf forest biome:
+    title: broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000197
+  coniferous forest biome:
+    title: coniferous forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000196
+  cropland biome:
+    title: cropland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000245
+  flooded grassland biome:
+    title: flooded grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000195
+  flooded savanna biome:
+    title: flooded savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000190
+  forest biome:
+    title: forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000174
+  freshwater stream biome:
+    title: freshwater stream biome
+    from_schema: TEMP
+    class_uri: ENVO:03605008
+  grassland biome:
+    title: grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000177
+  large freshwater lake biome:
+    title: large freshwater lake biome
+    from_schema: TEMP
+    class_uri: ENVO:00000891
+  large river biome:
+    title: large river biome
+    from_schema: TEMP
+    class_uri: ENVO:00000887
+  large river headwater biome:
+    title: large river headwater biome
+    from_schema: TEMP
+    class_uri: ENVO:00000888
+  mediterranean forest biome:
+    title: mediterranean forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000199
+  mediterranean grassland biome:
+    title: mediterranean grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000224
+  mediterranean savanna biome:
+    title: mediterranean savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000229
+  mediterranean shrubland biome:
+    title: mediterranean shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000217
+  mediterranean woodland biome:
+    title: mediterranean woodland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000208
+  mixed forest biome:
+    title: mixed forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000198
+  montane grassland biome:
+    title: montane grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000194
+  montane savanna biome:
+    title: montane savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000223
+  montane shrubland biome:
+    title: montane shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000216
+  neritic epipelagic zone biome:
+    title: neritic epipelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000042
+  neritic mesopelagic zone biome:
+    title: neritic mesopelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000043
+  neritic pelagic zone biome:
+    title: neritic pelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000032
+  neritic sea surface microlayer biome:
+    title: neritic sea surface microlayer biome
+    from_schema: TEMP
+    class_uri: ENVO:01000041
+  rangeland biome:
+    title: rangeland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000247
+  savanna biome:
+    title: savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000178
+  shrubland biome:
+    title: shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000176
+  small freshwater lake biome:
+    title: small freshwater lake biome
+    from_schema: TEMP
+    class_uri: ENVO:00000892
+  small river biome:
+    title: small river biome
+    from_schema: TEMP
+    class_uri: ENVO:00000890
+  subpolar coniferous forest biome:
+    title: subpolar coniferous forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000250
+  subtropical broadleaf forest biome:
+    title: subtropical broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000201
+  subtropical coniferous forest biome:
+    title: subtropical coniferous forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000209
+  subtropical dry broadleaf forest biome:
+    title: subtropical dry broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000225
+  subtropical grassland biome:
+    title: subtropical grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000191
+  subtropical moist broadleaf forest biome:
+    title: subtropical moist broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000226
+  subtropical savanna biome:
+    title: subtropical savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000187
+  subtropical shrubland biome:
+    title: subtropical shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000213
+  subtropical woodland biome:
+    title: subtropical woodland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000222
+  temperate broadleaf forest biome:
+    title: temperate broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000202
+  temperate coniferous forest biome:
+    title: temperate coniferous forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000211
+  temperate grassland biome:
+    title: temperate grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000193
+  temperate mixed forest biome:
+    title: temperate mixed forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000212
+  temperate savanna biome:
+    title: temperate savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000189
+  temperate shrubland biome:
+    title: temperate shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000215
+  temperate woodland biome:
+    title: temperate woodland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000221
+  terrestrial biome:
+    title: terrestrial biome
+    from_schema: TEMP
+    class_uri: ENVO:00000446
+  tidal mangrove shrubland:
+    title: tidal mangrove shrubland
+    from_schema: TEMP
+    class_uri: ENVO:01001369
+  tropical broadleaf forest biome:
+    title: tropical broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000200
+  tropical coniferous forest biome:
+    title: tropical coniferous forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000210
+  tropical dry broadleaf forest biome:
+    title: tropical dry broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000227
+  tropical grassland biome:
+    title: tropical grassland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000192
+  tropical mixed forest biome:
+    title: tropical mixed forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01001798
+  tropical moist broadleaf forest biome:
+    title: tropical moist broadleaf forest biome
+    from_schema: TEMP
+    class_uri: ENVO:01000228
+  tropical savanna biome:
+    title: tropical savanna biome
+    from_schema: TEMP
+    class_uri: ENVO:01000188
+  tropical shrubland biome:
+    title: tropical shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000214
+  tropical woodland biome:
+    title: tropical woodland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000220
+  tundra biome:
+    title: tundra biome
+    from_schema: TEMP
+    class_uri: ENVO:01000180
+  woodland biome:
+    title: woodland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000175
+  xeric shrubland biome:
+    title: xeric shrubland biome
+    from_schema: TEMP
+    class_uri: ENVO:01000218
+  bark:
+    title: bark
+    from_schema: TEMP
+    class_uri: PO:0004518
+  bulb:
+    title: bulb
+    from_schema: TEMP
+    class_uri: PO:0025356
+  corm:
+    title: corm
+    from_schema: TEMP
+    class_uri: PO:0025355
+  ear infructescence axis:
+    title: ear infructescence axis
+    from_schema: TEMP
+    class_uri: PO:0025623
+  flag leaf:
+    title: flag leaf
+    from_schema: TEMP
+    class_uri: PO:0020103
+  flower:
+    title: flower
+    from_schema: TEMP
+    class_uri: PO:0009046
+  fruit:
+    title: fruit
+    from_schema: TEMP
+    class_uri: PO:0009001
+  leaf:
+    title: leaf
+    from_schema: TEMP
+    class_uri: PO:0025034
+  petiole:
+    title: petiole
+    from_schema: TEMP
+    class_uri: PO:0020038
+  phyllome:
+    title: phyllome
+    from_schema: TEMP
+    class_uri: PO:0006001
+  pith:
+    title: pith
+    from_schema: TEMP
+    class_uri: PO:0006109
+  plant callus:
+    title: plant callus
+    from_schema: TEMP
+    class_uri: PO:0005052
+  plant gall:
+    title: plant gall
+    from_schema: TEMP
+    class_uri: PO:0025626
+  plant litter:
+    title: plant litter
+    from_schema: TEMP
+    class_uri: ENVO:01000628
+  pollen:
+    title: pollen
+    from_schema: TEMP
+    class_uri: PO:0025281
+  radicle:
+    title: radicle
+    from_schema: TEMP
+    class_uri: PO:0020031
+  rhizoid:
+    title: rhizoid
+    from_schema: TEMP
+    class_uri: PO:0030078
+  rhizome:
+    title: rhizome
+    from_schema: TEMP
+    class_uri: PO:0004542
+  rhizosphere:
+    title: rhizosphere
+    from_schema: TEMP
+    class_uri: ENVO:00005801
+  root:
+    title: root
+    from_schema: TEMP
+    class_uri: PO:0009005
+  root nodule:
+    title: root nodule
+    from_schema: TEMP
+    class_uri: PO:0003023
+  sapwood:
+    title: sapwood
+    from_schema: TEMP
+    class_uri: PO:0004513
+  secondary xylem:
+    title: secondary xylem
+    from_schema: TEMP
+    class_uri: PO:0005848
+  seed:
+    title: seed
+    from_schema: TEMP
+    class_uri: PO:0009010
+  seedling:
+    title: seedling
+    from_schema: TEMP
+    class_uri: PO:0008037
+  stem:
+    title: stem
+    from_schema: TEMP
+    class_uri: PO:0009047
+  tuber:
+    title: tuber
+    from_schema: TEMP
+    class_uri: PO:0025522
+  xylem vessel:
+    title: xylem vessel
+    from_schema: TEMP
+    class_uri: PO:0025417
+  canal:
+    title: canal
+    from_schema: TEMP
+    class_uri: ENVO:00000014
+  lake:
+    title: lake
+    from_schema: TEMP
+    class_uri: ENVO:00000020
+  reservoir:
+    title: reservoir
+    from_schema: TEMP
+    class_uri: ENVO:00000025
+  well:
+    title: well
+    from_schema: TEMP
+    class_uri: ENVO:00000026
+  wadi:
+    title: wadi
+    from_schema: TEMP
+    class_uri: ENVO:00000031
+  marsh:
+    title: marsh
+    from_schema: TEMP
+    class_uri: ENVO:00000035
+  ditch:
+    title: ditch
+    from_schema: TEMP
+    class_uri: ENVO:00000037
+  wetland area:
+    title: wetland area
+    from_schema: TEMP
+    class_uri: ENVO:00000043
+  peatland:
+    title: peatland
+    from_schema: TEMP
+    class_uri: ENVO:00000044
+  estuary:
+    title: estuary
+    from_schema: TEMP
+    class_uri: ENVO:00000045
+  mangrove swamp:
+    title: mangrove swamp
+    from_schema: TEMP
+    class_uri: ENVO:00000057
+  tunnel:
+    title: tunnel
+    from_schema: TEMP
+    class_uri: ENVO:00000068
+  mine:
+    title: mine
+    from_schema: TEMP
+    class_uri: ENVO:00000076
+  plain:
+    title: plain
+    from_schema: TEMP
+    class_uri: ENVO:00000086
+  caldera:
+    title: caldera
+    from_schema: TEMP
+    class_uri: ENVO:00000096
+  delta:
+    title: delta
+    from_schema: TEMP
+    class_uri: ENVO:00000101
+  woodland area:
+    title: woodland area
+    from_schema: TEMP
+    class_uri: ENVO:00000109
+  agricultural field:
+    title: agricultural field
+    from_schema: TEMP
+    class_uri: ENVO:00000114
+  glacier:
+    title: glacier
+    from_schema: TEMP
+    class_uri: ENVO:00000133
+  cirque:
+    title: cirque
+    from_schema: TEMP
+    class_uri: ENVO:00000155
+  isthmus:
+    title: isthmus
+    from_schema: TEMP
+    class_uri: ENVO:00000174
+  karst:
+    title: karst
+    from_schema: TEMP
+    class_uri: ENVO:00000175
+  levee:
+    title: levee
+    from_schema: TEMP
+    class_uri: ENVO:00000178
+  mesa:
+    title: mesa
+    from_schema: TEMP
+    class_uri: ENVO:00000179
+  peat swamp:
+    title: peat swamp
+    from_schema: TEMP
+    class_uri: ENVO:00000189
+  mudflat:
+    title: mudflat
+    from_schema: TEMP
+    class_uri: ENVO:00000192
+  sinkhole:
+    title: sinkhole
+    from_schema: TEMP
+    class_uri: ENVO:00000195
+  fen:
+    title: fen
+    from_schema: TEMP
+    class_uri: ENVO:00000232
+  volcano:
+    title: volcano
+    from_schema: TEMP
+    class_uri: ENVO:00000247
+  steppe:
+    title: steppe
+    from_schema: TEMP
+    class_uri: ENVO:00000262
+  pasture:
+    title: pasture
+    from_schema: TEMP
+    class_uri: ENVO:00000266
+  ridge:
+    title: ridge
+    from_schema: TEMP
+    class_uri: ENVO:00000283
+  quarry:
+    title: quarry
+    from_schema: TEMP
+    class_uri: ENVO:00000284
+  butte:
+    title: butte
+    from_schema: TEMP
+    class_uri: ENVO:00000287
+  drainage basin:
+    title: drainage basin
+    from_schema: TEMP
+    class_uri: ENVO:00000291
+  watershed:
+    title: watershed
+    from_schema: TEMP
+    class_uri: ENVO:00000292
+  peninsula:
+    title: peninsula
+    from_schema: TEMP
+    class_uri: ENVO:00000305
+  vadose zone:
+    title: vadose zone
+    from_schema: TEMP
+    class_uri: ENVO:00000328
+  shoreline:
+    title: shoreline
+    from_schema: TEMP
+    class_uri: ENVO:00000486
+  palsa:
+    title: palsa
+    from_schema: TEMP
+    class_uri: ENVO:00000489
+  crater:
+    title: crater
+    from_schema: TEMP
+    class_uri: ENVO:00000514
+  hummock:
+    title: hummock
+    from_schema: TEMP
+    class_uri: ENVO:00000516
+  landfill:
+    title: landfill
+    from_schema: TEMP
+    class_uri: ENVO:00000533
+  park:
+    title: park
+    from_schema: TEMP
+    class_uri: ENVO:00000562
+  slope:
+    title: slope
+    from_schema: TEMP
+    class_uri: ENVO:00002000
+  animal habitation:
+    title: animal habitation
+    from_schema: TEMP
+    class_uri: ENVO:00005803
+  aquifer:
+    title: aquifer
+    from_schema: TEMP
+    class_uri: ENVO:00012408
+  needleleaf forest:
+    title: needleleaf forest
+    from_schema: TEMP
+    class_uri: ENVO:01000433
+  roadside:
+    title: roadside
+    from_schema: TEMP
+    class_uri: ENVO:01000447
+  dike:
+    title: dike
+    from_schema: TEMP
+    class_uri: ENVO:01000671
+  area of pastureland or hayfields:
+    title: area of pastureland or hayfields
+    from_schema: TEMP
+    class_uri: ENVO:01000891
+  frost heave:
+    title: frost heave
+    from_schema: TEMP
+    class_uri: ENVO:01001568
+  tropical forest:
+    title: tropical forest
+    from_schema: TEMP
+    class_uri: ENVO:01001803
+  channel:
+    title: channel
+    from_schema: TEMP
+    class_uri: ENVO:03000117
+  anthropogenic litter:
+    title: anthropogenic litter
+    from_schema: TEMP
+    class_uri: ENVO:03500005
+  active permafrost layer:
+    title: active permafrost layer
+    from_schema: TEMP
+    class_uri: ENVO:04000009
+  lawn soil:
+    title: lawn soil
+    from_schema: TEMP
+    class_uri: ENVO:00005756
+  luvisol:
+    title: luvisol
+    from_schema: TEMP
+    class_uri: ENVO:00002248
+  podzol:
+    title: podzol
+    from_schema: TEMP
+    class_uri: ENVO:00002257
+  alluvial paddy field soil:
+    title: alluvial paddy field soil
+    from_schema: TEMP
+    class_uri: ENVO:00005759
+  grassland soil:
+    title: grassland soil
+    from_schema: TEMP
+    class_uri: ENVO:00005750
+  bare soil:
+    title: bare soil
+    from_schema: TEMP
+    class_uri: ENVO:01001616
+  stagnosol:
+    title: stagnosol
+    from_schema: TEMP
+    class_uri: ENVO:00002274
+  vegetable garden soil:
+    title: vegetable garden soil
+    from_schema: TEMP
+    class_uri: ENVO:00005779
+  manured soil:
+    title: manured soil
+    from_schema: TEMP
+    class_uri: ENVO:00005767
+  planosol:
+    title: planosol
+    from_schema: TEMP
+    class_uri: ENVO:00002251
+  leafy wood soil:
+    title: leafy wood soil
+    from_schema: TEMP
+    class_uri: ENVO:00005783
+  tropical soil:
+    title: tropical soil
+    from_schema: TEMP
+    class_uri: ENVO:00005778
+  calcisol:
+    title: calcisol
+    from_schema: TEMP
+    class_uri: ENVO:00002239
+  chernozem:
+    title: chernozem
+    from_schema: TEMP
+    class_uri: ENVO:00002237
+  arable soil:
+    title: arable soil
+    from_schema: TEMP
+    class_uri: ENVO:00005742
+  pond soil:
+    title: pond soil
+    from_schema: TEMP
+    class_uri: ENVO:00005764
+  albeluvisol:
+    title: albeluvisol
+    from_schema: TEMP
+    class_uri: ENVO:00002233
+  compost soil:
+    title: compost soil
+    from_schema: TEMP
+    class_uri: ENVO:00005747
+  fertilized soil:
+    title: fertilized soil
+    from_schema: TEMP
+    class_uri: ENVO:00005754
+  ferralsol:
+    title: ferralsol
+    from_schema: TEMP
+    class_uri: ENVO:00002246
+  leptosol:
+    title: leptosol
+    from_schema: TEMP
+    class_uri: ENVO:00002241
+  frozen compost soil:
+    title: frozen compost soil
+    from_schema: TEMP
+    class_uri: ENVO:00005765
+  solonetz:
+    title: solonetz
+    from_schema: TEMP
+    class_uri: ENVO:00002255
+  surface soil:
+    title: surface soil
+    from_schema: TEMP
+    class_uri: ENVO:02000059
+  andosol:
+    title: andosol
+    from_schema: TEMP
+    class_uri: ENVO:00002232
+  compacted soil:
+    title: compacted soil
+    from_schema: TEMP
+    class_uri: ENVO:06105205
+  agricultural soil:
+    title: agricultural soil
+    from_schema: TEMP
+    class_uri: ENVO:00002259
+  pathogen-suppressive soil:
+    title: pathogen-suppressive soil
+    from_schema: TEMP
+    class_uri: ENVO:03600036
+  upland soil:
+    title: upland soil
+    from_schema: TEMP
+    class_uri: ENVO:00005786
+  savanna soil:
+    title: savanna soil
+    from_schema: TEMP
+    class_uri: ENVO:00005746
+  allotment garden soil:
+    title: allotment garden soil
+    from_schema: TEMP
+    class_uri: ENVO:00005744
+  rubber plantation soil:
+    title: rubber plantation soil
+    from_schema: TEMP
+    class_uri: ENVO:00005788
+  jungle soil:
+    title: jungle soil
+    from_schema: TEMP
+    class_uri: ENVO:00005751
+  orchid soil:
+    title: orchid soil
+    from_schema: TEMP
+    class_uri: ENVO:00005768
+  gleysol:
+    title: gleysol
+    from_schema: TEMP
+    class_uri: ENVO:00002244
+  sawah soil:
+    title: sawah soil
+    from_schema: TEMP
+    class_uri: ENVO:00005752
+  limed soil:
+    title: limed soil
+    from_schema: TEMP
+    class_uri: ENVO:00005766
+  spruce forest soil:
+    title: spruce forest soil
+    from_schema: TEMP
+    class_uri: ENVO:00005784
+  nitisol:
+    title: nitisol
+    from_schema: TEMP
+    class_uri: ENVO:00002247
+  frost-susceptible soil:
+    title: frost-susceptible soil
+    from_schema: TEMP
+    class_uri: ENVO:01001638
+  anthrosol:
+    title: anthrosol
+    from_schema: TEMP
+    class_uri: ENVO:00002230
+  bluegrass field soil:
+    title: bluegrass field soil
+    from_schema: TEMP
+    class_uri: ENVO:00005789
+  plastic-frozen soil:
+    title: plastic-frozen soil
+    from_schema: TEMP
+    class_uri: ENVO:01001527
+  ultisol:
+    title: ultisol
+    from_schema: TEMP
+    class_uri: ENVO:01001397
+  alluvial soil:
+    title: alluvial soil
+    from_schema: TEMP
+    class_uri: ENVO:00002871
+  solonchak:
+    title: solonchak
+    from_schema: TEMP
+    class_uri: ENVO:00002252
+  umbrisol:
+    title: umbrisol
+    from_schema: TEMP
+    class_uri: ENVO:00002253
+  loam:
+    title: loam
+    from_schema: TEMP
+    class_uri: ENVO:00002258
+  vertisol:
+    title: vertisol
+    from_schema: TEMP
+    class_uri: ENVO:00002254
+  phaeozem:
+    title: phaeozem
+    from_schema: TEMP
+    class_uri: ENVO:00002249
+  beech forest soil:
+    title: beech forest soil
+    from_schema: TEMP
+    class_uri: ENVO:00005770
+  gypsisol:
+    title: gypsisol
+    from_schema: TEMP
+    class_uri: ENVO:00002245
+  technosol:
+    title: technosol
+    from_schema: TEMP
+    class_uri: ENVO:00002275
+  alisol:
+    title: alisol
+    from_schema: TEMP
+    class_uri: ENVO:00002231
+  bulk soil:
+    title: bulk soil
+    from_schema: TEMP
+    class_uri: ENVO:00005802
+  lixisol:
+    title: lixisol
+    from_schema: TEMP
+    class_uri: ENVO:00002242
+  acidic soil:
+    title: acidic soil
+    from_schema: TEMP
+    class_uri: ENVO:01001185
+  cryosol:
+    title: cryosol
+    from_schema: TEMP
+    class_uri: ENVO:00002236
+  alpine soil:
+    title: alpine soil
+    from_schema: TEMP
+    class_uri: ENVO:00005741
+  histosol:
+    title: histosol
+    from_schema: TEMP
+    class_uri: ENVO:00002243
+  frozen soil:
+    title: frozen soil
+    from_schema: TEMP
+    class_uri: ENVO:01001526
+  arenosol:
+    title: arenosol
+    from_schema: TEMP
+    class_uri: ENVO:00002229
+  alluvial swamp soil:
+    title: alluvial swamp soil
+    from_schema: TEMP
+    class_uri: ENVO:00005758
+  muddy soil:
+    title: muddy soil
+    from_schema: TEMP
+    class_uri: ENVO:00005771
+  ornithogenic soil:
+    title: ornithogenic soil
+    from_schema: TEMP
+    class_uri: ENVO:00005782
+  heat stressed soil:
+    title: heat stressed soil
+    from_schema: TEMP
+    class_uri: ENVO:00005781
+  durisol:
+    title: durisol
+    from_schema: TEMP
+    class_uri: ENVO:00002238
+  friable-frozen soil:
+    title: friable-frozen soil
+    from_schema: TEMP
+    class_uri: ENVO:01001528
+  paddy field soil:
+    title: paddy field soil
+    from_schema: TEMP
+    class_uri: ENVO:00005740
+  fluvisol:
+    title: fluvisol
+    from_schema: TEMP
+    class_uri: ENVO:00002273
+  plinthosol:
+    title: plinthosol
+    from_schema: TEMP
+    class_uri: ENVO:00002250
+  cambisol:
+    title: cambisol
+    from_schema: TEMP
+    class_uri: ENVO:00002235
+  eucalyptus forest soil:
+    title: eucalyptus forest soil
+    from_schema: TEMP
+    class_uri: ENVO:00005787
+  kastanozem:
+    title: kastanozem
+    from_schema: TEMP
+    class_uri: ENVO:00002240
+  dry soil:
+    title: dry soil
+    from_schema: TEMP
+    class_uri: ENVO:00005748
+  clay soil:
+    title: clay soil
+    from_schema: TEMP
+    class_uri: ENVO:00002262
+  burned soil:
+    title: burned soil
+    from_schema: TEMP
+    class_uri: ENVO:00005760
+  meadow soil:
+    title: meadow soil
+    from_schema: TEMP
+    class_uri: ENVO:00005761
+  forest soil:
+    title: forest soil
+    from_schema: TEMP
+    class_uri: ENVO:00002261
+  acrisol:
+    title: acrisol
+    from_schema: TEMP
+    class_uri: ENVO:00002234
+  regosol:
+    title: regosol
+    from_schema: TEMP
+    class_uri: ENVO:00002256
+  mountain forest soil:
+    title: mountain forest soil
+    from_schema: TEMP
+    class_uri: ENVO:00005769
+  hard-frozen soil:
+    title: hard-frozen soil
+    from_schema: TEMP
+    class_uri: ENVO:01001525
+  soil:
+    title: soil
+    from_schema: TEMP
+    class_uri: ENVO:00001998
+  red soil:
+    title: red soil
+    from_schema: TEMP
+    class_uri: ENVO:00005790
+  headwater:
+    title: headwater
+    from_schema: TEMP
+    class_uri: ENVO:00000153
+  subterranean lake:
+    title: subterranean lake
+    from_schema: TEMP
+    class_uri: ENVO:02000145
+  water tap:
+    title: water tap
+    from_schema: TEMP
+    class_uri: ENVO:03600052
+  wood fall:
+    title: wood fall
+    from_schema: TEMP
+    class_uri: ENVO:01000142
+  whale fall:
+    title: whale fall
+    from_schema: TEMP
+    class_uri: ENVO:01000140
+  pit:
+    title: pit
+    from_schema: TEMP
+    class_uri: ENVO:01001871
+  water well:
+    title: water well
+    from_schema: TEMP
+    class_uri: ENVO:01000002
+  biofilm:
+    title: biofilm
+    from_schema: TEMP
+    class_uri: ENVO:00002034
+  aquaculture farm:
+    title: aquaculture farm
+    from_schema: TEMP
+    class_uri: ENVO:03600074
+  saline marsh:
+    title: saline marsh
+    from_schema: TEMP
+    class_uri: ENVO:00000054
+  abyssal plain:
+    title: abyssal plain
+    from_schema: TEMP
+    class_uri: ENVO:00000244
+  acid mine drainage:
+    title: acid mine drainage
+    from_schema: TEMP
+    class_uri: ENVO:00001997
+  anoxic lake:
+    title: anoxic lake
+    from_schema: TEMP
+    class_uri: ENVO:01001072
+  black smoker:
+    title: black smoker
+    from_schema: TEMP
+    class_uri: ENVO:00000218
+  coral reef:
+    title: coral reef
+    from_schema: TEMP
+    class_uri: ENVO:00000150
+  cyanobacterial bloom:
+    title: cyanobacterial bloom
+    from_schema: TEMP
+    class_uri: ENVO:03600071
+  desert spring:
+    title: desert spring
+    from_schema: TEMP
+    class_uri: ENVO:02000139
+  epilimnion:
+    title: epilimnion
+    from_schema: TEMP
+    class_uri: ENVO:00002131
+  freshwater lake:
+    title: freshwater lake
+    from_schema: TEMP
+    class_uri: ENVO:00000021
+  freshwater littoral zone:
+    title: freshwater littoral zone
+    from_schema: TEMP
+    class_uri: ENVO:01000409
+  freshwater river:
+    title: freshwater river
+    from_schema: TEMP
+    class_uri: ENVO:01000297
+  freshwater stream:
+    title: freshwater stream
+    from_schema: TEMP
+    class_uri: ENVO:03605007
+  glacial lake:
+    title: glacial lake
+    from_schema: TEMP
+    class_uri: ENVO:00000488
+  wetland ecosystem:
+    title: wetland ecosystem
+    from_schema: TEMP
+    class_uri: ENVO:01001209
+  hypolimnion:
+    title: hypolimnion
+    from_schema: TEMP
+    class_uri: ENVO:00002130
+  inlet:
+    title: inlet
+    from_schema: TEMP
+    class_uri: ENVO:00000475
+  marine aphotic zone:
+    title: marine aphotic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000210
+  marine bathypelagic zone:
+    title: marine bathypelagic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000211
+  marine lake:
+    title: marine lake
+    from_schema: TEMP
+    class_uri: ENVO:03600041
+  marine mesopelagic zone:
+    title: marine mesopelagic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000213
+  marine pelagic zone:
+    title: marine pelagic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000208
+  marine photic zone:
+    title: marine photic zone
+    from_schema: TEMP
+    class_uri: ENVO:00000209
+  melt pond:
+    title: melt pond
+    from_schema: TEMP
+    class_uri: ENVO:03000040
+  metalimnion:
+    title: metalimnion
+    from_schema: TEMP
+    class_uri: ENVO:00002132
+  mine drainage:
+    title: mine drainage
+    from_schema: TEMP
+    class_uri: ENVO:00001996
+  ocean trench:
+    title: ocean trench
+    from_schema: TEMP
+    class_uri: ENVO:00000275
+  oceanic crust:
+    title: oceanic crust
+    from_schema: TEMP
+    class_uri: ENVO:01000749
+  oil seep:
+    title: oil seep
+    from_schema: TEMP
+    class_uri: ENVO:00002063
+  puddle of water:
+    title: puddle of water
+    from_schema: TEMP
+    class_uri: ENVO:01000871
+  riffle:
+    title: riffle
+    from_schema: TEMP
+    class_uri: ENVO:00000148
+  microbial mat:
+    title: microbial mat
+    from_schema: TEMP
+    class_uri: ENVO:01000008
+  sea:
+    title: sea
+    from_schema: TEMP
+    class_uri: ENVO:00000016
+  shrimp pond:
+    title: shrimp pond
+    from_schema: TEMP
+    class_uri: ENVO:01000905
+  step pool:
+    title: step pool
+    from_schema: TEMP
+    class_uri: ENVO:03600096
+  strait:
+    title: strait
+    from_schema: TEMP
+    class_uri: ENVO:00000394
+  stream pool:
+    title: stream pool
+    from_schema: TEMP
+    class_uri: ENVO:03600094
+  stream run:
+    title: stream run
+    from_schema: TEMP
+    class_uri: ENVO:03600095
+  subglacial lake:
+    title: subglacial lake
+    from_schema: TEMP
+    class_uri: ENVO:03000120
+  swamp ecosystem:
+    title: swamp ecosystem
+    from_schema: TEMP
+    class_uri: ENVO:00000233
+  water surface:
+    title: water surface
+    from_schema: TEMP
+    class_uri: ENVO:01001191
+  concentration basin mediterranean sea biome:
+    title: concentration basin mediterranean sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000004
+  dilution basin mediterranean sea biome:
+    title: dilution basin mediterranean sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000128
+  epeiric sea biome:
+    title: epeiric sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000045
+  marine abyssal zone biome:
+    title: marine abyssal zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000027
+  marine basaltic hydrothermal vent biome:
+    title: marine basaltic hydrothermal vent biome
+    from_schema: TEMP
+    class_uri: ENVO:01000054
+  marine bathyal zone biome:
+    title: marine bathyal zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000026
+  marine black smoker biome:
+    title: marine black smoker biome
+    from_schema: TEMP
+    class_uri: ENVO:01000051
+  marine hadal zone biome:
+    title: marine hadal zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000028
+  marine hydrothermal vent biome:
+    title: marine hydrothermal vent biome
+    from_schema: TEMP
+    class_uri: ENVO:01000030
+  marine pelagic biome:
+    title: marine pelagic biome
+    from_schema: TEMP
+    class_uri: ENVO:01000023
+  marine reef biome:
+    title: marine reef biome
+    from_schema: TEMP
+    class_uri: ENVO:01000029
+  marine sponge reef biome:
+    title: marine sponge reef biome
+    from_schema: TEMP
+    class_uri: ENVO:01000123
+  marine ultramafic hydrothermal vent biome:
+    title: marine ultramafic hydrothermal vent biome
+    from_schema: TEMP
+    class_uri: ENVO:01000053
+  marine upwelling biome:
+    title: marine upwelling biome
+    from_schema: TEMP
+    class_uri: ENVO:01000858
+  marine white smoker biome:
+    title: marine white smoker biome
+    from_schema: TEMP
+    class_uri: ENVO:01000052
+  mediterranean sea biome:
+    title: mediterranean sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000047
+  ocean biome:
+    title: ocean biome
+    from_schema: TEMP
+    class_uri: ENVO:01000048
+  oceanic abyssopelagic zone biome:
+    title: oceanic abyssopelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000038
+  oceanic bathypelagic zone biome:
+    title: oceanic bathypelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000037
+  oceanic benthopelagic zone biome:
+    title: oceanic benthopelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000040
+  oceanic epipelagic zone biome:
+    title: oceanic epipelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000035
+  oceanic hadal pelagic zone biome:
+    title: oceanic hadal pelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000039
+  oceanic mesopelagic zone biome:
+    title: oceanic mesopelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000036
+  oceanic pelagic zone biome:
+    title: oceanic pelagic zone biome
+    from_schema: TEMP
+    class_uri: ENVO:01000033
+  oceanic sea surface microlayer biome:
+    title: oceanic sea surface microlayer biome
+    from_schema: TEMP
+    class_uri: ENVO:01000034
+  temperate marginal sea biome:
+    title: temperate marginal sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000856
+  temperate marine upwelling biome:
+    title: temperate marine upwelling biome
+    from_schema: TEMP
+    class_uri: ENVO:01000860
+  temperate mediterranean sea biome:
+    title: temperate mediterranean sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01000857
+  tropical marginal sea biome:
+    title: tropical marginal sea biome
+    from_schema: TEMP
+    class_uri: ENVO:01001230
+  tropical marine coral reef biome:
+    title: tropical marine coral reef biome
+    from_schema: TEMP
+    class_uri: ENVO:01000854
+  tropical marine upwelling biome:
+    title: tropical marine upwelling biome
+    from_schema: TEMP
+    class_uri: ENVO:01000859
+  shuga:
+    title: shuga
+    from_schema: TEMP
+    class_uri: ENVO:03000075
+  second year ice:
+    title: second year ice
+    from_schema: TEMP
+    class_uri: ENVO:03000072
+  frazil ice:
+    title: frazil ice
+    from_schema: TEMP
+    class_uri: ENVO:03000046
+  freshwater congelation ice:
+    title: freshwater congelation ice
+    from_schema: TEMP
+    class_uri: ENVO:01001515
+  water ice:
+    title: water ice
+    from_schema: TEMP
+    class_uri: ENVO:01000277
+  blue ice:
+    title: blue ice
+    from_schema: TEMP
+    class_uri: ENVO:03000007
+  permafrost congelation ice:
+    title: permafrost congelation ice
+    from_schema: TEMP
+    class_uri: ENVO:01001513
+  frazil:
+    title: frazil
+    from_schema: TEMP
+    class_uri: ENVO:01001523
+  freshwater ice:
+    title: freshwater ice
+    from_schema: TEMP
+    class_uri: ENVO:01001511
+  glacial ice:
+    title: glacial ice
+    from_schema: TEMP
+    class_uri: ENVO:03000004
+  erosionally enriched ice:
+    title: erosionally enriched ice
+    from_schema: TEMP
+    class_uri: ENVO:03000025
+  brown sea ice:
+    title: brown sea ice
+    from_schema: TEMP
+    class_uri: ENVO:01001190
+  first year ice:
+    title: first year ice
+    from_schema: TEMP
+    class_uri: ENVO:03000071
+  hair ice:
+    title: hair ice
+    from_schema: TEMP
+    class_uri: ENVO:01000847
+  multiyear ice:
+    title: multiyear ice
+    from_schema: TEMP
+    class_uri: ENVO:03000073
+  sea ice:
+    title: sea ice
+    from_schema: TEMP
+    class_uri: ENVO:00002200
+  congelation ice in a fresh water body:
+    title: congelation ice in a fresh water body
+    from_schema: TEMP
+    class_uri: ENVO:01001514
+  water-body-derived ice:
+    title: water-body-derived ice
+    from_schema: TEMP
+    class_uri: ENVO:01001557
+  ice cave congelation ice:
+    title: ice cave congelation ice
+    from_schema: TEMP
+    class_uri: ENVO:01001516
+  erosionally enriched glacial ice:
+    title: erosionally enriched glacial ice
+    from_schema: TEMP
+    class_uri: ENVO:03000005
+  congelation sea ice:
+    title: congelation sea ice
+    from_schema: TEMP
+    class_uri: ENVO:01001512
+  new ice:
+    title: new ice
+    from_schema: TEMP
+    class_uri: ENVO:03000063
+  acidic water:
+    title: acidic water
+    from_schema: TEMP
+    class_uri: ENVO:01000358
+  alkaline water:
+    title: alkaline water
+    from_schema: TEMP
+    class_uri: ENVO:01000357
+  anoxic water:
+    title: anoxic water
+    from_schema: TEMP
+    class_uri: ENVO:01000173
+  bacon curing brine:
+    title: bacon curing brine
+    from_schema: TEMP
+    class_uri: ENVO:00003045
+  ballast water:
+    title: ballast water
+    from_schema: TEMP
+    class_uri: ENVO:01000872
+  borax leachate:
+    title: borax leachate
+    from_schema: TEMP
+    class_uri: ENVO:00002142
+  bore hole water:
+    title: bore hole water
+    from_schema: TEMP
+    class_uri: ENVO:00003097
+  brackish water:
+    title: brackish water
+    from_schema: TEMP
+    class_uri: ENVO:00002019
+  brine:
+    title: brine
+    from_schema: TEMP
+    class_uri: ENVO:00003044
+  cloud water:
+    title: cloud water
+    from_schema: TEMP
+    class_uri: ENVO:03600081
+  coastal sea water:
+    title: coastal sea water
+    from_schema: TEMP
+    class_uri: ENVO:00002150
+  contaminated water:
+    title: contaminated water
+    from_schema: TEMP
+    class_uri: ENVO:00002186
+  cooling water:
+    title: cooling water
+    from_schema: TEMP
+    class_uri: ENVO:03600002
+  desalinated water:
+    title: desalinated water
+    from_schema: TEMP
+    class_uri: ENVO:06105269
+  distilled water:
+    title: distilled water
+    from_schema: TEMP
+    class_uri: ENVO:00003065
+  ditch water:
+    title: ditch water
+    from_schema: TEMP
+    class_uri: ENVO:00002158
+  drilling bore water:
+    title: drilling bore water
+    from_schema: TEMP
+    class_uri: ENVO:00002159
+  drinking water:
+    title: drinking water
+    from_schema: TEMP
+    class_uri: ENVO:00003064
+  estuarine water:
+    title: estuarine water
+    from_schema: TEMP
+    class_uri: ENVO:01000301
+  eutrophic water:
+    title: eutrophic water
+    from_schema: TEMP
+    class_uri: ENVO:00002224
+  fissure water:
+    title: fissure water
+    from_schema: TEMP
+    class_uri: ENVO:01000940
+  fresh water:
+    title: fresh water
+    from_schema: TEMP
+    class_uri: ENVO:00002011
+  groundwater:
+    title: groundwater
+    from_schema: TEMP
+    class_uri: ENVO:01001004
+  highly saline water:
+    title: highly saline water
+    from_schema: TEMP
+    class_uri: ENVO:01001039
+  hydrothermal fluid:
+    title: hydrothermal fluid
+    from_schema: TEMP
+    class_uri: ENVO:01000134
+  hypereutrophic water:
+    title: hypereutrophic water
+    from_schema: TEMP
+    class_uri: ENVO:01001018
+  hypersaline water:
+    title: hypersaline water
+    from_schema: TEMP
+    class_uri: ENVO:00002012
+  hypoxic water:
+    title: hypoxic water
+    from_schema: TEMP
+    class_uri: ENVO:01001064
+  industrial wastewater:
+    title: industrial wastewater
+    from_schema: TEMP
+    class_uri: ENVO:01000964
+  interstitial water:
+    title: interstitial water
+    from_schema: TEMP
+    class_uri: ENVO:03600009
+  lake water:
+    title: lake water
+    from_schema: TEMP
+    class_uri: ENVO:04000007
+  leachate:
+    title: leachate
+    from_schema: TEMP
+    class_uri: ENVO:00002141
+  liquid water:
+    title: liquid water
+    from_schema: TEMP
+    class_uri: ENVO:00002006
+  marine lake water:
+    title: marine lake water
+    from_schema: TEMP
+    class_uri: ENVO:03600042
+  meltwater:
+    title: meltwater
+    from_schema: TEMP
+    class_uri: ENVO:01000722
+  mesotrophic water:
+    title: mesotrophic water
+    from_schema: TEMP
+    class_uri: ENVO:00002225
+  moderately saline water:
+    title: moderately saline water
+    from_schema: TEMP
+    class_uri: ENVO:01001038
+  muddy water:
+    title: muddy water
+    from_schema: TEMP
+    class_uri: ENVO:00005793
+  oil field production water:
+    title: oil field production water
+    from_schema: TEMP
+    class_uri: ENVO:00002194
+  oligotrophic water:
+    title: oligotrophic water
+    from_schema: TEMP
+    class_uri: ENVO:00002223
+  oxic water:
+    title: oxic water
+    from_schema: TEMP
+    class_uri: ENVO:01001063
+  pond water:
+    title: pond water
+    from_schema: TEMP
+    class_uri: ENVO:00002228
+  pulp-bleaching waste water:
+    title: pulp-bleaching waste water
+    from_schema: TEMP
+    class_uri: ENVO:00002193
+  rainwater:
+    title: rainwater
+    from_schema: TEMP
+    class_uri: ENVO:01000600
+  residual water in soil:
+    title: residual water in soil
+    from_schema: TEMP
+    class_uri: ENVO:06105238
+  river water:
+    title: river water
+    from_schema: TEMP
+    class_uri: ENVO:01000599
+  runoff:
+    title: runoff
+    from_schema: TEMP
+    class_uri: ENVO:06105211
+  rural stormwater:
+    title: rural stormwater
+    from_schema: TEMP
+    class_uri: ENVO:01001270
+  saline shrimp pond water:
+    title: saline shrimp pond water
+    from_schema: TEMP
+    class_uri: ENVO:01001257
+  saline water:
+    title: saline water
+    from_schema: TEMP
+    class_uri: ENVO:00002010
+  sea water:
+    title: sea water
+    from_schema: TEMP
+    class_uri: ENVO:00002149
+  sewage:
+    title: sewage
+    from_schema: TEMP
+    class_uri: ENVO:00002018
+  slightly saline water:
+    title: slightly saline water
+    from_schema: TEMP
+    class_uri: ENVO:01001037
+  spring water:
+    title: spring water
+    from_schema: TEMP
+    class_uri: ENVO:03600065
+  stagnant water:
+    title: stagnant water
+    from_schema: TEMP
+    class_uri: ENVO:03501370
+  sterile water:
+    title: sterile water
+    from_schema: TEMP
+    class_uri: ENVO:00005791
+  stormwater:
+    title: stormwater
+    from_schema: TEMP
+    class_uri: ENVO:01001267
+  stream water:
+    title: stream water
+    from_schema: TEMP
+    class_uri: ENVO:03605006
+  surface water:
+    title: surface water
+    from_schema: TEMP
+    class_uri: ENVO:00002042
+  tap water:
+    title: tap water
+    from_schema: TEMP
+    class_uri: ENVO:00003096
+  treated wastewater:
+    title: treated wastewater
+    from_schema: TEMP
+    class_uri: ENVO:06105268
+  underground water:
+    title: underground water
+    from_schema: TEMP
+    class_uri: ENVO:00005792
+  urban stormwater:
+    title: urban stormwater
+    from_schema: TEMP
+    class_uri: ENVO:01001268
+  waste water:
+    title: waste water
+    from_schema: TEMP
+    class_uri: ENVO:00002001
+  epilithon:
+    title: epilithon
+    from_schema: TEMP
+    class_uri: ENVO:03605001
+  epipelon:
+    title: epipelon
+    from_schema: TEMP
+    class_uri: ENVO:03605002
+  epiphyton:
+    title: epiphyton
+    from_schema: TEMP
+    class_uri: ENVO:03605003
+  epipsammon:
+    title: epipsammon
+    from_schema: TEMP
+    class_uri: ENVO:03605004
+  epixylon:
+    title: epixylon
+    from_schema: TEMP
+    class_uri: ENVO:03605005
+  marine snow:
+    title: marine snow
+    from_schema: TEMP
+    class_uri: ENVO:01000158
+  powdery snow:
+    title: powdery snow
+    from_schema: TEMP
+    class_uri: ENVO:03000027
+  slab snow:
+    title: slab snow
+    from_schema: TEMP
+    class_uri: ENVO:03000108
+  snow:
+    title: snow
+    from_schema: TEMP
+    class_uri: ENVO:01000406
