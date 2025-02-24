@@ -1,0 +1,3252 @@
+@prefix ENVO: <http://purl.obolibrary.org/obo/ENVO_> .
+@prefix PO: <http://purl.obolibrary.org/obo/PO_> .
+@prefix TEMP: <https://example.org/TEMP/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<TEMP.owl.ttl> a owl:Ontology ;
+    rdfs:label "TEMP" .
+
+ENVO:00000011 a owl:Class ;
+    rdfs:label "garden" ;
+    dcterms:title "garden" ;
+    skos:exactMatch TEMP:Garden ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000014 a owl:Class ;
+    rdfs:label "canal" ;
+    dcterms:title "canal" ;
+    skos:exactMatch TEMP:Canal ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000015 a owl:Class ;
+    rdfs:label "ocean" ;
+    dcterms:title "ocean" ;
+    skos:exactMatch TEMP:Ocean ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000016 a owl:Class ;
+    rdfs:label "sea" ;
+    dcterms:title "sea" ;
+    skos:exactMatch TEMP:Sea ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000019 a owl:Class ;
+    rdfs:label "saline lake" ;
+    dcterms:title "saline lake" ;
+    skos:exactMatch TEMP:SalineLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000020 a owl:Class ;
+    rdfs:label "lake" ;
+    dcterms:title "lake" ;
+    skos:exactMatch TEMP:Lake ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000021 a owl:Class ;
+    rdfs:label "freshwater lake" ;
+    dcterms:title "freshwater lake" ;
+    skos:exactMatch TEMP:FreshwaterLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000022 a owl:Class ;
+    rdfs:label "river" ;
+    dcterms:title "river" ;
+    skos:exactMatch TEMP:River ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000023 a owl:Class ;
+    rdfs:label "stream" ;
+    dcterms:title "stream" ;
+    skos:exactMatch TEMP:Stream ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000025 a owl:Class ;
+    rdfs:label "reservoir" ;
+    dcterms:title "reservoir" ;
+    skos:exactMatch TEMP:Reservoir ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000026 a owl:Class ;
+    rdfs:label "well" ;
+    dcterms:title "well" ;
+    skos:exactMatch TEMP:Well ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000027 a owl:Class ;
+    rdfs:label "spring" ;
+    dcterms:title "spring" ;
+    skos:exactMatch TEMP:Spring ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000031 a owl:Class ;
+    rdfs:label "wadi" ;
+    dcterms:title "wadi" ;
+    skos:exactMatch TEMP:Wadi ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000032 a owl:Class ;
+    rdfs:label "bay" ;
+    dcterms:title "bay" ;
+    skos:exactMatch TEMP:Bay ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000033 a owl:Class ;
+    rdfs:label "pond" ;
+    dcterms:title "pond" ;
+    skos:exactMatch TEMP:Pond ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000035 a owl:Class ;
+    rdfs:label "marsh" ;
+    dcterms:title "marsh" ;
+    skos:exactMatch TEMP:Marsh ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000036 a owl:Class ;
+    rdfs:label "irrigation canal" ;
+    dcterms:title "irrigation canal" ;
+    skos:exactMatch TEMP:IrrigationCanal ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000037 a owl:Class ;
+    rdfs:label "ditch" ;
+    dcterms:title "ditch" ;
+    skos:exactMatch TEMP:Ditch ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000039 a owl:Class ;
+    rdfs:label "fjord" ;
+    dcterms:title "fjord" ;
+    skos:exactMatch TEMP:Fjord ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000043 a owl:Class ;
+    rdfs:label "wetland area" ;
+    dcterms:title "wetland area" ;
+    skos:exactMatch TEMP:WetlandArea ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000044 a owl:Class ;
+    rdfs:label "peatland" ;
+    dcterms:title "peatland" ;
+    skos:exactMatch TEMP:Peatland ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000045 a owl:Class ;
+    rdfs:label "estuary" ;
+    dcterms:title "estuary" ;
+    skos:exactMatch TEMP:Estuary ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000050 a owl:Class ;
+    rdfs:label "geyser" ;
+    dcterms:title "geyser" ;
+    skos:exactMatch TEMP:Geyser ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000051 a owl:Class ;
+    rdfs:label "hot spring" ;
+    dcterms:title "hot spring" ;
+    skos:exactMatch TEMP:HotSpring ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000054 a owl:Class ;
+    rdfs:label "saline marsh" ;
+    dcterms:title "saline marsh" ;
+    skos:exactMatch TEMP:SalineMarsh ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000055 a owl:Class ;
+    rdfs:label "saline evaporation pond" ;
+    dcterms:title "saline evaporation pond" ;
+    skos:exactMatch TEMP:SalineEvaporationPond ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000057 a owl:Class ;
+    rdfs:label "mangrove swamp" ;
+    dcterms:title "mangrove swamp" ;
+    skos:exactMatch TEMP:MangroveSwamp ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000064 a owl:Class ;
+    rdfs:label "road" ;
+    dcterms:title "road" ;
+    skos:exactMatch TEMP:Road ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000067 a owl:Class ;
+    rdfs:label "cave" ;
+    dcterms:title "cave" ;
+    skos:exactMatch TEMP:Cave ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000068 a owl:Class ;
+    rdfs:label "tunnel" ;
+    dcterms:title "tunnel" ;
+    skos:exactMatch TEMP:Tunnel ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000076 a owl:Class ;
+    rdfs:label "mine" ;
+    dcterms:title "mine" ;
+    skos:exactMatch TEMP:Mine ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000078 a owl:Class ;
+    rdfs:label "farm" ;
+    dcterms:title "farm" ;
+    skos:exactMatch TEMP:Farm ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000081 a owl:Class ;
+    rdfs:label "mountain" ;
+    dcterms:title "mountain" ;
+    skos:exactMatch TEMP:Mountain ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000083 a owl:Class ;
+    rdfs:label "hill" ;
+    dcterms:title "hill" ;
+    skos:exactMatch TEMP:Hill ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000086 a owl:Class ;
+    rdfs:label "plain" ;
+    dcterms:title "plain" ;
+    skos:exactMatch TEMP:Plain ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000087 a owl:Class ;
+    rdfs:label "cliff" ;
+    dcterms:title "cliff" ;
+    skos:exactMatch TEMP:Cliff ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000091 a owl:Class ;
+    rdfs:label "beach" ;
+    dcterms:title "beach" ;
+    skos:exactMatch TEMP:Beach ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000096 a owl:Class ;
+    rdfs:label "caldera" ;
+    dcterms:title "caldera" ;
+    skos:exactMatch TEMP:Caldera ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000098 a owl:Class ;
+    rdfs:label "island" ;
+    dcterms:title "island" ;
+    skos:exactMatch TEMP:Island ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000100 a owl:Class ;
+    rdfs:label "valley" ;
+    dcterms:title "valley" ;
+    skos:exactMatch TEMP:Valley ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000101 a owl:Class ;
+    rdfs:label "delta" ;
+    dcterms:title "delta" ;
+    skos:exactMatch TEMP:Delta ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000109 a owl:Class ;
+    rdfs:label "woodland area" ;
+    dcterms:title "woodland area" ;
+    skos:exactMatch TEMP:WoodlandArea ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000114 a owl:Class ;
+    rdfs:label "agricultural field" ;
+    dcterms:title "agricultural field" ;
+    skos:exactMatch TEMP:AgriculturalField ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000117 a owl:Class ;
+    rdfs:label "plantation" ;
+    dcterms:title "plantation" ;
+    skos:exactMatch TEMP:Plantation ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000133 a owl:Class ;
+    rdfs:label "glacier" ;
+    dcterms:title "glacier" ;
+    skos:exactMatch TEMP:Glacier ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000141 a owl:Class ;
+    rdfs:label "bank" ;
+    dcterms:title "bank" ;
+    skos:exactMatch TEMP:Bank ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000143 a owl:Class ;
+    rdfs:label "river bank" ;
+    dcterms:title "river bank" ;
+    skos:exactMatch TEMP:RiverBank ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000148 a owl:Class ;
+    rdfs:label "riffle" ;
+    dcterms:title "riffle" ;
+    skos:exactMatch TEMP:Riffle ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000150 a owl:Class ;
+    rdfs:label "coral reef" ;
+    dcterms:title "coral reef" ;
+    skos:exactMatch TEMP:CoralReef ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000153 a owl:Class ;
+    rdfs:label "headwater" ;
+    dcterms:title "headwater" ;
+    skos:exactMatch TEMP:Headwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000155 a owl:Class ;
+    rdfs:label "cirque" ;
+    dcterms:title "cirque" ;
+    skos:exactMatch TEMP:Cirque ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000167 a owl:Class ;
+    rdfs:label "bar" ;
+    dcterms:title "bar" ;
+    skos:exactMatch TEMP:Bar ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000170 a owl:Class ;
+    rdfs:label "dune" ;
+    dcterms:title "dune" ;
+    skos:exactMatch TEMP:Dune ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000171 a owl:Class ;
+    rdfs:label "river valley" ;
+    dcterms:title "river valley" ;
+    skos:exactMatch TEMP:RiverValley ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000174 a owl:Class ;
+    rdfs:label "isthmus" ;
+    dcterms:title "isthmus" ;
+    skos:exactMatch TEMP:Isthmus ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000175 a owl:Class ;
+    rdfs:label "karst" ;
+    dcterms:title "karst" ;
+    skos:exactMatch TEMP:Karst ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000178 a owl:Class ;
+    rdfs:label "levee" ;
+    dcterms:title "levee" ;
+    skos:exactMatch TEMP:Levee ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000179 a owl:Class ;
+    rdfs:label "mesa" ;
+    dcterms:title "mesa" ;
+    skos:exactMatch TEMP:Mesa ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000182 a owl:Class ;
+    rdfs:label "plateau" ;
+    dcterms:title "plateau" ;
+    skos:exactMatch TEMP:Plateau ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000189 a owl:Class ;
+    rdfs:label "peat swamp" ;
+    dcterms:title "peat swamp" ;
+    skos:exactMatch TEMP:PeatSwamp ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000192 a owl:Class ;
+    rdfs:label "mudflat" ;
+    dcterms:title "mudflat" ;
+    skos:exactMatch TEMP:Mudflat ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000195 a owl:Class ;
+    rdfs:label "sinkhole" ;
+    dcterms:title "sinkhole" ;
+    skos:exactMatch TEMP:Sinkhole ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000206 a owl:Class ;
+    rdfs:label "marine neritic zone" ;
+    dcterms:title "marine neritic zone" ;
+    skos:exactMatch TEMP:MarineNeriticZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000208 a owl:Class ;
+    rdfs:label "marine pelagic zone" ;
+    dcterms:title "marine pelagic zone" ;
+    skos:exactMatch TEMP:MarinePelagicZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000209 a owl:Class ;
+    rdfs:label "marine photic zone" ;
+    dcterms:title "marine photic zone" ;
+    skos:exactMatch TEMP:MarinePhoticZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000210 a owl:Class ;
+    rdfs:label "marine aphotic zone" ;
+    dcterms:title "marine aphotic zone" ;
+    skos:exactMatch TEMP:MarineAphoticZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000211 a owl:Class ;
+    rdfs:label "marine bathypelagic zone" ;
+    dcterms:title "marine bathypelagic zone" ;
+    skos:exactMatch TEMP:MarineBathypelagicZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000213 a owl:Class ;
+    rdfs:label "marine mesopelagic zone" ;
+    dcterms:title "marine mesopelagic zone" ;
+    skos:exactMatch TEMP:MarineMesopelagicZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000214 a owl:Class ;
+    rdfs:label "hadalpelagic zone" ;
+    dcterms:title "hadalpelagic zone" ;
+    skos:exactMatch TEMP:HadalpelagicZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000215 a owl:Class ;
+    rdfs:label "hydrothermal vent" ;
+    dcterms:title "hydrothermal vent" ;
+    skos:exactMatch TEMP:HydrothermalVent ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000216 a owl:Class ;
+    rdfs:label "fumarole" ;
+    dcterms:title "fumarole" ;
+    skos:exactMatch TEMP:Fumarole ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000218 a owl:Class ;
+    rdfs:label "black smoker" ;
+    dcterms:title "black smoker" ;
+    skos:exactMatch TEMP:BlackSmoker ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000220 a owl:Class ;
+    rdfs:label "archipelago" ;
+    dcterms:title "archipelago" ;
+    skos:exactMatch TEMP:Archipelago ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000223 a owl:Class ;
+    rdfs:label "continental shelf" ;
+    dcterms:title "continental shelf" ;
+    skos:exactMatch TEMP:ContinentalShelf ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000232 a owl:Class ;
+    rdfs:label "fen" ;
+    dcterms:title "fen" ;
+    skos:exactMatch TEMP:Fen ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000233 a owl:Class ;
+    rdfs:label "swamp ecosystem" ;
+    dcterms:title "swamp ecosystem" ;
+    skos:exactMatch TEMP:SwampEcosystem ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000244 a owl:Class ;
+    rdfs:label "abyssal plain" ;
+    dcterms:title "abyssal plain" ;
+    skos:exactMatch TEMP:AbyssalPlain ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000247 a owl:Class ;
+    rdfs:label "volcano" ;
+    dcterms:title "volcano" ;
+    skos:exactMatch TEMP:Volcano ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000255 a owl:Class ;
+    rdfs:label "flood plain" ;
+    dcterms:title "flood plain" ;
+    skos:exactMatch TEMP:FloodPlain ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000258 a owl:Class ;
+    rdfs:label "alluvial plain" ;
+    dcterms:title "alluvial plain" ;
+    skos:exactMatch TEMP:AlluvialPlain ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000260 a owl:Class ;
+    rdfs:label "prairie" ;
+    dcterms:title "prairie" ;
+    skos:exactMatch TEMP:Prairie ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000262 a owl:Class ;
+    rdfs:label "steppe" ;
+    dcterms:title "steppe" ;
+    skos:exactMatch TEMP:Steppe ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000266 a owl:Class ;
+    rdfs:label "pasture" ;
+    dcterms:title "pasture" ;
+    skos:exactMatch TEMP:Pasture ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000268 a owl:Class ;
+    rdfs:label "lake bed" ;
+    dcterms:title "lake bed" ;
+    skos:exactMatch TEMP:LakeBed ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000275 a owl:Class ;
+    rdfs:label "ocean trench" ;
+    dcterms:title "ocean trench" ;
+    skos:exactMatch TEMP:OceanTrench ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000279 a owl:Class ;
+    rdfs:label "saline pan" ;
+    dcterms:title "saline pan" ;
+    skos:exactMatch TEMP:SalinePan ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000283 a owl:Class ;
+    rdfs:label "ridge" ;
+    dcterms:title "ridge" ;
+    skos:exactMatch TEMP:Ridge ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000284 a owl:Class ;
+    rdfs:label "quarry" ;
+    dcterms:title "quarry" ;
+    skos:exactMatch TEMP:Quarry ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000287 a owl:Class ;
+    rdfs:label "butte" ;
+    dcterms:title "butte" ;
+    skos:exactMatch TEMP:Butte ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000291 a owl:Class ;
+    rdfs:label "drainage basin" ;
+    dcterms:title "drainage basin" ;
+    skos:exactMatch TEMP:DrainageBasin ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000292 a owl:Class ;
+    rdfs:label "watershed" ;
+    dcterms:title "watershed" ;
+    skos:exactMatch TEMP:Watershed ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000304 a owl:Class ;
+    rdfs:label "shore" ;
+    dcterms:title "shore" ;
+    skos:exactMatch TEMP:Shore ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000305 a owl:Class ;
+    rdfs:label "peninsula" ;
+    dcterms:title "peninsula" ;
+    skos:exactMatch TEMP:Peninsula ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000316 a owl:Class ;
+    rdfs:label "intertidal zone" ;
+    dcterms:title "intertidal zone" ;
+    skos:exactMatch TEMP:IntertidalZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000328 a owl:Class ;
+    rdfs:label "vadose zone" ;
+    dcterms:title "vadose zone" ;
+    skos:exactMatch TEMP:VadoseZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000383 a owl:Class ;
+    rdfs:label "stream bed" ;
+    dcterms:title "stream bed" ;
+    skos:exactMatch TEMP:StreamBed ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000384 a owl:Class ;
+    rdfs:label "river bed" ;
+    dcterms:title "river bed" ;
+    skos:exactMatch TEMP:RiverBed ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000394 a owl:Class ;
+    rdfs:label "strait" ;
+    dcterms:title "strait" ;
+    skos:exactMatch TEMP:Strait ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000402 a owl:Class ;
+    rdfs:label "mud volcano" ;
+    dcterms:title "mud volcano" ;
+    skos:exactMatch TEMP:MudVolcano ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000406 a owl:Class ;
+    rdfs:label "mid-ocean ridge" ;
+    dcterms:title "mid-ocean ridge" ;
+    skos:exactMatch TEMP:Mid-oceanRidge ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000426 a owl:Class ;
+    rdfs:label "ocean floor" ;
+    dcterms:title "ocean floor" ;
+    skos:exactMatch TEMP:OceanFloor ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000446 a owl:Class ;
+    rdfs:label "terrestrial biome" ;
+    dcterms:title "terrestrial biome" ;
+    skos:exactMatch TEMP:TerrestrialBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000447 a owl:Class ;
+    rdfs:label "marine biome" ;
+    dcterms:title "marine biome" ;
+    skos:exactMatch TEMP:MarineBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000463 a owl:Class ;
+    rdfs:label "harbour" ;
+    dcterms:title "harbour" ;
+    skos:exactMatch TEMP:Harbour ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000469 a owl:Class ;
+    rdfs:label "research facility" ;
+    dcterms:title "research facility" ;
+    skos:exactMatch TEMP:ResearchFacility ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000475 a owl:Class ;
+    rdfs:label "inlet" ;
+    dcterms:title "inlet" ;
+    skos:exactMatch TEMP:Inlet ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000482 a owl:Class ;
+    rdfs:label "sea floor" ;
+    dcterms:title "sea floor" ;
+    skos:exactMatch TEMP:SeaFloor ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000486 a owl:Class ;
+    rdfs:label "shoreline" ;
+    dcterms:title "shoreline" ;
+    skos:exactMatch TEMP:Shoreline ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000488 a owl:Class ;
+    rdfs:label "glacial lake" ;
+    dcterms:title "glacial lake" ;
+    skos:exactMatch TEMP:GlacialLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000489 a owl:Class ;
+    rdfs:label "palsa" ;
+    dcterms:title "palsa" ;
+    skos:exactMatch TEMP:Palsa ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000501 a owl:Class ;
+    rdfs:label "submerged bed" ;
+    dcterms:title "submerged bed" ;
+    skos:exactMatch TEMP:SubmergedBed ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000514 a owl:Class ;
+    rdfs:label "crater" ;
+    dcterms:title "crater" ;
+    skos:exactMatch TEMP:Crater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000516 a owl:Class ;
+    rdfs:label "hummock" ;
+    dcterms:title "hummock" ;
+    skos:exactMatch TEMP:Hummock ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000519 a owl:Class ;
+    rdfs:label "agricultural terrace" ;
+    dcterms:title "agricultural terrace" ;
+    skos:exactMatch TEMP:AgriculturalTerrace ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000533 a owl:Class ;
+    rdfs:label "landfill" ;
+    dcterms:title "landfill" ;
+    skos:exactMatch TEMP:Landfill ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000540 a owl:Class ;
+    rdfs:label "brackish lake" ;
+    dcterms:title "brackish lake" ;
+    skos:exactMatch TEMP:BrackishLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000562 a owl:Class ;
+    rdfs:label "park" ;
+    dcterms:title "park" ;
+    skos:exactMatch TEMP:Park ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000873 a owl:Class ;
+    rdfs:label "freshwater biome" ;
+    dcterms:title "freshwater biome" ;
+    skos:exactMatch TEMP:FreshwaterBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000887 a owl:Class ;
+    rdfs:label "large river biome" ;
+    dcterms:title "large river biome" ;
+    skos:exactMatch TEMP:LargeRiverBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000888 a owl:Class ;
+    rdfs:label "large river headwater biome" ;
+    dcterms:title "large river headwater biome" ;
+    skos:exactMatch TEMP:LargeRiverHeadwaterBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000889 a owl:Class ;
+    rdfs:label "large river delta biome" ;
+    dcterms:title "large river delta biome" ;
+    skos:exactMatch TEMP:LargeRiverDeltaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000890 a owl:Class ;
+    rdfs:label "small river biome" ;
+    dcterms:title "small river biome" ;
+    skos:exactMatch TEMP:SmallRiverBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000891 a owl:Class ;
+    rdfs:label "large freshwater lake biome" ;
+    dcterms:title "large freshwater lake biome" ;
+    skos:exactMatch TEMP:LargeFreshwaterLakeBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000892 a owl:Class ;
+    rdfs:label "small freshwater lake biome" ;
+    dcterms:title "small freshwater lake biome" ;
+    skos:exactMatch TEMP:SmallFreshwaterLakeBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00000893 a owl:Class ;
+    rdfs:label "xeric basin biome" ;
+    dcterms:title "xeric basin biome" ;
+    skos:exactMatch TEMP:XericBasinBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00001996 a owl:Class ;
+    rdfs:label "mine drainage" ;
+    dcterms:title "mine drainage" ;
+    skos:exactMatch TEMP:MineDrainage ;
+    skos:inScheme <TEMP> .
+
+ENVO:00001997 a owl:Class ;
+    rdfs:label "acid mine drainage" ;
+    dcterms:title "acid mine drainage" ;
+    skos:exactMatch TEMP:AcidMineDrainage ;
+    skos:inScheme <TEMP> .
+
+ENVO:00001998 a owl:Class ;
+    rdfs:label "soil" ;
+    dcterms:title "soil" ;
+    skos:exactMatch TEMP:Soil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002000 a owl:Class ;
+    rdfs:label "slope" ;
+    dcterms:title "slope" ;
+    skos:exactMatch TEMP:Slope ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002001 a owl:Class ;
+    rdfs:label "waste water" ;
+    dcterms:title "waste water" ;
+    skos:exactMatch TEMP:WasteWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002006 a owl:Class ;
+    rdfs:label "liquid water" ;
+    dcterms:title "liquid water" ;
+    skos:exactMatch TEMP:LiquidWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002007 a owl:Class ;
+    rdfs:label "sediment" ;
+    dcterms:title "sediment" ;
+    skos:exactMatch TEMP:Sediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002010 a owl:Class ;
+    rdfs:label "saline water" ;
+    dcterms:title "saline water" ;
+    skos:exactMatch TEMP:SalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002011 a owl:Class ;
+    rdfs:label "fresh water" ;
+    dcterms:title "fresh water" ;
+    skos:exactMatch TEMP:FreshWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002012 a owl:Class ;
+    rdfs:label "hypersaline water" ;
+    dcterms:title "hypersaline water" ;
+    skos:exactMatch TEMP:HypersalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002018 a owl:Class ;
+    rdfs:label "sewage" ;
+    dcterms:title "sewage" ;
+    skos:exactMatch TEMP:Sewage ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002019 a owl:Class ;
+    rdfs:label "brackish water" ;
+    dcterms:title "brackish water" ;
+    skos:exactMatch TEMP:BrackishWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002030 a owl:Class ;
+    rdfs:label "aquatic biome" ;
+    dcterms:title "aquatic biome" ;
+    skos:exactMatch TEMP:AquaticBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002034 a owl:Class ;
+    rdfs:label "biofilm" ;
+    dcterms:title "biofilm" ;
+    skos:exactMatch TEMP:Biofilm ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002042 a owl:Class ;
+    rdfs:label "surface water" ;
+    dcterms:title "surface water" ;
+    skos:exactMatch TEMP:SurfaceWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002044 a owl:Class ;
+    rdfs:label "sludge" ;
+    dcterms:title "sludge" ;
+    skos:exactMatch TEMP:Sludge ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002045 a owl:Class ;
+    rdfs:label "anaerobic sediment" ;
+    dcterms:title "anaerobic sediment" ;
+    skos:exactMatch TEMP:AnaerobicSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002061 a owl:Class ;
+    rdfs:label "oil spill" ;
+    dcterms:title "oil spill" ;
+    skos:exactMatch TEMP:OilSpill ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002063 a owl:Class ;
+    rdfs:label "oil seep" ;
+    dcterms:title "oil seep" ;
+    skos:exactMatch TEMP:OilSeep ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002115 a owl:Class ;
+    rdfs:label "petroleum enriched sediment" ;
+    dcterms:title "petroleum enriched sediment" ;
+    skos:exactMatch TEMP:PetroleumEnrichedSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002130 a owl:Class ;
+    rdfs:label "hypolimnion" ;
+    dcterms:title "hypolimnion" ;
+    skos:exactMatch TEMP:Hypolimnion ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002131 a owl:Class ;
+    rdfs:label "epilimnion" ;
+    dcterms:title "epilimnion" ;
+    skos:exactMatch TEMP:Epilimnion ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002132 a owl:Class ;
+    rdfs:label "metalimnion" ;
+    dcterms:title "metalimnion" ;
+    skos:exactMatch TEMP:Metalimnion ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002137 a owl:Class ;
+    rdfs:label "brackish estuary" ;
+    dcterms:title "brackish estuary" ;
+    skos:exactMatch TEMP:BrackishEstuary ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002141 a owl:Class ;
+    rdfs:label "leachate" ;
+    dcterms:title "leachate" ;
+    skos:exactMatch TEMP:Leachate ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002142 a owl:Class ;
+    rdfs:label "borax leachate" ;
+    dcterms:title "borax leachate" ;
+    skos:exactMatch TEMP:BoraxLeachate ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002149 a owl:Class ;
+    rdfs:label "sea water" ;
+    dcterms:title "sea water" ;
+    skos:exactMatch TEMP:SeaWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002150 a owl:Class ;
+    rdfs:label "coastal sea water" ;
+    dcterms:title "coastal sea water" ;
+    skos:exactMatch TEMP:CoastalSeaWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002154 a owl:Class ;
+    rdfs:label "radioactive sediment" ;
+    dcterms:title "radioactive sediment" ;
+    skos:exactMatch TEMP:RadioactiveSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002158 a owl:Class ;
+    rdfs:label "ditch water" ;
+    dcterms:title "ditch water" ;
+    skos:exactMatch TEMP:DitchWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002159 a owl:Class ;
+    rdfs:label "drilling bore water" ;
+    dcterms:title "drilling bore water" ;
+    skos:exactMatch TEMP:DrillingBoreWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002160 a owl:Class ;
+    rdfs:label "estuarine mud" ;
+    dcterms:title "estuarine mud" ;
+    skos:exactMatch TEMP:EstuarineMud ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002185 a owl:Class ;
+    rdfs:label "oil reservoir" ;
+    dcterms:title "oil reservoir" ;
+    skos:exactMatch TEMP:OilReservoir ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002186 a owl:Class ;
+    rdfs:label "contaminated water" ;
+    dcterms:title "contaminated water" ;
+    skos:exactMatch TEMP:ContaminatedWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002193 a owl:Class ;
+    rdfs:label "pulp-bleaching waste water" ;
+    dcterms:title "pulp-bleaching waste water" ;
+    skos:exactMatch TEMP:Pulp-bleachingWasteWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002194 a owl:Class ;
+    rdfs:label "oil field production water" ;
+    dcterms:title "oil field production water" ;
+    skos:exactMatch TEMP:OilFieldProductionWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002200 a owl:Class ;
+    rdfs:label "sea ice" ;
+    dcterms:title "sea ice" ;
+    skos:exactMatch TEMP:SeaIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002223 a owl:Class ;
+    rdfs:label "oligotrophic water" ;
+    dcterms:title "oligotrophic water" ;
+    skos:exactMatch TEMP:OligotrophicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002224 a owl:Class ;
+    rdfs:label "eutrophic water" ;
+    dcterms:title "eutrophic water" ;
+    skos:exactMatch TEMP:EutrophicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002225 a owl:Class ;
+    rdfs:label "mesotrophic water" ;
+    dcterms:title "mesotrophic water" ;
+    skos:exactMatch TEMP:MesotrophicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002228 a owl:Class ;
+    rdfs:label "pond water" ;
+    dcterms:title "pond water" ;
+    skos:exactMatch TEMP:PondWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002229 a owl:Class ;
+    rdfs:label "arenosol" ;
+    dcterms:title "arenosol" ;
+    skos:exactMatch TEMP:Arenosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002230 a owl:Class ;
+    rdfs:label "anthrosol" ;
+    dcterms:title "anthrosol" ;
+    skos:exactMatch TEMP:Anthrosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002231 a owl:Class ;
+    rdfs:label "alisol" ;
+    dcterms:title "alisol" ;
+    skos:exactMatch TEMP:Alisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002232 a owl:Class ;
+    rdfs:label "andosol" ;
+    dcterms:title "andosol" ;
+    skos:exactMatch TEMP:Andosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002233 a owl:Class ;
+    rdfs:label "albeluvisol" ;
+    dcterms:title "albeluvisol" ;
+    skos:exactMatch TEMP:Albeluvisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002234 a owl:Class ;
+    rdfs:label "acrisol" ;
+    dcterms:title "acrisol" ;
+    skos:exactMatch TEMP:Acrisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002235 a owl:Class ;
+    rdfs:label "cambisol" ;
+    dcterms:title "cambisol" ;
+    skos:exactMatch TEMP:Cambisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002236 a owl:Class ;
+    rdfs:label "cryosol" ;
+    dcterms:title "cryosol" ;
+    skos:exactMatch TEMP:Cryosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002237 a owl:Class ;
+    rdfs:label "chernozem" ;
+    dcterms:title "chernozem" ;
+    skos:exactMatch TEMP:Chernozem ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002238 a owl:Class ;
+    rdfs:label "durisol" ;
+    dcterms:title "durisol" ;
+    skos:exactMatch TEMP:Durisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002239 a owl:Class ;
+    rdfs:label "calcisol" ;
+    dcterms:title "calcisol" ;
+    skos:exactMatch TEMP:Calcisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002240 a owl:Class ;
+    rdfs:label "kastanozem" ;
+    dcterms:title "kastanozem" ;
+    skos:exactMatch TEMP:Kastanozem ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002241 a owl:Class ;
+    rdfs:label "leptosol" ;
+    dcterms:title "leptosol" ;
+    skos:exactMatch TEMP:Leptosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002242 a owl:Class ;
+    rdfs:label "lixisol" ;
+    dcterms:title "lixisol" ;
+    skos:exactMatch TEMP:Lixisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002243 a owl:Class ;
+    rdfs:label "histosol" ;
+    dcterms:title "histosol" ;
+    skos:exactMatch TEMP:Histosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002244 a owl:Class ;
+    rdfs:label "gleysol" ;
+    dcterms:title "gleysol" ;
+    skos:exactMatch TEMP:Gleysol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002245 a owl:Class ;
+    rdfs:label "gypsisol" ;
+    dcterms:title "gypsisol" ;
+    skos:exactMatch TEMP:Gypsisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002246 a owl:Class ;
+    rdfs:label "ferralsol" ;
+    dcterms:title "ferralsol" ;
+    skos:exactMatch TEMP:Ferralsol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002247 a owl:Class ;
+    rdfs:label "nitisol" ;
+    dcterms:title "nitisol" ;
+    skos:exactMatch TEMP:Nitisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002248 a owl:Class ;
+    rdfs:label "luvisol" ;
+    dcterms:title "luvisol" ;
+    skos:exactMatch TEMP:Luvisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002249 a owl:Class ;
+    rdfs:label "phaeozem" ;
+    dcterms:title "phaeozem" ;
+    skos:exactMatch TEMP:Phaeozem ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002250 a owl:Class ;
+    rdfs:label "plinthosol" ;
+    dcterms:title "plinthosol" ;
+    skos:exactMatch TEMP:Plinthosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002251 a owl:Class ;
+    rdfs:label "planosol" ;
+    dcterms:title "planosol" ;
+    skos:exactMatch TEMP:Planosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002252 a owl:Class ;
+    rdfs:label "solonchak" ;
+    dcterms:title "solonchak" ;
+    skos:exactMatch TEMP:Solonchak ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002253 a owl:Class ;
+    rdfs:label "umbrisol" ;
+    dcterms:title "umbrisol" ;
+    skos:exactMatch TEMP:Umbrisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002254 a owl:Class ;
+    rdfs:label "vertisol" ;
+    dcterms:title "vertisol" ;
+    skos:exactMatch TEMP:Vertisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002255 a owl:Class ;
+    rdfs:label "solonetz" ;
+    dcterms:title "solonetz" ;
+    skos:exactMatch TEMP:Solonetz ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002256 a owl:Class ;
+    rdfs:label "regosol" ;
+    dcterms:title "regosol" ;
+    skos:exactMatch TEMP:Regosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002257 a owl:Class ;
+    rdfs:label "podzol" ;
+    dcterms:title "podzol" ;
+    skos:exactMatch TEMP:Podzol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002258 a owl:Class ;
+    rdfs:label "loam" ;
+    dcterms:title "loam" ;
+    skos:exactMatch TEMP:Loam ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002259 a owl:Class ;
+    rdfs:label "agricultural soil" ;
+    dcterms:title "agricultural soil" ;
+    skos:exactMatch TEMP:AgriculturalSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002261 a owl:Class ;
+    rdfs:label "forest soil" ;
+    dcterms:title "forest soil" ;
+    skos:exactMatch TEMP:ForestSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002262 a owl:Class ;
+    rdfs:label "clay soil" ;
+    dcterms:title "clay soil" ;
+    skos:exactMatch TEMP:ClaySoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002273 a owl:Class ;
+    rdfs:label "fluvisol" ;
+    dcterms:title "fluvisol" ;
+    skos:exactMatch TEMP:Fluvisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002274 a owl:Class ;
+    rdfs:label "stagnosol" ;
+    dcterms:title "stagnosol" ;
+    skos:exactMatch TEMP:Stagnosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002275 a owl:Class ;
+    rdfs:label "technosol" ;
+    dcterms:title "technosol" ;
+    skos:exactMatch TEMP:Technosol ;
+    skos:inScheme <TEMP> .
+
+ENVO:00002871 a owl:Class ;
+    rdfs:label "alluvial soil" ;
+    dcterms:title "alluvial soil" ;
+    skos:exactMatch TEMP:AlluvialSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00003044 a owl:Class ;
+    rdfs:label "brine" ;
+    dcterms:title "brine" ;
+    skos:exactMatch TEMP:Brine ;
+    skos:inScheme <TEMP> .
+
+ENVO:00003045 a owl:Class ;
+    rdfs:label "bacon curing brine" ;
+    dcterms:title "bacon curing brine" ;
+    skos:exactMatch TEMP:BaconCuringBrine ;
+    skos:inScheme <TEMP> .
+
+ENVO:00003064 a owl:Class ;
+    rdfs:label "drinking water" ;
+    dcterms:title "drinking water" ;
+    skos:exactMatch TEMP:DrinkingWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00003065 a owl:Class ;
+    rdfs:label "distilled water" ;
+    dcterms:title "distilled water" ;
+    skos:exactMatch TEMP:DistilledWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00003096 a owl:Class ;
+    rdfs:label "tap water" ;
+    dcterms:title "tap water" ;
+    skos:exactMatch TEMP:TapWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00003097 a owl:Class ;
+    rdfs:label "bore hole water" ;
+    dcterms:title "bore hole water" ;
+    skos:exactMatch TEMP:BoreHoleWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005740 a owl:Class ;
+    rdfs:label "paddy field soil" ;
+    dcterms:title "paddy field soil" ;
+    skos:exactMatch TEMP:PaddyFieldSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005741 a owl:Class ;
+    rdfs:label "alpine soil" ;
+    dcterms:title "alpine soil" ;
+    skos:exactMatch TEMP:AlpineSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005742 a owl:Class ;
+    rdfs:label "arable soil" ;
+    dcterms:title "arable soil" ;
+    skos:exactMatch TEMP:ArableSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005744 a owl:Class ;
+    rdfs:label "allotment garden soil" ;
+    dcterms:title "allotment garden soil" ;
+    skos:exactMatch TEMP:AllotmentGardenSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005746 a owl:Class ;
+    rdfs:label "savanna soil" ;
+    dcterms:title "savanna soil" ;
+    skos:exactMatch TEMP:SavannaSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005747 a owl:Class ;
+    rdfs:label "compost soil" ;
+    dcterms:title "compost soil" ;
+    skos:exactMatch TEMP:CompostSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005748 a owl:Class ;
+    rdfs:label "dry soil" ;
+    dcterms:title "dry soil" ;
+    skos:exactMatch TEMP:DrySoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005750 a owl:Class ;
+    rdfs:label "grassland soil" ;
+    dcterms:title "grassland soil" ;
+    skos:exactMatch TEMP:GrasslandSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005751 a owl:Class ;
+    rdfs:label "jungle soil" ;
+    dcterms:title "jungle soil" ;
+    skos:exactMatch TEMP:JungleSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005752 a owl:Class ;
+    rdfs:label "sawah soil" ;
+    dcterms:title "sawah soil" ;
+    skos:exactMatch TEMP:SawahSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005754 a owl:Class ;
+    rdfs:label "fertilized soil" ;
+    dcterms:title "fertilized soil" ;
+    skos:exactMatch TEMP:FertilizedSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005756 a owl:Class ;
+    rdfs:label "lawn soil" ;
+    dcterms:title "lawn soil" ;
+    skos:exactMatch TEMP:LawnSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005758 a owl:Class ;
+    rdfs:label "alluvial swamp soil" ;
+    dcterms:title "alluvial swamp soil" ;
+    skos:exactMatch TEMP:AlluvialSwampSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005759 a owl:Class ;
+    rdfs:label "alluvial paddy field soil" ;
+    dcterms:title "alluvial paddy field soil" ;
+    skos:exactMatch TEMP:AlluvialPaddyFieldSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005760 a owl:Class ;
+    rdfs:label "burned soil" ;
+    dcterms:title "burned soil" ;
+    skos:exactMatch TEMP:BurnedSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005761 a owl:Class ;
+    rdfs:label "meadow soil" ;
+    dcterms:title "meadow soil" ;
+    skos:exactMatch TEMP:MeadowSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005764 a owl:Class ;
+    rdfs:label "pond soil" ;
+    dcterms:title "pond soil" ;
+    skos:exactMatch TEMP:PondSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005765 a owl:Class ;
+    rdfs:label "frozen compost soil" ;
+    dcterms:title "frozen compost soil" ;
+    skos:exactMatch TEMP:FrozenCompostSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005766 a owl:Class ;
+    rdfs:label "limed soil" ;
+    dcterms:title "limed soil" ;
+    skos:exactMatch TEMP:LimedSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005767 a owl:Class ;
+    rdfs:label "manured soil" ;
+    dcterms:title "manured soil" ;
+    skos:exactMatch TEMP:ManuredSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005768 a owl:Class ;
+    rdfs:label "orchid soil" ;
+    dcterms:title "orchid soil" ;
+    skos:exactMatch TEMP:OrchidSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005769 a owl:Class ;
+    rdfs:label "mountain forest soil" ;
+    dcterms:title "mountain forest soil" ;
+    skos:exactMatch TEMP:MountainForestSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005770 a owl:Class ;
+    rdfs:label "beech forest soil" ;
+    dcterms:title "beech forest soil" ;
+    skos:exactMatch TEMP:BeechForestSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005771 a owl:Class ;
+    rdfs:label "muddy soil" ;
+    dcterms:title "muddy soil" ;
+    skos:exactMatch TEMP:MuddySoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005778 a owl:Class ;
+    rdfs:label "tropical soil" ;
+    dcterms:title "tropical soil" ;
+    skos:exactMatch TEMP:TropicalSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005779 a owl:Class ;
+    rdfs:label "vegetable garden soil" ;
+    dcterms:title "vegetable garden soil" ;
+    skos:exactMatch TEMP:VegetableGardenSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005781 a owl:Class ;
+    rdfs:label "heat stressed soil" ;
+    dcterms:title "heat stressed soil" ;
+    skos:exactMatch TEMP:HeatStressedSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005782 a owl:Class ;
+    rdfs:label "ornithogenic soil" ;
+    dcterms:title "ornithogenic soil" ;
+    skos:exactMatch TEMP:OrnithogenicSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005783 a owl:Class ;
+    rdfs:label "leafy wood soil" ;
+    dcterms:title "leafy wood soil" ;
+    skos:exactMatch TEMP:LeafyWoodSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005784 a owl:Class ;
+    rdfs:label "spruce forest soil" ;
+    dcterms:title "spruce forest soil" ;
+    skos:exactMatch TEMP:SpruceForestSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005786 a owl:Class ;
+    rdfs:label "upland soil" ;
+    dcterms:title "upland soil" ;
+    skos:exactMatch TEMP:UplandSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005787 a owl:Class ;
+    rdfs:label "eucalyptus forest soil" ;
+    dcterms:title "eucalyptus forest soil" ;
+    skos:exactMatch TEMP:EucalyptusForestSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005788 a owl:Class ;
+    rdfs:label "rubber plantation soil" ;
+    dcterms:title "rubber plantation soil" ;
+    skos:exactMatch TEMP:RubberPlantationSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005789 a owl:Class ;
+    rdfs:label "bluegrass field soil" ;
+    dcterms:title "bluegrass field soil" ;
+    skos:exactMatch TEMP:BluegrassFieldSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005790 a owl:Class ;
+    rdfs:label "red soil" ;
+    dcterms:title "red soil" ;
+    skos:exactMatch TEMP:RedSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005791 a owl:Class ;
+    rdfs:label "sterile water" ;
+    dcterms:title "sterile water" ;
+    skos:exactMatch TEMP:SterileWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005792 a owl:Class ;
+    rdfs:label "underground water" ;
+    dcterms:title "underground water" ;
+    skos:exactMatch TEMP:UndergroundWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005793 a owl:Class ;
+    rdfs:label "muddy water" ;
+    dcterms:title "muddy water" ;
+    skos:exactMatch TEMP:MuddyWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005801 a owl:Class ;
+    rdfs:label "rhizosphere" ;
+    dcterms:title "rhizosphere" ;
+    skos:exactMatch TEMP:Rhizosphere ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005802 a owl:Class ;
+    rdfs:label "bulk soil" ;
+    dcterms:title "bulk soil" ;
+    skos:exactMatch TEMP:BulkSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:00005803 a owl:Class ;
+    rdfs:label "animal habitation" ;
+    dcterms:title "animal habitation" ;
+    skos:exactMatch TEMP:AnimalHabitation ;
+    skos:inScheme <TEMP> .
+
+ENVO:00010624 a owl:Class ;
+    rdfs:label "botanical garden" ;
+    dcterms:title "botanical garden" ;
+    skos:exactMatch TEMP:BotanicalGarden ;
+    skos:inScheme <TEMP> .
+
+ENVO:00012408 a owl:Class ;
+    rdfs:label "aquifer" ;
+    dcterms:title "aquifer" ;
+    skos:exactMatch TEMP:Aquifer ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000002 a owl:Class ;
+    rdfs:label "water well" ;
+    dcterms:title "water well" ;
+    skos:exactMatch TEMP:WaterWell ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000004 a owl:Class ;
+    rdfs:label "concentration basin mediterranean sea biome" ;
+    dcterms:title "concentration basin mediterranean sea biome" ;
+    skos:exactMatch TEMP:ConcentrationBasinMediterraneanSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000008 a owl:Class ;
+    rdfs:label "microbial mat" ;
+    dcterms:title "microbial mat" ;
+    skos:exactMatch TEMP:MicrobialMat ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000020 a owl:Class ;
+    rdfs:label "estuarine biome" ;
+    dcterms:title "estuarine biome" ;
+    skos:exactMatch TEMP:EstuarineBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000022 a owl:Class ;
+    rdfs:label "marine salt marsh biome" ;
+    dcterms:title "marine salt marsh biome" ;
+    skos:exactMatch TEMP:MarineSaltMarshBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000023 a owl:Class ;
+    rdfs:label "marine pelagic biome" ;
+    dcterms:title "marine pelagic biome" ;
+    skos:exactMatch TEMP:MarinePelagicBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000024 a owl:Class ;
+    rdfs:label "marine benthic biome" ;
+    dcterms:title "marine benthic biome" ;
+    skos:exactMatch TEMP:MarineBenthicBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000025 a owl:Class ;
+    rdfs:label "marine neritic benthic zone biome" ;
+    dcterms:title "marine neritic benthic zone biome" ;
+    skos:exactMatch TEMP:MarineNeriticBenthicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000026 a owl:Class ;
+    rdfs:label "marine bathyal zone biome" ;
+    dcterms:title "marine bathyal zone biome" ;
+    skos:exactMatch TEMP:MarineBathyalZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000027 a owl:Class ;
+    rdfs:label "marine abyssal zone biome" ;
+    dcterms:title "marine abyssal zone biome" ;
+    skos:exactMatch TEMP:MarineAbyssalZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000028 a owl:Class ;
+    rdfs:label "marine hadal zone biome" ;
+    dcterms:title "marine hadal zone biome" ;
+    skos:exactMatch TEMP:MarineHadalZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000029 a owl:Class ;
+    rdfs:label "marine reef biome" ;
+    dcterms:title "marine reef biome" ;
+    skos:exactMatch TEMP:MarineReefBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000030 a owl:Class ;
+    rdfs:label "marine hydrothermal vent biome" ;
+    dcterms:title "marine hydrothermal vent biome" ;
+    skos:exactMatch TEMP:MarineHydrothermalVentBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000032 a owl:Class ;
+    rdfs:label "neritic pelagic zone biome" ;
+    dcterms:title "neritic pelagic zone biome" ;
+    skos:exactMatch TEMP:NeriticPelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000033 a owl:Class ;
+    rdfs:label "oceanic pelagic zone biome" ;
+    dcterms:title "oceanic pelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicPelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000034 a owl:Class ;
+    rdfs:label "oceanic sea surface microlayer biome" ;
+    dcterms:title "oceanic sea surface microlayer biome" ;
+    skos:exactMatch TEMP:OceanicSeaSurfaceMicrolayerBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000035 a owl:Class ;
+    rdfs:label "oceanic epipelagic zone biome" ;
+    dcterms:title "oceanic epipelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicEpipelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000036 a owl:Class ;
+    rdfs:label "oceanic mesopelagic zone biome" ;
+    dcterms:title "oceanic mesopelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicMesopelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000037 a owl:Class ;
+    rdfs:label "oceanic bathypelagic zone biome" ;
+    dcterms:title "oceanic bathypelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicBathypelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000038 a owl:Class ;
+    rdfs:label "oceanic abyssopelagic zone biome" ;
+    dcterms:title "oceanic abyssopelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicAbyssopelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000039 a owl:Class ;
+    rdfs:label "oceanic hadal pelagic zone biome" ;
+    dcterms:title "oceanic hadal pelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicHadalPelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000040 a owl:Class ;
+    rdfs:label "oceanic benthopelagic zone biome" ;
+    dcterms:title "oceanic benthopelagic zone biome" ;
+    skos:exactMatch TEMP:OceanicBenthopelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000041 a owl:Class ;
+    rdfs:label "neritic sea surface microlayer biome" ;
+    dcterms:title "neritic sea surface microlayer biome" ;
+    skos:exactMatch TEMP:NeriticSeaSurfaceMicrolayerBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000042 a owl:Class ;
+    rdfs:label "neritic epipelagic zone biome" ;
+    dcterms:title "neritic epipelagic zone biome" ;
+    skos:exactMatch TEMP:NeriticEpipelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000043 a owl:Class ;
+    rdfs:label "neritic mesopelagic zone biome" ;
+    dcterms:title "neritic mesopelagic zone biome" ;
+    skos:exactMatch TEMP:NeriticMesopelagicZoneBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000045 a owl:Class ;
+    rdfs:label "epeiric sea biome" ;
+    dcterms:title "epeiric sea biome" ;
+    skos:exactMatch TEMP:EpeiricSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000046 a owl:Class ;
+    rdfs:label "marginal sea biome" ;
+    dcterms:title "marginal sea biome" ;
+    skos:exactMatch TEMP:MarginalSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000047 a owl:Class ;
+    rdfs:label "mediterranean sea biome" ;
+    dcterms:title "mediterranean sea biome" ;
+    skos:exactMatch TEMP:MediterraneanSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000048 a owl:Class ;
+    rdfs:label "ocean biome" ;
+    dcterms:title "ocean biome" ;
+    skos:exactMatch TEMP:OceanBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000049 a owl:Class ;
+    rdfs:label "marine coral reef biome" ;
+    dcterms:title "marine coral reef biome" ;
+    skos:exactMatch TEMP:MarineCoralReefBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000050 a owl:Class ;
+    rdfs:label "marine subtidal rocky reef biome" ;
+    dcterms:title "marine subtidal rocky reef biome" ;
+    skos:exactMatch TEMP:MarineSubtidalRockyReefBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000051 a owl:Class ;
+    rdfs:label "marine black smoker biome" ;
+    dcterms:title "marine black smoker biome" ;
+    skos:exactMatch TEMP:MarineBlackSmokerBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000052 a owl:Class ;
+    rdfs:label "marine white smoker biome" ;
+    dcterms:title "marine white smoker biome" ;
+    skos:exactMatch TEMP:MarineWhiteSmokerBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000053 a owl:Class ;
+    rdfs:label "marine ultramafic hydrothermal vent biome" ;
+    dcterms:title "marine ultramafic hydrothermal vent biome" ;
+    skos:exactMatch TEMP:MarineUltramaficHydrothermalVentBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000054 a owl:Class ;
+    rdfs:label "marine basaltic hydrothermal vent biome" ;
+    dcterms:title "marine basaltic hydrothermal vent biome" ;
+    skos:exactMatch TEMP:MarineBasalticHydrothermalVentBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000059 a owl:Class ;
+    rdfs:label "sea grass bed" ;
+    dcterms:title "sea grass bed" ;
+    skos:exactMatch TEMP:SeaGrassBed ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000066 a owl:Class ;
+    rdfs:label "marine anoxic zone" ;
+    dcterms:title "marine anoxic zone" ;
+    skos:exactMatch TEMP:MarineAnoxicZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000117 a owl:Class ;
+    rdfs:label "granular sediment" ;
+    dcterms:title "granular sediment" ;
+    skos:exactMatch TEMP:GranularSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000122 a owl:Class ;
+    rdfs:label "marine hydrothermal vent" ;
+    dcterms:title "marine hydrothermal vent" ;
+    skos:exactMatch TEMP:MarineHydrothermalVent ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000123 a owl:Class ;
+    rdfs:label "marine sponge reef biome" ;
+    dcterms:title "marine sponge reef biome" ;
+    skos:exactMatch TEMP:MarineSpongeReefBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000126 a owl:Class ;
+    rdfs:label "marine sub-littoral zone" ;
+    dcterms:title "marine sub-littoral zone" ;
+    skos:exactMatch TEMP:MarineSub-littoralZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000127 a owl:Class ;
+    rdfs:label "marine cold seep biome" ;
+    dcterms:title "marine cold seep biome" ;
+    skos:exactMatch TEMP:MarineColdSeepBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000128 a owl:Class ;
+    rdfs:label "dilution basin mediterranean sea biome" ;
+    dcterms:title "dilution basin mediterranean sea biome" ;
+    skos:exactMatch TEMP:DilutionBasinMediterraneanSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000132 a owl:Class ;
+    rdfs:label "thermophilic sediment" ;
+    dcterms:title "thermophilic sediment" ;
+    skos:exactMatch TEMP:ThermophilicSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000133 a owl:Class ;
+    rdfs:label "hyperthermophilic sediment" ;
+    dcterms:title "hyperthermophilic sediment" ;
+    skos:exactMatch TEMP:HyperthermophilicSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000134 a owl:Class ;
+    rdfs:label "hydrothermal fluid" ;
+    dcterms:title "hydrothermal fluid" ;
+    skos:exactMatch TEMP:HydrothermalFluid ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000140 a owl:Class ;
+    rdfs:label "whale fall" ;
+    dcterms:title "whale fall" ;
+    skos:exactMatch TEMP:WhaleFall ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000142 a owl:Class ;
+    rdfs:label "wood fall" ;
+    dcterms:title "wood fall" ;
+    skos:exactMatch TEMP:WoodFall ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000158 a owl:Class ;
+    rdfs:label "marine snow" ;
+    dcterms:title "marine snow" ;
+    skos:exactMatch TEMP:MarineSnow ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000173 a owl:Class ;
+    rdfs:label "anoxic water" ;
+    dcterms:title "anoxic water" ;
+    skos:exactMatch TEMP:AnoxicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000174 a owl:Class ;
+    rdfs:label "forest biome" ;
+    dcterms:title "forest biome" ;
+    skos:exactMatch TEMP:ForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000175 a owl:Class ;
+    rdfs:label "woodland biome" ;
+    dcterms:title "woodland biome" ;
+    skos:exactMatch TEMP:WoodlandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000176 a owl:Class ;
+    rdfs:label "shrubland biome" ;
+    dcterms:title "shrubland biome" ;
+    skos:exactMatch TEMP:ShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000177 a owl:Class ;
+    rdfs:label "grassland biome" ;
+    dcterms:title "grassland biome" ;
+    skos:exactMatch TEMP:GrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000178 a owl:Class ;
+    rdfs:label "savanna biome" ;
+    dcterms:title "savanna biome" ;
+    skos:exactMatch TEMP:SavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000180 a owl:Class ;
+    rdfs:label "tundra biome" ;
+    dcterms:title "tundra biome" ;
+    skos:exactMatch TEMP:TundraBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000181 a owl:Class ;
+    rdfs:label "mangrove biome" ;
+    dcterms:title "mangrove biome" ;
+    skos:exactMatch TEMP:MangroveBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000187 a owl:Class ;
+    rdfs:label "subtropical savanna biome" ;
+    dcterms:title "subtropical savanna biome" ;
+    skos:exactMatch TEMP:SubtropicalSavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000188 a owl:Class ;
+    rdfs:label "tropical savanna biome" ;
+    dcterms:title "tropical savanna biome" ;
+    skos:exactMatch TEMP:TropicalSavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000189 a owl:Class ;
+    rdfs:label "temperate savanna biome" ;
+    dcterms:title "temperate savanna biome" ;
+    skos:exactMatch TEMP:TemperateSavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000190 a owl:Class ;
+    rdfs:label "flooded savanna biome" ;
+    dcterms:title "flooded savanna biome" ;
+    skos:exactMatch TEMP:FloodedSavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000191 a owl:Class ;
+    rdfs:label "subtropical grassland biome" ;
+    dcterms:title "subtropical grassland biome" ;
+    skos:exactMatch TEMP:SubtropicalGrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000192 a owl:Class ;
+    rdfs:label "tropical grassland biome" ;
+    dcterms:title "tropical grassland biome" ;
+    skos:exactMatch TEMP:TropicalGrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000193 a owl:Class ;
+    rdfs:label "temperate grassland biome" ;
+    dcterms:title "temperate grassland biome" ;
+    skos:exactMatch TEMP:TemperateGrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000194 a owl:Class ;
+    rdfs:label "montane grassland biome" ;
+    dcterms:title "montane grassland biome" ;
+    skos:exactMatch TEMP:MontaneGrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000195 a owl:Class ;
+    rdfs:label "flooded grassland biome" ;
+    dcterms:title "flooded grassland biome" ;
+    skos:exactMatch TEMP:FloodedGrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000196 a owl:Class ;
+    rdfs:label "coniferous forest biome" ;
+    dcterms:title "coniferous forest biome" ;
+    skos:exactMatch TEMP:ConiferousForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000197 a owl:Class ;
+    rdfs:label "broadleaf forest biome" ;
+    dcterms:title "broadleaf forest biome" ;
+    skos:exactMatch TEMP:BroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000198 a owl:Class ;
+    rdfs:label "mixed forest biome" ;
+    dcterms:title "mixed forest biome" ;
+    skos:exactMatch TEMP:MixedForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000199 a owl:Class ;
+    rdfs:label "mediterranean forest biome" ;
+    dcterms:title "mediterranean forest biome" ;
+    skos:exactMatch TEMP:MediterraneanForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000200 a owl:Class ;
+    rdfs:label "tropical broadleaf forest biome" ;
+    dcterms:title "tropical broadleaf forest biome" ;
+    skos:exactMatch TEMP:TropicalBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000201 a owl:Class ;
+    rdfs:label "subtropical broadleaf forest biome" ;
+    dcterms:title "subtropical broadleaf forest biome" ;
+    skos:exactMatch TEMP:SubtropicalBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000202 a owl:Class ;
+    rdfs:label "temperate broadleaf forest biome" ;
+    dcterms:title "temperate broadleaf forest biome" ;
+    skos:exactMatch TEMP:TemperateBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000208 a owl:Class ;
+    rdfs:label "mediterranean woodland biome" ;
+    dcterms:title "mediterranean woodland biome" ;
+    skos:exactMatch TEMP:MediterraneanWoodlandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000209 a owl:Class ;
+    rdfs:label "subtropical coniferous forest biome" ;
+    dcterms:title "subtropical coniferous forest biome" ;
+    skos:exactMatch TEMP:SubtropicalConiferousForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000210 a owl:Class ;
+    rdfs:label "tropical coniferous forest biome" ;
+    dcterms:title "tropical coniferous forest biome" ;
+    skos:exactMatch TEMP:TropicalConiferousForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000211 a owl:Class ;
+    rdfs:label "temperate coniferous forest biome" ;
+    dcterms:title "temperate coniferous forest biome" ;
+    skos:exactMatch TEMP:TemperateConiferousForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000212 a owl:Class ;
+    rdfs:label "temperate mixed forest biome" ;
+    dcterms:title "temperate mixed forest biome" ;
+    skos:exactMatch TEMP:TemperateMixedForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000213 a owl:Class ;
+    rdfs:label "subtropical shrubland biome" ;
+    dcterms:title "subtropical shrubland biome" ;
+    skos:exactMatch TEMP:SubtropicalShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000214 a owl:Class ;
+    rdfs:label "tropical shrubland biome" ;
+    dcterms:title "tropical shrubland biome" ;
+    skos:exactMatch TEMP:TropicalShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000215 a owl:Class ;
+    rdfs:label "temperate shrubland biome" ;
+    dcterms:title "temperate shrubland biome" ;
+    skos:exactMatch TEMP:TemperateShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000216 a owl:Class ;
+    rdfs:label "montane shrubland biome" ;
+    dcterms:title "montane shrubland biome" ;
+    skos:exactMatch TEMP:MontaneShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000217 a owl:Class ;
+    rdfs:label "mediterranean shrubland biome" ;
+    dcterms:title "mediterranean shrubland biome" ;
+    skos:exactMatch TEMP:MediterraneanShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000218 a owl:Class ;
+    rdfs:label "xeric shrubland biome" ;
+    dcterms:title "xeric shrubland biome" ;
+    skos:exactMatch TEMP:XericShrublandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000219 a owl:Class ;
+    rdfs:label "anthropogenic terrestrial biome" ;
+    dcterms:title "anthropogenic terrestrial biome" ;
+    skos:exactMatch TEMP:AnthropogenicTerrestrialBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000220 a owl:Class ;
+    rdfs:label "tropical woodland biome" ;
+    dcterms:title "tropical woodland biome" ;
+    skos:exactMatch TEMP:TropicalWoodlandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000221 a owl:Class ;
+    rdfs:label "temperate woodland biome" ;
+    dcterms:title "temperate woodland biome" ;
+    skos:exactMatch TEMP:TemperateWoodlandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000222 a owl:Class ;
+    rdfs:label "subtropical woodland biome" ;
+    dcterms:title "subtropical woodland biome" ;
+    skos:exactMatch TEMP:SubtropicalWoodlandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000223 a owl:Class ;
+    rdfs:label "montane savanna biome" ;
+    dcterms:title "montane savanna biome" ;
+    skos:exactMatch TEMP:MontaneSavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000224 a owl:Class ;
+    rdfs:label "mediterranean grassland biome" ;
+    dcterms:title "mediterranean grassland biome" ;
+    skos:exactMatch TEMP:MediterraneanGrasslandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000225 a owl:Class ;
+    rdfs:label "subtropical dry broadleaf forest biome" ;
+    dcterms:title "subtropical dry broadleaf forest biome" ;
+    skos:exactMatch TEMP:SubtropicalDryBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000226 a owl:Class ;
+    rdfs:label "subtropical moist broadleaf forest biome" ;
+    dcterms:title "subtropical moist broadleaf forest biome" ;
+    skos:exactMatch TEMP:SubtropicalMoistBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000227 a owl:Class ;
+    rdfs:label "tropical dry broadleaf forest biome" ;
+    dcterms:title "tropical dry broadleaf forest biome" ;
+    skos:exactMatch TEMP:TropicalDryBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000228 a owl:Class ;
+    rdfs:label "tropical moist broadleaf forest biome" ;
+    dcterms:title "tropical moist broadleaf forest biome" ;
+    skos:exactMatch TEMP:TropicalMoistBroadleafForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000229 a owl:Class ;
+    rdfs:label "mediterranean savanna biome" ;
+    dcterms:title "mediterranean savanna biome" ;
+    skos:exactMatch TEMP:MediterraneanSavannaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000245 a owl:Class ;
+    rdfs:label "cropland biome" ;
+    dcterms:title "cropland biome" ;
+    skos:exactMatch TEMP:CroplandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000247 a owl:Class ;
+    rdfs:label "rangeland biome" ;
+    dcterms:title "rangeland biome" ;
+    skos:exactMatch TEMP:RangelandBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000250 a owl:Class ;
+    rdfs:label "subpolar coniferous forest biome" ;
+    dcterms:title "subpolar coniferous forest biome" ;
+    skos:exactMatch TEMP:SubpolarConiferousForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000252 a owl:Class ;
+    rdfs:label "freshwater lake biome" ;
+    dcterms:title "freshwater lake biome" ;
+    skos:exactMatch TEMP:FreshwaterLakeBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000253 a owl:Class ;
+    rdfs:label "freshwater river biome" ;
+    dcterms:title "freshwater river biome" ;
+    skos:exactMatch TEMP:FreshwaterRiverBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000263 a owl:Class ;
+    rdfs:label "cold seep" ;
+    dcterms:title "cold seep" ;
+    skos:exactMatch TEMP:ColdSeep ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000265 a owl:Class ;
+    rdfs:label "hydrothermal seep" ;
+    dcterms:title "hydrothermal seep" ;
+    skos:exactMatch TEMP:HydrothermalSeep ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000277 a owl:Class ;
+    rdfs:label "water ice" ;
+    dcterms:title "water ice" ;
+    skos:exactMatch TEMP:WaterIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000297 a owl:Class ;
+    rdfs:label "freshwater river" ;
+    dcterms:title "freshwater river" ;
+    skos:exactMatch TEMP:FreshwaterRiver ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000298 a owl:Class ;
+    rdfs:label "continental margin" ;
+    dcterms:title "continental margin" ;
+    skos:exactMatch TEMP:ContinentalMargin ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000301 a owl:Class ;
+    rdfs:label "estuarine water" ;
+    dcterms:title "estuarine water" ;
+    skos:exactMatch TEMP:EstuarineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000302 a owl:Class ;
+    rdfs:label "outcrop" ;
+    dcterms:title "outcrop" ;
+    skos:exactMatch TEMP:Outcrop ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000335 a owl:Class ;
+    rdfs:label "understory" ;
+    dcterms:title "understory" ;
+    skos:exactMatch TEMP:Understory ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000336 a owl:Class ;
+    rdfs:label "shrub layer" ;
+    dcterms:title "shrub layer" ;
+    skos:exactMatch TEMP:ShrubLayer ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000337 a owl:Class ;
+    rdfs:label "herb and fern layer" ;
+    dcterms:title "herb and fern layer" ;
+    skos:exactMatch TEMP:HerbAndFernLayer ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000338 a owl:Class ;
+    rdfs:label "litter layer" ;
+    dcterms:title "litter layer" ;
+    skos:exactMatch TEMP:LitterLayer ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000357 a owl:Class ;
+    rdfs:label "alkaline water" ;
+    dcterms:title "alkaline water" ;
+    skos:exactMatch TEMP:AlkalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000358 a owl:Class ;
+    rdfs:label "acidic water" ;
+    dcterms:title "acidic water" ;
+    skos:exactMatch TEMP:AcidicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000406 a owl:Class ;
+    rdfs:label "snow" ;
+    dcterms:title "snow" ;
+    skos:exactMatch TEMP:Snow ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000407 a owl:Class ;
+    rdfs:label "littoral zone" ;
+    dcterms:title "littoral zone" ;
+    skos:exactMatch TEMP:LittoralZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000409 a owl:Class ;
+    rdfs:label "freshwater littoral zone" ;
+    dcterms:title "freshwater littoral zone" ;
+    skos:exactMatch TEMP:FreshwaterLittoralZone ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000417 a owl:Class ;
+    rdfs:label "house" ;
+    dcterms:title "house" ;
+    skos:exactMatch TEMP:House ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000433 a owl:Class ;
+    rdfs:label "needleleaf forest" ;
+    dcterms:title "needleleaf forest" ;
+    skos:exactMatch TEMP:NeedleleafForest ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000447 a owl:Class ;
+    rdfs:label "roadside" ;
+    dcterms:title "roadside" ;
+    skos:exactMatch TEMP:Roadside ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000548 a owl:Class ;
+    rdfs:label "eutrophic lake" ;
+    dcterms:title "eutrophic lake" ;
+    skos:exactMatch TEMP:EutrophicLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000599 a owl:Class ;
+    rdfs:label "river water" ;
+    dcterms:title "river water" ;
+    skos:exactMatch TEMP:RiverWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000600 a owl:Class ;
+    rdfs:label "rainwater" ;
+    dcterms:title "rainwater" ;
+    skos:exactMatch TEMP:Rainwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000617 a owl:Class ;
+    rdfs:label "lentic water body" ;
+    dcterms:title "lentic water body" ;
+    skos:exactMatch TEMP:LenticWaterBody ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000628 a owl:Class ;
+    rdfs:label "plant litter" ;
+    dcterms:title "plant litter" ;
+    skos:exactMatch TEMP:PlantLitter ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000666 a owl:Class ;
+    rdfs:label "area of open water" ;
+    dcterms:title "area of open water" ;
+    skos:exactMatch TEMP:AreaOfOpenWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000671 a owl:Class ;
+    rdfs:label "dike" ;
+    dcterms:title "dike" ;
+    skos:exactMatch TEMP:Dike ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000687 a owl:Class ;
+    rdfs:label "coast" ;
+    dcterms:title "coast" ;
+    skos:exactMatch TEMP:Coast ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000722 a owl:Class ;
+    rdfs:label "meltwater" ;
+    dcterms:title "meltwater" ;
+    skos:exactMatch TEMP:Meltwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000740 a owl:Class ;
+    rdfs:label "area of perennial water ice" ;
+    dcterms:title "area of perennial water ice" ;
+    skos:exactMatch TEMP:AreaOfPerennialWaterIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000745 a owl:Class ;
+    rdfs:label "area of perennial snow" ;
+    dcterms:title "area of perennial snow" ;
+    skos:exactMatch TEMP:AreaOfPerennialSnow ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000746 a owl:Class ;
+    rdfs:label "area of perennial ice or snow" ;
+    dcterms:title "area of perennial ice or snow" ;
+    skos:exactMatch TEMP:AreaOfPerennialIceOrSnow ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000749 a owl:Class ;
+    rdfs:label "oceanic crust" ;
+    dcterms:title "oceanic crust" ;
+    skos:exactMatch TEMP:OceanicCrust ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000752 a owl:Class ;
+    rdfs:label "area of barren land" ;
+    dcterms:title "area of barren land" ;
+    skos:exactMatch TEMP:AreaOfBarrenLand ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000816 a owl:Class ;
+    rdfs:label "area of deciduous forest" ;
+    dcterms:title "area of deciduous forest" ;
+    skos:exactMatch TEMP:AreaOfDeciduousForest ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000843 a owl:Class ;
+    rdfs:label "area of evergreen forest" ;
+    dcterms:title "area of evergreen forest" ;
+    skos:exactMatch TEMP:AreaOfEvergreenForest ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000847 a owl:Class ;
+    rdfs:label "hair ice" ;
+    dcterms:title "hair ice" ;
+    skos:exactMatch TEMP:HairIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000854 a owl:Class ;
+    rdfs:label "tropical marine coral reef biome" ;
+    dcterms:title "tropical marine coral reef biome" ;
+    skos:exactMatch TEMP:TropicalMarineCoralReefBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000855 a owl:Class ;
+    rdfs:label "area of mixed forest" ;
+    dcterms:title "area of mixed forest" ;
+    skos:exactMatch TEMP:AreaOfMixedForest ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000856 a owl:Class ;
+    rdfs:label "temperate marginal sea biome" ;
+    dcterms:title "temperate marginal sea biome" ;
+    skos:exactMatch TEMP:TemperateMarginalSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000857 a owl:Class ;
+    rdfs:label "temperate mediterranean sea biome" ;
+    dcterms:title "temperate mediterranean sea biome" ;
+    skos:exactMatch TEMP:TemperateMediterraneanSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000858 a owl:Class ;
+    rdfs:label "marine upwelling biome" ;
+    dcterms:title "marine upwelling biome" ;
+    skos:exactMatch TEMP:MarineUpwellingBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000859 a owl:Class ;
+    rdfs:label "tropical marine upwelling biome" ;
+    dcterms:title "tropical marine upwelling biome" ;
+    skos:exactMatch TEMP:TropicalMarineUpwellingBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000860 a owl:Class ;
+    rdfs:label "temperate marine upwelling biome" ;
+    dcterms:title "temperate marine upwelling biome" ;
+    skos:exactMatch TEMP:TemperateMarineUpwellingBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000861 a owl:Class ;
+    rdfs:label "area of dwarf scrub" ;
+    dcterms:title "area of dwarf scrub" ;
+    skos:exactMatch TEMP:AreaOfDwarfScrub ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000869 a owl:Class ;
+    rdfs:label "area of scrub" ;
+    dcterms:title "area of scrub" ;
+    skos:exactMatch TEMP:AreaOfScrub ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000871 a owl:Class ;
+    rdfs:label "puddle of water" ;
+    dcterms:title "puddle of water" ;
+    skos:exactMatch TEMP:PuddleOfWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000872 a owl:Class ;
+    rdfs:label "ballast water" ;
+    dcterms:title "ballast water" ;
+    skos:exactMatch TEMP:BallastWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000883 a owl:Class ;
+    rdfs:label "area of developed open space" ;
+    dcterms:title "area of developed open space" ;
+    skos:exactMatch TEMP:AreaOfDevelopedOpenSpace ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000884 a owl:Class ;
+    rdfs:label "area of developed space with low usage intensity" ;
+    dcterms:title "area of developed space with low usage intensity" ;
+    skos:exactMatch TEMP:AreaOfDevelopedSpaceWithLowUsageIntensity ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000885 a owl:Class ;
+    rdfs:label "area of developed space with medium usage intensity" ;
+    dcterms:title "area of developed space with medium usage intensity" ;
+    skos:exactMatch TEMP:AreaOfDevelopedSpaceWithMediumUsageIntensity ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000886 a owl:Class ;
+    rdfs:label "area of developed space with high usage intensity" ;
+    dcterms:title "area of developed space with high usage intensity" ;
+    skos:exactMatch TEMP:AreaOfDevelopedSpaceWithHighUsageIntensity ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000887 a owl:Class ;
+    rdfs:label "area of sedge- and forb-dominated herbaceous vegetation" ;
+    dcterms:title "area of sedge- and forb-dominated herbaceous vegetation" ;
+    skos:exactMatch TEMP:AreaOfSedge-AndForb-dominatedHerbaceousVegetation ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000888 a owl:Class ;
+    rdfs:label "area of gramanoid or herbaceous vegetation" ;
+    dcterms:title "area of gramanoid or herbaceous vegetation" ;
+    skos:exactMatch TEMP:AreaOfGramanoidOrHerbaceousVegetation ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000889 a owl:Class ;
+    rdfs:label "area of lichen-dominated vegetation" ;
+    dcterms:title "area of lichen-dominated vegetation" ;
+    skos:exactMatch TEMP:AreaOfLichen-dominatedVegetation ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000890 a owl:Class ;
+    rdfs:label "area of moss-dominated vegetation" ;
+    dcterms:title "area of moss-dominated vegetation" ;
+    skos:exactMatch TEMP:AreaOfMoss-dominatedVegetation ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000891 a owl:Class ;
+    rdfs:label "area of pastureland or hayfields" ;
+    dcterms:title "area of pastureland or hayfields" ;
+    skos:exactMatch TEMP:AreaOfPasturelandOrHayfields ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000892 a owl:Class ;
+    rdfs:label "area of cropland" ;
+    dcterms:title "area of cropland" ;
+    skos:exactMatch TEMP:AreaOfCropland ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000893 a owl:Class ;
+    rdfs:label "area of woody wetland" ;
+    dcterms:title "area of woody wetland" ;
+    skos:exactMatch TEMP:AreaOfWoodyWetland ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000894 a owl:Class ;
+    rdfs:label "area of emergent herbaceous wetland" ;
+    dcterms:title "area of emergent herbaceous wetland" ;
+    skos:exactMatch TEMP:AreaOfEmergentHerbaceousWetland ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000905 a owl:Class ;
+    rdfs:label "shrimp pond" ;
+    dcterms:title "shrimp pond" ;
+    skos:exactMatch TEMP:ShrimpPond ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000940 a owl:Class ;
+    rdfs:label "fissure water" ;
+    dcterms:title "fissure water" ;
+    skos:exactMatch TEMP:FissureWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000964 a owl:Class ;
+    rdfs:label "industrial wastewater" ;
+    dcterms:title "industrial wastewater" ;
+    skos:exactMatch TEMP:IndustrialWastewater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01000987 a owl:Class ;
+    rdfs:label "market" ;
+    dcterms:title "market" ;
+    skos:exactMatch TEMP:Market ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001004 a owl:Class ;
+    rdfs:label "groundwater" ;
+    dcterms:title "groundwater" ;
+    skos:exactMatch TEMP:Groundwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001018 a owl:Class ;
+    rdfs:label "hypereutrophic water" ;
+    dcterms:title "hypereutrophic water" ;
+    skos:exactMatch TEMP:HypereutrophicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001020 a owl:Class ;
+    rdfs:label "hypersaline lake" ;
+    dcterms:title "hypersaline lake" ;
+    skos:exactMatch TEMP:HypersalineLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001036 a owl:Class ;
+    rdfs:label "sediment permeated by saline water" ;
+    dcterms:title "sediment permeated by saline water" ;
+    skos:exactMatch TEMP:SedimentPermeatedBySalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001037 a owl:Class ;
+    rdfs:label "slightly saline water" ;
+    dcterms:title "slightly saline water" ;
+    skos:exactMatch TEMP:SlightlySalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001038 a owl:Class ;
+    rdfs:label "moderately saline water" ;
+    dcterms:title "moderately saline water" ;
+    skos:exactMatch TEMP:ModeratelySalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001039 a owl:Class ;
+    rdfs:label "highly saline water" ;
+    dcterms:title "highly saline water" ;
+    skos:exactMatch TEMP:HighlySalineWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001063 a owl:Class ;
+    rdfs:label "oxic water" ;
+    dcterms:title "oxic water" ;
+    skos:exactMatch TEMP:OxicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001064 a owl:Class ;
+    rdfs:label "hypoxic water" ;
+    dcterms:title "hypoxic water" ;
+    skos:exactMatch TEMP:HypoxicWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001072 a owl:Class ;
+    rdfs:label "anoxic lake" ;
+    dcterms:title "anoxic lake" ;
+    skos:exactMatch TEMP:AnoxicLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001185 a owl:Class ;
+    rdfs:label "acidic soil" ;
+    dcterms:title "acidic soil" ;
+    skos:exactMatch TEMP:AcidicSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001190 a owl:Class ;
+    rdfs:label "brown sea ice" ;
+    dcterms:title "brown sea ice" ;
+    skos:exactMatch TEMP:BrownSeaIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001191 a owl:Class ;
+    rdfs:label "water surface" ;
+    dcterms:title "water surface" ;
+    skos:exactMatch TEMP:WaterSurface ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001209 a owl:Class ;
+    rdfs:label "wetland ecosystem" ;
+    dcterms:title "wetland ecosystem" ;
+    skos:exactMatch TEMP:WetlandEcosystem ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001230 a owl:Class ;
+    rdfs:label "tropical marginal sea biome" ;
+    dcterms:title "tropical marginal sea biome" ;
+    skos:exactMatch TEMP:TropicalMarginalSeaBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001240 a owl:Class ;
+    rdfs:label "woodland canopy" ;
+    dcterms:title "woodland canopy" ;
+    skos:exactMatch TEMP:WoodlandCanopy ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001241 a owl:Class ;
+    rdfs:label "crop canopy" ;
+    dcterms:title "crop canopy" ;
+    skos:exactMatch TEMP:CropCanopy ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001257 a owl:Class ;
+    rdfs:label "saline shrimp pond water" ;
+    dcterms:title "saline shrimp pond water" ;
+    skos:exactMatch TEMP:SalineShrimpPondWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001267 a owl:Class ;
+    rdfs:label "stormwater" ;
+    dcterms:title "stormwater" ;
+    skos:exactMatch TEMP:Stormwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001268 a owl:Class ;
+    rdfs:label "urban stormwater" ;
+    dcterms:title "urban stormwater" ;
+    skos:exactMatch TEMP:UrbanStormwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001270 a owl:Class ;
+    rdfs:label "rural stormwater" ;
+    dcterms:title "rural stormwater" ;
+    skos:exactMatch TEMP:RuralStormwater ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001304 a owl:Class ;
+    rdfs:label "oasis" ;
+    dcterms:title "oasis" ;
+    skos:exactMatch TEMP:Oasis ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001357 a owl:Class ;
+    rdfs:label "desert" ;
+    dcterms:title "desert" ;
+    skos:exactMatch TEMP:Desert ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001369 a owl:Class ;
+    rdfs:label "tidal mangrove shrubland" ;
+    dcterms:title "tidal mangrove shrubland" ;
+    skos:exactMatch TEMP:TidalMangroveShrubland ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001397 a owl:Class ;
+    rdfs:label "ultisol" ;
+    dcterms:title "ultisol" ;
+    skos:exactMatch TEMP:Ultisol ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001406 a owl:Class ;
+    rdfs:label "laboratory facility" ;
+    dcterms:title "laboratory facility" ;
+    skos:exactMatch TEMP:LaboratoryFacility ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001505 a owl:Class ;
+    rdfs:label "alpine tundra biome" ;
+    dcterms:title "alpine tundra biome" ;
+    skos:exactMatch TEMP:AlpineTundraBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001511 a owl:Class ;
+    rdfs:label "freshwater ice" ;
+    dcterms:title "freshwater ice" ;
+    skos:exactMatch TEMP:FreshwaterIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001512 a owl:Class ;
+    rdfs:label "congelation sea ice" ;
+    dcterms:title "congelation sea ice" ;
+    skos:exactMatch TEMP:CongelationSeaIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001513 a owl:Class ;
+    rdfs:label "permafrost congelation ice" ;
+    dcterms:title "permafrost congelation ice" ;
+    skos:exactMatch TEMP:PermafrostCongelationIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001514 a owl:Class ;
+    rdfs:label "congelation ice in a fresh water body" ;
+    dcterms:title "congelation ice in a fresh water body" ;
+    skos:exactMatch TEMP:CongelationIceInAFreshWaterBody ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001515 a owl:Class ;
+    rdfs:label "freshwater congelation ice" ;
+    dcterms:title "freshwater congelation ice" ;
+    skos:exactMatch TEMP:FreshwaterCongelationIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001516 a owl:Class ;
+    rdfs:label "ice cave congelation ice" ;
+    dcterms:title "ice cave congelation ice" ;
+    skos:exactMatch TEMP:IceCaveCongelationIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001523 a owl:Class ;
+    rdfs:label "frazil" ;
+    dcterms:title "frazil" ;
+    skos:exactMatch TEMP:Frazil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001525 a owl:Class ;
+    rdfs:label "hard-frozen soil" ;
+    dcterms:title "hard-frozen soil" ;
+    skos:exactMatch TEMP:Hard-frozenSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001526 a owl:Class ;
+    rdfs:label "frozen soil" ;
+    dcterms:title "frozen soil" ;
+    skos:exactMatch TEMP:FrozenSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001527 a owl:Class ;
+    rdfs:label "plastic-frozen soil" ;
+    dcterms:title "plastic-frozen soil" ;
+    skos:exactMatch TEMP:Plastic-frozenSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001528 a owl:Class ;
+    rdfs:label "friable-frozen soil" ;
+    dcterms:title "friable-frozen soil" ;
+    skos:exactMatch TEMP:Friable-frozenSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001557 a owl:Class ;
+    rdfs:label "water-body-derived ice" ;
+    dcterms:title "water-body-derived ice" ;
+    skos:exactMatch TEMP:Water-body-derivedIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001568 a owl:Class ;
+    rdfs:label "frost heave" ;
+    dcterms:title "frost heave" ;
+    skos:exactMatch TEMP:FrostHeave ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001582 a owl:Class ;
+    rdfs:label "forest floor" ;
+    dcterms:title "forest floor" ;
+    skos:exactMatch TEMP:ForestFloor ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001616 a owl:Class ;
+    rdfs:label "bare soil" ;
+    dcterms:title "bare soil" ;
+    skos:exactMatch TEMP:BareSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001638 a owl:Class ;
+    rdfs:label "frost-susceptible soil" ;
+    dcterms:title "frost-susceptible soil" ;
+    skos:exactMatch TEMP:Frost-susceptibleSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001798 a owl:Class ;
+    rdfs:label "tropical mixed forest biome" ;
+    dcterms:title "tropical mixed forest biome" ;
+    skos:exactMatch TEMP:TropicalMixedForestBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001803 a owl:Class ;
+    rdfs:label "tropical forest" ;
+    dcterms:title "tropical forest" ;
+    skos:exactMatch TEMP:TropicalForest ;
+    skos:inScheme <TEMP> .
+
+ENVO:01001871 a owl:Class ;
+    rdfs:label "pit" ;
+    dcterms:title "pit" ;
+    skos:exactMatch TEMP:Pit ;
+    skos:inScheme <TEMP> .
+
+ENVO:02000049 a owl:Class ;
+    rdfs:label "coastal water body" ;
+    dcterms:title "coastal water body" ;
+    skos:exactMatch TEMP:CoastalWaterBody ;
+    skos:inScheme <TEMP> .
+
+ENVO:02000059 a owl:Class ;
+    rdfs:label "surface soil" ;
+    dcterms:title "surface soil" ;
+    skos:exactMatch TEMP:SurfaceSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:02000139 a owl:Class ;
+    rdfs:label "desert spring" ;
+    dcterms:title "desert spring" ;
+    skos:exactMatch TEMP:DesertSpring ;
+    skos:inScheme <TEMP> .
+
+ENVO:02000145 a owl:Class ;
+    rdfs:label "subterranean lake" ;
+    dcterms:title "subterranean lake" ;
+    skos:exactMatch TEMP:SubterraneanLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000004 a owl:Class ;
+    rdfs:label "glacial ice" ;
+    dcterms:title "glacial ice" ;
+    skos:exactMatch TEMP:GlacialIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000005 a owl:Class ;
+    rdfs:label "erosionally enriched glacial ice" ;
+    dcterms:title "erosionally enriched glacial ice" ;
+    skos:exactMatch TEMP:ErosionallyEnrichedGlacialIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000007 a owl:Class ;
+    rdfs:label "blue ice" ;
+    dcterms:title "blue ice" ;
+    skos:exactMatch TEMP:BlueIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000025 a owl:Class ;
+    rdfs:label "erosionally enriched ice" ;
+    dcterms:title "erosionally enriched ice" ;
+    skos:exactMatch TEMP:ErosionallyEnrichedIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000027 a owl:Class ;
+    rdfs:label "powdery snow" ;
+    dcterms:title "powdery snow" ;
+    skos:exactMatch TEMP:PowderySnow ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000039 a owl:Class ;
+    rdfs:label "cryoconite hole" ;
+    dcterms:title "cryoconite hole" ;
+    skos:exactMatch TEMP:CryoconiteHole ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000040 a owl:Class ;
+    rdfs:label "melt pond" ;
+    dcterms:title "melt pond" ;
+    skos:exactMatch TEMP:MeltPond ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000046 a owl:Class ;
+    rdfs:label "frazil ice" ;
+    dcterms:title "frazil ice" ;
+    skos:exactMatch TEMP:FrazilIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000063 a owl:Class ;
+    rdfs:label "new ice" ;
+    dcterms:title "new ice" ;
+    skos:exactMatch TEMP:NewIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000071 a owl:Class ;
+    rdfs:label "first year ice" ;
+    dcterms:title "first year ice" ;
+    skos:exactMatch TEMP:FirstYearIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000072 a owl:Class ;
+    rdfs:label "second year ice" ;
+    dcterms:title "second year ice" ;
+    skos:exactMatch TEMP:SecondYearIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000073 a owl:Class ;
+    rdfs:label "multiyear ice" ;
+    dcterms:title "multiyear ice" ;
+    skos:exactMatch TEMP:MultiyearIce ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000075 a owl:Class ;
+    rdfs:label "shuga" ;
+    dcterms:title "shuga" ;
+    skos:exactMatch TEMP:Shuga ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000108 a owl:Class ;
+    rdfs:label "slab snow" ;
+    dcterms:title "slab snow" ;
+    skos:exactMatch TEMP:SlabSnow ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000117 a owl:Class ;
+    rdfs:label "channel" ;
+    dcterms:title "channel" ;
+    skos:exactMatch TEMP:Channel ;
+    skos:inScheme <TEMP> .
+
+ENVO:03000120 a owl:Class ;
+    rdfs:label "subglacial lake" ;
+    dcterms:title "subglacial lake" ;
+    skos:exactMatch TEMP:SubglacialLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:03500002 a owl:Class ;
+    rdfs:label "public park" ;
+    dcterms:title "public park" ;
+    skos:exactMatch TEMP:PublicPark ;
+    skos:inScheme <TEMP> .
+
+ENVO:03500005 a owl:Class ;
+    rdfs:label "anthropogenic litter" ;
+    dcterms:title "anthropogenic litter" ;
+    skos:exactMatch TEMP:AnthropogenicLitter ;
+    skos:inScheme <TEMP> .
+
+ENVO:03501370 a owl:Class ;
+    rdfs:label "stagnant water" ;
+    dcterms:title "stagnant water" ;
+    skos:exactMatch TEMP:StagnantWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600001 a owl:Class ;
+    rdfs:label "chemically contaminated sediment" ;
+    dcterms:title "chemically contaminated sediment" ;
+    skos:exactMatch TEMP:ChemicallyContaminatedSediment ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600002 a owl:Class ;
+    rdfs:label "cooling water" ;
+    dcterms:title "cooling water" ;
+    skos:exactMatch TEMP:CoolingWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600009 a owl:Class ;
+    rdfs:label "interstitial water" ;
+    dcterms:title "interstitial water" ;
+    skos:exactMatch TEMP:InterstitialWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600036 a owl:Class ;
+    rdfs:label "pathogen-suppressive soil" ;
+    dcterms:title "pathogen-suppressive soil" ;
+    skos:exactMatch TEMP:Pathogen-suppressiveSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600041 a owl:Class ;
+    rdfs:label "marine lake" ;
+    dcterms:title "marine lake" ;
+    skos:exactMatch TEMP:MarineLake ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600042 a owl:Class ;
+    rdfs:label "marine lake water" ;
+    dcterms:title "marine lake water" ;
+    skos:exactMatch TEMP:MarineLakeWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600052 a owl:Class ;
+    rdfs:label "water tap" ;
+    dcterms:title "water tap" ;
+    skos:exactMatch TEMP:WaterTap ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600065 a owl:Class ;
+    rdfs:label "spring water" ;
+    dcterms:title "spring water" ;
+    skos:exactMatch TEMP:SpringWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600071 a owl:Class ;
+    rdfs:label "cyanobacterial bloom" ;
+    dcterms:title "cyanobacterial bloom" ;
+    skos:exactMatch TEMP:CyanobacterialBloom ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600074 a owl:Class ;
+    rdfs:label "aquaculture farm" ;
+    dcterms:title "aquaculture farm" ;
+    skos:exactMatch TEMP:AquacultureFarm ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600081 a owl:Class ;
+    rdfs:label "cloud water" ;
+    dcterms:title "cloud water" ;
+    skos:exactMatch TEMP:CloudWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600087 a owl:Class ;
+    rdfs:label "greenhouse" ;
+    dcterms:title "greenhouse" ;
+    skos:exactMatch TEMP:Greenhouse ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600094 a owl:Class ;
+    rdfs:label "stream pool" ;
+    dcterms:title "stream pool" ;
+    skos:exactMatch TEMP:StreamPool ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600095 a owl:Class ;
+    rdfs:label "stream run" ;
+    dcterms:title "stream run" ;
+    skos:exactMatch TEMP:StreamRun ;
+    skos:inScheme <TEMP> .
+
+ENVO:03600096 a owl:Class ;
+    rdfs:label "step pool" ;
+    dcterms:title "step pool" ;
+    skos:exactMatch TEMP:StepPool ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605001 a owl:Class ;
+    rdfs:label "epilithon" ;
+    dcterms:title "epilithon" ;
+    skos:exactMatch TEMP:Epilithon ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605002 a owl:Class ;
+    rdfs:label "epipelon" ;
+    dcterms:title "epipelon" ;
+    skos:exactMatch TEMP:Epipelon ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605003 a owl:Class ;
+    rdfs:label "epiphyton" ;
+    dcterms:title "epiphyton" ;
+    skos:exactMatch TEMP:Epiphyton ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605004 a owl:Class ;
+    rdfs:label "epipsammon" ;
+    dcterms:title "epipsammon" ;
+    skos:exactMatch TEMP:Epipsammon ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605005 a owl:Class ;
+    rdfs:label "epixylon" ;
+    dcterms:title "epixylon" ;
+    skos:exactMatch TEMP:Epixylon ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605006 a owl:Class ;
+    rdfs:label "stream water" ;
+    dcterms:title "stream water" ;
+    skos:exactMatch TEMP:StreamWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605007 a owl:Class ;
+    rdfs:label "freshwater stream" ;
+    dcterms:title "freshwater stream" ;
+    skos:exactMatch TEMP:FreshwaterStream ;
+    skos:inScheme <TEMP> .
+
+ENVO:03605008 a owl:Class ;
+    rdfs:label "freshwater stream biome" ;
+    dcterms:title "freshwater stream biome" ;
+    skos:exactMatch TEMP:FreshwaterStreamBiome ;
+    skos:inScheme <TEMP> .
+
+ENVO:04000007 a owl:Class ;
+    rdfs:label "lake water" ;
+    dcterms:title "lake water" ;
+    skos:exactMatch TEMP:LakeWater ;
+    skos:inScheme <TEMP> .
+
+ENVO:04000009 a owl:Class ;
+    rdfs:label "active permafrost layer" ;
+    dcterms:title "active permafrost layer" ;
+    skos:exactMatch TEMP:ActivePermafrostLayer ;
+    skos:inScheme <TEMP> .
+
+ENVO:06105205 a owl:Class ;
+    rdfs:label "compacted soil" ;
+    dcterms:title "compacted soil" ;
+    skos:exactMatch TEMP:CompactedSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:06105211 a owl:Class ;
+    rdfs:label "runoff" ;
+    dcterms:title "runoff" ;
+    skos:exactMatch TEMP:Runoff ;
+    skos:inScheme <TEMP> .
+
+ENVO:06105238 a owl:Class ;
+    rdfs:label "residual water in soil" ;
+    dcterms:title "residual water in soil" ;
+    skos:exactMatch TEMP:ResidualWaterInSoil ;
+    skos:inScheme <TEMP> .
+
+ENVO:06105268 a owl:Class ;
+    rdfs:label "treated wastewater" ;
+    dcterms:title "treated wastewater" ;
+    skos:exactMatch TEMP:TreatedWastewater ;
+    skos:inScheme <TEMP> .
+
+ENVO:06105269 a owl:Class ;
+    rdfs:label "desalinated water" ;
+    dcterms:title "desalinated water" ;
+    skos:exactMatch TEMP:DesalinatedWater ;
+    skos:inScheme <TEMP> .
+
+PO:0003023 a owl:Class ;
+    rdfs:label "root nodule" ;
+    dcterms:title "root nodule" ;
+    skos:exactMatch TEMP:RootNodule ;
+    skos:inScheme <TEMP> .
+
+PO:0004513 a owl:Class ;
+    rdfs:label "sapwood" ;
+    dcterms:title "sapwood" ;
+    skos:exactMatch TEMP:Sapwood ;
+    skos:inScheme <TEMP> .
+
+PO:0004518 a owl:Class ;
+    rdfs:label "bark" ;
+    dcterms:title "bark" ;
+    skos:exactMatch TEMP:Bark ;
+    skos:inScheme <TEMP> .
+
+PO:0004542 a owl:Class ;
+    rdfs:label "rhizome" ;
+    dcterms:title "rhizome" ;
+    skos:exactMatch TEMP:Rhizome ;
+    skos:inScheme <TEMP> .
+
+PO:0005052 a owl:Class ;
+    rdfs:label "plant callus" ;
+    dcterms:title "plant callus" ;
+    skos:exactMatch TEMP:PlantCallus ;
+    skos:inScheme <TEMP> .
+
+PO:0005848 a owl:Class ;
+    rdfs:label "secondary xylem" ;
+    dcterms:title "secondary xylem" ;
+    skos:exactMatch TEMP:SecondaryXylem ;
+    skos:inScheme <TEMP> .
+
+PO:0006001 a owl:Class ;
+    rdfs:label "phyllome" ;
+    dcterms:title "phyllome" ;
+    skos:exactMatch TEMP:Phyllome ;
+    skos:inScheme <TEMP> .
+
+PO:0006109 a owl:Class ;
+    rdfs:label "pith" ;
+    dcterms:title "pith" ;
+    skos:exactMatch TEMP:Pith ;
+    skos:inScheme <TEMP> .
+
+PO:0008037 a owl:Class ;
+    rdfs:label "seedling" ;
+    dcterms:title "seedling" ;
+    skos:exactMatch TEMP:Seedling ;
+    skos:inScheme <TEMP> .
+
+PO:0009001 a owl:Class ;
+    rdfs:label "fruit" ;
+    dcterms:title "fruit" ;
+    skos:exactMatch TEMP:Fruit ;
+    skos:inScheme <TEMP> .
+
+PO:0009005 a owl:Class ;
+    rdfs:label "root" ;
+    dcterms:title "root" ;
+    skos:exactMatch TEMP:Root ;
+    skos:inScheme <TEMP> .
+
+PO:0009010 a owl:Class ;
+    rdfs:label "seed" ;
+    dcterms:title "seed" ;
+    skos:exactMatch TEMP:Seed ;
+    skos:inScheme <TEMP> .
+
+PO:0009046 a owl:Class ;
+    rdfs:label "flower" ;
+    dcterms:title "flower" ;
+    skos:exactMatch TEMP:Flower ;
+    skos:inScheme <TEMP> .
+
+PO:0009047 a owl:Class ;
+    rdfs:label "stem" ;
+    dcterms:title "stem" ;
+    skos:exactMatch TEMP:Stem ;
+    skos:inScheme <TEMP> .
+
+PO:0020031 a owl:Class ;
+    rdfs:label "radicle" ;
+    dcterms:title "radicle" ;
+    skos:exactMatch TEMP:Radicle ;
+    skos:inScheme <TEMP> .
+
+PO:0020038 a owl:Class ;
+    rdfs:label "petiole" ;
+    dcterms:title "petiole" ;
+    skos:exactMatch TEMP:Petiole ;
+    skos:inScheme <TEMP> .
+
+PO:0020103 a owl:Class ;
+    rdfs:label "flag leaf" ;
+    dcterms:title "flag leaf" ;
+    skos:exactMatch TEMP:FlagLeaf ;
+    skos:inScheme <TEMP> .
+
+PO:0025034 a owl:Class ;
+    rdfs:label "leaf" ;
+    dcterms:title "leaf" ;
+    skos:exactMatch TEMP:Leaf ;
+    skos:inScheme <TEMP> .
+
+PO:0025281 a owl:Class ;
+    rdfs:label "pollen" ;
+    dcterms:title "pollen" ;
+    skos:exactMatch TEMP:Pollen ;
+    skos:inScheme <TEMP> .
+
+PO:0025355 a owl:Class ;
+    rdfs:label "corm" ;
+    dcterms:title "corm" ;
+    skos:exactMatch TEMP:Corm ;
+    skos:inScheme <TEMP> .
+
+PO:0025356 a owl:Class ;
+    rdfs:label "bulb" ;
+    dcterms:title "bulb" ;
+    skos:exactMatch TEMP:Bulb ;
+    skos:inScheme <TEMP> .
+
+PO:0025417 a owl:Class ;
+    rdfs:label "xylem vessel" ;
+    dcterms:title "xylem vessel" ;
+    skos:exactMatch TEMP:XylemVessel ;
+    skos:inScheme <TEMP> .
+
+PO:0025522 a owl:Class ;
+    rdfs:label "tuber" ;
+    dcterms:title "tuber" ;
+    skos:exactMatch TEMP:Tuber ;
+    skos:inScheme <TEMP> .
+
+PO:0025623 a owl:Class ;
+    rdfs:label "ear infructescence axis" ;
+    dcterms:title "ear infructescence axis" ;
+    skos:exactMatch TEMP:EarInfructescenceAxis ;
+    skos:inScheme <TEMP> .
+
+PO:0025626 a owl:Class ;
+    rdfs:label "plant gall" ;
+    dcterms:title "plant gall" ;
+    skos:exactMatch TEMP:PlantGall ;
+    skos:inScheme <TEMP> .
+
+PO:0030078 a owl:Class ;
+    rdfs:label "rhizoid" ;
+    dcterms:title "rhizoid" ;
+    skos:exactMatch TEMP:Rhizoid ;
+    skos:inScheme <TEMP> .
+
+
