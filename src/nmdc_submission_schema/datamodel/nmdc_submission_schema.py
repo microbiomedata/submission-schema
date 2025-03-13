@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-13T10:55:18
+# Generation date: 2025-03-13T05:21:47
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -185,28 +185,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
-
-
 class DecimalDegree(float):
     """ A decimal degree expresses latitude or longitude as decimal fractions. """
     type_class_uri = XSD["decimal"]
     type_class_curie = "xsd:decimal"
     type_name = "decimal_degree"
     type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
-
-
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
 class Integer(int):
@@ -217,12 +201,12 @@ class Integer(int):
     type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Float(float):
@@ -233,12 +217,28 @@ class Float(float):
     type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
 class LanguageCode(str):
     """ A language code conforming to ISO_639-1 """
     type_class_uri = XSD["language"]
     type_class_curie = "xsd:language"
     type_name = "language_code"
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
+
+
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
 class Uriorcurie(URIorCURIE):
@@ -249,12 +249,12 @@ class Uriorcurie(URIorCURIE):
     type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class Time(XSDTime):
@@ -12644,6 +12644,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Pupa = PermissibleValue(text="Pupa")
     Regolith = PermissibleValue(text="Regolith")
     Remains = PermissibleValue(text="Remains")
+    Rhizaria = PermissibleValue(text="Rhizaria")
     Rhizoid = PermissibleValue(text="Rhizoid")
     Rhizome = PermissibleValue(text="Rhizome")
     River = PermissibleValue(text="River")
@@ -13016,6 +13017,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Urinary system"))
         setattr(cls, "Visual system",
             PermissibleValue(text="Visual system"))
+        setattr(cls, "Water channel system",
+            PermissibleValue(text="Water channel system"))
         setattr(cls, "Water microcosm",
             PermissibleValue(text="Water microcosm"))
         setattr(cls, "Water treatment plant",
@@ -13130,6 +13133,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Fjord = PermissibleValue(text="Fjord")
     Floodplain = PermissibleValue(text="Floodplain")
     Floor = PermissibleValue(text="Floor")
+    Foraminifera = PermissibleValue(text="Foraminifera")
     Foregut = PermissibleValue(text="Foregut")
     Forest = PermissibleValue(text="Forest")
     Fossil = PermissibleValue(text="Fossil")
@@ -13173,6 +13177,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     ICU = PermissibleValue(text="ICU")
     ISE6 = PermissibleValue(text="ISE6")
     Ice = PermissibleValue(text="Ice")
+    Indoor = PermissibleValue(text="Indoor")
     Inlet = PermissibleValue(text="Inlet")
     Inoculum = PermissibleValue(text="Inoculum")
     Insectarium = PermissibleValue(text="Insectarium")
@@ -13221,6 +13226,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Oil = PermissibleValue(text="Oil")
     Orchard = PermissibleValue(text="Orchard")
     Osteoma = PermissibleValue(text="Osteoma")
+    Outdoor = PermissibleValue(text="Outdoor")
     Ovaries = PermissibleValue(text="Ovaries")
     Ovicells = PermissibleValue(text="Ovicells")
     Palsa = PermissibleValue(text="Palsa")
@@ -13585,6 +13591,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Hypersaline lake"))
         setattr(cls, "Hypersaline soda lake",
             PermissibleValue(text="Hypersaline soda lake"))
+        setattr(cls, "Hypersaline spring",
+            PermissibleValue(text="Hypersaline spring"))
         setattr(cls, "Hypoxic zone",
             PermissibleValue(text="Hypoxic zone"))
         setattr(cls, "Ice cream",
@@ -18874,8 +18882,17 @@ slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('
 slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
                    model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
 
+slots.is_obsolete = Slot(uri=NMDC_SUB_SCHEMA.is_obsolete, name="is_obsolete", curie=NMDC_SUB_SCHEMA.curie('is_obsolete'),
+                   model_uri=NMDC_SUB_SCHEMA.is_obsolete, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.is_root = Slot(uri=NMDC_SUB_SCHEMA.is_root, name="is_root", curie=NMDC_SUB_SCHEMA.curie('is_root'),
+                   model_uri=NMDC_SUB_SCHEMA.is_root, domain=None, range=Optional[Union[bool, Bool]])
+
 slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
                    model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
+
+slots.mixs_env_triad_field = Slot(uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, name="mixs_env_triad_field", curie=NMDC_SUB_SCHEMA.curie('mixs_env_triad_field'),
+                   model_uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, domain=None, range=Optional[str])
 
 slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
                    model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
