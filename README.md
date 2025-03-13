@@ -52,7 +52,12 @@ Here's how you can generate the submission schema release artifacts:
    ```shell
    docker run --rm -it -v ${PWD}:/submission-schema submission-schema-builder
    ```
-3. (Optional) Delete the container image:
+3. Commit the changes, using the new `nmdc-schema` version number as the commit message; like this:
+   ```shell
+   git add .
+   git commit -m "X.Y.Z"  # replace X.Y.Z with the nmdc-schema version
+   ```
+4. (Optional) Delete the container image:
    ```shell
    docker image rm submission-schema-builder
    ```
@@ -92,7 +97,7 @@ Here's how you can generate the submission schema release artifacts:
 3. Commit the changes, using the new `nmdc-schema` version number as the commit message; like this:
    ```shell
    git add .
-   git commit -m "11.1.0"
+   git commit -m "X.Y.Z"  # replace X.Y.Z with the nmdc-schema version
    ```
 
 ## Credits
