@@ -1,0 +1,6 @@
+select distinct ?s
+where
+{
+    ?s <http://www.geneontology.org/formats/oboInOwl#inSubset> ?leaf_subset .
+    ?leaf_subset <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>* <http://purl.obolibrary.org/obo/ENVO_03605010>
+}
