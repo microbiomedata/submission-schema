@@ -2729,7 +2729,6 @@ slot_usage:
     - broad-scale environmental context
     rank: 6
     is_a: mixs_env_triad_field
-    string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000012
     owner: Biosample
     domain_of:
@@ -2750,7 +2749,7 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvBroadScaleSedimentEnum
     - range: string
@@ -2792,7 +2791,6 @@ slot_usage:
     - local environmental context
     rank: 7
     is_a: mixs_env_triad_field
-    string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000013
     owner: Biosample
     domain_of:
@@ -2813,7 +2811,7 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvLocalScaleSedimentEnum
     - range: string
@@ -2851,7 +2849,6 @@ slot_usage:
     - environmental medium
     rank: 8
     is_a: mixs_env_triad_field
-    string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000014
     owner: Biosample
     domain_of:
@@ -2872,7 +2869,7 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvMediumSedimentEnum
     - range: string
@@ -6746,7 +6743,6 @@ slot_usage:
     - broad-scale environmental context
     rank: 6
     is_a: mixs_env_triad_field
-    string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000012
     owner: Biosample
     domain_of:
@@ -6767,7 +6763,7 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvBroadScaleSedimentEnum
     - range: string
@@ -6809,7 +6805,6 @@ slot_usage:
     - local environmental context
     rank: 7
     is_a: mixs_env_triad_field
-    string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000013
     owner: Biosample
     domain_of:
@@ -6830,7 +6825,7 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvLocalScaleSedimentEnum
     - range: string
@@ -6868,7 +6863,6 @@ slot_usage:
     - environmental medium
     rank: 8
     is_a: mixs_env_triad_field
-    string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000014
     owner: Biosample
     domain_of:
@@ -6889,7 +6883,7 @@ slot_usage:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvMediumSedimentEnum
     - range: string
@@ -10803,7 +10797,7 @@ attributes:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvBroadScaleSedimentEnum
     - range: string
@@ -10867,7 +10861,7 @@ attributes:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvLocalScaleSedimentEnum
     - range: string
@@ -10927,7 +10921,7 @@ attributes:
     range: string
     required: true
     multivalued: false
-    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+    pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
     any_of:
     - range: EnvMediumSedimentEnum
     - range: string
