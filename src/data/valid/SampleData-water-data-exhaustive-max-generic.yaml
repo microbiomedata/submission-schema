@@ -38,7 +38,7 @@ water_data:
     ecosystem_subtype: xyz
     ecosystem_type: xyz
     elev: 1.5
-    env_broad_scale: xyz xyz xyz [UBERON:123]
+    env_broad_scale: xyz xyz xyz [ENVO:123]
     env_local_scale: xyz xyz xyz [ENVO:123]
     env_medium: xyz xyz xyz [PO:123]
     experimental_factor: xyz xyz xyz [XYZ:123]
