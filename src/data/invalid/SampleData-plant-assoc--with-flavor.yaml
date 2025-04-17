@@ -4,9 +4,9 @@ plant_associated_data: # this is linking a SampleData instance to a PlantAssocia
     collection_date: 2021-01-01
     depth: "111"
     elev: 111
-    env_broad_scale: Code Generation [PO:8888]
-    env_local_scale: Code Generation [PO:8888]
-    env_medium: Code Generation [PO:8888]
+    env_broad_scale: Code Generation [PO:8888888]
+    env_local_scale: Code Generation [PO:8888888]
+    env_medium: Code Generation [PO:8888888]
     geo_loc_name: our first houseplant is dying
     growth_facil: field
     lat_lon: 77 88

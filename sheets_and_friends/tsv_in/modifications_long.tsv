@@ -336,9 +336,9 @@ MetagenomeSequencingNonInterleavedDataInterface|MetagenomeSequencingInterleavedD
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	remove_attribute	string_serialization
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	remove_attribute	string_serialization
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	remove_attribute	string_serialization
-AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO|PO):\d+\]$
-AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO|PO):\d+\]$
-AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	replace_attribute	pattern			^\S+.*\S+ \[(ENVO|PO):\d+\]$
-HostAssociatedInterface	env_broad_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
-HostAssociatedInterface	env_local_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
-HostAssociatedInterface	env_medium	replace_attribute	pattern			^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_broad_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_local_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	env_medium	replace_attribute	pattern			^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+HostAssociatedInterface	env_broad_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7}|UBERON:\d{7})\]$
+HostAssociatedInterface	env_local_scale	replace_attribute	pattern			^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7}|UBERON:\d{7})\]$
+HostAssociatedInterface	env_medium	replace_attribute	pattern			^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7}|UBERON:\d{7})\]$

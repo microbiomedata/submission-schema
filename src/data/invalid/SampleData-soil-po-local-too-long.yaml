@@ -1,0 +1,16 @@
+soil_data:
+  - elev: 123
+    analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    collection_date: '2022-01-15'
+    depth: "0 - 1"
+    env_broad_scale: label x [PO:1234567]
+    env_local_scale: label y [PO:1234567]
+    env_medium: label z [PO:12345678]
+    geo_loc_name: 'USA: Nowhere, Oklahoma'
+    growth_facil: greenhouse
+    lat_lon: 35.211445 -98.464612
+    samp_name: b
+    samp_store_temp: "-80 Celsius"
+    store_cond: frozen
