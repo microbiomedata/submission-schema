@@ -6,7 +6,7 @@ host_associated_data:
     elev: 0
     env_broad_scale: term label 1 [ENVO:123456789]
     env_local_scale: term label 2 [UBERON:1234567]
-    env_medium: term label 3 [PO:1234567]
+    env_medium: term label 3 [UBERON:1234567]
     geo_loc_name: "USA: State, City"
     lat_lon: 40 -100
     samp_store_temp: -80 C
