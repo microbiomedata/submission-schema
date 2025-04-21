@@ -3,7 +3,7 @@
   "children": [
     {
       "name": "Engineered",
-      "count": 18970,
+      "count": 19006,
       "url": "search?Biosample.Ecosystem=Engineered",
       "children": [
         {
@@ -4373,7 +4373,7 @@
         },
         {
           "name": "Bioreactor",
-          "count": 2937,
+          "count": 2972,
           "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor",
           "children": [
             {
@@ -4884,7 +4884,7 @@
             },
             {
               "name": "Anaerobic",
-              "count": 2349,
+              "count": 2384,
               "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=Anaerobic",
               "children": [
                 {
@@ -4997,7 +4997,7 @@
                 },
                 {
                   "name": "Sludge",
-                  "count": 583,
+                  "count": 618,
                   "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=Anaerobic&Biosample.Ecosystem+Subtype=Sludge",
                   "children": [
                     {
@@ -5007,7 +5007,7 @@
                     },
                     {
                       "name": "Unclassified",
-                      "count": 583,
+                      "count": 618,
                       "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Bioreactor&Biosample.Ecosystem+Type=Anaerobic&Biosample.Ecosystem+Subtype=Sludge&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
@@ -5393,7 +5393,7 @@
         },
         {
           "name": "Industrial production",
-          "count": 782,
+          "count": 783,
           "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production",
           "children": [
             {
@@ -5436,7 +5436,7 @@
             },
             {
               "name": "Chemical products",
-              "count": 583,
+              "count": 584,
               "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products",
               "children": [
                 {
@@ -5489,12 +5489,12 @@
                 },
                 {
                   "name": "Unclassified",
-                  "count": 74,
+                  "count": 75,
                   "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Unclassified",
                   "children": [
                     {
                       "name": "Unclassified",
-                      "count": 74,
+                      "count": 75,
                       "url": "search?Biosample.Ecosystem=Engineered&Biosample.Ecosystem+Category=Industrial production&Biosample.Ecosystem+Type=Chemical products&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
@@ -6376,7 +6376,7 @@
     },
     {
       "name": "Environmental",
-      "count": 101573,
+      "count": 101583,
       "url": "search?Biosample.Ecosystem=Environmental",
       "children": [
         {
@@ -9486,7 +9486,7 @@
         },
         {
           "name": "Terrestrial",
-          "count": 42094,
+          "count": 42104,
           "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial",
           "children": [
             {
@@ -10088,7 +10088,7 @@
             },
             {
               "name": "Soil",
-              "count": 39097,
+              "count": 39107,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil",
               "children": [
                 {
@@ -10308,7 +10308,7 @@
                 },
                 {
                   "name": "Shrubland",
-                  "count": 195,
+                  "count": 198,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Shrubland",
                   "children": [
                     {
@@ -10318,7 +10318,7 @@
                     },
                     {
                       "name": "Unclassified",
-                      "count": 179,
+                      "count": 182,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Shrubland&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
@@ -11003,7 +11003,7 @@
                 },
                 {
                   "name": "Grasslands",
-                  "count": 3978,
+                  "count": 3982,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Grasslands",
                   "children": [
                     {
@@ -11018,7 +11018,7 @@
                     },
                     {
                       "name": "Unclassified",
-                      "count": 3481,
+                      "count": 3485,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Grasslands&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
@@ -11369,12 +11369,12 @@
                 },
                 {
                   "name": "Boreal forest/Taiga",
-                  "count": 681,
+                  "count": 684,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Boreal forest/Taiga",
                   "children": [
                     {
                       "name": "Unclassified",
-                      "count": 156,
+                      "count": 159,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Boreal forest/Taiga&Biosample.Specific+Ecosystem=Unclassified"
                     },
                     {
@@ -11789,7 +11789,7 @@
     },
     {
       "name": "Host-associated",
-      "count": 96974,
+      "count": 97038,
       "url": "search?Biosample.Ecosystem=Host-associated",
       "children": [
         {
@@ -21548,7 +21548,7 @@
         },
         {
           "name": "Plants",
-          "count": 23565,
+          "count": 23629,
           "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants",
           "children": [
             {
@@ -22046,7 +22046,7 @@
             },
             {
               "name": "Roots",
-              "count": 17898,
+              "count": 17962,
               "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots",
               "children": [
                 {
@@ -22097,12 +22097,12 @@
                 },
                 {
                   "name": "Unclassified",
-                  "count": 5418,
+                  "count": 5482,
                   "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Unclassified",
                   "children": [
                     {
                       "name": "Unclassified",
-                      "count": 5418,
+                      "count": 5482,
                       "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]

@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-17T10:05:42
+# Generation date: 2025-04-21T15:08:31
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -80,6 +80,7 @@ EGGNOG = CurieNamespace('EGGNOG', 'https://bioregistry.io/eggnog:')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
 FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
+GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 HMDB = CurieNamespace('HMDB', 'https://bioregistry.io/hmdb:')
 ISA = CurieNamespace('ISA', 'http://example.org/isa/')
@@ -100,6 +101,7 @@ NCBI = CurieNamespace('NCBI', 'http://example.com/ncbitaxon/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
+OMIT = CurieNamespace('OMIT', 'http://purl.obolibrary.org/obo/OMIT_')
 ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'https://bioregistry.io/panther.family:')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
@@ -120,12 +122,13 @@ UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UNIPROTKB = CurieNamespace('UniProtKB', 'https://bioregistry.io/uniprot:')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
-BIOPROJECT = CurieNamespace('bioproject', 'https://identifiers.org/bioproject:')
+BIOPROJECT = CurieNamespace('bioproject', 'https://bioregistry.io/bioproject:')
 BIOSAMPLE = CurieNamespace('biosample', 'https://bioregistry.io/biosample:')
 CAS = CurieNamespace('cas', 'https://bioregistry.io/cas:')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://bioregistry.io/doi:')
 EDAM_DATA = CurieNamespace('edam_data', 'http://edamontology.org/data_')
+EDAM_FORMAT = CurieNamespace('edam_format', 'http://edamontology.org/format_')
 EMSL = CurieNamespace('emsl', 'http://example.org/emsl_in_mongodb/')
 EMSL_PROJECT = CurieNamespace('emsl_project', 'https://bioregistry.io/emsl.project:')
 EMSL_UUID_LIKE = CurieNamespace('emsl_uuid_like', 'http://example.org/emsl_uuid_like/')
@@ -135,11 +138,13 @@ GOLD = CurieNamespace('gold', 'https://bioregistry.io/gold:')
 GTPO = CurieNamespace('gtpo', 'http://example.org/gtpo/')
 IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
 IMG_TAXON = CurieNamespace('img_taxon', 'https://bioregistry.io/img.taxon:')
+INSDC_SRA = CurieNamespace('insdc_sra', 'https://bioregistry.io/insdc.sra:')
 JGI = CurieNamespace('jgi', 'http://example.org/jgi/')
 JGI_ANALYSIS = CurieNamespace('jgi_analysis', 'https://data.jgi.doe.gov/search?q=')
 JGI_PROPOSAL = CurieNamespace('jgi_proposal', 'https://bioregistry.io/jgi.proposal:')
 KEGG = CurieNamespace('kegg', 'https://bioregistry.io/kegg:')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+MGNIFY_ANALYSIS = CurieNamespace('mgnify_analysis', 'https://bioregistry.io/mgnify.analysis:')
 MGNIFY_PROJ = CurieNamespace('mgnify_proj', 'https://bioregistry.io/mgnify.proj:')
 MY_EMSL = CurieNamespace('my_emsl', 'https://release.my.emsl.pnnl.gov/released_data/')
 NEON_IDENTIFIER = CurieNamespace('neon_identifier', 'http://example.org/neon/identifier/')
@@ -151,6 +156,7 @@ PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 QUD = CurieNamespace('qud', 'http://qudt.org/1.1/schema/qudt#')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
+ROR = CurieNamespace('ror', 'https://bioregistry.io/ror:')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 SHEX = CurieNamespace('shex', 'http://www.w3.org/ns/shex#')
 SKOS = CurieNamespace('skos', 'http://www.w3.org/2004/02/skos/core#')
@@ -185,20 +191,20 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
-
-
 class DecimalDegree(float):
     """ A decimal degree expresses latitude or longitude as decimal fractions. """
     type_class_uri = XSD["decimal"]
     type_class_curie = "xsd:decimal"
     type_name = "decimal_degree"
     type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+
+
+class LanguageCode(str):
+    """ A language code conforming to ISO_639-1 """
+    type_class_uri = XSD["language"]
+    type_class_curie = "xsd:language"
+    type_name = "language_code"
+    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
 class Float(float):
@@ -217,20 +223,28 @@ class Integer(int):
     type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
-class LanguageCode(str):
-    """ A language code conforming to ISO_639-1 """
-    type_class_uri = XSD["language"]
-    type_class_curie = "xsd:language"
-    type_name = "language_code"
-    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Uriorcurie(URIorCURIE):
@@ -241,20 +255,12 @@ class Uriorcurie(URIorCURIE):
     type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class Time(XSDTime):
@@ -12273,6 +12279,7 @@ class HostSexEnum(EnumDefinitionImpl):
 class AnalysisTypeEnum(EnumDefinitionImpl):
 
     metabolomics = PermissibleValue(text="metabolomics")
+    lipidomics = PermissibleValue(text="lipidomics")
     metagenomics = PermissibleValue(
         text="metagenomics",
         description="Standard short-read metagenomic sequencing")
@@ -12437,19 +12444,19 @@ class ProcessingInstitutionEnum(EnumDefinitionImpl):
 
     UCSD = PermissibleValue(
         text="UCSD",
-        meaning=None)
+        meaning=ROR["0168r3w48"])
     JGI = PermissibleValue(
         text="JGI",
-        meaning=None)
+        meaning=ROR["04xm1d337"])
     EMSL = PermissibleValue(
         text="EMSL",
-        meaning=None)
+        meaning=ROR["04rc0xn13"])
     Battelle = PermissibleValue(
         text="Battelle",
-        meaning=None)
+        meaning=ROR["01h5tnr73"])
     ANL = PermissibleValue(
         text="ANL",
-        meaning=None)
+        meaning=ROR["05gvnxz63"])
     UCD_Genome_Center = PermissibleValue(
         text="UCD_Genome_Center",
         meaning=None)
@@ -18885,8 +18892,17 @@ slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('
 slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
                    model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
 
+slots.is_obsolete = Slot(uri=NMDC_SUB_SCHEMA.is_obsolete, name="is_obsolete", curie=NMDC_SUB_SCHEMA.curie('is_obsolete'),
+                   model_uri=NMDC_SUB_SCHEMA.is_obsolete, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.is_root = Slot(uri=NMDC_SUB_SCHEMA.is_root, name="is_root", curie=NMDC_SUB_SCHEMA.curie('is_root'),
+                   model_uri=NMDC_SUB_SCHEMA.is_root, domain=None, range=Optional[Union[bool, Bool]])
+
 slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
                    model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
+
+slots.mixs_env_triad_field = Slot(uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, name="mixs_env_triad_field", curie=NMDC_SUB_SCHEMA.curie('mixs_env_triad_field'),
+                   model_uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, domain=None, range=Optional[str])
 
 slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
                    model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
@@ -18972,15 +18988,15 @@ slots.AirInterface_elev = Slot(uri=MIXS['0000093'], name="AirInterface_elev", cu
 
 slots.AirInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="AirInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_broad_scale, domain=AirInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.AirInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="AirInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_local_scale, domain=AirInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.AirInterface_env_medium = Slot(uri=MIXS['0000014'], name="AirInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_medium, domain=AirInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.AirInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="AirInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_experimental_factor, domain=AirInterface, range=Optional[str])
@@ -19198,15 +19214,15 @@ slots.BiofilmInterface_elev = Slot(uri=MIXS['0000093'], name="BiofilmInterface_e
 
 slots.BiofilmInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="BiofilmInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_broad_scale, domain=BiofilmInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.BiofilmInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="BiofilmInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_local_scale, domain=BiofilmInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.BiofilmInterface_env_medium = Slot(uri=MIXS['0000014'], name="BiofilmInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_medium, domain=BiofilmInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.BiofilmInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="BiofilmInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_experimental_factor, domain=BiofilmInterface, range=Optional[str])
@@ -19568,15 +19584,15 @@ slots.BuiltEnvInterface_elevator = Slot(uri=MIXS['0000799'], name="BuiltEnvInter
 
 slots.BuiltEnvInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="BuiltEnvInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_broad_scale, domain=BuiltEnvInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.BuiltEnvInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="BuiltEnvInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_local_scale, domain=BuiltEnvInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.BuiltEnvInterface_env_medium = Slot(uri=MIXS['0000014'], name="BuiltEnvInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_medium, domain=BuiltEnvInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.BuiltEnvInterface_escalator = Slot(uri=MIXS['0000800'], name="BuiltEnvInterface_escalator", curie=MIXS.curie('0000800'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_escalator, domain=BuiltEnvInterface, range=Optional[str])
@@ -20113,15 +20129,15 @@ slots.HcrCoresInterface_elev = Slot(uri=MIXS['0000093'], name="HcrCoresInterface
 
 slots.HcrCoresInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="HcrCoresInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_broad_scale, domain=HcrCoresInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HcrCoresInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HcrCoresInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_local_scale, domain=HcrCoresInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HcrCoresInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrCoresInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_medium, domain=HcrCoresInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HcrCoresInterface_ethylbenzene = Slot(uri=MIXS['0000155'], name="HcrCoresInterface_ethylbenzene", curie=MIXS.curie('0000155'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ethylbenzene, domain=HcrCoresInterface, range=Optional[str],
@@ -20490,15 +20506,15 @@ slots.HcrFluidsSwabsInterface_elev = Slot(uri=MIXS['0000093'], name="HcrFluidsSw
 
 slots.HcrFluidsSwabsInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="HcrFluidsSwabsInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_broad_scale, domain=HcrFluidsSwabsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HcrFluidsSwabsInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HcrFluidsSwabsInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_local_scale, domain=HcrFluidsSwabsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HcrFluidsSwabsInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrFluidsSwabsInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_medium, domain=HcrFluidsSwabsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HcrFluidsSwabsInterface_ethylbenzene = Slot(uri=MIXS['0000155'], name="HcrFluidsSwabsInterface_ethylbenzene", curie=MIXS.curie('0000155'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ethylbenzene, domain=HcrFluidsSwabsInterface, range=Optional[str],
@@ -20801,15 +20817,15 @@ slots.HostAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="HostAssocia
 
 slots.HostAssociatedInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="HostAssociatedInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_broad_scale, domain=HostAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.HostAssociatedInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HostAssociatedInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_local_scale, domain=HostAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$'))
 
 slots.HostAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="HostAssociatedInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_medium, domain=HostAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$'))
 
 slots.HostAssociatedInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="HostAssociatedInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_experimental_factor, domain=HostAssociatedInterface, range=Optional[str])
@@ -21239,15 +21255,15 @@ slots.MiscEnvsInterface_elev = Slot(uri=MIXS['0000093'], name="MiscEnvsInterface
 
 slots.MiscEnvsInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="MiscEnvsInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_broad_scale, domain=MiscEnvsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.MiscEnvsInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="MiscEnvsInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_local_scale, domain=MiscEnvsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.MiscEnvsInterface_env_medium = Slot(uri=MIXS['0000014'], name="MiscEnvsInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_medium, domain=MiscEnvsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.MiscEnvsInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="MiscEnvsInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_experimental_factor, domain=MiscEnvsInterface, range=Optional[str])
@@ -21448,15 +21464,15 @@ slots.PlantAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="PlantAssoc
 
 slots.PlantAssociatedInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="PlantAssociatedInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_broad_scale, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.PlantAssociatedInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="PlantAssociatedInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_local_scale, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.PlantAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="PlantAssociatedInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_medium, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.PlantAssociatedInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="PlantAssociatedInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_experimental_factor, domain=PlantAssociatedInterface, range=Optional[str])
@@ -21840,15 +21856,15 @@ slots.SedimentInterface_elev = Slot(uri=MIXS['0000093'], name="SedimentInterface
 
 slots.SedimentInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SedimentInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_broad_scale, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.SedimentInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SedimentInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_local_scale, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.SedimentInterface_env_medium = Slot(uri=MIXS['0000014'], name="SedimentInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_medium, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.SedimentInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SedimentInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_experimental_factor, domain=SedimentInterface, range=Optional[str])
@@ -22226,15 +22242,15 @@ slots.SoilInterface_elev = Slot(uri=MIXS['0000093'], name="SoilInterface_elev", 
 
 slots.SoilInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SoilInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.SoilInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SoilInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.SoilInterface_env_medium = Slot(uri=MIXS['0000014'], name="SoilInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.SoilInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="SoilInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_experimental_factor, domain=SoilInterface, range=Optional[str])
@@ -22582,15 +22598,15 @@ slots.WastewaterSludgeInterface_emulsions = Slot(uri=MIXS['0000660'], name="Wast
 
 slots.WastewaterSludgeInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WastewaterSludgeInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_broad_scale, domain=WastewaterSludgeInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.WastewaterSludgeInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WastewaterSludgeInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_local_scale, domain=WastewaterSludgeInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.WastewaterSludgeInterface_env_medium = Slot(uri=MIXS['0000014'], name="WastewaterSludgeInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_medium, domain=WastewaterSludgeInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.WastewaterSludgeInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="WastewaterSludgeInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_experimental_factor, domain=WastewaterSludgeInterface, range=Optional[str])
@@ -22897,15 +22913,15 @@ slots.WaterInterface_elev = Slot(uri=MIXS['0000093'], name="WaterInterface_elev"
 
 slots.WaterInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WaterInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_broad_scale, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
 
 slots.WaterInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WaterInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_local_scale, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.WaterInterface_env_medium = Slot(uri=MIXS['0000014'], name="WaterInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_medium, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$'))
+                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.WaterInterface_experimental_factor = Slot(uri=MIXS['0000008'], name="WaterInterface_experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_experimental_factor, domain=WaterInterface, range=Optional[str])

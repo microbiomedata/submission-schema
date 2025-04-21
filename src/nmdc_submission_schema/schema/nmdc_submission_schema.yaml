@@ -25,6 +25,9 @@ prefixes:
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
+  BFO:
+    prefix_prefix: BFO
+    prefix_reference: http://purl.obolibrary.org/obo/BFO_
   CATH:
     prefix_prefix: CATH
     prefix_reference: 'https://bioregistry.io/cath:'
@@ -37,6 +40,9 @@ prefixes:
   CHMO:
     prefix_prefix: CHMO
     prefix_reference: http://purl.obolibrary.org/obo/CHMO_
+  COG:
+    prefix_prefix: COG
+    prefix_reference: 'https://bioregistry.io/cog:'
   Contaminant:
     prefix_prefix: Contaminant
     prefix_reference: http://example.org/contaminant/
@@ -61,6 +67,9 @@ prefixes:
   FMA:
     prefix_prefix: FMA
     prefix_reference: http://purl.obolibrary.org/obo/FMA_
+  GENEPIO:
+    prefix_prefix: GENEPIO
+    prefix_reference: http://purl.obolibrary.org/obo/GENEPIO_
   GO:
     prefix_prefix: GO
     prefix_reference: http://purl.obolibrary.org/obo/GO_
@@ -70,33 +79,57 @@ prefixes:
   ISA:
     prefix_prefix: ISA
     prefix_reference: http://example.org/isa/
+  KEGG.COMPOUND:
+    prefix_prefix: KEGG.COMPOUND
+    prefix_reference: 'https://bioregistry.io/kegg.compound:'
+  KEGG.MODULE:
+    prefix_prefix: KEGG.MODULE
+    prefix_reference: 'https://bioregistry.io/kegg.module:'
   KEGG.ORTHOLOGY:
     prefix_prefix: KEGG.ORTHOLOGY
     prefix_reference: 'https://bioregistry.io/kegg.orthology:'
+  KEGG.REACTION:
+    prefix_prefix: KEGG.REACTION
+    prefix_reference: 'https://bioregistry.io/kegg.reaction:'
+  KEGG_PATHWAY:
+    prefix_prefix: KEGG_PATHWAY
+    prefix_reference: 'https://bioregistry.io/kegg.pathway:'
   MASSIVE:
     prefix_prefix: MASSIVE
     prefix_reference: 'https://bioregistry.io/reference/massive:'
   MESH:
     prefix_prefix: MESH
     prefix_reference: 'https://bioregistry.io/mesh:'
+  MISO:
+    prefix_prefix: MISO
+    prefix_reference: http://purl.obolibrary.org/obo/MISO_
+  MIXS:
+    prefix_prefix: MIXS
+    prefix_reference: https://w3id.org/mixs/
   MS:
     prefix_prefix: MS
     prefix_reference: http://purl.obolibrary.org/obo/MS_
+  MetaCyc:
+    prefix_prefix: MetaCyc
+    prefix_reference: 'https://bioregistry.io/metacyc.compound:'
   MetaNetX:
     prefix_prefix: MetaNetX
     prefix_reference: http://example.org/metanetx/
-  NCBITaxon:
-    prefix_prefix: NCBITaxon
-    prefix_reference: http://purl.obolibrary.org/obo/NCBITaxon_
   NCBI:
     prefix_prefix: NCBI
     prefix_reference: http://example.com/ncbitaxon/
+  NCBITaxon:
+    prefix_prefix: NCBITaxon
+    prefix_reference: http://purl.obolibrary.org/obo/NCBITaxon_
   NCIT:
     prefix_prefix: NCIT
     prefix_reference: http://purl.obolibrary.org/obo/NCIT_
   OBI:
     prefix_prefix: OBI
     prefix_reference: http://purl.obolibrary.org/obo/OBI_
+  OMIT:
+    prefix_prefix: OMIT
+    prefix_reference: http://purl.obolibrary.org/obo/OMIT_
   ORCID:
     prefix_prefix: ORCID
     prefix_reference: https://orcid.org/
@@ -106,12 +139,12 @@ prefixes:
   PATO:
     prefix_prefix: PATO
     prefix_reference: http://purl.obolibrary.org/obo/PATO_
-  PFAM:
-    prefix_prefix: PFAM
-    prefix_reference: 'https://bioregistry.io/pfam:'
   PFAM.CLAN:
     prefix_prefix: PFAM.CLAN
     prefix_reference: 'https://bioregistry.io/pfam.clan:'
+  PFAM:
+    prefix_prefix: PFAM
+    prefix_reference: 'https://bioregistry.io/pfam:'
   PO:
     prefix_prefix: PO
     prefix_reference: http://purl.obolibrary.org/obo/PO_
@@ -121,12 +154,21 @@ prefixes:
   PUBCHEM.COMPOUND:
     prefix_prefix: PUBCHEM.COMPOUND
     prefix_reference: 'https://bioregistry.io/pubchem.compound:'
+  RHEA:
+    prefix_prefix: RHEA
+    prefix_reference: 'https://bioregistry.io/rhea:'
   RO:
     prefix_prefix: RO
     prefix_reference: http://purl.obolibrary.org/obo/RO_
   RetroRules:
     prefix_prefix: RetroRules
     prefix_reference: http://example.org/retrorules/
+  SEED:
+    prefix_prefix: SEED
+    prefix_reference: 'https://bioregistry.io/seed:'
+  SIO:
+    prefix_prefix: SIO
+    prefix_reference: http://semanticscience.org/resource/SIO_
   SO:
     prefix_prefix: SO
     prefix_reference: http://purl.obolibrary.org/obo/SO_
@@ -139,21 +181,33 @@ prefixes:
   UBERON:
     prefix_prefix: UBERON
     prefix_reference: http://purl.obolibrary.org/obo/UBERON_
+  UniProtKB:
+    prefix_prefix: UniProtKB
+    prefix_reference: 'https://bioregistry.io/uniprot:'
+  biolink:
+    prefix_prefix: biolink
+    prefix_reference: https://w3id.org/biolink/vocab/
   bioproject:
     prefix_prefix: bioproject
-    prefix_reference: 'https://identifiers.org/bioproject:'
+    prefix_reference: 'https://bioregistry.io/bioproject:'
   biosample:
     prefix_prefix: biosample
     prefix_reference: 'https://bioregistry.io/biosample:'
   cas:
     prefix_prefix: cas
     prefix_reference: 'https://bioregistry.io/cas:'
+  dcterms:
+    prefix_prefix: dcterms
+    prefix_reference: http://purl.org/dc/terms/
   doi:
     prefix_prefix: doi
     prefix_reference: 'https://bioregistry.io/doi:'
   edam.data:
     prefix_prefix: edam.data
     prefix_reference: http://edamontology.org/data_
+  edam.format:
+    prefix_prefix: edam.format
+    prefix_reference: http://edamontology.org/format_
   emsl.project:
     prefix_prefix: emsl.project
     prefix_reference: 'https://bioregistry.io/emsl.project:'
@@ -169,6 +223,9 @@ prefixes:
   gnps.task:
     prefix_prefix: gnps.task
     prefix_reference: 'https://bioregistry.io/gnps.task:'
+  gold:
+    prefix_prefix: gold
+    prefix_reference: 'https://bioregistry.io/gold:'
   gtpo:
     prefix_prefix: gtpo
     prefix_reference: http://example.org/gtpo/
@@ -178,6 +235,9 @@ prefixes:
   img.taxon:
     prefix_prefix: img.taxon
     prefix_reference: 'https://bioregistry.io/img.taxon:'
+  insdc.sra:
+    prefix_prefix: insdc.sra
+    prefix_reference: 'https://bioregistry.io/insdc.sra:'
   jgi.analysis:
     prefix_prefix: jgi.analysis
     prefix_reference: https://data.jgi.doe.gov/search?q=
@@ -190,9 +250,9 @@ prefixes:
   kegg:
     prefix_prefix: kegg
     prefix_reference: 'https://bioregistry.io/kegg:'
-  KEGG.MODULE:
-    prefix_prefix: KEGG.MODULE
-    prefix_reference: 'https://bioregistry.io/kegg.module:'
+  mgnify.analysis:
+    prefix_prefix: mgnify.analysis
+    prefix_reference: 'https://bioregistry.io/mgnify.analysis:'
   mgnify.proj:
     prefix_prefix: mgnify.proj
     prefix_reference: 'https://bioregistry.io/mgnify.proj:'
@@ -208,6 +268,9 @@ prefixes:
   nmdc:
     prefix_prefix: nmdc
     prefix_reference: https://w3id.org/nmdc/
+  owl:
+    prefix_prefix: owl
+    prefix_reference: http://www.w3.org/2002/07/owl#
   prov:
     prefix_prefix: prov
     prefix_reference: http://www.w3.org/ns/prov#
@@ -217,66 +280,21 @@ prefixes:
   rdfs:
     prefix_prefix: rdfs
     prefix_reference: http://www.w3.org/2000/01/rdf-schema#
+  ror:
+    prefix_prefix: ror
+    prefix_reference: 'https://bioregistry.io/ror:'
   skos:
     prefix_prefix: skos
     prefix_reference: http://www.w3.org/2004/02/skos/core#
-  wikidata:
-    prefix_prefix: wikidata
-    prefix_reference: http://www.wikidata.org/entity/
-  KEGG.COMPOUND:
-    prefix_prefix: KEGG.COMPOUND
-    prefix_reference: 'https://bioregistry.io/kegg.compound:'
-  SIO:
-    prefix_prefix: SIO
-    prefix_reference: http://semanticscience.org/resource/SIO_
-  UniProtKB:
-    prefix_prefix: UniProtKB
-    prefix_reference: 'https://bioregistry.io/uniprot:'
-  biolink:
-    prefix_prefix: biolink
-    prefix_reference: https://w3id.org/biolink/vocab/
-  dcterms:
-    prefix_prefix: dcterms
-    prefix_reference: http://purl.org/dc/terms/
   wgs84:
     prefix_prefix: wgs84
     prefix_reference: http://www.w3.org/2003/01/geo/wgs84_pos#
-  MISO:
-    prefix_prefix: MISO
-    prefix_reference: http://purl.obolibrary.org/obo/MISO_
-  COG:
-    prefix_prefix: COG
-    prefix_reference: 'https://bioregistry.io/cog:'
-  KEGG.REACTION:
-    prefix_prefix: KEGG.REACTION
-    prefix_reference: 'https://bioregistry.io/kegg.reaction:'
-  KEGG_PATHWAY:
-    prefix_prefix: KEGG_PATHWAY
-    prefix_reference: 'https://bioregistry.io/kegg.pathway:'
-  MetaCyc:
-    prefix_prefix: MetaCyc
-    prefix_reference: 'https://bioregistry.io/metacyc.compound:'
-  RHEA:
-    prefix_prefix: RHEA
-    prefix_reference: 'https://bioregistry.io/rhea:'
-  SEED:
-    prefix_prefix: SEED
-    prefix_reference: 'https://bioregistry.io/seed:'
-  gold:
-    prefix_prefix: gold
-    prefix_reference: 'https://bioregistry.io/gold:'
-  MIXS:
-    prefix_prefix: MIXS
-    prefix_reference: https://w3id.org/mixs/
+  wikidata:
+    prefix_prefix: wikidata
+    prefix_reference: http://www.wikidata.org/entity/
   MIXS_yaml:
     prefix_prefix: MIXS_yaml
     prefix_reference: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
-  BFO:
-    prefix_prefix: BFO
-    prefix_reference: http://purl.obolibrary.org/obo/BFO_
-  owl:
-    prefix_prefix: owl
-    prefix_reference: http://www.w3.org/2002/07/owl#
 default_prefix: nmdc_sub_schema
 default_range: string
 subsets:
@@ -313,18 +331,6 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  string:
-    name: string
-    description: A character string
-    notes:
-    - In RDF serializations, a slot with range of string is treated as a literal or
-      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
-      referenced with the lower case "string".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Text
-    base: str
-    uri: xsd:string
   decimal_degree:
     name: decimal_degree
     description: A decimal degree expresses latitude or longitude as decimal fractions.
@@ -333,6 +339,14 @@ types:
     - https://en.wikipedia.org/wiki/Decimal_degrees
     base: float
     uri: xsd:decimal
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
@@ -355,35 +369,6 @@ types:
     - schema:Integer
     base: int
     uri: xsd:integer
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
-    base: str
-    uri: xsd:language
-  double:
-    name: double
-    description: A real number that conforms to the xsd:double specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "double".
-    from_schema: https://example.com/nmdc_submission_schema
-    close_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:double
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
-    from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
   decimal:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
@@ -396,15 +381,18 @@ types:
     - schema:Number
     base: Decimal
     uri: xsd:decimal
-  external_identifier:
-    name: external_identifier
-    description: A CURIE representing an external identifier
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://microbiomedata.github.io/nmdc-schema/identifiers/
-    typeof: uriorcurie
-    uri: xsd:anyURI
-    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
   boolean:
     name: boolean
     description: A binary (true or false) value
@@ -417,6 +405,36 @@ types:
     base: Bool
     uri: xsd:boolean
     repr: bool
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
+    from_schema: https://example.com/nmdc_submission_schema
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
+    from_schema: https://example.com/nmdc_submission_schema
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
+  external_identifier:
+    name: external_identifier
+    description: A CURIE representing an external identifier
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://microbiomedata.github.io/nmdc-schema/identifiers/
+    typeof: uriorcurie
+    uri: xsd:anyURI
+    pattern: ^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$
   time:
     name: time
     description: A time object represents a (local) time of day, independent of any
@@ -2785,6 +2803,8 @@ enums:
     permissible_values:
       metabolomics:
         text: metabolomics
+      lipidomics:
+        text: lipidomics
       metagenomics:
         text: metagenomics
         description: Standard short-read metagenomic sequencing
@@ -3103,31 +3123,31 @@ enums:
   ProcessingInstitutionEnum:
     name: ProcessingInstitutionEnum
     notes:
-    - use ROR meanings like https://ror.org/0168r3w48 for UCSD
+    - use ROR meanings like ror:0168r3w48 for UCSD
     from_schema: https://example.com/nmdc_submission_schema
     permissible_values:
       UCSD:
         text: UCSD
-        meaning: https://ror.org/0168r3w48
+        meaning: ror:0168r3w48
         title: University of California, San Diego
       JGI:
         text: JGI
-        meaning: https://ror.org/04xm1d337
+        meaning: ror:04xm1d337
         title: Joint Genome Institute
       EMSL:
         text: EMSL
-        meaning: https://ror.org/04rc0xn13
+        meaning: ror:04rc0xn13
         title: Environmental Molecular Sciences Laboratory
         aliases:
         - Environmental Molecular Science Laboratory
         - Environmental Molecular Sciences Lab
       Battelle:
         text: Battelle
-        meaning: https://ror.org/01h5tnr73
+        meaning: ror:01h5tnr73
         title: Battelle Memorial Institute
       ANL:
         text: ANL
-        meaning: https://ror.org/05gvnxz63
+        meaning: ror:05gvnxz63
         title: Argonne National Laboratory
       UCD_Genome_Center:
         text: UCD_Genome_Center
@@ -9328,11 +9348,12 @@ slots:
     name: analysis_type
     description: Select all the data types associated or available for this biosample
     title: analysis/data type
+    comments:
+    - MIxS:investigation_type was included as a `see_also` but that term doesn't resolve
+      any more
     examples:
     - value: metagenomics; metabolomics; metaproteomics
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - MIxS:investigation_type
     rank: 3
     domain_of:
     - Biosample
@@ -12166,7 +12187,7 @@ slots:
       to EMSL
     title: EMSL sample storage temperature, deg. C
     todos:
-    - add 'see_alsos' with link to NEXUS info
+    - add 'see_also's with link to NEXUS info
     comments:
     - Enter a temperature in celsius. Numeric portion only.
     examples:
@@ -12230,7 +12251,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - broad-scale environmental context
-    is_a: environment field
+    is_a: mixs_env_triad_field
     string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000012
     domain_of:
@@ -12266,7 +12287,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - local environmental context
-    is_a: environment field
+    is_a: mixs_env_triad_field
     string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000013
     domain_of:
@@ -12302,7 +12323,7 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - environmental medium
-    is_a: environment field
+    is_a: mixs_env_triad_field
     string_serialization: '{termLabel} {[termID]}'
     slot_uri: MIXS:0000014
     domain_of:
@@ -21877,7 +21898,7 @@ slots:
     - these are distinct IDs from INSDC SRA/ENA project identifiers, but are usually(?)
       one to one
     examples:
-    - value: https://bioregistry.io/bioproject:PRJNA366857
+    - value: bioproject:PRJNA366857
       description: Avena fatua rhizosphere microbial communities - H1_Rhizo_Litter_2
         metatranscriptome
     from_schema: https://example.com/nmdc_submission_schema
@@ -22008,6 +22029,25 @@ slots:
     abstract: true
     domain_of:
     - Biosample
+  is_obsolete:
+    name: is_obsolete
+    description: A boolean value indicating whether the ontology term is obsolete.
+    comments:
+    - If true (the ontology term is declared obsolete via the ontology source itself),  the
+      term is no longer considered a valid term to use in an annotation at NMDC, and
+      it no longer has ontology_relation_set records.
+    from_schema: https://example.com/nmdc_submission_schema
+    domain_of:
+    - OntologyClass
+    range: boolean
+  is_root:
+    name: is_root
+    description: A boolean value indicating whether the ontology term is a root term;
+      it is not a subclass of  any other term.
+    from_schema: https://example.com/nmdc_submission_schema
+    domain_of:
+    - OntologyClass
+    range: boolean
   language:
     name: language
     description: Should use ISO 639-1 code e.g. "en", "fr"
@@ -22015,6 +22055,36 @@ slots:
     domain_of:
     - TextValue
     range: language_code
+  mixs_env_triad_field:
+    name: mixs_env_triad_field
+    annotations:
+      tooltip:
+        tag: tooltip
+        value: The MIxS environmental triad provides context about where a sample
+          was collected and what it consists of.
+        annotations:
+          source:
+            tag: source
+            value: https://link.springer.com/protocol/10.1007/978-1-0716-3838-5_20
+    description: The MIxS environmental triad provides context about where a sample
+      was collected and what it consists of. Its component slots capture the biome
+      that the sample was found in, nearby geographical features that might influence
+      the organisms in the sample, and the substance that was displaced in the process
+      of collecting the sample. Careful population of these slots makes it easier
+      for data users to find samples that are similar, not just in terms of textual
+      values, but through ontological relationships. Furthermore, NMDC requires that
+      its three component slots are populated because the INSDC Biosample databases
+      require that they are populated because the MIxS standard from the GSC requires
+      that they are populated.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+    created_by: orcid:0000-0002-5004-3362
+    contributors:
+    - orcid:0000-0001-9076-6066
+    abstract: true
+    range: string
+    multivalued: false
   name:
     name: name
     description: A human readable label for an entity
@@ -22057,7 +22127,6 @@ slots:
     name: type
     description: the class_uri of the class that has been instantiated
     notes:
-    - replaces legacy nmdc:type slot
     - makes it easier to read example data files
     - required for polymorphic MongoDB collections
     examples:
@@ -22102,8 +22171,6 @@ slots:
   external_database_identifiers:
     name: external_database_identifiers
     description: Link to corresponding identifier in external database
-    notes:
-    - had tried ranges of external identifier and string
     comments:
     - The value of this field is always a registered CURIE
     from_schema: https://example.com/nmdc_submission_schema
@@ -22619,7 +22686,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -22628,7 +22695,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -22667,7 +22734,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -22676,7 +22743,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -22711,7 +22778,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -22720,7 +22787,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -24492,7 +24559,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -24501,7 +24568,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -24540,7 +24607,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -24549,7 +24616,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -24584,7 +24651,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -24593,7 +24660,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -27653,8 +27720,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
-        string_serialization: '{termLabel} {[termID]}'
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -27663,7 +27729,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -27702,8 +27768,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
-        string_serialization: '{termLabel} {[termID]}'
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -27712,7 +27777,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -27747,8 +27812,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
-        string_serialization: '{termLabel} {[termID]}'
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -27757,7 +27821,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       escalator:
         name: escalator
         annotations:
@@ -31079,7 +31143,7 @@ classes:
           to EMSL
         title: EMSL sample storage temperature, deg. C
         todos:
-        - add 'see_alsos' with link to NEXUS info
+        - add 'see_also's with link to NEXUS info
         comments:
         - Enter a temperature in celsius. Numeric portion only.
         examples:
@@ -32116,7 +32180,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -32125,7 +32189,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -32164,7 +32228,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -32173,7 +32237,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -32208,7 +32272,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -32217,7 +32281,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       ethylbenzene:
         name: ethylbenzene
         annotations:
@@ -35342,7 +35406,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -35351,7 +35415,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -35390,7 +35454,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -35399,7 +35463,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -35434,7 +35498,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -35443,7 +35507,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       ethylbenzene:
         name: ethylbenzene
         annotations:
@@ -37963,7 +38027,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -37972,7 +38036,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -38011,7 +38075,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -38020,7 +38084,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
       env_medium:
         name: env_medium
         annotations:
@@ -38055,7 +38119,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -38064,7 +38128,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -41387,7 +41451,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -41396,7 +41460,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -41435,7 +41499,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -41444,7 +41508,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -41479,7 +41543,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -41488,7 +41552,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -43215,7 +43279,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -43224,7 +43288,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
         any_of:
         - range: EnvBroadScalePlantAssociatedEnum
         - range: string
@@ -43266,7 +43330,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -43275,7 +43339,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
         any_of:
         - range: EnvLocalScalePlantAssociatedEnum
         - range: string
@@ -43313,7 +43377,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -43322,7 +43386,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
         any_of:
         - range: EnvMediumPlantAssociatedEnum
         - range: string
@@ -46675,7 +46739,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -46684,7 +46748,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
         any_of:
         - range: EnvBroadScaleSedimentEnum
         - range: string
@@ -46726,7 +46790,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -46735,7 +46799,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
         any_of:
         - range: EnvLocalScaleSedimentEnum
         - range: string
@@ -46773,7 +46837,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -46782,7 +46846,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
         any_of:
         - range: EnvMediumSedimentEnum
         - range: string
@@ -49972,7 +50036,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -49980,7 +50044,7 @@ classes:
         slot_group: sample_id_section
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
         any_of:
         - range: EnvBroadScaleSoilEnum
         - range: string
@@ -50022,7 +50086,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -50030,7 +50094,7 @@ classes:
         slot_group: sample_id_section
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
         any_of:
         - range: EnvLocalScaleSoilEnum
         - range: string
@@ -50068,7 +50132,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -50076,7 +50140,7 @@ classes:
         slot_group: sample_id_section
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
         any_of:
         - range: EnvMediumSoilEnum
         - range: string
@@ -53005,7 +53069,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -53014,7 +53078,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_local_scale:
         name: env_local_scale
         annotations:
@@ -53053,7 +53117,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -53062,7 +53126,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       env_medium:
         name: env_medium
         annotations:
@@ -53097,7 +53161,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -53106,7 +53170,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
       experimental_factor:
         name: experimental_factor
         annotations:
@@ -55640,7 +55704,7 @@ classes:
         aliases:
         - broad-scale environmental context
         rank: 6
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000012
         owner: Biosample
         domain_of:
@@ -55649,7 +55713,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
         any_of:
         - range: EnvBroadScaleWaterEnum
         - range: string
@@ -55684,7 +55748,7 @@ classes:
         aliases:
         - local environmental context
         rank: 7
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000013
         owner: Biosample
         domain_of:
@@ -55693,7 +55757,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
         any_of:
         - range: EnvLocalScaleWaterEnum
         - range: string
@@ -55728,7 +55792,7 @@ classes:
         aliases:
         - environmental medium
         rank: 8
-        is_a: environment field
+        is_a: mixs_env_triad_field
         slot_uri: MIXS:0000014
         owner: Biosample
         domain_of:
@@ -55737,7 +55801,7 @@ classes:
         range: string
         required: true
         multivalued: false
-        pattern: ^\S+.*\S+ \[(ENVO|UBERON|PO):\d+\]$
+        pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
         any_of:
         - range: EnvMediumWaterEnum
         - range: string
@@ -58171,11 +58235,12 @@ classes:
         name: analysis_type
         description: Select all the data types associated or available for this biosample
         title: analysis/data type
+        comments:
+        - MIxS:investigation_type was included as a `see_also` but that term doesn't
+          resolve any more
         examples:
         - value: metagenomics; metabolomics; metaproteomics
         from_schema: https://w3id.org/nmdc/nmdc
-        see_also:
-        - MIxS:investigation_type
         rank: 3
         owner: Biosample
         domain_of:
