@@ -12,8 +12,8 @@ water_data:
     ecosystem_subtype: Unclassified
     ecosystem_type: Soil
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz

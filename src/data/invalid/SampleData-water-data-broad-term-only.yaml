@@ -8,8 +8,9 @@ water_data:
     ecosystem_category: Terrestrial
     ecosystem_subtype: Unclassified
     ecosystem_type: Soil
-    env_local_scale: [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_broad_scale: [ENVO:01000033]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_name: xyz
     specific_ecosystem: Unclassified

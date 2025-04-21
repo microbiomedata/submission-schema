@@ -5,8 +5,8 @@ water_data:
     collection_date: '2022-01-15'
     depth: '111'
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
@@ -17,8 +17,8 @@ water_data:
     collection_date: '2022-01-15'
     depth: '0'
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
@@ -29,8 +29,8 @@ water_data:
     collection_date: '2022-01-15'
     depth: '-3.333'
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
@@ -41,8 +41,8 @@ water_data:
     collection_date: '2022-01-15'
     depth: '13.4-16.99'
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
@@ -53,8 +53,8 @@ water_data:
     collection_date: '2022-01-15'
     depth: '-99.99 - 38'
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
@@ -65,8 +65,8 @@ water_data:
     collection_date: '2022-01-15'
     depth: '-3--4'
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
-    env_local_scale: sand [ONTO:1234]
-    env_medium: sand [ONTO:1234]
+    env_local_scale: sand [ENVO:01000017]
+    env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz

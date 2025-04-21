@@ -5,7 +5,7 @@ soil_data:
       - metatranscriptomics
     collection_date: "2022-01-15"
     depth: "0 - 1"
-    env_broad_scale: tundra
+    env_broad_scale: "tundra [NOPE:0000]"
     env_local_scale: "________tunnel [ENVO:00000068]"
     env_medium: "bare soil [ENVO:01001616]"
     geo_loc_name: "USA: Nowhere, Oklahoma"

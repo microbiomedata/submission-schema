@@ -6,7 +6,7 @@ soil_data:
     collection_date: "2022-01-15"
     depth: "0 - 1"
     env_broad_scale: "______urban biome [ENVO:01000249]"
-    env_local_scale: shore
+    env_local_scale: "shore [BAD:1234]"
     env_medium: "bare soil [ENVO:01001616]"
     geo_loc_name: "USA: Nowhere, Oklahoma"
     growth_facil: greenhouse
