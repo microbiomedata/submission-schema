@@ -1,0 +1,47 @@
+active	scope	criterion_field	criterion_in_set	criterion_value	element_key	operation	target_field	target_value
+true	slot_or_usage	range		TimestampValue		set	range	string
+true	slot_or_usage	range		TextValue		set	range	string
+true	slot_or_usage	range		QuantityValue		set	range	string
+true	slot_or_usage	range		OntologyClass		set	range	string
+true	slot_or_usage	range		GeolocationValue		set	range	string
+true	slot_or_usage	range		ControlledTermValue		set	range	string
+true	slot_or_usage	range		ControlledIdentifiedTermValue		set	range	string
+true	slot_or_usage	range	enum_keys			delete_field	multivalued	NULL
+true	slot_or_usage	range	type_keys			delete_field	multivalued	NULL
+true	slot_or_usage				dna_dnase	set	range	YesNoEnum
+true	slot_or_usage				dnase_rna	set	range	YesNoEnum
+true	slot_or_usage				oxy_stat_samp	set	range	rel_to_oxygen_enum
+true	slot_or_usage				oxy_stat_samp	delete_field	multivalued	""
+true	slot_or_usage				sample_link	set	range	string
+true	slot_or_usage					delete_element	latitude	NULL
+true	slot_or_usage					delete_element	longitude	NULL
+true	slot_or_usage					delete_element	has_maximum_numeric_value	NULL
+true	slot_or_usage					delete_element	has_minimum_numeric_value	NULL
+true	slot_or_usage					delete_element	has_numeric_value	NULL
+true	slot_or_usage					delete_element	has_raw_value	NULL
+true	slot_or_usage					delete_element	has_unit	NULL
+true	slot_or_usage					delete_element	term	NULL
+true	class					delete_element	AttributeValue	NULL
+true	class					delete_element	ControlledIdentifiedTermValue	NULL
+true	class					delete_element	ControlledTermValue	NULL
+true	class					delete_element	GeolocationValue	NULL
+true	class					delete_element	OntologyClass	NULL
+true	class					delete_element	QuantityValue	NULL
+true	class					delete_element	TextValue	NULL
+true	class					delete_element	TimestampValue	NULL
+true	all_elements					delete_field	domain_of	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	all_elements					delete_field	domain	NULL
+true	all_elements					delete_field	name	""
+true	all_elements					delete_field	owner	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	all_elements					delete_field	from_schema	NULL
+true	class					delete_element	NamedThing	NULL
+true	slot_or_usage					delete_element	name	NULL
+true	slot_or_usage	range		string		delete_field	inlined	NULL
+true	slot_or_usage	range		string		delete_field	inlined_as_list	NULL
+true	all_elements	""		""		delete_field	text	NULL
+true	slot_or_usage	""		""	lat_lon	set	pattern	^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$
+true	slot_or_usage	range		QuantityValue			pattern	^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$
+true	slot_or_usage	string_serialization		{text};{float} {unit}			pattern	^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$
