@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-21T15:08:31
+# Generation date: 2025-05-12T21:33:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -191,20 +191,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
-
-
-class LanguageCode(str):
-    """ A language code conforming to ISO_639-1 """
-    type_class_uri = XSD["language"]
-    type_class_curie = "xsd:language"
-    type_name = "language_code"
-    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Float(float):
@@ -215,12 +207,44 @@ class Float(float):
     type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
+class LanguageCode(str):
+    """ A language code conforming to ISO_639-1 """
+    type_class_uri = XSD["language"]
+    type_class_curie = "xsd:language"
+    type_name = "language_code"
+    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
+
+
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
+
+
 class Integer(int):
     """ An integer """
     type_class_uri = XSD["integer"]
     type_class_curie = "xsd:integer"
     type_name = "integer"
     type_model_uri = NMDC_SUB_SCHEMA.Integer
+
+
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
 
 
 class Decimal(Decimal):
@@ -231,36 +255,12 @@ class Decimal(Decimal):
     type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
-
-
 class Uriorcurie(URIorCURIE):
     """ a URI or a CURIE """
     type_class_uri = XSD["anyURI"]
     type_class_curie = "xsd:anyURI"
     type_name = "uriorcurie"
     type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
-
-
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class Time(XSDTime):
