@@ -331,29 +331,22 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  boolean:
-    name: boolean
-    description: A binary (true or false) value
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "boolean".
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
     from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Boolean
-    base: Bool
-    uri: xsd:boolean
-    repr: bool
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "float".
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
     from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Float
+    see_also:
+    - https://en.wikipedia.org/wiki/Decimal_degrees
     base: float
-    uri: xsd:float
+    uri: xsd:decimal
   string:
     name: string
     description: A character string
@@ -366,25 +359,18 @@ types:
     - schema:Text
     base: str
     uri: xsd:string
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
-    base: str
-    uri: xsd:language
-  double:
-    name: double
-    description: A real number that conforms to the xsd:double specification
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
     notes:
     - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "double".
+      lower case "boolean".
     from_schema: https://example.com/nmdc_submission_schema
-    close_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:double
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
   integer:
     name: integer
     description: An integer
@@ -396,14 +382,28 @@ types:
     - schema:Integer
     base: int
     uri: xsd:integer
-  decimal_degree:
-    name: decimal_degree
-    description: A decimal degree expresses latitude or longitude as decimal fractions.
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/Decimal_degrees
+    exact_mappings:
+    - schema:Float
     base: float
-    uri: xsd:decimal
+    uri: xsd:float
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
+    from_schema: https://example.com/nmdc_submission_schema
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
   decimal:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
@@ -8775,6 +8775,7 @@ slots:
     range: string
     required: true
     multivalued: false
+    pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   read_1_md5_checksum:
     name: read_1_md5_checksum
     description: MD5 checksum of file in "read 1 FASTQ".
@@ -8787,6 +8788,7 @@ slots:
     slot_group: data_files_section
     range: string
     multivalued: false
+    pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
   read_2_url:
     name: read_2_url
     description: URL for FASTQ file of read 2 of a pair of reads.
@@ -8802,6 +8804,7 @@ slots:
     range: string
     required: true
     multivalued: false
+    pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   read_2_md5_checksum:
     name: read_2_md5_checksum
     description: MD5 checksum of file in "read 2 FASTQ".
@@ -8814,6 +8817,7 @@ slots:
     slot_group: data_files_section
     range: string
     multivalued: false
+    pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
   interleaved_url:
     name: interleaved_url
     description: URL for FASTQ file of interleaved reads.
@@ -8829,6 +8833,7 @@ slots:
     range: string
     required: true
     multivalued: false
+    pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   interleaved_md5_checksum:
     name: interleaved_md5_checksum
     description: MD5 checksum of file in "interleaved FASTQ".
@@ -8841,6 +8846,7 @@ slots:
     slot_group: data_files_section
     range: string
     multivalued: false
+    pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
   abs_air_humidity:
     name: abs_air_humidity
     annotations:

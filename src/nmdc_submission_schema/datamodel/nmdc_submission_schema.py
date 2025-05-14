@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-12T21:33:35
+# Generation date: 2025-05-14T16:29:39
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -33,7 +33,6 @@ from linkml_runtime.linkml_model.meta import (
     PvFormulaOptions
 )
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.utils.dataclass_extensions_376 import dataclasses_init_fn_with_kwargs
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from linkml_runtime.utils.formatutils import (
     camelcase,
@@ -61,9 +60,6 @@ from linkml_runtime.utils.metamodelcore import Bool, Curie, Decimal, ElementIden
 
 metamodel_version = "1.7.0"
 version = "0.0.0"
-
-# Overwrite dataclasses _init_fn to add **kwargs in __init__
-dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
@@ -191,20 +187,20 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+class LanguageCode(str):
+    """ A language code conforming to ISO_639-1 """
+    type_class_uri = XSD["language"]
+    type_class_curie = "xsd:language"
+    type_name = "language_code"
+    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Float(float):
-    """ A real number that conforms to the xsd:float specification """
-    type_class_uri = XSD["float"]
-    type_class_curie = "xsd:float"
-    type_name = "float"
-    type_model_uri = NMDC_SUB_SCHEMA.Float
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
 
 
 class String(str):
@@ -215,20 +211,12 @@ class String(str):
     type_model_uri = NMDC_SUB_SCHEMA.String
 
 
-class LanguageCode(str):
-    """ A language code conforming to ISO_639-1 """
-    type_class_uri = XSD["language"]
-    type_class_curie = "xsd:language"
-    type_name = "language_code"
-    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
-
-
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Integer(int):
@@ -239,12 +227,20 @@ class Integer(int):
     type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+class Float(float):
+    """ A real number that conforms to the xsd:float specification """
+    type_class_uri = XSD["float"]
+    type_class_curie = "xsd:float"
+    type_name = "float"
+    type_model_uri = NMDC_SUB_SCHEMA.Float
+
+
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class Decimal(Decimal):
@@ -385,7 +381,7 @@ class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
     """
     Interface for non-interleaved metagenome sequencing data
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetagenomeSequencingNonInterleavedDataInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetagenomeSequencingNonInterleavedDataInterface"
@@ -395,18 +391,18 @@ class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
     read_1_url: str = None
     read_2_url: str = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     read_1_md5_checksum: Optional[str] = None
     read_2_md5_checksum: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
-    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
-    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.read_1_url):
             self.MissingRequiredField("read_1_url")
         if not isinstance(self.read_1_url, str):
@@ -473,7 +469,7 @@ class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
     """
     Interface for interleaved metagenome sequencing data
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetagenomeSequencingInterleavedDataInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetagenomeSequencingInterleavedDataInterface"
@@ -482,17 +478,17 @@ class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
 
     interleaved_url: str = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     interleaved_md5_checksum: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
-    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
-    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.interleaved_url):
             self.MissingRequiredField("interleaved_url")
         if not isinstance(self.interleaved_url, str):
@@ -551,7 +547,7 @@ class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
     """
     Interface for non-interleaved metatranscriptome sequencing data
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetatranscriptomeSequencingNonInterleavedDataInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetatranscriptomeSequencingNonInterleavedDataInterface"
@@ -561,18 +557,18 @@ class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
     read_1_url: str = None
     read_2_url: str = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     read_1_md5_checksum: Optional[str] = None
     read_2_md5_checksum: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
-    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
-    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.read_1_url):
             self.MissingRequiredField("read_1_url")
         if not isinstance(self.read_1_url, str):
@@ -639,7 +635,7 @@ class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
     """
     Interface for interleaved metatranscriptome sequencing data
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetatranscriptomeSequencingInterleavedDataInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetatranscriptomeSequencingInterleavedDataInterface"
@@ -648,17 +644,17 @@ class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
 
     interleaved_url: str = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     interleaved_md5_checksum: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
-    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
-    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_bioproject_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
+    insdc_experiment_identifiers: Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]] = empty_list()
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.interleaved_url):
             self.MissingRequiredField("interleaved_url")
         if not isinstance(self.interleaved_url, str):
@@ -717,19 +713,19 @@ class DhMultiviewCommonColumnsMixin(YAMLRoot):
     """
     Mixin with DhMutliviewCommon Columns
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["DhMultiviewCommonColumnsMixin"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:DhMultiviewCommonColumnsMixin"
     class_name: ClassVar[str] = "DhMultiviewCommonColumnsMixin"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
         if not isinstance(self.analysis_type, list):
@@ -761,7 +757,7 @@ class SampIdNewTermsMixin(YAMLRoot):
     """
     Mixin with SampIdNew Terms
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["SampIdNewTermsMixin"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:SampIdNewTermsMixin"
@@ -770,7 +766,7 @@ class SampIdNewTermsMixin(YAMLRoot):
 
     sample_link: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.sample_link is not None and not isinstance(self.sample_link, str):
             self.sample_link = str(self.sample_link)
 
@@ -782,7 +778,7 @@ class SoilMixsInspiredMixin(YAMLRoot):
     """
     Mixin with SoilMixsInspired Terms
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["SoilMixsInspiredMixin"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:SoilMixsInspiredMixin"
@@ -806,7 +802,7 @@ class SoilMixsInspiredMixin(YAMLRoot):
     start_date_inc: Optional[str] = None
     start_time_inc: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
             self.collection_date_inc = str(self.collection_date_inc)
 
@@ -911,7 +907,7 @@ class DhInterface(YAMLRoot):
     One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various
     standards, user facilities or analysis types
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["DhInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:DhInterface"
@@ -924,14 +920,14 @@ class AirInterface(DhInterface):
     """
     air dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["AirInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:AirInterface"
     class_name: ClassVar[str] = "AirInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.AirInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     air_PM_concen: Optional[str] = None
     alt: Optional[str] = None
     barometric_press: Optional[str] = None
@@ -981,7 +977,7 @@ class AirInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -1288,14 +1284,14 @@ class BiofilmInterface(DhInterface):
     """
     biofilm dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["BiofilmInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:BiofilmInterface"
     class_name: ClassVar[str] = "BiofilmInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.BiofilmInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     alkalinity: Optional[str] = None
     alkyl_diethers: Optional[str] = None
     alt: Optional[str] = None
@@ -1381,7 +1377,7 @@ class BiofilmInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -1904,14 +1900,14 @@ class BuiltEnvInterface(DhInterface):
     """
     built_env dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["BuiltEnvInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:BuiltEnvInterface"
     class_name: ClassVar[str] = "BuiltEnvInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.BuiltEnvInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     abs_air_humidity: Optional[str] = None
     address: Optional[str] = None
     adj_room: Optional[str] = None
@@ -1926,7 +1922,7 @@ class BuiltEnvInterface(DhInterface):
     bathroom_count: Optional[str] = None
     bedroom_count: Optional[str] = None
     build_docs: Optional[Union[str, "BuildDocsEnum"]] = None
-    build_occup_type: Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]] = empty_list()
+    build_occup_type: Optional[Union[Union[str, "BuildOccupTypeEnum"], list[Union[str, "BuildOccupTypeEnum"]]]] = empty_list()
     building_setting: Optional[Union[str, "BuildingSettingEnum"]] = None
     built_struc_age: Optional[str] = None
     built_struc_set: Optional[str] = None
@@ -1973,7 +1969,7 @@ class BuiltEnvInterface(DhInterface):
     ext_door: Optional[str] = None
     ext_wall_orient: Optional[Union[str, "ExtWallOrientEnum"]] = None
     ext_window_orient: Optional[Union[str, "ExtWindowOrientEnum"]] = None
-    filter_type: Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]] = empty_list()
+    filter_type: Optional[Union[Union[str, "FilterTypeEnum"], list[Union[str, "FilterTypeEnum"]]]] = empty_list()
     fireplace_type: Optional[str] = None
     floor_age: Optional[str] = None
     floor_area: Optional[str] = None
@@ -1990,7 +1986,7 @@ class BuiltEnvInterface(DhInterface):
     geo_loc_name: Optional[str] = None
     hall_count: Optional[str] = None
     handidness: Optional[Union[str, "HandidnessEnum"]] = None
-    heat_cool_type: Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]] = empty_list()
+    heat_cool_type: Optional[Union[Union[str, "HeatCoolTypeEnum"], list[Union[str, "HeatCoolTypeEnum"]]]] = empty_list()
     heat_deliv_loc: Optional[Union[str, "HeatDelivLocEnum"]] = None
     heat_sys_deliv_meth: Optional[str] = None
     heat_system_id: Optional[str] = None
@@ -2001,7 +1997,7 @@ class BuiltEnvInterface(DhInterface):
     int_wall_cond: Optional[Union[str, "IntWallCondEnum"]] = None
     last_clean: Optional[str] = None
     lat_lon: Optional[str] = None
-    light_type: Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]] = empty_list()
+    light_type: Optional[Union[Union[str, "LightTypeEnum"], list[Union[str, "LightTypeEnum"]]]] = empty_list()
     max_occup: Optional[str] = None
     mech_struc: Optional[Union[str, "MechStrucEnum"]] = None
     number_pets: Optional[str] = None
@@ -2052,8 +2048,8 @@ class BuiltEnvInterface(DhInterface):
     specific: Optional[Union[str, "SpecificEnum"]] = None
     specific_ecosystem: Optional[str] = None
     specific_humidity: Optional[str] = None
-    substructure_type: Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]] = empty_list()
-    surf_air_cont: Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]] = empty_list()
+    substructure_type: Optional[Union[Union[str, "SubstructureTypeEnum"], list[Union[str, "SubstructureTypeEnum"]]]] = empty_list()
+    surf_air_cont: Optional[Union[Union[str, "SurfAirContEnum"], list[Union[str, "SurfAirContEnum"]]]] = empty_list()
     surf_humidity: Optional[str] = None
     surf_material: Optional[Union[str, "SurfMaterialEnum"]] = None
     surf_moisture: Optional[str] = None
@@ -2095,7 +2091,7 @@ class BuiltEnvInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -3213,7 +3209,7 @@ class EmslInterface(DhInterface):
     """
     emsl dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["EmslInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:EmslInterface"
@@ -3224,14 +3220,14 @@ class EmslInterface(DhInterface):
     project_id: str = None
     sample_shipped: str = None
     sample_type: Union[str, "SampleTypeEnum"] = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     replicate_number: Optional[int] = None
     technical_reps: Optional[int] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.emsl_store_temp):
             self.MissingRequiredField("emsl_store_temp")
         if not isinstance(self.emsl_store_temp, float):
@@ -3299,14 +3295,14 @@ class HcrCoresInterface(DhInterface):
     """
     hcr_cores dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["HcrCoresInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:HcrCoresInterface"
     class_name: ClassVar[str] = "HcrCoresInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.HcrCoresInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     additional_info: Optional[str] = None
     alkalinity: Optional[str] = None
     alkalinity_method: Optional[str] = None
@@ -3411,7 +3407,7 @@ class HcrCoresInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -4048,14 +4044,14 @@ class HcrFluidsSwabsInterface(DhInterface):
     """
     hcr_fluids_swabs dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["HcrFluidsSwabsInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:HcrFluidsSwabsInterface"
     class_name: ClassVar[str] = "HcrFluidsSwabsInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     add_recov_method: Optional[str] = None
     additional_info: Optional[str] = None
     alkalinity: Optional[str] = None
@@ -4165,7 +4161,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -4832,14 +4828,14 @@ class HostAssociatedInterface(DhInterface):
     """
     host_associated dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["HostAssociatedInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:HostAssociatedInterface"
     class_name: ClassVar[str] = "HostAssociatedInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.HostAssociatedInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     alt: Optional[str] = None
     ances_data: Optional[str] = None
     biol_stat: Optional[Union[str, "BiolStatEnum"]] = None
@@ -4909,7 +4905,7 @@ class HostAssociatedInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -5336,7 +5332,7 @@ class JgiMgInterface(DhInterface):
     """
     Metadata for samples sent to JGI for standard metagenome sequencing
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["JgiMgInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:JgiMgInterface"
@@ -5357,7 +5353,7 @@ class JgiMgInterface(DhInterface):
     dna_seq_project_pi: str = None
     dna_volume: float = None
     proposal_dna: str = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     dna_absorb1: Optional[float] = None
     dna_absorb2: Optional[float] = None
     dna_cont_well: Optional[str] = None
@@ -5365,7 +5361,7 @@ class JgiMgInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.dna_concentration):
             self.MissingRequiredField("dna_concentration")
         if not isinstance(self.dna_concentration, float):
@@ -5525,7 +5521,7 @@ class JgiMgLrInterface(DhInterface):
     """
     Metadata for samples sent to JGI for long read metagenome sequecning
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["JgiMgLrInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:JgiMgLrInterface"
@@ -5546,7 +5542,7 @@ class JgiMgLrInterface(DhInterface):
     dna_seq_project_pi: str = None
     dna_volume: float = None
     proposal_dna: str = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     dna_absorb1: Optional[float] = None
     dna_absorb2: Optional[float] = None
     dna_cont_well: Optional[str] = None
@@ -5554,7 +5550,7 @@ class JgiMgLrInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.dna_concentration):
             self.MissingRequiredField("dna_concentration")
         if not isinstance(self.dna_concentration, float):
@@ -5718,7 +5714,7 @@ class JgiMtInterface(DhInterface):
     """
     jgi_mt dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["JgiMtInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:JgiMtInterface"
@@ -5739,7 +5735,7 @@ class JgiMtInterface(DhInterface):
     rna_seq_project_name: str = None
     rna_seq_project_pi: str = None
     rna_volume: float = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     rna_absorb1: Optional[float] = None
     rna_absorb2: Optional[float] = None
     rna_cont_well: Optional[str] = None
@@ -5747,7 +5743,7 @@ class JgiMtInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.dnase_rna):
             self.MissingRequiredField("dnase_rna")
         if not isinstance(self.dnase_rna, YesNoEnum):
@@ -5901,14 +5897,14 @@ class MiscEnvsInterface(DhInterface):
     """
     misc_envs dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MiscEnvsInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:MiscEnvsInterface"
     class_name: ClassVar[str] = "MiscEnvsInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MiscEnvsInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     alkalinity: Optional[str] = None
     alt: Optional[str] = None
     ammonium: Optional[str] = None
@@ -5975,7 +5971,7 @@ class MiscEnvsInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -6384,14 +6380,14 @@ class PlantAssociatedInterface(DhInterface):
     """
     plant_associated dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["PlantAssociatedInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:PlantAssociatedInterface"
     class_name: ClassVar[str] = "PlantAssociatedInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.PlantAssociatedInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     air_temp_regm: Optional[str] = None
     ances_data: Optional[str] = None
     antibiotic_regm: Optional[str] = None
@@ -6492,7 +6488,7 @@ class PlantAssociatedInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -7095,14 +7091,14 @@ class SedimentInterface(DhInterface):
     """
     sediment dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["SedimentInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:SedimentInterface"
     class_name: ClassVar[str] = "SedimentInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.SedimentInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     air_temp_regm: Optional[str] = None
     alkalinity: Optional[str] = None
     alkalinity_method: Optional[str] = None
@@ -7221,7 +7217,7 @@ class SedimentInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -7917,14 +7913,14 @@ class SoilInterface(DhInterface):
     """
     soil dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["SoilInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:SoilInterface"
     class_name: ClassVar[str] = "SoilInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.SoilInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     agrochem_addition: Optional[str] = None
     air_temp_regm: Optional[str] = None
     al_sat: Optional[str] = None
@@ -8029,7 +8025,7 @@ class SoilInterface(DhInterface):
     start_time_inc: Optional[str] = None
     store_cond: Optional[str] = None
     temp: Optional[str] = None
-    tillage: Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]] = empty_list()
+    tillage: Optional[Union[Union[str, "TillageEnum"], list[Union[str, "TillageEnum"]]]] = empty_list()
     tot_carb: Optional[str] = None
     tot_nitro_cont_meth: Optional[str] = None
     tot_nitro_content: Optional[str] = None
@@ -8044,7 +8040,7 @@ class SoilInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -8716,14 +8712,14 @@ class WastewaterSludgeInterface(DhInterface):
     """
     wastewater_sludge dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["WastewaterSludgeInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:WastewaterSludgeInterface"
     class_name: ClassVar[str] = "WastewaterSludgeInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.WastewaterSludgeInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     alkalinity: Optional[str] = None
     biochem_oxygen_dem: Optional[str] = None
     chem_administration: Optional[str] = None
@@ -8785,7 +8781,7 @@ class WastewaterSludgeInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -9164,14 +9160,14 @@ class WaterInterface(DhInterface):
     """
     water dh_interface
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["WaterInterface"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:WaterInterface"
     class_name: ClassVar[str] = "WaterInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.WaterInterface
 
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]] = None
+    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     air_temp_regm: Optional[str] = None
     alkalinity: Optional[str] = None
     alkalinity_method: Optional[str] = None
@@ -9289,7 +9285,7 @@ class WaterInterface(DhInterface):
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.collection_date):
             self.MissingRequiredField("collection_date")
         if not isinstance(self.collection_date, str):
@@ -9988,32 +9984,32 @@ class SampleData(YAMLRoot):
     """
     represents data produced by the DataHarmonizer tabs of the submission portal
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["SampleData"]
     class_class_curie: ClassVar[str] = "nmdc_sub_schema:SampleData"
     class_name: ClassVar[str] = "SampleData"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.SampleData
 
-    air_data: Optional[Union[Union[dict, AirInterface], List[Union[dict, AirInterface]]]] = empty_list()
-    biofilm_data: Optional[Union[Union[dict, BiofilmInterface], List[Union[dict, BiofilmInterface]]]] = empty_list()
-    built_env_data: Optional[Union[Union[dict, BuiltEnvInterface], List[Union[dict, BuiltEnvInterface]]]] = empty_list()
-    host_associated_data: Optional[Union[Union[dict, HostAssociatedInterface], List[Union[dict, HostAssociatedInterface]]]] = empty_list()
-    plant_associated_data: Optional[Union[Union[dict, PlantAssociatedInterface], List[Union[dict, PlantAssociatedInterface]]]] = empty_list()
-    sediment_data: Optional[Union[Union[dict, SedimentInterface], List[Union[dict, SedimentInterface]]]] = empty_list()
-    soil_data: Optional[Union[Union[dict, SoilInterface], List[Union[dict, SoilInterface]]]] = empty_list()
-    wastewater_sludge_data: Optional[Union[Union[dict, WastewaterSludgeInterface], List[Union[dict, WastewaterSludgeInterface]]]] = empty_list()
-    water_data: Optional[Union[Union[dict, WaterInterface], List[Union[dict, WaterInterface]]]] = empty_list()
-    emsl_data: Optional[Union[Union[dict, EmslInterface], List[Union[dict, EmslInterface]]]] = empty_list()
-    jgi_mg_lr_data: Optional[Union[Union[dict, JgiMgLrInterface], List[Union[dict, JgiMgLrInterface]]]] = empty_list()
-    jgi_mg_data: Optional[Union[Union[dict, JgiMgInterface], List[Union[dict, JgiMgInterface]]]] = empty_list()
-    jgi_mt_data: Optional[Union[Union[dict, JgiMtInterface], List[Union[dict, JgiMtInterface]]]] = empty_list()
-    metagenome_sequencing_non_interleaved_data: Optional[Union[Union[dict, MetagenomeSequencingNonInterleavedDataInterface], List[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]] = empty_list()
-    metagenome_sequencing_interleaved_data: Optional[Union[Union[dict, MetagenomeSequencingInterleavedDataInterface], List[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]] = empty_list()
-    metatranscriptome_sequencing_non_interleaved_data: Optional[Union[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]] = empty_list()
-    metatranscriptome_sequencing_interleaved_data: Optional[Union[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]] = empty_list()
+    air_data: Optional[Union[Union[dict, AirInterface], list[Union[dict, AirInterface]]]] = empty_list()
+    biofilm_data: Optional[Union[Union[dict, BiofilmInterface], list[Union[dict, BiofilmInterface]]]] = empty_list()
+    built_env_data: Optional[Union[Union[dict, BuiltEnvInterface], list[Union[dict, BuiltEnvInterface]]]] = empty_list()
+    host_associated_data: Optional[Union[Union[dict, HostAssociatedInterface], list[Union[dict, HostAssociatedInterface]]]] = empty_list()
+    plant_associated_data: Optional[Union[Union[dict, PlantAssociatedInterface], list[Union[dict, PlantAssociatedInterface]]]] = empty_list()
+    sediment_data: Optional[Union[Union[dict, SedimentInterface], list[Union[dict, SedimentInterface]]]] = empty_list()
+    soil_data: Optional[Union[Union[dict, SoilInterface], list[Union[dict, SoilInterface]]]] = empty_list()
+    wastewater_sludge_data: Optional[Union[Union[dict, WastewaterSludgeInterface], list[Union[dict, WastewaterSludgeInterface]]]] = empty_list()
+    water_data: Optional[Union[Union[dict, WaterInterface], list[Union[dict, WaterInterface]]]] = empty_list()
+    emsl_data: Optional[Union[Union[dict, EmslInterface], list[Union[dict, EmslInterface]]]] = empty_list()
+    jgi_mg_lr_data: Optional[Union[Union[dict, JgiMgLrInterface], list[Union[dict, JgiMgLrInterface]]]] = empty_list()
+    jgi_mg_data: Optional[Union[Union[dict, JgiMgInterface], list[Union[dict, JgiMgInterface]]]] = empty_list()
+    jgi_mt_data: Optional[Union[Union[dict, JgiMtInterface], list[Union[dict, JgiMtInterface]]]] = empty_list()
+    metagenome_sequencing_non_interleaved_data: Optional[Union[Union[dict, MetagenomeSequencingNonInterleavedDataInterface], list[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]] = empty_list()
+    metagenome_sequencing_interleaved_data: Optional[Union[Union[dict, MetagenomeSequencingInterleavedDataInterface], list[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]] = empty_list()
+    metatranscriptome_sequencing_non_interleaved_data: Optional[Union[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface], list[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]] = empty_list()
+    metatranscriptome_sequencing_interleaved_data: Optional[Union[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface], list[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if not isinstance(self.air_data, list):
             self.air_data = [self.air_data] if self.air_data is not None else []
         self.air_data = [v if isinstance(v, AirInterface) else AirInterface(**as_dict(v)) for v in self.air_data]
@@ -10090,7 +10086,7 @@ class NamedThing(YAMLRoot):
     """
     a databased entity or concept/class
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC["NamedThing"]
     class_class_curie: ClassVar[str] = "nmdc:NamedThing"
@@ -10101,9 +10097,9 @@ class NamedThing(YAMLRoot):
     type: Union[str, URIorCURIE] = None
     name: Optional[str] = None
     description: Optional[str] = None
-    alternative_identifiers: Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]] = empty_list()
+    alternative_identifiers: Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]] = empty_list()
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, NamedThingId):
@@ -10156,7 +10152,7 @@ class GeneProduct(NamedThing):
     """
     A molecule encoded by a gene that has an evolved function
     """
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC["GeneProduct"]
     class_class_curie: ClassVar[str] = "nmdc:GeneProduct"
@@ -10166,7 +10162,7 @@ class GeneProduct(NamedThing):
     id: Union[str, GeneProductId] = None
     type: Union[str, URIorCURIE] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, GeneProductId):
@@ -10180,7 +10176,7 @@ class GeneProduct(NamedThing):
 
 @dataclass(repr=False)
 class Protocol(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
+    _inherited_slots: ClassVar[list[str]] = []
 
     class_class_uri: ClassVar[URIRef] = NMDC["Protocol"]
     class_class_curie: ClassVar[str] = "nmdc:Protocol"
@@ -10191,7 +10187,7 @@ class Protocol(YAMLRoot):
     url: Optional[str] = None
     name: Optional[str] = None
 
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+    def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.type):
             self.MissingRequiredField("type")
         self.type = str(self.class_class_curie)
@@ -17082,64 +17078,64 @@ class slots:
     pass
 
 slots.air_data = Slot(uri=NMDC_SUB_SCHEMA.air_data, name="air_data", curie=NMDC_SUB_SCHEMA.curie('air_data'),
-                   model_uri=NMDC_SUB_SCHEMA.air_data, domain=None, range=Optional[Union[Union[dict, AirInterface], List[Union[dict, AirInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.air_data, domain=None, range=Optional[Union[Union[dict, AirInterface], list[Union[dict, AirInterface]]]])
 
 slots.biofilm_data = Slot(uri=NMDC_SUB_SCHEMA.biofilm_data, name="biofilm_data", curie=NMDC_SUB_SCHEMA.curie('biofilm_data'),
-                   model_uri=NMDC_SUB_SCHEMA.biofilm_data, domain=None, range=Optional[Union[Union[dict, BiofilmInterface], List[Union[dict, BiofilmInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.biofilm_data, domain=None, range=Optional[Union[Union[dict, BiofilmInterface], list[Union[dict, BiofilmInterface]]]])
 
 slots.built_env_data = Slot(uri=NMDC_SUB_SCHEMA.built_env_data, name="built_env_data", curie=NMDC_SUB_SCHEMA.curie('built_env_data'),
-                   model_uri=NMDC_SUB_SCHEMA.built_env_data, domain=None, range=Optional[Union[Union[dict, BuiltEnvInterface], List[Union[dict, BuiltEnvInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.built_env_data, domain=None, range=Optional[Union[Union[dict, BuiltEnvInterface], list[Union[dict, BuiltEnvInterface]]]])
 
 slots.emsl_data = Slot(uri=NMDC_SUB_SCHEMA.emsl_data, name="emsl_data", curie=NMDC_SUB_SCHEMA.curie('emsl_data'),
-                   model_uri=NMDC_SUB_SCHEMA.emsl_data, domain=None, range=Optional[Union[Union[dict, EmslInterface], List[Union[dict, EmslInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.emsl_data, domain=None, range=Optional[Union[Union[dict, EmslInterface], list[Union[dict, EmslInterface]]]])
 
 slots.hcr_cores_data = Slot(uri=NMDC_SUB_SCHEMA.hcr_cores_data, name="hcr_cores_data", curie=NMDC_SUB_SCHEMA.curie('hcr_cores_data'),
-                   model_uri=NMDC_SUB_SCHEMA.hcr_cores_data, domain=None, range=Optional[Union[Union[dict, HcrCoresInterface], List[Union[dict, HcrCoresInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.hcr_cores_data, domain=None, range=Optional[Union[Union[dict, HcrCoresInterface], list[Union[dict, HcrCoresInterface]]]])
 
 slots.hcr_fluids_swabs_data = Slot(uri=NMDC_SUB_SCHEMA.hcr_fluids_swabs_data, name="hcr_fluids_swabs_data", curie=NMDC_SUB_SCHEMA.curie('hcr_fluids_swabs_data'),
-                   model_uri=NMDC_SUB_SCHEMA.hcr_fluids_swabs_data, domain=None, range=Optional[Union[Union[dict, HcrFluidsSwabsInterface], List[Union[dict, HcrFluidsSwabsInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.hcr_fluids_swabs_data, domain=None, range=Optional[Union[Union[dict, HcrFluidsSwabsInterface], list[Union[dict, HcrFluidsSwabsInterface]]]])
 
 slots.host_associated_data = Slot(uri=NMDC_SUB_SCHEMA.host_associated_data, name="host_associated_data", curie=NMDC_SUB_SCHEMA.curie('host_associated_data'),
-                   model_uri=NMDC_SUB_SCHEMA.host_associated_data, domain=None, range=Optional[Union[Union[dict, HostAssociatedInterface], List[Union[dict, HostAssociatedInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.host_associated_data, domain=None, range=Optional[Union[Union[dict, HostAssociatedInterface], list[Union[dict, HostAssociatedInterface]]]])
 
 slots.jgi_mg_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_mg_data, name="jgi_mg_data", curie=NMDC_SUB_SCHEMA.curie('jgi_mg_data'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_mg_data, domain=None, range=Optional[Union[Union[dict, JgiMgInterface], List[Union[dict, JgiMgInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.jgi_mg_data, domain=None, range=Optional[Union[Union[dict, JgiMgInterface], list[Union[dict, JgiMgInterface]]]])
 
 slots.jgi_mg_lr_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_mg_lr_data, name="jgi_mg_lr_data", curie=NMDC_SUB_SCHEMA.curie('jgi_mg_lr_data'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_mg_lr_data, domain=None, range=Optional[Union[Union[dict, JgiMgLrInterface], List[Union[dict, JgiMgLrInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.jgi_mg_lr_data, domain=None, range=Optional[Union[Union[dict, JgiMgLrInterface], list[Union[dict, JgiMgLrInterface]]]])
 
 slots.jgi_mt_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_mt_data, name="jgi_mt_data", curie=NMDC_SUB_SCHEMA.curie('jgi_mt_data'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_mt_data, domain=None, range=Optional[Union[Union[dict, JgiMtInterface], List[Union[dict, JgiMtInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.jgi_mt_data, domain=None, range=Optional[Union[Union[dict, JgiMtInterface], list[Union[dict, JgiMtInterface]]]])
 
 slots.misc_envs_data = Slot(uri=NMDC_SUB_SCHEMA.misc_envs_data, name="misc_envs_data", curie=NMDC_SUB_SCHEMA.curie('misc_envs_data'),
-                   model_uri=NMDC_SUB_SCHEMA.misc_envs_data, domain=None, range=Optional[Union[Union[dict, MiscEnvsInterface], List[Union[dict, MiscEnvsInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.misc_envs_data, domain=None, range=Optional[Union[Union[dict, MiscEnvsInterface], list[Union[dict, MiscEnvsInterface]]]])
 
 slots.plant_associated_data = Slot(uri=NMDC_SUB_SCHEMA.plant_associated_data, name="plant_associated_data", curie=NMDC_SUB_SCHEMA.curie('plant_associated_data'),
-                   model_uri=NMDC_SUB_SCHEMA.plant_associated_data, domain=None, range=Optional[Union[Union[dict, PlantAssociatedInterface], List[Union[dict, PlantAssociatedInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.plant_associated_data, domain=None, range=Optional[Union[Union[dict, PlantAssociatedInterface], list[Union[dict, PlantAssociatedInterface]]]])
 
 slots.sediment_data = Slot(uri=NMDC_SUB_SCHEMA.sediment_data, name="sediment_data", curie=NMDC_SUB_SCHEMA.curie('sediment_data'),
-                   model_uri=NMDC_SUB_SCHEMA.sediment_data, domain=None, range=Optional[Union[Union[dict, SedimentInterface], List[Union[dict, SedimentInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.sediment_data, domain=None, range=Optional[Union[Union[dict, SedimentInterface], list[Union[dict, SedimentInterface]]]])
 
 slots.soil_data = Slot(uri=NMDC_SUB_SCHEMA.soil_data, name="soil_data", curie=NMDC_SUB_SCHEMA.curie('soil_data'),
-                   model_uri=NMDC_SUB_SCHEMA.soil_data, domain=None, range=Optional[Union[Union[dict, SoilInterface], List[Union[dict, SoilInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.soil_data, domain=None, range=Optional[Union[Union[dict, SoilInterface], list[Union[dict, SoilInterface]]]])
 
 slots.wastewater_sludge_data = Slot(uri=NMDC_SUB_SCHEMA.wastewater_sludge_data, name="wastewater_sludge_data", curie=NMDC_SUB_SCHEMA.curie('wastewater_sludge_data'),
-                   model_uri=NMDC_SUB_SCHEMA.wastewater_sludge_data, domain=None, range=Optional[Union[Union[dict, WastewaterSludgeInterface], List[Union[dict, WastewaterSludgeInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.wastewater_sludge_data, domain=None, range=Optional[Union[Union[dict, WastewaterSludgeInterface], list[Union[dict, WastewaterSludgeInterface]]]])
 
 slots.water_data = Slot(uri=NMDC_SUB_SCHEMA.water_data, name="water_data", curie=NMDC_SUB_SCHEMA.curie('water_data'),
-                   model_uri=NMDC_SUB_SCHEMA.water_data, domain=None, range=Optional[Union[Union[dict, WaterInterface], List[Union[dict, WaterInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.water_data, domain=None, range=Optional[Union[Union[dict, WaterInterface], list[Union[dict, WaterInterface]]]])
 
 slots.metagenome_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, name="metagenome_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metagenome_sequencing_non_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetagenomeSequencingNonInterleavedDataInterface], List[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetagenomeSequencingNonInterleavedDataInterface], list[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]])
 
 slots.metagenome_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, name="metagenome_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metagenome_sequencing_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetagenomeSequencingInterleavedDataInterface], List[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetagenomeSequencingInterleavedDataInterface], list[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]])
 
 slots.metatranscriptome_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, name="metatranscriptome_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metatranscriptome_sequencing_non_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface], list[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]])
 
 slots.metatranscriptome_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, name="metatranscriptome_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metatranscriptome_sequencing_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface], List[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]])
+                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, domain=None, range=Optional[Union[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface], list[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]])
 
 slots.dh_section = Slot(uri=NMDC_SUB_SCHEMA.dh_section, name="dh_section", curie=NMDC_SUB_SCHEMA.curie('dh_section'),
                    model_uri=NMDC_SUB_SCHEMA.dh_section, domain=None, range=Optional[str])
@@ -17181,22 +17177,28 @@ slots.data_files_section = Slot(uri=NMDC_SUB_SCHEMA.data_files_section, name="da
                    model_uri=NMDC_SUB_SCHEMA.data_files_section, domain=None, range=Optional[str])
 
 slots.read_1_url = Slot(uri=NMDC_SUB_SCHEMA.read_1_url, name="read_1_url", curie=NMDC_SUB_SCHEMA.curie('read_1_url'),
-                   model_uri=NMDC_SUB_SCHEMA.read_1_url, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.read_1_url, domain=None, range=str,
+                   pattern=re.compile(r'^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$'))
 
 slots.read_1_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, name="read_1_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('read_1_md5_checksum'),
-                   model_uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$'))
 
 slots.read_2_url = Slot(uri=NMDC_SUB_SCHEMA.read_2_url, name="read_2_url", curie=NMDC_SUB_SCHEMA.curie('read_2_url'),
-                   model_uri=NMDC_SUB_SCHEMA.read_2_url, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.read_2_url, domain=None, range=str,
+                   pattern=re.compile(r'^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$'))
 
 slots.read_2_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, name="read_2_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('read_2_md5_checksum'),
-                   model_uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$'))
 
 slots.interleaved_url = Slot(uri=NMDC_SUB_SCHEMA.interleaved_url, name="interleaved_url", curie=NMDC_SUB_SCHEMA.curie('interleaved_url'),
-                   model_uri=NMDC_SUB_SCHEMA.interleaved_url, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.interleaved_url, domain=None, range=str,
+                   pattern=re.compile(r'^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$'))
 
 slots.interleaved_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, name="interleaved_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('interleaved_md5_checksum'),
-                   model_uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$'))
 
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str])
@@ -17259,7 +17261,7 @@ slots.amount_light = Slot(uri=MIXS['0000140'], name="amount_light", curie=MIXS.c
                    model_uri=NMDC_SUB_SCHEMA.amount_light, domain=None, range=Optional[str])
 
 slots.analysis_type = Slot(uri=NMDC_SUB_SCHEMA.analysis_type, name="analysis_type", curie=NMDC_SUB_SCHEMA.curie('analysis_type'),
-                   model_uri=NMDC_SUB_SCHEMA.analysis_type, domain=None, range=Optional[Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.analysis_type, domain=None, range=Optional[Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]]])
 
 slots.ances_data = Slot(uri=MIXS['0000247'], name="ances_data", curie=MIXS.curie('0000247'),
                    model_uri=NMDC_SUB_SCHEMA.ances_data, domain=None, range=Optional[str])
@@ -17358,7 +17360,7 @@ slots.build_docs = Slot(uri=MIXS['0000787'], name="build_docs", curie=MIXS.curie
                    model_uri=NMDC_SUB_SCHEMA.build_docs, domain=None, range=Optional[Union[str, "BuildDocsEnum"]])
 
 slots.build_occup_type = Slot(uri=MIXS['0000761'], name="build_occup_type", curie=MIXS.curie('0000761'),
-                   model_uri=NMDC_SUB_SCHEMA.build_occup_type, domain=None, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.build_occup_type, domain=None, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], list[Union[str, "BuildOccupTypeEnum"]]]])
 
 slots.building_setting = Slot(uri=MIXS['0000768'], name="building_setting", curie=MIXS.curie('0000768'),
                    model_uri=NMDC_SUB_SCHEMA.building_setting, domain=None, range=Optional[Union[str, "BuildingSettingEnum"]])
@@ -17689,7 +17691,7 @@ slots.filter_method = Slot(uri=NMDC_SUB_SCHEMA.filter_method, name="filter_metho
                    model_uri=NMDC_SUB_SCHEMA.filter_method, domain=None, range=Optional[str])
 
 slots.filter_type = Slot(uri=MIXS['0000765'], name="filter_type", curie=MIXS.curie('0000765'),
-                   model_uri=NMDC_SUB_SCHEMA.filter_type, domain=None, range=Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.filter_type, domain=None, range=Optional[Union[Union[str, "FilterTypeEnum"], list[Union[str, "FilterTypeEnum"]]]])
 
 slots.fire = Slot(uri=MIXS['0001086'], name="fire", curie=MIXS.curie('0001086'),
                    model_uri=NMDC_SUB_SCHEMA.fire, domain=None, range=Optional[str])
@@ -17797,7 +17799,7 @@ slots.hcr_temp = Slot(uri=MIXS['0000393'], name="hcr_temp", curie=MIXS.curie('00
                    model_uri=NMDC_SUB_SCHEMA.hcr_temp, domain=None, range=Optional[str])
 
 slots.heat_cool_type = Slot(uri=MIXS['0000766'], name="heat_cool_type", curie=MIXS.curie('0000766'),
-                   model_uri=NMDC_SUB_SCHEMA.heat_cool_type, domain=None, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.heat_cool_type, domain=None, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], list[Union[str, "HeatCoolTypeEnum"]]]])
 
 slots.heat_deliv_loc = Slot(uri=MIXS['0000810'], name="heat_deliv_loc", curie=MIXS.curie('0000810'),
                    model_uri=NMDC_SUB_SCHEMA.heat_deliv_loc, domain=None, range=Optional[Union[str, "HeatDelivLocEnum"]])
@@ -17960,7 +17962,7 @@ slots.light_regm = Slot(uri=MIXS['0000569'], name="light_regm", curie=MIXS.curie
                    model_uri=NMDC_SUB_SCHEMA.light_regm, domain=None, range=Optional[str])
 
 slots.light_type = Slot(uri=MIXS['0000769'], name="light_type", curie=MIXS.curie('0000769'),
-                   model_uri=NMDC_SUB_SCHEMA.light_type, domain=None, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.light_type, domain=None, range=Optional[Union[Union[str, "LightTypeEnum"], list[Union[str, "LightTypeEnum"]]]])
 
 slots.link_addit_analys = Slot(uri=MIXS['0000340'], name="link_addit_analys", curie=MIXS.curie('0000340'),
                    model_uri=NMDC_SUB_SCHEMA.link_addit_analys, domain=None, range=Optional[str])
@@ -18595,7 +18597,7 @@ slots.store_cond = Slot(uri=MIXS['0000327'], name="store_cond", curie=MIXS.curie
                    model_uri=NMDC_SUB_SCHEMA.store_cond, domain=None, range=Optional[str])
 
 slots.substructure_type = Slot(uri=MIXS['0000767'], name="substructure_type", curie=MIXS.curie('0000767'),
-                   model_uri=NMDC_SUB_SCHEMA.substructure_type, domain=None, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.substructure_type, domain=None, range=Optional[Union[Union[str, "SubstructureTypeEnum"], list[Union[str, "SubstructureTypeEnum"]]]])
 
 slots.sulfate = Slot(uri=MIXS['0000423'], name="sulfate", curie=MIXS.curie('0000423'),
                    model_uri=NMDC_SUB_SCHEMA.sulfate, domain=None, range=Optional[str])
@@ -18607,7 +18609,7 @@ slots.sulfide = Slot(uri=MIXS['0000424'], name="sulfide", curie=MIXS.curie('0000
                    model_uri=NMDC_SUB_SCHEMA.sulfide, domain=None, range=Optional[str])
 
 slots.surf_air_cont = Slot(uri=MIXS['0000759'], name="surf_air_cont", curie=MIXS.curie('0000759'),
-                   model_uri=NMDC_SUB_SCHEMA.surf_air_cont, domain=None, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.surf_air_cont, domain=None, range=Optional[Union[Union[str, "SurfAirContEnum"], list[Union[str, "SurfAirContEnum"]]]])
 
 slots.surf_humidity = Slot(uri=MIXS['0000123'], name="surf_humidity", curie=MIXS.curie('0000123'),
                    model_uri=NMDC_SUB_SCHEMA.surf_humidity, domain=None, range=Optional[str])
@@ -18649,7 +18651,7 @@ slots.tidal_stage = Slot(uri=MIXS['0000750'], name="tidal_stage", curie=MIXS.cur
                    model_uri=NMDC_SUB_SCHEMA.tidal_stage, domain=None, range=Optional[Union[str, "TidalStageEnum"]])
 
 slots.tillage = Slot(uri=MIXS['0001081'], name="tillage", curie=MIXS.curie('0001081'),
-                   model_uri=NMDC_SUB_SCHEMA.tillage, domain=None, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.tillage, domain=None, range=Optional[Union[Union[str, "TillageEnum"], list[Union[str, "TillageEnum"]]]])
 
 slots.tiss_cult_growth_med = Slot(uri=MIXS['0001070'], name="tiss_cult_growth_med", curie=MIXS.curie('0001070'),
                    model_uri=NMDC_SUB_SCHEMA.tiss_cult_growth_med, domain=None, range=Optional[str])
@@ -18859,15 +18861,15 @@ slots.protocol_link = Slot(uri=NMDC_SUB_SCHEMA.protocol_link, name="protocol_lin
                    model_uri=NMDC_SUB_SCHEMA.protocol_link, domain=None, range=Optional[Union[dict, Protocol]])
 
 slots.insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   model_uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
 slots.insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   model_uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
 
 slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers, name="alternative_identifiers", curie=NMDC_SUB_SCHEMA.curie('alternative_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]],
+                   model_uri=NMDC_SUB_SCHEMA.alternative_identifiers, domain=None, range=Optional[Union[Union[str, URIorCURIE], list[Union[str, URIorCURIE]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,\(\)\=\#]*$'))
 
 slots.alternative_names = Slot(uri=NMDC_SUB_SCHEMA.alternative_names, name="alternative_names", curie=NMDC_SUB_SCHEMA.curie('alternative_names'),
@@ -18926,14 +18928,14 @@ slots.biomaterial_purity = Slot(uri=NMDC_SUB_SCHEMA.biomaterial_purity, name="bi
                    model_uri=NMDC_SUB_SCHEMA.biomaterial_purity, domain=None, range=Optional[str])
 
 slots.external_database_identifiers = Slot(uri=NMDC_SUB_SCHEMA.external_database_identifiers, name="external_database_identifiers", curie=NMDC_SUB_SCHEMA.curie('external_database_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.external_database_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   model_uri=NMDC_SUB_SCHEMA.external_database_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
 
 slots.insdc_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_identifiers, name="insdc_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.insdc_identifiers, domain=None, range=Optional[str])
 
 slots.study_identifiers = Slot(uri=NMDC_SUB_SCHEMA.study_identifiers, name="study_identifiers", curie=NMDC_SUB_SCHEMA.curie('study_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.study_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], List[Union[str, ExternalIdentifier]]]],
+                   model_uri=NMDC_SUB_SCHEMA.study_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
 
 slots.url = Slot(uri=NMDC_SUB_SCHEMA.url, name="url", curie=NMDC_SUB_SCHEMA.curie('url'),
@@ -19464,7 +19466,7 @@ slots.BuiltEnvInterface_build_docs = Slot(uri=MIXS['0000787'], name="BuiltEnvInt
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_build_docs, domain=BuiltEnvInterface, range=Optional[Union[str, "BuildDocsEnum"]])
 
 slots.BuiltEnvInterface_build_occup_type = Slot(uri=MIXS['0000761'], name="BuiltEnvInterface_build_occup_type", curie=MIXS.curie('0000761'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_build_occup_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], List[Union[str, "BuildOccupTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_build_occup_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "BuildOccupTypeEnum"], list[Union[str, "BuildOccupTypeEnum"]]]])
 
 slots.BuiltEnvInterface_building_setting = Slot(uri=MIXS['0000768'], name="BuiltEnvInterface_building_setting", curie=MIXS.curie('0000768'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_building_setting, domain=BuiltEnvInterface, range=Optional[Union[str, "BuildingSettingEnum"]])
@@ -19618,7 +19620,7 @@ slots.BuiltEnvInterface_ext_window_orient = Slot(uri=MIXS['0000818'], name="Buil
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ext_window_orient, domain=BuiltEnvInterface, range=Optional[Union[str, "ExtWindowOrientEnum"]])
 
 slots.BuiltEnvInterface_filter_type = Slot(uri=MIXS['0000765'], name="BuiltEnvInterface_filter_type", curie=MIXS.curie('0000765'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_filter_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "FilterTypeEnum"], List[Union[str, "FilterTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_filter_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "FilterTypeEnum"], list[Union[str, "FilterTypeEnum"]]]])
 
 slots.BuiltEnvInterface_fireplace_type = Slot(uri=MIXS['0000802'], name="BuiltEnvInterface_fireplace_type", curie=MIXS.curie('0000802'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_fireplace_type, domain=BuiltEnvInterface, range=Optional[str])
@@ -19675,7 +19677,7 @@ slots.BuiltEnvInterface_handidness = Slot(uri=MIXS['0000809'], name="BuiltEnvInt
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_handidness, domain=BuiltEnvInterface, range=Optional[Union[str, "HandidnessEnum"]])
 
 slots.BuiltEnvInterface_heat_cool_type = Slot(uri=MIXS['0000766'], name="BuiltEnvInterface_heat_cool_type", curie=MIXS.curie('0000766'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_heat_cool_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], List[Union[str, "HeatCoolTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_heat_cool_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], list[Union[str, "HeatCoolTypeEnum"]]]])
 
 slots.BuiltEnvInterface_heat_deliv_loc = Slot(uri=MIXS['0000810'], name="BuiltEnvInterface_heat_deliv_loc", curie=MIXS.curie('0000810'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_heat_deliv_loc, domain=BuiltEnvInterface, range=Optional[Union[str, "HeatDelivLocEnum"]])
@@ -19711,7 +19713,7 @@ slots.BuiltEnvInterface_lat_lon = Slot(uri=MIXS['0000009'], name="BuiltEnvInterf
                    pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
 
 slots.BuiltEnvInterface_light_type = Slot(uri=MIXS['0000769'], name="BuiltEnvInterface_light_type", curie=MIXS.curie('0000769'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_light_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "LightTypeEnum"], List[Union[str, "LightTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_light_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "LightTypeEnum"], list[Union[str, "LightTypeEnum"]]]])
 
 slots.BuiltEnvInterface_max_occup = Slot(uri=MIXS['0000229'], name="BuiltEnvInterface_max_occup", curie=MIXS.curie('0000229'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_max_occup, domain=BuiltEnvInterface, range=Optional[str],
@@ -19878,10 +19880,10 @@ slots.BuiltEnvInterface_specific_humidity = Slot(uri=MIXS['0000214'], name="Buil
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BuiltEnvInterface_substructure_type = Slot(uri=MIXS['0000767'], name="BuiltEnvInterface_substructure_type", curie=MIXS.curie('0000767'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_substructure_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "SubstructureTypeEnum"], List[Union[str, "SubstructureTypeEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_substructure_type, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "SubstructureTypeEnum"], list[Union[str, "SubstructureTypeEnum"]]]])
 
 slots.BuiltEnvInterface_surf_air_cont = Slot(uri=MIXS['0000759'], name="BuiltEnvInterface_surf_air_cont", curie=MIXS.curie('0000759'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_air_cont, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "SurfAirContEnum"], List[Union[str, "SurfAirContEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_air_cont, domain=BuiltEnvInterface, range=Optional[Union[Union[str, "SurfAirContEnum"], list[Union[str, "SurfAirContEnum"]]]])
 
 slots.BuiltEnvInterface_surf_humidity = Slot(uri=MIXS['0000123'], name="BuiltEnvInterface_surf_humidity", curie=MIXS.curie('0000123'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_surf_humidity, domain=BuiltEnvInterface, range=Optional[str],
@@ -22507,7 +22509,7 @@ slots.SoilInterface_temp = Slot(uri=MIXS['0000113'], name="SoilInterface_temp", 
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_tillage = Slot(uri=MIXS['0001081'], name="SoilInterface_tillage", curie=MIXS.curie('0001081'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tillage, domain=SoilInterface, range=Optional[Union[Union[str, "TillageEnum"], List[Union[str, "TillageEnum"]]]])
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_tillage, domain=SoilInterface, range=Optional[Union[Union[str, "TillageEnum"], list[Union[str, "TillageEnum"]]]])
 
 slots.SoilInterface_tot_carb = Slot(uri=MIXS['0000525'], name="SoilInterface_tot_carb", curie=MIXS.curie('0000525'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_tot_carb, domain=SoilInterface, range=Optional[str],
@@ -23193,11 +23195,11 @@ slots.MetagenomeSequencingNonInterleavedDataInterface_protocol_link = Slot(uri=N
                    model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_protocol_link, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[str])
 
 slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
 slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
 
 slots.MetagenomeSequencingInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetagenomeSequencingInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
@@ -23210,11 +23212,11 @@ slots.MetagenomeSequencingInterleavedDataInterface_protocol_link = Slot(uri=NMDC
                    model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_protocol_link, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[str])
 
 slots.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
 slots.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
 
 slots.MetatranscriptomeSequencingNonInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
@@ -23227,11 +23229,11 @@ slots.MetatranscriptomeSequencingNonInterleavedDataInterface_protocol_link = Slo
                    model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_protocol_link, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[str])
 
 slots.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
 slots.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
 
 slots.MetatranscriptomeSequencingInterleavedDataInterface_model = Slot(uri=NMDC['nmdc/model'], name="MetatranscriptomeSequencingInterleavedDataInterface_model", curie=NMDC.curie('nmdc/model'),
@@ -23244,15 +23246,15 @@ slots.MetatranscriptomeSequencingInterleavedDataInterface_protocol_link = Slot(u
                    model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_protocol_link, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[str])
 
 slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC['nmdc/insdc_bioproject_identifiers'], name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC.curie('nmdc/insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
 slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC['nmdc/insdc_experiment_identifiers'], name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC.curie('nmdc/insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, List[str]]],
+                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[Union[str, list[str]]],
                    pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
 
 slots.DhMultiviewCommonColumnsMixin_analysis_type = Slot(uri=NMDC['nmdc/analysis_type'], name="DhMultiviewCommonColumnsMixin_analysis_type", curie=NMDC.curie('nmdc/analysis_type'),
-                   model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_analysis_type, domain=None, range=Union[Union[str, "AnalysisTypeEnum"], List[Union[str, "AnalysisTypeEnum"]]])
+                   model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_analysis_type, domain=None, range=Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]])
 
 slots.DhMultiviewCommonColumnsMixin_samp_name = Slot(uri=MIXS['0001107'], name="DhMultiviewCommonColumnsMixin_samp_name", curie=MIXS.curie('0001107'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_samp_name, domain=None, range=Union[str, DhMultiviewCommonColumnsMixinSampName])

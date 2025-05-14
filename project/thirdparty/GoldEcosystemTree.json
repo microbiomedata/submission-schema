@@ -6376,7 +6376,7 @@
     },
     {
       "name": "Environmental",
-      "count": 101854,
+      "count": 102076,
       "url": "search?Biosample.Ecosystem=Environmental",
       "children": [
         {
@@ -6536,7 +6536,7 @@
         },
         {
           "name": "Aquatic",
-          "count": 57991,
+          "count": 58205,
           "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic",
           "children": [
             {
@@ -6726,7 +6726,7 @@
             },
             {
               "name": "Non-marine Saline and Alkaline",
-              "count": 1695,
+              "count": 1698,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline",
               "children": [
                 {
@@ -6875,12 +6875,12 @@
                 },
                 {
                   "name": "Hypersaline soda lake",
-                  "count": 0,
+                  "count": 3,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Hypersaline soda lake",
                   "children": [
                     {
                       "name": "Sediment",
-                      "count": 0,
+                      "count": 3,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Hypersaline soda lake&Biosample.Specific+Ecosystem=Sediment"
                     },
                     {
@@ -7160,7 +7160,7 @@
             },
             {
               "name": "Thermal springs",
-              "count": 3621,
+              "count": 3808,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs",
               "children": [
                 {
@@ -7321,7 +7321,7 @@
                 },
                 {
                   "name": "Runoff channel",
-                  "count": 120,
+                  "count": 307,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Runoff channel",
                   "children": [
                     {
@@ -7331,7 +7331,7 @@
                     },
                     {
                       "name": "Microbial mats",
-                      "count": 80,
+                      "count": 267,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Runoff channel&Biosample.Specific+Ecosystem=Microbial mats"
                     },
                     {
@@ -7367,7 +7367,7 @@
             },
             {
               "name": "Marine",
-              "count": 28237,
+              "count": 28261,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine",
               "children": [
                 {
@@ -7763,12 +7763,12 @@
                 },
                 {
                   "name": "Epipelagic",
-                  "count": 1071,
+                  "count": 1095,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Epipelagic",
                   "children": [
                     {
                       "name": "Unclassified",
-                      "count": 1071,
+                      "count": 1095,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Epipelagic&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
@@ -9486,7 +9486,7 @@
         },
         {
           "name": "Terrestrial",
-          "count": 42225,
+          "count": 42233,
           "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial",
           "children": [
             {
@@ -10088,7 +10088,7 @@
             },
             {
               "name": "Soil",
-              "count": 39228,
+              "count": 39236,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil",
               "children": [
                 {
@@ -10756,7 +10756,7 @@
                 },
                 {
                   "name": "Unclassified",
-                  "count": 11654,
+                  "count": 11655,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified",
                   "children": [
                     {
@@ -10781,7 +10781,7 @@
                     },
                     {
                       "name": "Unclassified",
-                      "count": 8074,
+                      "count": 8075,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific+Ecosystem=Unclassified"
                     },
                     {
@@ -11248,7 +11248,7 @@
                 },
                 {
                   "name": "Temperate forest",
-                  "count": 4128,
+                  "count": 4135,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Temperate forest",
                   "children": [
                     {
@@ -11258,7 +11258,7 @@
                     },
                     {
                       "name": "Bulk soil",
-                      "count": 2520,
+                      "count": 2527,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Temperate forest&Biosample.Specific+Ecosystem=Bulk soil"
                     },
                     {
@@ -11789,7 +11789,7 @@
     },
     {
       "name": "Host-associated",
-      "count": 96970,
+      "count": 96975,
       "url": "search?Biosample.Ecosystem=Host-associated",
       "children": [
         {
@@ -14418,7 +14418,7 @@
         },
         {
           "name": "Fungi",
-          "count": 1178,
+          "count": 1179,
           "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi",
           "children": [
             {
@@ -14537,17 +14537,17 @@
             },
             {
               "name": "Mycelium",
-              "count": 1017,
+              "count": 1018,
               "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium",
               "children": [
                 {
                   "name": "Unclassified",
-                  "count": 1017,
+                  "count": 1018,
                   "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium&Biosample.Ecosystem+Subtype=Unclassified",
                   "children": [
                     {
                       "name": "Unclassified",
-                      "count": 1017,
+                      "count": 1018,
                       "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Fungi&Biosample.Ecosystem+Type=Mycelium&Biosample.Ecosystem+Subtype=Unclassified&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
@@ -21548,7 +21548,7 @@
         },
         {
           "name": "Plants",
-          "count": 23553,
+          "count": 23555,
           "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants",
           "children": [
             {
@@ -22046,7 +22046,7 @@
             },
             {
               "name": "Roots",
-              "count": 17884,
+              "count": 17886,
               "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots",
               "children": [
                 {
@@ -22080,7 +22080,7 @@
                 },
                 {
                   "name": "Rhizosphere",
-                  "count": 11869,
+                  "count": 11871,
                   "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere",
                   "children": [
                     {
@@ -22090,7 +22090,7 @@
                     },
                     {
                       "name": "Soil",
-                      "count": 3019,
+                      "count": 3021,
                       "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Plants&Biosample.Ecosystem+Type=Roots&Biosample.Ecosystem+Subtype=Rhizosphere&Biosample.Specific+Ecosystem=Soil"
                     }
                   ]
@@ -22885,7 +22885,7 @@
         },
         {
           "name": "Arthropoda: Insects",
-          "count": 2416,
+          "count": 2418,
           "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Arthropoda: Insects",
           "children": [
             {
@@ -23024,7 +23024,7 @@
             },
             {
               "name": "Digestive system",
-              "count": 947,
+              "count": 949,
               "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Arthropoda: Insects&Biosample.Ecosystem+Type=Digestive system",
               "children": [
                 {
@@ -23098,12 +23098,12 @@
                 },
                 {
                   "name": "Gut",
-                  "count": 689,
+                  "count": 691,
                   "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Arthropoda: Insects&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Gut",
                   "children": [
                     {
                       "name": "Unclassified",
-                      "count": 635,
+                      "count": 637,
                       "url": "search?Biosample.Ecosystem=Host-associated&Biosample.Ecosystem+Category=Arthropoda: Insects&Biosample.Ecosystem+Type=Digestive system&Biosample.Ecosystem+Subtype=Gut&Biosample.Specific+Ecosystem=Unclassified"
                     },
                     {
