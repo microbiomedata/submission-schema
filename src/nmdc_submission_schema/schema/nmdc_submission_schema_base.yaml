@@ -388,6 +388,7 @@ slots:
     required: true
     slot_group: data_files_section
     rank: 10
+    pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   read_1_md5_checksum:
     title: read 1 FASTQ MD5
     description: >-
@@ -398,6 +399,7 @@ slots:
     range: string
     slot_group: data_files_section
     rank: 11
+    pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
   read_2_url:
     title: read 2 FASTQ
     description: >-
@@ -411,6 +413,7 @@ slots:
     required: true
     slot_group: data_files_section
     rank: 12
+    pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   read_2_md5_checksum:
     title: read 2 FASTQ MD5
     description: >-
@@ -421,6 +424,7 @@ slots:
     range: string
     slot_group: data_files_section
     rank: 13
+    pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
   interleaved_url:
     title: interleaved FASTQ
     description: >-
@@ -434,6 +438,7 @@ slots:
     required: true
     slot_group: data_files_section
     rank: 14
+    pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   interleaved_md5_checksum:
     title: interleaved FASTQ MD5
     description: >-
@@ -444,6 +449,7 @@ slots:
     range: string
     slot_group: data_files_section
     rank: 15
+    pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
 classes:
   AirInterface:
     annotations:
