@@ -269,7 +269,7 @@ SoilInterface	slope_aspect	overwrite_examples	examples			35 degrees
 SoilInterface	slope_aspect	add_attribute	todos			This is no longer matching the listed IRI from GSC. When NMDC has its own slots, map this to the MIxS slot
 SoilInterface	slope_gradient	replace_attribute	string_serialization			{percentage}
 SoilInterface	slope_gradient	overwrite_examples	examples			10%
-DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI biosample accession IDs.
+DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI biosample accession IDs, `gold` for GOLD identifiers.
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the parent sample or sample that is the source of this sample.
 DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			igsn:AU1243|biosample:SAMEA2397676 
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	string_serialization			{text}:{text}
