@@ -919,9 +919,6 @@ attributes:
     - Currently, the comments say to use UUIDs. However, if we implement assigning
       NMDC identifiers with the minter we dont need to require a GUID. It can be an
       optional field to fill out only if they already have a resolvable ID.
-    - Currently, the comments say to use UUIDs. However, if we implement assigning
-      NMDC identifiers with the minter we dont need to require a GUID. It can be an
-      optional field to fill out only if they already have a resolvable ID.
     comments:
     - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
       NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
@@ -929,11 +926,9 @@ attributes:
       FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
     - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
       NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
-      IDs enable linking to derived analytes and subsamples. If you have not assigned
-      FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+      IDs enable linking to derived analytes and subsamples.
     examples:
     - value: IGSN:AU1243
-    - value: UUID:24f1467a-40f4-11ed-b878-0242ac120002
     from_schema: https://w3id.org/nmdc/nmdc
     aliases:
     - source material identifiers
