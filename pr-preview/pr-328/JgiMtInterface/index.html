@@ -562,7 +562,7 @@
 <tr>
 <td><a href="../source_mat_id/">source_mat_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A globally unique identifier assigned to the biological sample</td>
+<td>A globally unique identifier assigned to the parent sample or sample that is ...</td>
 <td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
 </tr>
 </tbody>
@@ -1824,7 +1824,8 @@ attributes:
         tag: expected_value
         value: 'for cultures of microorganisms: identifiers for two culture collections;
           for other material a unique arbitrary identifer'
-    description: A globally unique identifier assigned to the biological sample.
+    description: A globally unique identifier assigned to the parent sample or sample
+      that is the source of this sample.
     title: source material identifier
     todos:
     - Currently, the comments say to use UUIDs. However, if we implement assigning
