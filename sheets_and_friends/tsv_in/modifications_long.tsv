@@ -272,7 +272,6 @@ SoilInterface	slope_gradient	overwrite_examples	examples			10%
 DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn), NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These IDs enable linking to derived analytes and subsamples. If you have not assigned FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the biological sample.
 DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			IGSN:AU1243|UUID:24f1467a-40f4-11ed-b878-0242ac120002
-DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	notes			The source material IS the Globally Unique ID
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	string_serialization			{text}:{text}
 DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	todos			Currently, the comments say to use UUIDs. However, if we implement assigning NMDC identifiers with the minter we dont need to require a GUID. It can be an optional field to fill out only if they already have a resolvable ID.
 SoilInterface	specific_ecosystem	replace_attribute	range			SpecificEcosystemForSoilEnum
