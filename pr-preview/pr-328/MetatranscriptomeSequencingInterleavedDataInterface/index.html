@@ -867,11 +867,12 @@ attributes:
       NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
       IDs enable linking to derived analytes and subsamples. If you have not assigned
       FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
-    - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
-      NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
-      IDs enable linking to derived analytes and subsamples.
+    - 'Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International
+      Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for
+      NCBI biosample accession IDs.'
     examples:
-    - value: IGSN:AU1243
+    - value: igsn:AU1243
+    - value: biosample:SAMEA2397676
     from_schema: https://w3id.org/nmdc/nmdc
     aliases:
     - source material identifiers
