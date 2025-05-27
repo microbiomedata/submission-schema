@@ -273,6 +273,7 @@ DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the parent sample or sample that is the source of this sample.
 DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			igsn:AU1243|biosample:SAMEA2397676 
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	string_serialization			{text}:{text}
+DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	pattern			^(igsn|biosample|gold):[a-zA-Z0-9]+(\|(igsn|biosample|gold):[a-zA-Z0-9]+)*$
 SoilInterface	specific_ecosystem	replace_attribute	range			SpecificEcosystemForSoilEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface	specific_ecosystem	replace_attribute	range			SpecificEcosystemEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	specific_ecosystem	replace_attribute	recommended			true
