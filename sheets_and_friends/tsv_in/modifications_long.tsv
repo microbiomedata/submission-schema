@@ -18,6 +18,7 @@ PlantAssociatedInterface|SoilInterface	biotic_regm	replace_attribute	recommended
 BuiltEnvInterface	built_struc_age	overwrite_examples	examples			15 years
 SoilInterface	bulk_elect_conductivity	overwrite_examples	examples			0.017 mS/cm
 BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface	carb_nitro_ratio	replace_attribute	range			float
+BiofilmInterface|SedimentInterface|SoilInterface|WaterInterface	carb_nitro_ratio	remove_attribute	pattern
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	chem_administration	replace_attribute	pattern			^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	chem_administration	replace_attribute	range			string
 AirInterface|BiofilmInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	chem_administration	replace_attribute	recommended			true
@@ -166,6 +167,7 @@ SedimentInterface|SoilInterface	microbial_biomass_n	replace_attribute	pattern			
 SoilInterface	non_microb_biomass	remove_attribute	string_serialization
 SoilInterface	non_microb_biomass	replace_attribute	pattern			^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
 BuiltEnvInterface	occup_samp	replace_attribute	range			integer
+BuiltEnvInterface	occup_samp	remove_attribute	pattern
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	replace_attribute	pattern			^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other))$
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	replace_attribute	range			string
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WaterInterface|WastewaterSludgeInterface	organism_count	overwrite_examples	examples			total prokaryotes;3.5e7 cells/mL;qPCR
@@ -223,6 +225,7 @@ PlantAssociatedInterface	root_med_carbon	overwrite_examples	examples			sucrose;5
 PlantAssociatedInterface	root_med_macronutr	overwrite_examples	examples			KH2PO4;170 mg/L
 PlantAssociatedInterface	root_med_micronutr	overwrite_examples	examples			H3BO3;6.2 mg/L
 PlantAssociatedInterface	root_med_ph	replace_attribute	range			float
+PlantAssociatedInterface	root_med_ph	remove_attribute	pattern
 PlantAssociatedInterface	root_med_ph	replace_attribute	minimum_value			1
 PlantAssociatedInterface	root_med_ph	replace_attribute	maximum_value			14
 SoilInterface	salinity_meth	overwrite_examples	examples			https://doi.org/10.1007/978-1-61779-986-0_28
