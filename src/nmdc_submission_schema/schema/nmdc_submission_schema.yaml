@@ -97,6 +97,9 @@ prefixes:
   MASSIVE:
     prefix_prefix: MASSIVE
     prefix_reference: 'https://bioregistry.io/reference/massive:'
+  MCO:
+    prefix_prefix: MCO
+    prefix_reference: http://purl.obolibrary.org/obo/MICRO_
   MESH:
     prefix_prefix: MESH
     prefix_reference: 'https://bioregistry.io/mesh:'
@@ -117,7 +120,7 @@ prefixes:
     prefix_reference: http://example.org/metanetx/
   NCBI:
     prefix_prefix: NCBI
-    prefix_reference: http://example.com/ncbitaxon/
+    prefix_reference: http://example.org/ncbitaxon/
   NCBITaxon:
     prefix_prefix: NCBITaxon
     prefix_reference: http://purl.obolibrary.org/obo/NCBITaxon_
@@ -219,7 +222,7 @@ prefixes:
     prefix_reference: http://example.org/emsl_uuid_like/
   generic:
     prefix_prefix: generic
-    prefix_reference: https://example.org/generic/
+    prefix_reference: http://example.org/generic/
   gnps.task:
     prefix_prefix: gnps.task
     prefix_reference: 'https://bioregistry.io/gnps.task:'
@@ -292,9 +295,6 @@ prefixes:
   wikidata:
     prefix_prefix: wikidata
     prefix_reference: http://www.wikidata.org/entity/
-  MIXS_yaml:
-    prefix_prefix: MIXS_yaml
-    prefix_reference: https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/
 default_prefix: nmdc_sub_schema
 default_range: string
 subsets:
@@ -339,49 +339,16 @@ types:
     - https://en.wikipedia.org/wiki/ISO_639-1
     base: str
     uri: xsd:language
-  decimal_degree:
-    name: decimal_degree
-    description: A decimal degree expresses latitude or longitude as decimal fractions.
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/Decimal_degrees
-    base: float
-    uri: xsd:decimal
-  string:
-    name: string
-    description: A character string
-    notes:
-    - In RDF serializations, a slot with range of string is treated as a literal or
-      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
-      referenced with the lower case "string".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Text
-    base: str
-    uri: xsd:string
-  boolean:
-    name: boolean
-    description: A binary (true or false) value
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
     notes:
     - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "boolean".
+      lower case "uriorcurie".
     from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Boolean
-    base: Bool
-    uri: xsd:boolean
-    repr: bool
-  integer:
-    name: integer
-    description: An integer
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
@@ -393,6 +360,14 @@ types:
     - schema:Float
     base: float
     uri: xsd:float
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/Decimal_degrees
+    base: float
+    uri: xsd:decimal
   double:
     name: double
     description: A real number that conforms to the xsd:double specification
@@ -416,16 +391,41 @@ types:
     - schema:Number
     base: Decimal
     uri: xsd:decimal
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
     notes:
     - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
+      lower case "boolean".
     from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
   external_identifier:
     name: external_identifier
     description: A CURIE representing an external identifier

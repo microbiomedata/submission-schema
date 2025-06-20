@@ -3762,14 +3762,14 @@ test = ["pytest (>=7.2)", "pytest-cov (>=4.0)"]
 
 [[package]]
 name = "nmdc-schema"
-version = "11.7.0"
+version = "11.8.0"
 description = "Schema resources for the National Microbiome Data Collaborative (NMDC)"
 optional = false
 python-versions = "<4.0,>=3.9"
 groups = ["dev"]
 files = [
-    {file = "nmdc_schema-11.7.0-py3-none-any.whl", hash = "sha256:046471dbb3f3114d2f4abdadf91ab1e3918e2fd3508f2b2abce189b5137f5e6d"},
-    {file = "nmdc_schema-11.7.0.tar.gz", hash = "sha256:7468baf451cfbba047874c99da9f769b0a4093dc43f9ce62ec87562d36aa87d3"},
+    {file = "nmdc_schema-11.8.0-py3-none-any.whl", hash = "sha256:5649b25cb1d390830199ffcff2b1ec0f5d7a6b1ee35f01f0de039c5d7f5c8f9e"},
+    {file = "nmdc_schema-11.8.0.tar.gz", hash = "sha256:537b16b7d83526bd4fbf715d2775c615d44c5d25e0fa3b8f2ea3960d8fa156cd"},
 ]
 
 [package.dependencies]
@@ -5134,7 +5134,6 @@ optional = false
 python-versions = "*"
 groups = ["main", "dev"]
 files = [
-    {file = "PyTrie-0.4.0-py3-none-any.whl", hash = "sha256:f687c224ee8c66cda8e8628a903011b692635ffbb08d4b39c5f92b18eb78c950"},
     {file = "PyTrie-0.4.0.tar.gz", hash = "sha256:8f4488f402d3465993fb6b6efa09866849ed8cda7903b50647b7d0342b805379"},
 ]
 
@@ -6849,4 +6848,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "1e76bf110eb91bc1cbc06567abd1c5e1c5903cddb32f71603286ac7bf74cc72b"
+content-hash = "6b9b946c0c4233c77c908f5c9e794525b2c38d008caf3dac4f6e2062ac500577"
