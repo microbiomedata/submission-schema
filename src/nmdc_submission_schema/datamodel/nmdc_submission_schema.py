@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-14T16:29:39
+# Generation date: 2025-06-20T19:45:23
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -86,14 +86,14 @@ KEGG_ORTHOLOGY = CurieNamespace('KEGG_ORTHOLOGY', 'https://bioregistry.io/kegg.o
 KEGG_REACTION = CurieNamespace('KEGG_REACTION', 'https://bioregistry.io/kegg.reaction:')
 KEGG_PATHWAY = CurieNamespace('KEGG_PATHWAY', 'https://bioregistry.io/kegg.pathway:')
 MASSIVE = CurieNamespace('MASSIVE', 'https://bioregistry.io/reference/massive:')
+MCO = CurieNamespace('MCO', 'http://purl.obolibrary.org/obo/MICRO_')
 MESH = CurieNamespace('MESH', 'https://bioregistry.io/mesh:')
 MISO = CurieNamespace('MISO', 'http://purl.obolibrary.org/obo/MISO_')
 MIXS = CurieNamespace('MIXS', 'https://w3id.org/mixs/')
-MIXS_YAML = CurieNamespace('MIXS_yaml', 'https://raw.githubusercontent.com/microbiomedata/mixs/main/model/schema/')
 MS = CurieNamespace('MS', 'http://purl.obolibrary.org/obo/MS_')
 METACYC = CurieNamespace('MetaCyc', 'https://bioregistry.io/metacyc.compound:')
 METANETX = CurieNamespace('MetaNetX', 'http://example.org/metanetx/')
-NCBI = CurieNamespace('NCBI', 'http://example.com/ncbitaxon/')
+NCBI = CurieNamespace('NCBI', 'http://example.org/ncbitaxon/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
@@ -128,7 +128,7 @@ EDAM_FORMAT = CurieNamespace('edam_format', 'http://edamontology.org/format_')
 EMSL = CurieNamespace('emsl', 'http://example.org/emsl_in_mongodb/')
 EMSL_PROJECT = CurieNamespace('emsl_project', 'https://bioregistry.io/emsl.project:')
 EMSL_UUID_LIKE = CurieNamespace('emsl_uuid_like', 'http://example.org/emsl_uuid_like/')
-GENERIC = CurieNamespace('generic', 'https://example.org/generic/')
+GENERIC = CurieNamespace('generic', 'http://example.org/generic/')
 GNPS_TASK = CurieNamespace('gnps_task', 'https://bioregistry.io/gnps.task:')
 GOLD = CurieNamespace('gold', 'https://bioregistry.io/gold:')
 GTPO = CurieNamespace('gtpo', 'http://example.org/gtpo/')
@@ -195,36 +195,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
-
-
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
-
-
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Float(float):
@@ -233,6 +209,14 @@ class Float(float):
     type_class_curie = "xsd:float"
     type_name = "float"
     type_model_uri = NMDC_SUB_SCHEMA.Float
+
+
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
 
 
 class Double(float):
@@ -251,12 +235,28 @@ class Decimal(Decimal):
     type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+
+
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
+
+
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
 
 
 class Time(XSDTime):
