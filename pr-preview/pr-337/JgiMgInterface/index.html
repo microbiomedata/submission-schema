@@ -1,0 +1,1981 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://microbiomedata.github.io/submission-schema/JgiMgInterface/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.48" name="generator"/>
+<title>Class: JGI MG (JgiMgInterface) - submission-schema</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-jgi-mg-jgimginterface">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="submission-schema" class="md-header__button md-logo" data-md-component="logo" href=".." title="submission-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            submission-schema
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: JGI MG (JgiMgInterface)
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/microbiomedata/submission-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="submission-schema" class="md-nav__button md-logo" data-md-component="logo" href=".." title="submission-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    submission-schema
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/microbiomedata/submission-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Index
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    About
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://microbiomedata.github.io/submission-schema/_playground/">
+<span class="md-ellipsis">
+    Submission Schema DH Playground
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/SoilInterface">
+<span class="md-ellipsis">
+    Direct submission of soil samples
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+<span class="md-ellipsis">
+      Inheritance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+<span class="md-ellipsis">
+      Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+<span class="md-ellipsis">
+      Usages
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+<span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+</a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#annotations">
+<span class="md-ellipsis">
+      Annotations
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+<span class="md-ellipsis">
+      Schema Source
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+<span class="md-ellipsis">
+      Mappings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+<span class="md-ellipsis">
+      LinkML Source
+    </span>
+</a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+<span class="md-ellipsis">
+      Direct
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+<span class="md-ellipsis">
+      Induced
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-jgi-mg-jgimginterface">Class: JGI MG (JgiMgInterface)</h1>
+<p><em>Metadata for samples sent to JGI for standard metagenome sequencing</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/JgiMgInterface">nmdc_sub_schema:JgiMgInterface</a></p>
+<div class="mermaid"> classDiagram
+    class JgiMgInterface
+    click JgiMgInterface href "../JgiMgInterface"
+      DhMultiviewCommonColumnsMixin &lt;|-- JgiMgInterface
+        click DhMultiviewCommonColumnsMixin href "../DhMultiviewCommonColumnsMixin"
+      DhInterface &lt;|-- JgiMgInterface
+        click DhInterface href "../DhInterface"
+
+      JgiMgInterface : analysis_type
+
+
+
+
+    JgiMgInterface --&gt; "1..*" AnalysisTypeEnum : analysis_type
+    click AnalysisTypeEnum href "../AnalysisTypeEnum"
+
+
+      JgiMgInterface : dna_absorb1
+
+      JgiMgInterface : dna_absorb2
+
+      JgiMgInterface : dna_concentration
+
+      JgiMgInterface : dna_cont_type
+
+
+
+
+    JgiMgInterface --&gt; "1" JgiContTypeEnum : dna_cont_type
+    click JgiContTypeEnum href "../JgiContTypeEnum"
+
+
+      JgiMgInterface : dna_cont_well
+
+      JgiMgInterface : dna_container_id
+
+      JgiMgInterface : dna_dnase
+
+
+
+
+    JgiMgInterface --&gt; "1" YesNoEnum : dna_dnase
+    click YesNoEnum href "../YesNoEnum"
+
+
+      JgiMgInterface : dna_isolate_meth
+
+      JgiMgInterface : dna_project_contact
+
+      JgiMgInterface : dna_samp_id
+
+      JgiMgInterface : dna_sample_format
+
+
+
+
+    JgiMgInterface --&gt; "1" DNASampleFormatEnum : dna_sample_format
+    click DNASampleFormatEnum href "../DNASampleFormatEnum"
+
+
+      JgiMgInterface : dna_sample_name
+
+      JgiMgInterface : dna_seq_project
+
+      JgiMgInterface : dna_seq_project_name
+
+      JgiMgInterface : dna_seq_project_pi
+
+      JgiMgInterface : dna_volume
+
+      JgiMgInterface : proposal_dna
+
+      JgiMgInterface : samp_name
+
+      JgiMgInterface : source_mat_id
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../DhInterface/">DhInterface</a><ul>
+<li><strong>JgiMgInterface</strong> [ <a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a>]</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../dna_absorb1/">dna_absorb1</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>260/280 measurement of DNA sample purity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_absorb2/">dna_absorb2</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>260/230 measurement of DNA sample purity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_concentration/">dna_concentration</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_cont_type/">dna_cont_type</a></td>
+<td>1 <br/> <a href="../JgiContTypeEnum/">JgiContTypeEnum</a></td>
+<td>Tube or plate (96-well)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_cont_well/">dna_cont_well</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_container_id/">dna_container_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_dnase/">dna_dnase</a></td>
+<td>1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_isolate_meth/">dna_isolate_meth</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Describe the method/protocol/kit used to extract DNA/RNA</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_project_contact/">dna_project_contact</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_samp_id/">dna_samp_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_sample_format/">dna_sample_format</a></td>
+<td>1 <br/> <a href="../DNASampleFormatEnum/">DNASampleFormatEnum</a></td>
+<td>Solution in which the DNA sample has been suspended</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_sample_name/">dna_sample_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Give the DNA sample a name that is meaningful to you</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_seq_project/">dna_seq_project</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_seq_project_name/">dna_seq_project_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_seq_project_pi/">dna_seq_project_pi</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_volume/">dna_volume</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../proposal_dna/">proposal_dna</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_absorb1/">dna_absorb1</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>260/280 measurement of DNA sample purity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_absorb2/">dna_absorb2</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>260/230 measurement of DNA sample purity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_concentration/">dna_concentration</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_cont_type/">dna_cont_type</a></td>
+<td>1 <br/> <a href="../JgiContTypeEnum/">JgiContTypeEnum</a></td>
+<td>Tube or plate (96-well)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_cont_well/">dna_cont_well</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_container_id/">dna_container_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_dnase/">dna_dnase</a></td>
+<td>1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_isolate_meth/">dna_isolate_meth</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Describe the method/protocol/kit used to extract DNA/RNA</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_project_contact/">dna_project_contact</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_samp_id/">dna_samp_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_sample_format/">dna_sample_format</a></td>
+<td>1 <br/> <a href="../DNASampleFormatEnum/">DNASampleFormatEnum</a></td>
+<td>Solution in which the DNA sample has been suspended</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_sample_name/">dna_sample_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Give the DNA sample a name that is meaningful to you</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_seq_project/">dna_seq_project</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_seq_project_name/">dna_seq_project_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_seq_project_pi/">dna_seq_project_pi</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../dna_volume/">dna_volume</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../proposal_dna/">proposal_dna</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../analysis_type/">analysis_type</a></td>
+<td>1..* <br/> <a href="../AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
+<td>Select all the data types associated or available for this biosample</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+<tr>
+<td><a href="../samp_name/">samp_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A local identifier or name that for the material sample collected</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+<tr>
+<td><a href="../source_mat_id/">source_mat_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A globally unique identifier assigned to the biological sample</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../SampleData/">SampleData</a></td>
+<td><a href="../jgi_mg_data/">jgi_mg_data</a></td>
+<td>range</td>
+<td><a href="./">JgiMgInterface</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>excel_worksheet_name</td>
+<td>JGI MG</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>nmdc_sub_schema:JgiMgInterface</td>
+</tr>
+<tr>
+<td>native</td>
+<td>nmdc_sub_schema:JgiMgInterface</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: JgiMgInterface
+annotations:
+  excel_worksheet_name:
+    tag: excel_worksheet_name
+    value: JGI MG
+description: Metadata for samples sent to JGI for standard metagenome sequencing
+title: JGI MG
+from_schema: https://example.com/nmdc_submission_schema
+is_a: DhInterface
+mixins:
+- DhMultiviewCommonColumnsMixin
+slots:
+- dna_absorb1
+- dna_absorb2
+- dna_concentration
+- dna_cont_type
+- dna_cont_well
+- dna_container_id
+- dna_dnase
+- dna_isolate_meth
+- dna_project_contact
+- dna_samp_id
+- dna_sample_format
+- dna_sample_name
+- dna_seq_project
+- dna_seq_project_name
+- dna_seq_project_pi
+- dna_volume
+- proposal_dna
+- dna_absorb1
+- dna_absorb2
+- dna_concentration
+- dna_cont_type
+- dna_cont_well
+- dna_container_id
+- dna_dnase
+- dna_isolate_meth
+- dna_project_contact
+- dna_samp_id
+- dna_sample_format
+- dna_sample_name
+- dna_seq_project
+- dna_seq_project_name
+- dna_seq_project_pi
+- dna_volume
+- proposal_dna
+slot_usage:
+  dna_absorb1:
+    name: dna_absorb1
+    description: 260/280 measurement of DNA sample purity
+    title: DNA absorbance 260/280
+    comments:
+    - Recommended value is between 1 and 3.
+    examples:
+    - value: '2.02'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 7
+    is_a: biomaterial_purity
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - ProcessedSample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    recommended: true
+  dna_absorb2:
+    name: dna_absorb2
+    description: 260/230 measurement of DNA sample purity
+    title: DNA absorbance 260/230
+    comments:
+    - Recommended value is between 1 and 3.
+    examples:
+    - value: '2.02'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 8
+    is_a: biomaterial_purity
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    recommended: true
+  dna_concentration:
+    name: dna_concentration
+    title: DNA concentration in ng/ul
+    comments:
+    - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
+      a fluorometric method. Acceptable values are 0-2000.
+    examples:
+    - value: '100'
+    from_schema: https://w3id.org/nmdc/nmdc
+    see_also:
+    - nmdc:nucleic_acid_concentration
+    rank: 5
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - ProcessedSample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    required: true
+    recommended: false
+    minimum_value: 0
+    maximum_value: 2000
+  dna_cont_type:
+    name: dna_cont_type
+    description: Tube or plate (96-well)
+    title: DNA container type
+    examples:
+    - value: plate
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 10
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: JgiContTypeEnum
+    required: true
+    recommended: false
+  dna_cont_well:
+    name: dna_cont_well
+    title: DNA plate position
+    comments:
+    - Required when 'plate' is selected for container type.
+    - Leave blank if the sample will be shipped in a tube.
+    - JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not
+      pass validation.
+    - For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
+    examples:
+    - value: B2
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 11
+    string_serialization: '{96 well plate pos}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+  dna_container_id:
+    name: dna_container_id
+    title: DNA container label
+    comments:
+    - Must be unique across all tubes and plates, and &lt;20 characters. All samples
+      in a plate should have the same plate label.
+    examples:
+    - value: Pond_MT_041618
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 9
+    string_serialization: '{text &lt; 20 characters}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+    pattern: ^.{1,20}$
+  dna_dnase:
+    name: dna_dnase
+    title: DNase treatment DNA
+    comments:
+    - Note DNase treatment is required for all RNA samples.
+    examples:
+    - value: 'no'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 13
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: YesNoEnum
+    required: true
+    recommended: false
+  dna_isolate_meth:
+    name: dna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: DNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_project_contact:
+    name: dna_project_contact
+    title: DNA seq project contact
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: John Jones
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 18
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_samp_id:
+    name: dna_samp_id
+    title: DNA sample ID
+    todos:
+    - Removed identifier = TRUE from dna_samp_ID in JGI_sample_slots, as a class can't
+      have two identifiers. How to force uniqueness? Moot because that column will
+      be prefilled?
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '187654'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 3
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_sample_format:
+    name: dna_sample_format
+    description: Solution in which the DNA sample has been suspended
+    title: DNA sample format
+    examples:
+    - value: Water
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 12
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: DNASampleFormatEnum
+    required: true
+    recommended: false
+  dna_sample_name:
+    name: dna_sample_name
+    description: Give the DNA sample a name that is meaningful to you. Sample names
+      must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
+    title: DNA sample name
+    examples:
+    - value: JGI_pond_041618
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 4
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+    pattern: ^[_a-zA-Z0-9-]*$
+  dna_seq_project:
+    name: dna_seq_project
+    title: DNA seq project ID
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '1191234'
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - Seq Project ID
+    rank: 1
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_seq_project_name:
+    name: dna_seq_project_name
+    title: DNA seq project name
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: JGI Pond metagenomics
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 2
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_seq_project_pi:
+    name: dna_seq_project_pi
+    title: DNA seq project PI
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: Jane Johnson
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 17
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_volume:
+    name: dna_volume
+    title: DNA volume in ul
+    comments:
+    - Units must be in uL. Enter the numerical part only. Value must be 0-1000. This
+      form accepts values &lt; 25, but JGI may refuse to process them unless permission
+      has been granted by a project manager
+    examples:
+    - value: '25'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 6
+    string_serialization: '{float}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    required: true
+    recommended: false
+    minimum_value: 0
+    maximum_value: 1000
+  proposal_dna:
+    name: proposal_dna
+    title: DNA proposal ID
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '504000'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 19
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  oxy_stat_samp:
+    name: oxy_stat_samp
+    range: OxyStatSampEnum
+rules:
+- preconditions:
+    slot_conditions:
+      dna_cont_well:
+        name: dna_cont_well
+        pattern: .+
+  postconditions:
+    slot_conditions:
+      dna_cont_type:
+        name: dna_cont_type
+        equals_string: plate
+  description: DNA samples shipped to JGI for metagenomic analysis in tubes can't
+    have any value for their plate position.
+  title: dna_well_requires_plate
+- preconditions:
+    slot_conditions:
+      dna_cont_type:
+        name: dna_cont_type
+        equals_string: plate
+  postconditions:
+    slot_conditions:
+      dna_cont_well:
+        name: dna_cont_well
+        pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+  description: DNA samples in plates must have a plate position that matches the regex.
+    Note the requirement for an empty string in the tube case. Waiting for value_present
+    validation to be added to runtime
+  title: dna_plate_requires_well
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: JgiMgInterface
+annotations:
+  excel_worksheet_name:
+    tag: excel_worksheet_name
+    value: JGI MG
+description: Metadata for samples sent to JGI for standard metagenome sequencing
+title: JGI MG
+from_schema: https://example.com/nmdc_submission_schema
+is_a: DhInterface
+mixins:
+- DhMultiviewCommonColumnsMixin
+slot_usage:
+  dna_absorb1:
+    name: dna_absorb1
+    description: 260/280 measurement of DNA sample purity
+    title: DNA absorbance 260/280
+    comments:
+    - Recommended value is between 1 and 3.
+    examples:
+    - value: '2.02'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 7
+    is_a: biomaterial_purity
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - ProcessedSample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    recommended: true
+  dna_absorb2:
+    name: dna_absorb2
+    description: 260/230 measurement of DNA sample purity
+    title: DNA absorbance 260/230
+    comments:
+    - Recommended value is between 1 and 3.
+    examples:
+    - value: '2.02'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 8
+    is_a: biomaterial_purity
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    recommended: true
+  dna_concentration:
+    name: dna_concentration
+    title: DNA concentration in ng/ul
+    comments:
+    - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
+      a fluorometric method. Acceptable values are 0-2000.
+    examples:
+    - value: '100'
+    from_schema: https://w3id.org/nmdc/nmdc
+    see_also:
+    - nmdc:nucleic_acid_concentration
+    rank: 5
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - ProcessedSample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    required: true
+    recommended: false
+    minimum_value: 0
+    maximum_value: 2000
+  dna_cont_type:
+    name: dna_cont_type
+    description: Tube or plate (96-well)
+    title: DNA container type
+    examples:
+    - value: plate
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 10
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: JgiContTypeEnum
+    required: true
+    recommended: false
+  dna_cont_well:
+    name: dna_cont_well
+    title: DNA plate position
+    comments:
+    - Required when 'plate' is selected for container type.
+    - Leave blank if the sample will be shipped in a tube.
+    - JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not
+      pass validation.
+    - For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
+    examples:
+    - value: B2
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 11
+    string_serialization: '{96 well plate pos}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+  dna_container_id:
+    name: dna_container_id
+    title: DNA container label
+    comments:
+    - Must be unique across all tubes and plates, and &lt;20 characters. All samples
+      in a plate should have the same plate label.
+    examples:
+    - value: Pond_MT_041618
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 9
+    string_serialization: '{text &lt; 20 characters}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+    pattern: ^.{1,20}$
+  dna_dnase:
+    name: dna_dnase
+    title: DNase treatment DNA
+    comments:
+    - Note DNase treatment is required for all RNA samples.
+    examples:
+    - value: 'no'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 13
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: YesNoEnum
+    required: true
+    recommended: false
+  dna_isolate_meth:
+    name: dna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: DNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_project_contact:
+    name: dna_project_contact
+    title: DNA seq project contact
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: John Jones
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 18
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_samp_id:
+    name: dna_samp_id
+    title: DNA sample ID
+    todos:
+    - Removed identifier = TRUE from dna_samp_ID in JGI_sample_slots, as a class can't
+      have two identifiers. How to force uniqueness? Moot because that column will
+      be prefilled?
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '187654'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 3
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_sample_format:
+    name: dna_sample_format
+    description: Solution in which the DNA sample has been suspended
+    title: DNA sample format
+    examples:
+    - value: Water
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 12
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: DNASampleFormatEnum
+    required: true
+    recommended: false
+  dna_sample_name:
+    name: dna_sample_name
+    description: Give the DNA sample a name that is meaningful to you. Sample names
+      must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
+    title: DNA sample name
+    examples:
+    - value: JGI_pond_041618
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 4
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+    pattern: ^[_a-zA-Z0-9-]*$
+  dna_seq_project:
+    name: dna_seq_project
+    title: DNA seq project ID
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '1191234'
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - Seq Project ID
+    rank: 1
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_seq_project_name:
+    name: dna_seq_project_name
+    title: DNA seq project name
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: JGI Pond metagenomics
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 2
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_seq_project_pi:
+    name: dna_seq_project_pi
+    title: DNA seq project PI
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: Jane Johnson
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 17
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_volume:
+    name: dna_volume
+    title: DNA volume in ul
+    comments:
+    - Units must be in uL. Enter the numerical part only. Value must be 0-1000. This
+      form accepts values &lt; 25, but JGI may refuse to process them unless permission
+      has been granted by a project manager
+    examples:
+    - value: '25'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 6
+    string_serialization: '{float}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    required: true
+    recommended: false
+    minimum_value: 0
+    maximum_value: 1000
+  proposal_dna:
+    name: proposal_dna
+    title: DNA proposal ID
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '504000'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 19
+    string_serialization: '{text}'
+    owner: Biosample
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  oxy_stat_samp:
+    name: oxy_stat_samp
+    range: OxyStatSampEnum
+attributes:
+  dna_absorb1:
+    name: dna_absorb1
+    description: 260/280 measurement of DNA sample purity
+    title: DNA absorbance 260/280
+    comments:
+    - Recommended value is between 1 and 3.
+    examples:
+    - value: '2.02'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 7
+    is_a: biomaterial_purity
+    alias: dna_absorb1
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - ProcessedSample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    recommended: true
+  dna_absorb2:
+    name: dna_absorb2
+    description: 260/230 measurement of DNA sample purity
+    title: DNA absorbance 260/230
+    comments:
+    - Recommended value is between 1 and 3.
+    examples:
+    - value: '2.02'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 8
+    is_a: biomaterial_purity
+    alias: dna_absorb2
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    recommended: true
+  dna_concentration:
+    name: dna_concentration
+    title: DNA concentration in ng/ul
+    comments:
+    - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
+      a fluorometric method. Acceptable values are 0-2000.
+    examples:
+    - value: '100'
+    from_schema: https://w3id.org/nmdc/nmdc
+    see_also:
+    - nmdc:nucleic_acid_concentration
+    rank: 5
+    alias: dna_concentration
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - ProcessedSample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    required: true
+    recommended: false
+    minimum_value: 0
+    maximum_value: 2000
+  dna_cont_type:
+    name: dna_cont_type
+    description: Tube or plate (96-well)
+    title: DNA container type
+    examples:
+    - value: plate
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 10
+    alias: dna_cont_type
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: JgiContTypeEnum
+    required: true
+    recommended: false
+  dna_cont_well:
+    name: dna_cont_well
+    title: DNA plate position
+    comments:
+    - Required when 'plate' is selected for container type.
+    - Leave blank if the sample will be shipped in a tube.
+    - JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not
+      pass validation.
+    - For partial plates, fill by columns, like B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
+    examples:
+    - value: B2
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 11
+    string_serialization: '{96 well plate pos}'
+    alias: dna_cont_well
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+  dna_container_id:
+    name: dna_container_id
+    title: DNA container label
+    comments:
+    - Must be unique across all tubes and plates, and &lt;20 characters. All samples
+      in a plate should have the same plate label.
+    examples:
+    - value: Pond_MT_041618
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 9
+    string_serialization: '{text &lt; 20 characters}'
+    alias: dna_container_id
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+    pattern: ^.{1,20}$
+  dna_dnase:
+    name: dna_dnase
+    title: DNase treatment DNA
+    comments:
+    - Note DNase treatment is required for all RNA samples.
+    examples:
+    - value: 'no'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 13
+    alias: dna_dnase
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: YesNoEnum
+    required: true
+    recommended: false
+  dna_isolate_meth:
+    name: dna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: DNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    string_serialization: '{text}'
+    alias: dna_isolate_meth
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_project_contact:
+    name: dna_project_contact
+    title: DNA seq project contact
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: John Jones
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 18
+    string_serialization: '{text}'
+    alias: dna_project_contact
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_samp_id:
+    name: dna_samp_id
+    title: DNA sample ID
+    todos:
+    - Removed identifier = TRUE from dna_samp_ID in JGI_sample_slots, as a class can't
+      have two identifiers. How to force uniqueness? Moot because that column will
+      be prefilled?
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '187654'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 3
+    string_serialization: '{text}'
+    alias: dna_samp_id
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_sample_format:
+    name: dna_sample_format
+    description: Solution in which the DNA sample has been suspended
+    title: DNA sample format
+    examples:
+    - value: Water
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 12
+    alias: dna_sample_format
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: DNASampleFormatEnum
+    required: true
+    recommended: false
+  dna_sample_name:
+    name: dna_sample_name
+    description: Give the DNA sample a name that is meaningful to you. Sample names
+      must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
+    title: DNA sample name
+    examples:
+    - value: JGI_pond_041618
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 4
+    string_serialization: '{text}'
+    alias: dna_sample_name
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+    pattern: ^[_a-zA-Z0-9-]*$
+  dna_seq_project:
+    name: dna_seq_project
+    title: DNA seq project ID
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '1191234'
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - Seq Project ID
+    rank: 1
+    string_serialization: '{text}'
+    alias: dna_seq_project
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_seq_project_name:
+    name: dna_seq_project_name
+    title: DNA seq project name
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: JGI Pond metagenomics
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 2
+    string_serialization: '{text}'
+    alias: dna_seq_project_name
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_seq_project_pi:
+    name: dna_seq_project_pi
+    title: DNA seq project PI
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: Jane Johnson
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 17
+    string_serialization: '{text}'
+    alias: dna_seq_project_pi
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  dna_volume:
+    name: dna_volume
+    title: DNA volume in ul
+    comments:
+    - Units must be in uL. Enter the numerical part only. Value must be 0-1000. This
+      form accepts values &lt; 25, but JGI may refuse to process them unless permission
+      has been granted by a project manager
+    examples:
+    - value: '25'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 6
+    string_serialization: '{float}'
+    alias: dna_volume
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: float
+    required: true
+    recommended: false
+    minimum_value: 0
+    maximum_value: 1000
+  proposal_dna:
+    name: proposal_dna
+    title: DNA proposal ID
+    comments:
+    - Do not edit these values. A template will be provided by NMDC in which these
+      values have been pre-filled.
+    examples:
+    - value: '504000'
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 19
+    string_serialization: '{text}'
+    alias: proposal_dna
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - JgiMgInterface
+    - JgiMgLrInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
+    multivalued: false
+  analysis_type:
+    name: analysis_type
+    description: Select all the data types associated or available for this biosample
+    title: analysis/data type
+    comments:
+    - MIxS:investigation_type was included as a `see_also` but that term doesn't resolve
+      any more
+    examples:
+    - value: metagenomics; metabolomics; metaproteomics
+    from_schema: https://w3id.org/nmdc/nmdc
+    rank: 3
+    alias: analysis_type
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: AnalysisTypeEnum
+    required: true
+    recommended: false
+    multivalued: true
+  samp_name:
+    name: samp_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+    description: A local identifier or name that for the material sample collected.
+      Refers to the original material collected or to any derived sub-samples.
+    title: sample name
+    comments:
+    - It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible.
+    examples:
+    - value: Rock core CB1178(5-6) from NSW
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - sample name
+    rank: 1
+    is_a: investigation field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0001107
+    identifier: true
+    alias: samp_name
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: string
+    required: true
+    multivalued: false
+  source_mat_id:
+    name: source_mat_id
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'for cultures of microorganisms: identifiers for two culture collections;
+          for other material a unique arbitrary identifer'
+    description: A globally unique identifier assigned to the biological sample.
+    title: source material identifier
+    todos:
+    - Currently, the comments say to use UUIDs. However, if we implement assigning
+      NMDC identifiers with the minter we dont need to require a GUID. It can be an
+      optional field to fill out only if they already have a resolvable ID.
+    - Currently, the comments say to use UUIDs. However, if we implement assigning
+      NMDC identifiers with the minter we dont need to require a GUID. It can be an
+      optional field to fill out only if they already have a resolvable ID.
+    notes:
+    - The source material IS the Globally Unique ID
+    comments:
+    - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
+      NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
+      IDs enable linking to derived analytes and subsamples. If you have not assigned
+      FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+    - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
+      NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
+      IDs enable linking to derived analytes and subsamples. If you have not assigned
+      FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+    examples:
+    - value: IGSN:AU1243
+    - value: UUID:24f1467a-40f4-11ed-b878-0242ac120002
+    from_schema: https://w3id.org/nmdc/nmdc
+    aliases:
+    - source material identifiers
+    rank: 2
+    is_a: nucleic acid sequence source field
+    string_serialization: '{text}:{text}'
+    slot_uri: MIXS:0000026
+    alias: source_mat_id
+    owner: JgiMgInterface
+    domain_of:
+    - Biosample
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: string
+    multivalued: false
+    pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+rules:
+- preconditions:
+    slot_conditions:
+      dna_cont_well:
+        name: dna_cont_well
+        pattern: .+
+  postconditions:
+    slot_conditions:
+      dna_cont_type:
+        name: dna_cont_type
+        equals_string: plate
+  description: DNA samples shipped to JGI for metagenomic analysis in tubes can't
+    have any value for their plate position.
+  title: dna_well_requires_plate
+- preconditions:
+    slot_conditions:
+      dna_cont_type:
+        name: dna_cont_type
+        equals_string: plate
+  postconditions:
+    slot_conditions:
+      dna_cont_well:
+        name: dna_cont_well
+        pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+  description: DNA samples in plates must have a plate position that matches the regex.
+    Note the requirement for an empty string in the tube case. Waiting for value_present
+    validation to be added to runtime
+  title: dna_plate_requires_well
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../javascripts/tablesort.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
