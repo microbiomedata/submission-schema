@@ -1402,8 +1402,8 @@ enums:
         text: electric light
       desk lamp:
         text: desk lamp
-      flourescent lights:
-        text: flourescent lights
+      fluorescent lights:
+        text: fluorescent lights
       none:
         text: none
   mech_struc_enum:
