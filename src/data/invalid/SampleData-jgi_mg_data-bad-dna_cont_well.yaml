@@ -16,6 +16,5 @@ jgi_mg_data:
     jgi_seq_project_name: xxx
     jgi_seq_project_pi: xxx
     jgi_volume: 1.23
-    proposal_dna: xxx
     samp_name: xxx
 
