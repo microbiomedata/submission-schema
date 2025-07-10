@@ -294,8 +294,25 @@ slots:
     rank: 9
     string_serialization: '{text < 20 characters}'
     recommended: true
-  dna_dnase
-  dna_project_contact
+  dna_dnase:
+    title: DNase treatment
+    comments:
+      - Note DNase treatment is required for all RNA samples.
+    examples:
+      - value: 'no'
+    rank: 13
+    range: YesNoEnum
+    required: true
+  project_contact:
+    title: Sequencing project contact
+    comments:
+      - Do not edit these values. A template will be provided by NMDC in which these
+        values have been pre-filled.
+    examples:
+      - value: John Jones
+    rank: 18
+    string_serialization: '{text}'
+    recommended: true
   dna_samp_id
   dna_sample_format
   dna_sample_name
