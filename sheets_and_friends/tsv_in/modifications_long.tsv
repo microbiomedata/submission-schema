@@ -54,8 +54,8 @@ JgiMgLrInterface	dna_absorb2	replace_attribute	required			true
 JgiMgLrInterface	dna_absorb2	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	recommended			false
-JgiMgInterface|JgiMgLrInterface	dna_cont_type	replace_attribute	required			true
-JgiMgInterface|JgiMgLrInterface	dna_cont_type	replace_attribute	recommended			false
+JgiMgInterface|JgiMgLrInterface	cont_type	replace_attribute	required			true
+JgiMgInterface|JgiMgLrInterface	cont_type	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_container_id	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_container_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	required			true

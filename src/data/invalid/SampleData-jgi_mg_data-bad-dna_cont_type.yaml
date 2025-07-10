@@ -3,7 +3,7 @@ jgi_mg_data:
       - metagenomics
       - metatranscriptomics
     dna_concentration: 1.23
-    dna_cont_type: bucket
+    cont_type: bucket
     dna_cont_well: H3
     dna_container_id: xxx
     dna_dnase: "no"

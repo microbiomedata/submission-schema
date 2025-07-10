@@ -3,7 +3,7 @@ jgi_mg_data:
       - metagenomics
       - metatranscriptomics
     dna_concentration: 1.23
-    dna_cont_type: tube
+    cont_type: tube
     dna_cont_well: B2
     dna_container_id: xxx
     dna_dnase: "no"
