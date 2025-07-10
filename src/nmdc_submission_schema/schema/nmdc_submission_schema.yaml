@@ -11509,10 +11509,10 @@ slots:
     recommended: true
     minimum_value: 0
     maximum_value: 2000
-  dna_cont_type:
-    name: dna_cont_type
+  cont_type:
+    name: cont_type
     description: Tube or plate (96-well)
-    title: DNA container type
+    title: JGI container type
     examples:
     - value: plate
     from_schema: https://example.com/nmdc_submission_schema
