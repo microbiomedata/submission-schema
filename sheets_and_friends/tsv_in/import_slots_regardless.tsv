@@ -325,8 +325,6 @@ Biosample	local/nmdc.yaml	prod_rate	mixs_core_section	344	HcrFluidsSwabsInterfac
 Biosample	local/nmdc.yaml	prod_start_date	mixs_core_section	345	HcrFluidsSwabsInterface
 Biosample	local/nmdc.yaml	profile_position	mixs_section	28	SoilInterface
 Biosample	local/nmdc.yaml	project_id	emsl_section	1	EmslInterface
-Biosample	local/nmdc.yaml	proposal_dna	jgi_metagenomics_section	19	JgiMgInterface|JgiMgLrInterface
-Biosample	local/nmdc.yaml	proposal_rna	jgi_metatranscriptomics_section	19	JgiMtInterface
 Biosample	local/nmdc.yaml	quad_pos	mixs_core_section	145	BuiltEnvInterface
 Biosample	local/nmdc.yaml	radiation_regm	mixs_core_section	271	PlantAssociatedInterface
 Biosample	local/nmdc.yaml	rainfall_regm	mixs_core_section	272	PlantAssociatedInterface

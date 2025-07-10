@@ -665,7 +665,6 @@ classes:
       - jgi_seq_project_name
       - jgi_seq_project_pi
       - jgi_sample_volume
-      - proposal_dna
   JgiMgLrInterface:
     annotations:
       excel_worksheet_name: JGI MG (Long Read)
@@ -691,7 +690,6 @@ classes:
       - jgi_seq_project_name
       - jgi_seq_project_pi
       - jgi_sample_volume
-      - proposal_dna
   JgiMtInterface:
     annotations:
       excel_worksheet_name: JGI MT
@@ -702,7 +700,6 @@ classes:
       - DhMultiviewCommonColumnsMixin
     slots:
       - dnase
-      - proposal_rna
       - rna_absorb1
       - rna_absorb2
       - rna_concentration

@@ -182,10 +182,6 @@ BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_f
 BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	phosplipid_fatt_acid	replace_attribute	multivalued			false
 EmslInterface	project_id	replace_attribute	required			true
 EmslInterface	project_id	replace_attribute	recommended			false
-JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	required			true
-JgiMgInterface|JgiMgLrInterface	proposal_dna	replace_attribute	recommended			false
-JgiMtInterface	proposal_rna	replace_attribute	required			true
-JgiMtInterface	proposal_rna	replace_attribute	recommended			false
 BuiltEnvInterface	rel_air_humidity	replace_attribute	string_serialization			{percentage}
 EmslInterface	replicate_number	replace_attribute	recommended			true
 JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
