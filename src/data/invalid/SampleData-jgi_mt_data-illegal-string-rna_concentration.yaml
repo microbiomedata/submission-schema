@@ -1,7 +1,7 @@
 jgi_mt_data:
   - samp_name: sample name
     source_mat_id: MPI:012345
-    dnase_rna: no
+    dnase: no
     proposal_rna: '504000'
     rna_concentration: one hundred
     rna_cont_type: tube 

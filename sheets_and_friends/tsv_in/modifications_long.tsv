@@ -54,8 +54,6 @@ JgiMgLrInterface	dna_absorb2	replace_attribute	required			true
 JgiMgLrInterface	dna_absorb2	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	recommended			false
-JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	required			true
-JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_samp_id	replace_attribute	required			true
@@ -71,8 +69,6 @@ JgiMgInterface|JgiMgLrInterface	dna_seq_project_name	replace_attribute	required	
 JgiMgInterface|JgiMgLrInterface	dna_seq_project_name	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_volume	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_volume	replace_attribute	recommended			false
-JgiMtInterface	dnase_rna	replace_attribute	required			true
-JgiMtInterface	dnase_rna	replace_attribute	recommended			false
 SoilInterface	ecosystem	replace_attribute	range			EcosystemForSoilEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface	ecosystem	replace_attribute	range			EcosystemEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	ecosystem	replace_attribute	recommended			true

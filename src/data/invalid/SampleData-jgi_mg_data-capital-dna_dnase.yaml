@@ -6,7 +6,7 @@ jgi_mg_data:
     cont_type: plate
     cont_well: C3
     container_name: xxx
-    dna_dnase: "No"
+    dnase: "No"
     dna_isolate_meth: xxx
     dna_project_contact: xxx
     dna_samp_id: xxx

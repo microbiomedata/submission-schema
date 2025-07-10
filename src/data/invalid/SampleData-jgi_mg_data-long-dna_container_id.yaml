@@ -6,7 +6,7 @@ jgi_mg_data:
     cont_type: plate
     cont_well: C3
     container_name: mount_mordor_012356789
-    dna_dnase: "no"
+    dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx
     dna_samp_id: xxx

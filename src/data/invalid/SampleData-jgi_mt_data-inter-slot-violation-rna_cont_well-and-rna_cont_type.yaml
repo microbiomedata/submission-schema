@@ -1,7 +1,7 @@
 jgi_mt_data:
   - analysis_type:
       - metatranscriptomics
-    dnase_rna: "no"
+    dnase: "no"
     proposal_rna: '504000'
     rna_concentration: 100.3
     rna_cont_type: tube

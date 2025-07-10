@@ -302,7 +302,7 @@ slots:
     rank: 3
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
-    recommended: true
+    required: true
   jgi_sample_format:
     description: Solution in which the JGI sample has been suspended
     title: JGI sample format

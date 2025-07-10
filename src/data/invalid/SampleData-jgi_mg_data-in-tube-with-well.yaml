@@ -6,7 +6,7 @@ jgi_mg_data:
     cont_type: tube
     cont_well: B2
     container_name: xxx
-    dna_dnase: "no"
+    dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx
     dna_samp_id: xxx
