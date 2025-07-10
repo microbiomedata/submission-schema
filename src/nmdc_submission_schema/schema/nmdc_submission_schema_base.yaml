@@ -655,7 +655,7 @@ classes:
       - cont_type
       - cont_well
       - container_id
-      - dna_dnase
+      - dnase
       - dna_isolate_meth
       - dna_project_contact
       - dna_samp_id
@@ -681,7 +681,7 @@ classes:
       - cont_type
       - cont_well
       - container_id
-      - dna_dnase
+      - dnase
       - dna_isolate_meth
       - dna_project_contact
       - dna_samp_id
@@ -701,7 +701,7 @@ classes:
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
-      - dnase_rna
+      - dnase
       - proposal_rna
       - rna_absorb1
       - rna_absorb2
