@@ -247,6 +247,15 @@ slots:
     range: JgiMtInterface
     inlined: true
     inlined_as_list: true
+  cont_type:
+    description: Tube or plate (96-well)
+    title: JGI container type
+    examples:
+      - value: plate
+      - value: tube
+    rank: 10
+    range: JgiContTypeEnum
+    required: true
   cont_well:
     title: JGI plate position
     comments:
