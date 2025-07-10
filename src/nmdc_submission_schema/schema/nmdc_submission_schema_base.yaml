@@ -292,16 +292,6 @@ slots:
     rank: 13
     range: YesNoEnum
     required: true
-  project_contact:
-    title: Sequencing project contact
-    comments:
-      - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
-    examples:
-      - value: John Jones
-    rank: 18
-    string_serialization: '{text}'
-    recommended: true
   jgi_samp_id:
     title: JGI Sample ID
     comments:
@@ -646,7 +636,6 @@ classes:
       - container_id
       - dnase
       - dna_isolate_meth
-      - project_contact
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -670,7 +659,6 @@ classes:
       - container_id
       - dnase
       - dna_isolate_meth
-      - project_contact
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -694,7 +682,6 @@ classes:
       - cont_well
       - container_id
       - rna_isolate_meth
-      - project_contact
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name

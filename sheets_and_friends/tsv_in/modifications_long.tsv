@@ -60,8 +60,6 @@ JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_dnase	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	recommended			false
-JgiMgInterface|JgiMgLrInterface	dna_project_contact	replace_attribute	required			true
-JgiMgInterface|JgiMgLrInterface	dna_project_contact	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_samp_id	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_samp_id	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	required			true
@@ -192,8 +190,6 @@ JgiMtInterface	rna_container_id	replace_attribute	required			true
 JgiMtInterface	rna_container_id	replace_attribute	recommended			false
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	recommended			false
-JgiMtInterface	rna_project_contact	replace_attribute	required			true
-JgiMtInterface	rna_project_contact	replace_attribute	recommended			false
 JgiMtInterface	rna_samp_id	replace_attribute	required			true
 JgiMtInterface	rna_samp_id	replace_attribute	recommended			false
 JgiMtInterface	rna_sample_format	replace_attribute	required			true
