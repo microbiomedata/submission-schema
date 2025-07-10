@@ -13,7 +13,6 @@ jgi_mg_data:
     jgi_sample_name: xxx
     jgi_seq_project: xxx
     jgi_seq_project_name: xxx
-    dna_seq_project_pi: xxx
     dna_volume: 111
     proposal_dna: xxx
     samp_name: xxx
