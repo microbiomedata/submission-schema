@@ -8,7 +8,7 @@ jgi_mt_data:
     cont_well: H7
     container_name: Columbia_River_Watershed_MT_052292 # should be less than 20 characters
     rna_isolate_meth: phenol/cloroform extraction
-    rna_samp_id: '123456'
+    jgi_samp_id: '123456'
     rna_sample_format: MDA reaction buffer
     rna_sample_name: JGI_lagoon_14343
     rna_seq_project: '123456789'

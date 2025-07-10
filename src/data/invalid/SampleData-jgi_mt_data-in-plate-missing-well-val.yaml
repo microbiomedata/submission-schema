@@ -7,7 +7,7 @@ jgi_mt_data:
     container_name: xxx
     dnase: "no"
     rna_isolate_meth: xxx
-    rna_samp_id: xxx
+    jgi_samp_id: xxx
     rna_sample_format: DNAStable
     rna_sample_name: xxx
     rna_seq_project: xxx
