@@ -344,7 +344,17 @@ slots:
     recommended: true
     aliases:
       - Seq Project ID
-  dna_seq_project_name
+  jgi_seq_project_name:
+    title: JGI seq project name
+    comments:
+      - Do not edit these values. A template will be provided by NMDC in which these
+        values have been pre-filled.
+    examples:
+      - value: JGI Pond metagenomics
+    rank: 2
+    string_serialization: '{text}'
+    slot_group: JGI-Metagenomics
+    recommended: true
   dna_seq_project_pi
   dna_volume
 
