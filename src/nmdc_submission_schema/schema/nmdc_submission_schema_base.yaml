@@ -652,7 +652,7 @@ classes:
       - dna_absorb1
       - dna_absorb2
       - dna_concentration
-      - dna_cont_type
+      - cont_type
       - dna_cont_well
       - dna_container_id
       - dna_dnase
@@ -678,7 +678,7 @@ classes:
       - dna_absorb1
       - dna_absorb2
       - dna_concentration
-      - dna_cont_type
+      - cont_type
       - dna_cont_well
       - dna_container_id
       - dna_dnase
@@ -706,7 +706,7 @@ classes:
       - rna_absorb1
       - rna_absorb2
       - rna_concentration
-      - rna_cont_type
+      - cont_type
       - rna_cont_well
       - rna_container_id
       - rna_isolate_meth
