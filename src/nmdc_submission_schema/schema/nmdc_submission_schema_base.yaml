@@ -259,7 +259,7 @@ slots:
       - value: tube
     rank: 10
     range: JgiContTypeEnum
-    recommended: true
+    required: true
   cont_well:
     title: JGI plate position
     comments:
