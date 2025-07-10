@@ -108,7 +108,6 @@ Biosample	local/nmdc.yaml	diss_oxygen_fluid	mixs_core_section	306	HcrCoresInterf
 Biosample	local/nmdc.yaml	dna_absorb1	jgi_metagenomics_section	7	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	dna_absorb2	jgi_metagenomics_section	8	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	dna_concentration	jgi_metagenomics_section	5	JgiMgInterface|JgiMgLrInterface
-Biosample	local/nmdc.yaml	dna_cont_well	jgi_metagenomics_section	11	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	dna_container_id	jgi_metagenomics_section	9	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	dna_dnase	jgi_metagenomics_section	13	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	dna_isolate_meth	jgi_metagenomics_section	16	JgiMgInterface|JgiMgLrInterface
@@ -353,7 +352,6 @@ Biosample	local/nmdc.yaml	resins_pc	mixs_core_section	348	HcrCoresInterface|HcrF
 Biosample	local/nmdc.yaml	rna_absorb1	jgi_metatranscriptomics_section	7	JgiMtInterface
 Biosample	local/nmdc.yaml	rna_absorb2	jgi_metatranscriptomics_section	8	JgiMtInterface
 Biosample	local/nmdc.yaml	rna_concentration	jgi_metatranscriptomics_section	5	JgiMtInterface
-Biosample	local/nmdc.yaml	rna_cont_well	jgi_metatranscriptomics_section	11	JgiMtInterface
 Biosample	local/nmdc.yaml	rna_container_id	jgi_metatranscriptomics_section	9	JgiMtInterface
 Biosample	local/nmdc.yaml	rna_isolate_meth	jgi_metatranscriptomics_section	16	JgiMtInterface
 Biosample	local/nmdc.yaml	rna_project_contact	jgi_metatranscriptomics_section	18	JgiMtInterface
