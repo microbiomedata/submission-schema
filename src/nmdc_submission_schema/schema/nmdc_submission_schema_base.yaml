@@ -320,7 +320,16 @@ slots:
     rank: 12
     range: SampleFormatEnum
     recommended: true
-  dna_sample_name
+  jgi_sample_name:
+    description: Give the JGI sample a name that is meaningful to you. Sample names
+      must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
+    title: JGI sample name
+    examples:
+      - value: JGI_pond_041618
+    rank: 4
+    string_serialization: '{text}'
+    slot_group: JGI-Metagenomics
+    recommended: true
   dna_seq_project
   dna_seq_project_name
   dna_seq_project_pi
