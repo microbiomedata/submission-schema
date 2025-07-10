@@ -659,12 +659,12 @@ classes:
       - dna_isolate_meth
       - project_contact
       - jgi_samp_id
-      - dna_sample_format
-      - dna_sample_name
-      - dna_seq_project
-      - dna_seq_project_name
-      - dna_seq_project_pi
-      - dna_volume
+      - jgi_sample_format
+      - jgi_sample_name
+      - jgi_seq_project
+      - jgi_seq_project_name
+      - jgi_seq_project_pi
+      - jgi_sample_volume
       - proposal_dna
   JgiMgLrInterface:
     annotations:
@@ -685,12 +685,12 @@ classes:
       - dna_isolate_meth
       - project_contact
       - jgi_samp_id
-      - dna_sample_format
-      - dna_sample_name
-      - dna_seq_project
-      - dna_seq_project_name
-      - dna_seq_project_pi
-      - dna_volume
+      - jgi_sample_format
+      - jgi_sample_name
+      - jgi_seq_project
+      - jgi_seq_project_name
+      - jgi_seq_project_pi
+      - jgi_sample_volume
       - proposal_dna
   JgiMtInterface:
     annotations:
@@ -712,12 +712,12 @@ classes:
       - rna_isolate_meth
       - project_contact
       - jgi_samp_id
-      - rna_sample_format
-      - rna_sample_name
-      - rna_seq_project
-      - rna_seq_project_name
-      - rna_seq_project_pi
-      - rna_volume
+      - jgi_sample_format
+      - jgi_sample_name
+      - jgi_seq_project
+      - jgi_seq_project_name
+      - jgi_seq_project_pi
+      - jgi_sample_volume
   MiscEnvsInterface:
     annotations:
       excel_worksheet_name: misc natural or artificial
