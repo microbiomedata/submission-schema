@@ -332,7 +332,7 @@ slots:
     rank: 1
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
-    recommended: true
+    required: true
     aliases:
       - Seq Project ID
   jgi_seq_project_name:
@@ -345,7 +345,7 @@ slots:
     rank: 2
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
-    recommended: true
+    required: true
   jgi_sample_volume:
     title: JGI sample volume in ul
     comments:
