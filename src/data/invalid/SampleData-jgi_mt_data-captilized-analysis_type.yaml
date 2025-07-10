@@ -8,13 +8,11 @@ jgi_mt_data:
     cont_well: H7
     container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
-    rna_project_contact: Leslie Ann Levine
     rna_samp_id: '123456'
     rna_sample_format: MDA reaction buffer
     rna_sample_name: JGI_lagoon_14343
     rna_seq_project: '123456789'
     rna_seq_project_name: JGI Lagoon metatranscritpomics
-    rna_seq_project_pi: Patty Smith
     rna_volume: 25.1
     analysis_type: 
       - Metatranscriptomics

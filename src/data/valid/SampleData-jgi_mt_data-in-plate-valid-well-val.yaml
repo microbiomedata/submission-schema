@@ -8,13 +8,11 @@ jgi_mt_data:
     container_name: xxx
     dnase: "no"
     rna_isolate_meth: xxx
-    rna_project_contact: xxx
     rna_samp_id: xxx
     rna_sample_format: DNAStable
     rna_sample_name: xxx
     rna_seq_project: xxx
     rna_seq_project_name: xxx
-    rna_seq_project_pi: xxx
     rna_volume: 111
     proposal_rna: xxx
     samp_name: xxx

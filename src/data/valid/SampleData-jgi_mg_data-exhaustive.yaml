@@ -4,15 +4,12 @@ jgi_mg_data:
       - metatranscriptomics
     dna_absorb1: 1.23
     dna_absorb2: 1.23
-#    dna_collect_site: xxx
     dna_concentration: 1.23
     cont_type: plate
     cont_well: C3
     container_name: xxx
     dnase: "no"
     dna_isolate_meth: xxx
-#    dna_organisms: xxx
-    dna_project_contact: xxx
     dna_samp_id: xxx
     dna_sample_format: DNAStable
     dna_sample_name: xxx
