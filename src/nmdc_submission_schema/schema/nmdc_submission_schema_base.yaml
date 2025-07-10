@@ -657,8 +657,8 @@ classes:
       - container_id
       - dnase
       - dna_isolate_meth
-      - dna_project_contact
-      - dna_samp_id
+      - project_contact
+      - jgi_samp_id
       - dna_sample_format
       - dna_sample_name
       - dna_seq_project
@@ -683,8 +683,8 @@ classes:
       - container_id
       - dnase
       - dna_isolate_meth
-      - dna_project_contact
-      - dna_samp_id
+      - project_contact
+      - jgi_samp_id
       - dna_sample_format
       - dna_sample_name
       - dna_seq_project
@@ -710,8 +710,8 @@ classes:
       - cont_well
       - container_id
       - rna_isolate_meth
-      - rna_project_contact
-      - rna_samp_id
+      - project_contact
+      - jgi_samp_id
       - rna_sample_format
       - rna_sample_name
       - rna_seq_project
