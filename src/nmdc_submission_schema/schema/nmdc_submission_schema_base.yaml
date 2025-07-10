@@ -247,6 +247,7 @@ slots:
     range: JgiMtInterface
     inlined: true
     inlined_as_list: true
+  
   dna_absorb1
   dna_absorb2
   dna_concentration
@@ -282,7 +283,7 @@ slots:
     rank: 9
     string_serialization: '{text < 20 characters}'
     recommended: true
-  dna_dnase:
+  dnase:
     title: DNase treatment
     comments:
       - Note DNase treatment is required for all RNA samples.
@@ -330,7 +331,19 @@ slots:
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
     recommended: true
-  dna_seq_project
+  jgi_seq_project:
+    title: JGI seq project ID
+    comments:
+      - Do not edit these values. A template will be provided by NMDC in which these
+        values have been pre-filled.
+    examples:
+      - value: '1191234'
+    rank: 1
+    string_serialization: '{text}'
+    slot_group: JGI-Metagenomics
+    recommended: true
+    aliases:
+      - Seq Project ID
   dna_seq_project_name
   dna_seq_project_pi
   dna_volume
