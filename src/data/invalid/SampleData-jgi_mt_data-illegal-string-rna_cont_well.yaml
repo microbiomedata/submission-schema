@@ -2,7 +2,6 @@ jgi_mt_data:
   - samp_name: sample name
     source_mat_id: MPI:012345
     dnase: no
-    proposal_rna: '504000'
     rna_concentration: 100.3
     rna_cont_type: plate 
     cont_well: A2-A11 

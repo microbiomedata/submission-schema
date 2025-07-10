@@ -2,7 +2,6 @@ jgi_mt_data:
   - analysis_type:
       - metatranscriptomics
     dnase: "no"
-    proposal_rna: '504000'
     rna_concentration: 100.3
     rna_cont_type: plate
     cont_well: H7
