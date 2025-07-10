@@ -57,7 +57,7 @@ enums:
     permissible_values:
       plate:
       tube:
-  DnaSampleFormatEnum:
+  SampleFormatEnum:
     permissible_values:
       10 mM Tris-HCl:
       DNAStable:
@@ -104,18 +104,6 @@ enums:
       microanaerobe:
       obligate aerobe:
       obligate anaerobe:
-  RnaSampleFormatEnum:
-    permissible_values:
-      10 mM Tris-HCl:
-      DNAStable:
-      Ethanol:
-      Low EDTA TE:
-      MDA reaction buffer:
-      PBS:
-      Pellet:
-      RNAStable:
-      TE:
-      Water:
   SampleTypeEnum:
     permissible_values:
       soil:
@@ -313,7 +301,7 @@ slots:
     rank: 18
     string_serialization: '{text}'
     recommended: true
-  dna_samp_id:
+  jgi_samp_id:
     title: JGI Sample ID
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
@@ -324,7 +312,14 @@ slots:
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
     recommended: true
-  dna_sample_format
+  jgi_sample_format:
+    description: Solution in which the JGI sample has been suspended
+    title: JGI sample format
+    examples:
+      - value: Water
+    rank: 12
+    range: SampleFormatEnum
+    recommended: true
   dna_sample_name
   dna_seq_project
   dna_seq_project_name
