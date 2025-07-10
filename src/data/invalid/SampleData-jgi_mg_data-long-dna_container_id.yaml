@@ -4,8 +4,8 @@ jgi_mg_data:
       - metatranscriptomics
     dna_concentration: 1.23
     cont_type: plate
-    dna_cont_well: C3
-    dna_container_id: mount_mordor_012356789
+    cont_well: C3
+    container_name: mount_mordor_012356789
     dna_dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx

@@ -4,7 +4,7 @@ jgi_mg_data:
       - metatranscriptomics
     dna_concentration: 1.23
     cont_type: tube
-    dna_container_id: xxx
+    container_name: xxx
     dna_dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx

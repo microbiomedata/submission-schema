@@ -5341,7 +5341,7 @@ class JgiMgInterface(DhInterface):
 
     dna_concentration: float = None
     dna_cont_type: Union[str, "JgiContTypeEnum"] = None
-    dna_container_id: str = None
+    container_name: str = None
     dna_dnase: Union[str, "YesNoEnum"] = None
     dna_isolate_meth: str = None
     dna_project_contact: str = None
@@ -5372,10 +5372,10 @@ class JgiMgInterface(DhInterface):
         if not isinstance(self.dna_cont_type, JgiContTypeEnum):
             self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
 
-        if self._is_empty(self.dna_container_id):
-            self.MissingRequiredField("dna_container_id")
-        if not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
+        if self._is_empty(self.container_name):
+            self.MissingRequiredField("container_name")
+        if not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
 
         if self._is_empty(self.dna_dnase):
             self.MissingRequiredField("dna_dnase")
@@ -5462,8 +5462,8 @@ class JgiMgInterface(DhInterface):
         if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
             self.dna_cont_well = str(self.dna_cont_well)
 
-        if self.dna_container_id is not None and not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
+        if self.container_name is not None and not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
 
         if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
             self.dna_dnase = YesNoEnum(self.dna_dnase)
@@ -5530,7 +5530,7 @@ class JgiMgLrInterface(DhInterface):
 
     dna_concentration: float = None
     dna_cont_type: Union[str, "JgiContTypeEnum"] = None
-    dna_container_id: str = None
+    container_name: str = None
     dna_dnase: Union[str, "YesNoEnum"] = None
     dna_isolate_meth: str = None
     dna_project_contact: str = None
@@ -5561,10 +5561,10 @@ class JgiMgLrInterface(DhInterface):
         if not isinstance(self.dna_cont_type, JgiContTypeEnum):
             self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
 
-        if self._is_empty(self.dna_container_id):
-            self.MissingRequiredField("dna_container_id")
-        if not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
+        if self._is_empty(self.container_name):
+            self.MissingRequiredField("container_name")
+        if not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
 
         if self._is_empty(self.dna_dnase):
             self.MissingRequiredField("dna_dnase")
@@ -5661,8 +5661,8 @@ class JgiMgLrInterface(DhInterface):
         if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
             self.dna_cont_well = str(self.dna_cont_well)
 
-        if self.dna_container_id is not None and not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
+        if self.container_name is not None and not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
 
         if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
             self.dna_dnase = YesNoEnum(self.dna_dnase)
@@ -17534,8 +17534,8 @@ slots.dna_cont_well = Slot(uri=NMDC_SUB_SCHEMA.dna_cont_well, name="dna_cont_wel
                    model_uri=NMDC_SUB_SCHEMA.dna_cont_well, domain=None, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.dna_container_id = Slot(uri=NMDC_SUB_SCHEMA.dna_container_id, name="dna_container_id", curie=NMDC_SUB_SCHEMA.curie('dna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_container_id, domain=None, range=Optional[str])
+slots.container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, name="container_name", curie=NMDC_SUB_SCHEMA.curie('container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.container_name, domain=None, range=Optional[str])
 
 slots.dna_dnase = Slot(uri=NMDC_SUB_SCHEMA.dna_dnase, name="dna_dnase", curie=NMDC_SUB_SCHEMA.curie('dna_dnase'),
                    model_uri=NMDC_SUB_SCHEMA.dna_dnase, domain=None, range=Optional[Union[str, "YesNoEnum"]])
@@ -21013,8 +21013,8 @@ slots.JgiMgInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name="
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_cont_well, domain=JgiMgInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMgInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_container_id, domain=JgiMgInterface, range=str,
+slots.JgiMgInterface_container_name = Slot(uri=NMDC['nmdc/container_name'], name="JgiMgInterface_container_name", curie=NMDC.curie('nmdc/container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_container_name, domain=JgiMgInterface, range=str,
                    pattern=re.compile(r'^.{1,20}$'))
 
 slots.JgiMgInterface_dna_dnase = Slot(uri=NMDC['nmdc/dna_dnase'], name="JgiMgInterface_dna_dnase", curie=NMDC.curie('nmdc/dna_dnase'),
@@ -21070,8 +21070,8 @@ slots.JgiMgLrInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_cont_well, domain=JgiMgLrInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMgLrInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgLrInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_container_id, domain=JgiMgLrInterface, range=str,
+slots.JgiMgLrInterface_container_name = Slot(uri=NMDC['nmdc/container_name'], name="JgiMgLrInterface_container_name", curie=NMDC.curie('nmdc/container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_container_name, domain=JgiMgLrInterface, range=str,
                    pattern=re.compile(r'^.{1,20}$'))
 
 slots.JgiMgLrInterface_dna_dnase = Slot(uri=NMDC['nmdc/dna_dnase'], name="JgiMgLrInterface_dna_dnase", curie=NMDC.curie('nmdc/dna_dnase'),

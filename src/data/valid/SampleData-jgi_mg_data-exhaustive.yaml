@@ -7,8 +7,8 @@ jgi_mg_data:
 #    dna_collect_site: xxx
     dna_concentration: 1.23
     cont_type: plate
-    dna_cont_well: C3
-    dna_container_id: xxx
+    cont_well: C3
+    container_name: xxx
     dna_dnase: "no"
     dna_isolate_meth: xxx
 #    dna_organisms: xxx

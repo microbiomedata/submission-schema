@@ -273,8 +273,8 @@ slots:
     string_serialization: '{96 well plate pos}'
     recommended: true
     pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  container_id:
-    title: Container label
+  container_name:
+    title: Container name
     comments:
       - Must be unique across all tubes and plates, and <20 characters. 
       - All samples in a plate should have the same plate label.
@@ -633,7 +633,7 @@ classes:
       - dna_concentration
       - cont_type
       - cont_well
-      - container_id
+      - container_name
       - dnase
       - dna_isolate_meth
       - jgi_samp_id
@@ -656,7 +656,7 @@ classes:
       - dna_concentration
       - cont_type
       - cont_well
-      - container_id
+      - container_name
       - dnase
       - dna_isolate_meth
       - jgi_samp_id
@@ -680,7 +680,7 @@ classes:
       - rna_concentration
       - cont_type
       - cont_well
-      - container_id
+      - container_name
       - rna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format

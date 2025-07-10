@@ -4,7 +4,7 @@ jgi_mt_data:
       - metatranscriptomics
     rna_concentration: 1.23
     rna_cont_type: plate
-    rna_container_id: xxx
+    container_name: xxx
     dnase_rna: "no"
     rna_isolate_meth: xxx
     rna_project_contact: xxx
