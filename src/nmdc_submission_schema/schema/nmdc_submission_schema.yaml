@@ -11521,7 +11521,7 @@ slots:
     - Biosample
     slot_group: JGI-Metagenomics
     range: JgiContTypeEnum
-    recommended: true
+    required: true
   dna_cont_well:
     name: dna_cont_well
     title: DNA plate position
@@ -17178,19 +17178,6 @@ slots:
     recommended: true
     minimum_value: 0
     maximum_value: 1000
-  rna_cont_type:
-    name: rna_cont_type
-    description: Tube or plate (96-well)
-    title: RNA container type
-    examples:
-    - value: plate
-    from_schema: https://example.com/nmdc_submission_schema
-    rank: 10
-    domain_of:
-    - Biosample
-    slot_group: JGI-Metatranscriptomics
-    range: JgiContTypeEnum
-    recommended: true
   rna_cont_well:
     name: rna_cont_well
     title: RNA plate position
@@ -39508,7 +39495,7 @@ classes:
     - dna_absorb1
     - dna_absorb2
     - dna_concentration
-    - dna_cont_type
+    - cont_type
     - dna_cont_well
     - dna_container_id
     - dna_dnase
@@ -39525,7 +39512,7 @@ classes:
     - dna_absorb1
     - dna_absorb2
     - dna_concentration
-    - dna_cont_type
+    - cont_type
     - dna_cont_well
     - dna_container_id
     - dna_dnase
@@ -39597,10 +39584,10 @@ classes:
         recommended: false
         minimum_value: 0
         maximum_value: 2000
-      dna_cont_type:
-        name: dna_cont_type
+      cont_type:
+        name: cont_type
         description: Tube or plate (96-well)
-        title: DNA container type
+        title: JGI container type
         examples:
         - value: plate
         from_schema: https://w3id.org/nmdc/nmdc
@@ -39876,16 +39863,16 @@ classes:
             pattern: .+
       postconditions:
         slot_conditions:
-          dna_cont_type:
-            name: dna_cont_type
+          cont_type:
+            name: cont_type
             equals_string: plate
       description: DNA samples shipped to JGI for metagenomic analysis in tubes can't
         have any value for their plate position.
       title: dna_well_requires_plate
     - preconditions:
         slot_conditions:
-          dna_cont_type:
-            name: dna_cont_type
+          cont_type:
+            name: cont_type
             equals_string: plate
       postconditions:
         slot_conditions:
@@ -39912,7 +39899,7 @@ classes:
     - dna_absorb1
     - dna_absorb2
     - dna_concentration
-    - dna_cont_type
+    - cont_type
     - dna_cont_well
     - dna_container_id
     - dna_dnase
@@ -39929,7 +39916,7 @@ classes:
     - dna_absorb1
     - dna_absorb2
     - dna_concentration
-    - dna_cont_type
+    - cont_type
     - dna_cont_well
     - dna_container_id
     - dna_dnase
@@ -40003,10 +39990,10 @@ classes:
         recommended: false
         minimum_value: 0
         maximum_value: 2000
-      dna_cont_type:
-        name: dna_cont_type
+      cont_type:
+        name: cont_type
         description: Tube or plate (96-well)
-        title: DNA container type
+        title: JGI container type
         examples:
         - value: plate
         from_schema: https://w3id.org/nmdc/nmdc
@@ -40292,7 +40279,7 @@ classes:
     - rna_absorb1
     - rna_absorb2
     - rna_concentration
-    - rna_cont_type
+    - cont_type
     - rna_cont_well
     - rna_container_id
     - rna_isolate_meth
@@ -40309,7 +40296,7 @@ classes:
     - rna_absorb1
     - rna_absorb2
     - rna_concentration
-    - rna_cont_type
+    - cont_type
     - rna_cont_well
     - rna_container_id
     - rna_isolate_meth
@@ -40415,10 +40402,10 @@ classes:
         recommended: false
         minimum_value: 0
         maximum_value: 1000
-      rna_cont_type:
-        name: rna_cont_type
+      cont_type:
+        name: cont_type
         description: Tube or plate (96-well)
-        title: RNA container type
+        title: JGI container type
         examples:
         - value: plate
         from_schema: https://w3id.org/nmdc/nmdc
@@ -40657,16 +40644,16 @@ classes:
             pattern: .+
       postconditions:
         slot_conditions:
-          rna_cont_type:
-            name: rna_cont_type
+          cont_type:
+            name: cont_type
             equals_string: plate
       description: RNA samples shipped to JGI for metagenomic analysis in tubes can't
         have any value for their plate position.
       title: rna_well_requires_plate
     - preconditions:
         slot_conditions:
-          rna_cont_type:
-            name: rna_cont_type
+          cont_type:
+            name: cont_type
             equals_string: plate
       postconditions:
         slot_conditions:
