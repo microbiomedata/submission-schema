@@ -10,7 +10,7 @@ jgi_mg_lr_data:
     dnase: "no"
     dna_isolate_meth: xxx
     jgi_samp_id: xxx
-    dna_sample_format: DNAStable
+    jgi_sample_format: DNAStable
     dna_sample_name: xxx
     dna_seq_project: xxx
     dna_seq_project_name: xxx

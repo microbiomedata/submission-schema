@@ -56,8 +56,6 @@ JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	required			t
 JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	recommended			false
-JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	required			true
-JgiMgInterface|JgiMgLrInterface	dna_sample_format	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_sample_name	replace_attribute	pattern			^[-_.a-zA-Z0-9]*$
@@ -178,8 +176,6 @@ JgiMtInterface	rna_concentration	replace_attribute	required			true
 JgiMtInterface	rna_concentration	replace_attribute	recommended			false
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	recommended			false
-JgiMtInterface	rna_sample_format	replace_attribute	required			true
-JgiMtInterface	rna_sample_format	replace_attribute	recommended			false
 JgiMtInterface	rna_sample_name	replace_attribute	required			true
 JgiMtInterface	rna_sample_name	replace_attribute	recommended			false
 JgiMtInterface	rna_sample_name	replace_attribute	pattern			^[-_.a-zA-Z0-9]*$
