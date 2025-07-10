@@ -3,7 +3,7 @@ jgi_mt_data:
       - metagenomics
       - metatranscriptomics
     rna_concentration: 1.23
-    rna_cont_type: bucket
+    cont_type: bucket
     container_name: xxx
     dnase: "no"
     rna_isolate_meth: xxx

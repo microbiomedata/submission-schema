@@ -3,8 +3,8 @@ jgi_mt_data:
       - metatranscriptomics
     dnase: "no"
     rna_concentration: 100.3
-    rna_cont_type: tube
-    cont_well: H7 # Should be blank because rna_cont_type is a tube.
+    cont_type: tube
+    cont_well: H7 # Should be blank because cont_type is a tube.
     container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
     jgi_samp_id: '123456'

@@ -3,7 +3,7 @@ jgi_mt_data:
     source_mat_id: MPI:012345
     dnase: no
     rna_concentration: 100.3
-    rna_cont_type: plate 
+    cont_type: plate 
     cont_well: A2-A11 
     container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
