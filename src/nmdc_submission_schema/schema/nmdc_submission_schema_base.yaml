@@ -320,7 +320,8 @@ slots:
     rank: 4
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
-    recommended: true
+    required: true
+    pattern: ^[-_.a-zA-Z0-9]*$
   jgi_seq_project:
     title: JGI seq project ID
     comments:

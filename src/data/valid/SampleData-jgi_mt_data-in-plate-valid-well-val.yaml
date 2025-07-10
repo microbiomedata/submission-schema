@@ -10,7 +10,7 @@ jgi_mt_data:
     rna_isolate_meth: xxx
     jgi_samp_id: xxx
     jgi_sample_format: DNAStable
-    rna_sample_name: xxx
+    jgi_sample_name: xxx
     rna_seq_project: xxx
     rna_seq_project_name: xxx
     rna_volume: 111

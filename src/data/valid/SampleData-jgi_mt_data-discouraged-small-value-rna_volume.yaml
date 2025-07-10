@@ -10,7 +10,7 @@ jgi_mt_data:
     rna_isolate_meth: phenol/cloroform extraction
     jgi_samp_id: '123456'
     jgi_sample_format: MDA reaction buffer
-    rna_sample_name: JGI_lagoon_14343
+    jgi_sample_name: JGI_lagoon_14343
     rna_seq_project: '123456789'
     rna_seq_project_name: JGI Lagoon metatranscritpomics
     rna_volume: 5.1 # comments say "This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager" but minimum_value says 0
