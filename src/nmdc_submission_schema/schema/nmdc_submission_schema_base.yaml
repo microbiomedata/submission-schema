@@ -355,17 +355,6 @@ slots:
     string_serialization: '{text}'
     slot_group: JGI-Metagenomics
     recommended: true
-  jgi_seq_project_pi:
-    title: JGI seq project PI
-    comments:
-      - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
-    examples:
-      - value: Jane Johnson
-    rank: 17
-    string_serialization: '{text}'
-    slot_group: JGI-Metagenomics
-    recommended: true
   jgi_sample_volume:
     title: JGI sample volume in ul
     comments:
@@ -663,7 +652,6 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
-      - jgi_seq_project_pi
       - jgi_sample_volume
   JgiMgLrInterface:
     annotations:
@@ -688,7 +676,6 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
-      - jgi_seq_project_pi
       - jgi_sample_volume
   JgiMtInterface:
     annotations:
@@ -713,7 +700,6 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
-      - jgi_seq_project_pi
       - jgi_sample_volume
   MiscEnvsInterface:
     annotations:
