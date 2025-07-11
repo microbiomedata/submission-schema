@@ -6934,24 +6934,24 @@
                     },
                     "then": {
                         "properties": {
-                            "dna_cont_type": {
+                            "cont_type": {
                                 "const": "plate"
                             }
                         },
                         "required": [
-                            "dna_cont_type"
+                            "cont_type"
                         ]
                     }
                 },
                 {
                     "if": {
                         "properties": {
-                            "dna_cont_type": {
+                            "cont_type": {
                                 "const": "plate"
                             }
                         },
                         "required": [
-                            "dna_cont_type"
+                            "cont_type"
                         ]
                     },
                     "then": {
@@ -6994,7 +6994,7 @@
                     "minimum": 0,
                     "type": "number"
                 },
-                "dna_cont_type": {
+                "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
@@ -7063,7 +7063,7 @@
             },
             "required": [
                 "dna_concentration",
-                "dna_cont_type",
+                "cont_type",
                 "dna_container_id",
                 "dna_dnase",
                 "dna_isolate_meth",
@@ -7106,7 +7106,7 @@
                     "minimum": 0,
                     "type": "number"
                 },
-                "dna_cont_type": {
+                "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
@@ -7177,7 +7177,7 @@
                 "dna_absorb1",
                 "dna_absorb2",
                 "dna_concentration",
-                "dna_cont_type",
+                "cont_type",
                 "dna_container_id",
                 "dna_dnase",
                 "dna_isolate_meth",
