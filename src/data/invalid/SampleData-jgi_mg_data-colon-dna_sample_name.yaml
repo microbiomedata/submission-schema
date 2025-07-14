@@ -11,7 +11,7 @@ jgi_mg_data:
     jgi_samp_id: xxx
     jgi_sample_format: DNAStable
     jgi_sample_name: DNA:0546789 # description says "Sample names must ... contain a-z, A-Z, 0-9, - and _ only." but there's no patten constraint
-    jgi_seq_project: xxx
+    jgi_seq_project: 111
     jgi_seq_project_name: xxx
-    dna_volume: 0
+    jgi_sample_volume: 0
     samp_name: xxx

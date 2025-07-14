@@ -10,9 +10,9 @@ jgi_mt_data:
     jgi_samp_id: xxx
     jgi_sample_format: DNAStable
     jgi_sample_name: xxx
-    jgi_seq_project xxx
+    jgi_seq_project: 111
     jgi_seq_project_name: xxx
-    rna_volume: 111
+    jgi_sample_volume: 111
     samp_name: xxx
     source_mat_id: x:1
 
