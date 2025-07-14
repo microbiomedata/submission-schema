@@ -375,7 +375,7 @@
 </tr>
 <tr>
 <td><a href="../container_name/">container_name</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -405,7 +405,7 @@
 </tr>
 <tr>
 <td><a href="../jgi_seq_project/">jgi_seq_project</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -417,7 +417,7 @@
 </tr>
 <tr>
 <td><a href="../jgi_sample_volume/">jgi_sample_volume</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -558,6 +558,36 @@ slots:
 - rna_concentration
 - rna_isolate_meth
 slot_usage:
+  cont_type:
+    name: cont_type
+    slot_group: JGI-Metatranscriptomics
+  cont_well:
+    name: cont_well
+    slot_group: JGI-Metatranscriptomics
+  container_name:
+    name: container_name
+    slot_group: JGI-Metatranscriptomics
+  dnase:
+    name: dnase
+    slot_group: JGI-Metatranscriptomics
+  jgi_samp_id:
+    name: jgi_samp_id
+    slot_group: JGI-Metatranscriptomics
+  jgi_sample_format:
+    name: jgi_sample_format
+    slot_group: JGI-Metatranscriptomics
+  jgi_sample_name:
+    name: jgi_sample_name
+    slot_group: JGI-Metatranscriptomics
+  jgi_seq_project:
+    name: jgi_seq_project
+    slot_group: JGI-Metatranscriptomics
+  jgi_seq_project_name:
+    name: jgi_seq_project_name
+    slot_group: JGI-Metatranscriptomics
+  jgi_sample_volume:
+    name: jgi_sample_volume
+    slot_group: JGI-Metatranscriptomics
   rna_absorb1:
     name: rna_absorb1
     description: 260/280 measurement of RNA sample purity
@@ -689,6 +719,36 @@ is_a: DhInterface
 mixins:
 - DhMultiviewCommonColumnsMixin
 slot_usage:
+  cont_type:
+    name: cont_type
+    slot_group: JGI-Metatranscriptomics
+  cont_well:
+    name: cont_well
+    slot_group: JGI-Metatranscriptomics
+  container_name:
+    name: container_name
+    slot_group: JGI-Metatranscriptomics
+  dnase:
+    name: dnase
+    slot_group: JGI-Metatranscriptomics
+  jgi_samp_id:
+    name: jgi_samp_id
+    slot_group: JGI-Metatranscriptomics
+  jgi_sample_format:
+    name: jgi_sample_format
+    slot_group: JGI-Metatranscriptomics
+  jgi_sample_name:
+    name: jgi_sample_name
+    slot_group: JGI-Metatranscriptomics
+  jgi_seq_project:
+    name: jgi_seq_project
+    slot_group: JGI-Metatranscriptomics
+  jgi_seq_project_name:
+    name: jgi_seq_project_name
+    slot_group: JGI-Metatranscriptomics
+  jgi_sample_volume:
+    name: jgi_sample_volume
+    slot_group: JGI-Metatranscriptomics
   rna_absorb1:
     name: rna_absorb1
     description: 260/280 measurement of RNA sample purity
@@ -791,6 +851,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
+    slot_group: JGI-Metatranscriptomics
     range: YesNoEnum
     required: true
   rna_absorb1:
@@ -870,6 +931,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
+    slot_group: JGI-Metatranscriptomics
     range: JgiContTypeEnum
     required: true
   cont_well:
@@ -892,6 +954,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
+    slot_group: JGI-Metatranscriptomics
     range: string
     recommended: true
     pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
@@ -900,7 +963,7 @@ attributes:
     title: Container name
     comments:
     - Must be unique across all tubes and plates, and &lt;20 characters.
-    - All samples in a plate should have the same plate label.
+    - All samples in a plate should have the same plate name.
     examples:
     - value: Pond_MT_041618
     from_schema: https://example.com/nmdc_submission_schema
@@ -912,8 +975,9 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
+    slot_group: JGI-Metatranscriptomics
     range: string
-    recommended: true
+    required: true
   rna_isolate_meth:
     name: rna_isolate_meth
     description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -945,16 +1009,16 @@ attributes:
     - value: '187654'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 3
-    string_serialization: '{text}'
     alias: jgi_samp_id
     owner: JgiMtInterface
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: JGI-Metatranscriptomics
     range: string
     required: true
+    multivalued: false
   jgi_sample_format:
     name: jgi_sample_format
     description: Solution in which the JGI sample has been suspended
@@ -969,6 +1033,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
+    slot_group: JGI-Metatranscriptomics
     range: SampleFormatEnum
     required: true
   jgi_sample_name:
@@ -980,16 +1045,16 @@ attributes:
     - value: JGI_pond_041618
     from_schema: https://example.com/nmdc_submission_schema
     rank: 4
-    string_serialization: '{text}'
     alias: jgi_sample_name
     owner: JgiMtInterface
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: JGI-Metatranscriptomics
     range: string
     required: true
+    multivalued: false
     pattern: ^[-_.a-zA-Z0-9]*$
   jgi_seq_project:
     name: jgi_seq_project
@@ -1003,15 +1068,14 @@ attributes:
     aliases:
     - Seq Project ID
     rank: 1
-    string_serialization: '{text}'
     alias: jgi_seq_project
     owner: JgiMtInterface
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
-    range: string
+    slot_group: JGI-Metatranscriptomics
+    range: float
     required: true
   jgi_seq_project_name:
     name: jgi_seq_project_name
@@ -1023,16 +1087,16 @@ attributes:
     - value: JGI Pond metagenomics
     from_schema: https://example.com/nmdc_submission_schema
     rank: 2
-    string_serialization: '{text}'
     alias: jgi_seq_project_name
     owner: JgiMtInterface
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: JGI-Metatranscriptomics
     range: string
     required: true
+    multivalued: false
   jgi_sample_volume:
     name: jgi_sample_volume
     title: JGI sample volume in ul
@@ -1044,16 +1108,15 @@ attributes:
     - value: '25'
     from_schema: https://example.com/nmdc_submission_schema
     rank: 6
-    string_serialization: '{float}'
     alias: jgi_sample_volume
     owner: JgiMtInterface
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: JGI-Metatranscriptomics
     range: float
-    recommended: true
+    required: true
     minimum_value: 0
     maximum_value: 1000
   analysis_type:

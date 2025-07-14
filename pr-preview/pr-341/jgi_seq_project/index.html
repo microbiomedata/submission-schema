@@ -433,26 +433,26 @@ Alias: jgi_seq_project</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
-<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
 <td>jgi_mt dh_interface</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
 <td>Metadata for samples sent to JGI for long read metagenome sequecning</td>
-<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../String/">String</a></p>
+<p>Range: <a href="../Float/">Float</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -517,14 +517,12 @@ from_schema: https://example.com/nmdc_submission_schema
 aliases:
 - Seq Project ID
 rank: 1
-string_serialization: '{text}'
 alias: jgi_seq_project
 domain_of:
 - JgiMgInterface
 - JgiMgLrInterface
 - JgiMtInterface
-slot_group: JGI-Metagenomics
-range: string
+range: float
 required: true
 
 </code></pre>

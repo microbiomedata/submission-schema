@@ -424,19 +424,19 @@ Alias: jgi_sample_volume</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
-<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
 <td>jgi_mt dh_interface</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
 <td>Metadata for samples sent to JGI for long read metagenome sequecning</td>
-<td>no</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -446,7 +446,7 @@ Alias: jgi_sample_volume</p>
 <p>Range: <a href="../Float/">Float</a></p>
 </li>
 <li>
-<p>Recommended: True</p>
+<p>Required: True</p>
 </li>
 <li>
 <p>Minimum Value: 0</p>
@@ -509,15 +509,13 @@ examples:
 - value: '25'
 from_schema: https://example.com/nmdc_submission_schema
 rank: 6
-string_serialization: '{float}'
 alias: jgi_sample_volume
 domain_of:
 - JgiMgInterface
 - JgiMgLrInterface
 - JgiMtInterface
-slot_group: JGI-Metagenomics
 range: float
-recommended: true
+required: true
 minimum_value: 0
 maximum_value: 1000
 
