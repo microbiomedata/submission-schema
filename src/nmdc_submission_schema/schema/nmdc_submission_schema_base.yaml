@@ -247,116 +247,6 @@ slots:
     range: JgiMtInterface
     inlined: true
     inlined_as_list: true
-  cont_type:
-    description: Tube or plate (96-well)
-    title: JGI container type
-    examples:
-      - value: plate
-      - value: tube
-    rank: 10
-    range: JgiContTypeEnum
-    required: true
-  cont_well:
-    title: JGI plate position
-    comments:
-      - Required when 'plate' is selected for container type.
-      - Leave blank if the sample will be shipped in a tube.
-      - JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.
-      - Fill plate in column-wise format. B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
-    examples:
-      - value: B2
-    rank: 11
-    string_serialization: '{96 well plate pos}'
-    recommended: true
-    pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  container_name:
-    title: Container name
-    comments:
-      - Must be unique across all tubes and plates, and <20 characters. 
-      - All samples in a plate should have the same plate label.
-    examples:
-      - value: Pond_MT_041618
-    rank: 9
-    string_serialization: '{text < 20 characters}'
-    recommended: true
-  dnase:
-    title: DNase treatment
-    comments:
-      - Note DNase treatment is required for all RNA samples.
-    examples:
-      - value: 'no'
-    rank: 13
-    range: YesNoEnum
-    required: true
-  jgi_samp_id:
-    title: JGI Sample ID
-    comments:
-      - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
-    examples:
-      - value: '187654'
-    rank: 3
-    string_serialization: '{text}'
-    slot_group: JGI-Metagenomics
-    required: true
-  jgi_sample_format:
-    description: Solution in which the JGI sample has been suspended
-    title: JGI sample format
-    examples:
-      - value: Water
-    rank: 12
-    range: SampleFormatEnum
-    required: true
-  jgi_sample_name:
-    description: Give the JGI sample a name that is meaningful to you. Sample names
-      must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
-    title: JGI sample name
-    examples:
-      - value: JGI_pond_041618
-    rank: 4
-    string_serialization: '{text}'
-    slot_group: JGI-Metagenomics
-    required: true
-    pattern: ^[-_.a-zA-Z0-9]*$
-  jgi_seq_project:
-    title: JGI seq project ID
-    comments:
-      - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
-    examples:
-      - value: '1191234'
-    rank: 1
-    string_serialization: '{text}'
-    slot_group: JGI-Metagenomics
-    required: true
-    aliases:
-      - Seq Project ID
-  jgi_seq_project_name:
-    title: JGI seq project name
-    comments:
-      - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
-    examples:
-      - value: JGI Pond metagenomics
-    rank: 2
-    string_serialization: '{text}'
-    slot_group: JGI-Metagenomics
-    required: true
-  jgi_sample_volume:
-    title: JGI sample volume in ul
-    comments:
-      - Units must be in uL. Enter the numerical part only. Value must be 0-1000.
-        This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager
-    examples:
-      - value: '25'
-    rank: 6
-    string_serialization: '{float}'
-    range: float
-    slot_group: JGI-Metagenomics
-    recommended: true
-    minimum_value: 0
-    maximum_value: 1000
-
   misc_envs_data:
     description: aggregation slot relating misc_envs data collections to a SampleData container
     multivalued: true
@@ -548,6 +438,110 @@ slots:
     slot_group: data_files_section
     rank: 15
     pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
+  cont_type:
+    description: Tube or plate (96-well)
+    title: JGI container type
+    examples:
+      - value: plate
+      - value: tube
+    rank: 10
+    range: JgiContTypeEnum
+    required: true
+  cont_well:
+    title: JGI plate position
+    comments:
+      - Required when 'plate' is selected for container type.
+      - Leave blank if the sample will be shipped in a tube.
+      - JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.
+      - Fill plate in column-wise format. B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
+    examples:
+      - value: B2
+    rank: 11
+    string_serialization: '{96 well plate pos}'
+    recommended: true
+    pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+  container_name:
+    title: Container name
+    comments:
+      - Must be unique across all tubes and plates, and <20 characters. 
+      - All samples in a plate should have the same plate name.
+    examples:
+      - value: Pond_MT_041618
+    rank: 9
+    string_serialization: '{text < 20 characters}'
+    required: true
+  dnase:
+    title: DNase treatment
+    comments:
+      - Note DNase treatment is required for all RNA samples.
+    examples:
+      - value: 'no'
+    rank: 13
+    range: YesNoEnum
+    required: true
+  jgi_samp_id:
+    title: JGI Sample ID
+    comments:
+      - Do not edit these values. A template will be provided by NMDC in which these
+        values have been pre-filled.
+    examples:
+      - value: '187654'
+    rank: 3
+    slot_group: JGI-Metagenomics
+    range: string
+    required: true
+  jgi_sample_format:
+    description: Solution in which the JGI sample has been suspended
+    title: JGI sample format
+    examples:
+      - value: Water
+    rank: 12
+    range: SampleFormatEnum
+    required: true
+  jgi_sample_name:
+    description: Give the JGI sample a name that is meaningful to you. Sample names
+      must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.
+    title: JGI sample name
+    examples:
+      - value: JGI_pond_041618
+    rank: 4
+    range: string
+    required: true
+    pattern: ^[-_.a-zA-Z0-9]*$
+  jgi_seq_project:
+    title: JGI seq project ID
+    comments:
+      - Do not edit these values. A template will be provided by NMDC in which these
+        values have been pre-filled.
+    examples:
+      - value: '1191234'
+    rank: 1
+    required: true
+    range: numeric
+    aliases:
+      - Seq Project ID
+  jgi_seq_project_name:
+    title: JGI seq project name
+    comments:
+      - Do not edit these values. A template will be provided by NMDC in which these
+        values have been pre-filled.
+    examples:
+      - value: JGI Pond metagenomics
+    rank: 2
+    required: true
+    range: string
+  jgi_sample_volume:
+    title: JGI sample volume in ul
+    comments:
+      - Units must be in uL. Enter the numerical part only. Value must be 0-1000.
+        This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager
+    examples:
+      - value: '25'
+    rank: 6
+    range: float
+    required: true
+    minimum_value: 0
+    maximum_value: 1000
 classes:
   AirInterface:
     annotations:
@@ -639,6 +633,29 @@ classes:
       - jgi_seq_project
       - jgi_seq_project_name
       - jgi_sample_volume
+    slot_usage:
+      jgi_sample_name:
+        slot_group: JGI-Metagenomics
+      cont_type:
+        slot_group: JGI-Metagenomics
+      cont_well:
+        slot_group: JGI-Metagenomics
+      container_name:
+        slot_group: JGI-Metagenomics
+      dnase:
+        slot_group: JGI-Metagenomics
+      jgi_samp_id:
+        slot_group: JGI-Metagenomics
+      jgi_sample_format:
+        slot_group: JGI-Metagenomics
+      jgi_sample_name:
+        slot_group: JGI-Metagenomics
+      jgi_seq_project:
+        slot_group: JGI-Metagenomics
+      jgi_seq_project_name:
+        slot_group: JGI-Metagenomics
+      jgi_sample_volume:
+        slot_group: JGI-Metagenomics
   JgiMgLrInterface:
     annotations:
       excel_worksheet_name: JGI MG (Long Read)
@@ -662,6 +679,29 @@ classes:
       - jgi_seq_project
       - jgi_seq_project_name
       - jgi_sample_volume
+    slot_usage:
+      jgi_sample_name:
+        slot_group: JGI-Metagenomics
+      cont_type:
+        slot_group: JGI-Metagenomics
+      cont_well:
+        slot_group: JGI-Metagenomics
+      container_name:
+        slot_group: JGI-Metagenomics
+      dnase:
+        slot_group: JGI-Metagenomics
+      jgi_samp_id:
+        slot_group: JGI-Metagenomics
+      jgi_sample_format:
+        slot_group: JGI-Metagenomics
+      jgi_sample_name:
+        slot_group: JGI-Metagenomics
+      jgi_seq_project:
+        slot_group: JGI-Metagenomics
+      jgi_seq_project_name:
+        slot_group: JGI-Metagenomics
+      jgi_sample_volume:
+        slot_group: JGI-Metagenomics
   JgiMtInterface:
     annotations:
       excel_worksheet_name: JGI MT
@@ -685,6 +725,29 @@ classes:
       - jgi_seq_project
       - jgi_seq_project_name
       - jgi_sample_volume
+    slot_usage:
+      jgi_sample_name:
+        slot_group: JGI-Metatranscriptomics
+      cont_type:
+        slot_group: JGI-Metatranscriptomics
+      cont_well:
+        slot_group: JGI-Metatranscriptomics
+      container_name:
+        slot_group: JGI-Metatranscriptomics
+      dnase:
+        slot_group: JGI-Metatranscriptomics
+      jgi_samp_id:
+        slot_group: JGI-Metatranscriptomics
+      jgi_sample_format:
+        slot_group: JGI-Metatranscriptomics
+      jgi_sample_name:
+        slot_group: JGI-Metatranscriptomics
+      jgi_seq_project:
+        slot_group: JGI-Metatranscriptomics
+      jgi_seq_project_name:
+        slot_group: JGI-Metatranscriptomics
+      jgi_sample_volume:
+        slot_group: JGI-Metatranscriptomics
   MiscEnvsInterface:
     annotations:
       excel_worksheet_name: misc natural or artificial
