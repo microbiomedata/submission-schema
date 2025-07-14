@@ -634,8 +634,6 @@ classes:
       - jgi_seq_project_name
       - jgi_sample_volume
     slot_usage:
-      jgi_sample_name:
-        slot_group: JGI-Metagenomics
       cont_type:
         slot_group: JGI-Metagenomics
       cont_well:
@@ -680,8 +678,6 @@ classes:
       - jgi_seq_project_name
       - jgi_sample_volume
     slot_usage:
-      jgi_sample_name:
-        slot_group: JGI-Metagenomics
       cont_type:
         slot_group: JGI-Metagenomics
       cont_well:
@@ -726,8 +722,6 @@ classes:
       - jgi_seq_project_name
       - jgi_sample_volume
     slot_usage:
-      jgi_sample_name:
-        slot_group: JGI-Metatranscriptomics
       cont_type:
         slot_group: JGI-Metatranscriptomics
       cont_well:
