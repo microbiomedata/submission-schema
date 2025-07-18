@@ -313,48 +313,14 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
-    base: str
-    uri: xsd:language
-  decimal:
-    name: decimal
-    description: A real number with arbitrary precision that conforms to the xsd:decimal
-      specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "decimal".
-    from_schema: https://example.com/nmdc_submission_schema
-    broad_mappings:
-    - schema:Number
-    base: Decimal
-    uri: xsd:decimal
-  float:
-    name: float
-    description: A real number that conforms to the xsd:float specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "float".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Float
+    - https://en.wikipedia.org/wiki/Decimal_degrees
     base: float
-    uri: xsd:float
-  integer:
-    name: integer
-    description: An integer
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
+    uri: xsd:decimal
   uriorcurie:
     name: uriorcurie
     description: a URI or a CURIE
@@ -365,26 +331,6 @@ types:
     base: URIorCURIE
     uri: xsd:anyURI
     repr: str
-  boolean:
-    name: boolean
-    description: A binary (true or false) value
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "boolean".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Boolean
-    base: Bool
-    uri: xsd:boolean
-    repr: bool
-  decimal_degree:
-    name: decimal_degree
-    description: A decimal degree expresses latitude or longitude as decimal fractions.
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/Decimal_degrees
-    base: float
-    uri: xsd:decimal
   string:
     name: string
     description: A character string
@@ -408,6 +354,60 @@ types:
     - schema:Float
     base: float
     uri: xsd:double
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
+  float:
+    name: float
+    description: A real number that conforms to the xsd:float specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "float".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:float
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "decimal".
+    from_schema: https://example.com/nmdc_submission_schema
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  boolean:
+    name: boolean
+    description: A binary (true or false) value
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "boolean".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Boolean
+    base: Bool
+    uri: xsd:boolean
+    repr: bool
   external_identifier:
     name: external_identifier
     description: A CURIE representing an external identifier

@@ -5,8 +5,8 @@ pipeds_strings_lines = """EMSL_store_temp|project_ID|replicate_number|sample_shi
 
 
 
-dna_absorb1|dna_absorb2|dna_collect_site|dna_concentration|dna_cont_type|dna_cont_well|dna_container_ID|dna_dnase|dna_isolate_meth|dna_organisms|dna_project_contact|dna_samp_ID|dna_sample_format|dna_sample_name|dna_seq_project|dna_seq_project_PI|dna_seq_project_name|dna_volume|proposal_dna
-dnase_rna|proposal_rna|rna_absorb1|rna_absorb2|rna_collect_site|rna_concentration|rna_cont_type|rna_cont_well|rna_container_ID|rna_isolate_meth|rna_organisms|rna_project_contact|rna_samp_ID|rna_sample_format|rna_sample_name|rna_seq_project|rna_seq_project_PI|rna_seq_project_name|rna_volume"""
+dna_absorb1|dna_absorb2|dna_collect_site|dna_concentration|cont_type|cont_well|container_name|dnase|dna_isolate_meth|dna_organisms|jgi_samp_ID|jgi_sample_format|jgi_sample_name|jgi_seq_project|jgi_seq_project_name|jgi_sample_volume
+dnase|rna_absorb1|rna_absorb2|rna_collect_site|rna_concentration|cont_type|cont_well|container_name|rna_isolate_meth|rna_organisms|jgi_samp_ID|jgi_sample_format|jgi_sample_name|jgi_seq_project|jgi_seq_project_name|jgi_sample_volume"""
 
 pipeds_strings_list = pipeds_strings_lines.split('\n')
 
