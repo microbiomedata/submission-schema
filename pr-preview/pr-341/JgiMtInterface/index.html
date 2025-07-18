@@ -670,34 +670,6 @@ slot_usage:
   oxy_stat_samp:
     name: oxy_stat_samp
     range: OxyStatSampEnum
-rules:
-- preconditions:
-    slot_conditions:
-      rna_cont_well:
-        name: rna_cont_well
-        pattern: .+
-  postconditions:
-    slot_conditions:
-      rna_cont_type:
-        name: rna_cont_type
-        equals_string: plate
-  description: RNA samples shipped to JGI for metagenomic analysis in tubes can't
-    have any value for their plate position.
-  title: rna_well_requires_plate
-- preconditions:
-    slot_conditions:
-      rna_cont_type:
-        name: rna_cont_type
-        equals_string: plate
-  postconditions:
-    slot_conditions:
-      rna_cont_well:
-        name: rna_cont_well
-        pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  description: RNA samples in plates must have a plate position that matches the regex.
-    Note the requirement for an empty string in the tube case. Waiting for value_present
-    validation to be added to runtime
-  title: rna_plate_requires_well
 
 </code></pre>
 </details>
@@ -970,6 +942,7 @@ attributes:
     slot_group: JGI-Metatranscriptomics
     range: string
     required: true
+    pattern: ^[-_.a-zA-Z0-9]{1,20}$
   rna_isolate_meth:
     name: rna_isolate_meth
     description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -1209,34 +1182,6 @@ attributes:
     range: string
     multivalued: false
     pattern: '[^\:\n\r]+\:[^\:\n\r]+'
-rules:
-- preconditions:
-    slot_conditions:
-      rna_cont_well:
-        name: rna_cont_well
-        pattern: .+
-  postconditions:
-    slot_conditions:
-      rna_cont_type:
-        name: rna_cont_type
-        equals_string: plate
-  description: RNA samples shipped to JGI for metagenomic analysis in tubes can't
-    have any value for their plate position.
-  title: rna_well_requires_plate
-- preconditions:
-    slot_conditions:
-      rna_cont_type:
-        name: rna_cont_type
-        equals_string: plate
-  postconditions:
-    slot_conditions:
-      rna_cont_well:
-        name: rna_cont_well
-        pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  description: RNA samples in plates must have a plate position that matches the regex.
-    Note the requirement for an empty string in the tube case. Waiting for value_present
-    validation to be added to runtime
-  title: rna_plate_requires_well
 
 </code></pre>
 </details>

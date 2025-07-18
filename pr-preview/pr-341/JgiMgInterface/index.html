@@ -675,34 +675,6 @@ slot_usage:
   oxy_stat_samp:
     name: oxy_stat_samp
     range: OxyStatSampEnum
-rules:
-- preconditions:
-    slot_conditions:
-      dna_cont_well:
-        name: dna_cont_well
-        pattern: .+
-  postconditions:
-    slot_conditions:
-      dna_cont_type:
-        name: dna_cont_type
-        equals_string: plate
-  description: DNA samples shipped to JGI for metagenomic analysis in tubes can't
-    have any value for their plate position.
-  title: dna_well_requires_plate
-- preconditions:
-    slot_conditions:
-      dna_cont_type:
-        name: dna_cont_type
-        equals_string: plate
-  postconditions:
-    slot_conditions:
-      dna_cont_well:
-        name: dna_cont_well
-        pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  description: DNA samples in plates must have a plate position that matches the regex.
-    Note the requirement for an empty string in the tube case. Waiting for value_present
-    validation to be added to runtime
-  title: dna_plate_requires_well
 
 </code></pre>
 </details>
@@ -966,6 +938,7 @@ attributes:
     slot_group: JGI-Metagenomics
     range: string
     required: true
+    pattern: ^[-_.a-zA-Z0-9]{1,20}$
   dnase:
     name: dnase
     title: DNase treatment
@@ -1224,34 +1197,6 @@ attributes:
     range: string
     multivalued: false
     pattern: '[^\:\n\r]+\:[^\:\n\r]+'
-rules:
-- preconditions:
-    slot_conditions:
-      dna_cont_well:
-        name: dna_cont_well
-        pattern: .+
-  postconditions:
-    slot_conditions:
-      dna_cont_type:
-        name: dna_cont_type
-        equals_string: plate
-  description: DNA samples shipped to JGI for metagenomic analysis in tubes can't
-    have any value for their plate position.
-  title: dna_well_requires_plate
-- preconditions:
-    slot_conditions:
-      dna_cont_type:
-        name: dna_cont_type
-        equals_string: plate
-  postconditions:
-    slot_conditions:
-      dna_cont_well:
-        name: dna_cont_well
-        pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  description: DNA samples in plates must have a plate position that matches the regex.
-    Note the requirement for an empty string in the tube case. Waiting for value_present
-    validation to be added to runtime
-  title: dna_plate_requires_well
 
 </code></pre>
 </details>

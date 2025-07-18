@@ -448,6 +448,9 @@ Alias: container_name</p>
 <li>
 <p>Required: True</p>
 </li>
+<li>
+<p>Regex pattern: <code>^[-_.a-zA-Z0-9]{1,20}$</code></p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -511,6 +514,7 @@ domain_of:
 - JgiMtInterface
 range: string
 required: true
+pattern: ^[-_.a-zA-Z0-9]{1,20}$
 
 </code></pre>
 
