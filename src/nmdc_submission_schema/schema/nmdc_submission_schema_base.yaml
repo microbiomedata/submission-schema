@@ -470,6 +470,7 @@ slots:
     rank: 9
     string_serialization: '{text < 20 characters}'
     required: true
+    pattern: ^[-_.a-zA-Z0-9]{1,20}$
   dnase:
     title: DNase treatment
     comments:
