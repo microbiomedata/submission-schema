@@ -459,7 +459,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -1681,7 +1680,6 @@
                 },
                 "occup_samp": {
                     "description": "Number of occupants present at time of sample within the given space",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "integer",
                         "null"
@@ -2639,6 +2637,7 @@
                 "Archaea",
                 "Archipelago",
                 "Arterial ulcer",
+                "Artificial seawater",
                 "Ascites",
                 "Atoll lagoon",
                 "Autotrophic (ANF)",
@@ -7028,7 +7027,7 @@
                 },
                 "dna_sample_name": {
                     "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
-                    "pattern": "^[_a-zA-Z0-9-]*$",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
                     "type": "string"
                 },
                 "dna_seq_project": {
@@ -7140,7 +7139,7 @@
                 },
                 "dna_sample_name": {
                     "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
-                    "pattern": "^[_a-zA-Z0-9-]*$",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
                     "type": "string"
                 },
                 "dna_seq_project": {
@@ -7311,7 +7310,7 @@
                     "description": "Give the RNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
                     "maximum": 2000,
                     "minimum": 0,
-                    "pattern": "^[_a-zA-Z0-9-]*$",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
                     "type": "string"
                 },
                 "rna_seq_project": {
@@ -8747,7 +8746,6 @@
                     "description": "pH measurement of the culture rooting medium; e.g. 5.5.",
                     "maximum": 14,
                     "minimum": 1,
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -9606,7 +9604,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -10523,7 +10520,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -12977,7 +12973,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"

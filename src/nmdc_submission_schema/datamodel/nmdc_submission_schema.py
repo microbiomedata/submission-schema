@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-06-20T19:45:23
+# Generation date: 2025-07-18T20:32:23
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -113,6 +113,7 @@ SEED = CurieNamespace('SEED', 'https://bioregistry.io/seed:')
 SIO = CurieNamespace('SIO', 'http://semanticscience.org/resource/SIO_')
 SO = CurieNamespace('SO', 'http://purl.obolibrary.org/obo/SO_')
 SUPFAM = CurieNamespace('SUPFAM', 'https://bioregistry.io/supfam:')
+TAXRANK = CurieNamespace('TAXRANK', 'http://purl.obolibrary.org/obo/TAXRANK_')
 TIGRFAM = CurieNamespace('TIGRFAM', 'https://bioregistry.io/tigrfam:')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
@@ -187,28 +188,28 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class LanguageCode(str):
-    """ A language code conforming to ISO_639-1 """
-    type_class_uri = XSD["language"]
-    type_class_curie = "xsd:language"
-    type_name = "language_code"
-    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
-
-
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
-
-
 class Float(float):
     """ A real number that conforms to the xsd:float specification """
     type_class_uri = XSD["float"]
     type_class_curie = "xsd:float"
     type_name = "float"
     type_model_uri = NMDC_SUB_SCHEMA.Float
+
+
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
 class DecimalDegree(float):
@@ -227,20 +228,20 @@ class Double(float):
     type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+class LanguageCode(str):
+    """ A language code conforming to ISO_639-1 """
+    type_class_uri = XSD["language"]
+    type_class_curie = "xsd:language"
+    type_name = "language_code"
+    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Integer(int):
@@ -251,12 +252,12 @@ class Integer(int):
     type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Time(XSDTime):
@@ -13394,6 +13395,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Aquatic biofilm"))
         setattr(cls, "Arterial ulcer",
             PermissibleValue(text="Arterial ulcer"))
+        setattr(cls, "Artificial seawater",
+            PermissibleValue(text="Artificial seawater"))
         setattr(cls, "Atoll lagoon",
             PermissibleValue(text="Atoll lagoon"))
         setattr(cls, "Autotrophic (ANF)",
@@ -19148,8 +19151,7 @@ slots.BiofilmInterface_calcium = Slot(uri=MIXS['0000432'], name="BiofilmInterfac
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.BiofilmInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="BiofilmInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_carb_nitro_ratio, domain=BiofilmInterface, range=Optional[float],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_carb_nitro_ratio, domain=BiofilmInterface, range=Optional[float])
 
 slots.BiofilmInterface_chem_administration = Slot(uri=MIXS['0000751'], name="BiofilmInterface_chem_administration", curie=MIXS.curie('0000751'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_chem_administration, domain=BiofilmInterface, range=Optional[str],
@@ -19742,8 +19744,7 @@ slots.BuiltEnvInterface_occup_document = Slot(uri=MIXS['0000816'], name="BuiltEn
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_document, domain=BuiltEnvInterface, range=Optional[Union[str, "OccupDocumentEnum"]])
 
 slots.BuiltEnvInterface_occup_samp = Slot(uri=MIXS['0000772'], name="BuiltEnvInterface_occup_samp", curie=MIXS.curie('0000772'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_samp, domain=BuiltEnvInterface, range=Optional[int],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_occup_samp, domain=BuiltEnvInterface, range=Optional[int])
 
 slots.BuiltEnvInterface_organism_count = Slot(uri=MIXS['0000103'], name="BuiltEnvInterface_organism_count", curie=MIXS.curie('0000103'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_organism_count, domain=BuiltEnvInterface, range=Optional[str],
@@ -21034,7 +21035,7 @@ slots.JgiMgInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format']
 
 slots.JgiMgInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_name, domain=JgiMgInterface, range=str,
-                   pattern=re.compile(r'^[_a-zA-Z0-9-]*$'))
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
 
 slots.JgiMgInterface_dna_seq_project = Slot(uri=NMDC['nmdc/dna_seq_project'], name="JgiMgInterface_dna_seq_project", curie=NMDC.curie('nmdc/dna_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project, domain=JgiMgInterface, range=str)
@@ -21091,7 +21092,7 @@ slots.JgiMgLrInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format
 
 slots.JgiMgLrInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgLrInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_sample_name, domain=JgiMgLrInterface, range=str,
-                   pattern=re.compile(r'^[_a-zA-Z0-9-]*$'))
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
 
 slots.JgiMgLrInterface_dna_seq_project = Slot(uri=NMDC['nmdc/dna_seq_project'], name="JgiMgLrInterface_dna_seq_project", curie=NMDC.curie('nmdc/dna_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project, domain=JgiMgLrInterface, range=str)
@@ -21151,7 +21152,7 @@ slots.JgiMtInterface_rna_sample_format = Slot(uri=NMDC['nmdc/rna_sample_format']
 
 slots.JgiMtInterface_rna_sample_name = Slot(uri=NMDC['nmdc/rna_sample_name'], name="JgiMtInterface_rna_sample_name", curie=NMDC.curie('nmdc/rna_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_name, domain=JgiMtInterface, range=str,
-                   pattern=re.compile(r'^[_a-zA-Z0-9-]*$'))
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
 
 slots.JgiMtInterface_rna_seq_project = Slot(uri=NMDC['nmdc/rna_seq_project'], name="JgiMtInterface_rna_seq_project", curie=NMDC.curie('nmdc/rna_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project, domain=JgiMtInterface, range=str)
@@ -21637,8 +21638,7 @@ slots.PlantAssociatedInterface_root_med_micronutr = Slot(uri=MIXS['0000579'], na
                    pattern=re.compile(r'^[^;\t\r\x0A\|]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A\|]+$'))
 
 slots.PlantAssociatedInterface_root_med_ph = Slot(uri=MIXS['0001062'], name="PlantAssociatedInterface_root_med_ph", curie=MIXS.curie('0001062'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_ph, domain=PlantAssociatedInterface, range=Optional[float],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_ph, domain=PlantAssociatedInterface, range=Optional[float])
 
 slots.PlantAssociatedInterface_root_med_regl = Slot(uri=MIXS['0000581'], name="PlantAssociatedInterface_root_med_regl", curie=MIXS.curie('0000581'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_root_med_regl, domain=PlantAssociatedInterface, range=Optional[str],
@@ -21775,8 +21775,7 @@ slots.SedimentInterface_calcium = Slot(uri=MIXS['0000432'], name="SedimentInterf
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SedimentInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="SedimentInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_carb_nitro_ratio, domain=SedimentInterface, range=Optional[float],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_carb_nitro_ratio, domain=SedimentInterface, range=Optional[float])
 
 slots.SedimentInterface_chem_administration = Slot(uri=MIXS['0000751'], name="SedimentInterface_chem_administration", curie=MIXS.curie('0000751'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_chem_administration, domain=SedimentInterface, range=Optional[str],
@@ -22182,8 +22181,7 @@ slots.SoilInterface_bulk_elect_conductivity = Slot(uri=NMDC['nmdc/bulk_elect_con
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.SoilInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="SoilInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_carb_nitro_ratio, domain=SoilInterface, range=Optional[float],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_carb_nitro_ratio, domain=SoilInterface, range=Optional[float])
 
 slots.SoilInterface_chem_administration = Slot(uri=MIXS['0000751'], name="SoilInterface_chem_administration", curie=MIXS.curie('0000751'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_chem_administration, domain=SoilInterface, range=Optional[str],
@@ -22816,8 +22814,7 @@ slots.WaterInterface_calcium = Slot(uri=MIXS['0000432'], name="WaterInterface_ca
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
 
 slots.WaterInterface_carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="WaterInterface_carb_nitro_ratio", curie=MIXS.curie('0000310'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_carb_nitro_ratio, domain=WaterInterface, range=Optional[float],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_carb_nitro_ratio, domain=WaterInterface, range=Optional[float])
 
 slots.WaterInterface_chem_administration = Slot(uri=MIXS['0000751'], name="WaterInterface_chem_administration", curie=MIXS.curie('0000751'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_chem_administration, domain=WaterInterface, range=Optional[str],
