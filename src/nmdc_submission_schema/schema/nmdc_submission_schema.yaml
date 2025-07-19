@@ -295,6 +295,9 @@ prefixes:
   wikidata:
     prefix_prefix: wikidata
     prefix_reference: http://www.wikidata.org/entity/
+  TAXRANK:
+    prefix_prefix: TAXRANK
+    prefix_reference: http://purl.obolibrary.org/obo/TAXRANK_
 default_prefix: nmdc_sub_schema
 default_range: string
 subsets:
@@ -331,24 +334,6 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
-    base: str
-    uri: xsd:language
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
-    from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
@@ -360,6 +345,30 @@ types:
     - schema:Float
     base: float
     uri: xsd:float
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Text
+    base: str
+    uri: xsd:string
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "decimal".
+    from_schema: https://example.com/nmdc_submission_schema
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
   decimal_degree:
     name: decimal_degree
     description: A decimal degree expresses latitude or longitude as decimal fractions.
@@ -379,18 +388,35 @@ types:
     - schema:Float
     base: float
     uri: xsd:double
-  decimal:
-    name: decimal
-    description: A real number with arbitrary precision that conforms to the xsd:decimal
-      specification
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
     notes:
     - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "decimal".
+      lower case "uriorcurie".
     from_schema: https://example.com/nmdc_submission_schema
-    broad_mappings:
-    - schema:Number
-    base: Decimal
-    uri: xsd:decimal
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
   boolean:
     name: boolean
     description: A binary (true or false) value
@@ -403,29 +429,6 @@ types:
     base: Bool
     uri: xsd:boolean
     repr: bool
-  integer:
-    name: integer
-    description: An integer
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
-  string:
-    name: string
-    description: A character string
-    notes:
-    - In RDF serializations, a slot with range of string is treated as a literal or
-      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
-      referenced with the lower case "string".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Text
-    base: str
-    uri: xsd:string
   external_identifier:
     name: external_identifier
     description: A CURIE representing an external identifier
@@ -3965,6 +3968,8 @@ enums:
         text: Archipelago
       Arterial ulcer:
         text: Arterial ulcer
+      Artificial seawater:
+        text: Artificial seawater
       Ascites:
         text: Ascites
       Atoll lagoon:
@@ -9318,7 +9323,6 @@ slots:
     see_also:
     - https://www.ornl.gov/content/bio-scales-0
     aliases:
-    - ammonium_nitrogen
     - NH4-N
     domain_of:
     - Biosample
@@ -11588,12 +11592,16 @@ slots:
   dna_project_contact:
     name: dna_project_contact
     title: DNA seq project contact
+    deprecated: This slot is not always provided by JGI and does not need to be in
+      the file that we send back to JGI. Not needed in UI
     comments:
     - Do not edit these values. A template will be provided by NMDC in which these
       values have been pre-filled.
     examples:
     - value: John Jones
     from_schema: https://example.com/nmdc_submission_schema
+    last_updated_on: '2025-07-02T00:00:00'
+    modified_by: ORCID:0000-0002-8683-0050
     rank: 18
     string_serialization: '{text}'
     domain_of:
@@ -11681,12 +11689,16 @@ slots:
   dna_seq_project_pi:
     name: dna_seq_project_pi
     title: DNA seq project PI
+    deprecated: This slot is not always provided by JGI and does not need to be in
+      the file that we send back to JGI. Not needed in UI
     comments:
     - Do not edit these values. A template will be provided by NMDC in which these
       values have been pre-filled.
     examples:
     - value: Jane Johnson
     from_schema: https://example.com/nmdc_submission_schema
+    last_updated_on: '2025-07-02T00:00:00'
+    modified_by: ORCID:0000-0002-8683-0050
     rank: 17
     string_serialization: '{text}'
     domain_of:
@@ -14761,7 +14773,6 @@ slots:
     - https://www.ornl.gov/content/bio-scales-0
     - https://secure.caes.uga.edu/extension/publications/files/pdf/C%20874_5.PDF
     aliases:
-    - lbc_thirty
     - lbc30
     - lime buffer capacity (at 30 minutes)
     domain_of:
@@ -14791,7 +14802,6 @@ slots:
     see_also:
     - https://www.ornl.gov/content/bio-scales-0
     aliases:
-    - lbceq
     - lime buffer capacity (at 5-day equilibrium)
     domain_of:
     - Biosample
@@ -15058,8 +15068,6 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - https://www.ornl.gov/content/bio-scales-0
-    aliases:
-    - manganese
     domain_of:
     - Biosample
     range: string
@@ -15458,7 +15466,6 @@ slots:
     see_also:
     - https://www.ornl.gov/content/bio-scales-0
     aliases:
-    - nitrate_nitrogen
     - NO3-N
     domain_of:
     - Biosample
@@ -15509,7 +15516,6 @@ slots:
     see_also:
     - https://www.ornl.gov/content/bio-scales-0
     aliases:
-    - nitrite_nitrogen
     - NO2-N
     domain_of:
     - Biosample
@@ -16828,12 +16834,16 @@ slots:
   proposal_dna:
     name: proposal_dna
     title: DNA proposal ID
+    deprecated: This slot is not always provided by JGI and does not need to be in
+      the file that we send back to JGI. Not needed in UI
     comments:
     - Do not edit these values. A template will be provided by NMDC in which these
       values have been pre-filled.
     examples:
     - value: '504000'
     from_schema: https://example.com/nmdc_submission_schema
+    last_updated_on: '2025-07-02T00:00:00'
+    modified_by: ORCID:0000-0002-8683-0050
     rank: 19
     string_serialization: '{text}'
     domain_of:
@@ -16843,12 +16853,16 @@ slots:
   proposal_rna:
     name: proposal_rna
     title: RNA proposal ID
+    deprecated: This slot is not always provided by JGI and does not need to be in
+      the file that we send back to JGI. Not needed in UI
     comments:
     - Do not edit these values. A template will be provided by NMDC in which these
       values have been pre-filled.
     examples:
     - value: '504000'
     from_schema: https://example.com/nmdc_submission_schema
+    last_updated_on: '2025-07-02T00:00:00'
+    modified_by: ORCID:0000-0002-8683-0050
     rank: 19
     string_serialization: '{text}'
     domain_of:
@@ -17243,12 +17257,16 @@ slots:
   rna_project_contact:
     name: rna_project_contact
     title: RNA seq project contact
+    deprecated: This slot is not always provided by JGI and does not need to be in
+      the file that we send back to JGI. Not needed in UI
     comments:
     - Do not edit these values. A template will be provided by NMDC in which these
       values have been pre-filled.
     examples:
     - value: John Jones
     from_schema: https://example.com/nmdc_submission_schema
+    last_updated_on: '2025-07-02T00:00:00'
+    modified_by: ORCID:0000-0002-8683-0050
     rank: 18
     string_serialization: '{text}'
     domain_of:
@@ -17334,12 +17352,16 @@ slots:
   rna_seq_project_pi:
     name: rna_seq_project_pi
     title: RNA seq project PI
+    deprecated: This slot is not always provided by JGI and does not need to be in
+      the file that we send back to JGI. Not needed in UI
     comments:
     - Do not edit these values. A template will be provided by NMDC in which these
       values have been pre-filled.
     examples:
     - value: Jane Johnson
     from_schema: https://example.com/nmdc_submission_schema
+    last_updated_on: '2025-07-02T00:00:00'
+    modified_by: ORCID:0000-0002-8683-0050
     rank: 17
     string_serialization: '{text}'
     domain_of:
@@ -21871,8 +21893,6 @@ slots:
     from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - https://www.ornl.gov/content/bio-scales-0
-    aliases:
-    - zinc
     domain_of:
     - Biosample
     range: string
@@ -21894,6 +21914,7 @@ slots:
     name: protocol_link
     from_schema: https://example.com/nmdc_submission_schema
     domain_of:
+    - Configuration
     - PlannedProcess
     - Study
     range: Protocol
@@ -21944,12 +21965,14 @@ slots:
   alternative_names:
     name: alternative_names
     description: A list of alternative names used to refer to the entity. The distinction
-      between name and alternative names is application-specific.
+      between name and alternative names is application-specific.  This should not
+      be used for identifers which have their own slots (e.g., bioproject:PRJNA406974)
     from_schema: https://example.com/nmdc_submission_schema
     exact_mappings:
     - dcterms:alternative
     - skos:altLabel
     domain_of:
+    - Biosample
     - OntologyClass
     - Study
     range: string
@@ -21959,8 +21982,6 @@ slots:
     description: basic fields
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
-    domain_of:
-    - Biosample
   description:
     name: description
     description: a human-readable description of a thing
@@ -21976,8 +21997,6 @@ slots:
     description: field describing environmental aspect of a sample
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
-    domain_of:
-    - Biosample
   gold_path_field:
     name: gold_path_field
     annotations:
@@ -22033,8 +22052,6 @@ slots:
       belongs
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
-    domain_of:
-    - Biosample
   is_obsolete:
     name: is_obsolete
     description: A boolean value indicating whether the ontology term is obsolete.
@@ -22105,8 +22122,6 @@ slots:
     name: nucleic acid sequence source field
     from_schema: https://example.com/nmdc_submission_schema
     abstract: true
-    domain_of:
-    - Biosample
   object:
     name: object
     from_schema: https://example.com/nmdc_submission_schema
@@ -24038,7 +24053,6 @@ classes:
         slot_group: mixs_section
         range: float
         multivalued: false
-        pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       chem_administration:
         name: chem_administration
         annotations:
@@ -28989,7 +29003,6 @@ classes:
         slot_group: mixs_core_section
         range: integer
         multivalued: false
-        pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       organism_count:
         name: organism_count
         annotations:
@@ -39692,12 +39705,16 @@ classes:
       dna_project_contact:
         name: dna_project_contact
         title: DNA seq project contact
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: John Jones
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 18
         string_serialization: '{text}'
         owner: Biosample
@@ -39765,7 +39782,7 @@ classes:
         required: true
         recommended: false
         multivalued: false
-        pattern: ^[_a-zA-Z0-9-]*$
+        pattern: ^[-_.a-zA-Z0-9]*$
       dna_seq_project:
         name: dna_seq_project
         title: DNA seq project ID
@@ -39809,12 +39826,16 @@ classes:
       dna_seq_project_pi:
         name: dna_seq_project_pi
         title: DNA seq project PI
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: Jane Johnson
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 17
         string_serialization: '{text}'
         owner: Biosample
@@ -39849,12 +39870,16 @@ classes:
       proposal_dna:
         name: proposal_dna
         title: DNA proposal ID
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: '504000'
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 19
         string_serialization: '{text}'
         owner: Biosample
@@ -40098,12 +40123,16 @@ classes:
       dna_project_contact:
         name: dna_project_contact
         title: DNA seq project contact
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: John Jones
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 18
         string_serialization: '{text}'
         owner: Biosample
@@ -40171,7 +40200,7 @@ classes:
         required: true
         recommended: false
         multivalued: false
-        pattern: ^[_a-zA-Z0-9-]*$
+        pattern: ^[-_.a-zA-Z0-9]*$
       dna_seq_project:
         name: dna_seq_project
         title: DNA seq project ID
@@ -40215,12 +40244,16 @@ classes:
       dna_seq_project_pi:
         name: dna_seq_project_pi
         title: DNA seq project PI
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: Jane Johnson
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 17
         string_serialization: '{text}'
         owner: Biosample
@@ -40255,12 +40288,16 @@ classes:
       proposal_dna:
         name: proposal_dna
         title: DNA proposal ID
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: '504000'
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 19
         string_serialization: '{text}'
         owner: Biosample
@@ -40343,12 +40380,16 @@ classes:
       proposal_rna:
         name: proposal_rna
         title: RNA proposal ID
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: '504000'
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 19
         string_serialization: '{text}'
         owner: Biosample
@@ -40494,12 +40535,16 @@ classes:
       rna_project_contact:
         name: rna_project_contact
         title: RNA seq project contact
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: John Jones
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 18
         string_serialization: '{text}'
         owner: Biosample
@@ -40565,7 +40610,7 @@ classes:
         multivalued: false
         minimum_value: 0
         maximum_value: 2000
-        pattern: ^[_a-zA-Z0-9-]*$
+        pattern: ^[-_.a-zA-Z0-9]*$
       rna_seq_project:
         name: rna_seq_project
         title: RNA seq project ID
@@ -40609,12 +40654,16 @@ classes:
       rna_seq_project_pi:
         name: rna_seq_project_pi
         title: RNA seq project PI
+        deprecated: This slot is not always provided by JGI and does not need to be
+          in the file that we send back to JGI. Not needed in UI
         comments:
         - Do not edit these values. A template will be provided by NMDC in which these
           values have been pre-filled.
         examples:
         - value: Jane Johnson
         from_schema: https://w3id.org/nmdc/nmdc
+        last_updated_on: '2025-07-02T00:00:00'
+        modified_by: ORCID:0000-0002-8683-0050
         rank: 17
         string_serialization: '{text}'
         owner: Biosample
@@ -44862,7 +44911,6 @@ classes:
         multivalued: false
         minimum_value: 1
         maximum_value: 14
-        pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       root_med_regl:
         name: root_med_regl
         annotations:
@@ -46100,7 +46148,6 @@ classes:
         slot_group: mixs_section
         range: float
         multivalued: false
-        pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       chem_administration:
         name: chem_administration
         annotations:
@@ -49343,7 +49390,6 @@ classes:
         see_also:
         - https://www.ornl.gov/content/bio-scales-0
         aliases:
-        - ammonium_nitrogen
         - NH4-N
         rank: 1005
         owner: Biosample
@@ -49513,7 +49559,6 @@ classes:
         slot_group: mixs_section
         range: float
         multivalued: false
-        pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       chem_administration:
         name: chem_administration
         annotations:
@@ -50685,7 +50730,6 @@ classes:
         - https://www.ornl.gov/content/bio-scales-0
         - https://secure.caes.uga.edu/extension/publications/files/pdf/C%20874_5.PDF
         aliases:
-        - lbc_thirty
         - lbc30
         - lime buffer capacity (at 30 minutes)
         rank: 1001
@@ -50719,7 +50763,6 @@ classes:
         see_also:
         - https://www.ornl.gov/content/bio-scales-0
         aliases:
-        - lbceq
         - lime buffer capacity (at 5-day equilibrium)
         rank: 1002
         owner: Biosample
@@ -50912,8 +50955,6 @@ classes:
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - https://www.ornl.gov/content/bio-scales-0
-        aliases:
-        - manganese
         rank: 1003
         owner: Biosample
         domain_of:
@@ -51115,7 +51156,6 @@ classes:
         see_also:
         - https://www.ornl.gov/content/bio-scales-0
         aliases:
-        - nitrate_nitrogen
         - NO3-N
         rank: 1006
         owner: Biosample
@@ -51145,7 +51185,6 @@ classes:
         see_also:
         - https://www.ornl.gov/content/bio-scales-0
         aliases:
-        - nitrite_nitrogen
         - NO2-N
         rank: 1007
         owner: Biosample
@@ -52573,8 +52612,6 @@ classes:
         from_schema: https://w3id.org/nmdc/nmdc
         see_also:
         - https://www.ornl.gov/content/bio-scales-0
-        aliases:
-        - zinc
         rank: 1004
         owner: Biosample
         domain_of:
@@ -54954,7 +54991,6 @@ classes:
         slot_group: mixs_section
         range: float
         multivalued: false
-        pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
       chem_administration:
         name: chem_administration
         annotations:
@@ -57873,6 +57909,7 @@ classes:
         rank: 4
         owner: NucleotideSequencing
         domain_of:
+        - Configuration
         - PlannedProcess
         - Study
         slot_group: sequencing_section
@@ -57973,6 +58010,7 @@ classes:
         rank: 4
         owner: NucleotideSequencing
         domain_of:
+        - Configuration
         - PlannedProcess
         - Study
         slot_group: sequencing_section
@@ -58075,6 +58113,7 @@ classes:
         rank: 4
         owner: NucleotideSequencing
         domain_of:
+        - Configuration
         - PlannedProcess
         - Study
         slot_group: sequencing_section
@@ -58175,6 +58214,7 @@ classes:
         rank: 4
         owner: NucleotideSequencing
         domain_of:
+        - Configuration
         - PlannedProcess
         - Study
         slot_group: sequencing_section
