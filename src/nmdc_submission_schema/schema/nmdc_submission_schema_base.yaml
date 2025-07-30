@@ -765,8 +765,10 @@ classes:
         slot_group: JGI-Metagenomics
       nuc_acid_absorb1:
         slot_group: JGI-Metagenomics
+        required: true
       nuc_acid_absorb2:
         slot_group: JGI-Metagenomics
+        required: true
       nuc_acid_concentration:
         slot_group: JGI-Metagenomics
     rules:
