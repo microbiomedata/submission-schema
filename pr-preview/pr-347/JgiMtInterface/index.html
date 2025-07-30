@@ -797,7 +797,7 @@ attributes:
     required: true
   cont_well:
     name: cont_well
-    title: JGI plate position
+    title: plate position
     comments:
     - Required when 'plate' is selected for container type.
     - Leave blank if the sample will be shipped in a tube.
@@ -824,7 +824,7 @@ attributes:
     pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
   container_name:
     name: container_name
-    title: Container name
+    title: container name
     comments:
     - Must be unique across all tubes and plates, and &lt;20 characters.
     - All samples in a plate should have the same plate name.
