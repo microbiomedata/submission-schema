@@ -57,7 +57,7 @@ enums:
     permissible_values:
       plate:
       tube:
-  DnaSampleFormatEnum:
+  JGISampleFormatEnum:
     permissible_values:
       10 mM Tris-HCl:
       DNAStable:
@@ -104,18 +104,6 @@ enums:
       microanaerobe:
       obligate aerobe:
       obligate anaerobe:
-  RnaSampleFormatEnum:
-    permissible_values:
-      10 mM Tris-HCl:
-      DNAStable:
-      Ethanol:
-      Low EDTA TE:
-      MDA reaction buffer:
-      PBS:
-      Pellet:
-      RNAStable:
-      TE:
-      Water:
   SampleTypeEnum:
     permissible_values:
       soil:
@@ -506,7 +494,7 @@ slots:
     examples:
       - value: Water
     rank: 12
-    range: SampleFormatEnum
+    range: JGISampleFormatEnum
     required: true
   jgi_sample_name:
     description: Give the JGI sample a name that is meaningful to you. Sample names
