@@ -705,33 +705,33 @@ classes:
       - jgi_sample_volume
     slot_usage:
       cont_type:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       cont_well:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       container_name:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       dnase:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_samp_id:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_sample_format:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_sample_name:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_seq_project:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_seq_project_name:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_sample_volume:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       nuc_acid_absorb1:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       nuc_acid_absorb2:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       nuc_acid_concentration:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       dna_isolate_meth:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
@@ -778,35 +778,35 @@ classes:
       - jgi_sample_volume
     slot_usage:
       cont_type:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       cont_well:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       container_name:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       dnase:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_samp_id:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_sample_format:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_sample_name:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_seq_project:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_seq_project_name:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       jgi_sample_volume:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       nuc_acid_absorb1:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
         required: true
       nuc_acid_absorb2:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
         required: true
       nuc_acid_concentration:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
       dna_isolate_meth:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metagenomics_section
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
@@ -853,31 +853,31 @@ classes:
       - jgi_sample_volume
     slot_usage:
       cont_type:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       cont_well:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       container_name:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       dnase:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       jgi_samp_id:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       jgi_sample_format:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       jgi_sample_name:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       jgi_seq_project:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       jgi_seq_project_name:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       jgi_sample_volume:
-        slot_group: JGI-Metatranscriptomics
+        slot_group: jgi_metatranscriptomics_section
       nuc_acid_absorb1:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metatranscriptomics_section
       nuc_acid_absorb2:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metatranscriptomics_section
       nuc_acid_concentration:
-        slot_group: JGI-Metagenomics
+        slot_group: jgi_metatranscriptomics_section
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
