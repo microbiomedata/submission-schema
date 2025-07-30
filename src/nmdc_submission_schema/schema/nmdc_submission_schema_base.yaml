@@ -552,6 +552,7 @@ slots:
     recommended: true
     aliases:
       - dna_absorb1
+      - rna_absorb1
   nuc_acid_absorb2:
     description: 260/230 measurement of nucleic acid sample purity
     title: Nucleic acid absorbance 260/230
@@ -564,11 +565,13 @@ slots:
     recommended: true
     aliases:
       - dna_absorb2
+      - nuc_acid_absorb2
   nuc_acid_concentration:
     see_also:
       - nmdc:nucleic_acid_concentration
     aliases:
       - dna_concentration
+      - rna_concentration
     title: Nucleic acid concentration in ng/ul
     comments:
       - Units must be in ng/uL. Enter the numerical part only. Must be calculated using

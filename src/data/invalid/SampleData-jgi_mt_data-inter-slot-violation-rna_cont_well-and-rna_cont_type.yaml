@@ -2,7 +2,7 @@ jgi_mt_data:
   - analysis_type:
       - metatranscriptomics
     dnase: "no"
-    rna_concentration: 100.3
+    nuc_acid_concentration: 100.3
     cont_type: tube
     cont_well: H7 # Should be blank because cont_type is a tube.
     container_name: cat_ht_1999

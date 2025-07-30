@@ -130,7 +130,7 @@ TEMPLATE_INSTANCES = {
     "JgiMtInterface": {
         "analysis_type": ["metatranscriptomics"],
         "dnase": "no",
-        "rna_concentration": 0.0,
+        "nuc_acid_concentration": 0.0,
         "cont_type": "plate",
         "cont_well": "C5",
         "container_name": "0000001",

@@ -2,7 +2,7 @@ jgi_mt_data:
   - analysis_type:
       - metatranscriptomics
     dnase: "no"
-    rna_concentration: 100.3
+    nuc_acid_concentration: 100.3
     cont_type: plate
     cont_well: H7
     container_name: Columbia_River_Watershed_MT_052292 # should be less than 20 characters
