@@ -945,10 +945,6 @@
          <lastmod>2025-07-30</lastmod>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/biomaterial_purity/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
          <loc>https://microbiomedata.github.io/submission-schema/biotic_regm/</loc>
          <lastmod>2025-07-30</lastmod>
     </url>
@@ -1218,18 +1214,6 @@
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/diss_oxygen_fluid/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/dna_absorb1/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/dna_absorb2/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/dna_concentration/</loc>
          <lastmod>2025-07-30</lastmod>
     </url>
     <url>
@@ -2065,6 +2049,18 @@
          <lastmod>2025-07-30</lastmod>
     </url>
     <url>
+         <loc>https://microbiomedata.github.io/submission-schema/nuc_acid_absorb1/</loc>
+         <lastmod>2025-07-30</lastmod>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/nuc_acid_absorb2/</loc>
+         <lastmod>2025-07-30</lastmod>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/nuc_acid_concentration/</loc>
+         <lastmod>2025-07-30</lastmod>
+    </url>
+    <url>
          <loc>https://microbiomedata.github.io/submission-schema/nucleic_acid_sequence_source_field/</loc>
          <lastmod>2025-07-30</lastmod>
     </url>
@@ -2346,18 +2342,6 @@
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/resins_pc/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/rna_absorb1/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/rna_absorb2/</loc>
-         <lastmod>2025-07-30</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/rna_concentration/</loc>
          <lastmod>2025-07-30</lastmod>
     </url>
     <url>

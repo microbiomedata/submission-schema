@@ -277,12 +277,6 @@
 
       JgiMgInterface : container_name
 
-      JgiMgInterface : dna_absorb1
-
-      JgiMgInterface : dna_absorb2
-
-      JgiMgInterface : dna_concentration
-
       JgiMgInterface : dna_isolate_meth
 
       JgiMgInterface : dnase
@@ -313,6 +307,12 @@
 
       JgiMgInterface : jgi_seq_project_name
 
+      JgiMgInterface : nuc_acid_absorb1
+
+      JgiMgInterface : nuc_acid_absorb2
+
+      JgiMgInterface : nuc_acid_concentration
+
       JgiMgInterface : samp_name
 
       JgiMgInterface : source_mat_id
@@ -338,19 +338,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../dna_absorb1/">dna_absorb1</a></td>
+<td><a href="../nuc_acid_absorb1/">nuc_acid_absorb1</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
-<td>260/280 measurement of DNA sample purity</td>
+<td>260/280 measurement of nucleic acid sample purity</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../dna_absorb2/">dna_absorb2</a></td>
+<td><a href="../nuc_acid_absorb2/">nuc_acid_absorb2</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
-<td>260/230 measurement of DNA sample purity</td>
+<td>260/230 measurement of nucleic acid sample purity</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../dna_concentration/">dna_concentration</a></td>
+<td><a href="../nuc_acid_concentration/">nuc_acid_concentration</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td></td>
 <td>direct</td>
@@ -417,24 +417,6 @@
 </tr>
 <tr>
 <td><a href="../jgi_sample_volume/">jgi_sample_volume</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dna_absorb1/">dna_absorb1</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
-<td>260/280 measurement of DNA sample purity</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dna_absorb2/">dna_absorb2</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
-<td>260/230 measurement of DNA sample purity</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dna_concentration/">dna_concentration</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td></td>
 <td>direct</td>
@@ -539,9 +521,9 @@ is_a: DhInterface
 mixins:
 - DhMultiviewCommonColumnsMixin
 slots:
-- dna_absorb1
-- dna_absorb2
-- dna_concentration
+- nuc_acid_absorb1
+- nuc_acid_absorb2
+- nuc_acid_concentration
 - cont_type
 - cont_well
 - container_name
@@ -553,9 +535,6 @@ slots:
 - jgi_seq_project
 - jgi_seq_project_name
 - jgi_sample_volume
-- dna_absorb1
-- dna_absorb2
-- dna_concentration
 - dna_isolate_meth
 slot_usage:
   cont_type:
@@ -588,72 +567,15 @@ slot_usage:
   jgi_sample_volume:
     name: jgi_sample_volume
     slot_group: JGI-Metagenomics
-  dna_absorb1:
-    name: dna_absorb1
-    description: 260/280 measurement of DNA sample purity
-    title: DNA absorbance 260/280
-    comments:
-    - Recommended value is between 1 and 3.
-    examples:
-    - value: '2.02'
-    from_schema: https://w3id.org/nmdc/nmdc
-    rank: 7
-    is_a: biomaterial_purity
-    owner: Biosample
-    domain_of:
-    - Biosample
-    - ProcessedSample
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiMtInterface
-    slot_group: jgi_metagenomics_section
-    range: float
-    recommended: true
-  dna_absorb2:
-    name: dna_absorb2
-    description: 260/230 measurement of DNA sample purity
-    title: DNA absorbance 260/230
-    comments:
-    - Recommended value is between 1 and 3.
-    examples:
-    - value: '2.02'
-    from_schema: https://w3id.org/nmdc/nmdc
-    rank: 8
-    is_a: biomaterial_purity
-    owner: Biosample
-    domain_of:
-    - Biosample
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiMtInterface
-    slot_group: jgi_metagenomics_section
-    range: float
-    recommended: true
-  dna_concentration:
-    name: dna_concentration
-    title: DNA concentration in ng/ul
-    comments:
-    - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
-      a fluorometric method. Acceptable values are 0-2000.
-    examples:
-    - value: '100'
-    from_schema: https://w3id.org/nmdc/nmdc
-    see_also:
-    - nmdc:nucleic_acid_concentration
-    rank: 5
-    owner: Biosample
-    domain_of:
-    - Biosample
-    - ProcessedSample
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiMtInterface
-    slot_group: jgi_metagenomics_section
-    range: float
-    required: true
-    recommended: false
-    minimum_value: 0
-    maximum_value: 2000
+  nuc_acid_absorb1:
+    name: nuc_acid_absorb1
+    slot_group: JGI-Metagenomics
+  nuc_acid_absorb2:
+    name: nuc_acid_absorb2
+    slot_group: JGI-Metagenomics
+  nuc_acid_concentration:
+    name: nuc_acid_concentration
+    slot_group: JGI-Metagenomics
   dna_isolate_meth:
     name: dna_isolate_meth
     description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -752,72 +674,15 @@ slot_usage:
   jgi_sample_volume:
     name: jgi_sample_volume
     slot_group: JGI-Metagenomics
-  dna_absorb1:
-    name: dna_absorb1
-    description: 260/280 measurement of DNA sample purity
-    title: DNA absorbance 260/280
-    comments:
-    - Recommended value is between 1 and 3.
-    examples:
-    - value: '2.02'
-    from_schema: https://w3id.org/nmdc/nmdc
-    rank: 7
-    is_a: biomaterial_purity
-    owner: Biosample
-    domain_of:
-    - Biosample
-    - ProcessedSample
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiMtInterface
-    slot_group: jgi_metagenomics_section
-    range: float
-    recommended: true
-  dna_absorb2:
-    name: dna_absorb2
-    description: 260/230 measurement of DNA sample purity
-    title: DNA absorbance 260/230
-    comments:
-    - Recommended value is between 1 and 3.
-    examples:
-    - value: '2.02'
-    from_schema: https://w3id.org/nmdc/nmdc
-    rank: 8
-    is_a: biomaterial_purity
-    owner: Biosample
-    domain_of:
-    - Biosample
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiMtInterface
-    slot_group: jgi_metagenomics_section
-    range: float
-    recommended: true
-  dna_concentration:
-    name: dna_concentration
-    title: DNA concentration in ng/ul
-    comments:
-    - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
-      a fluorometric method. Acceptable values are 0-2000.
-    examples:
-    - value: '100'
-    from_schema: https://w3id.org/nmdc/nmdc
-    see_also:
-    - nmdc:nucleic_acid_concentration
-    rank: 5
-    owner: Biosample
-    domain_of:
-    - Biosample
-    - ProcessedSample
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiMtInterface
-    slot_group: jgi_metagenomics_section
-    range: float
-    required: true
-    recommended: false
-    minimum_value: 0
-    maximum_value: 2000
+  nuc_acid_absorb1:
+    name: nuc_acid_absorb1
+    slot_group: JGI-Metagenomics
+  nuc_acid_absorb2:
+    name: nuc_acid_absorb2
+    slot_group: JGI-Metagenomics
+  nuc_acid_concentration:
+    name: nuc_acid_concentration
+    slot_group: JGI-Metagenomics
   dna_isolate_meth:
     name: dna_isolate_meth
     description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -844,73 +709,74 @@ slot_usage:
     name: oxy_stat_samp
     range: OxyStatSampEnum
 attributes:
-  dna_absorb1:
-    name: dna_absorb1
-    description: 260/280 measurement of DNA sample purity
-    title: DNA absorbance 260/280
+  nuc_acid_absorb1:
+    name: nuc_acid_absorb1
+    description: 260/280 measurement of nucleic acid sample purity
+    title: Nucleic acid absorbance 260/280
     comments:
     - Recommended value is between 1 and 3.
     examples:
     - value: '2.02'
-    from_schema: https://w3id.org/nmdc/nmdc
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_absorb1
+    - rna_absorb1
     rank: 7
-    is_a: biomaterial_purity
-    alias: dna_absorb1
+    alias: nuc_acid_absorb1
     owner: JgiMgInterface
     domain_of:
-    - Biosample
-    - ProcessedSample
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: jgi_metagenomics_section
+    slot_group: JGI-Metagenomics
     range: float
     recommended: true
-  dna_absorb2:
-    name: dna_absorb2
-    description: 260/230 measurement of DNA sample purity
-    title: DNA absorbance 260/230
+  nuc_acid_absorb2:
+    name: nuc_acid_absorb2
+    description: 260/230 measurement of nucleic acid sample purity
+    title: Nucleic acid absorbance 260/230
     comments:
     - Recommended value is between 1 and 3.
     examples:
     - value: '2.02'
-    from_schema: https://w3id.org/nmdc/nmdc
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_absorb2
+    - nuc_acid_absorb2
     rank: 8
-    is_a: biomaterial_purity
-    alias: dna_absorb2
+    alias: nuc_acid_absorb2
     owner: JgiMgInterface
     domain_of:
-    - Biosample
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: jgi_metagenomics_section
+    slot_group: JGI-Metagenomics
     range: float
     recommended: true
-  dna_concentration:
-    name: dna_concentration
-    title: DNA concentration in ng/ul
+  nuc_acid_concentration:
+    name: nuc_acid_concentration
+    title: Nucleic acid concentration in ng/ul
     comments:
     - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
       a fluorometric method. Acceptable values are 0-2000.
     examples:
     - value: '100'
-    from_schema: https://w3id.org/nmdc/nmdc
+    from_schema: https://example.com/nmdc_submission_schema
     see_also:
     - nmdc:nucleic_acid_concentration
+    aliases:
+    - dna_concentration
+    - rna_concentration
     rank: 5
-    alias: dna_concentration
+    alias: nuc_acid_concentration
     owner: JgiMgInterface
     domain_of:
-    - Biosample
-    - ProcessedSample
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: jgi_metagenomics_section
+    slot_group: JGI-Metagenomics
     range: float
     required: true
-    recommended: false
     minimum_value: 0
     maximum_value: 2000
   cont_type:

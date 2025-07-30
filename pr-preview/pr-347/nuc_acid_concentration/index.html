@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/dna_concentration/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/nuc_acid_concentration/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: DNA concentration in ng/ul (dna_concentration) - submission-schema</title>
+        <title>Slot: Nucleic acid concentration in ng/ul (nuc_acid_concentration) - submission-schema</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-dna-concentration-in-ngul-dna_concentration" class="md-skip">
+        <a href="#slot-nucleic-acid-concentration-in-ngul-nuc_acid_concentration" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: DNA concentration in ng/ul (dna_concentration)
+              Slot: Nucleic acid concentration in ng/ul (nuc_acid_concentration)
             
           </span>
         </div>
@@ -331,6 +331,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -417,9 +426,9 @@
   
 
 
-<h1 id="slot-dna-concentration-in-ngul-dna_concentration">Slot: DNA concentration in ng/ul (dna_concentration)</h1>
-<p>URI: <a href="https://example.com/nmdc_sub_schema/dna_concentration">nmdc_sub_schema:dna_concentration</a>
-Alias: dna_concentration</p>
+<h1 id="slot-nucleic-acid-concentration-in-ngul-nuc_acid_concentration">Slot: Nucleic acid concentration in ng/ul (nuc_acid_concentration)</h1>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/nuc_acid_concentration">nmdc_sub_schema:nuc_acid_concentration</a>
+Alias: nuc_acid_concentration</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -435,7 +444,7 @@ Alias: dna_concentration</p>
 <tr>
 <td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
 <td>jgi_mt dh_interface</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
@@ -455,7 +464,7 @@ Alias: dna_concentration</p>
 <p>Range: <a href="../Float/">Float</a></p>
 </li>
 <li>
-<p>Recommended: True</p>
+<p>Required: True</p>
 </li>
 <li>
 <p>Minimum Value: 0</p>
@@ -463,6 +472,11 @@ Alias: dna_concentration</p>
 <li>
 <p>Maximum Value: 2000</p>
 </li>
+</ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>dna_concentration</li>
+<li>rna_concentration</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -501,19 +515,19 @@ Alias: dna_concentration</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>nmdc_sub_schema:dna_concentration</td>
+<td>nmdc_sub_schema:nuc_acid_concentration</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:dna_concentration</td>
+<td>nmdc_sub_schema:nuc_acid_concentration</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: dna_concentration
-title: DNA concentration in ng/ul
+<pre><code class="language-yaml">name: nuc_acid_concentration
+title: Nucleic acid concentration in ng/ul
 comments:
 - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
   a fluorometric method. Acceptable values are 0-2000.
@@ -522,17 +536,17 @@ examples:
 from_schema: https://example.com/nmdc_submission_schema
 see_also:
 - nmdc:nucleic_acid_concentration
+aliases:
+- dna_concentration
+- rna_concentration
 rank: 5
-alias: dna_concentration
+alias: nuc_acid_concentration
 domain_of:
-- Biosample
-- ProcessedSample
 - JgiMgInterface
 - JgiMgLrInterface
 - JgiMtInterface
-slot_group: JGI-Metagenomics
 range: float
-recommended: true
+required: true
 minimum_value: 0
 maximum_value: 2000
 
