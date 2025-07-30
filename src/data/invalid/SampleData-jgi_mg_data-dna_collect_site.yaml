@@ -3,7 +3,7 @@ jgi_mg_data:
       - metagenomics
       - metatranscriptomics
     dna_collect_site: xxx
-    dna_concentration: 1.23
+    nuc_acid_concentration: 1.23
     cont_type: plate
     cont_well: C3
     container_name: xxx

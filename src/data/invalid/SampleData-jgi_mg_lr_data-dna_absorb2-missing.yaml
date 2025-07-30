@@ -2,7 +2,7 @@ jgi_mg_lr_data:
   - analysis_type:
       - metagenomics_long_read
     dba_absorb1: 4.56
-    dna_concentration: 1.23
+    nuc_acid_concentration: 1.23
     cont_type: plate
     cont_well: C3
     container_name: xxx

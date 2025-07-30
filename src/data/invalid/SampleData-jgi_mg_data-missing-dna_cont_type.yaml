@@ -2,7 +2,7 @@ jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    dna_concentration: 1.23
+    nuc_acid_concentration: 1.23
     container_name: xxx
     dnase: "no"
     dna_isolate_meth: xxx

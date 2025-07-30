@@ -95,7 +95,7 @@ TEMPLATE_INSTANCES = {
     },
     "JgiMgInterface": {
         "analysis_type": ["metagenomics"],
-        "dna_concentration": 0.0,
+        "nuc_acid_concentration": 0.0,
         "cont_type": "plate",
         "cont_well": "C5",
         "container_name": "0000001",
@@ -111,9 +111,9 @@ TEMPLATE_INSTANCES = {
     },
     "JgiMgLrInterface": {
         "analysis_type": ["metagenomics"],
-        "dna_absorb1": 0.0,
-        "dna_absorb2": 0.0,
-        "dna_concentration": 0.0,
+        "nuc_acid_absorb1": 0.0,
+        "nuc_acid_absorb2": 0.0,
+        "nuc_acid_concentration": 0.0,
         "cont_type": "plate",
         "cont_well": "C5",
         "container_name": "0000001",
