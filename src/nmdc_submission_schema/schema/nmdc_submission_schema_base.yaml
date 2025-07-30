@@ -512,7 +512,7 @@ slots:
       - Do not edit these values. A template will be provided by NMDC in which these
         values have been pre-filled.
     examples:
-      - value: '1191234'
+      - value: 1191234
     rank: 1
     required: true
     range: float

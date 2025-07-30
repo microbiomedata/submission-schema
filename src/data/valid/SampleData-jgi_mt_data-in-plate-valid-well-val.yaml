@@ -6,7 +6,7 @@ jgi_mt_data:
     cont_type: plate
     cont_well: B2
     container_name: xxx
-    dnase_rna: "no"
+    dnase: "no"
     rna_isolate_meth: xxx
     jgi_samp_id: xxx
     jgi_sample_format: DNAStable

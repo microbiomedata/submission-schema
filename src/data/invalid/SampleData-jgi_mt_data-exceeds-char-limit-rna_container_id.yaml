@@ -1,7 +1,7 @@
 jgi_mt_data:
   - analysis_type:
       - metatranscriptomics
-    dnase_rna: "no"
+    dnase: "no"
     rna_concentration: 100.3
     cont_type: plate
     cont_well: H7

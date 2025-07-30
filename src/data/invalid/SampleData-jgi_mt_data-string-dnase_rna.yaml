@@ -1,7 +1,7 @@
 jgi_mt_data:
   - samp_name: sample name
     source_mat_id: MPI:012345
-    dnase_rna: Not Applicable
+    dnase: Not Applicable
     rna_concentration: 100.3
     cont_type: tube 
     cont_well: H7 

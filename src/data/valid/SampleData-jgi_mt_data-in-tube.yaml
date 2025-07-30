@@ -5,7 +5,7 @@ jgi_mt_data:
     rna_concentration: 1.23
     cont_type: tube
     container_name: xxx
-    dnase_rna: "no"
+    dnase: "no"
     rna_isolate_meth: xxx
     jgi_samp_id: xxx
     jgi_sample_format: DNAStable
