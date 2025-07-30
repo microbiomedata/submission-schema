@@ -539,45 +539,45 @@ slots:
 slot_usage:
   cont_type:
     name: cont_type
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   cont_well:
     name: cont_well
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   container_name:
     name: container_name
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   dnase:
     name: dnase
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_samp_id:
     name: jgi_samp_id
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_sample_format:
     name: jgi_sample_format
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_sample_name:
     name: jgi_sample_name
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_seq_project:
     name: jgi_seq_project
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_seq_project_name:
     name: jgi_seq_project_name
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_sample_volume:
     name: jgi_sample_volume
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   nuc_acid_absorb1:
     name: nuc_acid_absorb1
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     required: true
   nuc_acid_absorb2:
     name: nuc_acid_absorb2
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     required: true
   nuc_acid_concentration:
     name: nuc_acid_concentration
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   dna_isolate_meth:
     name: dna_isolate_meth
     description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -648,45 +648,45 @@ mixins:
 slot_usage:
   cont_type:
     name: cont_type
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   cont_well:
     name: cont_well
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   container_name:
     name: container_name
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   dnase:
     name: dnase
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_samp_id:
     name: jgi_samp_id
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_sample_format:
     name: jgi_sample_format
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_sample_name:
     name: jgi_sample_name
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_seq_project:
     name: jgi_seq_project
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_seq_project_name:
     name: jgi_seq_project_name
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   jgi_sample_volume:
     name: jgi_sample_volume
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   nuc_acid_absorb1:
     name: nuc_acid_absorb1
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     required: true
   nuc_acid_absorb2:
     name: nuc_acid_absorb2
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     required: true
   nuc_acid_concentration:
     name: nuc_acid_concentration
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
   dna_isolate_meth:
     name: dna_isolate_meth
     description: Describe the method/protocol/kit used to extract DNA/RNA.
@@ -732,7 +732,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: float
     required: true
     recommended: true
@@ -755,7 +755,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: float
     required: true
     recommended: true
@@ -780,7 +780,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: float
     required: true
     minimum_value: 0
@@ -800,7 +800,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: JgiContTypeEnum
     required: true
   cont_well:
@@ -826,7 +826,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: string
     recommended: true
     pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
@@ -850,7 +850,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: string
     required: true
     pattern: ^[-_.a-zA-Z0-9]{1,20}$
@@ -872,7 +872,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: YesNoEnum
     required: true
   dna_isolate_meth:
@@ -917,7 +917,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: string
     required: true
     multivalued: false
@@ -938,7 +938,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: JGISampleFormatEnum
     required: true
   jgi_sample_name:
@@ -959,7 +959,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: string
     required: true
     multivalued: false
@@ -984,7 +984,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: float
     required: true
   jgi_seq_project_name:
@@ -1006,7 +1006,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: string
     required: true
     multivalued: false
@@ -1030,7 +1030,7 @@ attributes:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: float
     required: true
     minimum_value: 0
