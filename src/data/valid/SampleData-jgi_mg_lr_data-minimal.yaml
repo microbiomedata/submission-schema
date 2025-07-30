@@ -5,7 +5,7 @@ jgi_mg_lr_data:
     dna_absorb2: 4.56
     dna_concentration: 1.23
     cont_type: plate
-    dna_cont_well: C3
+    cont_well: C3
     dna_container_id: xxx
     dna_dnase: "no"
     dna_isolate_meth: xxx

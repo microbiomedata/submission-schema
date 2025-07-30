@@ -4,7 +4,7 @@ jgi_mg_data:
       - metatranscriptomics
     dna_concentration: 1.23
     cont_type: plate
-    dna_cont_well: Z99
+    cont_well: Z99
     dna_container_id: xxx
     dna_dnase: "no"
     dna_isolate_meth: xxx

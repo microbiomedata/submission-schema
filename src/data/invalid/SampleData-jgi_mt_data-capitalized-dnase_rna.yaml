@@ -5,7 +5,7 @@ jgi_mt_data:
     proposal_rna: '504000'
     rna_concentration: 100.3
     cont_type: tube 
-    rna_cont_well: H7 
+    cont_well: H7 
     rna_container_id: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
     rna_project_contact: Leslie Ann Levine
