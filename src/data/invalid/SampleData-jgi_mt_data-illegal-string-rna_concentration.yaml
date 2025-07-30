@@ -2,19 +2,16 @@ jgi_mt_data:
   - samp_name: sample name
     source_mat_id: MPI:012345
     dnase_rna: no
-    proposal_rna: '504000'
     rna_concentration: one hundred
     cont_type: tube 
     cont_well: H7 
     container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
-    rna_project_contact: Leslie Ann Levine
     jgi_samp_id: '123456'
     jgi_sample_format: MDA reaction buffer
     jgi_sample_name: JGI_lagoon_14343
     jgi_seq_project: '123456789'
     jgi_seq_project_name: JGI Lagoon metatranscritpomics
-    rna_seq_project_pi: Patty Smith
     jgi_sample_volume: 25.1
     analysis_type: 
       - metatranscriptomics
