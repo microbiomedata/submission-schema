@@ -10,7 +10,7 @@ jgi_mg_data:
     dna_isolate_meth: xxx
     dna_project_contact: xxx
     jgi_samp_id: xxx
-    dna_sample_format: red red wine
+    jgi_sample_format: red red wine
     dna_sample_name: xxx
     dna_seq_project: xxx
     dna_seq_project_name: xxx
