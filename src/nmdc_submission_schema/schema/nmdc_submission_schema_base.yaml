@@ -844,7 +844,7 @@ classes:
       - cont_well
       - container_name
       - dnase
-      - dna_isolate_meth
+      - rna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -877,6 +877,8 @@ classes:
       nuc_acid_absorb2:
         slot_group: jgi_metatranscriptomics_section
       nuc_acid_concentration:
+        slot_group: jgi_metatranscriptomics_section
+      rna_isolate_meth:
         slot_group: jgi_metatranscriptomics_section
     rules:
       - title: well_requires_plate
