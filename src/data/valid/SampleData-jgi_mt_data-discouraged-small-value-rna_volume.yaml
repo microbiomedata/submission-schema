@@ -6,7 +6,7 @@ jgi_mt_data:
     rna_concentration: 100.3
     cont_type: plate
     cont_well: H7
-    rna_container_id: cat_ht_1999
+    container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
     rna_project_contact: Leslie Ann Levine
     rna_samp_id: '123456'

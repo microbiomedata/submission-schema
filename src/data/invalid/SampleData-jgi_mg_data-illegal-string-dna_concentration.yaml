@@ -5,7 +5,7 @@ jgi_mg_data:
     dna_concentration: five hundred
     cont_type: plate
     cont_well: C3
-    dna_container_id: xxx
+    container_name: xxx
     dna_dnase: "no"
     dna_isolate_meth: xxx
     dna_project_contact: xxx

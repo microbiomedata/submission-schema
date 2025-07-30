@@ -5,7 +5,7 @@ jgi_mt_data:
     rna_concentration: 1.23
     cont_type: plate
     cont_well: B2
-    rna_container_id: xxx
+    container_name: xxx
     dnase_rna: "no"
     rna_isolate_meth: xxx
     rna_project_contact: xxx
