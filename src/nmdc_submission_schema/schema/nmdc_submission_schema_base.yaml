@@ -540,6 +540,46 @@ slots:
     required: true
     minimum_value: 0
     maximum_value: 1000
+  nuc_acid_absorb1:
+    description: 260/280 measurement of nucleic acid sample purity
+    title: Nucleic acid absorbance 260/280
+    comments:
+      - Recommended value is between 1 and 3.
+    examples:
+      - value: 2.02
+    rank: 7
+    range: float
+    recommended: true
+    aliases:
+      - dna_absorb1
+  nuc_acid_absorb2:
+    description: 260/230 measurement of nucleic acid sample purity
+    title: Nucleic acid absorbance 260/230
+    comments:
+      - Recommended value is between 1 and 3.
+    examples:
+      - value: 2.02
+    rank: 8
+    range: float
+    recommended: true
+    aliases:
+      - dna_absorb2
+  nuc_acid_concentration:
+    see_also:
+      - nmdc:nucleic_acid_concentration
+    aliases:
+      - dna_concentration
+    title: Nucleic acid concentration in ng/ul
+    comments:
+      - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
+        a fluorometric method. Acceptable values are 0-2000.
+    examples:
+      - value: 100
+    rank: 5
+    range: float
+    recommended: true
+    minimum_value: 0
+    maximum_value: 2000
 classes:
   AirInterface:
     annotations:
@@ -617,9 +657,9 @@ classes:
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
-      - dna_absorb1
-      - dna_absorb2
-      - dna_concentration
+      - nuc_acid_absorb1
+      - nuc_acid_absorb2
+      - nuc_acid_concentration
       - cont_type
       - cont_well
       - container_name
@@ -651,6 +691,12 @@ classes:
       jgi_seq_project_name:
         slot_group: JGI-Metagenomics
       jgi_sample_volume:
+        slot_group: JGI-Metagenomics
+      nuc_acid_absorb1:
+        slot_group: JGI-Metagenomics
+      nuc_acid_absorb2:
+        slot_group: JGI-Metagenomics
+      nuc_acid_concentration:
         slot_group: JGI-Metagenomics
     rules:
       - title: well_requires_plate
@@ -682,9 +728,9 @@ classes:
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
-      - dna_absorb1
-      - dna_absorb2
-      - dna_concentration
+      - nuc_acid_absorb1
+      - nuc_acid_absorb2
+      - nuc_acid_concentration
       - cont_type
       - cont_well
       - container_name
@@ -716,6 +762,12 @@ classes:
       jgi_seq_project_name:
         slot_group: JGI-Metagenomics
       jgi_sample_volume:
+        slot_group: JGI-Metagenomics
+      nuc_acid_absorb1:
+        slot_group: JGI-Metagenomics
+      nuc_acid_absorb2:
+        slot_group: JGI-Metagenomics
+      nuc_acid_concentration:
         slot_group: JGI-Metagenomics
     rules:
       - title: well_requires_plate
@@ -747,9 +799,9 @@ classes:
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
-      - dna_absorb1
-      - dna_absorb2
-      - dna_concentration
+      - nuc_acid_absorb1
+      - nuc_acid_absorb2
+      - nuc_acid_concentration
       - cont_type
       - cont_well
       - container_name
@@ -782,6 +834,12 @@ classes:
         slot_group: JGI-Metatranscriptomics
       jgi_sample_volume:
         slot_group: JGI-Metatranscriptomics
+      nuc_acid_absorb1:
+        slot_group: JGI-Metagenomics
+      nuc_acid_absorb2:
+        slot_group: JGI-Metagenomics
+      nuc_acid_concentration:
+        slot_group: JGI-Metagenomics
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
