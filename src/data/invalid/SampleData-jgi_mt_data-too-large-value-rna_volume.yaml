@@ -17,4 +17,4 @@ jgi_mt_data:
     jgi_seq_project: '123456789'
     jgi_seq_project_name: JGI Lagoon metatranscritpomics
     rna_seq_project_pi: Patty Smith
-    rna_volume: 2000 # According to documentation. Values must 0-1000
+    jgi_sample_volume: 2000 # According to documentation. Values must 0-1000

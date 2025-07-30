@@ -15,7 +15,7 @@ jgi_mg_data:
     jgi_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
-    dna_volume: 1.23 liters
+    jgi_sample_volume: 1.23 liters
     proposal_dna: xxx
     samp_name: xxx
 
