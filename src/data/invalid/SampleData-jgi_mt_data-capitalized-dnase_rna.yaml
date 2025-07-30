@@ -4,7 +4,7 @@ jgi_mt_data:
     dnase_rna: Yes
     proposal_rna: '504000'
     rna_concentration: 100.3
-    rna_cont_type: tube 
+    cont_type: tube 
     rna_cont_well: H7 
     rna_container_id: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction

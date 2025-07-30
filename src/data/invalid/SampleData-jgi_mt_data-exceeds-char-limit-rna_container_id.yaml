@@ -4,7 +4,7 @@ jgi_mt_data:
     dnase_rna: "no"
     proposal_rna: '504000'
     rna_concentration: 100.3
-    rna_cont_type: plate
+    cont_type: plate
     rna_cont_well: H7
     rna_container_id: Columbia_River_Watershed_MT_052292 # should be less than 20 characters
     rna_isolate_meth: phenol/cloroform extraction
