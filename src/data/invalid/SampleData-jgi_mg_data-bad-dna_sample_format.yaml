@@ -11,7 +11,7 @@ jgi_mg_data:
     jgi_samp_id: xxx
     jgi_sample_format: red red wine
     jgi_sample_name: xxx
-    jgi_seq_project: xxx
+    jgi_seq_project: 111
     jgi_seq_project_name: xxx
     jgi_sample_volume: 1.23
     samp_name: xxx
