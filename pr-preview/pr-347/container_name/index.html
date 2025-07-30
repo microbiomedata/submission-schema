@@ -331,6 +331,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -452,6 +461,11 @@ Alias: container_name</p>
 <p>Regex pattern: <code>^[-_.a-zA-Z0-9]{1,20}$</code></p>
 </li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>dna_container_id</li>
+<li>rna_container_id</li>
+</ul>
 <h2 id="examples">Examples</h2>
 <table>
 <thead>
@@ -505,6 +519,9 @@ comments:
 examples:
 - value: Pond_MT_041618
 from_schema: https://example.com/nmdc_submission_schema
+aliases:
+- dna_container_id
+- rna_container_id
 rank: 9
 string_serialization: '{text &lt; 20 characters}'
 alias: container_name

@@ -331,6 +331,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -449,6 +458,11 @@ Alias: jgi_seq_project_name</p>
 <p>Required: True</p>
 </li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>dna_seq_project_name</li>
+<li>rna_seq_project_name</li>
+</ul>
 <h2 id="examples">Examples</h2>
 <table>
 <thead>
@@ -501,6 +515,9 @@ comments:
 examples:
 - value: JGI Pond metagenomics
 from_schema: https://example.com/nmdc_submission_schema
+aliases:
+- dna_seq_project_name
+- rna_seq_project_name
 rank: 2
 alias: jgi_seq_project_name
 domain_of:

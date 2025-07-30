@@ -782,6 +782,9 @@ attributes:
     description: Tube or plate (96-well)
     title: JGI container type
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_cont_type
+    - rna_cont_type
     rank: 10
     alias: cont_type
     owner: JgiMtInterface
@@ -804,6 +807,9 @@ attributes:
     examples:
     - value: B2
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_cont_well
+    - rna_cont_well
     rank: 11
     string_serialization: '{96 well plate pos}'
     alias: cont_well
@@ -825,6 +831,9 @@ attributes:
     examples:
     - value: Pond_MT_041618
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_container_id
+    - rna_container_id
     rank: 9
     string_serialization: '{text &lt; 20 characters}'
     alias: container_name
@@ -845,6 +854,9 @@ attributes:
     examples:
     - value: 'no'
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_dnase
+    - dnase_rna
     rank: 13
     alias: dnase
     owner: JgiMtInterface
@@ -885,6 +897,9 @@ attributes:
     examples:
     - value: '187654'
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_samp_id
+    - rna_samp_id
     rank: 3
     alias: jgi_samp_id
     owner: JgiMtInterface
@@ -903,6 +918,9 @@ attributes:
     examples:
     - value: Water
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_sample_format
+    - rna_sample_format
     rank: 12
     alias: jgi_sample_format
     owner: JgiMtInterface
@@ -921,6 +939,9 @@ attributes:
     examples:
     - value: JGI_pond_041618
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_sample_name
+    - rna_sample_name
     rank: 4
     alias: jgi_sample_name
     owner: JgiMtInterface
@@ -944,6 +965,8 @@ attributes:
     from_schema: https://example.com/nmdc_submission_schema
     aliases:
     - Seq Project ID
+    - dna_seq_project
+    - rna_seq_project
     rank: 1
     alias: jgi_seq_project
     owner: JgiMtInterface
@@ -963,6 +986,9 @@ attributes:
     examples:
     - value: JGI Pond metagenomics
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_seq_project_name
+    - rna_seq_project_name
     rank: 2
     alias: jgi_seq_project_name
     owner: JgiMtInterface
@@ -984,6 +1010,9 @@ attributes:
     examples:
     - value: '25'
     from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dna_volume
+    - rna_volume
     rank: 6
     alias: jgi_sample_volume
     owner: JgiMtInterface

@@ -331,6 +331,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aliases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
@@ -452,6 +461,11 @@ Alias: cont_well</p>
 <p>Regex pattern: <code>^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$</code></p>
 </li>
 </ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>dna_cont_well</li>
+<li>rna_cont_well</li>
+</ul>
 <h2 id="examples">Examples</h2>
 <table>
 <thead>
@@ -510,6 +524,9 @@ comments:
 examples:
 - value: B2
 from_schema: https://example.com/nmdc_submission_schema
+aliases:
+- dna_cont_well
+- rna_cont_well
 rank: 11
 string_serialization: '{96 well plate pos}'
 alias: cont_well
