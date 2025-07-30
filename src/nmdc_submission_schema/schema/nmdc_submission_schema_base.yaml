@@ -754,7 +754,7 @@ classes:
   JgiMgLrInterface:
     annotations:
       excel_worksheet_name: JGI MG (Long Read)
-    description: Metadata for samples sent to JGI for long read metagenome sequecning
+    description: Metadata for samples sent to JGI for long read metagenome sequencing
     title: JGI MG (Long Read)
     is_a: DhInterface
     mixins:
