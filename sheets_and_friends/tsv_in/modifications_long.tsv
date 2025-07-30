@@ -47,8 +47,6 @@ AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabs
 SedimentInterface|SoilInterface	depth	replace_attribute	string_serialization			{float}-{float}
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|SoilInterface|WastewaterSludgeInterface|WaterInterface	depth	replace_attribute	title			depth, meters
 BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface	diether_lipids	overwrite_examples	examples			archaeol;0.2 ng/L
-JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	required			true
-JgiMgInterface|JgiMgLrInterface	dna_concentration	replace_attribute	recommended			false
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	required			true
 JgiMgInterface|JgiMgLrInterface	dna_isolate_meth	replace_attribute	recommended			false
 SoilInterface	ecosystem	replace_attribute	range			EcosystemForSoilEnum
@@ -157,10 +155,6 @@ EmslInterface	project_id	replace_attribute	required			true
 EmslInterface	project_id	replace_attribute	recommended			false
 BuiltEnvInterface	rel_air_humidity	replace_attribute	string_serialization			{percentage}
 EmslInterface	replicate_number	replace_attribute	recommended			true
-JgiMtInterface	rna_absorb1	replace_attribute	recommended			true
-JgiMtInterface	rna_absorb2	replace_attribute	recommended			true
-JgiMtInterface	rna_concentration	replace_attribute	required			true
-JgiMtInterface	rna_concentration	replace_attribute	recommended			false
 JgiMtInterface	rna_isolate_meth	replace_attribute	required			true
 JgiMtInterface	rna_isolate_meth	replace_attribute	recommended			false
 PlantAssociatedInterface	root_med_carbon	overwrite_examples	examples			sucrose;50 mg/L
