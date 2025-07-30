@@ -730,6 +730,8 @@ classes:
         slot_group: JGI-Metagenomics
       nuc_acid_concentration:
         slot_group: JGI-Metagenomics
+      dna_isolate_meth:
+        slot_group: JGI-Metagenomics
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
