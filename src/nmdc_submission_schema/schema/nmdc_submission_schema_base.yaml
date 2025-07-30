@@ -448,7 +448,7 @@ slots:
       - dna_cont_type
       - rna_cont_type
   cont_well:
-    title: JGI plate position
+    title: plate position
     comments:
       - Required when 'plate' is selected for container type.
       - Leave blank if the sample will be shipped in a tube.
@@ -464,7 +464,7 @@ slots:
       - dna_cont_well
       - rna_cont_well
   container_name:
-    title: Container name
+    title: container name
     comments:
       - Must be unique across all tubes and plates, and <20 characters. 
       - All samples in a plate should have the same plate name.
