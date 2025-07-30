@@ -13,7 +13,7 @@ jgi_mt_data:
     jgi_sample_format: MDA reaction buffer
     jgi_sample_name: JGI_lagoon_14343
     jgi_seq_project: '123456789'
-    rna_seq_project_name: JGI Lagoon metatranscritpomics
+    jgi_seq_project_name: JGI Lagoon metatranscritpomics
     rna_seq_project_pi: Patty Smith
     rna_volume: 25.1
     samp_name: sample name
