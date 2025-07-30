@@ -12,7 +12,7 @@ jgi_mg_lr_data:
     dna_project_contact: xxx
     jgi_samp_id: xxx
     jgi_sample_format: DNAStable
-    dna_sample_name: xxx
+    jgi_sample_name: xxx
     dna_seq_project: xxx
     dna_seq_project_name: xxx
     dna_seq_project_pi: xxx
