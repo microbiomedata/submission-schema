@@ -577,7 +577,7 @@ slots:
       - value: 100
     rank: 5
     range: float
-    recommended: true
+    required: true
     minimum_value: 0
     maximum_value: 2000
 classes:

@@ -105,9 +105,6 @@ Biosample	local/nmdc.yaml	diss_org_carb	mixs_core_section	17	BiofilmInterface|Hc
 Biosample	local/nmdc.yaml	diss_org_nitro	mixs_core_section	18	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
 Biosample	local/nmdc.yaml	diss_oxygen	mixs_core_section	19	BiofilmInterface|MiscEnvsInterface|SedimentInterface|WaterInterface
 Biosample	local/nmdc.yaml	diss_oxygen_fluid	mixs_core_section	306	HcrCoresInterface|HcrFluidsSwabsInterface
-Biosample	local/nmdc.yaml	dna_absorb1	jgi_metagenomics_section	7	JgiMgInterface|JgiMgLrInterface
-Biosample	local/nmdc.yaml	dna_absorb2	jgi_metagenomics_section	8	JgiMgInterface|JgiMgLrInterface
-Biosample	local/nmdc.yaml	dna_concentration	jgi_metagenomics_section	5	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	dna_isolate_meth	jgi_metagenomics_section	16	JgiMgInterface|JgiMgLrInterface
 Biosample	local/nmdc.yaml	door_comp_type	mixs_core_section	90	BuiltEnvInterface
 Biosample	local/nmdc.yaml	door_cond	mixs_core_section	91	BuiltEnvInterface
@@ -336,9 +333,6 @@ Biosample	local/nmdc.yaml	rel_samp_loc	mixs_core_section	148	BuiltEnvInterface
 Biosample	local/nmdc.yaml	replicate_number	emsl_section	6	EmslInterface
 Biosample	local/nmdc.yaml	reservoir	mixs_core_section	347	HcrCoresInterface|HcrFluidsSwabsInterface
 Biosample	local/nmdc.yaml	resins_pc	mixs_core_section	348	HcrCoresInterface|HcrFluidsSwabsInterface
-Biosample	local/nmdc.yaml	rna_absorb1	jgi_metatranscriptomics_section	7	JgiMtInterface
-Biosample	local/nmdc.yaml	rna_absorb2	jgi_metatranscriptomics_section	8	JgiMtInterface
-Biosample	local/nmdc.yaml	rna_concentration	jgi_metatranscriptomics_section	5	JgiMtInterface
 Biosample	local/nmdc.yaml	rna_isolate_meth	jgi_metatranscriptomics_section	16	JgiMtInterface
 Biosample	local/nmdc.yaml	room_air_exch_rate	mixs_core_section	149	BuiltEnvInterface
 Biosample	local/nmdc.yaml	room_architec_elem	mixs_core_section	150	BuiltEnvInterface
