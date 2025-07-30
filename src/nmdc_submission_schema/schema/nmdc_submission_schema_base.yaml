@@ -534,7 +534,7 @@ slots:
       - Units must be in uL. Enter the numerical part only. Value must be 0-1000.
         This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager
     examples:
-      - value: '25'
+      - value: 25
     rank: 6
     range: float
     required: true
