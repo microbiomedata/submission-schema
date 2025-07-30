@@ -700,6 +700,27 @@ classes:
         slot_group: JGI-Metagenomics
       jgi_sample_volume:
         slot_group: JGI-Metagenomics
+    rules:
+      - title: well_requires_plate
+        description: If a well is specified, the container type must be a plate.
+        preconditions:
+         slot_conditions:
+            cont_well:
+              pattern: ".+"
+        postconditions:
+          slot_conditions:
+            cont_type:
+              equals_string: plate
+      - title: plate_requires_well
+        description: If a plate is specified, a well must be specified according to the pattern.
+        preconditions:
+          slot_conditions:
+            cont_type:
+              equals_string: plate
+        postconditions:
+          slot_conditions:
+            cont_well:
+              pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
   JgiMgLrInterface:
     annotations:
       excel_worksheet_name: JGI MG (Long Read)
