@@ -571,7 +571,7 @@ slots:
       - rna_volume
   nuc_acid_absorb1:
     description: 260/280 measurement of nucleic acid sample purity
-    title: namesucleic acid absorbance 260/280
+    title: nucleic acid absorbance 260/280
     comments:
       - Recommended value is between 1 and 3.
     examples:
