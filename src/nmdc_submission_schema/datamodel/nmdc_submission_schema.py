@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-18T20:32:23
+# Generation date: 2025-08-06T11:35:42
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -188,12 +188,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Float(float):
-    """ A real number that conforms to the xsd:float specification """
-    type_class_uri = XSD["float"]
-    type_class_curie = "xsd:float"
-    type_name = "float"
-    type_model_uri = NMDC_SUB_SCHEMA.Float
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class String(str):
@@ -212,12 +212,12 @@ class Decimal(Decimal):
     type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
 class Double(float):
@@ -228,6 +228,22 @@ class Double(float):
     type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+
+
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+
+
 class LanguageCode(str):
     """ A language code conforming to ISO_639-1 """
     type_class_uri = XSD["language"]
@@ -236,28 +252,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
-
-
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+class Float(float):
+    """ A real number that conforms to the xsd:float specification """
+    type_class_uri = XSD["float"]
+    type_class_curie = "xsd:float"
+    type_name = "float"
+    type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
 class Time(XSDTime):
@@ -5340,98 +5340,80 @@ class JgiMgInterface(DhInterface):
     class_name: ClassVar[str] = "JgiMgInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiMgInterface
 
-    dna_concentration: float = None
-    dna_cont_type: Union[str, "JgiContTypeEnum"] = None
-    dna_container_id: str = None
-    dna_dnase: Union[str, "YesNoEnum"] = None
+    nuc_acid_concentration: float = None
+    cont_type: Union[str, "JgiContTypeEnum"] = None
+    container_name: str = None
+    dnase: Union[str, "YesNoEnum"] = None
     dna_isolate_meth: str = None
-    dna_project_contact: str = None
-    dna_samp_id: str = None
-    dna_sample_format: Union[str, "DNASampleFormatEnum"] = None
-    dna_sample_name: str = None
-    dna_seq_project: str = None
-    dna_seq_project_name: str = None
-    dna_seq_project_pi: str = None
-    dna_volume: float = None
-    proposal_dna: str = None
+    jgi_samp_id: str = None
+    jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
+    jgi_sample_name: str = None
+    jgi_seq_project: float = None
+    jgi_seq_project_name: str = None
+    jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
-    dna_absorb1: Optional[float] = None
-    dna_absorb2: Optional[float] = None
-    dna_cont_well: Optional[str] = None
+    nuc_acid_absorb1: Optional[float] = None
+    nuc_acid_absorb2: Optional[float] = None
+    cont_well: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.dna_concentration):
-            self.MissingRequiredField("dna_concentration")
-        if not isinstance(self.dna_concentration, float):
-            self.dna_concentration = float(self.dna_concentration)
+        if self._is_empty(self.nuc_acid_concentration):
+            self.MissingRequiredField("nuc_acid_concentration")
+        if not isinstance(self.nuc_acid_concentration, float):
+            self.nuc_acid_concentration = float(self.nuc_acid_concentration)
 
-        if self._is_empty(self.dna_cont_type):
-            self.MissingRequiredField("dna_cont_type")
-        if not isinstance(self.dna_cont_type, JgiContTypeEnum):
-            self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
+        if self._is_empty(self.cont_type):
+            self.MissingRequiredField("cont_type")
+        if not isinstance(self.cont_type, JgiContTypeEnum):
+            self.cont_type = JgiContTypeEnum(self.cont_type)
 
-        if self._is_empty(self.dna_container_id):
-            self.MissingRequiredField("dna_container_id")
-        if not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
+        if self._is_empty(self.container_name):
+            self.MissingRequiredField("container_name")
+        if not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
 
-        if self._is_empty(self.dna_dnase):
-            self.MissingRequiredField("dna_dnase")
-        if not isinstance(self.dna_dnase, YesNoEnum):
-            self.dna_dnase = YesNoEnum(self.dna_dnase)
+        if self._is_empty(self.dnase):
+            self.MissingRequiredField("dnase")
+        if not isinstance(self.dnase, YesNoEnum):
+            self.dnase = YesNoEnum(self.dnase)
 
         if self._is_empty(self.dna_isolate_meth):
             self.MissingRequiredField("dna_isolate_meth")
         if not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
 
-        if self._is_empty(self.dna_project_contact):
-            self.MissingRequiredField("dna_project_contact")
-        if not isinstance(self.dna_project_contact, str):
-            self.dna_project_contact = str(self.dna_project_contact)
+        if self._is_empty(self.jgi_samp_id):
+            self.MissingRequiredField("jgi_samp_id")
+        if not isinstance(self.jgi_samp_id, str):
+            self.jgi_samp_id = str(self.jgi_samp_id)
 
-        if self._is_empty(self.dna_samp_id):
-            self.MissingRequiredField("dna_samp_id")
-        if not isinstance(self.dna_samp_id, str):
-            self.dna_samp_id = str(self.dna_samp_id)
+        if self._is_empty(self.jgi_sample_format):
+            self.MissingRequiredField("jgi_sample_format")
+        if not isinstance(self.jgi_sample_format, JGISampleFormatEnum):
+            self.jgi_sample_format = JGISampleFormatEnum(self.jgi_sample_format)
 
-        if self._is_empty(self.dna_sample_format):
-            self.MissingRequiredField("dna_sample_format")
-        if not isinstance(self.dna_sample_format, DNASampleFormatEnum):
-            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
+        if self._is_empty(self.jgi_sample_name):
+            self.MissingRequiredField("jgi_sample_name")
+        if not isinstance(self.jgi_sample_name, str):
+            self.jgi_sample_name = str(self.jgi_sample_name)
 
-        if self._is_empty(self.dna_sample_name):
-            self.MissingRequiredField("dna_sample_name")
-        if not isinstance(self.dna_sample_name, str):
-            self.dna_sample_name = str(self.dna_sample_name)
+        if self._is_empty(self.jgi_seq_project):
+            self.MissingRequiredField("jgi_seq_project")
+        if not isinstance(self.jgi_seq_project, float):
+            self.jgi_seq_project = float(self.jgi_seq_project)
 
-        if self._is_empty(self.dna_seq_project):
-            self.MissingRequiredField("dna_seq_project")
-        if not isinstance(self.dna_seq_project, str):
-            self.dna_seq_project = str(self.dna_seq_project)
+        if self._is_empty(self.jgi_seq_project_name):
+            self.MissingRequiredField("jgi_seq_project_name")
+        if not isinstance(self.jgi_seq_project_name, str):
+            self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
-        if self._is_empty(self.dna_seq_project_name):
-            self.MissingRequiredField("dna_seq_project_name")
-        if not isinstance(self.dna_seq_project_name, str):
-            self.dna_seq_project_name = str(self.dna_seq_project_name)
-
-        if self._is_empty(self.dna_seq_project_pi):
-            self.MissingRequiredField("dna_seq_project_pi")
-        if not isinstance(self.dna_seq_project_pi, str):
-            self.dna_seq_project_pi = str(self.dna_seq_project_pi)
-
-        if self._is_empty(self.dna_volume):
-            self.MissingRequiredField("dna_volume")
-        if not isinstance(self.dna_volume, float):
-            self.dna_volume = float(self.dna_volume)
-
-        if self._is_empty(self.proposal_dna):
-            self.MissingRequiredField("proposal_dna")
-        if not isinstance(self.proposal_dna, str):
-            self.proposal_dna = str(self.proposal_dna)
+        if self._is_empty(self.jgi_sample_volume):
+            self.MissingRequiredField("jgi_sample_volume")
+        if not isinstance(self.jgi_sample_volume, float):
+            self.jgi_sample_volume = float(self.jgi_sample_volume)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -5439,71 +5421,17 @@ class JgiMgInterface(DhInterface):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
 
-        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
+        if self.nuc_acid_absorb1 is not None and not isinstance(self.nuc_acid_absorb1, float):
+            self.nuc_acid_absorb1 = float(self.nuc_acid_absorb1)
 
-        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
-            self.dna_absorb2 = float(self.dna_absorb2)
+        if self.nuc_acid_absorb2 is not None and not isinstance(self.nuc_acid_absorb2, float):
+            self.nuc_acid_absorb2 = float(self.nuc_acid_absorb2)
 
-        if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
-            self.dna_cont_well = str(self.dna_cont_well)
-
-        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
-
-        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
-            self.dna_absorb2 = float(self.dna_absorb2)
-
-        if self.dna_concentration is not None and not isinstance(self.dna_concentration, float):
-            self.dna_concentration = float(self.dna_concentration)
-
-        if self.dna_cont_type is not None and not isinstance(self.dna_cont_type, JgiContTypeEnum):
-            self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
-
-        if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
-            self.dna_cont_well = str(self.dna_cont_well)
-
-        if self.dna_container_id is not None and not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
-
-        if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
-            self.dna_dnase = YesNoEnum(self.dna_dnase)
+        if self.cont_well is not None and not isinstance(self.cont_well, str):
+            self.cont_well = str(self.cont_well)
 
         if self.dna_isolate_meth is not None and not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
-
-        if self.dna_project_contact is not None and not isinstance(self.dna_project_contact, str):
-            self.dna_project_contact = str(self.dna_project_contact)
-
-        if self.dna_samp_id is not None and not isinstance(self.dna_samp_id, str):
-            self.dna_samp_id = str(self.dna_samp_id)
-
-        if self.dna_sample_format is not None and not isinstance(self.dna_sample_format, DNASampleFormatEnum):
-            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
-
-        if self.dna_sample_name is not None and not isinstance(self.dna_sample_name, str):
-            self.dna_sample_name = str(self.dna_sample_name)
-
-        if self.dna_seq_project is not None and not isinstance(self.dna_seq_project, str):
-            self.dna_seq_project = str(self.dna_seq_project)
-
-        if self.dna_seq_project_name is not None and not isinstance(self.dna_seq_project_name, str):
-            self.dna_seq_project_name = str(self.dna_seq_project_name)
-
-        if self.dna_seq_project_pi is not None and not isinstance(self.dna_seq_project_pi, str):
-            self.dna_seq_project_pi = str(self.dna_seq_project_pi)
-
-        if self.dna_volume is not None and not isinstance(self.dna_volume, float):
-            self.dna_volume = float(self.dna_volume)
-
-        if self.proposal_dna is not None and not isinstance(self.proposal_dna, str):
-            self.proposal_dna = str(self.proposal_dna)
-
-        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
-
-        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
-            self.dna_absorb2 = float(self.dna_absorb2)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -5520,7 +5448,7 @@ class JgiMgInterface(DhInterface):
 @dataclass(repr=False)
 class JgiMgLrInterface(DhInterface):
     """
-    Metadata for samples sent to JGI for long read metagenome sequecning
+    Metadata for samples sent to JGI for long read metagenome sequencing
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -5529,108 +5457,90 @@ class JgiMgLrInterface(DhInterface):
     class_name: ClassVar[str] = "JgiMgLrInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiMgLrInterface
 
-    dna_concentration: float = None
-    dna_cont_type: Union[str, "JgiContTypeEnum"] = None
-    dna_container_id: str = None
-    dna_dnase: Union[str, "YesNoEnum"] = None
+    nuc_acid_absorb1: float = None
+    nuc_acid_absorb2: float = None
+    nuc_acid_concentration: float = None
+    cont_type: Union[str, "JgiContTypeEnum"] = None
+    container_name: str = None
+    dnase: Union[str, "YesNoEnum"] = None
     dna_isolate_meth: str = None
-    dna_project_contact: str = None
-    dna_samp_id: str = None
-    dna_sample_format: Union[str, "DNASampleFormatEnum"] = None
-    dna_sample_name: str = None
-    dna_seq_project: str = None
-    dna_seq_project_name: str = None
-    dna_seq_project_pi: str = None
-    dna_volume: float = None
-    proposal_dna: str = None
+    jgi_samp_id: str = None
+    jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
+    jgi_sample_name: str = None
+    jgi_seq_project: float = None
+    jgi_seq_project_name: str = None
+    jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
-    dna_absorb1: Optional[float] = None
-    dna_absorb2: Optional[float] = None
-    dna_cont_well: Optional[str] = None
+    cont_well: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.dna_concentration):
-            self.MissingRequiredField("dna_concentration")
-        if not isinstance(self.dna_concentration, float):
-            self.dna_concentration = float(self.dna_concentration)
+        if self._is_empty(self.nuc_acid_absorb1):
+            self.MissingRequiredField("nuc_acid_absorb1")
+        if not isinstance(self.nuc_acid_absorb1, float):
+            self.nuc_acid_absorb1 = float(self.nuc_acid_absorb1)
 
-        if self._is_empty(self.dna_cont_type):
-            self.MissingRequiredField("dna_cont_type")
-        if not isinstance(self.dna_cont_type, JgiContTypeEnum):
-            self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
+        if self._is_empty(self.nuc_acid_absorb2):
+            self.MissingRequiredField("nuc_acid_absorb2")
+        if not isinstance(self.nuc_acid_absorb2, float):
+            self.nuc_acid_absorb2 = float(self.nuc_acid_absorb2)
 
-        if self._is_empty(self.dna_container_id):
-            self.MissingRequiredField("dna_container_id")
-        if not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
+        if self._is_empty(self.nuc_acid_concentration):
+            self.MissingRequiredField("nuc_acid_concentration")
+        if not isinstance(self.nuc_acid_concentration, float):
+            self.nuc_acid_concentration = float(self.nuc_acid_concentration)
 
-        if self._is_empty(self.dna_dnase):
-            self.MissingRequiredField("dna_dnase")
-        if not isinstance(self.dna_dnase, YesNoEnum):
-            self.dna_dnase = YesNoEnum(self.dna_dnase)
+        if self._is_empty(self.cont_type):
+            self.MissingRequiredField("cont_type")
+        if not isinstance(self.cont_type, JgiContTypeEnum):
+            self.cont_type = JgiContTypeEnum(self.cont_type)
+
+        if self._is_empty(self.container_name):
+            self.MissingRequiredField("container_name")
+        if not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
+
+        if self._is_empty(self.dnase):
+            self.MissingRequiredField("dnase")
+        if not isinstance(self.dnase, YesNoEnum):
+            self.dnase = YesNoEnum(self.dnase)
 
         if self._is_empty(self.dna_isolate_meth):
             self.MissingRequiredField("dna_isolate_meth")
         if not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
 
-        if self._is_empty(self.dna_project_contact):
-            self.MissingRequiredField("dna_project_contact")
-        if not isinstance(self.dna_project_contact, str):
-            self.dna_project_contact = str(self.dna_project_contact)
+        if self._is_empty(self.jgi_samp_id):
+            self.MissingRequiredField("jgi_samp_id")
+        if not isinstance(self.jgi_samp_id, str):
+            self.jgi_samp_id = str(self.jgi_samp_id)
 
-        if self._is_empty(self.dna_samp_id):
-            self.MissingRequiredField("dna_samp_id")
-        if not isinstance(self.dna_samp_id, str):
-            self.dna_samp_id = str(self.dna_samp_id)
+        if self._is_empty(self.jgi_sample_format):
+            self.MissingRequiredField("jgi_sample_format")
+        if not isinstance(self.jgi_sample_format, JGISampleFormatEnum):
+            self.jgi_sample_format = JGISampleFormatEnum(self.jgi_sample_format)
 
-        if self._is_empty(self.dna_sample_format):
-            self.MissingRequiredField("dna_sample_format")
-        if not isinstance(self.dna_sample_format, DNASampleFormatEnum):
-            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
+        if self._is_empty(self.jgi_sample_name):
+            self.MissingRequiredField("jgi_sample_name")
+        if not isinstance(self.jgi_sample_name, str):
+            self.jgi_sample_name = str(self.jgi_sample_name)
 
-        if self._is_empty(self.dna_sample_name):
-            self.MissingRequiredField("dna_sample_name")
-        if not isinstance(self.dna_sample_name, str):
-            self.dna_sample_name = str(self.dna_sample_name)
+        if self._is_empty(self.jgi_seq_project):
+            self.MissingRequiredField("jgi_seq_project")
+        if not isinstance(self.jgi_seq_project, float):
+            self.jgi_seq_project = float(self.jgi_seq_project)
 
-        if self._is_empty(self.dna_seq_project):
-            self.MissingRequiredField("dna_seq_project")
-        if not isinstance(self.dna_seq_project, str):
-            self.dna_seq_project = str(self.dna_seq_project)
+        if self._is_empty(self.jgi_seq_project_name):
+            self.MissingRequiredField("jgi_seq_project_name")
+        if not isinstance(self.jgi_seq_project_name, str):
+            self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
-        if self._is_empty(self.dna_seq_project_name):
-            self.MissingRequiredField("dna_seq_project_name")
-        if not isinstance(self.dna_seq_project_name, str):
-            self.dna_seq_project_name = str(self.dna_seq_project_name)
-
-        if self._is_empty(self.dna_seq_project_pi):
-            self.MissingRequiredField("dna_seq_project_pi")
-        if not isinstance(self.dna_seq_project_pi, str):
-            self.dna_seq_project_pi = str(self.dna_seq_project_pi)
-
-        if self._is_empty(self.dna_volume):
-            self.MissingRequiredField("dna_volume")
-        if not isinstance(self.dna_volume, float):
-            self.dna_volume = float(self.dna_volume)
-
-        if self._is_empty(self.proposal_dna):
-            self.MissingRequiredField("proposal_dna")
-        if not isinstance(self.proposal_dna, str):
-            self.proposal_dna = str(self.proposal_dna)
-
-        if self._is_empty(self.dna_absorb1):
-            self.MissingRequiredField("dna_absorb1")
-        if not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
-
-        if self._is_empty(self.dna_absorb2):
-            self.MissingRequiredField("dna_absorb2")
-        if not isinstance(self.dna_absorb2, float):
-            self.dna_absorb2 = float(self.dna_absorb2)
+        if self._is_empty(self.jgi_sample_volume):
+            self.MissingRequiredField("jgi_sample_volume")
+        if not isinstance(self.jgi_sample_volume, float):
+            self.jgi_sample_volume = float(self.jgi_sample_volume)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -5638,65 +5548,11 @@ class JgiMgLrInterface(DhInterface):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
 
-        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
-
-        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
-            self.dna_absorb2 = float(self.dna_absorb2)
-
-        if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
-            self.dna_cont_well = str(self.dna_cont_well)
-
-        if self.dna_absorb1 is not None and not isinstance(self.dna_absorb1, float):
-            self.dna_absorb1 = float(self.dna_absorb1)
-
-        if self.dna_absorb2 is not None and not isinstance(self.dna_absorb2, float):
-            self.dna_absorb2 = float(self.dna_absorb2)
-
-        if self.dna_concentration is not None and not isinstance(self.dna_concentration, float):
-            self.dna_concentration = float(self.dna_concentration)
-
-        if self.dna_cont_type is not None and not isinstance(self.dna_cont_type, JgiContTypeEnum):
-            self.dna_cont_type = JgiContTypeEnum(self.dna_cont_type)
-
-        if self.dna_cont_well is not None and not isinstance(self.dna_cont_well, str):
-            self.dna_cont_well = str(self.dna_cont_well)
-
-        if self.dna_container_id is not None and not isinstance(self.dna_container_id, str):
-            self.dna_container_id = str(self.dna_container_id)
-
-        if self.dna_dnase is not None and not isinstance(self.dna_dnase, YesNoEnum):
-            self.dna_dnase = YesNoEnum(self.dna_dnase)
+        if self.cont_well is not None and not isinstance(self.cont_well, str):
+            self.cont_well = str(self.cont_well)
 
         if self.dna_isolate_meth is not None and not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
-
-        if self.dna_project_contact is not None and not isinstance(self.dna_project_contact, str):
-            self.dna_project_contact = str(self.dna_project_contact)
-
-        if self.dna_samp_id is not None and not isinstance(self.dna_samp_id, str):
-            self.dna_samp_id = str(self.dna_samp_id)
-
-        if self.dna_sample_format is not None and not isinstance(self.dna_sample_format, DNASampleFormatEnum):
-            self.dna_sample_format = DNASampleFormatEnum(self.dna_sample_format)
-
-        if self.dna_sample_name is not None and not isinstance(self.dna_sample_name, str):
-            self.dna_sample_name = str(self.dna_sample_name)
-
-        if self.dna_seq_project is not None and not isinstance(self.dna_seq_project, str):
-            self.dna_seq_project = str(self.dna_seq_project)
-
-        if self.dna_seq_project_name is not None and not isinstance(self.dna_seq_project_name, str):
-            self.dna_seq_project_name = str(self.dna_seq_project_name)
-
-        if self.dna_seq_project_pi is not None and not isinstance(self.dna_seq_project_pi, str):
-            self.dna_seq_project_pi = str(self.dna_seq_project_pi)
-
-        if self.dna_volume is not None and not isinstance(self.dna_volume, float):
-            self.dna_volume = float(self.dna_volume)
-
-        if self.proposal_dna is not None and not isinstance(self.proposal_dna, str):
-            self.proposal_dna = str(self.proposal_dna)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -5722,98 +5578,80 @@ class JgiMtInterface(DhInterface):
     class_name: ClassVar[str] = "JgiMtInterface"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiMtInterface
 
-    dnase_rna: Union[str, "YesNoEnum"] = None
-    proposal_rna: str = None
-    rna_concentration: float = None
-    rna_cont_type: Union[str, "JgiContTypeEnum"] = None
-    rna_container_id: str = None
+    nuc_acid_concentration: float = None
+    cont_type: Union[str, "JgiContTypeEnum"] = None
+    container_name: str = None
+    dnase: Union[str, "YesNoEnum"] = None
     rna_isolate_meth: str = None
-    rna_project_contact: str = None
-    rna_samp_id: str = None
-    rna_sample_format: Union[str, "RNASampleFormatEnum"] = None
-    rna_sample_name: str = None
-    rna_seq_project: str = None
-    rna_seq_project_name: str = None
-    rna_seq_project_pi: str = None
-    rna_volume: float = None
+    jgi_samp_id: str = None
+    jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
+    jgi_sample_name: str = None
+    jgi_seq_project: float = None
+    jgi_seq_project_name: str = None
+    jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
-    rna_absorb1: Optional[float] = None
-    rna_absorb2: Optional[float] = None
-    rna_cont_well: Optional[str] = None
+    nuc_acid_absorb1: Optional[float] = None
+    nuc_acid_absorb2: Optional[float] = None
+    cont_well: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     samp_name: Optional[str] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.dnase_rna):
-            self.MissingRequiredField("dnase_rna")
-        if not isinstance(self.dnase_rna, YesNoEnum):
-            self.dnase_rna = YesNoEnum(self.dnase_rna)
+        if self._is_empty(self.nuc_acid_concentration):
+            self.MissingRequiredField("nuc_acid_concentration")
+        if not isinstance(self.nuc_acid_concentration, float):
+            self.nuc_acid_concentration = float(self.nuc_acid_concentration)
 
-        if self._is_empty(self.proposal_rna):
-            self.MissingRequiredField("proposal_rna")
-        if not isinstance(self.proposal_rna, str):
-            self.proposal_rna = str(self.proposal_rna)
+        if self._is_empty(self.cont_type):
+            self.MissingRequiredField("cont_type")
+        if not isinstance(self.cont_type, JgiContTypeEnum):
+            self.cont_type = JgiContTypeEnum(self.cont_type)
 
-        if self._is_empty(self.rna_concentration):
-            self.MissingRequiredField("rna_concentration")
-        if not isinstance(self.rna_concentration, float):
-            self.rna_concentration = float(self.rna_concentration)
+        if self._is_empty(self.container_name):
+            self.MissingRequiredField("container_name")
+        if not isinstance(self.container_name, str):
+            self.container_name = str(self.container_name)
 
-        if self._is_empty(self.rna_cont_type):
-            self.MissingRequiredField("rna_cont_type")
-        if not isinstance(self.rna_cont_type, JgiContTypeEnum):
-            self.rna_cont_type = JgiContTypeEnum(self.rna_cont_type)
-
-        if self._is_empty(self.rna_container_id):
-            self.MissingRequiredField("rna_container_id")
-        if not isinstance(self.rna_container_id, str):
-            self.rna_container_id = str(self.rna_container_id)
+        if self._is_empty(self.dnase):
+            self.MissingRequiredField("dnase")
+        if not isinstance(self.dnase, YesNoEnum):
+            self.dnase = YesNoEnum(self.dnase)
 
         if self._is_empty(self.rna_isolate_meth):
             self.MissingRequiredField("rna_isolate_meth")
         if not isinstance(self.rna_isolate_meth, str):
             self.rna_isolate_meth = str(self.rna_isolate_meth)
 
-        if self._is_empty(self.rna_project_contact):
-            self.MissingRequiredField("rna_project_contact")
-        if not isinstance(self.rna_project_contact, str):
-            self.rna_project_contact = str(self.rna_project_contact)
+        if self._is_empty(self.jgi_samp_id):
+            self.MissingRequiredField("jgi_samp_id")
+        if not isinstance(self.jgi_samp_id, str):
+            self.jgi_samp_id = str(self.jgi_samp_id)
 
-        if self._is_empty(self.rna_samp_id):
-            self.MissingRequiredField("rna_samp_id")
-        if not isinstance(self.rna_samp_id, str):
-            self.rna_samp_id = str(self.rna_samp_id)
+        if self._is_empty(self.jgi_sample_format):
+            self.MissingRequiredField("jgi_sample_format")
+        if not isinstance(self.jgi_sample_format, JGISampleFormatEnum):
+            self.jgi_sample_format = JGISampleFormatEnum(self.jgi_sample_format)
 
-        if self._is_empty(self.rna_sample_format):
-            self.MissingRequiredField("rna_sample_format")
-        if not isinstance(self.rna_sample_format, RNASampleFormatEnum):
-            self.rna_sample_format = RNASampleFormatEnum(self.rna_sample_format)
+        if self._is_empty(self.jgi_sample_name):
+            self.MissingRequiredField("jgi_sample_name")
+        if not isinstance(self.jgi_sample_name, str):
+            self.jgi_sample_name = str(self.jgi_sample_name)
 
-        if self._is_empty(self.rna_sample_name):
-            self.MissingRequiredField("rna_sample_name")
-        if not isinstance(self.rna_sample_name, str):
-            self.rna_sample_name = str(self.rna_sample_name)
+        if self._is_empty(self.jgi_seq_project):
+            self.MissingRequiredField("jgi_seq_project")
+        if not isinstance(self.jgi_seq_project, float):
+            self.jgi_seq_project = float(self.jgi_seq_project)
 
-        if self._is_empty(self.rna_seq_project):
-            self.MissingRequiredField("rna_seq_project")
-        if not isinstance(self.rna_seq_project, str):
-            self.rna_seq_project = str(self.rna_seq_project)
+        if self._is_empty(self.jgi_seq_project_name):
+            self.MissingRequiredField("jgi_seq_project_name")
+        if not isinstance(self.jgi_seq_project_name, str):
+            self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
-        if self._is_empty(self.rna_seq_project_name):
-            self.MissingRequiredField("rna_seq_project_name")
-        if not isinstance(self.rna_seq_project_name, str):
-            self.rna_seq_project_name = str(self.rna_seq_project_name)
-
-        if self._is_empty(self.rna_seq_project_pi):
-            self.MissingRequiredField("rna_seq_project_pi")
-        if not isinstance(self.rna_seq_project_pi, str):
-            self.rna_seq_project_pi = str(self.rna_seq_project_pi)
-
-        if self._is_empty(self.rna_volume):
-            self.MissingRequiredField("rna_volume")
-        if not isinstance(self.rna_volume, float):
-            self.rna_volume = float(self.rna_volume)
+        if self._is_empty(self.jgi_sample_volume):
+            self.MissingRequiredField("jgi_sample_volume")
+        if not isinstance(self.jgi_sample_volume, float):
+            self.jgi_sample_volume = float(self.jgi_sample_volume)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -5821,65 +5659,17 @@ class JgiMtInterface(DhInterface):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
 
-        if self.rna_absorb1 is not None and not isinstance(self.rna_absorb1, float):
-            self.rna_absorb1 = float(self.rna_absorb1)
+        if self.nuc_acid_absorb1 is not None and not isinstance(self.nuc_acid_absorb1, float):
+            self.nuc_acid_absorb1 = float(self.nuc_acid_absorb1)
 
-        if self.rna_absorb2 is not None and not isinstance(self.rna_absorb2, float):
-            self.rna_absorb2 = float(self.rna_absorb2)
+        if self.nuc_acid_absorb2 is not None and not isinstance(self.nuc_acid_absorb2, float):
+            self.nuc_acid_absorb2 = float(self.nuc_acid_absorb2)
 
-        if self.rna_cont_well is not None and not isinstance(self.rna_cont_well, str):
-            self.rna_cont_well = str(self.rna_cont_well)
-
-        if self.dnase_rna is not None and not isinstance(self.dnase_rna, YesNoEnum):
-            self.dnase_rna = YesNoEnum(self.dnase_rna)
-
-        if self.proposal_rna is not None and not isinstance(self.proposal_rna, str):
-            self.proposal_rna = str(self.proposal_rna)
-
-        if self.rna_absorb1 is not None and not isinstance(self.rna_absorb1, float):
-            self.rna_absorb1 = float(self.rna_absorb1)
-
-        if self.rna_absorb2 is not None and not isinstance(self.rna_absorb2, float):
-            self.rna_absorb2 = float(self.rna_absorb2)
-
-        if self.rna_concentration is not None and not isinstance(self.rna_concentration, float):
-            self.rna_concentration = float(self.rna_concentration)
-
-        if self.rna_cont_type is not None and not isinstance(self.rna_cont_type, JgiContTypeEnum):
-            self.rna_cont_type = JgiContTypeEnum(self.rna_cont_type)
-
-        if self.rna_cont_well is not None and not isinstance(self.rna_cont_well, str):
-            self.rna_cont_well = str(self.rna_cont_well)
-
-        if self.rna_container_id is not None and not isinstance(self.rna_container_id, str):
-            self.rna_container_id = str(self.rna_container_id)
+        if self.cont_well is not None and not isinstance(self.cont_well, str):
+            self.cont_well = str(self.cont_well)
 
         if self.rna_isolate_meth is not None and not isinstance(self.rna_isolate_meth, str):
             self.rna_isolate_meth = str(self.rna_isolate_meth)
-
-        if self.rna_project_contact is not None and not isinstance(self.rna_project_contact, str):
-            self.rna_project_contact = str(self.rna_project_contact)
-
-        if self.rna_samp_id is not None and not isinstance(self.rna_samp_id, str):
-            self.rna_samp_id = str(self.rna_samp_id)
-
-        if self.rna_sample_format is not None and not isinstance(self.rna_sample_format, RNASampleFormatEnum):
-            self.rna_sample_format = RNASampleFormatEnum(self.rna_sample_format)
-
-        if self.rna_sample_name is not None and not isinstance(self.rna_sample_name, str):
-            self.rna_sample_name = str(self.rna_sample_name)
-
-        if self.rna_seq_project is not None and not isinstance(self.rna_seq_project, str):
-            self.rna_seq_project = str(self.rna_seq_project)
-
-        if self.rna_seq_project_name is not None and not isinstance(self.rna_seq_project_name, str):
-            self.rna_seq_project_name = str(self.rna_seq_project_name)
-
-        if self.rna_seq_project_pi is not None and not isinstance(self.rna_seq_project_pi, str):
-            self.rna_seq_project_pi = str(self.rna_seq_project_pi)
-
-        if self.rna_volume is not None and not isinstance(self.rna_volume, float):
-            self.rna_volume = float(self.rna_volume)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -10228,7 +10018,7 @@ class JgiContTypeEnum(EnumDefinitionImpl):
         name="JgiContTypeEnum",
     )
 
-class DnaSampleFormatEnum(EnumDefinitionImpl):
+class JGISampleFormatEnum(EnumDefinitionImpl):
 
     DNAStable = PermissibleValue(text="DNAStable")
     Ethanol = PermissibleValue(text="Ethanol")
@@ -10239,7 +10029,7 @@ class DnaSampleFormatEnum(EnumDefinitionImpl):
     Water = PermissibleValue(text="Water")
 
     _defn = EnumDefinition(
-        name="DnaSampleFormatEnum",
+        name="JGISampleFormatEnum",
     )
 
     @classmethod
@@ -10293,29 +10083,6 @@ class RelToOxygenEnum(EnumDefinitionImpl):
             PermissibleValue(text="obligate aerobe"))
         setattr(cls, "obligate anaerobe",
             PermissibleValue(text="obligate anaerobe"))
-
-class RnaSampleFormatEnum(EnumDefinitionImpl):
-
-    DNAStable = PermissibleValue(text="DNAStable")
-    Ethanol = PermissibleValue(text="Ethanol")
-    PBS = PermissibleValue(text="PBS")
-    Pellet = PermissibleValue(text="Pellet")
-    RNAStable = PermissibleValue(text="RNAStable")
-    TE = PermissibleValue(text="TE")
-    Water = PermissibleValue(text="Water")
-
-    _defn = EnumDefinition(
-        name="RnaSampleFormatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "10 mM Tris-HCl",
-            PermissibleValue(text="10 mM Tris-HCl"))
-        setattr(cls, "Low EDTA TE",
-            PermissibleValue(text="Low EDTA TE"))
-        setattr(cls, "MDA reaction buffer",
-            PermissibleValue(text="MDA reaction buffer"))
 
 class SampleTypeEnum(EnumDefinitionImpl):
 
@@ -12300,60 +12067,6 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
             PermissibleValue(
                 text="amplicon sequencing assay",
                 meaning=OBI["0002767"]))
-
-class DNASampleFormatEnum(EnumDefinitionImpl):
-
-    DNAStable = PermissibleValue(text="DNAStable")
-    Ethanol = PermissibleValue(text="Ethanol")
-    PBS = PermissibleValue(text="PBS")
-    Pellet = PermissibleValue(text="Pellet")
-    RNAStable = PermissibleValue(text="RNAStable")
-    TE = PermissibleValue(text="TE")
-    Water = PermissibleValue(text="Water")
-
-    _defn = EnumDefinition(
-        name="DNASampleFormatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "10 mM Tris-HCl",
-            PermissibleValue(text="10 mM Tris-HCl"))
-        setattr(cls, "Low EDTA TE",
-            PermissibleValue(text="Low EDTA TE"))
-        setattr(cls, "MDA reaction buffer",
-            PermissibleValue(text="MDA reaction buffer"))
-        setattr(cls, "Gentegra-DNA",
-            PermissibleValue(text="Gentegra-DNA"))
-        setattr(cls, "Gentegra-RNA",
-            PermissibleValue(text="Gentegra-RNA"))
-
-class RNASampleFormatEnum(EnumDefinitionImpl):
-
-    DNAStable = PermissibleValue(text="DNAStable")
-    Ethanol = PermissibleValue(text="Ethanol")
-    PBS = PermissibleValue(text="PBS")
-    Pellet = PermissibleValue(text="Pellet")
-    RNAStable = PermissibleValue(text="RNAStable")
-    TE = PermissibleValue(text="TE")
-    Water = PermissibleValue(text="Water")
-
-    _defn = EnumDefinition(
-        name="RNASampleFormatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "10 mM Tris-HCl",
-            PermissibleValue(text="10 mM Tris-HCl"))
-        setattr(cls, "Low EDTA TE",
-            PermissibleValue(text="Low EDTA TE"))
-        setattr(cls, "MDA reaction buffer",
-            PermissibleValue(text="MDA reaction buffer"))
-        setattr(cls, "Gentegra-DNA",
-            PermissibleValue(text="Gentegra-DNA"))
-        setattr(cls, "Gentegra-RNA",
-            PermissibleValue(text="Gentegra-RNA"))
 
 class InstrumentModelEnum(EnumDefinitionImpl):
 
@@ -15117,10 +14830,10 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Soft tissues"))
         setattr(cls, "Soft tissues: Muscles",
             PermissibleValue(text="Soft tissues: Muscles"))
-        setattr(cls, "Solar solterns",
-            PermissibleValue(text="Solar solterns"))
-        setattr(cls, "Solar solterns sediment",
-            PermissibleValue(text="Solar solterns sediment"))
+        setattr(cls, "Solar salterns",
+            PermissibleValue(text="Solar salterns"))
+        setattr(cls, "Solar salterns sediment",
+            PermissibleValue(text="Solar salterns sediment"))
         setattr(cls, "Sonicate fluid",
             PermissibleValue(text="Sonicate fluid"))
         setattr(cls, "Spider web",
@@ -17203,6 +16916,48 @@ slots.interleaved_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.interleaved_md5_checks
                    model_uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$'))
 
+slots.cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
+                   model_uri=NMDC_SUB_SCHEMA.cont_type, domain=None, range=Union[str, "JgiContTypeEnum"])
+
+slots.cont_well = Slot(uri=NMDC_SUB_SCHEMA.cont_well, name="cont_well", curie=NMDC_SUB_SCHEMA.curie('cont_well'),
+                   model_uri=NMDC_SUB_SCHEMA.cont_well, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
+
+slots.container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, name="container_name", curie=NMDC_SUB_SCHEMA.curie('container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.container_name, domain=None, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]{1,20}$'))
+
+slots.dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
+                   model_uri=NMDC_SUB_SCHEMA.dnase, domain=None, range=Union[str, "YesNoEnum"])
+
+slots.jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_samp_id, domain=None, range=str)
+
+slots.jgi_sample_format = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_format, name="jgi_sample_format", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_format'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_sample_format, domain=None, range=Union[str, "JGISampleFormatEnum"])
+
+slots.jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_name, name="jgi_sample_name", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_name'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_sample_name, domain=None, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
+
+slots.jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_seq_project, domain=None, range=float)
+
+slots.jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, domain=None, range=str)
+
+slots.jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_sample_volume, domain=None, range=float)
+
+slots.nuc_acid_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb1, name="nuc_acid_absorb1", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb1'),
+                   model_uri=NMDC_SUB_SCHEMA.nuc_acid_absorb1, domain=None, range=Optional[float])
+
+slots.nuc_acid_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, name="nuc_acid_absorb2", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb2'),
+                   model_uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, domain=None, range=Optional[float])
+
+slots.nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, name="nuc_acid_concentration", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_concentration'),
+                   model_uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, domain=None, range=float)
+
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str])
 
@@ -17521,57 +17276,8 @@ slots.diss_oxygen = Slot(uri=MIXS['0000119'], name="diss_oxygen", curie=MIXS.cur
 slots.diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="diss_oxygen_fluid", curie=MIXS.curie('0000438'),
                    model_uri=NMDC_SUB_SCHEMA.diss_oxygen_fluid, domain=None, range=Optional[str])
 
-slots.dna_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.dna_absorb1, name="dna_absorb1", curie=NMDC_SUB_SCHEMA.curie('dna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_absorb1, domain=None, range=Optional[float])
-
-slots.dna_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.dna_absorb2, name="dna_absorb2", curie=NMDC_SUB_SCHEMA.curie('dna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_absorb2, domain=None, range=Optional[float])
-
-slots.dna_concentration = Slot(uri=NMDC_SUB_SCHEMA.dna_concentration, name="dna_concentration", curie=NMDC_SUB_SCHEMA.curie('dna_concentration'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_concentration, domain=None, range=Optional[float])
-
-slots.dna_cont_type = Slot(uri=NMDC_SUB_SCHEMA.dna_cont_type, name="dna_cont_type", curie=NMDC_SUB_SCHEMA.curie('dna_cont_type'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_cont_type, domain=None, range=Optional[Union[str, "JgiContTypeEnum"]])
-
-slots.dna_cont_well = Slot(uri=NMDC_SUB_SCHEMA.dna_cont_well, name="dna_cont_well", curie=NMDC_SUB_SCHEMA.curie('dna_cont_well'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_cont_well, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
-
-slots.dna_container_id = Slot(uri=NMDC_SUB_SCHEMA.dna_container_id, name="dna_container_id", curie=NMDC_SUB_SCHEMA.curie('dna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_container_id, domain=None, range=Optional[str])
-
-slots.dna_dnase = Slot(uri=NMDC_SUB_SCHEMA.dna_dnase, name="dna_dnase", curie=NMDC_SUB_SCHEMA.curie('dna_dnase'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_dnase, domain=None, range=Optional[Union[str, "YesNoEnum"]])
-
 slots.dna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.dna_isolate_meth, name="dna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.dna_isolate_meth, domain=None, range=Optional[str])
-
-slots.dna_project_contact = Slot(uri=NMDC_SUB_SCHEMA.dna_project_contact, name="dna_project_contact", curie=NMDC_SUB_SCHEMA.curie('dna_project_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_project_contact, domain=None, range=Optional[str])
-
-slots.dna_samp_id = Slot(uri=NMDC_SUB_SCHEMA.dna_samp_id, name="dna_samp_id", curie=NMDC_SUB_SCHEMA.curie('dna_samp_id'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_samp_id, domain=None, range=Optional[str])
-
-slots.dna_sample_format = Slot(uri=NMDC_SUB_SCHEMA.dna_sample_format, name="dna_sample_format", curie=NMDC_SUB_SCHEMA.curie('dna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_sample_format, domain=None, range=Optional[Union[str, "DNASampleFormatEnum"]])
-
-slots.dna_sample_name = Slot(uri=NMDC_SUB_SCHEMA.dna_sample_name, name="dna_sample_name", curie=NMDC_SUB_SCHEMA.curie('dna_sample_name'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_sample_name, domain=None, range=Optional[str])
-
-slots.dna_seq_project = Slot(uri=NMDC_SUB_SCHEMA.dna_seq_project, name="dna_seq_project", curie=NMDC_SUB_SCHEMA.curie('dna_seq_project'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_seq_project, domain=None, range=Optional[str])
-
-slots.dna_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.dna_seq_project_name, name="dna_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('dna_seq_project_name'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_seq_project_name, domain=None, range=Optional[str])
-
-slots.dna_seq_project_pi = Slot(uri=NMDC_SUB_SCHEMA.dna_seq_project_pi, name="dna_seq_project_pi", curie=NMDC_SUB_SCHEMA.curie('dna_seq_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_seq_project_pi, domain=None, range=Optional[str])
-
-slots.dna_volume = Slot(uri=NMDC_SUB_SCHEMA.dna_volume, name="dna_volume", curie=NMDC_SUB_SCHEMA.curie('dna_volume'),
-                   model_uri=NMDC_SUB_SCHEMA.dna_volume, domain=None, range=Optional[float])
-
-slots.dnase_rna = Slot(uri=NMDC_SUB_SCHEMA.dnase_rna, name="dnase_rna", curie=NMDC_SUB_SCHEMA.curie('dnase_rna'),
-                   model_uri=NMDC_SUB_SCHEMA.dnase_rna, domain=None, range=Optional[Union[str, "YesNoEnum"]])
 
 slots.door_comp_type = Slot(uri=MIXS['0000795'], name="door_comp_type", curie=MIXS.curie('0000795'),
                    model_uri=NMDC_SUB_SCHEMA.door_comp_type, domain=None, range=Optional[Union[str, "DoorCompTypeEnum"]])
@@ -18211,12 +17917,6 @@ slots.profile_position = Slot(uri=MIXS['0001084'], name="profile_position", curi
 slots.project_id = Slot(uri=NMDC_SUB_SCHEMA.project_id, name="project_id", curie=NMDC_SUB_SCHEMA.curie('project_id'),
                    model_uri=NMDC_SUB_SCHEMA.project_id, domain=None, range=Optional[str])
 
-slots.proposal_dna = Slot(uri=NMDC_SUB_SCHEMA.proposal_dna, name="proposal_dna", curie=NMDC_SUB_SCHEMA.curie('proposal_dna'),
-                   model_uri=NMDC_SUB_SCHEMA.proposal_dna, domain=None, range=Optional[str])
-
-slots.proposal_rna = Slot(uri=NMDC_SUB_SCHEMA.proposal_rna, name="proposal_rna", curie=NMDC_SUB_SCHEMA.curie('proposal_rna'),
-                   model_uri=NMDC_SUB_SCHEMA.proposal_rna, domain=None, range=Optional[str])
-
 slots.quad_pos = Slot(uri=MIXS['0000820'], name="quad_pos", curie=MIXS.curie('0000820'),
                    model_uri=NMDC_SUB_SCHEMA.quad_pos, domain=None, range=Optional[Union[str, "QuadPosEnum"]])
 
@@ -18250,51 +17950,8 @@ slots.reservoir = Slot(uri=MIXS['0000303'], name="reservoir", curie=MIXS.curie('
 slots.resins_pc = Slot(uri=MIXS['0000134'], name="resins_pc", curie=MIXS.curie('0000134'),
                    model_uri=NMDC_SUB_SCHEMA.resins_pc, domain=None, range=Optional[str])
 
-slots.rna_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.rna_absorb1, name="rna_absorb1", curie=NMDC_SUB_SCHEMA.curie('rna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_absorb1, domain=None, range=Optional[float])
-
-slots.rna_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.rna_absorb2, name="rna_absorb2", curie=NMDC_SUB_SCHEMA.curie('rna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_absorb2, domain=None, range=Optional[float])
-
-slots.rna_concentration = Slot(uri=NMDC_SUB_SCHEMA.rna_concentration, name="rna_concentration", curie=NMDC_SUB_SCHEMA.curie('rna_concentration'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_concentration, domain=None, range=Optional[float])
-
-slots.rna_cont_type = Slot(uri=NMDC_SUB_SCHEMA.rna_cont_type, name="rna_cont_type", curie=NMDC_SUB_SCHEMA.curie('rna_cont_type'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_cont_type, domain=None, range=Optional[Union[str, "JgiContTypeEnum"]])
-
-slots.rna_cont_well = Slot(uri=NMDC_SUB_SCHEMA.rna_cont_well, name="rna_cont_well", curie=NMDC_SUB_SCHEMA.curie('rna_cont_well'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_cont_well, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
-
-slots.rna_container_id = Slot(uri=NMDC_SUB_SCHEMA.rna_container_id, name="rna_container_id", curie=NMDC_SUB_SCHEMA.curie('rna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_container_id, domain=None, range=Optional[str])
-
 slots.rna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.rna_isolate_meth, name="rna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('rna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.rna_isolate_meth, domain=None, range=Optional[str])
-
-slots.rna_project_contact = Slot(uri=NMDC_SUB_SCHEMA.rna_project_contact, name="rna_project_contact", curie=NMDC_SUB_SCHEMA.curie('rna_project_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_project_contact, domain=None, range=Optional[str])
-
-slots.rna_samp_id = Slot(uri=NMDC_SUB_SCHEMA.rna_samp_id, name="rna_samp_id", curie=NMDC_SUB_SCHEMA.curie('rna_samp_id'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_samp_id, domain=None, range=Optional[str])
-
-slots.rna_sample_format = Slot(uri=NMDC_SUB_SCHEMA.rna_sample_format, name="rna_sample_format", curie=NMDC_SUB_SCHEMA.curie('rna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_sample_format, domain=None, range=Optional[Union[str, "RNASampleFormatEnum"]])
-
-slots.rna_sample_name = Slot(uri=NMDC_SUB_SCHEMA.rna_sample_name, name="rna_sample_name", curie=NMDC_SUB_SCHEMA.curie('rna_sample_name'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_sample_name, domain=None, range=Optional[str])
-
-slots.rna_seq_project = Slot(uri=NMDC_SUB_SCHEMA.rna_seq_project, name="rna_seq_project", curie=NMDC_SUB_SCHEMA.curie('rna_seq_project'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_seq_project, domain=None, range=Optional[str])
-
-slots.rna_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.rna_seq_project_name, name="rna_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('rna_seq_project_name'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_seq_project_name, domain=None, range=Optional[str])
-
-slots.rna_seq_project_pi = Slot(uri=NMDC_SUB_SCHEMA.rna_seq_project_pi, name="rna_seq_project_pi", curie=NMDC_SUB_SCHEMA.curie('rna_seq_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_seq_project_pi, domain=None, range=Optional[str])
-
-slots.rna_volume = Slot(uri=NMDC_SUB_SCHEMA.rna_volume, name="rna_volume", curie=NMDC_SUB_SCHEMA.curie('rna_volume'),
-                   model_uri=NMDC_SUB_SCHEMA.rna_volume, domain=None, range=Optional[float])
 
 slots.room_air_exch_rate = Slot(uri=MIXS['0000169'], name="room_air_exch_rate", curie=MIXS.curie('0000169'),
                    model_uri=NMDC_SUB_SCHEMA.room_air_exch_rate, domain=None, range=Optional[str])
@@ -18926,9 +18583,6 @@ slots.subject = Slot(uri=NMDC_SUB_SCHEMA.subject, name="subject", curie=NMDC_SUB
 
 slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
                    model_uri=NMDC_SUB_SCHEMA.type, domain=None, range=Union[str, URIorCURIE])
-
-slots.biomaterial_purity = Slot(uri=NMDC_SUB_SCHEMA.biomaterial_purity, name="biomaterial_purity", curie=NMDC_SUB_SCHEMA.curie('biomaterial_purity'),
-                   model_uri=NMDC_SUB_SCHEMA.biomaterial_purity, domain=None, range=Optional[str])
 
 slots.external_database_identifiers = Slot(uri=NMDC_SUB_SCHEMA.external_database_identifiers, name="external_database_identifiers", curie=NMDC_SUB_SCHEMA.curie('external_database_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.external_database_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
@@ -20998,173 +20652,146 @@ slots.HostAssociatedInterface_temp = Slot(uri=MIXS['0000113'], name="HostAssocia
 slots.HostAssociatedInterface_horizon_meth = Slot(uri=MIXS['0000321'], name="HostAssociatedInterface_horizon_meth", curie=MIXS.curie('0000321'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_horizon_meth, domain=HostAssociatedInterface, range=Optional[str])
 
-slots.JgiMgInterface_dna_absorb1 = Slot(uri=NMDC['nmdc/dna_absorb1'], name="JgiMgInterface_dna_absorb1", curie=NMDC.curie('nmdc/dna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_absorb1, domain=JgiMgInterface, range=Optional[float])
+slots.JgiMgInterface_cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="JgiMgInterface_cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_cont_type, domain=JgiMgInterface, range=Union[str, "JgiContTypeEnum"])
 
-slots.JgiMgInterface_dna_absorb2 = Slot(uri=NMDC['nmdc/dna_absorb2'], name="JgiMgInterface_dna_absorb2", curie=NMDC.curie('nmdc/dna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_absorb2, domain=JgiMgInterface, range=Optional[float])
-
-slots.JgiMgInterface_dna_concentration = Slot(uri=NMDC['nmdc/dna_concentration'], name="JgiMgInterface_dna_concentration", curie=NMDC.curie('nmdc/dna_concentration'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_concentration, domain=JgiMgInterface, range=float)
-
-slots.JgiMgInterface_dna_cont_type = Slot(uri=NMDC['nmdc/dna_cont_type'], name="JgiMgInterface_dna_cont_type", curie=NMDC.curie('nmdc/dna_cont_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_cont_type, domain=JgiMgInterface, range=Union[str, "JgiContTypeEnum"])
-
-slots.JgiMgInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name="JgiMgInterface_dna_cont_well", curie=NMDC.curie('nmdc/dna_cont_well'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_cont_well, domain=JgiMgInterface, range=Optional[str],
+slots.JgiMgInterface_cont_well = Slot(uri=NMDC_SUB_SCHEMA.cont_well, name="JgiMgInterface_cont_well", curie=NMDC_SUB_SCHEMA.curie('cont_well'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_cont_well, domain=JgiMgInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMgInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_container_id, domain=JgiMgInterface, range=str,
-                   pattern=re.compile(r'^.{1,20}$'))
+slots.JgiMgInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, name="JgiMgInterface_container_name", curie=NMDC_SUB_SCHEMA.curie('container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_container_name, domain=JgiMgInterface, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]{1,20}$'))
 
-slots.JgiMgInterface_dna_dnase = Slot(uri=NMDC['nmdc/dna_dnase'], name="JgiMgInterface_dna_dnase", curie=NMDC.curie('nmdc/dna_dnase'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_dnase, domain=JgiMgInterface, range=Union[str, "YesNoEnum"])
+slots.JgiMgInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiMgInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dnase, domain=JgiMgInterface, range=Union[str, "YesNoEnum"])
+
+slots.JgiMgInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiMgInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_samp_id, domain=JgiMgInterface, range=str)
+
+slots.JgiMgInterface_jgi_sample_format = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_format, name="JgiMgInterface_jgi_sample_format", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_format'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_format, domain=JgiMgInterface, range=Union[str, "JGISampleFormatEnum"])
+
+slots.JgiMgInterface_jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_name, name="JgiMgInterface_jgi_sample_name", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_name, domain=JgiMgInterface, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
+
+slots.JgiMgInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="JgiMgInterface_jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_seq_project, domain=JgiMgInterface, range=float)
+
+slots.JgiMgInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="JgiMgInterface_jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_seq_project_name, domain=JgiMgInterface, range=str)
+
+slots.JgiMgInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMgInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_volume, domain=JgiMgInterface, range=float)
+
+slots.JgiMgInterface_nuc_acid_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb1, name="JgiMgInterface_nuc_acid_absorb1", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb1'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_nuc_acid_absorb1, domain=JgiMgInterface, range=Optional[float])
+
+slots.JgiMgInterface_nuc_acid_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, name="JgiMgInterface_nuc_acid_absorb2", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb2'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_nuc_acid_absorb2, domain=JgiMgInterface, range=Optional[float])
+
+slots.JgiMgInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, name="JgiMgInterface_nuc_acid_concentration", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_concentration'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_nuc_acid_concentration, domain=JgiMgInterface, range=float)
 
 slots.JgiMgInterface_dna_isolate_meth = Slot(uri=NMDC['nmdc/dna_isolate_meth'], name="JgiMgInterface_dna_isolate_meth", curie=NMDC.curie('nmdc/dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_isolate_meth, domain=JgiMgInterface, range=str)
 
-slots.JgiMgInterface_dna_project_contact = Slot(uri=NMDC['nmdc/dna_project_contact'], name="JgiMgInterface_dna_project_contact", curie=NMDC.curie('nmdc/dna_project_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_project_contact, domain=JgiMgInterface, range=str)
-
-slots.JgiMgInterface_dna_samp_id = Slot(uri=NMDC['nmdc/dna_samp_id'], name="JgiMgInterface_dna_samp_id", curie=NMDC.curie('nmdc/dna_samp_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_samp_id, domain=JgiMgInterface, range=str)
-
-slots.JgiMgInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format'], name="JgiMgInterface_dna_sample_format", curie=NMDC.curie('nmdc/dna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_format, domain=JgiMgInterface, range=Union[str, "DNASampleFormatEnum"])
-
-slots.JgiMgInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_sample_name, domain=JgiMgInterface, range=str,
-                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
-
-slots.JgiMgInterface_dna_seq_project = Slot(uri=NMDC['nmdc/dna_seq_project'], name="JgiMgInterface_dna_seq_project", curie=NMDC.curie('nmdc/dna_seq_project'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project, domain=JgiMgInterface, range=str)
-
-slots.JgiMgInterface_dna_seq_project_name = Slot(uri=NMDC['nmdc/dna_seq_project_name'], name="JgiMgInterface_dna_seq_project_name", curie=NMDC.curie('nmdc/dna_seq_project_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project_name, domain=JgiMgInterface, range=str)
-
-slots.JgiMgInterface_dna_seq_project_pi = Slot(uri=NMDC['nmdc/dna_seq_project_pi'], name="JgiMgInterface_dna_seq_project_pi", curie=NMDC.curie('nmdc/dna_seq_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_seq_project_pi, domain=JgiMgInterface, range=str)
-
-slots.JgiMgInterface_dna_volume = Slot(uri=NMDC['nmdc/dna_volume'], name="JgiMgInterface_dna_volume", curie=NMDC.curie('nmdc/dna_volume'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_volume, domain=JgiMgInterface, range=float)
-
-slots.JgiMgInterface_proposal_dna = Slot(uri=NMDC['nmdc/proposal_dna'], name="JgiMgInterface_proposal_dna", curie=NMDC.curie('nmdc/proposal_dna'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_proposal_dna, domain=JgiMgInterface, range=str)
-
 slots.JgiMgInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMgInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_oxy_stat_samp, domain=JgiMgInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
 
-slots.JgiMgLrInterface_dna_absorb1 = Slot(uri=NMDC['nmdc/dna_absorb1'], name="JgiMgLrInterface_dna_absorb1", curie=NMDC.curie('nmdc/dna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_absorb1, domain=JgiMgLrInterface, range=float)
+slots.JgiMgLrInterface_cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="JgiMgLrInterface_cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_cont_type, domain=JgiMgLrInterface, range=Union[str, "JgiContTypeEnum"])
 
-slots.JgiMgLrInterface_dna_absorb2 = Slot(uri=NMDC['nmdc/dna_absorb2'], name="JgiMgLrInterface_dna_absorb2", curie=NMDC.curie('nmdc/dna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_absorb2, domain=JgiMgLrInterface, range=float)
-
-slots.JgiMgLrInterface_dna_concentration = Slot(uri=NMDC['nmdc/dna_concentration'], name="JgiMgLrInterface_dna_concentration", curie=NMDC.curie('nmdc/dna_concentration'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_concentration, domain=JgiMgLrInterface, range=float)
-
-slots.JgiMgLrInterface_dna_cont_type = Slot(uri=NMDC['nmdc/dna_cont_type'], name="JgiMgLrInterface_dna_cont_type", curie=NMDC.curie('nmdc/dna_cont_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_cont_type, domain=JgiMgLrInterface, range=Union[str, "JgiContTypeEnum"])
-
-slots.JgiMgLrInterface_dna_cont_well = Slot(uri=NMDC['nmdc/dna_cont_well'], name="JgiMgLrInterface_dna_cont_well", curie=NMDC.curie('nmdc/dna_cont_well'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_cont_well, domain=JgiMgLrInterface, range=Optional[str],
+slots.JgiMgLrInterface_cont_well = Slot(uri=NMDC_SUB_SCHEMA.cont_well, name="JgiMgLrInterface_cont_well", curie=NMDC_SUB_SCHEMA.curie('cont_well'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_cont_well, domain=JgiMgLrInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMgLrInterface_dna_container_id = Slot(uri=NMDC['nmdc/dna_container_id'], name="JgiMgLrInterface_dna_container_id", curie=NMDC.curie('nmdc/dna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_container_id, domain=JgiMgLrInterface, range=str,
-                   pattern=re.compile(r'^.{1,20}$'))
+slots.JgiMgLrInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, name="JgiMgLrInterface_container_name", curie=NMDC_SUB_SCHEMA.curie('container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_container_name, domain=JgiMgLrInterface, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]{1,20}$'))
 
-slots.JgiMgLrInterface_dna_dnase = Slot(uri=NMDC['nmdc/dna_dnase'], name="JgiMgLrInterface_dna_dnase", curie=NMDC.curie('nmdc/dna_dnase'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_dnase, domain=JgiMgLrInterface, range=Union[str, "YesNoEnum"])
+slots.JgiMgLrInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiMgLrInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dnase, domain=JgiMgLrInterface, range=Union[str, "YesNoEnum"])
+
+slots.JgiMgLrInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiMgLrInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_samp_id, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_jgi_sample_format = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_format, name="JgiMgLrInterface_jgi_sample_format", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_format'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_format, domain=JgiMgLrInterface, range=Union[str, "JGISampleFormatEnum"])
+
+slots.JgiMgLrInterface_jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_name, name="JgiMgLrInterface_jgi_sample_name", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_name, domain=JgiMgLrInterface, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
+
+slots.JgiMgLrInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="JgiMgLrInterface_jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_seq_project, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="JgiMgLrInterface_jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_seq_project_name, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMgLrInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_volume, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_nuc_acid_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb1, name="JgiMgLrInterface_nuc_acid_absorb1", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb1'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_nuc_acid_absorb1, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_nuc_acid_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, name="JgiMgLrInterface_nuc_acid_absorb2", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb2'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_nuc_acid_absorb2, domain=JgiMgLrInterface, range=float)
+
+slots.JgiMgLrInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, name="JgiMgLrInterface_nuc_acid_concentration", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_concentration'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_nuc_acid_concentration, domain=JgiMgLrInterface, range=float)
 
 slots.JgiMgLrInterface_dna_isolate_meth = Slot(uri=NMDC['nmdc/dna_isolate_meth'], name="JgiMgLrInterface_dna_isolate_meth", curie=NMDC.curie('nmdc/dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_isolate_meth, domain=JgiMgLrInterface, range=str)
 
-slots.JgiMgLrInterface_dna_project_contact = Slot(uri=NMDC['nmdc/dna_project_contact'], name="JgiMgLrInterface_dna_project_contact", curie=NMDC.curie('nmdc/dna_project_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_project_contact, domain=JgiMgLrInterface, range=str)
-
-slots.JgiMgLrInterface_dna_samp_id = Slot(uri=NMDC['nmdc/dna_samp_id'], name="JgiMgLrInterface_dna_samp_id", curie=NMDC.curie('nmdc/dna_samp_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_samp_id, domain=JgiMgLrInterface, range=str)
-
-slots.JgiMgLrInterface_dna_sample_format = Slot(uri=NMDC['nmdc/dna_sample_format'], name="JgiMgLrInterface_dna_sample_format", curie=NMDC.curie('nmdc/dna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_sample_format, domain=JgiMgLrInterface, range=Union[str, "DNASampleFormatEnum"])
-
-slots.JgiMgLrInterface_dna_sample_name = Slot(uri=NMDC['nmdc/dna_sample_name'], name="JgiMgLrInterface_dna_sample_name", curie=NMDC.curie('nmdc/dna_sample_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_sample_name, domain=JgiMgLrInterface, range=str,
-                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
-
-slots.JgiMgLrInterface_dna_seq_project = Slot(uri=NMDC['nmdc/dna_seq_project'], name="JgiMgLrInterface_dna_seq_project", curie=NMDC.curie('nmdc/dna_seq_project'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project, domain=JgiMgLrInterface, range=str)
-
-slots.JgiMgLrInterface_dna_seq_project_name = Slot(uri=NMDC['nmdc/dna_seq_project_name'], name="JgiMgLrInterface_dna_seq_project_name", curie=NMDC.curie('nmdc/dna_seq_project_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project_name, domain=JgiMgLrInterface, range=str)
-
-slots.JgiMgLrInterface_dna_seq_project_pi = Slot(uri=NMDC['nmdc/dna_seq_project_pi'], name="JgiMgLrInterface_dna_seq_project_pi", curie=NMDC.curie('nmdc/dna_seq_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_seq_project_pi, domain=JgiMgLrInterface, range=str)
-
-slots.JgiMgLrInterface_dna_volume = Slot(uri=NMDC['nmdc/dna_volume'], name="JgiMgLrInterface_dna_volume", curie=NMDC.curie('nmdc/dna_volume'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_volume, domain=JgiMgLrInterface, range=float)
-
-slots.JgiMgLrInterface_proposal_dna = Slot(uri=NMDC['nmdc/proposal_dna'], name="JgiMgLrInterface_proposal_dna", curie=NMDC.curie('nmdc/proposal_dna'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_proposal_dna, domain=JgiMgLrInterface, range=str)
-
 slots.JgiMgLrInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMgLrInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_oxy_stat_samp, domain=JgiMgLrInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
 
-slots.JgiMtInterface_dnase_rna = Slot(uri=NMDC['nmdc/dnase_rna'], name="JgiMtInterface_dnase_rna", curie=NMDC.curie('nmdc/dnase_rna'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_dnase_rna, domain=JgiMtInterface, range=Union[str, "YesNoEnum"])
+slots.JgiMtInterface_cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="JgiMtInterface_cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_cont_type, domain=JgiMtInterface, range=Union[str, "JgiContTypeEnum"])
 
-slots.JgiMtInterface_proposal_rna = Slot(uri=NMDC['nmdc/proposal_rna'], name="JgiMtInterface_proposal_rna", curie=NMDC.curie('nmdc/proposal_rna'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_proposal_rna, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_absorb1 = Slot(uri=NMDC['nmdc/rna_absorb1'], name="JgiMtInterface_rna_absorb1", curie=NMDC.curie('nmdc/rna_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_absorb1, domain=JgiMtInterface, range=Optional[float])
-
-slots.JgiMtInterface_rna_absorb2 = Slot(uri=NMDC['nmdc/rna_absorb2'], name="JgiMtInterface_rna_absorb2", curie=NMDC.curie('nmdc/rna_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_absorb2, domain=JgiMtInterface, range=Optional[float])
-
-slots.JgiMtInterface_rna_concentration = Slot(uri=NMDC['nmdc/rna_concentration'], name="JgiMtInterface_rna_concentration", curie=NMDC.curie('nmdc/rna_concentration'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_concentration, domain=JgiMtInterface, range=float)
-
-slots.JgiMtInterface_rna_cont_type = Slot(uri=NMDC['nmdc/rna_cont_type'], name="JgiMtInterface_rna_cont_type", curie=NMDC.curie('nmdc/rna_cont_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_cont_type, domain=JgiMtInterface, range=Union[str, "JgiContTypeEnum"])
-
-slots.JgiMtInterface_rna_cont_well = Slot(uri=NMDC['nmdc/rna_cont_well'], name="JgiMtInterface_rna_cont_well", curie=NMDC.curie('nmdc/rna_cont_well'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_cont_well, domain=JgiMtInterface, range=Optional[str],
+slots.JgiMtInterface_cont_well = Slot(uri=NMDC_SUB_SCHEMA.cont_well, name="JgiMtInterface_cont_well", curie=NMDC_SUB_SCHEMA.curie('cont_well'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_cont_well, domain=JgiMtInterface, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
 
-slots.JgiMtInterface_rna_container_id = Slot(uri=NMDC['nmdc/rna_container_id'], name="JgiMtInterface_rna_container_id", curie=NMDC.curie('nmdc/rna_container_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_container_id, domain=JgiMtInterface, range=str,
-                   pattern=re.compile(r'^.{1,20}$'))
+slots.JgiMtInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, name="JgiMtInterface_container_name", curie=NMDC_SUB_SCHEMA.curie('container_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_container_name, domain=JgiMtInterface, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]{1,20}$'))
+
+slots.JgiMtInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiMtInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_dnase, domain=JgiMtInterface, range=Union[str, "YesNoEnum"])
+
+slots.JgiMtInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiMtInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_samp_id, domain=JgiMtInterface, range=str)
+
+slots.JgiMtInterface_jgi_sample_format = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_format, name="JgiMtInterface_jgi_sample_format", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_format'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_format, domain=JgiMtInterface, range=Union[str, "JGISampleFormatEnum"])
+
+slots.JgiMtInterface_jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_name, name="JgiMtInterface_jgi_sample_name", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_name, domain=JgiMtInterface, range=str,
+                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
+
+slots.JgiMtInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="JgiMtInterface_jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_seq_project, domain=JgiMtInterface, range=float)
+
+slots.JgiMtInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="JgiMtInterface_jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_seq_project_name, domain=JgiMtInterface, range=str)
+
+slots.JgiMtInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMtInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_volume, domain=JgiMtInterface, range=float)
+
+slots.JgiMtInterface_nuc_acid_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb1, name="JgiMtInterface_nuc_acid_absorb1", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb1'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_nuc_acid_absorb1, domain=JgiMtInterface, range=Optional[float])
+
+slots.JgiMtInterface_nuc_acid_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, name="JgiMtInterface_nuc_acid_absorb2", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb2'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_nuc_acid_absorb2, domain=JgiMtInterface, range=Optional[float])
+
+slots.JgiMtInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, name="JgiMtInterface_nuc_acid_concentration", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_concentration'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_nuc_acid_concentration, domain=JgiMtInterface, range=float)
 
 slots.JgiMtInterface_rna_isolate_meth = Slot(uri=NMDC['nmdc/rna_isolate_meth'], name="JgiMtInterface_rna_isolate_meth", curie=NMDC.curie('nmdc/rna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_isolate_meth, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_project_contact = Slot(uri=NMDC['nmdc/rna_project_contact'], name="JgiMtInterface_rna_project_contact", curie=NMDC.curie('nmdc/rna_project_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_project_contact, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_samp_id = Slot(uri=NMDC['nmdc/rna_samp_id'], name="JgiMtInterface_rna_samp_id", curie=NMDC.curie('nmdc/rna_samp_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_samp_id, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_sample_format = Slot(uri=NMDC['nmdc/rna_sample_format'], name="JgiMtInterface_rna_sample_format", curie=NMDC.curie('nmdc/rna_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_format, domain=JgiMtInterface, range=Union[str, "RNASampleFormatEnum"])
-
-slots.JgiMtInterface_rna_sample_name = Slot(uri=NMDC['nmdc/rna_sample_name'], name="JgiMtInterface_rna_sample_name", curie=NMDC.curie('nmdc/rna_sample_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_sample_name, domain=JgiMtInterface, range=str,
-                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
-
-slots.JgiMtInterface_rna_seq_project = Slot(uri=NMDC['nmdc/rna_seq_project'], name="JgiMtInterface_rna_seq_project", curie=NMDC.curie('nmdc/rna_seq_project'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_seq_project_name = Slot(uri=NMDC['nmdc/rna_seq_project_name'], name="JgiMtInterface_rna_seq_project_name", curie=NMDC.curie('nmdc/rna_seq_project_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project_name, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_seq_project_pi = Slot(uri=NMDC['nmdc/rna_seq_project_pi'], name="JgiMtInterface_rna_seq_project_pi", curie=NMDC.curie('nmdc/rna_seq_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_seq_project_pi, domain=JgiMtInterface, range=str)
-
-slots.JgiMtInterface_rna_volume = Slot(uri=NMDC['nmdc/rna_volume'], name="JgiMtInterface_rna_volume", curie=NMDC.curie('nmdc/rna_volume'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_volume, domain=JgiMtInterface, range=float)
 
 slots.JgiMtInterface_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="JgiMtInterface_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_oxy_stat_samp, domain=JgiMtInterface, range=Optional[Union[str, "OxyStatSampEnum"]])
