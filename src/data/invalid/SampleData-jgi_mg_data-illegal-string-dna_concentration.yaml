@@ -2,19 +2,16 @@ jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    dna_concentration: five hundred
-    dna_cont_type: plate
-    dna_cont_well: C3
-    dna_container_id: xxx
-    dna_dnase: "no"
+    nuc_acid_concentration: five hundred
+    cont_type: plate
+    cont_well: C3
+    container_name: xxx
+    dnase: "no"
     dna_isolate_meth: xxx
-    dna_project_contact: xxx
-    dna_samp_id: xxx
-    dna_sample_format: DNAStable
-    dna_sample_name: xxx
-    dna_seq_project: xxx
-    dna_seq_project_name: xxx
-    dna_seq_project_pi: xxx
-    dna_volume: 0
-    proposal_dna: xxx
+    jgi_samp_id: xxx
+    jgi_sample_format: DNAStable
+    jgi_sample_name: xxx
+    jgi_seq_project: 111
+    jgi_seq_project_name: xxx
+    jgi_sample_volume: 0
     samp_name: xxx

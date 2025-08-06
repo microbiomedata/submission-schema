@@ -1,22 +1,19 @@
 jgi_mt_data:
   - samp_name: sample name
     source_mat_id: MPI:012345
-    dnase_rna: "no"
-    proposal_rna: '504000'
-    rna_concentration: 100.3
-    rna_cont_type: plate 
-    rna_cont_well: H7
-    rna_container_id: cat_ht_1999
+    dnase: "no"
+    nuc_acid_concentration: 100.3
+    cont_type: plate 
+    cont_well: H7
+    container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
-    rna_project_contact: Leslie Ann Levine
-    rna_samp_id: '123456'
-    rna_sample_format: MDA reaction buffer
-    rna_sample_name: JGI_lagoon_14343
-    rna_seq_project: '123456789'
-    rna_seq_project_name: JGI Lagoon metatranscritpomics
-    rna_seq_project_pi: Patty Smith
-    rna_volume: 25.1
+    jgi_samp_id: '123456'
+    jgi_sample_format: MDA reaction buffer
+    jgi_sample_name: JGI_lagoon_14343
+    jgi_seq_project: 123456789
+    jgi_seq_project_name: JGI Lagoon metatranscritpomics
+    jgi_sample_volume: 25.1
     analysis_type: 
       - metatranscriptomics
-    rna_absorb1: 2.02
-    rna_absorb2: 1.4
+    nuc_acid_absorb1: 2.02
+    nuc_acid_absorb2: 1.4
