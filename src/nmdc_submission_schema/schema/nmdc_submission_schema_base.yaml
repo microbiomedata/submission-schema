@@ -60,13 +60,13 @@ enums:
   JGISampleFormatEnum:
     permissible_values:
       10 mM Tris-HCl:
-      DNAStable:
       Ethanol:
+      Gentegra-DNA:
+      Gentegra-RNA:
       Low EDTA TE:
       MDA reaction buffer:
       PBS:
       Pellet:
-      RNAStable:
       TE:
       Water:
   EnvPackageEnum:

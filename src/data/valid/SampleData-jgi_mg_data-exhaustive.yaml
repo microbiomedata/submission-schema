@@ -13,7 +13,7 @@ jgi_mg_data:
     dna_isolate_meth: xxx
 #    dna_organisms: xxx
     jgi_samp_id: xxx
-    jgi_sample_format: DNAStable
+    jgi_sample_format: Ethanol
     jgi_sample_name: xxx
     jgi_seq_project: 111
     jgi_seq_project_name: xxx
