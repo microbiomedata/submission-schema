@@ -161,24 +161,7 @@ local/nmdc.yaml
 		--modifications_config_tsv $(word 2,$^) \
 		--validation_config_tsv $(word 3,$^) \
 		--yaml_output $@.raw
-
-	# # having trouble selectively injecting rules based on title pattern
-#	yq eval-all \
-#		'select(fileIndex==1).classes.JgiMtInterface.rules = (select(fileIndex==0).classes.Biosample.rules.[] | select(.title == "rna*")) | select(fileIndex==1)' \
-#		local/nmdc.yaml src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml | cat > ruleswap.yaml
-	# # so just inject all rules...
-	# # using | cat > because yq fails to write to STDOUT (permissions error?!)
-	yq eval-all \
-		'select(fileIndex==1).classes.JgiMgInterface.rules = select(fileIndex==0).classes.Biosample.rules | select(fileIndex==1)' \
-		local/nmdc.yaml $@.raw | cat > $@.raw2
-	yq eval-all \
-		'select(fileIndex==1).classes.JgiMtInterface.rules = select(fileIndex==0).classes.Biosample.rules | select(fileIndex==1)' \
-		local/nmdc.yaml $@.raw2 | cat > $@.raw
-	# # ...then removing rules that aren't relevant to a class
-	# # requires some prior knowledge
-	yq -i 'del(.classes.JgiMgInterface.rules.[] | select(.title == "rna*"))' $@.raw
-	yq -i 'del(.classes.JgiMtInterface.rules.[] | select(.title == "dna*"))' $@.raw
-
+	
 	$(RUN) gen-linkml \
 		--no-materialize-attributes \
 		--format yaml $@.raw > $@

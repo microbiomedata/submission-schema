@@ -459,7 +459,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -1681,7 +1680,6 @@
                 },
                 "occup_samp": {
                     "description": "Number of occupants present at time of sample within the given space",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "integer",
                         "null"
@@ -2300,25 +2298,6 @@
             "title": "CurLandUseEnum",
             "type": "string"
         },
-        "DNASampleFormatEnum": {
-            "description": "",
-            "enum": [
-                "10 mM Tris-HCl",
-                "DNAStable",
-                "Ethanol",
-                "Low EDTA TE",
-                "MDA reaction buffer",
-                "PBS",
-                "Pellet",
-                "RNAStable",
-                "TE",
-                "Water",
-                "Gentegra-DNA",
-                "Gentegra-RNA"
-            ],
-            "title": "DNASampleFormatEnum",
-            "type": "string"
-        },
         "DeposEnvEnum": {
             "description": "",
             "enum": [
@@ -2347,23 +2326,6 @@
             "description": "One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types",
             "title": "DhInterface",
             "type": "object"
-        },
-        "DnaSampleFormatEnum": {
-            "description": "",
-            "enum": [
-                "10 mM Tris-HCl",
-                "DNAStable",
-                "Ethanol",
-                "Low EDTA TE",
-                "MDA reaction buffer",
-                "PBS",
-                "Pellet",
-                "RNAStable",
-                "TE",
-                "Water"
-            ],
-            "title": "DnaSampleFormatEnum",
-            "type": "string"
         },
         "DoorCompTypeEnum": {
             "description": "",
@@ -2639,6 +2601,7 @@
                 "Archaea",
                 "Archipelago",
                 "Arterial ulcer",
+                "Artificial seawater",
                 "Ascites",
                 "Atoll lagoon",
                 "Autotrophic (ANF)",
@@ -2785,6 +2748,7 @@
                 "Fetal tissue",
                 "Fibroma",
                 "Filter",
+                "Fish pen",
                 "Fish pond",
                 "Fish tank",
                 "Fjord",
@@ -3388,7 +3352,6 @@
                 "Desert",
                 "Diatoms",
                 "Digestive system",
-                "Dinoflagellata",
                 "Dinoflagellates",
                 "Drinking water treatment plant",
                 "Drugs/Supplements",
@@ -6863,6 +6826,7 @@
                 "orbitrap_fusion_lumos",
                 "orbitrap_eclipse_tribid",
                 "orbitrap_q_exactive",
+                "orbitrap_iqx_tribrid",
                 "solarix_7T",
                 "solarix_12T",
                 "solarix_15T",
@@ -6909,6 +6873,23 @@
             "title": "IntWallCondEnum",
             "type": "string"
         },
+        "JGISampleFormatEnum": {
+            "description": "",
+            "enum": [
+                "10 mM Tris-HCl",
+                "Ethanol",
+                "Gentegra-DNA",
+                "Gentegra-RNA",
+                "Low EDTA TE",
+                "MDA reaction buffer",
+                "PBS",
+                "Pellet",
+                "TE",
+                "Water"
+            ],
+            "title": "JGISampleFormatEnum",
+            "type": "string"
+        },
         "JgiContTypeEnum": {
             "description": "",
             "enum": [
@@ -6924,44 +6905,44 @@
                 {
                     "if": {
                         "properties": {
-                            "dna_cont_well": {
+                            "cont_well": {
                                 "pattern": ".+"
                             }
                         },
                         "required": [
-                            "dna_cont_well"
+                            "cont_well"
                         ]
                     },
                     "then": {
                         "properties": {
-                            "dna_cont_type": {
+                            "cont_type": {
                                 "const": "plate"
                             }
                         },
                         "required": [
-                            "dna_cont_type"
+                            "cont_type"
                         ]
                     }
                 },
                 {
                     "if": {
                         "properties": {
-                            "dna_cont_type": {
+                            "cont_type": {
                                 "const": "plate"
                             }
                         },
                         "required": [
-                            "dna_cont_type"
+                            "cont_type"
                         ]
                     },
                     "then": {
                         "properties": {
-                            "dna_cont_well": {
+                            "cont_well": {
                                 "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
                             }
                         },
                         "required": [
-                            "dna_cont_well"
+                            "cont_well"
                         ]
                     }
                 }
@@ -6975,78 +6956,69 @@
                     },
                     "type": "array"
                 },
-                "dna_absorb1": {
-                    "description": "260/280 measurement of DNA sample purity",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "dna_absorb2": {
-                    "description": "260/230 measurement of DNA sample purity",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "dna_concentration": {
-                    "maximum": 2000,
-                    "minimum": 0,
-                    "type": "number"
-                },
-                "dna_cont_type": {
+                "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
-                "dna_cont_well": {
+                "cont_well": {
                     "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "dna_container_id": {
-                    "pattern": "^.{1,20}$",
+                "container_name": {
+                    "pattern": "^[-_.a-zA-Z0-9]{1,20}$",
                     "type": "string"
-                },
-                "dna_dnase": {
-                    "$ref": "#/$defs/YesNoEnum"
                 },
                 "dna_isolate_meth": {
                     "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
                     "type": "string"
                 },
-                "dna_project_contact": {
+                "dnase": {
+                    "$ref": "#/$defs/YesNoEnum"
+                },
+                "jgi_samp_id": {
                     "type": "string"
                 },
-                "dna_samp_id": {
+                "jgi_sample_format": {
+                    "$ref": "#/$defs/JGISampleFormatEnum",
+                    "description": "Solution in which the JGI sample has been suspended"
+                },
+                "jgi_sample_name": {
+                    "description": "Give the JGI sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
                     "type": "string"
                 },
-                "dna_sample_format": {
-                    "$ref": "#/$defs/DNASampleFormatEnum",
-                    "description": "Solution in which the DNA sample has been suspended"
-                },
-                "dna_sample_name": {
-                    "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
-                    "pattern": "^[_a-zA-Z0-9-]*$",
-                    "type": "string"
-                },
-                "dna_seq_project": {
-                    "type": "string"
-                },
-                "dna_seq_project_name": {
-                    "type": "string"
-                },
-                "dna_seq_project_pi": {
-                    "type": "string"
-                },
-                "dna_volume": {
+                "jgi_sample_volume": {
                     "maximum": 1000,
                     "minimum": 0,
                     "type": "number"
                 },
-                "proposal_dna": {
+                "jgi_seq_project": {
+                    "type": "number"
+                },
+                "jgi_seq_project_name": {
                     "type": "string"
+                },
+                "nuc_acid_absorb1": {
+                    "description": "260/280 measurement of nucleic acid sample purity",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "nuc_acid_absorb2": {
+                    "description": "260/230 measurement of nucleic acid sample purity",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "nuc_acid_concentration": {
+                    "maximum": 2000,
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
@@ -7062,20 +7034,17 @@
                 }
             },
             "required": [
-                "dna_concentration",
-                "dna_cont_type",
-                "dna_container_id",
-                "dna_dnase",
+                "nuc_acid_concentration",
+                "cont_type",
+                "container_name",
+                "dnase",
                 "dna_isolate_meth",
-                "dna_project_contact",
-                "dna_samp_id",
-                "dna_sample_format",
-                "dna_sample_name",
-                "dna_seq_project",
-                "dna_seq_project_name",
-                "dna_seq_project_pi",
-                "dna_volume",
-                "proposal_dna",
+                "jgi_samp_id",
+                "jgi_sample_format",
+                "jgi_sample_name",
+                "jgi_seq_project",
+                "jgi_seq_project_name",
+                "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
             ],
@@ -7084,7 +7053,53 @@
         },
         "JgiMgLrInterface": {
             "additionalProperties": false,
-            "description": "Metadata for samples sent to JGI for long read metagenome sequecning",
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "cont_well": {
+                                "pattern": ".+"
+                            }
+                        },
+                        "required": [
+                            "cont_well"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "cont_type"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "cont_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "cont_well": {
+                                "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
+                            }
+                        },
+                        "required": [
+                            "cont_well"
+                        ]
+                    }
+                }
+            ],
+            "description": "Metadata for samples sent to JGI for long read metagenome sequencing",
             "properties": {
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
@@ -7093,72 +7108,63 @@
                     },
                     "type": "array"
                 },
-                "dna_absorb1": {
-                    "description": "260/280 measurement of DNA sample purity",
-                    "type": "number"
-                },
-                "dna_absorb2": {
-                    "description": "260/230 measurement of DNA sample purity",
-                    "type": "number"
-                },
-                "dna_concentration": {
-                    "maximum": 2000,
-                    "minimum": 0,
-                    "type": "number"
-                },
-                "dna_cont_type": {
+                "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
-                "dna_cont_well": {
+                "cont_well": {
                     "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "dna_container_id": {
-                    "pattern": "^.{1,20}$",
+                "container_name": {
+                    "pattern": "^[-_.a-zA-Z0-9]{1,20}$",
                     "type": "string"
-                },
-                "dna_dnase": {
-                    "$ref": "#/$defs/YesNoEnum"
                 },
                 "dna_isolate_meth": {
                     "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
                     "type": "string"
                 },
-                "dna_project_contact": {
+                "dnase": {
+                    "$ref": "#/$defs/YesNoEnum"
+                },
+                "jgi_samp_id": {
                     "type": "string"
                 },
-                "dna_samp_id": {
+                "jgi_sample_format": {
+                    "$ref": "#/$defs/JGISampleFormatEnum",
+                    "description": "Solution in which the JGI sample has been suspended"
+                },
+                "jgi_sample_name": {
+                    "description": "Give the JGI sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
                     "type": "string"
                 },
-                "dna_sample_format": {
-                    "$ref": "#/$defs/DNASampleFormatEnum",
-                    "description": "Solution in which the DNA sample has been suspended"
-                },
-                "dna_sample_name": {
-                    "description": "Give the DNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
-                    "pattern": "^[_a-zA-Z0-9-]*$",
-                    "type": "string"
-                },
-                "dna_seq_project": {
-                    "type": "string"
-                },
-                "dna_seq_project_name": {
-                    "type": "string"
-                },
-                "dna_seq_project_pi": {
-                    "type": "string"
-                },
-                "dna_volume": {
+                "jgi_sample_volume": {
                     "maximum": 1000,
                     "minimum": 0,
                     "type": "number"
                 },
-                "proposal_dna": {
+                "jgi_seq_project": {
+                    "type": "number"
+                },
+                "jgi_seq_project_name": {
                     "type": "string"
+                },
+                "nuc_acid_absorb1": {
+                    "description": "260/280 measurement of nucleic acid sample purity",
+                    "type": "number"
+                },
+                "nuc_acid_absorb2": {
+                    "description": "260/230 measurement of nucleic acid sample purity",
+                    "type": "number"
+                },
+                "nuc_acid_concentration": {
+                    "maximum": 2000,
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
@@ -7174,22 +7180,19 @@
                 }
             },
             "required": [
-                "dna_absorb1",
-                "dna_absorb2",
-                "dna_concentration",
-                "dna_cont_type",
-                "dna_container_id",
-                "dna_dnase",
+                "nuc_acid_absorb1",
+                "nuc_acid_absorb2",
+                "nuc_acid_concentration",
+                "cont_type",
+                "container_name",
+                "dnase",
                 "dna_isolate_meth",
-                "dna_project_contact",
-                "dna_samp_id",
-                "dna_sample_format",
-                "dna_sample_name",
-                "dna_seq_project",
-                "dna_seq_project_name",
-                "dna_seq_project_pi",
-                "dna_volume",
-                "proposal_dna",
+                "jgi_samp_id",
+                "jgi_sample_format",
+                "jgi_sample_name",
+                "jgi_seq_project",
+                "jgi_seq_project_name",
+                "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
             ],
@@ -7202,44 +7205,44 @@
                 {
                     "if": {
                         "properties": {
-                            "rna_cont_well": {
+                            "cont_well": {
                                 "pattern": ".+"
                             }
                         },
                         "required": [
-                            "rna_cont_well"
+                            "cont_well"
                         ]
                     },
                     "then": {
                         "properties": {
-                            "rna_cont_type": {
+                            "cont_type": {
                                 "const": "plate"
                             }
                         },
                         "required": [
-                            "rna_cont_type"
+                            "cont_type"
                         ]
                     }
                 },
                 {
                     "if": {
                         "properties": {
-                            "rna_cont_type": {
+                            "cont_type": {
                                 "const": "plate"
                             }
                         },
                         "required": [
-                            "rna_cont_type"
+                            "cont_type"
                         ]
                     },
                     "then": {
                         "properties": {
-                            "rna_cont_well": {
+                            "cont_well": {
                                 "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
                             }
                         },
                         "required": [
-                            "rna_cont_well"
+                            "cont_well"
                         ]
                     }
                 }
@@ -7253,80 +7256,69 @@
                     },
                     "type": "array"
                 },
-                "dnase_rna": {
-                    "$ref": "#/$defs/YesNoEnum"
-                },
-                "proposal_rna": {
-                    "type": "string"
-                },
-                "rna_absorb1": {
-                    "description": "260/280 measurement of RNA sample purity",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "rna_absorb2": {
-                    "description": "260/230 measurement of RNA sample purity",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "rna_concentration": {
-                    "maximum": 1000,
-                    "minimum": 0,
-                    "type": "number"
-                },
-                "rna_cont_type": {
+                "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
                 },
-                "rna_cont_well": {
+                "cont_well": {
                     "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "rna_container_id": {
-                    "pattern": "^.{1,20}$",
+                "container_name": {
+                    "pattern": "^[-_.a-zA-Z0-9]{1,20}$",
                     "type": "string"
+                },
+                "dnase": {
+                    "$ref": "#/$defs/YesNoEnum"
+                },
+                "jgi_samp_id": {
+                    "type": "string"
+                },
+                "jgi_sample_format": {
+                    "$ref": "#/$defs/JGISampleFormatEnum",
+                    "description": "Solution in which the JGI sample has been suspended"
+                },
+                "jgi_sample_name": {
+                    "description": "Give the JGI sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
+                    "type": "string"
+                },
+                "jgi_sample_volume": {
+                    "maximum": 1000,
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "jgi_seq_project": {
+                    "type": "number"
+                },
+                "jgi_seq_project_name": {
+                    "type": "string"
+                },
+                "nuc_acid_absorb1": {
+                    "description": "260/280 measurement of nucleic acid sample purity",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "nuc_acid_absorb2": {
+                    "description": "260/230 measurement of nucleic acid sample purity",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "nuc_acid_concentration": {
+                    "maximum": 2000,
+                    "minimum": 0,
+                    "type": "number"
                 },
                 "rna_isolate_meth": {
                     "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
                     "type": "string"
-                },
-                "rna_project_contact": {
-                    "type": "string"
-                },
-                "rna_samp_id": {
-                    "type": "string"
-                },
-                "rna_sample_format": {
-                    "$ref": "#/$defs/RNASampleFormatEnum",
-                    "description": "Solution in which the RNA sample has been suspended"
-                },
-                "rna_sample_name": {
-                    "description": "Give the RNA sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
-                    "maximum": 2000,
-                    "minimum": 0,
-                    "pattern": "^[_a-zA-Z0-9-]*$",
-                    "type": "string"
-                },
-                "rna_seq_project": {
-                    "type": "string"
-                },
-                "rna_seq_project_name": {
-                    "type": "string"
-                },
-                "rna_seq_project_pi": {
-                    "type": "string"
-                },
-                "rna_volume": {
-                    "maximum": 1000,
-                    "minimum": 0,
-                    "type": "number"
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
@@ -7342,20 +7334,17 @@
                 }
             },
             "required": [
-                "dnase_rna",
-                "proposal_rna",
-                "rna_concentration",
-                "rna_cont_type",
-                "rna_container_id",
+                "nuc_acid_concentration",
+                "cont_type",
+                "container_name",
+                "dnase",
                 "rna_isolate_meth",
-                "rna_project_contact",
-                "rna_samp_id",
-                "rna_sample_format",
-                "rna_sample_name",
-                "rna_seq_project",
-                "rna_seq_project_name",
-                "rna_seq_project_pi",
-                "rna_volume",
+                "jgi_samp_id",
+                "jgi_sample_format",
+                "jgi_sample_name",
+                "jgi_seq_project",
+                "jgi_seq_project_name",
+                "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
             ],
@@ -8747,7 +8736,6 @@
                     "description": "pH measurement of the culture rooting medium; e.g. 5.5.",
                     "maximum": 14,
                     "minimum": 1,
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -8992,6 +8980,7 @@
         "ProcessingInstitutionEnum": {
             "description": "",
             "enum": [
+                "NMDC",
                 "UCSD",
                 "JGI",
                 "EMSL",
@@ -9057,25 +9046,6 @@
             "title": "QuadPosEnum",
             "type": "string"
         },
-        "RNASampleFormatEnum": {
-            "description": "",
-            "enum": [
-                "10 mM Tris-HCl",
-                "DNAStable",
-                "Ethanol",
-                "Low EDTA TE",
-                "MDA reaction buffer",
-                "PBS",
-                "Pellet",
-                "RNAStable",
-                "TE",
-                "Water",
-                "Gentegra-DNA",
-                "Gentegra-RNA"
-            ],
-            "title": "RNASampleFormatEnum",
-            "type": "string"
-        },
         "RelSampLocEnum": {
             "description": "",
             "enum": [
@@ -9098,23 +9068,6 @@
                 "obligate anaerobe"
             ],
             "title": "RelToOxygenEnum",
-            "type": "string"
-        },
-        "RnaSampleFormatEnum": {
-            "description": "",
-            "enum": [
-                "10 mM Tris-HCl",
-                "DNAStable",
-                "Ethanol",
-                "Low EDTA TE",
-                "MDA reaction buffer",
-                "PBS",
-                "Pellet",
-                "RNAStable",
-                "TE",
-                "Water"
-            ],
-            "title": "RnaSampleFormatEnum",
             "type": "string"
         },
         "RoomCondtEnum": {
@@ -9606,7 +9559,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -10523,7 +10475,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
@@ -11926,8 +11877,8 @@
                 "Soft tissues",
                 "Soft tissues: Muscles",
                 "Soil",
-                "Solar solterns",
-                "Solar solterns sediment",
+                "Solar salterns",
+                "Solar salterns sediment",
                 "Sonicate fluid",
                 "Speleothems",
                 "Sperm",
@@ -12312,6 +12263,124 @@
                 "downtown"
             ],
             "title": "TrainStopLocEnum",
+            "type": "string"
+        },
+        "UnitEnum": {
+            "description": "",
+            "enum": [
+                "%",
+                "J/K",
+                "Cel",
+                "cm",
+                "d",
+                "g",
+                "h",
+                "kPa",
+                "m",
+                "m/s",
+                "mg/kg",
+                "mg/L",
+                "min",
+                "mL",
+                "mm",
+                "mL/L",
+                "mmol/L",
+                "mS/cm",
+                "[ppm]",
+                "uS/cm",
+                "W/m2",
+                "a",
+                "ug/L",
+                "ug/uL",
+                "uL",
+                "mol/L",
+                "mol/L/h",
+                "ug/L/h",
+                "umol/L",
+                "umol/kg",
+                "umol/m2/s",
+                "mg/m3",
+                "m2/s",
+                "kg/m3",
+                "g/m3",
+                "m2",
+                "atm",
+                "mV",
+                "PSU",
+                "L",
+                "um",
+                "y",
+                "1",
+                "uL/kg",
+                "kg",
+                "ppt",
+                "g/g",
+                "lx",
+                "mg/m3/d",
+                "ng/h",
+                "mm[Hg]",
+                "[ppb]",
+                "g/kg",
+                "deg",
+                "mg/g",
+                "ug/g",
+                "ng/g",
+                "pg/g",
+                "ng/L",
+                "pg/L",
+                "ug/mL",
+                "ng/mL",
+                "pg/mL",
+                "mol",
+                "mmol",
+                "umol",
+                "nmol",
+                "pmol",
+                "U",
+                "mU",
+                "uU",
+                "nU",
+                "Bq",
+                "kBq",
+                "MBq",
+                "GBq",
+                "Ci",
+                "mCi",
+                "uCi",
+                "nCi",
+                "pCi",
+                "rad",
+                "sr",
+                "Hz",
+                "kHz",
+                "MHz",
+                "GHz",
+                "N",
+                "kN",
+                "J",
+                "kJ",
+                "MJ",
+                "W",
+                "kW",
+                "API",
+                "mbar",
+                "ratio",
+                "J/Cel",
+                "uE/m2/s",
+                "kW/m2",
+                "people",
+                "pets",
+                "plants",
+                "umol/s/m2",
+                "m3/d",
+                "L/h",
+                "pH",
+                "kW/m2/d",
+                "NTU",
+                "m3/min",
+                "km/h"
+            ],
+            "title": "UnitEnum",
             "type": "string"
         },
         "VisMediaEnum": {
@@ -12977,7 +13046,6 @@
                 },
                 "carb_nitro_ratio": {
                     "description": "Ratio of amount or concentrations of carbon to nitrogen",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
                         "number",
                         "null"
