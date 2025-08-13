@@ -247,51 +247,6 @@ slots:
     range: JgiMtInterface
     inlined: true
     inlined_as_list: true
-  dna_absorb1
-  dna_absorb2
-  dna_concentration
-  cont_type:
-    description: Tube or plate (96-well)
-    title: JGI container type
-    examples:
-      - value: plate
-      - value: tube
-    rank: 10
-    range: JgiContTypeEnum
-    recommended: true
-  cont_well:
-    title: JGI plate position
-    comments:
-      - Required when 'plate' is selected for container type.
-      - Leave blank if the sample will be shipped in a tube.
-      - JGI will not process samples in corner wells, so A1, A12, H1 and H12 will not pass validation.
-      - Fill plate in column-wise format. B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
-    examples:
-      - value: B2
-    rank: 11
-    string_serialization: '{96 well plate pos}'
-    recommended: true
-    pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
-  container_id:
-    title: Container label
-    comments:
-      - Must be unique across all tubes and plates, and <20 characters. 
-      - All samples in a plate should have the same plate label.
-    examples:
-      - value: Pond_MT_041618
-    rank: 9
-    string_serialization: '{text < 20 characters}'
-    recommended: true
-  dna_dnase
-  dna_project_contact
-  dna_samp_id
-  dna_sample_format
-  dna_sample_name
-  dna_seq_project
-  dna_seq_project_name
-  dna_seq_project_pi
-  dna_volume
-
   misc_envs_data:
     description: aggregation slot relating misc_envs data collections to a SampleData container
     multivalued: true
