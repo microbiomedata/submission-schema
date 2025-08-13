@@ -89,7 +89,7 @@ water_data:
     size_frac_up: 100 units
     sodium: 100 units
     soluble_react_phosp: 100 units
-    source_mat_id: x:1
+    source_mat_id: igsn:001
     specific_ecosystem: xyz
     sulfate: 100 units
     sulfide: 100 units

@@ -8,6 +8,6 @@ emsl_data:
     samp_name: xxx
     sample_shipped: 100 units
     sample_type: soil
-    source_mat_id: x:1
+    source_mat_id: igsn:000
     technical_reps: 3
 
