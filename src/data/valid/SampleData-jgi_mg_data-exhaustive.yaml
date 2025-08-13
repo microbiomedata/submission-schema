@@ -19,5 +19,5 @@ jgi_mg_data:
     jgi_seq_project_name: xxx
     jgi_sample_volume: 33
     samp_name: xxx
-    source_mat_id: x:1
+    source_mat_id: igsn:000
 

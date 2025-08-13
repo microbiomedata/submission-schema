@@ -9,4 +9,4 @@ water_data:
     env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Crater Lake"
     samp_name: xyz
-    source_mat_id: x:1
+    source_mat_id: igsn:001

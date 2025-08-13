@@ -1,6 +1,5 @@
 plant_associated_data: # this is linking a SampleData instance to a PlantAssociatedInterface instance (starting below)
   - samp_name: our first houseplant is dying
-    source_mat_id: example:plant_associated_data001
     collection_date: 2021-01-01
     depth: "111"
     elev: 111
