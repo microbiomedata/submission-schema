@@ -2,20 +2,17 @@ jgi_mg_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    dna_concentration: 1.23
-    dna_cont_type: plate
-    dna_cont_well: C3
-    dna_container_id: xxx
-    dna_dnase: "no"
+    nuc_acid_concentration: 1.23
+    cont_type: plate
+    cont_well: C3
+    container_name: xxx
+    dnase: "no"
     dna_isolate_meth: xxx
-    dna_project_contact: xxx
-    dna_samp_id: xxx
-    dna_sample_format: red red wine
-    dna_sample_name: xxx
-    dna_seq_project: xxx
-    dna_seq_project_name: xxx
-    dna_seq_project_pi: xxx
-    dna_volume: 1.23
-    proposal_dna: xxx
+    jgi_samp_id: xxx
+    jgi_sample_format: red red wine
+    jgi_sample_name: xxx
+    jgi_seq_project: 111
+    jgi_seq_project_name: xxx
+    jgi_sample_volume: 1.23
     samp_name: xxx
 
