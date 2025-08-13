@@ -382,7 +382,7 @@
 
 
 <h1 id="slot-alternative_names">Slot: alternative_names</h1>
-<p><em>A list of alternative names used to refer to the entity. The distinction between name and alternative names is application-specific.</em></p>
+<p><em>A list of alternative names used to refer to the entity. The distinction between name and alternative names is application-specific.  This should not be used for identifers which have their own slots (e.g., bioproject:PRJNA406974)</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/alternative_names">nmdc_sub_schema:alternative_names</a>
 Alias: alternative_names</p>
 <!-- no inheritance hierarchy -->
@@ -424,7 +424,8 @@ Alias: alternative_names</p>
 
 <pre><code class="language-yaml">name: alternative_names
 description: A list of alternative names used to refer to the entity. The distinction
-  between name and alternative names is application-specific.
+  between name and alternative names is application-specific.  This should not be
+  used for identifers which have their own slots (e.g., bioproject:PRJNA406974)
 from_schema: https://example.com/nmdc_submission_schema
 exact_mappings:
 - dcterms:alternative
@@ -432,6 +433,7 @@ exact_mappings:
 rank: 1000
 alias: alternative_names
 domain_of:
+- Biosample
 - OntologyClass
 - Study
 range: string
