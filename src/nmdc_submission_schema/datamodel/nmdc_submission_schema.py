@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-06T11:35:42
+# Generation date: 2025-08-13T12:02:22
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -188,62 +188,6 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
-
-
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
-
-
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
-
-
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
-
-
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
-
-
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
-
-
 class LanguageCode(str):
     """ A language code conforming to ISO_639-1 """
     type_class_uri = XSD["language"]
@@ -258,6 +202,62 @@ class Float(float):
     type_class_curie = "xsd:float"
     type_name = "float"
     type_model_uri = NMDC_SUB_SCHEMA.Float
+
+
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
+
+
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+
+
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+
+
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+
+
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
+
+
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
 class Time(XSDTime):
@@ -10020,11 +10020,9 @@ class JgiContTypeEnum(EnumDefinitionImpl):
 
 class JGISampleFormatEnum(EnumDefinitionImpl):
 
-    DNAStable = PermissibleValue(text="DNAStable")
     Ethanol = PermissibleValue(text="Ethanol")
     PBS = PermissibleValue(text="PBS")
     Pellet = PermissibleValue(text="Pellet")
-    RNAStable = PermissibleValue(text="RNAStable")
     TE = PermissibleValue(text="TE")
     Water = PermissibleValue(text="Water")
 
@@ -10036,6 +10034,10 @@ class JGISampleFormatEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "10 mM Tris-HCl",
             PermissibleValue(text="10 mM Tris-HCl"))
+        setattr(cls, "Gentegra-DNA",
+            PermissibleValue(text="Gentegra-DNA"))
+        setattr(cls, "Gentegra-RNA",
+            PermissibleValue(text="Gentegra-RNA"))
         setattr(cls, "Low EDTA TE",
             PermissibleValue(text="Low EDTA TE"))
         setattr(cls, "MDA reaction buffer",
@@ -10152,6 +10154,398 @@ class SeasonEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="SeasonEnum",
     )
+
+class UnitEnum(EnumDefinitionImpl):
+
+    Cel = PermissibleValue(
+        text="Cel",
+        description="""The Unified Code for Units of Measure (UCUM) representation of degrees Celsius; a SI unit of temperature  equal to one unit Kelvin.""")
+    cm = PermissibleValue(
+        text="cm",
+        description="The Unified Code for Units of Measure (UCUM) representation of centimeter.")
+    d = PermissibleValue(
+        text="d",
+        description="The Unified Code for Units of Measure (UCUM) representation of day.")
+    g = PermissibleValue(
+        text="g",
+        description="The Unified Code for Units of Measure (UCUM) representation of gram.")
+    h = PermissibleValue(
+        text="h",
+        description="The Unified Code for Units of Measure (UCUM) representation of hour.")
+    kPa = PermissibleValue(
+        text="kPa",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilopascal.")
+    m = PermissibleValue(
+        text="m",
+        description="The Unified Code for Units of Measure (UCUM) representation of meter.")
+    min = PermissibleValue(
+        text="min",
+        description="The Unified Code for Units of Measure (UCUM) representation of minute.")
+    mL = PermissibleValue(
+        text="mL",
+        description="The Unified Code for Units of Measure (UCUM) representation of milliliter.")
+    mm = PermissibleValue(
+        text="mm",
+        description="The Unified Code for Units of Measure (UCUM) representation of millimeter.")
+    a = PermissibleValue(
+        text="a",
+        description="The Unified Code for Units of Measure (UCUM) representation of year.")
+    uL = PermissibleValue(
+        text="uL",
+        description="The Unified Code for Units of Measure (UCUM) representation of microliter.")
+    m2 = PermissibleValue(
+        text="m2",
+        description="The Unified Code for Units of Measure (UCUM) representation of square meters.")
+    atm = PermissibleValue(
+        text="atm",
+        description="The Unified Code for Units of Measure (UCUM) representation of atmosphere.")
+    mV = PermissibleValue(
+        text="mV",
+        description="The Unified Code for Units of Measure (UCUM) representation of millivolt.")
+    PSU = PermissibleValue(
+        text="PSU",
+        description="The Unified Code for Units of Measure (UCUM) representation of practical salinity unit.")
+    L = PermissibleValue(
+        text="L",
+        description="The Unified Code for Units of Measure (UCUM) representation of liter.")
+    um = PermissibleValue(
+        text="um",
+        description="The Unified Code for Units of Measure (UCUM) representation of micrometer.")
+    y = PermissibleValue(
+        text="y",
+        description="The Unified Code for Units of Measure (UCUM) representation of year.")
+    kg = PermissibleValue(
+        text="kg",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilogram.")
+    ppt = PermissibleValue(
+        text="ppt",
+        description="The Unified Code for Units of Measure (UCUM) representation of parts per thousand.")
+    lx = PermissibleValue(
+        text="lx",
+        description="The Unified Code for Units of Measure (UCUM) representation of lux.")
+    deg = PermissibleValue(
+        text="deg",
+        description="The Unified Code for Units of Measure (UCUM) representation of degree (angle).")
+    mol = PermissibleValue(
+        text="mol",
+        description="The Unified Code for Units of Measure (UCUM) representation of mole.")
+    mmol = PermissibleValue(
+        text="mmol",
+        description="The Unified Code for Units of Measure (UCUM) representation of millimole.")
+    umol = PermissibleValue(
+        text="umol",
+        description="The Unified Code for Units of Measure (UCUM) representation of micromole.")
+    nmol = PermissibleValue(
+        text="nmol",
+        description="The Unified Code for Units of Measure (UCUM) representation of nanomole.")
+    pmol = PermissibleValue(
+        text="pmol",
+        description="The Unified Code for Units of Measure (UCUM) representation of picomole.")
+    U = PermissibleValue(
+        text="U",
+        description="The Unified Code for Units of Measure (UCUM) representation of enzyme unit.")
+    mU = PermissibleValue(
+        text="mU",
+        description="The Unified Code for Units of Measure (UCUM) representation of millienzyme unit.")
+    uU = PermissibleValue(
+        text="uU",
+        description="The Unified Code for Units of Measure (UCUM) representation of microenzyme unit.")
+    nU = PermissibleValue(
+        text="nU",
+        description="The Unified Code for Units of Measure (UCUM) representation of nanoenzyme unit.")
+    Bq = PermissibleValue(
+        text="Bq",
+        description="The Unified Code for Units of Measure (UCUM) representation of becquerel.")
+    kBq = PermissibleValue(
+        text="kBq",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilobecquerel.")
+    MBq = PermissibleValue(
+        text="MBq",
+        description="The Unified Code for Units of Measure (UCUM) representation of megabecquerel.")
+    GBq = PermissibleValue(
+        text="GBq",
+        description="The Unified Code for Units of Measure (UCUM) representation of gigabecquerel.")
+    Ci = PermissibleValue(
+        text="Ci",
+        description="The Unified Code for Units of Measure (UCUM) representation of curie.")
+    mCi = PermissibleValue(
+        text="mCi",
+        description="The Unified Code for Units of Measure (UCUM) representation of millicurie.")
+    uCi = PermissibleValue(
+        text="uCi",
+        description="The Unified Code for Units of Measure (UCUM) representation of microcurie.")
+    nCi = PermissibleValue(
+        text="nCi",
+        description="The Unified Code for Units of Measure (UCUM) representation of nanocurie.")
+    pCi = PermissibleValue(
+        text="pCi",
+        description="The Unified Code for Units of Measure (UCUM) representation of picocurie.")
+    rad = PermissibleValue(
+        text="rad",
+        description="The Unified Code for Units of Measure (UCUM) representation of radian.")
+    sr = PermissibleValue(
+        text="sr",
+        description="The Unified Code for Units of Measure (UCUM) representation of steradian.")
+    Hz = PermissibleValue(
+        text="Hz",
+        description="The Unified Code for Units of Measure (UCUM) representation of hertz.")
+    kHz = PermissibleValue(
+        text="kHz",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilohertz.")
+    MHz = PermissibleValue(
+        text="MHz",
+        description="The Unified Code for Units of Measure (UCUM) representation of megahertz.")
+    GHz = PermissibleValue(
+        text="GHz",
+        description="The Unified Code for Units of Measure (UCUM) representation of gigahertz.")
+    N = PermissibleValue(
+        text="N",
+        description="The Unified Code for Units of Measure (UCUM) representation of newton.")
+    kN = PermissibleValue(
+        text="kN",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilonewton.")
+    J = PermissibleValue(
+        text="J",
+        description="The Unified Code for Units of Measure (UCUM) representation of joule.")
+    kJ = PermissibleValue(
+        text="kJ",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilojoule.")
+    MJ = PermissibleValue(
+        text="MJ",
+        description="The Unified Code for Units of Measure (UCUM) representation of megajoule.")
+    W = PermissibleValue(
+        text="W",
+        description="The Unified Code for Units of Measure (UCUM) representation of watt.")
+    kW = PermissibleValue(
+        text="kW",
+        description="The Unified Code for Units of Measure (UCUM) representation of kilowatt.")
+    API = PermissibleValue(
+        text="API",
+        description="The Unified Code for Units of Measure (UCUM) representation of API units.")
+    mbar = PermissibleValue(
+        text="mbar",
+        description="The Unified Code for Units of Measure (UCUM) representation of millibar.")
+    ratio = PermissibleValue(
+        text="ratio",
+        description="The Unified Code for Units of Measure (UCUM) representation of ratio (dimensionless).")
+    people = PermissibleValue(
+        text="people",
+        description="The Unified Code for Units of Measure (UCUM) representation of people count.")
+    pets = PermissibleValue(
+        text="pets",
+        description="The Unified Code for Units of Measure (UCUM) representation of pet count.")
+    plants = PermissibleValue(
+        text="plants",
+        description="The Unified Code for Units of Measure (UCUM) representation of plant count.")
+    pH = PermissibleValue(
+        text="pH",
+        description="The Unified Code for Units of Measure (UCUM) representation of pH units.")
+    NTU = PermissibleValue(
+        text="NTU",
+        description="The Unified Code for Units of Measure (UCUM) representation of Nephelometric Turbidity Units.")
+
+    _defn = EnumDefinition(
+        name="UnitEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "%",
+            PermissibleValue(
+                text="%",
+                description="The Unified Code for Units of Measure (UCUM) representation of percent."))
+        setattr(cls, "J/K",
+            PermissibleValue(
+                text="J/K",
+                description="The Unified Code for Units of Measure (UCUM) representation of joule per kelvin."))
+        setattr(cls, "m/s",
+            PermissibleValue(
+                text="m/s",
+                description="The Unified Code for Units of Measure (UCUM) representation of meters per second."))
+        setattr(cls, "mg/kg",
+            PermissibleValue(
+                text="mg/kg",
+                description="""The Unified Code for Units of Measure (UCUM) representation of milligrams per kilogram."""))
+        setattr(cls, "mg/L",
+            PermissibleValue(
+                text="mg/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of milligrams per liter."))
+        setattr(cls, "mL/L",
+            PermissibleValue(
+                text="mL/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of milliliters per liter."))
+        setattr(cls, "mmol/L",
+            PermissibleValue(
+                text="mmol/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of millimolar."))
+        setattr(cls, "mS/cm",
+            PermissibleValue(
+                text="mS/cm",
+                description="""The Unified Code for Units of Measure (UCUM) representation of millisiemens per centimeter."""))
+        setattr(cls, "[ppm]",
+            PermissibleValue(
+                text="[ppm]",
+                description="The Unified Code for Units of Measure (UCUM) representation of parts per million."))
+        setattr(cls, "uS/cm",
+            PermissibleValue(
+                text="uS/cm",
+                description="""The Unified Code for Units of Measure (UCUM) representation of microsiemens per centimeter."""))
+        setattr(cls, "W/m2",
+            PermissibleValue(
+                text="W/m2",
+                description="The Unified Code for Units of Measure (UCUM) representation of watts per square meter."))
+        setattr(cls, "ug/L",
+            PermissibleValue(
+                text="ug/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of micrograms per liter."))
+        setattr(cls, "ug/uL",
+            PermissibleValue(
+                text="ug/uL",
+                description="""The Unified Code for Units of Measure (UCUM) representation of micrograms per microliter."""))
+        setattr(cls, "mol/L",
+            PermissibleValue(
+                text="mol/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of moles per liter."))
+        setattr(cls, "mol/L/h",
+            PermissibleValue(
+                text="mol/L/h",
+                description="""The Unified Code for Units of Measure (UCUM) representation of moles per liter per hour."""))
+        setattr(cls, "ug/L/h",
+            PermissibleValue(
+                text="ug/L/h",
+                description="""The Unified Code for Units of Measure (UCUM) representation of micrograms per liter per hour."""))
+        setattr(cls, "umol/L",
+            PermissibleValue(
+                text="umol/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of micromoles per liter."))
+        setattr(cls, "umol/kg",
+            PermissibleValue(
+                text="umol/kg",
+                description="""The Unified Code for Units of Measure (UCUM) representation of micromoles per kilogram."""))
+        setattr(cls, "umol/m2/s",
+            PermissibleValue(
+                text="umol/m2/s",
+                description="""The Unified Code for Units of Measure (UCUM) representation of micromoles per square meter per second."""))
+        setattr(cls, "mg/m3",
+            PermissibleValue(
+                text="mg/m3",
+                description="""The Unified Code for Units of Measure (UCUM) representation of milligrams per cubic meter."""))
+        setattr(cls, "m2/s",
+            PermissibleValue(
+                text="m2/s",
+                description="""The Unified Code for Units of Measure (UCUM) representation of square meters per second."""))
+        setattr(cls, "kg/m3",
+            PermissibleValue(
+                text="kg/m3",
+                description="""The Unified Code for Units of Measure (UCUM) representation of kilograms per cubic meter."""))
+        setattr(cls, "g/m3",
+            PermissibleValue(
+                text="g/m3",
+                description="The Unified Code for Units of Measure (UCUM) representation of grams per cubic meter."))
+        setattr(cls, "1",
+            PermissibleValue(
+                text="1",
+                description="The Unified Code for Units of Measure (UCUM) representation of dimensionless quantity."))
+        setattr(cls, "uL/kg",
+            PermissibleValue(
+                text="uL/kg",
+                description="""The Unified Code for Units of Measure (UCUM) representation of microliters per kilogram."""))
+        setattr(cls, "g/g",
+            PermissibleValue(
+                text="g/g",
+                description="The Unified Code for Units of Measure (UCUM) representation of gram per gram."))
+        setattr(cls, "mg/m3/d",
+            PermissibleValue(
+                text="mg/m3/d",
+                description="""The Unified Code for Units of Measure (UCUM) representation of milligrams per cubic meter per day."""))
+        setattr(cls, "ng/h",
+            PermissibleValue(
+                text="ng/h",
+                description="The Unified Code for Units of Measure (UCUM) representation of nanograms per hour."))
+        setattr(cls, "mm[Hg]",
+            PermissibleValue(
+                text="mm[Hg]",
+                description="The Unified Code for Units of Measure (UCUM) representation of millimeters of mercury."))
+        setattr(cls, "[ppb]",
+            PermissibleValue(
+                text="[ppb]",
+                description="The Unified Code for Units of Measure (UCUM) representation of parts per billion."))
+        setattr(cls, "g/kg",
+            PermissibleValue(
+                text="g/kg",
+                description="The Unified Code for Units of Measure (UCUM) representation of grams per kilogram."))
+        setattr(cls, "mg/g",
+            PermissibleValue(
+                text="mg/g",
+                description="The Unified Code for Units of Measure (UCUM) representation of milligrams per gram."))
+        setattr(cls, "ug/g",
+            PermissibleValue(
+                text="ug/g",
+                description="The Unified Code for Units of Measure (UCUM) representation of micrograms per gram."))
+        setattr(cls, "ng/g",
+            PermissibleValue(
+                text="ng/g",
+                description="The Unified Code for Units of Measure (UCUM) representation of nanograms per gram."))
+        setattr(cls, "pg/g",
+            PermissibleValue(
+                text="pg/g",
+                description="The Unified Code for Units of Measure (UCUM) representation of picograms per gram."))
+        setattr(cls, "ng/L",
+            PermissibleValue(
+                text="ng/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of nanograms per liter."))
+        setattr(cls, "pg/L",
+            PermissibleValue(
+                text="pg/L",
+                description="The Unified Code for Units of Measure (UCUM) representation of picograms per liter."))
+        setattr(cls, "ug/mL",
+            PermissibleValue(
+                text="ug/mL",
+                description="""The Unified Code for Units of Measure (UCUM) representation of micrograms per milliliter."""))
+        setattr(cls, "ng/mL",
+            PermissibleValue(
+                text="ng/mL",
+                description="""The Unified Code for Units of Measure (UCUM) representation of nanograms per milliliter."""))
+        setattr(cls, "pg/mL",
+            PermissibleValue(
+                text="pg/mL",
+                description="""The Unified Code for Units of Measure (UCUM) representation of picograms per milliliter."""))
+        setattr(cls, "J/Cel",
+            PermissibleValue(
+                text="J/Cel",
+                description="The Unified Code for Units of Measure (UCUM) representation of joules per Celsius."))
+        setattr(cls, "uE/m2/s",
+            PermissibleValue(
+                text="uE/m2/s",
+                description="""The Unified Code for Units of Measure (UCUM) representation of microeinsteins per square meter per second."""))
+        setattr(cls, "kW/m2",
+            PermissibleValue(
+                text="kW/m2",
+                description="""The Unified Code for Units of Measure (UCUM) representation of kilowatts per square meter."""))
+        setattr(cls, "umol/s/m2",
+            PermissibleValue(
+                text="umol/s/m2",
+                description="""The Unified Code for Units of Measure (UCUM) representation of micromoles per second per square meter."""))
+        setattr(cls, "m3/d",
+            PermissibleValue(
+                text="m3/d",
+                description="The Unified Code for Units of Measure (UCUM) representation of cubic meters per day."))
+        setattr(cls, "L/h",
+            PermissibleValue(
+                text="L/h",
+                description="The Unified Code for Units of Measure (UCUM) representation of liters per hour."))
+        setattr(cls, "kW/m2/d",
+            PermissibleValue(
+                text="kW/m2/d",
+                description="""The Unified Code for Units of Measure (UCUM) representation of kilowatts per square meter per day."""))
+        setattr(cls, "m3/min",
+            PermissibleValue(
+                text="m3/min",
+                description="""The Unified Code for Units of Measure (UCUM) representation of cubic meters per minute."""))
+        setattr(cls, "km/h",
+            PermissibleValue(
+                text="km/h",
+                description="The Unified Code for Units of Measure (UCUM) representation of kilometers per hour."))
 
 class ArchStrucEnum(EnumDefinitionImpl):
 
@@ -12077,6 +12471,7 @@ class InstrumentModelEnum(EnumDefinitionImpl):
     orbitrap_fusion_lumos = PermissibleValue(text="orbitrap_fusion_lumos")
     orbitrap_eclipse_tribid = PermissibleValue(text="orbitrap_eclipse_tribid")
     orbitrap_q_exactive = PermissibleValue(text="orbitrap_q_exactive")
+    orbitrap_iqx_tribrid = PermissibleValue(text="orbitrap_iqx_tribrid")
     solarix_7T = PermissibleValue(text="solarix_7T")
     solarix_12T = PermissibleValue(text="solarix_12T")
     solarix_15T = PermissibleValue(text="solarix_15T")
@@ -12152,6 +12547,9 @@ class InstrumentModelEnum(EnumDefinitionImpl):
 
 class ProcessingInstitutionEnum(EnumDefinitionImpl):
 
+    NMDC = PermissibleValue(
+        text="NMDC",
+        meaning=ROR["05cwx3318"])
     UCSD = PermissibleValue(
         text="UCSD",
         meaning=ROR["0168r3w48"])
@@ -12303,7 +12701,6 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Denitrification = PermissibleValue(text="Denitrification")
     Desert = PermissibleValue(text="Desert")
     Diatoms = PermissibleValue(text="Diatoms")
-    Dinoflagellata = PermissibleValue(text="Dinoflagellata")
     Dinoflagellates = PermissibleValue(text="Dinoflagellates")
     EBPR = PermissibleValue(text="EBPR")
     Echinodermata = PermissibleValue(text="Echinodermata")
@@ -13246,6 +13643,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Fermented meat products"))
         setattr(cls, "Fetal tissue",
             PermissibleValue(text="Fetal tissue"))
+        setattr(cls, "Fish pen",
+            PermissibleValue(text="Fish pen"))
         setattr(cls, "Fish pond",
             PermissibleValue(text="Fish pond"))
         setattr(cls, "Fish tank",
