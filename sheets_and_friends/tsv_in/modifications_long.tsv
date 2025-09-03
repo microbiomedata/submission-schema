@@ -130,7 +130,6 @@ PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended	
 SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization
 SedimentInterface|SoilInterface	microbial_biomass_c	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
 SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization
-DhMultiviewCommonColumnsMixin	source_mat_id	remove_attribute	string_serialization
 SedimentInterface|SoilInterface	microbial_biomass_n	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
 SoilInterface	non_microb_biomass	remove_attribute	string_serialization
 SoilInterface	non_microb_biomass	replace_attribute	pattern			^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
@@ -212,7 +211,6 @@ SoilInterface	slope_gradient	overwrite_examples	examples			10%
 DhMultiviewCommonColumnsMixin	source_mat_id	add_attribute	comments			Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI biosample accession IDs, `gold` for GOLD identifiers.
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	description			A globally unique identifier assigned to the parent sample or sample that is the source of this sample.
 DhMultiviewCommonColumnsMixin	source_mat_id	overwrite_examples	examples			igsn:AU1243|biosample:SAMEA2397676 
-DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	string_serialization			{text}:{text}
 DhMultiviewCommonColumnsMixin	source_mat_id	replace_attribute	pattern			^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)(;(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+))*$
 SoilInterface	specific_ecosystem	replace_attribute	range			SpecificEcosystemForSoilEnum
 AirInterface|BiofilmInterface|BuiltEnvInterface|HcrCoresInterface|HcrFluidsSwabsInterface|HostAssociatedInterface|MiscEnvsInterface|PlantAssociatedInterface|SedimentInterface|WastewaterSludgeInterface	specific_ecosystem	replace_attribute	range			SpecificEcosystemEnum

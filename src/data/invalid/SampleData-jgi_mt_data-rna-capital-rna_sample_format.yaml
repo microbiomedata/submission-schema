@@ -1,6 +1,6 @@
 jgi_mt_data:
   - samp_name: sample name
-    source_mat_id: biosample:012345
+    source_mat_id: biosample:SAMN012345
     dnase: no
     nuc_acid_concentration: 100.3
     cont_type: plate 
