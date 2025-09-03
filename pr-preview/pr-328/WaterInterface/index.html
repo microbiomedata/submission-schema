@@ -13533,7 +13533,7 @@ attributes:
     - source material identifiers
     rank: 2
     is_a: nucleic acid sequence source field
-    string_serialization: '{text}:{text}'
+    string_serialization: '{text}'
     slot_uri: MIXS:0000026
     alias: source_mat_id
     owner: WaterInterface
@@ -13543,7 +13543,7 @@ attributes:
     slot_group: sample_id_section
     range: string
     multivalued: false
-    pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+    pattern: ^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)(;(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+))*$
 
 </code></pre>
 </details>
