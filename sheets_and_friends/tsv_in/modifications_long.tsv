@@ -130,6 +130,7 @@ PlantAssociatedInterface|SoilInterface	light_regm	replace_attribute	recommended	
 SedimentInterface|SoilInterface	microbial_biomass_c	remove_attribute	string_serialization
 SedimentInterface|SoilInterface	microbial_biomass_c	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
 SedimentInterface|SoilInterface	microbial_biomass_n	remove_attribute	string_serialization
+DhMultiviewCommonColumnsMixin	source_mat_id	remove_attribute	string_serialization
 SedimentInterface|SoilInterface	microbial_biomass_n	replace_attribute	pattern			^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;|\t\r\n]+$
 SoilInterface	non_microb_biomass	remove_attribute	string_serialization
 SoilInterface	non_microb_biomass	replace_attribute	pattern			^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$
