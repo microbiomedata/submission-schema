@@ -40,12 +40,12 @@ slots:
         ]
     )
 
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
     # Check that the slot 'a' was copied to the target schema
-    copied_slot = updated_target.get_slot("a")
+    copied_slot = empty_target_schema.get_slot("a")
     assert copied_slot is not None
     assert copied_slot.range == "string"
     assert copied_slot.description == "Source slot a"
@@ -73,12 +73,12 @@ classes:
 
     config = ImporterConfig(slots=[SlotImport(slot="a", source="SourceClass")])
 
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
     # Check that the induced slot 'SourceClass.a' was copied to the target schema
-    copied_slot = updated_target.get_slot("a")
+    copied_slot = empty_target_schema.get_slot("a")
     assert copied_slot is not None
     assert copied_slot.range == "string"
     assert copied_slot.description == "Induced description of slot a in SourceClass"
@@ -114,19 +114,19 @@ classes:
         ]
     )
 
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=target_schema
     )
 
     # Check that the slot 'a' was copied to the target schema
-    copied_slot = updated_target.get_slot("a")
+    copied_slot = target_schema.get_slot("a")
     assert copied_slot is not None
     assert copied_slot.range == "string"
     assert copied_slot.description == "Source slot a"
 
     # Check that the slot 'a' was added to the specified target classes
     for class_name in config.slots[0].destinations:
-        target_class = updated_target.get_class(class_name)
+        target_class = target_schema.get_class(class_name)
         assert target_class is not None
         assert "a" in target_class.slots
 
@@ -170,12 +170,12 @@ slots:
             )
         ]
     )
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
     # Check that the slot 'a' was copied to the target schema with modifications applied
-    copied_slot = updated_target.get_slot("a")
+    copied_slot = empty_target_schema.get_slot("a")
     assert copied_slot is not None
     assert copied_slot.range == "integer"
     assert copied_slot.description == "Modified description of slot a"
@@ -226,22 +226,22 @@ classes:
         ]
     )
 
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=target_schema
     )
 
     # Check that the slot 'a' was copied to the target schema
-    copied_slot = updated_target.get_slot("a")
+    copied_slot = target_schema.get_slot("a")
     assert copied_slot is not None
     assert copied_slot.range == "string"
     assert copied_slot.description == "Source slot a"
 
     # Check that the slot 'a' was added to DestinationClass1 without modification
-    dest_class1_slot = updated_target.induced_slot("a", "DestinationClass1")
+    dest_class1_slot = target_schema.induced_slot("a", "DestinationClass1")
     assert dest_class1_slot.description == "Source slot a"
 
     # Check that the slot 'a' was added to DestinationClass2 with modification
-    dest_class2_slot = updated_target.induced_slot("a", "DestinationClass2")
+    dest_class2_slot = target_schema.induced_slot("a", "DestinationClass2")
     assert (
         dest_class2_slot.description
         == "Modified description of slot a in DestinationClass1"
@@ -346,12 +346,12 @@ slots:
             ),
         ]
     )
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
     # Check that the slot 'a' was copied to the target schema with automatic modifications applied
-    slot_a = updated_target.get_slot("a")
+    slot_a = empty_target_schema.get_slot("a")
     assert slot_a is not None
     assert slot_a.multivalued is False
     # 'inlined' and 'inlined_as_list' should be removed automatically
@@ -359,7 +359,7 @@ slots:
     assert slot_a.inlined_as_list is None
 
     # Check that the slot 'b' was copied to the target schema with automatic modifications applied
-    slot_b = updated_target.get_slot("b")
+    slot_b = empty_target_schema.get_slot("b")
     assert slot_b is not None
     assert slot_b.required is True
     # 'recommended' should be removed automatically
@@ -390,18 +390,18 @@ slots:
             )
         ]
     )
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
     # Check that the slot 'd' was copied to the target schema
-    slot_d = updated_target.get_slot("d")
+    slot_d = empty_target_schema.get_slot("d")
     assert slot_d is not None
     assert slot_d.is_a == "a"
     assert slot_d.mixins == ["b", "c"]
     # Check that the ancestor slots 'a', 'b', and 'c' were also copied to the target schema
     for ancestor in ["a", "b", "c"]:
-        slot = updated_target.get_slot(ancestor)
+        slot = empty_target_schema.get_slot(ancestor)
         assert slot is not None, f"Ancestor slot '{ancestor}' was not imported"
 
 
@@ -438,7 +438,7 @@ classes:
             SlotImport(slot="slot_with_class"),
         ]
     )
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
@@ -448,22 +448,22 @@ classes:
         "slot_with_enum",
         "slot_with_class",
     ]:
-        slot = updated_target.get_slot(slot_name)
+        slot = empty_target_schema.get_slot(slot_name)
         assert slot is not None, f"Slot '{slot_name}' was not imported"
 
     # Check that the type 'TestType' was copied to the target schema
-    type_def = updated_target.get_type("TestType")
+    type_def = empty_target_schema.get_type("TestType")
     assert type_def is not None, "Type 'TestType' was not imported"
     assert type_def.uri == "xsd:integer"
     assert type_def.base == "int"
 
     # Check that the enum 'TestEnum' was copied to the target schema
-    enum_def = updated_target.get_enum("TestEnum")
+    enum_def = empty_target_schema.get_enum("TestEnum")
     assert enum_def is not None, "Enum 'TestEnum' was not imported"
     assert set(enum_def.permissible_values.keys()) == {"VALUE1", "VALUE2"}
 
     # Check that the class 'TestClass' was copied to the target schema
-    class_def = updated_target.get_class("TestClass")
+    class_def = empty_target_schema.get_class("TestClass")
     assert class_def is not None, "Class 'TestClass' was not imported"
 
 
@@ -496,15 +496,15 @@ types:
             )
         ]
     )
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
     # Check that the slot was copied to the target schema with modified range
-    slot = updated_target.get_slot("slot_with_type")
+    slot = empty_target_schema.get_slot("slot_with_type")
     assert slot is not None, "Slot 'slot_with_type' was not imported"
     assert slot.range == "string"
     # Check that the type 'TestType' was NOT copied to the target schema
-    type_def = updated_target.get_type("TestType")
+    type_def = empty_target_schema.get_type("TestType")
     assert type_def is None, "Type 'TestType' should not have been imported"
 
 
@@ -533,12 +533,12 @@ classes:
         ]
     )
 
-    updated_target = import_elements(
+    import_elements(
         source_schema=source_schema, config=config, target_schema=empty_target_schema
     )
 
     # Check that the slot 'a' was copied to the target schema
-    copied_slot = updated_target.get_slot("a")
+    copied_slot = empty_target_schema.get_slot("a")
     assert copied_slot is not None
     assert copied_slot.range == "string"
     # Check that the domain and owner attributes were removed

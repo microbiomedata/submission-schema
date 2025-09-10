@@ -175,7 +175,7 @@ def _import_elements_with_dependencies(
 
 def import_elements(
     *, source_schema: SchemaView, config: ImporterConfig, target_schema: SchemaView
-) -> SchemaView:
+):
     """
     Import slots from a source schema into a target schema based on the provided configuration.
 
@@ -185,7 +185,6 @@ def import_elements(
     :param source_schema: The SchemaView object representing the source schema.
     :param config: The ImporterConfig object containing import configurations.
     :param target_schema: The SchemaView object representing the target schema.
-    :return: The modified target SchemaView object with imported slots.
     """
     for slot_import in config.slots:
         source_slot = source_schema.get_slot(slot_import.slot)
@@ -250,4 +249,3 @@ def import_elements(
         )
 
     target_schema.set_modified()
-    return target_schema
