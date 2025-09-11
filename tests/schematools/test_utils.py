@@ -1,7 +1,7 @@
 import pytest
 from linkml_runtime import SchemaView
 
-from nmdc_submission_schema.schematools import remove_class
+from nmdc_submission_schema.schematools import merge_prefixes, remove_class
 
 
 def test_remove_class_removes_class_and_unused_slots():
@@ -173,3 +173,56 @@ classes:
     # OtherClass and its slot should remain because they were not referenced by the removed class
     assert "OtherClass" in schema.all_classes()
     assert "e" in schema.all_slots()
+
+
+def test_merge_prefixes():
+    """Test that merge_prefixes correctly merges prefixes from source to target schema."""
+    source_schema = SchemaView("""
+id: http://example.org/source
+name: SourceSchema
+prefixes:
+    geo: http://purl.obolibrary.org/obo/GEO_
+    chebi: http://purl.obolibrary.org/obo/CHEBI_
+""")
+    target_schema = SchemaView("""
+id: http://example.org/target
+name: TargetSchema
+prefixes:
+    geo: http://www.opengis.net/ont/geosparql#
+    owl: http://www.w3.org/2002/07/owl#
+""")
+    merge_prefixes(target_schema, source_schema=source_schema)
+    prefixes = {
+        prefix.prefix_prefix: prefix.prefix_reference
+        for prefix in target_schema.schema.prefixes.values()
+    }
+    assert prefixes["geo"] == "http://www.opengis.net/ont/geosparql#"
+    assert prefixes["chebi"] == "http://purl.obolibrary.org/obo/CHEBI_"
+    assert prefixes["owl"] == "http://www.w3.org/2002/07/owl#"
+
+
+def test_merge_prefixes_with_overwrite():
+    """Test that merge_prefixes correctly merges prefixes from source to target schema with
+    overwrite set to True."""
+    source_schema = SchemaView("""
+id: http://example.org/source
+name: SourceSchema
+prefixes:
+    geo: http://purl.obolibrary.org/obo/GEO_
+    chebi: http://purl.obolibrary.org/obo/CHEBI_
+""")
+    target_schema = SchemaView("""
+id: http://example.org/target
+name: TargetSchema
+prefixes:
+    geo: http://www.opengis.net/ont/geosparql#
+    owl: http://www.w3.org/2002/07/owl#
+""")
+    merge_prefixes(target_schema, source_schema=source_schema, overwrite=True)
+    prefixes = {
+        prefix.prefix_prefix: prefix.prefix_reference
+        for prefix in target_schema.schema.prefixes.values()
+    }
+    assert prefixes["geo"] == "http://purl.obolibrary.org/obo/GEO_"
+    assert prefixes["chebi"] == "http://purl.obolibrary.org/obo/CHEBI_"
+    assert prefixes["owl"] == "http://www.w3.org/2002/07/owl#"

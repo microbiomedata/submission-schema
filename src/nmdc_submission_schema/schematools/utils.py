@@ -84,3 +84,19 @@ def remove_class(
                     pass
 
     _remove_class(class_name)
+
+
+def merge_prefixes(
+    schema_view: SchemaView, *, source_schema: SchemaView, overwrite: bool = False
+) -> None:
+    """Merge prefixes from source_schema into schema_view.
+
+    :param schema_view: The target SchemaView object to merge prefixes into.
+    :param source_schema: The source SchemaView object to merge prefixes from.
+    :param overwrite: If True, existing prefixes in schema_view will be overwritten by those in source_schema.
+                      If False, existing prefixes will be preserved.
+    """
+    for prefix, uri in source_schema.schema.prefixes.items():
+        if overwrite or prefix not in schema_view.schema.prefixes:
+            schema_view.schema.prefixes[prefix] = uri
+    schema_view.set_modified()

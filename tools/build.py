@@ -9,7 +9,7 @@ from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
 from rich.console import Console
 
-from nmdc_submission_schema.schematools import import_elements
+from nmdc_submission_schema.schematools import import_elements, merge_prefixes
 from nmdc_submission_schema.schematools.importer import ImporterConfig
 from nmdc_submission_schema.scripts import nmdc_schema_yaml_path
 
@@ -60,6 +60,9 @@ def main() -> None:
             target_schema=submission_schema,
             config=nmdc_schema_import_config,
         )
+
+    with log("Merging nmdc-schema prefixes into submission-schema"):
+        merge_prefixes(submission_schema, source_schema=nmdc_schema)
 
     with log(
         f"Writing final submission-schema to [bold]{project_rel(SUBMISSION_SCHEMA_OUTPUT)}"
