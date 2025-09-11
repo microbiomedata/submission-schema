@@ -1,0 +1,5905 @@
+slots:
+  - slot: abs_air_humidity
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 61
+          slot_group: mixs_core_section
+
+  - slot: add_recov_method
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          range: string
+          rank: 289
+          slot_group: mixs_core_section
+
+  - slot: additional_info
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 290
+          slot_group: mixs_core_section
+
+  - slot: address
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 62
+          slot_group: mixs_core_section
+
+  - slot: adj_room
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 63
+          slot_group: mixs_core_section
+
+  - slot: aero_struc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 64
+          slot_group: mixs_core_section
+
+  - slot: agrochem_addition
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 2
+          slot_group: mixs_section
+
+  - slot: air_PM_concen
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          range: string
+          rank: 48
+          slot_group: mixs_core_section
+
+  - slot: air_temp
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 65
+          slot_group: mixs_core_section
+
+  - slot: air_temp_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 16
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: al_sat
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 3
+          slot_group: mixs_section
+          examples:
+            - value: 27%
+          # TODO: investigate why partial_match: false doesn't work and we need to use ^ and $ in syntax
+          structured_pattern:
+            syntax: '^{percentage}$'
+            interpolated: true
+
+  - slot: al_sat_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 4
+          slot_group: mixs_section
+
+  - slot: alkalinity
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 1
+          slot_group: mixs_core_section
+
+  - slot: alkalinity_method
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 218
+          slot_group: mixs_core_section
+
+  - slot: alkyl_diethers
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 2
+          slot_group: mixs_core_section
+
+  - slot: alt
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+    modifications:
+      - replace:
+          rank: 26
+          recommended: true
+          slot_group: mixs_modified_section
+
+  - slot: aminopept_act
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 3
+          slot_group: mixs_core_section
+
+  - slot: ammonium
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 4
+          slot_group: mixs_core_section
+
+  - slot: ammonium_nitrogen
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1005
+          slot_group: mixs_inspired_section
+
+  - slot: amount_light
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 66
+          slot_group: mixs_core_section
+
+  - slot: analysis_type
+    source: Biosample
+    destinations:
+      - DhMultiviewCommonColumnsMixin
+    modifications:
+      - replace:
+          rank: 3
+          required: true
+          slot_group: sample_id_section
+
+  - slot: ances_data
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 237
+          slot_group: mixs_core_section
+
+  - slot: annual_precpt
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 5
+          slot_group: mixs_section
+
+  - slot: annual_temp
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 6
+          slot_group: mixs_section
+
+  - slot: antibiotic_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 238
+          slot_group: mixs_core_section
+
+  - slot: api
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 291
+          slot_group: mixs_core_section
+
+  - slot: arch_struc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 67
+          slot_group: mixs_core_section
+
+  - slot: aromatics_pc
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 292
+          slot_group: mixs_core_section
+
+  - slot: asphaltenes_pc
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 293
+          slot_group: mixs_core_section
+
+  - slot: atmospheric_data
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 219
+          slot_group: mixs_core_section
+
+  - slot: avg_dew_point
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 68
+          slot_group: mixs_core_section
+
+  - slot: avg_occup
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 69
+          slot_group: mixs_core_section
+
+  - slot: avg_temp
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 70
+          slot_group: mixs_core_section
+
+  - slot: bac_prod
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 220
+          slot_group: mixs_core_section
+
+  - slot: bac_resp
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 221
+          slot_group: mixs_core_section
+
+  - slot: bacteria_carb_prod
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 5
+          slot_group: mixs_core_section
+
+  - slot: barometric_press
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 49
+          slot_group: mixs_core_section
+
+  - slot: basin
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 294
+          slot_group: mixs_core_section
+
+  - slot: bathroom_count
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 71
+          slot_group: mixs_core_section
+
+  - slot: bedroom_count
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 72
+          slot_group: mixs_core_section
+
+  - slot: benzene
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 295
+          slot_group: mixs_core_section
+
+  - slot: biochem_oxygen_dem
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 296
+          slot_group: mixs_core_section
+
+  - slot: biocide
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 297
+          slot_group: mixs_core_section
+
+  - slot: biocide_admin_method
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 298
+          slot_group: mixs_core_section
+
+  - slot: biol_stat
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 239
+          slot_group: mixs_core_section
+
+  - slot: biomass
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 6
+          slot_group: mixs_core_section
+
+  - slot: biotic_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 13
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: biotic_relationship
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 22
+          slot_group: mixs_modified_section
+
+  - slot: bishomohopanol
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 7
+          slot_group: mixs_core_section
+
+  - slot: blood_press_diast
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 299
+          slot_group: mixs_core_section
+
+  - slot: blood_press_syst
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 300
+          slot_group: mixs_core_section
+
+  - slot: bromide
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 8
+          slot_group: mixs_core_section
+
+  - slot: build_docs
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 73
+          slot_group: mixs_core_section
+
+  - slot: build_occup_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 74
+          slot_group: mixs_core_section
+
+  - slot: building_setting
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 75
+          slot_group: mixs_core_section
+
+  - slot: built_struc_age
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          examples:
+            - value: 15 years
+          rank: 76
+          slot_group: mixs_core_section
+
+  - slot: built_struc_set
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 77
+          slot_group: mixs_core_section
+
+  - slot: built_struc_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 78
+          slot_group: mixs_core_section
+
+  - slot: bulk_elect_conductivity
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          examples:
+            - value: 0.017 mS/cm
+          rank: 1008
+          slot_group: mixs_inspired_section
+
+  - slot: calcium
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 9
+          slot_group: mixs_core_section
+
+  - slot: carb_dioxide
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 50
+          slot_group: mixs_core_section
+
+  - slot: carb_monoxide
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 51
+          slot_group: mixs_core_section
+
+  - slot: carb_nitro_ratio
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          range: float
+          rank: 44
+          slot_group: mixs_section
+        remove:
+          - pattern
+
+  - slot: ceil_area
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 79
+          slot_group: mixs_core_section
+
+  - slot: ceil_cond
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 80
+          slot_group: mixs_core_section
+
+  - slot: ceil_finish_mat
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 81
+          slot_group: mixs_core_section
+
+  - slot: ceil_struc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 82
+          slot_group: mixs_core_section
+
+  - slot: ceil_texture
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 83
+          slot_group: mixs_core_section
+
+  - slot: ceil_thermal_mass
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 84
+          slot_group: mixs_core_section
+
+  - slot: ceil_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 85
+          slot_group: mixs_core_section
+
+  - slot: ceil_water_mold
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 86
+          slot_group: mixs_core_section
+
+  - slot: chem_administration
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          examples:
+            - value: "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"
+            - value: "agar [CHEBI:2509];2018-05"
+          range: string
+          rank: 17
+          recommended: true
+          pattern: ^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+
+            \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$
+          slot_group: mixs_modified_section
+
+  - slot: chem_mutagen
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 240
+          slot_group: mixs_core_section
+
+  - slot: chem_oxygen_dem
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 301
+          slot_group: mixs_core_section
+
+  - slot: chem_treat_method
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 302
+          slot_group: mixs_core_section
+
+  - slot: chem_treatment
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 303
+          slot_group: mixs_core_section
+
+  - slot: chloride
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 10
+          slot_group: mixs_core_section
+
+  - slot: chlorophyll
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 11
+          slot_group: mixs_core_section
+
+  - slot: climate_environment
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 19
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: collection_date
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          description: The date of sampling
+          examples:
+            - value: '2021-04-15'
+            - value: '2021-04'
+            - value: '2021'
+          range: string
+          rank: 3
+          required: true
+          pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+          slot_group: mixs_modified_section
+
+  - slot: collection_date_inc
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 2
+          slot_group: mixs_inspired_section
+          pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+
+  - slot: collection_time
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 1
+          slot_group: mixs_inspired_section
+
+  - slot: collection_time_inc
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 3
+          slot_group: mixs_inspired_section
+
+  - slot: conduc
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 222
+          slot_group: mixs_core_section
+
+  - slot: cool_syst_id
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 87
+          slot_group: mixs_core_section
+
+  - slot: crop_rotation
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 7
+          slot_group: mixs_section
+
+  - slot: cult_root_med
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 241
+          slot_group: mixs_core_section
+
+  - slot: cur_land_use
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 8
+          slot_group: mixs_section
+
+  - slot: cur_vegetation
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 9
+          slot_group: mixs_section
+
+  - slot: cur_vegetation_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 10
+          slot_group: mixs_section
+
+  - slot: date_last_rain
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 88
+          slot_group: mixs_core_section
+
+  - slot: density
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 12
+          slot_group: mixs_core_section
+
+  - slot: depos_env
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 304
+          slot_group: mixs_core_section
+
+  - slot: depth
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 9
+          slot_group: mixs_modified_section
+          range: string
+          title: depth, meters
+        append:
+          comments:
+            - All depths must be reported in meters. Provide the numerical portion
+              only.
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - WastewaterSludgeInterface
+          - WaterInterface
+        replace:
+          examples:
+            - value: 0 - 0.1
+            - value: '1'
+          structured_pattern:
+            syntax: '^{float}(\s*-\s*{float})?$'
+            interpolated: true
+      - in_classes:
+          - SedimentInterface
+          - SoilInterface
+        replace:
+          examples:
+            - value: 0 - 0.1
+            - value: 1 - 1.5
+          structured_pattern:
+            syntax: '^{float}\s*-\s*{float}$'
+            interpolated: true
+      - in_classes:
+          - SedimentInterface
+          - SoilInterface
+          - WaterInterface
+        replace:
+          required: true
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - WastewaterSludgeInterface
+        replace:
+          recommended: true
+
+  - slot: dew_point
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 89
+          slot_group: mixs_core_section
+
+  - slot: diether_lipids
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 13
+          slot_group: mixs_core_section
+          examples:
+            - value: archaeol;0.2 ng/L
+
+  - slot: diss_carb_dioxide
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 14
+          slot_group: mixs_core_section
+
+  - slot: diss_hydrogen
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 15
+          slot_group: mixs_core_section
+
+  - slot: diss_inorg_carb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 16
+          slot_group: mixs_core_section
+
+  - slot: diss_inorg_nitro
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 223
+          slot_group: mixs_core_section
+
+  - slot: diss_inorg_phosp
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 224
+          slot_group: mixs_core_section
+
+  - slot: diss_iron
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 305
+          slot_group: mixs_core_section
+
+  - slot: diss_org_carb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 17
+          slot_group: mixs_core_section
+
+  - slot: diss_org_nitro
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 18
+          slot_group: mixs_core_section
+
+  - slot: diss_oxygen
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 19
+          slot_group: mixs_core_section
+
+  - slot: diss_oxygen_fluid
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 306
+          slot_group: mixs_core_section
+
+  - slot: dna_isolate_meth
+    source: Biosample
+    destinations:
+      - JgiMgInterface
+      - JgiMgLrInterface
+    modifications:
+      - replace:
+          rank: 16
+          slot_group: jgi_metagenomics_section
+          required: true
+          recommended: false
+
+  - slot: door_comp_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 90
+          slot_group: mixs_core_section
+
+  - slot: door_cond
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 91
+          slot_group: mixs_core_section
+
+  - slot: door_direct
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 92
+          slot_group: mixs_core_section
+
+  - slot: door_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 93
+          slot_group: mixs_core_section
+
+  - slot: door_mat
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 94
+          slot_group: mixs_core_section
+
+  - slot: door_move
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 95
+          slot_group: mixs_core_section
+
+  - slot: door_size
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 96
+          slot_group: mixs_core_section
+
+  - slot: door_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 97
+          slot_group: mixs_core_section
+
+  - slot: door_type_metal
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 98
+          slot_group: mixs_core_section
+
+  - slot: door_type_wood
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 99
+          slot_group: mixs_core_section
+
+  - slot: door_water_mold
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 100
+          slot_group: mixs_core_section
+
+  - slot: down_par
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 225
+          slot_group: mixs_core_section
+
+  - slot: drainage_class
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 11
+          slot_group: mixs_section
+
+  - slot: drawings
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 101
+          slot_group: mixs_core_section
+
+  - slot: ecosystem
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 9
+          slot_group: sample_id_section
+          recommended: true
+      - in_classes:
+          - SoilInterface
+        replace:
+          range: EcosystemForSoilEnum
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          range: EcosystemEnum
+
+  - slot: ecosystem_category
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 10
+          slot_group: sample_id_section
+          recommended: true
+      - in_classes:
+          - SoilInterface
+        replace:
+          range: EcosystemCategoryForSoilEnum
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          range: EcosystemCategoryEnum
+
+  - slot: ecosystem_subtype
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 12
+          slot_group: sample_id_section
+          recommended: true
+      - in_classes:
+          - SoilInterface
+        replace:
+          range: EcosystemSubtypeForSoilEnum
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          range: EcosystemSubtypeEnum
+
+  - slot: ecosystem_type
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 11
+          slot_group: sample_id_section
+          recommended: true
+      - in_classes:
+          - SoilInterface
+        replace:
+          range: EcosystemTypeForSoilEnum
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          range: EcosystemTypeEnum
+
+  - slot: efficiency_percent
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 307
+          slot_group: mixs_core_section
+
+  - slot: elev
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 6
+          slot_group: mixs_modified_section
+          examples:
+            - value: 225
+            - value: 0
+            - value: 1250
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - SoilInterface
+          - WastewaterSludgeInterface
+        replace:
+          required: true
+      - in_classes:
+          - WaterInterface
+        replace:
+          recommended: true
+
+  - slot: elevator
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 102
+          slot_group: mixs_core_section
+
+  - slot: emsl_store_temp
+    source: Biosample
+    destinations:
+      - EmslInterface
+    modifications:
+      - replace:
+          range: float
+          rank: 4
+          slot_group: emsl_section
+          required: true
+
+  - slot: emulsions
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 308
+          slot_group: mixs_core_section
+
+  - slot: env_broad_scale
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          description: 'In this field, report which major environmental system your
+                      sample or specimen came from. The systems identified should have a coarse
+                      spatial grain, to provide the general environmental context of where the
+                      sampling was done (e.g. were you in the desert or a rainforest?). We recommend
+                      using subclasses of ENVO''s biome class: http://purl.obolibrary.org/obo/ENVO_00000428.
+                      Format (one term): termLabel [termID], Format (multiple terms): termLabel
+                      [termID]|termLabel [termID]|termLabel [termID]. Example: Annotating a
+                      water sample from the photic zone in middle of the Atlantic Ocean, consider:
+                      oceanic epipelagic zone biome [ENVO:01000033]. Example: Annotating a sample
+                      from the Amazon rainforest consider: tropical moist broadleaf forest biome
+                      [ENVO:01000228]. If needed, request new terms on the ENVO tracker, identified
+                      here: http://www.obofoundry.org/ontology/envo.html'
+          rank: 6
+          required: true
+          slot_group: sample_id_section
+          pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+
+  - slot: env_local_scale
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          examples:
+            - value: canopy [ENVO:00000047]
+            - value: herb and fern layer [ENVO:01000337]
+            - value: understory [ENVO:01000335]
+            - value: shrub layer [ENVO:01000336]
+          rank: 7
+          required: true
+          slot_group: sample_id_section
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - MiscEnvsInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+      - in_classes:
+          - HostAssociatedInterface
+        replace:
+          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+          - WaterInterface
+        replace:
+          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+
+  - slot: env_medium
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 8
+          required: true
+          slot_group: sample_id_section
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - MiscEnvsInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+      - in_classes:
+          - HostAssociatedInterface
+        replace:
+          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+          - WaterInterface
+        replace:
+          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+
+  - slot: escalator
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 103
+          slot_group: mixs_core_section
+
+  - slot: ethylbenzene
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 309
+          slot_group: mixs_core_section
+
+  - slot: exp_duct
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 104
+          slot_group: mixs_core_section
+
+  - slot: exp_pipe
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 105
+          slot_group: mixs_core_section
+
+  - slot: experimental_factor
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          range: string
+          rank: 12
+          slot_group: mixs_section
+          examples:
+            - value: time series design [EFO:0001779]
+
+  - slot: experimental_factor_other
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 7
+          slot_group: mixs_inspired_section
+
+  - slot: ext_door
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 106
+          slot_group: mixs_core_section
+
+  - slot: ext_wall_orient
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 107
+          slot_group: mixs_core_section
+
+  - slot: ext_window_orient
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 108
+          slot_group: mixs_core_section
+
+  - slot: extreme_event
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 13
+          slot_group: mixs_section
+
+  - slot: fao_class
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 14
+          slot_group: mixs_section
+
+  - slot: fertilizer_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 242
+          slot_group: mixs_core_section
+
+  - slot: field
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 310
+          slot_group: mixs_core_section
+
+  - slot: filter_method
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 6
+          slot_group: mixs_inspired_section
+
+  - slot: filter_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 109
+          slot_group: mixs_core_section
+
+  - slot: fire
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 15
+          slot_group: mixs_section
+
+  - slot: fireplace_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 110
+          slot_group: mixs_core_section
+
+  - slot: flooding
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 16
+          slot_group: mixs_section
+
+  - slot: floor_age
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 111
+          slot_group: mixs_core_section
+
+  - slot: floor_area
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 112
+          slot_group: mixs_core_section
+
+  - slot: floor_cond
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 113
+          slot_group: mixs_core_section
+
+  - slot: floor_count
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 114
+          slot_group: mixs_core_section
+
+  - slot: floor_finish_mat
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 115
+          slot_group: mixs_core_section
+
+  - slot: floor_struc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 116
+          slot_group: mixs_core_section
+
+  - slot: floor_thermal_mass
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 117
+          slot_group: mixs_core_section
+
+  - slot: floor_water_mold
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 118
+          slot_group: mixs_core_section
+
+  - slot: fluor
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 226
+          slot_group: mixs_core_section
+
+  - slot: freq_clean
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 119
+          slot_group: mixs_core_section
+
+  - slot: freq_cook
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 120
+          slot_group: mixs_core_section
+
+  - slot: fungicide_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 243
+          slot_group: mixs_core_section
+
+  - slot: furniture
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 121
+          slot_group: mixs_core_section
+
+  - slot: gaseous_environment
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 20
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: gaseous_substances
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 311
+          slot_group: mixs_core_section
+
+  - slot: gender_restroom
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 122
+          slot_group: mixs_core_section
+
+  - slot: genetic_mod
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 244
+          slot_group: mixs_core_section
+
+  - slot: geo_loc_name
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          range: string
+          rank: 4
+          slot_group: mixs_modified_section
+          description: The geographical origin of the sample as defined by the country
+            or sea name followed by specific region name.
+          required: true
+          pattern: '^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$'
+      # This may have been a mistake in the original sheets_and_friends TSV config files, but it is
+      # compatible with what they specified so we will keep it for now.
+      - in_classes:
+          - WaterInterface
+        replace:
+          pattern: ''
+
+  - slot: glucosidase_act
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 20
+          slot_group: mixs_core_section
+
+  - slot: gravidity
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 312
+          slot_group: mixs_core_section
+
+  - slot: gravity
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 245
+          slot_group: mixs_core_section
+
+  - slot: growth_facil
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1
+          slot_group: mixs_modified_section
+          description: 'Type of facility/location where the sample was harvested;
+            controlled vocabulary: growth chamber, open top chamber, glasshouse, experimental
+            garden, field.'
+          range: GrowthFacilEnum
+          examples:
+            - value: growth_chamber
+          required: true
+
+  - slot: growth_habit
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 246
+          slot_group: mixs_core_section
+
+  - slot: growth_hormone_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 247
+          slot_group: mixs_core_section
+
+  - slot: hall_count
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 123
+          slot_group: mixs_core_section
+
+  - slot: handidness
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 124
+          slot_group: mixs_core_section
+
+  - slot: hc_produced
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 313
+          slot_group: mixs_core_section
+
+  - slot: hcr
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 314
+          slot_group: mixs_core_section
+
+  - slot: hcr_fw_salinity
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 315
+          slot_group: mixs_core_section
+
+  - slot: hcr_geol_age
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 316
+          slot_group: mixs_core_section
+
+  - slot: hcr_pressure
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 317
+          slot_group: mixs_core_section
+
+  - slot: hcr_temp
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 318
+          slot_group: mixs_core_section
+
+  - slot: heat_cool_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 125
+          slot_group: mixs_core_section
+
+  - slot: heat_deliv_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 126
+          slot_group: mixs_core_section
+
+  - slot: heat_sys_deliv_meth
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 127
+          slot_group: mixs_core_section
+
+  - slot: heat_system_id
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 128
+          slot_group: mixs_core_section
+
+  - slot: heavy_metals
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          examples:
+            - value: "mercury;0.09 ug/g"
+            - value: "mercury;0.09 ug/g|chromium;0.03 ug/g"
+          rank: 17
+          slot_group: mixs_section
+
+  - slot: heavy_metals_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 18
+          slot_group: mixs_section
+
+  - slot: height_carper_fiber
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 129
+          slot_group: mixs_core_section
+
+  - slot: herbicide_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 248
+          slot_group: mixs_core_section
+
+  - slot: horizon_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 19
+          slot_group: mixs_section
+
+  - slot: host_age
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 249
+          slot_group: mixs_core_section
+
+  - slot: host_body_habitat
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 319
+          slot_group: mixs_core_section
+
+  - slot: host_body_product
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 320
+          slot_group: mixs_core_section
+
+  - slot: host_body_site
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 321
+          slot_group: mixs_core_section
+
+  - slot: host_body_temp
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 322
+          slot_group: mixs_core_section
+
+  - slot: host_color
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 323
+          slot_group: mixs_core_section
+
+  - slot: host_common_name
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 250
+          slot_group: mixs_core_section
+
+  - slot: host_diet
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 324
+          slot_group: mixs_core_section
+
+  - slot: host_disease_stat
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 390
+          slot_group: mixs_core_section
+
+  - slot: host_dry_mass
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 251
+          slot_group: mixs_core_section
+
+  - slot: host_family_relation
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 325
+          slot_group: mixs_core_section
+
+  - slot: host_genotype
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 252
+          slot_group: mixs_core_section
+
+  - slot: host_growth_cond
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 326
+          slot_group: mixs_core_section
+
+  - slot: host_height
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 253
+          slot_group: mixs_core_section
+
+  - slot: host_last_meal
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 327
+          slot_group: mixs_core_section
+
+  - slot: host_length
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 254
+          slot_group: mixs_core_section
+
+  - slot: host_life_stage
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 255
+          slot_group: mixs_core_section
+
+  - slot: host_phenotype
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 256
+          slot_group: mixs_core_section
+
+  - slot: host_sex
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 328
+          slot_group: mixs_core_section
+
+  - slot: host_shape
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 329
+          slot_group: mixs_core_section
+
+  - slot: host_subject_id
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 330
+          slot_group: mixs_core_section
+
+  - slot: host_subspecf_genlin
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 257
+          slot_group: mixs_core_section
+
+  - slot: host_substrate
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+    modifications:
+      - replace:
+          rank: 331
+          slot_group: mixs_core_section
+
+  - slot: host_symbiont
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 258
+          slot_group: mixs_core_section
+
+  - slot: host_taxid
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 259
+          slot_group: mixs_core_section
+
+  - slot: host_tot_mass
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 260
+          slot_group: mixs_core_section
+
+  - slot: host_wet_mass
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 261
+          slot_group: mixs_core_section
+
+  - slot: humidity
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 52
+          slot_group: mixs_core_section
+
+  - slot: humidity_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 21
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: indoor_space
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 130
+          slot_group: mixs_core_section
+
+  - slot: indoor_surf
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 131
+          slot_group: mixs_core_section
+
+  - slot: indust_eff_percent
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 332
+          slot_group: mixs_core_section
+
+  - slot: infiltrations
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1009
+          slot_group: mixs_inspired_section
+          examples:
+            - value: 00:01:32;00:00:53
+          multivalued: false
+          pattern: ^(?:(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])(?:;(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])*$
+
+  - slot: inorg_particles
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 333
+          slot_group: mixs_core_section
+
+  - slot: inside_lux
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 132
+          slot_group: mixs_core_section
+
+  - slot: int_wall_cond
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 133
+          slot_group: mixs_core_section
+
+  - slot: isotope_exposure
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 16
+          slot_group: mixs_inspired_section
+
+  - slot: iw_bt_date_well
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 334
+          slot_group: mixs_core_section
+
+  - slot: iwf
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 335
+          slot_group: mixs_core_section
+
+  - slot: last_clean
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 134
+          slot_group: mixs_core_section
+
+  - slot: lat_lon
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          range: string
+          rank: 5
+          slot_group: mixs_modified_section
+          pattern: '^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - SoilInterface
+          - WastewaterSludgeInterface
+        replace:
+          required: true
+      - in_classes:
+          - WaterInterface
+        replace:
+          recommended: true
+
+  - slot: lbc_thirty
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1001
+          slot_group: mixs_inspired_section
+
+  - slot: lbceq
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1002
+          slot_group: mixs_inspired_section
+
+  - slot: light_intensity
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 227
+          slot_group: mixs_core_section
+
+  - slot: light_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 24
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: light_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 135
+          slot_group: mixs_core_section
+
+  - slot: link_addit_analys
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 56
+          slot_group: mixs_section
+
+  - slot: link_class_info
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 20
+          slot_group: mixs_section
+
+  - slot: link_climate_info
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 21
+          slot_group: mixs_section
+
+  - slot: lithology
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 336
+          slot_group: mixs_core_section
+
+  - slot: local_class
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 22
+          slot_group: mixs_section
+
+  - slot: local_class_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 24
+          slot_group: mixs_section
+
+  - slot: magnesium
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 21
+          slot_group: mixs_core_section
+
+  - slot: manganese
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1003
+          slot_group: mixs_inspired_section
+
+  - slot: max_occup
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 136
+          slot_group: mixs_core_section
+
+  - slot: mean_frict_vel
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 22
+          slot_group: mixs_core_section
+
+  - slot: mean_peak_frict_vel
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 23
+          slot_group: mixs_core_section
+
+  - slot: mech_struc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 137
+          slot_group: mixs_core_section
+
+  - slot: mechanical_damage
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 262
+          slot_group: mixs_core_section
+
+  - slot: methane
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - SedimentInterface
+    modifications:
+      - replace:
+          rank: 24
+          slot_group: mixs_core_section
+
+  - slot: micro_biomass_c_meth
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 11
+          slot_group: mixs_inspired_section
+
+  - slot: micro_biomass_meth
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 43
+          slot_group: mixs_section
+
+  - slot: micro_biomass_n_meth
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 13
+          slot_group: mixs_inspired_section
+
+  - slot: microbial_biomass
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 42
+          slot_group: mixs_section
+
+  - slot: microbial_biomass_c
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 10
+          slot_group: mixs_inspired_section
+      - in_classes:
+          - SedimentInterface
+          - SoilInterface
+        replace:
+          structured_pattern:
+            syntax: '^{float} {text}$'
+            interpolated: true
+
+  - slot: microbial_biomass_n
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 12
+          slot_group: mixs_inspired_section
+      - in_classes:
+          - SedimentInterface
+          - SoilInterface
+        replace:
+          structured_pattern:
+            syntax: '^{float} {text}$'
+            interpolated: true
+
+  - slot: mineral_nutr_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 263
+          slot_group: mixs_core_section
+
+  - slot: misc_param
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 23
+          slot_group: mixs_section
+
+  - slot: n_alkanes
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 25
+          slot_group: mixs_core_section
+
+  - slot: nitrate
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 26
+          slot_group: mixs_core_section
+
+  - slot: nitrate_nitrogen
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1006
+          slot_group: mixs_inspired_section
+
+  - slot: nitrite
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 27
+          slot_group: mixs_core_section
+
+  - slot: nitrite_nitrogen
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1007
+          slot_group: mixs_inspired_section
+
+  - slot: nitro
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 28
+          slot_group: mixs_core_section
+
+  - slot: non_microb_biomass
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          examples:
+            - value: "insect;0.23 ug"
+            - value: "insect;0.23 ug|plant;1 g"
+          rank: 8
+          slot_group: mixs_inspired_section
+      - in_classes:
+          - SoilInterface
+        replace:
+          pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?
+            [^;\t\r\x0A]+)$
+
+  - slot: non_microb_biomass_method
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 9
+          slot_group: mixs_inspired_section
+
+  - slot: non_min_nutr_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 264
+          slot_group: mixs_core_section
+
+  - slot: number_pets
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 138
+          slot_group: mixs_core_section
+
+  - slot: number_plants
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 139
+          slot_group: mixs_core_section
+
+  - slot: number_resident
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 140
+          slot_group: mixs_core_section
+
+  - slot: occup_density_samp
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 141
+          slot_group: mixs_core_section
+
+  - slot: occup_document
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 142
+          slot_group: mixs_core_section
+
+  - slot: occup_samp
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 143
+          slot_group: mixs_core_section
+          range: integer
+        remove:
+          - pattern
+
+  - slot: org_carb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 29
+          slot_group: mixs_core_section
+
+  - slot: org_count_qpcr_info
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 337
+          slot_group: mixs_core_section
+
+  - slot: org_matter
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 45
+          slot_group: mixs_section
+
+  - slot: org_nitro
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 46
+          slot_group: mixs_section
+
+  - slot: org_nitro_method
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 14
+          slot_group: mixs_inspired_section
+
+  - slot: org_particles
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 338
+          slot_group: mixs_core_section
+
+  - slot: organism_count
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 30
+          slot_group: mixs_core_section
+          pattern: ^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?
+            \S+.*\S+;(qPCR|ATP|MPN|other))$
+          range: string
+          examples:
+            - value: total prokaryotes;3.5e7 cells/mL;qPCR
+
+  - slot: other_treatment
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 15
+          slot_group: mixs_inspired_section
+
+  - slot: owc_tvdss
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 339
+          slot_group: mixs_core_section
+
+  - slot: oxy_stat_samp
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 25
+          slot_group: mixs_section
+          range: OxyStatSampEnum
+
+  - slot: oxygen
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 53
+          slot_group: mixs_core_section
+
+  - slot: part_org_carb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 31
+          slot_group: mixs_core_section
+
+  - slot: part_org_nitro
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 228
+          slot_group: mixs_core_section
+
+  - slot: particle_class
+    source: Biosample
+    destinations:
+      - SedimentInterface
+    modifications:
+      - replace:
+          rank: 32
+          slot_group: mixs_core_section
+
+  - slot: permeability
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 340
+          slot_group: mixs_core_section
+
+  - slot: perturbation
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 33
+          slot_group: mixs_core_section
+
+  - slot: pesticide_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 265
+          slot_group: mixs_core_section
+
+  - slot: petroleum_hydrocarb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 34
+          slot_group: mixs_core_section
+
+  - slot: ph
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 27
+          slot_group: mixs_modified_section
+          maximum_value: 14
+          minimum_value: 0
+          range: float
+          recommended: true
+
+  - slot: ph_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 41
+          slot_group: mixs_section
+
+  - slot: ph_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 266
+          slot_group: mixs_core_section
+
+  - slot: phaeopigments
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 35
+          slot_group: mixs_core_section
+          examples:
+            - value: phaeophytin;2.5 mg/m3
+
+  - slot: phosphate
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 53
+          slot_group: mixs_section
+
+  - slot: phosplipid_fatt_acid
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 36
+          slot_group: mixs_core_section
+          description: Concentration of phospholipid fatty acids
+          structured_pattern:
+            syntax: '^{float} {text}$'
+            interpolated: true
+          examples:
+            - value: 2.98 mg/L
+          multivalued: false
+
+  - slot: photon_flux
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 229
+          slot_group: mixs_core_section
+
+  - slot: plant_growth_med
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 267
+          slot_group: mixs_core_section
+
+  - slot: plant_product
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 268
+          slot_group: mixs_core_section
+
+  - slot: plant_sex
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 269
+          slot_group: mixs_core_section
+
+  - slot: plant_struc
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 270
+          slot_group: mixs_core_section
+
+  - slot: pollutants
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 54
+          slot_group: mixs_core_section
+
+  - slot: porosity
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - SedimentInterface
+    modifications:
+      - replace:
+          rank: 37
+          slot_group: mixs_core_section
+
+  - slot: potassium
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 38
+          slot_group: mixs_core_section
+
+  - slot: pour_point
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 341
+          slot_group: mixs_core_section
+
+  - slot: pre_treatment
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 342
+          slot_group: mixs_core_section
+
+  - slot: pres_animal_insect
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 144
+          slot_group: mixs_core_section
+
+  - slot: pressure
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 39
+          slot_group: mixs_core_section
+
+  - slot: prev_land_use_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 26
+          slot_group: mixs_section
+
+  - slot: previous_land_use
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 27
+          slot_group: mixs_section
+
+  - slot: primary_prod
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 230
+          slot_group: mixs_core_section
+
+  - slot: primary_treatment
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 343
+          slot_group: mixs_core_section
+
+  - slot: prod_rate
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 344
+          slot_group: mixs_core_section
+
+  - slot: prod_start_date
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 345
+          slot_group: mixs_core_section
+
+  - slot: profile_position
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 28
+          slot_group: mixs_section
+
+  - slot: project_id
+    source: Biosample
+    destinations:
+      - EmslInterface
+    modifications:
+      - replace:
+          rank: 1
+          slot_group: emsl_section
+          required: true
+          recommended: false
+
+  - slot: quad_pos
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 145
+          slot_group: mixs_core_section
+
+  - slot: radiation_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 271
+          slot_group: mixs_core_section
+
+  - slot: rainfall_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 272
+          slot_group: mixs_core_section
+
+  - slot: reactor_type
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 346
+          slot_group: mixs_core_section
+
+  - slot: redox_potential
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 40
+          slot_group: mixs_core_section
+
+  - slot: rel_air_humidity
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 146
+          slot_group: mixs_core_section
+          structured_pattern:
+            syntax: '^{percentage}$'
+            interpolated: true
+
+  - slot: rel_humidity_out
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 147
+          slot_group: mixs_core_section
+
+  - slot: rel_samp_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 148
+          slot_group: mixs_core_section
+
+  - slot: replicate_number
+    source: Biosample
+    destinations:
+      - EmslInterface
+    modifications:
+      - replace:
+          range: integer
+          rank: 6
+          slot_group: emsl_section
+
+  - slot: reservoir
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 347
+          slot_group: mixs_core_section
+
+  - slot: resins_pc
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 348
+          slot_group: mixs_core_section
+
+  - slot: rna_isolate_meth
+    source: Biosample
+    destinations:
+      - JgiMtInterface
+    modifications:
+      - replace:
+          rank: 16
+          slot_group: jgi_metatranscriptomics_section
+          required: true
+          recommended: false
+
+  - slot: room_air_exch_rate
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 149
+          slot_group: mixs_core_section
+
+  - slot: room_architec_elem
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 150
+          slot_group: mixs_core_section
+
+  - slot: room_condt
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 151
+          slot_group: mixs_core_section
+
+  - slot: room_connected
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 152
+          slot_group: mixs_core_section
+
+  - slot: room_count
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 153
+          slot_group: mixs_core_section
+
+  - slot: room_dim
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 154
+          slot_group: mixs_core_section
+
+  - slot: room_door_dist
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 155
+          slot_group: mixs_core_section
+
+  - slot: room_door_share
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 156
+          slot_group: mixs_core_section
+
+  - slot: room_hallway
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 157
+          slot_group: mixs_core_section
+
+  - slot: room_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 158
+          slot_group: mixs_core_section
+
+  - slot: room_moist_dam_hist
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 159
+          slot_group: mixs_core_section
+
+  - slot: room_net_area
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 160
+          slot_group: mixs_core_section
+
+  - slot: room_occup
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 161
+          slot_group: mixs_core_section
+
+  - slot: room_samp_pos
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 162
+          slot_group: mixs_core_section
+
+  - slot: room_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 163
+          slot_group: mixs_core_section
+
+  - slot: room_vol
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 164
+          slot_group: mixs_core_section
+
+  - slot: room_wall_share
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 165
+          slot_group: mixs_core_section
+
+  - slot: room_window_count
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 166
+          slot_group: mixs_core_section
+
+  - slot: root_cond
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 273
+          slot_group: mixs_core_section
+
+  - slot: root_med_carbon
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 274
+          slot_group: mixs_core_section
+          examples:
+            - value: sucrose;50 mg/L
+
+  - slot: root_med_macronutr
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 275
+          slot_group: mixs_core_section
+          examples:
+            - value: KH2PO4;170 mg/L
+
+  - slot: root_med_micronutr
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 276
+          slot_group: mixs_core_section
+          examples:
+            - value: H3BO3;6.2 mg/L
+
+  - slot: root_med_ph
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 277
+          slot_group: mixs_core_section
+          range: float
+          minimum_value: 0
+          maximum_value: 14
+        remove:
+          - pattern
+
+  - slot: root_med_regl
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 278
+          slot_group: mixs_core_section
+
+  - slot: root_med_solid
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 279
+          slot_group: mixs_core_section
+
+  - slot: root_med_suppl
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 280
+          slot_group: mixs_core_section
+
+  - slot: salinity
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 54
+          slot_group: mixs_section
+
+  - slot: salinity_meth
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 55
+          slot_group: mixs_section
+
+  - slot: salt_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 281
+          slot_group: mixs_core_section
+
+  - slot: samp_capt_status
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 282
+          slot_group: mixs_core_section
+
+  - slot: samp_collec_device
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 14
+          recommended: true
+          slot_group: mixs_modified_section
+        append:
+          comments:
+            - Report dimensions and details when applicable
+
+  - slot: samp_collec_method
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 15
+          slot_group: mixs_modified_section
+        append:
+          comments:
+            - This can be a citation or description
+
+  - slot: samp_collect_point
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 349
+          slot_group: mixs_core_section
+
+  - slot: samp_dis_stage
+    source: Biosample
+    destinations:
+      - HostAssociatedInterface
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 283
+          slot_group: mixs_core_section
+
+  - slot: samp_floor
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 167
+          slot_group: mixs_core_section
+          examples:
+            - value: basement
+
+  - slot: samp_loc_corr_rate
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 350
+          slot_group: mixs_core_section
+
+  - slot: samp_mat_process
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 12
+          slot_group: mixs_modified_section
+          examples:
+            - value: filtering of seawater
+            - value: storing samples in ethanol
+          range: string
+
+  - slot: samp_md
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 351
+          slot_group: mixs_core_section
+
+  - slot: samp_name
+    source: Biosample
+    destinations:
+      - DhMultiviewCommonColumnsMixin
+    modifications:
+      - replace:
+          rank: 1
+          slot_group: sample_id_section
+          description: A local identifier or name that for the material sample collected.
+            Refers to the original material collected or to any derived sub-samples.
+          examples:
+            - value: Rock core CB1178(5-6) from NSW
+          identifier: true
+          required: true
+        append:
+          comments:
+            - It can have any format, but we suggest that you make it concise, unique
+              and consistent within your lab, and as informative as possible.
+
+  - slot: samp_preserv
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 352
+          slot_group: mixs_core_section
+
+  - slot: samp_room_id
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 168
+          slot_group: mixs_core_section
+
+  - slot: samp_size
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 18
+          slot_group: mixs_modified_section
+          examples:
+            - value: 5 grams
+            - value: 10 mL
+          range: string
+          structured_pattern:
+            syntax: '^{float} {text}$'
+            interpolated: true
+        append:
+          comments:
+            - This refers to the TOTAL amount of sample collected from the experiment.
+              NOT the amount sent to each institution or collected for a specific
+              analysis.
+
+  - slot: samp_sort_meth
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 169
+          slot_group: mixs_core_section
+
+  - slot: samp_store_dur
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 353
+          slot_group: mixs_core_section
+
+  - slot: samp_store_loc
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 41
+          slot_group: mixs_core_section
+
+  - slot: samp_store_temp
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 7
+          slot_group: mixs_modified_section
+          description: Temperature at which the sample was stored (degrees are assumed)
+          examples:
+            - value: -80 Celsius
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - SoilInterface
+          - WastewaterSludgeInterface
+        replace:
+          required: true
+      - in_classes:
+          - WaterInterface
+        replace:
+          recommended: true
+
+  - slot: samp_subtype
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 354
+          slot_group: mixs_core_section
+
+  - slot: samp_time_out
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 170
+          slot_group: mixs_core_section
+
+  - slot: samp_transport_cond
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 355
+          slot_group: mixs_core_section
+
+  - slot: samp_tvdss
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 356
+          slot_group: mixs_core_section
+
+  - slot: samp_type
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 357
+          slot_group: mixs_core_section
+
+  - slot: samp_weather
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 171
+          slot_group: mixs_core_section
+
+  - slot: samp_well_name
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 358
+          slot_group: mixs_core_section
+
+  - slot: sample_link
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+          rank: 5
+          slot_group: sample_id_section
+
+  - slot: sample_shipped
+    source: Biosample
+    destinations:
+      - EmslInterface
+    modifications:
+      - replace:
+          rank: 3
+          slot_group: emsl_section
+          required: true
+          recommended: false
+
+  - slot: sample_type
+    source: Biosample
+    destinations:
+      - EmslInterface
+    modifications:
+      - replace:
+          rank: 2
+          slot_group: emsl_section
+          required: true
+          recommended: false
+          examples:
+            - value: soil - water extract
+
+  - slot: saturates_pc
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 359
+          slot_group: mixs_core_section
+
+  - slot: season
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 172
+          slot_group: mixs_core_section
+          range: SeasonEnum
+          examples:
+            - value: autumn
+
+  - slot: season_environment
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 284
+          slot_group: mixs_core_section
+
+  - slot: season_precpt
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 29
+          slot_group: mixs_section
+
+  - slot: season_temp
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 30
+          slot_group: mixs_section
+
+  - slot: season_use
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 173
+          slot_group: mixs_core_section
+
+  - slot: secondary_treatment
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 360
+          slot_group: mixs_core_section
+
+  - slot: sediment_type
+    source: Biosample
+    destinations:
+      - SedimentInterface
+    modifications:
+      - replace:
+          rank: 42
+          slot_group: mixs_core_section
+
+  - slot: sewage_type
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 361
+          slot_group: mixs_core_section
+
+  - slot: shad_dev_water_mold
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 174
+          slot_group: mixs_core_section
+
+  - slot: shading_device_cond
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 175
+          slot_group: mixs_core_section
+
+  - slot: shading_device_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 176
+          slot_group: mixs_core_section
+
+  - slot: shading_device_mat
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 177
+          slot_group: mixs_core_section
+
+  - slot: shading_device_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 178
+          slot_group: mixs_core_section
+          examples:
+            - value: slatted aluminum
+
+  - slot: sieving
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 8
+          slot_group: mixs_modified_section
+      - in_classes:
+          - SoilInterface
+        replace:
+          examples:
+            - value: combined 2 cores
+            - value: 4mm sieved
+            - value: 50 g
+            - value: 5 cores
+            - value: 2 mm sieved
+          recommended: true
+
+  - slot: silicate
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 43
+          slot_group: mixs_core_section
+
+  - slot: size_frac
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 285
+          slot_group: mixs_core_section
+
+  - slot: size_frac_low
+    source: Biosample
+    destinations:
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 10
+          slot_group: mixs_modified_section
+
+  - slot: size_frac_up
+    source: Biosample
+    destinations:
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 11
+          slot_group: mixs_modified_section
+
+  - slot: slope_aspect
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1
+          slot_group: mixs_section
+          description: The direction a slope faces. While looking down a slope use
+            a compass to record the direction you are facing (direction or degrees).
+            - This measure provides an indication of sun and wind exposure that will
+            influence soil temperature and evapotranspiration.
+          examples:
+            - value: 35 degrees
+
+  - slot: slope_gradient
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          examples:
+            - value: 10%
+          rank: 31
+          slot_group: mixs_section
+          structured_pattern:
+            syntax: '^{percentage}$'
+            interpolated: true
+
+  - slot: sludge_retent_time
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 362
+          slot_group: mixs_core_section
+
+  - slot: sodium
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 363
+          slot_group: mixs_core_section
+
+  - slot: soil_horizon
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 32
+          slot_group: mixs_section
+
+  - slot: soil_text_measure
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 33
+          slot_group: mixs_section
+
+  - slot: soil_texture_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 34
+          slot_group: mixs_section
+
+  - slot: soil_type
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 35
+          slot_group: mixs_section
+
+  - slot: soil_type_meth
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 36
+          slot_group: mixs_section
+
+  - slot: solar_irradiance
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 55
+          slot_group: mixs_core_section
+
+  - slot: soluble_inorg_mat
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 364
+          slot_group: mixs_core_section
+
+  - slot: soluble_org_mat
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 365
+          slot_group: mixs_core_section
+
+  - slot: soluble_react_phosp
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 231
+          slot_group: mixs_core_section
+
+  - slot: source_mat_id
+    source: Biosample
+    destinations:
+      - DhMultiviewCommonColumnsMixin
+    modifications:
+      - replace:
+          pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+          rank: 2
+          slot_group: sample_id_section
+
+  - slot: space_typ_state
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 179
+          slot_group: mixs_core_section
+
+  - slot: specific
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 180
+          slot_group: mixs_core_section
+
+  - slot: specific_ecosystem
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 13
+          slot_group: sample_id_section
+          recommended: true
+      - in_classes:
+          - SoilInterface
+        replace:
+          range: SpecificEcosystemForSoilEnum
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - WastewaterSludgeInterface
+        replace:
+          range: SpecificEcosystemEnum
+
+  - slot: specific_humidity
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 181
+          slot_group: mixs_core_section
+
+  - slot: sr_dep_env
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 366
+          slot_group: mixs_core_section
+
+  - slot: sr_geol_age
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 367
+          slot_group: mixs_core_section
+
+  - slot: sr_kerog_type
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 368
+          slot_group: mixs_core_section
+
+  - slot: sr_lithology
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+    modifications:
+      - replace:
+          rank: 369
+          slot_group: mixs_core_section
+
+  - slot: standing_water_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 286
+          slot_group: mixs_core_section
+
+  - slot: start_date_inc
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilMixsInspiredMixin
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 4
+          slot_group: mixs_inspired_section
+          pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+
+  - slot: start_time_inc
+    source: Biosample
+    destinations:
+      - SoilMixsInspiredMixin
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 5
+          slot_group: mixs_inspired_section
+
+  - slot: store_cond
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 2
+          slot_group: mixs_modified_section
+          description: Explain how the soil sample is stored (fresh/frozen/other).
+          range: StoreCondEnum
+          required: true
+          examples:
+            - value: frozen
+
+  - slot: substructure_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 182
+          slot_group: mixs_core_section
+
+  - slot: sulfate
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 44
+          slot_group: mixs_core_section
+
+  - slot: sulfate_fw
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 370
+          slot_group: mixs_core_section
+
+  - slot: sulfide
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - MiscEnvsInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 371
+          slot_group: mixs_core_section
+
+  - slot: surf_air_cont
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 183
+          slot_group: mixs_core_section
+
+  - slot: surf_humidity
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 184
+          slot_group: mixs_core_section
+          structured_pattern:
+            syntax: '^{percentage}$'
+            interpolated: true
+
+  - slot: surf_material
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 185
+          slot_group: mixs_core_section
+
+  - slot: surf_moisture
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 186
+          slot_group: mixs_core_section
+
+  - slot: surf_moisture_ph
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 187
+          slot_group: mixs_core_section
+
+  - slot: surf_temp
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 188
+          slot_group: mixs_core_section
+
+  - slot: suspend_part_matter
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 232
+          slot_group: mixs_core_section
+
+  - slot: suspend_solids
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 372
+          slot_group: mixs_core_section
+
+  - slot: tan
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 373
+          slot_group: mixs_core_section
+
+  - slot: technical_reps
+    source: Biosample
+    destinations:
+      - EmslInterface
+    modifications:
+      - replace:
+          range: integer
+          rank: 5
+          slot_group: emsl_section
+
+  - slot: temp
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 37
+          slot_group: mixs_section
+
+  - slot: temp_out
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 189
+          slot_group: mixs_core_section
+
+  - slot: tertiary_treatment
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 374
+          slot_group: mixs_core_section
+
+  - slot: tidal_stage
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 45
+          slot_group: mixs_core_section
+
+  - slot: tillage
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 38
+          slot_group: mixs_section
+
+  - slot: tiss_cult_growth_med
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 287
+          slot_group: mixs_core_section
+
+  - slot: toluene
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 375
+          slot_group: mixs_core_section
+
+  - slot: tot_carb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 47
+          slot_group: mixs_section
+
+  - slot: tot_depth_water_col
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 46
+          slot_group: mixs_core_section
+
+  - slot: tot_diss_nitro
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 233
+          slot_group: mixs_core_section
+
+  - slot: tot_inorg_nitro
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 234
+          slot_group: mixs_core_section
+
+  - slot: tot_iron
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 376
+          slot_group: mixs_core_section
+
+  - slot: tot_nitro
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 377
+          slot_group: mixs_core_section
+
+  - slot: tot_nitro_cont_meth
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 49
+          slot_group: mixs_section
+
+  - slot: tot_nitro_content
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 48
+          slot_group: mixs_section
+
+  - slot: tot_org_c_meth
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 51
+          slot_group: mixs_section
+
+  - slot: tot_org_carb
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 50
+          slot_group: mixs_section
+
+  - slot: tot_part_carb
+    source: Biosample
+    destinations:
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 235
+          slot_group: mixs_core_section
+
+  - slot: tot_phosp
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 52
+          slot_group: mixs_section
+
+  - slot: tot_phosphate
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 378
+          slot_group: mixs_core_section
+
+  - slot: tot_sulfur
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 379
+          slot_group: mixs_core_section
+
+  - slot: train_line
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 190
+          slot_group: mixs_core_section
+
+  - slot: train_stat_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 191
+          slot_group: mixs_core_section
+
+  - slot: train_stop_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 192
+          slot_group: mixs_core_section
+
+  - slot: turbidity
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 47
+          slot_group: mixs_core_section
+
+  - slot: tvdss_of_hcr_press
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 380
+          slot_group: mixs_core_section
+
+  - slot: tvdss_of_hcr_temp
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 381
+          slot_group: mixs_core_section
+
+  - slot: typ_occup_density
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 193
+          slot_group: mixs_core_section
+
+  - slot: ventilation_rate
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 56
+          slot_group: mixs_core_section
+
+  - slot: ventilation_type
+    source: Biosample
+    destinations:
+      - AirInterface
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 57
+          slot_group: mixs_core_section
+
+  - slot: vfa
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 382
+          slot_group: mixs_core_section
+
+  - slot: vfa_fw
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 383
+          slot_group: mixs_core_section
+
+  - slot: vis_media
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 194
+          slot_group: mixs_core_section
+
+  - slot: viscosity
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 384
+          slot_group: mixs_core_section
+
+  - slot: volatile_org_comp
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 58
+          slot_group: mixs_core_section
+
+  - slot: wall_area
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 195
+          slot_group: mixs_core_section
+
+  - slot: wall_const_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 196
+          slot_group: mixs_core_section
+
+  - slot: wall_finish_mat
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 197
+          slot_group: mixs_core_section
+
+  - slot: wall_height
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 198
+          slot_group: mixs_core_section
+
+  - slot: wall_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 199
+          slot_group: mixs_core_section
+
+  - slot: wall_surf_treatment
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 200
+          slot_group: mixs_core_section
+
+  - slot: wall_texture
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 201
+          slot_group: mixs_core_section
+
+  - slot: wall_thermal_mass
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 202
+          slot_group: mixs_core_section
+
+  - slot: wall_water_mold
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 203
+          slot_group: mixs_core_section
+
+  - slot: wastewater_type
+    source: Biosample
+    destinations:
+      - WastewaterSludgeInterface
+    modifications:
+      - replace:
+          rank: 385
+          slot_group: mixs_core_section
+
+  - slot: water_cont_soil_meth
+    source: Biosample
+    destinations:
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 40
+          slot_group: mixs_section
+
+  - slot: water_content
+    source: Biosample
+    destinations:
+      - BiofilmInterface
+      - SedimentInterface
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 39
+          slot_group: mixs_section
+          pattern: '^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%? \S.+$'
+
+  - slot: water_current
+    source: Biosample
+    destinations:
+      - MiscEnvsInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 236
+          slot_group: mixs_core_section
+
+  - slot: water_cut
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 386
+          slot_group: mixs_core_section
+
+  - slot: water_feat_size
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 204
+          slot_group: mixs_core_section
+
+  - slot: water_feat_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 205
+          slot_group: mixs_core_section
+
+  - slot: water_prod_rate
+    source: Biosample
+    destinations:
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 387
+          slot_group: mixs_core_section
+
+  - slot: water_temp_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+    modifications:
+      - replace:
+          rank: 288
+          slot_group: mixs_core_section
+
+  - slot: watering_regm
+    source: Biosample
+    destinations:
+      - PlantAssociatedInterface
+      - SedimentInterface
+      - SoilInterface
+      - WaterInterface
+    modifications:
+      - replace:
+          rank: 25
+          slot_group: mixs_modified_section
+      - in_classes:
+          - PlantAssociatedInterface
+          - SoilInterface
+        replace:
+          recommended: true
+
+  - slot: weekday
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 206
+          slot_group: mixs_core_section
+
+  - slot: win
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 388
+          slot_group: mixs_core_section
+
+  - slot: wind_direction
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 59
+          slot_group: mixs_core_section
+
+  - slot: wind_speed
+    source: Biosample
+    destinations:
+      - AirInterface
+    modifications:
+      - replace:
+          rank: 60
+          slot_group: mixs_core_section
+
+  - slot: window_cond
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 207
+          slot_group: mixs_core_section
+
+  - slot: window_cover
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 208
+          slot_group: mixs_core_section
+
+  - slot: window_horiz_pos
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 209
+          slot_group: mixs_core_section
+
+  - slot: window_loc
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 210
+          slot_group: mixs_core_section
+
+  - slot: window_mat
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 211
+          slot_group: mixs_core_section
+
+  - slot: window_open_freq
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 212
+          slot_group: mixs_core_section
+
+  - slot: window_size
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 213
+          slot_group: mixs_core_section
+
+  - slot: window_status
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 214
+          slot_group: mixs_core_section
+
+  - slot: window_type
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 215
+          slot_group: mixs_core_section
+
+  - slot: window_vert_pos
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 216
+          slot_group: mixs_core_section
+
+  - slot: window_water_mold
+    source: Biosample
+    destinations:
+      - BuiltEnvInterface
+    modifications:
+      - replace:
+          rank: 217
+          slot_group: mixs_core_section
+
+  - slot: xylene
+    source: Biosample
+    destinations:
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+    modifications:
+      - replace:
+          rank: 389
+          slot_group: mixs_core_section
+
+  - slot: zinc
+    source: Biosample
+    destinations:
+      - SoilInterface
+    modifications:
+      - replace:
+          rank: 1004
+          slot_group: mixs_inspired_section
+
+  - slot: model
+    source: Instrument
+    destinations:
+      - MetagenomeSequencingNonInterleavedDataInterface
+      - MetagenomeSequencingInterleavedDataInterface
+      - MetatranscriptomeSequencingNonInterleavedDataInterface
+      - MetatranscriptomeSequencingInterleavedDataInterface
+    modifications:
+      - replace:
+          rank: 2
+          slot_group: sequencing_section
+          required: true
+          title: instrument model
+          description: The model of the Illumina sequencing instrument used to generate
+            the data.
+          range: IlluminaInstrumentModelEnum
+
+  - slot: insdc_bioproject_identifiers
+    source: NucleotideSequencing
+    destinations:
+      - MetagenomeSequencingNonInterleavedDataInterface
+      - MetagenomeSequencingInterleavedDataInterface
+      - MetatranscriptomeSequencingNonInterleavedDataInterface
+      - MetatranscriptomeSequencingInterleavedDataInterface
+    modifications:
+      - replace:
+          rank: 5
+          slot_group: sequencing_section
+          title: INSDC bioproject identifier
+          range: string
+          examples:
+            - value: bioproject:PRJNA366857
+      # this is a hack to work around a SchemaView issue
+      - in_classes:
+        - MetagenomeSequencingNonInterleavedDataInterface
+        - MetagenomeSequencingInterleavedDataInterface
+        - MetatranscriptomeSequencingNonInterleavedDataInterface
+        - MetatranscriptomeSequencingInterleavedDataInterface
+        replace:
+          multivalued: false
+
+
+  - slot: insdc_experiment_identifiers
+    source: NucleotideSequencing
+    destinations:
+      - MetagenomeSequencingNonInterleavedDataInterface
+      - MetagenomeSequencingInterleavedDataInterface
+      - MetatranscriptomeSequencingNonInterleavedDataInterface
+      - MetatranscriptomeSequencingInterleavedDataInterface
+    modifications:
+      - replace:
+          rank: 6
+          slot_group: sequencing_section
+          title: INSDC experiment identifiers
+          range: string
+          description: If multiple identifiers are provided, separate them with a
+            semicolon. The number of identifiers must match the number of sequencing
+            files.
+      # this is a hack to work around a SchemaView issue
+      - in_classes:
+        - MetagenomeSequencingNonInterleavedDataInterface
+        - MetagenomeSequencingInterleavedDataInterface
+        - MetatranscriptomeSequencingNonInterleavedDataInterface
+        - MetatranscriptomeSequencingInterleavedDataInterface
+        replace:
+          multivalued: false
+
+  - slot: processing_institution
+    source: NucleotideSequencing
+    destinations:
+      - MetagenomeSequencingNonInterleavedDataInterface
+      - MetagenomeSequencingInterleavedDataInterface
+      - MetatranscriptomeSequencingNonInterleavedDataInterface
+      - MetatranscriptomeSequencingInterleavedDataInterface
+    modifications:
+      - replace:
+          rank: 3
+          slot_group: sequencing_section
+          title: processing institution
+
+  - slot: protocol_link
+    source: NucleotideSequencing
+    destinations:
+      - MetagenomeSequencingNonInterleavedDataInterface
+      - MetagenomeSequencingInterleavedDataInterface
+      - MetatranscriptomeSequencingNonInterleavedDataInterface
+      - MetatranscriptomeSequencingInterleavedDataInterface
+    modifications:
+      - replace:
+          rank: 4
+          slot_group: sequencing_section
+          title: protocol
+          description: A URL to a description of the sequencing protocol used to generate
+            the data.
+          range: string
+
