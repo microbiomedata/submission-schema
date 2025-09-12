@@ -26,15 +26,6 @@ jobs:
       - name: Install Poetry.
         uses: snok/install-poetry@v1.3
 
-      - name: Install yq
-        env:
-          YQ_VERSION: v4.30.5
-          YQ_BINARY: yq_linux_amd64
-        run: |
-          mkdir -p $HOME/.local/bin
-          wget https://github.com/mikefarah/yq/releases/download/$YQ_VERSION/$YQ_BINARY.tar.gz -O - | tar xz && mv $YQ_BINARY $HOME/.local/bin/yq
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
       - name: Install Python dependencies.
         run: poetry install -E docs
 

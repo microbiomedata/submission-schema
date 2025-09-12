@@ -6,11 +6,6 @@ FROM python:3.9
 
 WORKDIR /submission-schema
 
-# Download and install yq.
-# Reference: https://github.com/mikefarah/yq#install
-RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
-    chmod +x /usr/bin/yq
-
 # Install Poetry, a package manager for Python (an alternative to pip).
 RUN pip install poetry
 
