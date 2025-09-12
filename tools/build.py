@@ -202,6 +202,9 @@ def main(download_gold_ecosystem_terms: bool) -> None:
         ):
             inject_env_triad_enum(submission_schema, tsv_file)
 
+    with log("Materializing structured patterns"):
+        submission_schema.materialize_patterns()
+
     with log(
         f"Writing final submission-schema to [bold]{rel_root(SUBMISSION_SCHEMA_OUTPUT)}"
     ):
