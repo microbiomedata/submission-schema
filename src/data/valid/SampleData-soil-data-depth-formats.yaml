@@ -11,7 +11,7 @@ soil_data:
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
-    samp_name: b
+    samp_name: a
     samp_store_temp: "-80 Celsius"
     source_mat_id: x:6
     store_cond: frozen
@@ -43,7 +43,7 @@ soil_data:
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
-    samp_name: b
+    samp_name: c
     samp_store_temp: "-80 Celsius"
     source_mat_id: x:8
     store_cond: frozen
@@ -59,7 +59,7 @@ soil_data:
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
-    samp_name: b
+    samp_name: d
     samp_store_temp: "-80 Celsius"
     source_mat_id: x:9
     store_cond: frozen

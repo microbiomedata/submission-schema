@@ -10,7 +10,7 @@ sediment_data:
     env_medium: 'bare soil [ENVO:01001616]'
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     lat_lon: 35.211445 -98.464612
-    samp_name: a
+    samp_name: a1
     samp_store_temp: "-80 Celsius"
     source_mat_id: x:1
   - analysis_type:
@@ -24,7 +24,7 @@ sediment_data:
     env_medium: 'bare soil [ENVO:01001616]'
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     lat_lon: 35.211445 -98.464612
-    samp_name: a
+    samp_name: a2
     samp_store_temp: "-80 Celsius"
     source_mat_id: x:1
   - analysis_type:
@@ -38,6 +38,6 @@ sediment_data:
     env_medium: 'bare soil [ENVO:01001616]'
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     lat_lon: 35.211445 -98.464612
-    samp_name: a
+    samp_name: a3
     samp_store_temp: "-80 Celsius"
     source_mat_id: x:1
