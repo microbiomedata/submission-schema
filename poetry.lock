@@ -311,18 +311,6 @@ webencodings = "*"
 css = ["tinycss2 (>=1.1.0,<1.5)"]
 
 [[package]]
-name = "boltons"
-version = "24.1.0"
-description = "When they're not builtins, they're boltons."
-optional = false
-python-versions = ">=3.7"
-groups = ["dev"]
-files = [
-    {file = "boltons-24.1.0-py3-none-any.whl", hash = "sha256:a1776d47fdc387fb730fba1fe245f405ee184ee0be2fb447dd289773a84aed3b"},
-    {file = "boltons-24.1.0.tar.gz", hash = "sha256:4a49b7d57ee055b83a458c8682a2a6f199d263a8aa517098bda9bab813554b87"},
-]
-
-[[package]]
 name = "cachetools"
 version = "5.5.0"
 description = "Extensible memoizing collections and decorators"
@@ -1168,22 +1156,6 @@ files = [
 linkml = ">=1.5.2,<2.0.0"
 
 [[package]]
-name = "face"
-version = "20.1.1"
-description = "A command-line application framework (and CLI parser). Friendly for users, full-featured for developers."
-optional = false
-python-versions = "*"
-groups = ["dev"]
-files = [
-    {file = "face-20.1.1-py2-none-any.whl", hash = "sha256:3790311a7329e4b0d90baee346eecad54b337629576edf3a246683a5f0d24446"},
-    {file = "face-20.1.1-py3-none-any.whl", hash = "sha256:ca3a1d8b8b6aa8e61d62a300e9ee24e09c062aceda549e9a640128e4fa0f4559"},
-    {file = "face-20.1.1.tar.gz", hash = "sha256:7d59ca5ba341316e58cf72c6aff85cca2541cf5056c4af45cb63af9a814bed3e"},
-]
-
-[package.dependencies]
-boltons = ">=20.0.0"
-
-[[package]]
 name = "fastjsonschema"
 version = "2.21.1"
 description = "Fastest Python implementation of JSON schema"
@@ -1379,27 +1351,6 @@ python-dateutil = ">=2.8.1"
 dev = ["flake8", "markdown", "twine", "wheel"]
 
 [[package]]
-name = "glom"
-version = "23.5.0"
-description = "A declarative object transformer and formatter, for conglomerating nested data."
-optional = false
-python-versions = "*"
-groups = ["dev"]
-files = [
-    {file = "glom-23.5.0-py3-none-any.whl", hash = "sha256:fe4e9be4dc93c11a99f8277042e4bee95419c02cda4b969f504508b0a1aa6a66"},
-    {file = "glom-23.5.0.tar.gz", hash = "sha256:06af5e3486aacc59382ba34e53ebeabd7a9345d78f7dbcbee26f03baa4b83bac"},
-]
-
-[package.dependencies]
-attrs = "*"
-boltons = ">=19.3.0"
-face = "20.1.1"
-
-[package.extras]
-toml = ["tomli ; python_version < \"3.11\""]
-yaml = ["PyYAML"]
-
-[[package]]
 name = "google-api-core"
 version = "2.24.0"
 description = "Google API client core library"
@@ -1494,25 +1445,6 @@ files = [
 [package.dependencies]
 google-auth = "*"
 httplib2 = ">=0.19.0"
-
-[[package]]
-name = "google-auth-oauthlib"
-version = "1.2.1"
-description = "Google Authentication Library"
-optional = false
-python-versions = ">=3.6"
-groups = ["dev"]
-files = [
-    {file = "google_auth_oauthlib-1.2.1-py2.py3-none-any.whl", hash = "sha256:2d58a27262d55aa1b87678c3ba7142a080098cbc2024f903c62355deb235d91f"},
-    {file = "google_auth_oauthlib-1.2.1.tar.gz", hash = "sha256:afd0cad092a2eaa53cd8e8298557d6de1034c6cb4a740500b5357b648af97263"},
-]
-
-[package.dependencies]
-google-auth = ">=2.15.0"
-requests-oauthlib = ">=0.7.0"
-
-[package.extras]
-tool = ["click (>=6.0.0)"]
 
 [[package]]
 name = "google-cloud-bigquery"
@@ -4060,23 +3992,6 @@ rsa = ">=3.1.4"
 six = ">=1.6.1"
 
 [[package]]
-name = "oauthlib"
-version = "3.2.2"
-description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
-optional = false
-python-versions = ">=3.6"
-groups = ["dev"]
-files = [
-    {file = "oauthlib-3.2.2-py3-none-any.whl", hash = "sha256:8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca"},
-    {file = "oauthlib-3.2.2.tar.gz", hash = "sha256:9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"},
-]
-
-[package.extras]
-rsa = ["cryptography (>=3.0.0)"]
-signals = ["blinker (>=1.4.0)"]
-signedtoken = ["cryptography (>=3.0.0)", "pyjwt (>=2.0.0,<3)"]
-
-[[package]]
 name = "ols-client"
 version = "0.1.4"
 description = "A client to the EBI Ontology Lookup Service"
@@ -4260,22 +4175,6 @@ spss = ["pyreadstat (>=1.2.0)"]
 sql-other = ["SQLAlchemy (>=2.0.0)", "adbc-driver-postgresql (>=0.8.0)", "adbc-driver-sqlite (>=0.8.0)"]
 test = ["hypothesis (>=6.46.1)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)"]
 xml = ["lxml (>=4.9.2)"]
-
-[[package]]
-name = "pandasql"
-version = "0.7.3"
-description = "sqldf for pandas"
-optional = false
-python-versions = "*"
-groups = ["dev"]
-files = [
-    {file = "pandasql-0.7.3.tar.gz", hash = "sha256:1eb248869086435a7d85281ebd9fe525d69d9d954a0dceb854f71a8d0fd8de69"},
-]
-
-[package.dependencies]
-numpy = "*"
-pandas = "*"
-sqlalchemy = "*"
 
 [[package]]
 name = "pandocfilters"
@@ -4910,25 +4809,6 @@ files = [
 
 [package.extras]
 windows-terminal = ["colorama (>=0.4.6)"]
-
-[[package]]
-name = "pygsheets"
-version = "2.0.6"
-description = "Google Spreadsheets Python API v4"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-groups = ["dev"]
-files = [
-    {file = "pygsheets-2.0.6-py3-none-any.whl", hash = "sha256:3338c2eb8990fdee9f463b42a370ec0870c118d607d775471a6dfb8b08f6cd87"},
-    {file = "pygsheets-2.0.6.tar.gz", hash = "sha256:bff46c812e99f9b8b81a09b456581365281c797620ec08530b0d0e48fa9299e2"},
-]
-
-[package.dependencies]
-google-api-python-client = ">=2.50.0"
-google-auth-oauthlib = ">=0.7.1"
-
-[package.extras]
-pandas = ["pandas (>=0.14.0)"]
 
 [[package]]
 name = "pyjsg"
@@ -5771,25 +5651,6 @@ security = ["itsdangerous (>=2.0)"]
 yaml = ["pyyaml (>=6.0.1)"]
 
 [[package]]
-name = "requests-oauthlib"
-version = "2.0.0"
-description = "OAuthlib authentication support for Requests."
-optional = false
-python-versions = ">=3.4"
-groups = ["dev"]
-files = [
-    {file = "requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"},
-    {file = "requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36"},
-]
-
-[package.dependencies]
-oauthlib = ">=3.0.0"
-requests = ">=2.0.0"
-
-[package.extras]
-rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
-
-[[package]]
 name = "requests-toolbelt"
 version = "1.0.0"
 description = "A utility belt for advanced users of python-requests"
@@ -6160,27 +6021,6 @@ doc = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-
 enabler = ["pytest-enabler (>=2.2)"]
 test = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "ini2toml[lite] (>=0.14)", "jaraco.develop (>=7.21) ; python_version >= \"3.9\" and sys_platform != \"cygwin\"", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "jaraco.test (>=5.5)", "packaging (>=24.2)", "pip (>=19.1)", "pyproject-hooks (!=1.1)", "pytest (>=6,!=8.1.*)", "pytest-home (>=0.5)", "pytest-perf ; sys_platform != \"cygwin\"", "pytest-subprocess", "pytest-timeout", "pytest-xdist (>=3)", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel (>=0.44.0)"]
 type = ["importlib_metadata (>=7.0.2) ; python_version < \"3.10\"", "jaraco.develop (>=7.21) ; sys_platform != \"cygwin\"", "mypy (>=1.12,<1.14)", "pytest-mypy"]
-
-[[package]]
-name = "sheets-and-friends"
-version = "0.5.4"
-description = "Enhance a LinkML model with imported and optionally modified slots"
-optional = false
-python-versions = "<4.0,>=3.9"
-groups = ["dev"]
-files = [
-    {file = "sheets_and_friends-0.5.4-py3-none-any.whl", hash = "sha256:57e6c6c91a9803a799506e4dd1484c9c4c5b8cc562716adfe7f6d23f845de445"},
-    {file = "sheets_and_friends-0.5.4.tar.gz", hash = "sha256:7002bcab6d1b4d9d53dc12ba371fe7de12e98619ab67bb0b9ed62700483a10a6"},
-]
-
-[package.dependencies]
-click = ">=8.0.0,<9.0.0"
-click_log = "0.4.0"
-glom = ">=23.1.1,<24.0.0"
-linkml-runtime = ">=1.4.0,<2.0.0"
-pandas = ">=1.3.4"
-pandasql = ">=0.7.3,<0.8.0"
-pygsheets = ">=2.0.5,<3.0.0"
 
 [[package]]
 name = "shexjsg"
@@ -7219,4 +7059,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "a211fb00ffdbb931f7fcf8141209be0387dd137cbbbfc3614add1c3aa9583cf0"
+content-hash = "2c0721efd26faa6e1f02d327118c714581b51461d4be666ce23c78601a424b5b"

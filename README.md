@@ -1,6 +1,6 @@
 # submission-schema
 
-The home of the NMDC submission schema. *Not* the home of sheets_and_friends. In development: GH pages hosted NMDC DataHarmonizer interface.
+The NMDC submission schema.
 
 Note that the while this repo is named `submission-schema`, the generated artifacts are named `nmdc_submission_schema` for disambiguation purposes when publishing to PyPI.
 

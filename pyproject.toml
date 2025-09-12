@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "nmdc_submission_schema"
 version = "0.0.0"
-description = "The home of the NMDC submission schema. *Not* the home of sheets_and_friends. *Not* a GH pages host of NMDC DataHarmonizer interfaces."
+description = "The NMDC submission schema"
 authors = ["Mark Andrew Miller <mam@lbl.gov>"]
 license = "MIT"
 readme = "README.md"
@@ -37,7 +37,6 @@ pytest = "^8.3.4"
 rdflib = "^6.2.0"
 rich = "^14.1.0"
 scikit-learn = "^1.5.2"
-sheets-and-friends = "^0.5.4"
 textdistance = "^4.6.3"
 requests = "^2.32.5"
 
@@ -63,11 +62,6 @@ patterns = [
     "(^\\s*__version__\\s*(?::.*?)?=\\s*['\\\"])[^'\\\"]*(['\\\"])",
     "(^version:\\s*['\\\"]?)[^'\\\"]*?(['\\\"]?)$"
 ]
-
-
-## /Users/MAM/Documents/gitrepos/sheets_and_friends
-## /home/mark/gitrepos/sheets_and_friends
-#sheets-and-friends = { path = "/home/mark/gitrepos/sheets_and_friends", develop = true }
 
 
 [build-system]
