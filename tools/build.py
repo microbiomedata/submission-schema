@@ -1,6 +1,7 @@
 """Main build script for the final submission-schema YAML file."""
 
 import json
+import time
 from collections.abc import Callable, Iterable
 from contextlib import contextmanager
 from importlib import metadata
@@ -128,6 +129,8 @@ def download_terms_from_gold() -> dict:
 @click.option("--download-gold-ecosystem-terms", is_flag=True)
 def main(download_gold_ecosystem_terms: bool) -> None:
     """Run all the steps to produce the final submission-schema YAML file"""
+    start_time = time.time()
+
     with log(
         f"Loading submission-schema base from [bold]{rel_root(SUBMISSION_SCHEMA_BASE)}"
     ):
@@ -210,7 +213,12 @@ def main(download_gold_ecosystem_terms: bool) -> None:
     ):
         yaml_dumper.dump(submission_schema.schema, SUBMISSION_SCHEMA_OUTPUT)
 
-    console.log("Done", style="green")
+    elapsed_time = time.time() - start_time
+    console.print("")
+    console.rule(
+        f"[green][bold]{SUBMISSION_SCHEMA_OUTPUT.name} successfully built[/bold] in {elapsed_time:.2f}s[/]",
+        characters="=",
+    )
 
 
 if __name__ == "__main__":
