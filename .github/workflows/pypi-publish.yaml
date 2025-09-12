@@ -42,10 +42,9 @@ jobs:
 
     - name: Generate project files
       run: |
-        make clean schema-clean src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml ingest-triad 
+        make schema-build 
         poetry dynamic-versioning
         make gen-project
-        make project/json/nmdc_submission_schema.json
         cp -r project src/nmdc_submission_schema
 
     - name: Build source and wheel archives

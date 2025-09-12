@@ -40,11 +40,7 @@ jobs:
 
       - name: Regenerate schema
         run: |
-          make \
-            clean \
-            schema-clean \
-            src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml \
-            project/json/nmdc_submission_schema.json
+          make schema-build project/json/nmdc_submission_schema.json
       
       - name: Build documentation.
         run: |

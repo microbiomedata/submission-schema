@@ -188,6 +188,7 @@ def main(download_gold_ecosystem_terms: bool) -> None:
             f"Downloading GOLD Ecosystem Classification terms to [bold]{rel_root(GOLD_ECOSYSTEM_TREE_JSON)}"
         ):
             gold_terms = download_terms_from_gold()
+            GOLD_ECOSYSTEM_TREE_JSON.parent.mkdir(parents=True, exist_ok=True)
             with open(GOLD_ECOSYSTEM_TREE_JSON, "w") as f:
                 json.dump(gold_terms, f)
 
