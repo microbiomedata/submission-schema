@@ -4819,9 +4819,21 @@ slots:
       - DhMultiviewCommonColumnsMixin
     modifications:
       - replace:
-          pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+          description: >-
+            A globally unique identifier assigned to the parent sample or sample that is the source 
+            of this sample.
+          examples:
+            - value: 'igsn:AU1243'
+            - value: 'biosample:SAMEA2397676'
+          pattern: '^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$'
           rank: 2
           slot_group: sample_id_section
+        append:
+          comments:
+            - >-
+              Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International 
+              Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI 
+              biosample accession IDs, `gold` for GOLD identifiers.
 
   - slot: space_typ_state
     source: Biosample
