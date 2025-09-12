@@ -64,17 +64,6 @@ Here's how you can generate the submission schema release artifacts:
 
 #### Direct process
 
-##### Prerequisites
-
-- `wget` is installed on your computer, such that the following command shows a version number instead of an error message.
-  ```shell
-  bash -c 'wget --version'
-  ```
-  If `wget` is not installed, you can install it by running this, assuming you're using macOS:
-  ```shell
-  brew install wget
-  ```
-
 ##### Procedure
 
 1. Install Python dependencies:
