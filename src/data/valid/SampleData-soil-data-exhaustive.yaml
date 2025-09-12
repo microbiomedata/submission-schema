@@ -93,7 +93,7 @@ soil_data:
     soil_texture_meth: xxx
     soil_type: xxx [ENVO:00000000]
     soil_type_meth: xxx
-    source_mat_id: x:1
+    source_mat_id: igsn:001
     specific_ecosystem: Unclassified
     start_date_inc: '2022-02-15'
     start_time_inc: '13:33:55'
@@ -122,7 +122,7 @@ soil_data:
     analysis_type:
       - metagenomics
       - metatranscriptomics
-    source_mat_id: x:2
+    source_mat_id: igsn:2
     ecosystem_type: Soil
     collection_date: '2022-01-15'
     env_broad_scale: '______urban biome [ENVO:01000249]'

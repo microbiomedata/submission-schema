@@ -1,10 +1,10 @@
 jgi_mt_data:
   - samp_name: sample name
-    source_mat_id: igsn:012345
-    dnase: no
+    source_mat_id: gold:012345
+    dnase: "no"
     nuc_acid_concentration: 100.3
-    cont_type: none
-    cont_well: H7 
+    cont_type: plate 
+    cont_well: H7
     container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
     jgi_samp_id: '123456'
@@ -15,3 +15,5 @@ jgi_mt_data:
     jgi_sample_volume: 25.1
     analysis_type: 
       - metatranscriptomics
+    nuc_acid_absorb1: 2.02
+    nuc_acid_absorb2: 1.4
