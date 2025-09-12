@@ -9,6 +9,7 @@ from pathlib import Path
 import click
 import requests
 import yaml
+from enums import inject_illumina_instrument_model_enum
 from gold import inject_gold_pathway_terms
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
@@ -187,6 +188,11 @@ def main(download_gold_ecosystem_terms: bool) -> None:
 
     with log("Injecting GOLD Ecosystem Classification term enums"):
         inject_gold_pathway_terms(submission_schema, gold_terms)
+
+    with log("Injecting Illumina instrument enum"):
+        inject_illumina_instrument_model_enum(
+            submission_schema, source_schema=nmdc_schema
+        )
 
     with log(
         f"Writing final submission-schema to [bold]{rel_root(SUBMISSION_SCHEMA_OUTPUT)}"
