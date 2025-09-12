@@ -10,7 +10,7 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz1
-    source_mat_id: x:1
+    source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -22,7 +22,7 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz2
-    source_mat_id: x:1
+    source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -34,7 +34,7 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz3
-    source_mat_id: x:1
+    source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -46,7 +46,7 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz4
-    source_mat_id: x:1
+    source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -58,7 +58,7 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz5
-    source_mat_id: x:1
+    source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -70,4 +70,4 @@ water_data:
     geo_loc_name: "USA: Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz6
-    source_mat_id: x:1
+    source_mat_id: igsn:001

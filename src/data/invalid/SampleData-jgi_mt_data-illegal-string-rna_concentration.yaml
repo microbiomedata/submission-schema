@@ -1,6 +1,6 @@
 jgi_mt_data:
   - samp_name: sample name
-    source_mat_id: MPI:012345
+    source_mat_id: igsn:012345
     dnase: no
     nuc_acid_concentration: one hundred
     cont_type: tube 
