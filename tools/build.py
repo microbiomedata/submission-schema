@@ -7,6 +7,7 @@ from pathlib import Path
 import yaml
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
+from mixs import translate_string_serializations
 from rich.console import Console
 
 from nmdc_submission_schema.schematools import import_elements, merge_prefixes
@@ -63,6 +64,9 @@ def main() -> None:
 
     with log("Merging nmdc-schema prefixes into submission-schema"):
         merge_prefixes(submission_schema, source_schema=nmdc_schema)
+
+    with log("Translating MIxS string_serializations into patterns"):
+        translate_string_serializations(submission_schema)
 
     with log(
         f"Writing final submission-schema to [bold]{project_rel(SUBMISSION_SCHEMA_OUTPUT)}"
