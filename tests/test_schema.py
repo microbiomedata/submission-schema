@@ -108,6 +108,7 @@ TEMPLATE_INSTANCES = {
         "jgi_seq_project_name": "100000",
         "jgi_sample_volume": 1.0,
         "samp_name": "000001",
+        "biosafety_mat_cat": "Metagenome (Environmental)",
     },
     "JgiMgLrInterface": {
         "analysis_type": ["metagenomics"],
@@ -126,6 +127,7 @@ TEMPLATE_INSTANCES = {
         "jgi_seq_project_name": "100000",
         "jgi_sample_volume": 1.0,
         "samp_name": "000001",
+        "biosafety_mat_cat": "Metagenome (Environmental)",
     },
     "JgiMtInterface": {
         "analysis_type": ["metatranscriptomics"],
@@ -142,6 +144,7 @@ TEMPLATE_INSTANCES = {
         "jgi_seq_project_name": "100000",
         "jgi_sample_volume": 1.0,
         "samp_name": "000001",
+        "biosafety_mat_cat": "Metagenome (Environmental)",
     },
     "MiscEnvsInterface": {
         "analysis_type": ["metagenomics"],
