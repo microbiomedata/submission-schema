@@ -6,6 +6,7 @@ from collections.abc import Callable, Iterable
 from contextlib import contextmanager
 from importlib import metadata
 from pathlib import Path
+from typing import Union
 
 import click
 import requests
@@ -78,7 +79,7 @@ def iter_slot_definitions_with_range(
 def replace_range(
     schema_view: SchemaView,
     range_name: str,
-    replacement: str | Callable[[SlotDefinition], None],
+    replacement: Union[str, Callable[[SlotDefinition], None]],
 ) -> None:
     """Replace the range of each slot or slot usage definition with the given replacement. If the
     replacement is a string it will be used as the new range. If the replacement is a callable, it
