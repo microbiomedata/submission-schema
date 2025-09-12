@@ -9,7 +9,7 @@ from pathlib import Path
 import click
 import requests
 import yaml
-from enums import inject_illumina_instrument_model_enum
+from enums import inject_env_triad_enum, inject_illumina_instrument_model_enum
 from gold import inject_gold_pathway_terms
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
@@ -36,6 +36,8 @@ NMDC_SCHEMA_IMPORT_CONFIG = CONFIG_DIRECTORY / "nmdc_schema_import.yaml"
 
 PROJECT_DIRECTORY = ROOT / "project"
 GOLD_ECOSYSTEM_TREE_JSON = PROJECT_DIRECTORY / "thirdparty/GoldEcosystemTree.json"
+
+ENV_TRIAD_ENUM_TSV_DIRECTORY = ROOT / "notebooks/environmental_context_value_sets"
 
 console = Console(highlight=False)
 
@@ -193,6 +195,12 @@ def main(download_gold_ecosystem_terms: bool) -> None:
         inject_illumina_instrument_model_enum(
             submission_schema, source_schema=nmdc_schema
         )
+
+    with log("Injecting environment triad enums"):
+        for tsv_file in ENV_TRIAD_ENUM_TSV_DIRECTORY.glob(
+            "**/post_google_sheets_*.tsv"
+        ):
+            inject_env_triad_enum(submission_schema, tsv_file)
 
     with log(
         f"Writing final submission-schema to [bold]{rel_root(SUBMISSION_SCHEMA_OUTPUT)}"
