@@ -1,11 +1,15 @@
 """Main build script for the final submission-schema YAML file."""
 
+import json
 from collections.abc import Callable, Iterable
 from contextlib import contextmanager
 from importlib import metadata
 from pathlib import Path
 
+import click
+import requests
 import yaml
+from gold import inject_gold_pathway_terms
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.linkml_model import SlotDefinition
@@ -20,14 +24,17 @@ from nmdc_submission_schema.schematools import (
 from nmdc_submission_schema.schematools.importer import ImporterConfig
 from nmdc_submission_schema.scripts import nmdc_schema_yaml_path
 
-PROJECT_ROOT = Path(__file__).parent.parent
+ROOT = Path(__file__).parent.parent
 
-SCHEMA_DIRECTORY = PROJECT_ROOT / "src/nmdc_submission_schema/schema"
+SCHEMA_DIRECTORY = ROOT / "src/nmdc_submission_schema/schema"
 SUBMISSION_SCHEMA_BASE = SCHEMA_DIRECTORY / "nmdc_submission_schema_base.yaml"
 SUBMISSION_SCHEMA_OUTPUT = SCHEMA_DIRECTORY / "nmdc_submission_schema.yaml"
 
-CONFIG_DIRECTORY = PROJECT_ROOT / "config"
+CONFIG_DIRECTORY = ROOT / "config"
 NMDC_SCHEMA_IMPORT_CONFIG = CONFIG_DIRECTORY / "nmdc_schema_import.yaml"
+
+PROJECT_DIRECTORY = ROOT / "project"
+GOLD_ECOSYSTEM_TREE_JSON = PROJECT_DIRECTORY / "thirdparty/GoldEcosystemTree.json"
 
 console = Console(highlight=False)
 
@@ -40,9 +47,9 @@ def log(message: str):
     console.log(message, _stack_offset=3)
 
 
-def project_rel(path: Path) -> Path:
+def rel_root(path: Path) -> Path:
     """Return a path relative to the project root"""
-    return path.relative_to(PROJECT_ROOT)
+    return path.relative_to(ROOT)
 
 
 def iter_slot_definitions(schema_view: SchemaView) -> Iterable[SlotDefinition]:
@@ -106,10 +113,20 @@ def modify_multivalued_string_slot(slot: SlotDefinition) -> None:
         slot.inlined_as_list = None
 
 
-def main() -> None:
+def download_terms_from_gold() -> dict:
+    """Download the GOLD Ecosystem Classification terms in JSON format"""
+    url = "https://gold.jgi.doe.gov/download?mode=biosampleEcosystemsJson"
+    response = requests.get(url)
+    response.raise_for_status()
+    return response.json()
+
+
+@click.command()
+@click.option("--download-gold-ecosystem-terms", is_flag=True)
+def main(download_gold_ecosystem_terms: bool) -> None:
     """Run all the steps to produce the final submission-schema YAML file"""
     with log(
-        f"Loading submission-schema base from [bold]{project_rel(SUBMISSION_SCHEMA_BASE)}"
+        f"Loading submission-schema base from [bold]{rel_root(SUBMISSION_SCHEMA_BASE)}"
     ):
         submission_schema = SchemaView(SUBMISSION_SCHEMA_BASE)
 
@@ -117,7 +134,7 @@ def main() -> None:
         nmdc_schema = SchemaView(nmdc_schema_yaml_path)
 
     with log(
-        f"Loading nmdc-schema import config from [bold]{project_rel(NMDC_SCHEMA_IMPORT_CONFIG)}"
+        f"Loading nmdc-schema import config from [bold]{rel_root(NMDC_SCHEMA_IMPORT_CONFIG)}"
     ):
         with open(NMDC_SCHEMA_IMPORT_CONFIG) as config_file:
             config_dict = yaml.safe_load(config_file)
@@ -154,8 +171,25 @@ def main() -> None:
             modify_multivalued_string_slot(slot_def)
         submission_schema.set_modified()
 
+    if GOLD_ECOSYSTEM_TREE_JSON.exists() and not download_gold_ecosystem_terms:
+        with log(
+            f"Reading GOLD Ecosystem Classification terms from existing [bold]{rel_root(GOLD_ECOSYSTEM_TREE_JSON)}"
+        ):
+            with open(GOLD_ECOSYSTEM_TREE_JSON) as f:
+                gold_terms = json.load(f)
+    else:
+        with log(
+            f"Downloading GOLD Ecosystem Classification terms to [bold]{rel_root(GOLD_ECOSYSTEM_TREE_JSON)}"
+        ):
+            gold_terms = download_terms_from_gold()
+            with open(GOLD_ECOSYSTEM_TREE_JSON, "w") as f:
+                json.dump(gold_terms, f)
+
+    with log("Injecting GOLD Ecosystem Classification term enums"):
+        inject_gold_pathway_terms(submission_schema, gold_terms)
+
     with log(
-        f"Writing final submission-schema to [bold]{project_rel(SUBMISSION_SCHEMA_OUTPUT)}"
+        f"Writing final submission-schema to [bold]{rel_root(SUBMISSION_SCHEMA_OUTPUT)}"
     ):
         yaml_dumper.dump(submission_schema.schema, SUBMISSION_SCHEMA_OUTPUT)
 

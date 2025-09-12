@@ -39,6 +39,7 @@ rich = "^14.1.0"
 scikit-learn = "^1.5.2"
 sheets-and-friends = "^0.5.4"
 textdistance = "^4.6.3"
+requests = "^2.32.5"
 
 [tool.poetry-dynamic-versioning]
 # We need poetry-dynamic-versioning to update the version in the src schema file,
