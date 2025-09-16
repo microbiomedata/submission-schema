@@ -2,8 +2,8 @@ import pytest
 from linkml_runtime import SchemaView
 from linkml_runtime.linkml_model import Example
 
-from nmdc_submission_schema.schematools import import_elements
-from nmdc_submission_schema.schematools.importer import (
+from tools.schematools import import_elements
+from tools.schematools.importer import (
     ImporterConfig,
     SlotImport,
     SlotModification,

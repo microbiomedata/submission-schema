@@ -1,7 +1,7 @@
 import pytest
 from linkml_runtime import SchemaView
 
-from nmdc_submission_schema.schematools import merge_prefixes, remove_class
+from tools.schematools import merge_prefixes, remove_class
 
 
 def test_remove_class_removes_class_and_unused_slots():

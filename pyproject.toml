@@ -5,11 +5,18 @@ description = "The NMDC submission schema"
 authors = ["Mark Andrew Miller <mam@lbl.gov>"]
 license = "MIT"
 readme = "README.md"
+packages = [
+    { include = "nmdc_submission_schema", from = "src" },
+    { include = "tools"}
+]
 include = [
     # These files are copied from the top-level project folder at build time. Without
     # the copy step they end up in a weird location when installed via wheel.
     # See: https://github.com/python-poetry/poetry/issues/7153
     { path = "src/nmdc_submission_schema/project/**/*", format = ["sdist", "wheel"] }
+]
+exclude = [
+    "tools"
 ]
 
 [tool.poetry.dependencies]

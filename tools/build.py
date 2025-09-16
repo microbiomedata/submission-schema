@@ -11,21 +11,21 @@ from typing import Union
 import click
 import requests
 import yaml
-from enums import inject_env_triad_enum, inject_illumina_instrument_model_enum
-from gold import inject_gold_pathway_terms
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.linkml_model import SlotDefinition
-from mixs import translate_string_serializations
 from rich.console import Console
 
-from nmdc_submission_schema.schematools import (
+from nmdc_submission_schema.scripts import nmdc_schema_yaml_path
+from tools.enums import inject_env_triad_enum, inject_illumina_instrument_model_enum
+from tools.gold import inject_gold_pathway_terms
+from tools.mixs import translate_string_serializations
+from tools.schematools import (
     import_elements,
     merge_prefixes,
     remove_class,
 )
-from nmdc_submission_schema.schematools.importer import ImporterConfig
-from nmdc_submission_schema.scripts import nmdc_schema_yaml_path
+from tools.schematools.importer import ImporterConfig
 
 ROOT = Path(__file__).parent.parent
 
