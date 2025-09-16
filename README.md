@@ -68,12 +68,11 @@ Here's how you can generate the submission schema release artifacts:
 
 1. Install Python dependencies:
    ```shell
-   poetry shell
    poetry install
    ```
 2. Generate the release artefacts:
    ```shell
-   make all
+   make clean all
    ```
 3. Commit the changes, using the new `nmdc-schema` version number as the commit message; like this:
    ```shell

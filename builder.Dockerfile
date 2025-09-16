@@ -9,6 +9,10 @@ WORKDIR /submission-schema
 # Install Poetry, a package manager for Python (an alternative to pip).
 RUN pip install poetry
 
+# Set this configuration option so that when Poetry creates a virtual environment, it doesn't
+# interfere with a `.venv` folder in a mounted volume.
+RUN poetry config virtualenvs.in-project false
+
 # Copy the entire repository into the container image.
 #
 # Note: Copying _only_ the dependency lists (i.e. `pyproject.toml` and `poetry.lock`) and then
@@ -23,4 +27,4 @@ ADD . /submission-schema
 RUN poetry install --no-interaction
 
 # Run the command that builds the submission schema release artifacts.
-CMD ["make", "all"]
+CMD ["make", "clean", "all"]
