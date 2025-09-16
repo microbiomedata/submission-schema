@@ -33,7 +33,7 @@ jobs:
 
     - name: Generate project files
       run: |
-        make schema-build 
+        make clean schema-build 
         poetry dynamic-versioning
         make gen-project
         cp -r project src/nmdc_submission_schema
