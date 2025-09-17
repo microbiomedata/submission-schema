@@ -47,9 +47,11 @@ console = Console(highlight=False)
 @contextmanager
 def log(message: str):
     """Context manager for logging a status that stays in the console."""
-    with console.status(" " * 9 + message):
+    indent_amount = 9  # accounts for the timestamp and spinner
+    stack_offset = 3  # this is the point in the stack where the log was called
+    with console.status(" " * indent_amount + message):
         yield
-    console.log(message, _stack_offset=3)
+    console.log(message, _stack_offset=stack_offset)
 
 
 def rel_root(path: Path) -> Path:
