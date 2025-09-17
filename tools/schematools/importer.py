@@ -195,10 +195,7 @@ def import_elements(
         # slot definition from that class, otherwise use the top-level slot definition.
         if slot_import.source:
             new_slot = source_schema.induced_slot(slot_import.slot, slot_import.source)
-            # induced_slot() sets the alias to the name of the slot itself. It's unclear why it does
-            # that, but it makes the schema incompatible with schemaloader (which is used by, for
-            # example, PythonGenerator). So we clear it here.
-            # TODO: make an issue in linkml or linkml-runtime to fix this
+            # This is a workaround for https://github.com/linkml/linkml/issues/2911
             if new_slot.alias == new_slot.name:
                 new_slot.alias = None
         else:
