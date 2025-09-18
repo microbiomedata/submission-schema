@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-13T12:02:22
+# Generation date: 2025-09-18T20:32:52
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -188,12 +188,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class LanguageCode(str):
-    """ A language code conforming to ISO_639-1 """
-    type_class_uri = XSD["language"]
-    type_class_curie = "xsd:language"
-    type_name = "language_code"
-    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Float(float):
@@ -204,14 +204,6 @@ class Float(float):
     type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
-
-
 class String(str):
     """ A character string """
     type_class_uri = XSD["string"]
@@ -220,12 +212,20 @@ class String(str):
     type_model_uri = NMDC_SUB_SCHEMA.String
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
+
+
+class Integer(int):
+    """ An integer """
+    type_class_uri = XSD["integer"]
+    type_class_curie = "xsd:integer"
+    type_name = "integer"
+    type_model_uri = NMDC_SUB_SCHEMA.Integer
 
 
 class Decimal(Decimal):
@@ -236,6 +236,14 @@ class Decimal(Decimal):
     type_model_uri = NMDC_SUB_SCHEMA.Decimal
 
 
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+
+
 class Boolean(Bool):
     """ A binary (true or false) value """
     type_class_uri = XSD["boolean"]
@@ -244,20 +252,12 @@ class Boolean(Bool):
     type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
-
-
-class Integer(int):
-    """ An integer """
-    type_class_uri = XSD["integer"]
-    type_class_curie = "xsd:integer"
-    type_name = "integer"
-    type_model_uri = NMDC_SUB_SCHEMA.Integer
+class LanguageCode(str):
+    """ A language code conforming to ISO_639-1 """
+    type_class_uri = XSD["language"]
+    type_class_curie = "xsd:language"
+    type_name = "language_code"
+    type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
 class Time(XSDTime):
@@ -9977,6 +9977,7 @@ class Protocol(YAMLRoot):
     type: Union[str, URIorCURIE] = None
     url: Optional[str] = None
     name: Optional[str] = None
+    description: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.type):
@@ -9988,6 +9989,9 @@ class Protocol(YAMLRoot):
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -13396,6 +13400,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Snow = PermissibleValue(text="Snow")
     Snuff = PermissibleValue(text="Snuff")
     Soil = PermissibleValue(text="Soil")
+    Solonetz = PermissibleValue(text="Solonetz")
     Spacecraft = PermissibleValue(text="Spacecraft")
     Spat = PermissibleValue(text="Spat")
     Spermathecae = PermissibleValue(text="Spermathecae")
@@ -13541,6 +13546,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="City park"))
         setattr(cls, "Claws/Talon",
             PermissibleValue(text="Claws/Talon"))
+        setattr(cls, "Coal mine",
+            PermissibleValue(text="Coal mine"))
         setattr(cls, "Coalbed methane well",
             PermissibleValue(text="Coalbed methane well"))
         setattr(cls, "Coastal area",
@@ -14117,6 +14124,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Thorax/Pereon"))
         setattr(cls, "Tobacco product",
             PermissibleValue(text="Tobacco product"))
+        setattr(cls, "Town canal",
+            PermissibleValue(text="Town canal"))
         setattr(cls, "Transient pool",
             PermissibleValue(text="Transient pool"))
         setattr(cls, "Tree plantation",
@@ -15257,6 +15266,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Stomach: Pyloric"))
         setattr(cls, "Stone surface",
             PermissibleValue(text="Stone surface"))
+        setattr(cls, "Storm water pond",
+            PermissibleValue(text="Storm water pond"))
         setattr(cls, "Subcutaneous fat",
             PermissibleValue(text="Subcutaneous fat"))
         setattr(cls, "Subgingival plaque",
@@ -15436,6 +15447,7 @@ class EcosystemSubtypeForSoilEnum(EnumDefinitionImpl):
     Sand = PermissibleValue(text="Sand")
     Shrubland = PermissibleValue(text="Shrubland")
     Silt = PermissibleValue(text="Silt")
+    Solonetz = PermissibleValue(text="Solonetz")
     Tailings = PermissibleValue(text="Tailings")
     Tundra = PermissibleValue(text="Tundra")
     Unclassified = PermissibleValue(text="Unclassified")
@@ -23284,7 +23296,7 @@ slots.DhMultiviewCommonColumnsMixin_samp_name = Slot(uri=MIXS['0001107'], name="
 
 slots.DhMultiviewCommonColumnsMixin_source_mat_id = Slot(uri=MIXS['0000026'], name="DhMultiviewCommonColumnsMixin_source_mat_id", curie=MIXS.curie('0000026'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_source_mat_id, domain=None, range=Optional[str],
-                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+                   pattern=re.compile(r'^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$'))
 
 slots.DhMultiviewCommonColumnsMixin_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="DhMultiviewCommonColumnsMixin_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_oxy_stat_samp, domain=None, range=Optional[Union[str, "OxyStatSampEnum"]])
