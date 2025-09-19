@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-13T12:02:22
+# Generation date: 2025-09-19T10:27:52
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -196,12 +196,36 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
+
+
 class Float(float):
     """ A real number that conforms to the xsd:float specification """
     type_class_uri = XSD["float"]
     type_class_curie = "xsd:float"
     type_name = "float"
     type_model_uri = NMDC_SUB_SCHEMA.Float
+
+
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
+
+
+class Uriorcurie(URIorCURIE):
+    """ a URI or a CURIE """
+    type_class_uri = XSD["anyURI"]
+    type_class_curie = "xsd:anyURI"
+    type_name = "uriorcurie"
+    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Double(float):
@@ -220,36 +244,12 @@ class String(str):
     type_model_uri = NMDC_SUB_SCHEMA.String
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
-
-
 class Decimal(Decimal):
     """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
     type_class_uri = XSD["decimal"]
     type_class_curie = "xsd:decimal"
     type_name = "decimal"
     type_model_uri = NMDC_SUB_SCHEMA.Decimal
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
-
-
-class Uriorcurie(URIorCURIE):
-    """ a URI or a CURIE """
-    type_class_uri = XSD["anyURI"]
-    type_class_curie = "xsd:anyURI"
-    type_name = "uriorcurie"
-    type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
 class Integer(int):
@@ -5345,6 +5345,7 @@ class JgiMgInterface(DhInterface):
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
     dna_isolate_meth: str = None
+    biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     jgi_sample_name: str = None
@@ -5384,6 +5385,11 @@ class JgiMgInterface(DhInterface):
             self.MissingRequiredField("dna_isolate_meth")
         if not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
+
+        if self._is_empty(self.biosafety_mat_cat):
+            self.MissingRequiredField("biosafety_mat_cat")
+        if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
+            self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
 
         if self._is_empty(self.jgi_samp_id):
             self.MissingRequiredField("jgi_samp_id")
@@ -5463,6 +5469,7 @@ class JgiMgLrInterface(DhInterface):
     cont_type: Union[str, "JgiContTypeEnum"] = None
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
+    biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
     dna_isolate_meth: str = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
@@ -5506,6 +5513,11 @@ class JgiMgLrInterface(DhInterface):
             self.MissingRequiredField("dnase")
         if not isinstance(self.dnase, YesNoEnum):
             self.dnase = YesNoEnum(self.dnase)
+
+        if self._is_empty(self.biosafety_mat_cat):
+            self.MissingRequiredField("biosafety_mat_cat")
+        if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
+            self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
 
         if self._is_empty(self.dna_isolate_meth):
             self.MissingRequiredField("dna_isolate_meth")
@@ -5582,6 +5594,7 @@ class JgiMtInterface(DhInterface):
     cont_type: Union[str, "JgiContTypeEnum"] = None
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
+    biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
     rna_isolate_meth: str = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
@@ -5617,6 +5630,11 @@ class JgiMtInterface(DhInterface):
             self.MissingRequiredField("dnase")
         if not isinstance(self.dnase, YesNoEnum):
             self.dnase = YesNoEnum(self.dnase)
+
+        if self._is_empty(self.biosafety_mat_cat):
+            self.MissingRequiredField("biosafety_mat_cat")
+        if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
+            self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
 
         if self._is_empty(self.rna_isolate_meth):
             self.MissingRequiredField("rna_isolate_meth")
@@ -9977,6 +9995,7 @@ class Protocol(YAMLRoot):
     type: Union[str, URIorCURIE] = None
     url: Optional[str] = None
     name: Optional[str] = None
+    description: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.type):
@@ -9988,6 +10007,9 @@ class Protocol(YAMLRoot):
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
 
         super().__post_init__(**kwargs)
 
@@ -10042,6 +10064,22 @@ class JGISampleFormatEnum(EnumDefinitionImpl):
             PermissibleValue(text="Low EDTA TE"))
         setattr(cls, "MDA reaction buffer",
             PermissibleValue(text="MDA reaction buffer"))
+
+class JGIBiosafetyMaterialCategoryEnum(EnumDefinitionImpl):
+    """
+    Biosafety material category for samples sent to JGI
+    """
+    _defn = EnumDefinition(
+        name="JGIBiosafetyMaterialCategoryEnum",
+        description="Biosafety material category for samples sent to JGI",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Metagenome (Environmental)",
+            PermissibleValue(text="Metagenome (Environmental)"))
+        setattr(cls, "Metagenome (Host-associated)",
+            PermissibleValue(text="Metagenome (Host-associated)"))
 
 class EnvPackageEnum(EnumDefinitionImpl):
 
@@ -13396,6 +13434,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Snow = PermissibleValue(text="Snow")
     Snuff = PermissibleValue(text="Snuff")
     Soil = PermissibleValue(text="Soil")
+    Solonetz = PermissibleValue(text="Solonetz")
     Spacecraft = PermissibleValue(text="Spacecraft")
     Spat = PermissibleValue(text="Spat")
     Spermathecae = PermissibleValue(text="Spermathecae")
@@ -13541,6 +13580,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="City park"))
         setattr(cls, "Claws/Talon",
             PermissibleValue(text="Claws/Talon"))
+        setattr(cls, "Coal mine",
+            PermissibleValue(text="Coal mine"))
         setattr(cls, "Coalbed methane well",
             PermissibleValue(text="Coalbed methane well"))
         setattr(cls, "Coastal area",
@@ -14117,6 +14158,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Thorax/Pereon"))
         setattr(cls, "Tobacco product",
             PermissibleValue(text="Tobacco product"))
+        setattr(cls, "Town canal",
+            PermissibleValue(text="Town canal"))
         setattr(cls, "Transient pool",
             PermissibleValue(text="Transient pool"))
         setattr(cls, "Tree plantation",
@@ -15257,6 +15300,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Stomach: Pyloric"))
         setattr(cls, "Stone surface",
             PermissibleValue(text="Stone surface"))
+        setattr(cls, "Storm water pond",
+            PermissibleValue(text="Storm water pond"))
         setattr(cls, "Subcutaneous fat",
             PermissibleValue(text="Subcutaneous fat"))
         setattr(cls, "Subgingival plaque",
@@ -15436,6 +15481,7 @@ class EcosystemSubtypeForSoilEnum(EnumDefinitionImpl):
     Sand = PermissibleValue(text="Sand")
     Shrubland = PermissibleValue(text="Shrubland")
     Silt = PermissibleValue(text="Silt")
+    Solonetz = PermissibleValue(text="Solonetz")
     Tailings = PermissibleValue(text="Tailings")
     Tundra = PermissibleValue(text="Tundra")
     Unclassified = PermissibleValue(text="Unclassified")
@@ -17356,6 +17402,9 @@ slots.nuc_acid_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, name="nuc_ac
 
 slots.nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, name="nuc_acid_concentration", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_concentration'),
                    model_uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, domain=None, range=float)
+
+slots.biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
+                   model_uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, domain=None, range=Union[str, "JGIBiosafetyMaterialCategoryEnum"])
 
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str])
@@ -21065,6 +21114,9 @@ slots.JgiMgInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, n
 slots.JgiMgInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiMgInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dnase, domain=JgiMgInterface, range=Union[str, "YesNoEnum"])
 
+slots.JgiMgInterface_biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="JgiMgInterface_biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_biosafety_mat_cat, domain=JgiMgInterface, range=Union[str, "JGIBiosafetyMaterialCategoryEnum"])
+
 slots.JgiMgInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiMgInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_samp_id, domain=JgiMgInterface, range=str)
 
@@ -21113,6 +21165,9 @@ slots.JgiMgLrInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name,
 slots.JgiMgLrInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiMgLrInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dnase, domain=JgiMgLrInterface, range=Union[str, "YesNoEnum"])
 
+slots.JgiMgLrInterface_biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="JgiMgLrInterface_biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_biosafety_mat_cat, domain=JgiMgLrInterface, range=Union[str, "JGIBiosafetyMaterialCategoryEnum"])
+
 slots.JgiMgLrInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiMgLrInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_samp_id, domain=JgiMgLrInterface, range=str)
 
@@ -21160,6 +21215,9 @@ slots.JgiMtInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, n
 
 slots.JgiMtInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiMtInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_dnase, domain=JgiMtInterface, range=Union[str, "YesNoEnum"])
+
+slots.JgiMtInterface_biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="JgiMtInterface_biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_biosafety_mat_cat, domain=JgiMtInterface, range=Union[str, "JGIBiosafetyMaterialCategoryEnum"])
 
 slots.JgiMtInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiMtInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_samp_id, domain=JgiMtInterface, range=str)
@@ -23284,7 +23342,7 @@ slots.DhMultiviewCommonColumnsMixin_samp_name = Slot(uri=MIXS['0001107'], name="
 
 slots.DhMultiviewCommonColumnsMixin_source_mat_id = Slot(uri=MIXS['0000026'], name="DhMultiviewCommonColumnsMixin_source_mat_id", curie=MIXS.curie('0000026'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_source_mat_id, domain=None, range=Optional[str],
-                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+                   pattern=re.compile(r'^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$'))
 
 slots.DhMultiviewCommonColumnsMixin_oxy_stat_samp = Slot(uri=MIXS['0000753'], name="DhMultiviewCommonColumnsMixin_oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.DhMultiviewCommonColumnsMixin_oxy_stat_samp, domain=None, range=Optional[Union[str, "OxyStatSampEnum"]])

@@ -14,3 +14,4 @@ jgi_mg_data:
     jgi_seq_project_name: xxx
     jgi_sample_volume: 999
     samp_name: xxx
+    biosafety_mat_cat: Metagenome (Environmental)

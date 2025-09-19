@@ -17,3 +17,4 @@ jgi_mt_data:
       - metatranscriptomics
     nuc_acid_absorb1: 2.02
     nuc_acid_absorb2: 1.4
+    biosafety_mat_cat: Metagenome (Environmental)

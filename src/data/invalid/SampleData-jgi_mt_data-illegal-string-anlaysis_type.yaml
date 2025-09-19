@@ -13,5 +13,6 @@ jgi_mt_data:
     jgi_seq_project: 123456789
     jgi_seq_project_name: JGI Lagoon metatranscritpomics
     jgi_sample_volume: 25.1
+    biosafety_mat_cat: Metagenome (Environmental)
     analysis_type: 
       - transcriptomics
