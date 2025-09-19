@@ -618,7 +618,7 @@ slots:
     minimum_value: 0
     maximum_value: 2000
   biosafety_mat_cat:
-    description: Select the material catagory for your JGI samples.
+    description: Select the biosafety material category for your JGI samples.
     title: JGI Biosafety Material Category
     rank: 15
     range: JGIMatCatEnum
