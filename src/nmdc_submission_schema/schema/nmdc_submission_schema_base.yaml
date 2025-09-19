@@ -109,10 +109,6 @@ enums:
       microanaerobe:
       obligate aerobe:
       obligate anaerobe:
-  SampleTypeEnum:
-    permissible_values:
-      soil:
-      water_extract_soil:
   StoreCondEnum:
     permissible_values:
       fresh:
@@ -128,54 +124,6 @@ enums:
     permissible_values:
       'no': { }
       'yes': { }
-  EnvBroadScalePlantAssociatedEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvMediumPlantAssociatedEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvLocalScalePlantAssociatedEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvBroadScaleSedimentEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvMediumSedimentEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvLocalScaleSedimentEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvBroadScaleSoilEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvMediumSoilEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvLocalScaleSoilEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvBroadScaleWaterEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvMediumWaterEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
-  EnvLocalScaleWaterEnum:
-    in_subset:
-      - nmdc_env_triad_enums
-    permissible_values: {}
   OxyStatSampEnum:
     permissible_values:
       aerobic:
@@ -462,7 +410,6 @@ slots:
     examples:
       - value: B2
     rank: 11
-    string_serialization: '{96 well plate pos}'
     recommended: true
     pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
     aliases:
@@ -476,7 +423,6 @@ slots:
     examples:
       - value: Pond_MT_041618
     rank: 9
-    string_serialization: '{text < 20 characters}'
     required: true
     pattern: ^[-_.a-zA-Z0-9]{1,20}$
     aliases:
@@ -660,13 +606,6 @@ classes:
     is_a: DhInterface
     mixins:
       - DhMultiviewCommonColumnsMixin
-    slots:
-      - emsl_store_temp
-      - project_id
-      - replicate_number
-      - sample_shipped
-      - sample_type
-      - technical_reps
   HcrCoresInterface:
     annotations:
       excel_worksheet_name: hcr core
@@ -1068,7 +1007,10 @@ classes:
       - metatranscriptome_sequencing_non_interleaved_data
       - metatranscriptome_sequencing_interleaved_data
     tree_root: true
-settings: [ ]
+settings:
+  float: '[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?'
+  percentage: '[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%'
+  text: '[^;|\t\r\n]+'
 subsets:
   nmdc_env_triad_enums:
     todos:
