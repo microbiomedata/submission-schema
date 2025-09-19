@@ -69,7 +69,7 @@ enums:
       Pellet:
       TE:
       Water:
-  JGIMatCatEnum:
+  JGIBiosafetyMaterialCategoryEnum:
     description: Biosafety material category for samples sent to JGI
     permissible_values:
       Metagenome (Environmental):
