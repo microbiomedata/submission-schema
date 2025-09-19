@@ -334,16 +334,22 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
     from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/Decimal_degrees
+    base: float
+    uri: xsd:decimal
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
@@ -355,60 +361,6 @@ types:
     - schema:Float
     base: float
     uri: xsd:float
-  string:
-    name: string
-    description: A character string
-    notes:
-    - In RDF serializations, a slot with range of string is treated as a literal or
-      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
-      referenced with the lower case "string".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Text
-    base: str
-    uri: xsd:string
-  double:
-    name: double
-    description: A real number that conforms to the xsd:double specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "double".
-    from_schema: https://example.com/nmdc_submission_schema
-    close_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:double
-  integer:
-    name: integer
-    description: An integer
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
-  decimal:
-    name: decimal
-    description: A real number with arbitrary precision that conforms to the xsd:decimal
-      specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "decimal".
-    from_schema: https://example.com/nmdc_submission_schema
-    broad_mappings:
-    - schema:Number
-    base: Decimal
-    uri: xsd:decimal
-  decimal_degree:
-    name: decimal_degree
-    description: A decimal degree expresses latitude or longitude as decimal fractions.
-    from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/Decimal_degrees
-    base: float
-    uri: xsd:decimal
   boolean:
     name: boolean
     description: A binary (true or false) value
@@ -421,14 +373,62 @@ types:
     base: Bool
     uri: xsd:boolean
     repr: bool
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
+    from_schema: https://example.com/nmdc_submission_schema
+    close_mappings:
+    - schema:Float
+    base: float
+    uri: xsd:double
+  string:
+    name: string
+    description: A character string
+    notes:
+    - In RDF serializations, a slot with range of string is treated as a literal or
+      type xsd:string.   If you are authoring schemas in LinkML YAML, the type is
+      referenced with the lower case "string".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Text
     base: str
-    uri: xsd:language
+    uri: xsd:string
+  decimal:
+    name: decimal
+    description: A real number with arbitrary precision that conforms to the xsd:decimal
+      specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "decimal".
+    from_schema: https://example.com/nmdc_submission_schema
+    broad_mappings:
+    - schema:Number
+    base: Decimal
+    uri: xsd:decimal
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
   external_identifier:
     name: external_identifier
     description: A CURIE representing an external identifier
@@ -648,6 +648,15 @@ enums:
         text: TE
       Water:
         text: Water
+  JGIBiosafetyMaterialCategoryEnum:
+    name: JGIBiosafetyMaterialCategoryEnum
+    description: Biosafety material category for samples sent to JGI
+    from_schema: https://example.com/nmdc_submission_schema
+    permissible_values:
+      Metagenome (Environmental):
+        text: Metagenome (Environmental)
+      Metagenome (Host-associated):
+        text: Metagenome (Host-associated)
   EnvPackageEnum:
     name: EnvPackageEnum
     from_schema: https://example.com/nmdc_submission_schema
@@ -9701,6 +9710,14 @@ slots:
     required: true
     minimum_value: 0
     maximum_value: 2000
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
+    description: Select the biosafety material category for your JGI samples.
+    title: JGI Biosafety Material Category
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 15
+    range: JGIBiosafetyMaterialCategoryEnum
+    required: true
   abs_air_humidity:
     name: abs_air_humidity
     annotations:
@@ -39836,6 +39853,7 @@ classes:
     - container_name
     - dnase
     - dna_isolate_meth
+    - biosafety_mat_cat
     - jgi_samp_id
     - jgi_sample_format
     - jgi_sample_name
@@ -39855,6 +39873,9 @@ classes:
         slot_group: jgi_metagenomics_section
       dnase:
         name: dnase
+        slot_group: jgi_metagenomics_section
+      biosafety_mat_cat:
+        name: biosafety_mat_cat
         slot_group: jgi_metagenomics_section
       jgi_samp_id:
         name: jgi_samp_id
@@ -39951,6 +39972,7 @@ classes:
     - cont_well
     - container_name
     - dnase
+    - biosafety_mat_cat
     - dna_isolate_meth
     - jgi_samp_id
     - jgi_sample_format
@@ -39971,6 +39993,9 @@ classes:
         slot_group: jgi_metagenomics_section
       dnase:
         name: dnase
+        slot_group: jgi_metagenomics_section
+      biosafety_mat_cat:
+        name: biosafety_mat_cat
         slot_group: jgi_metagenomics_section
       jgi_samp_id:
         name: jgi_samp_id
@@ -40069,6 +40094,7 @@ classes:
     - cont_well
     - container_name
     - dnase
+    - biosafety_mat_cat
     - rna_isolate_meth
     - jgi_samp_id
     - jgi_sample_format
@@ -40089,6 +40115,9 @@ classes:
         slot_group: jgi_metatranscriptomics_section
       dnase:
         name: dnase
+        slot_group: jgi_metatranscriptomics_section
+      biosafety_mat_cat:
+        name: biosafety_mat_cat
         slot_group: jgi_metatranscriptomics_section
       jgi_samp_id:
         name: jgi_samp_id

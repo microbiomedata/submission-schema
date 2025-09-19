@@ -6877,6 +6877,15 @@
             "title": "IntWallCondEnum",
             "type": "string"
         },
+        "JGIBiosafetyMaterialCategoryEnum": {
+            "description": "Biosafety material category for samples sent to JGI",
+            "enum": [
+                "Metagenome (Environmental)",
+                "Metagenome (Host-associated)"
+            ],
+            "title": "JGIBiosafetyMaterialCategoryEnum",
+            "type": "string"
+        },
         "JGISampleFormatEnum": {
             "description": "",
             "enum": [
@@ -6960,6 +6969,10 @@
                     },
                     "type": "array"
                 },
+                "biosafety_mat_cat": {
+                    "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
+                    "description": "Select the biosafety material category for your JGI samples."
+                },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
                     "description": "Tube or plate (96-well)"
@@ -7043,6 +7056,7 @@
                 "container_name",
                 "dnase",
                 "dna_isolate_meth",
+                "biosafety_mat_cat",
                 "jgi_samp_id",
                 "jgi_sample_format",
                 "jgi_sample_name",
@@ -7111,6 +7125,10 @@
                         "$ref": "#/$defs/AnalysisTypeEnum"
                     },
                     "type": "array"
+                },
+                "biosafety_mat_cat": {
+                    "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
+                    "description": "Select the biosafety material category for your JGI samples."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7190,6 +7208,7 @@
                 "cont_type",
                 "container_name",
                 "dnase",
+                "biosafety_mat_cat",
                 "dna_isolate_meth",
                 "jgi_samp_id",
                 "jgi_sample_format",
@@ -7259,6 +7278,10 @@
                         "$ref": "#/$defs/AnalysisTypeEnum"
                     },
                     "type": "array"
+                },
+                "biosafety_mat_cat": {
+                    "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
+                    "description": "Select the biosafety material category for your JGI samples."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7342,6 +7365,7 @@
                 "cont_type",
                 "container_name",
                 "dnase",
+                "biosafety_mat_cat",
                 "rna_isolate_meth",
                 "jgi_samp_id",
                 "jgi_sample_format",

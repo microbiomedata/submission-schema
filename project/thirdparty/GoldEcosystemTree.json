@@ -6422,7 +6422,7 @@
     },
     {
       "name": "Environmental",
-      "count": 114942,
+      "count": 115031,
       "url": "search?Biosample.Ecosystem=Environmental",
       "children": [
         {
@@ -6582,7 +6582,7 @@
         },
         {
           "name": "Aquatic",
-          "count": 61535,
+          "count": 61623,
           "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic",
           "children": [
             {
@@ -6637,7 +6637,7 @@
             },
             {
               "name": "Non-marine Saline and Alkaline",
-              "count": 1733,
+              "count": 1734,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline",
               "children": [
                 {
@@ -6833,7 +6833,7 @@
                 },
                 {
                   "name": "Saline lake",
-                  "count": 34,
+                  "count": 35,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Saline lake",
                   "children": [
                     {
@@ -6843,7 +6843,7 @@
                     },
                     {
                       "name": "Sediment",
-                      "count": 9,
+                      "count": 10,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Non-marine Saline and Alkaline&Biosample.Ecosystem+Subtype=Saline lake&Biosample.Specific+Ecosystem=Sediment"
                     },
                     {
@@ -7071,7 +7071,7 @@
             },
             {
               "name": "Thermal springs",
-              "count": 4185,
+              "count": 4250,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs",
               "children": [
                 {
@@ -7149,12 +7149,17 @@
                       "name": "Sediment",
                       "count": 6,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Near-boiling (>90C)&Biosample.Specific+Ecosystem=Sediment"
+                    },
+                    {
+                      "name": "Microbial mats",
+                      "count": 0,
+                      "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Near-boiling (>90C)&Biosample.Specific+Ecosystem=Microbial mats"
                     }
                   ]
                 },
                 {
                   "name": "Hot (42-90C)",
-                  "count": 3428,
+                  "count": 3493,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Hot (42-90C)",
                   "children": [
                     {
@@ -7174,7 +7179,7 @@
                     },
                     {
                       "name": "Sediment",
-                      "count": 1556,
+                      "count": 1621,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Thermal springs&Biosample.Ecosystem+Subtype=Hot (42-90C)&Biosample.Specific+Ecosystem=Sediment"
                     },
                     {
@@ -7278,7 +7283,7 @@
             },
             {
               "name": "Marine",
-              "count": 29759,
+              "count": 29781,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine",
               "children": [
                 {
@@ -7756,7 +7761,7 @@
                 },
                 {
                   "name": "Intertidal zone",
-                  "count": 4601,
+                  "count": 4623,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone",
                   "children": [
                     {
@@ -7821,7 +7826,7 @@
                     },
                     {
                       "name": "Tidal flats",
-                      "count": 618,
+                      "count": 640,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Aquatic&Biosample.Ecosystem+Type=Marine&Biosample.Ecosystem+Subtype=Intertidal zone&Biosample.Specific+Ecosystem=Tidal flats"
                     },
                     {
@@ -9571,7 +9576,7 @@
         },
         {
           "name": "Terrestrial",
-          "count": 51769,
+          "count": 51770,
           "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial",
           "children": [
             {
@@ -10166,7 +10171,7 @@
             },
             {
               "name": "Soil",
-              "count": 48771,
+              "count": 48772,
               "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil",
               "children": [
                 {
@@ -11448,7 +11453,7 @@
                 },
                 {
                   "name": "Shrubland",
-                  "count": 208,
+                  "count": 209,
                   "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Shrubland",
                   "children": [
                     {
@@ -11458,7 +11463,7 @@
                     },
                     {
                       "name": "Unclassified",
-                      "count": 192,
+                      "count": 193,
                       "url": "search?Biosample.Ecosystem=Environmental&Biosample.Ecosystem+Category=Terrestrial&Biosample.Ecosystem+Type=Soil&Biosample.Ecosystem+Subtype=Shrubland&Biosample.Specific+Ecosystem=Unclassified"
                     }
                   ]
