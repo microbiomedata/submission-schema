@@ -269,8 +269,8 @@
 
 
 
-    JgiMtInterface --&gt; "1" JGIMatCatEnum : biosafety_mat_cat
-    click JGIMatCatEnum href "../JGIMatCatEnum"
+    JgiMtInterface --&gt; "1" JGIBiosafetyMaterialCategoryEnum : biosafety_mat_cat
+    click JGIBiosafetyMaterialCategoryEnum href "../JGIBiosafetyMaterialCategoryEnum"
 
 
       JgiMtInterface : cont_type
@@ -390,8 +390,8 @@
 </tr>
 <tr>
 <td><a href="../biosafety_mat_cat/">biosafety_mat_cat</a></td>
-<td>1 <br/> <a href="../JGIMatCatEnum/">JGIMatCatEnum</a></td>
-<td>Select the material catagory for your JGI samples</td>
+<td>1 <br/> <a href="../JGIBiosafetyMaterialCategoryEnum/">JGIBiosafetyMaterialCategoryEnum</a></td>
+<td>Select the biosafety material category for your JGI samples</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -889,7 +889,7 @@ attributes:
     required: true
   biosafety_mat_cat:
     name: biosafety_mat_cat
-    description: Select the material catagory for your JGI samples.
+    description: Select the biosafety material category for your JGI samples.
     title: JGI Biosafety Material Category
     from_schema: https://example.com/nmdc_submission_schema
     rank: 15
@@ -900,7 +900,7 @@ attributes:
     - JgiMgLrInterface
     - JgiMtInterface
     slot_group: jgi_metatranscriptomics_section
-    range: JGIMatCatEnum
+    range: JGIBiosafetyMaterialCategoryEnum
     required: true
   rna_isolate_meth:
     name: rna_isolate_meth

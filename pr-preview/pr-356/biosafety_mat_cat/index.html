@@ -391,7 +391,7 @@
 
 
 <h1 id="slot-jgi-biosafety-material-category-biosafety_mat_cat">Slot: JGI Biosafety Material Category (biosafety_mat_cat)</h1>
-<p><em>Select the material catagory for your JGI samples.</em></p>
+<p><em>Select the biosafety material category for your JGI samples.</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/biosafety_mat_cat">nmdc_sub_schema:biosafety_mat_cat</a>
 Alias: biosafety_mat_cat</p>
 <!-- no inheritance hierarchy -->
@@ -407,8 +407,8 @@ Alias: biosafety_mat_cat</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
-<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -417,8 +417,8 @@ Alias: biosafety_mat_cat</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
-<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
+<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
+<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -426,7 +426,7 @@ Alias: biosafety_mat_cat</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../JGIMatCatEnum/">JGIMatCatEnum</a></p>
+<p>Range: <a href="../JGIBiosafetyMaterialCategoryEnum/">JGIBiosafetyMaterialCategoryEnum</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -460,7 +460,7 @@ Alias: biosafety_mat_cat</p>
 <details>
 
 <pre><code class="language-yaml">name: biosafety_mat_cat
-description: Select the material catagory for your JGI samples.
+description: Select the biosafety material category for your JGI samples.
 title: JGI Biosafety Material Category
 from_schema: https://example.com/nmdc_submission_schema
 rank: 15
@@ -469,7 +469,7 @@ domain_of:
 - JgiMgInterface
 - JgiMgLrInterface
 - JgiMtInterface
-range: JGIMatCatEnum
+range: JGIBiosafetyMaterialCategoryEnum
 required: true
 
 </code></pre>

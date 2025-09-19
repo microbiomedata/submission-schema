@@ -228,6 +228,8 @@
 <div class="mermaid"> classDiagram
     class Protocol
     click Protocol href "../Protocol"
+      Protocol : description
+
       Protocol : name
 
       Protocol : type
@@ -266,6 +268,12 @@
 <td>the class_uri of the class that has been instantiated</td>
 <td>direct</td>
 </tr>
+<tr>
+<td><a href="../description/">description</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>a human-readable description of a thing</td>
+<td>direct</td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -302,6 +310,7 @@ slots:
 - url
 - name
 - type
+- description
 class_uri: nmdc:Protocol
 
 </code></pre>
@@ -381,6 +390,20 @@ attributes:
     - Doi
     range: uriorcurie
     required: true
+  description:
+    name: description
+    description: a human-readable description of a thing
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1000
+    slot_uri: dcterms:description
+    alias: description
+    owner: Protocol
+    domain_of:
+    - ImageValue
+    - NamedThing
+    - Protocol
+    range: string
+    multivalued: false
 class_uri: nmdc:Protocol
 
 </code></pre>
