@@ -267,8 +267,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -904,8 +904,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -1924,8 +1924,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -2663,6 +2663,7 @@
                 "Claws",
                 "Claws/Talon",
                 "Clay",
+                "Coal mine",
                 "Coalbed methane well",
                 "Coastal",
                 "Coastal area",
@@ -3109,6 +3110,7 @@
                 "Soil crust",
                 "Solar salt",
                 "Solar solterns",
+                "Solonetz",
                 "Soy sauce",
                 "Soybean paste",
                 "Spacecraft",
@@ -3160,6 +3162,7 @@
                 "Tissue",
                 "Tobacco product",
                 "Tonsils",
+                "Town canal",
                 "Trachea",
                 "Transient pool",
                 "Tree plantation",
@@ -3262,6 +3265,7 @@
                 "Shrubland",
                 "Silt",
                 "Soil crust",
+                "Solonetz",
                 "Sub-biocrust",
                 "Surface mine",
                 "Tailings",
@@ -3631,8 +3635,8 @@
                     "description": "Type of sample being submitted"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -5257,8 +5261,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -6047,8 +6051,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -6712,8 +6716,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7025,8 +7029,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7171,8 +7175,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7325,8 +7329,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7459,8 +7463,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7549,8 +7553,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7627,8 +7631,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -7717,8 +7721,8 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -8154,8 +8158,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -8869,8 +8873,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -9008,6 +9012,13 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "description": {
+                    "description": "a human-readable description of a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human readable label for an entity",
                     "type": [
@@ -10192,8 +10203,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -11108,8 +11119,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -11900,6 +11911,7 @@
                 "Stomach: Fundic",
                 "Stomach: Pyloric",
                 "Stone surface",
+                "Storm water pond",
                 "Stromatolites",
                 "Stye",
                 "Subcutaneous fat",
@@ -12831,8 +12843,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"
@@ -13692,8 +13704,8 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the biological sample.",
-                    "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "pattern": "^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$",
                     "type": [
                         "string",
                         "null"

@@ -334,14 +334,16 @@ types:
     from_schema: https://example.com/nmdc_submission_schema
     base: str
     uri: xsd:language
-  language_code:
-    name: language_code
-    description: A language code conforming to ISO_639-1
+  uriorcurie:
+    name: uriorcurie
+    description: a URI or a CURIE
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "uriorcurie".
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/ISO_639-1
-    base: str
-    uri: xsd:language
+    base: URIorCURIE
+    uri: xsd:anyURI
+    repr: str
   float:
     name: float
     description: A real number that conforms to the xsd:float specification
@@ -353,17 +355,6 @@ types:
     - schema:Float
     base: float
     uri: xsd:float
-  double:
-    name: double
-    description: A real number that conforms to the xsd:double specification
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "double".
-    from_schema: https://example.com/nmdc_submission_schema
-    close_mappings:
-    - schema:Float
-    base: float
-    uri: xsd:double
   string:
     name: string
     description: A character string
@@ -376,14 +367,28 @@ types:
     - schema:Text
     base: str
     uri: xsd:string
-  decimal_degree:
-    name: decimal_degree
-    description: A decimal degree expresses latitude or longitude as decimal fractions.
+  double:
+    name: double
+    description: A real number that conforms to the xsd:double specification
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "double".
     from_schema: https://example.com/nmdc_submission_schema
-    see_also:
-    - https://en.wikipedia.org/wiki/Decimal_degrees
+    close_mappings:
+    - schema:Float
     base: float
-    uri: xsd:decimal
+    uri: xsd:double
+  integer:
+    name: integer
+    description: An integer
+    notes:
+    - If you are authoring schemas in LinkML YAML, the type is referenced with the
+      lower case "integer".
+    from_schema: https://example.com/nmdc_submission_schema
+    exact_mappings:
+    - schema:Integer
+    base: int
+    uri: xsd:integer
   decimal:
     name: decimal
     description: A real number with arbitrary precision that conforms to the xsd:decimal
@@ -395,6 +400,14 @@ types:
     broad_mappings:
     - schema:Number
     base: Decimal
+    uri: xsd:decimal
+  decimal_degree:
+    name: decimal_degree
+    description: A decimal degree expresses latitude or longitude as decimal fractions.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://en.wikipedia.org/wiki/Decimal_degrees
+    base: float
     uri: xsd:decimal
   boolean:
     name: boolean
@@ -408,27 +421,14 @@ types:
     base: Bool
     uri: xsd:boolean
     repr: bool
-  uriorcurie:
-    name: uriorcurie
-    description: a URI or a CURIE
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "uriorcurie".
+  language_code:
+    name: language_code
+    description: A language code conforming to ISO_639-1
     from_schema: https://example.com/nmdc_submission_schema
-    base: URIorCURIE
-    uri: xsd:anyURI
-    repr: str
-  integer:
-    name: integer
-    description: An integer
-    notes:
-    - If you are authoring schemas in LinkML YAML, the type is referenced with the
-      lower case "integer".
-    from_schema: https://example.com/nmdc_submission_schema
-    exact_mappings:
-    - schema:Integer
-    base: int
-    uri: xsd:integer
+    see_also:
+    - https://en.wikipedia.org/wiki/ISO_639-1
+    base: str
+    uri: xsd:language
   external_identifier:
     name: external_identifier
     description: A CURIE representing an external identifier
@@ -3669,6 +3669,12 @@ enums:
         aliases:
         - MiSeq
         - Illumina MiSeq
+        structured_aliases:
+          ILLUMINA_MI_SEQ:
+            literal_form: ILLUMINA_MI_SEQ
+            predicate: EXACT_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
       nextseq_1000:
         text: nextseq_1000
         meaning: OBI:0003606
@@ -4708,6 +4714,8 @@ enums:
         text: Claws/Talon
       Clay:
         text: Clay
+      Coal mine:
+        text: Coal mine
       Coalbed methane well:
         text: Coalbed methane well
       Coastal:
@@ -5600,6 +5608,8 @@ enums:
         text: Solar salt
       Solar solterns:
         text: Solar solterns
+      Solonetz:
+        text: Solonetz
       Soy sauce:
         text: Soy sauce
       Soybean paste:
@@ -5702,6 +5712,8 @@ enums:
         text: Tobacco product
       Tonsils:
         text: Tonsils
+      Town canal:
+        text: Town canal
       Trachea:
         text: Trachea
       Transient pool:
@@ -7077,6 +7089,8 @@ enums:
         text: 'Stomach: Pyloric'
       Stone surface:
         text: Stone surface
+      Storm water pond:
+        text: Storm water pond
       Stromatolites:
         text: Stromatolites
       Stye:
@@ -7391,6 +7405,8 @@ enums:
         text: Silt
       Soil crust:
         text: Soil crust
+      Solonetz:
+        text: Solonetz
       Sub-biocrust:
         text: Sub-biocrust
       Surface mine:
@@ -7668,6 +7684,12 @@ enums:
         aliases:
         - MiSeq
         - Illumina MiSeq
+        structured_aliases:
+          ILLUMINA_MI_SEQ:
+            literal_form: ILLUMINA_MI_SEQ
+            predicate: EXACT_SYNONYM
+            contexts:
+            - https://gold.jgi.doe.gov/
       nextseq_1000:
         text: nextseq_1000
         meaning: OBI:0003606
@@ -22282,6 +22304,7 @@ slots:
     domain_of:
     - ImageValue
     - NamedThing
+    - Protocol
     range: string
     multivalued: false
   environment field:
@@ -57748,37 +57771,30 @@ classes:
             tag: expected_value
             value: 'for cultures of microorganisms: identifiers for two culture collections;
               for other material a unique arbitrary identifer'
-        description: A globally unique identifier assigned to the biological sample.
+        description: A globally unique identifier assigned to the parent sample or
+          sample that is the source of this sample.
         title: source material identifier
         todos:
         - Currently, the comments say to use UUIDs. However, if we implement assigning
           NMDC identifiers with the minter we dont need to require a GUID. It can
           be an optional field to fill out only if they already have a resolvable
           ID.
-        - Currently, the comments say to use UUIDs. However, if we implement assigning
-          NMDC identifiers with the minter we dont need to require a GUID. It can
-          be an optional field to fill out only if they already have a resolvable
-          ID.
-        notes:
-        - The source material IS the Globally Unique ID
         comments:
         - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
           NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
           IDs enable linking to derived analytes and subsamples. If you have not assigned
           FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
-        - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
-          NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
-          IDs enable linking to derived analytes and subsamples. If you have not assigned
-          FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+        - 'Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International
+          Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample`
+          for NCBI biosample accession IDs, `gold` for GOLD identifiers.'
         examples:
-        - value: IGSN:AU1243
-        - value: UUID:24f1467a-40f4-11ed-b878-0242ac120002
+        - value: igsn:AU1243
+        - value: biosample:SAMEA2397676
         from_schema: https://w3id.org/nmdc/nmdc
         aliases:
         - source material identifiers
         rank: 2
         is_a: nucleic acid sequence source field
-        string_serialization: '{text}:{text}'
         slot_uri: MIXS:0000026
         owner: Biosample
         domain_of:
@@ -57786,7 +57802,7 @@ classes:
         slot_group: sample_id_section
         range: string
         multivalued: false
-        pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+        pattern: ^(igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+)*$
       oxy_stat_samp:
         name: oxy_stat_samp
         range: OxyStatSampEnum
@@ -58280,5 +58296,6 @@ classes:
     - url
     - name
     - type
+    - description
     class_uri: nmdc:Protocol
 source_file: src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
