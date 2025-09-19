@@ -16,4 +16,5 @@ jgi_mg_data:
     jgi_sample_volume: 111
     samp_name: xxx
     source_mat_id: igsn:000
+    biosafety_mat_cat: Metagenome (Environmental)
 

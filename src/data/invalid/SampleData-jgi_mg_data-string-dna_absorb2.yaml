@@ -16,3 +16,4 @@ jgi_mg_data:
     jgi_sample_volume: 0
     samp_name: xxx
     nuc_acid_absorb2: four
+    biosafety_mat_cat: Metagenome (Environmental)

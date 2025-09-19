@@ -69,6 +69,11 @@ enums:
       Pellet:
       TE:
       Water:
+  JGIBiosafetyMaterialCategoryEnum:
+    description: Biosafety material category for samples sent to JGI
+    permissible_values:
+      Metagenome (Environmental):
+      Metagenome (Host-associated):
   EnvPackageEnum:
     permissible_values:
       soil:
@@ -612,6 +617,13 @@ slots:
     required: true
     minimum_value: 0
     maximum_value: 2000
+  biosafety_mat_cat:
+    description: Select the biosafety material category for your JGI samples.
+    title: JGI Biosafety Material Category
+    rank: 15
+    range: JGIBiosafetyMaterialCategoryEnum
+    required: true
+
 classes:
   AirInterface:
     annotations:
@@ -697,6 +709,7 @@ classes:
       - container_name
       - dnase
       - dna_isolate_meth
+      - biosafety_mat_cat
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -711,6 +724,8 @@ classes:
       container_name:
         slot_group: jgi_metagenomics_section
       dnase:
+        slot_group: jgi_metagenomics_section
+      biosafety_mat_cat:
         slot_group: jgi_metagenomics_section
       jgi_samp_id:
         slot_group: jgi_metagenomics_section
@@ -769,6 +784,7 @@ classes:
       - cont_well
       - container_name
       - dnase
+      - biosafety_mat_cat
       - dna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
@@ -784,6 +800,8 @@ classes:
       container_name:
         slot_group: jgi_metagenomics_section
       dnase:
+        slot_group: jgi_metagenomics_section
+      biosafety_mat_cat:
         slot_group: jgi_metagenomics_section
       jgi_samp_id:
         slot_group: jgi_metagenomics_section
@@ -844,6 +862,7 @@ classes:
       - cont_well
       - container_name
       - dnase
+      - biosafety_mat_cat
       - rna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
@@ -859,6 +878,8 @@ classes:
       container_name:
         slot_group: jgi_metatranscriptomics_section
       dnase:
+        slot_group: jgi_metatranscriptomics_section
+      biosafety_mat_cat:
         slot_group: jgi_metatranscriptomics_section
       jgi_samp_id:
         slot_group: jgi_metatranscriptomics_section

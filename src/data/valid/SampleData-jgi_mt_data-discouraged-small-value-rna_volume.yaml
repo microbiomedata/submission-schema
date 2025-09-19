@@ -15,3 +15,4 @@ jgi_mt_data:
     jgi_sample_volume: 5.1 # comments say "This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager" but minimum_value says 0
     analysis_type:
       - metatranscriptomics
+    biosafety_mat_cat: Metagenome (Environmental)
