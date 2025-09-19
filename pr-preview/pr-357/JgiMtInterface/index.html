@@ -291,6 +291,17 @@
 
 
 
+      JgiMtInterface : biosafety_mat_cat
+
+
+
+
+
+        JgiMtInterface --&gt; "1" JGIBiosafetyMaterialCategoryEnum : biosafety_mat_cat
+        click JGIBiosafetyMaterialCategoryEnum href "../JGIBiosafetyMaterialCategoryEnum/"
+
+
+
       JgiMtInterface : cont_type
 
 
@@ -410,6 +421,12 @@
 <td><a href="../dnase/">dnase</a></td>
 <td>1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biosafety_mat_cat/">biosafety_mat_cat</a></td>
+<td>1 <br/> <a href="../JGIBiosafetyMaterialCategoryEnum/">JGIBiosafetyMaterialCategoryEnum</a></td>
+<td>Select the biosafety material category for your JGI samples</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -600,6 +617,7 @@ slots:
 - cont_well
 - container_name
 - dnase
+- biosafety_mat_cat
 - rna_isolate_meth
 - jgi_samp_id
 - jgi_sample_format
@@ -620,6 +638,9 @@ slot_usage:
     slot_group: jgi_metatranscriptomics_section
   dnase:
     name: dnase
+    slot_group: jgi_metatranscriptomics_section
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
     slot_group: jgi_metatranscriptomics_section
   jgi_samp_id:
     name: jgi_samp_id
@@ -705,6 +726,9 @@ slot_usage:
     slot_group: jgi_metatranscriptomics_section
   dnase:
     name: dnase
+    slot_group: jgi_metatranscriptomics_section
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
     slot_group: jgi_metatranscriptomics_section
   jgi_samp_id:
     name: jgi_samp_id
@@ -894,6 +918,21 @@ attributes:
     - JgiMtInterface
     slot_group: jgi_metatranscriptomics_section
     range: YesNoEnum
+    required: true
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
+    description: Select the biosafety material category for your JGI samples.
+    title: JGI Biosafety Material Category
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 15
+    alias: biosafety_mat_cat
+    owner: JgiMtInterface
+    domain_of:
+    - JgiMgInterface
+    - JgiMgLrInterface
+    - JgiMtInterface
+    slot_group: jgi_metatranscriptomics_section
+    range: JGIBiosafetyMaterialCategoryEnum
     required: true
   rna_isolate_meth:
     name: rna_isolate_meth

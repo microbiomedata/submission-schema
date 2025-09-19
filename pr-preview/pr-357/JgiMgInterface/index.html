@@ -291,6 +291,17 @@
 
 
 
+      JgiMgInterface : biosafety_mat_cat
+
+
+
+
+
+        JgiMgInterface --&gt; "1" JGIBiosafetyMaterialCategoryEnum : biosafety_mat_cat
+        click JGIBiosafetyMaterialCategoryEnum href "../JGIBiosafetyMaterialCategoryEnum/"
+
+
+
       JgiMgInterface : cont_type
 
 
@@ -416,6 +427,12 @@
 <td><a href="../dna_isolate_meth/">dna_isolate_meth</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Describe the method/protocol/kit used to extract DNA/RNA</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biosafety_mat_cat/">biosafety_mat_cat</a></td>
+<td>1 <br/> <a href="../JGIBiosafetyMaterialCategoryEnum/">JGIBiosafetyMaterialCategoryEnum</a></td>
+<td>Select the biosafety material category for your JGI samples</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -601,6 +618,7 @@ slots:
 - container_name
 - dnase
 - dna_isolate_meth
+- biosafety_mat_cat
 - jgi_samp_id
 - jgi_sample_format
 - jgi_sample_name
@@ -620,6 +638,9 @@ slot_usage:
     slot_group: jgi_metagenomics_section
   dnase:
     name: dnase
+    slot_group: jgi_metagenomics_section
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
     slot_group: jgi_metagenomics_section
   jgi_samp_id:
     name: jgi_samp_id
@@ -705,6 +726,9 @@ slot_usage:
     slot_group: jgi_metagenomics_section
   dnase:
     name: dnase
+    slot_group: jgi_metagenomics_section
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
     slot_group: jgi_metagenomics_section
   jgi_samp_id:
     name: jgi_samp_id
@@ -915,6 +939,21 @@ attributes:
     range: string
     required: true
     recommended: false
+  biosafety_mat_cat:
+    name: biosafety_mat_cat
+    description: Select the biosafety material category for your JGI samples.
+    title: JGI Biosafety Material Category
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 15
+    alias: biosafety_mat_cat
+    owner: JgiMgInterface
+    domain_of:
+    - JgiMgInterface
+    - JgiMgLrInterface
+    - JgiMtInterface
+    slot_group: jgi_metagenomics_section
+    range: JGIBiosafetyMaterialCategoryEnum
+    required: true
   jgi_samp_id:
     name: jgi_samp_id
     title: JGI sample ID
