@@ -40,7 +40,9 @@ def remove_class(
 
         # Find the class's direct slots that can be removed because they aren't used elsewhere
         slots_to_remove = set()
-        for slot_name in class_def.slots:
+        slots_to_check = set(class_def.slots or [])
+        while slots_to_check:
+            slot_name = slots_to_check.pop()
             slot = schema_view.get_slot(slot_name, strict=False)
             if not slot:
                 continue
@@ -50,11 +52,17 @@ def remove_class(
                     slot_is_used_elsewhere = True
                     break
             for other_slot in schema_view.all_slots().values():
-                if other_slot.name != slot_name and other_slot.is_a == slot_name:
+                if (
+                    other_slot.name != slot_name
+                    and other_slot.name not in slots_to_remove
+                    and other_slot.is_a == slot_name
+                ):
                     slot_is_used_elsewhere = True
                     break
             if not slot_is_used_elsewhere:
                 slots_to_remove.add(slot_name)
+                if slot.is_a:
+                    slots_to_check.add(slot.is_a)
 
         # Get a list of additional classes to check for dangling references
         additional_classes_to_check = set()
