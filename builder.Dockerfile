@@ -6,13 +6,12 @@ FROM python:3.9
 
 WORKDIR /submission-schema
 
-# Download and install yq.
-# Reference: https://github.com/mikefarah/yq#install
-RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && \
-    chmod +x /usr/bin/yq
-
 # Install Poetry, a package manager for Python (an alternative to pip).
 RUN pip install poetry
+
+# Set this configuration option so that when Poetry creates a virtual environment, it doesn't
+# interfere with a `.venv` folder in a mounted volume.
+RUN poetry config virtualenvs.in-project false
 
 # Copy the entire repository into the container image.
 #
@@ -28,4 +27,4 @@ ADD . /submission-schema
 RUN poetry install --no-interaction
 
 # Run the command that builds the submission schema release artifacts.
-CMD ["make", "all"]
+CMD ["make", "clean", "all"]

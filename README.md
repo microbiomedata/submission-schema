@@ -1,6 +1,6 @@
 # submission-schema
 
-The home of the NMDC submission schema. *Not* the home of sheets_and_friends. In development: GH pages hosted NMDC DataHarmonizer interface.
+The NMDC submission schema.
 
 Note that the while this repo is named `submission-schema`, the generated artifacts are named `nmdc_submission_schema` for disambiguation purposes when publishing to PyPI.
 
@@ -64,35 +64,15 @@ Here's how you can generate the submission schema release artifacts:
 
 #### Direct process
 
-##### Prerequisites
-
-- `yq` is installed on your computer, such that the following command shows a version number instead of an error message.
-  ```shell
-  bash -c 'yq --version'
-  ```
-  If `yq` is not installed, you can install it by running this, assuming you're using macOS:
-  ```shell
-  brew install yq
-  ```
-- `wget` is installed on your computer, such that the following command shows a version number instead of an error message.
-  ```shell
-  bash -c 'wget --version'
-  ```
-  If `wget` is not installed, you can install it by running this, assuming you're using macOS:
-  ```shell
-  brew install wget
-  ```
-
 ##### Procedure
 
 1. Install Python dependencies:
    ```shell
-   poetry shell
    poetry install
    ```
 2. Generate the release artefacts:
    ```shell
-   make all
+   make clean all
    ```
 3. Commit the changes, using the new `nmdc-schema` version number as the commit message; like this:
    ```shell
