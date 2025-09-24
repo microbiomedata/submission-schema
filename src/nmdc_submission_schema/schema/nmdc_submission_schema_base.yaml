@@ -448,7 +448,7 @@ slots:
     examples:
       - value: '187654'
     rank: 3
-    slot_group: JGI-Metagenomics
+    slot_group: jgi_metagenomics_section
     range: string
     required: true
     aliases:
