@@ -175,6 +175,31 @@ classes:
     assert "e" in schema.all_slots()
 
 
+def test_remove_class_removes_slots_via_slot_inheritance():
+    """Test that remove_class with remove_dangling_classes=True removes slots that become dangling
+    due to slot inheritance."""
+    schema = SchemaView("""
+id: http://example.org/test
+name: TestSchema
+slots:
+  a:
+  b:
+  c:
+    is_a: a
+classes:
+  TestClass:
+    slots:
+      - a
+      - b
+      - c
+""")
+    remove_class(schema, "TestClass", remove_dangling_classes=True)
+    assert "TestClass" not in schema.all_classes()
+    assert "a" not in schema.all_slots()
+    assert "b" not in schema.all_slots()
+    assert "c" not in schema.all_slots()
+
+
 def test_merge_prefixes():
     """Test that merge_prefixes correctly merges prefixes from source to target schema."""
     source_schema = SchemaView("""
