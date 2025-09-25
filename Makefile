@@ -85,12 +85,9 @@ serve:
 
 .PHONY: gendoc
 gendoc:
-	rm -rf p $(DOCDIR)
-	mkdir -p $(DOCDIR)
-	cp $(SRC)/docs/*md $(DOCDIR) ; \
+	rm -rf $(DOCDIR)
+	cp -r $(SRC)/docs/ $(DOCDIR)
 	$(RUN) gen-doc -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
-	mkdir -p $(DOCDIR)/javascripts
-	cp $(SRC)/scripts/*.js $(DOCDIR)/javascripts/
 
 .PHONY: testdoc
 testdoc: gendoc serve
