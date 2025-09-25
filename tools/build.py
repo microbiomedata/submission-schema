@@ -5,7 +5,7 @@ import time
 from collections.abc import Callable, Iterable
 from contextlib import contextmanager
 from datetime import datetime
-from importlib import metadata
+from importlib import metadata, resources
 from pathlib import Path
 from typing import Union
 
@@ -17,7 +17,6 @@ from linkml_runtime.dumpers import yaml_dumper
 from linkml_runtime.linkml_model import SlotDefinition
 from rich.console import Console
 
-from nmdc_submission_schema.scripts import nmdc_schema_yaml_path
 from tools.enums import inject_env_triad_enum, inject_illumina_instrument_model_enum
 from tools.gold import inject_gold_pathway_terms
 from tools.mixs import translate_string_serializations
@@ -29,6 +28,10 @@ from tools.schematools import (
 from tools.schematools.importer import ImporterConfig
 
 ROOT = Path(__file__).parent.parent
+
+NMDC_SCHEMA_YAML_PATH = (
+    resources.files("nmdc_schema") / "nmdc_materialized_patterns.yaml"
+)
 
 SCHEMA_DIRECTORY = ROOT / "src/nmdc_submission_schema/schema"
 SUBMISSION_SCHEMA_BASE = SCHEMA_DIRECTORY / "nmdc_submission_schema_base.yaml"
@@ -167,7 +170,7 @@ def main(download_gold_ecosystem_terms: bool) -> None:
         submission_schema = SchemaView(SUBMISSION_SCHEMA_BASE)
 
     with log(f"Loading nmdc-schema version [bold]{metadata.version('nmdc_schema')}"):
-        nmdc_schema = SchemaView(nmdc_schema_yaml_path)
+        nmdc_schema = SchemaView(NMDC_SCHEMA_YAML_PATH)
 
     with log(
         f"Loading nmdc-schema import config from [bold]{rel(NMDC_SCHEMA_IMPORT_CONFIG)}"
