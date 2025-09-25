@@ -6,6 +6,7 @@ theme:
 #    primary: cyan
   features:
     - content.tabs.link
+    - navigation.sections
 plugins:
   - search
   - mermaid2:
@@ -21,8 +22,10 @@ nav:
 #  - Home: home.md
   - Index: index.md
   - About: about.md
-  - 'Submission Schema DH Playground': https://microbiomedata.github.io/submission-schema/_playground/
-  - 'Direct submission of soil samples': https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/SoilInterface
+  - 'DataHarmonizer Playground':
+    # Add additional template shortcuts here if desired
+    - 'SoilInterface': https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/SoilInterface
+    - 'WaterInterface': https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/WaterInterface
 site_url: https://microbiomedata.github.io/submission-schema
 repo_url: https://github.com/microbiomedata/submission-schema
 
