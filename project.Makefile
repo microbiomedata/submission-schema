@@ -34,7 +34,7 @@ env-triad-robot-clean:
 	rm -rf notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.tsv
 
 notebooks/environmental_context_value_sets/nmdc_env_context_subset_membership.tsv: $(SOURCE_SCHEMA_PATH)
-	$(RUN) python src/nmdc_submission_schema/scripts/create_env_context_robot_template.py \
+	$(RUN) python notebooks/environmental_context_value_sets/create_env_context_robot_template.py \
 		--envo-owl-path notebooks/environmental_context_value_sets/envo.owl \
 		--schema-path $< \
 		--output-file $@

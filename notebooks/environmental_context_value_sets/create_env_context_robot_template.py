@@ -152,12 +152,12 @@ def create_see_also_dict(graph: Graph, properties: Set[URIRef]) -> Dict[str, Lis
 
 
 @click.command()
-@click.option('--envo-owl-path', type=click.Path(exists=True), default='../../../envo.owl',
+@click.option('--envo-owl-path', type=click.Path(exists=True), default='envo.owl',
               help='Path to the ENVO OWL file.')
 @click.option('--schema-path', type=click.Path(exists=True),
-              default='../../../src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml',
+              default='../../src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml',
               help='Path to the NMDC submission schema YAML file.')
-@click.option('--output-file', type=click.Path(), default='../nmdc_env_context_subset_membership.tsv',
+@click.option('--output-file', type=click.Path(), default='nmdc_env_context_subset_membership.tsv',
               help='Path to save the output TSV file.')
 def main(envo_owl_path: str, schema_path: str, output_file: str):
     """
