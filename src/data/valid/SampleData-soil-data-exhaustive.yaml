@@ -7,8 +7,8 @@ soil_data:
       - metatranscriptomics
     air_temp_regm: xxx
     al_sat_meth: xxx
-    annual_precpt: 111 units
-    annual_temp: 111 units
+    annual_precpt: 111
+    annual_temp: 111
     biotic_regm: xxx
     biotic_relationship: free living
     carb_nitro_ratio: 0.5
@@ -60,34 +60,34 @@ soil_data:
     microbial_biomass_n: 111 units
     non_microb_biomass: xxx;123.45 units
     non_microb_biomass_method: xxx
-    org_matter: 111 units
-    org_nitro: 111 units
+    org_matter: 111
+    org_nitro: 111
     org_nitro_method: xxx
     other_treatment: xxx
     oxy_stat_samp: anaerobic
     ph: 9
     ph_meth: xxx
-    phosphate: 111 units
+    phosphate: 111
     prev_land_use_meth: xxx
     previous_land_use: circus tent;+0530
     profile_position: summit
 #    rel_to_oxygen: anaerobic
-    salinity: 111 units
+    salinity: 111 mg/L
     salinity_meth: xxx
     samp_collec_device: xxx
     samp_collec_method: xxx
     samp_mat_process: text [ONTO:000000000]
     samp_name: a
-    samp_size: 111 units
-    samp_store_temp: "-80 Celsius"
+    samp_size: 111 mL
+    samp_store_temp: -80
     sample_link: z:99
-    season_precpt: 111 units
-    season_temp: 111 units
+    season_precpt: 111
+    season_temp: 111
     sieving: xxx
-    size_frac_low: 99 units
-    size_frac_up: 111 units
-    slope_aspect: 100 units
-    slope_gradient: 5.5%
+    size_frac_low: 99
+    size_frac_up: 111
+    slope_aspect: 100
+    slope_gradient: 5.5
     soil_horizon: O horizon
     soil_text_measure: 111 units
     soil_texture_meth: xxx
@@ -98,13 +98,13 @@ soil_data:
     start_date_inc: '2022-02-15'
     start_time_inc: '13:33:55'
     store_cond: frozen
-    temp: 111 units
-    tot_carb: 111 units
+    temp: 111
+    tot_carb: 111 ug/L
     tot_nitro_cont_meth: xxx
-    tot_nitro_content: 111 units
+    tot_nitro_content: 111 ug/L
     tot_org_c_meth: xxx
-    tot_org_carb: 111 units
-    tot_phosp: 111 units
+    tot_org_carb: 111
+    tot_phosp: 111 mg/L
     water_cont_soil_meth: xxx
     water_content: 111 units
     watering_regm: xxx
@@ -118,7 +118,7 @@ soil_data:
     sample_link: z:99
     geo_loc_name: 'USA: Maryland, Bethesda'
     growth_facil: greenhouse
-    slope_aspect: 100 units
+    slope_aspect: 100
     analysis_type:
       - metagenomics
       - metatranscriptomics
@@ -127,7 +127,7 @@ soil_data:
     collection_date: '2022-01-15'
     env_broad_scale: '______urban biome [ENVO:01000249]'
     env_local_scale: '________tunnel [ENVO:00000068]'
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     ecosystem_subtype: Unclassified
     ecosystem_category: Terrestrial
     specific_ecosystem: Unclassified

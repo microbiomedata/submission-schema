@@ -12,7 +12,7 @@ soil_data:
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
     samp_name: a
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:6
     store_cond: frozen
   - elev: 123
@@ -28,7 +28,7 @@ soil_data:
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
     samp_name: b
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:7
     store_cond: frozen
   - elev: 123
@@ -44,7 +44,7 @@ soil_data:
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
     samp_name: c
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:8
     store_cond: frozen
   - elev: 123
@@ -60,6 +60,6 @@ soil_data:
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
     samp_name: d
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:9
     store_cond: frozen

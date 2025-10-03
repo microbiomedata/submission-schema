@@ -3,8 +3,8 @@ water_data:
       - metagenomics
       - metatranscriptomics
     alkalinity:
-      - 50 milligram per liter
-      - 100 spoons per bucket
+      - 50 mg/L
+      - 100 mg/L
     collection_date: '2022-01-15'
     depth: '111'
     ecosystem: Environmental

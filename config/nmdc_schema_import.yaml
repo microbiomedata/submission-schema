@@ -14,7 +14,6 @@ slots:
       - HcrFluidsSwabsInterface
     modifications:
       - replace:
-          range: string
           rank: 289
           slot_group: mixs_core_section
 
@@ -70,7 +69,6 @@ slots:
       - AirInterface
     modifications:
       - replace:
-          range: string
           rank: 48
           slot_group: mixs_core_section
 
@@ -110,10 +108,6 @@ slots:
           slot_group: mixs_section
           examples:
             - value: 27%
-          # TODO: investigate why partial_match: false doesn't work and we need to use ^ and $ in syntax
-          structured_pattern:
-            syntax: '^{percentage}$'
-            interpolated: true
 
   - slot: al_sat_meth
     source: Biosample
@@ -568,8 +562,6 @@ slots:
       - BuiltEnvInterface
     modifications:
       - replace:
-          examples:
-            - value: 15 years
           rank: 76
           slot_group: mixs_core_section
 
@@ -644,11 +636,8 @@ slots:
       - WaterInterface
     modifications:
       - replace:
-          range: float
           rank: 44
           slot_group: mixs_section
-        remove:
-          - pattern
 
   - slot: ceil_area
     source: Biosample
@@ -1008,6 +997,8 @@ slots:
           slot_group: mixs_modified_section
           range: string
           title: depth, meters
+          unit:
+            ucum_code: m
         append:
           comments:
             - All depths must be reported in meters. Provide the numerical portion
@@ -1521,6 +1512,8 @@ slots:
             - value: 225
             - value: 0
             - value: 1250
+          unit:
+            ucum_code: m
       - in_classes:
           - AirInterface
           - BiofilmInterface
@@ -3180,9 +3173,6 @@ slots:
       - replace:
           rank: 143
           slot_group: mixs_core_section
-          range: integer
-        remove:
-          - pattern
 
   - slot: org_carb
     source: Biosample
@@ -3738,9 +3728,6 @@ slots:
       - replace:
           rank: 146
           slot_group: mixs_core_section
-          structured_pattern:
-            syntax: '^{percentage}$'
-            interpolated: true
 
   - slot: rel_humidity_out
     source: Biosample
@@ -4013,11 +4000,8 @@ slots:
       - replace:
           rank: 277
           slot_group: mixs_core_section
-          range: float
           minimum_value: 0
           maximum_value: 14
-        remove:
-          - pattern
 
   - slot: root_med_regl
     source: Biosample
@@ -4265,15 +4249,12 @@ slots:
       - WaterInterface
     modifications:
       - replace:
+          description: The total amount (volume or mass) of sample collected.
           rank: 18
           slot_group: mixs_modified_section
           examples:
-            - value: 5 grams
+            - value: 5 g
             - value: 10 mL
-          range: string
-          structured_pattern:
-            syntax: '^{float} {text}$'
-            interpolated: true
         append:
           comments:
             - This refers to the TOTAL amount of sample collected from the experiment.
@@ -4345,7 +4326,7 @@ slots:
           slot_group: mixs_modified_section
           description: Temperature at which the sample was stored (degrees are assumed)
           examples:
-            - value: -80 Celsius
+            - value: -80 Cel
       - in_classes:
           - AirInterface
           - BiofilmInterface
@@ -4691,8 +4672,6 @@ slots:
             a compass to record the direction you are facing (direction or degrees).
             - This measure provides an indication of sun and wind exposure that will
             influence soil temperature and evapotranspiration.
-          examples:
-            - value: 35 degrees
 
   - slot: slope_gradient
     source: Biosample
@@ -4704,9 +4683,6 @@ slots:
             - value: 10%
           rank: 31
           slot_group: mixs_section
-          structured_pattern:
-            syntax: '^{percentage}$'
-            interpolated: true
 
   - slot: sludge_retent_time
     source: Biosample
@@ -5047,9 +5023,6 @@ slots:
       - replace:
           rank: 184
           slot_group: mixs_core_section
-          structured_pattern:
-            syntax: '^{percentage}$'
-            interpolated: true
 
   - slot: surf_material
     source: Biosample

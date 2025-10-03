@@ -24,7 +24,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "BiofilmInterface": {
         "analysis_type": ["metagenomics"],
@@ -36,7 +36,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "BuiltEnvInterface": {
         "analysis_type": ["metagenomics"],
@@ -67,7 +67,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "HcrFluidsSwabsInterface": {
         "analysis_type": ["metagenomics"],
@@ -79,7 +79,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "HostAssociatedInterface": {
         "analysis_type": ["metagenomics"],
@@ -91,7 +91,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "JgiMgInterface": {
         "analysis_type": ["metagenomics"],
@@ -156,7 +156,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "PlantAssociatedInterface": {
         "analysis_type": ["metagenomics"],
@@ -169,7 +169,7 @@ TEMPLATE_INSTANCES = {
         "growth_facil": "field",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "SedimentInterface": {
         "analysis_type": ["metagenomics"],
@@ -182,7 +182,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "SoilInterface": {
         "analysis_type": ["metagenomics"],
@@ -196,7 +196,7 @@ TEMPLATE_INSTANCES = {
         "growth_facil": "field",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
         "store_cond": "fresh",
     },
     "WastewaterSludgeInterface": {
@@ -209,7 +209,7 @@ TEMPLATE_INSTANCES = {
         "geo_loc_name": "Country: Province, City",
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
-        "samp_store_temp": "0 C",
+        "samp_store_temp": 0,
     },
     "WaterInterface": {
         "analysis_type": ["metagenomics"],
