@@ -1,6 +1,7 @@
 """Main build script for the final submission-schema YAML file."""
 
 import json
+import re
 import time
 from collections.abc import Callable, Iterable
 from contextlib import contextmanager
@@ -14,7 +15,8 @@ import requests
 import yaml
 from linkml_runtime import SchemaView
 from linkml_runtime.dumpers import yaml_dumper
-from linkml_runtime.linkml_model import SlotDefinition
+from linkml_runtime.linkml_model import EnumDefinition, Example, SlotDefinition
+from linkml_runtime.linkml_model.units import UnitOfMeasure
 from rich.console import Console
 
 from tools.enums import inject_env_triad_enum, inject_illumina_instrument_model_enum
@@ -107,13 +109,60 @@ def modify_controlled_term_value_slot(slot: SlotDefinition) -> None:
     slot.pattern = r"^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$"
 
 
-def modify_quantity_value_slot(slot: SlotDefinition) -> None:
-    """Modify a slot that was imported with range QuantityValue"""
-    slot.range = "string"
-    if slot.multivalued:
-        slot.pattern = r"^([-+]?[0-9]*\.?[0-9]+ +\S.*\|)*([-+]?[0-9]*\.?[0-9]+ +\S.*)$"
-    else:
-        slot.pattern = r"^[-+]?[0-9]*\.?[0-9]+ +\S.*$"
+def modify_quantity_value_slot(
+    unit_enum: EnumDefinition,
+) -> Callable[[SlotDefinition], None]:
+    def _modify(slot: SlotDefinition) -> None:
+        """Modify a slot that was imported with range QuantityValue"""
+        storage_units = []
+        if "storage_units" in slot.annotations:
+            storage_units = slot.annotations["storage_units"].value.split("|")
+
+        base_pattern = None
+        if len(storage_units) == 0:
+            slot.range = "string"
+            base_pattern = r"[-+]?[0-9]*\.?[0-9]+ +\S.*"
+        elif len(storage_units) == 1:
+            unit = storage_units[0]
+            descriptive_name = None
+            unit_pv = unit_enum.permissible_values.get(unit)
+            if unit_pv is not None and unit_pv.title:
+                descriptive_name = unit_pv.title
+            slot.range = "float"
+            slot.unit = UnitOfMeasure(descriptive_name=descriptive_name, ucum_code=unit)
+            slot.examples = [
+                Example(**e) if isinstance(e, dict) else e for e in slot.examples
+            ]
+            for example in slot.examples:
+                example.value = example.value.removesuffix(unit).strip()
+            slot.comments.insert(
+                0,
+                f"Value must be reported in {descriptive_name or unit}. "
+                "Provide the numeric portion only.",
+            )
+        else:
+            slot.range = "string"
+            base_pattern = (
+                r"[-+]?[0-9]*\.?[0-9]+ +("
+                + "|".join(re.escape(u) for u in storage_units)
+                + r")"
+            )
+            slot.comments.insert(
+                0,
+                f"Value must be reported in one of the following units: {', '.join(storage_units)}. "
+                "Provide the numeric portion followed by a space and the unit.",
+            )
+
+        if base_pattern:
+            if slot.multivalued:
+                slot.pattern = f"^{base_pattern}(\\|{base_pattern})*$"
+                slot.multivalued = False
+                slot.inlined = None
+                slot.inlined_as_list = None
+            else:
+                slot.pattern = f"^{base_pattern}$"
+
+    return _modify
 
 
 def modify_multivalued_string_slot(slot: SlotDefinition) -> None:
@@ -197,7 +246,12 @@ def main(download_gold_ecosystem_terms: bool) -> None:
         replace_range(
             submission_schema, "ControlledTermValue", modify_controlled_term_value_slot
         )
-        replace_range(submission_schema, "QuantityValue", modify_quantity_value_slot)
+
+        unit_enum = submission_schema.get_enum("UnitEnum")
+        replace_range(
+            submission_schema, "QuantityValue", modify_quantity_value_slot(unit_enum)
+        )
+
         replace_range(submission_schema, "TextValue", "string")
         replace_range(submission_schema, "TimestampValue", "string")
 
