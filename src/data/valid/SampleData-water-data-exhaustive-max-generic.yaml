@@ -78,7 +78,7 @@ water_data:
     samp_collec_method: xyz
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
-    samp_size: 100 units
+    samp_size: 100 mL
     samp_store_dur: xyz
     samp_store_loc: xyz
     samp_store_temp: 100

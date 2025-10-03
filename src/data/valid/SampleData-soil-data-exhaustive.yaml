@@ -78,7 +78,7 @@ soil_data:
     samp_collec_method: xxx
     samp_mat_process: text [ONTO:000000000]
     samp_name: a
-    samp_size: 111 units
+    samp_size: 111 mL
     samp_store_temp: -80
     sample_link: z:99
     season_precpt: 111
