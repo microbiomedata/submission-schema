@@ -9,7 +9,7 @@ plant_associated_data: # this is linking a SampleData instance to a PlantAssocia
     geo_loc_name: our first houseplant is dying
     growth_facil: field
     lat_lon: 111 88
-    samp_store_temp: "20 C"
+    samp_store_temp: 20
     analysis_type:
       - metagenomics
       - metatranscriptomics

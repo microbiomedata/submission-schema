@@ -12,7 +12,7 @@ soil_data:
     growth_facil: greenhouse
     lat_lon: 35.211445 -98.464612
     samp_name: b
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     store_cond: frozen
     infiltrations:
       - '2 minutes'

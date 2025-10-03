@@ -11,7 +11,7 @@ sediment_data:
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     lat_lon: 35.211445 -98.464612
     samp_name: a1
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
@@ -25,7 +25,7 @@ sediment_data:
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     lat_lon: 35.211445 -98.464612
     samp_name: a2
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:001
   - analysis_type:
       - metagenomics
@@ -39,5 +39,5 @@ sediment_data:
     geo_loc_name: 'USA: Nowhere, Oklahoma'
     lat_lon: 35.211445 -98.464612
     samp_name: a3
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
     source_mat_id: igsn:001

@@ -2,37 +2,37 @@ water_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    alkalinity: 100 units
+    alkalinity: 100 mg/L
     alkalinity_method: xyz
-    alkyl_diethers: 100 units
-    aminopept_act: 100 units
-    ammonium: 100 units
+    alkyl_diethers: 100
+    aminopept_act: 100
+    ammonium: 100 [ppm]
     atmospheric_data: xyz;100 units
-    bac_prod: 100 units
-    bac_resp: 100 units
-    bacteria_carb_prod: 100 units
+    bac_prod: 100
+    bac_resp: 100 umol/L/h
+    bacteria_carb_prod: 100
     biomass: xyz;100 units
-    bishomohopanol: 100 units
-    bromide: 100 units
-    calcium: 100 units
+    bishomohopanol: 100 ug/g
+    bromide: 100
+    calcium: 100 umol/L
     carb_nitro_ratio: 1.5
     chem_administration: xyz [XYZ:123];2111-11-11
-    chloride: 100 units
-    chlorophyll: 100 units
+    chloride: 100 mg/L
+    chlorophyll: 100 ug/L
     collection_date: '2021-01-01'
-    conduc: 100 units
-    density: 100 units
+    conduc: 100 uS/cm
+    density: 100 kg/m3
     depth: "1.5"
     diether_lipids: xyz;100 units
-    diss_carb_dioxide: 100 units
-    diss_hydrogen: 100 units
-    diss_inorg_carb: 100 units
-    diss_inorg_nitro: 100 units
-    diss_inorg_phosp: 100 units
-    diss_org_carb: 100 units
-    diss_org_nitro: 100 units
-    diss_oxygen: 100 units
-    down_par: 100 units
+    diss_carb_dioxide: 100 umol/L
+    diss_hydrogen: 100
+    diss_inorg_carb: 100 ug/L
+    diss_inorg_nitro: 100 ug/L
+    diss_inorg_phosp: 100 ug/L
+    diss_org_carb: 100 ug/L
+    diss_org_nitro: 100 ug/L
+    diss_oxygen: 100 umol/L
+    down_par: 100
     ecosystem: xyz
     ecosystem_category: xyz
     ecosystem_subtype: xyz
@@ -42,38 +42,38 @@ water_data:
     env_local_scale: xyz xyz xyz [ENVO:12345678]
     env_medium: xyz xyz xyz [PO:1234567]
     experimental_factor: xyz xyz xyz [XYZ:123]
-    fluor: 100 units
+    fluor: 100 mg/m3
     geo_loc_name: 'xyz: xyz, xyz'
-    glucosidase_act: 100 units
+    glucosidase_act: 100
     lat_lon: 78 89
-    light_intensity: 100 units
-    mean_frict_vel: 100 units
-    mean_peak_frict_vel: 100 units
+    light_intensity: 100
+    mean_frict_vel: 100
+    mean_peak_frict_vel: 100
     misc_param: xyz;100 units
     n_alkanes: xyz;100 units
-    nitrate: 100 units
-    nitrite: 100 units
-    nitro: 100 units
-    org_carb: 100 units
-    org_matter: 100 units
-    org_nitro: 100 units
+    nitrate: 100 [ppm]
+    nitrite: 100 [ppm]
+    nitro: 100 umol/L
+    org_carb: 100 umol/L
+    org_matter: 100
+    org_nitro: 100
     organism_count: xyz;100 units;qPCR
     oxy_stat_samp: anaerobic
-    part_org_carb: 100 units
-    part_org_nitro: 100 units
+    part_org_carb: 100 ug/L
+    part_org_nitro: 100 ug/L
     perturbation: xyz
-    petroleum_hydrocarb: 100 units
+    petroleum_hydrocarb: 100
     ph: 1.5
     ph_meth: xyz
     phaeopigments: xyz;100 units
-    phosphate: 100 units
+    phosphate: 100
     phosplipid_fatt_acid: 100 units
-    potassium: 100 units
-    pressure: 100 units
-    primary_prod: 100 units
-    redox_potential: 100 units
+    potassium: 100 mg/kg
+    pressure: 100
+    primary_prod: 100 g/m2/d
+    redox_potential: 100
 #    rel_to_oxygen: anaerobic
-    salinity: 100 units
+    salinity: 100 mg/L
     samp_collec_device: xyz
     samp_collec_method: xyz
     samp_mat_process: text [ONTO:000000000]
@@ -81,25 +81,25 @@ water_data:
     samp_size: 100 units
     samp_store_dur: xyz
     samp_store_loc: xyz
-    samp_store_temp: 100 units
+    samp_store_temp: 100
     sample_link: z:99
-    silicate: 100 units
+    silicate: 100
     size_frac: xyz
-    size_frac_low: 100 units
-    size_frac_up: 100 units
-    sodium: 100 units
-    soluble_react_phosp: 100 units
+    size_frac_low: 100
+    size_frac_up: 100
+    sodium: 100 [ppm]
+    soluble_react_phosp: 100 ug/L
     source_mat_id: igsn:001
     specific_ecosystem: xyz
-    sulfate: 100 units
-    sulfide: 100 units
-    suspend_part_matter: 100 units
-    temp: 100 units
+    sulfate: 100 umol/L
+    sulfide: 100 umol/L
+    suspend_part_matter: 100
+    temp: 100
     tidal_stage: high tide
-    tot_depth_water_col: 100 units
-    tot_diss_nitro: 100 units
-    tot_inorg_nitro: 100 units
-    tot_nitro: 100 units
-    tot_part_carb: 100 units
-    turbidity: 100 units
-    water_current: 100 units
+    tot_depth_water_col: 100
+    tot_diss_nitro: 100 umol/L
+    tot_inorg_nitro: 100
+    tot_nitro: 100 umol/L
+    tot_part_carb: 100 umol/L
+    turbidity: 100 [NTU]
+    water_current: 100 m3/s

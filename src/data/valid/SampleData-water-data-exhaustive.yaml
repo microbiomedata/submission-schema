@@ -2,37 +2,37 @@ water_data:
   - analysis_type:
       - metagenomics
       - metatranscriptomics
-    alkalinity: 50 milligram per liter
+    alkalinity: 50 mg/L
     alkalinity_method: titration
-    alkyl_diethers: 0.005 mole per liter
-    aminopept_act: 0.269 mole per liter per hour
-    ammonium: 1.5 milligram per liter
+    alkyl_diethers: 0.005
+    aminopept_act: 0.269
+    ammonium: 1.5 mg/L
     atmospheric_data: "wind speed;9 knots|rain;2.3 inches"
-    bac_prod: 5 milligram per cubic meter per day
-    bac_resp: 300 micromole oxygen per liter per hour
-    bacteria_carb_prod: 2.53 microgram per liter per hour
+    bac_prod: 5
+    bac_resp: 300 umol/L/h
+    bacteria_carb_prod: 2.53
     biomass: "total;20 gram|archeal;1 gram"
-    bishomohopanol: 14 microgram per liter
-    bromide: 0.05 parts per million
-    calcium: 0.2 micromole per liter
+    bishomohopanol: 14 ug/g
+    bromide: 0.05
+    calcium: 0.2 umol/L
     carb_nitro_ratio: 1.5
     chem_administration: "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"
-    chloride: 5000 milligram per liter
-    chlorophyll: 5 milligram per cubic meter
+    chloride: 5000 mg/L
+    chlorophyll: 5 mg/m3
     collection_date: '2021-01-01'
-    conduc: 10 milliSiemens per centimeter
-    density: 1000 kilogram per cubic meter
+    conduc: 10 mS/cm
+    density: 1000 kg/m3
     depth: "1.5"
     diether_lipids: "phosphatidylglycerol;1.5 parts per million|phosphatidylglycerylsulphate;1.5 parts per million"
-    diss_carb_dioxide: 5 milligram per liter
-    diss_hydrogen: 0.3 micromole per liter
-    diss_inorg_carb: 2059 micromole per liter
-    diss_inorg_nitro: 761 micromole per liter
-    diss_inorg_phosp: 56.5 micromole per liter
-    diss_org_carb: 205.9 micromole per liter
-    diss_org_nitro: 76.1 micromole per liter
-    diss_oxygen: 175 micromole per liter
-    down_par: 28.71 microEinstein per square meter per second
+    diss_carb_dioxide: 5 mg/L
+    diss_hydrogen: 0.3
+    diss_inorg_carb: 2059 umol/kg
+    diss_inorg_nitro: 761 umol/L
+    diss_inorg_phosp: 56.5 umol/L
+    diss_org_carb: 205.9 umol/L
+    diss_org_nitro: 76.1 ug/L
+    diss_oxygen: 175 umol/L
+    down_par: 28.71
     ecosystem: xyz
     ecosystem_category: xyz
     ecosystem_subtype: xyz
@@ -42,39 +42,39 @@ water_data:
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
     experimental_factor: time series design [EFO:0001779]
-    fluor: 2.5 volts
+    fluor: 2.5 V
     geo_loc_name: 'USA: Maryland, Bethesda'
-    glucosidase_act: 5 mol per liter per hour
+    glucosidase_act: 5
     lat_lon: 78 89
-    light_intensity: 0.3 lux
-    mean_frict_vel: 0.5 meter per second
-    mean_peak_frict_vel: 1 meter per second
+    light_intensity: 0.3
+    mean_frict_vel: 0.5
+    mean_peak_frict_vel: 1
     misc_param: "Bicarbonate ion concentration;2075 micromole per kilogram|Perchlorate ion concentration;1111 micromole per kilogram"
-    n_alkanes: "n-hexadecane;100 milligram per liter|n-octane;111 milligram per liter"
-    nitrate: 65 micromole per liter
-    nitrite: 0.5 micromole per liter
-    nitro: 4.2 micromole per liter
-    org_carb: 1.5 microgram per liter
-    org_matter: 1.75 milligram per cubic meter
-    org_nitro: 4 micromole per liter
+    n_alkanes: "n-hexadecane;100 mg/L|n-octane;111 mg/L"
+    nitrate: 65 umol/L
+    nitrite: 0.5 umol/L
+    nitro: 4.2 umol/L
+    org_carb: 1.5 mg/L
+    org_matter: 1.75
+    org_nitro: 4
     organism_count: "total prokaryotes;3.5e7 cells per milliliter;qPCR|total prokaryotes;1e5 CFU;MPN"
     oxy_stat_samp: anaerobic
-    part_org_carb: 1.92 micromole per liter
-    part_org_nitro: 0.3 micromole per liter
+    part_org_carb: 1.92 ug/L
+    part_org_nitro: 0.3 umol/L
     perturbation: "xyz1|xyz2"
-    petroleum_hydrocarb: 0.05 micromole per liter
+    petroleum_hydrocarb: 0.05
     ph: 1.5
     ph_meth: xyz
     phaeopigments: "phaeopigment 1;1.5 parts per million|phaeopigment 2;1.5 parts per million"
-    phosphate: 0.7 micromole per liter
+    phosphate: 0.7
     phosplipid_fatt_acid: "1.5 ppm"
-    photon_flux: 3.926 micromole photons per second per square meter
-    potassium: 463 milligram per liter
-    pressure: 50 atmosphere
-    primary_prod: 100 milligram per cubic meter per day
-    redox_potential: 300 millivolt
+    photon_flux: 3.926
+    potassium: 463 mg/L
+    pressure: 50
+    primary_prod: 100 mg/m3/d
+    redox_potential: 300
 #    rel_to_oxygen: anaerobic
-    salinity: 25 practical salinity unit
+    salinity: 25 mg/L
     samp_collec_device: xyz
     samp_collec_method: xyz
     samp_mat_process: text [ONTO:000000000]
@@ -82,27 +82,27 @@ water_data:
     samp_size: 5 liter
     samp_store_dur: xyz
     samp_store_loc: xyz
-    samp_store_temp: -80 degree Celsius
+    samp_store_temp: -80
     sample_link: z:99
-    silicate: 0.05 micromole per liter
+    silicate: 0.05
     size_frac: xyz
-    size_frac_low: 0.2 micrometer
-    size_frac_up: 20 micrometer
-    sodium: 10.5 milligram per liter
-    soluble_react_phosp: 0.1 milligram per liter
+    size_frac_low: 0.2
+    size_frac_up: 20
+    sodium: 10.5 mg/L
+    soluble_react_phosp: 0.1 mg/L
     source_mat_id: igsn:001
     specific_ecosystem: xyz
-    sulfate: 5 micromole per liter
-    sulfide: 2 micromole per liter
-    suspend_part_matter: 0.5 milligram per liter
-    temp: 25 degree Celsius
+    sulfate: 5 umol/L
+    sulfide: 2 umol/L
+    suspend_part_matter: 0.5
+    temp: 25
     tidal_stage: high tide
-    tot_depth_water_col: 500 meter
-    tot_diss_nitro: 40 microgram per liter
-    tot_inorg_nitro: 40 microgram per liter
-    tot_nitro: 50 micromole per liter
-    tot_part_carb: 35 micromole per liter
-    turbidity: 0.3 nephelometric turbidity units
-    water_current: 10 cubic meter per second
+    tot_depth_water_col: 500
+    tot_diss_nitro: 40 ug/L
+    tot_inorg_nitro: 40
+    tot_nitro: 50 umol/L
+    tot_part_carb: 35 umol/L
+    turbidity: 0.3 [NTU]
+    water_current: 10 m3/s
 #    growth_facil:
 #    store_cond:

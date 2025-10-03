@@ -12,5 +12,5 @@ plant_associated_data: # this is linking a SampleData instance to a PlantAssocia
     growth_facil: field
     lat_lon: 77 88
     samp_name: our first houseplant is dying
-    samp_store_temp: "20 C"
+    samp_store_temp: 20
 

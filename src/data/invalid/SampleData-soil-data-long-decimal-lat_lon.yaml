@@ -11,4 +11,4 @@ sediment_data:
     geo_loc_name: "USA: Oklahoma, Nowhere"
     lat_lon: 35.2114459 -98.4646126787809678678
     samp_name: a
-    samp_store_temp: "-80 Celsius"
+    samp_store_temp: -80
