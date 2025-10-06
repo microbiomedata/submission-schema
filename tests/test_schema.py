@@ -170,6 +170,7 @@ TEMPLATE_INSTANCES = {
         "lat_lon": "0.0 0.0",
         "samp_name": "000001",
         "samp_store_temp": 0,
+        "plant_struc": "epidermis [PO:0005679]"
     },
     "SedimentInterface": {
         "analysis_type": ["metagenomics"],
