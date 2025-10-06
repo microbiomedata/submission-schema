@@ -5887,11 +5887,3 @@ slots:
           description: A URL to a description of the sequencing protocol used to generate
             the data.
           range: string
-  
-  - slot: plant_struc
-    source: Biosample
-    destinations:
-      - PlantAssociatedInterface
-    modifications:
-      - replace:
-          required: true 
