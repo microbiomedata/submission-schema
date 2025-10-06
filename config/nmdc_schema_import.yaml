@@ -3523,6 +3523,7 @@ slots:
       - replace:
           rank: 270
           slot_group: mixs_core_section
+          required: true
 
   - slot: pollutants
     source: Biosample
