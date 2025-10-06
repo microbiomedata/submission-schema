@@ -14,4 +14,5 @@ plant_associated_data: # this is linking a SampleData instance to a PlantAssocia
     samp_name: our first houseplant is dying
     samp_store_temp: 20
     plant_struc: epidermis [PO:0005679]
+    host_common_name: switchgrass
 

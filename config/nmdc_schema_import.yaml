@@ -2352,6 +2352,7 @@ slots:
       - replace:
           rank: 250
           slot_group: mixs_core_section
+          required: true
 
   - slot: host_diet
     source: Biosample
