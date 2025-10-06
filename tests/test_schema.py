@@ -171,7 +171,8 @@ TEMPLATE_INSTANCES = {
         "samp_name": "000001",
         "samp_store_temp": 0,
         "plant_struc": "epidermis [PO:0005679]",
-        "host_common_name": "switchgrass"
+        "host_common_name": "switchgrass",
+        "host_taxid": "Panicum virgatum [NCBI:txid38727]"
     },
     "SedimentInterface": {
         "analysis_type": ["metagenomics"],

@@ -2352,6 +2352,9 @@ slots:
       - replace:
           rank: 250
           slot_group: mixs_core_section
+      - in_classes:
+          - PlantAssociatedInterface
+        replace:
           required: true
 
   - slot: host_diet
@@ -2525,6 +2528,10 @@ slots:
       - replace:
           rank: 259
           slot_group: mixs_core_section
+      - in_classes:
+          - PlantAssociatedInterface
+        replace:
+          required: true
 
   - slot: host_tot_mass
     source: Biosample
