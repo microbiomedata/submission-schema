@@ -13,4 +13,7 @@ plant_associated_data: # this is linking a SampleData instance to a PlantAssocia
     lat_lon: 77 88
     samp_name: our first houseplant is dying
     samp_store_temp: 20
+    plant_struc: epidermis [PO:0005679]
+    host_common_name: switchgrass
+    host_taxid: Panicum virgatum [NCBI:txid38727]
 

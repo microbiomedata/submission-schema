@@ -2352,6 +2352,10 @@ slots:
       - replace:
           rank: 250
           slot_group: mixs_core_section
+      - in_classes:
+          - PlantAssociatedInterface
+        replace:
+          required: true
 
   - slot: host_diet
     source: Biosample
@@ -2524,6 +2528,10 @@ slots:
       - replace:
           rank: 259
           slot_group: mixs_core_section
+      - in_classes:
+          - PlantAssociatedInterface
+        replace:
+          required: true
 
   - slot: host_tot_mass
     source: Biosample
@@ -3523,6 +3531,7 @@ slots:
       - replace:
           rank: 270
           slot_group: mixs_core_section
+          required: true
 
   - slot: pollutants
     source: Biosample
@@ -5887,4 +5896,3 @@ slots:
           description: A URL to a description of the sequencing protocol used to generate
             the data.
           range: string
-
