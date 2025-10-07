@@ -1,7 +1,7 @@
-import { DataHarmonizer, Footer, Toolbar } from 'data-harmonizer';
+import { DataHarmonizer, Footer, Toolbar } from '@microbiomedata/data-harmonizer';
 import menu from './menu.json';
 
-import 'data-harmonizer/data-harmonizer.css';
+import '@microbiomedata/data-harmonizer/data-harmonizer.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
