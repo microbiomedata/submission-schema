@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-07T15:22:22
+# Generation date: 2025-10-10T11:33:25
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -811,7 +811,6 @@ class AirInterface(DhInterface):
     experimental_factor: Optional[str] = None
     humidity: Optional[str] = None
     methane: Optional[str] = None
-    misc_param: Optional[str] = None
     organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     oxygen: Optional[str] = None
@@ -929,9 +928,6 @@ class AirInterface(DhInterface):
 
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
@@ -1059,7 +1055,6 @@ class BiofilmInterface(DhInterface):
     mean_frict_vel: Optional[float] = None
     mean_peak_frict_vel: Optional[float] = None
     methane: Optional[str] = None
-    misc_param: Optional[str] = None
     n_alkanes: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
@@ -1249,9 +1244,6 @@ class BiofilmInterface(DhInterface):
 
         if self.methane is not None and not isinstance(self.methane, str):
             self.methane = str(self.methane)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
             self.n_alkanes = str(self.n_alkanes)
@@ -2269,7 +2261,6 @@ class HcrCoresInterface(DhInterface):
     hcr_temp: Optional[str] = None
     lithology: Optional[Union[str, "LithologyEnum"]] = None
     magnesium: Optional[str] = None
-    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     org_count_qpcr_info: Optional[str] = None
@@ -2486,9 +2477,6 @@ class HcrCoresInterface(DhInterface):
 
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -2726,7 +2714,6 @@ class HcrFluidsSwabsInterface(DhInterface):
     iwf: Optional[float] = None
     lithology: Optional[Union[str, "LithologyEnum"]] = None
     magnesium: Optional[str] = None
-    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     org_count_qpcr_info: Optional[str] = None
@@ -2963,9 +2950,6 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.magnesium is not None and not isinstance(self.magnesium, str):
             self.magnesium = str(self.magnesium)
 
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
-
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
 
@@ -3193,7 +3177,6 @@ class HostAssociatedInterface(DhInterface):
     host_symbiont: Optional[str] = None
     host_taxid: Optional[str] = None
     host_tot_mass: Optional[str] = None
-    misc_param: Optional[str] = None
     organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     perturbation: Optional[str] = None
@@ -3383,9 +3366,6 @@ class HostAssociatedInterface(DhInterface):
 
         if self.host_tot_mass is not None and not isinstance(self.host_tot_mass, str):
             self.host_tot_mass = str(self.host_tot_mass)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
@@ -3858,7 +3838,6 @@ class MiscEnvsInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
-    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     nitro: Optional[str] = None
@@ -4009,9 +3988,6 @@ class MiscEnvsInterface(DhInterface):
 
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -4181,7 +4157,6 @@ class PlantAssociatedInterface(DhInterface):
     light_regm: Optional[str] = None
     mechanical_damage: Optional[str] = None
     mineral_nutr_regm: Optional[str] = None
-    misc_param: Optional[str] = None
     non_min_nutr_regm: Optional[str] = None
     organism_count: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
@@ -4425,9 +4400,6 @@ class PlantAssociatedInterface(DhInterface):
         if self.mineral_nutr_regm is not None and not isinstance(self.mineral_nutr_regm, str):
             self.mineral_nutr_regm = str(self.mineral_nutr_regm)
 
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
-
         if self.non_min_nutr_regm is not None and not isinstance(self.non_min_nutr_regm, str):
             self.non_min_nutr_regm = str(self.non_min_nutr_regm)
 
@@ -4628,7 +4600,6 @@ class SedimentInterface(DhInterface):
     microbial_biomass: Optional[str] = None
     microbial_biomass_c: Optional[str] = None
     microbial_biomass_n: Optional[str] = None
-    misc_param: Optional[str] = None
     n_alkanes: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
@@ -4894,9 +4865,6 @@ class SedimentInterface(DhInterface):
         if self.microbial_biomass_n is not None and not isinstance(self.microbial_biomass_n, str):
             self.microbial_biomass_n = str(self.microbial_biomass_n)
 
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
-
         if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
             self.n_alkanes = str(self.n_alkanes)
 
@@ -5141,7 +5109,6 @@ class SoilInterface(DhInterface):
     microbial_biomass: Optional[str] = None
     microbial_biomass_c: Optional[str] = None
     microbial_biomass_n: Optional[str] = None
-    misc_param: Optional[str] = None
     nitrate_nitrogen: Optional[str] = None
     nitrite_nitrogen: Optional[str] = None
     non_microb_biomass: Optional[str] = None
@@ -5422,9 +5389,6 @@ class SoilInterface(DhInterface):
         if self.microbial_biomass_n is not None and not isinstance(self.microbial_biomass_n, str):
             self.microbial_biomass_n = str(self.microbial_biomass_n)
 
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
-
         if self.nitrate_nitrogen is not None and not isinstance(self.nitrate_nitrogen, str):
             self.nitrate_nitrogen = str(self.nitrate_nitrogen)
 
@@ -5616,7 +5580,6 @@ class WastewaterSludgeInterface(DhInterface):
     gaseous_substances: Optional[str] = None
     indust_eff_percent: Optional[float] = None
     inorg_particles: Optional[str] = None
-    misc_param: Optional[str] = None
     nitrate: Optional[str] = None
     org_particles: Optional[str] = None
     organism_count: Optional[str] = None
@@ -5748,9 +5711,6 @@ class WastewaterSludgeInterface(DhInterface):
 
         if self.inorg_particles is not None and not isinstance(self.inorg_particles, str):
             self.inorg_particles = str(self.inorg_particles)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
@@ -5929,7 +5889,6 @@ class WaterInterface(DhInterface):
     magnesium: Optional[str] = None
     mean_frict_vel: Optional[float] = None
     mean_peak_frict_vel: Optional[float] = None
-    misc_param: Optional[str] = None
     n_alkanes: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
@@ -6184,9 +6143,6 @@ class WaterInterface(DhInterface):
 
         if self.mean_peak_frict_vel is not None and not isinstance(self.mean_peak_frict_vel, float):
             self.mean_peak_frict_vel = float(self.mean_peak_frict_vel)
-
-        if self.misc_param is not None and not isinstance(self.misc_param, str):
-            self.misc_param = str(self.misc_param)
 
         if self.n_alkanes is not None and not isinstance(self.n_alkanes, str):
             self.n_alkanes = str(self.n_alkanes)
@@ -14759,9 +14715,6 @@ slots.microbial_biomass_n = Slot(uri=NMDC_SUB_SCHEMA.microbial_biomass_n, name="
 
 slots.mineral_nutr_regm = Slot(uri=MIXS['0000570'], name="mineral_nutr_regm", curie=MIXS.curie('0000570'),
                    model_uri=NMDC_SUB_SCHEMA.mineral_nutr_regm, domain=None, range=Optional[str])
-
-slots.misc_param = Slot(uri=MIXS['0000752'], name="misc_param", curie=MIXS.curie('0000752'),
-                   model_uri=NMDC_SUB_SCHEMA.misc_param, domain=None, range=Optional[str])
 
 slots.n_alkanes = Slot(uri=MIXS['0000503'], name="n_alkanes", curie=MIXS.curie('0000503'),
                    model_uri=NMDC_SUB_SCHEMA.n_alkanes, domain=None, range=Optional[str])

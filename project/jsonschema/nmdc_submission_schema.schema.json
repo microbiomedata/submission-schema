@@ -137,13 +137,6 @@
                         "null"
                     ]
                 },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
@@ -625,13 +618,6 @@
                 "methane": {
                     "description": "Methane (gas) amount or concentration at the time of sampling",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppb\\]|\\[ppm\\]|umol/L)$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
                     "type": [
                         "string",
                         "null"
@@ -4893,13 +4879,6 @@
                         "null"
                     ]
                 },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "nitrate": {
                     "description": "Concentration of nitrate in the sample",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppm\\]|mg/L|umol/L)$",
@@ -5661,13 +5640,6 @@
                 "magnesium": {
                     "description": "Concentration of magnesium in the sample",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppm\\]|mg/L|mol/L|umol/kg|mg/kg)$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
                     "type": [
                         "string",
                         "null"
@@ -6448,13 +6420,6 @@
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
                     "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 },
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
@@ -7758,13 +7723,6 @@
                     "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "nitrate": {
                     "description": "Concentration of nitrate in the sample",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppm\\]|mg/L|umol/L)$",
@@ -8412,13 +8370,6 @@
                 },
                 "mineral_nutr_regm": {
                     "description": "Information about treatment involving the use of mineral supplements; should include the name of mineral nutrient, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple mineral nutrient regimens",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
                     "type": [
                         "string",
                         "null"
@@ -9652,13 +9603,6 @@
                         "null"
                     ]
                 },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "n_alkanes": {
                     "description": "Concentration of n-alkanes; can include multiple n-alkanes",
                     "type": [
@@ -10568,13 +10512,6 @@
                 "microbial_biomass_n": {
                     "description": "The part of the organic matter in the soil that constitutes living microorganisms smaller than 5-10 micrometer.",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)? [^;|\\t\\r\\n]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
                     "type": [
                         "string",
                         "null"
@@ -12357,13 +12294,6 @@
                     "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
                     "type": "string"
                 },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "nitrate": {
                     "description": "Concentration of nitrate in the sample",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppm\\]|mg/L|umol/L)$",
@@ -13091,13 +13021,6 @@
                     "description": "Measurement of mean peak friction velocity",
                     "type": [
                         "number",
-                        "null"
-                    ]
-                },
-                "misc_param": {
-                    "description": "Any other measurement performed or parameter collected, that is not listed here",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },

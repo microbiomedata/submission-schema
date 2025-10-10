@@ -24319,50 +24319,6 @@
       "range": "string",
       "multivalued": false
     },
-    "misc_param": {
-      "name": "misc_param",
-      "annotations": {
-        "expected_value": {
-          "tag": "expected_value",
-          "value": "parameter name;measurement value"
-        },
-        "occurrence": {
-          "tag": "occurrence",
-          "value": "m"
-        }
-      },
-      "description": "Any other measurement performed or parameter collected, that is not listed here",
-      "title": "miscellaneous parameter",
-      "examples": [
-        {
-          "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-        }
-      ],
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "aliases": [
-        "miscellaneous parameter"
-      ],
-      "rank": 23,
-      "is_a": "core field",
-      "string_serialization": "{text};{float} {unit}",
-      "slot_uri": "MIXS:0000752",
-      "domain_of": [
-        "AirInterface",
-        "BiofilmInterface",
-        "HcrCoresInterface",
-        "HcrFluidsSwabsInterface",
-        "HostAssociatedInterface",
-        "MiscEnvsInterface",
-        "PlantAssociatedInterface",
-        "SedimentInterface",
-        "SoilInterface",
-        "WastewaterSludgeInterface",
-        "WaterInterface"
-      ],
-      "slot_group": "mixs_section",
-      "range": "string",
-      "multivalued": false
-    },
     "n_alkanes": {
       "name": "n_alkanes",
       "annotations": {
@@ -34682,7 +34638,6 @@
         "humidity",
         "lat_lon",
         "methane",
-        "misc_param",
         "organism_count",
         "oxy_stat_samp",
         "oxygen",
@@ -35730,52 +35685,6 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppb\\]|\\[ppm\\]|umol/L)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "AirInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "organism_count": {
           "name": "organism_count",
@@ -37052,7 +36961,6 @@
         "mean_frict_vel",
         "mean_peak_frict_vel",
         "methane",
-        "misc_param",
         "n_alkanes",
         "nitrate",
         "nitrite",
@@ -39046,52 +38954,6 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppb\\]|\\[ppm\\]|umol/L)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "BiofilmInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "n_alkanes": {
           "name": "n_alkanes",
@@ -49059,7 +48921,6 @@
         "lat_lon",
         "lithology",
         "magnesium",
-        "misc_param",
         "nitrate",
         "nitrite",
         "org_count_qpcr_info",
@@ -51112,52 +50973,6 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppm\\]|mg/L|mol/L|umol/kg|mg/kg)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "HcrCoresInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "nitrate": {
           "name": "nitrate",
@@ -53948,7 +53763,6 @@
         "lat_lon",
         "lithology",
         "magnesium",
-        "misc_param",
         "nitrate",
         "nitrite",
         "org_count_qpcr_info",
@@ -56270,52 +56084,6 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +(\\[ppm\\]|mg/L|mol/L|umol/kg|mg/kg)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "HcrFluidsSwabsInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "nitrate": {
           "name": "nitrate",
@@ -59042,7 +58810,6 @@
         "host_taxid",
         "host_tot_mass",
         "lat_lon",
-        "misc_param",
         "organism_count",
         "oxy_stat_samp",
         "perturbation",
@@ -61061,52 +60828,6 @@
           "required": true,
           "multivalued": false,
           "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "HostAssociatedInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "organism_count": {
           "name": "organism_count",
@@ -64257,7 +63978,6 @@
         "experimental_factor",
         "geo_loc_name",
         "lat_lon",
-        "misc_param",
         "nitrate",
         "nitrite",
         "nitro",
@@ -65738,52 +65458,6 @@
           "required": true,
           "multivalued": false,
           "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "MiscEnvsInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "nitrate": {
           "name": "nitrate",
@@ -67603,7 +67277,6 @@
         "light_regm",
         "mechanical_damage",
         "mineral_nutr_regm",
-        "misc_param",
         "non_min_nutr_regm",
         "organism_count",
         "oxy_stat_samp",
@@ -70001,52 +69674,6 @@
           "range": "string",
           "multivalued": false
         },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "PlantAssociatedInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
-        },
         "non_min_nutr_regm": {
           "name": "non_min_nutr_regm",
           "annotations": {
@@ -72048,7 +71675,6 @@
         "microbial_biomass",
         "microbial_biomass_c",
         "microbial_biomass_n",
-        "misc_param",
         "n_alkanes",
         "nitrate",
         "nitrite",
@@ -74906,52 +74532,6 @@
             "interpolated": true
           }
         },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "SedimentInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
-        },
         "n_alkanes": {
           "name": "n_alkanes",
           "annotations": {
@@ -77757,7 +77337,6 @@
         "microbial_biomass",
         "microbial_biomass_c",
         "microbial_biomass_n",
-        "misc_param",
         "nitrate_nitrogen",
         "nitrite_nitrogen",
         "non_microb_biomass",
@@ -80586,52 +80165,6 @@
             "interpolated": true
           }
         },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "SoilInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
-        },
         "nitrate_nitrogen": {
           "name": "nitrate_nitrogen",
           "annotations": {
@@ -83096,7 +82629,6 @@
         "indust_eff_percent",
         "inorg_particles",
         "lat_lon",
-        "misc_param",
         "nitrate",
         "org_particles",
         "organism_count",
@@ -84193,52 +83725,6 @@
           "required": true,
           "multivalued": false,
           "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$"
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "WastewaterSludgeInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "nitrate": {
           "name": "nitrate",
@@ -86007,7 +85493,6 @@
         "magnesium",
         "mean_frict_vel",
         "mean_peak_frict_vel",
-        "misc_param",
         "n_alkanes",
         "nitrate",
         "nitrite",
@@ -88875,52 +88360,6 @@
           "unit": {
             "ucum_code": "m/s"
           }
-        },
-        "misc_param": {
-          "name": "misc_param",
-          "annotations": {
-            "expected_value": {
-              "tag": "expected_value",
-              "value": "parameter name;measurement value"
-            },
-            "occurrence": {
-              "tag": "occurrence",
-              "value": "m"
-            }
-          },
-          "description": "Any other measurement performed or parameter collected, that is not listed here",
-          "title": "miscellaneous parameter",
-          "examples": [
-            {
-              "value": "Bicarbonate ion concentration;2075 micromole per kilogram"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "miscellaneous parameter"
-          ],
-          "rank": 23,
-          "is_a": "core field",
-          "string_serialization": "{text};{float} {unit}",
-          "slot_uri": "MIXS:0000752",
-          "alias": "misc_param",
-          "owner": "WaterInterface",
-          "domain_of": [
-            "AirInterface",
-            "BiofilmInterface",
-            "HcrCoresInterface",
-            "HcrFluidsSwabsInterface",
-            "HostAssociatedInterface",
-            "MiscEnvsInterface",
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WastewaterSludgeInterface",
-            "WaterInterface"
-          ],
-          "slot_group": "mixs_section",
-          "range": "string",
-          "multivalued": false
         },
         "n_alkanes": {
           "name": "n_alkanes",
