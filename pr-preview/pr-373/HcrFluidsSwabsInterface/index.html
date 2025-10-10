@@ -1,0 +1,5493 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://microbiomedata.github.io/submission-schema/HcrFluidsSwabsInterface/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.48" name="generator"/>
+<title>Class: Hcr Fluids Swabs (HcrFluidsSwabsInterface) - submission-schema</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-hcr-fluids-swabs-hcrfluidsswabsinterface">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="submission-schema" class="md-header__button md-logo" data-md-component="logo" href=".." title="submission-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            submission-schema
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: Hcr Fluids Swabs (HcrFluidsSwabsInterface)
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/microbiomedata/submission-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="submission-schema" class="md-nav__button md-logo" data-md-component="logo" href=".." title="submission-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    submission-schema
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/microbiomedata/submission-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Index
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    About
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    DataHarmonizer Playground
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            DataHarmonizer Playground
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/SoilInterface">
+<span class="md-ellipsis">
+    SoilInterface
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/WaterInterface">
+<span class="md-ellipsis">
+    WaterInterface
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+<span class="md-ellipsis">
+      Inheritance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+<span class="md-ellipsis">
+      Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+<span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+</a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#annotations">
+<span class="md-ellipsis">
+      Annotations
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+<span class="md-ellipsis">
+      Schema Source
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+<span class="md-ellipsis">
+      Mappings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+<span class="md-ellipsis">
+      LinkML Source
+    </span>
+</a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+<span class="md-ellipsis">
+      Direct
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+<span class="md-ellipsis">
+      Induced
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-hcr-fluids-swabs-hcrfluidsswabsinterface">Class: Hcr Fluids Swabs (HcrFluidsSwabsInterface)</h1>
+<p><em>hcr_fluids_swabs dh_interface</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/HcrFluidsSwabsInterface">nmdc_sub_schema:HcrFluidsSwabsInterface</a></p>
+<div class="mermaid"> classDiagram
+    class HcrFluidsSwabsInterface
+    click HcrFluidsSwabsInterface href "../HcrFluidsSwabsInterface/"
+      DhMultiviewCommonColumnsMixin &lt;|-- HcrFluidsSwabsInterface
+        click DhMultiviewCommonColumnsMixin href "../DhMultiviewCommonColumnsMixin/"
+      DhInterface &lt;|-- HcrFluidsSwabsInterface
+        click DhInterface href "../DhInterface/"
+
+      HcrFluidsSwabsInterface : add_recov_method
+
+      HcrFluidsSwabsInterface : additional_info
+
+      HcrFluidsSwabsInterface : alkalinity
+
+      HcrFluidsSwabsInterface : alkalinity_method
+
+      HcrFluidsSwabsInterface : ammonium
+
+      HcrFluidsSwabsInterface : analysis_type
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "1..*" AnalysisTypeEnum : analysis_type
+        click AnalysisTypeEnum href "../AnalysisTypeEnum/"
+
+
+
+      HcrFluidsSwabsInterface : api
+
+      HcrFluidsSwabsInterface : aromatics_pc
+
+      HcrFluidsSwabsInterface : asphaltenes_pc
+
+      HcrFluidsSwabsInterface : basin
+
+      HcrFluidsSwabsInterface : benzene
+
+      HcrFluidsSwabsInterface : biocide
+
+      HcrFluidsSwabsInterface : biocide_admin_method
+
+      HcrFluidsSwabsInterface : calcium
+
+      HcrFluidsSwabsInterface : chem_administration
+
+      HcrFluidsSwabsInterface : chem_treat_method
+
+      HcrFluidsSwabsInterface : chem_treatment
+
+      HcrFluidsSwabsInterface : chloride
+
+      HcrFluidsSwabsInterface : collection_date
+
+      HcrFluidsSwabsInterface : density
+
+      HcrFluidsSwabsInterface : depos_env
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" DeposEnvEnum : depos_env
+        click DeposEnvEnum href "../DeposEnvEnum/"
+
+
+
+      HcrFluidsSwabsInterface : depth
+
+      HcrFluidsSwabsInterface : diss_carb_dioxide
+
+      HcrFluidsSwabsInterface : diss_inorg_carb
+
+      HcrFluidsSwabsInterface : diss_inorg_phosp
+
+      HcrFluidsSwabsInterface : diss_iron
+
+      HcrFluidsSwabsInterface : diss_org_carb
+
+      HcrFluidsSwabsInterface : diss_oxygen_fluid
+
+      HcrFluidsSwabsInterface : ecosystem
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1 _recommended_" EcosystemEnum : ecosystem
+        click EcosystemEnum href "../EcosystemEnum/"
+
+
+
+      HcrFluidsSwabsInterface : ecosystem_category
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1 _recommended_" EcosystemCategoryEnum : ecosystem_category
+        click EcosystemCategoryEnum href "../EcosystemCategoryEnum/"
+
+
+
+      HcrFluidsSwabsInterface : ecosystem_subtype
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1 _recommended_" EcosystemSubtypeEnum : ecosystem_subtype
+        click EcosystemSubtypeEnum href "../EcosystemSubtypeEnum/"
+
+
+
+      HcrFluidsSwabsInterface : ecosystem_type
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1 _recommended_" EcosystemTypeEnum : ecosystem_type
+        click EcosystemTypeEnum href "../EcosystemTypeEnum/"
+
+
+
+      HcrFluidsSwabsInterface : elev
+
+      HcrFluidsSwabsInterface : env_broad_scale
+
+      HcrFluidsSwabsInterface : env_local_scale
+
+      HcrFluidsSwabsInterface : env_medium
+
+      HcrFluidsSwabsInterface : ethylbenzene
+
+      HcrFluidsSwabsInterface : experimental_factor
+
+      HcrFluidsSwabsInterface : field
+
+      HcrFluidsSwabsInterface : geo_loc_name
+
+      HcrFluidsSwabsInterface : hc_produced
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" HcProducedEnum : hc_produced
+        click HcProducedEnum href "../HcProducedEnum/"
+
+
+
+      HcrFluidsSwabsInterface : hcr
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" HcrEnum : hcr
+        click HcrEnum href "../HcrEnum/"
+
+
+
+      HcrFluidsSwabsInterface : hcr_fw_salinity
+
+      HcrFluidsSwabsInterface : hcr_geol_age
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" HcrGeolAgeEnum : hcr_geol_age
+        click HcrGeolAgeEnum href "../HcrGeolAgeEnum/"
+
+
+
+      HcrFluidsSwabsInterface : hcr_pressure
+
+      HcrFluidsSwabsInterface : hcr_temp
+
+      HcrFluidsSwabsInterface : iw_bt_date_well
+
+      HcrFluidsSwabsInterface : iwf
+
+      HcrFluidsSwabsInterface : lat_lon
+
+      HcrFluidsSwabsInterface : lithology
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" LithologyEnum : lithology
+        click LithologyEnum href "../LithologyEnum/"
+
+
+
+      HcrFluidsSwabsInterface : magnesium
+
+      HcrFluidsSwabsInterface : nitrate
+
+      HcrFluidsSwabsInterface : nitrite
+
+      HcrFluidsSwabsInterface : org_count_qpcr_info
+
+      HcrFluidsSwabsInterface : organism_count
+
+      HcrFluidsSwabsInterface : oxy_stat_samp
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" OxyStatSampEnum : oxy_stat_samp
+        click OxyStatSampEnum href "../OxyStatSampEnum/"
+
+
+
+      HcrFluidsSwabsInterface : ph
+
+      HcrFluidsSwabsInterface : ph_meth
+
+      HcrFluidsSwabsInterface : potassium
+
+      HcrFluidsSwabsInterface : pour_point
+
+      HcrFluidsSwabsInterface : pressure
+
+      HcrFluidsSwabsInterface : prod_rate
+
+      HcrFluidsSwabsInterface : prod_start_date
+
+      HcrFluidsSwabsInterface : reservoir
+
+      HcrFluidsSwabsInterface : resins_pc
+
+      HcrFluidsSwabsInterface : salinity
+
+      HcrFluidsSwabsInterface : samp_collec_device
+
+      HcrFluidsSwabsInterface : samp_collec_method
+
+      HcrFluidsSwabsInterface : samp_collect_point
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" SampCollectPointEnum : samp_collect_point
+        click SampCollectPointEnum href "../SampCollectPointEnum/"
+
+
+
+      HcrFluidsSwabsInterface : samp_loc_corr_rate
+
+      HcrFluidsSwabsInterface : samp_mat_process
+
+      HcrFluidsSwabsInterface : samp_name
+
+      HcrFluidsSwabsInterface : samp_preserv
+
+      HcrFluidsSwabsInterface : samp_size
+
+      HcrFluidsSwabsInterface : samp_store_dur
+
+      HcrFluidsSwabsInterface : samp_store_loc
+
+      HcrFluidsSwabsInterface : samp_store_temp
+
+      HcrFluidsSwabsInterface : samp_subtype
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1" SampSubtypeEnum : samp_subtype
+        click SampSubtypeEnum href "../SampSubtypeEnum/"
+
+
+
+      HcrFluidsSwabsInterface : samp_transport_cond
+
+      HcrFluidsSwabsInterface : samp_type
+
+      HcrFluidsSwabsInterface : samp_well_name
+
+      HcrFluidsSwabsInterface : sample_link
+
+      HcrFluidsSwabsInterface : saturates_pc
+
+      HcrFluidsSwabsInterface : size_frac
+
+      HcrFluidsSwabsInterface : sodium
+
+      HcrFluidsSwabsInterface : source_mat_id
+
+      HcrFluidsSwabsInterface : specific_ecosystem
+
+
+
+
+
+        HcrFluidsSwabsInterface --&gt; "0..1 _recommended_" SpecificEcosystemEnum : specific_ecosystem
+        click SpecificEcosystemEnum href "../SpecificEcosystemEnum/"
+
+
+
+      HcrFluidsSwabsInterface : sulfate
+
+      HcrFluidsSwabsInterface : sulfate_fw
+
+      HcrFluidsSwabsInterface : sulfide
+
+      HcrFluidsSwabsInterface : suspend_solids
+
+      HcrFluidsSwabsInterface : tan
+
+      HcrFluidsSwabsInterface : temp
+
+      HcrFluidsSwabsInterface : toluene
+
+      HcrFluidsSwabsInterface : tot_iron
+
+      HcrFluidsSwabsInterface : tot_nitro
+
+      HcrFluidsSwabsInterface : tot_phosp
+
+      HcrFluidsSwabsInterface : tot_sulfur
+
+      HcrFluidsSwabsInterface : tvdss_of_hcr_press
+
+      HcrFluidsSwabsInterface : tvdss_of_hcr_temp
+
+      HcrFluidsSwabsInterface : vfa
+
+      HcrFluidsSwabsInterface : vfa_fw
+
+      HcrFluidsSwabsInterface : viscosity
+
+      HcrFluidsSwabsInterface : water_cut
+
+      HcrFluidsSwabsInterface : water_prod_rate
+
+      HcrFluidsSwabsInterface : win
+
+      HcrFluidsSwabsInterface : xylene
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../DhInterface/">DhInterface</a><ul>
+<li><strong>HcrFluidsSwabsInterface</strong> [ <a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a>]</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../add_recov_method/">add_recov_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Additional (i</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../additional_info/">additional_info</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Information that doesn't fit anywhere else</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../alkalinity/">alkalinity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Alkalinity, the ability of a solution to neutralize acids to the equivalence ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../alkalinity_method/">alkalinity_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Method used for alkalinity measurement</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ammonium/">ammonium</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of ammonium in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../api/">api</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>API gravity is a measure of how heavy or light a petroleum liquid is compared...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../aromatics_pc/">aromatics_pc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis method that d...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../asphaltenes_pc/">asphaltenes_pc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis method that d...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../basin/">basin</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Name of the basin (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../benzene/">benzene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of benzene in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biocide/">biocide</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>List of biocides (commercial name of product and supplier) and date of admini...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biocide_admin_method/">biocide_admin_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Method of biocide administration (dose, frequency, duration, time elapsed bet...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../calcium/">calcium</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of calcium in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chem_administration/">chem_administration</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>List of chemical compounds administered to the host or site where sampling oc...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chem_treat_method/">chem_treat_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Method of chemical administration(dose, frequency, duration, time elapsed bet...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chem_treatment/">chem_treatment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>List of chemical compounds administered upstream the sampling location where ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chloride/">chloride</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of chloride in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../collection_date/">collection_date</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The date of sampling</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../density/">density</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Density of the sample, which is its mass per unit volume (aka volumetric mass...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../depos_env/">depos_env</a></td>
+<td>0..1 <br/> <a href="../DeposEnvEnum/">DeposEnvEnum</a></td>
+<td>Main depositional environment (<a href="https://en">https://en</a></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../depth/">depth</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The vertical distance below local surface, e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../diss_carb_dioxide/">diss_carb_dioxide</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of dissolved carbon dioxide in the sample or liquid portion of ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../diss_inorg_carb/">diss_inorg_carb</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Dissolved inorganic carbon concentration in the sample, typically measured af...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../diss_inorg_phosp/">diss_inorg_phosp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of dissolved inorganic phosphorus in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../diss_iron/">diss_iron</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Concentration of dissolved iron in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../diss_org_carb/">diss_org_carb</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of dissolved organic carbon in the sample, liquid portion of th...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../diss_oxygen_fluid/">diss_oxygen_fluid</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of dissolved oxygen in the oil field produced fluids as it cont...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem/">ecosystem</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemEnum/">EcosystemEnum</a></td>
+<td>An ecosystem is a combination of a physical environment (abiotic factors) and...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem_category/">ecosystem_category</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemCategoryEnum/">EcosystemCategoryEnum</a></td>
+<td>Ecosystem categories represent divisions within the ecosystem based on specif...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem_subtype/">ecosystem_subtype</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemSubtypeEnum/">EcosystemSubtypeEnum</a></td>
+<td>Ecosystem subtypes represent further subdivision of Ecosystem types into more...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem_type/">ecosystem_type</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemTypeEnum/">EcosystemTypeEnum</a></td>
+<td>Ecosystem types represent things having common characteristics within the Eco...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../elev/">elev</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>Elevation of the sampling site is its height above a fixed reference point, m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../env_broad_scale/">env_broad_scale</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>In this field, report which major environmental system your sample or specime...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../env_local_scale/">env_local_scale</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Report the entity or entities which are in the sample or specimen’s local vic...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../env_medium/">env_medium</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Report the environmental material(s) immediately surrounding the sample or sp...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ethylbenzene/">ethylbenzene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of ethylbenzene in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../experimental_factor/">experimental_factor</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Experimental factors are essentially the variable aspects of an experiment de...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../field/">field</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Name of the hydrocarbon field (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../geo_loc_name/">geo_loc_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by the country or sea name f...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hc_produced/">hc_produced</a></td>
+<td>0..1 <br/> <a href="../HcProducedEnum/">HcProducedEnum</a></td>
+<td>Main hydrocarbon type produced from resource (i</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hcr/">hcr</a></td>
+<td>0..1 <br/> <a href="../HcrEnum/">HcrEnum</a></td>
+<td>Main Hydrocarbon Resource type</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hcr_fw_salinity/">hcr_fw_salinity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Original formation water salinity (prior to secondary recovery e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hcr_geol_age/">hcr_geol_age</a></td>
+<td>0..1 <br/> <a href="../HcrGeolAgeEnum/">HcrGeolAgeEnum</a></td>
+<td>Geological age of hydrocarbon resource (Additional info: <a href="https://en">https://en</a></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hcr_pressure/">hcr_pressure</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Original pressure of the hydrocarbon resource</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hcr_temp/">hcr_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Original temperature of the hydrocarbon resource</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../iw_bt_date_well/">iw_bt_date_well</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Injection water breakthrough date per well following a secondary and/or terti...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../iwf/">iwf</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Proportion of the produced fluids derived from injected water at the time of ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lat_lon/">lat_lon</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by latitude and longitude</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lithology/">lithology</a></td>
+<td>0..1 <br/> <a href="../LithologyEnum/">LithologyEnum</a></td>
+<td>Hydrocarbon resource main lithology (Additional information: <a href="http://petrowiki">http://petrowiki</a></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../magnesium/">magnesium</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of magnesium in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../nitrate/">nitrate</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of nitrate in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../nitrite/">nitrite</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of nitrite in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../org_count_qpcr_info/">org_count_qpcr_info</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>If qpcr was used for the cell count, the target gene name, the primer sequenc...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../organism_count/">organism_count</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total cell count of any organism (or group of organisms) per gram, volume or ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../oxy_stat_samp/">oxy_stat_samp</a></td>
+<td>0..1 <br/> <a href="../OxyStatSampEnum/">OxyStatSampEnum</a></td>
+<td>Oxygenation status of sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ph/">ph</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>Ph measurement of the sample, or liquid portion of sample, or aqueous phase o...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ph_meth/">ph_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining ph</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../potassium/">potassium</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of potassium in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../pour_point/">pour_point</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature at which a liquid becomes semi solid and loses its flow character...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../pressure/">pressure</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Pressure to which the sample is subject to, in atmospheres</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../prod_rate/">prod_rate</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Oil and/or gas production rates per well (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../prod_start_date/">prod_start_date</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Date of field's first production</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reservoir/">reservoir</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Name of the reservoir (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../resins_pc/">resins_pc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis method that d...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../salinity/">salinity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total concentration of all dissolved salts in a liquid or solid sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_collec_device/">samp_collec_device</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The device used to collect an environmental sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_collec_method/">samp_collec_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The method employed for collecting the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_collect_point/">samp_collect_point</a></td>
+<td>0..1 <br/> <a href="../SampCollectPointEnum/">SampCollectPointEnum</a></td>
+<td>Sampling point on the asset were sample was collected (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_loc_corr_rate/">samp_loc_corr_rate</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Metal corrosion rate is the speed of metal deterioration due to environmental...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_mat_process/">samp_mat_process</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A brief description of any processing applied to the sample during or after r...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_preserv/">samp_preserv</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Preservative added to the sample (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_size/">samp_size</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total amount (volume or mass) of sample collected</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_store_dur/">samp_store_dur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Duration for which the sample was stored</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_store_loc/">samp_store_loc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Location at which sample was stored, usually name of a specific freezer/room</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_store_temp/">samp_store_temp</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature at which the sample was stored (degrees are assumed)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_subtype/">samp_subtype</a></td>
+<td>0..1 <br/> <a href="../SampSubtypeEnum/">SampSubtypeEnum</a></td>
+<td>Name of sample sub-type</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_transport_cond/">samp_transport_cond</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Sample transport duration (in days or hrs) and temperature the sample was exp...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_type/">samp_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The type of material from which the sample was obtained</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_well_name/">samp_well_name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Name of the well (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sample_link/">sample_link</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A unique identifier to assign parent-child, subsample, or sibling samples</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../saturates_pc/">saturates_pc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis method that d...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../size_frac/">size_frac</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Filtering pore size used in sample preparation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sodium/">sodium</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Sodium concentration in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../specific_ecosystem/">specific_ecosystem</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../SpecificEcosystemEnum/">SpecificEcosystemEnum</a></td>
+<td>Specific ecosystems represent specific features of the environment like aphot...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sulfate/">sulfate</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of sulfate in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sulfate_fw/">sulfate_fw</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Original sulfate concentration in the hydrocarbon resource</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sulfide/">sulfide</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of sulfide in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../suspend_solids/">suspend_solids</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of substances including a wide variety of material, such as sil...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tan/">tan</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Total Acid Number¬†(TAN) is a measurement of acidity that is determined by th...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../temp/">temp</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature of the sample at the time of sampling</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../toluene/">toluene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of toluene in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_iron/">tot_iron</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of total iron in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_nitro/">tot_nitro</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total nitrogen concentration of water samples, calculated by: total nitrogen ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_phosp/">tot_phosp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total phosphorus concentration in the sample, calculated by: total phosphorus...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_sulfur/">tot_sulfur</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of total sulfur in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tvdss_of_hcr_press/">tvdss_of_hcr_press</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>True vertical depth subsea (TVDSS) of the hydrocarbon resource where the orig...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tvdss_of_hcr_temp/">tvdss_of_hcr_temp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>True vertical depth subsea (TVDSS) of the hydrocarbon resource where the orig...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../vfa/">vfa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of Volatile Fatty Acids in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../vfa_fw/">vfa_fw</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Original volatile fatty acid concentration in the hydrocarbon resource</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../viscosity/">viscosity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A measure of oil's resistance¬†to gradual deformation by¬†shear stress¬†or¬†t...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../water_cut/">water_cut</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Current amount of water (%) in a produced fluid stream; or the average of the...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../water_prod_rate/">water_prod_rate</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Water production rates per well (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../win/">win</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A unique identifier of a well or wellbore</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../xylene/">xylene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of xylene in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../analysis_type/">analysis_type</a></td>
+<td>1..* <br/> <a href="../AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
+<td>Select all the data types associated or available for this biosample</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+<tr>
+<td><a href="../samp_name/">samp_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A local identifier or name that for the material sample collected</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+<tr>
+<td><a href="../source_mat_id/">source_mat_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A globally unique identifier assigned to the parent sample or sample that is ...</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>excel_worksheet_name</td>
+<td>hcr fluids swab</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>nmdc_sub_schema:HcrFluidsSwabsInterface</td>
+</tr>
+<tr>
+<td>native</td>
+<td>nmdc_sub_schema:HcrFluidsSwabsInterface</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: HcrFluidsSwabsInterface
+annotations:
+  excel_worksheet_name:
+    tag: excel_worksheet_name
+    value: hcr fluids swab
+description: hcr_fluids_swabs dh_interface
+title: Hcr Fluids Swabs
+from_schema: https://example.com/nmdc_submission_schema
+is_a: DhInterface
+mixins:
+- DhMultiviewCommonColumnsMixin
+slots:
+- add_recov_method
+- additional_info
+- alkalinity
+- alkalinity_method
+- ammonium
+- api
+- aromatics_pc
+- asphaltenes_pc
+- basin
+- benzene
+- biocide
+- biocide_admin_method
+- calcium
+- chem_administration
+- chem_treat_method
+- chem_treatment
+- chloride
+- collection_date
+- density
+- depos_env
+- depth
+- diss_carb_dioxide
+- diss_inorg_carb
+- diss_inorg_phosp
+- diss_iron
+- diss_org_carb
+- diss_oxygen_fluid
+- ecosystem
+- ecosystem_category
+- ecosystem_subtype
+- ecosystem_type
+- elev
+- env_broad_scale
+- env_local_scale
+- env_medium
+- ethylbenzene
+- experimental_factor
+- field
+- geo_loc_name
+- hc_produced
+- hcr
+- hcr_fw_salinity
+- hcr_geol_age
+- hcr_pressure
+- hcr_temp
+- iw_bt_date_well
+- iwf
+- lat_lon
+- lithology
+- magnesium
+- nitrate
+- nitrite
+- org_count_qpcr_info
+- organism_count
+- oxy_stat_samp
+- ph
+- ph_meth
+- potassium
+- pour_point
+- pressure
+- prod_rate
+- prod_start_date
+- reservoir
+- resins_pc
+- salinity
+- samp_collec_device
+- samp_collec_method
+- samp_collect_point
+- samp_loc_corr_rate
+- samp_mat_process
+- samp_preserv
+- samp_size
+- samp_store_dur
+- samp_store_loc
+- samp_store_temp
+- samp_subtype
+- samp_transport_cond
+- samp_type
+- samp_well_name
+- sample_link
+- saturates_pc
+- size_frac
+- sodium
+- specific_ecosystem
+- sulfate
+- sulfate_fw
+- sulfide
+- suspend_solids
+- tan
+- temp
+- toluene
+- tot_iron
+- tot_nitro
+- tot_phosp
+- tot_sulfur
+- tvdss_of_hcr_press
+- tvdss_of_hcr_temp
+- vfa
+- vfa_fw
+- viscosity
+- water_cut
+- water_prod_rate
+- win
+- xylene
+slot_usage:
+  depth:
+    name: depth
+    examples:
+    - value: 0 - 0.1
+    - value: '1'
+    recommended: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$
+    structured_pattern:
+      syntax: ^{float}(\s*-\s*{float})?$
+      interpolated: true
+  ecosystem:
+    name: ecosystem
+    range: EcosystemEnum
+  ecosystem_category:
+    name: ecosystem_category
+    range: EcosystemCategoryEnum
+  ecosystem_subtype:
+    name: ecosystem_subtype
+    range: EcosystemSubtypeEnum
+  ecosystem_type:
+    name: ecosystem_type
+    range: EcosystemTypeEnum
+  elev:
+    name: elev
+    required: true
+  env_local_scale:
+    name: env_local_scale
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  env_medium:
+    name: env_medium
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  lat_lon:
+    name: lat_lon
+    required: true
+  samp_store_temp:
+    name: samp_store_temp
+    required: true
+  specific_ecosystem:
+    name: specific_ecosystem
+    range: SpecificEcosystemEnum
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: HcrFluidsSwabsInterface
+annotations:
+  excel_worksheet_name:
+    tag: excel_worksheet_name
+    value: hcr fluids swab
+description: hcr_fluids_swabs dh_interface
+title: Hcr Fluids Swabs
+from_schema: https://example.com/nmdc_submission_schema
+is_a: DhInterface
+mixins:
+- DhMultiviewCommonColumnsMixin
+slot_usage:
+  depth:
+    name: depth
+    examples:
+    - value: 0 - 0.1
+    - value: '1'
+    recommended: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$
+    structured_pattern:
+      syntax: ^{float}(\s*-\s*{float})?$
+      interpolated: true
+  ecosystem:
+    name: ecosystem
+    range: EcosystemEnum
+  ecosystem_category:
+    name: ecosystem_category
+    range: EcosystemCategoryEnum
+  ecosystem_subtype:
+    name: ecosystem_subtype
+    range: EcosystemSubtypeEnum
+  ecosystem_type:
+    name: ecosystem_type
+    range: EcosystemTypeEnum
+  elev:
+    name: elev
+    required: true
+  env_local_scale:
+    name: env_local_scale
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  env_medium:
+    name: env_medium
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  lat_lon:
+    name: lat_lon
+    required: true
+  samp_store_temp:
+    name: samp_store_temp
+    required: true
+  specific_ecosystem:
+    name: specific_ecosystem
+    range: SpecificEcosystemEnum
+attributes:
+  add_recov_method:
+    name: add_recov_method
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration;timestamp
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Additional (i.e. Secondary, tertiary, etc.) recovery methods deployed
+      for increase of hydrocarbon recovery from resource and start date for each one
+      of them. If "other" is specified, please propose entry in "additional info"
+      field
+    title: secondary and tertiary recovery methods and start date
+    examples:
+    - value: Polymer Addition;2018-06-21T14:30Z
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - secondary and tertiary recovery methods and start date
+    rank: 289
+    is_a: core field
+    slot_uri: MIXS:0001009
+    alias: add_recov_method
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  additional_info:
+    name: additional_info
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Information that doesn't fit anywhere else. Can also be used to propose
+      new entries for fields with controlled vocabulary
+    title: additional info
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - additional info
+    rank: 290
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000300
+    alias: additional_info
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  alkalinity:
+    name: alkalinity
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milliequivalent per liter, milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: meq/L|mg/L
+    description: Alkalinity, the ability of a solution to neutralize acids to the
+      equivalence point of carbonate or bicarbonate
+    title: alkalinity
+    comments:
+    - 'Value must be reported in one of the following units: meq/L, mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 50 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - alkalinity
+    rank: 1
+    is_a: core field
+    slot_uri: MIXS:0000421
+    alias: alkalinity
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(meq/L|mg/L)$
+  alkalinity_method:
+    name: alkalinity_method
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: description of method
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Method used for alkalinity measurement
+    title: alkalinity method
+    examples:
+    - value: titration
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - alkalinity method
+    rank: 218
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000298
+    alias: alkalinity_method
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  ammonium:
+    name: ammonium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: Concentration of ammonium in the sample
+    title: ammonium
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 1.5 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - ammonium
+    rank: 4
+    is_a: core field
+    slot_uri: MIXS:0000427
+    alias: ammonium
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$
+  api:
+    name: api
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: degrees API
+      occurrence:
+        tag: occurrence
+        value: '1'
+      units_alignment_excuse:
+        tag: units_alignment_excuse
+        value: non_ucum_unit
+    description: 'API gravity is a measure of how heavy or light a petroleum liquid
+      is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g.
+      31.1¬∞ API)'
+    title: API gravity
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - API gravity
+    rank: 291
+    is_a: core field
+    slot_uri: MIXS:0000157
+    alias: api
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
+  aromatics_pc:
+    name: aromatics_pc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: percent
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
+      method that divides¬†crude oil¬†components according to their polarizability
+      and polarity. There are three main methods to obtain SARA results. The most
+      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
+      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    title: aromatics wt%
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - aromatics wt%
+    rank: 292
+    is_a: core field
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000133
+    alias: aromatics_pc
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  asphaltenes_pc:
+    name: asphaltenes_pc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: percent
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
+      method that divides¬†crude oil¬†components according to their polarizability
+      and polarity. There are three main methods to obtain SARA results. The most
+      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
+      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    title: asphaltenes wt%
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - asphaltenes wt%
+    rank: 293
+    is_a: core field
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000135
+    alias: asphaltenes_pc
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  basin:
+    name: basin
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Name of the basin (e.g. Campos)
+    title: basin name
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - basin name
+    rank: 294
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000290
+    alias: basin
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  benzene:
+    name: benzene
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of benzene in the sample
+    title: benzene
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - benzene
+    rank: 295
+    is_a: core field
+    slot_uri: MIXS:0000153
+    alias: benzene
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  biocide:
+    name: biocide
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;name;timestamp
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: List of biocides (commercial name of product and supplier) and date
+      of administration
+    title: biocide administration
+    examples:
+    - value: ALPHA 1427;Baker Hughes;2008-01-23
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - biocide administration
+    rank: 297
+    is_a: core field
+    string_serialization: '{text};{text};{timestamp}'
+    slot_uri: MIXS:0001011
+    alias: biocide
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  biocide_admin_method:
+    name: biocide_admin_method
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value;frequency;duration;duration
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Method of biocide administration (dose, frequency, duration, time
+      elapsed between last biociding and sampling) (e.g. 150 mg/l; weekly; 4 hr; 3
+      days)
+    title: biocide administration method
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - biocide administration method
+    rank: 298
+    is_a: core field
+    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration};{duration}'
+    slot_uri: MIXS:0000456
+    alias: biocide_admin_method
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  calcium:
+    name: calcium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, micromole per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L|mg/kg'
+    description: Concentration of calcium in the sample
+    title: calcium
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L,
+      mg/kg. Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 0.2 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - calcium
+    rank: 9
+    is_a: core field
+    slot_uri: MIXS:0000432
+    alias: calcium
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L|mg/kg)$
+  chem_administration:
+    name: chem_administration
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: CHEBI;timestamp
+      occurrence:
+        tag: occurrence
+        value: m
+    description: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    title: chemical administration
+    examples:
+    - value: agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22
+    - value: agar [CHEBI:2509];2018-05
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - chemical administration
+    rank: 17
+    is_a: core field
+    string_serialization: '{termLabel} {[termID]};{timestamp}'
+    slot_uri: MIXS:0000751
+    alias: chem_administration
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: ^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+
+      \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$
+  chem_treat_method:
+    name: chem_treat_method
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value;frequency;duration;duration
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Method of chemical administration(dose, frequency, duration, time
+      elapsed between administration and sampling) (e.g. 50 mg/l; twice a week; 1
+      hr; 0 days)
+    title: chemical treatment method
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - chemical treatment method
+    rank: 302
+    is_a: core field
+    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration};{duration};{duration}'
+    slot_uri: MIXS:0000457
+    alias: chem_treat_method
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  chem_treatment:
+    name: chem_treatment
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;name;timestamp
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: List of chemical compounds administered upstream the sampling location
+      where sampling occurred (e.g. Glycols, H2S scavenger, corrosion and scale inhibitors,
+      demulsifiers, and other production chemicals etc.). The commercial name of the
+      product and name of the supplier should be provided. The date of administration
+      should also be included
+    title: chemical treatment
+    examples:
+    - value: ACCENT 1125;DOW;2010-11-17
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - chemical treatment
+    rank: 303
+    is_a: core field
+    string_serialization: '{text};{text};{timestamp}'
+    slot_uri: MIXS:0001012
+    alias: chem_treatment
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  chloride:
+    name: chloride
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of chloride in the sample
+    title: chloride
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 5000 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - chloride
+    rank: 10
+    is_a: core field
+    slot_uri: MIXS:0000429
+    alias: chloride
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  collection_date:
+    name: collection_date
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: date and time
+    description: The date of sampling
+    title: collection date
+    examples:
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - collection date
+    rank: 3
+    is_a: environment field
+    slot_uri: MIXS:0000011
+    alias: collection_date
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    multivalued: false
+    pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+  density:
+    name: density
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: gram per cubic meter, gram per cubic centimeter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: g/cm3|g/m3|kg/m3
+    description: Density of the sample, which is its mass per unit volume (aka volumetric
+      mass density)
+    title: density
+    comments:
+    - 'Value must be reported in one of the following units: g/cm3, g/m3, kg/m3. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 1000 kg/m3
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - density
+    rank: 12
+    is_a: core field
+    slot_uri: MIXS:0000435
+    alias: density
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(g/cm3|g/m3|kg/m3)$
+  depos_env:
+    name: depos_env
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Main depositional environment (https://en.wikipedia.org/wiki/Depositional_environment).
+      If "other" is specified, please propose entry in "additional info" field
+    title: depositional environment
+    examples:
+    - value: Continental - Alluvial
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - depositional environment
+    rank: 304
+    is_a: core field
+    slot_uri: MIXS:0000992
+    alias: depos_env
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: depos_env_enum
+    multivalued: false
+  depth:
+    name: depth
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      storage_units:
+        tag: storage_units
+        value: m
+    description: The vertical distance below local surface, e.g. for sediment or soil
+      samples depth is measured from sediment or soil surface, respectively. Depth
+      can be reported as an interval for subsurface samples.
+    title: depth, meters
+    comments:
+    - All depths must be reported in meters. Provide the numerical portion only.
+    examples:
+    - value: 0 - 0.1
+    - value: '1'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - depth
+    rank: 9
+    is_a: environment field
+    slot_uri: MIXS:0000018
+    alias: depth
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$
+    structured_pattern:
+      syntax: ^{float}(\s*-\s*{float})?$
+      interpolated: true
+    unit:
+      ucum_code: m
+  diss_carb_dioxide:
+    name: diss_carb_dioxide
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L|umol/L
+    description: Concentration of dissolved carbon dioxide in the sample or liquid
+      portion of the sample
+    title: dissolved carbon dioxide
+    comments:
+    - 'Value must be reported in one of the following units: mg/L, umol/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 5 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dissolved carbon dioxide
+    rank: 14
+    is_a: core field
+    slot_uri: MIXS:0000436
+    alias: diss_carb_dioxide
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/L)$
+  diss_inorg_carb:
+    name: diss_inorg_carb
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: microgram per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|ug/L|umol/kg'
+    description: Dissolved inorganic carbon concentration in the sample, typically
+      measured after filtering the sample using a 0.45 micrometer filter
+    title: dissolved inorganic carbon
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, ug/L, umol/kg.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 2059 umol/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dissolved inorganic carbon
+    rank: 16
+    is_a: core field
+    slot_uri: MIXS:0000434
+    alias: diss_inorg_carb
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|ug/L|umol/kg)$
+  diss_inorg_phosp:
+    name: diss_inorg_phosp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: microgram per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|ug/L|umol/L'
+    description: Concentration of dissolved inorganic phosphorus in the sample
+    title: dissolved inorganic phosphorus
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, ug/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 56.5 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dissolved inorganic phosphorus
+    rank: 224
+    is_a: core field
+    slot_uri: MIXS:0000106
+    alias: diss_inorg_phosp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|ug/L|umol/L)$
+  diss_iron:
+    name: diss_iron
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L
+    description: Concentration of dissolved iron in the sample
+    title: dissolved iron
+    comments:
+    - Value must be reported in mg/L. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dissolved iron
+    rank: 305
+    is_a: core field
+    slot_uri: MIXS:0000139
+    alias: diss_iron
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: mg/L
+  diss_org_carb:
+    name: diss_org_carb
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L|umol/L|ug/L
+    description: Concentration of dissolved organic carbon in the sample, liquid portion
+      of the sample, or aqueous phase of the fluid
+    title: dissolved organic carbon
+    comments:
+    - 'Value must be reported in one of the following units: mg/L, umol/L, ug/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 197 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dissolved organic carbon
+    rank: 17
+    is_a: core field
+    slot_uri: MIXS:0000433
+    alias: diss_org_carb
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/L|ug/L)$
+  diss_oxygen_fluid:
+    name: diss_oxygen_fluid
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per kilogram, milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L|umol/kg
+    description: Concentration of dissolved oxygen in the oil field produced fluids
+      as it contributes to oxgen-corrosion and microbial activity (e.g. Mic).
+    title: dissolved oxygen in fluids
+    comments:
+    - 'Value must be reported in one of the following units: mg/L, umol/kg. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - dissolved oxygen in fluids
+    rank: 306
+    is_a: core field
+    slot_uri: MIXS:0000438
+    alias: diss_oxygen_fluid
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/kg)$
+  ecosystem:
+    name: ecosystem
+    description: An ecosystem is a combination of a physical environment (abiotic
+      factors) and all the organisms (biotic factors) that interact with this environment.
+      Ecosystem is in position 1/5 in a GOLD path.
+    comments:
+    - The abiotic factors play a profound role on the type and composition of organisms
+      in a given environment. The GOLD Ecosystem at the top of the five-level classification
+      system is aimed at capturing the broader environment from which an organism
+      or environmental sample is collected. The three broad groups under Ecosystem
+      are Environmental, Host-associated, and Engineered. They represent samples collected
+      from a natural environment or from another organism or from engineered environments
+      like bioreactors respectively.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 9
+    is_a: gold_path_field
+    alias: ecosystem
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemEnum
+    recommended: true
+  ecosystem_category:
+    name: ecosystem_category
+    description: Ecosystem categories represent divisions within the ecosystem based
+      on specific characteristics of the environment from where an organism or sample
+      is isolated. Ecosystem category is in position 2/5 in a GOLD path.
+    comments:
+    - The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial.
+      Ecosystem categories for Host-associated samples can be individual hosts or
+      phyla and for engineered samples it may be manipulated environments like bioreactors,
+      solid waste etc.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 10
+    is_a: gold_path_field
+    alias: ecosystem_category
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemCategoryEnum
+    recommended: true
+  ecosystem_subtype:
+    name: ecosystem_subtype
+    description: Ecosystem subtypes represent further subdivision of Ecosystem types
+      into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD
+      path.
+    comments:
+    - Ecosystem Type Marine (Environmental -&gt; Aquatic -&gt; Marine) is further divided
+      (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in
+      the Ecosystem subtype category.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 12
+    is_a: gold_path_field
+    alias: ecosystem_subtype
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemSubtypeEnum
+    recommended: true
+  ecosystem_type:
+    name: ecosystem_type
+    description: Ecosystem types represent things having common characteristics within
+      the Ecosystem Category. These common characteristics based grouping is still
+      broad but specific to the characteristics of a given environment. Ecosystem
+      type is in position 3/5 in a GOLD path.
+    comments:
+    - The Aquatic ecosystem category (for example) may have ecosystem types like Marine
+      or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor
+      air as different Ecosystem Types. In the case of Host-associated samples, ecosystem
+      type can represent Respiratory system, Digestive system, Roots etc.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 11
+    is_a: gold_path_field
+    alias: ecosystem_type
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemTypeEnum
+    recommended: true
+  elev:
+    name: elev
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+    description: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit.
+    title: elevation, meters
+    comments:
+    - All elevations must be reported in meters. Provide the numerical portion only.
+    - Please use https://www.advancedconverter.com/map-tools/find-altitude-by-coordinates,
+      if needed, to help estimate the elevation based on latitude and longitude coordinates.
+    examples:
+    - value: '225'
+    - value: '0'
+    - value: '1250'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - elevation
+    rank: 6
+    is_a: environment field
+    slot_uri: MIXS:0000093
+    alias: elev
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    required: true
+    multivalued: false
+    unit:
+      ucum_code: m
+  env_broad_scale:
+    name: env_broad_scale
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: The major environment type(s) where the sample was collected. Recommend
+          subclasses of biome [ENVO:00000428]. Multiple terms can be separated by
+          one or more pipes.
+      tooltip:
+        tag: tooltip
+        value: The biome or major environmental system where the sample or specimen
+          originated. Choose values from subclasses of the 'biome' class [ENVO:00000428]
+          in the Environment Ontology (ENVO). For host-associated or plant-associated
+          samples, use terms from the UBERON or Plant Ontology to describe the broad
+          anatomical or morphological context
+    description: 'In this field, report which major environmental system your sample
+      or specimen came from. The systems identified should have a coarse spatial grain,
+      to provide the general environmental context of where the sampling was done
+      (e.g. were you in the desert or a rainforest?). We recommend using subclasses
+      of ENVO''s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format
+      (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel
+      [termID]|termLabel [termID]. Example: Annotating a water sample from the photic
+      zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome
+      [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider:
+      tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new
+      terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
+    title: broad-scale environmental context
+    examples:
+    - value: oceanic epipelagic zone biome [ENVO:01000035]
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - broad-scale environmental context
+    rank: 6
+    is_a: mixs_env_triad_field
+    string_serialization: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000012
+    alias: env_broad_scale
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: string
+    required: true
+    multivalued: false
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  env_local_scale:
+    name: env_local_scale
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: Environmental entities having causal influences upon the entity at
+          time of sampling.
+      tooltip:
+        tag: tooltip
+        value: The specific environmental entities or features near the sample or
+          specimen that significantly influence its characteristics or composition.
+          These entities are typically smaller in scale than the broad environmental
+          context. Values for this field should be countable, material nouns and must
+          be chosen from subclasses of BFO:0000040 (material entity) that appear in
+          the Environment Ontology (ENVO). For host-associated or plant-associated
+          samples, use terms from the UBERON or Plant Ontology to describe specific
+          anatomical structures or plant parts.
+    description: 'Report the entity or entities which are in the sample or specimen’s
+      local vicinity and which you believe have significant causal influences on your
+      sample or specimen. We recommend using EnvO terms which are of smaller spatial
+      grain than your entry for env_broad_scale. Terms, such as anatomical sites,
+      from other OBO Library ontologies which interoperate with EnvO (e.g. UBERON)
+      are accepted in this field. EnvO documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS.'
+    title: local environmental context
+    examples:
+    - value: canopy [ENVO:00000047]
+    - value: herb and fern layer [ENVO:01000337]
+    - value: understory [ENVO:01000335]
+    - value: shrub layer [ENVO:01000336]
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - local environmental context
+    rank: 7
+    is_a: mixs_env_triad_field
+    string_serialization: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000013
+    alias: env_local_scale
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: string
+    required: true
+    multivalued: false
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  env_medium:
+    name: env_medium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: The material displaced by the entity at time of sampling. Recommend
+          subclasses of environmental material [ENVO:00010483].
+      tooltip:
+        tag: tooltip
+        value: The predominant environmental material or substrate that directly surrounds
+          or hosts the sample or specimen at the time of sampling. Choose values from
+          subclasses of the 'environmental material' class [ENVO:00010483] in the
+          Environment Ontology (ENVO). Values for this field should be measurable
+          or mass material nouns, representing continuous environmental materials.
+          For host-associated or plant-associated samples, use terms from the UBERON
+          or Plant Ontology to indicate a tissue, organ, or plant structure
+    description: 'Report the environmental material(s) immediately surrounding the
+      sample or specimen at the time of sampling. We recommend using subclasses of
+      ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO
+      documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top).'
+    title: environmental medium
+    examples:
+    - value: soil [ENVO:00001998]
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - environmental medium
+    rank: 8
+    is_a: mixs_env_triad_field
+    string_serialization: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000014
+    alias: env_medium
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: string
+    required: true
+    multivalued: false
+    pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+  ethylbenzene:
+    name: ethylbenzene
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of ethylbenzene in the sample
+    title: ethylbenzene
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - ethylbenzene
+    rank: 309
+    is_a: core field
+    slot_uri: MIXS:0000155
+    alias: ethylbenzene
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  experimental_factor:
+    name: experimental_factor
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text or EFO and/or OBI
+    description: Experimental factors are essentially the variable aspects of an experiment
+      design which can be used to describe an experiment, or set of experiments, in
+      an increasingly detailed manner. This field accepts ontology terms from Experimental
+      Factor Ontology (EFO) and/or Ontology for Biomedical Investigations (OBI). For
+      a browser of EFO (v 2.95) terms, please see http://purl.bioontology.org/ontology/EFO;
+      for a browser of OBI (v 2018-02-12) terms please see http://purl.bioontology.org/ontology/OBI
+    title: experimental factor
+    examples:
+    - value: time series design [EFO:0001779]
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - experimental factor
+    rank: 12
+    is_a: investigation field
+    string_serialization: '{termLabel} {[termID]}|{text}'
+    slot_uri: MIXS:0000008
+    alias: experimental_factor
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+  field:
+    name: field
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Name of the hydrocarbon field (e.g. Albacora)
+    title: field name
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - field name
+    rank: 310
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000291
+    alias: field
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  geo_loc_name:
+    name: geo_loc_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'country or sea name (INSDC or GAZ): region(GAZ), specific location
+          name'
+    description: The geographical origin of the sample as defined by the country or
+      sea name followed by specific region name.
+    title: geographic location (country and/or sea,region)
+    examples:
+    - value: 'USA: Maryland, Bethesda'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - geographic location (country and/or sea,region)
+    rank: 4
+    is_a: environment field
+    string_serialization: '{term}: {term}, {text}'
+    slot_uri: MIXS:0000010
+    alias: geo_loc_name
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    multivalued: false
+    pattern: '^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$'
+  hc_produced:
+    name: hc_produced
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Main hydrocarbon type produced from resource (i.e. Oil, gas, condensate,
+      etc). If "other" is specified, please propose entry in "additional info" field
+    title: hydrocarbon type produced
+    examples:
+    - value: Gas
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - hydrocarbon type produced
+    rank: 313
+    is_a: core field
+    slot_uri: MIXS:0000989
+    alias: hc_produced
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: hc_produced_enum
+    multivalued: false
+  hcr:
+    name: hcr
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Main Hydrocarbon Resource type. The term "Hydrocarbon Resource" HCR
+      defined as a natural environmental feature containing large amounts of hydrocarbons
+      at high concentrations potentially suitable for commercial exploitation. This
+      term should not be confused with the Hydrocarbon Occurrence term which also
+      includes hydrocarbon-rich environments with currently limited commercial interest
+      such as seeps, outcrops, gas hydrates etc. If "other" is specified, please propose
+      entry in "additional info" field
+    title: hydrocarbon resource type
+    examples:
+    - value: Oil Sand
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - hydrocarbon resource type
+    rank: 314
+    is_a: core field
+    slot_uri: MIXS:0000988
+    alias: hcr
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: hcr_enum
+    multivalued: false
+  hcr_fw_salinity:
+    name: hcr_fw_salinity
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L
+    description: Original formation water salinity (prior to secondary recovery e.g.
+      Waterflooding) expressed as TDS
+    title: formation water salinity
+    comments:
+    - Value must be reported in mg/L. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - formation water salinity
+    rank: 315
+    is_a: core field
+    slot_uri: MIXS:0000406
+    alias: hcr_fw_salinity
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: mg/L
+  hcr_geol_age:
+    name: hcr_geol_age
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'Geological age of hydrocarbon resource (Additional info: https://en.wikipedia.org/wiki/Period_(geology)).
+      If "other" is specified, please propose entry in "additional info" field'
+    title: hydrocarbon resource geological age
+    examples:
+    - value: Silurian
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - hydrocarbon resource geological age
+    rank: 316
+    is_a: core field
+    slot_uri: MIXS:0000993
+    alias: hcr_geol_age
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: hcr_geol_age_enum
+    multivalued: false
+  hcr_pressure:
+    name: hcr_pressure
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value range
+      preferred_unit:
+        tag: preferred_unit
+        value: atmosphere, kilopascal
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Original pressure of the hydrocarbon resource
+    title: hydrocarbon resource original pressure
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - hydrocarbon resource original pressure
+    rank: 317
+    is_a: core field
+    string_serialization: '{float} - {float} {unit}'
+    slot_uri: MIXS:0000395
+    alias: hcr_pressure
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  hcr_temp:
+    name: hcr_temp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value range
+      preferred_unit:
+        tag: preferred_unit
+        value: degree Celsius
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Original temperature of the hydrocarbon resource
+    title: hydrocarbon resource original temperature
+    examples:
+    - value: 150-295 degree Celsius
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - hydrocarbon resource original temperature
+    rank: 318
+    is_a: core field
+    string_serialization: '{float} - {float} {unit}'
+    slot_uri: MIXS:0000393
+    alias: hcr_temp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  iw_bt_date_well:
+    name: iw_bt_date_well
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: timestamp
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Injection water breakthrough date per well following a secondary
+      and/or tertiary recovery
+    title: injection water breakthrough date of specific well
+    examples:
+    - value: '2018-05-11'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - injection water breakthrough date of specific well
+    rank: 334
+    is_a: core field
+    slot_uri: MIXS:0001010
+    alias: iw_bt_date_well
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  iwf:
+    name: iwf
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: percent
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '%'
+    description: Proportion of the produced fluids derived from injected water at
+      the time of sampling. (e.g. 87%)
+    title: injection water fraction
+    comments:
+    - Value must be reported in %. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - injection water fraction
+    rank: 335
+    is_a: core field
+    slot_uri: MIXS:0000455
+    alias: iwf
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: '%'
+  lat_lon:
+    name: lat_lon
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: decimal degrees,  limit to 8 decimal points
+    description: The geographical origin of the sample as defined by latitude and
+      longitude. The values should be reported in decimal degrees and in WGS84 system
+    title: geographic location (latitude and longitude)
+    notes:
+    - This is currently a required field but it's not clear if this should be required
+      for human hosts
+    examples:
+    - value: 50.586825 6.408977
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - geographic location (latitude and longitude)
+    rank: 5
+    is_a: environment field
+    string_serialization: '{float} {float}'
+    slot_uri: MIXS:0000009
+    alias: lat_lon
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    multivalued: false
+    pattern: ^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$
+  lithology:
+    name: lithology
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'Hydrocarbon resource main lithology (Additional information: http://petrowiki.org/Lithology_and_rock_type_determination).
+      If "other" is specified, please propose entry in "additional info" field'
+    title: lithology
+    examples:
+    - value: Volcanic
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - lithology
+    rank: 336
+    is_a: core field
+    slot_uri: MIXS:0000990
+    alias: lithology
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: lithology_enum
+    multivalued: false
+  magnesium:
+    name: magnesium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: mole per liter, milligram per liter, parts per million, micromole per
+          kilogram
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|mol/L|umol/kg|mg/kg'
+    description: Concentration of magnesium in the sample
+    title: magnesium
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, mol/L, umol/kg,
+      mg/kg. Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 52.8 umol/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - magnesium
+    rank: 21
+    is_a: core field
+    slot_uri: MIXS:0000431
+    alias: magnesium
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|mol/L|umol/kg|mg/kg)$
+  nitrate:
+    name: nitrate
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: Concentration of nitrate in the sample
+    title: nitrate
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 65 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - nitrate
+    rank: 26
+    is_a: core field
+    slot_uri: MIXS:0000425
+    alias: nitrate
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$
+  nitrite:
+    name: nitrite
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: Concentration of nitrite in the sample
+    title: nitrite
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 0.5 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - nitrite
+    rank: 27
+    is_a: core field
+    slot_uri: MIXS:0000426
+    alias: nitrite
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$
+  org_count_qpcr_info:
+    name: org_count_qpcr_info
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: gene name;FWD:forward primer sequence;REV:reverse primer sequence;initial
+          denaturation:degrees_minutes;denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+          elongation:degrees_minutes; total cycles
+      preferred_unit:
+        tag: preferred_unit
+        value: number of cells per gram (or ml or cm^2)
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'If qpcr was used for the cell count, the target gene name, the primer
+      sequence and the cycling conditions should also be provided. (Example: 16S rrna;
+      FWD:ACGTAGCTATGACGT REV:GTGCTAGTCGAGTAC; initial denaturation:90C_5min; denaturation:90C_2min;
+      annealing:52C_30 sec; elongation:72C_30 sec; 90 C for 1 min; final elongation:72C_5min;
+      30 cycles)'
+    title: organism count qPCR information
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - organism count qPCR information
+    rank: 337
+    is_a: core field
+    string_serialization: '{text};FWD:{dna};REV:{dna};initial denaturation:degrees_minutes;denaturation:degrees_minutes;annealing:degrees_minutes;elongation:degrees_minutes;final
+      elongation:degrees_minutes; total cycles'
+    slot_uri: MIXS:0000099
+    alias: org_count_qpcr_info
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  organism_count:
+    name: organism_count
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: organism name;measurement value;enumeration
+      preferred_unit:
+        tag: preferred_unit
+        value: number of cells per cubic meter, number of cells per milliliter, number
+          of cells per cubic centimeter
+      occurrence:
+        tag: occurrence
+        value: m
+      storage_units:
+        tag: storage_units
+        value: '1'
+    description: 'Total cell count of any organism (or group of organisms) per gram,
+      volume or area of sample, should include name of organism followed by count.
+      The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should
+      also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)'
+    title: organism count
+    examples:
+    - value: total prokaryotes;3.5e7 cells/mL;qPCR
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - organism count
+    rank: 30
+    is_a: core field
+    slot_uri: MIXS:0000103
+    alias: organism_count
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+.*\S+;(qPCR|ATP|MPN|other)\|)*(\S+.*\S+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?
+      \S+.*\S+;(qPCR|ATP|MPN|other))$
+  oxy_stat_samp:
+    name: oxy_stat_samp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Oxygenation status of sample
+    title: oxygenation status of sample
+    examples:
+    - value: aerobic
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - oxygenation status of sample
+    rank: 25
+    is_a: core field
+    slot_uri: MIXS:0000753
+    alias: oxy_stat_samp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: OxyStatSampEnum
+    multivalued: false
+  ph:
+    name: ph
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Ph measurement of the sample, or liquid portion of sample, or aqueous
+      phase of the fluid
+    title: pH
+    examples:
+    - value: '7.2'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - pH
+    rank: 27
+    is_a: core field
+    slot_uri: MIXS:0001001
+    alias: ph
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    recommended: true
+    multivalued: false
+    minimum_value: 0
+    maximum_value: 14
+  ph_meth:
+    name: ph_meth
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID,DOI or url
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Reference or method used in determining ph
+    title: pH method
+    comments:
+    - This can include a link to the instrument used or a citation for the method.
+    examples:
+    - value: https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB
+    - value: https://doi.org/10.2136/sssabookser5.3.c16
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - pH method
+    rank: 41
+    is_a: core field
+    string_serialization: '{PMID}|{DOI}|{URL}'
+    slot_uri: MIXS:0001106
+    alias: ph_meth
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+  potassium:
+    name: potassium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|mg/kg'
+    description: Concentration of potassium in the sample
+    title: potassium
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, mg/kg. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 463 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - potassium
+    rank: 38
+    is_a: core field
+    slot_uri: MIXS:0000430
+    alias: potassium
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|mg/kg)$
+  pour_point:
+    name: pour_point
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: degree Celsius
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: 'Temperature at which a liquid becomes semi solid and loses its flow
+      characteristics. In crude oil a high¬†pour point¬†is generally associated with
+      a high paraffin content, typically found in crude deriving from a larger proportion
+      of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)'
+    title: pour point
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - pour point
+    rank: 341
+    is_a: core field
+    slot_uri: MIXS:0000127
+    alias: pour_point
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  pressure:
+    name: pressure
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: atmosphere
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: atm
+    description: Pressure to which the sample is subject to, in atmospheres
+    title: pressure
+    comments:
+    - Value must be reported in atm. Provide the numeric portion only.
+    examples:
+    - value: '50'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - pressure
+    rank: 39
+    is_a: core field
+    slot_uri: MIXS:0000412
+    alias: pressure
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: atm
+  prod_rate:
+    name: prod_rate
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: cubic meter per day
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: m3/d
+    description: Oil and/or gas production rates per well (e.g. 524 m3 / day)
+    title: production rate
+    comments:
+    - Value must be reported in m3/d. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - production rate
+    rank: 344
+    is_a: core field
+    slot_uri: MIXS:0000452
+    alias: prod_rate
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: m3/d
+  prod_start_date:
+    name: prod_start_date
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: timestamp
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Date of field's first production
+    title: production start date
+    examples:
+    - value: '2018-05-11'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - production start date
+    rank: 345
+    is_a: core field
+    slot_uri: MIXS:0001008
+    alias: prod_start_date
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  reservoir:
+    name: reservoir
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Name of the reservoir (e.g. Carapebus)
+    title: reservoir name
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - reservoir name
+    rank: 347
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000303
+    alias: reservoir
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  resins_pc:
+    name: resins_pc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: percent
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
+      method that divides¬†crude oil¬†components according to their polarizability
+      and polarity. There are three main methods to obtain SARA results. The most
+      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
+      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    title: resins wt%
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - resins wt%
+    rank: 348
+    is_a: core field
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000134
+    alias: resins_pc
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  salinity:
+    name: salinity
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: practical salinity unit, percentage
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '%|mg/L'
+    description: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater.
+    title: salinity
+    comments:
+    - 'Value must be reported in one of the following units: %, mg/L. Provide the
+      numeric portion followed by a space and the unit.'
+    examples:
+    - value: 70 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - salinity
+    rank: 54
+    is_a: core field
+    slot_uri: MIXS:0000183
+    alias: salinity
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(%|mg/L)$
+  samp_collec_device:
+    name: samp_collec_device
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: device name
+    description: The device used to collect an environmental sample. This field accepts
+      terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094).
+    title: sample collection device
+    comments:
+    - Report dimensions and details when applicable
+    examples:
+    - value: swab, biopsy, niskin bottle, push core, drag swab [GENEPIO:0002713]
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample collection device
+    rank: 14
+    is_a: nucleic acid sequence source field
+    string_serialization: '{termLabel} {[termID]}|{text}'
+    slot_uri: MIXS:0000002
+    alias: samp_collec_device
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  samp_collec_method:
+    name: samp_collec_method
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: PMID,DOI,url , or text
+    description: The method employed for collecting the sample.
+    title: sample collection method
+    comments:
+    - This can be a citation or description
+    examples:
+    - value: swabbing
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample collection method
+    rank: 15
+    is_a: nucleic acid sequence source field
+    string_serialization: '{PMID}|{DOI}|{URL}|{text}'
+    slot_uri: MIXS:0001225
+    alias: samp_collec_method
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    multivalued: false
+  samp_collect_point:
+    name: samp_collect_point
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Sampling point on the asset were sample was collected (e.g. Wellhead,
+      storage tank, separator, etc). If "other" is specified, please propose entry
+      in "additional info" field
+    title: sample collection point
+    examples:
+    - value: well
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample collection point
+    rank: 349
+    is_a: core field
+    slot_uri: MIXS:0001015
+    alias: samp_collect_point
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: samp_collect_point_enum
+    multivalued: false
+  samp_loc_corr_rate:
+    name: samp_loc_corr_rate
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value range
+      preferred_unit:
+        tag: preferred_unit
+        value: millimeter per year
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Metal corrosion rate is the speed of metal deterioration due to environmental
+      conditions. As environmental conditions change corrosion rates change accordingly.
+      Therefore, long term corrosion rates are generally more informative than short
+      term rates and for that reason they are preferred during reporting. In the case
+      of suspected MIC, corrosion rate measurements at the time of sampling might
+      provide insights into the involvement of certain microbial community members
+      in MIC as well as potential microbial interplays
+    title: corrosion rate at sample location
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - corrosion rate at sample location
+    rank: 350
+    is_a: core field
+    string_serialization: '{float} - {float} {unit}'
+    slot_uri: MIXS:0000136
+    alias: samp_loc_corr_rate
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  samp_mat_process:
+    name: samp_mat_process
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+    description: A brief description of any processing applied to the sample during
+      or after retrieving the sample from environment, or a link to the relevant protocol(s)
+      performed.
+    title: sample material processing
+    examples:
+    - value: filtering of seawater
+    - value: storing samples in ethanol
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample material processing
+    rank: 12
+    is_a: nucleic acid sequence source field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000016
+    alias: samp_mat_process
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    multivalued: false
+  samp_preserv:
+    name: samp_preserv
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milliliter
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Preservative added to the sample (e.g. Rnalater, alcohol, formaldehyde,
+      etc.). Where appropriate include volume added (e.g. Rnalater; 2 ml)
+    title: preservative added to sample
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - preservative added to sample
+    rank: 352
+    is_a: core field
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000463
+    alias: samp_preserv
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  samp_size:
+    name: samp_size
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: millliter, gram, milligram, liter
+      storage_units:
+        tag: storage_units
+        value: L|g|mL|mg
+    description: The total amount (volume or mass) of sample collected.
+    title: amount or size of sample collected
+    comments:
+    - 'Value must be reported in one of the following units: L, g, mL, mg. Provide
+      the numeric portion followed by a space and the unit.'
+    - This refers to the TOTAL amount of sample collected from the experiment. NOT
+      the amount sent to each institution or collected for a specific analysis.
+    examples:
+    - value: 5 g
+    - value: 10 mL
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - amount or size of sample collected
+    rank: 18
+    is_a: nucleic acid sequence source field
+    slot_uri: MIXS:0000001
+    alias: samp_size
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(L|g|mL|mg)$
+  samp_store_dur:
+    name: samp_store_dur
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: duration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Duration for which the sample was stored
+    title: sample storage duration
+    examples:
+    - value: P1Y6M
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample storage duration
+    rank: 353
+    is_a: core field
+    string_serialization: '{duration}'
+    slot_uri: MIXS:0000116
+    alias: samp_store_dur
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  samp_store_loc:
+    name: samp_store_loc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: location name
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Location at which sample was stored, usually name of a specific freezer/room
+    title: sample storage location
+    examples:
+    - value: Freezer no:5
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample storage location
+    rank: 41
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000755
+    alias: samp_store_loc
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  samp_store_temp:
+    name: samp_store_temp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: degree Celsius
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: Temperature at which the sample was stored (degrees are assumed)
+    title: sample storage temperature
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: '-80'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample storage temperature
+    rank: 7
+    is_a: core field
+    slot_uri: MIXS:0000110
+    alias: samp_store_temp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    required: true
+    multivalued: false
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  samp_subtype:
+    name: samp_subtype
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: enumeration
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Name of sample sub-type. For example if "sample type" is "Produced
+      Water" then subtype could be "Oil Phase" or "Water Phase". If "other" is specified,
+      please propose entry in "additional info" field
+    title: sample subtype
+    examples:
+    - value: biofilm
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample subtype
+    rank: 354
+    is_a: core field
+    slot_uri: MIXS:0000999
+    alias: samp_subtype
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: samp_subtype_enum
+    multivalued: false
+  samp_transport_cond:
+    name: samp_transport_cond
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: days;degree Celsius
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Sample transport duration (in days or hrs) and temperature the sample
+      was exposed to (e.g. 5.5 days; 20 ¬∞C)
+    title: sample transport conditions
+    examples:
+    - value: 5 days;-20 degree Celsius
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample transport conditions
+    rank: 355
+    is_a: core field
+    string_serialization: '{float} {unit};{float} {unit}'
+    slot_uri: MIXS:0000410
+    alias: samp_transport_cond
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  samp_type:
+    name: samp_type
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: GENEPIO:0001246
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: The type of material from which the sample was obtained. For the
+      Hydrocarbon package, samples include types like core, rock trimmings, drill
+      cuttings, piping section, coupon, pigging debris, solid deposit, produced fluid,
+      produced water, injected water, swabs, etc. For the Food Package, samples are
+      usually categorized as food, body products or tissues, or environmental material.
+      This field accepts terms listed under environmental specimen (http://purl.obolibrary.org/obo/GENEPIO_0001246).
+    title: sample type
+    examples:
+    - value: built environment sample [GENEPIO:0001248]
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample type
+    rank: 357
+    is_a: core field
+    string_serialization: '{termLabel} {[termID]}'
+    slot_uri: MIXS:0000998
+    alias: samp_type
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  samp_well_name:
+    name: samp_well_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: Name of the well (e.g. BXA1123) where sample was taken
+    title: sample well name
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample well name
+    rank: 358
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000296
+    alias: samp_well_name
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  sample_link:
+    name: sample_link
+    description: A unique identifier to assign parent-child, subsample, or sibling
+      samples. This is relevant when a sample or other material was used to generate
+      the new sample.
+    title: sample linkage
+    comments:
+    - 'This field allows multiple entries separated by ; (Examples: Soil collected
+      from the field will link with the soil used in an incubation. The soil a plant
+      was grown in links to the plant sample. An original culture sample was transferred
+      to a new vial and generated a new sample)'
+    examples:
+    - value: IGSN:DSJ0284
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 5
+    string_serialization: '{text}:{text}'
+    alias: sample_link
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    - SampIdNewTermsMixin
+    slot_group: sample_id_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+  saturates_pc:
+    name: saturates_pc
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: name;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: percent
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'Saturate, Aromatic, Resin and Asphaltene¬†(SARA) is an analysis
+      method that divides¬†crude oil¬†components according to their polarizability
+      and polarity. There are three main methods to obtain SARA results. The most
+      popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source:
+      https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)'
+    title: saturates wt%
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - saturates wt%
+    rank: 359
+    is_a: core field
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000131
+    alias: saturates_pc
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  size_frac:
+    name: size_frac
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: filter size value range
+    description: Filtering pore size used in sample preparation
+    title: size fraction selected
+    examples:
+    - value: 0-0.22 micrometer
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - size fraction selected
+    rank: 285
+    is_a: nucleic acid sequence source field
+    string_serialization: '{float}-{float} {unit}'
+    slot_uri: MIXS:0000017
+    alias: size_frac
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  sodium:
+    name: sodium
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Sodium concentration in the sample
+    title: sodium
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 10.5 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sodium
+    rank: 363
+    is_a: core field
+    slot_uri: MIXS:0000428
+    alias: sodium
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  specific_ecosystem:
+    name: specific_ecosystem
+    description: Specific ecosystems represent specific features of the environment
+      like aphotic zone in an ocean or gastric mucosa within a host digestive system.
+      Specific ecosystem is in position 5/5 in a GOLD path.
+    comments:
+    - Specific ecosystems help to define samples based on very specific characteristics
+      of an environment under the five-level classification system.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 13
+    is_a: gold_path_field
+    alias: specific_ecosystem
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: SpecificEcosystemEnum
+    recommended: true
+  sulfate:
+    name: sulfate
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: Concentration of sulfate in the sample
+    title: sulfate
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 5 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sulfate
+    rank: 44
+    is_a: core field
+    slot_uri: MIXS:0000423
+    alias: sulfate
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$
+  sulfate_fw:
+    name: sulfate_fw
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L
+    description: Original sulfate concentration in the hydrocarbon resource
+    title: sulfate in formation water
+    comments:
+    - Value must be reported in mg/L. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sulfate in formation water
+    rank: 370
+    is_a: core field
+    slot_uri: MIXS:0000407
+    alias: sulfate_fw
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: mg/L
+  sulfide:
+    name: sulfide
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: Concentration of sulfide in the sample
+    title: sulfide
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 2 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sulfide
+    rank: 371
+    is_a: core field
+    slot_uri: MIXS:0000424
+    alias: sulfide
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$
+  suspend_solids:
+    name: suspend_solids
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: suspended solid name;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: gram, microgram, milligram per liter, mole per liter, gram per liter,
+          part per million
+      occurrence:
+        tag: occurrence
+        value: m
+    description: Concentration of substances including a wide variety of material,
+      such as silt, decaying plant and animal matter; can include multiple substances
+    title: suspended solids
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - suspended solids
+    rank: 372
+    is_a: core field
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000150
+    alias: suspend_solids
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - WastewaterSludgeInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  tan:
+    name: tan
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L
+    description: 'Total Acid Number¬†(TAN) is a measurement of acidity that is determined
+      by the amount of¬†potassium hydroxide¬†in milligrams that is needed to neutralize
+      the acids in one gram of oil.¬†It is an important quality measurement of¬†crude
+      oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)'
+    title: total acid number
+    comments:
+    - Value must be reported in mg/L. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - total acid number
+    rank: 373
+    is_a: core field
+    slot_uri: MIXS:0000120
+    alias: tan
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: mg/L
+  temp:
+    name: temp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: degree Celsius
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: Temperature of the sample at the time of sampling.
+    title: temperature
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: '25'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - temperature
+    rank: 37
+    is_a: environment field
+    slot_uri: MIXS:0000113
+    alias: temp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: float
+    multivalued: false
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  toluene:
+    name: toluene
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of toluene in the sample
+    title: toluene
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - toluene
+    rank: 375
+    is_a: core field
+    slot_uri: MIXS:0000154
+    alias: toluene
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  tot_iron:
+    name: tot_iron
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, milligram per kilogram
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L|mg/kg
+    description: Concentration of total iron in the sample
+    title: total iron
+    comments:
+    - 'Value must be reported in one of the following units: mg/L, mg/kg. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - total iron
+    rank: 376
+    is_a: core field
+    slot_uri: MIXS:0000105
+    alias: tot_iron
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(mg/L|mg/kg)$
+  tot_nitro:
+    name: tot_nitro
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: microgram per liter, micromole per liter, milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L|ug/L|umol/L|%
+    description: 'Total nitrogen concentration of water samples, calculated by: total
+      nitrogen = total dissolved nitrogen + particulate nitrogen. Can also be measured
+      without filtering, reported as nitrogen'
+    title: total nitrogen concentration
+    comments:
+    - 'Value must be reported in one of the following units: mg/L, ug/L, umol/L, %.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 50 umol/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - total nitrogen concentration
+    rank: 377
+    is_a: core field
+    slot_uri: MIXS:0000102
+    alias: tot_nitro
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(mg/L|ug/L|umol/L|%)$
+  tot_phosp:
+    name: tot_phosp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: 'Total phosphorus concentration in the sample, calculated by: total
+      phosphorus = total dissolved phosphorus + particulate phosphorus'
+    title: total phosphorus
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 0.03 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - total phosphorus
+    rank: 52
+    is_a: core field
+    slot_uri: MIXS:0000117
+    alias: tot_phosp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$
+  tot_sulfur:
+    name: tot_sulfur
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of total sulfur in the sample
+    title: total sulfur
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - total sulfur
+    rank: 379
+    is_a: core field
+    slot_uri: MIXS:0000419
+    alias: tot_sulfur
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  tvdss_of_hcr_press:
+    name: tvdss_of_hcr_press
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: meter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: m
+    description: True vertical depth subsea (TVDSS) of the hydrocarbon resource where
+      the original pressure was measured (e.g. 1578 m).
+    title: depth (TVDSS) of hydrocarbon resource pressure
+    comments:
+    - Value must be reported in m. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - depth (TVDSS) of hydrocarbon resource pressure
+    rank: 380
+    is_a: core field
+    slot_uri: MIXS:0000397
+    alias: tvdss_of_hcr_press
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: m
+  tvdss_of_hcr_temp:
+    name: tvdss_of_hcr_temp
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: meter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      units_alignment_excuse:
+        tag: units_alignment_excuse
+        value: complex_unit
+    description: True vertical depth subsea (TVDSS) of the hydrocarbon resource where
+      the original temperature was measured (e.g. 1345 m).
+    title: depth (TVDSS) of hydrocarbon resource temperature
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - depth (TVDSS) of hydrocarbon resource temperature
+    rank: 381
+    is_a: core field
+    slot_uri: MIXS:0000394
+    alias: tvdss_of_hcr_temp
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +\S.*$
+  vfa:
+    name: vfa
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of Volatile Fatty Acids in the sample
+    title: volatile fatty acids
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - volatile fatty acids
+    rank: 382
+    is_a: core field
+    slot_uri: MIXS:0000152
+    alias: vfa
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  vfa_fw:
+    name: vfa_fw
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: mg/L
+    description: Original volatile fatty acid concentration in the hydrocarbon resource
+    title: vfa in formation water
+    comments:
+    - Value must be reported in mg/L. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - vfa in formation water
+    rank: 383
+    is_a: core field
+    slot_uri: MIXS:0000408
+    alias: vfa_fw
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: mg/L
+  viscosity:
+    name: viscosity
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value;measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: cP at degree Celsius
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: A measure of oil's resistance¬†to gradual deformation by¬†shear stress¬†or¬†tensile
+      stress (e.g. 3.5 cp; 100 ¬∞C)
+    title: viscosity
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - viscosity
+    rank: 384
+    is_a: core field
+    string_serialization: '{float} {unit};{float} {unit}'
+    slot_uri: MIXS:0000126
+    alias: viscosity
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  water_cut:
+    name: water_cut
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: percent
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '%'
+    description: Current amount of water (%) in a produced fluid stream; or the average
+      of the combined streams
+    title: water cut
+    comments:
+    - Value must be reported in %. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - water cut
+    rank: 386
+    is_a: core field
+    slot_uri: MIXS:0000454
+    alias: water_cut
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: '%'
+  water_prod_rate:
+    name: water_prod_rate
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: cubic meter per day
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: m3/d
+    description: Water production rates per well (e.g. 987 m3 / day)
+    title: water production rate
+    comments:
+    - Value must be reported in m3/d. Provide the numeric portion only.
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - water production rate
+    rank: 387
+    is_a: core field
+    slot_uri: MIXS:0000453
+    alias: water_prod_rate
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: float
+    multivalued: false
+    unit:
+      ucum_code: m3/d
+  win:
+    name: win
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+      occurrence:
+        tag: occurrence
+        value: '1'
+    description: 'A unique identifier of a well or wellbore. This is part of the Global
+      Framework for Well Identification initiative which is compiled by the Professional
+      Petroleum Data Management Association (PPDM) in an effort to improve well identification
+      systems. (Supporting information: https://ppdm.org/ and http://dl.ppdm.org/dl/690)'
+    title: well identification number
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - well identification number
+    rank: 388
+    is_a: core field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000297
+    alias: win
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+  xylene:
+    name: xylene
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: measurement value
+      preferred_unit:
+        tag: preferred_unit
+        value: milligram per liter, parts per million
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L'
+    description: Concentration of xylene in the sample
+    title: xylene
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: ''
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - xylene
+    rank: 389
+    is_a: core field
+    slot_uri: MIXS:0000156
+    alias: xylene
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    slot_group: mixs_core_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$
+  analysis_type:
+    name: analysis_type
+    description: Select all the data types associated or available for this biosample
+    title: analysis/data type
+    comments:
+    - MIxS:investigation_type was included as a `see_also` but that term doesn't resolve
+      any more
+    examples:
+    - value: metagenomics; metabolomics; metaproteomics
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 3
+    alias: analysis_type
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: AnalysisTypeEnum
+    required: true
+    multivalued: true
+  samp_name:
+    name: samp_name
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: text
+    description: A local identifier or name that for the material sample collected.
+      Refers to the original material collected or to any derived sub-samples.
+    title: sample name
+    comments:
+    - It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible.
+    examples:
+    - value: Rock core CB1178(5-6) from NSW
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - sample name
+    rank: 1
+    is_a: investigation field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0001107
+    identifier: true
+    alias: samp_name
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: string
+    required: true
+    multivalued: false
+  source_mat_id:
+    name: source_mat_id
+    annotations:
+      expected_value:
+        tag: expected_value
+        value: 'for cultures of microorganisms: identifiers for two culture collections;
+          for other material a unique arbitrary identifer'
+    description: A globally unique identifier assigned to the parent sample or sample
+      that is the source  of this sample.
+    title: source material identifier
+    todos:
+    - Currently, the comments say to use UUIDs. However, if we implement assigning
+      NMDC identifiers with the minter we dont need to require a GUID. It can be an
+      optional field to fill out only if they already have a resolvable ID.
+    comments:
+    - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
+      NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
+      IDs enable linking to derived analytes and subsamples. If you have not assigned
+      FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+    - 'Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International  Generic
+      Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI  biosample
+      accession IDs, `gold` for GOLD identifiers.'
+    examples:
+    - value: igsn:AU1243
+    - value: biosample:SAMEA2397676
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - source material identifiers
+    rank: 2
+    is_a: nucleic acid sequence source field
+    string_serialization: '{text}'
+    slot_uri: MIXS:0000026
+    alias: source_mat_id
+    owner: HcrFluidsSwabsInterface
+    domain_of:
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: string
+    multivalued: false
+    pattern: ^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.sections"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../js/tablesort.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
