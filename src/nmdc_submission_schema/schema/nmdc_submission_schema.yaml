@@ -25756,9 +25756,6 @@ classes:
         any_of:
         - range: EnvMediumWaterEnum
         - range: string
-      geo_loc_name:
-        name: geo_loc_name
-        pattern: ''
       lat_lon:
         name: lat_lon
         recommended: true
