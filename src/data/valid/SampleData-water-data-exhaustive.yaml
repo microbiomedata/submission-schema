@@ -49,7 +49,6 @@ water_data:
     light_intensity: 0.3
     mean_frict_vel: 0.5
     mean_peak_frict_vel: 1
-    misc_param: "Bicarbonate ion concentration;2075 micromole per kilogram|Perchlorate ion concentration;1111 micromole per kilogram"
     n_alkanes: "n-hexadecane;100 mg/L|n-octane;111 mg/L"
     nitrate: 65 umol/L
     nitrite: 0.5 umol/L
