@@ -3002,25 +3002,6 @@ slots:
           rank: 263
           slot_group: mixs_core_section
 
-  - slot: misc_param
-    source: Biosample
-    destinations:
-      - AirInterface
-      - BiofilmInterface
-      - HcrCoresInterface
-      - HcrFluidsSwabsInterface
-      - HostAssociatedInterface
-      - MiscEnvsInterface
-      - PlantAssociatedInterface
-      - SedimentInterface
-      - SoilInterface
-      - WastewaterSludgeInterface
-      - WaterInterface
-    modifications:
-      - replace:
-          rank: 23
-          slot_group: mixs_section
-
   - slot: n_alkanes
     source: Biosample
     destinations:

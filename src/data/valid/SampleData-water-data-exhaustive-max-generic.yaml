@@ -49,7 +49,6 @@ water_data:
     light_intensity: 100
     mean_frict_vel: 100
     mean_peak_frict_vel: 100
-    misc_param: xyz;100 units
     n_alkanes: xyz;100 units
     nitrate: 100 [ppm]
     nitrite: 100 [ppm]
