@@ -11,6 +11,6 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     specific_ecosystem: Unclassified
 
