@@ -2055,12 +2055,6 @@ slots:
             or sea name followed by specific region name.
           required: true
           pattern: '^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$'
-      # This may have been a mistake in the original sheets_and_friends TSV config files, but it is
-      # compatible with what they specified so we will keep it for now.
-      - in_classes:
-          - WaterInterface
-        replace:
-          pattern: ''
 
   - slot: glucosidase_act
     source: Biosample

@@ -7,7 +7,7 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz1
     source_mat_id: igsn:001
@@ -19,7 +19,7 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz2
     source_mat_id: igsn:001
@@ -31,7 +31,7 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz3
     source_mat_id: igsn:001
@@ -43,7 +43,7 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz4
     source_mat_id: igsn:001
@@ -55,7 +55,7 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz5
     source_mat_id: igsn:001
@@ -67,7 +67,7 @@ water_data:
     env_broad_scale: oceanic epipelagic zone biome [ENVO:01000033]
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
-    geo_loc_name: "USA: Crater Lake"
+    geo_loc_name: "USA: Oregon, Crater Lake"
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz6
     source_mat_id: igsn:001
