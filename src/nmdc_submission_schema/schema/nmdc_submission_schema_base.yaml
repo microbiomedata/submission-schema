@@ -64,7 +64,7 @@ enums:
       Gentegra-DNA:
       Gentegra-RNA:
       Low EDTA TE:
-      MDA reaction buffer:
+      MDA Reaction Buffer:
       PBS:
       Pellet:
       TE:
@@ -400,6 +400,12 @@ slots:
     aliases:
       - dna_cont_type
       - rna_cont_type
+  replicate_group:
+    title: Biological replicate/sample group Name
+    description: Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.
+    range: string
+    examples:
+      - value: SampleGroup1
   cont_well:
     title: plate position
     comments:
@@ -655,6 +661,7 @@ classes:
       - jgi_seq_project
       - jgi_seq_project_name
       - jgi_sample_volume
+      - replicate_group
     slot_usage:
       cont_type:
         slot_group: jgi_metagenomics_section
@@ -686,6 +693,8 @@ classes:
         slot_group: jgi_metagenomics_section
       dna_isolate_meth:
         slot_group: jgi_metagenomics_section
+      replicate_group:
+        slot_group: jgi_metagenomics_section  
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
@@ -731,6 +740,7 @@ classes:
       - jgi_seq_project
       - jgi_seq_project_name
       - jgi_sample_volume
+      - replicate_group
     slot_usage:
       cont_type:
         slot_group: jgi_metagenomics_section
@@ -763,6 +773,8 @@ classes:
       nuc_acid_concentration:
         slot_group: jgi_metagenomics_section
       dna_isolate_meth:
+        slot_group: jgi_metagenomics_section
+      replicate_group:
         slot_group: jgi_metagenomics_section
     rules:
       - title: well_requires_plate
@@ -809,6 +821,7 @@ classes:
       - jgi_seq_project
       - jgi_seq_project_name
       - jgi_sample_volume
+      - replicate_group
     slot_usage:
       cont_type:
         slot_group: jgi_metatranscriptomics_section
@@ -840,6 +853,9 @@ classes:
         slot_group: jgi_metatranscriptomics_section
       rna_isolate_meth:
         slot_group: jgi_metatranscriptomics_section
+      replicate_group:
+        slot_group: jgi_metatranscriptomics_section
+        required: true  
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
