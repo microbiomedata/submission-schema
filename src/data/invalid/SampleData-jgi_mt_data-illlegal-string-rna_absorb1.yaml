@@ -16,4 +16,5 @@ jgi_mt_data:
     biosafety_mat_cat: Metagenome (Environmental)
     analysis_type: 
       - metatranscriptomics
+    replicate_group: bio_rep_1
     nuc_acid_absorb1: one

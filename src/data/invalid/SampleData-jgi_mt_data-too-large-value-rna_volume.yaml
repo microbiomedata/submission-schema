@@ -1,6 +1,7 @@
 jgi_mt_data:
   - analysis_type:
       - metatranscriptomics
+    replicate_group: bio_rep_1
     samp_name: sample name
     source_mat_id: gold:Gb012345
     dnase: "no"

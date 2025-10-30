@@ -15,6 +15,7 @@ jgi_mt_data:
     jgi_sample_volume: 25.1
     analysis_type: 
       - metatranscriptomics
+    replicate_group: bio_rep_1
     nuc_acid_absorb1: 2.02
     nuc_acid_absorb2: two and a half
     biosafety_mat_cat: Metagenome (Environmental)
