@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-10T11:33:25
+# Generation date: 2025-10-31T04:39:13
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -15114,8 +15114,7 @@ slots.sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="sample_link", cu
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.sample_shipped = Slot(uri=NMDC_SUB_SCHEMA.sample_shipped, name="sample_shipped", curie=NMDC_SUB_SCHEMA.curie('sample_shipped'),
-                   model_uri=NMDC_SUB_SCHEMA.sample_shipped, domain=None, range=str,
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? \S+$'))
+                   model_uri=NMDC_SUB_SCHEMA.sample_shipped, domain=None, range=str)
 
 slots.sample_type = Slot(uri=NMDC_SUB_SCHEMA.sample_type, name="sample_type", curie=NMDC_SUB_SCHEMA.curie('sample_type'),
                    model_uri=NMDC_SUB_SCHEMA.sample_type, domain=None, range=Union[str, "SampleTypeEnum"])
@@ -15548,14 +15547,15 @@ slots.insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_i
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
 slots.insdc_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_identifiers, name="insdc_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.insdc_identifiers, domain=None, range=Optional[str])
-
-slots.study_identifiers = Slot(uri=NMDC_SUB_SCHEMA.study_identifiers, name="study_identifiers", curie=NMDC_SUB_SCHEMA.curie('study_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.study_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
+                   model_uri=NMDC_SUB_SCHEMA.insdc_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
 
 slots.external_database_identifiers = Slot(uri=NMDC_SUB_SCHEMA.external_database_identifiers, name="external_database_identifiers", curie=NMDC_SUB_SCHEMA.curie('external_database_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.external_database_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
+                   pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
+
+slots.study_identifiers = Slot(uri=NMDC_SUB_SCHEMA.study_identifiers, name="study_identifiers", curie=NMDC_SUB_SCHEMA.curie('study_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.study_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
 
 slots.insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
@@ -16213,10 +16213,6 @@ slots.WaterInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WaterInte
 slots.WaterInterface_env_medium = Slot(uri=MIXS['0000014'], name="WaterInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_medium, domain=WaterInterface, range=str,
                    pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
-
-slots.WaterInterface_geo_loc_name = Slot(uri=MIXS['0000010'], name="WaterInterface_geo_loc_name", curie=MIXS.curie('0000010'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_geo_loc_name, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$'))
 
 slots.WaterInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WaterInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=Optional[str],
