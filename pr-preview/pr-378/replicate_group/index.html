@@ -465,6 +465,11 @@ Alias: replicate_group</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
+<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
 <td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
 <td>yes</td>
@@ -472,11 +477,6 @@ Alias: replicate_group</p>
 <tr>
 <td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
 <td>jgi_mt dh_interface</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
-<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -533,7 +533,7 @@ title: Biological replicate/sample group Name
 examples:
 - value: SampleGroup1
 from_schema: https://example.com/nmdc_submission_schema
-rank: 1000
+rank: 5
 alias: replicate_group
 domain_of:
 - JgiMgInterface
