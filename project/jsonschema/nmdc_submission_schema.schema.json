@@ -3550,8 +3550,7 @@
                     "type": "string"
                 },
                 "sample_shipped": {
-                    "description": "The total amount or size (volume (ml), mass (g) or area (m2) ) of sample sent to EMSL.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+$",
+                    "description": "The total amount or size (volume, mass, or area) of sample sent to EMSL.",
                     "type": "string"
                 },
                 "sample_type": {
@@ -12956,7 +12955,7 @@
                 },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
-                    "pattern": "",
+                    "pattern": "^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$",
                     "type": "string"
                 },
                 "glucosidase_act": {

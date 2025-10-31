@@ -1,8 +1,8 @@
 # Introduction: This Dockerfile can be used to build a container image that can, in turn, be used
 #               to "build" (hence, its name, "builder") the submission schema release artifacts.
 
-# Use Python 3.9 because that's the Python version listed in `pyproject.toml`.
-FROM python:3.9
+# Use Python 3.10 because that's the Python version listed in `pyproject.toml`.
+FROM python:3.10
 
 WORKDIR /submission-schema
 
