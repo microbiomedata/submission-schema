@@ -5,5 +5,5 @@ emsl_data:
     emsl_store_temp: -80
     project_id: xxx
     samp_name: xxx
-    sample_shipped: three buckets
+    sample_shipped: true
     sample_type: soil
