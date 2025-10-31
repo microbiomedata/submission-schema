@@ -8,7 +8,7 @@ jgi_mt_data:
     container_name: cat_ht_1999
     rna_isolate_meth: phenol/cloroform extraction
     jgi_samp_id: '123456'
-    jgi_sample_format: MDA reaction buffer
+    jgi_sample_format: MDA Reaction Buffer
     jgi_sample_name: JGI_lagoon_14343
     jgi_seq_project: 123456789
     jgi_seq_project_name: JGI Lagoon metatranscritpomics
@@ -18,3 +18,4 @@ jgi_mt_data:
     nuc_acid_absorb1: 2.02
     nuc_acid_absorb2: 1.4
     biosafety_mat_cat: Metagenome (Environmental)
+    replicate_group: bio_rep_1

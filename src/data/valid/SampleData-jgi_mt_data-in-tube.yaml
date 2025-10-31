@@ -16,4 +16,6 @@ jgi_mt_data:
     samp_name: xxx
     source_mat_id: igsn:001
     biosafety_mat_cat: Metagenome (Environmental)
+    replicate_group: RG_A
+    
 

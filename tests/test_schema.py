@@ -145,6 +145,7 @@ TEMPLATE_INSTANCES = {
         "jgi_sample_volume": 1.0,
         "samp_name": "000001",
         "biosafety_mat_cat": "Metagenome (Environmental)",
+        "replicate_group": "replicate_1",
     },
     "MiscEnvsInterface": {
         "analysis_type": ["metagenomics"],
