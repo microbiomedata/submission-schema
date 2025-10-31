@@ -6654,7 +6654,7 @@
                 "Gentegra-DNA",
                 "Gentegra-RNA",
                 "Low EDTA TE",
-                "MDA reaction buffer",
+                "MDA Reaction Buffer",
                 "PBS",
                 "Pellet",
                 "TE",
@@ -6796,6 +6796,13 @@
                     "maximum": 2000,
                     "minimum": 0,
                     "type": "number"
+                },
+                "replicate_group": {
+                    "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
@@ -6947,6 +6954,13 @@
                     "maximum": 2000,
                     "minimum": 0,
                     "type": "number"
+                },
+                "replicate_group": {
+                    "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
@@ -7103,6 +7117,10 @@
                     "minimum": 0,
                     "type": "number"
                 },
+                "replicate_group": {
+                    "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+                    "type": "string"
+                },
                 "rna_isolate_meth": {
                     "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
                     "type": "string"
@@ -7133,6 +7151,7 @@
                 "jgi_seq_project",
                 "jgi_seq_project_name",
                 "jgi_sample_volume",
+                "replicate_group",
                 "analysis_type",
                 "samp_name"
             ],

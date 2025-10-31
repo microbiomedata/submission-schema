@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-31T08:47:19
+# Generation date: 2025-10-31T08:55:51
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -3450,6 +3450,7 @@ class JgiMgInterface(DhInterface):
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
     cont_well: Optional[str] = None
+    replicate_group: Optional[str] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3538,6 +3539,9 @@ class JgiMgInterface(DhInterface):
         if self.cont_well is not None and not isinstance(self.cont_well, str):
             self.cont_well = str(self.cont_well)
 
+        if self.replicate_group is not None and not isinstance(self.replicate_group, str):
+            self.replicate_group = str(self.replicate_group)
+
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
 
@@ -3573,6 +3577,7 @@ class JgiMgLrInterface(DhInterface):
     jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     cont_well: Optional[str] = None
+    replicate_group: Optional[str] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3665,6 +3670,9 @@ class JgiMgLrInterface(DhInterface):
         if self.cont_well is not None and not isinstance(self.cont_well, str):
             self.cont_well = str(self.cont_well)
 
+        if self.replicate_group is not None and not isinstance(self.replicate_group, str):
+            self.replicate_group = str(self.replicate_group)
+
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
 
@@ -3696,6 +3704,7 @@ class JgiMtInterface(DhInterface):
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
     jgi_sample_volume: float = None
+    replicate_group: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
@@ -3767,6 +3776,11 @@ class JgiMtInterface(DhInterface):
             self.MissingRequiredField("jgi_sample_volume")
         if not isinstance(self.jgi_sample_volume, float):
             self.jgi_sample_volume = float(self.jgi_sample_volume)
+
+        if self._is_empty(self.replicate_group):
+            self.MissingRequiredField("replicate_group")
+        if not isinstance(self.replicate_group, str):
+            self.replicate_group = str(self.replicate_group)
 
         if self._is_empty(self.rna_isolate_meth):
             self.MissingRequiredField("rna_isolate_meth")
@@ -6472,8 +6486,8 @@ class JGISampleFormatEnum(EnumDefinitionImpl):
             PermissibleValue(text="Gentegra-RNA"))
         setattr(cls, "Low EDTA TE",
             PermissibleValue(text="Low EDTA TE"))
-        setattr(cls, "MDA reaction buffer",
-            PermissibleValue(text="MDA reaction buffer"))
+        setattr(cls, "MDA Reaction Buffer",
+            PermissibleValue(text="MDA Reaction Buffer"))
 
 class JGIBiosafetyMaterialCategoryEnum(EnumDefinitionImpl):
     """
@@ -13805,6 +13819,9 @@ slots.interleaved_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.interleaved_md5_checks
 slots.cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
                    model_uri=NMDC_SUB_SCHEMA.cont_type, domain=None, range=Union[str, "JgiContTypeEnum"])
 
+slots.replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group, name="replicate_group", curie=NMDC_SUB_SCHEMA.curie('replicate_group'),
+                   model_uri=NMDC_SUB_SCHEMA.replicate_group, domain=None, range=Optional[str])
+
 slots.cont_well = Slot(uri=NMDC_SUB_SCHEMA.cont_well, name="cont_well", curie=NMDC_SUB_SCHEMA.curie('cont_well'),
                    model_uri=NMDC_SUB_SCHEMA.cont_well, domain=None, range=Optional[str],
                    pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
@@ -15835,6 +15852,9 @@ slots.JgiMgInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_
 slots.JgiMgInterface_dna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.dna_isolate_meth, name="JgiMgInterface_dna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_dna_isolate_meth, domain=JgiMgInterface, range=str)
 
+slots.JgiMgInterface_replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group, name="JgiMgInterface_replicate_group", curie=NMDC_SUB_SCHEMA.curie('replicate_group'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_replicate_group, domain=JgiMgInterface, range=Optional[str])
+
 slots.JgiMgLrInterface_cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="JgiMgLrInterface_cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_cont_type, domain=JgiMgLrInterface, range=Union[str, "JgiContTypeEnum"])
 
@@ -15883,6 +15903,9 @@ slots.JgiMgLrInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_aci
 slots.JgiMgLrInterface_dna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.dna_isolate_meth, name="JgiMgLrInterface_dna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_dna_isolate_meth, domain=JgiMgLrInterface, range=str)
 
+slots.JgiMgLrInterface_replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group, name="JgiMgLrInterface_replicate_group", curie=NMDC_SUB_SCHEMA.curie('replicate_group'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_replicate_group, domain=JgiMgLrInterface, range=Optional[str])
+
 slots.JgiMtInterface_cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="JgiMtInterface_cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_cont_type, domain=JgiMtInterface, range=Union[str, "JgiContTypeEnum"])
 
@@ -15930,6 +15953,9 @@ slots.JgiMtInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_
 
 slots.JgiMtInterface_rna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.rna_isolate_meth, name="JgiMtInterface_rna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('rna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_rna_isolate_meth, domain=JgiMtInterface, range=str)
+
+slots.JgiMtInterface_replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group, name="JgiMtInterface_replicate_group", curie=NMDC_SUB_SCHEMA.curie('replicate_group'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_replicate_group, domain=JgiMtInterface, range=str)
 
 slots.MiscEnvsInterface_depth = Slot(uri=MIXS['0000018'], name="MiscEnvsInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_depth, domain=MiscEnvsInterface, range=Optional[str],

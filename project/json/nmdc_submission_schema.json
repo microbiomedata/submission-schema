@@ -783,8 +783,8 @@
         "Low EDTA TE": {
           "text": "Low EDTA TE"
         },
-        "MDA reaction buffer": {
-          "text": "MDA reaction buffer"
+        "MDA Reaction Buffer": {
+          "text": "MDA Reaction Buffer"
         },
         "PBS": {
           "text": "PBS"
@@ -13694,7 +13694,7 @@
         "dna_cont_type",
         "rna_cont_type"
       ],
-      "rank": 10,
+      "rank": 11,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13702,6 +13702,24 @@
       ],
       "range": "JgiContTypeEnum",
       "required": true
+    },
+    "replicate_group": {
+      "name": "replicate_group",
+      "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+      "title": "Biological replicate/sample group Name",
+      "examples": [
+        {
+          "value": "SampleGroup1"
+        }
+      ],
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "rank": 5,
+      "domain_of": [
+        "JgiMgInterface",
+        "JgiMgLrInterface",
+        "JgiMtInterface"
+      ],
+      "range": "string"
     },
     "cont_well": {
       "name": "cont_well",
@@ -13722,7 +13740,7 @@
         "dna_cont_well",
         "rna_cont_well"
       ],
-      "rank": 11,
+      "rank": 12,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13748,7 +13766,7 @@
         "dna_container_id",
         "rna_container_id"
       ],
-      "rank": 9,
+      "rank": 10,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13773,7 +13791,7 @@
         "dna_dnase",
         "dnase_rna"
       ],
-      "rank": 13,
+      "rank": 15,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13822,7 +13840,7 @@
         "dna_sample_format",
         "rna_sample_format"
       ],
-      "rank": 12,
+      "rank": 13,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13922,7 +13940,7 @@
         "dna_volume",
         "rna_volume"
       ],
-      "rank": 6,
+      "rank": 8,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13976,7 +13994,7 @@
         "dna_absorb2",
         "nuc_acid_absorb2"
       ],
-      "rank": 8,
+      "rank": 9,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -14004,7 +14022,7 @@
         "dna_concentration",
         "rna_concentration"
       ],
-      "rank": 5,
+      "rank": 6,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -14020,7 +14038,7 @@
       "description": "Select the biosafety material category for your JGI samples.",
       "title": "JGI Biosafety Material Category",
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "rank": 15,
+      "rank": 16,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -58722,6 +58740,7 @@
         "jgi_seq_project",
         "jgi_seq_project_name",
         "jgi_sample_volume",
+        "replicate_group",
         "dna_isolate_meth"
       ],
       "slot_usage": {
@@ -58784,6 +58803,10 @@
         "dna_isolate_meth": {
           "name": "dna_isolate_meth",
           "slot_group": "jgi_metagenomics_section"
+        },
+        "replicate_group": {
+          "name": "replicate_group",
+          "slot_group": "jgi_metagenomics_section"
         }
       },
       "attributes": {
@@ -58833,7 +58856,7 @@
             "dna_absorb2",
             "nuc_acid_absorb2"
           ],
-          "rank": 8,
+          "rank": 9,
           "alias": "nuc_acid_absorb2",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -58864,7 +58887,7 @@
             "dna_concentration",
             "rna_concentration"
           ],
-          "rank": 5,
+          "rank": 6,
           "alias": "nuc_acid_concentration",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -58887,7 +58910,7 @@
             "dna_cont_type",
             "rna_cont_type"
           ],
-          "rank": 10,
+          "rank": 11,
           "alias": "cont_type",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -58918,7 +58941,7 @@
             "dna_cont_well",
             "rna_cont_well"
           ],
-          "rank": 11,
+          "rank": 12,
           "alias": "cont_well",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -58948,7 +58971,7 @@
             "dna_container_id",
             "rna_container_id"
           ],
-          "rank": 9,
+          "rank": 10,
           "alias": "container_name",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -58977,7 +59000,7 @@
             "dna_dnase",
             "dnase_rna"
           ],
-          "rank": 13,
+          "rank": 15,
           "alias": "dnase",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -59019,7 +59042,7 @@
           "description": "Select the biosafety material category for your JGI samples.",
           "title": "JGI Biosafety Material Category",
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "rank": 15,
+          "rank": 16,
           "alias": "biosafety_mat_cat",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -59073,7 +59096,7 @@
             "dna_sample_format",
             "rna_sample_format"
           ],
-          "rank": 12,
+          "rank": 13,
           "alias": "jgi_sample_format",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -59185,7 +59208,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 6,
+          "rank": 8,
           "alias": "jgi_sample_volume",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -59198,6 +59221,27 @@
           "required": true,
           "minimum_value": 0,
           "maximum_value": 1000
+        },
+        "replicate_group": {
+          "name": "replicate_group",
+          "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+          "title": "Biological replicate/sample group Name",
+          "examples": [
+            {
+              "value": "SampleGroup1"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "rank": 5,
+          "alias": "replicate_group",
+          "owner": "JgiMgInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiMtInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -59432,6 +59476,7 @@
         "jgi_seq_project",
         "jgi_seq_project_name",
         "jgi_sample_volume",
+        "replicate_group",
         "dna_isolate_meth"
       ],
       "slot_usage": {
@@ -59496,6 +59541,10 @@
         "dna_isolate_meth": {
           "name": "dna_isolate_meth",
           "slot_group": "jgi_metagenomics_section"
+        },
+        "replicate_group": {
+          "name": "replicate_group",
+          "slot_group": "jgi_metagenomics_section"
         }
       },
       "attributes": {
@@ -59546,7 +59595,7 @@
             "dna_absorb2",
             "nuc_acid_absorb2"
           ],
-          "rank": 8,
+          "rank": 9,
           "alias": "nuc_acid_absorb2",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59578,7 +59627,7 @@
             "dna_concentration",
             "rna_concentration"
           ],
-          "rank": 5,
+          "rank": 6,
           "alias": "nuc_acid_concentration",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59601,7 +59650,7 @@
             "dna_cont_type",
             "rna_cont_type"
           ],
-          "rank": 10,
+          "rank": 11,
           "alias": "cont_type",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59632,7 +59681,7 @@
             "dna_cont_well",
             "rna_cont_well"
           ],
-          "rank": 11,
+          "rank": 12,
           "alias": "cont_well",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59662,7 +59711,7 @@
             "dna_container_id",
             "rna_container_id"
           ],
-          "rank": 9,
+          "rank": 10,
           "alias": "container_name",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59691,7 +59740,7 @@
             "dna_dnase",
             "dnase_rna"
           ],
-          "rank": 13,
+          "rank": 15,
           "alias": "dnase",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59708,7 +59757,7 @@
           "description": "Select the biosafety material category for your JGI samples.",
           "title": "JGI Biosafety Material Category",
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "rank": 15,
+          "rank": 16,
           "alias": "biosafety_mat_cat",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59787,7 +59836,7 @@
             "dna_sample_format",
             "rna_sample_format"
           ],
-          "rank": 12,
+          "rank": 13,
           "alias": "jgi_sample_format",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59899,7 +59948,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 6,
+          "rank": 8,
           "alias": "jgi_sample_volume",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -59912,6 +59961,27 @@
           "required": true,
           "minimum_value": 0,
           "maximum_value": 1000
+        },
+        "replicate_group": {
+          "name": "replicate_group",
+          "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+          "title": "Biological replicate/sample group Name",
+          "examples": [
+            {
+              "value": "SampleGroup1"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "rank": 5,
+          "alias": "replicate_group",
+          "owner": "JgiMgLrInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiMtInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string"
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -60146,6 +60216,7 @@
         "jgi_seq_project",
         "jgi_seq_project_name",
         "jgi_sample_volume",
+        "replicate_group",
         "rna_isolate_meth"
       ],
       "slot_usage": {
@@ -60208,6 +60279,11 @@
         "rna_isolate_meth": {
           "name": "rna_isolate_meth",
           "slot_group": "jgi_metatranscriptomics_section"
+        },
+        "replicate_group": {
+          "name": "replicate_group",
+          "slot_group": "jgi_metatranscriptomics_section",
+          "required": true
         }
       },
       "attributes": {
@@ -60257,7 +60333,7 @@
             "dna_absorb2",
             "nuc_acid_absorb2"
           ],
-          "rank": 8,
+          "rank": 9,
           "alias": "nuc_acid_absorb2",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60288,7 +60364,7 @@
             "dna_concentration",
             "rna_concentration"
           ],
-          "rank": 5,
+          "rank": 6,
           "alias": "nuc_acid_concentration",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60311,7 +60387,7 @@
             "dna_cont_type",
             "rna_cont_type"
           ],
-          "rank": 10,
+          "rank": 11,
           "alias": "cont_type",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60342,7 +60418,7 @@
             "dna_cont_well",
             "rna_cont_well"
           ],
-          "rank": 11,
+          "rank": 12,
           "alias": "cont_well",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60372,7 +60448,7 @@
             "dna_container_id",
             "rna_container_id"
           ],
-          "rank": 9,
+          "rank": 10,
           "alias": "container_name",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60401,7 +60477,7 @@
             "dna_dnase",
             "dnase_rna"
           ],
-          "rank": 13,
+          "rank": 15,
           "alias": "dnase",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60418,7 +60494,7 @@
           "description": "Select the biosafety material category for your JGI samples.",
           "title": "JGI Biosafety Material Category",
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "rank": 15,
+          "rank": 16,
           "alias": "biosafety_mat_cat",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60496,7 +60572,7 @@
             "dna_sample_format",
             "rna_sample_format"
           ],
-          "rank": 12,
+          "rank": 13,
           "alias": "jgi_sample_format",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60608,7 +60684,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 6,
+          "rank": 8,
           "alias": "jgi_sample_volume",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -60621,6 +60697,28 @@
           "required": true,
           "minimum_value": 0,
           "maximum_value": 1000
+        },
+        "replicate_group": {
+          "name": "replicate_group",
+          "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+          "title": "Biological replicate/sample group Name",
+          "examples": [
+            {
+              "value": "SampleGroup1"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "rank": 5,
+          "alias": "replicate_group",
+          "owner": "JgiMtInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiMtInterface"
+          ],
+          "slot_group": "jgi_metatranscriptomics_section",
+          "range": "string",
+          "required": true
         },
         "analysis_type": {
           "name": "analysis_type",
