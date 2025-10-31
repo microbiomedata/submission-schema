@@ -394,7 +394,7 @@ slots:
   cont_type:
     description: Tube or plate (96-well)
     title: JGI container type
-    rank: 10
+    rank: 11
     range: JgiContTypeEnum
     required: true
     aliases:
@@ -403,6 +403,7 @@ slots:
   replicate_group:
     title: Biological replicate/sample group Name
     description: Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.
+    rank: 5
     range: string
     examples:
       - value: SampleGroup1
@@ -415,7 +416,7 @@ slots:
       - Fill plate in column-wise format. B1-G1,A2-H2,A3-D3 (NOT A2-A11,B1-B8).
     examples:
       - value: B2
-    rank: 11
+    rank: 12
     recommended: true
     pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
     aliases:
@@ -428,7 +429,7 @@ slots:
       - All samples in a plate should have the same plate name.
     examples:
       - value: Pond_MT_041618
-    rank: 9
+    rank: 10
     required: true
     pattern: ^[-_.a-zA-Z0-9]{1,20}$
     aliases:
@@ -440,7 +441,7 @@ slots:
       - Note DNase treatment is required for all RNA samples.
     examples:
       - value: 'no'
-    rank: 13
+    rank: 15
     range: YesNoEnum
     required: true
     aliases:
@@ -465,7 +466,7 @@ slots:
     title: JGI sample format
     examples:
       - value: Water
-    rank: 12
+    rank: 13
     range: JGISampleFormatEnum
     required: true
     aliases:
@@ -518,7 +519,7 @@ slots:
         This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager
     examples:
       - value: 25
-    rank: 6
+    rank: 8
     range: float
     required: true
     minimum_value: 0
@@ -546,7 +547,7 @@ slots:
       - Recommended value is between 1 and 3.
     examples:
       - value: 2.02
-    rank: 8
+    rank: 9
     range: float
     recommended: true
     aliases:
@@ -564,7 +565,7 @@ slots:
         a fluorometric method. Acceptable values are 0-2000.
     examples:
       - value: 100
-    rank: 5
+    rank: 6
     range: float
     required: true
     minimum_value: 0
@@ -572,7 +573,7 @@ slots:
   biosafety_mat_cat:
     description: Select the biosafety material category for your JGI samples.
     title: JGI Biosafety Material Category
-    rank: 15
+    rank: 16
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
 
