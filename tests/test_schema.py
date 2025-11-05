@@ -223,6 +223,7 @@ TEMPLATE_INSTANCES = {
         "env_local_scale": "dolor sit amet [ENVO:00000002]",
         "env_medium": "consectetur [ENVO:00000003]",
         "geo_loc_name": "Country: Province, City",
+        "lat_lon": "12.34 -56.78",
         "samp_name": "000001",
     },
 }
