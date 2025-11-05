@@ -2712,12 +2712,9 @@ slots:
           - SedimentInterface
           - SoilInterface
           - WastewaterSludgeInterface
-        replace:
-          required: true
-      - in_classes:
           - WaterInterface
         replace:
-          recommended: true
+          required: true
 
   - slot: lbc_thirty
     source: Biosample
