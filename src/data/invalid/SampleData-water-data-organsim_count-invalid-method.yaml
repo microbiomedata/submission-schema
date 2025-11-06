@@ -13,5 +13,6 @@ water_data:
     env_medium: sand [ENVO:01000017]
     organism_count: xyz;100 units;xyz
     geo_loc_name: "USA: Oregon, Crater Lake"
+    lat_lon: 42.944611 -122.109245
     samp_name: xyz
     specific_ecosystem: Unclassified

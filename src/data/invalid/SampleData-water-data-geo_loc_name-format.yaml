@@ -8,6 +8,7 @@ water_data:
     env_local_scale: sand [ENVO:01000017]
     env_medium: sand [ENVO:01000017]
     geo_loc_name: "USA: Berkeley California"
+    lat_lon: 42.944611 -122.109245
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
 
