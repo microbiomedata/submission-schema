@@ -14,4 +14,4 @@ soil_data:
     samp_name: b
     samp_store_temp: -80
     store_cond: frozen
-    bulk_elect_conductivity: 34
+    bulk_elect_conductivity: 34 km

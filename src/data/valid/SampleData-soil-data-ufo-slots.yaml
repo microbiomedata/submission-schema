@@ -14,5 +14,5 @@ soil_data:
     samp_name: b
     samp_store_temp: -80
     store_cond: frozen
-    bulk_elect_conductivity: '0.017 mS'
+    bulk_elect_conductivity: 0.017
     infiltrations: "01:24:03;00:02:33;00:02:02"
