@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-10-31T08:55:51
+# Generation date: 2025-12-08T10:08:33
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -1443,7 +1443,7 @@ class BuiltEnvInterface(DhInterface):
     elevator: Optional[str] = None
     escalator: Optional[str] = None
     exp_duct: Optional[float] = None
-    exp_pipe: Optional[str] = None
+    exp_pipe: Optional[float] = None
     experimental_factor: Optional[str] = None
     ext_door: Optional[str] = None
     ext_wall_orient: Optional[Union[str, "ExtWallOrientEnum"]] = None
@@ -1480,7 +1480,7 @@ class BuiltEnvInterface(DhInterface):
     number_pets: Optional[float] = None
     number_plants: Optional[float] = None
     number_resident: Optional[float] = None
-    occup_density_samp: Optional[str] = None
+    occup_density_samp: Optional[float] = None
     occup_document: Optional[Union[str, "OccupDocumentEnum"]] = None
     occup_samp: Optional[float] = None
     organism_count: Optional[str] = None
@@ -1524,7 +1524,7 @@ class BuiltEnvInterface(DhInterface):
     space_typ_state: Optional[str] = None
     specific: Optional[Union[str, "SpecificEnum"]] = None
     specific_ecosystem: Optional[Union[str, "SpecificEcosystemEnum"]] = None
-    specific_humidity: Optional[str] = None
+    specific_humidity: Optional[float] = None
     substructure_type: Optional[Union[Union[str, "SubstructureTypeEnum"], list[Union[str, "SubstructureTypeEnum"]]]] = empty_list()
     surf_air_cont: Optional[Union[Union[str, "SurfAirContEnum"], list[Union[str, "SurfAirContEnum"]]]] = empty_list()
     surf_humidity: Optional[float] = None
@@ -1766,8 +1766,8 @@ class BuiltEnvInterface(DhInterface):
         if self.exp_duct is not None and not isinstance(self.exp_duct, float):
             self.exp_duct = float(self.exp_duct)
 
-        if self.exp_pipe is not None and not isinstance(self.exp_pipe, str):
-            self.exp_pipe = str(self.exp_pipe)
+        if self.exp_pipe is not None and not isinstance(self.exp_pipe, float):
+            self.exp_pipe = float(self.exp_pipe)
 
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
@@ -1880,8 +1880,8 @@ class BuiltEnvInterface(DhInterface):
         if self.number_resident is not None and not isinstance(self.number_resident, float):
             self.number_resident = float(self.number_resident)
 
-        if self.occup_density_samp is not None and not isinstance(self.occup_density_samp, str):
-            self.occup_density_samp = str(self.occup_density_samp)
+        if self.occup_density_samp is not None and not isinstance(self.occup_density_samp, float):
+            self.occup_density_samp = float(self.occup_density_samp)
 
         if self.occup_document is not None and not isinstance(self.occup_document, OccupDocumentEnum):
             self.occup_document = OccupDocumentEnum(self.occup_document)
@@ -2012,8 +2012,8 @@ class BuiltEnvInterface(DhInterface):
         if self.specific_ecosystem is not None and not isinstance(self.specific_ecosystem, SpecificEcosystemEnum):
             self.specific_ecosystem = SpecificEcosystemEnum(self.specific_ecosystem)
 
-        if self.specific_humidity is not None and not isinstance(self.specific_humidity, str):
-            self.specific_humidity = str(self.specific_humidity)
+        if self.specific_humidity is not None and not isinstance(self.specific_humidity, float):
+            self.specific_humidity = float(self.specific_humidity)
 
         if not isinstance(self.substructure_type, list):
             self.substructure_type = [self.substructure_type] if self.substructure_type is not None else []
@@ -2310,7 +2310,7 @@ class HcrCoresInterface(DhInterface):
     tot_phosp: Optional[str] = None
     tot_sulfur: Optional[str] = None
     tvdss_of_hcr_press: Optional[float] = None
-    tvdss_of_hcr_temp: Optional[str] = None
+    tvdss_of_hcr_temp: Optional[float] = None
     vfa: Optional[str] = None
     vfa_fw: Optional[float] = None
     viscosity: Optional[str] = None
@@ -2625,8 +2625,8 @@ class HcrCoresInterface(DhInterface):
         if self.tvdss_of_hcr_press is not None and not isinstance(self.tvdss_of_hcr_press, float):
             self.tvdss_of_hcr_press = float(self.tvdss_of_hcr_press)
 
-        if self.tvdss_of_hcr_temp is not None and not isinstance(self.tvdss_of_hcr_temp, str):
-            self.tvdss_of_hcr_temp = str(self.tvdss_of_hcr_temp)
+        if self.tvdss_of_hcr_temp is not None and not isinstance(self.tvdss_of_hcr_temp, float):
+            self.tvdss_of_hcr_temp = float(self.tvdss_of_hcr_temp)
 
         if self.vfa is not None and not isinstance(self.vfa, str):
             self.vfa = str(self.vfa)
@@ -2759,7 +2759,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     tot_phosp: Optional[str] = None
     tot_sulfur: Optional[str] = None
     tvdss_of_hcr_press: Optional[float] = None
-    tvdss_of_hcr_temp: Optional[str] = None
+    tvdss_of_hcr_temp: Optional[float] = None
     vfa: Optional[str] = None
     vfa_fw: Optional[float] = None
     viscosity: Optional[str] = None
@@ -3085,8 +3085,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.tvdss_of_hcr_press is not None and not isinstance(self.tvdss_of_hcr_press, float):
             self.tvdss_of_hcr_press = float(self.tvdss_of_hcr_press)
 
-        if self.tvdss_of_hcr_temp is not None and not isinstance(self.tvdss_of_hcr_temp, str):
-            self.tvdss_of_hcr_temp = str(self.tvdss_of_hcr_temp)
+        if self.tvdss_of_hcr_temp is not None and not isinstance(self.tvdss_of_hcr_temp, float):
+            self.tvdss_of_hcr_temp = float(self.tvdss_of_hcr_temp)
 
         if self.vfa is not None and not isinstance(self.vfa, str):
             self.vfa = str(self.vfa)
@@ -5078,7 +5078,7 @@ class SoilInterface(DhInterface):
     annual_temp: Optional[float] = None
     biotic_regm: Optional[str] = None
     biotic_relationship: Optional[Union[str, "BioticRelationshipEnum"]] = None
-    bulk_elect_conductivity: Optional[str] = None
+    bulk_elect_conductivity: Optional[float] = None
     carb_nitro_ratio: Optional[float] = None
     chem_administration: Optional[str] = None
     climate_environment: Optional[str] = None
@@ -5268,8 +5268,8 @@ class SoilInterface(DhInterface):
         if self.biotic_relationship is not None and not isinstance(self.biotic_relationship, BioticRelationshipEnum):
             self.biotic_relationship = BioticRelationshipEnum(self.biotic_relationship)
 
-        if self.bulk_elect_conductivity is not None and not isinstance(self.bulk_elect_conductivity, str):
-            self.bulk_elect_conductivity = str(self.bulk_elect_conductivity)
+        if self.bulk_elect_conductivity is not None and not isinstance(self.bulk_elect_conductivity, float):
+            self.bulk_elect_conductivity = float(self.bulk_elect_conductivity)
 
         if self.carb_nitro_ratio is not None and not isinstance(self.carb_nitro_ratio, float):
             self.carb_nitro_ratio = float(self.carb_nitro_ratio)
@@ -5850,6 +5850,7 @@ class WaterInterface(DhInterface):
     env_local_scale: str = None
     env_medium: str = None
     geo_loc_name: str = None
+    lat_lon: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     air_temp_regm: Optional[str] = None
     alkalinity: Optional[str] = None
@@ -5897,7 +5898,6 @@ class WaterInterface(DhInterface):
     glucosidase_act: Optional[float] = None
     humidity_regm: Optional[str] = None
     isotope_exposure: Optional[str] = None
-    lat_lon: Optional[str] = None
     light_intensity: Optional[float] = None
     light_regm: Optional[str] = None
     magnesium: Optional[str] = None
@@ -5995,6 +5995,11 @@ class WaterInterface(DhInterface):
             self.MissingRequiredField("geo_loc_name")
         if not isinstance(self.geo_loc_name, str):
             self.geo_loc_name = str(self.geo_loc_name)
+
+        if self._is_empty(self.lat_lon):
+            self.MissingRequiredField("lat_lon")
+        if not isinstance(self.lat_lon, str):
+            self.lat_lon = str(self.lat_lon)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -6139,9 +6144,6 @@ class WaterInterface(DhInterface):
 
         if self.isotope_exposure is not None and not isinstance(self.isotope_exposure, str):
             self.isotope_exposure = str(self.isotope_exposure)
-
-        if self.lat_lon is not None and not isinstance(self.lat_lon, str):
-            self.lat_lon = str(self.lat_lon)
 
         if self.light_intensity is not None and not isinstance(self.light_intensity, float):
             self.light_intensity = float(self.light_intensity)
@@ -6967,6 +6969,11 @@ class UnitEnum(EnumDefinitionImpl):
             PermissibleValue(
                 text="1/d",
                 description="The Unified Code for Units of Measure (UCUM) representation of per day (frequency)."))
+        setattr(cls, "1/[sft_i]",
+            PermissibleValue(
+                text="1/[sft_i]",
+                title="per square foot",
+                description="The Unified Code for Units of Measure (UCUM) representation of per square foot."))
         setattr(cls, "kW/m2",
             PermissibleValue(
                 text="kW/m2",
@@ -9257,6 +9264,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     River = PermissibleValue(text="River")
     Roots = PermissibleValue(text="Roots")
     Salt = PermissibleValue(text="Salt")
+    Sap = PermissibleValue(text="Sap")
     Sargassum = PermissibleValue(text="Sargassum")
     Sclerotium = PermissibleValue(text="Sclerotium")
     Seafood = PermissibleValue(text="Seafood")
@@ -10821,6 +10829,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Paleofeces = PermissibleValue(text="Paleofeces")
     Palsa = PermissibleValue(text="Palsa")
     Paper = PermissibleValue(text="Paper")
+    Paramo = PermissibleValue(text="Paramo")
     Parathyroid = PermissibleValue(text="Parathyroid")
     Pasture = PermissibleValue(text="Pasture")
     Peat = PermissibleValue(text="Peat")
@@ -12030,6 +12039,7 @@ class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
     Mine = PermissibleValue(text="Mine")
     Mire = PermissibleValue(text="Mire")
     Palsa = PermissibleValue(text="Palsa")
+    Paramo = PermissibleValue(text="Paramo")
     Pasture = PermissibleValue(text="Pasture")
     Peat = PermissibleValue(text="Peat")
     Permafrost = PermissibleValue(text="Permafrost")
@@ -14060,8 +14070,7 @@ slots.built_struc_type = Slot(uri=MIXS['0000721'], name="built_struc_type", curi
                    model_uri=NMDC_SUB_SCHEMA.built_struc_type, domain=None, range=Optional[str])
 
 slots.bulk_elect_conductivity = Slot(uri=NMDC_SUB_SCHEMA.bulk_elect_conductivity, name="bulk_elect_conductivity", curie=NMDC_SUB_SCHEMA.curie('bulk_elect_conductivity'),
-                   model_uri=NMDC_SUB_SCHEMA.bulk_elect_conductivity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.bulk_elect_conductivity, domain=None, range=Optional[float])
 
 slots.calcium = Slot(uri=MIXS['0000432'], name="calcium", curie=MIXS.curie('0000432'),
                    model_uri=NMDC_SUB_SCHEMA.calcium, domain=None, range=Optional[str],
@@ -14338,8 +14347,7 @@ slots.exp_duct = Slot(uri=MIXS['0000144'], name="exp_duct", curie=MIXS.curie('00
                    model_uri=NMDC_SUB_SCHEMA.exp_duct, domain=None, range=Optional[float])
 
 slots.exp_pipe = Slot(uri=MIXS['0000220'], name="exp_pipe", curie=MIXS.curie('0000220'),
-                   model_uri=NMDC_SUB_SCHEMA.exp_pipe, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.exp_pipe, domain=None, range=Optional[float])
 
 slots.experimental_factor = Slot(uri=MIXS['0000008'], name="experimental_factor", curie=MIXS.curie('0000008'),
                    model_uri=NMDC_SUB_SCHEMA.experimental_factor, domain=None, range=Optional[str])
@@ -14776,8 +14784,7 @@ slots.number_resident = Slot(uri=MIXS['0000232'], name="number_resident", curie=
                    model_uri=NMDC_SUB_SCHEMA.number_resident, domain=None, range=Optional[float])
 
 slots.occup_density_samp = Slot(uri=MIXS['0000217'], name="occup_density_samp", curie=MIXS.curie('0000217'),
-                   model_uri=NMDC_SUB_SCHEMA.occup_density_samp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.occup_density_samp, domain=None, range=Optional[float])
 
 slots.occup_document = Slot(uri=MIXS['0000816'], name="occup_document", curie=MIXS.curie('0000816'),
                    model_uri=NMDC_SUB_SCHEMA.occup_document, domain=None, range=Optional[Union[str, "OccupDocumentEnum"]])
@@ -15250,8 +15257,7 @@ slots.specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="sp
                    model_uri=NMDC_SUB_SCHEMA.specific_ecosystem, domain=None, range=Optional[str])
 
 slots.specific_humidity = Slot(uri=MIXS['0000214'], name="specific_humidity", curie=MIXS.curie('0000214'),
-                   model_uri=NMDC_SUB_SCHEMA.specific_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.specific_humidity, domain=None, range=Optional[float])
 
 slots.sr_dep_env = Slot(uri=MIXS['0000996'], name="sr_dep_env", curie=MIXS.curie('0000996'),
                    model_uri=NMDC_SUB_SCHEMA.sr_dep_env, domain=None, range=Optional[Union[str, "SrDepEnvEnum"]])
@@ -15414,8 +15420,7 @@ slots.tvdss_of_hcr_press = Slot(uri=MIXS['0000397'], name="tvdss_of_hcr_press", 
                    model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_press, domain=None, range=Optional[float])
 
 slots.tvdss_of_hcr_temp = Slot(uri=MIXS['0000394'], name="tvdss_of_hcr_temp", curie=MIXS.curie('0000394'),
-                   model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_temp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_temp, domain=None, range=Optional[float])
 
 slots.typ_occup_density = Slot(uri=MIXS['0000771'], name="typ_occup_density", curie=MIXS.curie('0000771'),
                    model_uri=NMDC_SUB_SCHEMA.typ_occup_density, domain=None, range=Optional[float])
@@ -16241,7 +16246,7 @@ slots.WaterInterface_env_medium = Slot(uri=MIXS['0000014'], name="WaterInterface
                    pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.WaterInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WaterInterface_lat_lon", curie=MIXS.curie('0000009'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=Optional[str],
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=str,
                    pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
 
 slots.WaterInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WaterInterface_samp_store_temp", curie=MIXS.curie('0000110'),

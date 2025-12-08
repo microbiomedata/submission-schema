@@ -1364,9 +1364,8 @@
                 },
                 "exp_pipe": {
                     "description": "The number of exposed pipes in the room",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -1603,9 +1602,8 @@
                 },
                 "occup_density_samp": {
                     "description": "Average number of occupants at time of sampling per square footage",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -1880,9 +1878,8 @@
                 },
                 "specific_humidity": {
                     "description": "The mass of water vapour in a unit mass of moist air, usually expressed as grams of vapour per kilogram of air, or, in air conditioning, as grains per pound.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -3434,6 +3431,7 @@
                 "SSF (Solid state fermentation)",
                 "Salt",
                 "Sand microcosm",
+                "Sap",
                 "Saprolite\u2013Bedrock interface",
                 "Sargassum",
                 "Sclerotium",
@@ -5235,9 +5233,8 @@
                 },
                 "tvdss_of_hcr_temp": {
                     "description": "True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature was measured (e.g. 1345 m).",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -5982,9 +5979,8 @@
                 },
                 "tvdss_of_hcr_temp": {
                     "description": "True vertical depth subsea (TVDSS) of the hydrocarbon resource where the original temperature was measured (e.g. 1345 m).",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -10165,9 +10161,8 @@
                 },
                 "bulk_elect_conductivity": {
                     "description": "Electrical conductivity is a measure of the ability to carry electric current, which is mostly dictated by the chemistry of and amount of water.",
-                    "pattern": "^[-+]?[0-9]*\\.?[0-9]+ +\\S.*$",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -11393,6 +11388,7 @@
                 "Pancreatic duct",
                 "Paper",
                 "Papillate region",
+                "Paramo",
                 "Paranasal sinuses",
                 "Paranasal sinuses: Catarrh",
                 "Paranasal sinuses: Ethmoiddal",
@@ -11723,6 +11719,7 @@
                 "Orchard soil",
                 "Organic layer",
                 "Palsa",
+                "Paramo",
                 "Pasture",
                 "Peat",
                 "Peat permafrost",
@@ -12026,6 +12023,7 @@
                 "sr",
                 "Hz",
                 "1/d",
+                "1/[sft_i]",
                 "kHz",
                 "MHz",
                 "GHz",
@@ -13001,10 +12999,7 @@
                 "lat_lon": {
                     "description": "The geographical origin of the sample as defined by latitude and longitude. The values should be reported in decimal degrees and in WGS84 system",
                     "pattern": "^[-+]?([1-8]?\\d(\\.\\d{1,8})?|90(\\.0{1,8})?)\\s[-+]?(180(\\.0{1,8})?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d{1,8})?)$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "light_intensity": {
                     "description": "Measurement of light intensity",
@@ -13467,6 +13462,7 @@
                 "env_local_scale",
                 "env_medium",
                 "geo_loc_name",
+                "lat_lon",
                 "analysis_type",
                 "samp_name"
             ],
