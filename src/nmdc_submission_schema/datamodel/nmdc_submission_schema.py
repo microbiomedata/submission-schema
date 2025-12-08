@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-13T05:21:47
+# Generation date: 2025-03-25T09:37:37
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -185,28 +185,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class DecimalDegree(float):
-    """ A decimal degree expresses latitude or longitude as decimal fractions. """
-    type_class_uri = XSD["decimal"]
-    type_class_curie = "xsd:decimal"
-    type_name = "decimal_degree"
-    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
-
-
 class Integer(int):
     """ An integer """
     type_class_uri = XSD["integer"]
     type_class_curie = "xsd:integer"
     type_name = "integer"
     type_model_uri = NMDC_SUB_SCHEMA.Integer
-
-
-class Boolean(Bool):
-    """ A binary (true or false) value """
-    type_class_uri = XSD["boolean"]
-    type_class_curie = "xsd:boolean"
-    type_name = "boolean"
-    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Float(float):
@@ -217,12 +201,12 @@ class Float(float):
     type_model_uri = NMDC_SUB_SCHEMA.Float
 
 
-class String(str):
-    """ A character string """
-    type_class_uri = XSD["string"]
-    type_class_curie = "xsd:string"
-    type_name = "string"
-    type_model_uri = NMDC_SUB_SCHEMA.String
+class Double(float):
+    """ A real number that conforms to the xsd:double specification """
+    type_class_uri = XSD["double"]
+    type_class_curie = "xsd:double"
+    type_name = "double"
+    type_model_uri = NMDC_SUB_SCHEMA.Double
 
 
 class LanguageCode(str):
@@ -233,12 +217,12 @@ class LanguageCode(str):
     type_model_uri = NMDC_SUB_SCHEMA.LanguageCode
 
 
-class Decimal(Decimal):
-    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+class DecimalDegree(float):
+    """ A decimal degree expresses latitude or longitude as decimal fractions. """
     type_class_uri = XSD["decimal"]
     type_class_curie = "xsd:decimal"
-    type_name = "decimal"
-    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+    type_name = "decimal_degree"
+    type_model_uri = NMDC_SUB_SCHEMA.DecimalDegree
 
 
 class Uriorcurie(URIorCURIE):
@@ -249,12 +233,28 @@ class Uriorcurie(URIorCURIE):
     type_model_uri = NMDC_SUB_SCHEMA.Uriorcurie
 
 
-class Double(float):
-    """ A real number that conforms to the xsd:double specification """
-    type_class_uri = XSD["double"]
-    type_class_curie = "xsd:double"
-    type_name = "double"
-    type_model_uri = NMDC_SUB_SCHEMA.Double
+class Decimal(Decimal):
+    """ A real number with arbitrary precision that conforms to the xsd:decimal specification """
+    type_class_uri = XSD["decimal"]
+    type_class_curie = "xsd:decimal"
+    type_name = "decimal"
+    type_model_uri = NMDC_SUB_SCHEMA.Decimal
+
+
+class String(str):
+    """ A character string """
+    type_class_uri = XSD["string"]
+    type_class_curie = "xsd:string"
+    type_name = "string"
+    type_model_uri = NMDC_SUB_SCHEMA.String
+
+
+class Boolean(Bool):
+    """ A binary (true or false) value """
+    type_class_uri = XSD["boolean"]
+    type_class_curie = "xsd:boolean"
+    type_name = "boolean"
+    type_model_uri = NMDC_SUB_SCHEMA.Boolean
 
 
 class Time(XSDTime):
@@ -14244,6 +14244,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Sacciform = PermissibleValue(text="Sacciform")
     Saline = PermissibleValue(text="Saline")
     Saliva = PermissibleValue(text="Saliva")
+    Sand = PermissibleValue(text="Sand")
     Sandstone = PermissibleValue(text="Sandstone")
     Saprolite = PermissibleValue(text="Saprolite")
     Scales = PermissibleValue(text="Scales")
@@ -15561,22 +15562,129 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
         description="Derived from InstrumentModelEnum by filtering for Illumina models",
     )
 
-class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
+class EnvLocalScaleSedimentEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="EnvBroadScaleWaterEnum",
+        name="EnvLocalScaleSedimentEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "aquatic biome [ENVO:00002030]",
-            PermissibleValue(text="aquatic biome [ENVO:00002030]"))
-        setattr(cls, "concentration basin mediterranean sea biome [ENVO:01000004]",
-            PermissibleValue(text="concentration basin mediterranean sea biome [ENVO:01000004]"))
-        setattr(cls, "dilution basin mediterranean sea biome [ENVO:01000128]",
-            PermissibleValue(text="dilution basin mediterranean sea biome [ENVO:01000128]"))
-        setattr(cls, "epeiric sea biome [ENVO:01000045]",
-            PermissibleValue(text="epeiric sea biome [ENVO:01000045]"))
+        setattr(cls, "archipelago [ENVO:00000220]",
+            PermissibleValue(text="archipelago [ENVO:00000220]"))
+        setattr(cls, "bank [ENVO:00000141]",
+            PermissibleValue(text="bank [ENVO:00000141]"))
+        setattr(cls, "bar [ENVO:00000167]",
+            PermissibleValue(text="bar [ENVO:00000167]"))
+        setattr(cls, "bay [ENVO:00000032]",
+            PermissibleValue(text="bay [ENVO:00000032]"))
+        setattr(cls, "beach [ENVO:00000091]",
+            PermissibleValue(text="beach [ENVO:00000091]"))
+        setattr(cls, "brackish estuary [ENVO:00002137]",
+            PermissibleValue(text="brackish estuary [ENVO:00002137]"))
+        setattr(cls, "brackish lake [ENVO:00000540]",
+            PermissibleValue(text="brackish lake [ENVO:00000540]"))
+        setattr(cls, "cave [ENVO:00000067]",
+            PermissibleValue(text="cave [ENVO:00000067]"))
+        setattr(cls, "coast [ENVO:01000687]",
+            PermissibleValue(text="coast [ENVO:01000687]"))
+        setattr(cls, "coastal water body [ENVO:02000049]",
+            PermissibleValue(text="coastal water body [ENVO:02000049]"))
+        setattr(cls, "cold seep [ENVO:01000263]",
+            PermissibleValue(text="cold seep [ENVO:01000263]"))
+        setattr(cls, "continental margin [ENVO:01000298]",
+            PermissibleValue(text="continental margin [ENVO:01000298]"))
+        setattr(cls, "continental shelf [ENVO:00000223]",
+            PermissibleValue(text="continental shelf [ENVO:00000223]"))
+        setattr(cls, "cryoconite hole [ENVO:03000039]",
+            PermissibleValue(text="cryoconite hole [ENVO:03000039]"))
+        setattr(cls, "eutrophic lake [ENVO:01000548]",
+            PermissibleValue(text="eutrophic lake [ENVO:01000548]"))
+        setattr(cls, "fjord [ENVO:00000039]",
+            PermissibleValue(text="fjord [ENVO:00000039]"))
+        setattr(cls, "flood plain [ENVO:00000255]",
+            PermissibleValue(text="flood plain [ENVO:00000255]"))
+        setattr(cls, "fumarole [ENVO:00000216]",
+            PermissibleValue(text="fumarole [ENVO:00000216]"))
+        setattr(cls, "geyser [ENVO:00000050]",
+            PermissibleValue(text="geyser [ENVO:00000050]"))
+        setattr(cls, "hadalpelagic zone [ENVO:00000214]",
+            PermissibleValue(text="hadalpelagic zone [ENVO:00000214]"))
+        setattr(cls, "harbour [ENVO:00000463]",
+            PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "hot spring [ENVO:00000051]",
+            PermissibleValue(text="hot spring [ENVO:00000051]"))
+        setattr(cls, "hydrothermal seep [ENVO:01000265]",
+            PermissibleValue(text="hydrothermal seep [ENVO:01000265]"))
+        setattr(cls, "hydrothermal vent [ENVO:00000215]",
+            PermissibleValue(text="hydrothermal vent [ENVO:00000215]"))
+        setattr(cls, "hypersaline lake [ENVO:01001020]",
+            PermissibleValue(text="hypersaline lake [ENVO:01001020]"))
+        setattr(cls, "intertidal zone [ENVO:00000316]",
+            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
+        setattr(cls, "irrigation canal [ENVO:00000036]",
+            PermissibleValue(text="irrigation canal [ENVO:00000036]"))
+        setattr(cls, "lake bed [ENVO:00000268]",
+            PermissibleValue(text="lake bed [ENVO:00000268]"))
+        setattr(cls, "lentic water body [ENVO:01000617]",
+            PermissibleValue(text="lentic water body [ENVO:01000617]"))
+        setattr(cls, "littoral zone [ENVO:01000407]",
+            PermissibleValue(text="littoral zone [ENVO:01000407]"))
+        setattr(cls, "marine anoxic zone [ENVO:01000066]",
+            PermissibleValue(text="marine anoxic zone [ENVO:01000066]"))
+        setattr(cls, "marine hydrothermal vent [ENVO:01000122]",
+            PermissibleValue(text="marine hydrothermal vent [ENVO:01000122]"))
+        setattr(cls, "marine neritic zone [ENVO:00000206]",
+            PermissibleValue(text="marine neritic zone [ENVO:00000206]"))
+        setattr(cls, "marine sub-littoral zone [ENVO:01000126]",
+            PermissibleValue(text="marine sub-littoral zone [ENVO:01000126]"))
+        setattr(cls, "mid-ocean ridge [ENVO:00000406]",
+            PermissibleValue(text="mid-ocean ridge [ENVO:00000406]"))
+        setattr(cls, "mud volcano [ENVO:00000402]",
+            PermissibleValue(text="mud volcano [ENVO:00000402]"))
+        setattr(cls, "ocean floor [ENVO:00000426]",
+            PermissibleValue(text="ocean floor [ENVO:00000426]"))
+        setattr(cls, "oil reservoir [ENVO:00002185]",
+            PermissibleValue(text="oil reservoir [ENVO:00002185]"))
+        setattr(cls, "oil spill [ENVO:00002061]",
+            PermissibleValue(text="oil spill [ENVO:00002061]"))
+        setattr(cls, "pond [ENVO:00000033]",
+            PermissibleValue(text="pond [ENVO:00000033]"))
+        setattr(cls, "river [ENVO:00000022]",
+            PermissibleValue(text="river [ENVO:00000022]"))
+        setattr(cls, "river bank [ENVO:00000143]",
+            PermissibleValue(text="river bank [ENVO:00000143]"))
+        setattr(cls, "river bed [ENVO:00000384]",
+            PermissibleValue(text="river bed [ENVO:00000384]"))
+        setattr(cls, "saline evaporation pond [ENVO:00000055]",
+            PermissibleValue(text="saline evaporation pond [ENVO:00000055]"))
+        setattr(cls, "saline lake [ENVO:00000019]",
+            PermissibleValue(text="saline lake [ENVO:00000019]"))
+        setattr(cls, "saline pan [ENVO:00000279]",
+            PermissibleValue(text="saline pan [ENVO:00000279]"))
+        setattr(cls, "sea floor [ENVO:00000482]",
+            PermissibleValue(text="sea floor [ENVO:00000482]"))
+        setattr(cls, "sea grass bed [ENVO:01000059]",
+            PermissibleValue(text="sea grass bed [ENVO:01000059]"))
+        setattr(cls, "shore [ENVO:00000304]",
+            PermissibleValue(text="shore [ENVO:00000304]"))
+        setattr(cls, "spring [ENVO:00000027]",
+            PermissibleValue(text="spring [ENVO:00000027]"))
+        setattr(cls, "stream [ENVO:00000023]",
+            PermissibleValue(text="stream [ENVO:00000023]"))
+        setattr(cls, "stream bed [ENVO:00000383]",
+            PermissibleValue(text="stream bed [ENVO:00000383]"))
+        setattr(cls, "submerged bed [ENVO:00000501]",
+            PermissibleValue(text="submerged bed [ENVO:00000501]"))
+
+class EnvBroadScaleSedimentEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScaleSedimentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
         setattr(cls, "estuarine biome [ENVO:01000020]",
             PermissibleValue(text="estuarine biome [ENVO:01000020]"))
         setattr(cls, "freshwater biome [ENVO:00000873]",
@@ -15585,8 +15693,231 @@ class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
         setattr(cls, "freshwater river biome [ENVO:01000253]",
             PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
+        setattr(cls, "large river delta biome [ENVO:00000889]",
+            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
+        setattr(cls, "mangrove biome [ENVO:01000181]",
+            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
+        setattr(cls, "marginal sea biome [ENVO:01000046]",
+            PermissibleValue(text="marginal sea biome [ENVO:01000046]"))
+        setattr(cls, "marine benthic biome [ENVO:01000024]",
+            PermissibleValue(text="marine benthic biome [ENVO:01000024]"))
+        setattr(cls, "marine biome [ENVO:00000447]",
+            PermissibleValue(text="marine biome [ENVO:00000447]"))
+        setattr(cls, "marine cold seep biome [ENVO:01000127]",
+            PermissibleValue(text="marine cold seep biome [ENVO:01000127]"))
+        setattr(cls, "marine coral reef biome [ENVO:01000049]",
+            PermissibleValue(text="marine coral reef biome [ENVO:01000049]"))
+        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
+            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
+        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
+            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
+        setattr(cls, "marine subtidal rocky reef biome [ENVO:01000050]",
+            PermissibleValue(text="marine subtidal rocky reef biome [ENVO:01000050]"))
+        setattr(cls, "xeric basin biome [ENVO:00000893]",
+            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
+
+class EnvMediumSedimentEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvMediumSedimentEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "anaerobic sediment [ENVO:00002045]",
+            PermissibleValue(text="anaerobic sediment [ENVO:00002045]"))
+        setattr(cls, "chemically contaminated sediment [ENVO:03600001]",
+            PermissibleValue(text="chemically contaminated sediment [ENVO:03600001]"))
+        setattr(cls, "estuarine mud [ENVO:00002160]",
+            PermissibleValue(text="estuarine mud [ENVO:00002160]"))
+        setattr(cls, "granular sediment [ENVO:01000117]",
+            PermissibleValue(text="granular sediment [ENVO:01000117]"))
+        setattr(cls, "hyperthermophilic sediment [ENVO:01000133]",
+            PermissibleValue(text="hyperthermophilic sediment [ENVO:01000133]"))
+        setattr(cls, "petroleum enriched sediment [ENVO:00002115]",
+            PermissibleValue(text="petroleum enriched sediment [ENVO:00002115]"))
+        setattr(cls, "radioactive sediment [ENVO:00002154]",
+            PermissibleValue(text="radioactive sediment [ENVO:00002154]"))
+        setattr(cls, "sediment [ENVO:00002007]",
+            PermissibleValue(text="sediment [ENVO:00002007]"))
+        setattr(cls, "sediment permeated by saline water [ENVO:01001036]",
+            PermissibleValue(text="sediment permeated by saline water [ENVO:01001036]"))
+        setattr(cls, "sludge [ENVO:00002044]",
+            PermissibleValue(text="sludge [ENVO:00002044]"))
+        setattr(cls, "thermophilic sediment [ENVO:01000132]",
+            PermissibleValue(text="thermophilic sediment [ENVO:01000132]"))
+
+class EnvLocalScalePlantAssociatedEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvLocalScalePlantAssociatedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "agricultural terrace [ENVO:00000519]",
+            PermissibleValue(text="agricultural terrace [ENVO:00000519]"))
+        setattr(cls, "alluvial plain [ENVO:00000258]",
+            PermissibleValue(text="alluvial plain [ENVO:00000258]"))
+        setattr(cls, "area of barren land [ENVO:01000752]",
+            PermissibleValue(text="area of barren land [ENVO:01000752]"))
+        setattr(cls, "area of cropland [ENVO:01000892]",
+            PermissibleValue(text="area of cropland [ENVO:01000892]"))
+        setattr(cls, "area of deciduous forest [ENVO:01000816]",
+            PermissibleValue(text="area of deciduous forest [ENVO:01000816]"))
+        setattr(cls, "area of developed open space [ENVO:01000883]",
+            PermissibleValue(text="area of developed open space [ENVO:01000883]"))
+        setattr(cls, "area of developed space with high usage intensity [ENVO:01000886]",
+            PermissibleValue(text="area of developed space with high usage intensity [ENVO:01000886]"))
+        setattr(cls, "area of developed space with low usage intensity [ENVO:01000884]",
+            PermissibleValue(text="area of developed space with low usage intensity [ENVO:01000884]"))
+        setattr(cls, "area of developed space with medium usage intensity [ENVO:01000885]",
+            PermissibleValue(text="area of developed space with medium usage intensity [ENVO:01000885]"))
+        setattr(cls, "area of dwarf scrub [ENVO:01000861]",
+            PermissibleValue(text="area of dwarf scrub [ENVO:01000861]"))
+        setattr(cls, "area of emergent herbaceous wetland [ENVO:01000894]",
+            PermissibleValue(text="area of emergent herbaceous wetland [ENVO:01000894]"))
+        setattr(cls, "area of evergreen forest [ENVO:01000843]",
+            PermissibleValue(text="area of evergreen forest [ENVO:01000843]"))
+        setattr(cls, "area of gramanoid or herbaceous vegetation [ENVO:01000888]",
+            PermissibleValue(text="area of gramanoid or herbaceous vegetation [ENVO:01000888]"))
+        setattr(cls, "area of lichen-dominated vegetation [ENVO:01000889]",
+            PermissibleValue(text="area of lichen-dominated vegetation [ENVO:01000889]"))
+        setattr(cls, "area of mixed forest [ENVO:01000855]",
+            PermissibleValue(text="area of mixed forest [ENVO:01000855]"))
+        setattr(cls, "area of moss-dominated vegetation [ENVO:01000890]",
+            PermissibleValue(text="area of moss-dominated vegetation [ENVO:01000890]"))
+        setattr(cls, "area of open water [ENVO:01000666]",
+            PermissibleValue(text="area of open water [ENVO:01000666]"))
+        setattr(cls, "area of perennial ice or snow [ENVO:01000746]",
+            PermissibleValue(text="area of perennial ice or snow [ENVO:01000746]"))
+        setattr(cls, "area of perennial snow [ENVO:01000745]",
+            PermissibleValue(text="area of perennial snow [ENVO:01000745]"))
+        setattr(cls, "area of perennial water ice [ENVO:01000740]",
+            PermissibleValue(text="area of perennial water ice [ENVO:01000740]"))
+        setattr(cls, "area of scrub [ENVO:01000869]",
+            PermissibleValue(text="area of scrub [ENVO:01000869]"))
+        setattr(cls, "area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]",
+            PermissibleValue(text="area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]"))
+        setattr(cls, "area of woody wetland [ENVO:01000893]",
+            PermissibleValue(text="area of woody wetland [ENVO:01000893]"))
+        setattr(cls, "beach [ENVO:00000091]",
+            PermissibleValue(text="beach [ENVO:00000091]"))
+        setattr(cls, "botanical garden [ENVO:00010624]",
+            PermissibleValue(text="botanical garden [ENVO:00010624]"))
+        setattr(cls, "cliff [ENVO:00000087]",
+            PermissibleValue(text="cliff [ENVO:00000087]"))
+        setattr(cls, "coast [ENVO:01000687]",
+            PermissibleValue(text="coast [ENVO:01000687]"))
+        setattr(cls, "crop canopy [ENVO:01001241]",
+            PermissibleValue(text="crop canopy [ENVO:01001241]"))
+        setattr(cls, "desert [ENVO:01001357]",
+            PermissibleValue(text="desert [ENVO:01001357]"))
+        setattr(cls, "dune [ENVO:00000170]",
+            PermissibleValue(text="dune [ENVO:00000170]"))
+        setattr(cls, "farm [ENVO:00000078]",
+            PermissibleValue(text="farm [ENVO:00000078]"))
+        setattr(cls, "forest floor [ENVO:01001582]",
+            PermissibleValue(text="forest floor [ENVO:01001582]"))
+        setattr(cls, "garden [ENVO:00000011]",
+            PermissibleValue(text="garden [ENVO:00000011]"))
+        setattr(cls, "greenhouse [ENVO:03600087]",
+            PermissibleValue(text="greenhouse [ENVO:03600087]"))
+        setattr(cls, "harbour [ENVO:00000463]",
+            PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "herb and fern layer [ENVO:01000337]",
+            PermissibleValue(text="herb and fern layer [ENVO:01000337]"))
+        setattr(cls, "hill [ENVO:00000083]",
+            PermissibleValue(text="hill [ENVO:00000083]"))
+        setattr(cls, "house [ENVO:01000417]",
+            PermissibleValue(text="house [ENVO:01000417]"))
+        setattr(cls, "island [ENVO:00000098]",
+            PermissibleValue(text="island [ENVO:00000098]"))
+        setattr(cls, "laboratory facility [ENVO:01001406]",
+            PermissibleValue(text="laboratory facility [ENVO:01001406]"))
+        setattr(cls, "litter layer [ENVO:01000338]",
+            PermissibleValue(text="litter layer [ENVO:01000338]"))
+        setattr(cls, "market [ENVO:01000987]",
+            PermissibleValue(text="market [ENVO:01000987]"))
+        setattr(cls, "mountain [ENVO:00000081]",
+            PermissibleValue(text="mountain [ENVO:00000081]"))
+        setattr(cls, "oasis [ENVO:01001304]",
+            PermissibleValue(text="oasis [ENVO:01001304]"))
+        setattr(cls, "ocean [ENVO:00000015]",
+            PermissibleValue(text="ocean [ENVO:00000015]"))
+        setattr(cls, "outcrop [ENVO:01000302]",
+            PermissibleValue(text="outcrop [ENVO:01000302]"))
+        setattr(cls, "plantation [ENVO:00000117]",
+            PermissibleValue(text="plantation [ENVO:00000117]"))
+        setattr(cls, "plateau [ENVO:00000182]",
+            PermissibleValue(text="plateau [ENVO:00000182]"))
+        setattr(cls, "pond [ENVO:00000033]",
+            PermissibleValue(text="pond [ENVO:00000033]"))
+        setattr(cls, "prairie [ENVO:00000260]",
+            PermissibleValue(text="prairie [ENVO:00000260]"))
+        setattr(cls, "public park [ENVO:03500002]",
+            PermissibleValue(text="public park [ENVO:03500002]"))
+        setattr(cls, "research facility [ENVO:00000469]",
+            PermissibleValue(text="research facility [ENVO:00000469]"))
+        setattr(cls, "river bank [ENVO:00000143]",
+            PermissibleValue(text="river bank [ENVO:00000143]"))
+        setattr(cls, "river valley [ENVO:00000171]",
+            PermissibleValue(text="river valley [ENVO:00000171]"))
+        setattr(cls, "road [ENVO:00000064]",
+            PermissibleValue(text="road [ENVO:00000064]"))
+        setattr(cls, "sea grass bed [ENVO:01000059]",
+            PermissibleValue(text="sea grass bed [ENVO:01000059]"))
+        setattr(cls, "shore [ENVO:00000304]",
+            PermissibleValue(text="shore [ENVO:00000304]"))
+        setattr(cls, "shrub layer [ENVO:01000336]",
+            PermissibleValue(text="shrub layer [ENVO:01000336]"))
+        setattr(cls, "submerged bed [ENVO:00000501]",
+            PermissibleValue(text="submerged bed [ENVO:00000501]"))
+        setattr(cls, "understory [ENVO:01000335]",
+            PermissibleValue(text="understory [ENVO:01000335]"))
+        setattr(cls, "valley [ENVO:00000100]",
+            PermissibleValue(text="valley [ENVO:00000100]"))
+        setattr(cls, "woodland canopy [ENVO:01001240]",
+            PermissibleValue(text="woodland canopy [ENVO:01001240]"))
+
+class EnvBroadScalePlantAssociatedEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScalePlantAssociatedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "alpine tundra biome [ENVO:01001505]",
+            PermissibleValue(text="alpine tundra biome [ENVO:01001505]"))
+        setattr(cls, "anthropogenic terrestrial biome [ENVO:01000219]",
+            PermissibleValue(text="anthropogenic terrestrial biome [ENVO:01000219]"))
+        setattr(cls, "aquatic biome [ENVO:00002030]",
+            PermissibleValue(text="aquatic biome [ENVO:00002030]"))
+        setattr(cls, "broadleaf forest biome [ENVO:01000197]",
+            PermissibleValue(text="broadleaf forest biome [ENVO:01000197]"))
+        setattr(cls, "coniferous forest biome [ENVO:01000196]",
+            PermissibleValue(text="coniferous forest biome [ENVO:01000196]"))
+        setattr(cls, "cropland biome [ENVO:01000245]",
+            PermissibleValue(text="cropland biome [ENVO:01000245]"))
+        setattr(cls, "estuarine biome [ENVO:01000020]",
+            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
+        setattr(cls, "flooded grassland biome [ENVO:01000195]",
+            PermissibleValue(text="flooded grassland biome [ENVO:01000195]"))
+        setattr(cls, "flooded savanna biome [ENVO:01000190]",
+            PermissibleValue(text="flooded savanna biome [ENVO:01000190]"))
+        setattr(cls, "forest biome [ENVO:01000174]",
+            PermissibleValue(text="forest biome [ENVO:01000174]"))
+        setattr(cls, "freshwater biome [ENVO:00000873]",
+            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
+        setattr(cls, "freshwater lake biome [ENVO:01000252]",
+            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
+        setattr(cls, "freshwater river biome [ENVO:01000253]",
+            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
         setattr(cls, "freshwater stream biome [ENVO:03605008]",
             PermissibleValue(text="freshwater stream biome [ENVO:03605008]"))
+        setattr(cls, "grassland biome [ENVO:01000177]",
+            PermissibleValue(text="grassland biome [ENVO:01000177]"))
         setattr(cls, "large freshwater lake biome [ENVO:00000891]",
             PermissibleValue(text="large freshwater lake biome [ENVO:00000891]"))
         setattr(cls, "large river biome [ENVO:00000887]",
@@ -15595,48 +15926,32 @@ class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="large river delta biome [ENVO:00000889]"))
         setattr(cls, "large river headwater biome [ENVO:00000888]",
             PermissibleValue(text="large river headwater biome [ENVO:00000888]"))
-        setattr(cls, "marginal sea biome [ENVO:01000046]",
-            PermissibleValue(text="marginal sea biome [ENVO:01000046]"))
-        setattr(cls, "marine abyssal zone biome [ENVO:01000027]",
-            PermissibleValue(text="marine abyssal zone biome [ENVO:01000027]"))
-        setattr(cls, "marine basaltic hydrothermal vent biome [ENVO:01000054]",
-            PermissibleValue(text="marine basaltic hydrothermal vent biome [ENVO:01000054]"))
-        setattr(cls, "marine bathyal zone biome [ENVO:01000026]",
-            PermissibleValue(text="marine bathyal zone biome [ENVO:01000026]"))
-        setattr(cls, "marine benthic biome [ENVO:01000024]",
-            PermissibleValue(text="marine benthic biome [ENVO:01000024]"))
+        setattr(cls, "mangrove biome [ENVO:01000181]",
+            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
         setattr(cls, "marine biome [ENVO:00000447]",
             PermissibleValue(text="marine biome [ENVO:00000447]"))
-        setattr(cls, "marine black smoker biome [ENVO:01000051]",
-            PermissibleValue(text="marine black smoker biome [ENVO:01000051]"))
-        setattr(cls, "marine cold seep biome [ENVO:01000127]",
-            PermissibleValue(text="marine cold seep biome [ENVO:01000127]"))
-        setattr(cls, "marine coral reef biome [ENVO:01000049]",
-            PermissibleValue(text="marine coral reef biome [ENVO:01000049]"))
-        setattr(cls, "marine hadal zone biome [ENVO:01000028]",
-            PermissibleValue(text="marine hadal zone biome [ENVO:01000028]"))
-        setattr(cls, "marine hydrothermal vent biome [ENVO:01000030]",
-            PermissibleValue(text="marine hydrothermal vent biome [ENVO:01000030]"))
         setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
             PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
-        setattr(cls, "marine pelagic biome [ENVO:01000023]",
-            PermissibleValue(text="marine pelagic biome [ENVO:01000023]"))
-        setattr(cls, "marine reef biome [ENVO:01000029]",
-            PermissibleValue(text="marine reef biome [ENVO:01000029]"))
         setattr(cls, "marine salt marsh biome [ENVO:01000022]",
             PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
-        setattr(cls, "marine sponge reef biome [ENVO:01000123]",
-            PermissibleValue(text="marine sponge reef biome [ENVO:01000123]"))
-        setattr(cls, "marine subtidal rocky reef biome [ENVO:01000050]",
-            PermissibleValue(text="marine subtidal rocky reef biome [ENVO:01000050]"))
-        setattr(cls, "marine ultramafic hydrothermal vent biome [ENVO:01000053]",
-            PermissibleValue(text="marine ultramafic hydrothermal vent biome [ENVO:01000053]"))
-        setattr(cls, "marine upwelling biome [ENVO:01000858]",
-            PermissibleValue(text="marine upwelling biome [ENVO:01000858]"))
-        setattr(cls, "marine white smoker biome [ENVO:01000052]",
-            PermissibleValue(text="marine white smoker biome [ENVO:01000052]"))
-        setattr(cls, "mediterranean sea biome [ENVO:01000047]",
-            PermissibleValue(text="mediterranean sea biome [ENVO:01000047]"))
+        setattr(cls, "mediterranean forest biome [ENVO:01000199]",
+            PermissibleValue(text="mediterranean forest biome [ENVO:01000199]"))
+        setattr(cls, "mediterranean grassland biome [ENVO:01000224]",
+            PermissibleValue(text="mediterranean grassland biome [ENVO:01000224]"))
+        setattr(cls, "mediterranean savanna biome [ENVO:01000229]",
+            PermissibleValue(text="mediterranean savanna biome [ENVO:01000229]"))
+        setattr(cls, "mediterranean shrubland biome [ENVO:01000217]",
+            PermissibleValue(text="mediterranean shrubland biome [ENVO:01000217]"))
+        setattr(cls, "mediterranean woodland biome [ENVO:01000208]",
+            PermissibleValue(text="mediterranean woodland biome [ENVO:01000208]"))
+        setattr(cls, "mixed forest biome [ENVO:01000198]",
+            PermissibleValue(text="mixed forest biome [ENVO:01000198]"))
+        setattr(cls, "montane grassland biome [ENVO:01000194]",
+            PermissibleValue(text="montane grassland biome [ENVO:01000194]"))
+        setattr(cls, "montane savanna biome [ENVO:01000223]",
+            PermissibleValue(text="montane savanna biome [ENVO:01000223]"))
+        setattr(cls, "montane shrubland biome [ENVO:01000216]",
+            PermissibleValue(text="montane shrubland biome [ENVO:01000216]"))
         setattr(cls, "neritic epipelagic zone biome [ENVO:01000042]",
             PermissibleValue(text="neritic epipelagic zone biome [ENVO:01000042]"))
         setattr(cls, "neritic mesopelagic zone biome [ENVO:01000043]",
@@ -15645,42 +15960,610 @@ class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="neritic pelagic zone biome [ENVO:01000032]"))
         setattr(cls, "neritic sea surface microlayer biome [ENVO:01000041]",
             PermissibleValue(text="neritic sea surface microlayer biome [ENVO:01000041]"))
-        setattr(cls, "ocean biome [ENVO:01000048]",
-            PermissibleValue(text="ocean biome [ENVO:01000048]"))
-        setattr(cls, "oceanic abyssopelagic zone biome [ENVO:01000038]",
-            PermissibleValue(text="oceanic abyssopelagic zone biome [ENVO:01000038]"))
-        setattr(cls, "oceanic bathypelagic zone biome [ENVO:01000037]",
-            PermissibleValue(text="oceanic bathypelagic zone biome [ENVO:01000037]"))
-        setattr(cls, "oceanic benthopelagic zone biome [ENVO:01000040]",
-            PermissibleValue(text="oceanic benthopelagic zone biome [ENVO:01000040]"))
-        setattr(cls, "oceanic epipelagic zone biome [ENVO:01000035]",
-            PermissibleValue(text="oceanic epipelagic zone biome [ENVO:01000035]"))
-        setattr(cls, "oceanic hadal pelagic zone biome [ENVO:01000039]",
-            PermissibleValue(text="oceanic hadal pelagic zone biome [ENVO:01000039]"))
-        setattr(cls, "oceanic mesopelagic zone biome [ENVO:01000036]",
-            PermissibleValue(text="oceanic mesopelagic zone biome [ENVO:01000036]"))
-        setattr(cls, "oceanic pelagic zone biome [ENVO:01000033]",
-            PermissibleValue(text="oceanic pelagic zone biome [ENVO:01000033]"))
-        setattr(cls, "oceanic sea surface microlayer biome [ENVO:01000034]",
-            PermissibleValue(text="oceanic sea surface microlayer biome [ENVO:01000034]"))
+        setattr(cls, "rangeland biome [ENVO:01000247]",
+            PermissibleValue(text="rangeland biome [ENVO:01000247]"))
+        setattr(cls, "savanna biome [ENVO:01000178]",
+            PermissibleValue(text="savanna biome [ENVO:01000178]"))
+        setattr(cls, "shrubland biome [ENVO:01000176]",
+            PermissibleValue(text="shrubland biome [ENVO:01000176]"))
         setattr(cls, "small freshwater lake biome [ENVO:00000892]",
             PermissibleValue(text="small freshwater lake biome [ENVO:00000892]"))
         setattr(cls, "small river biome [ENVO:00000890]",
             PermissibleValue(text="small river biome [ENVO:00000890]"))
-        setattr(cls, "temperate marginal sea biome [ENVO:01000856]",
-            PermissibleValue(text="temperate marginal sea biome [ENVO:01000856]"))
-        setattr(cls, "temperate marine upwelling biome [ENVO:01000860]",
-            PermissibleValue(text="temperate marine upwelling biome [ENVO:01000860]"))
-        setattr(cls, "temperate mediterranean sea biome [ENVO:01000857]",
-            PermissibleValue(text="temperate mediterranean sea biome [ENVO:01000857]"))
-        setattr(cls, "tropical marginal sea biome [ENVO:01001230]",
-            PermissibleValue(text="tropical marginal sea biome [ENVO:01001230]"))
-        setattr(cls, "tropical marine coral reef biome [ENVO:01000854]",
-            PermissibleValue(text="tropical marine coral reef biome [ENVO:01000854]"))
-        setattr(cls, "tropical marine upwelling biome [ENVO:01000859]",
-            PermissibleValue(text="tropical marine upwelling biome [ENVO:01000859]"))
+        setattr(cls, "subpolar coniferous forest biome [ENVO:01000250]",
+            PermissibleValue(text="subpolar coniferous forest biome [ENVO:01000250]"))
+        setattr(cls, "subtropical broadleaf forest biome [ENVO:01000201]",
+            PermissibleValue(text="subtropical broadleaf forest biome [ENVO:01000201]"))
+        setattr(cls, "subtropical coniferous forest biome [ENVO:01000209]",
+            PermissibleValue(text="subtropical coniferous forest biome [ENVO:01000209]"))
+        setattr(cls, "subtropical dry broadleaf forest biome [ENVO:01000225]",
+            PermissibleValue(text="subtropical dry broadleaf forest biome [ENVO:01000225]"))
+        setattr(cls, "subtropical grassland biome [ENVO:01000191]",
+            PermissibleValue(text="subtropical grassland biome [ENVO:01000191]"))
+        setattr(cls, "subtropical moist broadleaf forest biome [ENVO:01000226]",
+            PermissibleValue(text="subtropical moist broadleaf forest biome [ENVO:01000226]"))
+        setattr(cls, "subtropical savanna biome [ENVO:01000187]",
+            PermissibleValue(text="subtropical savanna biome [ENVO:01000187]"))
+        setattr(cls, "subtropical shrubland biome [ENVO:01000213]",
+            PermissibleValue(text="subtropical shrubland biome [ENVO:01000213]"))
+        setattr(cls, "subtropical woodland biome [ENVO:01000222]",
+            PermissibleValue(text="subtropical woodland biome [ENVO:01000222]"))
+        setattr(cls, "temperate broadleaf forest biome [ENVO:01000202]",
+            PermissibleValue(text="temperate broadleaf forest biome [ENVO:01000202]"))
+        setattr(cls, "temperate coniferous forest biome [ENVO:01000211]",
+            PermissibleValue(text="temperate coniferous forest biome [ENVO:01000211]"))
+        setattr(cls, "temperate grassland biome [ENVO:01000193]",
+            PermissibleValue(text="temperate grassland biome [ENVO:01000193]"))
+        setattr(cls, "temperate mixed forest biome [ENVO:01000212]",
+            PermissibleValue(text="temperate mixed forest biome [ENVO:01000212]"))
+        setattr(cls, "temperate savanna biome [ENVO:01000189]",
+            PermissibleValue(text="temperate savanna biome [ENVO:01000189]"))
+        setattr(cls, "temperate shrubland biome [ENVO:01000215]",
+            PermissibleValue(text="temperate shrubland biome [ENVO:01000215]"))
+        setattr(cls, "temperate woodland biome [ENVO:01000221]",
+            PermissibleValue(text="temperate woodland biome [ENVO:01000221]"))
+        setattr(cls, "terrestrial biome [ENVO:00000446]",
+            PermissibleValue(text="terrestrial biome [ENVO:00000446]"))
+        setattr(cls, "tidal mangrove shrubland [ENVO:01001369]",
+            PermissibleValue(text="tidal mangrove shrubland [ENVO:01001369]"))
+        setattr(cls, "tropical broadleaf forest biome [ENVO:01000200]",
+            PermissibleValue(text="tropical broadleaf forest biome [ENVO:01000200]"))
+        setattr(cls, "tropical coniferous forest biome [ENVO:01000210]",
+            PermissibleValue(text="tropical coniferous forest biome [ENVO:01000210]"))
+        setattr(cls, "tropical dry broadleaf forest biome [ENVO:01000227]",
+            PermissibleValue(text="tropical dry broadleaf forest biome [ENVO:01000227]"))
+        setattr(cls, "tropical grassland biome [ENVO:01000192]",
+            PermissibleValue(text="tropical grassland biome [ENVO:01000192]"))
+        setattr(cls, "tropical mixed forest biome [ENVO:01001798]",
+            PermissibleValue(text="tropical mixed forest biome [ENVO:01001798]"))
+        setattr(cls, "tropical moist broadleaf forest biome [ENVO:01000228]",
+            PermissibleValue(text="tropical moist broadleaf forest biome [ENVO:01000228]"))
+        setattr(cls, "tropical savanna biome [ENVO:01000188]",
+            PermissibleValue(text="tropical savanna biome [ENVO:01000188]"))
+        setattr(cls, "tropical shrubland biome [ENVO:01000214]",
+            PermissibleValue(text="tropical shrubland biome [ENVO:01000214]"))
+        setattr(cls, "tropical woodland biome [ENVO:01000220]",
+            PermissibleValue(text="tropical woodland biome [ENVO:01000220]"))
+        setattr(cls, "tundra biome [ENVO:01000180]",
+            PermissibleValue(text="tundra biome [ENVO:01000180]"))
+        setattr(cls, "woodland biome [ENVO:01000175]",
+            PermissibleValue(text="woodland biome [ENVO:01000175]"))
         setattr(cls, "xeric basin biome [ENVO:00000893]",
             PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
+        setattr(cls, "xeric shrubland biome [ENVO:01000218]",
+            PermissibleValue(text="xeric shrubland biome [ENVO:01000218]"))
+
+class EnvMediumPlantAssociatedEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvMediumPlantAssociatedEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "bark [PO:0004518]",
+            PermissibleValue(text="bark [PO:0004518]"))
+        setattr(cls, "bulb [PO:0025356]",
+            PermissibleValue(text="bulb [PO:0025356]"))
+        setattr(cls, "corm [PO:0025355]",
+            PermissibleValue(text="corm [PO:0025355]"))
+        setattr(cls, "ear infructescence axis [PO:0025623]",
+            PermissibleValue(text="ear infructescence axis [PO:0025623]"))
+        setattr(cls, "flag leaf [PO:0020103]",
+            PermissibleValue(text="flag leaf [PO:0020103]"))
+        setattr(cls, "flower [PO:0009046]",
+            PermissibleValue(text="flower [PO:0009046]"))
+        setattr(cls, "fruit [PO:0009001]",
+            PermissibleValue(text="fruit [PO:0009001]"))
+        setattr(cls, "leaf [PO:0025034]",
+            PermissibleValue(text="leaf [PO:0025034]"))
+        setattr(cls, "petiole [PO:0020038]",
+            PermissibleValue(text="petiole [PO:0020038]"))
+        setattr(cls, "phyllome [PO:0006001]",
+            PermissibleValue(text="phyllome [PO:0006001]"))
+        setattr(cls, "pith [PO:0006109]",
+            PermissibleValue(text="pith [PO:0006109]"))
+        setattr(cls, "plant callus [PO:0005052]",
+            PermissibleValue(text="plant callus [PO:0005052]"))
+        setattr(cls, "plant gall [PO:0025626]",
+            PermissibleValue(text="plant gall [PO:0025626]"))
+        setattr(cls, "plant litter [ENVO:01000628]",
+            PermissibleValue(text="plant litter [ENVO:01000628]"))
+        setattr(cls, "pollen [PO:0025281]",
+            PermissibleValue(text="pollen [PO:0025281]"))
+        setattr(cls, "radicle [PO:0020031]",
+            PermissibleValue(text="radicle [PO:0020031]"))
+        setattr(cls, "rhizoid [PO:0030078]",
+            PermissibleValue(text="rhizoid [PO:0030078]"))
+        setattr(cls, "rhizome [PO:0004542]",
+            PermissibleValue(text="rhizome [PO:0004542]"))
+        setattr(cls, "rhizosphere [ENVO:00005801]",
+            PermissibleValue(text="rhizosphere [ENVO:00005801]"))
+        setattr(cls, "root [PO:0009005]",
+            PermissibleValue(text="root [PO:0009005]"))
+        setattr(cls, "root nodule [PO:0003023]",
+            PermissibleValue(text="root nodule [PO:0003023]"))
+        setattr(cls, "sapwood [PO:0004513]",
+            PermissibleValue(text="sapwood [PO:0004513]"))
+        setattr(cls, "secondary xylem [PO:0005848]",
+            PermissibleValue(text="secondary xylem [PO:0005848]"))
+        setattr(cls, "seed [PO:0009010]",
+            PermissibleValue(text="seed [PO:0009010]"))
+        setattr(cls, "seedling [PO:0008037]",
+            PermissibleValue(text="seedling [PO:0008037]"))
+        setattr(cls, "stem [PO:0009047]",
+            PermissibleValue(text="stem [PO:0009047]"))
+        setattr(cls, "tuber [PO:0025522]",
+            PermissibleValue(text="tuber [PO:0025522]"))
+        setattr(cls, "xylem vessel [PO:0025417]",
+            PermissibleValue(text="xylem vessel [PO:0025417]"))
+
+class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvLocalScaleSoilEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "active permafrost layer [ENVO:04000009]",
+            PermissibleValue(text="active permafrost layer [ENVO:04000009]"))
+        setattr(cls, "agricultural field [ENVO:00000114]",
+            PermissibleValue(text="agricultural field [ENVO:00000114]"))
+        setattr(cls, "animal habitation [ENVO:00005803]",
+            PermissibleValue(text="animal habitation [ENVO:00005803]"))
+        setattr(cls, "anthropogenic litter [ENVO:03500005]",
+            PermissibleValue(text="anthropogenic litter [ENVO:03500005]"))
+        setattr(cls, "aquifer [ENVO:00012408]",
+            PermissibleValue(text="aquifer [ENVO:00012408]"))
+        setattr(cls, "area of cropland [ENVO:01000892]",
+            PermissibleValue(text="area of cropland [ENVO:01000892]"))
+        setattr(cls, "area of deciduous forest [ENVO:01000816]",
+            PermissibleValue(text="area of deciduous forest [ENVO:01000816]"))
+        setattr(cls, "area of dwarf scrub [ENVO:01000861]",
+            PermissibleValue(text="area of dwarf scrub [ENVO:01000861]"))
+        setattr(cls, "area of evergreen forest [ENVO:01000843]",
+            PermissibleValue(text="area of evergreen forest [ENVO:01000843]"))
+        setattr(cls, "area of pastureland or hayfields [ENVO:01000891]",
+            PermissibleValue(text="area of pastureland or hayfields [ENVO:01000891]"))
+        setattr(cls, "bank [ENVO:00000141]",
+            PermissibleValue(text="bank [ENVO:00000141]"))
+        setattr(cls, "beach [ENVO:00000091]",
+            PermissibleValue(text="beach [ENVO:00000091]"))
+        setattr(cls, "butte [ENVO:00000287]",
+            PermissibleValue(text="butte [ENVO:00000287]"))
+        setattr(cls, "caldera [ENVO:00000096]",
+            PermissibleValue(text="caldera [ENVO:00000096]"))
+        setattr(cls, "canal [ENVO:00000014]",
+            PermissibleValue(text="canal [ENVO:00000014]"))
+        setattr(cls, "cave [ENVO:00000067]",
+            PermissibleValue(text="cave [ENVO:00000067]"))
+        setattr(cls, "channel [ENVO:03000117]",
+            PermissibleValue(text="channel [ENVO:03000117]"))
+        setattr(cls, "cirque [ENVO:00000155]",
+            PermissibleValue(text="cirque [ENVO:00000155]"))
+        setattr(cls, "cliff [ENVO:00000087]",
+            PermissibleValue(text="cliff [ENVO:00000087]"))
+        setattr(cls, "crater [ENVO:00000514]",
+            PermissibleValue(text="crater [ENVO:00000514]"))
+        setattr(cls, "delta [ENVO:00000101]",
+            PermissibleValue(text="delta [ENVO:00000101]"))
+        setattr(cls, "desert [ENVO:01001357]",
+            PermissibleValue(text="desert [ENVO:01001357]"))
+        setattr(cls, "dike [ENVO:01000671]",
+            PermissibleValue(text="dike [ENVO:01000671]"))
+        setattr(cls, "ditch [ENVO:00000037]",
+            PermissibleValue(text="ditch [ENVO:00000037]"))
+        setattr(cls, "drainage basin [ENVO:00000291]",
+            PermissibleValue(text="drainage basin [ENVO:00000291]"))
+        setattr(cls, "dune [ENVO:00000170]",
+            PermissibleValue(text="dune [ENVO:00000170]"))
+        setattr(cls, "estuary [ENVO:00000045]",
+            PermissibleValue(text="estuary [ENVO:00000045]"))
+        setattr(cls, "farm [ENVO:00000078]",
+            PermissibleValue(text="farm [ENVO:00000078]"))
+        setattr(cls, "fen [ENVO:00000232]",
+            PermissibleValue(text="fen [ENVO:00000232]"))
+        setattr(cls, "fjord [ENVO:00000039]",
+            PermissibleValue(text="fjord [ENVO:00000039]"))
+        setattr(cls, "flood plain [ENVO:00000255]",
+            PermissibleValue(text="flood plain [ENVO:00000255]"))
+        setattr(cls, "frost heave [ENVO:01001568]",
+            PermissibleValue(text="frost heave [ENVO:01001568]"))
+        setattr(cls, "fumarole [ENVO:00000216]",
+            PermissibleValue(text="fumarole [ENVO:00000216]"))
+        setattr(cls, "garden [ENVO:00000011]",
+            PermissibleValue(text="garden [ENVO:00000011]"))
+        setattr(cls, "glacier [ENVO:00000133]",
+            PermissibleValue(text="glacier [ENVO:00000133]"))
+        setattr(cls, "harbour [ENVO:00000463]",
+            PermissibleValue(text="harbour [ENVO:00000463]"))
+        setattr(cls, "hill [ENVO:00000083]",
+            PermissibleValue(text="hill [ENVO:00000083]"))
+        setattr(cls, "hot spring [ENVO:00000051]",
+            PermissibleValue(text="hot spring [ENVO:00000051]"))
+        setattr(cls, "hummock [ENVO:00000516]",
+            PermissibleValue(text="hummock [ENVO:00000516]"))
+        setattr(cls, "intertidal zone [ENVO:00000316]",
+            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
+        setattr(cls, "isthmus [ENVO:00000174]",
+            PermissibleValue(text="isthmus [ENVO:00000174]"))
+        setattr(cls, "karst [ENVO:00000175]",
+            PermissibleValue(text="karst [ENVO:00000175]"))
+        setattr(cls, "lake [ENVO:00000020]",
+            PermissibleValue(text="lake [ENVO:00000020]"))
+        setattr(cls, "landfill [ENVO:00000533]",
+            PermissibleValue(text="landfill [ENVO:00000533]"))
+        setattr(cls, "levee [ENVO:00000178]",
+            PermissibleValue(text="levee [ENVO:00000178]"))
+        setattr(cls, "mangrove swamp [ENVO:00000057]",
+            PermissibleValue(text="mangrove swamp [ENVO:00000057]"))
+        setattr(cls, "marsh [ENVO:00000035]",
+            PermissibleValue(text="marsh [ENVO:00000035]"))
+        setattr(cls, "mesa [ENVO:00000179]",
+            PermissibleValue(text="mesa [ENVO:00000179]"))
+        setattr(cls, "mine [ENVO:00000076]",
+            PermissibleValue(text="mine [ENVO:00000076]"))
+        setattr(cls, "mountain [ENVO:00000081]",
+            PermissibleValue(text="mountain [ENVO:00000081]"))
+        setattr(cls, "mudflat [ENVO:00000192]",
+            PermissibleValue(text="mudflat [ENVO:00000192]"))
+        setattr(cls, "needleleaf forest [ENVO:01000433]",
+            PermissibleValue(text="needleleaf forest [ENVO:01000433]"))
+        setattr(cls, "oil spill [ENVO:00002061]",
+            PermissibleValue(text="oil spill [ENVO:00002061]"))
+        setattr(cls, "palsa [ENVO:00000489]",
+            PermissibleValue(text="palsa [ENVO:00000489]"))
+        setattr(cls, "park [ENVO:00000562]",
+            PermissibleValue(text="park [ENVO:00000562]"))
+        setattr(cls, "pasture [ENVO:00000266]",
+            PermissibleValue(text="pasture [ENVO:00000266]"))
+        setattr(cls, "peat swamp [ENVO:00000189]",
+            PermissibleValue(text="peat swamp [ENVO:00000189]"))
+        setattr(cls, "peatland [ENVO:00000044]",
+            PermissibleValue(text="peatland [ENVO:00000044]"))
+        setattr(cls, "peninsula [ENVO:00000305]",
+            PermissibleValue(text="peninsula [ENVO:00000305]"))
+        setattr(cls, "plain [ENVO:00000086]",
+            PermissibleValue(text="plain [ENVO:00000086]"))
+        setattr(cls, "plateau [ENVO:00000182]",
+            PermissibleValue(text="plateau [ENVO:00000182]"))
+        setattr(cls, "prairie [ENVO:00000260]",
+            PermissibleValue(text="prairie [ENVO:00000260]"))
+        setattr(cls, "quarry [ENVO:00000284]",
+            PermissibleValue(text="quarry [ENVO:00000284]"))
+        setattr(cls, "reservoir [ENVO:00000025]",
+            PermissibleValue(text="reservoir [ENVO:00000025]"))
+        setattr(cls, "rhizosphere [ENVO:00005801]",
+            PermissibleValue(text="rhizosphere [ENVO:00005801]"))
+        setattr(cls, "ridge [ENVO:00000283]",
+            PermissibleValue(text="ridge [ENVO:00000283]"))
+        setattr(cls, "river [ENVO:00000022]",
+            PermissibleValue(text="river [ENVO:00000022]"))
+        setattr(cls, "roadside [ENVO:01000447]",
+            PermissibleValue(text="roadside [ENVO:01000447]"))
+        setattr(cls, "shoreline [ENVO:00000486]",
+            PermissibleValue(text="shoreline [ENVO:00000486]"))
+        setattr(cls, "sinkhole [ENVO:00000195]",
+            PermissibleValue(text="sinkhole [ENVO:00000195]"))
+        setattr(cls, "slope [ENVO:00002000]",
+            PermissibleValue(text="slope [ENVO:00002000]"))
+        setattr(cls, "spring [ENVO:00000027]",
+            PermissibleValue(text="spring [ENVO:00000027]"))
+        setattr(cls, "steppe [ENVO:00000262]",
+            PermissibleValue(text="steppe [ENVO:00000262]"))
+        setattr(cls, "stream [ENVO:00000023]",
+            PermissibleValue(text="stream [ENVO:00000023]"))
+        setattr(cls, "tropical forest [ENVO:01001803]",
+            PermissibleValue(text="tropical forest [ENVO:01001803]"))
+        setattr(cls, "tunnel [ENVO:00000068]",
+            PermissibleValue(text="tunnel [ENVO:00000068]"))
+        setattr(cls, "vadose zone [ENVO:00000328]",
+            PermissibleValue(text="vadose zone [ENVO:00000328]"))
+        setattr(cls, "volcano [ENVO:00000247]",
+            PermissibleValue(text="volcano [ENVO:00000247]"))
+        setattr(cls, "wadi [ENVO:00000031]",
+            PermissibleValue(text="wadi [ENVO:00000031]"))
+        setattr(cls, "watershed [ENVO:00000292]",
+            PermissibleValue(text="watershed [ENVO:00000292]"))
+        setattr(cls, "well [ENVO:00000026]",
+            PermissibleValue(text="well [ENVO:00000026]"))
+        setattr(cls, "wetland area [ENVO:00000043]",
+            PermissibleValue(text="wetland area [ENVO:00000043]"))
+        setattr(cls, "woodland area [ENVO:00000109]",
+            PermissibleValue(text="woodland area [ENVO:00000109]"))
+
+class EnvBroadScaleSoilEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScaleSoilEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "alpine tundra biome [ENVO:01001505]",
+            PermissibleValue(text="alpine tundra biome [ENVO:01001505]"))
+        setattr(cls, "anthropogenic terrestrial biome [ENVO:01000219]",
+            PermissibleValue(text="anthropogenic terrestrial biome [ENVO:01000219]"))
+        setattr(cls, "broadleaf forest biome [ENVO:01000197]",
+            PermissibleValue(text="broadleaf forest biome [ENVO:01000197]"))
+        setattr(cls, "coniferous forest biome [ENVO:01000196]",
+            PermissibleValue(text="coniferous forest biome [ENVO:01000196]"))
+        setattr(cls, "cropland biome [ENVO:01000245]",
+            PermissibleValue(text="cropland biome [ENVO:01000245]"))
+        setattr(cls, "flooded grassland biome [ENVO:01000195]",
+            PermissibleValue(text="flooded grassland biome [ENVO:01000195]"))
+        setattr(cls, "flooded savanna biome [ENVO:01000190]",
+            PermissibleValue(text="flooded savanna biome [ENVO:01000190]"))
+        setattr(cls, "forest biome [ENVO:01000174]",
+            PermissibleValue(text="forest biome [ENVO:01000174]"))
+        setattr(cls, "grassland biome [ENVO:01000177]",
+            PermissibleValue(text="grassland biome [ENVO:01000177]"))
+        setattr(cls, "mangrove biome [ENVO:01000181]",
+            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
+        setattr(cls, "mediterranean forest biome [ENVO:01000199]",
+            PermissibleValue(text="mediterranean forest biome [ENVO:01000199]"))
+        setattr(cls, "mediterranean grassland biome [ENVO:01000224]",
+            PermissibleValue(text="mediterranean grassland biome [ENVO:01000224]"))
+        setattr(cls, "mediterranean savanna biome [ENVO:01000229]",
+            PermissibleValue(text="mediterranean savanna biome [ENVO:01000229]"))
+        setattr(cls, "mediterranean shrubland biome [ENVO:01000217]",
+            PermissibleValue(text="mediterranean shrubland biome [ENVO:01000217]"))
+        setattr(cls, "mediterranean woodland biome [ENVO:01000208]",
+            PermissibleValue(text="mediterranean woodland biome [ENVO:01000208]"))
+        setattr(cls, "mixed forest biome [ENVO:01000198]",
+            PermissibleValue(text="mixed forest biome [ENVO:01000198]"))
+        setattr(cls, "montane grassland biome [ENVO:01000194]",
+            PermissibleValue(text="montane grassland biome [ENVO:01000194]"))
+        setattr(cls, "montane savanna biome [ENVO:01000223]",
+            PermissibleValue(text="montane savanna biome [ENVO:01000223]"))
+        setattr(cls, "montane shrubland biome [ENVO:01000216]",
+            PermissibleValue(text="montane shrubland biome [ENVO:01000216]"))
+        setattr(cls, "rangeland biome [ENVO:01000247]",
+            PermissibleValue(text="rangeland biome [ENVO:01000247]"))
+        setattr(cls, "savanna biome [ENVO:01000178]",
+            PermissibleValue(text="savanna biome [ENVO:01000178]"))
+        setattr(cls, "shrubland biome [ENVO:01000176]",
+            PermissibleValue(text="shrubland biome [ENVO:01000176]"))
+        setattr(cls, "subpolar coniferous forest biome [ENVO:01000250]",
+            PermissibleValue(text="subpolar coniferous forest biome [ENVO:01000250]"))
+        setattr(cls, "subtropical broadleaf forest biome [ENVO:01000201]",
+            PermissibleValue(text="subtropical broadleaf forest biome [ENVO:01000201]"))
+        setattr(cls, "subtropical coniferous forest biome [ENVO:01000209]",
+            PermissibleValue(text="subtropical coniferous forest biome [ENVO:01000209]"))
+        setattr(cls, "subtropical dry broadleaf forest biome [ENVO:01000225]",
+            PermissibleValue(text="subtropical dry broadleaf forest biome [ENVO:01000225]"))
+        setattr(cls, "subtropical grassland biome [ENVO:01000191]",
+            PermissibleValue(text="subtropical grassland biome [ENVO:01000191]"))
+        setattr(cls, "subtropical moist broadleaf forest biome [ENVO:01000226]",
+            PermissibleValue(text="subtropical moist broadleaf forest biome [ENVO:01000226]"))
+        setattr(cls, "subtropical savanna biome [ENVO:01000187]",
+            PermissibleValue(text="subtropical savanna biome [ENVO:01000187]"))
+        setattr(cls, "subtropical shrubland biome [ENVO:01000213]",
+            PermissibleValue(text="subtropical shrubland biome [ENVO:01000213]"))
+        setattr(cls, "subtropical woodland biome [ENVO:01000222]",
+            PermissibleValue(text="subtropical woodland biome [ENVO:01000222]"))
+        setattr(cls, "temperate broadleaf forest biome [ENVO:01000202]",
+            PermissibleValue(text="temperate broadleaf forest biome [ENVO:01000202]"))
+        setattr(cls, "temperate coniferous forest biome [ENVO:01000211]",
+            PermissibleValue(text="temperate coniferous forest biome [ENVO:01000211]"))
+        setattr(cls, "temperate grassland biome [ENVO:01000193]",
+            PermissibleValue(text="temperate grassland biome [ENVO:01000193]"))
+        setattr(cls, "temperate mixed forest biome [ENVO:01000212]",
+            PermissibleValue(text="temperate mixed forest biome [ENVO:01000212]"))
+        setattr(cls, "temperate savanna biome [ENVO:01000189]",
+            PermissibleValue(text="temperate savanna biome [ENVO:01000189]"))
+        setattr(cls, "temperate shrubland biome [ENVO:01000215]",
+            PermissibleValue(text="temperate shrubland biome [ENVO:01000215]"))
+        setattr(cls, "temperate woodland biome [ENVO:01000221]",
+            PermissibleValue(text="temperate woodland biome [ENVO:01000221]"))
+        setattr(cls, "terrestrial biome [ENVO:00000446]",
+            PermissibleValue(text="terrestrial biome [ENVO:00000446]"))
+        setattr(cls, "tidal mangrove shrubland [ENVO:01001369]",
+            PermissibleValue(text="tidal mangrove shrubland [ENVO:01001369]"))
+        setattr(cls, "tropical broadleaf forest biome [ENVO:01000200]",
+            PermissibleValue(text="tropical broadleaf forest biome [ENVO:01000200]"))
+        setattr(cls, "tropical coniferous forest biome [ENVO:01000210]",
+            PermissibleValue(text="tropical coniferous forest biome [ENVO:01000210]"))
+        setattr(cls, "tropical dry broadleaf forest biome [ENVO:01000227]",
+            PermissibleValue(text="tropical dry broadleaf forest biome [ENVO:01000227]"))
+        setattr(cls, "tropical grassland biome [ENVO:01000192]",
+            PermissibleValue(text="tropical grassland biome [ENVO:01000192]"))
+        setattr(cls, "tropical mixed forest biome [ENVO:01001798]",
+            PermissibleValue(text="tropical mixed forest biome [ENVO:01001798]"))
+        setattr(cls, "tropical moist broadleaf forest biome [ENVO:01000228]",
+            PermissibleValue(text="tropical moist broadleaf forest biome [ENVO:01000228]"))
+        setattr(cls, "tropical savanna biome [ENVO:01000188]",
+            PermissibleValue(text="tropical savanna biome [ENVO:01000188]"))
+        setattr(cls, "tropical shrubland biome [ENVO:01000214]",
+            PermissibleValue(text="tropical shrubland biome [ENVO:01000214]"))
+        setattr(cls, "tropical woodland biome [ENVO:01000220]",
+            PermissibleValue(text="tropical woodland biome [ENVO:01000220]"))
+        setattr(cls, "tundra biome [ENVO:01000180]",
+            PermissibleValue(text="tundra biome [ENVO:01000180]"))
+        setattr(cls, "woodland biome [ENVO:01000175]",
+            PermissibleValue(text="woodland biome [ENVO:01000175]"))
+        setattr(cls, "xeric shrubland biome [ENVO:01000218]",
+            PermissibleValue(text="xeric shrubland biome [ENVO:01000218]"))
+
+class EnvMediumSoilEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvMediumSoilEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "acidic soil [ENVO:01001185]",
+            PermissibleValue(text="acidic soil [ENVO:01001185]"))
+        setattr(cls, "acrisol [ENVO:00002234]",
+            PermissibleValue(text="acrisol [ENVO:00002234]"))
+        setattr(cls, "agricultural soil [ENVO:00002259]",
+            PermissibleValue(text="agricultural soil [ENVO:00002259]"))
+        setattr(cls, "albeluvisol [ENVO:00002233]",
+            PermissibleValue(text="albeluvisol [ENVO:00002233]"))
+        setattr(cls, "alisol [ENVO:00002231]",
+            PermissibleValue(text="alisol [ENVO:00002231]"))
+        setattr(cls, "allotment garden soil [ENVO:00005744]",
+            PermissibleValue(text="allotment garden soil [ENVO:00005744]"))
+        setattr(cls, "alluvial paddy field soil [ENVO:00005759]",
+            PermissibleValue(text="alluvial paddy field soil [ENVO:00005759]"))
+        setattr(cls, "alluvial soil [ENVO:00002871]",
+            PermissibleValue(text="alluvial soil [ENVO:00002871]"))
+        setattr(cls, "alluvial swamp soil [ENVO:00005758]",
+            PermissibleValue(text="alluvial swamp soil [ENVO:00005758]"))
+        setattr(cls, "alpine soil [ENVO:00005741]",
+            PermissibleValue(text="alpine soil [ENVO:00005741]"))
+        setattr(cls, "andosol [ENVO:00002232]",
+            PermissibleValue(text="andosol [ENVO:00002232]"))
+        setattr(cls, "anthrosol [ENVO:00002230]",
+            PermissibleValue(text="anthrosol [ENVO:00002230]"))
+        setattr(cls, "arable soil [ENVO:00005742]",
+            PermissibleValue(text="arable soil [ENVO:00005742]"))
+        setattr(cls, "arenosol [ENVO:00002229]",
+            PermissibleValue(text="arenosol [ENVO:00002229]"))
+        setattr(cls, "bare soil [ENVO:01001616]",
+            PermissibleValue(text="bare soil [ENVO:01001616]"))
+        setattr(cls, "beech forest soil [ENVO:00005770]",
+            PermissibleValue(text="beech forest soil [ENVO:00005770]"))
+        setattr(cls, "bluegrass field soil [ENVO:00005789]",
+            PermissibleValue(text="bluegrass field soil [ENVO:00005789]"))
+        setattr(cls, "bulk soil [ENVO:00005802]",
+            PermissibleValue(text="bulk soil [ENVO:00005802]"))
+        setattr(cls, "burned soil [ENVO:00005760]",
+            PermissibleValue(text="burned soil [ENVO:00005760]"))
+        setattr(cls, "calcisol [ENVO:00002239]",
+            PermissibleValue(text="calcisol [ENVO:00002239]"))
+        setattr(cls, "cambisol [ENVO:00002235]",
+            PermissibleValue(text="cambisol [ENVO:00002235]"))
+        setattr(cls, "chernozem [ENVO:00002237]",
+            PermissibleValue(text="chernozem [ENVO:00002237]"))
+        setattr(cls, "clay soil [ENVO:00002262]",
+            PermissibleValue(text="clay soil [ENVO:00002262]"))
+        setattr(cls, "compacted soil [ENVO:06105205]",
+            PermissibleValue(text="compacted soil [ENVO:06105205]"))
+        setattr(cls, "compost soil [ENVO:00005747]",
+            PermissibleValue(text="compost soil [ENVO:00005747]"))
+        setattr(cls, "cryosol [ENVO:00002236]",
+            PermissibleValue(text="cryosol [ENVO:00002236]"))
+        setattr(cls, "dry soil [ENVO:00005748]",
+            PermissibleValue(text="dry soil [ENVO:00005748]"))
+        setattr(cls, "durisol [ENVO:00002238]",
+            PermissibleValue(text="durisol [ENVO:00002238]"))
+        setattr(cls, "eucalyptus forest soil [ENVO:00005787]",
+            PermissibleValue(text="eucalyptus forest soil [ENVO:00005787]"))
+        setattr(cls, "ferralsol [ENVO:00002246]",
+            PermissibleValue(text="ferralsol [ENVO:00002246]"))
+        setattr(cls, "fertilized soil [ENVO:00005754]",
+            PermissibleValue(text="fertilized soil [ENVO:00005754]"))
+        setattr(cls, "fluvisol [ENVO:00002273]",
+            PermissibleValue(text="fluvisol [ENVO:00002273]"))
+        setattr(cls, "forest soil [ENVO:00002261]",
+            PermissibleValue(text="forest soil [ENVO:00002261]"))
+        setattr(cls, "friable-frozen soil [ENVO:01001528]",
+            PermissibleValue(text="friable-frozen soil [ENVO:01001528]"))
+        setattr(cls, "frost-susceptible soil [ENVO:01001638]",
+            PermissibleValue(text="frost-susceptible soil [ENVO:01001638]"))
+        setattr(cls, "frozen compost soil [ENVO:00005765]",
+            PermissibleValue(text="frozen compost soil [ENVO:00005765]"))
+        setattr(cls, "frozen soil [ENVO:01001526]",
+            PermissibleValue(text="frozen soil [ENVO:01001526]"))
+        setattr(cls, "gleysol [ENVO:00002244]",
+            PermissibleValue(text="gleysol [ENVO:00002244]"))
+        setattr(cls, "grassland soil [ENVO:00005750]",
+            PermissibleValue(text="grassland soil [ENVO:00005750]"))
+        setattr(cls, "gypsisol [ENVO:00002245]",
+            PermissibleValue(text="gypsisol [ENVO:00002245]"))
+        setattr(cls, "hard-frozen soil [ENVO:01001525]",
+            PermissibleValue(text="hard-frozen soil [ENVO:01001525]"))
+        setattr(cls, "heat stressed soil [ENVO:00005781]",
+            PermissibleValue(text="heat stressed soil [ENVO:00005781]"))
+        setattr(cls, "histosol [ENVO:00002243]",
+            PermissibleValue(text="histosol [ENVO:00002243]"))
+        setattr(cls, "jungle soil [ENVO:00005751]",
+            PermissibleValue(text="jungle soil [ENVO:00005751]"))
+        setattr(cls, "kastanozem [ENVO:00002240]",
+            PermissibleValue(text="kastanozem [ENVO:00002240]"))
+        setattr(cls, "lawn soil [ENVO:00005756]",
+            PermissibleValue(text="lawn soil [ENVO:00005756]"))
+        setattr(cls, "leafy wood soil [ENVO:00005783]",
+            PermissibleValue(text="leafy wood soil [ENVO:00005783]"))
+        setattr(cls, "leptosol [ENVO:00002241]",
+            PermissibleValue(text="leptosol [ENVO:00002241]"))
+        setattr(cls, "limed soil [ENVO:00005766]",
+            PermissibleValue(text="limed soil [ENVO:00005766]"))
+        setattr(cls, "lixisol [ENVO:00002242]",
+            PermissibleValue(text="lixisol [ENVO:00002242]"))
+        setattr(cls, "loam [ENVO:00002258]",
+            PermissibleValue(text="loam [ENVO:00002258]"))
+        setattr(cls, "luvisol [ENVO:00002248]",
+            PermissibleValue(text="luvisol [ENVO:00002248]"))
+        setattr(cls, "manured soil [ENVO:00005767]",
+            PermissibleValue(text="manured soil [ENVO:00005767]"))
+        setattr(cls, "meadow soil [ENVO:00005761]",
+            PermissibleValue(text="meadow soil [ENVO:00005761]"))
+        setattr(cls, "mountain forest soil [ENVO:00005769]",
+            PermissibleValue(text="mountain forest soil [ENVO:00005769]"))
+        setattr(cls, "muddy soil [ENVO:00005771]",
+            PermissibleValue(text="muddy soil [ENVO:00005771]"))
+        setattr(cls, "nitisol [ENVO:00002247]",
+            PermissibleValue(text="nitisol [ENVO:00002247]"))
+        setattr(cls, "orchid soil [ENVO:00005768]",
+            PermissibleValue(text="orchid soil [ENVO:00005768]"))
+        setattr(cls, "ornithogenic soil [ENVO:00005782]",
+            PermissibleValue(text="ornithogenic soil [ENVO:00005782]"))
+        setattr(cls, "paddy field soil [ENVO:00005740]",
+            PermissibleValue(text="paddy field soil [ENVO:00005740]"))
+        setattr(cls, "pathogen-suppressive soil [ENVO:03600036]",
+            PermissibleValue(text="pathogen-suppressive soil [ENVO:03600036]"))
+        setattr(cls, "phaeozem [ENVO:00002249]",
+            PermissibleValue(text="phaeozem [ENVO:00002249]"))
+        setattr(cls, "planosol [ENVO:00002251]",
+            PermissibleValue(text="planosol [ENVO:00002251]"))
+        setattr(cls, "plastic-frozen soil [ENVO:01001527]",
+            PermissibleValue(text="plastic-frozen soil [ENVO:01001527]"))
+        setattr(cls, "plinthosol [ENVO:00002250]",
+            PermissibleValue(text="plinthosol [ENVO:00002250]"))
+        setattr(cls, "podzol [ENVO:00002257]",
+            PermissibleValue(text="podzol [ENVO:00002257]"))
+        setattr(cls, "pond soil [ENVO:00005764]",
+            PermissibleValue(text="pond soil [ENVO:00005764]"))
+        setattr(cls, "red soil [ENVO:00005790]",
+            PermissibleValue(text="red soil [ENVO:00005790]"))
+        setattr(cls, "regosol [ENVO:00002256]",
+            PermissibleValue(text="regosol [ENVO:00002256]"))
+        setattr(cls, "rubber plantation soil [ENVO:00005788]",
+            PermissibleValue(text="rubber plantation soil [ENVO:00005788]"))
+        setattr(cls, "savanna soil [ENVO:00005746]",
+            PermissibleValue(text="savanna soil [ENVO:00005746]"))
+        setattr(cls, "sawah soil [ENVO:00005752]",
+            PermissibleValue(text="sawah soil [ENVO:00005752]"))
+        setattr(cls, "soil [ENVO:00001998]",
+            PermissibleValue(text="soil [ENVO:00001998]"))
+        setattr(cls, "solonchak [ENVO:00002252]",
+            PermissibleValue(text="solonchak [ENVO:00002252]"))
+        setattr(cls, "solonetz [ENVO:00002255]",
+            PermissibleValue(text="solonetz [ENVO:00002255]"))
+        setattr(cls, "spruce forest soil [ENVO:00005784]",
+            PermissibleValue(text="spruce forest soil [ENVO:00005784]"))
+        setattr(cls, "stagnosol [ENVO:00002274]",
+            PermissibleValue(text="stagnosol [ENVO:00002274]"))
+        setattr(cls, "surface soil [ENVO:02000059]",
+            PermissibleValue(text="surface soil [ENVO:02000059]"))
+        setattr(cls, "technosol [ENVO:00002275]",
+            PermissibleValue(text="technosol [ENVO:00002275]"))
+        setattr(cls, "tropical soil [ENVO:00005778]",
+            PermissibleValue(text="tropical soil [ENVO:00005778]"))
+        setattr(cls, "ultisol [ENVO:01001397]",
+            PermissibleValue(text="ultisol [ENVO:01001397]"))
+        setattr(cls, "umbrisol [ENVO:00002253]",
+            PermissibleValue(text="umbrisol [ENVO:00002253]"))
+        setattr(cls, "upland soil [ENVO:00005786]",
+            PermissibleValue(text="upland soil [ENVO:00005786]"))
+        setattr(cls, "vegetable garden soil [ENVO:00005779]",
+            PermissibleValue(text="vegetable garden soil [ENVO:00005779]"))
+        setattr(cls, "vertisol [ENVO:00002254]",
+            PermissibleValue(text="vertisol [ENVO:00002254]"))
 
 class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
 
@@ -15862,6 +16745,127 @@ class EnvLocalScaleWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="whale fall [ENVO:01000140]"))
         setattr(cls, "wood fall [ENVO:01000142]",
             PermissibleValue(text="wood fall [ENVO:01000142]"))
+
+class EnvBroadScaleWaterEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="EnvBroadScaleWaterEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "aquatic biome [ENVO:00002030]",
+            PermissibleValue(text="aquatic biome [ENVO:00002030]"))
+        setattr(cls, "concentration basin mediterranean sea biome [ENVO:01000004]",
+            PermissibleValue(text="concentration basin mediterranean sea biome [ENVO:01000004]"))
+        setattr(cls, "dilution basin mediterranean sea biome [ENVO:01000128]",
+            PermissibleValue(text="dilution basin mediterranean sea biome [ENVO:01000128]"))
+        setattr(cls, "epeiric sea biome [ENVO:01000045]",
+            PermissibleValue(text="epeiric sea biome [ENVO:01000045]"))
+        setattr(cls, "estuarine biome [ENVO:01000020]",
+            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
+        setattr(cls, "freshwater biome [ENVO:00000873]",
+            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
+        setattr(cls, "freshwater lake biome [ENVO:01000252]",
+            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
+        setattr(cls, "freshwater river biome [ENVO:01000253]",
+            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
+        setattr(cls, "freshwater stream biome [ENVO:03605008]",
+            PermissibleValue(text="freshwater stream biome [ENVO:03605008]"))
+        setattr(cls, "large freshwater lake biome [ENVO:00000891]",
+            PermissibleValue(text="large freshwater lake biome [ENVO:00000891]"))
+        setattr(cls, "large river biome [ENVO:00000887]",
+            PermissibleValue(text="large river biome [ENVO:00000887]"))
+        setattr(cls, "large river delta biome [ENVO:00000889]",
+            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
+        setattr(cls, "large river headwater biome [ENVO:00000888]",
+            PermissibleValue(text="large river headwater biome [ENVO:00000888]"))
+        setattr(cls, "marginal sea biome [ENVO:01000046]",
+            PermissibleValue(text="marginal sea biome [ENVO:01000046]"))
+        setattr(cls, "marine abyssal zone biome [ENVO:01000027]",
+            PermissibleValue(text="marine abyssal zone biome [ENVO:01000027]"))
+        setattr(cls, "marine basaltic hydrothermal vent biome [ENVO:01000054]",
+            PermissibleValue(text="marine basaltic hydrothermal vent biome [ENVO:01000054]"))
+        setattr(cls, "marine bathyal zone biome [ENVO:01000026]",
+            PermissibleValue(text="marine bathyal zone biome [ENVO:01000026]"))
+        setattr(cls, "marine benthic biome [ENVO:01000024]",
+            PermissibleValue(text="marine benthic biome [ENVO:01000024]"))
+        setattr(cls, "marine biome [ENVO:00000447]",
+            PermissibleValue(text="marine biome [ENVO:00000447]"))
+        setattr(cls, "marine black smoker biome [ENVO:01000051]",
+            PermissibleValue(text="marine black smoker biome [ENVO:01000051]"))
+        setattr(cls, "marine cold seep biome [ENVO:01000127]",
+            PermissibleValue(text="marine cold seep biome [ENVO:01000127]"))
+        setattr(cls, "marine coral reef biome [ENVO:01000049]",
+            PermissibleValue(text="marine coral reef biome [ENVO:01000049]"))
+        setattr(cls, "marine hadal zone biome [ENVO:01000028]",
+            PermissibleValue(text="marine hadal zone biome [ENVO:01000028]"))
+        setattr(cls, "marine hydrothermal vent biome [ENVO:01000030]",
+            PermissibleValue(text="marine hydrothermal vent biome [ENVO:01000030]"))
+        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
+            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
+        setattr(cls, "marine pelagic biome [ENVO:01000023]",
+            PermissibleValue(text="marine pelagic biome [ENVO:01000023]"))
+        setattr(cls, "marine reef biome [ENVO:01000029]",
+            PermissibleValue(text="marine reef biome [ENVO:01000029]"))
+        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
+            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
+        setattr(cls, "marine sponge reef biome [ENVO:01000123]",
+            PermissibleValue(text="marine sponge reef biome [ENVO:01000123]"))
+        setattr(cls, "marine subtidal rocky reef biome [ENVO:01000050]",
+            PermissibleValue(text="marine subtidal rocky reef biome [ENVO:01000050]"))
+        setattr(cls, "marine ultramafic hydrothermal vent biome [ENVO:01000053]",
+            PermissibleValue(text="marine ultramafic hydrothermal vent biome [ENVO:01000053]"))
+        setattr(cls, "marine upwelling biome [ENVO:01000858]",
+            PermissibleValue(text="marine upwelling biome [ENVO:01000858]"))
+        setattr(cls, "marine white smoker biome [ENVO:01000052]",
+            PermissibleValue(text="marine white smoker biome [ENVO:01000052]"))
+        setattr(cls, "mediterranean sea biome [ENVO:01000047]",
+            PermissibleValue(text="mediterranean sea biome [ENVO:01000047]"))
+        setattr(cls, "neritic epipelagic zone biome [ENVO:01000042]",
+            PermissibleValue(text="neritic epipelagic zone biome [ENVO:01000042]"))
+        setattr(cls, "neritic mesopelagic zone biome [ENVO:01000043]",
+            PermissibleValue(text="neritic mesopelagic zone biome [ENVO:01000043]"))
+        setattr(cls, "neritic pelagic zone biome [ENVO:01000032]",
+            PermissibleValue(text="neritic pelagic zone biome [ENVO:01000032]"))
+        setattr(cls, "neritic sea surface microlayer biome [ENVO:01000041]",
+            PermissibleValue(text="neritic sea surface microlayer biome [ENVO:01000041]"))
+        setattr(cls, "ocean biome [ENVO:01000048]",
+            PermissibleValue(text="ocean biome [ENVO:01000048]"))
+        setattr(cls, "oceanic abyssopelagic zone biome [ENVO:01000038]",
+            PermissibleValue(text="oceanic abyssopelagic zone biome [ENVO:01000038]"))
+        setattr(cls, "oceanic bathypelagic zone biome [ENVO:01000037]",
+            PermissibleValue(text="oceanic bathypelagic zone biome [ENVO:01000037]"))
+        setattr(cls, "oceanic benthopelagic zone biome [ENVO:01000040]",
+            PermissibleValue(text="oceanic benthopelagic zone biome [ENVO:01000040]"))
+        setattr(cls, "oceanic epipelagic zone biome [ENVO:01000035]",
+            PermissibleValue(text="oceanic epipelagic zone biome [ENVO:01000035]"))
+        setattr(cls, "oceanic hadal pelagic zone biome [ENVO:01000039]",
+            PermissibleValue(text="oceanic hadal pelagic zone biome [ENVO:01000039]"))
+        setattr(cls, "oceanic mesopelagic zone biome [ENVO:01000036]",
+            PermissibleValue(text="oceanic mesopelagic zone biome [ENVO:01000036]"))
+        setattr(cls, "oceanic pelagic zone biome [ENVO:01000033]",
+            PermissibleValue(text="oceanic pelagic zone biome [ENVO:01000033]"))
+        setattr(cls, "oceanic sea surface microlayer biome [ENVO:01000034]",
+            PermissibleValue(text="oceanic sea surface microlayer biome [ENVO:01000034]"))
+        setattr(cls, "small freshwater lake biome [ENVO:00000892]",
+            PermissibleValue(text="small freshwater lake biome [ENVO:00000892]"))
+        setattr(cls, "small river biome [ENVO:00000890]",
+            PermissibleValue(text="small river biome [ENVO:00000890]"))
+        setattr(cls, "temperate marginal sea biome [ENVO:01000856]",
+            PermissibleValue(text="temperate marginal sea biome [ENVO:01000856]"))
+        setattr(cls, "temperate marine upwelling biome [ENVO:01000860]",
+            PermissibleValue(text="temperate marine upwelling biome [ENVO:01000860]"))
+        setattr(cls, "temperate mediterranean sea biome [ENVO:01000857]",
+            PermissibleValue(text="temperate mediterranean sea biome [ENVO:01000857]"))
+        setattr(cls, "tropical marginal sea biome [ENVO:01001230]",
+            PermissibleValue(text="tropical marginal sea biome [ENVO:01001230]"))
+        setattr(cls, "tropical marine coral reef biome [ENVO:01000854]",
+            PermissibleValue(text="tropical marine coral reef biome [ENVO:01000854]"))
+        setattr(cls, "tropical marine upwelling biome [ENVO:01000859]",
+            PermissibleValue(text="tropical marine upwelling biome [ENVO:01000859]"))
+        setattr(cls, "xeric basin biome [ENVO:00000893]",
+            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
 
 class EnvMediumWaterEnum(EnumDefinitionImpl):
 
@@ -16063,1009 +17067,6 @@ class EnvMediumWaterEnum(EnumDefinitionImpl):
             PermissibleValue(text="water ice [ENVO:01000277]"))
         setattr(cls, "water-body-derived ice [ENVO:01001557]",
             PermissibleValue(text="water-body-derived ice [ENVO:01001557]"))
-
-class EnvBroadScaleSoilEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvBroadScaleSoilEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "alpine tundra biome [ENVO:01001505]",
-            PermissibleValue(text="alpine tundra biome [ENVO:01001505]"))
-        setattr(cls, "anthropogenic terrestrial biome [ENVO:01000219]",
-            PermissibleValue(text="anthropogenic terrestrial biome [ENVO:01000219]"))
-        setattr(cls, "broadleaf forest biome [ENVO:01000197]",
-            PermissibleValue(text="broadleaf forest biome [ENVO:01000197]"))
-        setattr(cls, "coniferous forest biome [ENVO:01000196]",
-            PermissibleValue(text="coniferous forest biome [ENVO:01000196]"))
-        setattr(cls, "cropland biome [ENVO:01000245]",
-            PermissibleValue(text="cropland biome [ENVO:01000245]"))
-        setattr(cls, "flooded grassland biome [ENVO:01000195]",
-            PermissibleValue(text="flooded grassland biome [ENVO:01000195]"))
-        setattr(cls, "flooded savanna biome [ENVO:01000190]",
-            PermissibleValue(text="flooded savanna biome [ENVO:01000190]"))
-        setattr(cls, "forest biome [ENVO:01000174]",
-            PermissibleValue(text="forest biome [ENVO:01000174]"))
-        setattr(cls, "grassland biome [ENVO:01000177]",
-            PermissibleValue(text="grassland biome [ENVO:01000177]"))
-        setattr(cls, "mangrove biome [ENVO:01000181]",
-            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
-        setattr(cls, "mediterranean forest biome [ENVO:01000199]",
-            PermissibleValue(text="mediterranean forest biome [ENVO:01000199]"))
-        setattr(cls, "mediterranean grassland biome [ENVO:01000224]",
-            PermissibleValue(text="mediterranean grassland biome [ENVO:01000224]"))
-        setattr(cls, "mediterranean savanna biome [ENVO:01000229]",
-            PermissibleValue(text="mediterranean savanna biome [ENVO:01000229]"))
-        setattr(cls, "mediterranean shrubland biome [ENVO:01000217]",
-            PermissibleValue(text="mediterranean shrubland biome [ENVO:01000217]"))
-        setattr(cls, "mediterranean woodland biome [ENVO:01000208]",
-            PermissibleValue(text="mediterranean woodland biome [ENVO:01000208]"))
-        setattr(cls, "mixed forest biome [ENVO:01000198]",
-            PermissibleValue(text="mixed forest biome [ENVO:01000198]"))
-        setattr(cls, "montane grassland biome [ENVO:01000194]",
-            PermissibleValue(text="montane grassland biome [ENVO:01000194]"))
-        setattr(cls, "montane savanna biome [ENVO:01000223]",
-            PermissibleValue(text="montane savanna biome [ENVO:01000223]"))
-        setattr(cls, "montane shrubland biome [ENVO:01000216]",
-            PermissibleValue(text="montane shrubland biome [ENVO:01000216]"))
-        setattr(cls, "rangeland biome [ENVO:01000247]",
-            PermissibleValue(text="rangeland biome [ENVO:01000247]"))
-        setattr(cls, "savanna biome [ENVO:01000178]",
-            PermissibleValue(text="savanna biome [ENVO:01000178]"))
-        setattr(cls, "shrubland biome [ENVO:01000176]",
-            PermissibleValue(text="shrubland biome [ENVO:01000176]"))
-        setattr(cls, "subpolar coniferous forest biome [ENVO:01000250]",
-            PermissibleValue(text="subpolar coniferous forest biome [ENVO:01000250]"))
-        setattr(cls, "subtropical broadleaf forest biome [ENVO:01000201]",
-            PermissibleValue(text="subtropical broadleaf forest biome [ENVO:01000201]"))
-        setattr(cls, "subtropical coniferous forest biome [ENVO:01000209]",
-            PermissibleValue(text="subtropical coniferous forest biome [ENVO:01000209]"))
-        setattr(cls, "subtropical dry broadleaf forest biome [ENVO:01000225]",
-            PermissibleValue(text="subtropical dry broadleaf forest biome [ENVO:01000225]"))
-        setattr(cls, "subtropical grassland biome [ENVO:01000191]",
-            PermissibleValue(text="subtropical grassland biome [ENVO:01000191]"))
-        setattr(cls, "subtropical moist broadleaf forest biome [ENVO:01000226]",
-            PermissibleValue(text="subtropical moist broadleaf forest biome [ENVO:01000226]"))
-        setattr(cls, "subtropical savanna biome [ENVO:01000187]",
-            PermissibleValue(text="subtropical savanna biome [ENVO:01000187]"))
-        setattr(cls, "subtropical shrubland biome [ENVO:01000213]",
-            PermissibleValue(text="subtropical shrubland biome [ENVO:01000213]"))
-        setattr(cls, "subtropical woodland biome [ENVO:01000222]",
-            PermissibleValue(text="subtropical woodland biome [ENVO:01000222]"))
-        setattr(cls, "temperate broadleaf forest biome [ENVO:01000202]",
-            PermissibleValue(text="temperate broadleaf forest biome [ENVO:01000202]"))
-        setattr(cls, "temperate coniferous forest biome [ENVO:01000211]",
-            PermissibleValue(text="temperate coniferous forest biome [ENVO:01000211]"))
-        setattr(cls, "temperate grassland biome [ENVO:01000193]",
-            PermissibleValue(text="temperate grassland biome [ENVO:01000193]"))
-        setattr(cls, "temperate mixed forest biome [ENVO:01000212]",
-            PermissibleValue(text="temperate mixed forest biome [ENVO:01000212]"))
-        setattr(cls, "temperate savanna biome [ENVO:01000189]",
-            PermissibleValue(text="temperate savanna biome [ENVO:01000189]"))
-        setattr(cls, "temperate shrubland biome [ENVO:01000215]",
-            PermissibleValue(text="temperate shrubland biome [ENVO:01000215]"))
-        setattr(cls, "temperate woodland biome [ENVO:01000221]",
-            PermissibleValue(text="temperate woodland biome [ENVO:01000221]"))
-        setattr(cls, "terrestrial biome [ENVO:00000446]",
-            PermissibleValue(text="terrestrial biome [ENVO:00000446]"))
-        setattr(cls, "tidal mangrove shrubland [ENVO:01001369]",
-            PermissibleValue(text="tidal mangrove shrubland [ENVO:01001369]"))
-        setattr(cls, "tropical broadleaf forest biome [ENVO:01000200]",
-            PermissibleValue(text="tropical broadleaf forest biome [ENVO:01000200]"))
-        setattr(cls, "tropical coniferous forest biome [ENVO:01000210]",
-            PermissibleValue(text="tropical coniferous forest biome [ENVO:01000210]"))
-        setattr(cls, "tropical dry broadleaf forest biome [ENVO:01000227]",
-            PermissibleValue(text="tropical dry broadleaf forest biome [ENVO:01000227]"))
-        setattr(cls, "tropical grassland biome [ENVO:01000192]",
-            PermissibleValue(text="tropical grassland biome [ENVO:01000192]"))
-        setattr(cls, "tropical mixed forest biome [ENVO:01001798]",
-            PermissibleValue(text="tropical mixed forest biome [ENVO:01001798]"))
-        setattr(cls, "tropical moist broadleaf forest biome [ENVO:01000228]",
-            PermissibleValue(text="tropical moist broadleaf forest biome [ENVO:01000228]"))
-        setattr(cls, "tropical savanna biome [ENVO:01000188]",
-            PermissibleValue(text="tropical savanna biome [ENVO:01000188]"))
-        setattr(cls, "tropical shrubland biome [ENVO:01000214]",
-            PermissibleValue(text="tropical shrubland biome [ENVO:01000214]"))
-        setattr(cls, "tropical woodland biome [ENVO:01000220]",
-            PermissibleValue(text="tropical woodland biome [ENVO:01000220]"))
-        setattr(cls, "tundra biome [ENVO:01000180]",
-            PermissibleValue(text="tundra biome [ENVO:01000180]"))
-        setattr(cls, "woodland biome [ENVO:01000175]",
-            PermissibleValue(text="woodland biome [ENVO:01000175]"))
-        setattr(cls, "xeric shrubland biome [ENVO:01000218]",
-            PermissibleValue(text="xeric shrubland biome [ENVO:01000218]"))
-
-class EnvLocalScaleSoilEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvLocalScaleSoilEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "active permafrost layer [ENVO:04000009]",
-            PermissibleValue(text="active permafrost layer [ENVO:04000009]"))
-        setattr(cls, "agricultural field [ENVO:00000114]",
-            PermissibleValue(text="agricultural field [ENVO:00000114]"))
-        setattr(cls, "animal habitation [ENVO:00005803]",
-            PermissibleValue(text="animal habitation [ENVO:00005803]"))
-        setattr(cls, "anthropogenic litter [ENVO:03500005]",
-            PermissibleValue(text="anthropogenic litter [ENVO:03500005]"))
-        setattr(cls, "aquifer [ENVO:00012408]",
-            PermissibleValue(text="aquifer [ENVO:00012408]"))
-        setattr(cls, "area of cropland [ENVO:01000892]",
-            PermissibleValue(text="area of cropland [ENVO:01000892]"))
-        setattr(cls, "area of deciduous forest [ENVO:01000816]",
-            PermissibleValue(text="area of deciduous forest [ENVO:01000816]"))
-        setattr(cls, "area of dwarf scrub [ENVO:01000861]",
-            PermissibleValue(text="area of dwarf scrub [ENVO:01000861]"))
-        setattr(cls, "area of evergreen forest [ENVO:01000843]",
-            PermissibleValue(text="area of evergreen forest [ENVO:01000843]"))
-        setattr(cls, "area of pastureland or hayfields [ENVO:01000891]",
-            PermissibleValue(text="area of pastureland or hayfields [ENVO:01000891]"))
-        setattr(cls, "bank [ENVO:00000141]",
-            PermissibleValue(text="bank [ENVO:00000141]"))
-        setattr(cls, "beach [ENVO:00000091]",
-            PermissibleValue(text="beach [ENVO:00000091]"))
-        setattr(cls, "butte [ENVO:00000287]",
-            PermissibleValue(text="butte [ENVO:00000287]"))
-        setattr(cls, "caldera [ENVO:00000096]",
-            PermissibleValue(text="caldera [ENVO:00000096]"))
-        setattr(cls, "canal [ENVO:00000014]",
-            PermissibleValue(text="canal [ENVO:00000014]"))
-        setattr(cls, "cave [ENVO:00000067]",
-            PermissibleValue(text="cave [ENVO:00000067]"))
-        setattr(cls, "channel [ENVO:03000117]",
-            PermissibleValue(text="channel [ENVO:03000117]"))
-        setattr(cls, "cirque [ENVO:00000155]",
-            PermissibleValue(text="cirque [ENVO:00000155]"))
-        setattr(cls, "cliff [ENVO:00000087]",
-            PermissibleValue(text="cliff [ENVO:00000087]"))
-        setattr(cls, "crater [ENVO:00000514]",
-            PermissibleValue(text="crater [ENVO:00000514]"))
-        setattr(cls, "delta [ENVO:00000101]",
-            PermissibleValue(text="delta [ENVO:00000101]"))
-        setattr(cls, "desert [ENVO:01001357]",
-            PermissibleValue(text="desert [ENVO:01001357]"))
-        setattr(cls, "dike [ENVO:01000671]",
-            PermissibleValue(text="dike [ENVO:01000671]"))
-        setattr(cls, "ditch [ENVO:00000037]",
-            PermissibleValue(text="ditch [ENVO:00000037]"))
-        setattr(cls, "drainage basin [ENVO:00000291]",
-            PermissibleValue(text="drainage basin [ENVO:00000291]"))
-        setattr(cls, "dune [ENVO:00000170]",
-            PermissibleValue(text="dune [ENVO:00000170]"))
-        setattr(cls, "estuary [ENVO:00000045]",
-            PermissibleValue(text="estuary [ENVO:00000045]"))
-        setattr(cls, "farm [ENVO:00000078]",
-            PermissibleValue(text="farm [ENVO:00000078]"))
-        setattr(cls, "fen [ENVO:00000232]",
-            PermissibleValue(text="fen [ENVO:00000232]"))
-        setattr(cls, "fjord [ENVO:00000039]",
-            PermissibleValue(text="fjord [ENVO:00000039]"))
-        setattr(cls, "flood plain [ENVO:00000255]",
-            PermissibleValue(text="flood plain [ENVO:00000255]"))
-        setattr(cls, "frost heave [ENVO:01001568]",
-            PermissibleValue(text="frost heave [ENVO:01001568]"))
-        setattr(cls, "fumarole [ENVO:00000216]",
-            PermissibleValue(text="fumarole [ENVO:00000216]"))
-        setattr(cls, "garden [ENVO:00000011]",
-            PermissibleValue(text="garden [ENVO:00000011]"))
-        setattr(cls, "glacier [ENVO:00000133]",
-            PermissibleValue(text="glacier [ENVO:00000133]"))
-        setattr(cls, "harbour [ENVO:00000463]",
-            PermissibleValue(text="harbour [ENVO:00000463]"))
-        setattr(cls, "hill [ENVO:00000083]",
-            PermissibleValue(text="hill [ENVO:00000083]"))
-        setattr(cls, "hot spring [ENVO:00000051]",
-            PermissibleValue(text="hot spring [ENVO:00000051]"))
-        setattr(cls, "hummock [ENVO:00000516]",
-            PermissibleValue(text="hummock [ENVO:00000516]"))
-        setattr(cls, "intertidal zone [ENVO:00000316]",
-            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
-        setattr(cls, "isthmus [ENVO:00000174]",
-            PermissibleValue(text="isthmus [ENVO:00000174]"))
-        setattr(cls, "karst [ENVO:00000175]",
-            PermissibleValue(text="karst [ENVO:00000175]"))
-        setattr(cls, "lake [ENVO:00000020]",
-            PermissibleValue(text="lake [ENVO:00000020]"))
-        setattr(cls, "landfill [ENVO:00000533]",
-            PermissibleValue(text="landfill [ENVO:00000533]"))
-        setattr(cls, "levee [ENVO:00000178]",
-            PermissibleValue(text="levee [ENVO:00000178]"))
-        setattr(cls, "mangrove swamp [ENVO:00000057]",
-            PermissibleValue(text="mangrove swamp [ENVO:00000057]"))
-        setattr(cls, "marsh [ENVO:00000035]",
-            PermissibleValue(text="marsh [ENVO:00000035]"))
-        setattr(cls, "mesa [ENVO:00000179]",
-            PermissibleValue(text="mesa [ENVO:00000179]"))
-        setattr(cls, "mine [ENVO:00000076]",
-            PermissibleValue(text="mine [ENVO:00000076]"))
-        setattr(cls, "mountain [ENVO:00000081]",
-            PermissibleValue(text="mountain [ENVO:00000081]"))
-        setattr(cls, "mudflat [ENVO:00000192]",
-            PermissibleValue(text="mudflat [ENVO:00000192]"))
-        setattr(cls, "needleleaf forest [ENVO:01000433]",
-            PermissibleValue(text="needleleaf forest [ENVO:01000433]"))
-        setattr(cls, "oil spill [ENVO:00002061]",
-            PermissibleValue(text="oil spill [ENVO:00002061]"))
-        setattr(cls, "palsa [ENVO:00000489]",
-            PermissibleValue(text="palsa [ENVO:00000489]"))
-        setattr(cls, "park [ENVO:00000562]",
-            PermissibleValue(text="park [ENVO:00000562]"))
-        setattr(cls, "pasture [ENVO:00000266]",
-            PermissibleValue(text="pasture [ENVO:00000266]"))
-        setattr(cls, "peat swamp [ENVO:00000189]",
-            PermissibleValue(text="peat swamp [ENVO:00000189]"))
-        setattr(cls, "peatland [ENVO:00000044]",
-            PermissibleValue(text="peatland [ENVO:00000044]"))
-        setattr(cls, "peninsula [ENVO:00000305]",
-            PermissibleValue(text="peninsula [ENVO:00000305]"))
-        setattr(cls, "plain [ENVO:00000086]",
-            PermissibleValue(text="plain [ENVO:00000086]"))
-        setattr(cls, "plateau [ENVO:00000182]",
-            PermissibleValue(text="plateau [ENVO:00000182]"))
-        setattr(cls, "prairie [ENVO:00000260]",
-            PermissibleValue(text="prairie [ENVO:00000260]"))
-        setattr(cls, "quarry [ENVO:00000284]",
-            PermissibleValue(text="quarry [ENVO:00000284]"))
-        setattr(cls, "reservoir [ENVO:00000025]",
-            PermissibleValue(text="reservoir [ENVO:00000025]"))
-        setattr(cls, "rhizosphere [ENVO:00005801]",
-            PermissibleValue(text="rhizosphere [ENVO:00005801]"))
-        setattr(cls, "ridge [ENVO:00000283]",
-            PermissibleValue(text="ridge [ENVO:00000283]"))
-        setattr(cls, "river [ENVO:00000022]",
-            PermissibleValue(text="river [ENVO:00000022]"))
-        setattr(cls, "roadside [ENVO:01000447]",
-            PermissibleValue(text="roadside [ENVO:01000447]"))
-        setattr(cls, "shoreline [ENVO:00000486]",
-            PermissibleValue(text="shoreline [ENVO:00000486]"))
-        setattr(cls, "sinkhole [ENVO:00000195]",
-            PermissibleValue(text="sinkhole [ENVO:00000195]"))
-        setattr(cls, "slope [ENVO:00002000]",
-            PermissibleValue(text="slope [ENVO:00002000]"))
-        setattr(cls, "spring [ENVO:00000027]",
-            PermissibleValue(text="spring [ENVO:00000027]"))
-        setattr(cls, "steppe [ENVO:00000262]",
-            PermissibleValue(text="steppe [ENVO:00000262]"))
-        setattr(cls, "stream [ENVO:00000023]",
-            PermissibleValue(text="stream [ENVO:00000023]"))
-        setattr(cls, "tropical forest [ENVO:01001803]",
-            PermissibleValue(text="tropical forest [ENVO:01001803]"))
-        setattr(cls, "tunnel [ENVO:00000068]",
-            PermissibleValue(text="tunnel [ENVO:00000068]"))
-        setattr(cls, "vadose zone [ENVO:00000328]",
-            PermissibleValue(text="vadose zone [ENVO:00000328]"))
-        setattr(cls, "volcano [ENVO:00000247]",
-            PermissibleValue(text="volcano [ENVO:00000247]"))
-        setattr(cls, "wadi [ENVO:00000031]",
-            PermissibleValue(text="wadi [ENVO:00000031]"))
-        setattr(cls, "watershed [ENVO:00000292]",
-            PermissibleValue(text="watershed [ENVO:00000292]"))
-        setattr(cls, "well [ENVO:00000026]",
-            PermissibleValue(text="well [ENVO:00000026]"))
-        setattr(cls, "wetland area [ENVO:00000043]",
-            PermissibleValue(text="wetland area [ENVO:00000043]"))
-        setattr(cls, "woodland area [ENVO:00000109]",
-            PermissibleValue(text="woodland area [ENVO:00000109]"))
-
-class EnvMediumSoilEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvMediumSoilEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "acidic soil [ENVO:01001185]",
-            PermissibleValue(text="acidic soil [ENVO:01001185]"))
-        setattr(cls, "acrisol [ENVO:00002234]",
-            PermissibleValue(text="acrisol [ENVO:00002234]"))
-        setattr(cls, "agricultural soil [ENVO:00002259]",
-            PermissibleValue(text="agricultural soil [ENVO:00002259]"))
-        setattr(cls, "albeluvisol [ENVO:00002233]",
-            PermissibleValue(text="albeluvisol [ENVO:00002233]"))
-        setattr(cls, "alisol [ENVO:00002231]",
-            PermissibleValue(text="alisol [ENVO:00002231]"))
-        setattr(cls, "allotment garden soil [ENVO:00005744]",
-            PermissibleValue(text="allotment garden soil [ENVO:00005744]"))
-        setattr(cls, "alluvial paddy field soil [ENVO:00005759]",
-            PermissibleValue(text="alluvial paddy field soil [ENVO:00005759]"))
-        setattr(cls, "alluvial soil [ENVO:00002871]",
-            PermissibleValue(text="alluvial soil [ENVO:00002871]"))
-        setattr(cls, "alluvial swamp soil [ENVO:00005758]",
-            PermissibleValue(text="alluvial swamp soil [ENVO:00005758]"))
-        setattr(cls, "alpine soil [ENVO:00005741]",
-            PermissibleValue(text="alpine soil [ENVO:00005741]"))
-        setattr(cls, "andosol [ENVO:00002232]",
-            PermissibleValue(text="andosol [ENVO:00002232]"))
-        setattr(cls, "anthrosol [ENVO:00002230]",
-            PermissibleValue(text="anthrosol [ENVO:00002230]"))
-        setattr(cls, "arable soil [ENVO:00005742]",
-            PermissibleValue(text="arable soil [ENVO:00005742]"))
-        setattr(cls, "arenosol [ENVO:00002229]",
-            PermissibleValue(text="arenosol [ENVO:00002229]"))
-        setattr(cls, "bare soil [ENVO:01001616]",
-            PermissibleValue(text="bare soil [ENVO:01001616]"))
-        setattr(cls, "beech forest soil [ENVO:00005770]",
-            PermissibleValue(text="beech forest soil [ENVO:00005770]"))
-        setattr(cls, "bluegrass field soil [ENVO:00005789]",
-            PermissibleValue(text="bluegrass field soil [ENVO:00005789]"))
-        setattr(cls, "bulk soil [ENVO:00005802]",
-            PermissibleValue(text="bulk soil [ENVO:00005802]"))
-        setattr(cls, "burned soil [ENVO:00005760]",
-            PermissibleValue(text="burned soil [ENVO:00005760]"))
-        setattr(cls, "calcisol [ENVO:00002239]",
-            PermissibleValue(text="calcisol [ENVO:00002239]"))
-        setattr(cls, "cambisol [ENVO:00002235]",
-            PermissibleValue(text="cambisol [ENVO:00002235]"))
-        setattr(cls, "chernozem [ENVO:00002237]",
-            PermissibleValue(text="chernozem [ENVO:00002237]"))
-        setattr(cls, "clay soil [ENVO:00002262]",
-            PermissibleValue(text="clay soil [ENVO:00002262]"))
-        setattr(cls, "compacted soil [ENVO:06105205]",
-            PermissibleValue(text="compacted soil [ENVO:06105205]"))
-        setattr(cls, "compost soil [ENVO:00005747]",
-            PermissibleValue(text="compost soil [ENVO:00005747]"))
-        setattr(cls, "cryosol [ENVO:00002236]",
-            PermissibleValue(text="cryosol [ENVO:00002236]"))
-        setattr(cls, "dry soil [ENVO:00005748]",
-            PermissibleValue(text="dry soil [ENVO:00005748]"))
-        setattr(cls, "durisol [ENVO:00002238]",
-            PermissibleValue(text="durisol [ENVO:00002238]"))
-        setattr(cls, "eucalyptus forest soil [ENVO:00005787]",
-            PermissibleValue(text="eucalyptus forest soil [ENVO:00005787]"))
-        setattr(cls, "ferralsol [ENVO:00002246]",
-            PermissibleValue(text="ferralsol [ENVO:00002246]"))
-        setattr(cls, "fertilized soil [ENVO:00005754]",
-            PermissibleValue(text="fertilized soil [ENVO:00005754]"))
-        setattr(cls, "fluvisol [ENVO:00002273]",
-            PermissibleValue(text="fluvisol [ENVO:00002273]"))
-        setattr(cls, "forest soil [ENVO:00002261]",
-            PermissibleValue(text="forest soil [ENVO:00002261]"))
-        setattr(cls, "friable-frozen soil [ENVO:01001528]",
-            PermissibleValue(text="friable-frozen soil [ENVO:01001528]"))
-        setattr(cls, "frost-susceptible soil [ENVO:01001638]",
-            PermissibleValue(text="frost-susceptible soil [ENVO:01001638]"))
-        setattr(cls, "frozen compost soil [ENVO:00005765]",
-            PermissibleValue(text="frozen compost soil [ENVO:00005765]"))
-        setattr(cls, "frozen soil [ENVO:01001526]",
-            PermissibleValue(text="frozen soil [ENVO:01001526]"))
-        setattr(cls, "gleysol [ENVO:00002244]",
-            PermissibleValue(text="gleysol [ENVO:00002244]"))
-        setattr(cls, "grassland soil [ENVO:00005750]",
-            PermissibleValue(text="grassland soil [ENVO:00005750]"))
-        setattr(cls, "gypsisol [ENVO:00002245]",
-            PermissibleValue(text="gypsisol [ENVO:00002245]"))
-        setattr(cls, "hard-frozen soil [ENVO:01001525]",
-            PermissibleValue(text="hard-frozen soil [ENVO:01001525]"))
-        setattr(cls, "heat stressed soil [ENVO:00005781]",
-            PermissibleValue(text="heat stressed soil [ENVO:00005781]"))
-        setattr(cls, "histosol [ENVO:00002243]",
-            PermissibleValue(text="histosol [ENVO:00002243]"))
-        setattr(cls, "jungle soil [ENVO:00005751]",
-            PermissibleValue(text="jungle soil [ENVO:00005751]"))
-        setattr(cls, "kastanozem [ENVO:00002240]",
-            PermissibleValue(text="kastanozem [ENVO:00002240]"))
-        setattr(cls, "lawn soil [ENVO:00005756]",
-            PermissibleValue(text="lawn soil [ENVO:00005756]"))
-        setattr(cls, "leafy wood soil [ENVO:00005783]",
-            PermissibleValue(text="leafy wood soil [ENVO:00005783]"))
-        setattr(cls, "leptosol [ENVO:00002241]",
-            PermissibleValue(text="leptosol [ENVO:00002241]"))
-        setattr(cls, "limed soil [ENVO:00005766]",
-            PermissibleValue(text="limed soil [ENVO:00005766]"))
-        setattr(cls, "lixisol [ENVO:00002242]",
-            PermissibleValue(text="lixisol [ENVO:00002242]"))
-        setattr(cls, "loam [ENVO:00002258]",
-            PermissibleValue(text="loam [ENVO:00002258]"))
-        setattr(cls, "luvisol [ENVO:00002248]",
-            PermissibleValue(text="luvisol [ENVO:00002248]"))
-        setattr(cls, "manured soil [ENVO:00005767]",
-            PermissibleValue(text="manured soil [ENVO:00005767]"))
-        setattr(cls, "meadow soil [ENVO:00005761]",
-            PermissibleValue(text="meadow soil [ENVO:00005761]"))
-        setattr(cls, "mountain forest soil [ENVO:00005769]",
-            PermissibleValue(text="mountain forest soil [ENVO:00005769]"))
-        setattr(cls, "muddy soil [ENVO:00005771]",
-            PermissibleValue(text="muddy soil [ENVO:00005771]"))
-        setattr(cls, "nitisol [ENVO:00002247]",
-            PermissibleValue(text="nitisol [ENVO:00002247]"))
-        setattr(cls, "orchid soil [ENVO:00005768]",
-            PermissibleValue(text="orchid soil [ENVO:00005768]"))
-        setattr(cls, "ornithogenic soil [ENVO:00005782]",
-            PermissibleValue(text="ornithogenic soil [ENVO:00005782]"))
-        setattr(cls, "paddy field soil [ENVO:00005740]",
-            PermissibleValue(text="paddy field soil [ENVO:00005740]"))
-        setattr(cls, "pathogen-suppressive soil [ENVO:03600036]",
-            PermissibleValue(text="pathogen-suppressive soil [ENVO:03600036]"))
-        setattr(cls, "phaeozem [ENVO:00002249]",
-            PermissibleValue(text="phaeozem [ENVO:00002249]"))
-        setattr(cls, "planosol [ENVO:00002251]",
-            PermissibleValue(text="planosol [ENVO:00002251]"))
-        setattr(cls, "plastic-frozen soil [ENVO:01001527]",
-            PermissibleValue(text="plastic-frozen soil [ENVO:01001527]"))
-        setattr(cls, "plinthosol [ENVO:00002250]",
-            PermissibleValue(text="plinthosol [ENVO:00002250]"))
-        setattr(cls, "podzol [ENVO:00002257]",
-            PermissibleValue(text="podzol [ENVO:00002257]"))
-        setattr(cls, "pond soil [ENVO:00005764]",
-            PermissibleValue(text="pond soil [ENVO:00005764]"))
-        setattr(cls, "red soil [ENVO:00005790]",
-            PermissibleValue(text="red soil [ENVO:00005790]"))
-        setattr(cls, "regosol [ENVO:00002256]",
-            PermissibleValue(text="regosol [ENVO:00002256]"))
-        setattr(cls, "rubber plantation soil [ENVO:00005788]",
-            PermissibleValue(text="rubber plantation soil [ENVO:00005788]"))
-        setattr(cls, "savanna soil [ENVO:00005746]",
-            PermissibleValue(text="savanna soil [ENVO:00005746]"))
-        setattr(cls, "sawah soil [ENVO:00005752]",
-            PermissibleValue(text="sawah soil [ENVO:00005752]"))
-        setattr(cls, "soil [ENVO:00001998]",
-            PermissibleValue(text="soil [ENVO:00001998]"))
-        setattr(cls, "solonchak [ENVO:00002252]",
-            PermissibleValue(text="solonchak [ENVO:00002252]"))
-        setattr(cls, "solonetz [ENVO:00002255]",
-            PermissibleValue(text="solonetz [ENVO:00002255]"))
-        setattr(cls, "spruce forest soil [ENVO:00005784]",
-            PermissibleValue(text="spruce forest soil [ENVO:00005784]"))
-        setattr(cls, "stagnosol [ENVO:00002274]",
-            PermissibleValue(text="stagnosol [ENVO:00002274]"))
-        setattr(cls, "surface soil [ENVO:02000059]",
-            PermissibleValue(text="surface soil [ENVO:02000059]"))
-        setattr(cls, "technosol [ENVO:00002275]",
-            PermissibleValue(text="technosol [ENVO:00002275]"))
-        setattr(cls, "tropical soil [ENVO:00005778]",
-            PermissibleValue(text="tropical soil [ENVO:00005778]"))
-        setattr(cls, "ultisol [ENVO:01001397]",
-            PermissibleValue(text="ultisol [ENVO:01001397]"))
-        setattr(cls, "umbrisol [ENVO:00002253]",
-            PermissibleValue(text="umbrisol [ENVO:00002253]"))
-        setattr(cls, "upland soil [ENVO:00005786]",
-            PermissibleValue(text="upland soil [ENVO:00005786]"))
-        setattr(cls, "vegetable garden soil [ENVO:00005779]",
-            PermissibleValue(text="vegetable garden soil [ENVO:00005779]"))
-        setattr(cls, "vertisol [ENVO:00002254]",
-            PermissibleValue(text="vertisol [ENVO:00002254]"))
-
-class EnvBroadScaleSedimentEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvBroadScaleSedimentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "estuarine biome [ENVO:01000020]",
-            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
-        setattr(cls, "freshwater biome [ENVO:00000873]",
-            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
-        setattr(cls, "freshwater lake biome [ENVO:01000252]",
-            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
-        setattr(cls, "freshwater river biome [ENVO:01000253]",
-            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
-        setattr(cls, "large river delta biome [ENVO:00000889]",
-            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
-        setattr(cls, "mangrove biome [ENVO:01000181]",
-            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
-        setattr(cls, "marginal sea biome [ENVO:01000046]",
-            PermissibleValue(text="marginal sea biome [ENVO:01000046]"))
-        setattr(cls, "marine benthic biome [ENVO:01000024]",
-            PermissibleValue(text="marine benthic biome [ENVO:01000024]"))
-        setattr(cls, "marine biome [ENVO:00000447]",
-            PermissibleValue(text="marine biome [ENVO:00000447]"))
-        setattr(cls, "marine cold seep biome [ENVO:01000127]",
-            PermissibleValue(text="marine cold seep biome [ENVO:01000127]"))
-        setattr(cls, "marine coral reef biome [ENVO:01000049]",
-            PermissibleValue(text="marine coral reef biome [ENVO:01000049]"))
-        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
-            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
-        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
-            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
-        setattr(cls, "marine subtidal rocky reef biome [ENVO:01000050]",
-            PermissibleValue(text="marine subtidal rocky reef biome [ENVO:01000050]"))
-        setattr(cls, "xeric basin biome [ENVO:00000893]",
-            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
-
-class EnvLocalScaleSedimentEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvLocalScaleSedimentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "archipelago [ENVO:00000220]",
-            PermissibleValue(text="archipelago [ENVO:00000220]"))
-        setattr(cls, "bank [ENVO:00000141]",
-            PermissibleValue(text="bank [ENVO:00000141]"))
-        setattr(cls, "bar [ENVO:00000167]",
-            PermissibleValue(text="bar [ENVO:00000167]"))
-        setattr(cls, "bay [ENVO:00000032]",
-            PermissibleValue(text="bay [ENVO:00000032]"))
-        setattr(cls, "beach [ENVO:00000091]",
-            PermissibleValue(text="beach [ENVO:00000091]"))
-        setattr(cls, "brackish estuary [ENVO:00002137]",
-            PermissibleValue(text="brackish estuary [ENVO:00002137]"))
-        setattr(cls, "brackish lake [ENVO:00000540]",
-            PermissibleValue(text="brackish lake [ENVO:00000540]"))
-        setattr(cls, "cave [ENVO:00000067]",
-            PermissibleValue(text="cave [ENVO:00000067]"))
-        setattr(cls, "coast [ENVO:01000687]",
-            PermissibleValue(text="coast [ENVO:01000687]"))
-        setattr(cls, "coastal water body [ENVO:02000049]",
-            PermissibleValue(text="coastal water body [ENVO:02000049]"))
-        setattr(cls, "cold seep [ENVO:01000263]",
-            PermissibleValue(text="cold seep [ENVO:01000263]"))
-        setattr(cls, "continental margin [ENVO:01000298]",
-            PermissibleValue(text="continental margin [ENVO:01000298]"))
-        setattr(cls, "continental shelf [ENVO:00000223]",
-            PermissibleValue(text="continental shelf [ENVO:00000223]"))
-        setattr(cls, "cryoconite hole [ENVO:03000039]",
-            PermissibleValue(text="cryoconite hole [ENVO:03000039]"))
-        setattr(cls, "eutrophic lake [ENVO:01000548]",
-            PermissibleValue(text="eutrophic lake [ENVO:01000548]"))
-        setattr(cls, "fjord [ENVO:00000039]",
-            PermissibleValue(text="fjord [ENVO:00000039]"))
-        setattr(cls, "flood plain [ENVO:00000255]",
-            PermissibleValue(text="flood plain [ENVO:00000255]"))
-        setattr(cls, "fumarole [ENVO:00000216]",
-            PermissibleValue(text="fumarole [ENVO:00000216]"))
-        setattr(cls, "geyser [ENVO:00000050]",
-            PermissibleValue(text="geyser [ENVO:00000050]"))
-        setattr(cls, "hadalpelagic zone [ENVO:00000214]",
-            PermissibleValue(text="hadalpelagic zone [ENVO:00000214]"))
-        setattr(cls, "harbour [ENVO:00000463]",
-            PermissibleValue(text="harbour [ENVO:00000463]"))
-        setattr(cls, "hot spring [ENVO:00000051]",
-            PermissibleValue(text="hot spring [ENVO:00000051]"))
-        setattr(cls, "hydrothermal seep [ENVO:01000265]",
-            PermissibleValue(text="hydrothermal seep [ENVO:01000265]"))
-        setattr(cls, "hydrothermal vent [ENVO:00000215]",
-            PermissibleValue(text="hydrothermal vent [ENVO:00000215]"))
-        setattr(cls, "hypersaline lake [ENVO:01001020]",
-            PermissibleValue(text="hypersaline lake [ENVO:01001020]"))
-        setattr(cls, "intertidal zone [ENVO:00000316]",
-            PermissibleValue(text="intertidal zone [ENVO:00000316]"))
-        setattr(cls, "irrigation canal [ENVO:00000036]",
-            PermissibleValue(text="irrigation canal [ENVO:00000036]"))
-        setattr(cls, "lake bed [ENVO:00000268]",
-            PermissibleValue(text="lake bed [ENVO:00000268]"))
-        setattr(cls, "lentic water body [ENVO:01000617]",
-            PermissibleValue(text="lentic water body [ENVO:01000617]"))
-        setattr(cls, "littoral zone [ENVO:01000407]",
-            PermissibleValue(text="littoral zone [ENVO:01000407]"))
-        setattr(cls, "marine anoxic zone [ENVO:01000066]",
-            PermissibleValue(text="marine anoxic zone [ENVO:01000066]"))
-        setattr(cls, "marine hydrothermal vent [ENVO:01000122]",
-            PermissibleValue(text="marine hydrothermal vent [ENVO:01000122]"))
-        setattr(cls, "marine neritic zone [ENVO:00000206]",
-            PermissibleValue(text="marine neritic zone [ENVO:00000206]"))
-        setattr(cls, "marine sub-littoral zone [ENVO:01000126]",
-            PermissibleValue(text="marine sub-littoral zone [ENVO:01000126]"))
-        setattr(cls, "mid-ocean ridge [ENVO:00000406]",
-            PermissibleValue(text="mid-ocean ridge [ENVO:00000406]"))
-        setattr(cls, "mud volcano [ENVO:00000402]",
-            PermissibleValue(text="mud volcano [ENVO:00000402]"))
-        setattr(cls, "ocean floor [ENVO:00000426]",
-            PermissibleValue(text="ocean floor [ENVO:00000426]"))
-        setattr(cls, "oil reservoir [ENVO:00002185]",
-            PermissibleValue(text="oil reservoir [ENVO:00002185]"))
-        setattr(cls, "oil spill [ENVO:00002061]",
-            PermissibleValue(text="oil spill [ENVO:00002061]"))
-        setattr(cls, "pond [ENVO:00000033]",
-            PermissibleValue(text="pond [ENVO:00000033]"))
-        setattr(cls, "river [ENVO:00000022]",
-            PermissibleValue(text="river [ENVO:00000022]"))
-        setattr(cls, "river bank [ENVO:00000143]",
-            PermissibleValue(text="river bank [ENVO:00000143]"))
-        setattr(cls, "river bed [ENVO:00000384]",
-            PermissibleValue(text="river bed [ENVO:00000384]"))
-        setattr(cls, "saline evaporation pond [ENVO:00000055]",
-            PermissibleValue(text="saline evaporation pond [ENVO:00000055]"))
-        setattr(cls, "saline lake [ENVO:00000019]",
-            PermissibleValue(text="saline lake [ENVO:00000019]"))
-        setattr(cls, "saline pan [ENVO:00000279]",
-            PermissibleValue(text="saline pan [ENVO:00000279]"))
-        setattr(cls, "sea floor [ENVO:00000482]",
-            PermissibleValue(text="sea floor [ENVO:00000482]"))
-        setattr(cls, "sea grass bed [ENVO:01000059]",
-            PermissibleValue(text="sea grass bed [ENVO:01000059]"))
-        setattr(cls, "shore [ENVO:00000304]",
-            PermissibleValue(text="shore [ENVO:00000304]"))
-        setattr(cls, "spring [ENVO:00000027]",
-            PermissibleValue(text="spring [ENVO:00000027]"))
-        setattr(cls, "stream [ENVO:00000023]",
-            PermissibleValue(text="stream [ENVO:00000023]"))
-        setattr(cls, "stream bed [ENVO:00000383]",
-            PermissibleValue(text="stream bed [ENVO:00000383]"))
-        setattr(cls, "submerged bed [ENVO:00000501]",
-            PermissibleValue(text="submerged bed [ENVO:00000501]"))
-
-class EnvMediumSedimentEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvMediumSedimentEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "anaerobic sediment [ENVO:00002045]",
-            PermissibleValue(text="anaerobic sediment [ENVO:00002045]"))
-        setattr(cls, "chemically contaminated sediment [ENVO:03600001]",
-            PermissibleValue(text="chemically contaminated sediment [ENVO:03600001]"))
-        setattr(cls, "estuarine mud [ENVO:00002160]",
-            PermissibleValue(text="estuarine mud [ENVO:00002160]"))
-        setattr(cls, "granular sediment [ENVO:01000117]",
-            PermissibleValue(text="granular sediment [ENVO:01000117]"))
-        setattr(cls, "hyperthermophilic sediment [ENVO:01000133]",
-            PermissibleValue(text="hyperthermophilic sediment [ENVO:01000133]"))
-        setattr(cls, "petroleum enriched sediment [ENVO:00002115]",
-            PermissibleValue(text="petroleum enriched sediment [ENVO:00002115]"))
-        setattr(cls, "radioactive sediment [ENVO:00002154]",
-            PermissibleValue(text="radioactive sediment [ENVO:00002154]"))
-        setattr(cls, "sediment [ENVO:00002007]",
-            PermissibleValue(text="sediment [ENVO:00002007]"))
-        setattr(cls, "sediment permeated by saline water [ENVO:01001036]",
-            PermissibleValue(text="sediment permeated by saline water [ENVO:01001036]"))
-        setattr(cls, "sludge [ENVO:00002044]",
-            PermissibleValue(text="sludge [ENVO:00002044]"))
-        setattr(cls, "thermophilic sediment [ENVO:01000132]",
-            PermissibleValue(text="thermophilic sediment [ENVO:01000132]"))
-
-class EnvBroadScalePlantAssociatedEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvBroadScalePlantAssociatedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "alpine tundra biome [ENVO:01001505]",
-            PermissibleValue(text="alpine tundra biome [ENVO:01001505]"))
-        setattr(cls, "anthropogenic terrestrial biome [ENVO:01000219]",
-            PermissibleValue(text="anthropogenic terrestrial biome [ENVO:01000219]"))
-        setattr(cls, "aquatic biome [ENVO:00002030]",
-            PermissibleValue(text="aquatic biome [ENVO:00002030]"))
-        setattr(cls, "broadleaf forest biome [ENVO:01000197]",
-            PermissibleValue(text="broadleaf forest biome [ENVO:01000197]"))
-        setattr(cls, "coniferous forest biome [ENVO:01000196]",
-            PermissibleValue(text="coniferous forest biome [ENVO:01000196]"))
-        setattr(cls, "cropland biome [ENVO:01000245]",
-            PermissibleValue(text="cropland biome [ENVO:01000245]"))
-        setattr(cls, "estuarine biome [ENVO:01000020]",
-            PermissibleValue(text="estuarine biome [ENVO:01000020]"))
-        setattr(cls, "flooded grassland biome [ENVO:01000195]",
-            PermissibleValue(text="flooded grassland biome [ENVO:01000195]"))
-        setattr(cls, "flooded savanna biome [ENVO:01000190]",
-            PermissibleValue(text="flooded savanna biome [ENVO:01000190]"))
-        setattr(cls, "forest biome [ENVO:01000174]",
-            PermissibleValue(text="forest biome [ENVO:01000174]"))
-        setattr(cls, "freshwater biome [ENVO:00000873]",
-            PermissibleValue(text="freshwater biome [ENVO:00000873]"))
-        setattr(cls, "freshwater lake biome [ENVO:01000252]",
-            PermissibleValue(text="freshwater lake biome [ENVO:01000252]"))
-        setattr(cls, "freshwater river biome [ENVO:01000253]",
-            PermissibleValue(text="freshwater river biome [ENVO:01000253]"))
-        setattr(cls, "freshwater stream biome [ENVO:03605008]",
-            PermissibleValue(text="freshwater stream biome [ENVO:03605008]"))
-        setattr(cls, "grassland biome [ENVO:01000177]",
-            PermissibleValue(text="grassland biome [ENVO:01000177]"))
-        setattr(cls, "large freshwater lake biome [ENVO:00000891]",
-            PermissibleValue(text="large freshwater lake biome [ENVO:00000891]"))
-        setattr(cls, "large river biome [ENVO:00000887]",
-            PermissibleValue(text="large river biome [ENVO:00000887]"))
-        setattr(cls, "large river delta biome [ENVO:00000889]",
-            PermissibleValue(text="large river delta biome [ENVO:00000889]"))
-        setattr(cls, "large river headwater biome [ENVO:00000888]",
-            PermissibleValue(text="large river headwater biome [ENVO:00000888]"))
-        setattr(cls, "mangrove biome [ENVO:01000181]",
-            PermissibleValue(text="mangrove biome [ENVO:01000181]"))
-        setattr(cls, "marine biome [ENVO:00000447]",
-            PermissibleValue(text="marine biome [ENVO:00000447]"))
-        setattr(cls, "marine neritic benthic zone biome [ENVO:01000025]",
-            PermissibleValue(text="marine neritic benthic zone biome [ENVO:01000025]"))
-        setattr(cls, "marine salt marsh biome [ENVO:01000022]",
-            PermissibleValue(text="marine salt marsh biome [ENVO:01000022]"))
-        setattr(cls, "mediterranean forest biome [ENVO:01000199]",
-            PermissibleValue(text="mediterranean forest biome [ENVO:01000199]"))
-        setattr(cls, "mediterranean grassland biome [ENVO:01000224]",
-            PermissibleValue(text="mediterranean grassland biome [ENVO:01000224]"))
-        setattr(cls, "mediterranean savanna biome [ENVO:01000229]",
-            PermissibleValue(text="mediterranean savanna biome [ENVO:01000229]"))
-        setattr(cls, "mediterranean shrubland biome [ENVO:01000217]",
-            PermissibleValue(text="mediterranean shrubland biome [ENVO:01000217]"))
-        setattr(cls, "mediterranean woodland biome [ENVO:01000208]",
-            PermissibleValue(text="mediterranean woodland biome [ENVO:01000208]"))
-        setattr(cls, "mixed forest biome [ENVO:01000198]",
-            PermissibleValue(text="mixed forest biome [ENVO:01000198]"))
-        setattr(cls, "montane grassland biome [ENVO:01000194]",
-            PermissibleValue(text="montane grassland biome [ENVO:01000194]"))
-        setattr(cls, "montane savanna biome [ENVO:01000223]",
-            PermissibleValue(text="montane savanna biome [ENVO:01000223]"))
-        setattr(cls, "montane shrubland biome [ENVO:01000216]",
-            PermissibleValue(text="montane shrubland biome [ENVO:01000216]"))
-        setattr(cls, "neritic epipelagic zone biome [ENVO:01000042]",
-            PermissibleValue(text="neritic epipelagic zone biome [ENVO:01000042]"))
-        setattr(cls, "neritic mesopelagic zone biome [ENVO:01000043]",
-            PermissibleValue(text="neritic mesopelagic zone biome [ENVO:01000043]"))
-        setattr(cls, "neritic pelagic zone biome [ENVO:01000032]",
-            PermissibleValue(text="neritic pelagic zone biome [ENVO:01000032]"))
-        setattr(cls, "neritic sea surface microlayer biome [ENVO:01000041]",
-            PermissibleValue(text="neritic sea surface microlayer biome [ENVO:01000041]"))
-        setattr(cls, "rangeland biome [ENVO:01000247]",
-            PermissibleValue(text="rangeland biome [ENVO:01000247]"))
-        setattr(cls, "savanna biome [ENVO:01000178]",
-            PermissibleValue(text="savanna biome [ENVO:01000178]"))
-        setattr(cls, "shrubland biome [ENVO:01000176]",
-            PermissibleValue(text="shrubland biome [ENVO:01000176]"))
-        setattr(cls, "small freshwater lake biome [ENVO:00000892]",
-            PermissibleValue(text="small freshwater lake biome [ENVO:00000892]"))
-        setattr(cls, "small river biome [ENVO:00000890]",
-            PermissibleValue(text="small river biome [ENVO:00000890]"))
-        setattr(cls, "subpolar coniferous forest biome [ENVO:01000250]",
-            PermissibleValue(text="subpolar coniferous forest biome [ENVO:01000250]"))
-        setattr(cls, "subtropical broadleaf forest biome [ENVO:01000201]",
-            PermissibleValue(text="subtropical broadleaf forest biome [ENVO:01000201]"))
-        setattr(cls, "subtropical coniferous forest biome [ENVO:01000209]",
-            PermissibleValue(text="subtropical coniferous forest biome [ENVO:01000209]"))
-        setattr(cls, "subtropical dry broadleaf forest biome [ENVO:01000225]",
-            PermissibleValue(text="subtropical dry broadleaf forest biome [ENVO:01000225]"))
-        setattr(cls, "subtropical grassland biome [ENVO:01000191]",
-            PermissibleValue(text="subtropical grassland biome [ENVO:01000191]"))
-        setattr(cls, "subtropical moist broadleaf forest biome [ENVO:01000226]",
-            PermissibleValue(text="subtropical moist broadleaf forest biome [ENVO:01000226]"))
-        setattr(cls, "subtropical savanna biome [ENVO:01000187]",
-            PermissibleValue(text="subtropical savanna biome [ENVO:01000187]"))
-        setattr(cls, "subtropical shrubland biome [ENVO:01000213]",
-            PermissibleValue(text="subtropical shrubland biome [ENVO:01000213]"))
-        setattr(cls, "subtropical woodland biome [ENVO:01000222]",
-            PermissibleValue(text="subtropical woodland biome [ENVO:01000222]"))
-        setattr(cls, "temperate broadleaf forest biome [ENVO:01000202]",
-            PermissibleValue(text="temperate broadleaf forest biome [ENVO:01000202]"))
-        setattr(cls, "temperate coniferous forest biome [ENVO:01000211]",
-            PermissibleValue(text="temperate coniferous forest biome [ENVO:01000211]"))
-        setattr(cls, "temperate grassland biome [ENVO:01000193]",
-            PermissibleValue(text="temperate grassland biome [ENVO:01000193]"))
-        setattr(cls, "temperate mixed forest biome [ENVO:01000212]",
-            PermissibleValue(text="temperate mixed forest biome [ENVO:01000212]"))
-        setattr(cls, "temperate savanna biome [ENVO:01000189]",
-            PermissibleValue(text="temperate savanna biome [ENVO:01000189]"))
-        setattr(cls, "temperate shrubland biome [ENVO:01000215]",
-            PermissibleValue(text="temperate shrubland biome [ENVO:01000215]"))
-        setattr(cls, "temperate woodland biome [ENVO:01000221]",
-            PermissibleValue(text="temperate woodland biome [ENVO:01000221]"))
-        setattr(cls, "terrestrial biome [ENVO:00000446]",
-            PermissibleValue(text="terrestrial biome [ENVO:00000446]"))
-        setattr(cls, "tidal mangrove shrubland [ENVO:01001369]",
-            PermissibleValue(text="tidal mangrove shrubland [ENVO:01001369]"))
-        setattr(cls, "tropical broadleaf forest biome [ENVO:01000200]",
-            PermissibleValue(text="tropical broadleaf forest biome [ENVO:01000200]"))
-        setattr(cls, "tropical coniferous forest biome [ENVO:01000210]",
-            PermissibleValue(text="tropical coniferous forest biome [ENVO:01000210]"))
-        setattr(cls, "tropical dry broadleaf forest biome [ENVO:01000227]",
-            PermissibleValue(text="tropical dry broadleaf forest biome [ENVO:01000227]"))
-        setattr(cls, "tropical grassland biome [ENVO:01000192]",
-            PermissibleValue(text="tropical grassland biome [ENVO:01000192]"))
-        setattr(cls, "tropical mixed forest biome [ENVO:01001798]",
-            PermissibleValue(text="tropical mixed forest biome [ENVO:01001798]"))
-        setattr(cls, "tropical moist broadleaf forest biome [ENVO:01000228]",
-            PermissibleValue(text="tropical moist broadleaf forest biome [ENVO:01000228]"))
-        setattr(cls, "tropical savanna biome [ENVO:01000188]",
-            PermissibleValue(text="tropical savanna biome [ENVO:01000188]"))
-        setattr(cls, "tropical shrubland biome [ENVO:01000214]",
-            PermissibleValue(text="tropical shrubland biome [ENVO:01000214]"))
-        setattr(cls, "tropical woodland biome [ENVO:01000220]",
-            PermissibleValue(text="tropical woodland biome [ENVO:01000220]"))
-        setattr(cls, "tundra biome [ENVO:01000180]",
-            PermissibleValue(text="tundra biome [ENVO:01000180]"))
-        setattr(cls, "woodland biome [ENVO:01000175]",
-            PermissibleValue(text="woodland biome [ENVO:01000175]"))
-        setattr(cls, "xeric basin biome [ENVO:00000893]",
-            PermissibleValue(text="xeric basin biome [ENVO:00000893]"))
-        setattr(cls, "xeric shrubland biome [ENVO:01000218]",
-            PermissibleValue(text="xeric shrubland biome [ENVO:01000218]"))
-
-class EnvLocalScalePlantAssociatedEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvLocalScalePlantAssociatedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "agricultural terrace [ENVO:00000519]",
-            PermissibleValue(text="agricultural terrace [ENVO:00000519]"))
-        setattr(cls, "alluvial plain [ENVO:00000258]",
-            PermissibleValue(text="alluvial plain [ENVO:00000258]"))
-        setattr(cls, "area of barren land [ENVO:01000752]",
-            PermissibleValue(text="area of barren land [ENVO:01000752]"))
-        setattr(cls, "area of cropland [ENVO:01000892]",
-            PermissibleValue(text="area of cropland [ENVO:01000892]"))
-        setattr(cls, "area of deciduous forest [ENVO:01000816]",
-            PermissibleValue(text="area of deciduous forest [ENVO:01000816]"))
-        setattr(cls, "area of developed open space [ENVO:01000883]",
-            PermissibleValue(text="area of developed open space [ENVO:01000883]"))
-        setattr(cls, "area of developed space with high usage intensity [ENVO:01000886]",
-            PermissibleValue(text="area of developed space with high usage intensity [ENVO:01000886]"))
-        setattr(cls, "area of developed space with low usage intensity [ENVO:01000884]",
-            PermissibleValue(text="area of developed space with low usage intensity [ENVO:01000884]"))
-        setattr(cls, "area of developed space with medium usage intensity [ENVO:01000885]",
-            PermissibleValue(text="area of developed space with medium usage intensity [ENVO:01000885]"))
-        setattr(cls, "area of dwarf scrub [ENVO:01000861]",
-            PermissibleValue(text="area of dwarf scrub [ENVO:01000861]"))
-        setattr(cls, "area of emergent herbaceous wetland [ENVO:01000894]",
-            PermissibleValue(text="area of emergent herbaceous wetland [ENVO:01000894]"))
-        setattr(cls, "area of evergreen forest [ENVO:01000843]",
-            PermissibleValue(text="area of evergreen forest [ENVO:01000843]"))
-        setattr(cls, "area of gramanoid or herbaceous vegetation [ENVO:01000888]",
-            PermissibleValue(text="area of gramanoid or herbaceous vegetation [ENVO:01000888]"))
-        setattr(cls, "area of lichen-dominated vegetation [ENVO:01000889]",
-            PermissibleValue(text="area of lichen-dominated vegetation [ENVO:01000889]"))
-        setattr(cls, "area of mixed forest [ENVO:01000855]",
-            PermissibleValue(text="area of mixed forest [ENVO:01000855]"))
-        setattr(cls, "area of moss-dominated vegetation [ENVO:01000890]",
-            PermissibleValue(text="area of moss-dominated vegetation [ENVO:01000890]"))
-        setattr(cls, "area of open water [ENVO:01000666]",
-            PermissibleValue(text="area of open water [ENVO:01000666]"))
-        setattr(cls, "area of perennial ice or snow [ENVO:01000746]",
-            PermissibleValue(text="area of perennial ice or snow [ENVO:01000746]"))
-        setattr(cls, "area of perennial snow [ENVO:01000745]",
-            PermissibleValue(text="area of perennial snow [ENVO:01000745]"))
-        setattr(cls, "area of perennial water ice [ENVO:01000740]",
-            PermissibleValue(text="area of perennial water ice [ENVO:01000740]"))
-        setattr(cls, "area of scrub [ENVO:01000869]",
-            PermissibleValue(text="area of scrub [ENVO:01000869]"))
-        setattr(cls, "area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]",
-            PermissibleValue(text="area of sedge- and forb-dominated herbaceous vegetation [ENVO:01000887]"))
-        setattr(cls, "area of woody wetland [ENVO:01000893]",
-            PermissibleValue(text="area of woody wetland [ENVO:01000893]"))
-        setattr(cls, "beach [ENVO:00000091]",
-            PermissibleValue(text="beach [ENVO:00000091]"))
-        setattr(cls, "botanical garden [ENVO:00010624]",
-            PermissibleValue(text="botanical garden [ENVO:00010624]"))
-        setattr(cls, "cliff [ENVO:00000087]",
-            PermissibleValue(text="cliff [ENVO:00000087]"))
-        setattr(cls, "coast [ENVO:01000687]",
-            PermissibleValue(text="coast [ENVO:01000687]"))
-        setattr(cls, "crop canopy [ENVO:01001241]",
-            PermissibleValue(text="crop canopy [ENVO:01001241]"))
-        setattr(cls, "desert [ENVO:01001357]",
-            PermissibleValue(text="desert [ENVO:01001357]"))
-        setattr(cls, "dune [ENVO:00000170]",
-            PermissibleValue(text="dune [ENVO:00000170]"))
-        setattr(cls, "farm [ENVO:00000078]",
-            PermissibleValue(text="farm [ENVO:00000078]"))
-        setattr(cls, "forest floor [ENVO:01001582]",
-            PermissibleValue(text="forest floor [ENVO:01001582]"))
-        setattr(cls, "garden [ENVO:00000011]",
-            PermissibleValue(text="garden [ENVO:00000011]"))
-        setattr(cls, "greenhouse [ENVO:03600087]",
-            PermissibleValue(text="greenhouse [ENVO:03600087]"))
-        setattr(cls, "harbour [ENVO:00000463]",
-            PermissibleValue(text="harbour [ENVO:00000463]"))
-        setattr(cls, "herb and fern layer [ENVO:01000337]",
-            PermissibleValue(text="herb and fern layer [ENVO:01000337]"))
-        setattr(cls, "hill [ENVO:00000083]",
-            PermissibleValue(text="hill [ENVO:00000083]"))
-        setattr(cls, "house [ENVO:01000417]",
-            PermissibleValue(text="house [ENVO:01000417]"))
-        setattr(cls, "island [ENVO:00000098]",
-            PermissibleValue(text="island [ENVO:00000098]"))
-        setattr(cls, "laboratory facility [ENVO:01001406]",
-            PermissibleValue(text="laboratory facility [ENVO:01001406]"))
-        setattr(cls, "litter layer [ENVO:01000338]",
-            PermissibleValue(text="litter layer [ENVO:01000338]"))
-        setattr(cls, "market [ENVO:01000987]",
-            PermissibleValue(text="market [ENVO:01000987]"))
-        setattr(cls, "mountain [ENVO:00000081]",
-            PermissibleValue(text="mountain [ENVO:00000081]"))
-        setattr(cls, "oasis [ENVO:01001304]",
-            PermissibleValue(text="oasis [ENVO:01001304]"))
-        setattr(cls, "ocean [ENVO:00000015]",
-            PermissibleValue(text="ocean [ENVO:00000015]"))
-        setattr(cls, "outcrop [ENVO:01000302]",
-            PermissibleValue(text="outcrop [ENVO:01000302]"))
-        setattr(cls, "plantation [ENVO:00000117]",
-            PermissibleValue(text="plantation [ENVO:00000117]"))
-        setattr(cls, "plateau [ENVO:00000182]",
-            PermissibleValue(text="plateau [ENVO:00000182]"))
-        setattr(cls, "pond [ENVO:00000033]",
-            PermissibleValue(text="pond [ENVO:00000033]"))
-        setattr(cls, "prairie [ENVO:00000260]",
-            PermissibleValue(text="prairie [ENVO:00000260]"))
-        setattr(cls, "public park [ENVO:03500002]",
-            PermissibleValue(text="public park [ENVO:03500002]"))
-        setattr(cls, "research facility [ENVO:00000469]",
-            PermissibleValue(text="research facility [ENVO:00000469]"))
-        setattr(cls, "river bank [ENVO:00000143]",
-            PermissibleValue(text="river bank [ENVO:00000143]"))
-        setattr(cls, "river valley [ENVO:00000171]",
-            PermissibleValue(text="river valley [ENVO:00000171]"))
-        setattr(cls, "road [ENVO:00000064]",
-            PermissibleValue(text="road [ENVO:00000064]"))
-        setattr(cls, "sea grass bed [ENVO:01000059]",
-            PermissibleValue(text="sea grass bed [ENVO:01000059]"))
-        setattr(cls, "shore [ENVO:00000304]",
-            PermissibleValue(text="shore [ENVO:00000304]"))
-        setattr(cls, "shrub layer [ENVO:01000336]",
-            PermissibleValue(text="shrub layer [ENVO:01000336]"))
-        setattr(cls, "submerged bed [ENVO:00000501]",
-            PermissibleValue(text="submerged bed [ENVO:00000501]"))
-        setattr(cls, "understory [ENVO:01000335]",
-            PermissibleValue(text="understory [ENVO:01000335]"))
-        setattr(cls, "valley [ENVO:00000100]",
-            PermissibleValue(text="valley [ENVO:00000100]"))
-        setattr(cls, "woodland canopy [ENVO:01001240]",
-            PermissibleValue(text="woodland canopy [ENVO:01001240]"))
-
-class EnvMediumPlantAssociatedEnum(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="EnvMediumPlantAssociatedEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "bark [PO:0004518]",
-            PermissibleValue(text="bark [PO:0004518]"))
-        setattr(cls, "bulb [PO:0025356]",
-            PermissibleValue(text="bulb [PO:0025356]"))
-        setattr(cls, "corm [PO:0025355]",
-            PermissibleValue(text="corm [PO:0025355]"))
-        setattr(cls, "ear infructescence axis [PO:0025623]",
-            PermissibleValue(text="ear infructescence axis [PO:0025623]"))
-        setattr(cls, "flag leaf [PO:0020103]",
-            PermissibleValue(text="flag leaf [PO:0020103]"))
-        setattr(cls, "flower [PO:0009046]",
-            PermissibleValue(text="flower [PO:0009046]"))
-        setattr(cls, "fruit [PO:0009001]",
-            PermissibleValue(text="fruit [PO:0009001]"))
-        setattr(cls, "leaf [PO:0025034]",
-            PermissibleValue(text="leaf [PO:0025034]"))
-        setattr(cls, "petiole [PO:0020038]",
-            PermissibleValue(text="petiole [PO:0020038]"))
-        setattr(cls, "phyllome [PO:0006001]",
-            PermissibleValue(text="phyllome [PO:0006001]"))
-        setattr(cls, "pith [PO:0006109]",
-            PermissibleValue(text="pith [PO:0006109]"))
-        setattr(cls, "plant callus [PO:0005052]",
-            PermissibleValue(text="plant callus [PO:0005052]"))
-        setattr(cls, "plant gall [PO:0025626]",
-            PermissibleValue(text="plant gall [PO:0025626]"))
-        setattr(cls, "plant litter [ENVO:01000628]",
-            PermissibleValue(text="plant litter [ENVO:01000628]"))
-        setattr(cls, "pollen [PO:0025281]",
-            PermissibleValue(text="pollen [PO:0025281]"))
-        setattr(cls, "radicle [PO:0020031]",
-            PermissibleValue(text="radicle [PO:0020031]"))
-        setattr(cls, "rhizoid [PO:0030078]",
-            PermissibleValue(text="rhizoid [PO:0030078]"))
-        setattr(cls, "rhizome [PO:0004542]",
-            PermissibleValue(text="rhizome [PO:0004542]"))
-        setattr(cls, "rhizosphere [ENVO:00005801]",
-            PermissibleValue(text="rhizosphere [ENVO:00005801]"))
-        setattr(cls, "root [PO:0009005]",
-            PermissibleValue(text="root [PO:0009005]"))
-        setattr(cls, "root nodule [PO:0003023]",
-            PermissibleValue(text="root nodule [PO:0003023]"))
-        setattr(cls, "sapwood [PO:0004513]",
-            PermissibleValue(text="sapwood [PO:0004513]"))
-        setattr(cls, "secondary xylem [PO:0005848]",
-            PermissibleValue(text="secondary xylem [PO:0005848]"))
-        setattr(cls, "seed [PO:0009010]",
-            PermissibleValue(text="seed [PO:0009010]"))
-        setattr(cls, "seedling [PO:0008037]",
-            PermissibleValue(text="seedling [PO:0008037]"))
-        setattr(cls, "stem [PO:0009047]",
-            PermissibleValue(text="stem [PO:0009047]"))
-        setattr(cls, "tuber [PO:0025522]",
-            PermissibleValue(text="tuber [PO:0025522]"))
-        setattr(cls, "xylem vessel [PO:0025417]",
-            PermissibleValue(text="xylem vessel [PO:0025417]"))
 
 # Slots
 class slots:
@@ -18882,17 +18883,8 @@ slots.id = Slot(uri=NMDC_SUB_SCHEMA.id, name="id", curie=NMDC_SUB_SCHEMA.curie('
 slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
                    model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
 
-slots.is_obsolete = Slot(uri=NMDC_SUB_SCHEMA.is_obsolete, name="is_obsolete", curie=NMDC_SUB_SCHEMA.curie('is_obsolete'),
-                   model_uri=NMDC_SUB_SCHEMA.is_obsolete, domain=None, range=Optional[Union[bool, Bool]])
-
-slots.is_root = Slot(uri=NMDC_SUB_SCHEMA.is_root, name="is_root", curie=NMDC_SUB_SCHEMA.curie('is_root'),
-                   model_uri=NMDC_SUB_SCHEMA.is_root, domain=None, range=Optional[Union[bool, Bool]])
-
 slots.language = Slot(uri=NMDC_SUB_SCHEMA.language, name="language", curie=NMDC_SUB_SCHEMA.curie('language'),
                    model_uri=NMDC_SUB_SCHEMA.language, domain=None, range=Optional[str])
-
-slots.mixs_env_triad_field = Slot(uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, name="mixs_env_triad_field", curie=NMDC_SUB_SCHEMA.curie('mixs_env_triad_field'),
-                   model_uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, domain=None, range=Optional[str])
 
 slots.name = Slot(uri=NMDC_SUB_SCHEMA.name, name="name", curie=NMDC_SUB_SCHEMA.curie('name'),
                    model_uri=NMDC_SUB_SCHEMA.name, domain=None, range=Optional[str])
