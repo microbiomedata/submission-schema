@@ -4854,6 +4854,8 @@ slots:
       - BuiltEnvInterface
     modifications:
       - replace:
+          examples:
+            - value: 15 g/kg
           rank: 181
           slot_group: mixs_core_section
 
