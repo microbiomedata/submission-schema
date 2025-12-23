@@ -16,3 +16,4 @@ jgi_mt_data:
     biosafety_mat_cat: Metagenome (Environmental)
     analysis_type: 
       - metatranscriptomics
+    jgi_project_contact: Professor Scientist

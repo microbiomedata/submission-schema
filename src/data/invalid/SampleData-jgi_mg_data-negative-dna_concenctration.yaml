@@ -16,3 +16,4 @@ jgi_mg_data:
     jgi_sample_volume: 0
     samp_name: xxx
     biosafety_mat_cat: Metagenome (Environmental)
+    jgi_project_contact: Professor Scientist

@@ -17,3 +17,4 @@ jgi_mt_data:
     analysis_type: 
       - metatranscriptomics
     replicate_group: bio_rep_1
+    jgi_project_contact: Professor Scientist

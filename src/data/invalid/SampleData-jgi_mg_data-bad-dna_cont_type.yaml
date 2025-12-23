@@ -17,5 +17,6 @@ jgi_mg_data:
     samp_name: xxx
     biosafety_mat_cat: Metagenome (Environmental)
     replicate_group: RG_A
+    jgi_project_contact: Professor Scientist
 
 
