@@ -581,7 +581,7 @@ slots:
     examples:
       - value: John Jones
     rank: 18
-    string_serialization: '{text}'
+    range: string
     slot_group: JGI-Metagenomics
     required: true
 
