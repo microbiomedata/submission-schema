@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/jgi_project_contact/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/jgi_project_pi/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: DNA seq project contact (jgi_project_contact) - submission-schema</title>
+        <title>Slot: JGI sequencing project PI (jgi_project_pi) - submission-schema</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-dna-seq-project-contact-jgi_project_contact" class="md-skip">
+        <a href="#slot-jgi-sequencing-project-pi-jgi_project_pi" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: DNA seq project contact (jgi_project_contact)
+              Slot: JGI sequencing project PI (jgi_project_pi)
             
           </span>
         </div>
@@ -448,9 +448,9 @@
   
 
 
-<h1 id="slot-dna-seq-project-contact-jgi_project_contact">Slot: DNA seq project contact (jgi_project_contact)</h1>
-<p>URI: <a href="https://example.com/nmdc_sub_schema/jgi_project_contact">nmdc_sub_schema:jgi_project_contact</a>
-Alias: jgi_project_contact</p>
+<h1 id="slot-jgi-sequencing-project-pi-jgi_project_pi">Slot: JGI sequencing project PI (jgi_project_pi)</h1>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/jgi_project_pi">nmdc_sub_schema:jgi_project_pi</a>
+Alias: jgi_project_pi</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -464,8 +464,8 @@ Alias: jgi_project_contact</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
-<td>jgi_mt dh_interface</td>
+<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
+<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -474,8 +474,8 @@ Alias: jgi_project_contact</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
-<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
+<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>jgi_mt dh_interface</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -498,7 +498,7 @@ Alias: jgi_project_contact</p>
 </thead>
 <tbody>
 <tr>
-<td>John Jones</td>
+<td>Jordan James</td>
 </tr>
 </tbody>
 </table>
@@ -518,29 +518,28 @@ Alias: jgi_project_contact</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>nmdc_sub_schema:jgi_project_contact</td>
+<td>nmdc_sub_schema:jgi_project_pi</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:jgi_project_contact</td>
+<td>nmdc_sub_schema:jgi_project_pi</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: jgi_project_contact
-title: DNA seq project contact
+<pre><code class="language-yaml">name: jgi_project_pi
+title: JGI sequencing project PI
 examples:
-- value: John Jones
+- value: Jordan James
 from_schema: https://example.com/nmdc_submission_schema
-rank: 18
-alias: jgi_project_contact
+rank: 19
+alias: jgi_project_pi
 domain_of:
 - JgiMgInterface
 - JgiMgLrInterface
 - JgiMtInterface
-slot_group: JGI-Metagenomics
 range: string
 required: true
 

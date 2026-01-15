@@ -347,9 +347,13 @@
 
 
 
-      JgiMgInterface : jgi_project_contact
+      JgiMgInterface : jgi_project_pi
+
+      JgiMgInterface : jgi_proposal_id
 
       JgiMgInterface : jgi_samp_id
+
+      JgiMgInterface : jgi_sample_contact
 
       JgiMgInterface : jgi_sample_format
 
@@ -487,8 +491,20 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../jgi_project_contact/">jgi_project_contact</a></td>
+<td><a href="../jgi_sample_contact/">jgi_sample_contact</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../jgi_project_pi/">jgi_project_pi</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../jgi_proposal_id/">jgi_proposal_id</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -657,7 +673,9 @@ slots:
 - jgi_sample_name
 - jgi_seq_project
 - jgi_seq_project_name
-- jgi_project_contact
+- jgi_sample_contact
+- jgi_project_pi
+- jgi_proposal_id
 - jgi_sample_volume
 - replicate_group
 - dna_isolate_meth
@@ -692,8 +710,14 @@ slot_usage:
   jgi_seq_project_name:
     name: jgi_seq_project_name
     slot_group: jgi_metagenomics_section
-  jgi_project_contact:
-    name: jgi_project_contact
+  jgi_sample_contact:
+    name: jgi_sample_contact
+    slot_group: jgi_metagenomics_section
+  jgi_project_pi:
+    name: jgi_project_pi
+    slot_group: jgi_metagenomics_section
+  jgi_proposal_id:
+    name: jgi_proposal_id
     slot_group: jgi_metagenomics_section
   jgi_sample_volume:
     name: jgi_sample_volume
@@ -786,8 +810,14 @@ slot_usage:
   jgi_seq_project_name:
     name: jgi_seq_project_name
     slot_group: jgi_metagenomics_section
-  jgi_project_contact:
-    name: jgi_project_contact
+  jgi_sample_contact:
+    name: jgi_sample_contact
+    slot_group: jgi_metagenomics_section
+  jgi_project_pi:
+    name: jgi_project_pi
+    slot_group: jgi_metagenomics_section
+  jgi_proposal_id:
+    name: jgi_proposal_id
     slot_group: jgi_metagenomics_section
   jgi_sample_volume:
     name: jgi_sample_volume
@@ -1109,14 +1139,14 @@ attributes:
     slot_group: jgi_metagenomics_section
     range: string
     required: true
-  jgi_project_contact:
-    name: jgi_project_contact
-    title: DNA seq project contact
+  jgi_sample_contact:
+    name: jgi_sample_contact
+    title: DNA sample contact
     examples:
-    - value: John Jones
+    - value: Jordan James
     from_schema: https://example.com/nmdc_submission_schema
     rank: 18
-    alias: jgi_project_contact
+    alias: jgi_sample_contact
     owner: JgiMgInterface
     domain_of:
     - JgiMgInterface
@@ -1124,6 +1154,38 @@ attributes:
     - JgiMtInterface
     slot_group: jgi_metagenomics_section
     range: string
+    required: true
+  jgi_project_pi:
+    name: jgi_project_pi
+    title: JGI sequencing project PI
+    examples:
+    - value: Jordan James
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 19
+    alias: jgi_project_pi
+    owner: JgiMgInterface
+    domain_of:
+    - JgiMgInterface
+    - JgiMgLrInterface
+    - JgiMtInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+  jgi_proposal_id:
+    name: jgi_proposal_id
+    title: JGI proposal number
+    examples:
+    - value: '123456'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 20
+    alias: jgi_proposal_id
+    owner: JgiMgInterface
+    domain_of:
+    - JgiMgInterface
+    - JgiMgLrInterface
+    - JgiMtInterface
+    slot_group: jgi_metagenomics_section
+    range: float
     required: true
   jgi_sample_volume:
     name: jgi_sample_volume
