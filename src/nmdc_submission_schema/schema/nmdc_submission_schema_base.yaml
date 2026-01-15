@@ -682,7 +682,9 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
-      - jgi_project_contact
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
       - jgi_sample_volume
       - replicate_group
     slot_usage:
@@ -706,7 +708,11 @@ classes:
         slot_group: jgi_metagenomics_section
       jgi_seq_project_name:
         slot_group: jgi_metagenomics_section
-      jgi_project_contact:
+      jgi_sample_contact:
+        slot_group: jgi_metagenomics_section
+      jgi_project_pi:
+        slot_group: jgi_metagenomics_section
+      jgi_proposal_id:
         slot_group: jgi_metagenomics_section
       jgi_sample_volume:
         slot_group: jgi_metagenomics_section
@@ -764,7 +770,9 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
-      - jgi_project_contact
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
       - jgi_sample_volume
       - replicate_group
     slot_usage:
@@ -784,7 +792,11 @@ classes:
         slot_group: jgi_metagenomics_section
       jgi_sample_name:
         slot_group: jgi_metagenomics_section
-      jgi_project_contact:
+      jgi_sample_contact:
+        slot_group: jgi_metagenomics_section
+      jgi_project_pi:
+        slot_group: jgi_metagenomics_section
+      jgi_proposal_id:
         slot_group: jgi_metagenomics_section
       jgi_seq_project:
         slot_group: jgi_metagenomics_section
@@ -848,7 +860,9 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
-      - jgi_project_contact
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
       - jgi_sample_volume
       - replicate_group
     slot_usage:
@@ -872,7 +886,11 @@ classes:
         slot_group: jgi_metatranscriptomics_section
       jgi_seq_project_name:
         slot_group: jgi_metatranscriptomics_section
-      jgi_project_contact:
+      jgi_sample_contact:
+        slot_group: jgi_metatranscriptomics_section
+      jgi_project_pi:
+        slot_group: jgi_metatranscriptomics_section
+      jgi_proposal_id:
         slot_group: jgi_metatranscriptomics_section
       jgi_sample_volume:
         slot_group: jgi_metatranscriptomics_section
