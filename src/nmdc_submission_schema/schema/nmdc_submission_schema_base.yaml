@@ -576,13 +576,26 @@ slots:
     rank: 16
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
-  jgi_project_contact:
-    title: DNA seq project contact
+  jgi_sample_contact:
+    title: DNA sample contact
     examples:
-      - value: John Jones
+      - value: Jordan James
     rank: 18
     range: string
-    slot_group: JGI-Metagenomics
+    required: true
+  jgi_project_pi:
+    title: JGI sequencing project PI
+    examples:
+      - value: Jordan James
+    rank: 19
+    range: string
+    required: true
+  jgi_proposal_id:
+    title: JGI proposal number
+    examples:
+      - value: 123456
+    rank: 20
+    range: float
     required: true
 
 classes:
