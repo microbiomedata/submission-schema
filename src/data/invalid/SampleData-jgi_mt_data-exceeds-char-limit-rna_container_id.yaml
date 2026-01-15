@@ -17,3 +17,6 @@ jgi_mt_data:
     source_mat_id: igsn:012345
     biosafety_mat_cat: Metagenome (Environmental)
     replicate_group: bio_rep_1
+    jgi_sample_contact: Professor Scientist
+    jgi_project_pi: Scientist Professor
+    jgi_proposal_id: 123456

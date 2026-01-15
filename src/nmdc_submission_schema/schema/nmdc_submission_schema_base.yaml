@@ -576,6 +576,27 @@ slots:
     rank: 16
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
+  jgi_sample_contact:
+    title: DNA sample contact
+    examples:
+      - value: Jordan James
+    rank: 18
+    range: string
+    required: true
+  jgi_project_pi:
+    title: JGI sequencing project PI
+    examples:
+      - value: Jordan James
+    rank: 19
+    range: string
+    required: true
+  jgi_proposal_id:
+    title: JGI proposal number
+    examples:
+      - value: 123456
+    rank: 20
+    range: float
+    required: true
 
 classes:
   AirInterface:
@@ -661,6 +682,9 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
       - jgi_sample_volume
       - replicate_group
     slot_usage:
@@ -683,6 +707,12 @@ classes:
       jgi_seq_project:
         slot_group: jgi_metagenomics_section
       jgi_seq_project_name:
+        slot_group: jgi_metagenomics_section
+      jgi_sample_contact:
+        slot_group: jgi_metagenomics_section
+      jgi_project_pi:
+        slot_group: jgi_metagenomics_section
+      jgi_proposal_id:
         slot_group: jgi_metagenomics_section
       jgi_sample_volume:
         slot_group: jgi_metagenomics_section
@@ -740,6 +770,9 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
       - jgi_sample_volume
       - replicate_group
     slot_usage:
@@ -758,6 +791,12 @@ classes:
       jgi_sample_format:
         slot_group: jgi_metagenomics_section
       jgi_sample_name:
+        slot_group: jgi_metagenomics_section
+      jgi_sample_contact:
+        slot_group: jgi_metagenomics_section
+      jgi_project_pi:
+        slot_group: jgi_metagenomics_section
+      jgi_proposal_id:
         slot_group: jgi_metagenomics_section
       jgi_seq_project:
         slot_group: jgi_metagenomics_section
@@ -821,6 +860,9 @@ classes:
       - jgi_sample_name
       - jgi_seq_project
       - jgi_seq_project_name
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
       - jgi_sample_volume
       - replicate_group
     slot_usage:
@@ -843,6 +885,12 @@ classes:
       jgi_seq_project:
         slot_group: jgi_metatranscriptomics_section
       jgi_seq_project_name:
+        slot_group: jgi_metatranscriptomics_section
+      jgi_sample_contact:
+        slot_group: jgi_metatranscriptomics_section
+      jgi_project_pi:
+        slot_group: jgi_metatranscriptomics_section
+      jgi_proposal_id:
         slot_group: jgi_metatranscriptomics_section
       jgi_sample_volume:
         slot_group: jgi_metatranscriptomics_section

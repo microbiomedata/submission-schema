@@ -18,3 +18,6 @@ jgi_mt_data:
       - metatranscriptomics
     replicate_group: bio_rep_1
     nuc_acid_absorb1: one
+    jgi_sample_contact: Professor Scientist
+    jgi_project_pi: Scientist Professor
+    jgi_proposal_id: 123456

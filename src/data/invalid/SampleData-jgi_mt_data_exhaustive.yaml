@@ -19,3 +19,6 @@ jgi_mt_data:
     nuc_acid_absorb2: 1.4
     biosafety_mat_cat: Metagenome (Environmental)
     replicate_group: bio_rep_1
+    jgi_sample_contact: Professor Scientist
+    jgi_project_pi: Scientist Professor
+    jgi_proposal_id: 123456
