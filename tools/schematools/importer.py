@@ -1,4 +1,5 @@
 import logging
+import re
 from copy import deepcopy
 from typing import Any, Optional
 
@@ -153,6 +154,22 @@ def _import_elements_with_dependencies(
             _import_elements_with_dependencies(
                 range_element, source_schema=source_schema, target_schema=target_schema
             )
+
+        # Import any settings keys used in structured pattern
+        if (
+            source_schema.schema.settings is not None
+            and element.structured_pattern is not None
+            and element.structured_pattern.syntax
+        ):
+            # Extract all values like `{key}` from the syntax string. If the key exists
+            # in the source schema settings, copy it to the target schema settings.
+            for match in re.finditer(r"{([^}]+)}", element.structured_pattern.syntax):
+                key = match.group(1)
+                settings_value = source_schema.schema.settings.get(key)
+                if settings_value:
+                    if target_schema.schema.settings is None:
+                        target_schema.schema.settings = {}
+                    target_schema.schema.settings[key] = settings_value
 
     elif isinstance(element, EnumDefinition):
         if include_self:
