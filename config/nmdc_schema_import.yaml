@@ -4424,6 +4424,8 @@ slots:
           slot_group: emsl_section
           required: true
           recommended: false
+          structured_pattern:
+            syntax: '^{float} {text}$'
 
   - slot: sample_type
     source: Biosample

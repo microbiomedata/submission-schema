@@ -1,0 +1,9 @@
+emsl_data:
+  - analysis_type:
+      - metagenomics
+      - metatranscriptomics
+    emsl_store_temp: -80
+    project_id: xxx
+    samp_name: xxx
+    sample_shipped: 3
+    sample_type: soil
