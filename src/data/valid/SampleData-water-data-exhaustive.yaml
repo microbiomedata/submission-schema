@@ -79,7 +79,7 @@ water_data:
     samp_mat_process: text [ONTO:000000000]
     samp_name: xyz
     samp_size: 5 L
-    samp_store_dur: xyz
+    samp_store_dur: P1Y6M
     samp_store_loc: xyz
     samp_store_temp: -80
     sample_link: z:99
