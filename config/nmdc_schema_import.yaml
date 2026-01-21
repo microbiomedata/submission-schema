@@ -1594,7 +1594,9 @@ slots:
           rank: 6
           required: true
           slot_group: sample_id_section
-          pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[ENVO:\d{7,8}\]$
+            interpolated: true
 
   - slot: env_local_scale
     source: Biosample
@@ -1631,17 +1633,23 @@ slots:
           - SedimentInterface
           - WastewaterSludgeInterface
         replace:
-          pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[ENVO:\d{7,8}\]$
+            interpolated: true
       - in_classes:
           - HostAssociatedInterface
         replace:
-          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
+            interpolated: true
       - in_classes:
           - PlantAssociatedInterface
           - SoilInterface
           - WaterInterface
         replace:
-          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+            interpolated: true
 
   - slot: env_medium
     source: Biosample
@@ -1673,17 +1681,23 @@ slots:
           - SedimentInterface
           - WastewaterSludgeInterface
         replace:
-          pattern: ^\S+.*\S+ \[ENVO:\d{7,8}\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[ENVO:\d{7,8}\]$
+            interpolated: true
       - in_classes:
           - HostAssociatedInterface
         replace:
-          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[(ENVO:\d{7,8}|UBERON:\d{7})\]$
+            interpolated: true
       - in_classes:
           - PlantAssociatedInterface
           - SoilInterface
           - WaterInterface
         replace:
-          pattern: ^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$
+          structured_pattern:
+            syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+            interpolated: true
 
   - slot: escalator
     source: Biosample
@@ -5548,7 +5562,9 @@ slots:
       - replace:
           rank: 39
           slot_group: mixs_section
-          pattern: '^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%? \S.+$'
+          structured_pattern:
+            syntax: '^{scientific_float}%? \S.+$'
+            interpolated: true
 
   - slot: water_current
     source: Biosample
