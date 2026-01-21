@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-12-08T10:08:33
+# Generation date: 2026-01-21T12:09:52
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -56,7 +56,7 @@ from rdflib import (
     URIRef
 )
 
-from linkml_runtime.linkml_model.types import Double, Float, Integer, String, Uriorcurie
+from linkml_runtime.linkml_model.types import Float, Integer, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE
 
 metamodel_version = "1.7.0"
@@ -1395,7 +1395,7 @@ class BuiltEnvInterface(DhInterface):
     abs_air_humidity: Optional[str] = None
     address: Optional[str] = None
     adj_room: Optional[str] = None
-    aero_struc: Optional[str] = None
+    aero_struc: Optional[Union[str, "AeroStrucEnum"]] = None
     air_temp: Optional[float] = None
     alt: Optional[float] = None
     amount_light: Optional[str] = None
@@ -1409,32 +1409,32 @@ class BuiltEnvInterface(DhInterface):
     build_occup_type: Optional[Union[Union[str, "BuildOccupTypeEnum"], list[Union[str, "BuildOccupTypeEnum"]]]] = empty_list()
     building_setting: Optional[Union[str, "BuildingSettingEnum"]] = None
     built_struc_age: Optional[float] = None
-    built_struc_set: Optional[str] = None
+    built_struc_set: Optional[Union[str, "BuiltStrucSetEnum"]] = None
     built_struc_type: Optional[str] = None
     carb_dioxide: Optional[str] = None
     ceil_area: Optional[float] = None
-    ceil_cond: Optional[Union[str, "CeilCondEnum"]] = None
+    ceil_cond: Optional[Union[str, "DamagedEnum"]] = None
     ceil_finish_mat: Optional[Union[str, "CeilFinishMatEnum"]] = None
-    ceil_struc: Optional[str] = None
-    ceil_texture: Optional[Union[str, "CeilTextureEnum"]] = None
+    ceil_struc: Optional[Union[str, "CeilStrucEnum"]] = None
+    ceil_texture: Optional[Union[str, "CeilingWallTextureEnum"]] = None
     ceil_thermal_mass: Optional[float] = None
     ceil_type: Optional[Union[str, "CeilTypeEnum"]] = None
-    ceil_water_mold: Optional[str] = None
+    ceil_water_mold: Optional[Union[str, "MoldVisibilityEnum"]] = None
     cool_syst_id: Optional[str] = None
     date_last_rain: Optional[str] = None
     depth: Optional[str] = None
     dew_point: Optional[float] = None
     door_comp_type: Optional[Union[str, "DoorCompTypeEnum"]] = None
-    door_cond: Optional[Union[str, "DoorCondEnum"]] = None
+    door_cond: Optional[Union[str, "DamagedRupturedEnum"]] = None
     door_direct: Optional[Union[str, "DoorDirectEnum"]] = None
-    door_loc: Optional[Union[str, "DoorLocEnum"]] = None
+    door_loc: Optional[Union[str, "CompassDirections8Enum"]] = None
     door_mat: Optional[Union[str, "DoorMatEnum"]] = None
     door_move: Optional[Union[str, "DoorMoveEnum"]] = None
     door_size: Optional[float] = None
     door_type: Optional[Union[str, "DoorTypeEnum"]] = None
     door_type_metal: Optional[Union[str, "DoorTypeMetalEnum"]] = None
-    door_type_wood: Optional[Union[str, "DoorTypeWoodEnum"]] = None
-    door_water_mold: Optional[str] = None
+    door_type_wood: Optional[str] = None
+    door_water_mold: Optional[Union[str, "MoldVisibilityEnum"]] = None
     drawings: Optional[Union[str, "DrawingsEnum"]] = None
     ecosystem: Optional[Union[str, "EcosystemEnum"]] = None
     ecosystem_category: Optional[Union[str, "EcosystemCategoryEnum"]] = None
@@ -1446,15 +1446,15 @@ class BuiltEnvInterface(DhInterface):
     exp_pipe: Optional[float] = None
     experimental_factor: Optional[str] = None
     ext_door: Optional[str] = None
-    ext_wall_orient: Optional[Union[str, "ExtWallOrientEnum"]] = None
-    ext_window_orient: Optional[Union[str, "ExtWindowOrientEnum"]] = None
+    ext_wall_orient: Optional[Union[str, "CompassDirections8Enum"]] = None
+    ext_window_orient: Optional[Union[str, "CompassDirections8Enum"]] = None
     filter_type: Optional[Union[Union[str, "FilterTypeEnum"], list[Union[str, "FilterTypeEnum"]]]] = empty_list()
-    fireplace_type: Optional[str] = None
+    fireplace_type: Optional[Union[str, "FireplaceTypeEnum"]] = None
     floor_age: Optional[str] = None
     floor_area: Optional[float] = None
-    floor_cond: Optional[Union[str, "FloorCondEnum"]] = None
+    floor_cond: Optional[Union[str, "DamagedEnum"]] = None
     floor_count: Optional[str] = None
-    floor_finish_mat: Optional[Union[str, "FloorFinishMatEnum"]] = None
+    floor_finish_mat: Optional[str] = None
     floor_struc: Optional[Union[str, "FloorStrucEnum"]] = None
     floor_thermal_mass: Optional[float] = None
     floor_water_mold: Optional[Union[str, "FloorWaterMoldEnum"]] = None
@@ -1465,14 +1465,14 @@ class BuiltEnvInterface(DhInterface):
     hall_count: Optional[str] = None
     handidness: Optional[Union[str, "HandidnessEnum"]] = None
     heat_cool_type: Optional[Union[Union[str, "HeatCoolTypeEnum"], list[Union[str, "HeatCoolTypeEnum"]]]] = empty_list()
-    heat_deliv_loc: Optional[Union[str, "HeatDelivLocEnum"]] = None
+    heat_deliv_loc: Optional[Union[str, "CompassDirections8Enum"]] = None
     heat_sys_deliv_meth: Optional[str] = None
     heat_system_id: Optional[str] = None
     height_carper_fiber: Optional[float] = None
     indoor_space: Optional[Union[str, "IndoorSpaceEnum"]] = None
     indoor_surf: Optional[Union[str, "IndoorSurfEnum"]] = None
     inside_lux: Optional[str] = None
-    int_wall_cond: Optional[Union[str, "IntWallCondEnum"]] = None
+    int_wall_cond: Optional[Union[str, "DamagedEnum"]] = None
     last_clean: Optional[str] = None
     light_type: Optional[Union[Union[str, "LightTypeEnum"], list[Union[str, "LightTypeEnum"]]]] = empty_list()
     max_occup: Optional[float] = None
@@ -1503,11 +1503,11 @@ class BuiltEnvInterface(DhInterface):
     room_net_area: Optional[str] = None
     room_occup: Optional[float] = None
     room_samp_pos: Optional[Union[str, "RoomSampPosEnum"]] = None
-    room_type: Optional[Union[str, "RoomTypeEnum"]] = None
+    room_type: Optional[str] = None
     room_vol: Optional[str] = None
     room_wall_share: Optional[str] = None
     room_window_count: Optional[int] = None
-    samp_floor: Optional[Union[str, "SampFloorEnum"]] = None
+    samp_floor: Optional[str] = None
     samp_room_id: Optional[str] = None
     samp_sort_meth: Optional[str] = None
     samp_time_out: Optional[str] = None
@@ -1516,12 +1516,12 @@ class BuiltEnvInterface(DhInterface):
     season: Optional[Union[str, "SeasonEnum"]] = None
     season_use: Optional[Union[str, "SeasonUseEnum"]] = None
     shad_dev_water_mold: Optional[str] = None
-    shading_device_cond: Optional[Union[str, "ShadingDeviceCondEnum"]] = None
-    shading_device_loc: Optional[str] = None
+    shading_device_cond: Optional[Union[str, "DamagedRupturedEnum"]] = None
+    shading_device_loc: Optional[Union[str, "ShadingDeviceLocEnum"]] = None
     shading_device_mat: Optional[str] = None
     shading_device_type: Optional[Union[str, "ShadingDeviceTypeEnum"]] = None
     size_frac: Optional[str] = None
-    space_typ_state: Optional[str] = None
+    space_typ_state: Optional[Union[str, "SpaceTypStateEnum"]] = None
     specific: Optional[Union[str, "SpecificEnum"]] = None
     specific_ecosystem: Optional[Union[str, "SpecificEcosystemEnum"]] = None
     specific_humidity: Optional[float] = None
@@ -1539,30 +1539,30 @@ class BuiltEnvInterface(DhInterface):
     train_stop_loc: Optional[Union[str, "TrainStopLocEnum"]] = None
     typ_occup_density: Optional[float] = None
     ventilation_type: Optional[str] = None
-    vis_media: Optional[Union[str, "VisMediaEnum"]] = None
+    vis_media: Optional[str] = None
     wall_area: Optional[float] = None
     wall_const_type: Optional[Union[str, "WallConstTypeEnum"]] = None
     wall_finish_mat: Optional[Union[str, "WallFinishMatEnum"]] = None
     wall_height: Optional[float] = None
-    wall_loc: Optional[Union[str, "WallLocEnum"]] = None
+    wall_loc: Optional[Union[str, "CompassDirections8Enum"]] = None
     wall_surf_treatment: Optional[Union[str, "WallSurfTreatmentEnum"]] = None
-    wall_texture: Optional[Union[str, "WallTextureEnum"]] = None
+    wall_texture: Optional[Union[str, "CeilingWallTextureEnum"]] = None
     wall_thermal_mass: Optional[float] = None
-    wall_water_mold: Optional[str] = None
+    wall_water_mold: Optional[Union[str, "MoldVisibilityEnum"]] = None
     water_feat_size: Optional[float] = None
     water_feat_type: Optional[Union[str, "WaterFeatTypeEnum"]] = None
     weekday: Optional[Union[str, "WeekdayEnum"]] = None
-    window_cond: Optional[Union[str, "WindowCondEnum"]] = None
+    window_cond: Optional[Union[str, "DamagedRupturedEnum"]] = None
     window_cover: Optional[Union[str, "WindowCoverEnum"]] = None
     window_horiz_pos: Optional[Union[str, "WindowHorizPosEnum"]] = None
-    window_loc: Optional[Union[str, "WindowLocEnum"]] = None
+    window_loc: Optional[Union[str, "CompassDirections8Enum"]] = None
     window_mat: Optional[Union[str, "WindowMatEnum"]] = None
     window_open_freq: Optional[str] = None
     window_size: Optional[str] = None
-    window_status: Optional[str] = None
+    window_status: Optional[Union[str, "WindowStatusEnum"]] = None
     window_type: Optional[Union[str, "WindowTypeEnum"]] = None
     window_vert_pos: Optional[Union[str, "WindowVertPosEnum"]] = None
-    window_water_mold: Optional[str] = None
+    window_water_mold: Optional[Union[str, "MoldVisibilityEnum"]] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -1621,8 +1621,8 @@ class BuiltEnvInterface(DhInterface):
         if self.adj_room is not None and not isinstance(self.adj_room, str):
             self.adj_room = str(self.adj_room)
 
-        if self.aero_struc is not None and not isinstance(self.aero_struc, str):
-            self.aero_struc = str(self.aero_struc)
+        if self.aero_struc is not None and not isinstance(self.aero_struc, AeroStrucEnum):
+            self.aero_struc = AeroStrucEnum(self.aero_struc)
 
         if self.air_temp is not None and not isinstance(self.air_temp, float):
             self.air_temp = float(self.air_temp)
@@ -1664,8 +1664,8 @@ class BuiltEnvInterface(DhInterface):
         if self.built_struc_age is not None and not isinstance(self.built_struc_age, float):
             self.built_struc_age = float(self.built_struc_age)
 
-        if self.built_struc_set is not None and not isinstance(self.built_struc_set, str):
-            self.built_struc_set = str(self.built_struc_set)
+        if self.built_struc_set is not None and not isinstance(self.built_struc_set, BuiltStrucSetEnum):
+            self.built_struc_set = BuiltStrucSetEnum(self.built_struc_set)
 
         if self.built_struc_type is not None and not isinstance(self.built_struc_type, str):
             self.built_struc_type = str(self.built_struc_type)
@@ -1676,17 +1676,17 @@ class BuiltEnvInterface(DhInterface):
         if self.ceil_area is not None and not isinstance(self.ceil_area, float):
             self.ceil_area = float(self.ceil_area)
 
-        if self.ceil_cond is not None and not isinstance(self.ceil_cond, CeilCondEnum):
-            self.ceil_cond = CeilCondEnum(self.ceil_cond)
+        if self.ceil_cond is not None and not isinstance(self.ceil_cond, DamagedEnum):
+            self.ceil_cond = DamagedEnum(self.ceil_cond)
 
         if self.ceil_finish_mat is not None and not isinstance(self.ceil_finish_mat, CeilFinishMatEnum):
             self.ceil_finish_mat = CeilFinishMatEnum(self.ceil_finish_mat)
 
-        if self.ceil_struc is not None and not isinstance(self.ceil_struc, str):
-            self.ceil_struc = str(self.ceil_struc)
+        if self.ceil_struc is not None and not isinstance(self.ceil_struc, CeilStrucEnum):
+            self.ceil_struc = CeilStrucEnum(self.ceil_struc)
 
-        if self.ceil_texture is not None and not isinstance(self.ceil_texture, CeilTextureEnum):
-            self.ceil_texture = CeilTextureEnum(self.ceil_texture)
+        if self.ceil_texture is not None and not isinstance(self.ceil_texture, CeilingWallTextureEnum):
+            self.ceil_texture = CeilingWallTextureEnum(self.ceil_texture)
 
         if self.ceil_thermal_mass is not None and not isinstance(self.ceil_thermal_mass, float):
             self.ceil_thermal_mass = float(self.ceil_thermal_mass)
@@ -1694,8 +1694,8 @@ class BuiltEnvInterface(DhInterface):
         if self.ceil_type is not None and not isinstance(self.ceil_type, CeilTypeEnum):
             self.ceil_type = CeilTypeEnum(self.ceil_type)
 
-        if self.ceil_water_mold is not None and not isinstance(self.ceil_water_mold, str):
-            self.ceil_water_mold = str(self.ceil_water_mold)
+        if self.ceil_water_mold is not None and not isinstance(self.ceil_water_mold, MoldVisibilityEnum):
+            self.ceil_water_mold = MoldVisibilityEnum(self.ceil_water_mold)
 
         if self.cool_syst_id is not None and not isinstance(self.cool_syst_id, str):
             self.cool_syst_id = str(self.cool_syst_id)
@@ -1712,14 +1712,14 @@ class BuiltEnvInterface(DhInterface):
         if self.door_comp_type is not None and not isinstance(self.door_comp_type, DoorCompTypeEnum):
             self.door_comp_type = DoorCompTypeEnum(self.door_comp_type)
 
-        if self.door_cond is not None and not isinstance(self.door_cond, DoorCondEnum):
-            self.door_cond = DoorCondEnum(self.door_cond)
+        if self.door_cond is not None and not isinstance(self.door_cond, DamagedRupturedEnum):
+            self.door_cond = DamagedRupturedEnum(self.door_cond)
 
         if self.door_direct is not None and not isinstance(self.door_direct, DoorDirectEnum):
             self.door_direct = DoorDirectEnum(self.door_direct)
 
-        if self.door_loc is not None and not isinstance(self.door_loc, DoorLocEnum):
-            self.door_loc = DoorLocEnum(self.door_loc)
+        if self.door_loc is not None and not isinstance(self.door_loc, CompassDirections8Enum):
+            self.door_loc = CompassDirections8Enum(self.door_loc)
 
         if self.door_mat is not None and not isinstance(self.door_mat, DoorMatEnum):
             self.door_mat = DoorMatEnum(self.door_mat)
@@ -1736,11 +1736,11 @@ class BuiltEnvInterface(DhInterface):
         if self.door_type_metal is not None and not isinstance(self.door_type_metal, DoorTypeMetalEnum):
             self.door_type_metal = DoorTypeMetalEnum(self.door_type_metal)
 
-        if self.door_type_wood is not None and not isinstance(self.door_type_wood, DoorTypeWoodEnum):
-            self.door_type_wood = DoorTypeWoodEnum(self.door_type_wood)
+        if self.door_type_wood is not None and not isinstance(self.door_type_wood, str):
+            self.door_type_wood = str(self.door_type_wood)
 
-        if self.door_water_mold is not None and not isinstance(self.door_water_mold, str):
-            self.door_water_mold = str(self.door_water_mold)
+        if self.door_water_mold is not None and not isinstance(self.door_water_mold, MoldVisibilityEnum):
+            self.door_water_mold = MoldVisibilityEnum(self.door_water_mold)
 
         if self.drawings is not None and not isinstance(self.drawings, DrawingsEnum):
             self.drawings = DrawingsEnum(self.drawings)
@@ -1775,18 +1775,18 @@ class BuiltEnvInterface(DhInterface):
         if self.ext_door is not None and not isinstance(self.ext_door, str):
             self.ext_door = str(self.ext_door)
 
-        if self.ext_wall_orient is not None and not isinstance(self.ext_wall_orient, ExtWallOrientEnum):
-            self.ext_wall_orient = ExtWallOrientEnum(self.ext_wall_orient)
+        if self.ext_wall_orient is not None and not isinstance(self.ext_wall_orient, CompassDirections8Enum):
+            self.ext_wall_orient = CompassDirections8Enum(self.ext_wall_orient)
 
-        if self.ext_window_orient is not None and not isinstance(self.ext_window_orient, ExtWindowOrientEnum):
-            self.ext_window_orient = ExtWindowOrientEnum(self.ext_window_orient)
+        if self.ext_window_orient is not None and not isinstance(self.ext_window_orient, CompassDirections8Enum):
+            self.ext_window_orient = CompassDirections8Enum(self.ext_window_orient)
 
         if not isinstance(self.filter_type, list):
             self.filter_type = [self.filter_type] if self.filter_type is not None else []
         self.filter_type = [v if isinstance(v, FilterTypeEnum) else FilterTypeEnum(v) for v in self.filter_type]
 
-        if self.fireplace_type is not None and not isinstance(self.fireplace_type, str):
-            self.fireplace_type = str(self.fireplace_type)
+        if self.fireplace_type is not None and not isinstance(self.fireplace_type, FireplaceTypeEnum):
+            self.fireplace_type = FireplaceTypeEnum(self.fireplace_type)
 
         if self.floor_age is not None and not isinstance(self.floor_age, str):
             self.floor_age = str(self.floor_age)
@@ -1794,14 +1794,14 @@ class BuiltEnvInterface(DhInterface):
         if self.floor_area is not None and not isinstance(self.floor_area, float):
             self.floor_area = float(self.floor_area)
 
-        if self.floor_cond is not None and not isinstance(self.floor_cond, FloorCondEnum):
-            self.floor_cond = FloorCondEnum(self.floor_cond)
+        if self.floor_cond is not None and not isinstance(self.floor_cond, DamagedEnum):
+            self.floor_cond = DamagedEnum(self.floor_cond)
 
         if self.floor_count is not None and not isinstance(self.floor_count, str):
             self.floor_count = str(self.floor_count)
 
-        if self.floor_finish_mat is not None and not isinstance(self.floor_finish_mat, FloorFinishMatEnum):
-            self.floor_finish_mat = FloorFinishMatEnum(self.floor_finish_mat)
+        if self.floor_finish_mat is not None and not isinstance(self.floor_finish_mat, str):
+            self.floor_finish_mat = str(self.floor_finish_mat)
 
         if self.floor_struc is not None and not isinstance(self.floor_struc, FloorStrucEnum):
             self.floor_struc = FloorStrucEnum(self.floor_struc)
@@ -1834,8 +1834,8 @@ class BuiltEnvInterface(DhInterface):
             self.heat_cool_type = [self.heat_cool_type] if self.heat_cool_type is not None else []
         self.heat_cool_type = [v if isinstance(v, HeatCoolTypeEnum) else HeatCoolTypeEnum(v) for v in self.heat_cool_type]
 
-        if self.heat_deliv_loc is not None and not isinstance(self.heat_deliv_loc, HeatDelivLocEnum):
-            self.heat_deliv_loc = HeatDelivLocEnum(self.heat_deliv_loc)
+        if self.heat_deliv_loc is not None and not isinstance(self.heat_deliv_loc, CompassDirections8Enum):
+            self.heat_deliv_loc = CompassDirections8Enum(self.heat_deliv_loc)
 
         if self.heat_sys_deliv_meth is not None and not isinstance(self.heat_sys_deliv_meth, str):
             self.heat_sys_deliv_meth = str(self.heat_sys_deliv_meth)
@@ -1855,8 +1855,8 @@ class BuiltEnvInterface(DhInterface):
         if self.inside_lux is not None and not isinstance(self.inside_lux, str):
             self.inside_lux = str(self.inside_lux)
 
-        if self.int_wall_cond is not None and not isinstance(self.int_wall_cond, IntWallCondEnum):
-            self.int_wall_cond = IntWallCondEnum(self.int_wall_cond)
+        if self.int_wall_cond is not None and not isinstance(self.int_wall_cond, DamagedEnum):
+            self.int_wall_cond = DamagedEnum(self.int_wall_cond)
 
         if self.last_clean is not None and not isinstance(self.last_clean, str):
             self.last_clean = str(self.last_clean)
@@ -1949,8 +1949,8 @@ class BuiltEnvInterface(DhInterface):
         if self.room_samp_pos is not None and not isinstance(self.room_samp_pos, RoomSampPosEnum):
             self.room_samp_pos = RoomSampPosEnum(self.room_samp_pos)
 
-        if self.room_type is not None and not isinstance(self.room_type, RoomTypeEnum):
-            self.room_type = RoomTypeEnum(self.room_type)
+        if self.room_type is not None and not isinstance(self.room_type, str):
+            self.room_type = str(self.room_type)
 
         if self.room_vol is not None and not isinstance(self.room_vol, str):
             self.room_vol = str(self.room_vol)
@@ -1961,8 +1961,8 @@ class BuiltEnvInterface(DhInterface):
         if self.room_window_count is not None and not isinstance(self.room_window_count, int):
             self.room_window_count = int(self.room_window_count)
 
-        if self.samp_floor is not None and not isinstance(self.samp_floor, SampFloorEnum):
-            self.samp_floor = SampFloorEnum(self.samp_floor)
+        if self.samp_floor is not None and not isinstance(self.samp_floor, str):
+            self.samp_floor = str(self.samp_floor)
 
         if self.samp_room_id is not None and not isinstance(self.samp_room_id, str):
             self.samp_room_id = str(self.samp_room_id)
@@ -1988,11 +1988,11 @@ class BuiltEnvInterface(DhInterface):
         if self.shad_dev_water_mold is not None and not isinstance(self.shad_dev_water_mold, str):
             self.shad_dev_water_mold = str(self.shad_dev_water_mold)
 
-        if self.shading_device_cond is not None and not isinstance(self.shading_device_cond, ShadingDeviceCondEnum):
-            self.shading_device_cond = ShadingDeviceCondEnum(self.shading_device_cond)
+        if self.shading_device_cond is not None and not isinstance(self.shading_device_cond, DamagedRupturedEnum):
+            self.shading_device_cond = DamagedRupturedEnum(self.shading_device_cond)
 
-        if self.shading_device_loc is not None and not isinstance(self.shading_device_loc, str):
-            self.shading_device_loc = str(self.shading_device_loc)
+        if self.shading_device_loc is not None and not isinstance(self.shading_device_loc, ShadingDeviceLocEnum):
+            self.shading_device_loc = ShadingDeviceLocEnum(self.shading_device_loc)
 
         if self.shading_device_mat is not None and not isinstance(self.shading_device_mat, str):
             self.shading_device_mat = str(self.shading_device_mat)
@@ -2003,8 +2003,8 @@ class BuiltEnvInterface(DhInterface):
         if self.size_frac is not None and not isinstance(self.size_frac, str):
             self.size_frac = str(self.size_frac)
 
-        if self.space_typ_state is not None and not isinstance(self.space_typ_state, str):
-            self.space_typ_state = str(self.space_typ_state)
+        if self.space_typ_state is not None and not isinstance(self.space_typ_state, SpaceTypStateEnum):
+            self.space_typ_state = SpaceTypStateEnum(self.space_typ_state)
 
         if self.specific is not None and not isinstance(self.specific, SpecificEnum):
             self.specific = SpecificEnum(self.specific)
@@ -2059,8 +2059,8 @@ class BuiltEnvInterface(DhInterface):
         if self.ventilation_type is not None and not isinstance(self.ventilation_type, str):
             self.ventilation_type = str(self.ventilation_type)
 
-        if self.vis_media is not None and not isinstance(self.vis_media, VisMediaEnum):
-            self.vis_media = VisMediaEnum(self.vis_media)
+        if self.vis_media is not None and not isinstance(self.vis_media, str):
+            self.vis_media = str(self.vis_media)
 
         if self.wall_area is not None and not isinstance(self.wall_area, float):
             self.wall_area = float(self.wall_area)
@@ -2074,20 +2074,20 @@ class BuiltEnvInterface(DhInterface):
         if self.wall_height is not None and not isinstance(self.wall_height, float):
             self.wall_height = float(self.wall_height)
 
-        if self.wall_loc is not None and not isinstance(self.wall_loc, WallLocEnum):
-            self.wall_loc = WallLocEnum(self.wall_loc)
+        if self.wall_loc is not None and not isinstance(self.wall_loc, CompassDirections8Enum):
+            self.wall_loc = CompassDirections8Enum(self.wall_loc)
 
         if self.wall_surf_treatment is not None and not isinstance(self.wall_surf_treatment, WallSurfTreatmentEnum):
             self.wall_surf_treatment = WallSurfTreatmentEnum(self.wall_surf_treatment)
 
-        if self.wall_texture is not None and not isinstance(self.wall_texture, WallTextureEnum):
-            self.wall_texture = WallTextureEnum(self.wall_texture)
+        if self.wall_texture is not None and not isinstance(self.wall_texture, CeilingWallTextureEnum):
+            self.wall_texture = CeilingWallTextureEnum(self.wall_texture)
 
         if self.wall_thermal_mass is not None and not isinstance(self.wall_thermal_mass, float):
             self.wall_thermal_mass = float(self.wall_thermal_mass)
 
-        if self.wall_water_mold is not None and not isinstance(self.wall_water_mold, str):
-            self.wall_water_mold = str(self.wall_water_mold)
+        if self.wall_water_mold is not None and not isinstance(self.wall_water_mold, MoldVisibilityEnum):
+            self.wall_water_mold = MoldVisibilityEnum(self.wall_water_mold)
 
         if self.water_feat_size is not None and not isinstance(self.water_feat_size, float):
             self.water_feat_size = float(self.water_feat_size)
@@ -2098,8 +2098,8 @@ class BuiltEnvInterface(DhInterface):
         if self.weekday is not None and not isinstance(self.weekday, WeekdayEnum):
             self.weekday = WeekdayEnum(self.weekday)
 
-        if self.window_cond is not None and not isinstance(self.window_cond, WindowCondEnum):
-            self.window_cond = WindowCondEnum(self.window_cond)
+        if self.window_cond is not None and not isinstance(self.window_cond, DamagedRupturedEnum):
+            self.window_cond = DamagedRupturedEnum(self.window_cond)
 
         if self.window_cover is not None and not isinstance(self.window_cover, WindowCoverEnum):
             self.window_cover = WindowCoverEnum(self.window_cover)
@@ -2107,8 +2107,8 @@ class BuiltEnvInterface(DhInterface):
         if self.window_horiz_pos is not None and not isinstance(self.window_horiz_pos, WindowHorizPosEnum):
             self.window_horiz_pos = WindowHorizPosEnum(self.window_horiz_pos)
 
-        if self.window_loc is not None and not isinstance(self.window_loc, WindowLocEnum):
-            self.window_loc = WindowLocEnum(self.window_loc)
+        if self.window_loc is not None and not isinstance(self.window_loc, CompassDirections8Enum):
+            self.window_loc = CompassDirections8Enum(self.window_loc)
 
         if self.window_mat is not None and not isinstance(self.window_mat, WindowMatEnum):
             self.window_mat = WindowMatEnum(self.window_mat)
@@ -2119,8 +2119,8 @@ class BuiltEnvInterface(DhInterface):
         if self.window_size is not None and not isinstance(self.window_size, str):
             self.window_size = str(self.window_size)
 
-        if self.window_status is not None and not isinstance(self.window_status, str):
-            self.window_status = str(self.window_status)
+        if self.window_status is not None and not isinstance(self.window_status, WindowStatusEnum):
+            self.window_status = WindowStatusEnum(self.window_status)
 
         if self.window_type is not None and not isinstance(self.window_type, WindowTypeEnum):
             self.window_type = WindowTypeEnum(self.window_type)
@@ -2128,8 +2128,8 @@ class BuiltEnvInterface(DhInterface):
         if self.window_vert_pos is not None and not isinstance(self.window_vert_pos, WindowVertPosEnum):
             self.window_vert_pos = WindowVertPosEnum(self.window_vert_pos)
 
-        if self.window_water_mold is not None and not isinstance(self.window_water_mold, str):
-            self.window_water_mold = str(self.window_water_mold)
+        if self.window_water_mold is not None and not isinstance(self.window_water_mold, MoldVisibilityEnum):
+            self.window_water_mold = MoldVisibilityEnum(self.window_water_mold)
 
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
@@ -2256,7 +2256,7 @@ class HcrCoresInterface(DhInterface):
     hc_produced: Optional[Union[str, "HcProducedEnum"]] = None
     hcr: Optional[Union[str, "HcrEnum"]] = None
     hcr_fw_salinity: Optional[float] = None
-    hcr_geol_age: Optional[Union[str, "HcrGeolAgeEnum"]] = None
+    hcr_geol_age: Optional[Union[str, "GeolAgeEnum"]] = None
     hcr_pressure: Optional[str] = None
     hcr_temp: Optional[str] = None
     lithology: Optional[Union[str, "LithologyEnum"]] = None
@@ -2295,7 +2295,7 @@ class HcrCoresInterface(DhInterface):
     sodium: Optional[str] = None
     specific_ecosystem: Optional[Union[str, "SpecificEcosystemEnum"]] = None
     sr_dep_env: Optional[Union[str, "SrDepEnvEnum"]] = None
-    sr_geol_age: Optional[Union[str, "SrGeolAgeEnum"]] = None
+    sr_geol_age: Optional[Union[str, "GeolAgeEnum"]] = None
     sr_kerog_type: Optional[Union[str, "SrKerogTypeEnum"]] = None
     sr_lithology: Optional[Union[str, "SrLithologyEnum"]] = None
     sulfate: Optional[str] = None
@@ -2463,8 +2463,8 @@ class HcrCoresInterface(DhInterface):
         if self.hcr_fw_salinity is not None and not isinstance(self.hcr_fw_salinity, float):
             self.hcr_fw_salinity = float(self.hcr_fw_salinity)
 
-        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, HcrGeolAgeEnum):
-            self.hcr_geol_age = HcrGeolAgeEnum(self.hcr_geol_age)
+        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, GeolAgeEnum):
+            self.hcr_geol_age = GeolAgeEnum(self.hcr_geol_age)
 
         if self.hcr_pressure is not None and not isinstance(self.hcr_pressure, str):
             self.hcr_pressure = str(self.hcr_pressure)
@@ -2580,8 +2580,8 @@ class HcrCoresInterface(DhInterface):
         if self.sr_dep_env is not None and not isinstance(self.sr_dep_env, SrDepEnvEnum):
             self.sr_dep_env = SrDepEnvEnum(self.sr_dep_env)
 
-        if self.sr_geol_age is not None and not isinstance(self.sr_geol_age, SrGeolAgeEnum):
-            self.sr_geol_age = SrGeolAgeEnum(self.sr_geol_age)
+        if self.sr_geol_age is not None and not isinstance(self.sr_geol_age, GeolAgeEnum):
+            self.sr_geol_age = GeolAgeEnum(self.sr_geol_age)
 
         if self.sr_kerog_type is not None and not isinstance(self.sr_kerog_type, SrKerogTypeEnum):
             self.sr_kerog_type = SrKerogTypeEnum(self.sr_kerog_type)
@@ -2707,7 +2707,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     hc_produced: Optional[Union[str, "HcProducedEnum"]] = None
     hcr: Optional[Union[str, "HcrEnum"]] = None
     hcr_fw_salinity: Optional[float] = None
-    hcr_geol_age: Optional[Union[str, "HcrGeolAgeEnum"]] = None
+    hcr_geol_age: Optional[Union[str, "GeolAgeEnum"]] = None
     hcr_pressure: Optional[str] = None
     hcr_temp: Optional[str] = None
     iw_bt_date_well: Optional[str] = None
@@ -2929,8 +2929,8 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.hcr_fw_salinity is not None and not isinstance(self.hcr_fw_salinity, float):
             self.hcr_fw_salinity = float(self.hcr_fw_salinity)
 
-        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, HcrGeolAgeEnum):
-            self.hcr_geol_age = HcrGeolAgeEnum(self.hcr_geol_age)
+        if self.hcr_geol_age is not None and not isinstance(self.hcr_geol_age, GeolAgeEnum):
+            self.hcr_geol_age = GeolAgeEnum(self.hcr_geol_age)
 
         if self.hcr_pressure is not None and not isinstance(self.hcr_pressure, str):
             self.hcr_pressure = str(self.hcr_pressure)
@@ -3169,7 +3169,7 @@ class HostAssociatedInterface(DhInterface):
     host_length: Optional[str] = None
     host_life_stage: Optional[str] = None
     host_phenotype: Optional[str] = None
-    host_sex: Optional[Union[str, "HostSexEnum"]] = None
+    host_sex: Optional[str] = None
     host_shape: Optional[str] = None
     host_subject_id: Optional[str] = None
     host_subspecf_genlin: Optional[str] = None
@@ -3343,8 +3343,8 @@ class HostAssociatedInterface(DhInterface):
         if self.host_phenotype is not None and not isinstance(self.host_phenotype, str):
             self.host_phenotype = str(self.host_phenotype)
 
-        if self.host_sex is not None and not isinstance(self.host_sex, HostSexEnum):
-            self.host_sex = HostSexEnum(self.host_sex)
+        if self.host_sex is not None and not isinstance(self.host_sex, str):
+            self.host_sex = str(self.host_sex)
 
         if self.host_shape is not None and not isinstance(self.host_shape, str):
             self.host_shape = str(self.host_shape)
@@ -3445,6 +3445,9 @@ class JgiMgInterface(DhInterface):
     jgi_sample_name: str = None
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
+    jgi_sample_contact: str = None
+    jgi_project_pi: str = None
+    jgi_proposal_id: float = None
     jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
@@ -3514,6 +3517,21 @@ class JgiMgInterface(DhInterface):
         if not isinstance(self.jgi_seq_project_name, str):
             self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
+        if self._is_empty(self.jgi_sample_contact):
+            self.MissingRequiredField("jgi_sample_contact")
+        if not isinstance(self.jgi_sample_contact, str):
+            self.jgi_sample_contact = str(self.jgi_sample_contact)
+
+        if self._is_empty(self.jgi_project_pi):
+            self.MissingRequiredField("jgi_project_pi")
+        if not isinstance(self.jgi_project_pi, str):
+            self.jgi_project_pi = str(self.jgi_project_pi)
+
+        if self._is_empty(self.jgi_proposal_id):
+            self.MissingRequiredField("jgi_proposal_id")
+        if not isinstance(self.jgi_proposal_id, float):
+            self.jgi_proposal_id = float(self.jgi_proposal_id)
+
         if self._is_empty(self.jgi_sample_volume):
             self.MissingRequiredField("jgi_sample_volume")
         if not isinstance(self.jgi_sample_volume, float):
@@ -3574,6 +3592,9 @@ class JgiMgLrInterface(DhInterface):
     jgi_sample_name: str = None
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
+    jgi_sample_contact: str = None
+    jgi_project_pi: str = None
+    jgi_proposal_id: float = None
     jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     cont_well: Optional[str] = None
@@ -3651,6 +3672,21 @@ class JgiMgLrInterface(DhInterface):
         if not isinstance(self.jgi_seq_project_name, str):
             self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
+        if self._is_empty(self.jgi_sample_contact):
+            self.MissingRequiredField("jgi_sample_contact")
+        if not isinstance(self.jgi_sample_contact, str):
+            self.jgi_sample_contact = str(self.jgi_sample_contact)
+
+        if self._is_empty(self.jgi_project_pi):
+            self.MissingRequiredField("jgi_project_pi")
+        if not isinstance(self.jgi_project_pi, str):
+            self.jgi_project_pi = str(self.jgi_project_pi)
+
+        if self._is_empty(self.jgi_proposal_id):
+            self.MissingRequiredField("jgi_proposal_id")
+        if not isinstance(self.jgi_proposal_id, float):
+            self.jgi_proposal_id = float(self.jgi_proposal_id)
+
         if self._is_empty(self.jgi_sample_volume):
             self.MissingRequiredField("jgi_sample_volume")
         if not isinstance(self.jgi_sample_volume, float):
@@ -3703,6 +3739,9 @@ class JgiMtInterface(DhInterface):
     jgi_sample_name: str = None
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
+    jgi_sample_contact: str = None
+    jgi_project_pi: str = None
+    jgi_proposal_id: float = None
     jgi_sample_volume: float = None
     replicate_group: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
@@ -3771,6 +3810,21 @@ class JgiMtInterface(DhInterface):
             self.MissingRequiredField("jgi_seq_project_name")
         if not isinstance(self.jgi_seq_project_name, str):
             self.jgi_seq_project_name = str(self.jgi_seq_project_name)
+
+        if self._is_empty(self.jgi_sample_contact):
+            self.MissingRequiredField("jgi_sample_contact")
+        if not isinstance(self.jgi_sample_contact, str):
+            self.jgi_sample_contact = str(self.jgi_sample_contact)
+
+        if self._is_empty(self.jgi_project_pi):
+            self.MissingRequiredField("jgi_project_pi")
+        if not isinstance(self.jgi_project_pi, str):
+            self.jgi_project_pi = str(self.jgi_project_pi)
+
+        if self._is_empty(self.jgi_proposal_id):
+            self.MissingRequiredField("jgi_proposal_id")
+        if not isinstance(self.jgi_proposal_id, float):
+            self.jgi_proposal_id = float(self.jgi_proposal_id)
 
         if self._is_empty(self.jgi_sample_volume):
             self.MissingRequiredField("jgi_sample_volume")
@@ -5086,7 +5140,7 @@ class SoilInterface(DhInterface):
     collection_time: Optional[str] = None
     collection_time_inc: Optional[str] = None
     crop_rotation: Optional[str] = None
-    cur_land_use: Optional[Union[str, "CurLandUseEnum"]] = None
+    cur_land_use: Optional[str] = None
     cur_vegetation: Optional[str] = None
     cur_vegetation_meth: Optional[str] = None
     drainage_class: Optional[Union[str, "DrainageClassEnum"]] = None
@@ -5292,8 +5346,8 @@ class SoilInterface(DhInterface):
         if self.crop_rotation is not None and not isinstance(self.crop_rotation, str):
             self.crop_rotation = str(self.crop_rotation)
 
-        if self.cur_land_use is not None and not isinstance(self.cur_land_use, CurLandUseEnum):
-            self.cur_land_use = CurLandUseEnum(self.cur_land_use)
+        if self.cur_land_use is not None and not isinstance(self.cur_land_use, str):
+            self.cur_land_use = str(self.cur_land_use)
 
         if self.cur_vegetation is not None and not isinstance(self.cur_vegetation, str):
             self.cur_vegetation = str(self.cur_vegetation)
@@ -7112,6 +7166,15 @@ class UnitEnum(EnumDefinitionImpl):
                 title="inches",
                 description="The Unified Code for Units of Measure (UCUM) representation of inch."))
 
+class AeroStrucEnum(EnumDefinitionImpl):
+
+    glider = PermissibleValue(text="glider")
+    plane = PermissibleValue(text="plane")
+
+    _defn = EnumDefinition(
+        name="AeroStrucEnum",
+    )
+
 class AnalysisTypeEnum(EnumDefinitionImpl):
 
     metabolomics = PermissibleValue(text="metabolomics")
@@ -7146,8 +7209,8 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
 class ArchStrucEnum(EnumDefinitionImpl):
 
     building = PermissibleValue(text="building")
-    shed = PermissibleValue(text="shed")
     home = PermissibleValue(text="home")
+    shed = PermissibleValue(text="shed")
 
     _defn = EnumDefinition(
         name="ArchStrucEnum",
@@ -7155,10 +7218,10 @@ class ArchStrucEnum(EnumDefinitionImpl):
 
 class BiolStatEnum(EnumDefinitionImpl):
 
-    wild = PermissibleValue(text="wild")
-    natural = PermissibleValue(text="natural")
     hybrid = PermissibleValue(text="hybrid")
     mutant = PermissibleValue(text="mutant")
+    natural = PermissibleValue(text="natural")
+    wild = PermissibleValue(text="wild")
 
     _defn = EnumDefinition(
         name="BiolStatEnum",
@@ -7166,29 +7229,14 @@ class BiolStatEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "semi-natural",
-            PermissibleValue(text="semi-natural"))
-        setattr(cls, "inbred line",
-            PermissibleValue(text="inbred line"))
         setattr(cls, "breeder's line",
             PermissibleValue(text="breeder's line"))
         setattr(cls, "clonal selection",
             PermissibleValue(text="clonal selection"))
-
-class BioticRelationshipEnum(EnumDefinitionImpl):
-
-    parasite = PermissibleValue(text="parasite")
-    commensal = PermissibleValue(text="commensal")
-    symbiont = PermissibleValue(text="symbiont")
-
-    _defn = EnumDefinition(
-        name="BioticRelationshipEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "free living",
-            PermissibleValue(text="free living"))
+        setattr(cls, "inbred line",
+            PermissibleValue(text="inbred line"))
+        setattr(cls, "semi-natural",
+            PermissibleValue(text="semi-natural"))
 
 class BuildDocsEnum(EnumDefinitionImpl):
 
@@ -7224,14 +7272,14 @@ class BuildDocsEnum(EnumDefinitionImpl):
 
 class BuildOccupTypeEnum(EnumDefinitionImpl):
 
-    office = PermissibleValue(text="office")
-    market = PermissibleValue(text="market")
-    restaurant = PermissibleValue(text="restaurant")
-    residence = PermissibleValue(text="residence")
-    school = PermissibleValue(text="school")
-    residential = PermissibleValue(text="residential")
-    commercial = PermissibleValue(text="commercial")
     airport = PermissibleValue(text="airport")
+    commercial = PermissibleValue(text="commercial")
+    market = PermissibleValue(text="market")
+    office = PermissibleValue(text="office")
+    residence = PermissibleValue(text="residence")
+    residential = PermissibleValue(text="residential")
+    restaurant = PermissibleValue(text="restaurant")
+    school = PermissibleValue(text="school")
 
     _defn = EnumDefinition(
         name="BuildOccupTypeEnum",
@@ -7239,54 +7287,63 @@ class BuildOccupTypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "low rise",
-            PermissibleValue(text="low rise"))
-        setattr(cls, "high rise",
-            PermissibleValue(text="high rise"))
-        setattr(cls, "wood framed",
-            PermissibleValue(text="wood framed"))
         setattr(cls, "health care",
             PermissibleValue(text="health care"))
+        setattr(cls, "high rise",
+            PermissibleValue(text="high rise"))
+        setattr(cls, "low rise",
+            PermissibleValue(text="low rise"))
         setattr(cls, "sports complex",
             PermissibleValue(text="sports complex"))
+        setattr(cls, "wood framed",
+            PermissibleValue(text="wood framed"))
 
 class BuildingSettingEnum(EnumDefinitionImpl):
 
-    urban = PermissibleValue(text="urban")
-    suburban = PermissibleValue(text="suburban")
     exurban = PermissibleValue(text="exurban")
     rural = PermissibleValue(text="rural")
+    suburban = PermissibleValue(text="suburban")
+    urban = PermissibleValue(text="urban")
 
     _defn = EnumDefinition(
         name="BuildingSettingEnum",
     )
 
-class CeilCondEnum(EnumDefinitionImpl):
+class BuiltStrucSetEnum(EnumDefinitionImpl):
 
-    new = PermissibleValue(text="new")
+    rural = PermissibleValue(text="rural")
+    urban = PermissibleValue(text="urban")
+
+    _defn = EnumDefinition(
+        name="BuiltStrucSetEnum",
+    )
+
+class DamagedEnum(EnumDefinitionImpl):
+
     damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
     rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="CeilCondEnum",
+        name="DamagedEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "visible wear",
-            PermissibleValue(text="visible wear"))
         setattr(cls, "needs repair",
             PermissibleValue(text="needs repair"))
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
 
 class CeilFinishMatEnum(EnumDefinitionImpl):
 
-    drywall = PermissibleValue(text="drywall")
-    tiles = PermissibleValue(text="tiles")
     PVC = PermissibleValue(text="PVC")
-    plasterboard = PermissibleValue(text="plasterboard")
-    metal = PermissibleValue(text="metal")
+    drywall = PermissibleValue(text="drywall")
     fiberglass = PermissibleValue(text="fiberglass")
+    metal = PermissibleValue(text="metal")
+    plasterboard = PermissibleValue(text="plasterboard")
     stucco = PermissibleValue(text="stucco")
+    tiles = PermissibleValue(text="tiles")
     wood = PermissibleValue(text="wood")
 
     _defn = EnumDefinition(
@@ -7300,7 +7357,20 @@ class CeilFinishMatEnum(EnumDefinitionImpl):
         setattr(cls, "mineral wool/calcium silicate",
             PermissibleValue(text="mineral wool/calcium silicate"))
 
-class CeilTextureEnum(EnumDefinitionImpl):
+class CeilStrucEnum(EnumDefinitionImpl):
+
+    concrete = PermissibleValue(text="concrete")
+
+    _defn = EnumDefinition(
+        name="CeilStrucEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "wood frame",
+            PermissibleValue(text="wood frame"))
+
+class CeilingWallTextureEnum(EnumDefinitionImpl):
 
     knockdown = PermissibleValue(text="knockdown")
     popcorn = PermissibleValue(text="popcorn")
@@ -7308,11 +7378,13 @@ class CeilTextureEnum(EnumDefinitionImpl):
     swirl = PermissibleValue(text="swirl")
 
     _defn = EnumDefinition(
-        name="CeilTextureEnum",
+        name="CeilingWallTextureEnum",
     )
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "Santa-Fe texture",
+            PermissibleValue(text="Santa-Fe texture"))
         setattr(cls, "crows feet",
             PermissibleValue(text="crows feet"))
         setattr(cls, "crows-foot stomp",
@@ -7325,8 +7397,6 @@ class CeilTextureEnum(EnumDefinitionImpl):
             PermissibleValue(text="orange peel"))
         setattr(cls, "rosebud stomp",
             PermissibleValue(text="rosebud stomp"))
-        setattr(cls, "Santa-Fe texture",
-            PermissibleValue(text="Santa-Fe texture"))
         setattr(cls, "skip trowel",
             PermissibleValue(text="skip trowel"))
         setattr(cls, "stomp knockdown",
@@ -7335,10 +7405,10 @@ class CeilTextureEnum(EnumDefinitionImpl):
 class CeilTypeEnum(EnumDefinitionImpl):
 
     cathedral = PermissibleValue(text="cathedral")
-    dropped = PermissibleValue(text="dropped")
-    concave = PermissibleValue(text="concave")
     coffered = PermissibleValue(text="coffered")
+    concave = PermissibleValue(text="concave")
     cove = PermissibleValue(text="cove")
+    dropped = PermissibleValue(text="dropped")
     stretched = PermissibleValue(text="stretched")
 
     _defn = EnumDefinition(
@@ -7350,67 +7420,18 @@ class CeilTypeEnum(EnumDefinitionImpl):
         setattr(cls, "barrel-shaped",
             PermissibleValue(text="barrel-shaped"))
 
-class CurLandUseEnum(EnumDefinitionImpl):
-
-    badlands = PermissibleValue(text="badlands")
-    cities = PermissibleValue(text="cities")
-    conifers = PermissibleValue(text="conifers")
-    farmstead = PermissibleValue(text="farmstead")
-    gravel = PermissibleValue(text="gravel")
-    hardwoods = PermissibleValue(text="hardwoods")
-    hayland = PermissibleValue(text="hayland")
-    marshlands = PermissibleValue(text="marshlands")
-    meadows = PermissibleValue(text="meadows")
-    mudflats = PermissibleValue(text="mudflats")
-    pastureland = PermissibleValue(text="pastureland")
-    rainforest = PermissibleValue(text="rainforest")
-    rangeland = PermissibleValue(text="rangeland")
-    rock = PermissibleValue(text="rock")
-    sand = PermissibleValue(text="sand")
-    swamp = PermissibleValue(text="swamp")
-    tropical = PermissibleValue(text="tropical")
-    tundra = PermissibleValue(text="tundra")
+class MoldVisibilityEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="CurLandUseEnum",
+        name="MoldVisibilityEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "crop trees",
-            PermissibleValue(text="crop trees"))
-        setattr(cls, "horticultural plants",
-            PermissibleValue(text="horticultural plants"))
-        setattr(cls, "industrial areas",
-            PermissibleValue(text="industrial areas"))
-        setattr(cls, "intermixed hardwood and conifers",
-            PermissibleValue(text="intermixed hardwood and conifers"))
-        setattr(cls, "mines/quarries",
-            PermissibleValue(text="mines/quarries"))
-        setattr(cls, "oil waste areas",
-            PermissibleValue(text="oil waste areas"))
-        setattr(cls, "permanent snow or ice",
-            PermissibleValue(text="permanent snow or ice"))
-        setattr(cls, "roads/railroads",
-            PermissibleValue(text="roads/railroads"))
-        setattr(cls, "row crops",
-            PermissibleValue(text="row crops"))
-        setattr(cls, "saline seeps",
-            PermissibleValue(text="saline seeps"))
-        setattr(cls, "salt flats",
-            PermissibleValue(text="salt flats"))
-        setattr(cls, "shrub crops",
-            PermissibleValue(text="shrub crops"))
-        setattr(cls, "shrub land",
-            PermissibleValue(text="shrub land"))
-        setattr(cls, "small grains",
-            PermissibleValue(text="small grains"))
-        setattr(cls, "successional shrub land",
-            PermissibleValue(text="successional shrub land"))
-        setattr(cls, "vegetable crops",
-            PermissibleValue(text="vegetable crops"))
-        setattr(cls, "vine crops",
-            PermissibleValue(text="vine crops"))
+        setattr(cls, "no presence of mold visible",
+            PermissibleValue(text="no presence of mold visible"))
+        setattr(cls, "presence of mold visible",
+            PermissibleValue(text="presence of mold visible"))
 
 class DeposEnvEnum(EnumDefinitionImpl):
 
@@ -7422,36 +7443,36 @@ class DeposEnvEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "Continental - Alluvial",
-            PermissibleValue(text="Continental - Alluvial"))
         setattr(cls, "Continental - Aeolian",
             PermissibleValue(text="Continental - Aeolian"))
+        setattr(cls, "Continental - Alluvial",
+            PermissibleValue(text="Continental - Alluvial"))
         setattr(cls, "Continental - Fluvial",
             PermissibleValue(text="Continental - Fluvial"))
         setattr(cls, "Continental - Lacustrine",
             PermissibleValue(text="Continental - Lacustrine"))
-        setattr(cls, "Transitional - Deltaic",
-            PermissibleValue(text="Transitional - Deltaic"))
-        setattr(cls, "Transitional - Tidal",
-            PermissibleValue(text="Transitional - Tidal"))
-        setattr(cls, "Transitional - Lagoonal",
-            PermissibleValue(text="Transitional - Lagoonal"))
-        setattr(cls, "Transitional - Beach",
-            PermissibleValue(text="Transitional - Beach"))
-        setattr(cls, "Transitional - Lake",
-            PermissibleValue(text="Transitional - Lake"))
-        setattr(cls, "Marine - Shallow",
-            PermissibleValue(text="Marine - Shallow"))
         setattr(cls, "Marine - Deep",
             PermissibleValue(text="Marine - Deep"))
         setattr(cls, "Marine - Reef",
             PermissibleValue(text="Marine - Reef"))
+        setattr(cls, "Marine - Shallow",
+            PermissibleValue(text="Marine - Shallow"))
         setattr(cls, "Other - Evaporite",
             PermissibleValue(text="Other - Evaporite"))
         setattr(cls, "Other - Glacial",
             PermissibleValue(text="Other - Glacial"))
         setattr(cls, "Other - Volcanic",
             PermissibleValue(text="Other - Volcanic"))
+        setattr(cls, "Transitional - Beach",
+            PermissibleValue(text="Transitional - Beach"))
+        setattr(cls, "Transitional - Deltaic",
+            PermissibleValue(text="Transitional - Deltaic"))
+        setattr(cls, "Transitional - Lagoonal",
+            PermissibleValue(text="Transitional - Lagoonal"))
+        setattr(cls, "Transitional - Lake",
+            PermissibleValue(text="Transitional - Lake"))
+        setattr(cls, "Transitional - Tidal",
+            PermissibleValue(text="Transitional - Tidal"))
 
 class DoorCompTypeEnum(EnumDefinitionImpl):
 
@@ -7468,14 +7489,14 @@ class DoorCompTypeEnum(EnumDefinitionImpl):
         setattr(cls, "metal covered",
             PermissibleValue(text="metal covered"))
 
-class DoorCondEnum(EnumDefinitionImpl):
+class DamagedRupturedEnum(EnumDefinitionImpl):
 
     damaged = PermissibleValue(text="damaged")
     new = PermissibleValue(text="new")
     rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
-        name="DoorCondEnum",
+        name="DamagedRupturedEnum",
     )
 
     @classmethod
@@ -7495,15 +7516,19 @@ class DoorDirectEnum(EnumDefinitionImpl):
         name="DoorDirectEnum",
     )
 
-class DoorLocEnum(EnumDefinitionImpl):
+class CompassDirections8Enum(EnumDefinitionImpl):
 
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
     east = PermissibleValue(text="east")
+    north = PermissibleValue(text="north")
+    northeast = PermissibleValue(text="northeast")
+    northwest = PermissibleValue(text="northwest")
+    south = PermissibleValue(text="south")
+    southeast = PermissibleValue(text="southeast")
+    southwest = PermissibleValue(text="southwest")
     west = PermissibleValue(text="west")
 
     _defn = EnumDefinition(
-        name="DoorLocEnum",
+        name="CompassDirections8Enum",
     )
 
 class DoorMatEnum(EnumDefinitionImpl):
@@ -7575,33 +7600,6 @@ class DoorTypeMetalEnum(EnumDefinitionImpl):
         setattr(cls, "steel plate",
             PermissibleValue(text="steel plate"))
 
-class DoorTypeWoodEnum(EnumDefinitionImpl):
-
-    battened = PermissibleValue(text="battened")
-    flush = PermissibleValue(text="flush")
-    louvered = PermissibleValue(text="louvered")
-
-    _defn = EnumDefinition(
-        name="DoorTypeWoodEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "bettened and ledged",
-            PermissibleValue(text="bettened and ledged"))
-        setattr(cls, "ledged and braced",
-            PermissibleValue(text="ledged and braced"))
-        setattr(cls, "ledged and framed",
-            PermissibleValue(text="ledged and framed"))
-        setattr(cls, "ledged, braced and frame",
-            PermissibleValue(text="ledged, braced and frame"))
-        setattr(cls, "framed and paneled",
-            PermissibleValue(text="framed and paneled"))
-        setattr(cls, "glashed or sash",
-            PermissibleValue(text="glashed or sash"))
-        setattr(cls, "wire gauged",
-            PermissibleValue(text="wire gauged"))
-
 class DrainageClassEnum(EnumDefinitionImpl):
 
     poorly = PermissibleValue(text="poorly")
@@ -7613,22 +7611,22 @@ class DrainageClassEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "very poorly",
-            PermissibleValue(text="very poorly"))
-        setattr(cls, "somewhat poorly",
-            PermissibleValue(text="somewhat poorly"))
-        setattr(cls, "moderately well",
-            PermissibleValue(text="moderately well"))
         setattr(cls, "excessively drained",
             PermissibleValue(text="excessively drained"))
+        setattr(cls, "moderately well",
+            PermissibleValue(text="moderately well"))
+        setattr(cls, "somewhat poorly",
+            PermissibleValue(text="somewhat poorly"))
+        setattr(cls, "very poorly",
+            PermissibleValue(text="very poorly"))
 
 class DrawingsEnum(EnumDefinitionImpl):
 
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
     bid = PermissibleValue(text="bid")
+    construction = PermissibleValue(text="construction")
     design = PermissibleValue(text="design")
     diagram = PermissibleValue(text="diagram")
+    operation = PermissibleValue(text="operation")
     sketch = PermissibleValue(text="sketch")
 
     _defn = EnumDefinition(
@@ -7642,43 +7640,18 @@ class DrawingsEnum(EnumDefinitionImpl):
         setattr(cls, "building navigation map",
             PermissibleValue(text="building navigation map"))
 
-class ExtWallOrientEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-    northeast = PermissibleValue(text="northeast")
-    southeast = PermissibleValue(text="southeast")
-    southwest = PermissibleValue(text="southwest")
-    northwest = PermissibleValue(text="northwest")
-
-    _defn = EnumDefinition(
-        name="ExtWallOrientEnum",
-    )
-
-class ExtWindowOrientEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-    northeast = PermissibleValue(text="northeast")
-    southeast = PermissibleValue(text="southeast")
-    southwest = PermissibleValue(text="southwest")
-    northwest = PermissibleValue(text="northwest")
-
-    _defn = EnumDefinition(
-        name="ExtWindowOrientEnum",
-    )
-
 class FaoClassEnum(EnumDefinitionImpl):
 
     Acrisols = PermissibleValue(text="Acrisols")
+    Alisols = PermissibleValue(text="Alisols")
     Andosols = PermissibleValue(text="Andosols")
+    Anthrosols = PermissibleValue(text="Anthrosols")
     Arenosols = PermissibleValue(text="Arenosols")
+    Calcisols = PermissibleValue(text="Calcisols")
     Cambisols = PermissibleValue(text="Cambisols")
     Chernozems = PermissibleValue(text="Chernozems")
+    Cryosols = PermissibleValue(text="Cryosols")
+    Durisols = PermissibleValue(text="Durisols")
     Ferralsols = PermissibleValue(text="Ferralsols")
     Fluvisols = PermissibleValue(text="Fluvisols")
     Gleysols = PermissibleValue(text="Gleysols")
@@ -7687,10 +7660,13 @@ class FaoClassEnum(EnumDefinitionImpl):
     Histosols = PermissibleValue(text="Histosols")
     Kastanozems = PermissibleValue(text="Kastanozems")
     Lithosols = PermissibleValue(text="Lithosols")
+    Leptosols = PermissibleValue(text="Leptosols")
+    Lixisols = PermissibleValue(text="Lixisols")
     Luvisols = PermissibleValue(text="Luvisols")
     Nitosols = PermissibleValue(text="Nitosols")
     Phaeozems = PermissibleValue(text="Phaeozems")
     Planosols = PermissibleValue(text="Planosols")
+    Plinthosols = PermissibleValue(text="Plinthosols")
     Podzols = PermissibleValue(text="Podzols")
     Podzoluvisols = PermissibleValue(text="Podzoluvisols")
     Rankers = PermissibleValue(text="Rankers")
@@ -7698,6 +7674,9 @@ class FaoClassEnum(EnumDefinitionImpl):
     Rendzinas = PermissibleValue(text="Rendzinas")
     Solonchaks = PermissibleValue(text="Solonchaks")
     Solonetz = PermissibleValue(text="Solonetz")
+    Stagnosols = PermissibleValue(text="Stagnosols")
+    Technosols = PermissibleValue(text="Technosols")
+    Umbrisols = PermissibleValue(text="Umbrisols")
     Vertisols = PermissibleValue(text="Vertisols")
     Yermosols = PermissibleValue(text="Yermosols")
 
@@ -7716,65 +7695,27 @@ class FilterTypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "particulate air filter",
-            PermissibleValue(text="particulate air filter"))
         setattr(cls, "chemical air filter",
             PermissibleValue(text="chemical air filter"))
-        setattr(cls, "low-MERV pleated media",
-            PermissibleValue(text="low-MERV pleated media"))
         setattr(cls, "gas-phase or ultraviolet air treatments",
             PermissibleValue(text="gas-phase or ultraviolet air treatments"))
+        setattr(cls, "low-MERV pleated media",
+            PermissibleValue(text="low-MERV pleated media"))
+        setattr(cls, "particulate air filter",
+            PermissibleValue(text="particulate air filter"))
 
-class FloorCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
+class FireplaceTypeEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="FloorCondEnum",
+        name="FireplaceTypeEnum",
     )
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "visible wear",
-            PermissibleValue(text="visible wear"))
-        setattr(cls, "needs repair",
-            PermissibleValue(text="needs repair"))
-
-class FloorFinishMatEnum(EnumDefinitionImpl):
-
-    tile = PermissibleValue(text="tile")
-    carpet = PermissibleValue(text="carpet")
-    rug = PermissibleValue(text="rug")
-    lineoleum = PermissibleValue(text="lineoleum")
-    stone = PermissibleValue(text="stone")
-    bamboo = PermissibleValue(text="bamboo")
-    cork = PermissibleValue(text="cork")
-    terrazo = PermissibleValue(text="terrazo")
-    concrete = PermissibleValue(text="concrete")
-    none = PermissibleValue(text="none")
-    sealed = PermissibleValue(text="sealed")
-    paint = PermissibleValue(text="paint")
-
-    _defn = EnumDefinition(
-        name="FloorFinishMatEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "wood strip or parquet",
-            PermissibleValue(text="wood strip or parquet"))
-        setattr(cls, "laminate wood",
-            PermissibleValue(text="laminate wood"))
-        setattr(cls, "vinyl composition tile",
-            PermissibleValue(text="vinyl composition tile"))
-        setattr(cls, "sheet vinyl",
-            PermissibleValue(text="sheet vinyl"))
-        setattr(cls, "clear finish",
-            PermissibleValue(text="clear finish"))
-        setattr(cls, "none or unfinished",
-            PermissibleValue(text="none or unfinished"))
+        setattr(cls, "gas burning",
+            PermissibleValue(text="gas burning"))
+        setattr(cls, "wood burning",
+            PermissibleValue(text="wood burning"))
 
 class FloorStrucEnum(EnumDefinitionImpl):
 
@@ -7808,22 +7749,22 @@ class FloorWaterMoldEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "mold odor",
-            PermissibleValue(text="mold odor"))
-        setattr(cls, "wet floor",
-            PermissibleValue(text="wet floor"))
-        setattr(cls, "water stains",
-            PermissibleValue(text="water stains"))
-        setattr(cls, "wall discoloration",
-            PermissibleValue(text="wall discoloration"))
-        setattr(cls, "floor discoloration",
-            PermissibleValue(text="floor discoloration"))
-        setattr(cls, "ceiling discoloration",
-            PermissibleValue(text="ceiling discoloration"))
-        setattr(cls, "peeling paint or wallpaper",
-            PermissibleValue(text="peeling paint or wallpaper"))
         setattr(cls, "bulging walls",
             PermissibleValue(text="bulging walls"))
+        setattr(cls, "ceiling discoloration",
+            PermissibleValue(text="ceiling discoloration"))
+        setattr(cls, "floor discoloration",
+            PermissibleValue(text="floor discoloration"))
+        setattr(cls, "mold odor",
+            PermissibleValue(text="mold odor"))
+        setattr(cls, "peeling paint or wallpaper",
+            PermissibleValue(text="peeling paint or wallpaper"))
+        setattr(cls, "wall discoloration",
+            PermissibleValue(text="wall discoloration"))
+        setattr(cls, "water stains",
+            PermissibleValue(text="water stains"))
+        setattr(cls, "wet floor",
+            PermissibleValue(text="wet floor"))
 
 class FurnitureEnum(EnumDefinitionImpl):
 
@@ -7849,16 +7790,16 @@ class GenderRestroomEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "all gender",
             PermissibleValue(text="all gender"))
-        setattr(cls, "gender neurtral",
-            PermissibleValue(text="gender neurtral"))
+        setattr(cls, "gender neutral",
+            PermissibleValue(text="gender neutral"))
         setattr(cls, "male and female",
             PermissibleValue(text="male and female"))
 
 class GrowthHabitEnum(EnumDefinitionImpl):
 
     erect = PermissibleValue(text="erect")
-    spreading = PermissibleValue(text="spreading")
     prostrate = PermissibleValue(text="prostrate")
+    spreading = PermissibleValue(text="spreading")
 
     _defn = EnumDefinition(
         name="GrowthHabitEnum",
@@ -7888,9 +7829,9 @@ class HandidnessEnum(EnumDefinitionImpl):
 
 class HcProducedEnum(EnumDefinitionImpl):
 
-    Oil = PermissibleValue(text="Oil")
-    Gas = PermissibleValue(text="Gas")
     Bitumen = PermissibleValue(text="Bitumen")
+    Gas = PermissibleValue(text="Gas")
+    Oil = PermissibleValue(text="Oil")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
@@ -7899,10 +7840,10 @@ class HcProducedEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "Gas-Condensate",
-            PermissibleValue(text="Gas-Condensate"))
         setattr(cls, "Coalbed Methane",
             PermissibleValue(text="Coalbed Methane"))
+        setattr(cls, "Gas-Condensate",
+            PermissibleValue(text="Gas-Condensate"))
 
 class HcrEnum(EnumDefinitionImpl):
 
@@ -7916,18 +7857,18 @@ class HcrEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "Oil Reservoir",
-            PermissibleValue(text="Oil Reservoir"))
         setattr(cls, "Gas Reservoir",
             PermissibleValue(text="Gas Reservoir"))
+        setattr(cls, "Oil Reservoir",
+            PermissibleValue(text="Oil Reservoir"))
         setattr(cls, "Oil Sand",
             PermissibleValue(text="Oil Sand"))
-        setattr(cls, "Tight Oil Reservoir",
-            PermissibleValue(text="Tight Oil Reservoir"))
         setattr(cls, "Tight Gas Reservoir",
             PermissibleValue(text="Tight Gas Reservoir"))
+        setattr(cls, "Tight Oil Reservoir",
+            PermissibleValue(text="Tight Oil Reservoir"))
 
-class HcrGeolAgeEnum(EnumDefinitionImpl):
+class GeolAgeEnum(EnumDefinitionImpl):
 
     Archean = PermissibleValue(text="Archean")
     Cambrian = PermissibleValue(text="Cambrian")
@@ -7949,7 +7890,7 @@ class HcrGeolAgeEnum(EnumDefinitionImpl):
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="HcrGeolAgeEnum",
+        name="GeolAgeEnum",
     )
 
 class HeatCoolTypeEnum(EnumDefinitionImpl):
@@ -7960,58 +7901,26 @@ class HeatCoolTypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "radiant system",
-            PermissibleValue(text="radiant system"))
-        setattr(cls, "heat pump",
-            PermissibleValue(text="heat pump"))
         setattr(cls, "forced air system",
             PermissibleValue(text="forced air system"))
+        setattr(cls, "heat pump",
+            PermissibleValue(text="heat pump"))
+        setattr(cls, "radiant system",
+            PermissibleValue(text="radiant system"))
         setattr(cls, "steam forced heat",
             PermissibleValue(text="steam forced heat"))
         setattr(cls, "wood stove",
             PermissibleValue(text="wood stove"))
 
-class HeatDelivLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="HeatDelivLocEnum",
-    )
-
-class HostSexEnum(EnumDefinitionImpl):
-
-    female = PermissibleValue(text="female")
-    hermaphrodite = PermissibleValue(text="hermaphrodite")
-    male = PermissibleValue(text="male")
-    transgender = PermissibleValue(text="transgender")
-    undeclared = PermissibleValue(text="undeclared")
-
-    _defn = EnumDefinition(
-        name="HostSexEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "non-binary",
-            PermissibleValue(text="non-binary"))
-        setattr(cls, "transgender (female to male)",
-            PermissibleValue(text="transgender (female to male)"))
-        setattr(cls, "transgender (male to female)",
-            PermissibleValue(text="transgender (male to female)"))
-
 class IndoorSpaceEnum(EnumDefinitionImpl):
 
-    bedroom = PermissibleValue(text="bedroom")
-    office = PermissibleValue(text="office")
     bathroom = PermissibleValue(text="bathroom")
-    foyer = PermissibleValue(text="foyer")
-    kitchen = PermissibleValue(text="kitchen")
-    hallway = PermissibleValue(text="hallway")
+    bedroom = PermissibleValue(text="bedroom")
     elevator = PermissibleValue(text="elevator")
+    foyer = PermissibleValue(text="foyer")
+    hallway = PermissibleValue(text="hallway")
+    kitchen = PermissibleValue(text="kitchen")
+    office = PermissibleValue(text="office")
 
     _defn = EnumDefinition(
         name="IndoorSpaceEnum",
@@ -8028,8 +7937,8 @@ class IndoorSurfEnum(EnumDefinitionImpl):
     ceiling = PermissibleValue(text="ceiling")
     door = PermissibleValue(text="door")
     shelving = PermissibleValue(text="shelving")
-    window = PermissibleValue(text="window")
     wall = PermissibleValue(text="wall")
+    window = PermissibleValue(text="window")
 
     _defn = EnumDefinition(
         name="IndoorSurfEnum",
@@ -8042,23 +7951,6 @@ class IndoorSurfEnum(EnumDefinitionImpl):
         setattr(cls, "vent cover",
             PermissibleValue(text="vent cover"))
 
-class IntWallCondEnum(EnumDefinitionImpl):
-
-    new = PermissibleValue(text="new")
-    damaged = PermissibleValue(text="damaged")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="IntWallCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "visible wear",
-            PermissibleValue(text="visible wear"))
-        setattr(cls, "needs repair",
-            PermissibleValue(text="needs repair"))
-
 class LightTypeEnum(EnumDefinitionImpl):
 
     none = PermissibleValue(text="none")
@@ -8069,14 +7961,14 @@ class LightTypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "natural light",
-            PermissibleValue(text="natural light"))
-        setattr(cls, "electric light",
-            PermissibleValue(text="electric light"))
         setattr(cls, "desk lamp",
             PermissibleValue(text="desk lamp"))
-        setattr(cls, "flourescent lights",
-            PermissibleValue(text="flourescent lights"))
+        setattr(cls, "electric light",
+            PermissibleValue(text="electric light"))
+        setattr(cls, "fluorescent lights",
+            PermissibleValue(text="fluorescent lights"))
+        setattr(cls, "natural light",
+            PermissibleValue(text="natural light"))
 
 class LithologyEnum(EnumDefinitionImpl):
 
@@ -8100,15 +7992,15 @@ class LithologyEnum(EnumDefinitionImpl):
 
 class MechStrucEnum(EnumDefinitionImpl):
 
-    subway = PermissibleValue(text="subway")
-    coach = PermissibleValue(text="coach")
+    boat = PermissibleValue(text="boat")
+    bus = PermissibleValue(text="bus")
+    car = PermissibleValue(text="car")
     carriage = PermissibleValue(text="carriage")
+    coach = PermissibleValue(text="coach")
     elevator = PermissibleValue(text="elevator")
     escalator = PermissibleValue(text="escalator")
-    boat = PermissibleValue(text="boat")
+    subway = PermissibleValue(text="subway")
     train = PermissibleValue(text="train")
-    car = PermissibleValue(text="car")
-    bus = PermissibleValue(text="bus")
 
     _defn = EnumDefinition(
         name="MechStrucEnum",
@@ -8134,8 +8026,8 @@ class PlantSexEnum(EnumDefinitionImpl):
 
     Androdioecious = PermissibleValue(text="Androdioecious")
     Androecious = PermissibleValue(text="Androecious")
-    Androgynous = PermissibleValue(text="Androgynous")
     Androgynomonoecious = PermissibleValue(text="Androgynomonoecious")
+    Androgynous = PermissibleValue(text="Androgynous")
     Andromonoecious = PermissibleValue(text="Andromonoecious")
     Bisexual = PermissibleValue(text="Bisexual")
     Dichogamous = PermissibleValue(text="Dichogamous")
@@ -8168,10 +8060,10 @@ class PlantSexEnum(EnumDefinitionImpl):
 
 class ProfilePositionEnum(EnumDefinitionImpl):
 
-    summit = PermissibleValue(text="summit")
-    shoulder = PermissibleValue(text="shoulder")
     backslope = PermissibleValue(text="backslope")
     footslope = PermissibleValue(text="footslope")
+    shoulder = PermissibleValue(text="shoulder")
+    summit = PermissibleValue(text="summit")
     toeslope = PermissibleValue(text="toeslope")
 
     _defn = EnumDefinition(
@@ -8186,14 +8078,14 @@ class QuadPosEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "North side",
-            PermissibleValue(text="North side"))
-        setattr(cls, "West side",
-            PermissibleValue(text="West side"))
-        setattr(cls, "South side",
-            PermissibleValue(text="South side"))
         setattr(cls, "East side",
             PermissibleValue(text="East side"))
+        setattr(cls, "North side",
+            PermissibleValue(text="North side"))
+        setattr(cls, "South side",
+            PermissibleValue(text="South side"))
+        setattr(cls, "West side",
+            PermissibleValue(text="West side"))
 
 class RelSampLocEnum(EnumDefinitionImpl):
 
@@ -8203,17 +8095,17 @@ class RelSampLocEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "edge of car",
-            PermissibleValue(text="edge of car"))
         setattr(cls, "center of car",
             PermissibleValue(text="center of car"))
+        setattr(cls, "edge of car",
+            PermissibleValue(text="edge of car"))
         setattr(cls, "under a seat",
             PermissibleValue(text="under a seat"))
 
 class RoomCondtEnum(EnumDefinitionImpl):
 
-    new = PermissibleValue(text="new")
     damaged = PermissibleValue(text="damaged")
+    new = PermissibleValue(text="new")
     rupture = PermissibleValue(text="rupture")
 
     _defn = EnumDefinition(
@@ -8222,12 +8114,12 @@ class RoomCondtEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "visible wear",
-            PermissibleValue(text="visible wear"))
         setattr(cls, "needs repair",
             PermissibleValue(text="needs repair"))
         setattr(cls, "visible signs of mold/mildew",
             PermissibleValue(text="visible signs of mold/mildew"))
+        setattr(cls, "visible wear",
+            PermissibleValue(text="visible wear"))
 
 class RoomConnectedEnum(EnumDefinitionImpl):
 
@@ -8263,10 +8155,10 @@ class RoomLocEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "corner room",
             PermissibleValue(text="corner room"))
-        setattr(cls, "interior room",
-            PermissibleValue(text="interior room"))
         setattr(cls, "exterior wall",
             PermissibleValue(text="exterior wall"))
+        setattr(cls, "interior room",
+            PermissibleValue(text="interior room"))
 
 class RoomSampPosEnum(EnumDefinitionImpl):
 
@@ -8278,65 +8170,22 @@ class RoomSampPosEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "north corner",
-            PermissibleValue(text="north corner"))
-        setattr(cls, "south corner",
-            PermissibleValue(text="south corner"))
-        setattr(cls, "west corner",
-            PermissibleValue(text="west corner"))
         setattr(cls, "east corner",
             PermissibleValue(text="east corner"))
+        setattr(cls, "north corner",
+            PermissibleValue(text="north corner"))
         setattr(cls, "northeast corner",
             PermissibleValue(text="northeast corner"))
         setattr(cls, "northwest corner",
             PermissibleValue(text="northwest corner"))
+        setattr(cls, "south corner",
+            PermissibleValue(text="south corner"))
         setattr(cls, "southeast corner",
             PermissibleValue(text="southeast corner"))
         setattr(cls, "southwest corner",
             PermissibleValue(text="southwest corner"))
-
-class RoomTypeEnum(EnumDefinitionImpl):
-
-    attic = PermissibleValue(text="attic")
-    bathroom = PermissibleValue(text="bathroom")
-    closet = PermissibleValue(text="closet")
-    elevator = PermissibleValue(text="elevator")
-    hallway = PermissibleValue(text="hallway")
-    kitchen = PermissibleValue(text="kitchen")
-    stairwell = PermissibleValue(text="stairwell")
-    lobby = PermissibleValue(text="lobby")
-    vestibule = PermissibleValue(text="vestibule")
-    laboratory_wet = PermissibleValue(text="laboratory_wet")
-    laboratory_dry = PermissibleValue(text="laboratory_dry")
-    gymnasium = PermissibleValue(text="gymnasium")
-    natatorium = PermissibleValue(text="natatorium")
-    auditorium = PermissibleValue(text="auditorium")
-    lockers = PermissibleValue(text="lockers")
-    cafe = PermissibleValue(text="cafe")
-    warehouse = PermissibleValue(text="warehouse")
-
-    _defn = EnumDefinition(
-        name="RoomTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "conference room",
-            PermissibleValue(text="conference room"))
-        setattr(cls, "examining room",
-            PermissibleValue(text="examining room"))
-        setattr(cls, "mail room",
-            PermissibleValue(text="mail room"))
-        setattr(cls, "private office",
-            PermissibleValue(text="private office"))
-        setattr(cls, "open office",
-            PermissibleValue(text="open office"))
-        setattr(cls, ",restroom",
-            PermissibleValue(text=",restroom"))
-        setattr(cls, "mechanical or electrical room",
-            PermissibleValue(text="mechanical or electrical room"))
-        setattr(cls, "data center",
-            PermissibleValue(text="data center"))
+        setattr(cls, "west corner",
+            PermissibleValue(text="west corner"))
 
 class SampCaptStatusEnum(EnumDefinitionImpl):
 
@@ -8359,10 +8208,10 @@ class SampCaptStatusEnum(EnumDefinitionImpl):
 
 class SampCollectPointEnum(EnumDefinitionImpl):
 
+    other = PermissibleValue(text="other")
+    separator = PermissibleValue(text="separator")
     well = PermissibleValue(text="well")
     wellhead = PermissibleValue(text="wellhead")
-    separator = PermissibleValue(text="separator")
-    other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
         name="SampCollectPointEnum",
@@ -8370,20 +8219,20 @@ class SampCollectPointEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "test well",
-            PermissibleValue(text="test well"))
         setattr(cls, "drilling rig",
             PermissibleValue(text="drilling rig"))
         setattr(cls, "storage tank",
             PermissibleValue(text="storage tank"))
+        setattr(cls, "test well",
+            PermissibleValue(text="test well"))
 
 class SampDisStageEnum(EnumDefinitionImpl):
 
     dissemination = PermissibleValue(text="dissemination")
     infection = PermissibleValue(text="infection")
     inoculation = PermissibleValue(text="inoculation")
-    penetration = PermissibleValue(text="penetration")
     other = PermissibleValue(text="other")
+    penetration = PermissibleValue(text="penetration")
 
     _defn = EnumDefinition(
         name="SampDisStageEnum",
@@ -8393,22 +8242,6 @@ class SampDisStageEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "growth and reproduction",
             PermissibleValue(text="growth and reproduction"))
-
-class SampFloorEnum(EnumDefinitionImpl):
-
-    basement = PermissibleValue(text="basement")
-    lobby = PermissibleValue(text="lobby")
-
-    _defn = EnumDefinition(
-        name="SampFloorEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "1st floor",
-            PermissibleValue(text="1st floor"))
-        setattr(cls, "2nd floor",
-            PermissibleValue(text="2nd floor"))
 
 class SampSubtypeEnum(EnumDefinitionImpl):
 
@@ -8421,12 +8254,12 @@ class SampSubtypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "not applicable",
+            PermissibleValue(text="not applicable"))
         setattr(cls, "oil phase",
             PermissibleValue(text="oil phase"))
         setattr(cls, "water phase",
             PermissibleValue(text="water phase"))
-        setattr(cls, "not applicable",
-            PermissibleValue(text="not applicable"))
 
 class SampWeatherEnum(EnumDefinitionImpl):
 
@@ -8434,8 +8267,8 @@ class SampWeatherEnum(EnumDefinitionImpl):
     foggy = PermissibleValue(text="foggy")
     hail = PermissibleValue(text="hail")
     rain = PermissibleValue(text="rain")
-    snow = PermissibleValue(text="snow")
     sleet = PermissibleValue(text="sleet")
+    snow = PermissibleValue(text="snow")
     sunny = PermissibleValue(text="sunny")
     windy = PermissibleValue(text="windy")
 
@@ -8467,9 +8300,9 @@ class SampleTypeEnum(EnumDefinitionImpl):
 
 class SeasonUseEnum(EnumDefinitionImpl):
 
+    Fall = PermissibleValue(text="Fall")
     Spring = PermissibleValue(text="Spring")
     Summer = PermissibleValue(text="Summer")
-    Fall = PermissibleValue(text="Fall")
     Winter = PermissibleValue(text="Winter")
 
     _defn = EnumDefinition(
@@ -8487,22 +8320,14 @@ class SedimentTypeEnum(EnumDefinitionImpl):
         name="SedimentTypeEnum",
     )
 
-class ShadingDeviceCondEnum(EnumDefinitionImpl):
+class ShadingDeviceLocEnum(EnumDefinitionImpl):
 
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
+    exterior = PermissibleValue(text="exterior")
+    interior = PermissibleValue(text="interior")
 
     _defn = EnumDefinition(
-        name="ShadingDeviceCondEnum",
+        name="ShadingDeviceLocEnum",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-            PermissibleValue(text="needs repair"))
-        setattr(cls, "visible wear",
-            PermissibleValue(text="visible wear"))
 
 class ShadingDeviceTypeEnum(EnumDefinitionImpl):
 
@@ -8538,7 +8363,9 @@ class ShadingDeviceTypeEnum(EnumDefinitionImpl):
 
 class SoilHorizonEnum(EnumDefinitionImpl):
 
-    Permafrost = PermissibleValue(text="Permafrost")
+    Permafrost = PermissibleValue(
+        text="Permafrost",
+        description="Soil that continuously remains below 0 °C (32 °F) for two years or more.")
 
     _defn = EnumDefinition(
         name="SoilHorizonEnum",
@@ -8546,27 +8373,53 @@ class SoilHorizonEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "O horizon",
-            PermissibleValue(text="O horizon"))
         setattr(cls, "A horizon",
-            PermissibleValue(text="A horizon"))
-        setattr(cls, "E horizon",
-            PermissibleValue(text="E horizon"))
+            PermissibleValue(
+                text="A horizon",
+                description="""The surface horizon, also called topsoil. It has a defined soil structure, and is mostly made up of humus (decayed organic matter)."""))
         setattr(cls, "B horizon",
-            PermissibleValue(text="B horizon"))
+            PermissibleValue(
+                text="B horizon",
+                description="""Also known as the subsoil. It is greatly composed of material illuviated (washed in from) layers above it. It is typically denser than the A horizon and has a clayey texture."""))
         setattr(cls, "C horizon",
-            PermissibleValue(text="C horizon"))
+            PermissibleValue(
+                text="C horizon",
+                description="""Also known as the substratum is unconsolidated material deepest in the pit and closest to the bedrock."""))
+        setattr(cls, "E horizon",
+            PermissibleValue(
+                text="E horizon",
+                description="""Used to refer to subsurface horizons that have undergone a significant loss of minerals, also known as Eluviation (or leaching)."""))
+        setattr(cls, "O horizon",
+            PermissibleValue(
+                text="O horizon",
+                description="""The organic horizon. Typically at the top of the soil structure and is made up of mostly organic matter.""",
+                meaning=ENVO["03600018"]))
         setattr(cls, "R layer",
-            PermissibleValue(text="R layer"))
+            PermissibleValue(
+                text="R layer",
+                description="""Hard bedrock, which is usually the lowest layer. It is characterized by tightly bound and unbreakable materials."""))
         setattr(cls, "M horizon",
             PermissibleValue(text="M horizon"))
 
+class SpaceTypStateEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="SpaceTypStateEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "typically occupied",
+            PermissibleValue(text="typically occupied"))
+        setattr(cls, "typically unoccupied",
+            PermissibleValue(text="typically unoccupied"))
+
 class SpecificEnum(EnumDefinitionImpl):
 
-    operation = PermissibleValue(text="operation")
-    construction = PermissibleValue(text="construction")
     bid = PermissibleValue(text="bid")
+    construction = PermissibleValue(text="construction")
     design = PermissibleValue(text="design")
+    operation = PermissibleValue(text="operation")
     photos = PermissibleValue(text="photos")
 
     _defn = EnumDefinition(
@@ -8580,39 +8433,14 @@ class SpecificEnum(EnumDefinitionImpl):
 
 class SrDepEnvEnum(EnumDefinitionImpl):
 
-    Lacustine = PermissibleValue(text="Lacustine")
     Fluvioldeltaic = PermissibleValue(text="Fluvioldeltaic")
     Fluviomarine = PermissibleValue(text="Fluviomarine")
+    Lacustine = PermissibleValue(text="Lacustine")
     Marine = PermissibleValue(text="Marine")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
         name="SrDepEnvEnum",
-    )
-
-class SrGeolAgeEnum(EnumDefinitionImpl):
-
-    Archean = PermissibleValue(text="Archean")
-    Cambrian = PermissibleValue(text="Cambrian")
-    Carboniferous = PermissibleValue(text="Carboniferous")
-    Cenozoic = PermissibleValue(text="Cenozoic")
-    Cretaceous = PermissibleValue(text="Cretaceous")
-    Devonian = PermissibleValue(text="Devonian")
-    Jurassic = PermissibleValue(text="Jurassic")
-    Mesozoic = PermissibleValue(text="Mesozoic")
-    Neogene = PermissibleValue(text="Neogene")
-    Ordovician = PermissibleValue(text="Ordovician")
-    Paleogene = PermissibleValue(text="Paleogene")
-    Paleozoic = PermissibleValue(text="Paleozoic")
-    Permian = PermissibleValue(text="Permian")
-    Precambrian = PermissibleValue(text="Precambrian")
-    Proterozoic = PermissibleValue(text="Proterozoic")
-    Silurian = PermissibleValue(text="Silurian")
-    Triassic = PermissibleValue(text="Triassic")
-    other = PermissibleValue(text="other")
-
-    _defn = EnumDefinition(
-        name="SrGeolAgeEnum",
     )
 
 class SrKerogTypeEnum(EnumDefinitionImpl):
@@ -8636,10 +8464,10 @@ class SrKerogTypeEnum(EnumDefinitionImpl):
 
 class SrLithologyEnum(EnumDefinitionImpl):
 
-    Clastic = PermissibleValue(text="Clastic")
-    Carbonate = PermissibleValue(text="Carbonate")
-    Coal = PermissibleValue(text="Coal")
     Biosilicieous = PermissibleValue(text="Biosilicieous")
+    Carbonate = PermissibleValue(text="Carbonate")
+    Clastic = PermissibleValue(text="Clastic")
+    Coal = PermissibleValue(text="Coal")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
@@ -8648,8 +8476,8 @@ class SrLithologyEnum(EnumDefinitionImpl):
 
 class SubstructureTypeEnum(EnumDefinitionImpl):
 
-    crawlspace = PermissibleValue(text="crawlspace")
     basement = PermissibleValue(text="basement")
+    crawlspace = PermissibleValue(text="crawlspace")
 
     _defn = EnumDefinition(
         name="SubstructureTypeEnum",
@@ -8662,10 +8490,10 @@ class SubstructureTypeEnum(EnumDefinitionImpl):
 
 class SurfAirContEnum(EnumDefinitionImpl):
 
-    dust = PermissibleValue(text="dust")
-    radon = PermissibleValue(text="radon")
-    nutrients = PermissibleValue(text="nutrients")
     biocides = PermissibleValue(text="biocides")
+    dust = PermissibleValue(text="dust")
+    nutrients = PermissibleValue(text="nutrients")
+    radon = PermissibleValue(text="radon")
 
     _defn = EnumDefinition(
         name="SurfAirContEnum",
@@ -8673,14 +8501,14 @@ class SurfAirContEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "biological contaminants",
+            PermissibleValue(text="biological contaminants"))
         setattr(cls, "organic matter",
             PermissibleValue(text="organic matter"))
         setattr(cls, "particulate matter",
             PermissibleValue(text="particulate matter"))
         setattr(cls, "volatile organic compounds",
             PermissibleValue(text="volatile organic compounds"))
-        setattr(cls, "biological contaminants",
-            PermissibleValue(text="biological contaminants"))
 
 class SurfMaterialEnum(EnumDefinitionImpl):
 
@@ -8718,21 +8546,21 @@ class TidalStageEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "low tide",
-            PermissibleValue(text="low tide"))
         setattr(cls, "ebb tide",
             PermissibleValue(text="ebb tide"))
         setattr(cls, "flood tide",
             PermissibleValue(text="flood tide"))
         setattr(cls, "high tide",
             PermissibleValue(text="high tide"))
+        setattr(cls, "low tide",
+            PermissibleValue(text="low tide"))
 
 class TillageEnum(EnumDefinitionImpl):
 
-    drill = PermissibleValue(text="drill")
     chisel = PermissibleValue(text="chisel")
-    tined = PermissibleValue(text="tined")
+    drill = PermissibleValue(text="drill")
     mouldboard = PermissibleValue(text="mouldboard")
+    tined = PermissibleValue(text="tined")
 
     _defn = EnumDefinition(
         name="TillageEnum",
@@ -8742,20 +8570,20 @@ class TillageEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "cutting disc",
             PermissibleValue(text="cutting disc"))
+        setattr(cls, "disc plough",
+            PermissibleValue(text="disc plough"))
         setattr(cls, "ridge till",
             PermissibleValue(text="ridge till"))
         setattr(cls, "strip tillage",
             PermissibleValue(text="strip tillage"))
         setattr(cls, "zonal tillage",
             PermissibleValue(text="zonal tillage"))
-        setattr(cls, "disc plough",
-            PermissibleValue(text="disc plough"))
 
 class TrainLineEnum(EnumDefinitionImpl):
 
-    red = PermissibleValue(text="red")
     green = PermissibleValue(text="green")
     orange = PermissibleValue(text="orange")
+    red = PermissibleValue(text="red")
 
     _defn = EnumDefinition(
         name="TrainLineEnum",
@@ -8771,44 +8599,24 @@ class TrainStatLocEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "south station above ground",
-            PermissibleValue(text="south station above ground"))
-        setattr(cls, "south station underground",
-            PermissibleValue(text="south station underground"))
-        setattr(cls, "south station amtrak",
-            PermissibleValue(text="south station amtrak"))
         setattr(cls, "forest hills",
             PermissibleValue(text="forest hills"))
+        setattr(cls, "south station above ground",
+            PermissibleValue(text="south station above ground"))
+        setattr(cls, "south station amtrak",
+            PermissibleValue(text="south station amtrak"))
+        setattr(cls, "south station underground",
+            PermissibleValue(text="south station underground"))
 
 class TrainStopLocEnum(EnumDefinitionImpl):
 
+    downtown = PermissibleValue(text="downtown")
     end = PermissibleValue(text="end")
     mid = PermissibleValue(text="mid")
-    downtown = PermissibleValue(text="downtown")
 
     _defn = EnumDefinition(
         name="TrainStopLocEnum",
     )
-
-class VisMediaEnum(EnumDefinitionImpl):
-
-    photos = PermissibleValue(text="photos")
-    videos = PermissibleValue(text="videos")
-    interiors = PermissibleValue(text="interiors")
-    equipment = PermissibleValue(text="equipment")
-
-    _defn = EnumDefinition(
-        name="VisMediaEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "commonly of the building",
-            PermissibleValue(text="commonly of the building"))
-        setattr(cls, "site context (adjacent buildings, vegetation, terrain, streets)",
-            PermissibleValue(text="site context (adjacent buildings, vegetation, terrain, streets)"))
-        setattr(cls, "3D scans",
-            PermissibleValue(text="3D scans"))
 
 class WallConstTypeEnum(EnumDefinitionImpl):
 
@@ -8818,6 +8626,8 @@ class WallConstTypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "fire resistive",
+            PermissibleValue(text="fire resistive"))
         setattr(cls, "frame construction",
             PermissibleValue(text="frame construction"))
         setattr(cls, "joisted masonry",
@@ -8828,17 +8638,15 @@ class WallConstTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="masonry noncombustible"))
         setattr(cls, "modified fire resistive",
             PermissibleValue(text="modified fire resistive"))
-        setattr(cls, "fire resistive",
-            PermissibleValue(text="fire resistive"))
 
 class WallFinishMatEnum(EnumDefinitionImpl):
 
-    plaster = PermissibleValue(text="plaster")
-    tile = PermissibleValue(text="tile")
-    terrazzo = PermissibleValue(text="terrazzo")
-    wood = PermissibleValue(text="wood")
-    metal = PermissibleValue(text="metal")
     masonry = PermissibleValue(text="masonry")
+    metal = PermissibleValue(text="metal")
+    plaster = PermissibleValue(text="plaster")
+    terrazzo = PermissibleValue(text="terrazzo")
+    tile = PermissibleValue(text="tile")
+    wood = PermissibleValue(text="wood")
 
     _defn = EnumDefinition(
         name="WallFinishMatEnum",
@@ -8846,34 +8654,23 @@ class WallFinishMatEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "gypsum plaster",
-            PermissibleValue(text="gypsum plaster"))
-        setattr(cls, "veneer plaster",
-            PermissibleValue(text="veneer plaster"))
-        setattr(cls, "gypsum board",
-            PermissibleValue(text="gypsum board"))
-        setattr(cls, "stone facing",
-            PermissibleValue(text="stone facing"))
         setattr(cls, "acoustical treatment",
             PermissibleValue(text="acoustical treatment"))
-
-class WallLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WallLocEnum",
-    )
+        setattr(cls, "gypsum board",
+            PermissibleValue(text="gypsum board"))
+        setattr(cls, "gypsum plaster",
+            PermissibleValue(text="gypsum plaster"))
+        setattr(cls, "stone facing",
+            PermissibleValue(text="stone facing"))
+        setattr(cls, "veneer plaster",
+            PermissibleValue(text="veneer plaster"))
 
 class WallSurfTreatmentEnum(EnumDefinitionImpl):
 
+    fabric = PermissibleValue(text="fabric")
     painted = PermissibleValue(text="painted")
     paneling = PermissibleValue(text="paneling")
     stucco = PermissibleValue(text="stucco")
-    fabric = PermissibleValue(text="fabric")
 
     _defn = EnumDefinition(
         name="WallSurfTreatmentEnum",
@@ -8881,44 +8678,10 @@ class WallSurfTreatmentEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "wall paper",
-            PermissibleValue(text="wall paper"))
         setattr(cls, "no treatment",
             PermissibleValue(text="no treatment"))
-
-class WallTextureEnum(EnumDefinitionImpl):
-
-    knockdown = PermissibleValue(text="knockdown")
-    popcorn = PermissibleValue(text="popcorn")
-    smooth = PermissibleValue(text="smooth")
-    swirl = PermissibleValue(text="swirl")
-
-    _defn = EnumDefinition(
-        name="WallTextureEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "crows feet",
-            PermissibleValue(text="crows feet"))
-        setattr(cls, "crows-foot stomp",
-            PermissibleValue(text="crows-foot stomp"))
-        setattr(cls, "",
-            PermissibleValue(text=""))
-        setattr(cls, "double skip",
-            PermissibleValue(text="double skip"))
-        setattr(cls, "hawk and trowel",
-            PermissibleValue(text="hawk and trowel"))
-        setattr(cls, "orange peel",
-            PermissibleValue(text="orange peel"))
-        setattr(cls, "rosebud stomp",
-            PermissibleValue(text="rosebud stomp"))
-        setattr(cls, "Santa-Fe texture",
-            PermissibleValue(text="Santa-Fe texture"))
-        setattr(cls, "skip trowel",
-            PermissibleValue(text="skip trowel"))
-        setattr(cls, "stomp knockdown",
-            PermissibleValue(text="stomp knockdown"))
+        setattr(cls, "wall paper",
+            PermissibleValue(text="wall paper"))
 
 class WaterFeatTypeEnum(EnumDefinitionImpl):
 
@@ -8938,34 +8701,17 @@ class WaterFeatTypeEnum(EnumDefinitionImpl):
 
 class WeekdayEnum(EnumDefinitionImpl):
 
-    Monday = PermissibleValue(text="Monday")
-    Tuesday = PermissibleValue(text="Tuesday")
-    Wednesday = PermissibleValue(text="Wednesday")
-    Thursday = PermissibleValue(text="Thursday")
     Friday = PermissibleValue(text="Friday")
+    Monday = PermissibleValue(text="Monday")
     Saturday = PermissibleValue(text="Saturday")
     Sunday = PermissibleValue(text="Sunday")
+    Thursday = PermissibleValue(text="Thursday")
+    Tuesday = PermissibleValue(text="Tuesday")
+    Wednesday = PermissibleValue(text="Wednesday")
 
     _defn = EnumDefinition(
         name="WeekdayEnum",
     )
-
-class WindowCondEnum(EnumDefinitionImpl):
-
-    damaged = PermissibleValue(text="damaged")
-    new = PermissibleValue(text="new")
-    rupture = PermissibleValue(text="rupture")
-
-    _defn = EnumDefinition(
-        name="WindowCondEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "needs repair",
-            PermissibleValue(text="needs repair"))
-        setattr(cls, "visible wear",
-            PermissibleValue(text="visible wear"))
 
 class WindowCoverEnum(EnumDefinitionImpl):
 
@@ -8987,17 +8733,6 @@ class WindowHorizPosEnum(EnumDefinitionImpl):
         name="WindowHorizPosEnum",
     )
 
-class WindowLocEnum(EnumDefinitionImpl):
-
-    north = PermissibleValue(text="north")
-    south = PermissibleValue(text="south")
-    east = PermissibleValue(text="east")
-    west = PermissibleValue(text="west")
-
-    _defn = EnumDefinition(
-        name="WindowLocEnum",
-    )
-
 class WindowMatEnum(EnumDefinitionImpl):
 
     clad = PermissibleValue(text="clad")
@@ -9010,6 +8745,15 @@ class WindowMatEnum(EnumDefinitionImpl):
         name="WindowMatEnum",
     )
 
+class WindowStatusEnum(EnumDefinitionImpl):
+
+    closed = PermissibleValue(text="closed")
+    open = PermissibleValue(text="open")
+
+    _defn = EnumDefinition(
+        name="WindowStatusEnum",
+    )
+
 class WindowTypeEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -9018,20 +8762,20 @@ class WindowTypeEnum(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "single-hung sash window",
-            PermissibleValue(text="single-hung sash window"))
-        setattr(cls, "horizontal sash window",
-            PermissibleValue(text="horizontal sash window"))
         setattr(cls, "fixed window",
             PermissibleValue(text="fixed window"))
+        setattr(cls, "horizontal sash window",
+            PermissibleValue(text="horizontal sash window"))
+        setattr(cls, "single-hung sash window",
+            PermissibleValue(text="single-hung sash window"))
 
 class WindowVertPosEnum(EnumDefinitionImpl):
 
     bottom = PermissibleValue(text="bottom")
+    high = PermissibleValue(text="high")
+    low = PermissibleValue(text="low")
     middle = PermissibleValue(text="middle")
     top = PermissibleValue(text="top")
-    low = PermissibleValue(text="low")
-    high = PermissibleValue(text="high")
 
     _defn = EnumDefinition(
         name="WindowVertPosEnum",
@@ -13874,71 +13618,85 @@ slots.nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, 
 slots.biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
                    model_uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, domain=None, range=Union[str, "JGIBiosafetyMaterialCategoryEnum"])
 
+slots.jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_sample_contact, domain=None, range=str)
+
+slots.jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_project_pi, domain=None, range=str)
+
+slots.jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_proposal_id, domain=None, range=float)
+
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[lb_av\]|g/g|kg|kg/kg)$'))
-
-slots.core_field = Slot(uri=NMDC_SUB_SCHEMA.core_field, name="core field", curie=NMDC_SUB_SCHEMA.curie('core_field'),
-                   model_uri=NMDC_SUB_SCHEMA.core_field, domain=None, range=Optional[str])
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.type = Slot(uri=RDF.type, name="type", curie=RDF.curie('type'),
                    model_uri=NMDC_SUB_SCHEMA.type, domain=None, range=Union[str, URIorCURIE])
 
 slots.add_recov_method = Slot(uri=MIXS['0001009'], name="add_recov_method", curie=MIXS.curie('0001009'),
-                   model_uri=NMDC_SUB_SCHEMA.add_recov_method, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.add_recov_method, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(Water Injection|Dump Flood|Gas Injection|Wag Immiscible Injection|Polymer Addition|Surfactant Addition|Not Applicable|other);(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'))
 
 slots.additional_info = Slot(uri=MIXS['0000300'], name="additional_info", curie=MIXS.curie('0000300'),
                    model_uri=NMDC_SUB_SCHEMA.additional_info, domain=None, range=Optional[str])
 
 slots.address = Slot(uri=MIXS['0000218'], name="address", curie=MIXS.curie('0000218'),
-                   model_uri=NMDC_SUB_SCHEMA.address, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.address, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.adj_room = Slot(uri=MIXS['0000219'], name="adj_room", curie=MIXS.curie('0000219'),
-                   model_uri=NMDC_SUB_SCHEMA.adj_room, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.adj_room, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+);[1-9][0-9]*$'))
 
 slots.aero_struc = Slot(uri=MIXS['0000773'], name="aero_struc", curie=MIXS.curie('0000773'),
-                   model_uri=NMDC_SUB_SCHEMA.aero_struc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.aero_struc, domain=None, range=Optional[Union[str, "AeroStrucEnum"]])
 
 slots.agrochem_addition = Slot(uri=MIXS['0000639'], name="agrochem_addition", curie=MIXS.curie('0000639'),
-                   model_uri=NMDC_SUB_SCHEMA.agrochem_addition, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.agrochem_addition, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+);(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$'))
 
 slots.air_PM_concen = Slot(uri=MIXS['0000108'], name="air_PM_concen", curie=MIXS.curie('0000108'),
-                   model_uri=NMDC_SUB_SCHEMA.air_PM_concen, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.air_PM_concen, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.air_temp = Slot(uri=MIXS['0000124'], name="air_temp", curie=MIXS.curie('0000124'),
-                   model_uri=NMDC_SUB_SCHEMA.air_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.air_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.air_temp_regm = Slot(uri=MIXS['0000551'], name="air_temp_regm", curie=MIXS.curie('0000551'),
                    model_uri=NMDC_SUB_SCHEMA.air_temp_regm, domain=None, range=Optional[str])
 
 slots.al_sat = Slot(uri=MIXS['0000607'], name="al_sat", curie=MIXS.curie('0000607'),
-                   model_uri=NMDC_SUB_SCHEMA.al_sat, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.al_sat, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.al_sat_meth = Slot(uri=MIXS['0000324'], name="al_sat_meth", curie=MIXS.curie('0000324'),
-                   model_uri=NMDC_SUB_SCHEMA.al_sat_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.al_sat_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.alkalinity = Slot(uri=MIXS['0000421'], name="alkalinity", curie=MIXS.curie('0000421'),
                    model_uri=NMDC_SUB_SCHEMA.alkalinity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(meq/L|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.alkalinity_method = Slot(uri=MIXS['0000298'], name="alkalinity_method", curie=MIXS.curie('0000298'),
                    model_uri=NMDC_SUB_SCHEMA.alkalinity_method, domain=None, range=Optional[str])
 
 slots.alkyl_diethers = Slot(uri=MIXS['0000490'], name="alkyl_diethers", curie=MIXS.curie('0000490'),
-                   model_uri=NMDC_SUB_SCHEMA.alkyl_diethers, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.alkyl_diethers, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.alt = Slot(uri=MIXS['0000094'], name="alt", curie=MIXS.curie('0000094'),
-                   model_uri=NMDC_SUB_SCHEMA.alt, domain=None, range=Optional[float])
-
-slots.environment_field = Slot(uri=NMDC_SUB_SCHEMA.environment_field, name="environment field", curie=NMDC_SUB_SCHEMA.curie('environment_field'),
-                   model_uri=NMDC_SUB_SCHEMA.environment_field, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.alt, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.aminopept_act = Slot(uri=MIXS['0000172'], name="aminopept_act", curie=MIXS.curie('0000172'),
-                   model_uri=NMDC_SUB_SCHEMA.aminopept_act, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.aminopept_act, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.ammonium = Slot(uri=MIXS['0000427'], name="ammonium", curie=MIXS.curie('0000427'),
                    model_uri=NMDC_SUB_SCHEMA.ammonium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.ammonium_nitrogen = Slot(uri=NMDC_SUB_SCHEMA.ammonium_nitrogen, name="ammonium_nitrogen", curie=NMDC_SUB_SCHEMA.curie('ammonium_nitrogen'),
                    model_uri=NMDC_SUB_SCHEMA.ammonium_nitrogen, domain=None, range=Optional[str],
@@ -13946,7 +13704,7 @@ slots.ammonium_nitrogen = Slot(uri=NMDC_SUB_SCHEMA.ammonium_nitrogen, name="ammo
 
 slots.amount_light = Slot(uri=MIXS['0000140'], name="amount_light", curie=MIXS.curie('0000140'),
                    model_uri=NMDC_SUB_SCHEMA.amount_light, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(lm/m2|lx)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.analysis_type = Slot(uri=NMDC_SUB_SCHEMA.analysis_type, name="analysis_type", curie=NMDC_SUB_SCHEMA.curie('analysis_type'),
                    model_uri=NMDC_SUB_SCHEMA.analysis_type, domain=None, range=Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]])
@@ -13955,51 +13713,60 @@ slots.ances_data = Slot(uri=MIXS['0000247'], name="ances_data", curie=MIXS.curie
                    model_uri=NMDC_SUB_SCHEMA.ances_data, domain=None, range=Optional[str])
 
 slots.annual_precpt = Slot(uri=MIXS['0000644'], name="annual_precpt", curie=MIXS.curie('0000644'),
-                   model_uri=NMDC_SUB_SCHEMA.annual_precpt, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.annual_precpt, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.annual_temp = Slot(uri=MIXS['0000642'], name="annual_temp", curie=MIXS.curie('0000642'),
-                   model_uri=NMDC_SUB_SCHEMA.annual_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.annual_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.antibiotic_regm = Slot(uri=MIXS['0000553'], name="antibiotic_regm", curie=MIXS.curie('0000553'),
                    model_uri=NMDC_SUB_SCHEMA.antibiotic_regm, domain=None, range=Optional[str])
 
 slots.api = Slot(uri=MIXS['0000157'], name="api", curie=MIXS.curie('0000157'),
                    model_uri=NMDC_SUB_SCHEMA.api, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.arch_struc = Slot(uri=MIXS['0000774'], name="arch_struc", curie=MIXS.curie('0000774'),
                    model_uri=NMDC_SUB_SCHEMA.arch_struc, domain=None, range=Optional[Union[str, "ArchStrucEnum"]])
 
 slots.aromatics_pc = Slot(uri=MIXS['0000133'], name="aromatics_pc", curie=MIXS.curie('0000133'),
-                   model_uri=NMDC_SUB_SCHEMA.aromatics_pc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.aromatics_pc, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.asphaltenes_pc = Slot(uri=MIXS['0000135'], name="asphaltenes_pc", curie=MIXS.curie('0000135'),
-                   model_uri=NMDC_SUB_SCHEMA.asphaltenes_pc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.asphaltenes_pc, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.atmospheric_data = Slot(uri=MIXS['0001097'], name="atmospheric_data", curie=MIXS.curie('0001097'),
                    model_uri=NMDC_SUB_SCHEMA.atmospheric_data, domain=None, range=Optional[str])
 
 slots.avg_dew_point = Slot(uri=MIXS['0000141'], name="avg_dew_point", curie=MIXS.curie('0000141'),
-                   model_uri=NMDC_SUB_SCHEMA.avg_dew_point, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.avg_dew_point, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.avg_occup = Slot(uri=MIXS['0000775'], name="avg_occup", curie=MIXS.curie('0000775'),
                    model_uri=NMDC_SUB_SCHEMA.avg_occup, domain=None, range=Optional[str])
 
 slots.avg_temp = Slot(uri=MIXS['0000142'], name="avg_temp", curie=MIXS.curie('0000142'),
-                   model_uri=NMDC_SUB_SCHEMA.avg_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.avg_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.bac_prod = Slot(uri=MIXS['0000683'], name="bac_prod", curie=MIXS.curie('0000683'),
-                   model_uri=NMDC_SUB_SCHEMA.bac_prod, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.bac_prod, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.bac_resp = Slot(uri=MIXS['0000684'], name="bac_resp", curie=MIXS.curie('0000684'),
                    model_uri=NMDC_SUB_SCHEMA.bac_resp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/m3/d|umol/L/h)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.bacteria_carb_prod = Slot(uri=MIXS['0000173'], name="bacteria_carb_prod", curie=MIXS.curie('0000173'),
-                   model_uri=NMDC_SUB_SCHEMA.bacteria_carb_prod, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.bacteria_carb_prod, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.barometric_press = Slot(uri=MIXS['0000096'], name="barometric_press", curie=MIXS.curie('0000096'),
-                   model_uri=NMDC_SUB_SCHEMA.barometric_press, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.barometric_press, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.basin = Slot(uri=MIXS['0000290'], name="basin", curie=MIXS.curie('0000290'),
                    model_uri=NMDC_SUB_SCHEMA.basin, domain=None, range=Optional[str])
@@ -14012,10 +13779,11 @@ slots.bedroom_count = Slot(uri=MIXS['0000777'], name="bedroom_count", curie=MIXS
 
 slots.benzene = Slot(uri=MIXS['0000153'], name="benzene", curie=MIXS.curie('0000153'),
                    model_uri=NMDC_SUB_SCHEMA.benzene, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.biochem_oxygen_dem = Slot(uri=MIXS['0000653'], name="biochem_oxygen_dem", curie=MIXS.curie('0000653'),
-                   model_uri=NMDC_SUB_SCHEMA.biochem_oxygen_dem, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.biochem_oxygen_dem, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.biocide = Slot(uri=MIXS['0001011'], name="biocide", curie=MIXS.curie('0001011'),
                    model_uri=NMDC_SUB_SCHEMA.biocide, domain=None, range=Optional[str])
@@ -14035,21 +13803,21 @@ slots.biotic_regm = Slot(uri=MIXS['0001038'], name="biotic_regm", curie=MIXS.cur
 slots.biotic_relationship = Slot(uri=MIXS['0000028'], name="biotic_relationship", curie=MIXS.curie('0000028'),
                    model_uri=NMDC_SUB_SCHEMA.biotic_relationship, domain=None, range=Optional[Union[str, "BioticRelationshipEnum"]])
 
-slots.nucleic_acid_sequence_source_field = Slot(uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, name="nucleic acid sequence source field", curie=NMDC_SUB_SCHEMA.curie('nucleic_acid_sequence_source_field'),
-                   model_uri=NMDC_SUB_SCHEMA.nucleic_acid_sequence_source_field, domain=None, range=Optional[str])
-
 slots.bishomohopanol = Slot(uri=MIXS['0000175'], name="bishomohopanol", curie=MIXS.curie('0000175'),
                    model_uri=NMDC_SUB_SCHEMA.bishomohopanol, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|ug/g)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.blood_press_diast = Slot(uri=MIXS['0000258'], name="blood_press_diast", curie=MIXS.curie('0000258'),
-                   model_uri=NMDC_SUB_SCHEMA.blood_press_diast, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.blood_press_diast, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.blood_press_syst = Slot(uri=MIXS['0000259'], name="blood_press_syst", curie=MIXS.curie('0000259'),
-                   model_uri=NMDC_SUB_SCHEMA.blood_press_syst, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.blood_press_syst, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.bromide = Slot(uri=MIXS['0000176'], name="bromide", curie=MIXS.curie('0000176'),
-                   model_uri=NMDC_SUB_SCHEMA.bromide, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.bromide, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.build_docs = Slot(uri=MIXS['0000787'], name="build_docs", curie=MIXS.curie('0000787'),
                    model_uri=NMDC_SUB_SCHEMA.build_docs, domain=None, range=Optional[Union[str, "BuildDocsEnum"]])
@@ -14061,10 +13829,11 @@ slots.building_setting = Slot(uri=MIXS['0000768'], name="building_setting", curi
                    model_uri=NMDC_SUB_SCHEMA.building_setting, domain=None, range=Optional[Union[str, "BuildingSettingEnum"]])
 
 slots.built_struc_age = Slot(uri=MIXS['0000145'], name="built_struc_age", curie=MIXS.curie('0000145'),
-                   model_uri=NMDC_SUB_SCHEMA.built_struc_age, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.built_struc_age, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.built_struc_set = Slot(uri=MIXS['0000778'], name="built_struc_set", curie=MIXS.curie('0000778'),
-                   model_uri=NMDC_SUB_SCHEMA.built_struc_set, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.built_struc_set, domain=None, range=Optional[Union[str, "BuiltStrucSetEnum"]])
 
 slots.built_struc_type = Slot(uri=MIXS['0000721'], name="built_struc_type", curie=MIXS.curie('0000721'),
                    model_uri=NMDC_SUB_SCHEMA.built_struc_type, domain=None, range=Optional[str])
@@ -14074,42 +13843,44 @@ slots.bulk_elect_conductivity = Slot(uri=NMDC_SUB_SCHEMA.bulk_elect_conductivity
 
 slots.calcium = Slot(uri=MIXS['0000432'], name="calcium", curie=MIXS.curie('0000432'),
                    model_uri=NMDC_SUB_SCHEMA.calcium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L|mg/kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.carb_dioxide = Slot(uri=MIXS['0000097'], name="carb_dioxide", curie=MIXS.curie('0000097'),
                    model_uri=NMDC_SUB_SCHEMA.carb_dioxide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.carb_monoxide = Slot(uri=MIXS['0000098'], name="carb_monoxide", curie=MIXS.curie('0000098'),
                    model_uri=NMDC_SUB_SCHEMA.carb_monoxide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.carb_nitro_ratio = Slot(uri=MIXS['0000310'], name="carb_nitro_ratio", curie=MIXS.curie('0000310'),
                    model_uri=NMDC_SUB_SCHEMA.carb_nitro_ratio, domain=None, range=Optional[float])
 
 slots.ceil_area = Slot(uri=MIXS['0000148'], name="ceil_area", curie=MIXS.curie('0000148'),
-                   model_uri=NMDC_SUB_SCHEMA.ceil_area, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.ceil_area, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.ceil_cond = Slot(uri=MIXS['0000779'], name="ceil_cond", curie=MIXS.curie('0000779'),
-                   model_uri=NMDC_SUB_SCHEMA.ceil_cond, domain=None, range=Optional[Union[str, "CeilCondEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.ceil_cond, domain=None, range=Optional[Union[str, "DamagedEnum"]])
 
 slots.ceil_finish_mat = Slot(uri=MIXS['0000780'], name="ceil_finish_mat", curie=MIXS.curie('0000780'),
                    model_uri=NMDC_SUB_SCHEMA.ceil_finish_mat, domain=None, range=Optional[Union[str, "CeilFinishMatEnum"]])
 
 slots.ceil_struc = Slot(uri=MIXS['0000782'], name="ceil_struc", curie=MIXS.curie('0000782'),
-                   model_uri=NMDC_SUB_SCHEMA.ceil_struc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.ceil_struc, domain=None, range=Optional[Union[str, "CeilStrucEnum"]])
 
 slots.ceil_texture = Slot(uri=MIXS['0000783'], name="ceil_texture", curie=MIXS.curie('0000783'),
-                   model_uri=NMDC_SUB_SCHEMA.ceil_texture, domain=None, range=Optional[Union[str, "CeilTextureEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.ceil_texture, domain=None, range=Optional[Union[str, "CeilingWallTextureEnum"]])
 
 slots.ceil_thermal_mass = Slot(uri=MIXS['0000143'], name="ceil_thermal_mass", curie=MIXS.curie('0000143'),
-                   model_uri=NMDC_SUB_SCHEMA.ceil_thermal_mass, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.ceil_thermal_mass, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.ceil_type = Slot(uri=MIXS['0000784'], name="ceil_type", curie=MIXS.curie('0000784'),
                    model_uri=NMDC_SUB_SCHEMA.ceil_type, domain=None, range=Optional[Union[str, "CeilTypeEnum"]])
 
 slots.ceil_water_mold = Slot(uri=MIXS['0000781'], name="ceil_water_mold", curie=MIXS.curie('0000781'),
-                   model_uri=NMDC_SUB_SCHEMA.ceil_water_mold, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.ceil_water_mold, domain=None, range=Optional[Union[str, "MoldVisibilityEnum"]])
 
 slots.chem_administration = Slot(uri=MIXS['0000751'], name="chem_administration", curie=MIXS.curie('0000751'),
                    model_uri=NMDC_SUB_SCHEMA.chem_administration, domain=None, range=Optional[str],
@@ -14119,7 +13890,8 @@ slots.chem_mutagen = Slot(uri=MIXS['0000555'], name="chem_mutagen", curie=MIXS.c
                    model_uri=NMDC_SUB_SCHEMA.chem_mutagen, domain=None, range=Optional[str])
 
 slots.chem_oxygen_dem = Slot(uri=MIXS['0000656'], name="chem_oxygen_dem", curie=MIXS.curie('0000656'),
-                   model_uri=NMDC_SUB_SCHEMA.chem_oxygen_dem, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.chem_oxygen_dem, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.chem_treat_method = Slot(uri=MIXS['0000457'], name="chem_treat_method", curie=MIXS.curie('0000457'),
                    model_uri=NMDC_SUB_SCHEMA.chem_treat_method, domain=None, range=Optional[str])
@@ -14129,11 +13901,11 @@ slots.chem_treatment = Slot(uri=MIXS['0001012'], name="chem_treatment", curie=MI
 
 slots.chloride = Slot(uri=MIXS['0000429'], name="chloride", curie=MIXS.curie('0000429'),
                    model_uri=NMDC_SUB_SCHEMA.chloride, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.chlorophyll = Slot(uri=MIXS['0000177'], name="chlorophyll", curie=MIXS.curie('0000177'),
                    model_uri=NMDC_SUB_SCHEMA.chlorophyll, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/m3|ug/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.climate_environment = Slot(uri=MIXS['0001040'], name="climate_environment", curie=MIXS.curie('0001040'),
                    model_uri=NMDC_SUB_SCHEMA.climate_environment, domain=None, range=Optional[str])
@@ -14156,7 +13928,7 @@ slots.collection_time_inc = Slot(uri=NMDC_SUB_SCHEMA.collection_time_inc, name="
 
 slots.conduc = Slot(uri=MIXS['0000692'], name="conduc", curie=MIXS.curie('0000692'),
                    model_uri=NMDC_SUB_SCHEMA.conduc, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mS/cm|uS/cm)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.cool_syst_id = Slot(uri=MIXS['0000785'], name="cool_syst_id", curie=MIXS.curie('0000785'),
                    model_uri=NMDC_SUB_SCHEMA.cool_syst_id, domain=None, range=Optional[str])
@@ -14165,73 +13937,79 @@ slots.crop_rotation = Slot(uri=MIXS['0000318'], name="crop_rotation", curie=MIXS
                    model_uri=NMDC_SUB_SCHEMA.crop_rotation, domain=None, range=Optional[str])
 
 slots.cult_root_med = Slot(uri=MIXS['0001041'], name="cult_root_med", curie=MIXS.curie('0001041'),
-                   model_uri=NMDC_SUB_SCHEMA.cult_root_med, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.cult_root_med, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(.*|PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.cur_land_use = Slot(uri=MIXS['0001080'], name="cur_land_use", curie=MIXS.curie('0001080'),
-                   model_uri=NMDC_SUB_SCHEMA.cur_land_use, domain=None, range=Optional[Union[str, "CurLandUseEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.cur_land_use, domain=None, range=Optional[str])
 
 slots.cur_vegetation = Slot(uri=MIXS['0000312'], name="cur_vegetation", curie=MIXS.curie('0000312'),
                    model_uri=NMDC_SUB_SCHEMA.cur_vegetation, domain=None, range=Optional[str])
 
 slots.cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="cur_vegetation_meth", curie=MIXS.curie('0000314'),
-                   model_uri=NMDC_SUB_SCHEMA.cur_vegetation_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.cur_vegetation_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.date_last_rain = Slot(uri=MIXS['0000786'], name="date_last_rain", curie=MIXS.curie('0000786'),
                    model_uri=NMDC_SUB_SCHEMA.date_last_rain, domain=None, range=Optional[str])
 
 slots.density = Slot(uri=MIXS['0000435'], name="density", curie=MIXS.curie('0000435'),
                    model_uri=NMDC_SUB_SCHEMA.density, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(g/cm3|g/m3|kg/m3)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.depos_env = Slot(uri=MIXS['0000992'], name="depos_env", curie=MIXS.curie('0000992'),
                    model_uri=NMDC_SUB_SCHEMA.depos_env, domain=None, range=Optional[Union[str, "DeposEnvEnum"]])
 
 slots.depth = Slot(uri=MIXS['0000018'], name="depth", curie=MIXS.curie('0000018'),
-                   model_uri=NMDC_SUB_SCHEMA.depth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.depth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.dew_point = Slot(uri=MIXS['0000129'], name="dew_point", curie=MIXS.curie('0000129'),
-                   model_uri=NMDC_SUB_SCHEMA.dew_point, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.dew_point, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diether_lipids = Slot(uri=MIXS['0000178'], name="diether_lipids", curie=MIXS.curie('0000178'),
                    model_uri=NMDC_SUB_SCHEMA.diether_lipids, domain=None, range=Optional[str])
 
 slots.diss_carb_dioxide = Slot(uri=MIXS['0000436'], name="diss_carb_dioxide", curie=MIXS.curie('0000436'),
                    model_uri=NMDC_SUB_SCHEMA.diss_carb_dioxide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_hydrogen = Slot(uri=MIXS['0000179'], name="diss_hydrogen", curie=MIXS.curie('0000179'),
-                   model_uri=NMDC_SUB_SCHEMA.diss_hydrogen, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.diss_hydrogen, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_inorg_carb = Slot(uri=MIXS['0000434'], name="diss_inorg_carb", curie=MIXS.curie('0000434'),
                    model_uri=NMDC_SUB_SCHEMA.diss_inorg_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|ug/L|umol/kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_inorg_nitro = Slot(uri=MIXS['0000698'], name="diss_inorg_nitro", curie=MIXS.curie('0000698'),
                    model_uri=NMDC_SUB_SCHEMA.diss_inorg_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|umol/L|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_inorg_phosp = Slot(uri=MIXS['0000106'], name="diss_inorg_phosp", curie=MIXS.curie('0000106'),
                    model_uri=NMDC_SUB_SCHEMA.diss_inorg_phosp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|ug/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_iron = Slot(uri=MIXS['0000139'], name="diss_iron", curie=MIXS.curie('0000139'),
-                   model_uri=NMDC_SUB_SCHEMA.diss_iron, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.diss_iron, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_org_carb = Slot(uri=MIXS['0000433'], name="diss_org_carb", curie=MIXS.curie('0000433'),
                    model_uri=NMDC_SUB_SCHEMA.diss_org_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/L|ug/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_org_nitro = Slot(uri=MIXS['0000162'], name="diss_org_nitro", curie=MIXS.curie('0000162'),
                    model_uri=NMDC_SUB_SCHEMA.diss_org_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|ug/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_oxygen = Slot(uri=MIXS['0000119'], name="diss_oxygen", curie=MIXS.curie('0000119'),
                    model_uri=NMDC_SUB_SCHEMA.diss_oxygen, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/kg|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.diss_oxygen_fluid = Slot(uri=MIXS['0000438'], name="diss_oxygen_fluid", curie=MIXS.curie('0000438'),
                    model_uri=NMDC_SUB_SCHEMA.diss_oxygen_fluid, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|umol/kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.dna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.dna_isolate_meth, name="dna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('dna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.dna_isolate_meth, domain=None, range=str)
@@ -14240,13 +14018,13 @@ slots.door_comp_type = Slot(uri=MIXS['0000795'], name="door_comp_type", curie=MI
                    model_uri=NMDC_SUB_SCHEMA.door_comp_type, domain=None, range=Optional[Union[str, "DoorCompTypeEnum"]])
 
 slots.door_cond = Slot(uri=MIXS['0000788'], name="door_cond", curie=MIXS.curie('0000788'),
-                   model_uri=NMDC_SUB_SCHEMA.door_cond, domain=None, range=Optional[Union[str, "DoorCondEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.door_cond, domain=None, range=Optional[Union[str, "DamagedRupturedEnum"]])
 
 slots.door_direct = Slot(uri=MIXS['0000789'], name="door_direct", curie=MIXS.curie('0000789'),
                    model_uri=NMDC_SUB_SCHEMA.door_direct, domain=None, range=Optional[Union[str, "DoorDirectEnum"]])
 
 slots.door_loc = Slot(uri=MIXS['0000790'], name="door_loc", curie=MIXS.curie('0000790'),
-                   model_uri=NMDC_SUB_SCHEMA.door_loc, domain=None, range=Optional[Union[str, "DoorLocEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.door_loc, domain=None, range=Optional[Union[str, "CompassDirections8Enum"]])
 
 slots.door_mat = Slot(uri=MIXS['0000791'], name="door_mat", curie=MIXS.curie('0000791'),
                    model_uri=NMDC_SUB_SCHEMA.door_mat, domain=None, range=Optional[Union[str, "DoorMatEnum"]])
@@ -14255,7 +14033,8 @@ slots.door_move = Slot(uri=MIXS['0000792'], name="door_move", curie=MIXS.curie('
                    model_uri=NMDC_SUB_SCHEMA.door_move, domain=None, range=Optional[Union[str, "DoorMoveEnum"]])
 
 slots.door_size = Slot(uri=MIXS['0000158'], name="door_size", curie=MIXS.curie('0000158'),
-                   model_uri=NMDC_SUB_SCHEMA.door_size, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.door_size, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.door_type = Slot(uri=MIXS['0000794'], name="door_type", curie=MIXS.curie('0000794'),
                    model_uri=NMDC_SUB_SCHEMA.door_type, domain=None, range=Optional[Union[str, "DoorTypeEnum"]])
@@ -14264,13 +14043,14 @@ slots.door_type_metal = Slot(uri=MIXS['0000796'], name="door_type_metal", curie=
                    model_uri=NMDC_SUB_SCHEMA.door_type_metal, domain=None, range=Optional[Union[str, "DoorTypeMetalEnum"]])
 
 slots.door_type_wood = Slot(uri=MIXS['0000797'], name="door_type_wood", curie=MIXS.curie('0000797'),
-                   model_uri=NMDC_SUB_SCHEMA.door_type_wood, domain=None, range=Optional[Union[str, "DoorTypeWoodEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.door_type_wood, domain=None, range=Optional[str])
 
 slots.door_water_mold = Slot(uri=MIXS['0000793'], name="door_water_mold", curie=MIXS.curie('0000793'),
-                   model_uri=NMDC_SUB_SCHEMA.door_water_mold, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.door_water_mold, domain=None, range=Optional[Union[str, "MoldVisibilityEnum"]])
 
 slots.down_par = Slot(uri=MIXS['0000703'], name="down_par", curie=MIXS.curie('0000703'),
-                   model_uri=NMDC_SUB_SCHEMA.down_par, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.down_par, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.drainage_class = Slot(uri=MIXS['0001085'], name="drainage_class", curie=MIXS.curie('0001085'),
                    model_uri=NMDC_SUB_SCHEMA.drainage_class, domain=None, range=Optional[Union[str, "DrainageClassEnum"]])
@@ -14295,10 +14075,11 @@ slots.ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type, name="ecosystem_
 
 slots.efficiency_percent = Slot(uri=MIXS['0000657'], name="efficiency_percent", curie=MIXS.curie('0000657'),
                    model_uri=NMDC_SUB_SCHEMA.efficiency_percent, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.elev = Slot(uri=MIXS['0000093'], name="elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.elev, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.elev, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.elevator = Slot(uri=MIXS['0000799'], name="elevator", curie=MIXS.curie('0000799'),
                    model_uri=NMDC_SUB_SCHEMA.elevator, domain=None, range=Optional[str])
@@ -14311,7 +14092,7 @@ slots.emulsions = Slot(uri=MIXS['0000660'], name="emulsions", curie=MIXS.curie('
 
 slots.env_broad_scale = Slot(uri=MIXS['0000012'], name="env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.env_broad_scale, domain=None, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.mixs_env_triad_field = Slot(uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, name="mixs_env_triad_field", curie=NMDC_SUB_SCHEMA.curie('mixs_env_triad_field'),
                    model_uri=NMDC_SUB_SCHEMA.mixs_env_triad_field, domain=None, range=Optional[str])
@@ -14331,29 +14112,31 @@ slots.alternative_identifiers = Slot(uri=NMDC_SUB_SCHEMA.alternative_identifiers
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,\(\)\=\#]*$'))
 
 slots.env_local_scale = Slot(uri=MIXS['0000013'], name="env_local_scale", curie=MIXS.curie('0000013'),
-                   model_uri=NMDC_SUB_SCHEMA.env_local_scale, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.env_local_scale, domain=None, range=str,
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$'))
 
 slots.env_medium = Slot(uri=MIXS['0000014'], name="env_medium", curie=MIXS.curie('0000014'),
-                   model_uri=NMDC_SUB_SCHEMA.env_medium, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.env_medium, domain=None, range=str,
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$'))
 
 slots.escalator = Slot(uri=MIXS['0000800'], name="escalator", curie=MIXS.curie('0000800'),
                    model_uri=NMDC_SUB_SCHEMA.escalator, domain=None, range=Optional[str])
 
 slots.ethylbenzene = Slot(uri=MIXS['0000155'], name="ethylbenzene", curie=MIXS.curie('0000155'),
                    model_uri=NMDC_SUB_SCHEMA.ethylbenzene, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.exp_duct = Slot(uri=MIXS['0000144'], name="exp_duct", curie=MIXS.curie('0000144'),
-                   model_uri=NMDC_SUB_SCHEMA.exp_duct, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.exp_duct, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.exp_pipe = Slot(uri=MIXS['0000220'], name="exp_pipe", curie=MIXS.curie('0000220'),
-                   model_uri=NMDC_SUB_SCHEMA.exp_pipe, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.exp_pipe, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.experimental_factor = Slot(uri=MIXS['0000008'], name="experimental_factor", curie=MIXS.curie('0000008'),
-                   model_uri=NMDC_SUB_SCHEMA.experimental_factor, domain=None, range=Optional[str])
-
-slots.investigation_field = Slot(uri=NMDC_SUB_SCHEMA.investigation_field, name="investigation field", curie=NMDC_SUB_SCHEMA.curie('investigation_field'),
-                   model_uri=NMDC_SUB_SCHEMA.investigation_field, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.experimental_factor, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.experimental_factor_other = Slot(uri=NMDC_SUB_SCHEMA.experimental_factor_other, name="experimental_factor_other", curie=NMDC_SUB_SCHEMA.curie('experimental_factor_other'),
                    model_uri=NMDC_SUB_SCHEMA.experimental_factor_other, domain=None, range=Optional[str])
@@ -14362,10 +14145,10 @@ slots.ext_door = Slot(uri=MIXS['0000170'], name="ext_door", curie=MIXS.curie('00
                    model_uri=NMDC_SUB_SCHEMA.ext_door, domain=None, range=Optional[str])
 
 slots.ext_wall_orient = Slot(uri=MIXS['0000817'], name="ext_wall_orient", curie=MIXS.curie('0000817'),
-                   model_uri=NMDC_SUB_SCHEMA.ext_wall_orient, domain=None, range=Optional[Union[str, "ExtWallOrientEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.ext_wall_orient, domain=None, range=Optional[Union[str, "CompassDirections8Enum"]])
 
 slots.ext_window_orient = Slot(uri=MIXS['0000818'], name="ext_window_orient", curie=MIXS.curie('0000818'),
-                   model_uri=NMDC_SUB_SCHEMA.ext_window_orient, domain=None, range=Optional[Union[str, "ExtWindowOrientEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.ext_window_orient, domain=None, range=Optional[Union[str, "CompassDirections8Enum"]])
 
 slots.extreme_event = Slot(uri=MIXS['0000320'], name="extreme_event", curie=MIXS.curie('0000320'),
                    model_uri=NMDC_SUB_SCHEMA.extreme_event, domain=None, range=Optional[str])
@@ -14390,45 +14173,48 @@ slots.fire = Slot(uri=MIXS['0001086'], name="fire", curie=MIXS.curie('0001086'),
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?(\s+to\s+[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)?$'))
 
 slots.fireplace_type = Slot(uri=MIXS['0000802'], name="fireplace_type", curie=MIXS.curie('0000802'),
-                   model_uri=NMDC_SUB_SCHEMA.fireplace_type, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.fireplace_type, domain=None, range=Optional[Union[str, "FireplaceTypeEnum"]])
 
 slots.flooding = Slot(uri=MIXS['0000319'], name="flooding", curie=MIXS.curie('0000319'),
                    model_uri=NMDC_SUB_SCHEMA.flooding, domain=None, range=Optional[str])
 
 slots.floor_age = Slot(uri=MIXS['0000164'], name="floor_age", curie=MIXS.curie('0000164'),
                    model_uri=NMDC_SUB_SCHEMA.floor_age, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(a|d|wk)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.floor_area = Slot(uri=MIXS['0000165'], name="floor_area", curie=MIXS.curie('0000165'),
-                   model_uri=NMDC_SUB_SCHEMA.floor_area, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.floor_area, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.floor_cond = Slot(uri=MIXS['0000803'], name="floor_cond", curie=MIXS.curie('0000803'),
-                   model_uri=NMDC_SUB_SCHEMA.floor_cond, domain=None, range=Optional[Union[str, "FloorCondEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.floor_cond, domain=None, range=Optional[Union[str, "DamagedEnum"]])
 
 slots.floor_count = Slot(uri=MIXS['0000225'], name="floor_count", curie=MIXS.curie('0000225'),
                    model_uri=NMDC_SUB_SCHEMA.floor_count, domain=None, range=Optional[str])
 
 slots.floor_finish_mat = Slot(uri=MIXS['0000804'], name="floor_finish_mat", curie=MIXS.curie('0000804'),
-                   model_uri=NMDC_SUB_SCHEMA.floor_finish_mat, domain=None, range=Optional[Union[str, "FloorFinishMatEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.floor_finish_mat, domain=None, range=Optional[str])
 
 slots.floor_struc = Slot(uri=MIXS['0000806'], name="floor_struc", curie=MIXS.curie('0000806'),
                    model_uri=NMDC_SUB_SCHEMA.floor_struc, domain=None, range=Optional[Union[str, "FloorStrucEnum"]])
 
 slots.floor_thermal_mass = Slot(uri=MIXS['0000166'], name="floor_thermal_mass", curie=MIXS.curie('0000166'),
-                   model_uri=NMDC_SUB_SCHEMA.floor_thermal_mass, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.floor_thermal_mass, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.floor_water_mold = Slot(uri=MIXS['0000805'], name="floor_water_mold", curie=MIXS.curie('0000805'),
                    model_uri=NMDC_SUB_SCHEMA.floor_water_mold, domain=None, range=Optional[Union[str, "FloorWaterMoldEnum"]])
 
 slots.fluor = Slot(uri=MIXS['0000704'], name="fluor", curie=MIXS.curie('0000704'),
                    model_uri=NMDC_SUB_SCHEMA.fluor, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/m3|V)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.freq_clean = Slot(uri=MIXS['0000226'], name="freq_clean", curie=MIXS.curie('0000226'),
                    model_uri=NMDC_SUB_SCHEMA.freq_clean, domain=None, range=Optional[float])
 
 slots.freq_cook = Slot(uri=MIXS['0000227'], name="freq_cook", curie=MIXS.curie('0000227'),
-                   model_uri=NMDC_SUB_SCHEMA.freq_cook, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.freq_cook, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.fungicide_regm = Slot(uri=MIXS['0000557'], name="fungicide_regm", curie=MIXS.curie('0000557'),
                    model_uri=NMDC_SUB_SCHEMA.fungicide_regm, domain=None, range=Optional[str])
@@ -14446,14 +14232,16 @@ slots.gender_restroom = Slot(uri=MIXS['0000808'], name="gender_restroom", curie=
                    model_uri=NMDC_SUB_SCHEMA.gender_restroom, domain=None, range=Optional[Union[str, "GenderRestroomEnum"]])
 
 slots.genetic_mod = Slot(uri=MIXS['0000859'], name="genetic_mod", curie=MIXS.curie('0000859'),
-                   model_uri=NMDC_SUB_SCHEMA.genetic_mod, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.genetic_mod, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.geo_loc_name = Slot(uri=MIXS['0000010'], name="geo_loc_name", curie=MIXS.curie('0000010'),
                    model_uri=NMDC_SUB_SCHEMA.geo_loc_name, domain=None, range=str,
-                   pattern=re.compile(r'^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.glucosidase_act = Slot(uri=MIXS['0000137'], name="glucosidase_act", curie=MIXS.curie('0000137'),
-                   model_uri=NMDC_SUB_SCHEMA.glucosidase_act, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.glucosidase_act, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.gravidity = Slot(uri=MIXS['0000875'], name="gravidity", curie=MIXS.curie('0000875'),
                    model_uri=NMDC_SUB_SCHEMA.gravidity, domain=None, range=Optional[str])
@@ -14483,22 +14271,25 @@ slots.hcr = Slot(uri=MIXS['0000988'], name="hcr", curie=MIXS.curie('0000988'),
                    model_uri=NMDC_SUB_SCHEMA.hcr, domain=None, range=Optional[Union[str, "HcrEnum"]])
 
 slots.hcr_fw_salinity = Slot(uri=MIXS['0000406'], name="hcr_fw_salinity", curie=MIXS.curie('0000406'),
-                   model_uri=NMDC_SUB_SCHEMA.hcr_fw_salinity, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.hcr_fw_salinity, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.hcr_geol_age = Slot(uri=MIXS['0000993'], name="hcr_geol_age", curie=MIXS.curie('0000993'),
-                   model_uri=NMDC_SUB_SCHEMA.hcr_geol_age, domain=None, range=Optional[Union[str, "HcrGeolAgeEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.hcr_geol_age, domain=None, range=Optional[Union[str, "GeolAgeEnum"]])
 
 slots.hcr_pressure = Slot(uri=MIXS['0000395'], name="hcr_pressure", curie=MIXS.curie('0000395'),
-                   model_uri=NMDC_SUB_SCHEMA.hcr_pressure, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.hcr_pressure, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ *- *[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.hcr_temp = Slot(uri=MIXS['0000393'], name="hcr_temp", curie=MIXS.curie('0000393'),
-                   model_uri=NMDC_SUB_SCHEMA.hcr_temp, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.hcr_temp, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ *- *[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.heat_cool_type = Slot(uri=MIXS['0000766'], name="heat_cool_type", curie=MIXS.curie('0000766'),
                    model_uri=NMDC_SUB_SCHEMA.heat_cool_type, domain=None, range=Optional[Union[Union[str, "HeatCoolTypeEnum"], list[Union[str, "HeatCoolTypeEnum"]]]])
 
 slots.heat_deliv_loc = Slot(uri=MIXS['0000810'], name="heat_deliv_loc", curie=MIXS.curie('0000810'),
-                   model_uri=NMDC_SUB_SCHEMA.heat_deliv_loc, domain=None, range=Optional[Union[str, "HeatDelivLocEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.heat_deliv_loc, domain=None, range=Optional[Union[str, "CompassDirections8Enum"]])
 
 slots.heat_sys_deliv_meth = Slot(uri=MIXS['0000812'], name="heat_sys_deliv_meth", curie=MIXS.curie('0000812'),
                    model_uri=NMDC_SUB_SCHEMA.heat_sys_deliv_meth, domain=None, range=Optional[str])
@@ -14510,20 +14301,23 @@ slots.heavy_metals = Slot(uri=MIXS['0000652'], name="heavy_metals", curie=MIXS.c
                    model_uri=NMDC_SUB_SCHEMA.heavy_metals, domain=None, range=Optional[str])
 
 slots.heavy_metals_meth = Slot(uri=MIXS['0000343'], name="heavy_metals_meth", curie=MIXS.curie('0000343'),
-                   model_uri=NMDC_SUB_SCHEMA.heavy_metals_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.heavy_metals_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.height_carper_fiber = Slot(uri=MIXS['0000167'], name="height_carper_fiber", curie=MIXS.curie('0000167'),
-                   model_uri=NMDC_SUB_SCHEMA.height_carper_fiber, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.height_carper_fiber, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.herbicide_regm = Slot(uri=MIXS['0000561'], name="herbicide_regm", curie=MIXS.curie('0000561'),
                    model_uri=NMDC_SUB_SCHEMA.herbicide_regm, domain=None, range=Optional[str])
 
 slots.horizon_meth = Slot(uri=MIXS['0000321'], name="horizon_meth", curie=MIXS.curie('0000321'),
-                   model_uri=NMDC_SUB_SCHEMA.horizon_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.horizon_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.host_age = Slot(uri=MIXS['0000255'], name="host_age", curie=MIXS.curie('0000255'),
                    model_uri=NMDC_SUB_SCHEMA.host_age, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(a|d|h)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.host_body_habitat = Slot(uri=MIXS['0000866'], name="host_body_habitat", curie=MIXS.curie('0000866'),
                    model_uri=NMDC_SUB_SCHEMA.host_body_habitat, domain=None, range=Optional[str])
@@ -14537,7 +14331,8 @@ slots.host_body_site = Slot(uri=MIXS['0000867'], name="host_body_site", curie=MI
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.host_body_temp = Slot(uri=MIXS['0000274'], name="host_body_temp", curie=MIXS.curie('0000274'),
-                   model_uri=NMDC_SUB_SCHEMA.host_body_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.host_body_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.host_color = Slot(uri=MIXS['0000260'], name="host_color", curie=MIXS.curie('0000260'),
                    model_uri=NMDC_SUB_SCHEMA.host_color, domain=None, range=Optional[str])
@@ -14553,7 +14348,7 @@ slots.host_disease_stat = Slot(uri=MIXS['0000031'], name="host_disease_stat", cu
 
 slots.host_dry_mass = Slot(uri=MIXS['0000257'], name="host_dry_mass", curie=MIXS.curie('0000257'),
                    model_uri=NMDC_SUB_SCHEMA.host_dry_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(g|kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.host_family_relation = Slot(uri=MIXS['0000872'], name="host_family_relation", curie=MIXS.curie('0000872'),
                    model_uri=NMDC_SUB_SCHEMA.host_family_relation, domain=None, range=Optional[str])
@@ -14562,18 +14357,19 @@ slots.host_genotype = Slot(uri=MIXS['0000365'], name="host_genotype", curie=MIXS
                    model_uri=NMDC_SUB_SCHEMA.host_genotype, domain=None, range=Optional[str])
 
 slots.host_growth_cond = Slot(uri=MIXS['0000871'], name="host_growth_cond", curie=MIXS.curie('0000871'),
-                   model_uri=NMDC_SUB_SCHEMA.host_growth_cond, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.host_growth_cond, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
 
 slots.host_height = Slot(uri=MIXS['0000264'], name="host_height", curie=MIXS.curie('0000264'),
                    model_uri=NMDC_SUB_SCHEMA.host_height, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(cm|m|mm)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.host_last_meal = Slot(uri=MIXS['0000870'], name="host_last_meal", curie=MIXS.curie('0000870'),
                    model_uri=NMDC_SUB_SCHEMA.host_last_meal, domain=None, range=Optional[str])
 
 slots.host_length = Slot(uri=MIXS['0000256'], name="host_length", curie=MIXS.curie('0000256'),
                    model_uri=NMDC_SUB_SCHEMA.host_length, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(cm|m|mm)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.host_life_stage = Slot(uri=MIXS['0000251'], name="host_life_stage", curie=MIXS.curie('0000251'),
                    model_uri=NMDC_SUB_SCHEMA.host_life_stage, domain=None, range=Optional[str])
@@ -14583,7 +14379,7 @@ slots.host_phenotype = Slot(uri=MIXS['0000874'], name="host_phenotype", curie=MI
                    pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
 
 slots.host_sex = Slot(uri=MIXS['0000811'], name="host_sex", curie=MIXS.curie('0000811'),
-                   model_uri=NMDC_SUB_SCHEMA.host_sex, domain=None, range=Optional[Union[str, "HostSexEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.host_sex, domain=None, range=Optional[str])
 
 slots.host_shape = Slot(uri=MIXS['0000261'], name="host_shape", curie=MIXS.curie('0000261'),
                    model_uri=NMDC_SUB_SCHEMA.host_shape, domain=None, range=Optional[str])
@@ -14605,15 +14401,15 @@ slots.host_taxid = Slot(uri=MIXS['0000250'], name="host_taxid", curie=MIXS.curie
 
 slots.host_tot_mass = Slot(uri=MIXS['0000263'], name="host_tot_mass", curie=MIXS.curie('0000263'),
                    model_uri=NMDC_SUB_SCHEMA.host_tot_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(g|kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.host_wet_mass = Slot(uri=MIXS['0000567'], name="host_wet_mass", curie=MIXS.curie('0000567'),
                    model_uri=NMDC_SUB_SCHEMA.host_wet_mass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(g|kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.humidity = Slot(uri=MIXS['0000100'], name="humidity", curie=MIXS.curie('0000100'),
                    model_uri=NMDC_SUB_SCHEMA.humidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(g/m3|%)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.humidity_regm = Slot(uri=MIXS['0000568'], name="humidity_regm", curie=MIXS.curie('0000568'),
                    model_uri=NMDC_SUB_SCHEMA.humidity_regm, domain=None, range=Optional[str])
@@ -14625,7 +14421,8 @@ slots.indoor_surf = Slot(uri=MIXS['0000764'], name="indoor_surf", curie=MIXS.cur
                    model_uri=NMDC_SUB_SCHEMA.indoor_surf, domain=None, range=Optional[Union[str, "IndoorSurfEnum"]])
 
 slots.indust_eff_percent = Slot(uri=MIXS['0000662'], name="indust_eff_percent", curie=MIXS.curie('0000662'),
-                   model_uri=NMDC_SUB_SCHEMA.indust_eff_percent, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.indust_eff_percent, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.infiltrations = Slot(uri=NMDC_SUB_SCHEMA.infiltrations, name="infiltrations", curie=NMDC_SUB_SCHEMA.curie('infiltrations'),
                    model_uri=NMDC_SUB_SCHEMA.infiltrations, domain=None, range=Optional[str],
@@ -14636,10 +14433,10 @@ slots.inorg_particles = Slot(uri=MIXS['0000664'], name="inorg_particles", curie=
 
 slots.inside_lux = Slot(uri=MIXS['0000168'], name="inside_lux", curie=MIXS.curie('0000168'),
                    model_uri=NMDC_SUB_SCHEMA.inside_lux, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.int_wall_cond = Slot(uri=MIXS['0000813'], name="int_wall_cond", curie=MIXS.curie('0000813'),
-                   model_uri=NMDC_SUB_SCHEMA.int_wall_cond, domain=None, range=Optional[Union[str, "IntWallCondEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.int_wall_cond, domain=None, range=Optional[Union[str, "DamagedEnum"]])
 
 slots.isotope_exposure = Slot(uri=NMDC_SUB_SCHEMA.isotope_exposure, name="isotope_exposure", curie=NMDC_SUB_SCHEMA.curie('isotope_exposure'),
                    model_uri=NMDC_SUB_SCHEMA.isotope_exposure, domain=None, range=Optional[str])
@@ -14648,14 +14445,15 @@ slots.iw_bt_date_well = Slot(uri=MIXS['0001010'], name="iw_bt_date_well", curie=
                    model_uri=NMDC_SUB_SCHEMA.iw_bt_date_well, domain=None, range=Optional[str])
 
 slots.iwf = Slot(uri=MIXS['0000455'], name="iwf", curie=MIXS.curie('0000455'),
-                   model_uri=NMDC_SUB_SCHEMA.iwf, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.iwf, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.last_clean = Slot(uri=MIXS['0000814'], name="last_clean", curie=MIXS.curie('0000814'),
                    model_uri=NMDC_SUB_SCHEMA.last_clean, domain=None, range=Optional[str])
 
 slots.lat_lon = Slot(uri=MIXS['0000009'], name="lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.lat_lon, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.lbc_thirty = Slot(uri=NMDC_SUB_SCHEMA.lbc_thirty, name="lbc_thirty", curie=NMDC_SUB_SCHEMA.curie('lbc_thirty'),
                    model_uri=NMDC_SUB_SCHEMA.lbc_thirty, domain=None, range=Optional[float])
@@ -14664,7 +14462,8 @@ slots.lbceq = Slot(uri=NMDC_SUB_SCHEMA.lbceq, name="lbceq", curie=NMDC_SUB_SCHEM
                    model_uri=NMDC_SUB_SCHEMA.lbceq, domain=None, range=Optional[float])
 
 slots.light_intensity = Slot(uri=MIXS['0000706'], name="light_intensity", curie=MIXS.curie('0000706'),
-                   model_uri=NMDC_SUB_SCHEMA.light_intensity, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.light_intensity, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.light_regm = Slot(uri=MIXS['0000569'], name="light_regm", curie=MIXS.curie('0000569'),
                    model_uri=NMDC_SUB_SCHEMA.light_regm, domain=None, range=Optional[str])
@@ -14673,13 +14472,15 @@ slots.light_type = Slot(uri=MIXS['0000769'], name="light_type", curie=MIXS.curie
                    model_uri=NMDC_SUB_SCHEMA.light_type, domain=None, range=Optional[Union[Union[str, "LightTypeEnum"], list[Union[str, "LightTypeEnum"]]]])
 
 slots.link_addit_analys = Slot(uri=MIXS['0000340'], name="link_addit_analys", curie=MIXS.curie('0000340'),
-                   model_uri=NMDC_SUB_SCHEMA.link_addit_analys, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.link_addit_analys, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.link_class_info = Slot(uri=MIXS['0000329'], name="link_class_info", curie=MIXS.curie('0000329'),
                    model_uri=NMDC_SUB_SCHEMA.link_class_info, domain=None, range=Optional[str])
 
 slots.link_climate_info = Slot(uri=MIXS['0000328'], name="link_climate_info", curie=MIXS.curie('0000328'),
-                   model_uri=NMDC_SUB_SCHEMA.link_climate_info, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.link_climate_info, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.lithology = Slot(uri=MIXS['0000990'], name="lithology", curie=MIXS.curie('0000990'),
                    model_uri=NMDC_SUB_SCHEMA.lithology, domain=None, range=Optional[Union[str, "LithologyEnum"]])
@@ -14688,24 +14489,28 @@ slots.local_class = Slot(uri=MIXS['0000330'], name="local_class", curie=MIXS.cur
                    model_uri=NMDC_SUB_SCHEMA.local_class, domain=None, range=Optional[str])
 
 slots.local_class_meth = Slot(uri=MIXS['0000331'], name="local_class_meth", curie=MIXS.curie('0000331'),
-                   model_uri=NMDC_SUB_SCHEMA.local_class_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.local_class_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.magnesium = Slot(uri=MIXS['0000431'], name="magnesium", curie=MIXS.curie('0000431'),
                    model_uri=NMDC_SUB_SCHEMA.magnesium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|mol/L|umol/kg|mg/kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.manganese = Slot(uri=NMDC_SUB_SCHEMA.manganese, name="manganese", curie=NMDC_SUB_SCHEMA.curie('manganese'),
                    model_uri=NMDC_SUB_SCHEMA.manganese, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/kg|mg/L)$'))
 
 slots.max_occup = Slot(uri=MIXS['0000229'], name="max_occup", curie=MIXS.curie('0000229'),
-                   model_uri=NMDC_SUB_SCHEMA.max_occup, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.max_occup, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.mean_frict_vel = Slot(uri=MIXS['0000498'], name="mean_frict_vel", curie=MIXS.curie('0000498'),
-                   model_uri=NMDC_SUB_SCHEMA.mean_frict_vel, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.mean_frict_vel, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.mean_peak_frict_vel = Slot(uri=MIXS['0000502'], name="mean_peak_frict_vel", curie=MIXS.curie('0000502'),
-                   model_uri=NMDC_SUB_SCHEMA.mean_peak_frict_vel, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.mean_peak_frict_vel, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.mech_struc = Slot(uri=MIXS['0000815'], name="mech_struc", curie=MIXS.curie('0000815'),
                    model_uri=NMDC_SUB_SCHEMA.mech_struc, domain=None, range=Optional[Union[str, "MechStrucEnum"]])
@@ -14715,7 +14520,7 @@ slots.mechanical_damage = Slot(uri=MIXS['0001052'], name="mechanical_damage", cu
 
 slots.methane = Slot(uri=MIXS['0000101'], name="methane", curie=MIXS.curie('0000101'),
                    model_uri=NMDC_SUB_SCHEMA.methane, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppb\]|\[ppm\]|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.micro_biomass_c_meth = Slot(uri=NMDC_SUB_SCHEMA.micro_biomass_c_meth, name="micro_biomass_c_meth", curie=NMDC_SUB_SCHEMA.curie('micro_biomass_c_meth'),
                    model_uri=NMDC_SUB_SCHEMA.micro_biomass_c_meth, domain=None, range=Optional[str])
@@ -14728,7 +14533,7 @@ slots.micro_biomass_n_meth = Slot(uri=NMDC_SUB_SCHEMA.micro_biomass_n_meth, name
 
 slots.microbial_biomass = Slot(uri=MIXS['0000650'], name="microbial_biomass", curie=MIXS.curie('0000650'),
                    model_uri=NMDC_SUB_SCHEMA.microbial_biomass, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.microbial_biomass_c = Slot(uri=NMDC_SUB_SCHEMA.microbial_biomass_c, name="microbial_biomass_c", curie=NMDC_SUB_SCHEMA.curie('microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.microbial_biomass_c, domain=None, range=Optional[str],
@@ -14746,7 +14551,7 @@ slots.n_alkanes = Slot(uri=MIXS['0000503'], name="n_alkanes", curie=MIXS.curie('
 
 slots.nitrate = Slot(uri=MIXS['0000425'], name="nitrate", curie=MIXS.curie('0000425'),
                    model_uri=NMDC_SUB_SCHEMA.nitrate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.nitrate_nitrogen = Slot(uri=NMDC_SUB_SCHEMA.nitrate_nitrogen, name="nitrate_nitrogen", curie=NMDC_SUB_SCHEMA.curie('nitrate_nitrogen'),
                    model_uri=NMDC_SUB_SCHEMA.nitrate_nitrogen, domain=None, range=Optional[str],
@@ -14754,7 +14559,7 @@ slots.nitrate_nitrogen = Slot(uri=NMDC_SUB_SCHEMA.nitrate_nitrogen, name="nitrat
 
 slots.nitrite = Slot(uri=MIXS['0000426'], name="nitrite", curie=MIXS.curie('0000426'),
                    model_uri=NMDC_SUB_SCHEMA.nitrite, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.nitrite_nitrogen = Slot(uri=NMDC_SUB_SCHEMA.nitrite_nitrogen, name="nitrite_nitrogen", curie=NMDC_SUB_SCHEMA.curie('nitrite_nitrogen'),
                    model_uri=NMDC_SUB_SCHEMA.nitrite_nitrogen, domain=None, range=Optional[str],
@@ -14762,7 +14567,7 @@ slots.nitrite_nitrogen = Slot(uri=NMDC_SUB_SCHEMA.nitrite_nitrogen, name="nitrit
 
 slots.nitro = Slot(uri=MIXS['0000504'], name="nitro", curie=MIXS.curie('0000504'),
                    model_uri=NMDC_SUB_SCHEMA.nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(umol/L|%)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.non_microb_biomass = Slot(uri=NMDC_SUB_SCHEMA.non_microb_biomass, name="non_microb_biomass", curie=NMDC_SUB_SCHEMA.curie('non_microb_biomass'),
                    model_uri=NMDC_SUB_SCHEMA.non_microb_biomass, domain=None, range=Optional[str],
@@ -14775,13 +14580,16 @@ slots.non_min_nutr_regm = Slot(uri=MIXS['0000571'], name="non_min_nutr_regm", cu
                    model_uri=NMDC_SUB_SCHEMA.non_min_nutr_regm, domain=None, range=Optional[str])
 
 slots.number_pets = Slot(uri=MIXS['0000231'], name="number_pets", curie=MIXS.curie('0000231'),
-                   model_uri=NMDC_SUB_SCHEMA.number_pets, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.number_pets, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.number_plants = Slot(uri=MIXS['0000230'], name="number_plants", curie=MIXS.curie('0000230'),
-                   model_uri=NMDC_SUB_SCHEMA.number_plants, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.number_plants, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.number_resident = Slot(uri=MIXS['0000232'], name="number_resident", curie=MIXS.curie('0000232'),
-                   model_uri=NMDC_SUB_SCHEMA.number_resident, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.number_resident, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.occup_density_samp = Slot(uri=MIXS['0000217'], name="occup_density_samp", curie=MIXS.curie('0000217'),
                    model_uri=NMDC_SUB_SCHEMA.occup_density_samp, domain=None, range=Optional[float])
@@ -14790,20 +14598,23 @@ slots.occup_document = Slot(uri=MIXS['0000816'], name="occup_document", curie=MI
                    model_uri=NMDC_SUB_SCHEMA.occup_document, domain=None, range=Optional[Union[str, "OccupDocumentEnum"]])
 
 slots.occup_samp = Slot(uri=MIXS['0000772'], name="occup_samp", curie=MIXS.curie('0000772'),
-                   model_uri=NMDC_SUB_SCHEMA.occup_samp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.occup_samp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.org_carb = Slot(uri=MIXS['0000508'], name="org_carb", curie=MIXS.curie('0000508'),
                    model_uri=NMDC_SUB_SCHEMA.org_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(umol/L|%|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.org_count_qpcr_info = Slot(uri=MIXS['0000099'], name="org_count_qpcr_info", curie=MIXS.curie('0000099'),
                    model_uri=NMDC_SUB_SCHEMA.org_count_qpcr_info, domain=None, range=Optional[str])
 
 slots.org_matter = Slot(uri=MIXS['0000204'], name="org_matter", curie=MIXS.curie('0000204'),
-                   model_uri=NMDC_SUB_SCHEMA.org_matter, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.org_matter, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.org_nitro = Slot(uri=MIXS['0000205'], name="org_nitro", curie=MIXS.curie('0000205'),
-                   model_uri=NMDC_SUB_SCHEMA.org_nitro, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.org_nitro, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.org_nitro_method = Slot(uri=NMDC_SUB_SCHEMA.org_nitro_method, name="org_nitro_method", curie=NMDC_SUB_SCHEMA.curie('org_nitro_method'),
                    model_uri=NMDC_SUB_SCHEMA.org_nitro_method, domain=None, range=Optional[str])
@@ -14819,22 +14630,23 @@ slots.other_treatment = Slot(uri=NMDC_SUB_SCHEMA.other_treatment, name="other_tr
                    model_uri=NMDC_SUB_SCHEMA.other_treatment, domain=None, range=Optional[str])
 
 slots.owc_tvdss = Slot(uri=MIXS['0000405'], name="owc_tvdss", curie=MIXS.curie('0000405'),
-                   model_uri=NMDC_SUB_SCHEMA.owc_tvdss, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.owc_tvdss, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.oxy_stat_samp = Slot(uri=MIXS['0000753'], name="oxy_stat_samp", curie=MIXS.curie('0000753'),
                    model_uri=NMDC_SUB_SCHEMA.oxy_stat_samp, domain=None, range=Optional[Union[str, "OxyStatSampEnum"]])
 
 slots.oxygen = Slot(uri=MIXS['0000104'], name="oxygen", curie=MIXS.curie('0000104'),
                    model_uri=NMDC_SUB_SCHEMA.oxygen, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.part_org_carb = Slot(uri=MIXS['0000515'], name="part_org_carb", curie=MIXS.curie('0000515'),
                    model_uri=NMDC_SUB_SCHEMA.part_org_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.part_org_nitro = Slot(uri=MIXS['0000719'], name="part_org_nitro", curie=MIXS.curie('0000719'),
                    model_uri=NMDC_SUB_SCHEMA.part_org_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|umol/L|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.particle_class = Slot(uri=MIXS['0000206'], name="particle_class", curie=MIXS.curie('0000206'),
                    model_uri=NMDC_SUB_SCHEMA.particle_class, domain=None, range=Optional[str])
@@ -14849,7 +14661,8 @@ slots.pesticide_regm = Slot(uri=MIXS['0000573'], name="pesticide_regm", curie=MI
                    model_uri=NMDC_SUB_SCHEMA.pesticide_regm, domain=None, range=Optional[str])
 
 slots.petroleum_hydrocarb = Slot(uri=MIXS['0000516'], name="petroleum_hydrocarb", curie=MIXS.curie('0000516'),
-                   model_uri=NMDC_SUB_SCHEMA.petroleum_hydrocarb, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.petroleum_hydrocarb, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.ph = Slot(uri=MIXS['0001001'], name="ph", curie=MIXS.curie('0001001'),
                    model_uri=NMDC_SUB_SCHEMA.ph, domain=None, range=Optional[float])
@@ -14864,14 +14677,16 @@ slots.phaeopigments = Slot(uri=MIXS['0000180'], name="phaeopigments", curie=MIXS
                    model_uri=NMDC_SUB_SCHEMA.phaeopigments, domain=None, range=Optional[str])
 
 slots.phosphate = Slot(uri=MIXS['0000505'], name="phosphate", curie=MIXS.curie('0000505'),
-                   model_uri=NMDC_SUB_SCHEMA.phosphate, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.phosphate, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.phosplipid_fatt_acid = Slot(uri=MIXS['0000181'], name="phosplipid_fatt_acid", curie=MIXS.curie('0000181'),
                    model_uri=NMDC_SUB_SCHEMA.phosplipid_fatt_acid, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ .*$'))
 
 slots.photon_flux = Slot(uri=MIXS['0000725'], name="photon_flux", curie=MIXS.curie('0000725'),
-                   model_uri=NMDC_SUB_SCHEMA.photon_flux, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.photon_flux, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.plant_growth_med = Slot(uri=MIXS['0001057'], name="plant_growth_med", curie=MIXS.curie('0001057'),
                    model_uri=NMDC_SUB_SCHEMA.plant_growth_med, domain=None, range=Optional[str],
@@ -14885,7 +14700,7 @@ slots.plant_sex = Slot(uri=MIXS['0001059'], name="plant_sex", curie=MIXS.curie('
 
 slots.plant_struc = Slot(uri=MIXS['0001060'], name="plant_struc", curie=MIXS.curie('0001060'),
                    model_uri=NMDC_SUB_SCHEMA.plant_struc, domain=None, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$'))
 
 slots.pollutants = Slot(uri=MIXS['0000107'], name="pollutants", curie=MIXS.curie('0000107'),
                    model_uri=NMDC_SUB_SCHEMA.pollutants, domain=None, range=Optional[str])
@@ -14895,36 +14710,40 @@ slots.porosity = Slot(uri=MIXS['0000211'], name="porosity", curie=MIXS.curie('00
 
 slots.potassium = Slot(uri=MIXS['0000430'], name="potassium", curie=MIXS.curie('0000430'),
                    model_uri=NMDC_SUB_SCHEMA.potassium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|mg/kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.pour_point = Slot(uri=MIXS['0000127'], name="pour_point", curie=MIXS.curie('0000127'),
-                   model_uri=NMDC_SUB_SCHEMA.pour_point, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.pour_point, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.pre_treatment = Slot(uri=MIXS['0000348'], name="pre_treatment", curie=MIXS.curie('0000348'),
                    model_uri=NMDC_SUB_SCHEMA.pre_treatment, domain=None, range=Optional[str])
 
 slots.pres_animal_insect = Slot(uri=MIXS['0000819'], name="pres_animal_insect", curie=MIXS.curie('0000819'),
-                   model_uri=NMDC_SUB_SCHEMA.pres_animal_insect, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(cat|dog|rodent|snake|other);\d+$'))
+                   model_uri=NMDC_SUB_SCHEMA.pres_animal_insect, domain=None, range=Optional[str])
 
 slots.pressure = Slot(uri=MIXS['0000412'], name="pressure", curie=MIXS.curie('0000412'),
-                   model_uri=NMDC_SUB_SCHEMA.pressure, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.pressure, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.prev_land_use_meth = Slot(uri=MIXS['0000316'], name="prev_land_use_meth", curie=MIXS.curie('0000316'),
-                   model_uri=NMDC_SUB_SCHEMA.prev_land_use_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.prev_land_use_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.previous_land_use = Slot(uri=MIXS['0000315'], name="previous_land_use", curie=MIXS.curie('0000315'),
-                   model_uri=NMDC_SUB_SCHEMA.previous_land_use, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.previous_land_use, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$'))
 
 slots.primary_prod = Slot(uri=MIXS['0000728'], name="primary_prod", curie=MIXS.curie('0000728'),
                    model_uri=NMDC_SUB_SCHEMA.primary_prod, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(g/m2/d|mg/m3/d)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.primary_treatment = Slot(uri=MIXS['0000349'], name="primary_treatment", curie=MIXS.curie('0000349'),
                    model_uri=NMDC_SUB_SCHEMA.primary_treatment, domain=None, range=Optional[str])
 
 slots.prod_rate = Slot(uri=MIXS['0000452'], name="prod_rate", curie=MIXS.curie('0000452'),
-                   model_uri=NMDC_SUB_SCHEMA.prod_rate, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.prod_rate, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.prod_start_date = Slot(uri=MIXS['0001008'], name="prod_start_date", curie=MIXS.curie('0001008'),
                    model_uri=NMDC_SUB_SCHEMA.prod_start_date, domain=None, range=Optional[str])
@@ -14948,14 +14767,16 @@ slots.reactor_type = Slot(uri=MIXS['0000350'], name="reactor_type", curie=MIXS.c
                    model_uri=NMDC_SUB_SCHEMA.reactor_type, domain=None, range=Optional[str])
 
 slots.redox_potential = Slot(uri=MIXS['0000182'], name="redox_potential", curie=MIXS.curie('0000182'),
-                   model_uri=NMDC_SUB_SCHEMA.redox_potential, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.redox_potential, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.rel_air_humidity = Slot(uri=MIXS['0000121'], name="rel_air_humidity", curie=MIXS.curie('0000121'),
-                   model_uri=NMDC_SUB_SCHEMA.rel_air_humidity, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.rel_air_humidity, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.rel_humidity_out = Slot(uri=MIXS['0000188'], name="rel_humidity_out", curie=MIXS.curie('0000188'),
                    model_uri=NMDC_SUB_SCHEMA.rel_humidity_out, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.rel_samp_loc = Slot(uri=MIXS['0000821'], name="rel_samp_loc", curie=MIXS.curie('0000821'),
                    model_uri=NMDC_SUB_SCHEMA.rel_samp_loc, domain=None, range=Optional[Union[str, "RelSampLocEnum"]])
@@ -14967,13 +14788,15 @@ slots.reservoir = Slot(uri=MIXS['0000303'], name="reservoir", curie=MIXS.curie('
                    model_uri=NMDC_SUB_SCHEMA.reservoir, domain=None, range=Optional[str])
 
 slots.resins_pc = Slot(uri=MIXS['0000134'], name="resins_pc", curie=MIXS.curie('0000134'),
-                   model_uri=NMDC_SUB_SCHEMA.resins_pc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.resins_pc, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.rna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.rna_isolate_meth, name="rna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('rna_isolate_meth'),
                    model_uri=NMDC_SUB_SCHEMA.rna_isolate_meth, domain=None, range=str)
 
 slots.room_air_exch_rate = Slot(uri=MIXS['0000169'], name="room_air_exch_rate", curie=MIXS.curie('0000169'),
-                   model_uri=NMDC_SUB_SCHEMA.room_air_exch_rate, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.room_air_exch_rate, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.room_architec_elem = Slot(uri=MIXS['0000233'], name="room_architec_elem", curie=MIXS.curie('0000233'),
                    model_uri=NMDC_SUB_SCHEMA.room_architec_elem, domain=None, range=Optional[str])
@@ -14991,13 +14814,16 @@ slots.room_dim = Slot(uri=MIXS['0000192'], name="room_dim", curie=MIXS.curie('00
                    model_uri=NMDC_SUB_SCHEMA.room_dim, domain=None, range=Optional[str])
 
 slots.room_door_dist = Slot(uri=MIXS['0000193'], name="room_door_dist", curie=MIXS.curie('0000193'),
-                   model_uri=NMDC_SUB_SCHEMA.room_door_dist, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.room_door_dist, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.room_door_share = Slot(uri=MIXS['0000242'], name="room_door_share", curie=MIXS.curie('0000242'),
-                   model_uri=NMDC_SUB_SCHEMA.room_door_share, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.room_door_share, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+);[1-9][0-9]*$'))
 
 slots.room_hallway = Slot(uri=MIXS['0000238'], name="room_hallway", curie=MIXS.curie('0000238'),
-                   model_uri=NMDC_SUB_SCHEMA.room_hallway, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.room_hallway, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+);[1-9][0-9]*$'))
 
 slots.room_loc = Slot(uri=MIXS['0000823'], name="room_loc", curie=MIXS.curie('0000823'),
                    model_uri=NMDC_SUB_SCHEMA.room_loc, domain=None, range=Optional[Union[str, "RoomLocEnum"]])
@@ -15006,28 +14832,33 @@ slots.room_moist_dam_hist = Slot(uri=MIXS['0000235'], name="room_moist_dam_hist"
                    model_uri=NMDC_SUB_SCHEMA.room_moist_dam_hist, domain=None, range=Optional[int])
 
 slots.room_net_area = Slot(uri=MIXS['0000194'], name="room_net_area", curie=MIXS.curie('0000194'),
-                   model_uri=NMDC_SUB_SCHEMA.room_net_area, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.room_net_area, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.room_occup = Slot(uri=MIXS['0000236'], name="room_occup", curie=MIXS.curie('0000236'),
-                   model_uri=NMDC_SUB_SCHEMA.room_occup, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.room_occup, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.room_samp_pos = Slot(uri=MIXS['0000824'], name="room_samp_pos", curie=MIXS.curie('0000824'),
                    model_uri=NMDC_SUB_SCHEMA.room_samp_pos, domain=None, range=Optional[Union[str, "RoomSampPosEnum"]])
 
 slots.room_type = Slot(uri=MIXS['0000825'], name="room_type", curie=MIXS.curie('0000825'),
-                   model_uri=NMDC_SUB_SCHEMA.room_type, domain=None, range=Optional[Union[str, "RoomTypeEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.room_type, domain=None, range=Optional[str])
 
 slots.room_vol = Slot(uri=MIXS['0000195'], name="room_vol", curie=MIXS.curie('0000195'),
-                   model_uri=NMDC_SUB_SCHEMA.room_vol, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.room_vol, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[1-9][0-9]* .*$'))
 
 slots.room_wall_share = Slot(uri=MIXS['0000243'], name="room_wall_share", curie=MIXS.curie('0000243'),
-                   model_uri=NMDC_SUB_SCHEMA.room_wall_share, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.room_wall_share, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+);[1-9][0-9]*$'))
 
 slots.room_window_count = Slot(uri=MIXS['0000237'], name="room_window_count", curie=MIXS.curie('0000237'),
                    model_uri=NMDC_SUB_SCHEMA.room_window_count, domain=None, range=Optional[int])
 
 slots.root_cond = Slot(uri=MIXS['0001061'], name="root_cond", curie=MIXS.curie('0001061'),
-                   model_uri=NMDC_SUB_SCHEMA.root_cond, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.root_cond, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
 
 slots.root_med_carbon = Slot(uri=MIXS['0000577'], name="root_med_carbon", curie=MIXS.curie('0000577'),
                    model_uri=NMDC_SUB_SCHEMA.root_med_carbon, domain=None, range=Optional[str])
@@ -15052,10 +14883,11 @@ slots.root_med_suppl = Slot(uri=MIXS['0000580'], name="root_med_suppl", curie=MI
 
 slots.salinity = Slot(uri=MIXS['0000183'], name="salinity", curie=MIXS.curie('0000183'),
                    model_uri=NMDC_SUB_SCHEMA.salinity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(%|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.salinity_meth = Slot(uri=MIXS['0000341'], name="salinity_meth", curie=MIXS.curie('0000341'),
-                   model_uri=NMDC_SUB_SCHEMA.salinity_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.salinity_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$'))
 
 slots.salt_regm = Slot(uri=MIXS['0000582'], name="salt_regm", curie=MIXS.curie('0000582'),
                    model_uri=NMDC_SUB_SCHEMA.salt_regm, domain=None, range=Optional[str])
@@ -15076,10 +14908,12 @@ slots.samp_dis_stage = Slot(uri=MIXS['0000249'], name="samp_dis_stage", curie=MI
                    model_uri=NMDC_SUB_SCHEMA.samp_dis_stage, domain=None, range=Optional[Union[str, "SampDisStageEnum"]])
 
 slots.samp_floor = Slot(uri=MIXS['0000828'], name="samp_floor", curie=MIXS.curie('0000828'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_floor, domain=None, range=Optional[Union[str, "SampFloorEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.samp_floor, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(?:(?:\d*1[1-3]th|\d*1st|\d*2nd|\d*3rd|\d*[04-9]th) floor|basement|lobby)$'))
 
 slots.samp_loc_corr_rate = Slot(uri=MIXS['0000136'], name="samp_loc_corr_rate", curie=MIXS.curie('0000136'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_loc_corr_rate, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.samp_loc_corr_rate, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ *- *[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.samp_mat_process = Slot(uri=MIXS['0000016'], name="samp_mat_process", curie=MIXS.curie('0000016'),
                    model_uri=NMDC_SUB_SCHEMA.samp_mat_process, domain=None, range=Optional[str])
@@ -15091,26 +14925,29 @@ slots.samp_name = Slot(uri=MIXS['0001107'], name="samp_name", curie=MIXS.curie('
                    model_uri=NMDC_SUB_SCHEMA.samp_name, domain=None, range=URIRef)
 
 slots.samp_preserv = Slot(uri=MIXS['0000463'], name="samp_preserv", curie=MIXS.curie('0000463'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_preserv, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.samp_preserv, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.samp_room_id = Slot(uri=MIXS['0000244'], name="samp_room_id", curie=MIXS.curie('0000244'),
                    model_uri=NMDC_SUB_SCHEMA.samp_room_id, domain=None, range=Optional[str])
 
 slots.samp_size = Slot(uri=MIXS['0000001'], name="samp_size", curie=MIXS.curie('0000001'),
                    model_uri=NMDC_SUB_SCHEMA.samp_size, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(L|g|mL|mg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.samp_sort_meth = Slot(uri=MIXS['0000216'], name="samp_sort_meth", curie=MIXS.curie('0000216'),
                    model_uri=NMDC_SUB_SCHEMA.samp_sort_meth, domain=None, range=Optional[str])
 
 slots.samp_store_dur = Slot(uri=MIXS['0000116'], name="samp_store_dur", curie=MIXS.curie('0000116'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_store_dur, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.samp_store_dur, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^P(?:(?:\d+D|\d+M(?:\d+D)?|\d+Y(?:\d+M(?:\d+D)?)?)(?:T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S))?|T(?:\d+H(?:\d+M(?:\d+S)?)?|\d+M(?:\d+S)?|\d+S)|\d+W)$'))
 
 slots.samp_store_loc = Slot(uri=MIXS['0000755'], name="samp_store_loc", curie=MIXS.curie('0000755'),
                    model_uri=NMDC_SUB_SCHEMA.samp_store_loc, domain=None, range=Optional[str])
 
 slots.samp_store_temp = Slot(uri=MIXS['0000110'], name="samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_store_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.samp_store_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.samp_subtype = Slot(uri=MIXS['0000999'], name="samp_subtype", curie=MIXS.curie('0000999'),
                    model_uri=NMDC_SUB_SCHEMA.samp_subtype, domain=None, range=Optional[Union[str, "SampSubtypeEnum"]])
@@ -15125,7 +14962,8 @@ slots.samp_tvdss = Slot(uri=MIXS['0000409'], name="samp_tvdss", curie=MIXS.curie
                    model_uri=NMDC_SUB_SCHEMA.samp_tvdss, domain=None, range=Optional[str])
 
 slots.samp_type = Slot(uri=MIXS['0000998'], name="samp_type", curie=MIXS.curie('0000998'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_type, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.samp_type, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[[a-zA-Z]{2,}:[a-zA-Z0-9]\d+\]$'))
 
 slots.samp_weather = Slot(uri=MIXS['0000827'], name="samp_weather", curie=MIXS.curie('0000827'),
                    model_uri=NMDC_SUB_SCHEMA.samp_weather, domain=None, range=Optional[Union[str, "SampWeatherEnum"]])
@@ -15138,13 +14976,15 @@ slots.sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="sample_link", cu
                    pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.sample_shipped = Slot(uri=NMDC_SUB_SCHEMA.sample_shipped, name="sample_shipped", curie=NMDC_SUB_SCHEMA.curie('sample_shipped'),
-                   model_uri=NMDC_SUB_SCHEMA.sample_shipped, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.sample_shipped, domain=None, range=str,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ .*$'))
 
 slots.sample_type = Slot(uri=NMDC_SUB_SCHEMA.sample_type, name="sample_type", curie=NMDC_SUB_SCHEMA.curie('sample_type'),
                    model_uri=NMDC_SUB_SCHEMA.sample_type, domain=None, range=Union[str, "SampleTypeEnum"])
 
 slots.saturates_pc = Slot(uri=MIXS['0000131'], name="saturates_pc", curie=MIXS.curie('0000131'),
-                   model_uri=NMDC_SUB_SCHEMA.saturates_pc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.saturates_pc, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'))
 
 slots.season = Slot(uri=MIXS['0000829'], name="season", curie=MIXS.curie('0000829'),
                    model_uri=NMDC_SUB_SCHEMA.season, domain=None, range=Optional[Union[str, "SeasonEnum"]])
@@ -15153,10 +14993,12 @@ slots.season_environment = Slot(uri=MIXS['0001068'], name="season_environment", 
                    model_uri=NMDC_SUB_SCHEMA.season_environment, domain=None, range=Optional[str])
 
 slots.season_precpt = Slot(uri=MIXS['0000645'], name="season_precpt", curie=MIXS.curie('0000645'),
-                   model_uri=NMDC_SUB_SCHEMA.season_precpt, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.season_precpt, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.season_temp = Slot(uri=MIXS['0000643'], name="season_temp", curie=MIXS.curie('0000643'),
-                   model_uri=NMDC_SUB_SCHEMA.season_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.season_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.season_use = Slot(uri=MIXS['0000830'], name="season_use", curie=MIXS.curie('0000830'),
                    model_uri=NMDC_SUB_SCHEMA.season_use, domain=None, range=Optional[Union[str, "SeasonUseEnum"]])
@@ -15174,10 +15016,10 @@ slots.shad_dev_water_mold = Slot(uri=MIXS['0000834'], name="shad_dev_water_mold"
                    model_uri=NMDC_SUB_SCHEMA.shad_dev_water_mold, domain=None, range=Optional[str])
 
 slots.shading_device_cond = Slot(uri=MIXS['0000831'], name="shading_device_cond", curie=MIXS.curie('0000831'),
-                   model_uri=NMDC_SUB_SCHEMA.shading_device_cond, domain=None, range=Optional[Union[str, "ShadingDeviceCondEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.shading_device_cond, domain=None, range=Optional[Union[str, "DamagedRupturedEnum"]])
 
 slots.shading_device_loc = Slot(uri=MIXS['0000832'], name="shading_device_loc", curie=MIXS.curie('0000832'),
-                   model_uri=NMDC_SUB_SCHEMA.shading_device_loc, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.shading_device_loc, domain=None, range=Optional[Union[str, "ShadingDeviceLocEnum"]])
 
 slots.shading_device_mat = Slot(uri=MIXS['0000245'], name="shading_device_mat", curie=MIXS.curie('0000245'),
                    model_uri=NMDC_SUB_SCHEMA.shading_device_mat, domain=None, range=Optional[str])
@@ -15189,36 +15031,41 @@ slots.sieving = Slot(uri=MIXS['0000322'], name="sieving", curie=MIXS.curie('0000
                    model_uri=NMDC_SUB_SCHEMA.sieving, domain=None, range=Optional[str])
 
 slots.silicate = Slot(uri=MIXS['0000184'], name="silicate", curie=MIXS.curie('0000184'),
-                   model_uri=NMDC_SUB_SCHEMA.silicate, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.silicate, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.size_frac = Slot(uri=MIXS['0000017'], name="size_frac", curie=MIXS.curie('0000017'),
                    model_uri=NMDC_SUB_SCHEMA.size_frac, domain=None, range=Optional[str])
 
 slots.size_frac_low = Slot(uri=MIXS['0000735'], name="size_frac_low", curie=MIXS.curie('0000735'),
-                   model_uri=NMDC_SUB_SCHEMA.size_frac_low, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.size_frac_low, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.size_frac_up = Slot(uri=MIXS['0000736'], name="size_frac_up", curie=MIXS.curie('0000736'),
-                   model_uri=NMDC_SUB_SCHEMA.size_frac_up, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.size_frac_up, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.slope_aspect = Slot(uri=MIXS['0000647'], name="slope_aspect", curie=MIXS.curie('0000647'),
-                   model_uri=NMDC_SUB_SCHEMA.slope_aspect, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.slope_aspect, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.slope_gradient = Slot(uri=MIXS['0000646'], name="slope_gradient", curie=MIXS.curie('0000646'),
-                   model_uri=NMDC_SUB_SCHEMA.slope_gradient, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.slope_gradient, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.sludge_retent_time = Slot(uri=MIXS['0000669'], name="sludge_retent_time", curie=MIXS.curie('0000669'),
-                   model_uri=NMDC_SUB_SCHEMA.sludge_retent_time, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.sludge_retent_time, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.sodium = Slot(uri=MIXS['0000428'], name="sodium", curie=MIXS.curie('0000428'),
                    model_uri=NMDC_SUB_SCHEMA.sodium, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.soil_horizon = Slot(uri=MIXS['0001082'], name="soil_horizon", curie=MIXS.curie('0001082'),
                    model_uri=NMDC_SUB_SCHEMA.soil_horizon, domain=None, range=Optional[Union[str, "SoilHorizonEnum"]])
 
 slots.soil_text_measure = Slot(uri=MIXS['0000335'], name="soil_text_measure", curie=MIXS.curie('0000335'),
-                   model_uri=NMDC_SUB_SCHEMA.soil_text_measure, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +\S.*$'))
+                   model_uri=NMDC_SUB_SCHEMA.soil_text_measure, domain=None, range=Optional[str])
 
 slots.soil_texture_meth = Slot(uri=MIXS['0000336'], name="soil_texture_meth", curie=MIXS.curie('0000336'),
                    model_uri=NMDC_SUB_SCHEMA.soil_texture_meth, domain=None, range=Optional[str])
@@ -15231,7 +15078,7 @@ slots.soil_type_meth = Slot(uri=MIXS['0000334'], name="soil_type_meth", curie=MI
 
 slots.solar_irradiance = Slot(uri=MIXS['0000112'], name="solar_irradiance", curie=MIXS.curie('0000112'),
                    model_uri=NMDC_SUB_SCHEMA.solar_irradiance, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(kW/m2/d|erg/cm2/s)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.soluble_inorg_mat = Slot(uri=MIXS['0000672'], name="soluble_inorg_mat", curie=MIXS.curie('0000672'),
                    model_uri=NMDC_SUB_SCHEMA.soluble_inorg_mat, domain=None, range=Optional[str])
@@ -15241,14 +15088,14 @@ slots.soluble_org_mat = Slot(uri=MIXS['0000673'], name="soluble_org_mat", curie=
 
 slots.soluble_react_phosp = Slot(uri=MIXS['0000738'], name="soluble_react_phosp", curie=MIXS.curie('0000738'),
                    model_uri=NMDC_SUB_SCHEMA.soluble_react_phosp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L|ug/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.source_mat_id = Slot(uri=MIXS['0000026'], name="source_mat_id", curie=MIXS.curie('0000026'),
                    model_uri=NMDC_SUB_SCHEMA.source_mat_id, domain=None, range=Optional[str],
                    pattern=re.compile(r'^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$'))
 
 slots.space_typ_state = Slot(uri=MIXS['0000770'], name="space_typ_state", curie=MIXS.curie('0000770'),
-                   model_uri=NMDC_SUB_SCHEMA.space_typ_state, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.space_typ_state, domain=None, range=Optional[Union[str, "SpaceTypStateEnum"]])
 
 slots.specific = Slot(uri=MIXS['0000836'], name="specific", curie=MIXS.curie('0000836'),
                    model_uri=NMDC_SUB_SCHEMA.specific, domain=None, range=Optional[Union[str, "SpecificEnum"]])
@@ -15257,13 +15104,14 @@ slots.specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="sp
                    model_uri=NMDC_SUB_SCHEMA.specific_ecosystem, domain=None, range=Optional[str])
 
 slots.specific_humidity = Slot(uri=MIXS['0000214'], name="specific_humidity", curie=MIXS.curie('0000214'),
-                   model_uri=NMDC_SUB_SCHEMA.specific_humidity, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.specific_humidity, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.sr_dep_env = Slot(uri=MIXS['0000996'], name="sr_dep_env", curie=MIXS.curie('0000996'),
                    model_uri=NMDC_SUB_SCHEMA.sr_dep_env, domain=None, range=Optional[Union[str, "SrDepEnvEnum"]])
 
 slots.sr_geol_age = Slot(uri=MIXS['0000997'], name="sr_geol_age", curie=MIXS.curie('0000997'),
-                   model_uri=NMDC_SUB_SCHEMA.sr_geol_age, domain=None, range=Optional[Union[str, "SrGeolAgeEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.sr_geol_age, domain=None, range=Optional[Union[str, "GeolAgeEnum"]])
 
 slots.sr_kerog_type = Slot(uri=MIXS['0000994'], name="sr_kerog_type", curie=MIXS.curie('0000994'),
                    model_uri=NMDC_SUB_SCHEMA.sr_kerog_type, domain=None, range=Optional[Union[str, "SrKerogTypeEnum"]])
@@ -15290,51 +15138,58 @@ slots.substructure_type = Slot(uri=MIXS['0000767'], name="substructure_type", cu
 
 slots.sulfate = Slot(uri=MIXS['0000423'], name="sulfate", curie=MIXS.curie('0000423'),
                    model_uri=NMDC_SUB_SCHEMA.sulfate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.sulfate_fw = Slot(uri=MIXS['0000407'], name="sulfate_fw", curie=MIXS.curie('0000407'),
-                   model_uri=NMDC_SUB_SCHEMA.sulfate_fw, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.sulfate_fw, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.sulfide = Slot(uri=MIXS['0000424'], name="sulfide", curie=MIXS.curie('0000424'),
                    model_uri=NMDC_SUB_SCHEMA.sulfide, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.surf_air_cont = Slot(uri=MIXS['0000759'], name="surf_air_cont", curie=MIXS.curie('0000759'),
                    model_uri=NMDC_SUB_SCHEMA.surf_air_cont, domain=None, range=Optional[Union[Union[str, "SurfAirContEnum"], list[Union[str, "SurfAirContEnum"]]]])
 
 slots.surf_humidity = Slot(uri=MIXS['0000123'], name="surf_humidity", curie=MIXS.curie('0000123'),
-                   model_uri=NMDC_SUB_SCHEMA.surf_humidity, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.surf_humidity, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.surf_material = Slot(uri=MIXS['0000758'], name="surf_material", curie=MIXS.curie('0000758'),
                    model_uri=NMDC_SUB_SCHEMA.surf_material, domain=None, range=Optional[Union[str, "SurfMaterialEnum"]])
 
 slots.surf_moisture = Slot(uri=MIXS['0000128'], name="surf_moisture", curie=MIXS.curie('0000128'),
                    model_uri=NMDC_SUB_SCHEMA.surf_moisture, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|g/m2|g/m3)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.surf_moisture_ph = Slot(uri=MIXS['0000760'], name="surf_moisture_ph", curie=MIXS.curie('0000760'),
                    model_uri=NMDC_SUB_SCHEMA.surf_moisture_ph, domain=None, range=Optional[float])
 
 slots.surf_temp = Slot(uri=MIXS['0000125'], name="surf_temp", curie=MIXS.curie('0000125'),
-                   model_uri=NMDC_SUB_SCHEMA.surf_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.surf_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.suspend_part_matter = Slot(uri=MIXS['0000741'], name="suspend_part_matter", curie=MIXS.curie('0000741'),
-                   model_uri=NMDC_SUB_SCHEMA.suspend_part_matter, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.suspend_part_matter, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.suspend_solids = Slot(uri=MIXS['0000150'], name="suspend_solids", curie=MIXS.curie('0000150'),
                    model_uri=NMDC_SUB_SCHEMA.suspend_solids, domain=None, range=Optional[str])
 
 slots.tan = Slot(uri=MIXS['0000120'], name="tan", curie=MIXS.curie('0000120'),
-                   model_uri=NMDC_SUB_SCHEMA.tan, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.tan, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.technical_reps = Slot(uri=NMDC_SUB_SCHEMA.technical_reps, name="technical_reps", curie=NMDC_SUB_SCHEMA.curie('technical_reps'),
                    model_uri=NMDC_SUB_SCHEMA.technical_reps, domain=None, range=Optional[int])
 
 slots.temp = Slot(uri=MIXS['0000113'], name="temp", curie=MIXS.curie('0000113'),
-                   model_uri=NMDC_SUB_SCHEMA.temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.temp_out = Slot(uri=MIXS['0000197'], name="temp_out", curie=MIXS.curie('0000197'),
-                   model_uri=NMDC_SUB_SCHEMA.temp_out, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.temp_out, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tertiary_treatment = Slot(uri=MIXS['0000352'], name="tertiary_treatment", curie=MIXS.curie('0000352'),
                    model_uri=NMDC_SUB_SCHEMA.tertiary_treatment, domain=None, range=Optional[str])
@@ -15346,62 +15201,68 @@ slots.tillage = Slot(uri=MIXS['0001081'], name="tillage", curie=MIXS.curie('0001
                    model_uri=NMDC_SUB_SCHEMA.tillage, domain=None, range=Optional[Union[Union[str, "TillageEnum"], list[Union[str, "TillageEnum"]]]])
 
 slots.tiss_cult_growth_med = Slot(uri=MIXS['0001070'], name="tiss_cult_growth_med", curie=MIXS.curie('0001070'),
-                   model_uri=NMDC_SUB_SCHEMA.tiss_cult_growth_med, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.tiss_cult_growth_med, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
 
 slots.toluene = Slot(uri=MIXS['0000154'], name="toluene", curie=MIXS.curie('0000154'),
                    model_uri=NMDC_SUB_SCHEMA.toluene, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_carb = Slot(uri=MIXS['0000525'], name="tot_carb", curie=MIXS.curie('0000525'),
                    model_uri=NMDC_SUB_SCHEMA.tot_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|%)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_depth_water_col = Slot(uri=MIXS['0000634'], name="tot_depth_water_col", curie=MIXS.curie('0000634'),
-                   model_uri=NMDC_SUB_SCHEMA.tot_depth_water_col, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.tot_depth_water_col, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_diss_nitro = Slot(uri=MIXS['0000744'], name="tot_diss_nitro", curie=MIXS.curie('0000744'),
                    model_uri=NMDC_SUB_SCHEMA.tot_diss_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_inorg_nitro = Slot(uri=MIXS['0000745'], name="tot_inorg_nitro", curie=MIXS.curie('0000745'),
-                   model_uri=NMDC_SUB_SCHEMA.tot_inorg_nitro, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.tot_inorg_nitro, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_iron = Slot(uri=MIXS['0000105'], name="tot_iron", curie=MIXS.curie('0000105'),
                    model_uri=NMDC_SUB_SCHEMA.tot_iron, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|mg/kg)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_nitro = Slot(uri=MIXS['0000102'], name="tot_nitro", curie=MIXS.curie('0000102'),
                    model_uri=NMDC_SUB_SCHEMA.tot_nitro, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|ug/L|umol/L|%)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="tot_nitro_cont_meth", curie=MIXS.curie('0000338'),
-                   model_uri=NMDC_SUB_SCHEMA.tot_nitro_cont_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.tot_nitro_cont_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.tot_nitro_content = Slot(uri=MIXS['0000530'], name="tot_nitro_content", curie=MIXS.curie('0000530'),
                    model_uri=NMDC_SUB_SCHEMA.tot_nitro_content, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(mg/L|ug/L|umol/L|%)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_org_c_meth = Slot(uri=MIXS['0000337'], name="tot_org_c_meth", curie=MIXS.curie('0000337'),
-                   model_uri=NMDC_SUB_SCHEMA.tot_org_c_meth, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.tot_org_c_meth, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.tot_org_carb = Slot(uri=MIXS['0000533'], name="tot_org_carb", curie=MIXS.curie('0000533'),
-                   model_uri=NMDC_SUB_SCHEMA.tot_org_carb, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.tot_org_carb, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_part_carb = Slot(uri=MIXS['0000747'], name="tot_part_carb", curie=MIXS.curie('0000747'),
                    model_uri=NMDC_SUB_SCHEMA.tot_part_carb, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_phosp = Slot(uri=MIXS['0000117'], name="tot_phosp", curie=MIXS.curie('0000117'),
                    model_uri=NMDC_SUB_SCHEMA.tot_phosp, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_phosphate = Slot(uri=MIXS['0000689'], name="tot_phosphate", curie=MIXS.curie('0000689'),
                    model_uri=NMDC_SUB_SCHEMA.tot_phosphate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(ug/L|umol/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tot_sulfur = Slot(uri=MIXS['0000419'], name="tot_sulfur", curie=MIXS.curie('0000419'),
                    model_uri=NMDC_SUB_SCHEMA.tot_sulfur, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.train_line = Slot(uri=MIXS['0000837'], name="train_line", curie=MIXS.curie('0000837'),
                    model_uri=NMDC_SUB_SCHEMA.train_line, domain=None, range=Optional[Union[str, "TrainLineEnum"]])
@@ -15414,33 +15275,36 @@ slots.train_stop_loc = Slot(uri=MIXS['0000839'], name="train_stop_loc", curie=MI
 
 slots.turbidity = Slot(uri=MIXS['0000191'], name="turbidity", curie=MIXS.curie('0000191'),
                    model_uri=NMDC_SUB_SCHEMA.turbidity, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[NTU\]|\[FNU\])$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tvdss_of_hcr_press = Slot(uri=MIXS['0000397'], name="tvdss_of_hcr_press", curie=MIXS.curie('0000397'),
-                   model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_press, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_press, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.tvdss_of_hcr_temp = Slot(uri=MIXS['0000394'], name="tvdss_of_hcr_temp", curie=MIXS.curie('0000394'),
-                   model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_temp, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.tvdss_of_hcr_temp, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.typ_occup_density = Slot(uri=MIXS['0000771'], name="typ_occup_density", curie=MIXS.curie('0000771'),
                    model_uri=NMDC_SUB_SCHEMA.typ_occup_density, domain=None, range=Optional[float])
 
 slots.ventilation_rate = Slot(uri=MIXS['0000114'], name="ventilation_rate", curie=MIXS.curie('0000114'),
                    model_uri=NMDC_SUB_SCHEMA.ventilation_rate, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(L/s|m3/min)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.ventilation_type = Slot(uri=MIXS['0000756'], name="ventilation_type", curie=MIXS.curie('0000756'),
                    model_uri=NMDC_SUB_SCHEMA.ventilation_type, domain=None, range=Optional[str])
 
 slots.vfa = Slot(uri=MIXS['0000152'], name="vfa", curie=MIXS.curie('0000152'),
                    model_uri=NMDC_SUB_SCHEMA.vfa, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.vfa_fw = Slot(uri=MIXS['0000408'], name="vfa_fw", curie=MIXS.curie('0000408'),
-                   model_uri=NMDC_SUB_SCHEMA.vfa_fw, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.vfa_fw, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.vis_media = Slot(uri=MIXS['0000840'], name="vis_media", curie=MIXS.curie('0000840'),
-                   model_uri=NMDC_SUB_SCHEMA.vis_media, domain=None, range=Optional[Union[str, "VisMediaEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.vis_media, domain=None, range=Optional[str])
 
 slots.viscosity = Slot(uri=MIXS['0000126'], name="viscosity", curie=MIXS.curie('0000126'),
                    model_uri=NMDC_SUB_SCHEMA.viscosity, domain=None, range=Optional[str])
@@ -15449,7 +15313,8 @@ slots.volatile_org_comp = Slot(uri=MIXS['0000115'], name="volatile_org_comp", cu
                    model_uri=NMDC_SUB_SCHEMA.volatile_org_comp, domain=None, range=Optional[str])
 
 slots.wall_area = Slot(uri=MIXS['0000198'], name="wall_area", curie=MIXS.curie('0000198'),
-                   model_uri=NMDC_SUB_SCHEMA.wall_area, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.wall_area, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.wall_const_type = Slot(uri=MIXS['0000841'], name="wall_const_type", curie=MIXS.curie('0000841'),
                    model_uri=NMDC_SUB_SCHEMA.wall_const_type, domain=None, range=Optional[Union[str, "WallConstTypeEnum"]])
@@ -15458,22 +15323,24 @@ slots.wall_finish_mat = Slot(uri=MIXS['0000842'], name="wall_finish_mat", curie=
                    model_uri=NMDC_SUB_SCHEMA.wall_finish_mat, domain=None, range=Optional[Union[str, "WallFinishMatEnum"]])
 
 slots.wall_height = Slot(uri=MIXS['0000221'], name="wall_height", curie=MIXS.curie('0000221'),
-                   model_uri=NMDC_SUB_SCHEMA.wall_height, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.wall_height, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.wall_loc = Slot(uri=MIXS['0000843'], name="wall_loc", curie=MIXS.curie('0000843'),
-                   model_uri=NMDC_SUB_SCHEMA.wall_loc, domain=None, range=Optional[Union[str, "WallLocEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.wall_loc, domain=None, range=Optional[Union[str, "CompassDirections8Enum"]])
 
 slots.wall_surf_treatment = Slot(uri=MIXS['0000845'], name="wall_surf_treatment", curie=MIXS.curie('0000845'),
                    model_uri=NMDC_SUB_SCHEMA.wall_surf_treatment, domain=None, range=Optional[Union[str, "WallSurfTreatmentEnum"]])
 
 slots.wall_texture = Slot(uri=MIXS['0000846'], name="wall_texture", curie=MIXS.curie('0000846'),
-                   model_uri=NMDC_SUB_SCHEMA.wall_texture, domain=None, range=Optional[Union[str, "WallTextureEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.wall_texture, domain=None, range=Optional[Union[str, "CeilingWallTextureEnum"]])
 
 slots.wall_thermal_mass = Slot(uri=MIXS['0000222'], name="wall_thermal_mass", curie=MIXS.curie('0000222'),
-                   model_uri=NMDC_SUB_SCHEMA.wall_thermal_mass, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.wall_thermal_mass, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.wall_water_mold = Slot(uri=MIXS['0000844'], name="wall_water_mold", curie=MIXS.curie('0000844'),
-                   model_uri=NMDC_SUB_SCHEMA.wall_water_mold, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.wall_water_mold, domain=None, range=Optional[Union[str, "MoldVisibilityEnum"]])
 
 slots.wastewater_type = Slot(uri=MIXS['0000353'], name="wastewater_type", curie=MIXS.curie('0000353'),
                    model_uri=NMDC_SUB_SCHEMA.wastewater_type, domain=None, range=Optional[str])
@@ -15483,23 +15350,26 @@ slots.water_cont_soil_meth = Slot(uri=MIXS['0000323'], name="water_cont_soil_met
 
 slots.water_content = Slot(uri=MIXS['0000185'], name="water_content", curie=MIXS.curie('0000185'),
                    model_uri=NMDC_SUB_SCHEMA.water_content, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%? \S.+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?%? \S.+$'))
 
 slots.water_current = Slot(uri=MIXS['0000203'], name="water_current", curie=MIXS.curie('0000203'),
                    model_uri=NMDC_SUB_SCHEMA.water_current, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[kn_i\]|m3/s)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.water_cut = Slot(uri=MIXS['0000454'], name="water_cut", curie=MIXS.curie('0000454'),
-                   model_uri=NMDC_SUB_SCHEMA.water_cut, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.water_cut, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.water_feat_size = Slot(uri=MIXS['0000223'], name="water_feat_size", curie=MIXS.curie('0000223'),
-                   model_uri=NMDC_SUB_SCHEMA.water_feat_size, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.water_feat_size, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.water_feat_type = Slot(uri=MIXS['0000847'], name="water_feat_type", curie=MIXS.curie('0000847'),
                    model_uri=NMDC_SUB_SCHEMA.water_feat_type, domain=None, range=Optional[Union[str, "WaterFeatTypeEnum"]])
 
 slots.water_prod_rate = Slot(uri=MIXS['0000453'], name="water_prod_rate", curie=MIXS.curie('0000453'),
-                   model_uri=NMDC_SUB_SCHEMA.water_prod_rate, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.water_prod_rate, domain=None, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.water_temp_regm = Slot(uri=MIXS['0000590'], name="water_temp_regm", curie=MIXS.curie('0000590'),
                    model_uri=NMDC_SUB_SCHEMA.water_temp_regm, domain=None, range=Optional[str])
@@ -15518,10 +15388,10 @@ slots.wind_direction = Slot(uri=MIXS['0000757'], name="wind_direction", curie=MI
 
 slots.wind_speed = Slot(uri=MIXS['0000118'], name="wind_speed", curie=MIXS.curie('0000118'),
                    model_uri=NMDC_SUB_SCHEMA.wind_speed, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(km/h|m/s)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.window_cond = Slot(uri=MIXS['0000849'], name="window_cond", curie=MIXS.curie('0000849'),
-                   model_uri=NMDC_SUB_SCHEMA.window_cond, domain=None, range=Optional[Union[str, "WindowCondEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.window_cond, domain=None, range=Optional[Union[str, "DamagedRupturedEnum"]])
 
 slots.window_cover = Slot(uri=MIXS['0000850'], name="window_cover", curie=MIXS.curie('0000850'),
                    model_uri=NMDC_SUB_SCHEMA.window_cover, domain=None, range=Optional[Union[str, "WindowCoverEnum"]])
@@ -15530,7 +15400,7 @@ slots.window_horiz_pos = Slot(uri=MIXS['0000851'], name="window_horiz_pos", curi
                    model_uri=NMDC_SUB_SCHEMA.window_horiz_pos, domain=None, range=Optional[Union[str, "WindowHorizPosEnum"]])
 
 slots.window_loc = Slot(uri=MIXS['0000852'], name="window_loc", curie=MIXS.curie('0000852'),
-                   model_uri=NMDC_SUB_SCHEMA.window_loc, domain=None, range=Optional[Union[str, "WindowLocEnum"]])
+                   model_uri=NMDC_SUB_SCHEMA.window_loc, domain=None, range=Optional[Union[str, "CompassDirections8Enum"]])
 
 slots.window_mat = Slot(uri=MIXS['0000853'], name="window_mat", curie=MIXS.curie('0000853'),
                    model_uri=NMDC_SUB_SCHEMA.window_mat, domain=None, range=Optional[Union[str, "WindowMatEnum"]])
@@ -15542,7 +15412,7 @@ slots.window_size = Slot(uri=MIXS['0000224'], name="window_size", curie=MIXS.cur
                    model_uri=NMDC_SUB_SCHEMA.window_size, domain=None, range=Optional[str])
 
 slots.window_status = Slot(uri=MIXS['0000855'], name="window_status", curie=MIXS.curie('0000855'),
-                   model_uri=NMDC_SUB_SCHEMA.window_status, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.window_status, domain=None, range=Optional[Union[str, "WindowStatusEnum"]])
 
 slots.window_type = Slot(uri=MIXS['0000856'], name="window_type", curie=MIXS.curie('0000856'),
                    model_uri=NMDC_SUB_SCHEMA.window_type, domain=None, range=Optional[Union[str, "WindowTypeEnum"]])
@@ -15551,11 +15421,11 @@ slots.window_vert_pos = Slot(uri=MIXS['0000857'], name="window_vert_pos", curie=
                    model_uri=NMDC_SUB_SCHEMA.window_vert_pos, domain=None, range=Optional[Union[str, "WindowVertPosEnum"]])
 
 slots.window_water_mold = Slot(uri=MIXS['0000854'], name="window_water_mold", curie=MIXS.curie('0000854'),
-                   model_uri=NMDC_SUB_SCHEMA.window_water_mold, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.window_water_mold, domain=None, range=Optional[Union[str, "MoldVisibilityEnum"]])
 
 slots.xylene = Slot(uri=MIXS['0000156'], name="xylene", curie=MIXS.curie('0000156'),
                    model_uri=NMDC_SUB_SCHEMA.xylene, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/L)$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.zinc = Slot(uri=NMDC_SUB_SCHEMA.zinc, name="zinc", curie=NMDC_SUB_SCHEMA.curie('zinc'),
                    model_uri=NMDC_SUB_SCHEMA.zinc, domain=None, range=Optional[str],
@@ -15592,7 +15462,7 @@ slots.protocol_link = Slot(uri=NMDC_SUB_SCHEMA.protocol_link, name="protocol_lin
 
 slots.AirInterface_depth = Slot(uri=MIXS['0000018'], name="AirInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_depth, domain=AirInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.AirInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="AirInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem, domain=AirInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15607,29 +15477,31 @@ slots.AirInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type, nam
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_ecosystem_type, domain=AirInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.AirInterface_elev = Slot(uri=MIXS['0000093'], name="AirInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_elev, domain=AirInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_elev, domain=AirInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.AirInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="AirInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_local_scale, domain=AirInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.AirInterface_env_medium = Slot(uri=MIXS['0000014'], name="AirInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_env_medium, domain=AirInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.AirInterface_lat_lon = Slot(uri=MIXS['0000009'], name="AirInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_lat_lon, domain=AirInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.AirInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="AirInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_temp, domain=AirInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_temp, domain=AirInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.AirInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="AirInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_specific_ecosystem, domain=AirInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.BiofilmInterface_depth = Slot(uri=MIXS['0000018'], name="BiofilmInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_depth, domain=BiofilmInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.BiofilmInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="BiofilmInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem, domain=BiofilmInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15644,29 +15516,31 @@ slots.BiofilmInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type,
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_ecosystem_type, domain=BiofilmInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.BiofilmInterface_elev = Slot(uri=MIXS['0000093'], name="BiofilmInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_elev, domain=BiofilmInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_elev, domain=BiofilmInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.BiofilmInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="BiofilmInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_local_scale, domain=BiofilmInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.BiofilmInterface_env_medium = Slot(uri=MIXS['0000014'], name="BiofilmInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_env_medium, domain=BiofilmInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.BiofilmInterface_lat_lon = Slot(uri=MIXS['0000009'], name="BiofilmInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_lat_lon, domain=BiofilmInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.BiofilmInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="BiofilmInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_temp, domain=BiofilmInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_temp, domain=BiofilmInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.BiofilmInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="BiofilmInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_specific_ecosystem, domain=BiofilmInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.BuiltEnvInterface_depth = Slot(uri=MIXS['0000018'], name="BuiltEnvInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_depth, domain=BuiltEnvInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.BuiltEnvInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="BuiltEnvInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ecosystem, domain=BuiltEnvInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15681,26 +15555,27 @@ slots.BuiltEnvInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_ecosystem_type, domain=BuiltEnvInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.BuiltEnvInterface_elev = Slot(uri=MIXS['0000093'], name="BuiltEnvInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_elev, domain=BuiltEnvInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_elev, domain=BuiltEnvInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.BuiltEnvInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="BuiltEnvInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_local_scale, domain=BuiltEnvInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.BuiltEnvInterface_env_medium = Slot(uri=MIXS['0000014'], name="BuiltEnvInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_env_medium, domain=BuiltEnvInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.BuiltEnvInterface_lat_lon = Slot(uri=MIXS['0000009'], name="BuiltEnvInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_lat_lon, domain=BuiltEnvInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.BuiltEnvInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="BuiltEnvInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific_ecosystem, domain=BuiltEnvInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.HcrCoresInterface_depth = Slot(uri=MIXS['0000018'], name="HcrCoresInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_depth, domain=HcrCoresInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.HcrCoresInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="HcrCoresInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem, domain=HcrCoresInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15715,29 +15590,31 @@ slots.HcrCoresInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_ecosystem_type, domain=HcrCoresInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.HcrCoresInterface_elev = Slot(uri=MIXS['0000093'], name="HcrCoresInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_elev, domain=HcrCoresInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_elev, domain=HcrCoresInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.HcrCoresInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HcrCoresInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_local_scale, domain=HcrCoresInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.HcrCoresInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrCoresInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_env_medium, domain=HcrCoresInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.HcrCoresInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HcrCoresInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_lat_lon, domain=HcrCoresInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.HcrCoresInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HcrCoresInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_temp, domain=HcrCoresInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_temp, domain=HcrCoresInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.HcrCoresInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="HcrCoresInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_specific_ecosystem, domain=HcrCoresInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.HcrFluidsSwabsInterface_depth = Slot(uri=MIXS['0000018'], name="HcrFluidsSwabsInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_depth, domain=HcrFluidsSwabsInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.HcrFluidsSwabsInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="HcrFluidsSwabsInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15752,29 +15629,31 @@ slots.HcrFluidsSwabsInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosyste
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_ecosystem_type, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.HcrFluidsSwabsInterface_elev = Slot(uri=MIXS['0000093'], name="HcrFluidsSwabsInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_elev, domain=HcrFluidsSwabsInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_elev, domain=HcrFluidsSwabsInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.HcrFluidsSwabsInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HcrFluidsSwabsInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_local_scale, domain=HcrFluidsSwabsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.HcrFluidsSwabsInterface_env_medium = Slot(uri=MIXS['0000014'], name="HcrFluidsSwabsInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_env_medium, domain=HcrFluidsSwabsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.HcrFluidsSwabsInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HcrFluidsSwabsInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_lat_lon, domain=HcrFluidsSwabsInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.HcrFluidsSwabsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HcrFluidsSwabsInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_temp, domain=HcrFluidsSwabsInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_temp, domain=HcrFluidsSwabsInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.HcrFluidsSwabsInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="HcrFluidsSwabsInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_specific_ecosystem, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.HostAssociatedInterface_depth = Slot(uri=MIXS['0000018'], name="HostAssociatedInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_depth, domain=HostAssociatedInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.HostAssociatedInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="HostAssociatedInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem, domain=HostAssociatedInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15789,22 +15668,24 @@ slots.HostAssociatedInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosyste
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_ecosystem_type, domain=HostAssociatedInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.HostAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="HostAssociatedInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_elev, domain=HostAssociatedInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_elev, domain=HostAssociatedInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.HostAssociatedInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="HostAssociatedInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_local_scale, domain=HostAssociatedInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|UBERON:\d{7})\]$'))
 
 slots.HostAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="HostAssociatedInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_env_medium, domain=HostAssociatedInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|UBERON:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|UBERON:\d{7})\]$'))
 
 slots.HostAssociatedInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HostAssociatedInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_lat_lon, domain=HostAssociatedInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.HostAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HostAssociatedInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_temp, domain=HostAssociatedInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_temp, domain=HostAssociatedInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.HostAssociatedInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="HostAssociatedInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_specific_ecosystem, domain=HostAssociatedInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
@@ -15841,6 +15722,15 @@ slots.JgiMgInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project,
 
 slots.JgiMgInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="JgiMgInterface_jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_seq_project_name, domain=JgiMgInterface, range=str)
+
+slots.JgiMgInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiMgInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_contact, domain=JgiMgInterface, range=str)
+
+slots.JgiMgInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiMgInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_project_pi, domain=JgiMgInterface, range=str)
+
+slots.JgiMgInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiMgInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_proposal_id, domain=JgiMgInterface, range=float)
 
 slots.JgiMgInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMgInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_volume, domain=JgiMgInterface, range=float)
@@ -15886,6 +15776,15 @@ slots.JgiMgLrInterface_jgi_sample_format = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_f
 slots.JgiMgLrInterface_jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_name, name="JgiMgLrInterface_jgi_sample_name", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_name, domain=JgiMgLrInterface, range=str,
                    pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
+
+slots.JgiMgLrInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiMgLrInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_contact, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiMgLrInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_project_pi, domain=JgiMgLrInterface, range=str)
+
+slots.JgiMgLrInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiMgLrInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_proposal_id, domain=JgiMgLrInterface, range=float)
 
 slots.JgiMgLrInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="JgiMgLrInterface_jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_seq_project, domain=JgiMgLrInterface, range=float)
@@ -15944,6 +15843,15 @@ slots.JgiMtInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project,
 slots.JgiMtInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="JgiMtInterface_jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_seq_project_name, domain=JgiMtInterface, range=str)
 
+slots.JgiMtInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiMtInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_contact, domain=JgiMtInterface, range=str)
+
+slots.JgiMtInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiMtInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_project_pi, domain=JgiMtInterface, range=str)
+
+slots.JgiMtInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiMtInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_proposal_id, domain=JgiMtInterface, range=float)
+
 slots.JgiMtInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMtInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_volume, domain=JgiMtInterface, range=float)
 
@@ -15964,7 +15872,7 @@ slots.JgiMtInterface_replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group,
 
 slots.MiscEnvsInterface_depth = Slot(uri=MIXS['0000018'], name="MiscEnvsInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_depth, domain=MiscEnvsInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.MiscEnvsInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="MiscEnvsInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem, domain=MiscEnvsInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -15979,22 +15887,24 @@ slots.MiscEnvsInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_ecosystem_type, domain=MiscEnvsInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.MiscEnvsInterface_elev = Slot(uri=MIXS['0000093'], name="MiscEnvsInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_elev, domain=MiscEnvsInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_elev, domain=MiscEnvsInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.MiscEnvsInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="MiscEnvsInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_local_scale, domain=MiscEnvsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.MiscEnvsInterface_env_medium = Slot(uri=MIXS['0000014'], name="MiscEnvsInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_env_medium, domain=MiscEnvsInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.MiscEnvsInterface_lat_lon = Slot(uri=MIXS['0000009'], name="MiscEnvsInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_lat_lon, domain=MiscEnvsInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.MiscEnvsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="MiscEnvsInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_temp, domain=MiscEnvsInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_temp, domain=MiscEnvsInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.MiscEnvsInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="MiscEnvsInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_specific_ecosystem, domain=MiscEnvsInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
@@ -16010,7 +15920,7 @@ slots.PlantAssociatedInterface_climate_environment = Slot(uri=MIXS['0001040'], n
 
 slots.PlantAssociatedInterface_depth = Slot(uri=MIXS['0000018'], name="PlantAssociatedInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_depth, domain=PlantAssociatedInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.PlantAssociatedInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="PlantAssociatedInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem, domain=PlantAssociatedInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -16025,15 +15935,16 @@ slots.PlantAssociatedInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosyst
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_ecosystem_type, domain=PlantAssociatedInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.PlantAssociatedInterface_elev = Slot(uri=MIXS['0000093'], name="PlantAssociatedInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_elev, domain=PlantAssociatedInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_elev, domain=PlantAssociatedInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.PlantAssociatedInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="PlantAssociatedInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_local_scale, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.PlantAssociatedInterface_env_medium = Slot(uri=MIXS['0000014'], name="PlantAssociatedInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_medium, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.PlantAssociatedInterface_gaseous_environment = Slot(uri=MIXS['0000558'], name="PlantAssociatedInterface_gaseous_environment", curie=MIXS.curie('0000558'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_gaseous_environment, domain=PlantAssociatedInterface, range=Optional[str])
@@ -16049,13 +15960,14 @@ slots.PlantAssociatedInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="P
 
 slots.PlantAssociatedInterface_lat_lon = Slot(uri=MIXS['0000009'], name="PlantAssociatedInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_lat_lon, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.PlantAssociatedInterface_light_regm = Slot(uri=MIXS['0000569'], name="PlantAssociatedInterface_light_regm", curie=MIXS.curie('0000569'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_light_regm, domain=PlantAssociatedInterface, range=Optional[str])
 
 slots.PlantAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="PlantAssociatedInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_temp, domain=PlantAssociatedInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_temp, domain=PlantAssociatedInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.PlantAssociatedInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="PlantAssociatedInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_specific_ecosystem, domain=PlantAssociatedInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
@@ -16065,11 +15977,11 @@ slots.PlantAssociatedInterface_watering_regm = Slot(uri=MIXS['0000591'], name="P
 
 slots.PlantAssociatedInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="PlantAssociatedInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_env_broad_scale, domain=PlantAssociatedInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.SedimentInterface_depth = Slot(uri=MIXS['0000018'], name="SedimentInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_depth, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+\s*-\s*[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.SedimentInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="SedimentInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem, domain=SedimentInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -16084,37 +15996,39 @@ slots.SedimentInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_ecosystem_type, domain=SedimentInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.SedimentInterface_elev = Slot(uri=MIXS['0000093'], name="SedimentInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_elev, domain=SedimentInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_elev, domain=SedimentInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.SedimentInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SedimentInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_local_scale, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.SedimentInterface_env_medium = Slot(uri=MIXS['0000014'], name="SedimentInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_medium, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.SedimentInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SedimentInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_lat_lon, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.SedimentInterface_microbial_biomass_c = Slot(uri=NMDC_SUB_SCHEMA.microbial_biomass_c, name="SedimentInterface_microbial_biomass_c", curie=NMDC_SUB_SCHEMA.curie('microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_microbial_biomass_c, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ .*$'))
 
 slots.SedimentInterface_microbial_biomass_n = Slot(uri=NMDC_SUB_SCHEMA.microbial_biomass_n, name="SedimentInterface_microbial_biomass_n", curie=NMDC_SUB_SCHEMA.curie('microbial_biomass_n'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_microbial_biomass_n, domain=SedimentInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ .*$'))
 
 slots.SedimentInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SedimentInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_temp, domain=SedimentInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_temp, domain=SedimentInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.SedimentInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="SedimentInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_specific_ecosystem, domain=SedimentInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.SedimentInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SedimentInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_env_broad_scale, domain=SedimentInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.SoilInterface_air_temp_regm = Slot(uri=MIXS['0000551'], name="SoilInterface_air_temp_regm", curie=MIXS.curie('0000551'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_air_temp_regm, domain=SoilInterface, range=Optional[str])
@@ -16127,7 +16041,7 @@ slots.SoilInterface_climate_environment = Slot(uri=MIXS['0001040'], name="SoilIn
 
 slots.SoilInterface_depth = Slot(uri=MIXS['0000018'], name="SoilInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_depth, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+\s*-\s*[-+]?[0-9]*\.?[0-9]+$'))
 
 slots.SoilInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="SoilInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ecosystem, domain=SoilInterface, range=Optional[Union[str, "EcosystemForSoilEnum"]])
@@ -16142,15 +16056,16 @@ slots.SoilInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosystem_type, na
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_ecosystem_type, domain=SoilInterface, range=Optional[Union[str, "EcosystemTypeForSoilEnum"]])
 
 slots.SoilInterface_elev = Slot(uri=MIXS['0000093'], name="SoilInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_elev, domain=SoilInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_elev, domain=SoilInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.SoilInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="SoilInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_local_scale, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.SoilInterface_env_medium = Slot(uri=MIXS['0000014'], name="SoilInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_medium, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.SoilInterface_gaseous_environment = Slot(uri=MIXS['0000558'], name="SoilInterface_gaseous_environment", curie=MIXS.curie('0000558'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_gaseous_environment, domain=SoilInterface, range=Optional[str])
@@ -16160,25 +16075,26 @@ slots.SoilInterface_humidity_regm = Slot(uri=MIXS['0000568'], name="SoilInterfac
 
 slots.SoilInterface_lat_lon = Slot(uri=MIXS['0000009'], name="SoilInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_lat_lon, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.SoilInterface_light_regm = Slot(uri=MIXS['0000569'], name="SoilInterface_light_regm", curie=MIXS.curie('0000569'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_light_regm, domain=SoilInterface, range=Optional[str])
 
 slots.SoilInterface_microbial_biomass_c = Slot(uri=NMDC_SUB_SCHEMA.microbial_biomass_c, name="SoilInterface_microbial_biomass_c", curie=NMDC_SUB_SCHEMA.curie('microbial_biomass_c'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass_c, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ .*$'))
 
 slots.SoilInterface_microbial_biomass_n = Slot(uri=NMDC_SUB_SCHEMA.microbial_biomass_n, name="SoilInterface_microbial_biomass_n", curie=NMDC_SUB_SCHEMA.curie('microbial_biomass_n'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_microbial_biomass_n, domain=SoilInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)? [^;|\t\r\n]+$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+ .*$'))
 
 slots.SoilInterface_non_microb_biomass = Slot(uri=NMDC_SUB_SCHEMA.non_microb_biomass, name="SoilInterface_non_microb_biomass", curie=NMDC_SUB_SCHEMA.curie('non_microb_biomass'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_non_microb_biomass, domain=SoilInterface, range=Optional[str],
                    pattern=re.compile(r'^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+)$'))
 
 slots.SoilInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SoilInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_store_temp, domain=SoilInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_store_temp, domain=SoilInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.SoilInterface_sieving = Slot(uri=MIXS['0000322'], name="SoilInterface_sieving", curie=MIXS.curie('0000322'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_sieving, domain=SoilInterface, range=Optional[str])
@@ -16191,11 +16107,11 @@ slots.SoilInterface_watering_regm = Slot(uri=MIXS['0000591'], name="SoilInterfac
 
 slots.SoilInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="SoilInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_env_broad_scale, domain=SoilInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.WastewaterSludgeInterface_depth = Slot(uri=MIXS['0000018'], name="WastewaterSludgeInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_depth, domain=WastewaterSludgeInterface, range=Optional[str],
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.WastewaterSludgeInterface_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.ecosystem, name="WastewaterSludgeInterface_ecosystem", curie=NMDC_SUB_SCHEMA.curie('ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem, domain=WastewaterSludgeInterface, range=Optional[Union[str, "EcosystemEnum"]])
@@ -16210,51 +16126,55 @@ slots.WastewaterSludgeInterface_ecosystem_type = Slot(uri=NMDC_SUB_SCHEMA.ecosys
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_ecosystem_type, domain=WastewaterSludgeInterface, range=Optional[Union[str, "EcosystemTypeEnum"]])
 
 slots.WastewaterSludgeInterface_elev = Slot(uri=MIXS['0000093'], name="WastewaterSludgeInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_elev, domain=WastewaterSludgeInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_elev, domain=WastewaterSludgeInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.WastewaterSludgeInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WastewaterSludgeInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_local_scale, domain=WastewaterSludgeInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.WastewaterSludgeInterface_env_medium = Slot(uri=MIXS['0000014'], name="WastewaterSludgeInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_env_medium, domain=WastewaterSludgeInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.WastewaterSludgeInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WastewaterSludgeInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_lat_lon, domain=WastewaterSludgeInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.WastewaterSludgeInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WastewaterSludgeInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_temp, domain=WastewaterSludgeInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_temp, domain=WastewaterSludgeInterface, range=float,
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.WastewaterSludgeInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="WastewaterSludgeInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_specific_ecosystem, domain=WastewaterSludgeInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
 slots.WaterInterface_depth = Slot(uri=MIXS['0000018'], name="WaterInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_depth, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?(\s*-\s*[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?$'))
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
 
 slots.WaterInterface_elev = Slot(uri=MIXS['0000093'], name="WaterInterface_elev", curie=MIXS.curie('0000093'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_elev, domain=WaterInterface, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_elev, domain=WaterInterface, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.WaterInterface_env_local_scale = Slot(uri=MIXS['0000013'], name="WaterInterface_env_local_scale", curie=MIXS.curie('0000013'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_local_scale, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.WaterInterface_env_medium = Slot(uri=MIXS['0000014'], name="WaterInterface_env_medium", curie=MIXS.curie('0000014'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_medium, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^^\S+.*\S+ \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$'))
 
 slots.WaterInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WaterInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_lat_lon, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^[-+]?([1-8]?\d(\.\d{1,8})?|90(\.0{1,8})?)\s[-+]?(180(\.0{1,8})?|((1[0-7]\d)|([1-9]?\d))(\.\d{1,8})?)$'))
+                   pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
 
 slots.WaterInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WaterInterface_samp_store_temp", curie=MIXS.curie('0000110'),
-                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_temp, domain=WaterInterface, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_temp, domain=WaterInterface, range=Optional[float],
+                   pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
 slots.WaterInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WaterInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_broad_scale, domain=WaterInterface, range=str,
-                   pattern=re.compile(r'^\S+.*\S+ \[ENVO:\d{7,8}\]$'))
+                   pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
 slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[str],
