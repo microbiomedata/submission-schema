@@ -6,7 +6,7 @@ soil_data:
       - metagenomics
       - metatranscriptomics
     air_temp_regm: xxx
-    al_sat_meth: xxx
+    al_sat_meth: https://example.org/al_sat_meth
     annual_precpt: 111
     annual_temp: 111
     biotic_regm: xxx
@@ -21,7 +21,7 @@ soil_data:
     crop_rotation: xxx
     cur_land_use: cities
     cur_vegetation: xxx
-    cur_vegetation_meth: xxx
+    cur_vegetation_meth: https://example.org/cur_vegetation_meth
     depth: '0 - 1'
     drainage_class: well
     ecosystem: Environmental
@@ -42,16 +42,16 @@ soil_data:
     gaseous_environment: xxx
     geo_loc_name: 'USA: Maryland, Bethesda'
     growth_facil: greenhouse
-    heavy_metals_meth: xxx
-    horizon_meth: xxx
+    heavy_metals_meth: https://example.org/heavy_metals_meth
+    horizon_meth: https://example.org/horizon_meth
     humidity_regm: xxx
     isotope_exposure: strontium 90 [ONTO:00000000]; 2010-10-31T08:45:15.432-0700
     lat_lon: 77 88
     light_regm: incandescant light;10 lux;450 nanometer
-    link_class_info: xxx
-    link_climate_info: xxx
+    link_class_info: https://example.org/link_class_info
+    link_climate_info: https://example.org/link_climate_info
     local_class: xxx
-    local_class_meth: xxx
+    local_class_meth: https://example.org/local_class_meth
     micro_biomass_c_meth: xxx
     micro_biomass_meth: xxx
     micro_biomass_n_meth: xxx
@@ -68,12 +68,12 @@ soil_data:
     ph: 9
     ph_meth: xxx
     phosphate: 111
-    prev_land_use_meth: xxx
+    prev_land_use_meth: https://example.org/prev_land_use_meth
     previous_land_use: circus tent;+0530
     profile_position: summit
 #    rel_to_oxygen: anaerobic
     salinity: 111 mg/L
-    salinity_meth: xxx
+    salinity_meth: https://example.org/salinity_meth
     samp_collec_device: xxx
     samp_collec_method: xxx
     samp_mat_process: text [ONTO:000000000]
@@ -100,9 +100,9 @@ soil_data:
     store_cond: frozen
     temp: 111
     tot_carb: 111 ug/L
-    tot_nitro_cont_meth: xxx
+    tot_nitro_cont_meth: https://example.org/tot_nitro_cont_meth
     tot_nitro_content: 111 ug/L
-    tot_org_c_meth: xxx
+    tot_org_c_meth: https://example.org/tot_org_c_meth
     tot_org_carb: 111
     tot_phosp: 111 mg/L
     water_cont_soil_meth: xxx

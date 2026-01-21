@@ -3617,14 +3617,14 @@ test = ["pytest (>=7.2)", "pytest-cov (>=4.0)"]
 
 [[package]]
 name = "nmdc-schema"
-version = "11.14.0"
+version = "11.15.1"
 description = "Schema resources for the National Microbiome Data Collaborative (NMDC)"
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["dev"]
 files = [
-    {file = "nmdc_schema-11.14.0-py3-none-any.whl", hash = "sha256:b074c370ddbea55ea4f202038c95a1fab89e420f099255ea3f1b024e9f678d41"},
-    {file = "nmdc_schema-11.14.0.tar.gz", hash = "sha256:97123895ce2f863d909031cff9f31eb2da2e13f8463254c994cc5b21befd15d2"},
+    {file = "nmdc_schema-11.15.1-py3-none-any.whl", hash = "sha256:9873a33f6a3186a0354c7effc0fe4d2d6c0558fddb436fee01647ca5a1913809"},
+    {file = "nmdc_schema-11.15.1.tar.gz", hash = "sha256:5956ebe77d006dfc8d132bb024913b8da3a19075eadee1140c54a24c2ebf3207"},
 ]
 
 [package.dependencies]
@@ -3636,6 +3636,8 @@ jsonasobj2 = ">=1,<2"
 jsonschema = ">=4,<5"
 linkml = ">=1.9.6,<2.0.0"
 linkml-runtime = ">=1.9.5,<2.0.0"
+pyasn1 = ">=0.6.2"
+pymdown-extensions = ">=10.16.1"
 pymongo = ">=4.7.2,<5.0.0"
 python-dotenv = "*"
 pyyaml = ">=6,<7"
@@ -4421,14 +4423,14 @@ test = ["cffi", "hypothesis", "pandas", "pytest", "pytz"]
 
 [[package]]
 name = "pyasn1"
-version = "0.6.1"
+version = "0.6.2"
 description = "Pure-Python implementation of ASN.1 types and DER/BER/CER codecs (X.208)"
 optional = false
 python-versions = ">=3.8"
 groups = ["dev"]
 files = [
-    {file = "pyasn1-0.6.1-py3-none-any.whl", hash = "sha256:0d632f46f2ba09143da3a8afe9e33fb6f92fa2320ab7e886e2d0f7672af84629"},
-    {file = "pyasn1-0.6.1.tar.gz", hash = "sha256:6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"},
+    {file = "pyasn1-0.6.2-py3-none-any.whl", hash = "sha256:1eb26d860996a18e9b6ed05e7aae0e9fc21619fcee6af91cca9bad4fbea224bf"},
+    {file = "pyasn1-0.6.2.tar.gz", hash = "sha256:9b59a2b25ba7e4f8197db7686c09fb33e658b98339fadb826e9512629017833b"},
 ]
 
 [[package]]
@@ -4625,14 +4627,14 @@ jsonasobj = ">=1.2.1"
 
 [[package]]
 name = "pymdown-extensions"
-version = "10.12"
+version = "10.20"
 description = "Extension pack for Python Markdown."
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "pymdown_extensions-10.12-py3-none-any.whl", hash = "sha256:49f81412242d3527b8b4967b990df395c89563043bc51a3d2d7d500e52123b77"},
-    {file = "pymdown_extensions-10.12.tar.gz", hash = "sha256:b0ee1e0b2bef1071a47891ab17003bfe5bf824a398e13f49f8ed653b699369a7"},
+    {file = "pymdown_extensions-10.20-py3-none-any.whl", hash = "sha256:ea9e62add865da80a271d00bfa1c0fa085b20d133fb3fc97afdc88e682f60b2f"},
+    {file = "pymdown_extensions-10.20.tar.gz", hash = "sha256:5c73566ab0cf38c6ba084cb7c5ea64a119ae0500cce754ccb682761dfea13a52"},
 ]
 
 [package.dependencies]
@@ -4640,7 +4642,7 @@ markdown = ">=3.6"
 pyyaml = "*"
 
 [package.extras]
-extra = ["pygments (>=2.12)"]
+extra = ["pygments (>=2.19.1)"]
 
 [[package]]
 name = "pymongo"
@@ -6815,4 +6817,4 @@ docs = []
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "fab474512fa49580fefaede526b7a20a3f38fc1bf1a20da08d9c13a510ca8b0d"
+content-hash = "ff20173da2ca5041741bbd47615656b1229e25e9781aaa3f1ce83b9eaf4704b7"

@@ -1,6 +1,7 @@
 import pytest
 from linkml_runtime import SchemaView
 from linkml_runtime.linkml_model import Example
+from linkml_runtime.linkml_model.meta import Setting
 
 from tools.schematools import import_elements
 from tools.schematools.importer import (
@@ -544,3 +545,54 @@ classes:
     # Check that the domain and owner attributes were removed
     assert copied_slot.domain_of == []
     assert copied_slot.owner is None
+
+
+def test_import_elements_copies_settings_used_in_structured_patterns(
+    empty_target_schema,
+):
+    """When a slot with structured_pattern is imported, any `{keys}` used in the syntax are
+    imported into the schema's settings."""
+
+    source_schema = SchemaView("""
+id: http://example.org/source
+name: source_schema
+slots:
+  a:
+    range: string
+    structured_pattern:
+      syntax: "{key1}:{key2}"
+      interpolated: true
+settings:
+  key1: "[A-Z]+"
+  key2: "[0-9]+"
+  key3: "not used"
+""")
+
+    config = ImporterConfig(
+        slots=[
+            SlotImport(
+                slot="a",
+            )
+        ]
+    )
+
+    import_elements(
+        source_schema=source_schema, config=config, target_schema=empty_target_schema
+    )
+
+    # Check that the slot 'a' was copied to the target schema
+    copied_slot = empty_target_schema.get_slot("a")
+    assert copied_slot is not None
+    assert copied_slot.range == "string"
+    assert copied_slot.structured_pattern is not None
+    assert copied_slot.structured_pattern.syntax == "{key1}:{key2}"
+    assert copied_slot.structured_pattern.interpolated is True
+    # Check that the used settings were copied to the target schema
+    key1_setting = empty_target_schema.schema.settings.get("key1")
+    assert isinstance(key1_setting, Setting)
+    assert key1_setting.setting_value == "[A-Z]+"
+    key2_setting = empty_target_schema.schema.settings.get("key2")
+    assert isinstance(key2_setting, Setting)
+    assert key2_setting.setting_value == "[0-9]+"
+    # Check that unused settings were not copied to the target schema
+    assert "key3" not in empty_target_schema.schema.settings
