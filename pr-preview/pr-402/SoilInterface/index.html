@@ -1,0 +1,5489 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://microbiomedata.github.io/submission-schema/SoilInterface/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.48" name="generator"/>
+<title>Class: Soil (SoilInterface) - submission-schema</title>
+<link href="../assets/stylesheets/main.6f8fc17f.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-soil-soilinterface">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="submission-schema" class="md-header__button md-logo" data-md-component="logo" href=".." title="submission-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            submission-schema
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: Soil (SoilInterface)
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/microbiomedata/submission-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="submission-schema" class="md-nav__button md-logo" data-md-component="logo" href=".." title="submission-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    submission-schema
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/microbiomedata/submission-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Index
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    About
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    DataHarmonizer Playground
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            DataHarmonizer Playground
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/SoilInterface">
+<span class="md-ellipsis">
+    SoilInterface
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://microbiomedata.github.io/submission-schema/_playground/?template=nmdc_submission_schema/WaterInterface">
+<span class="md-ellipsis">
+    WaterInterface
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+<span class="md-ellipsis">
+      Inheritance
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+<span class="md-ellipsis">
+      Slots
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+<span class="md-ellipsis">
+      Usages
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+<span class="md-ellipsis">
+      Identifier and Mapping Information
+    </span>
+</a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#annotations">
+<span class="md-ellipsis">
+      Annotations
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+<span class="md-ellipsis">
+      Schema Source
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+<span class="md-ellipsis">
+      Mappings
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+<span class="md-ellipsis">
+      LinkML Source
+    </span>
+</a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+<span class="md-ellipsis">
+      Direct
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+<span class="md-ellipsis">
+      Induced
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="class-soil-soilinterface">Class: Soil (SoilInterface)</h1>
+<p><em>soil dh_interface</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/SoilInterface">nmdc_sub_schema:SoilInterface</a></p>
+<div class="mermaid"> classDiagram
+    class SoilInterface
+    click SoilInterface href "../SoilInterface/"
+      DhMultiviewCommonColumnsMixin &lt;|-- SoilInterface
+        click DhMultiviewCommonColumnsMixin href "../DhMultiviewCommonColumnsMixin/"
+      SampIdNewTermsMixin &lt;|-- SoilInterface
+        click SampIdNewTermsMixin href "../SampIdNewTermsMixin/"
+      SoilMixsInspiredMixin &lt;|-- SoilInterface
+        click SoilMixsInspiredMixin href "../SoilMixsInspiredMixin/"
+      DhInterface &lt;|-- SoilInterface
+        click DhInterface href "../DhInterface/"
+
+      SoilInterface : agrochem_addition
+
+      SoilInterface : air_temp_regm
+
+      SoilInterface : al_sat
+
+      SoilInterface : al_sat_meth
+
+      SoilInterface : ammonium_nitrogen
+
+      SoilInterface : analysis_type
+
+
+
+
+
+        SoilInterface --&gt; "1..*" AnalysisTypeEnum : analysis_type
+        click AnalysisTypeEnum href "../AnalysisTypeEnum/"
+
+
+
+      SoilInterface : annual_precpt
+
+      SoilInterface : annual_temp
+
+      SoilInterface : biotic_regm
+
+      SoilInterface : biotic_relationship
+
+
+
+
+
+        SoilInterface --&gt; "0..1" BioticRelationshipEnum : biotic_relationship
+        click BioticRelationshipEnum href "../BioticRelationshipEnum/"
+
+
+
+      SoilInterface : bulk_elect_conductivity
+
+      SoilInterface : carb_nitro_ratio
+
+      SoilInterface : chem_administration
+
+      SoilInterface : climate_environment
+
+      SoilInterface : collection_date
+
+      SoilInterface : collection_date_inc
+
+      SoilInterface : collection_time
+
+      SoilInterface : collection_time_inc
+
+      SoilInterface : crop_rotation
+
+      SoilInterface : cur_land_use
+
+      SoilInterface : cur_vegetation
+
+      SoilInterface : cur_vegetation_meth
+
+      SoilInterface : depth
+
+      SoilInterface : drainage_class
+
+
+
+
+
+        SoilInterface --&gt; "0..1" DrainageClassEnum : drainage_class
+        click DrainageClassEnum href "../DrainageClassEnum/"
+
+
+
+      SoilInterface : ecosystem
+
+
+
+
+
+        SoilInterface --&gt; "0..1 _recommended_" EcosystemForSoilEnum : ecosystem
+        click EcosystemForSoilEnum href "../EcosystemForSoilEnum/"
+
+
+
+      SoilInterface : ecosystem_category
+
+
+
+
+
+        SoilInterface --&gt; "0..1 _recommended_" EcosystemCategoryForSoilEnum : ecosystem_category
+        click EcosystemCategoryForSoilEnum href "../EcosystemCategoryForSoilEnum/"
+
+
+
+      SoilInterface : ecosystem_subtype
+
+
+
+
+
+        SoilInterface --&gt; "0..1 _recommended_" EcosystemSubtypeForSoilEnum : ecosystem_subtype
+        click EcosystemSubtypeForSoilEnum href "../EcosystemSubtypeForSoilEnum/"
+
+
+
+      SoilInterface : ecosystem_type
+
+
+
+
+
+        SoilInterface --&gt; "0..1 _recommended_" EcosystemTypeForSoilEnum : ecosystem_type
+        click EcosystemTypeForSoilEnum href "../EcosystemTypeForSoilEnum/"
+
+
+
+      SoilInterface : elev
+
+      SoilInterface : env_broad_scale
+
+      SoilInterface : env_local_scale
+
+      SoilInterface : env_medium
+
+      SoilInterface : experimental_factor
+
+      SoilInterface : experimental_factor_other
+
+      SoilInterface : extreme_event
+
+      SoilInterface : fao_class
+
+
+
+
+
+        SoilInterface --&gt; "0..1" FaoClassEnum : fao_class
+        click FaoClassEnum href "../FaoClassEnum/"
+
+
+
+      SoilInterface : filter_method
+
+      SoilInterface : fire
+
+      SoilInterface : flooding
+
+      SoilInterface : gaseous_environment
+
+      SoilInterface : geo_loc_name
+
+      SoilInterface : growth_facil
+
+
+
+
+
+        SoilInterface --&gt; "1" GrowthFacilEnum : growth_facil
+        click GrowthFacilEnum href "../GrowthFacilEnum/"
+
+
+
+      SoilInterface : heavy_metals
+
+      SoilInterface : heavy_metals_meth
+
+      SoilInterface : horizon_meth
+
+      SoilInterface : humidity_regm
+
+      SoilInterface : infiltrations
+
+      SoilInterface : isotope_exposure
+
+      SoilInterface : lat_lon
+
+      SoilInterface : lbc_thirty
+
+      SoilInterface : lbceq
+
+      SoilInterface : light_regm
+
+      SoilInterface : link_addit_analys
+
+      SoilInterface : link_class_info
+
+      SoilInterface : link_climate_info
+
+      SoilInterface : local_class
+
+      SoilInterface : local_class_meth
+
+      SoilInterface : manganese
+
+      SoilInterface : micro_biomass_c_meth
+
+      SoilInterface : micro_biomass_meth
+
+      SoilInterface : micro_biomass_n_meth
+
+      SoilInterface : microbial_biomass
+
+      SoilInterface : microbial_biomass_c
+
+      SoilInterface : microbial_biomass_n
+
+      SoilInterface : nitrate_nitrogen
+
+      SoilInterface : nitrite_nitrogen
+
+      SoilInterface : non_microb_biomass
+
+      SoilInterface : non_microb_biomass_method
+
+      SoilInterface : org_matter
+
+      SoilInterface : org_nitro
+
+      SoilInterface : org_nitro_method
+
+      SoilInterface : other_treatment
+
+      SoilInterface : oxy_stat_samp
+
+
+
+
+
+        SoilInterface --&gt; "0..1" OxyStatSampEnum : oxy_stat_samp
+        click OxyStatSampEnum href "../OxyStatSampEnum/"
+
+
+
+      SoilInterface : ph
+
+      SoilInterface : ph_meth
+
+      SoilInterface : phosphate
+
+      SoilInterface : prev_land_use_meth
+
+      SoilInterface : previous_land_use
+
+      SoilInterface : profile_position
+
+
+
+
+
+        SoilInterface --&gt; "0..1" ProfilePositionEnum : profile_position
+        click ProfilePositionEnum href "../ProfilePositionEnum/"
+
+
+
+      SoilInterface : salinity
+
+      SoilInterface : salinity_meth
+
+      SoilInterface : samp_collec_device
+
+      SoilInterface : samp_collec_method
+
+      SoilInterface : samp_mat_process
+
+      SoilInterface : samp_name
+
+      SoilInterface : samp_size
+
+      SoilInterface : samp_store_temp
+
+      SoilInterface : sample_link
+
+      SoilInterface : season_precpt
+
+      SoilInterface : season_temp
+
+      SoilInterface : sieving
+
+      SoilInterface : size_frac_low
+
+      SoilInterface : size_frac_up
+
+      SoilInterface : slope_aspect
+
+      SoilInterface : slope_gradient
+
+      SoilInterface : soil_horizon
+
+
+
+
+
+        SoilInterface --&gt; "0..1" SoilHorizonEnum : soil_horizon
+        click SoilHorizonEnum href "../SoilHorizonEnum/"
+
+
+
+      SoilInterface : soil_text_measure
+
+      SoilInterface : soil_texture_meth
+
+      SoilInterface : soil_type
+
+      SoilInterface : soil_type_meth
+
+      SoilInterface : source_mat_id
+
+      SoilInterface : specific_ecosystem
+
+
+
+
+
+        SoilInterface --&gt; "0..1 _recommended_" SpecificEcosystemForSoilEnum : specific_ecosystem
+        click SpecificEcosystemForSoilEnum href "../SpecificEcosystemForSoilEnum/"
+
+
+
+      SoilInterface : start_date_inc
+
+      SoilInterface : start_time_inc
+
+      SoilInterface : store_cond
+
+
+
+
+
+        SoilInterface --&gt; "1" StoreCondEnum : store_cond
+        click StoreCondEnum href "../StoreCondEnum/"
+
+
+
+      SoilInterface : temp
+
+      SoilInterface : tillage
+
+
+
+
+
+        SoilInterface --&gt; "*" TillageEnum : tillage
+        click TillageEnum href "../TillageEnum/"
+
+
+
+      SoilInterface : tot_carb
+
+      SoilInterface : tot_nitro_cont_meth
+
+      SoilInterface : tot_nitro_content
+
+      SoilInterface : tot_org_c_meth
+
+      SoilInterface : tot_org_carb
+
+      SoilInterface : tot_phosp
+
+      SoilInterface : water_cont_soil_meth
+
+      SoilInterface : water_content
+
+      SoilInterface : watering_regm
+
+      SoilInterface : zinc
+
+
+</div>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../DhInterface/">DhInterface</a><ul>
+<li><strong>SoilInterface</strong> [ <a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a> <a href="../SampIdNewTermsMixin/">SampIdNewTermsMixin</a> <a href="../SoilMixsInspiredMixin/">SoilMixsInspiredMixin</a>]</li>
+</ul>
+</li>
+</ul>
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../agrochem_addition/">agrochem_addition</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Addition of fertilizers, pesticides, etc</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../air_temp_regm/">air_temp_regm</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Information about treatment involving an exposure to varying temperatures; sh...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../al_sat/">al_sat</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>The relative abundance of aluminum in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../al_sat_meth/">al_sat_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining Aluminum saturation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ammonium_nitrogen/">ammonium_nitrogen</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of ammonium nitrogen in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../annual_precpt/">annual_precpt</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>The average of all annual precipitation values known, or an estimated equival...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../annual_temp/">annual_temp</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Mean annual temperature</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biotic_regm/">biotic_regm</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Information about treatment(s) involving use of biotic factors, such as bacte...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../biotic_relationship/">biotic_relationship</a></td>
+<td>0..1 <br/> <a href="../BioticRelationshipEnum/">BioticRelationshipEnum</a></td>
+<td>Description of relationship(s) between the subject organism and other organis...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bulk_elect_conductivity/">bulk_elect_conductivity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Electrical conductivity is a measure of the ability to carry electric current...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../carb_nitro_ratio/">carb_nitro_ratio</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Ratio of amount or concentrations of carbon to nitrogen</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chem_administration/">chem_administration</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>List of chemical compounds administered to the host or site where sampling oc...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../climate_environment/">climate_environment</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Treatment involving an exposure to a particular climate; treatment regimen in...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../collection_date/">collection_date</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The date of sampling</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../collection_date_inc/">collection_date_inc</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Date the incubation was harvested/collected/ended</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../collection_time/">collection_time</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The time of sampling, either as an instance (single point) or interval</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../collection_time_inc/">collection_time_inc</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Time the incubation was harvested/collected/ended</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../crop_rotation/">crop_rotation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Whether or not crop is rotated, and if yes, rotation schedule</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cur_land_use/">cur_land_use</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Present state of sample site</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cur_vegetation/">cur_vegetation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Vegetation classification from one or more standard classification systems, o...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../cur_vegetation_meth/">cur_vegetation_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in vegetation classification</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../depth/">depth</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The vertical distance below local surface</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../drainage_class/">drainage_class</a></td>
+<td>0..1 <br/> <a href="../DrainageClassEnum/">DrainageClassEnum</a></td>
+<td>Drainage classification from a standard system such as the USDA system</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem/">ecosystem</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemForSoilEnum/">EcosystemForSoilEnum</a></td>
+<td>An ecosystem is a combination of a physical environment (abiotic factors) and...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem_category/">ecosystem_category</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemCategoryForSoilEnum/">EcosystemCategoryForSoilEnum</a></td>
+<td>Ecosystem categories represent divisions within the ecosystem based on specif...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem_subtype/">ecosystem_subtype</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemSubtypeForSoilEnum/">EcosystemSubtypeForSoilEnum</a></td>
+<td>Ecosystem subtypes represent further subdivision of Ecosystem types into more...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ecosystem_type/">ecosystem_type</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../EcosystemTypeForSoilEnum/">EcosystemTypeForSoilEnum</a></td>
+<td>Ecosystem types represent things having common characteristics within the Eco...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../elev/">elev</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>Elevation of the sampling site is its height above a fixed reference point, m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../env_broad_scale/">env_broad_scale</a></td>
+<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvBroadScaleSoilEnum/">EnvBroadScaleSoilEnum</a> or <br/><a href="../String/">String</a></td>
+<td>In this field, report which major environmental system your sample or specime...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../env_local_scale/">env_local_scale</a></td>
+<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvLocalScaleSoilEnum/">EnvLocalScaleSoilEnum</a> or <br/><a href="../String/">String</a></td>
+<td>Report the entity or entities which are in the sample or specimen s local vic...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../env_medium/">env_medium</a></td>
+<td>1 <br/> <a href="../String/">String</a> or <br/><a href="../EnvMediumSoilEnum/">EnvMediumSoilEnum</a> or <br/><a href="../String/">String</a></td>
+<td>Report the environmental material(s) immediately surrounding the sample or sp...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../experimental_factor/">experimental_factor</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Variable aspects of an experiment design that can be used to describe an expe...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../experimental_factor_other/">experimental_factor_other</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Other details about your sample that you feel can't be accurately represented...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../extreme_event/">extreme_event</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Unusual physical events that may have affected microbial populations</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fao_class/">fao_class</a></td>
+<td>0..1 <br/> <a href="../FaoClassEnum/">FaoClassEnum</a></td>
+<td>Soil classification from the FAO World soil distribution from International S...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../filter_method/">filter_method</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Type of filter used or how the sample was filtered</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fire/">fire</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Historical and/or physical evidence of fire</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../flooding/">flooding</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Historical and/or physical evidence of flooding</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gaseous_environment/">gaseous_environment</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Use of conditions with differing gaseous environments; should include the nam...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../geo_loc_name/">geo_loc_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by the country or sea name f...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../growth_facil/">growth_facil</a></td>
+<td>1 <br/> <a href="../GrowthFacilEnum/">GrowthFacilEnum</a></td>
+<td>Type of facility/location where the sample was harvested; controlled vocabula...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../heavy_metals/">heavy_metals</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Heavy metals present in the sample and their concentrations</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../heavy_metals_meth/">heavy_metals_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining heavy metals</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../horizon_meth/">horizon_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining the horizon</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../humidity_regm/">humidity_regm</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Information about treatment involving an exposure to varying degree of humidi...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../infiltrations/">infiltrations</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The amount of time it takes to complete each infiltration activity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isotope_exposure/">isotope_exposure</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>List isotope exposure or addition applied to your sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lat_lon/">lat_lon</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The geographical origin of the sample as defined by latitude and longitude</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lbc_thirty/">lbc_thirty</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>lime buffer capacity, determined after 30 minute incubation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../lbceq/">lbceq</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>lime buffer capacity, determined at equilibrium after 5 day incubation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../light_regm/">light_regm</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Information about treatment(s) involving exposure to light, including both li...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../link_addit_analys/">link_addit_analys</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Link to additional analysis results performed on the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../link_class_info/">link_class_info</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Link to digitized soil maps or other soil classification information</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../link_climate_info/">link_climate_info</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Link to climate resource</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../local_class/">local_class</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Soil classification based on local soil classification system</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../local_class_meth/">local_class_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining the local soil classification</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../manganese/">manganese</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of manganese in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../micro_biomass_c_meth/">micro_biomass_c_meth</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining microbial biomass carbon</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../micro_biomass_meth/">micro_biomass_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining microbial biomass</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../micro_biomass_n_meth/">micro_biomass_n_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining microbial biomass nitrogen</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../microbial_biomass/">microbial_biomass</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The part of the organic matter in the soil that constitutes living microorgan...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../microbial_biomass_c/">microbial_biomass_c</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The part of the organic matter in the soil that constitutes living microorgan...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../microbial_biomass_n/">microbial_biomass_n</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The part of the organic matter in the soil that constitutes living microorgan...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../nitrate_nitrogen/">nitrate_nitrogen</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of nitrate nitrogen in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../nitrite_nitrogen/">nitrite_nitrogen</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of nitrite nitrogen in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../non_microb_biomass/">non_microb_biomass</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amount of biomass; should include the name for the part of biomass measured, ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../non_microb_biomass_method/">non_microb_biomass_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining biomass</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../org_matter/">org_matter</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Concentration of organic matter</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../org_nitro/">org_nitro</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Concentration of organic nitrogen</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../org_nitro_method/">org_nitro_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Method used for obtaining organic nitrogen</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../other_treatment/">other_treatment</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Other treatments applied to your samples that are not applicable to the provi...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../oxy_stat_samp/">oxy_stat_samp</a></td>
+<td>0..1 <br/> <a href="../OxyStatSampEnum/">OxyStatSampEnum</a></td>
+<td>Oxygenation status of sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ph/">ph</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../Float/">Float</a></td>
+<td>pH measurement of the sample, or liquid portion of sample, or aqueous phase o...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../ph_meth/">ph_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining pH</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../phosphate/">phosphate</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Concentration of phosphate</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../prev_land_use_meth/">prev_land_use_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining previous land use and dates</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../previous_land_use/">previous_land_use</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Previous land use and dates</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../profile_position/">profile_position</a></td>
+<td>0..1 <br/> <a href="../ProfilePositionEnum/">ProfilePositionEnum</a></td>
+<td>Cross-sectional position in the hillslope where sample was collected</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../salinity/">salinity</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total concentration of all dissolved salts in a liquid or solid sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../salinity_meth/">salinity_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining salinity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_collec_device/">samp_collec_device</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The device used to collect an environmental sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_collec_method/">samp_collec_method</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The method employed for collecting the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_mat_process/">samp_mat_process</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A brief description of any processing applied to the sample during or after r...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_size/">samp_size</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The total amount (volume or mass) of sample collected</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../samp_store_temp/">samp_store_temp</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature at which the sample was stored (degrees are assumed)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sample_link/">sample_link</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>A unique identifier to assign parent-child, subsample, or sibling samples</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../season_precpt/">season_precpt</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>The average of all seasonal precipitation values known, or an estimated equiv...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../season_temp/">season_temp</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Mean seasonal temperature</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sieving/">sieving</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Collection design of pooled samples and/or sieve size and amount of sample si...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../size_frac_low/">size_frac_low</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Refers to the mesh/pore size used to pre-filter/pre-sort the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../size_frac_up/">size_frac_up</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Mesh or pore size of the device used to retain the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../slope_aspect/">slope_aspect</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>The direction a slope faces</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../slope_gradient/">slope_gradient</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Commonly called 'slope'</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../soil_horizon/">soil_horizon</a></td>
+<td>0..1 <br/> <a href="../SoilHorizonEnum/">SoilHorizonEnum</a></td>
+<td>Specific layer in the land area which measures parallel to the soil surface a...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../soil_text_measure/">soil_text_measure</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The relative proportion of different grain sizes of mineral particles in a so...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../soil_texture_meth/">soil_texture_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining soil texture</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../soil_type/">soil_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Description of the soil type or classification</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../soil_type_meth/">soil_type_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining soil series name or other lower-level...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../specific_ecosystem/">specific_ecosystem</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../SpecificEcosystemForSoilEnum/">SpecificEcosystemForSoilEnum</a></td>
+<td>Specific ecosystems represent specific features of the environment like aphot...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../start_date_inc/">start_date_inc</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Date the incubation was started</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../start_time_inc/">start_time_inc</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Time the incubation was started</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../store_cond/">store_cond</a></td>
+<td>1 <br/> <a href="../StoreCondEnum/">StoreCondEnum</a></td>
+<td>Explain how the soil sample is stored (fresh/frozen/other)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../temp/">temp</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Temperature of the sample at the time of sampling</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tillage/">tillage</a></td>
+<td>* <br/> <a href="../TillageEnum/">TillageEnum</a></td>
+<td>Note method(s) used for tilling</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_carb/">tot_carb</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total carbon content</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_nitro_cont_meth/">tot_nitro_cont_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining the total nitrogen</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_nitro_content/">tot_nitro_content</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total nitrogen content of the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_org_c_meth/">tot_org_c_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining total organic carbon</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_org_carb/">tot_org_carb</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Total organic carbon content</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tot_phosp/">tot_phosp</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Total phosphorus concentration in the sample, calculated by: total phosphorus...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../water_cont_soil_meth/">water_cont_soil_meth</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Reference or method used in determining the water content of soil</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../water_content/">water_content</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Water content measurement</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../watering_regm/">watering_regm</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>Information about treatment involving an exposure to watering frequencies, tr...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../zinc/">zinc</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Concentration of zinc in the sample</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../analysis_type/">analysis_type</a></td>
+<td>1..* <br/> <a href="../AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
+<td>Select all the data types associated or available for this biosample</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+<tr>
+<td><a href="../samp_name/">samp_name</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>A local identifier or name that for the material sample collected</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+<tr>
+<td><a href="../source_mat_id/">source_mat_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A globally unique identifier assigned to the parent sample or sample that is ...</td>
+<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../SampleData/">SampleData</a></td>
+<td><a href="../soil_data/">soil_data</a></td>
+<td>range</td>
+<td><a href="./">SoilInterface</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>excel_worksheet_name</td>
+<td>soil</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>nmdc_sub_schema:SoilInterface</td>
+</tr>
+<tr>
+<td>native</td>
+<td>nmdc_sub_schema:SoilInterface</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: SoilInterface
+annotations:
+  excel_worksheet_name:
+    tag: excel_worksheet_name
+    value: soil
+description: soil dh_interface
+title: Soil
+from_schema: https://example.com/nmdc_submission_schema
+is_a: DhInterface
+mixins:
+- DhMultiviewCommonColumnsMixin
+- SampIdNewTermsMixin
+- SoilMixsInspiredMixin
+slots:
+- agrochem_addition
+- air_temp_regm
+- al_sat
+- al_sat_meth
+- ammonium_nitrogen
+- annual_precpt
+- annual_temp
+- biotic_regm
+- biotic_relationship
+- bulk_elect_conductivity
+- carb_nitro_ratio
+- chem_administration
+- climate_environment
+- collection_date
+- collection_date_inc
+- collection_time
+- collection_time_inc
+- crop_rotation
+- cur_land_use
+- cur_vegetation
+- cur_vegetation_meth
+- depth
+- drainage_class
+- ecosystem
+- ecosystem_category
+- ecosystem_subtype
+- ecosystem_type
+- elev
+- env_broad_scale
+- env_local_scale
+- env_medium
+- experimental_factor
+- experimental_factor_other
+- extreme_event
+- fao_class
+- filter_method
+- fire
+- flooding
+- gaseous_environment
+- geo_loc_name
+- growth_facil
+- heavy_metals
+- heavy_metals_meth
+- horizon_meth
+- humidity_regm
+- infiltrations
+- isotope_exposure
+- lat_lon
+- lbc_thirty
+- lbceq
+- light_regm
+- link_addit_analys
+- link_class_info
+- link_climate_info
+- local_class
+- local_class_meth
+- manganese
+- micro_biomass_c_meth
+- micro_biomass_meth
+- micro_biomass_n_meth
+- microbial_biomass
+- microbial_biomass_c
+- microbial_biomass_n
+- nitrate_nitrogen
+- nitrite_nitrogen
+- non_microb_biomass
+- non_microb_biomass_method
+- org_matter
+- org_nitro
+- org_nitro_method
+- other_treatment
+- oxy_stat_samp
+- ph
+- ph_meth
+- phosphate
+- prev_land_use_meth
+- previous_land_use
+- profile_position
+- salinity
+- salinity_meth
+- samp_collec_device
+- samp_collec_method
+- samp_mat_process
+- samp_size
+- samp_store_temp
+- sample_link
+- season_precpt
+- season_temp
+- sieving
+- size_frac_low
+- size_frac_up
+- slope_aspect
+- slope_gradient
+- soil_horizon
+- soil_text_measure
+- soil_texture_meth
+- soil_type
+- soil_type_meth
+- specific_ecosystem
+- start_date_inc
+- start_time_inc
+- store_cond
+- temp
+- tillage
+- tot_carb
+- tot_nitro_cont_meth
+- tot_nitro_content
+- tot_org_c_meth
+- tot_org_carb
+- tot_phosp
+- water_cont_soil_meth
+- water_content
+- watering_regm
+- zinc
+slot_usage:
+  air_temp_regm:
+    name: air_temp_regm
+    recommended: true
+  biotic_regm:
+    name: biotic_regm
+    recommended: true
+  climate_environment:
+    name: climate_environment
+    recommended: true
+  depth:
+    name: depth
+    examples:
+    - value: 0 - 0.1
+    - value: 1 - 1.5
+    required: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+\s*-\s*[-+]?[0-9]*\.?[0-9]+$
+    structured_pattern:
+      syntax: ^{float}\s*-\s*{float}$
+      interpolated: true
+  ecosystem:
+    name: ecosystem
+    range: EcosystemForSoilEnum
+  ecosystem_category:
+    name: ecosystem_category
+    range: EcosystemCategoryForSoilEnum
+  ecosystem_subtype:
+    name: ecosystem_subtype
+    range: EcosystemSubtypeForSoilEnum
+  ecosystem_type:
+    name: ecosystem_type
+    range: EcosystemTypeForSoilEnum
+  elev:
+    name: elev
+    required: true
+  env_local_scale:
+    name: env_local_scale
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+      interpolated: true
+    any_of:
+    - range: EnvLocalScaleSoilEnum
+    - range: string
+  env_medium:
+    name: env_medium
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+      interpolated: true
+    any_of:
+    - range: EnvMediumSoilEnum
+    - range: string
+  gaseous_environment:
+    name: gaseous_environment
+    recommended: true
+  humidity_regm:
+    name: humidity_regm
+    recommended: true
+  lat_lon:
+    name: lat_lon
+    required: true
+  light_regm:
+    name: light_regm
+    recommended: true
+  microbial_biomass_c:
+    name: microbial_biomass_c
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ .*$
+    structured_pattern:
+      syntax: ^{float} {text}$
+      interpolated: true
+  microbial_biomass_n:
+    name: microbial_biomass_n
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ .*$
+    structured_pattern:
+      syntax: ^{float} {text}$
+      interpolated: true
+  non_microb_biomass:
+    name: non_microb_biomass
+    pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?
+      [^;\t\r\x0A]+)$
+  samp_store_temp:
+    name: samp_store_temp
+    required: true
+  sieving:
+    name: sieving
+    examples:
+    - value: combined 2 cores
+    - value: 4mm sieved
+    - value: 50 g
+    - value: 5 cores
+    - value: 2 mm sieved
+    recommended: true
+  specific_ecosystem:
+    name: specific_ecosystem
+    range: SpecificEcosystemForSoilEnum
+  watering_regm:
+    name: watering_regm
+    recommended: true
+  env_broad_scale:
+    name: env_broad_scale
+    any_of:
+    - range: EnvBroadScaleSoilEnum
+    - range: string
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: SoilInterface
+annotations:
+  excel_worksheet_name:
+    tag: excel_worksheet_name
+    value: soil
+description: soil dh_interface
+title: Soil
+from_schema: https://example.com/nmdc_submission_schema
+is_a: DhInterface
+mixins:
+- DhMultiviewCommonColumnsMixin
+- SampIdNewTermsMixin
+- SoilMixsInspiredMixin
+slot_usage:
+  air_temp_regm:
+    name: air_temp_regm
+    recommended: true
+  biotic_regm:
+    name: biotic_regm
+    recommended: true
+  climate_environment:
+    name: climate_environment
+    recommended: true
+  depth:
+    name: depth
+    examples:
+    - value: 0 - 0.1
+    - value: 1 - 1.5
+    required: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+\s*-\s*[-+]?[0-9]*\.?[0-9]+$
+    structured_pattern:
+      syntax: ^{float}\s*-\s*{float}$
+      interpolated: true
+  ecosystem:
+    name: ecosystem
+    range: EcosystemForSoilEnum
+  ecosystem_category:
+    name: ecosystem_category
+    range: EcosystemCategoryForSoilEnum
+  ecosystem_subtype:
+    name: ecosystem_subtype
+    range: EcosystemSubtypeForSoilEnum
+  ecosystem_type:
+    name: ecosystem_type
+    range: EcosystemTypeForSoilEnum
+  elev:
+    name: elev
+    required: true
+  env_local_scale:
+    name: env_local_scale
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+      interpolated: true
+    any_of:
+    - range: EnvLocalScaleSoilEnum
+    - range: string
+  env_medium:
+    name: env_medium
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+      interpolated: true
+    any_of:
+    - range: EnvMediumSoilEnum
+    - range: string
+  gaseous_environment:
+    name: gaseous_environment
+    recommended: true
+  humidity_regm:
+    name: humidity_regm
+    recommended: true
+  lat_lon:
+    name: lat_lon
+    required: true
+  light_regm:
+    name: light_regm
+    recommended: true
+  microbial_biomass_c:
+    name: microbial_biomass_c
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ .*$
+    structured_pattern:
+      syntax: ^{float} {text}$
+      interpolated: true
+  microbial_biomass_n:
+    name: microbial_biomass_n
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ .*$
+    structured_pattern:
+      syntax: ^{float} {text}$
+      interpolated: true
+  non_microb_biomass:
+    name: non_microb_biomass
+    pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?
+      [^;\t\r\x0A]+)$
+  samp_store_temp:
+    name: samp_store_temp
+    required: true
+  sieving:
+    name: sieving
+    examples:
+    - value: combined 2 cores
+    - value: 4mm sieved
+    - value: 50 g
+    - value: 5 cores
+    - value: 2 mm sieved
+    recommended: true
+  specific_ecosystem:
+    name: specific_ecosystem
+    range: SpecificEcosystemForSoilEnum
+  watering_regm:
+    name: watering_regm
+    recommended: true
+  env_broad_scale:
+    name: env_broad_scale
+    any_of:
+    - range: EnvBroadScaleSoilEnum
+    - range: string
+attributes:
+  agrochem_addition:
+    name: agrochem_addition
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: gram, mole per liter, milligram per liter
+    description: Addition of fertilizers, pesticides, etc. - amount and time of applications
+    title: history/agrochemical additions
+    examples:
+    - value: roundup;5 milligram per liter;2018-06-21
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 2
+    keywords:
+    - history
+    slot_uri: MIXS:0000639
+    alias: agrochem_addition
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^.*;[-+]?[0-9]*\.?[0-9]+ ([^\s-]{1,2}|[^\s-]+.+[^\s-]+);(\d{4})(-(0[1-9]|1[0-2])(-(0[1-9]|[12]\d|3[01])(T([01]\d|2[0-3]):([0-5]\d)(:([0-5]\d))?(\.\d+)?(Z|([+-][01]\d:[0-5]\d))?)?)?)?$
+    structured_pattern:
+      syntax: ^{agrochemical_name};{amount} {unit};{date_time_stamp}$
+      interpolated: true
+      partial_match: true
+  air_temp_regm:
+    name: air_temp_regm
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: temperature value;treatment interval and duration
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+    description: Information about treatment involving an exposure to varying temperatures;
+      should include the temperature, treatment regimen including how many times the
+      treatment was repeated, how long each treatment lasted, and the start and end
+      time of the entire treatment; can include different temperature regimens
+    title: air temperature regimen
+    examples:
+    - value: 25 degree Celsius;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 16
+    keywords:
+    - air
+    - regimen
+    - temperature
+    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
+    slot_uri: MIXS:0000551
+    alias: air_temp_regm
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  al_sat:
+    name: al_sat
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: percentage
+      storage_units:
+        tag: storage_units
+        value: '%'
+    description: The relative abundance of aluminum in the sample
+    title: aluminum saturation/ extreme unusual properties
+    todos:
+    - Example &amp; validation. Can we configure things so that 27% &amp; 27 % &amp; 0.27 will
+      validate?
+    - I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
+      I would argue this isn't an extreme unusual property. It's just a biogeochemical
+      measurement.
+    notes:
+    - Aluminum saturation is the percentage of the CEC occupies by aluminum. Like
+      all cations, aluminum held by the cation exchange complex is in equilibrium
+      with aluminum in the soil solution.
+    comments:
+    - Value must be reported in %. Provide the numeric portion only.
+    examples:
+    - value: '27'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 3
+    keywords:
+    - extreme
+    - properties
+    - saturation
+    - unusual
+    slot_uri: MIXS:0000607
+    alias: al_sat
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: '%'
+  al_sat_meth:
+    name: al_sat_meth
+    description: Reference or method used in determining Aluminum saturation
+    title: aluminum saturation method/ extreme unusual properties
+    todos:
+    - I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
+    comments:
+    - Required when aluminum saturation is provided.
+    examples:
+    - value: https://doi.org/10.1371/journal.pone.0176357
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 4
+    keywords:
+    - extreme
+    - method
+    - properties
+    - saturation
+    - unusual
+    slot_uri: MIXS:0000324
+    alias: al_sat_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  ammonium_nitrogen:
+    name: ammonium_nitrogen
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: mg/kg
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/kg|mg/L'
+    description: Concentration of ammonium nitrogen in the sample
+    title: ammonium nitrogen
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 2.3 mg/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    aliases:
+    - NH4-N
+    rank: 1005
+    alias: ammonium_nitrogen
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/kg|mg/L)$
+  annual_precpt:
+    name: annual_precpt
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: millimeter
+      storage_units:
+        tag: storage_units
+        value: mm
+    description: The average of all annual precipitation values known, or an estimated
+      equivalent value derived by such methods as regional indexes or Isohyetal maps
+    title: mean annual precipitation
+    comments:
+    - Value must be reported in mm. Provide the numeric portion only.
+    examples:
+    - value: '225'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 5
+    keywords:
+    - mean
+    slot_uri: MIXS:0000644
+    alias: annual_precpt
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: mm
+  annual_temp:
+    name: annual_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: Mean annual temperature
+    title: mean annual temperature
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: '12.5'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 6
+    keywords:
+    - mean
+    - temperature
+    slot_uri: MIXS:0000642
+    alias: annual_temp
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  biotic_regm:
+    name: biotic_regm
+    description: Information about treatment(s) involving use of biotic factors, such
+      as bacteria, viruses or fungi
+    title: biotic regimen
+    examples:
+    - value: sample inoculated with Rhizobium spp. Culture
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 13
+    keywords:
+    - regimen
+    slot_uri: MIXS:0001038
+    alias: biotic_regm
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  biotic_relationship:
+    name: biotic_relationship
+    description: Description of relationship(s) between the subject organism and other
+      organism(s) it is associated with. E.g., parasite on species X; mutualist with
+      species Y. The target organism is the subject of the relationship, and the other
+      organism(s) is the object
+    title: observed biotic relationship
+    examples:
+    - value: free living
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 22
+    keywords:
+    - observed
+    - relationship
+    slot_uri: MIXS:0000028
+    alias: biotic_relationship
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_modified_section
+    range: BioticRelationshipEnum
+  bulk_elect_conductivity:
+    name: bulk_elect_conductivity
+    annotations:
+      storage_units:
+        tag: storage_units
+        value: mS/cm
+    description: Electrical conductivity is a measure of the ability to carry electric
+      current, which is mostly dictated by the chemistry of and amount of water.
+    title: bulk electrical conductivity
+    comments:
+    - Value must be reported in mS/cm. Provide the numeric portion only.
+    - Provide the value output of the field instrument.
+    examples:
+    - value: '0.017'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1008
+    alias: bulk_elect_conductivity
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: float
+    unit:
+      ucum_code: mS/cm
+  carb_nitro_ratio:
+    name: carb_nitro_ratio
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      storage_units:
+        tag: storage_units
+        value: '1'
+    description: Ratio of amount or concentrations of carbon to nitrogen
+    title: carbon/nitrogen ratio
+    comments:
+    - Value must be reported in ratio/unitless. Provide the numeric portion only.
+    examples:
+    - value: '0.41736111'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 44
+    keywords:
+    - carbon
+    - nitrogen
+    - ratio
+    string_serialization: '{float}:{float}'
+    slot_uri: MIXS:0000310
+    alias: carb_nitro_ratio
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: float
+    unit:
+      descriptive_name: ratio/unitless
+      ucum_code: '1'
+  chem_administration:
+    name: chem_administration
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: CHEBI;timestamp
+    description: List of chemical compounds administered to the host or site where
+      sampling occurred, and when (e.g. Antibiotics, n fertilizer, air filter); can
+      include multiple compounds. For chemical entities of biological interest ontology
+      (chebi) (v 163), http://purl.bioontology.org/ontology/chebi
+    title: chemical administration
+    examples:
+    - value: agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22
+    - value: agar [CHEBI:2509];2018-05
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 17
+    keywords:
+    - administration
+    string_serialization: '{termLabel} [{termID}];{timestamp}'
+    slot_uri: MIXS:0000751
+    alias: chem_administration
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: ^(\S+.*\S+ \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?\|)*(\S+.*\S+
+      \[[A-za-z]+:\d+\];[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)$
+  climate_environment:
+    name: climate_environment
+    description: Treatment involving an exposure to a particular climate; treatment
+      regimen including how many times the treatment was repeated, how long each treatment
+      lasted, and the start and end time of the entire treatment; can include multiple
+      climates
+    title: climate environment
+    deprecated: true, slot is inconsistently used and provides redundant information
+      to other slots, https://github.com/GenomicsStandardsConsortium/mixs/issues/591
+      and https://github.com/microbiomedata/nmdc-schema/issues/586
+    todos:
+    - description says "can include multiple climates" but multivalued is set to false
+    - add examples, i need to see some examples to add correctly formatted example.
+    examples:
+    - value: tropical climate;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 19
+    keywords:
+    - environment
+    slot_uri: MIXS:0001040
+    alias: climate_environment
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  collection_date:
+    name: collection_date
+    description: The date of sampling
+    title: collection date
+    examples:
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 3
+    keywords:
+    - date
+    slot_uri: MIXS:0000011
+    alias: collection_date
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+  collection_date_inc:
+    name: collection_date_inc
+    description: Date the incubation was harvested/collected/ended. Only relevant
+      for incubation samples.
+    title: incubation collection date
+    notes:
+    - MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision
+      date only
+    comments:
+    - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021
+      are all acceptable.
+    examples:
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000011
+    rank: 2
+    string_serialization: '{date, arbitrary precision}'
+    alias: collection_date_inc
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+    pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+  collection_time:
+    name: collection_time
+    description: The time of sampling, either as an instance (single point) or interval.
+    title: collection time, GMT
+    notes:
+    - MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional
+      time only
+    comments:
+    - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
+    examples:
+    - value: '13:33'
+    - value: '13:33:55'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000011
+    rank: 1
+    string_serialization: '{time, seconds optional}'
+    alias: collection_time
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+    pattern: ^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$
+  collection_time_inc:
+    name: collection_time_inc
+    description: Time the incubation was harvested/collected/ended. Only relevant
+      for incubation samples.
+    title: incubation collection time, GMT
+    notes:
+    - MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional
+      time only
+    comments:
+    - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
+    examples:
+    - value: '13:33'
+    - value: '13:33:55'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000011
+    rank: 3
+    string_serialization: '{time, seconds optional}'
+    alias: collection_time_inc
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+    pattern: ^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$
+  crop_rotation:
+    name: crop_rotation
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: crop rotation status;schedule
+    description: Whether or not crop is rotated, and if yes, rotation schedule
+    title: history/crop rotation
+    examples:
+    - value: yes;R2/2017-01-01/2018-12-31/P6M
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 7
+    keywords:
+    - history
+    slot_uri: MIXS:0000318
+    alias: crop_rotation
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  cur_land_use:
+    name: cur_land_use
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: enumeration
+    description: Present state of sample site
+    title: current land use
+    examples:
+    - value: conifers
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 8
+    keywords:
+    - land
+    - use
+    string_serialization: '[cities|farmstead|industrial areas|roads/railroads|rock|sand|gravel|mudflats|salt
+      flats|badlands|permanent snow or ice|saline seeps|mines/quarries|oil waste areas|small
+      grains|row crops|vegetable crops|horticultural plants (e.g. tulips)|marshlands
+      (grass,sedges,rushes)|tundra (mosses,lichens)|rangeland|pastureland (grasslands
+      used for livestock grazing)|hayland|meadows (grasses,alfalfa,fescue,bromegrass,timothy)|shrub
+      land (e.g. mesquite,sage-brush,creosote bush,shrub oak,eucalyptus)|successional
+      shrub land (tree saplings,hazels,sumacs,chokecherry,shrub dogwoods,blackberries)|shrub
+      crops (blueberries,nursery ornamentals,filberts)|vine crops (grapes)|conifers
+      (e.g. pine,spruce,fir,cypress)|hardwoods (e.g. oak,hickory,elm,aspen)|intermixed
+      hardwood and conifers|tropical (e.g. mangrove,palms)|rainforest (evergreen forest
+      receiving &gt;406 cm annual rainfall)|swamp (permanent or semi-permanent water
+      body dominated by woody plants)|crop trees (nuts,fruit,christmas trees,nursery
+      trees)]'
+    slot_uri: MIXS:0001080
+    alias: cur_land_use
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  cur_vegetation:
+    name: cur_vegetation
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: current vegetation type
+    description: Vegetation classification from one or more standard classification
+      systems, or agricultural crop
+    title: current vegetation
+    todos:
+    - Recommend changing this from text value to some king of ontology?
+    comments:
+    - Values provided here can be specific species of vegetation or vegetation regions
+    - See for vegetation regions- https://education.nationalgeographic.org/resource/vegetation-region
+    examples:
+    - value: deciduous forest
+    - value: forest
+    - value: Bauhinia variegata
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 9
+    keywords:
+    - vegetation
+    slot_uri: MIXS:0000312
+    alias: cur_vegetation
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  cur_vegetation_meth:
+    name: cur_vegetation_meth
+    description: Reference or method used in vegetation classification
+    title: current vegetation method
+    todos:
+    - I'm not sure this is a DOI, PMID, or URI. Should pool the community and find
+      out how they accomplish this if provided.
+    comments:
+    - Required when current vegetation is provided.
+    examples:
+    - value: https://doi.org/10.1111/j.1654-109X.2011.01154.x
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 10
+    keywords:
+    - method
+    - vegetation
+    slot_uri: MIXS:0000314
+    alias: cur_vegetation_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  depth:
+    name: depth
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: meter
+      storage_units:
+        tag: storage_units
+        value: m
+    description: The vertical distance below local surface. For sediment or soil samples
+      depth is measured from sediment or soil surface, respectively. Depth can be
+      reported as an interval for subsurface samples
+    title: depth, meters
+    comments:
+    - All depths must be reported in meters. Provide the numerical portion only.
+    examples:
+    - value: 0 - 0.1
+    - value: 1 - 1.5
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 9
+    keywords:
+    - depth
+    slot_uri: MIXS:0000018
+    alias: depth
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+\s*-\s*[-+]?[0-9]*\.?[0-9]+$
+    structured_pattern:
+      syntax: ^{float}\s*-\s*{float}$
+      interpolated: true
+    unit:
+      ucum_code: m
+  drainage_class:
+    name: drainage_class
+    description: Drainage classification from a standard system such as the USDA system
+    title: drainage classification
+    examples:
+    - value: well
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 11
+    keywords:
+    - classification
+    slot_uri: MIXS:0001085
+    alias: drainage_class
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: DrainageClassEnum
+  ecosystem:
+    name: ecosystem
+    description: An ecosystem is a combination of a physical environment (abiotic
+      factors) and all the organisms (biotic factors) that interact with this environment.
+      Ecosystem is in position 1/5 in a GOLD path.
+    comments:
+    - The abiotic factors play a profound role on the type and composition of organisms
+      in a given environment. The GOLD Ecosystem at the top of the five-level classification
+      system is aimed at capturing the broader environment from which an organism
+      or environmental sample is collected. The three broad groups under Ecosystem
+      are Environmental, Host-associated, and Engineered. They represent samples collected
+      from a natural environment or from another organism or from engineered environments
+      like bioreactors respectively.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 9
+    is_a: gold_path_field
+    alias: ecosystem
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemForSoilEnum
+    recommended: true
+  ecosystem_category:
+    name: ecosystem_category
+    description: Ecosystem categories represent divisions within the ecosystem based
+      on specific characteristics of the environment from where an organism or sample
+      is isolated. Ecosystem category is in position 2/5 in a GOLD path.
+    comments:
+    - The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial.
+      Ecosystem categories for Host-associated samples can be individual hosts or
+      phyla and for engineered samples it may be manipulated environments like bioreactors,
+      solid waste etc.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 10
+    is_a: gold_path_field
+    alias: ecosystem_category
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemCategoryForSoilEnum
+    recommended: true
+  ecosystem_subtype:
+    name: ecosystem_subtype
+    description: Ecosystem subtypes represent further subdivision of Ecosystem types
+      into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD
+      path.
+    comments:
+    - Ecosystem Type Marine (Environmental -&gt; Aquatic -&gt; Marine) is further divided
+      (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in
+      the Ecosystem subtype category.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 12
+    is_a: gold_path_field
+    alias: ecosystem_subtype
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemSubtypeForSoilEnum
+    recommended: true
+  ecosystem_type:
+    name: ecosystem_type
+    description: Ecosystem types represent things having common characteristics within
+      the Ecosystem Category. These common characteristics based grouping is still
+      broad but specific to the characteristics of a given environment. Ecosystem
+      type is in position 3/5 in a GOLD path.
+    comments:
+    - The Aquatic ecosystem category (for example) may have ecosystem types like Marine
+      or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor
+      air as different Ecosystem Types. In the case of Host-associated samples, ecosystem
+      type can represent Respiratory system, Digestive system, Roots etc.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 11
+    is_a: gold_path_field
+    alias: ecosystem_type
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: EcosystemTypeForSoilEnum
+    recommended: true
+  elev:
+    name: elev
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: meter
+    description: Elevation of the sampling site is its height above a fixed reference
+      point, most commonly the mean sea level. Elevation is mainly used when referring
+      to points on the earth's surface, while altitude is used for points above the
+      surface, such as an aircraft in flight or a spacecraft in orbit
+    title: elevation, meters
+    comments:
+    - All elevations must be reported in meters. Provide the numerical portion only.
+    - Please use https://www.advancedconverter.com/map-tools/find-altitude-by-coordinates,
+      if needed, to help estimate the elevation based on latitude and longitude coordinates.
+    examples:
+    - value: '225'
+    - value: '0'
+    - value: '1250'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 6
+    keywords:
+    - elevation
+    slot_uri: MIXS:0000093
+    alias: elev
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    required: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: m
+  env_broad_scale:
+    name: env_broad_scale
+    annotations:
+      tooltip:
+        tag: tooltip
+        value: The biome or major environmental system where the sample or specimen
+          originated. Choose values from subclasses of the 'biome' class [ENVO:00000428]
+          in the Environment Ontology (ENVO). For host-associated or plant-associated
+          samples, use terms from the UBERON or Plant Ontology to describe the broad
+          anatomical or morphological context
+    description: 'In this field, report which major environmental system your sample
+      or specimen came from. The systems identified should have a coarse spatial grain,
+      to provide the general environmental context of where the sampling was done
+      (e.g. were you in the desert or a rainforest?). We recommend using subclasses
+      of ENVO''s biome class: http://purl.obolibrary.org/obo/ENVO_00000428. Format
+      (one term): termLabel [termID], Format (multiple terms): termLabel [termID]|termLabel
+      [termID]|termLabel [termID]. Example: Annotating a water sample from the photic
+      zone in middle of the Atlantic Ocean, consider: oceanic epipelagic zone biome
+      [ENVO:01000033]. Example: Annotating a sample from the Amazon rainforest consider:
+      tropical moist broadleaf forest biome [ENVO:01000228]. If needed, request new
+      terms on the ENVO tracker, identified here: http://www.obofoundry.org/ontology/envo.html'
+    title: broad-scale environmental context
+    examples:
+    - value: oceanic epipelagic zone biome [ENVO:01000035]
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 6
+    keywords:
+    - context
+    - environmental
+    is_a: mixs_env_triad_field
+    slot_uri: MIXS:0000012
+    alias: env_broad_scale
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[ENVO:\d{7,8}\]$
+      interpolated: true
+    any_of:
+    - range: EnvBroadScaleSoilEnum
+    - range: string
+  env_local_scale:
+    name: env_local_scale
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: Environmental entities having causal influences upon the entity at
+          time of sampling
+      tooltip:
+        tag: tooltip
+        value: The specific environmental entities or features near the sample or
+          specimen that significantly influence its characteristics or composition.
+          These entities are typically smaller in scale than the broad environmental
+          context. Values for this field should be countable, material nouns and must
+          be chosen from subclasses of BFO:0000040 (material entity) that appear in
+          the Environment Ontology (ENVO). For host-associated or plant-associated
+          samples, use terms from the UBERON or Plant Ontology to describe specific
+          anatomical structures or plant parts.
+    description: 'Report the entity or entities which are in the sample or specimen
+      s local vicinity and which you believe have significant causal influences on
+      your sample or specimen. We recommend using EnvO terms which are of smaller
+      spatial grain than your entry for env_broad_scale. Terms, such as anatomical
+      sites, from other OBO Library ontologies which interoperate with EnvO (e.g.
+      UBERON) are accepted in this field. EnvO documentation about how to use the
+      field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS'
+    title: local environmental context
+    examples:
+    - value: canopy [ENVO:00000047]
+    - value: herb and fern layer [ENVO:01000337]
+    - value: understory [ENVO:01000335]
+    - value: shrub layer [ENVO:01000336]
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 7
+    keywords:
+    - context
+    - environmental
+    is_a: mixs_env_triad_field
+    slot_uri: MIXS:0000013
+    alias: env_local_scale
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+      interpolated: true
+    any_of:
+    - range: EnvLocalScaleSoilEnum
+    - range: string
+  env_medium:
+    name: env_medium
+    annotations:
+      tooltip:
+        tag: tooltip
+        value: The predominant environmental material or substrate that directly surrounds
+          or hosts the sample or specimen at the time of sampling. Choose values from
+          subclasses of the 'environmental material' class [ENVO:00010483] in the
+          Environment Ontology (ENVO). Values for this field should be measurable
+          or mass material nouns, representing continuous environmental materials.
+          For host-associated or plant-associated samples, use terms from the UBERON
+          or Plant Ontology to indicate a tissue, organ, or plant structure
+    description: 'Report the environmental material(s) immediately surrounding the
+      sample or specimen at the time of sampling. We recommend using subclasses of
+      ''environmental material'' (http://purl.obolibrary.org/obo/ENVO_00010483). EnvO
+      documentation about how to use the field: https://github.com/EnvironmentOntology/envo/wiki/Using-ENVO-with-MIxS
+      . Terms from other OBO ontologies are permissible as long as they reference
+      mass/volume nouns (e.g. air, water, blood) and not discrete, countable entities
+      (e.g. a tree, a leaf, a table top)'
+    title: environmental medium
+    examples:
+    - value: soil [ENVO:00001998]
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 8
+    keywords:
+    - environmental
+    is_a: mixs_env_triad_field
+    slot_uri: MIXS:0000014
+    alias: env_medium
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: string
+    required: true
+    pattern: ^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[(ENVO:\d{7,8}|PO:\d{7})\]$
+    structured_pattern:
+      syntax: ^{termLabel} \[(ENVO:\d{7,8}|PO:\d{7})\]$
+      interpolated: true
+    any_of:
+    - range: EnvMediumSoilEnum
+    - range: string
+  experimental_factor:
+    name: experimental_factor
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: text or EFO and/or OBI
+    description: Variable aspects of an experiment design that can be used to describe
+      an experiment, or set of experiments, in an increasingly detailed manner. This
+      field accepts ontology terms from Experimental Factor Ontology (EFO) and/or
+      Ontology for Biomedical Investigations (OBI)
+    title: experimental factor
+    examples:
+    - value: time series design [EFO:0001779]
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 12
+    keywords:
+    - experimental
+    - factor
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000008
+    alias: experimental_factor
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^\S+.*\S+ \[[a-zA-Z]{2,}:\d+\]$
+  experimental_factor_other:
+    name: experimental_factor_other
+    description: Other details about your sample that you feel can't be accurately
+      represented in the available columns.
+    title: experimental factor- other
+    comments:
+    - This slot accepts open-ended text about your sample.
+    - We recommend using key:value pairs.
+    - Provided pairs will be considered for inclusion as future slots/terms in this
+      data collection template.
+    examples:
+    - value: 'experimental treatment: value'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000008
+    - MIXS:0000300
+    rank: 7
+    string_serialization: '{text}'
+    alias: experimental_factor_other
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+  extreme_event:
+    name: extreme_event
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: date, string
+    description: Unusual physical events that may have affected microbial populations
+    title: history/extreme events
+    examples:
+    - value: 1980-05-18, volcanic eruption
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 13
+    keywords:
+    - event
+    - history
+    slot_uri: MIXS:0000320
+    alias: extreme_event
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  fao_class:
+    name: fao_class
+    description: Soil classification from the FAO World soil distribution from International
+      Soil Reference and Information Centre (ISRIC). The list of available soil classifications
+      can be found at https://www.isric.org/explore/world-soil-distribution
+    title: soil_taxonomic/FAO classification
+    examples:
+    - value: Luvisols
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 14
+    keywords:
+    - classification
+    slot_uri: MIXS:0001083
+    alias: fao_class
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: FaoClassEnum
+  filter_method:
+    name: filter_method
+    description: Type of filter used or how the sample was filtered
+    title: filter method
+    comments:
+    - describe the filter or provide a catalog number and manufacturer
+    examples:
+    - value: C18
+    - value: Basix PES, 13-100-106 FisherSci
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000765
+    rank: 6
+    string_serialization: '{text}'
+    alias: filter_method
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - WaterInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+  fire:
+    name: fire
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: date string
+    description: Historical and/or physical evidence of fire
+    title: history/fire
+    todos:
+    - is "to" acceptable? Is there a better way to request that be written?
+    comments:
+    - Provide the date the fire occurred. If extended burning occurred provide the
+      date range.
+    examples:
+    - value: '1871-10-10'
+    - value: 1871-10-01 to 1871-10-31
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 15
+    keywords:
+    - history
+    slot_uri: MIXS:0001086
+    alias: fire
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?(\s+to\s+[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?)?$
+  flooding:
+    name: flooding
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: date string
+    description: Historical and/or physical evidence of flooding
+    title: history/flooding
+    todos:
+    - is "to" acceptable? Is there a better way to request that be written?
+    - What about if the "day" isn't known? Is this ok?
+    comments:
+    - Provide the date the flood occurred. If extended flooding occurred provide the
+      date range.
+    examples:
+    - value: '1927-04-15'
+    - value: 1927-04 to 1927-05
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 16
+    keywords:
+    - history
+    slot_uri: MIXS:0000319
+    alias: flooding
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  gaseous_environment:
+    name: gaseous_environment
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: micromole per liter
+    description: Use of conditions with differing gaseous environments; should include
+      the name of gaseous compound, amount administered, treatment duration, interval
+      and total experimental duration; can include multiple gaseous environment regimens
+    title: gaseous environment
+    todos:
+    - would like to see usage examples for this slot. Requiring micromole/L seems
+      too limiting and doesn't match expected_value value
+    - did I do this right? keep the example that's provided and add another? so as
+      to not override
+    examples:
+    - value: CO2; 500ppm above ambient; constant
+    - value: nitric oxide;0.5 micromole per liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 20
+    keywords:
+    - environment
+    slot_uri: MIXS:0000558
+    alias: gaseous_environment
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  geo_loc_name:
+    name: geo_loc_name
+    description: The geographical origin of the sample as defined by the country or
+      sea name followed by specific region name.
+    title: geographic location (country and/or sea,region)
+    examples:
+    - value: 'USA: Maryland, Bethesda'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 4
+    keywords:
+    - geographic
+    - location
+    slot_uri: MIXS:0000010
+    alias: geo_loc_name
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    pattern: '^([^\s-]{1,2}|[^\s-]+.+[^\s-]+): ([^\s-]{1,2}|[^\s-]+.+[^\s-]+), ([^\s-]{1,2}|[^\s-]+.+[^\s-]+)$'
+    structured_pattern:
+      syntax: '^{country}: {region}, {specific_location}$'
+      interpolated: true
+      partial_match: true
+  growth_facil:
+    name: growth_facil
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: free text or CO
+    description: 'Type of facility/location where the sample was harvested; controlled
+      vocabulary: growth chamber, open top chamber, glasshouse, experimental garden,
+      field.'
+    title: growth facility
+    examples:
+    - value: growth_chamber
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1
+    keywords:
+    - facility
+    - growth
+    string_serialization: '{text}|{termLabel} [{termID}]'
+    slot_uri: MIXS:0001043
+    alias: growth_facil
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SoilInterface
+    slot_group: mixs_modified_section
+    range: GrowthFacilEnum
+    required: true
+  heavy_metals:
+    name: heavy_metals
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: heavy metal name;measurement value unit
+      Preferred_unit:
+        tag: Preferred_unit
+        value: microgram per gram
+    description: Heavy metals present in the sample and their concentrations.
+    title: heavy metals/ extreme unusual properties
+    todos:
+    - Example &amp; validation. Can we configure things so that 27% &amp; 27 % &amp; 0.27 will
+      validate?
+    - I think it's weird the way GSC writes the title. I recommend this change. Thoughts?
+      I would argue this isn't an extreme unusual property. It's just a biogeochemical
+      measurement.
+    comments:
+    - For multiple heavy metals and concentrations, separate by ;
+    examples:
+    - value: mercury;0.09 ug/g
+    - value: mercury;0.09 ug/g|chromium;0.03 ug/g
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 17
+    keywords:
+    - extreme
+    - properties
+    - unusual
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000652
+    alias: heavy_metals
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+  heavy_metals_meth:
+    name: heavy_metals_meth
+    description: Reference or method used in determining heavy metals
+    title: heavy metals method/ extreme unusual properties
+    comments:
+    - Required when heavy metals are provided
+    examples:
+    - value: https://doi.org/10.3390/ijms9040434
+    - value: doi:10.1007/BF01056090
+    - value: https://doi.org/10.1007/s00216-006-0322-8
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 18
+    keywords:
+    - extreme
+    - method
+    - properties
+    - unusual
+    slot_uri: MIXS:0000343
+    alias: heavy_metals_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  horizon_meth:
+    name: horizon_meth
+    description: Reference or method used in determining the horizon
+    title: horizon method
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 19
+    keywords:
+    - horizon
+    - method
+    slot_uri: MIXS:0000321
+    alias: horizon_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  humidity_regm:
+    name: humidity_regm
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: humidity value;treatment interval and duration
+      Preferred_unit:
+        tag: Preferred_unit
+        value: gram per cubic meter
+    description: Information about treatment involving an exposure to varying degree
+      of humidity; information about treatment involving use of growth hormones; should
+      include amount of humidity administered, treatment regimen including how many
+      times the treatment was repeated, how long each treatment lasted, and the start
+      and end time of the entire treatment; can include multiple regimens
+    title: humidity regimen
+    examples:
+    - value: 25 gram per cubic meter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 21
+    keywords:
+    - humidity
+    - regimen
+    string_serialization: '{float} {unit};{Rn/start_time/end_time/duration}'
+    slot_uri: MIXS:0000568
+    alias: humidity_regm
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  infiltrations:
+    name: infiltrations
+    description: The amount of time it takes to complete each infiltration activity
+    examples:
+    - value: 00:01:32;00:00:53
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.protocols.io/view/field-sampling-protocol-kqdg3962pg25/v1
+    aliases:
+    - infiltration_1
+    - infiltration_2
+    rank: 1009
+    list_elements_ordered: true
+    alias: infiltrations
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: string
+    multivalued: false
+    pattern: ^(?:(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])(?:;(?:[0-9]|[1-9][0-9]|9[0-9]|0[0-9]|0[0-5][0-9]):[0-5][0-9]:[0-5][0-9])*$
+  isotope_exposure:
+    name: isotope_exposure
+    description: List isotope exposure or addition applied to your sample.
+    title: isotope exposure/addition
+    todos:
+    - Can we make the H218O correctly super and subscripted?
+    comments:
+    - This is required when your experimental design includes the use of isotopically
+      labeled compounds
+    examples:
+    - value: 13C glucose
+    - value: 18O water
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000751
+    rank: 16
+    alias: isotope_exposure
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+  lat_lon:
+    name: lat_lon
+    description: The geographical origin of the sample as defined by latitude and
+      longitude. The values should be reported in decimal degrees, limited to 8 decimal
+      points, and in WGS84 system
+    title: geographic location (latitude and longitude)
+    notes:
+    - This is currently a required field but it's not clear if this should be required
+      for human hosts
+    examples:
+    - value: 50.586825 6.408977
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 5
+    keywords:
+    - geographic
+    - location
+    slot_uri: MIXS:0000009
+    alias: lat_lon
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    required: true
+    pattern: ^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$
+    structured_pattern:
+      syntax: ^{lat} {lon}$
+      interpolated: true
+      partial_match: true
+  lbc_thirty:
+    name: lbc_thirty
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: ppm CaCO3/pH
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]'
+    description: lime buffer capacity, determined after 30 minute incubation
+    title: lime buffer capacity (at 30 minutes)
+    comments:
+    - Value must be reported in [ppm]. Provide the numeric portion only.
+    - This is the mass of lime, in mg, needed to raise the pH of one kg of soil by
+      one pH unit
+    examples:
+    - value: '543'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    - https://secure.caes.uga.edu/extension/publications/files/pdf/C%20874_5.PDF
+    aliases:
+    - lbc30
+    - lime buffer capacity (at 30 minutes)
+    rank: 1001
+    alias: lbc_thirty
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: float
+    unit:
+      ucum_code: '[ppm]'
+  lbceq:
+    name: lbceq
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: ppm CaCO3/pH
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]'
+    description: lime buffer capacity, determined at equilibrium after 5 day incubation
+    title: lime buffer capacity (after 5 day incubation)
+    comments:
+    - Value must be reported in [ppm]. Provide the numeric portion only.
+    - This is the mass of lime, in mg, needed to raise the pH of one kg of soil by
+      one pH unit
+    examples:
+    - value: '1575'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    aliases:
+    - lime buffer capacity (at 5-day equilibrium)
+    rank: 1002
+    alias: lbceq
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: float
+    unit:
+      ucum_code: '[ppm]'
+  light_regm:
+    name: light_regm
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: exposure type;light intensity;light quality
+      Preferred_unit:
+        tag: Preferred_unit
+        value: lux; micrometer, nanometer, angstrom
+    description: Information about treatment(s) involving exposure to light, including
+      both light intensity and quality
+    title: light regimen
+    examples:
+    - value: incandescant light;10 lux;450 nanometer
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 24
+    keywords:
+    - light
+    - regimen
+    string_serialization: '{text};{float} {unit};{float} {unit}'
+    slot_uri: MIXS:0000569
+    alias: light_regm
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+  link_addit_analys:
+    name: link_addit_analys
+    description: Link to additional analysis results performed on the sample
+    title: links to additional analysis
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 56
+    keywords:
+    - link
+    slot_uri: MIXS:0000340
+    alias: link_addit_analys
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  link_class_info:
+    name: link_class_info
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: PMID,DOI or url
+    description: Link to digitized soil maps or other soil classification information
+    title: link to classification information
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 20
+    keywords:
+    - classification
+    - information
+    - link
+    string_serialization: '{termLabel} [{termID}]'
+    slot_uri: MIXS:0000329
+    alias: link_class_info
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  link_climate_info:
+    name: link_climate_info
+    description: Link to climate resource
+    title: link to climate information
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 21
+    keywords:
+    - information
+    - link
+    slot_uri: MIXS:0000328
+    alias: link_climate_info
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  local_class:
+    name: local_class
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: local classification name
+    description: Soil classification based on local soil classification system
+    title: soil_taxonomic/local classification
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 22
+    keywords:
+    - classification
+    slot_uri: MIXS:0000330
+    alias: local_class
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  local_class_meth:
+    name: local_class_meth
+    description: Reference or method used in determining the local soil classification
+    title: soil_taxonomic/local classification method
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 24
+    keywords:
+    - classification
+    - method
+    slot_uri: MIXS:0000331
+    alias: local_class_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  manganese:
+    name: manganese
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: mg/kg (ppm)
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/kg|mg/L'
+    description: Concentration of manganese in the sample
+    title: manganese
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 24.7 mg/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    rank: 1003
+    alias: manganese
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/kg|mg/L)$
+  micro_biomass_c_meth:
+    name: micro_biomass_c_meth
+    description: Reference or method used in determining microbial biomass carbon
+    title: microbial biomass carbon method
+    todos:
+    - How should we separate values? | or ;? lets be consistent
+    comments:
+    - required if "microbial_biomass_c" is provided
+    examples:
+    - value: https://doi.org/10.1016/0038-0717(87)90052-6
+    - value: https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000339
+    rank: 11
+    string_serialization: '{PMID}|{DOI}|{URL}'
+    alias: micro_biomass_c_meth
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+  micro_biomass_meth:
+    name: micro_biomass_meth
+    description: Reference or method used in determining microbial biomass
+    title: microbial biomass method
+    comments:
+    - slot name/scn was microbial_biomass_meth
+    examples:
+    - value: http://dx.doi.org/10.1016/j.soilbio.2005.01.021
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 43
+    keywords:
+    - biomass
+    - method
+    - microbial
+    slot_uri: MIXS:0000339
+    alias: micro_biomass_meth
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  micro_biomass_n_meth:
+    name: micro_biomass_n_meth
+    description: Reference or method used in determining microbial biomass nitrogen
+    title: microbial biomass nitrogen method
+    comments:
+    - required if "microbial_biomass_n" is provided
+    examples:
+    - value: https://doi.org/10.1016/0038-0717(87)90052-6
+    - value: https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000339
+    rank: 13
+    string_serialization: '{PMID}|{DOI}|{URL}'
+    alias: micro_biomass_n_meth
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+  microbial_biomass:
+    name: microbial_biomass
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: ton, kilogram, gram per kilogram soil
+      units_alignment_excuse:
+        tag: units_alignment_excuse
+        value: complex_unit
+    description: The part of the organic matter in the soil that constitutes living
+      microorganisms smaller than 5-10 micrometer. If you keep this, you would need
+      to have correction factors used for conversion to the final units
+    title: microbial biomass
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 42
+    keywords:
+    - biomass
+    - microbial
+    slot_uri: MIXS:0000650
+    alias: microbial_biomass
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  microbial_biomass_c:
+    name: microbial_biomass_c
+    description: The part of the organic matter in the soil that constitutes living
+      microorganisms smaller than 5-10 micrometer.
+    title: microbial biomass carbon
+    comments:
+    - If you provide this, correction factors used for conversion to the final units
+      and method are required
+    examples:
+    - value: 0.05 ug C/g dry soil
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000650
+    rank: 10
+    string_serialization: '{float} {unit}'
+    alias: microbial_biomass_c
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ .*$
+    structured_pattern:
+      syntax: ^{float} {text}$
+      interpolated: true
+  microbial_biomass_n:
+    name: microbial_biomass_n
+    description: The part of the organic matter in the soil that constitutes living
+      microorganisms smaller than 5-10 micrometer.
+    title: microbial biomass nitrogen
+    comments:
+    - If you provide this, correction factors used for conversion to the final units
+      and method are required
+    examples:
+    - value: 0.05 ug N/g dry soil
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000650
+    rank: 12
+    string_serialization: '{float} {unit}'
+    alias: microbial_biomass_n
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ .*$
+    structured_pattern:
+      syntax: ^{float} {text}$
+      interpolated: true
+  nitrate_nitrogen:
+    name: nitrate_nitrogen
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: mg/kg
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/kg|mg/L'
+    description: Concentration of nitrate nitrogen in the sample
+    title: nitrate_nitrogen
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    - often below some specified limit of detection
+    examples:
+    - value: 0.29 mg/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    aliases:
+    - NO3-N
+    rank: 1006
+    alias: nitrate_nitrogen
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/kg|mg/L)$
+  nitrite_nitrogen:
+    name: nitrite_nitrogen
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: mg/kg
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/kg|mg/L'
+    description: Concentration of nitrite nitrogen in the sample
+    title: nitrite_nitrogen
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 1.2 mg/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    aliases:
+    - NO2-N
+    rank: 1007
+    alias: nitrite_nitrogen
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/kg|mg/L)$
+  non_microb_biomass:
+    name: non_microb_biomass
+    description: Amount of biomass; should include the name for the part of biomass
+      measured, e.g.insect, plant, total. Can include multiple measurements separated
+      by ;
+    title: non-microbial biomass
+    examples:
+    - value: insect;0.23 ug
+    - value: insect;0.23 ug|plant;1 g
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000174
+    - MIXS:0000650
+    rank: 8
+    string_serialization: '{text};{float} {unit}'
+    alias: non_microb_biomass
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)? [^;\t\r\x0A]+\|)*([^;\t\r\x0A]+;[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?
+      [^;\t\r\x0A]+)$
+  non_microb_biomass_method:
+    name: non_microb_biomass_method
+    description: Reference or method used in determining biomass
+    title: non-microbial biomass method
+    comments:
+    - required if "non-microbial biomass" is provided
+    examples:
+    - value: https://doi.org/10.1038/s41467-021-26181-3
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000650
+    rank: 9
+    string_serialization: '{PMID}|{DOI}|{URL}'
+    alias: non_microb_biomass_method
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+  org_matter:
+    name: org_matter
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: microgram per liter
+      storage_units:
+        tag: storage_units
+        value: ug/L
+    description: Concentration of organic matter
+    title: organic matter
+    comments:
+    - Value must be reported in ug/L. Provide the numeric portion only.
+    examples:
+    - value: '200'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 45
+    keywords:
+    - organic
+    slot_uri: MIXS:0000204
+    alias: org_matter
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: ug/L
+  org_nitro:
+    name: org_nitro
+    annotations:
+      storage_units:
+        tag: storage_units
+        value: ug/L
+    description: Concentration of organic nitrogen
+    title: organic nitrogen
+    comments:
+    - Value must be reported in ug/L. Provide the numeric portion only.
+    examples:
+    - value: '4'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 46
+    keywords:
+    - nitrogen
+    - organic
+    slot_uri: MIXS:0000205
+    alias: org_nitro
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: ug/L
+  org_nitro_method:
+    name: org_nitro_method
+    description: Method used for obtaining organic nitrogen
+    title: organic nitrogen method
+    comments:
+    - required if "org_nitro" is provided
+    examples:
+    - value: https://doi.org/10.1016/0038-0717(85)90144-0
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000338
+    - MIXS:0000205
+    rank: 14
+    string_serialization: '{PMID}|{DOI}|{URL}'
+    alias: org_nitro_method
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+  other_treatment:
+    name: other_treatment
+    description: Other treatments applied to your samples that are not applicable
+      to the provided fields
+    title: other treatments
+    notes:
+    - Values entered here will be used to determine potential new slots.
+    comments:
+    - This is an open text field to provide any treatments that cannot be captured
+      in the provided slots.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000300
+    rank: 15
+    string_serialization: '{text}'
+    alias: other_treatment
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+  oxy_stat_samp:
+    name: oxy_stat_samp
+    description: Oxygenation status of sample
+    title: oxygenation status of sample
+    examples:
+    - value: aerobic
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 25
+    keywords:
+    - oxygen
+    - sample
+    - status
+    slot_uri: MIXS:0000753
+    alias: oxy_stat_samp
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: OxyStatSampEnum
+  ph:
+    name: ph
+    description: pH measurement of the sample, or liquid portion of sample, or aqueous
+      phase of the fluid
+    title: pH
+    examples:
+    - value: '7.2'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 27
+    keywords:
+    - ph
+    slot_uri: MIXS:0001001
+    alias: ph
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    recommended: true
+    minimum_value: 0
+    maximum_value: 14
+  ph_meth:
+    name: ph_meth
+    description: Reference or method used in determining pH
+    title: pH method
+    comments:
+    - This can include a link to the instrument used or a citation for the method.
+    examples:
+    - value: https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB
+    - value: https://doi.org/10.2136/sssabookser5.3.c16
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 41
+    keywords:
+    - method
+    - ph
+    slot_uri: MIXS:0001106
+    alias: ph_meth
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+  phosphate:
+    name: phosphate
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: micromole per liter
+      storage_units:
+        tag: storage_units
+        value: umol/L
+    description: Concentration of phosphate
+    title: phosphate
+    comments:
+    - Value must be reported in umol/L. Provide the numeric portion only.
+    examples:
+    - value: '0.7'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 53
+    keywords:
+    - phosphate
+    slot_uri: MIXS:0000505
+    alias: phosphate
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - MiscEnvsInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: umol/L
+  prev_land_use_meth:
+    name: prev_land_use_meth
+    description: Reference or method used in determining previous land use and dates
+    title: history/previous land use method
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 26
+    keywords:
+    - history
+    - land
+    - method
+    - use
+    slot_uri: MIXS:0000316
+    alias: prev_land_use_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  previous_land_use:
+    name: previous_land_use
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: land use name;date
+    description: Previous land use and dates
+    title: history/previous land use
+    examples:
+    - value: fallow;2018-05-11T14:30Z
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 27
+    keywords:
+    - history
+    - land
+    - use
+    string_serialization: '{text};{timestamp}'
+    slot_uri: MIXS:0000315
+    alias: previous_land_use
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^\S+.*\S+;([\+-]?\d{4}(?!\d{2}\b))((-?)((0[1-9]|1[0-2])(\3([12]\d|0[1-9]|3[01]))?|W([0-4]\d|5[0-2])(-?[1-7])?|(00[1-9]|0[1-9]\d|[12]\d{2}|3([0-5]\d|6[1-6])))([T\s]((([01]\d|2[0-3])((:?)[0-5]\d)?|24\:?00)([\.,]\d+(?!:))?)?(\17[0-5]\d([\.,]\d+)?)?([zZ]|([\+-])([01]\d|2[0-3]):?([0-5]\d)?)?)?)?$
+  profile_position:
+    name: profile_position
+    description: Cross-sectional position in the hillslope where sample was collected.sample
+      area position in relation to surrounding areas
+    title: profile position
+    examples:
+    - value: summit
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 28
+    slot_uri: MIXS:0001084
+    alias: profile_position
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: ProfilePositionEnum
+  salinity:
+    name: salinity
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: practical salinity unit, percentage
+      storage_units:
+        tag: storage_units
+        value: '%|mg/L'
+    description: The total concentration of all dissolved salts in a liquid or solid
+      sample. While salinity can be measured by a complete chemical analysis, this
+      method is difficult and time consuming. More often, it is instead derived from
+      the conductivity measurement. This is known as practical salinity. These derivations
+      compare the specific conductance of the sample to a salinity standard such as
+      seawater
+    title: salinity
+    comments:
+    - 'Value must be reported in one of the following units: %, mg/L. Provide the
+      numeric portion followed by a space and the unit.'
+    examples:
+    - value: 70 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 54
+    keywords:
+    - salinity
+    slot_uri: MIXS:0000183
+    alias: salinity
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  salinity_meth:
+    name: salinity_meth
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: PMID,DOI or url
+    description: Reference or method used in determining salinity.
+    title: salinity method
+    comments:
+    - Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema
+      compatibility.
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 55
+    slot_uri: MIXS:0000341
+    alias: salinity_meth
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$
+    structured_pattern:
+      syntax: ^{PMID}|{DOI}|{URL}$
+      interpolated: true
+  samp_collec_device:
+    name: samp_collec_device
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: device name
+    description: The device used to collect an environmental sample. This field accepts
+      terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO).
+      This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)
+    title: sample collection device
+    comments:
+    - Report dimensions and details when applicable
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      samp_collect_device:
+        literal_form: samp_collect_device
+        contexts:
+        - https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2
+    rank: 14
+    keywords:
+    - device
+    - sample
+    string_serialization: '{termLabel} [{termID}]|{text}'
+    slot_uri: MIXS:0000002
+    alias: samp_collec_device
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+  samp_collec_method:
+    name: samp_collec_method
+    description: The method employed for collecting the sample
+    title: sample collection method
+    comments:
+    - This can be a citation or description
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      samp_collect_method:
+        literal_form: samp_collect_method
+        contexts:
+        - https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2
+    rank: 15
+    keywords:
+    - method
+    - sample
+    slot_uri: MIXS:0001225
+    alias: samp_collec_method
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+  samp_mat_process:
+    name: samp_mat_process
+    description: A brief description of any processing applied to the sample during
+      or after retrieving the sample from environment, or a link to the relevant protocol(s)
+      performed
+    title: sample material processing
+    examples:
+    - value: filtering of seawater
+    - value: storing samples in ethanol
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 12
+    keywords:
+    - material
+    - process
+    - sample
+    slot_uri: MIXS:0000016
+    alias: samp_mat_process
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+  samp_size:
+    name: samp_size
+    annotations:
+      storage_units:
+        tag: storage_units
+        value: L|g|mL|mg
+    description: The total amount (volume or mass) of sample collected.
+    title: amount or size of sample collected
+    comments:
+    - 'Value must be reported in one of the following units: L, g, mL, mg. Provide
+      the numeric portion followed by a space and the unit.'
+    - This refers to the TOTAL amount of sample collected from the experiment. NOT
+      the amount sent to each institution or collected for a specific analysis.
+    examples:
+    - value: 5 g
+    - value: 10 mL
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 18
+    keywords:
+    - sample
+    - size
+    slot_uri: MIXS:0000001
+    alias: samp_size
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  samp_store_temp:
+    name: samp_store_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: Temperature at which the sample was stored (degrees are assumed)
+    title: sample storage temperature
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: '-80'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 7
+    keywords:
+    - sample
+    - storage
+    - temperature
+    slot_uri: MIXS:0000110
+    alias: samp_store_temp
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    required: true
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  sample_link:
+    name: sample_link
+    description: A unique identifier to assign parent-child, subsample, or sibling
+      samples. This is relevant when a sample or other material was used to generate
+      the new sample.
+    title: sample linkage
+    comments:
+    - 'This field allows multiple entries separated by ; (Examples: Soil collected
+      from the field will link with the soil used in an incubation. The soil a plant
+      was grown in links to the plant sample. An original culture sample was transferred
+      to a new vial and generated a new sample)'
+    examples:
+    - value: igsn:DSJ0284
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 5
+    string_serialization: '{text}:{text}'
+    alias: sample_link
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    - SampIdNewTermsMixin
+    slot_group: sample_id_section
+    range: string
+    recommended: true
+    multivalued: false
+    pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+  season_precpt:
+    name: season_precpt
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: millimeter
+      storage_units:
+        tag: storage_units
+        value: mm
+    description: The average of all seasonal precipitation values known, or an estimated
+      equivalent value derived by such methods as regional indexes or Isohyetal maps
+    title: average seasonal precipitation
+    todos:
+    - check validation &amp; examples. always mm? so value only? Or value + unit
+    notes:
+    - mean and average are the same thing, but it seems like bad practice to not be
+      consistent. Changed mean to average
+    comments:
+    - Value must be reported in mm. Provide the numeric portion only.
+    - Seasons are defined as spring (March, April, May), summer (June, July, August),
+      autumn (September, October, November) and winter (December, January, February).
+    examples:
+    - value: '10'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 29
+    keywords:
+    - mean
+    - season
+    slot_uri: MIXS:0000645
+    alias: season_precpt
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: mm
+  season_temp:
+    name: season_temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: Mean seasonal temperature
+    title: mean seasonal temperature
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: '18'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 30
+    keywords:
+    - mean
+    - season
+    - temperature
+    slot_uri: MIXS:0000643
+    alias: season_temp
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  sieving:
+    name: sieving
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: design name and/or size;amount
+    description: Collection design of pooled samples and/or sieve size and amount
+      of sample sieved
+    title: sieving
+    todos:
+    - check validation and examples
+    comments:
+    - Describe how samples were composited or sieved.
+    - Use 'sample link' to indicate which samples were combined.
+    examples:
+    - value: combined 2 cores
+    - value: 4mm sieved
+    - value: 50 g
+    - value: 5 cores
+    - value: 2 mm sieved
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 8
+    string_serialization: '{text};{float} {unit}'
+    slot_uri: MIXS:0000322
+    alias: sieving
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+  size_frac_low:
+    name: size_frac_low
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: micrometer
+      storage_units:
+        tag: storage_units
+        value: um
+    description: Refers to the mesh/pore size used to pre-filter/pre-sort the sample.
+      Materials smaller than the size threshold are excluded from the sample
+    title: size-fraction lower threshold
+    comments:
+    - Value must be reported in um. Provide the numeric portion only.
+    examples:
+    - value: '0.2'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 10
+    keywords:
+    - lower
+    slot_uri: MIXS:0000735
+    alias: size_frac_low
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: um
+  size_frac_up:
+    name: size_frac_up
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: micrometer
+      storage_units:
+        tag: storage_units
+        value: um
+    description: Mesh or pore size of the device used to retain the sample. Materials
+      larger than the size threshold are excluded from the sample.
+    title: size-fraction upper threshold
+    comments:
+    - Value must be reported in um. Provide the numeric portion only.
+    examples:
+    - value: '20'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 11
+    keywords:
+    - upper
+    slot_uri: MIXS:0000736
+    alias: size_frac_up
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: um
+  slope_aspect:
+    name: slope_aspect
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree
+      storage_units:
+        tag: storage_units
+        value: deg
+    description: The direction a slope faces. While looking down a slope use a compass
+      to record the direction you are facing (direction or degrees). - This measure
+      provides an indication of sun and wind exposure that will influence soil temperature
+      and evapotranspiration.
+    title: slope aspect
+    comments:
+    - Value must be reported in deg. Provide the numeric portion only.
+    - Aspect is the orientation of slope, measured clockwise in degrees from 0 to
+      360, where 0 is north-facing, 90 is east-facing, 180 is south-facing, and 270
+      is west-facing.
+    examples:
+    - value: '35'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1
+    keywords:
+    - slope
+    slot_uri: MIXS:0000647
+    alias: slope_aspect
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: deg
+  slope_gradient:
+    name: slope_gradient
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: percentage
+      storage_units:
+        tag: storage_units
+        value: '%'
+    description: Commonly called 'slope'. The angle between ground surface and a horizontal
+      line (in percent). This is the direction that overland water would flow. This
+      measure is usually taken with a hand level meter or clinometer
+    title: slope gradient
+    todos:
+    - Slope is a percent. How does the validation work? Check to correct examples
+    comments:
+    - Value must be reported in %. Provide the numeric portion only.
+    examples:
+    - value: '10'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 31
+    keywords:
+    - slope
+    slot_uri: MIXS:0000646
+    alias: slope_gradient
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: '%'
+  soil_horizon:
+    name: soil_horizon
+    description: Specific layer in the land area which measures parallel to the soil
+      surface and possesses physical characteristics which differ from the layers
+      above and beneath
+    title: soil horizon
+    examples:
+    - value: A horizon
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 32
+    keywords:
+    - horizon
+    - soil
+    slot_uri: MIXS:0001082
+    alias: soil_horizon
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: SoilHorizonEnum
+  soil_text_measure:
+    name: soil_text_measure
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+    description: The relative proportion of different grain sizes of mineral particles
+      in a soil, as described using a standard system; express as % sand (50 um to
+      2 mm), silt (2 um to 50 um), and clay (&lt;2 um) with textural name (e.g., silty
+      clay loam) optional.
+    title: soil texture measurement
+    comments:
+    - Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema
+      compatibility.
+    - Old MIxS used 'quantity value' range but this is clearly structured text, not
+      a single quantity.
+    examples:
+    - value: ite loam; 20% sand; 40% silt; 40% clay
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 33
+    slot_uri: MIXS:0000335
+    alias: soil_text_measure
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+  soil_texture_meth:
+    name: soil_texture_meth
+    description: Reference or method used in determining soil texture
+    title: soil texture method
+    examples:
+    - value: https://uwlab.soils.wisc.edu/wp-content/uploads/sites/17/2015/09/particle_size.pdf
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 34
+    keywords:
+    - method
+    - soil
+    - texture
+    slot_uri: MIXS:0000336
+    alias: soil_texture_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  soil_type:
+    name: soil_type
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: ENVO:00001998
+    description: Description of the soil type or classification. This field accepts
+      terms under soil (http://purl.obolibrary.org/obo/ENVO_00001998).  Multiple terms
+      can be separated by pipes
+    title: soil type
+    examples:
+    - value: plinthosol [ENVO:00002250]
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 35
+    keywords:
+    - soil
+    - type
+    slot_uri: MIXS:0000332
+    alias: soil_type
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  soil_type_meth:
+    name: soil_type_meth
+    description: Reference or method used in determining soil series name or other
+      lower-level classification
+    title: soil type method
+    examples:
+    - value: https://www.lrh.usace.army.mil/Portals/38/docs/PR/BluestoneSFEIS/Appendix%20K-Soil%20Descriptions.pdf
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 36
+    keywords:
+    - method
+    - soil
+    - type
+    slot_uri: MIXS:0000334
+    alias: soil_type_meth
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  specific_ecosystem:
+    name: specific_ecosystem
+    description: Specific ecosystems represent specific features of the environment
+      like aphotic zone in an ocean or gastric mucosa within a host digestive system.
+      Specific ecosystem is in position 5/5 in a GOLD path.
+    comments:
+    - Specific ecosystems help to define samples based on very specific characteristics
+      of an environment under the five-level classification system.
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://gold.jgi.doe.gov/help
+    rank: 13
+    is_a: gold_path_field
+    alias: specific_ecosystem
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: sample_id_section
+    range: SpecificEcosystemForSoilEnum
+    recommended: true
+  start_date_inc:
+    name: start_date_inc
+    description: Date the incubation was started. Only relevant for incubation samples.
+    title: incubation start date
+    notes:
+    - MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision
+      date only
+    comments:
+    - Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021
+      are all acceptable.
+    examples:
+    - value: '2021-04-15'
+    - value: 2021-04
+    - value: '2021'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000011
+    rank: 4
+    string_serialization: '{date, arbitrary precision}'
+    alias: start_date_inc
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+    pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+  start_time_inc:
+    name: start_time_inc
+    description: Time the incubation was started. Only relevant for incubation samples.
+    title: incubation start time, GMT
+    notes:
+    - MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional
+      time only
+    comments:
+    - 'Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter'
+    examples:
+    - value: '13:33'
+    - value: '13:33:55'
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - MIXS:0000011
+    rank: 5
+    string_serialization: '{time, seconds optional}'
+    alias: start_time_inc
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    - SoilMixsInspiredMixin
+    slot_group: mixs_inspired_section
+    range: string
+    recommended: true
+    pattern: ^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$
+  store_cond:
+    name: store_cond
+    description: Explain how the soil sample is stored (fresh/frozen/other).
+    title: storage conditions
+    examples:
+    - value: frozen
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 2
+    keywords:
+    - condition
+    - storage
+    slot_uri: MIXS:0000327
+    alias: store_cond
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_modified_section
+    range: StoreCondEnum
+    required: true
+  temp:
+    name: temp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: degree Celsius
+      storage_units:
+        tag: storage_units
+        value: Cel
+    description: Temperature of the sample at the time of sampling
+    title: temperature
+    comments:
+    - Value must be reported in degrees Celsius. Provide the numeric portion only.
+    examples:
+    - value: '25'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 37
+    keywords:
+    - temperature
+    slot_uri: MIXS:0000113
+    alias: temp
+    owner: SoilInterface
+    domain_of:
+    - AirInterface
+    - BiofilmInterface
+    - BuiltEnvInterface
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - HostAssociatedInterface
+    - MiscEnvsInterface
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WastewaterSludgeInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      descriptive_name: degrees Celsius
+      ucum_code: Cel
+  tillage:
+    name: tillage
+    description: Note method(s) used for tilling
+    title: history/tillage
+    examples:
+    - value: chisel
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 38
+    keywords:
+    - history
+    slot_uri: MIXS:0001081
+    alias: tillage
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_section
+    range: TillageEnum
+    multivalued: true
+  tot_carb:
+    name: tot_carb
+    annotations:
+      storage_units:
+        tag: storage_units
+        value: ug/L|%
+    description: Total carbon content
+    title: total carbon
+    todos:
+    - is this inorganic and organic? both? could use some clarification.
+    - ug/L doesn't seem like the right units. Should check this slots usage in databases
+      and re-evaluate. I couldn't find any references that provided this data in this
+      format
+    comments:
+    - 'Value must be reported in one of the following units: ug/L, %. Provide the
+      numeric portion followed by a space and the unit.'
+    examples:
+    - value: 1 ug/L
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 47
+    keywords:
+    - carbon
+    - total
+    slot_uri: MIXS:0000525
+    alias: tot_carb
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  tot_nitro_cont_meth:
+    name: tot_nitro_cont_meth
+    description: Reference or method used in determining the total nitrogen
+    title: total nitrogen content method
+    examples:
+    - value: https://doi.org/10.2134/agronmonogr9.2.c32
+    - value: https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 49
+    keywords:
+    - content
+    - method
+    - nitrogen
+    - total
+    slot_uri: MIXS:0000338
+    alias: tot_nitro_cont_meth
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  tot_nitro_content:
+    name: tot_nitro_content
+    annotations:
+      storage_units:
+        tag: storage_units
+        value: mg/L|ug/L|umol/L|%
+    description: Total nitrogen content of the sample
+    title: total nitrogen content
+    comments:
+    - 'Value must be reported in one of the following units: mg/L, ug/L, umol/L, %.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 5 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 48
+    keywords:
+    - content
+    - nitrogen
+    - total
+    slot_uri: MIXS:0000530
+    alias: tot_nitro_content
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  tot_org_c_meth:
+    name: tot_org_c_meth
+    description: Reference or method used in determining total organic carbon
+    title: total organic carbon method
+    examples:
+    - value: https://doi.org/10.1080/07352680902776556
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 51
+    keywords:
+    - carbon
+    - method
+    - organic
+    - total
+    slot_uri: MIXS:0000337
+    alias: tot_org_c_meth
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
+    structured_pattern:
+      syntax: ^({PMID}|{DOI}|{URL})$
+      interpolated: true
+      partial_match: true
+  tot_org_carb:
+    name: tot_org_carb
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: gram Carbon per kilogram sample material
+      storage_units:
+        tag: storage_units
+        value: mg/L
+    description: Total organic carbon content
+    title: total organic carbon
+    todos:
+    - check description. How are they different?
+    comments:
+    - Value must be reported in mg/L. Provide the numeric portion only.
+    examples:
+    - value: '5'
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 50
+    keywords:
+    - carbon
+    - organic
+    - total
+    slot_uri: MIXS:0000533
+    alias: tot_org_carb
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: float
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+    unit:
+      ucum_code: mg/L
+  tot_phosp:
+    name: tot_phosp
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: micromole per liter, milligram per liter, parts per million
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/L|umol/L'
+    description: 'Total phosphorus concentration in the sample, calculated by: total
+      phosphorus = total dissolved phosphorus + particulate phosphorus'
+    title: total phosphorus
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/L, umol/L.
+      Provide the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 0.03 mg/L
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 52
+    keywords:
+    - phosphorus
+    - total
+    slot_uri: MIXS:0000117
+    alias: tot_phosp
+    owner: SoilInterface
+    domain_of:
+    - HcrCoresInterface
+    - HcrFluidsSwabsInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
+      *.*$
+    structured_pattern:
+      syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
+      interpolated: true
+      partial_match: true
+  water_cont_soil_meth:
+    name: water_cont_soil_meth
+    description: Reference or method used in determining the water content of soil
+    title: water content method
+    todos:
+    - Why is it soil water content method in the name but not the title? Is this slot
+      used in other samples?
+    - Soil water content can be measure MANY ways and often, multiple ways are used
+      in one experiment (gravimetric water content and water holding capacity and
+      water filled pore space, to name a few).
+    - Should this be multi valued? How to we manage and validate this?
+    comments:
+    - Required if providing water content
+    examples:
+    - value: J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503
+    - value: https://dec.alaska.gov/applications/spar/webcalc/definitions.htm
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 40
+    keywords:
+    - content
+    - method
+    - water
+    slot_uri: MIXS:0000323
+    alias: water_cont_soil_meth
+    owner: SoilInterface
+    domain_of:
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+  water_content:
+    name: water_content
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: string
+      Preferred_unit:
+        tag: Preferred_unit
+        value: gram per gram or cubic centimeter per cubic centimeter
+    description: Water content measurement
+    title: water content
+    todos:
+    - value in preferred unit is too limiting. need to change this
+    - check and correct validation so examples are accepted
+    - how to manage multiple water content methods?
+    examples:
+    - value: 0.75 g water/g dry soil
+    - value: 75% water holding capacity
+    - value: 1.1 g fresh weight/ dry weight
+    - value: 10% water filled pore space
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 39
+    keywords:
+    - content
+    - water
+    slot_uri: MIXS:0000185
+    alias: water_content
+    owner: SoilInterface
+    domain_of:
+    - BiofilmInterface
+    - SedimentInterface
+    - SoilInterface
+    slot_group: mixs_section
+    range: string
+    multivalued: false
+    pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?%? \S.+$
+    structured_pattern:
+      syntax: ^{scientific_float}%? \S.+$
+      interpolated: true
+  watering_regm:
+    name: watering_regm
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: milliliter, liter
+    description: Information about treatment involving an exposure to watering frequencies,
+      treatment regimen including how many times the treatment was repeated, how long
+      each treatment lasted, and the start and end time of the entire treatment; can
+      include multiple regimens
+    title: watering regimen
+    examples:
+    - value: 1 liter;R2/2018-05-11T14:30/2018-05-11T19:30/P1H30M
+    - value: 75% water holding capacity; constant
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 25
+    keywords:
+    - regimen
+    - water
+    slot_uri: MIXS:0000591
+    alias: watering_regm
+    owner: SoilInterface
+    domain_of:
+    - PlantAssociatedInterface
+    - SedimentInterface
+    - SoilInterface
+    - WaterInterface
+    slot_group: mixs_modified_section
+    range: string
+    recommended: true
+    multivalued: false
+  zinc:
+    name: zinc
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: measurement value
+      Preferred_unit:
+        tag: Preferred_unit
+        value: mg/kg (ppm)
+      occurrence:
+        tag: occurrence
+        value: '1'
+      storage_units:
+        tag: storage_units
+        value: '[ppm]|mg/kg|mg/L'
+    description: Concentration of zinc in the sample
+    title: zinc
+    comments:
+    - 'Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide
+      the numeric portion followed by a space and the unit.'
+    examples:
+    - value: 2.5 mg/kg
+    from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://www.ornl.gov/content/bio-scales-0
+    rank: 1004
+    alias: zinc
+    owner: SoilInterface
+    domain_of:
+    - SoilInterface
+    slot_group: mixs_inspired_section
+    range: string
+    pattern: ^[-+]?[0-9]*\.?[0-9]+ +(\[ppm\]|mg/kg|mg/L)$
+  analysis_type:
+    name: analysis_type
+    description: Select all the data types associated or available for this biosample
+    title: analysis/data type
+    comments:
+    - MIxS:investigation_type was included as a `see_also` but that term doesn't resolve
+      any more
+    examples:
+    - value: metagenomics; metabolomics; metaproteomics
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 3
+    alias: analysis_type
+    owner: SoilInterface
+    domain_of:
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: AnalysisTypeEnum
+    required: true
+    multivalued: true
+  samp_name:
+    name: samp_name
+    annotations:
+      Preferred_unit:
+        tag: Preferred_unit
+        value: ''
+    description: A local identifier or name that for the material sample collected.
+      Refers to the original material collected or to any derived sub-samples.
+    title: sample name
+    comments:
+    - It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible.
+    examples:
+    - value: Rock core CB1178(5-6) from NSW
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1
+    keywords:
+    - sample
+    slot_uri: MIXS:0001107
+    identifier: true
+    alias: samp_name
+    owner: SoilInterface
+    domain_of:
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: string
+    required: true
+  source_mat_id:
+    name: source_mat_id
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: 'for cultures of microorganisms: identifiers for two culture collections;
+          for other material a unique arbitrary identifer'
+    description: A globally unique identifier assigned to the parent sample or sample
+      that is the source  of this sample.
+    title: source material identifier
+    todos:
+    - Currently, the comments say to use UUIDs. However, if we implement assigning
+      NMDC identifiers with the minter we dont need to require a GUID. It can be an
+      optional field to fill out only if they already have a resolvable ID.
+    comments:
+    - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
+      NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
+      IDs enable linking to derived analytes and subsamples. If you have not assigned
+      FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
+    - 'Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International  Generic
+      Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI  biosample
+      accession IDs, `gold` for GOLD identifiers.'
+    examples:
+    - value: igsn:AU1243
+    - value: biosample:SAMEA2397676
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 2
+    keywords:
+    - identifier
+    - material
+    - source
+    slot_uri: MIXS:0000026
+    alias: source_mat_id
+    owner: SoilInterface
+    domain_of:
+    - DhMultiviewCommonColumnsMixin
+    slot_group: sample_id_section
+    range: string
+    multivalued: false
+    pattern: ^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link", "navigation.sections"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="../js/tablesort.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
