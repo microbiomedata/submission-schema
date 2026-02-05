@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-01-21T12:09:52
+# Generation date: 2026-02-05T15:51:07
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -9012,7 +9012,6 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Sargassum = PermissibleValue(text="Sargassum")
     Sclerotium = PermissibleValue(text="Sclerotium")
     Seafood = PermissibleValue(text="Seafood")
-    Sediment = PermissibleValue(text="Sediment")
     Seeds = PermissibleValue(text="Seeds")
     Sewage = PermissibleValue(text="Sewage")
     Shell = PermissibleValue(text="Shell")
