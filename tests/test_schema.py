@@ -95,7 +95,7 @@ TEMPLATE_INSTANCES = {
     },
     "JgiMgInterface": {
         "analysis_type": ["metagenomics"],
-        "nuc_acid_concentration": 0.0,
+        "nuc_acid_concentration": 1.0,
         "cont_type": "plate",
         "cont_well": "C5",
         "container_name": "0000001",
@@ -117,7 +117,7 @@ TEMPLATE_INSTANCES = {
         "analysis_type": ["metagenomics"],
         "nuc_acid_absorb1": 0.0,
         "nuc_acid_absorb2": 0.0,
-        "nuc_acid_concentration": 0.0,
+        "nuc_acid_concentration": 1.0,
         "cont_type": "plate",
         "cont_well": "C5",
         "container_name": "0000001",
@@ -138,7 +138,7 @@ TEMPLATE_INSTANCES = {
     "JgiMtInterface": {
         "analysis_type": ["metatranscriptomics"],
         "dnase": "no",
-        "nuc_acid_concentration": 0.0,
+        "nuc_acid_concentration": 1.0,
         "cont_type": "plate",
         "cont_well": "C5",
         "container_name": "0000001",
