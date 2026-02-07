@@ -23,4 +23,4 @@ jgi_mg_data:
     biosafety_mat_cat: Metagenome (Environmental)
     jgi_sample_contact: Professor Scientist
     jgi_project_pi: Scientist Professor
-    jgi_proposal_id: 123456
+    jgi_proposal_id: "123456"
