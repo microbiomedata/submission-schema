@@ -578,7 +578,7 @@ slots:
   biosafety_mat_cat:
     description: Select the biosafety material category for your JGI samples.
     title: JGI Biosafety Material Category
-    rank: 16
+    rank: 17
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
   jgi_sample_contact:
