@@ -518,14 +518,14 @@ slots:
   jgi_sample_volume:
     title: JGI sample volume in ul
     comments:
-      - Units must be in uL. Enter the numerical part only. Value must be 0-1000.
-        This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager
+      - Units must be in uL. Enter the numerical part only. Value must be greater than zero and at most 1000.
+        This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager.
     examples:
       - value: 25
     rank: 8
     range: float
     required: true
-    minimum_value: 0
+    minimum_value: 0.0001
     maximum_value: 1000
     aliases:
       - dna_volume
@@ -538,8 +538,8 @@ slots:
     examples:
       - value: 2.02
     rank: 7
-    range: string
-    pattern: ^[0-9\.]+$
+    range: float
+    minimum_value: 0.0001
     recommended: true
     aliases:
       - dna_absorb1
@@ -552,8 +552,8 @@ slots:
     examples:
       - value: 2.02
     rank: 9
-    range: string
-    pattern: ^[0-9\.]+$
+    range: float
+    minimum_value: 0.0001
     recommended: true
     aliases:
       - dna_absorb2
@@ -567,13 +567,13 @@ slots:
     title: nucleic acid concentration in ng/ul
     comments:
       - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
-        a fluorometric method. Acceptable values are 0-2000.
+        a fluorometric method. Acceptable values are greater than zero and at most 2000.
     examples:
       - value: 100
     rank: 6
     range: float
     required: true
-    minimum_value: 0
+    minimum_value: 0.0001
     maximum_value: 2000
   biosafety_mat_cat:
     description: Select the biosafety material category for your JGI samples.
