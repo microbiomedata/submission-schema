@@ -598,9 +598,10 @@ slots:
   jgi_proposal_id:
     title: JGI proposal number
     examples:
-      - value: 123456
+      - value: PR123456
     rank: 20
-    range: float
+    range: string
+    pattern: ^[A-Z0-9]+$
     required: true
 
 classes:
