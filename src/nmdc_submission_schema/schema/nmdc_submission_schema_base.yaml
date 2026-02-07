@@ -587,14 +587,14 @@ slots:
       - value: Jordan James
     rank: 18
     range: string
-    required: true
+    recommended: true
   jgi_project_pi:
     title: JGI sequencing project PI
     examples:
       - value: Jordan James
     rank: 19
     range: string
-    required: true
+    recommended: true
   jgi_proposal_id:
     title: JGI proposal number
     examples:
@@ -602,7 +602,7 @@ slots:
     rank: 20
     range: string
     pattern: ^[A-Z0-9]+$
-    required: true
+    recommended: true
 
 classes:
   AirInterface:
