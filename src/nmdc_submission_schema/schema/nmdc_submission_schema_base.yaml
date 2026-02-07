@@ -451,7 +451,8 @@ slots:
     title: JGI sample ID
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
+        values have been pre-filled. If you do not have these values, please contact 
+        your NMDC POC & your JGI PM.
     examples:
       - value: '187654'
     rank: 3
@@ -489,7 +490,8 @@ slots:
     title: JGI seq project ID
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
+        values have been pre-filled. If you do not have these values, please contact 
+        your NMDC POC & your JGI PM.
     examples:
       - value: 1191234
     rank: 1
@@ -503,7 +505,8 @@ slots:
     title: JGI seq project name
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
+        values have been pre-filled. If you do not have these values, please contact 
+        your NMDC POC & your JGI PM.
     examples:
       - value: JGI Pond metagenomics
     rank: 2
