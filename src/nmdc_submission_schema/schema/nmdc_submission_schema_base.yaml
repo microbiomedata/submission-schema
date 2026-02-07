@@ -538,7 +538,8 @@ slots:
     examples:
       - value: 2.02
     rank: 7
-    range: float
+    range: string
+    pattern: ^[0-9\.]+$
     recommended: true
     aliases:
       - dna_absorb1
@@ -551,7 +552,8 @@ slots:
     examples:
       - value: 2.02
     rank: 9
-    range: float
+    range: string
+    pattern: ^[0-9\.]+$
     recommended: true
     aliases:
       - dna_absorb2
