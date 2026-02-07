@@ -4,7 +4,7 @@ jgi_mg_data:
       - metatranscriptomics
     nuc_acid_concentration: 1.23
     cont_type: plate
-    cont_well: Z99
+    cont_well: C3
     container_name: xxx
     dnase: "no"
     dna_isolate_meth: xxx
@@ -13,8 +13,9 @@ jgi_mg_data:
     jgi_sample_name: xxx
     jgi_seq_project: 111
     jgi_seq_project_name: xxx
-    jgi_sample_volume: 999
+    jgi_sample_volume: 0
     samp_name: xxx
+    nuc_acid_absorb2: -23
     biosafety_mat_cat: Metagenome (Environmental)
     jgi_sample_contact: Professor Scientist
     jgi_project_pi: Scientist Professor
