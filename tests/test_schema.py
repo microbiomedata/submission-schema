@@ -115,8 +115,8 @@ TEMPLATE_INSTANCES = {
     },
     "JgiMgLrInterface": {
         "analysis_type": ["metagenomics"],
-        "nuc_acid_absorb1": 0.0,
-        "nuc_acid_absorb2": 0.0,
+        "nuc_acid_absorb1": 1.0,
+        "nuc_acid_absorb2": 1.0,
         "nuc_acid_concentration": 1.0,
         "cont_type": "plate",
         "cont_well": "C5",
