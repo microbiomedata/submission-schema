@@ -599,6 +599,7 @@ slots:
     title: JGI proposal number
     examples:
       - value: PR123456
+      - value: 123456    
     rank: 20
     range: string
     pattern: ^[A-Z0-9]+$
