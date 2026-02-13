@@ -451,7 +451,8 @@ slots:
     title: JGI sample ID
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
+        values have been pre-filled. If you do not have these values, please contact 
+        your NMDC POC & your JGI PM.
     examples:
       - value: '187654'
     rank: 3
@@ -489,7 +490,8 @@ slots:
     title: JGI seq project ID
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
+        values have been pre-filled. If you do not have these values, please contact 
+        your NMDC POC & your JGI PM.
     examples:
       - value: 1191234
     rank: 1
@@ -503,7 +505,8 @@ slots:
     title: JGI seq project name
     comments:
       - Do not edit these values. A template will be provided by NMDC in which these
-        values have been pre-filled.
+        values have been pre-filled. If you do not have these values, please contact 
+        your NMDC POC & your JGI PM.
     examples:
       - value: JGI Pond metagenomics
     rank: 2
@@ -515,14 +518,14 @@ slots:
   jgi_sample_volume:
     title: JGI sample volume in ul
     comments:
-      - Units must be in uL. Enter the numerical part only. Value must be 0-1000.
-        This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager
+      - Units must be in uL. Enter the numerical part only. Value must be greater than zero and at most 1000.
+        This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager.
     examples:
       - value: 25
     rank: 8
     range: float
     required: true
-    minimum_value: 0
+    minimum_value: 0.0001
     maximum_value: 1000
     aliases:
       - dna_volume
@@ -536,6 +539,7 @@ slots:
       - value: 2.02
     rank: 7
     range: float
+    minimum_value: 0.0001
     recommended: true
     aliases:
       - dna_absorb1
@@ -549,6 +553,7 @@ slots:
       - value: 2.02
     rank: 9
     range: float
+    minimum_value: 0.0001
     recommended: true
     aliases:
       - dna_absorb2
@@ -562,18 +567,18 @@ slots:
     title: nucleic acid concentration in ng/ul
     comments:
       - Units must be in ng/uL. Enter the numerical part only. Must be calculated using
-        a fluorometric method. Acceptable values are 0-2000.
+        a fluorometric method. Acceptable values are greater than zero and at most 2000.
     examples:
       - value: 100
     rank: 6
     range: float
     required: true
-    minimum_value: 0
+    minimum_value: 0.0001
     maximum_value: 2000
   biosafety_mat_cat:
     description: Select the biosafety material category for your JGI samples.
     title: JGI Biosafety Material Category
-    rank: 16
+    rank: 17
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
   jgi_sample_contact:
@@ -582,21 +587,23 @@ slots:
       - value: Jordan James
     rank: 18
     range: string
-    required: true
+    recommended: true
   jgi_project_pi:
     title: JGI sequencing project PI
     examples:
       - value: Jordan James
     rank: 19
     range: string
-    required: true
+    recommended: true
   jgi_proposal_id:
     title: JGI proposal number
     examples:
-      - value: 123456
+      - value: PR123456
+      - value: 123456    
     rank: 20
-    range: float
-    required: true
+    range: string
+    pattern: ^[A-Z0-9]+$
+    recommended: true
 
 classes:
   AirInterface:
