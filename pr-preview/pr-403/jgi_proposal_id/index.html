@@ -464,6 +464,11 @@ Alias: jgi_proposal_id</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>jgi_mt dh_interface</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
 <td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
 <td>yes</td>
@@ -471,11 +476,6 @@ Alias: jgi_proposal_id</p>
 <tr>
 <td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
 <td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
-<td>jgi_mt dh_interface</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -502,6 +502,9 @@ Alias: jgi_proposal_id</p>
 <tbody>
 <tr>
 <td>PR123456</td>
+</tr>
+<tr>
+<td>123456</td>
 </tr>
 </tbody>
 </table>
@@ -536,6 +539,7 @@ Alias: jgi_proposal_id</p>
 title: JGI proposal number
 examples:
 - value: PR123456
+- value: '123456'
 from_schema: https://example.com/nmdc_submission_schema
 rank: 20
 alias: jgi_proposal_id
