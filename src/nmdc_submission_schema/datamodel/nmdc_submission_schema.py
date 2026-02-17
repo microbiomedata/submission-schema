@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-05T15:51:07
+# Generation date: 2026-02-17T09:29:13
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -3445,14 +3445,14 @@ class JgiMgInterface(DhInterface):
     jgi_sample_name: str = None
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
-    jgi_sample_contact: str = None
-    jgi_project_pi: str = None
-    jgi_proposal_id: float = None
     jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
     cont_well: Optional[str] = None
+    jgi_sample_contact: Optional[str] = None
+    jgi_project_pi: Optional[str] = None
+    jgi_proposal_id: Optional[str] = None
     replicate_group: Optional[str] = None
     source_mat_id: Optional[str] = None
 
@@ -3517,21 +3517,6 @@ class JgiMgInterface(DhInterface):
         if not isinstance(self.jgi_seq_project_name, str):
             self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
-        if self._is_empty(self.jgi_sample_contact):
-            self.MissingRequiredField("jgi_sample_contact")
-        if not isinstance(self.jgi_sample_contact, str):
-            self.jgi_sample_contact = str(self.jgi_sample_contact)
-
-        if self._is_empty(self.jgi_project_pi):
-            self.MissingRequiredField("jgi_project_pi")
-        if not isinstance(self.jgi_project_pi, str):
-            self.jgi_project_pi = str(self.jgi_project_pi)
-
-        if self._is_empty(self.jgi_proposal_id):
-            self.MissingRequiredField("jgi_proposal_id")
-        if not isinstance(self.jgi_proposal_id, float):
-            self.jgi_proposal_id = float(self.jgi_proposal_id)
-
         if self._is_empty(self.jgi_sample_volume):
             self.MissingRequiredField("jgi_sample_volume")
         if not isinstance(self.jgi_sample_volume, float):
@@ -3556,6 +3541,15 @@ class JgiMgInterface(DhInterface):
 
         if self.cont_well is not None and not isinstance(self.cont_well, str):
             self.cont_well = str(self.cont_well)
+
+        if self.jgi_sample_contact is not None and not isinstance(self.jgi_sample_contact, str):
+            self.jgi_sample_contact = str(self.jgi_sample_contact)
+
+        if self.jgi_project_pi is not None and not isinstance(self.jgi_project_pi, str):
+            self.jgi_project_pi = str(self.jgi_project_pi)
+
+        if self.jgi_proposal_id is not None and not isinstance(self.jgi_proposal_id, str):
+            self.jgi_proposal_id = str(self.jgi_proposal_id)
 
         if self.replicate_group is not None and not isinstance(self.replicate_group, str):
             self.replicate_group = str(self.replicate_group)
@@ -3592,12 +3586,12 @@ class JgiMgLrInterface(DhInterface):
     jgi_sample_name: str = None
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
-    jgi_sample_contact: str = None
-    jgi_project_pi: str = None
-    jgi_proposal_id: float = None
     jgi_sample_volume: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     cont_well: Optional[str] = None
+    jgi_sample_contact: Optional[str] = None
+    jgi_project_pi: Optional[str] = None
+    jgi_proposal_id: Optional[str] = None
     replicate_group: Optional[str] = None
     source_mat_id: Optional[str] = None
 
@@ -3672,21 +3666,6 @@ class JgiMgLrInterface(DhInterface):
         if not isinstance(self.jgi_seq_project_name, str):
             self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
-        if self._is_empty(self.jgi_sample_contact):
-            self.MissingRequiredField("jgi_sample_contact")
-        if not isinstance(self.jgi_sample_contact, str):
-            self.jgi_sample_contact = str(self.jgi_sample_contact)
-
-        if self._is_empty(self.jgi_project_pi):
-            self.MissingRequiredField("jgi_project_pi")
-        if not isinstance(self.jgi_project_pi, str):
-            self.jgi_project_pi = str(self.jgi_project_pi)
-
-        if self._is_empty(self.jgi_proposal_id):
-            self.MissingRequiredField("jgi_proposal_id")
-        if not isinstance(self.jgi_proposal_id, float):
-            self.jgi_proposal_id = float(self.jgi_proposal_id)
-
         if self._is_empty(self.jgi_sample_volume):
             self.MissingRequiredField("jgi_sample_volume")
         if not isinstance(self.jgi_sample_volume, float):
@@ -3705,6 +3684,15 @@ class JgiMgLrInterface(DhInterface):
 
         if self.cont_well is not None and not isinstance(self.cont_well, str):
             self.cont_well = str(self.cont_well)
+
+        if self.jgi_sample_contact is not None and not isinstance(self.jgi_sample_contact, str):
+            self.jgi_sample_contact = str(self.jgi_sample_contact)
+
+        if self.jgi_project_pi is not None and not isinstance(self.jgi_project_pi, str):
+            self.jgi_project_pi = str(self.jgi_project_pi)
+
+        if self.jgi_proposal_id is not None and not isinstance(self.jgi_proposal_id, str):
+            self.jgi_proposal_id = str(self.jgi_proposal_id)
 
         if self.replicate_group is not None and not isinstance(self.replicate_group, str):
             self.replicate_group = str(self.replicate_group)
@@ -3739,15 +3727,15 @@ class JgiMtInterface(DhInterface):
     jgi_sample_name: str = None
     jgi_seq_project: float = None
     jgi_seq_project_name: str = None
-    jgi_sample_contact: str = None
-    jgi_project_pi: str = None
-    jgi_proposal_id: float = None
     jgi_sample_volume: float = None
     replicate_group: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
     cont_well: Optional[str] = None
+    jgi_sample_contact: Optional[str] = None
+    jgi_project_pi: Optional[str] = None
+    jgi_proposal_id: Optional[str] = None
     source_mat_id: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
@@ -3811,21 +3799,6 @@ class JgiMtInterface(DhInterface):
         if not isinstance(self.jgi_seq_project_name, str):
             self.jgi_seq_project_name = str(self.jgi_seq_project_name)
 
-        if self._is_empty(self.jgi_sample_contact):
-            self.MissingRequiredField("jgi_sample_contact")
-        if not isinstance(self.jgi_sample_contact, str):
-            self.jgi_sample_contact = str(self.jgi_sample_contact)
-
-        if self._is_empty(self.jgi_project_pi):
-            self.MissingRequiredField("jgi_project_pi")
-        if not isinstance(self.jgi_project_pi, str):
-            self.jgi_project_pi = str(self.jgi_project_pi)
-
-        if self._is_empty(self.jgi_proposal_id):
-            self.MissingRequiredField("jgi_proposal_id")
-        if not isinstance(self.jgi_proposal_id, float):
-            self.jgi_proposal_id = float(self.jgi_proposal_id)
-
         if self._is_empty(self.jgi_sample_volume):
             self.MissingRequiredField("jgi_sample_volume")
         if not isinstance(self.jgi_sample_volume, float):
@@ -3855,6 +3828,15 @@ class JgiMtInterface(DhInterface):
 
         if self.cont_well is not None and not isinstance(self.cont_well, str):
             self.cont_well = str(self.cont_well)
+
+        if self.jgi_sample_contact is not None and not isinstance(self.jgi_sample_contact, str):
+            self.jgi_sample_contact = str(self.jgi_sample_contact)
+
+        if self.jgi_project_pi is not None and not isinstance(self.jgi_project_pi, str):
+            self.jgi_project_pi = str(self.jgi_project_pi)
+
+        if self.jgi_proposal_id is not None and not isinstance(self.jgi_proposal_id, str):
+            self.jgi_proposal_id = str(self.jgi_proposal_id)
 
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
@@ -13618,13 +13600,14 @@ slots.biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="bios
                    model_uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, domain=None, range=Union[str, "JGIBiosafetyMaterialCategoryEnum"])
 
 slots.jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_sample_contact, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.jgi_sample_contact, domain=None, range=Optional[str])
 
 slots.jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_project_pi, domain=None, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.jgi_project_pi, domain=None, range=Optional[str])
 
 slots.jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_proposal_id, domain=None, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.jgi_proposal_id, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^[A-Z0-9]+$'))
 
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str],
@@ -15723,13 +15706,14 @@ slots.JgiMgInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_pro
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_seq_project_name, domain=JgiMgInterface, range=str)
 
 slots.JgiMgInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiMgInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_contact, domain=JgiMgInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_contact, domain=JgiMgInterface, range=Optional[str])
 
 slots.JgiMgInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiMgInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_project_pi, domain=JgiMgInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_project_pi, domain=JgiMgInterface, range=Optional[str])
 
 slots.JgiMgInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiMgInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_proposal_id, domain=JgiMgInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_proposal_id, domain=JgiMgInterface, range=Optional[str],
+                   pattern=re.compile(r'^[A-Z0-9]+$'))
 
 slots.JgiMgInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMgInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgInterface_jgi_sample_volume, domain=JgiMgInterface, range=float)
@@ -15777,13 +15761,14 @@ slots.JgiMgLrInterface_jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_nam
                    pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
 
 slots.JgiMgLrInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiMgLrInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_contact, domain=JgiMgLrInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_sample_contact, domain=JgiMgLrInterface, range=Optional[str])
 
 slots.JgiMgLrInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiMgLrInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_project_pi, domain=JgiMgLrInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_project_pi, domain=JgiMgLrInterface, range=Optional[str])
 
 slots.JgiMgLrInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiMgLrInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_proposal_id, domain=JgiMgLrInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_proposal_id, domain=JgiMgLrInterface, range=Optional[str],
+                   pattern=re.compile(r'^[A-Z0-9]+$'))
 
 slots.JgiMgLrInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="JgiMgLrInterface_jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMgLrInterface_jgi_seq_project, domain=JgiMgLrInterface, range=float)
@@ -15843,13 +15828,14 @@ slots.JgiMtInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_pro
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_seq_project_name, domain=JgiMtInterface, range=str)
 
 slots.JgiMtInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiMtInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_contact, domain=JgiMtInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_contact, domain=JgiMtInterface, range=Optional[str])
 
 slots.JgiMtInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiMtInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_project_pi, domain=JgiMtInterface, range=str)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_project_pi, domain=JgiMtInterface, range=Optional[str])
 
 slots.JgiMtInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiMtInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_proposal_id, domain=JgiMtInterface, range=float)
+                   model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_proposal_id, domain=JgiMtInterface, range=Optional[str],
+                   pattern=re.compile(r'^[A-Z0-9]+$'))
 
 slots.JgiMtInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiMtInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
                    model_uri=NMDC_SUB_SCHEMA.JgiMtInterface_jgi_sample_volume, domain=JgiMtInterface, range=float)

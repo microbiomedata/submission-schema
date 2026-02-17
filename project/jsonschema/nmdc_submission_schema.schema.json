@@ -6758,16 +6758,26 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "jgi_project_pi": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_proposal_id": {
-                    "type": "number"
+                    "pattern": "^[A-Z0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -6780,7 +6790,7 @@
                 },
                 "jgi_sample_volume": {
                     "maximum": 1000,
-                    "minimum": 0,
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "jgi_seq_project": {
@@ -6791,6 +6801,7 @@
                 },
                 "nuc_acid_absorb1": {
                     "description": "260/280 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
                     "type": [
                         "number",
                         "null"
@@ -6798,6 +6809,7 @@
                 },
                 "nuc_acid_absorb2": {
                     "description": "260/230 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
                     "type": [
                         "number",
                         "null"
@@ -6805,7 +6817,7 @@
                 },
                 "nuc_acid_concentration": {
                     "maximum": 2000,
-                    "minimum": 0,
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "replicate_group": {
@@ -6840,9 +6852,6 @@
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
-                "jgi_sample_contact",
-                "jgi_project_pi",
-                "jgi_proposal_id",
                 "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
@@ -6934,16 +6943,26 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "jgi_project_pi": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_proposal_id": {
-                    "type": "number"
+                    "pattern": "^[A-Z0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -6956,7 +6975,7 @@
                 },
                 "jgi_sample_volume": {
                     "maximum": 1000,
-                    "minimum": 0,
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "jgi_seq_project": {
@@ -6967,15 +6986,17 @@
                 },
                 "nuc_acid_absorb1": {
                     "description": "260/280 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "nuc_acid_absorb2": {
                     "description": "260/230 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "nuc_acid_concentration": {
                     "maximum": 2000,
-                    "minimum": 0,
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "replicate_group": {
@@ -7012,9 +7033,6 @@
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
-                "jgi_sample_contact",
-                "jgi_project_pi",
-                "jgi_proposal_id",
                 "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
@@ -7102,16 +7120,26 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "jgi_project_pi": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_proposal_id": {
-                    "type": "number"
+                    "pattern": "^[A-Z0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -7124,7 +7152,7 @@
                 },
                 "jgi_sample_volume": {
                     "maximum": 1000,
-                    "minimum": 0,
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "jgi_seq_project": {
@@ -7135,6 +7163,7 @@
                 },
                 "nuc_acid_absorb1": {
                     "description": "260/280 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
                     "type": [
                         "number",
                         "null"
@@ -7142,6 +7171,7 @@
                 },
                 "nuc_acid_absorb2": {
                     "description": "260/230 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
                     "type": [
                         "number",
                         "null"
@@ -7149,7 +7179,7 @@
                 },
                 "nuc_acid_concentration": {
                     "maximum": 2000,
-                    "minimum": 0,
+                    "minimum": 0.0001,
                     "type": "number"
                 },
                 "replicate_group": {
@@ -7185,9 +7215,6 @@
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
-                "jgi_sample_contact",
-                "jgi_project_pi",
-                "jgi_proposal_id",
                 "jgi_sample_volume",
                 "replicate_group",
                 "analysis_type",

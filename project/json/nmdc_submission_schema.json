@@ -13055,7 +13055,7 @@
       "name": "jgi_samp_id",
       "title": "JGI sample ID",
       "comments": [
-        "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+        "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
       ],
       "examples": [
         {
@@ -13128,7 +13128,7 @@
       "name": "jgi_seq_project",
       "title": "JGI seq project ID",
       "comments": [
-        "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+        "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
       ],
       "examples": [
         {
@@ -13154,7 +13154,7 @@
       "name": "jgi_seq_project_name",
       "title": "JGI seq project name",
       "comments": [
-        "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+        "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
       ],
       "examples": [
         {
@@ -13179,7 +13179,7 @@
       "name": "jgi_sample_volume",
       "title": "JGI sample volume in ul",
       "comments": [
-        "Units must be in uL. Enter the numerical part only. Value must be 0-1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager"
+        "Units must be in uL. Enter the numerical part only. Value must be greater than zero and at most 1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager."
       ],
       "examples": [
         {
@@ -13199,7 +13199,7 @@
       ],
       "range": "float",
       "required": true,
-      "minimum_value": 0,
+      "minimum_value": 0.0001,
       "maximum_value": 1000
     },
     "nuc_acid_absorb1": {
@@ -13226,7 +13226,8 @@
         "JgiMtInterface"
       ],
       "range": "float",
-      "recommended": true
+      "recommended": true,
+      "minimum_value": 0.0001
     },
     "nuc_acid_absorb2": {
       "name": "nuc_acid_absorb2",
@@ -13252,13 +13253,14 @@
         "JgiMtInterface"
       ],
       "range": "float",
-      "recommended": true
+      "recommended": true,
+      "minimum_value": 0.0001
     },
     "nuc_acid_concentration": {
       "name": "nuc_acid_concentration",
       "title": "nucleic acid concentration in ng/ul",
       "comments": [
-        "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are 0-2000."
+        "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are greater than zero and at most 2000."
       ],
       "examples": [
         {
@@ -13281,7 +13283,7 @@
       ],
       "range": "float",
       "required": true,
-      "minimum_value": 0,
+      "minimum_value": 0.0001,
       "maximum_value": 2000
     },
     "biosafety_mat_cat": {
@@ -13289,7 +13291,7 @@
       "description": "Select the biosafety material category for your JGI samples.",
       "title": "JGI Biosafety Material Category",
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "rank": 16,
+      "rank": 17,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13314,7 +13316,7 @@
         "JgiMtInterface"
       ],
       "range": "string",
-      "required": true
+      "recommended": true
     },
     "jgi_project_pi": {
       "name": "jgi_project_pi",
@@ -13332,12 +13334,15 @@
         "JgiMtInterface"
       ],
       "range": "string",
-      "required": true
+      "recommended": true
     },
     "jgi_proposal_id": {
       "name": "jgi_proposal_id",
       "title": "JGI proposal number",
       "examples": [
+        {
+          "value": "PR123456"
+        },
         {
           "value": "123456"
         }
@@ -13349,8 +13354,9 @@
         "JgiMgLrInterface",
         "JgiMtInterface"
       ],
-      "range": "float",
-      "required": true
+      "range": "string",
+      "recommended": true,
+      "pattern": "^[A-Z0-9]+$"
     },
     "abs_air_humidity": {
       "name": "abs_air_humidity",
@@ -53202,7 +53208,8 @@
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
-          "recommended": true
+          "recommended": true,
+          "minimum_value": 0.0001
         },
         "nuc_acid_absorb2": {
           "name": "nuc_acid_absorb2",
@@ -53231,13 +53238,14 @@
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
-          "recommended": true
+          "recommended": true,
+          "minimum_value": 0.0001
         },
         "nuc_acid_concentration": {
           "name": "nuc_acid_concentration",
           "title": "nucleic acid concentration in ng/ul",
           "comments": [
-            "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are 0-2000."
+            "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are greater than zero and at most 2000."
           ],
           "examples": [
             {
@@ -53263,7 +53271,7 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
           "required": true,
-          "minimum_value": 0,
+          "minimum_value": 0.0001,
           "maximum_value": 2000
         },
         "cont_type": {
@@ -53407,7 +53415,7 @@
           "description": "Select the biosafety material category for your JGI samples.",
           "title": "JGI Biosafety Material Category",
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "rank": 16,
+          "rank": 17,
           "alias": "biosafety_mat_cat",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -53423,7 +53431,7 @@
           "name": "jgi_samp_id",
           "title": "JGI sample ID",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -53504,7 +53512,7 @@
           "name": "jgi_seq_project",
           "title": "JGI seq project ID",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -53533,7 +53541,7 @@
           "name": "jgi_seq_project_name",
           "title": "JGI seq project name",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -53576,7 +53584,7 @@
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
-          "required": true
+          "recommended": true
         },
         "jgi_project_pi": {
           "name": "jgi_project_pi",
@@ -53597,12 +53605,15 @@
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
-          "required": true
+          "recommended": true
         },
         "jgi_proposal_id": {
           "name": "jgi_proposal_id",
           "title": "JGI proposal number",
           "examples": [
+            {
+              "value": "PR123456"
+            },
             {
               "value": "123456"
             }
@@ -53617,14 +53628,15 @@
             "JgiMtInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
-          "range": "float",
-          "required": true
+          "range": "string",
+          "recommended": true,
+          "pattern": "^[A-Z0-9]+$"
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
           "title": "JGI sample volume in ul",
           "comments": [
-            "Units must be in uL. Enter the numerical part only. Value must be 0-1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager"
+            "Units must be in uL. Enter the numerical part only. Value must be greater than zero and at most 1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager."
           ],
           "examples": [
             {
@@ -53647,7 +53659,7 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
           "required": true,
-          "minimum_value": 0,
+          "minimum_value": 0.0001,
           "maximum_value": 1000
         },
         "replicate_group": {
@@ -54022,7 +54034,8 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
           "required": true,
-          "recommended": true
+          "recommended": true,
+          "minimum_value": 0.0001
         },
         "nuc_acid_absorb2": {
           "name": "nuc_acid_absorb2",
@@ -54052,13 +54065,14 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
           "required": true,
-          "recommended": true
+          "recommended": true,
+          "minimum_value": 0.0001
         },
         "nuc_acid_concentration": {
           "name": "nuc_acid_concentration",
           "title": "nucleic acid concentration in ng/ul",
           "comments": [
-            "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are 0-2000."
+            "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are greater than zero and at most 2000."
           ],
           "examples": [
             {
@@ -54084,7 +54098,7 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
           "required": true,
-          "minimum_value": 0,
+          "minimum_value": 0.0001,
           "maximum_value": 2000
         },
         "cont_type": {
@@ -54203,7 +54217,7 @@
           "description": "Select the biosafety material category for your JGI samples.",
           "title": "JGI Biosafety Material Category",
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "rank": 16,
+          "rank": 17,
           "alias": "biosafety_mat_cat",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -54244,7 +54258,7 @@
           "name": "jgi_samp_id",
           "title": "JGI sample ID",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -54325,7 +54339,7 @@
           "name": "jgi_seq_project",
           "title": "JGI seq project ID",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -54354,7 +54368,7 @@
           "name": "jgi_seq_project_name",
           "title": "JGI seq project name",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -54397,7 +54411,7 @@
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
-          "required": true
+          "recommended": true
         },
         "jgi_project_pi": {
           "name": "jgi_project_pi",
@@ -54418,12 +54432,15 @@
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
-          "required": true
+          "recommended": true
         },
         "jgi_proposal_id": {
           "name": "jgi_proposal_id",
           "title": "JGI proposal number",
           "examples": [
+            {
+              "value": "PR123456"
+            },
             {
               "value": "123456"
             }
@@ -54438,14 +54455,15 @@
             "JgiMtInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
-          "range": "float",
-          "required": true
+          "range": "string",
+          "recommended": true,
+          "pattern": "^[A-Z0-9]+$"
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
           "title": "JGI sample volume in ul",
           "comments": [
-            "Units must be in uL. Enter the numerical part only. Value must be 0-1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager"
+            "Units must be in uL. Enter the numerical part only. Value must be greater than zero and at most 1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager."
           ],
           "examples": [
             {
@@ -54468,7 +54486,7 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "float",
           "required": true,
-          "minimum_value": 0,
+          "minimum_value": 0.0001,
           "maximum_value": 1000
         },
         "replicate_group": {
@@ -54841,7 +54859,8 @@
           ],
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "float",
-          "recommended": true
+          "recommended": true,
+          "minimum_value": 0.0001
         },
         "nuc_acid_absorb2": {
           "name": "nuc_acid_absorb2",
@@ -54870,13 +54889,14 @@
           ],
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "float",
-          "recommended": true
+          "recommended": true,
+          "minimum_value": 0.0001
         },
         "nuc_acid_concentration": {
           "name": "nuc_acid_concentration",
           "title": "nucleic acid concentration in ng/ul",
           "comments": [
-            "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are 0-2000."
+            "Units must be in ng/uL. Enter the numerical part only. Must be calculated using a fluorometric method. Acceptable values are greater than zero and at most 2000."
           ],
           "examples": [
             {
@@ -54902,7 +54922,7 @@
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "float",
           "required": true,
-          "minimum_value": 0,
+          "minimum_value": 0.0001,
           "maximum_value": 2000
         },
         "cont_type": {
@@ -55021,7 +55041,7 @@
           "description": "Select the biosafety material category for your JGI samples.",
           "title": "JGI Biosafety Material Category",
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "rank": 16,
+          "rank": 17,
           "alias": "biosafety_mat_cat",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -55061,7 +55081,7 @@
           "name": "jgi_samp_id",
           "title": "JGI sample ID",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -55142,7 +55162,7 @@
           "name": "jgi_seq_project",
           "title": "JGI seq project ID",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -55171,7 +55191,7 @@
           "name": "jgi_seq_project_name",
           "title": "JGI seq project name",
           "comments": [
-            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled."
+            "Do not edit these values. A template will be provided by NMDC in which these values have been pre-filled. If you do not have these values, please contact your NMDC POC & your JGI PM."
           ],
           "examples": [
             {
@@ -55214,7 +55234,7 @@
           ],
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "string",
-          "required": true
+          "recommended": true
         },
         "jgi_project_pi": {
           "name": "jgi_project_pi",
@@ -55235,12 +55255,15 @@
           ],
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "string",
-          "required": true
+          "recommended": true
         },
         "jgi_proposal_id": {
           "name": "jgi_proposal_id",
           "title": "JGI proposal number",
           "examples": [
+            {
+              "value": "PR123456"
+            },
             {
               "value": "123456"
             }
@@ -55255,14 +55278,15 @@
             "JgiMtInterface"
           ],
           "slot_group": "jgi_metatranscriptomics_section",
-          "range": "float",
-          "required": true
+          "range": "string",
+          "recommended": true,
+          "pattern": "^[A-Z0-9]+$"
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
           "title": "JGI sample volume in ul",
           "comments": [
-            "Units must be in uL. Enter the numerical part only. Value must be 0-1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager"
+            "Units must be in uL. Enter the numerical part only. Value must be greater than zero and at most 1000. This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager."
           ],
           "examples": [
             {
@@ -55285,7 +55309,7 @@
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "float",
           "required": true,
-          "minimum_value": 0,
+          "minimum_value": 0.0001,
           "maximum_value": 1000
         },
         "replicate_group": {
