@@ -222,6 +222,9 @@ slots:
           rank: 3
           required: true
           slot_group: sample_id_section
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: ances_data
     source: Biosample
@@ -810,6 +813,9 @@ slots:
       - replace:
           rank: 19
           slot_group: mixs_modified_section
+      - append:
+          annotations:
+            ai_exclude: true
       - in_classes:
           - PlantAssociatedInterface
           - SoilInterface
@@ -843,6 +849,9 @@ slots:
           required: true
           pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
           slot_group: mixs_modified_section
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: collection_date_inc
     source: Biosample
@@ -857,6 +866,9 @@ slots:
           rank: 2
           slot_group: mixs_inspired_section
           pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
+      - append:
+          annotations:
+            ai_exclude: true
 
   - slot: collection_time
     source: Biosample
@@ -1037,6 +1049,9 @@ slots:
           - WaterInterface
         replace:
           required: true
+        append:
+          annotations: 
+            ai_exclude: true
       - in_classes:
           - AirInterface
           - BiofilmInterface
@@ -1201,6 +1216,9 @@ slots:
           slot_group: jgi_metagenomics_section
           required: true
           recommended: false
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: door_comp_type
     source: Biosample
@@ -1348,6 +1366,9 @@ slots:
           rank: 9
           slot_group: sample_id_section
           recommended: true
+      - append:
+          annotations:
+            ai_exclude: true
       - in_classes:
           - SoilInterface
         replace:
@@ -1386,6 +1407,9 @@ slots:
           rank: 10
           slot_group: sample_id_section
           recommended: true
+      - append:
+          annotations:
+            ai_exclude: true
       - in_classes:
           - SoilInterface
         replace:
@@ -1424,6 +1448,9 @@ slots:
           rank: 12
           slot_group: sample_id_section
           recommended: true
+      - append:
+          annotations:
+            ai_exclude: true
       - in_classes:
           - SoilInterface
         replace:
@@ -1462,6 +1489,9 @@ slots:
           rank: 11
           slot_group: sample_id_section
           recommended: true
+      - append:
+          annotations:
+            ai_exclude: true
       - in_classes:
           - SoilInterface
         replace:
@@ -1528,6 +1558,9 @@ slots:
           - WastewaterSludgeInterface
         replace:
           required: true
+        append:
+          annotations: 
+            ai_exclude: true
       - in_classes:
           - WaterInterface
         replace:
@@ -1552,6 +1585,9 @@ slots:
           rank: 4
           slot_group: emsl_section
           required: true
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: emulsions
     source: Biosample
@@ -1597,6 +1633,9 @@ slots:
           structured_pattern:
             syntax: ^{termLabel} \[ENVO:\d{7,8}\]$
             interpolated: true
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: env_local_scale
     source: Biosample
@@ -1623,6 +1662,9 @@ slots:
           rank: 7
           required: true
           slot_group: sample_id_section
+      - append:
+          annotations: 
+            ai_exclude: true
       - in_classes:
           - AirInterface
           - BiofilmInterface
@@ -1671,6 +1713,9 @@ slots:
           rank: 8
           required: true
           slot_group: sample_id_section
+      - append:
+          annotations: 
+            ai_exclude: true
       - in_classes:
           - AirInterface
           - BiofilmInterface
@@ -2069,6 +2114,9 @@ slots:
             or sea name followed by specific region name.
           required: true
           pattern: '^[^:, ][^:]*: [^:, ][^,]*, [^:, ].*$'
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: glucosidase_act
     source: Biosample
@@ -2115,6 +2163,9 @@ slots:
           examples:
             - value: growth_chamber
           required: true
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: growth_habit
     source: Biosample
@@ -2364,6 +2415,9 @@ slots:
           - PlantAssociatedInterface
         replace:
           required: true
+        append:
+          annotations: 
+            ai_exclude: true
 
   - slot: host_diet
     source: Biosample
@@ -2540,6 +2594,9 @@ slots:
           - PlantAssociatedInterface
         replace:
           required: true
+        append:
+          annotations: 
+            ai_exclude: true
 
   - slot: host_tot_mass
     source: Biosample
@@ -2729,6 +2786,9 @@ slots:
           - WaterInterface
         replace:
           required: true
+        append:
+          annotations: 
+            ai_exclude: true
 
   - slot: lbc_thirty
     source: Biosample
@@ -3518,6 +3578,9 @@ slots:
           rank: 270
           slot_group: mixs_core_section
           required: true
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: pollutants
     source: Biosample
@@ -3667,6 +3730,9 @@ slots:
           slot_group: emsl_section
           required: true
           recommended: false
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: quad_pos
     source: Biosample
@@ -3782,6 +3848,9 @@ slots:
           slot_group: jgi_metatranscriptomics_section
           required: true
           recommended: false
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: room_air_exch_rate
     source: Biosample
@@ -4209,6 +4278,8 @@ slots:
           comments:
             - It can have any format, but we suggest that you make it concise, unique
               and consistent within your lab, and as informative as possible.
+          annotations: 
+            ai_exclude: true
 
   - slot: samp_preserv
     source: Biosample
@@ -4335,6 +4406,9 @@ slots:
           - WastewaterSludgeInterface
         replace:
           required: true
+        append:
+          annotations: 
+            ai_exclude: true
       - in_classes:
           - WaterInterface
         replace:
@@ -4440,6 +4514,9 @@ slots:
           recommended: false
           structured_pattern:
             syntax: '^{float} {text}$'
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: sample_type
     source: Biosample
@@ -4453,6 +4530,9 @@ slots:
           recommended: false
           examples:
             - value: soil - water extract
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: saturates_pc
     source: Biosample
@@ -4846,6 +4926,9 @@ slots:
           rank: 13
           slot_group: sample_id_section
           recommended: true
+      - append:
+          annotations:
+            ai_exclude: true
       - in_classes:
           - SoilInterface
         replace:
@@ -4957,6 +5040,9 @@ slots:
           required: true
           examples:
             - value: frozen
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: substructure_type
     source: Biosample
@@ -5809,6 +5895,9 @@ slots:
           description: The model of the Illumina sequencing instrument used to generate
             the data.
           range: IlluminaInstrumentModelEnum
+      - append:
+          annotations: 
+            ai_exclude: true
 
   - slot: insdc_bioproject_identifiers
     source: NucleotideSequencing
