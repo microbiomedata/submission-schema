@@ -327,6 +327,8 @@ slots:
       microbiomedata.science@gmail.com.
     range: string
     required: true
+    annotations: 
+      ai_exclude: true
     slot_group: data_files_section
     rank: 10
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
@@ -341,6 +343,8 @@ slots:
     slot_group: data_files_section
     rank: 11
     pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
+    annotations:
+      ai_exclude: true
   read_2_url:
     title: read 2 FASTQ
     description: >-
@@ -352,6 +356,8 @@ slots:
       microbiomedata.science@gmail.com.
     range: string
     required: true
+    annotations: 
+      ai_exclude: true
     slot_group: data_files_section
     rank: 12
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
@@ -366,6 +372,8 @@ slots:
     slot_group: data_files_section
     rank: 13
     pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
+    annotations:
+      ai_exclude: true
   interleaved_url:
     title: interleaved FASTQ
     description: >-
@@ -377,6 +385,8 @@ slots:
       microbiomedata.science@gmail.com.
     range: string
     required: true
+    annotations: 
+      ai_exclude: true
     slot_group: data_files_section
     rank: 14
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
@@ -391,12 +401,16 @@ slots:
     slot_group: data_files_section
     rank: 15
     pattern: ^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$
+    annotations:
+      ai_exclude: true
   cont_type:
     description: Tube or plate (96-well)
     title: JGI container type
     rank: 11
     range: JgiContTypeEnum
     required: true
+    annotations: 
+      ai_exclude: true
     aliases:
       - dna_cont_type
       - rna_cont_type
@@ -431,6 +445,8 @@ slots:
       - value: Pond_MT_041618
     rank: 10
     required: true
+    annotations: 
+      ai_exclude: true
     pattern: ^[-_.a-zA-Z0-9]{1,20}$
     aliases:
       - dna_container_id
@@ -444,6 +460,8 @@ slots:
     rank: 15
     range: YesNoEnum
     required: true
+    annotations: 
+      ai_exclude: true
     aliases:
       - dna_dnase
       - dnase_rna
@@ -459,6 +477,8 @@ slots:
     slot_group: jgi_metagenomics_section
     range: string
     required: true
+    annotations: 
+      ai_exclude: true
     aliases:
       - dna_samp_id
       - rna_samp_id
@@ -470,6 +490,8 @@ slots:
     rank: 13
     range: JGISampleFormatEnum
     required: true
+    annotations: 
+      ai_exclude: true
     aliases:
       - dna_sample_format
       - rna_sample_format
@@ -482,6 +504,8 @@ slots:
     rank: 4
     range: string
     required: true
+    annotations: 
+      ai_exclude: true
     pattern: ^[-_.a-zA-Z0-9]*$
     aliases:
       - dna_sample_name
@@ -496,6 +520,8 @@ slots:
       - value: 1191234
     rank: 1
     required: true
+    annotations: 
+      ai_exclude: true
     range: float
     aliases:
       - Seq Project ID
@@ -511,6 +537,8 @@ slots:
       - value: JGI Pond metagenomics
     rank: 2
     required: true
+    annotations: 
+      ai_exclude: true
     range: string
     aliases:
       - dna_seq_project_name
@@ -525,6 +553,8 @@ slots:
     rank: 8
     range: float
     required: true
+    annotations: 
+      ai_exclude: true
     minimum_value: 0.0001
     maximum_value: 1000
     aliases:
@@ -573,6 +603,8 @@ slots:
     rank: 6
     range: float
     required: true
+    annotations: 
+      ai_exclude: true
     minimum_value: 0.0001
     maximum_value: 2000
   biosafety_mat_cat:
@@ -581,6 +613,8 @@ slots:
     rank: 17
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
+    annotations: 
+      ai_exclude: true
   jgi_sample_contact:
     title: DNA sample contact
     examples:
@@ -641,6 +675,13 @@ classes:
     is_a: DhInterface
     mixins:
       - DhMultiviewCommonColumnsMixin
+    slot_usage:
+      replicate_number:
+        annotations: 
+          ai_exclude: true
+      technical_reps:
+        annotations: 
+          ai_exclude: true
   HcrCoresInterface:
     annotations:
       excel_worksheet_name: hcr core
@@ -699,6 +740,8 @@ classes:
         slot_group: jgi_metagenomics_section
       cont_well:
         slot_group: jgi_metagenomics_section
+        annotations:
+          ai_exclude: true
       container_name:
         slot_group: jgi_metagenomics_section
       dnase:
@@ -717,22 +760,36 @@ classes:
         slot_group: jgi_metagenomics_section
       jgi_sample_contact:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       jgi_project_pi:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       jgi_proposal_id:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       jgi_sample_volume:
         slot_group: jgi_metagenomics_section
       nuc_acid_absorb1:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       nuc_acid_absorb2:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       nuc_acid_concentration:
         slot_group: jgi_metagenomics_section
       dna_isolate_meth:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       replicate_group:
-        slot_group: jgi_metagenomics_section  
+        slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
@@ -787,6 +844,8 @@ classes:
         slot_group: jgi_metagenomics_section
       cont_well:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       container_name:
         slot_group: jgi_metagenomics_section
       dnase:
@@ -801,10 +860,16 @@ classes:
         slot_group: jgi_metagenomics_section
       jgi_sample_contact:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       jgi_project_pi:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       jgi_proposal_id:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       jgi_seq_project:
         slot_group: jgi_metagenomics_section
       jgi_seq_project_name:
@@ -814,15 +879,23 @@ classes:
       nuc_acid_absorb1:
         slot_group: jgi_metagenomics_section
         required: true
+        annotations: 
+          ai_exclude: true
       nuc_acid_absorb2:
         slot_group: jgi_metagenomics_section
         required: true
+        annotations: 
+          ai_exclude: true
       nuc_acid_concentration:
         slot_group: jgi_metagenomics_section
       dna_isolate_meth:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
       replicate_group:
         slot_group: jgi_metagenomics_section
+        annotations: 
+          ai_exclude: true
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
@@ -877,6 +950,8 @@ classes:
         slot_group: jgi_metatranscriptomics_section
       cont_well:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       container_name:
         slot_group: jgi_metatranscriptomics_section
       dnase:
@@ -895,23 +970,39 @@ classes:
         slot_group: jgi_metatranscriptomics_section
       jgi_sample_contact:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       jgi_project_pi:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       jgi_proposal_id:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       jgi_sample_volume:
         slot_group: jgi_metatranscriptomics_section
       nuc_acid_absorb1:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       nuc_acid_absorb2:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       nuc_acid_concentration:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       rna_isolate_meth:
         slot_group: jgi_metatranscriptomics_section
+        annotations: 
+          ai_exclude: true
       replicate_group:
         slot_group: jgi_metatranscriptomics_section
-        required: true  
+        required: true
+        annotations: 
+          ai_exclude: true
     rules:
       - title: well_requires_plate
         description: If a well is specified, the container type must be a plate.
