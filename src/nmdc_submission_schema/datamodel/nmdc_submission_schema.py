@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-17T09:29:13
+# Generation date: 2026-03-23T10:40:16
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -8942,6 +8942,7 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
     Fungi = PermissibleValue(text="Fungi")
     Geologic = PermissibleValue(text="Geologic")
     Gills = PermissibleValue(text="Gills")
+    Glacier = PermissibleValue(text="Glacier")
     Grass = PermissibleValue(text="Grass")
     Haptophytes = PermissibleValue(text="Haptophytes")
     Head = PermissibleValue(text="Head")
@@ -9446,6 +9447,7 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Cortex = PermissibleValue(text="Cortex")
     Creek = PermissibleValue(text="Creek")
     Crop = PermissibleValue(text="Crop")
+    Cryoconite = PermissibleValue(text="Cryoconite")
     Cuticle = PermissibleValue(text="Cuticle")
     Dermoid = PermissibleValue(text="Dermoid")
     Desert = PermissibleValue(text="Desert")
@@ -10032,6 +10034,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Meat/Poultry processing plant"))
         setattr(cls, "Meibomian glands",
             PermissibleValue(text="Meibomian glands"))
+        setattr(cls, "Meromictic lake",
+            PermissibleValue(text="Meromictic lake"))
         setattr(cls, "Metalworking fluids",
             PermissibleValue(text="Metalworking fluids"))
         setattr(cls, "Microbial mats",
@@ -10435,6 +10439,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Cervical = PermissibleValue(text="Cervical")
     Cervix = PermissibleValue(text="Cervix")
     Cheese = PermissibleValue(text="Cheese")
+    Chemocline = PermissibleValue(text="Chemocline")
     Chloraminated = PermissibleValue(text="Chloraminated")
     Chlorinated = PermissibleValue(text="Chlorinated")
     Chyme = PermissibleValue(text="Chyme")
@@ -11193,6 +11198,10 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Mineral soil core"))
         setattr(cls, "Mixed segment",
             PermissibleValue(text="Mixed segment"))
+        setattr(cls, "Mixolimnion/Top layer",
+            PermissibleValue(text="Mixolimnion/Top layer"))
+        setattr(cls, "Monimolimnion/Bottom layer",
+            PermissibleValue(text="Monimolimnion/Bottom layer"))
         setattr(cls, "Mouth ulcer",
             PermissibleValue(text="Mouth ulcer"))
         setattr(cls, "Multiple myeloma",

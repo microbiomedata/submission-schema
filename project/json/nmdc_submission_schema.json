@@ -4882,6 +4882,9 @@
         "Gills": {
           "text": "Gills"
         },
+        "Glacier": {
+          "text": "Glacier"
+        },
         "Golden Algae": {
           "text": "Golden Algae"
         },
@@ -5866,6 +5869,9 @@
         "Crustaceans tank": {
           "text": "Crustaceans tank"
         },
+        "Cryoconite": {
+          "text": "Cryoconite"
+        },
         "Cultivation substrate": {
           "text": "Cultivation substrate"
         },
@@ -6507,6 +6513,9 @@
         },
         "Melanoma": {
           "text": "Melanoma"
+        },
+        "Meromictic lake": {
+          "text": "Meromictic lake"
         },
         "Mesopelagic": {
           "text": "Mesopelagic"
@@ -7813,6 +7822,9 @@
         "Cheese": {
           "text": "Cheese"
         },
+        "Chemocline": {
+          "text": "Chemocline"
+        },
         "Chloraminated": {
           "text": "Chloraminated"
         },
@@ -8640,6 +8652,12 @@
         },
         "Mixed segment": {
           "text": "Mixed segment"
+        },
+        "Mixolimnion/Top layer": {
+          "text": "Mixolimnion/Top layer"
+        },
+        "Monimolimnion/Bottom layer": {
+          "text": "Monimolimnion/Bottom layer"
         },
         "Mouth ulcer": {
           "text": "Mouth ulcer"
@@ -10153,6 +10171,15 @@
             "Illumina NovaSeq X",
             "Illumina NovaSeq X Plus"
           ],
+          "structured_aliases": {
+            "Illumina NovaSeq X 25B": {
+              "literal_form": "Illumina NovaSeq X 25B",
+              "predicate": "NARROW_SYNONYM",
+              "contexts": [
+                "https://gold.jgi.doe.gov/"
+              ]
+            }
+          },
           "exact_mappings": [
             "OBI:0003663"
           ],
