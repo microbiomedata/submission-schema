@@ -1763,7 +1763,18 @@ slots:
     source: Biosample
     destinations:
       - SoilMixsInspiredMixin
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
       - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
     modifications:
       - replace:
           rank: 7
@@ -3264,7 +3275,18 @@ slots:
     source: Biosample
     destinations:
       - SoilMixsInspiredMixin
+      - AirInterface
+      - BiofilmInterface
+      - BuiltEnvInterface
+      - HcrCoresInterface
+      - HcrFluidsSwabsInterface
+      - HostAssociatedInterface
+      - MiscEnvsInterface
+      - PlantAssociatedInterface
+      - SedimentInterface
       - SoilInterface
+      - WastewaterSludgeInterface
+      - WaterInterface
     modifications:
       - replace:
           rank: 15
