@@ -1024,8 +1024,8 @@ classes:
       - interleaved_url
       - interleaved_md5_checksum
   DhMultiviewCommonColumnsMixin:
-    description: Mixin with DhMutliviewCommon Columns
-    title: Dh Mutliview Common Columns
+    description: Mixin with DhMultiviewCommon Columns
+    title: Dh Multiview Common Columns
     mixin: true
   SampIdNewTermsMixin:
     description: Mixin with SampIdNew Terms
