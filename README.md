@@ -25,7 +25,7 @@ Note that the while this repo is named `submission-schema`, the generated artifa
 The version of `nmdc-schema` used as a basis when building the submission schema is controlled by a dependency in the `dev` group, specified in `pyproject.toml`. You can update the version used by running:
 
 ```shell
-poetry add nmdc-schema==X.Y.Z --group dev  # replace X.Y.Z with the desired version
+poetry add --group dev nmdc-schema==X.Y.Z  # replace X.Y.Z with the desired version
 ```
 
 > [!NOTE]  
@@ -48,16 +48,25 @@ Here's how you can generate the submission schema release artifacts:
    ```shell
    docker build -t submission-schema-builder -f builder.Dockerfile .
    ```
-2. Use that container image to build the submission schema:
+2. If you haven't already done so (see the "Updating the submission schema" section above), use that container image to update the `nmdc-schema` dependency of the submission schema:
+   ```shell
+   docker run --rm -it -v ${PWD}:/submission-schema submission-schema-builder \
+       poetry add --group dev nmdc-schema==X.Y.Z  # replace X.Y.Z
+   ```
+   Then, rebuild the container image (so it has that new version of `nmdc-schema` installed):
+   ```shell
+   docker build -t submission-schema-builder -f builder.Dockerfile .
+   ```
+3. Use the container image to build the submission schema:
    ```shell
    docker run --rm -it -v ${PWD}:/submission-schema submission-schema-builder
    ```
-3. Commit the changes, using the new `nmdc-schema` version number as the commit message; like this:
+4. Commit the changes, using the new `nmdc-schema` version number as the commit message; like this:
    ```shell
    git add .
    git commit -m "X.Y.Z"  # replace X.Y.Z with the nmdc-schema version
    ```
-4. (Optional) Delete the container image:
+5. (Optional) Delete the container image:
    ```shell
    docker image rm submission-schema-builder
    ```
@@ -70,7 +79,7 @@ Here's how you can generate the submission schema release artifacts:
    ```shell
    poetry install
    ```
-2. Generate the release artefacts:
+2. Generate the release artifacts:
    ```shell
    make clean all
    ```

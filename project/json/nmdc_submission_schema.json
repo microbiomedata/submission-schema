@@ -13788,6 +13788,12 @@
       "examples": [
         {
           "value": "https://doi.org/10.1371/journal.pone.0176357"
+        },
+        {
+          "value": "doi:10.1371/journal.pone.0176357"
+        },
+        {
+          "value": "PMID:28448589"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -13805,7 +13811,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -16258,7 +16264,7 @@
       ],
       "slot_group": "mixs_core_section",
       "range": "string",
-      "pattern": "^(.*|PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(.*|PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({text}|{PMID}|{DOI}|{URL})$",
         "interpolated": true
@@ -16346,6 +16352,9 @@
       "examples": [
         {
           "value": "https://doi.org/10.1111/j.1654-109X.2011.01154.x"
+        },
+        {
+          "value": "doi:10.1111/j.1654-109X.2011.01154.x"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -16360,7 +16369,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -18113,7 +18122,18 @@
       "rank": 7,
       "string_serialization": "{text}",
       "domain_of": [
+        "AirInterface",
+        "BiofilmInterface",
+        "BuiltEnvInterface",
+        "HcrCoresInterface",
+        "HcrFluidsSwabsInterface",
+        "HostAssociatedInterface",
+        "MiscEnvsInterface",
+        "PlantAssociatedInterface",
+        "SedimentInterface",
         "SoilInterface",
+        "WastewaterSludgeInterface",
+        "WaterInterface",
         "SoilMixsInspiredMixin"
       ],
       "slot_group": "mixs_inspired_section",
@@ -18904,7 +18924,7 @@
       ],
       "slot_group": "mixs_core_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true
@@ -19504,7 +19524,7 @@
       "slot_group": "mixs_section",
       "range": "string",
       "multivalued": false,
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -19581,6 +19601,14 @@
       "name": "horizon_meth",
       "description": "Reference or method used in determining the horizon",
       "title": "horizon method",
+      "examples": [
+        {
+          "value": "https://doi.org/10.1016/j.geoderma.2019.113898"
+        },
+        {
+          "value": "doi:10.1016/j.geoderma.2019.113898"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 19,
       "keywords": [
@@ -19593,7 +19621,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -19967,7 +19995,7 @@
       ],
       "slot_group": "mixs_core_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL}|{text})$",
         "interpolated": true,
@@ -21034,6 +21062,14 @@
       "name": "link_addit_analys",
       "description": "Link to additional analysis results performed on the sample",
       "title": "links to additional analysis",
+      "examples": [
+        {
+          "value": "https://doi.org/10.1111/j.1574-6941.2011.01140.x"
+        },
+        {
+          "value": "doi:10.1111/j.1574-6941.2011.01140.x"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 56,
       "keywords": [
@@ -21045,7 +21081,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -21081,6 +21117,14 @@
       "name": "link_climate_info",
       "description": "Link to climate resource",
       "title": "link to climate information",
+      "examples": [
+        {
+          "value": "https://www.int-res.com/abstracts/cr/v14/n3/p161-173/"
+        },
+        {
+          "value": "doi:10.3354/cr014161"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 21,
       "keywords": [
@@ -21093,7 +21137,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -21149,6 +21193,11 @@
       "name": "local_class_meth",
       "description": "Reference or method used in determining the local soil classification",
       "title": "soil_taxonomic/local classification method",
+      "examples": [
+        {
+          "value": "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/the-twelve-orders-of-soil-taxonomy"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 24,
       "keywords": [
@@ -21161,7 +21210,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -21477,7 +21526,7 @@
           "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
         },
         {
-          "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+          "value": "doi:10.1016/0038-0717(87)90052-6"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -21504,7 +21553,10 @@
       ],
       "examples": [
         {
-          "value": "http://dx.doi.org/10.1016/j.soilbio.2005.01.021"
+          "value": "https://doi.org/10.1016/j.soilbio.2005.01.021"
+        },
+        {
+          "value": "doi:10.1016/j.soilbio.2005.01.021"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -21534,7 +21586,7 @@
           "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
         },
         {
-          "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+          "value": "doi:10.1016/0038-0717(87)90052-6"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -21964,6 +22016,9 @@
       "examples": [
         {
           "value": "https://doi.org/10.1038/s41467-021-26181-3"
+        },
+        {
+          "value": "doi:10.1038/s41467-021-26181-3"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -22377,6 +22432,9 @@
       "examples": [
         {
           "value": "https://doi.org/10.1016/0038-0717(85)90144-0"
+        },
+        {
+          "value": "doi:10.1016/0038-0717(85)90144-0"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -22485,7 +22543,18 @@
       "rank": 15,
       "string_serialization": "{text}",
       "domain_of": [
+        "AirInterface",
+        "BiofilmInterface",
+        "BuiltEnvInterface",
+        "HcrCoresInterface",
+        "HcrFluidsSwabsInterface",
+        "HostAssociatedInterface",
+        "MiscEnvsInterface",
+        "PlantAssociatedInterface",
+        "SedimentInterface",
         "SoilInterface",
+        "WastewaterSludgeInterface",
+        "WaterInterface",
         "SoilMixsInspiredMixin"
       ],
       "slot_group": "mixs_inspired_section",
@@ -22892,10 +22961,13 @@
       ],
       "examples": [
         {
-          "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+          "value": "https://doi.org/10.2136/sssabookser5.3.c16"
         },
         {
-          "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+          "value": "doi:10.2136/sssabookser5.3.c16"
+        },
+        {
+          "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -23435,6 +23507,14 @@
       "name": "prev_land_use_meth",
       "description": "Reference or method used in determining previous land use and dates",
       "title": "history/previous land use method",
+      "examples": [
+        {
+          "value": "https://doi.org/10.2737/SRS-GTR-155"
+        },
+        {
+          "value": "doi:10.2737/SRS-GTR-155"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 26,
       "keywords": [
@@ -23449,7 +23529,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -24452,7 +24532,7 @@
       ],
       "slot_group": "mixs_core_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL}|{text})$",
         "interpolated": true,
@@ -24732,6 +24812,14 @@
       "comments": [
         "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
       ],
+      "examples": [
+        {
+          "value": "doi:10.1016/j.ecss.2011.11.024"
+        },
+        {
+          "value": "https://doi.org/10.1016/j.ecss.2011.11.024"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 55,
       "slot_uri": "MIXS:0000341",
@@ -24744,9 +24832,9 @@
       "slot_group": "mixs_section",
       "range": "string",
       "multivalued": false,
-      "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
-        "syntax": "^{PMID}|{DOI}|{URL}$",
+        "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true
       }
     },
@@ -27703,7 +27791,7 @@
       ],
       "slot_group": "mixs_core_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL}|{text})$",
         "interpolated": true,
@@ -28011,7 +28099,7 @@
           "value": "https://doi.org/10.2134/agronmonogr9.2.c32"
         },
         {
-          "value": "https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo"
+          "value": "doi:10.2136/sssaj2009.0389"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -28029,7 +28117,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -28083,6 +28171,9 @@
       "examples": [
         {
           "value": "https://doi.org/10.1080/07352680902776556"
+        },
+        {
+          "value": "doi:10.1080/07352680902776556"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -28100,7 +28191,7 @@
       ],
       "slot_group": "mixs_section",
       "range": "string",
-      "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+      "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
       "structured_pattern": {
         "syntax": "^({PMID}|{DOI}|{URL})$",
         "interpolated": true,
@@ -29035,10 +29126,10 @@
       ],
       "examples": [
         {
-          "value": "J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503"
+          "value": "https://dec.alaska.gov/applications/spar/webcalc/definitions.htm"
         },
         {
-          "value": "https://dec.alaska.gov/applications/spar/webcalc/definitions.htm"
+          "value": "doi:10.1016/j.geoderma.2019.113898"
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
@@ -29957,11 +30048,13 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "geo_loc_name",
         "humidity",
         "lat_lon",
         "methane",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "oxygen",
         "perturbation",
@@ -30798,6 +30891,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "AirInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "geo_loc_name": {
           "name": "geo_loc_name",
           "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
@@ -31010,6 +31145,43 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
+        },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "AirInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
         },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
@@ -32121,6 +32293,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "geo_loc_name",
         "glucosidase_act",
         "lat_lon",
@@ -32136,6 +32309,7 @@
         "org_matter",
         "org_nitro",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "part_org_carb",
         "perturbation",
@@ -33657,6 +33831,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "BiofilmInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "geo_loc_name": {
           "name": "geo_loc_name",
           "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
@@ -34323,6 +34539,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "BiofilmInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
           "description": "Oxygenation status of sample",
@@ -34529,10 +34782,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -36008,6 +36264,7 @@
         "exp_duct",
         "exp_pipe",
         "experimental_factor",
+        "experimental_factor_other",
         "ext_door",
         "ext_wall_orient",
         "ext_window_orient",
@@ -36049,6 +36306,7 @@
         "occup_document",
         "occup_samp",
         "organism_count",
+        "other_treatment",
         "pres_animal_insect",
         "quad_pos",
         "rel_air_humidity",
@@ -38050,6 +38308,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "BuiltEnvInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "ext_door": {
           "name": "ext_door",
           "description": "The number of exterior doors in the built structure",
@@ -39243,6 +39543,43 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
+        },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "BuiltEnvInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
         },
         "pres_animal_insect": {
           "name": "pres_animal_insect",
@@ -42026,6 +42363,7 @@
         "env_medium",
         "ethylbenzene",
         "experimental_factor",
+        "experimental_factor_other",
         "field",
         "geo_loc_name",
         "hc_produced",
@@ -42041,6 +42379,7 @@
         "nitrite",
         "org_count_qpcr_info",
         "organism_count",
+        "other_treatment",
         "owc_tvdss",
         "oxy_stat_samp",
         "permeability",
@@ -43445,6 +43784,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "HcrCoresInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "field": {
           "name": "field",
           "description": "Name of the hydrocarbon field (e.g. Albacora)",
@@ -43983,6 +44364,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "HcrCoresInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "owc_tvdss": {
           "name": "owc_tvdss",
           "annotations": {
@@ -44128,10 +44546,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -46149,6 +46570,7 @@
         "env_medium",
         "ethylbenzene",
         "experimental_factor",
+        "experimental_factor_other",
         "field",
         "geo_loc_name",
         "hc_produced",
@@ -46166,6 +46588,7 @@
         "nitrite",
         "org_count_qpcr_info",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "ph",
         "ph_meth",
@@ -47723,6 +48146,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "HcrFluidsSwabsInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "field": {
           "name": "field",
           "description": "Name of the hydrocarbon field (e.g. Albacora)",
@@ -48332,6 +48797,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "HcrFluidsSwabsInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
           "description": "Oxygenation status of sample",
@@ -48409,10 +48911,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -50451,6 +50956,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "genetic_mod",
         "geo_loc_name",
         "gravidity",
@@ -50482,6 +50988,7 @@
         "host_tot_mass",
         "lat_lon",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "perturbation",
         "salinity",
@@ -51278,6 +51785,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "HostAssociatedInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "genetic_mod": {
           "name": "genetic_mod",
           "description": "Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection",
@@ -51298,7 +51847,7 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true
@@ -51760,7 +52309,7 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL}|{text})$",
             "interpolated": true,
@@ -52266,6 +52815,43 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
+        },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "HostAssociatedInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
         },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
@@ -55609,6 +56195,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "geo_loc_name",
         "lat_lon",
         "nitrate",
@@ -55618,6 +56205,7 @@
         "org_matter",
         "org_nitro",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "perturbation",
         "ph",
@@ -56914,6 +57502,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "MiscEnvsInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "geo_loc_name": {
           "name": "geo_loc_name",
           "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
@@ -57325,6 +57955,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "MiscEnvsInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
           "description": "Oxygenation status of sample",
@@ -57440,10 +58107,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -58617,6 +59287,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "fertilizer_regm",
         "fungicide_regm",
         "gaseous_environment",
@@ -58649,6 +59320,7 @@
         "mineral_nutr_regm",
         "non_min_nutr_regm",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "perturbation",
         "pesticide_regm",
@@ -59250,7 +59922,7 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string",
-          "pattern": "^(.*|PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(.*|PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({text}|{PMID}|{DOI}|{URL})$",
             "interpolated": true
@@ -59727,6 +60399,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "PlantAssociatedInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "fertilizer_regm": {
           "name": "fertilizer_regm",
           "annotations": {
@@ -59853,7 +60567,7 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true
@@ -60856,6 +61570,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "PlantAssociatedInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
           "description": "Oxygenation status of sample",
@@ -61187,7 +61938,7 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL}|{text})$",
             "interpolated": true,
@@ -61483,6 +62234,14 @@
           "comments": [
             "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
           ],
+          "examples": [
+            {
+              "value": "doi:10.1016/j.ecss.2011.11.024"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.ecss.2011.11.024"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 55,
           "slot_uri": "MIXS:0000341",
@@ -61497,9 +62256,9 @@
           "slot_group": "mixs_section",
           "range": "string",
           "multivalued": false,
-          "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
-            "syntax": "^{PMID}|{DOI}|{URL}$",
+            "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true
           }
         },
@@ -62185,7 +62944,7 @@
           ],
           "slot_group": "mixs_core_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL}|{text})$",
             "interpolated": true,
@@ -62481,6 +63240,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "extreme_event",
         "fire",
         "flooding",
@@ -62510,6 +63270,7 @@
         "org_nitro",
         "org_nitro_method",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "part_org_carb",
         "particle_class",
@@ -64340,6 +65101,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "SedimentInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "extreme_event": {
           "name": "extreme_event",
           "annotations": {
@@ -64931,7 +65734,7 @@
               "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
             },
             {
-              "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+              "value": "doi:10.1016/0038-0717(87)90052-6"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -64960,7 +65763,10 @@
           ],
           "examples": [
             {
-              "value": "http://dx.doi.org/10.1016/j.soilbio.2005.01.021"
+              "value": "https://doi.org/10.1016/j.soilbio.2005.01.021"
+            },
+            {
+              "value": "doi:10.1016/j.soilbio.2005.01.021"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -64992,7 +65798,7 @@
               "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
             },
             {
-              "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+              "value": "doi:10.1016/0038-0717(87)90052-6"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -65430,6 +66236,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1016/0038-0717(85)90144-0"
+            },
+            {
+              "value": "doi:10.1016/0038-0717(85)90144-0"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -65495,6 +66304,43 @@
           "range": "string",
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
+        },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "SedimentInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
         },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
@@ -65733,10 +66579,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -66114,6 +66963,14 @@
           "comments": [
             "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
           ],
+          "examples": [
+            {
+              "value": "doi:10.1016/j.ecss.2011.11.024"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.ecss.2011.11.024"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 55,
           "slot_uri": "MIXS:0000341",
@@ -66128,9 +66985,9 @@
           "slot_group": "mixs_section",
           "range": "string",
           "multivalued": false,
-          "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
-            "syntax": "^{PMID}|{DOI}|{URL}$",
+            "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true
           }
         },
@@ -67034,7 +67891,7 @@
               "value": "https://doi.org/10.2134/agronmonogr9.2.c32"
             },
             {
-              "value": "https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo"
+              "value": "doi:10.2136/sssaj2009.0389"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -67054,7 +67911,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -67110,6 +67967,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1080/07352680902776556"
+            },
+            {
+              "value": "doi:10.1080/07352680902776556"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -67129,7 +67989,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -67239,10 +68099,10 @@
           ],
           "examples": [
             {
-              "value": "J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503"
+              "value": "https://dec.alaska.gov/applications/spar/webcalc/definitions.htm"
             },
             {
-              "value": "https://dec.alaska.gov/applications/spar/webcalc/definitions.htm"
+              "value": "doi:10.1016/j.geoderma.2019.113898"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -67960,6 +68820,12 @@
           "examples": [
             {
               "value": "https://doi.org/10.1371/journal.pone.0176357"
+            },
+            {
+              "value": "doi:10.1371/journal.pone.0176357"
+            },
+            {
+              "value": "PMID:28448589"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -67979,7 +68845,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -68607,6 +69473,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1111/j.1654-109X.2011.01154.x"
+            },
+            {
+              "value": "doi:10.1111/j.1654-109X.2011.01154.x"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -68623,7 +69492,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -69148,7 +70017,18 @@
           "alias": "experimental_factor_other",
           "owner": "SoilInterface",
           "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
             "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
             "SoilMixsInspiredMixin"
           ],
           "slot_group": "mixs_inspired_section",
@@ -69519,7 +70399,7 @@
           "slot_group": "mixs_section",
           "range": "string",
           "multivalued": false,
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -69530,6 +70410,14 @@
           "name": "horizon_meth",
           "description": "Reference or method used in determining the horizon",
           "title": "horizon method",
+          "examples": [
+            {
+              "value": "https://doi.org/10.1016/j.geoderma.2019.113898"
+            },
+            {
+              "value": "doi:10.1016/j.geoderma.2019.113898"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 19,
           "keywords": [
@@ -69544,7 +70432,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -69845,6 +70733,14 @@
           "name": "link_addit_analys",
           "description": "Link to additional analysis results performed on the sample",
           "title": "links to additional analysis",
+          "examples": [
+            {
+              "value": "https://doi.org/10.1111/j.1574-6941.2011.01140.x"
+            },
+            {
+              "value": "doi:10.1111/j.1574-6941.2011.01140.x"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 56,
           "keywords": [
@@ -69858,7 +70754,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -69896,6 +70792,14 @@
           "name": "link_climate_info",
           "description": "Link to climate resource",
           "title": "link to climate information",
+          "examples": [
+            {
+              "value": "https://www.int-res.com/abstracts/cr/v14/n3/p161-173/"
+            },
+            {
+              "value": "doi:10.3354/cr014161"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 21,
           "keywords": [
@@ -69910,7 +70814,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -69945,6 +70849,11 @@
           "name": "local_class_meth",
           "description": "Reference or method used in determining the local soil classification",
           "title": "soil_taxonomic/local classification method",
+          "examples": [
+            {
+              "value": "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/the-twelve-orders-of-soil-taxonomy"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 24,
           "keywords": [
@@ -69959,7 +70868,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -70025,7 +70934,7 @@
               "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
             },
             {
-              "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+              "value": "doi:10.1016/0038-0717(87)90052-6"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -70054,7 +70963,10 @@
           ],
           "examples": [
             {
-              "value": "http://dx.doi.org/10.1016/j.soilbio.2005.01.021"
+              "value": "https://doi.org/10.1016/j.soilbio.2005.01.021"
+            },
+            {
+              "value": "doi:10.1016/j.soilbio.2005.01.021"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -70086,7 +70998,7 @@
               "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
             },
             {
-              "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+              "value": "doi:10.1016/0038-0717(87)90052-6"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -70341,6 +71253,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1038/s41467-021-26181-3"
+            },
+            {
+              "value": "doi:10.1038/s41467-021-26181-3"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -70463,6 +71378,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1016/0038-0717(85)90144-0"
+            },
+            {
+              "value": "doi:10.1016/0038-0717(85)90144-0"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -70501,7 +71419,18 @@
           "alias": "other_treatment",
           "owner": "SoilInterface",
           "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
             "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
             "SoilMixsInspiredMixin"
           ],
           "slot_group": "mixs_inspired_section",
@@ -70585,10 +71514,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -70667,6 +71599,14 @@
           "name": "prev_land_use_meth",
           "description": "Reference or method used in determining previous land use and dates",
           "title": "history/previous land use method",
+          "examples": [
+            {
+              "value": "https://doi.org/10.2737/SRS-GTR-155"
+            },
+            {
+              "value": "doi:10.2737/SRS-GTR-155"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 26,
           "keywords": [
@@ -70683,7 +71623,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -70808,6 +71748,14 @@
           "comments": [
             "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
           ],
+          "examples": [
+            {
+              "value": "doi:10.1016/j.ecss.2011.11.024"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.ecss.2011.11.024"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 55,
           "slot_uri": "MIXS:0000341",
@@ -70822,9 +71770,9 @@
           "slot_group": "mixs_section",
           "range": "string",
           "multivalued": false,
-          "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
-            "syntax": "^{PMID}|{DOI}|{URL}$",
+            "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true
           }
         },
@@ -71842,7 +72790,7 @@
               "value": "https://doi.org/10.2134/agronmonogr9.2.c32"
             },
             {
-              "value": "https://acsess.onlinelibrary.wiley.com/doi/full/10.2136/sssaj2009.0389?casa_token=bm0pYIUdNMgAAAAA%3AOWVRR0STHaOe-afTcTdxn5m1hM8n2ltM0wY-b1iYpYdD9dhwppk5j3LvC2IO5yhOIvyLVeQz4NZRCZo"
+              "value": "doi:10.2136/sssaj2009.0389"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -71862,7 +72810,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -71918,6 +72866,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1080/07352680902776556"
+            },
+            {
+              "value": "doi:10.1080/07352680902776556"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -71937,7 +72888,7 @@
           ],
           "slot_group": "mixs_section",
           "range": "string",
-          "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
             "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true,
@@ -72056,10 +73007,10 @@
           ],
           "examples": [
             {
-              "value": "J. Nat. Prod. Plant Resour., 2012, 2 (4):500-503"
+              "value": "https://dec.alaska.gov/applications/spar/webcalc/definitions.htm"
             },
             {
-              "value": "https://dec.alaska.gov/applications/spar/webcalc/definitions.htm"
+              "value": "doi:10.1016/j.geoderma.2019.113898"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -72414,6 +73365,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "gaseous_substances",
         "geo_loc_name",
         "indust_eff_percent",
@@ -72422,6 +73374,7 @@
         "nitrate",
         "org_particles",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "perturbation",
         "ph",
@@ -73246,6 +74199,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "WastewaterSludgeInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "gaseous_substances": {
           "name": "gaseous_substances",
           "annotations": {
@@ -73557,6 +74552,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "WastewaterSludgeInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
           "description": "Oxygenation status of sample",
@@ -73672,10 +74704,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -74948,6 +75983,7 @@
         "env_local_scale",
         "env_medium",
         "experimental_factor",
+        "experimental_factor_other",
         "filter_method",
         "fluor",
         "gaseous_environment",
@@ -74969,6 +76005,7 @@
         "org_matter",
         "org_nitro",
         "organism_count",
+        "other_treatment",
         "oxy_stat_samp",
         "part_org_carb",
         "part_org_nitro",
@@ -77019,6 +78056,48 @@
           "multivalued": false,
           "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$"
         },
+        "experimental_factor_other": {
+          "name": "experimental_factor_other",
+          "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+          "title": "experimental factor- other",
+          "comments": [
+            "This slot accepts open-ended text about your sample.",
+            "We recommend using key:value pairs.",
+            "Provided pairs will be considered for inclusion as future slots/terms in this data collection template."
+          ],
+          "examples": [
+            {
+              "value": "experimental treatment: value"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000008",
+            "MIXS:0000300"
+          ],
+          "rank": 7,
+          "string_serialization": "{text}",
+          "alias": "experimental_factor_other",
+          "owner": "WaterInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "filter_method": {
           "name": "filter_method",
           "description": "Type of filter used or how the sample was filtered",
@@ -77915,6 +78994,43 @@
           "multivalued": false,
           "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$"
         },
+        "other_treatment": {
+          "name": "other_treatment",
+          "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+          "title": "other treatments",
+          "notes": [
+            "Values entered here will be used to determine potential new slots."
+          ],
+          "comments": [
+            "This is an open text field to provide any treatments that cannot be captured in the provided slots."
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "MIXS:0000300"
+          ],
+          "rank": 15,
+          "string_serialization": "{text}",
+          "alias": "other_treatment",
+          "owner": "WaterInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SoilMixsInspiredMixin"
+          ],
+          "slot_group": "mixs_inspired_section",
+          "range": "string",
+          "recommended": true
+        },
         "oxy_stat_samp": {
           "name": "oxy_stat_samp",
           "description": "Oxygenation status of sample",
@@ -78166,10 +79282,13 @@
           ],
           "examples": [
             {
-              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html?gclid=Cj0KCQiAwJWdBhCYARIsAJc4idCO5vtvbVMf545fcvdROFqa6zjzNSoywNx6K4k9Coo9cCc2pybtvGsaAiR0EALw_wcB"
+              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
             },
             {
-              "value": "https://doi.org/10.2136/sssabookser5.3.c16"
+              "value": "doi:10.2136/sssabookser5.3.c16"
+            },
+            {
+              "value": "https://www.southernlabware.com/pc9500-benchtop-ph-conductivity-meter-kit-ph-accuracy-2000mv-ph-range-2-000-to-20-000.html"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -78603,6 +79722,14 @@
           "comments": [
             "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
           ],
+          "examples": [
+            {
+              "value": "doi:10.1016/j.ecss.2011.11.024"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.ecss.2011.11.024"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 55,
           "slot_uri": "MIXS:0000341",
@@ -78617,9 +79744,9 @@
           "slot_group": "mixs_section",
           "range": "string",
           "multivalued": false,
-          "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+          "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
           "structured_pattern": {
-            "syntax": "^{PMID}|{DOI}|{URL}$",
+            "syntax": "^({PMID}|{DOI}|{URL})$",
             "interpolated": true
           }
         },
@@ -81561,8 +82688,8 @@
     },
     "DhMultiviewCommonColumnsMixin": {
       "name": "DhMultiviewCommonColumnsMixin",
-      "description": "Mixin with DhMutliviewCommon Columns",
-      "title": "Dh Mutliview Common Columns",
+      "description": "Mixin with DhMultiviewCommon Columns",
+      "title": "Dh Multiview Common Columns",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "mixin": true,
       "slots": [
@@ -81963,7 +83090,18 @@
           "alias": "experimental_factor_other",
           "owner": "SoilMixsInspiredMixin",
           "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
             "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
             "SoilMixsInspiredMixin"
           ],
           "slot_group": "mixs_inspired_section",
@@ -82053,7 +83191,7 @@
               "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
             },
             {
-              "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+              "value": "doi:10.1016/0038-0717(87)90052-6"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -82085,7 +83223,7 @@
               "value": "https://doi.org/10.1016/0038-0717(87)90052-6"
             },
             {
-              "value": "https://doi.org/10.1016/0038-0717(87)90052-6 | https://www.sciencedirect.com/science/article/abs/pii/0038071787900526"
+              "value": "doi:10.1016/0038-0717(87)90052-6"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -82201,6 +83339,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1038/s41467-021-26181-3"
+            },
+            {
+              "value": "doi:10.1038/s41467-021-26181-3"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -82228,6 +83369,9 @@
           "examples": [
             {
               "value": "https://doi.org/10.1016/0038-0717(85)90144-0"
+            },
+            {
+              "value": "doi:10.1016/0038-0717(85)90144-0"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -82266,7 +83410,18 @@
           "alias": "other_treatment",
           "owner": "SoilMixsInspiredMixin",
           "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
             "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
             "SoilMixsInspiredMixin"
           ],
           "slot_group": "mixs_inspired_section",
@@ -82818,7 +83973,7 @@
     },
     "DOI": {
       "setting_key": "DOI",
-      "setting_value": "doi:10.\\d{2,9}/.*"
+      "setting_value": "doi:10\\.\\d{2,9}/.*"
     },
     "URL": {
       "setting_key": "URL",
