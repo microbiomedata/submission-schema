@@ -51,9 +51,13 @@ Here's how you can generate the submission schema release artifacts:
 2. If you haven't already done so (see the "Updating the submission schema" section above), use that container image to update the `nmdc-schema` dependency of the submission schema:
    ```shell
    docker run --rm -it -v ${PWD}:/submission-schema submission-schema-builder \
-       poetry add --group dev nmdc-schema==X.Y.Z
+       poetry add --group dev nmdc-schema==X.Y.Z  # replace X.Y.Z
    ```
-3. Use that container image to build the submission schema:
+   Then, rebuild the container image (so it has that new version of `nmdc-schema` installed):
+   ```shell
+   docker build -t submission-schema-builder -f builder.Dockerfile .
+   ```
+3. Use the container image to build the submission schema:
    ```shell
    docker run --rm -it -v ${PWD}:/submission-schema submission-schema-builder
    ```
