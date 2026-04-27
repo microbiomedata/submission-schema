@@ -125,6 +125,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+): ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+), ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$",
@@ -154,6 +161,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -601,6 +615,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+): ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+), ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$",
@@ -709,6 +730,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -1419,6 +1447,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "ext_door": {
                     "description": "The number of exterior doors in the built structure",
                     "type": [
@@ -1673,6 +1708,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -4827,6 +4869,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "field": {
                     "description": "Name of the hydrocarbon field (e.g. Albacora)",
                     "type": [
@@ -4918,6 +4967,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -5601,6 +5657,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "field": {
                     "description": "Name of the hydrocarbon field (e.g. Albacora)",
                     "type": [
@@ -5707,6 +5770,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -6232,9 +6302,16 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "genetic_mod": {
                     "description": "Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -6343,7 +6420,7 @@
                 },
                 "host_growth_cond": {
                     "description": "Literature reference giving growth conditions of the host",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
                     "type": [
                         "string",
                         "null"
@@ -6452,6 +6529,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -7804,6 +7888,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+): ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+), ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$",
@@ -7865,6 +7956,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -8203,7 +8301,7 @@
                 },
                 "cult_root_med": {
                     "description": "Name or reference for the hydroponic or in vitro culture rooting medium; can be the name of a commonly used medium or reference to a specific medium, e.g. Murashige and Skoog medium. If the medium has not been formally published, use the rooting medium descriptors",
-                    "pattern": "^(.*|PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(.*|PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -8285,6 +8383,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "fertilizer_regm": {
                     "description": "Information about treatment involving the use of fertilizers; should include the name of fertilizer, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple fertilizer regimens",
                     "type": [
@@ -8308,7 +8413,7 @@
                 },
                 "genetic_mod": {
                     "description": "Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -8502,6 +8607,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -8567,7 +8679,7 @@
                 },
                 "root_cond": {
                     "description": "Relevant rooting conditions such as field plot size, sowing density, container dimensions, number of plants per container",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
                     "type": [
                         "string",
                         "null"
@@ -8634,7 +8746,7 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -8767,7 +8879,7 @@
                 },
                 "tiss_cult_growth_med": {
                     "description": "Description of plant tissue culture growth media used",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
                     "type": [
                         "string",
                         "null"
@@ -9543,6 +9655,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "extreme_event": {
                     "description": "Unusual physical events that may have affected microbial populations",
                     "type": [
@@ -9758,6 +9877,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -9872,7 +9998,7 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10039,7 +10165,7 @@
                 },
                 "tot_nitro_cont_meth": {
                     "description": "Reference or method used in determining the total nitrogen",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10055,7 +10181,7 @@
                 },
                 "tot_org_c_meth": {
                     "description": "Reference or method used in determining total organic carbon",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10199,7 +10325,7 @@
                 },
                 "al_sat_meth": {
                     "description": "Reference or method used in determining Aluminum saturation",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10328,7 +10454,7 @@
                 },
                 "cur_vegetation_meth": {
                     "description": "Reference or method used in vegetation classification",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10476,7 +10602,7 @@
                 },
                 "heavy_metals_meth": {
                     "description": "Reference or method used in determining heavy metals",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10484,7 +10610,7 @@
                 },
                 "horizon_meth": {
                     "description": "Reference or method used in determining the horizon",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10540,7 +10666,7 @@
                 },
                 "link_addit_analys": {
                     "description": "Link to additional analysis results performed on the sample",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10555,7 +10681,7 @@
                 },
                 "link_climate_info": {
                     "description": "Link to climate resource",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10570,7 +10696,7 @@
                 },
                 "local_class_meth": {
                     "description": "Reference or method used in determining the local soil classification",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10720,7 +10846,7 @@
                 },
                 "prev_land_use_meth": {
                     "description": "Reference or method used in determining previous land use and dates",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10748,7 +10874,7 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10947,7 +11073,7 @@
                 },
                 "tot_nitro_cont_meth": {
                     "description": "Reference or method used in determining the total nitrogen",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10963,7 +11089,7 @@
                 },
                 "tot_org_c_meth": {
                     "description": "Reference or method used in determining total organic carbon",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -12339,6 +12465,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "gaseous_substances": {
                     "description": "Amount or concentration of substances such as hydrogen sulfide, carbon dioxide, methane, etc.; can include multiple substances",
                     "type": [
@@ -12389,6 +12522,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -13023,6 +13163,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "filter_method": {
                     "description": "Type of filter used or how the sample was filtered",
                     "type": [
@@ -13179,6 +13326,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -13303,7 +13457,7 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"

@@ -1,0 +1,49 @@
+## Example data for IsolateInterface and JgiIsolateInterface classes.
+## Organism: Dictyoglomus turgidum DSM 6724
+## Source: GOLD analysis project Ga0028539, its_analysis_project_id 1377532
+## Retrieved from gold-db-2 postgresql.gold.analysis_project via JGI Dremio lakehouse.
+##
+## NOTE: analysis_type is not included; AnalysisTypeEnum has no isolate-WGS value yet.
+## A permissible value should be added to AnalysisTypeEnum in nmdc-schema. Until then,
+## analysis_type is overridden to required: false in IsolateInterface and JgiIsolateInterface.
+##
+## NOTE: IsolateInterface nmdc-schema slots (organism_genus, organism_species, strain_name,
+## isolate_name, classified_as, host_taxid, collection_date) are absent here — they are
+## wired in via config/nmdc_schema_import.yaml once nmdc-schema PR #2977 and #2975 merge.
+isolate_data:
+  - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
+    source_mat_id: igsn:000
+jgi_isolate_data:
+  - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
+    source_mat_id: igsn:000
+    ## --- JGI project logistics (real values from GOLD Ga0028539 / ITS project 1377532) ---
+    replicate_group: Dturgidum_rep1
+    jgi_samp_id: "187654"
+    jgi_sample_name: Dictyoglomus_turgidum_DSM6724
+    jgi_seq_project: 1377532
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724
+    jgi_sample_contact: Mead, David
+    jgi_project_pi: Mead, David
+    jgi_proposal_id: "502843"
+    ## --- DNA quality ---
+    nuc_acid_absorb1: 1.89
+    nuc_acid_absorb2: 2.03
+    nuc_acid_concentration: 45.7
+    jgi_sample_volume: 50
+    ## --- Container (tube submission) ---
+    cont_type: tube
+    container_name: Dturgidum_DSM6724
+    jgi_sample_format: TE
+    dnase: "no"
+    ## --- Biosafety and extraction ---
+    biosafety_mat_cat: Bacteria
+    dna_isolate_meth: CTAB
+    ## --- Isolate-specific fields ---
+    isolate_single_colony: "yes"
+    ## isolate_known_contaminants is blank: no known contaminants
+    isolate_ribosomal_seq: AGAGTTTGATCCTGGCTCAGGATGAACGCTGGCGGCGTGCTTAACACATGCAAGTCGAACGGTAACAGGAAGCTTGCTTTCTTTGAAGTTAGTGGCGGACGGGTGAGTAATACGTAGGTAATCTGCCCTTTAGTGGGGGACAACCTACCGAAAGGTAGGCTAATACCGCATAAGAGTCAGAGACCGCATGGTTTGAGTTAAAAGGTGGCTTCGGCTACCACTTACAGATGGACCCGCGGCGCATTAGCTAGTTGGTGGGGTAATGGCCCACCAAGGCGACGATGCGTAGCCGACCTGAGAGGGTGATCGGCCACACTGGGACTGAGACACGGCCCAGACTCCTACGGGAGGCAGCAGTAGGGAATCTTCGGCAATGGGCGAAAGCCTGACCGAGCGACGCCGCGTGAGGGATGAAGGCCTTCGGGTTGTAAACCTCTTTCAGTAGGGAAGAAGCGAAAGTGACGGTACCTGCAGAAGAAGCACCGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGGTGCAAGCGTTAATCGGAATTACTGGGCGTAAAGCGTGCGCAGGCGGTTTGTTAAGACCGATGTGAAATCCCCGGGCTCAACCTGGGAACTGCATCGGTGACTGGCAAGCTAGAGTATGGCAGAGGGGGGTAGAATTCCACGTGTAGCAGTGAAATGCGTAGAGATGTGGAGGAATACCGATGGCGAAGGCAGCCCCCTAGGCCTAATACTGACACTGAGGCACGAAAGCGTGGGGAGCAAACAGGATTAGATACCCTGGTAGTCCACGCCCTAAACGATGTCAACTAGTTGTCGGGTCTTCAGTGGCTAAGCGAAAGTGATAAGTGACCCACCTGGGAGTACGGTCGCAAGATTAAAACTCAAAGGAATTGACGGGGGCCCGCACAAGCGGTGGAGCATGTGGTTTAATTCGAAGCAACGCGCAGAACCTTACCAGCCCTTGACATCCTGATCGCGGATTACAGAGATGTTTTCTTTCAACGGAGACTTGACAGGTGGTGCATGGTTGTCGTCAGCTCGTGTCGTGAGATGTTGGGTTAAGTCCCGTAACGAGCGCAACCCTTGTCCTTAGTTACCAGCACGTAATGGTGGGCACTCTAAGGAGACTGCCGGTGATAAACCGGAGGAAGGTGGGGATGACGTCAAGTCATCATGGCCCTTACGGCCTGGGCTACACACGTGCTACAATGGTCGGTACAGAGGGTTGCCAAGCCGCGAGGTGGAGCTAATCCCATAAAGCCGATCGTAGTCCGGATCGCAGTCTGCAACTCGACTGCGTGAAGTCGGAATCGCTAGTAATCGTGGATCAGAATGCCACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGTCACACCATGGGAGTGGGTTGCAAAAGAAGTGGGTAGTTTAACCTTCGGGAGGGCGCTTACCACTTTGTGATTCATGACTGGGGTGAAGTCGTAACAAGGTAGCCGT
+    isolate_ribosomal_seq_type: 16S
+    isolate_ribosomal_seq_comments: "Full-length 16S, 1482 nt; Dictyoglomus turgidum DSM 6724"
+    ## isolate_second_ribosomal_seq not provided: no secondary sequence for this bacterial isolate
+    ## isolate_fungal_16s_screening not applicable: non-fungal sample
+    ## isolate_its_match_unite not applicable: non-fungal sample

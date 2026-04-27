@@ -235,6 +235,33 @@ TEMPLATE_INSTANCES = {
         "lat_lon": "12.34 -56.78",
         "samp_name": "000001",
     },
+    # analysis_type is required: false in IsolateInterface and JgiIsolateInterface because
+    # AnalysisTypeEnum has no isolate WGS value yet; see submission-schema#418
+    "IsolateInterface": {
+        "samp_name": "000001",
+    },
+    "JgiIsolateInterface": {
+        "samp_name": "000001",
+        "nuc_acid_concentration": 1.0,
+        "cont_type": "plate",
+        "cont_well": "C5",
+        "container_name": "0000001",
+        "dnase": "no",
+        "dna_isolate_meth": "lorem ipsum",
+        "jgi_samp_id": "000001",
+        "jgi_sample_format": "Water",
+        "jgi_sample_name": "000001",
+        "jgi_seq_project": 100000,
+        "jgi_seq_project_name": "100000",
+        "jgi_sample_contact": "Professor Scientist",
+        "jgi_project_pi": "Scientist Professor",
+        "jgi_proposal_id": "123456",
+        "jgi_sample_volume": 1.0,
+        "biosafety_mat_cat": "Bacteria",
+        "isolate_single_colony": "yes",
+        "isolate_ribosomal_seq": "ACGTAGCTAGCTAGCTAGCT",
+        "isolate_ribosomal_seq_type": "16S",
+    },
 }
 
 

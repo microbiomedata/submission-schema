@@ -139,6 +139,27 @@ enums:
         meaning: NCIT:C94733
       winter:
         meaning: NCIT:C94730
+  RibosomalSequenceTypeEnum:
+    permissible_values:
+      16S:
+      ITS:
+      ITS-AGI:
+        description: ITS sequence where DNA was isolated at the Arizona Genomics Institute (AGI)
+      28S:
+      Other:
+  JgiIsolateBiosafetyMaterialCategoryEnum:
+    description: Biosafety material category for single-organism isolate samples sent to JGI
+    permissible_values:
+      Alga:
+      Animal:
+      Archaea:
+      Bacteria:
+      Fungi:
+      Plant:
+      Plasmid:
+      Protist:
+      Virus:
+      Synthetic Construct:
 slots:
   air_data:
     description: aggregation slot relating air data collections to a SampleData container
@@ -599,11 +620,148 @@ slots:
     title: JGI proposal number
     examples:
       - value: PR123456
-      - value: 123456    
+      - value: 123456
     rank: 20
     range: string
     pattern: ^[A-Z0-9]+$
     recommended: true
+
+  ## isolate-specific slots (JGI-only; not stored in nmdc-schema)
+  isolate_single_colony:
+    title: single colony isolation
+    description: Was the sample isolated from a single colony or equivalent axenic/pure culture?
+    comments:
+      - Answer yes if the sample originated from a single colony pick, single-cell isolation,
+        or equivalent process expected to yield a genetically homogeneous culture.
+    examples:
+      - value: "yes"
+    rank: 30
+    range: YesNoEnum
+    required: true
+    aliases:
+      - Is the sample isolated from a single colony or equivalent?
+  isolate_known_contaminants:
+    title: known or suspected organisms
+    description: >-
+      List any organisms known or suspected to grow in co-culture or that may be
+      contaminating the culture, along with an estimate of the percentage.
+    comments:
+      - Leave blank if no contaminants are known or suspected.
+    examples:
+      - value: "Bacillus subtilis ~5%"
+    rank: 31
+    range: string
+    recommended: true
+    aliases:
+      - Known / Suspected Organisms
+  isolate_ribosomal_seq:
+    title: first ribosomal sequence
+    description: >-
+      Primary ribosomal sequence for strain verification. For microbial drafts must
+      be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N
+      with no FASTA header line.
+    comments:
+      - Required for all microbial and fungal genome projects.
+      - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
+      - Sequence must come from the actual sample to be shipped to JGI.
+    examples:
+      - value: ACGTAGCTAGCTAGCTAGCT
+    rank: 32
+    range: string
+    required: true
+    pattern: "^[ACGTNacgtn]+$"
+    aliases:
+      - First ribosomal sequence
+  isolate_ribosomal_seq_type:
+    title: first ribosomal sequence type
+    description: Type of the first ribosomal sequence provided.
+    examples:
+      - value: 16S
+    rank: 33
+    range: RibosomalSequenceTypeEnum
+    required: true
+    aliases:
+      - First ribosomal sequence type
+  isolate_ribosomal_seq_comments:
+    title: first ribosomal sequence comments
+    description: Additional information about the first ribosomal sequence.
+    comments:
+      - Required if ribosomal sequence type is Other.
+    examples:
+      - value: "Partial 16S, 850 nt"
+    rank: 34
+    range: string
+    aliases:
+      - First ribosomal sequence comments
+  isolate_second_ribosomal_seq:
+    title: second ribosomal sequence
+    description: >-
+      Optional secondary ribosomal sequence for additional strain verification.
+      For 28S must be >300 nt with <10% Ns. Use only A, C, G, T, or N with no
+      FASTA header line.
+    examples:
+      - value: ACGTAGCTAGCTAGCTAGCT
+    rank: 35
+    range: string
+    pattern: "^[ACGTNacgtn]+$"
+    aliases:
+      - Second ribosomal sequence
+  isolate_second_ribosomal_seq_type:
+    title: second ribosomal sequence type
+    description: Type of the second ribosomal sequence provided.
+    examples:
+      - value: ITS
+    rank: 36
+    range: RibosomalSequenceTypeEnum
+    aliases:
+      - Second ribosomal sequence type
+  isolate_second_ribosomal_seq_comments:
+    title: second ribosomal sequence comments
+    description: Additional information about the second ribosomal sequence.
+    comments:
+      - Required if second ribosomal sequence type is Other.
+    rank: 37
+    range: string
+    aliases:
+      - Second ribosomal sequence comments
+  isolate_fungal_16s_screening:
+    title: 16S screening performed
+    description: For fungal draft samples only — was 16S screening performed to check for bacterial contamination?
+    comments:
+      - Required for fungal minimal, standard, and improved drafts.
+      - Leave blank for non-fungal samples.
+    examples:
+      - value: "yes"
+    rank: 38
+    range: YesNoEnum
+    aliases:
+      - For fungal draft samples, was 16S screening performed?
+  isolate_its_match_unite:
+    title: ITS matches UNITE
+    description: For fungal draft samples only — does the ITS sequence match taxonomy in the UNITE database?
+    comments:
+      - Required for fungal minimal, standard, and improved drafts.
+      - Screen at https://unite.ut.ee/ before submitting.
+      - Leave blank for non-fungal samples.
+    examples:
+      - value: "yes"
+    rank: 39
+    range: YesNoEnum
+    aliases:
+      - For fungal draft samples, does ITS match taxonomy in UNITE?
+  ## data aggregation slots for SampleData
+  isolate_data:
+    description: aggregation slot relating isolate data collections to a SampleData container
+    multivalued: true
+    range: IsolateInterface
+    inlined: true
+    inlined_as_list: true
+  jgi_isolate_data:
+    description: aggregation slot relating jgi_isolate data collections to a SampleData container
+    multivalued: true
+    range: JgiIsolateInterface
+    inlined: true
+    inlined_as_list: true
 
 classes:
   AirInterface:
@@ -1054,6 +1212,159 @@ classes:
       - other_treatment
       - start_date_inc
       - start_time_inc
+  IsolateInterface:
+    annotations:
+      excel_worksheet_name: Isolate
+    description: >-
+      Metadata for microbial isolate samples submitted to NMDC. Captures core
+      biological identity slots (taxonomy, strain, culture collection) that NMDC
+      stores and queries. Slots are sourced from nmdc-schema OrganismSample and
+      Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.
+    title: Isolate
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slot_usage:
+      # analysis_type has no valid enum value for isolate WGS; suppress the inherited
+      # required constraint until a proper value is added to AnalysisTypeEnum in nmdc-schema
+      analysis_type:
+        required: false
+    # nmdc-schema slots (organism_genus, organism_species, strain_name, isolate_name,
+    # source_mat_id, classified_as, host_taxid, collection_date) are routed here
+    # via config/nmdc_schema_import.yaml once PR #2977 is released.
+    # TODO: add isolate WGS permissible value to AnalysisTypeEnum in nmdc-schema
+    # TODO: resolve open debate on estimated_size, gc_content, biosafety_mat_cat
+    # (currently JGI-only per Montana's spreadsheet; see submission-schema#418)
+
+  JgiIsolateInterface:
+    annotations:
+      excel_worksheet_name: JGI Isolate
+    description: >-
+      JGI-specific submission metadata for isolate sequencing projects. Captures
+      physical sample logistics, strain verification sequences, and QC fields
+      required by JGI but not stored in nmdc-schema.
+    title: JGI Isolate
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      ## reused JGI logistics slots (already defined in base YAML)
+      - replicate_group
+      - jgi_samp_id
+      - jgi_sample_name
+      - jgi_seq_project
+      - jgi_seq_project_name
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
+      - nuc_acid_absorb1
+      - nuc_acid_absorb2
+      - nuc_acid_concentration
+      - jgi_sample_volume
+      - cont_type
+      - cont_well
+      - container_name
+      - jgi_sample_format
+      - dnase
+      - biosafety_mat_cat
+      - dna_isolate_meth
+      ## isolate-specific JGI-only slots
+      - isolate_single_colony
+      - isolate_known_contaminants
+      - isolate_ribosomal_seq
+      - isolate_ribosomal_seq_type
+      - isolate_ribosomal_seq_comments
+      - isolate_second_ribosomal_seq
+      - isolate_second_ribosomal_seq_type
+      - isolate_second_ribosomal_seq_comments
+      - isolate_fungal_16s_screening
+      - isolate_its_match_unite
+    slot_usage:
+      # analysis_type has no valid enum value for isolate WGS; suppress the inherited
+      # required constraint until a proper value is added to AnalysisTypeEnum in nmdc-schema
+      analysis_type:
+        required: false
+      replicate_group:
+        slot_group: jgi_isolate_section
+      jgi_samp_id:
+        slot_group: jgi_isolate_section
+      jgi_sample_name:
+        slot_group: jgi_isolate_section
+      jgi_seq_project:
+        slot_group: jgi_isolate_section
+      jgi_seq_project_name:
+        slot_group: jgi_isolate_section
+      jgi_sample_contact:
+        slot_group: jgi_isolate_section
+      jgi_project_pi:
+        slot_group: jgi_isolate_section
+      jgi_proposal_id:
+        slot_group: jgi_isolate_section
+      nuc_acid_absorb1:
+        slot_group: jgi_isolate_section
+      nuc_acid_absorb2:
+        slot_group: jgi_isolate_section
+      nuc_acid_concentration:
+        slot_group: jgi_isolate_section
+      jgi_sample_volume:
+        slot_group: jgi_isolate_section
+      cont_type:
+        slot_group: jgi_isolate_section
+      cont_well:
+        slot_group: jgi_isolate_section
+      container_name:
+        slot_group: jgi_isolate_section
+      jgi_sample_format:
+        slot_group: jgi_isolate_section
+      dnase:
+        slot_group: jgi_isolate_section
+      biosafety_mat_cat:
+        slot_group: jgi_isolate_section
+        range: JgiIsolateBiosafetyMaterialCategoryEnum
+      dna_isolate_meth:
+        slot_group: jgi_isolate_section
+      isolate_single_colony:
+        slot_group: jgi_isolate_section
+      isolate_known_contaminants:
+        slot_group: jgi_isolate_section
+      isolate_ribosomal_seq:
+        slot_group: jgi_isolate_section
+      isolate_ribosomal_seq_type:
+        slot_group: jgi_isolate_section
+      isolate_ribosomal_seq_comments:
+        slot_group: jgi_isolate_section
+      isolate_second_ribosomal_seq:
+        slot_group: jgi_isolate_section
+      isolate_second_ribosomal_seq_type:
+        slot_group: jgi_isolate_section
+      isolate_second_ribosomal_seq_comments:
+        slot_group: jgi_isolate_section
+      isolate_fungal_16s_screening:
+        slot_group: jgi_isolate_section
+      isolate_its_match_unite:
+        slot_group: jgi_isolate_section
+    rules:
+      - title: well_requires_plate
+        description: If a well is specified, the container type must be a plate.
+        preconditions:
+          slot_conditions:
+            cont_well:
+              pattern: ".+"
+        postconditions:
+          slot_conditions:
+            cont_type:
+              equals_string: plate
+      - title: plate_requires_well
+        description: If a plate is specified, a well must be specified.
+        preconditions:
+          slot_conditions:
+            cont_type:
+              equals_string: plate
+        postconditions:
+          slot_conditions:
+            cont_well:
+              pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+
   DhInterface:
     description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
     title: Dh Root Interface
@@ -1078,6 +1389,8 @@ classes:
       - metagenome_sequencing_interleaved_data
       - metatranscriptome_sequencing_non_interleaved_data
       - metatranscriptome_sequencing_interleaved_data
+      - isolate_data
+      - jgi_isolate_data
     tree_root: true
 settings:
   float: '[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?'
