@@ -219,6 +219,27 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ribosomal_seq_type_other_requires_comments">
+<span class="md-ellipsis">
+      ribosomal_seq_type_other_requires_comments
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#second_ribosomal_seq_type_requires_sequence">
+<span class="md-ellipsis">
+      second_ribosomal_seq_type_requires_sequence
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#second_ribosomal_seq_type_other_requires_comments">
+<span class="md-ellipsis">
+      second_ribosomal_seq_type_other_requires_comments
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -723,6 +744,63 @@
 </tr>
 </tbody>
 </table>
+<h3 id="ribosomal_seq_type_other_requires_comments">ribosomal_seq_type_other_requires_comments</h3>
+<table>
+<thead>
+<tr>
+<th>Rule Applied</th>
+<th>Preconditions</th>
+<th>Postconditions</th>
+<th>Elseconditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slot_conditions</td>
+<td><code>{'isolate_ribosomal_seq_type': {'equals_string': 'Other'}}</code></td>
+<td><code>{'isolate_ribosomal_seq_comments': {'pattern': '.+'}}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="second_ribosomal_seq_type_requires_sequence">second_ribosomal_seq_type_requires_sequence</h3>
+<table>
+<thead>
+<tr>
+<th>Rule Applied</th>
+<th>Preconditions</th>
+<th>Postconditions</th>
+<th>Elseconditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slot_conditions</td>
+<td><code>{'isolate_second_ribosomal_seq_type': {'pattern': '.+'}}</code></td>
+<td><code>{'isolate_second_ribosomal_seq': {'pattern': '.+'}}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="second_ribosomal_seq_type_other_requires_comments">second_ribosomal_seq_type_other_requires_comments</h3>
+<table>
+<thead>
+<tr>
+<th>Rule Applied</th>
+<th>Preconditions</th>
+<th>Postconditions</th>
+<th>Elseconditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slot_conditions</td>
+<td><code>{'isolate_second_ribosomal_seq_type': {'equals_string': 'Other'}}</code></td>
+<td><code>{'isolate_second_ribosomal_seq_comments': {'pattern': '.+'}}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
 <table>
@@ -926,6 +1004,43 @@ rules:
         pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
   description: If a plate is specified, a well must be specified.
   title: plate_requires_well
+- preconditions:
+    slot_conditions:
+      isolate_ribosomal_seq_type:
+        name: isolate_ribosomal_seq_type
+        equals_string: Other
+  postconditions:
+    slot_conditions:
+      isolate_ribosomal_seq_comments:
+        name: isolate_ribosomal_seq_comments
+        pattern: .+
+  description: If the first ribosomal sequence type is Other, comments are required.
+  title: ribosomal_seq_type_other_requires_comments
+- preconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq_type:
+        name: isolate_second_ribosomal_seq_type
+        pattern: .+
+  postconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq:
+        name: isolate_second_ribosomal_seq
+        pattern: .+
+  description: If a second ribosomal sequence type is provided, the sequence itself
+    must also be provided.
+  title: second_ribosomal_seq_type_requires_sequence
+- preconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq_type:
+        name: isolate_second_ribosomal_seq_type
+        equals_string: Other
+  postconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq_comments:
+        name: isolate_second_ribosomal_seq_comments
+        pattern: .+
+  description: If the second ribosomal sequence type is Other, comments are required.
+  title: second_ribosomal_seq_type_other_requires_comments
 
 </code></pre>
 </details>
@@ -1760,6 +1875,43 @@ rules:
         pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
   description: If a plate is specified, a well must be specified.
   title: plate_requires_well
+- preconditions:
+    slot_conditions:
+      isolate_ribosomal_seq_type:
+        name: isolate_ribosomal_seq_type
+        equals_string: Other
+  postconditions:
+    slot_conditions:
+      isolate_ribosomal_seq_comments:
+        name: isolate_ribosomal_seq_comments
+        pattern: .+
+  description: If the first ribosomal sequence type is Other, comments are required.
+  title: ribosomal_seq_type_other_requires_comments
+- preconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq_type:
+        name: isolate_second_ribosomal_seq_type
+        pattern: .+
+  postconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq:
+        name: isolate_second_ribosomal_seq
+        pattern: .+
+  description: If a second ribosomal sequence type is provided, the sequence itself
+    must also be provided.
+  title: second_ribosomal_seq_type_requires_sequence
+- preconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq_type:
+        name: isolate_second_ribosomal_seq_type
+        equals_string: Other
+  postconditions:
+    slot_conditions:
+      isolate_second_ribosomal_seq_comments:
+        name: isolate_second_ribosomal_seq_comments
+        pattern: .+
+  description: If the second ribosomal sequence type is Other, comments are required.
+  title: second_ribosomal_seq_type_other_requires_comments
 
 </code></pre>
 </details>
