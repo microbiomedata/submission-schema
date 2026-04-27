@@ -12,9 +12,15 @@
 ## wired in via config/nmdc_schema_import.yaml once nmdc-schema PR #2977 and #2975 merge.
 isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
+    # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
+    analysis_type:
+      - metagenomics
     source_mat_id: igsn:000
 jgi_isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
+    # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
+    analysis_type:
+      - metagenomics
     source_mat_id: igsn:000
     ## --- JGI project logistics (real values from GOLD Ga0028539 / ITS project 1377532) ---
     replicate_group: Dturgidum_rep1
