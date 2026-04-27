@@ -261,6 +261,8 @@ TEMPLATE_INSTANCES = {
         "isolate_single_colony": "yes",
         "isolate_ribosomal_seq": "ACGTAGCTAGCTAGCTAGCT",
         "isolate_ribosomal_seq_type": "16S",
+        "isolate_second_ribosomal_seq": "ACGTAGCTAGCTAGCTAGCT",
+        "isolate_second_ribosomal_seq_type": "ITS",
     },
 }
 

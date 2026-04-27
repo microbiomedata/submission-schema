@@ -1364,6 +1364,36 @@ classes:
           slot_conditions:
             cont_well:
               pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+      - title: ribosomal_seq_type_other_requires_comments
+        description: If the first ribosomal sequence type is Other, comments are required.
+        preconditions:
+          slot_conditions:
+            isolate_ribosomal_seq_type:
+              equals_string: Other
+        postconditions:
+          slot_conditions:
+            isolate_ribosomal_seq_comments:
+              pattern: ".+"
+      - title: second_ribosomal_seq_type_requires_sequence
+        description: If a second ribosomal sequence type is provided, the sequence itself must also be provided.
+        preconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq_type:
+              pattern: ".+"
+        postconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq:
+              pattern: ".+"
+      - title: second_ribosomal_seq_type_other_requires_comments
+        description: If the second ribosomal sequence type is Other, comments are required.
+        preconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq_type:
+              equals_string: Other
+        postconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq_comments:
+              pattern: ".+"
 
   DhInterface:
     description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
