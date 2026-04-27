@@ -6,16 +6,12 @@ FROM python:3.10
 
 WORKDIR /submission-schema
 
-# Install Poetry, a package manager for Python (an alternative to pip).
-RUN pip install poetry
-
-# Set this configuration option so that when Poetry creates a virtual environment, it doesn't
-# interfere with a `.venv` folder in a mounted volume.
-RUN poetry config virtualenvs.in-project false
+# Install uv, which manages both environments and package operations.
+RUN pip install uv
 
 # Copy the entire repository into the container image.
 #
-# Note: Copying _only_ the dependency lists (i.e. `pyproject.toml` and `poetry.lock`) and then
+# Note: Copying _only_ the dependency lists (i.e. `pyproject.toml` and `uv.lock`) and then
 #       mounting the entire repository as a volume in the container image at `docker run` time
 #       results in `make all` failing due to the absence of an `nmdc_submission_schema` package.
 #       I haven't yet figured out why that happens, but it doesn't happen if I have copied the
@@ -24,7 +20,7 @@ RUN poetry config virtualenvs.in-project false
 ADD . /submission-schema
 
 # Install the project's Python dependencies.
-RUN poetry install --no-interaction
+RUN uv sync
 
 # Run the command that builds the submission schema release artifacts.
 CMD ["make", "clean", "all"]

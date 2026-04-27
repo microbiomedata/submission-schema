@@ -25,7 +25,7 @@ Note that the while this repo is named `submission-schema`, the generated artifa
 The version of `nmdc-schema` used as a basis when building the submission schema is controlled by a dependency in the `dev` group, specified in `pyproject.toml`. You can update the version used by running:
 
 ```shell
-poetry add --group dev nmdc-schema==X.Y.Z  # replace X.Y.Z with the desired version
+uv add --group dev "nmdc-schema==X.Y.Z"  # replace X.Y.Z with the desired version
 ```
 
 > [!NOTE]  
@@ -51,7 +51,7 @@ Here's how you can generate the submission schema release artifacts:
 2. If you haven't already done so (see the "Updating the submission schema" section above), use that container image to update the `nmdc-schema` dependency of the submission schema:
    ```shell
    docker run --rm -it -v ${PWD}:/submission-schema submission-schema-builder \
-       poetry add --group dev nmdc-schema==X.Y.Z  # replace X.Y.Z
+       uv add --group dev "nmdc-schema==X.Y.Z"  # replace X.Y.Z
    ```
    Then, rebuild the container image (so it has that new version of `nmdc-schema` installed):
    ```shell
@@ -77,7 +77,7 @@ Here's how you can generate the submission schema release artifacts:
 
 1. Install Python dependencies:
    ```shell
-   poetry install
+   uv sync
    ```
 2. Generate the release artifacts:
    ```shell
