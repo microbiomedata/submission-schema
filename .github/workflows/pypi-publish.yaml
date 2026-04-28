@@ -27,7 +27,7 @@ jobs:
       uses: astral-sh/setup-uv@v6
 
     - name: Install project dependencies
-      run: uv sync
+      run: uv sync --locked
 
     - name: Compute release version
       run: echo "NMDC_VERSION=$(uvx uv-dynamic-versioning)" >> "$GITHUB_ENV"

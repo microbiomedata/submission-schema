@@ -20,7 +20,7 @@ RUN pip install uv
 ADD . /submission-schema
 
 # Install the project's Python dependencies.
-RUN uv sync
+RUN uv sync --locked
 
 # Run the command that builds the submission schema release artifacts.
 CMD ["make", "clean", "all"]

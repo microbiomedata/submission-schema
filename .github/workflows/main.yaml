@@ -30,7 +30,7 @@ jobs:
         uses: astral-sh/setup-uv@v6
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --locked
 
       #----------------------------------------------
       #              run test suite   
