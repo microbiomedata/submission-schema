@@ -27,7 +27,7 @@ dev = [
     "nmdc-schema==11.18.0",
     "oaklib>=0.6.1,<0.7", # was using 0.5.6 up to 2024-12-10
     "pydantic>=2.11.7,<3",
-    "pytest>=8.3.4,<9",
+    "pytest>=9.0.0,<10",
     "pyyaml>=6.0.2,<7",
     "requests>=2.32.5,<3",
     "rich>=14.1.0,<15",
@@ -52,12 +52,15 @@ artifacts = ["src/nmdc_submission_schema/project/**/*"]
 vcs = "git"
 style = "pep440"
 
+[tool.pytest]
+# Add the current directory to the Python path so that tests can access the internal tools package
+pythonpath = ["."]
+
 [tool.uv]
 cache-keys = [
     { file = "pyproject.toml" },
     { git = { commit = true, tags = true } },
 ]
-
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning>=0.5.0,<1"]
