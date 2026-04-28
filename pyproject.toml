@@ -11,24 +11,6 @@ dependencies = [
     "rdflib>=6.2.0,<7",
 ]
 
-[tool.poetry]
-packages = [
-    { include = "nmdc_submission_schema", from = "src" },
-]
-include = [
-    # These files are copied from the top-level project folder at build time. Without
-    # the copy step they end up in a weird location when installed via wheel.
-    # See: https://github.com/python-poetry/poetry/issues/7153
-    { path = "src/nmdc_submission_schema/project/**/*", format = ["sdist", "wheel"] }
-]
-exclude = [
-    "tools"
-]
-
-# Keep the Poetry table because poetry-core still handles packaging details
-# like src-layout package discovery and file inclusion for releases.
-version = "0.0.0"
-
 [dependency-groups]
 dev = [
     "click>=8.1.0,<9",
@@ -44,7 +26,6 @@ dev = [
     "mkdocs-mermaid2-plugin>=1.1.0,<2",
     "nmdc-schema==11.18.0",
     "oaklib>=0.6.1,<0.7", # was using 0.5.6 up to 2024-12-10
-    "poetry-dynamic-versioning>=1.10.0,<2",
     "pydantic>=2.11.7,<3",
     "pytest>=8.3.4,<9",
     "pyyaml>=6.0.2,<7",
@@ -54,30 +35,30 @@ dev = [
     "textdistance>=4.6.3,<5",
 ]
 
-[tool.poetry-dynamic-versioning]
-# We need poetry-dynamic-versioning to update the version in the src schema file,
-# then generate project artifacts from that schema with the real version populated,
-# and then perform any build or publish actions. Since this requires running
-# `uv run poetry-dynamic-versioning` manually before `uv build`, we set enable = false.
-# similar dynamic versioning doesn't seem to be working for nmdc-schema right now
-enable = false
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nmdc_submission_schema"]
+artifacts = ["src/nmdc_submission_schema/project/**/*"]
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "src/nmdc_submission_schema",
+]
+artifacts = ["src/nmdc_submission_schema/project/**/*"]
+
+[tool.uv-dynamic-versioning]
 vcs = "git"
 style = "pep440"
 
-[tool.poetry-dynamic-versioning.substitution]
-files = [
-    "*.py",
-    "src/**/__init__.py",
-    "src/**/__version__.py",
-    "src/**/_version.py",
-    "src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml"
-]
-patterns = [
-    "(^\\s*__version__\\s*(?::.*?)?=\\s*['\\\"])[^'\\\"]*(['\\\"])",
-    "(^version:\\s*['\\\"]?)[^'\\\"]*?(['\\\"]?)$"
+[tool.uv]
+cache-keys = [
+    { file = "pyproject.toml" },
+    { git = { commit = true, tags = true } },
 ]
 
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["hatchling", "uv-dynamic-versioning>=0.5.0,<1"]
+build-backend = "hatchling.build"

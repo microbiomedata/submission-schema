@@ -29,10 +29,13 @@ jobs:
     - name: Install project dependencies
       run: uv sync
 
+    - name: Compute release version
+      run: echo "NMDC_VERSION=$(uvx uv-dynamic-versioning)" >> "$GITHUB_ENV"
+
     - name: Generate project files
       run: |
-        make clean schema-build 
-        uv run poetry-dynamic-versioning
+        make clean schema-build
+        sed -i "s/^version: .*/version: ${NMDC_VERSION}/" src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
         make gen-project
         cp -r project src/nmdc_submission_schema
 

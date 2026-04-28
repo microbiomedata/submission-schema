@@ -4199,26 +4199,6 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
-name = "poetry-dynamic-versioning"
-version = "1.10.0"
-description = "Plugin for Poetry to enable dynamic versioning based on VCS tags"
-optional = false
-python-versions = "<4.0,>=3.7"
-groups = ["dev"]
-files = [
-    {file = "poetry_dynamic_versioning-1.10.0-py3-none-any.whl", hash = "sha256:a573d47c77e96661a309ee2115c9c5db4c66ce78986747479187424c8c9f5093"},
-    {file = "poetry_dynamic_versioning-1.10.0.tar.gz", hash = "sha256:52bf9ed57f2d60f4250a1dfe43db7b8144541df2f3ae6e712d12b43ecda71f47"},
-]
-
-[package.dependencies]
-dunamai = ">=1.26.0,<2.0.0"
-jinja2 = ">=2.11.1,<4"
-tomlkit = ">=0.4"
-
-[package.extras]
-plugin = ["poetry (>=1.2.0)"]
-
-[[package]]
 name = "prefixcommons"
 version = "0.1.12"
 description = "A python API for working with ID prefixes"
@@ -6489,18 +6469,6 @@ files = [
 ]
 
 [[package]]
-name = "tomlkit"
-version = "0.14.0"
-description = "Style preserving TOML library"
-optional = false
-python-versions = ">=3.9"
-groups = ["dev"]
-files = [
-    {file = "tomlkit-0.14.0-py3-none-any.whl", hash = "sha256:592064ed85b40fa213469f81ac584f67a4f2992509a7c3ea2d632208623a3680"},
-    {file = "tomlkit-0.14.0.tar.gz", hash = "sha256:cf00efca415dbd57575befb1f6634c4f42d2d87dbba376128adb42c121b87064"},
-]
-
-[[package]]
 name = "tornado"
 version = "6.4.2"
 description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
@@ -6859,4 +6827,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4"
-content-hash = "eb30ea27884f24fc42b100a50cdf668cbf8e07a110a5920095a61203e7fcdf5a"
+content-hash = "d6ca26636d4778edd36ba5db5394d3bbf8c66254f4a6ec0ba2bb09b887ef60de"
