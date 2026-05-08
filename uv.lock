@@ -2784,7 +2784,7 @@ wheels = [
 
 [[package]]
 name = "nmdc-schema"
-version = "11.18.0"
+version = "11.19.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -2801,9 +2801,9 @@ dependencies = [
     { name = "rdflib" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c8/8f/a3792322b7894806112901f271bffea71101240429bb77480ff7f89d529e/nmdc_schema-11.18.0.tar.gz", hash = "sha256:efba19d87f5b5a765bc4acf073f99a7390f9cb6b5491b2068bfe8632d8584351", size = 718695, upload-time = "2026-04-09T21:18:40.756Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/fa/0d/0d9c7f85fd85fa9a7a9440f7943512af7e7b823511bc5b1c6cee9ef55d83/nmdc_schema-11.19.1.tar.gz", hash = "sha256:e258dfc31506dd325cd674a11284e9a9529c82d5a1b842184525f40a83927e30", size = 725052, upload-time = "2026-05-08T16:42:29.872Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/14/f5/02c47de90a1f77ba878c4e78ab59b369f0c3fed5b540fe83ae2d1980bc5b/nmdc_schema-11.18.0-py3-none-any.whl", hash = "sha256:86696614881c8389f205289ee351f54a332a54e41897b4602996ac25587aec77", size = 792075, upload-time = "2026-04-09T21:18:38.486Z" },
+    { url = "https://files.pythonhosted.org/packages/b8/9f/62e5b713a242bd4a1efca0f70f1efadd334656ee28251f4ea3c9f2aa67b6/nmdc_schema-11.19.1-py3-none-any.whl", hash = "sha256:e2df19d58c45714641e2ec93b55bb6e90c9da470f8e7fc49ba437db859019a67", size = 798170, upload-time = "2026-05-08T16:42:27.839Z" },
 ]
 
 [[package]]
@@ -2857,7 +2857,7 @@ dev = [
     { name = "matplotlib", specifier = ">=3.9.2,<4" },
     { name = "mkdocs-material", specifier = ">=9.1.2,<10" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.0,<2" },
-    { name = "nmdc-schema", specifier = "==11.18.0" },
+    { name = "nmdc-schema", specifier = "==11.19.1" },
     { name = "oaklib", specifier = ">=0.6.1,<0.7" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "pytest", specifier = ">=9.0.0,<10" },
