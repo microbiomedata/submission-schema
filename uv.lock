@@ -2179,7 +2179,7 @@ wheels = [
 
 [[package]]
 name = "linkml"
-version = "1.9.6"
+version = "1.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "antlr4-python3-runtime" },
@@ -2208,9 +2208,9 @@ dependencies = [
     { name = "typing-extensions", marker = "python_full_version < '3.12'" },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/0d/52/1e4e6e0af2296074822bbb26d60761a5dbd0b977b843fe263da8cc0a4be1/linkml-1.9.6.tar.gz", hash = "sha256:d2ef74bbb52bf5e48b67b5d9319ca2e4acb8184dd40bf43d00635222b2dc1d4c", size = 42963392, upload-time = "2025-12-01T22:14:54.962Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/f3/57/e480d016c94ac1dcfeccde3fd751fa1464545e3de2446c9ebf9fe66dd393/linkml-1.10.0.tar.gz", hash = "sha256:ca70bba1474bc7de37edd33005a8a556d4718190584ab2c88f7c46d090477d55", size = 334216, upload-time = "2026-02-25T17:13:32.086Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/94/ff/b965a845fc0a9ca2331d8d6043e262cc834f5328ac0f1970db1622bac2cf/linkml-1.9.6-py3-none-any.whl", hash = "sha256:4ac3d2b7b6ea38c9da70e264a434977281a655f5e6040b33e65be76c63ab95cd", size = 402879, upload-time = "2025-12-01T22:14:52.579Z" },
+    { url = "https://files.pythonhosted.org/packages/b3/54/0d01e407b3b8657cb1a58031e3f23e7039d26338173a130a3be30fdd8e0b/linkml-1.10.0-py3-none-any.whl", hash = "sha256:2d4934f000977489352307336267a8a4270de3156187c3394d542a0a4b8130e5", size = 434438, upload-time = "2026-02-25T17:13:29.068Z" },
 ]
 
 [[package]]
@@ -2230,7 +2230,7 @@ wheels = [
 
 [[package]]
 name = "linkml-runtime"
-version = "1.9.5"
+version = "1.10.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -2248,9 +2248,9 @@ dependencies = [
     { name = "rdflib" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e0/38/38ac19a5b81982f03709cda0a008327dc775d11f008d0cbdc0f2a5389e24/linkml_runtime-1.9.5.tar.gz", hash = "sha256:78dc1383adf11ad5f20bb11b6adde56ed566fbd2429a292d57699ad4596c738a", size = 480288, upload-time = "2025-08-15T22:22:51.098Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/36/3d/031e2e8ef7ca872340fb7b7102cfd1fe4a0b329dc04ff694ad9ec6ccaddc/linkml_runtime-1.10.0.tar.gz", hash = "sha256:899889d584ce8056c5c44512b2d247bdc84a8484c3aa228aeb2db283e3a9d2ec", size = 589957, upload-time = "2026-02-25T17:13:34.034Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/34/28/cdcbe1f0521a98b891dd30249513eef1ddcc7bb406be953b4a8d7825e68f/linkml_runtime-1.9.5-py3-none-any.whl", hash = "sha256:fece3e8aa25a4246165c6528b6a7fe83a929b985d2ce1951cc8a0f4da1a30b90", size = 576405, upload-time = "2025-08-15T22:22:49.264Z" },
+    { url = "https://files.pythonhosted.org/packages/1c/2d/6ab4127bb9aa6e3b54ad5d81fd0c0c12e4d1a80300f2bfdac8f2e18f9d17/linkml_runtime-1.10.0-py3-none-any.whl", hash = "sha256:b7caf806e1b49bf62005d8f398b070c282742c5f6626469fdc1660add0c9da58", size = 584001, upload-time = "2026-02-25T17:13:30.603Z" },
 ]
 
 [[package]]
@@ -2784,7 +2784,7 @@ wheels = [
 
 [[package]]
 name = "nmdc-schema"
-version = "11.18.0"
+version = "11.19.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
@@ -2801,9 +2801,9 @@ dependencies = [
     { name = "rdflib" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c8/8f/a3792322b7894806112901f271bffea71101240429bb77480ff7f89d529e/nmdc_schema-11.18.0.tar.gz", hash = "sha256:efba19d87f5b5a765bc4acf073f99a7390f9cb6b5491b2068bfe8632d8584351", size = 718695, upload-time = "2026-04-09T21:18:40.756Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c5/53/e75d3c87f58e4bc4363f2013c82ed0083da764056ee09b502706fe6b6db8/nmdc_schema-11.19.0.tar.gz", hash = "sha256:1245a005519d2bbc6b07bfc32625f47435e3530aec6b2b3ac428594aa0c4e7d9", size = 725049, upload-time = "2026-05-08T00:34:00.152Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/14/f5/02c47de90a1f77ba878c4e78ab59b369f0c3fed5b540fe83ae2d1980bc5b/nmdc_schema-11.18.0-py3-none-any.whl", hash = "sha256:86696614881c8389f205289ee351f54a332a54e41897b4602996ac25587aec77", size = 792075, upload-time = "2026-04-09T21:18:38.486Z" },
+    { url = "https://files.pythonhosted.org/packages/e5/04/871c02fc40c931af40fe567ac79cf02a3948690a71e176091827049b7237/nmdc_schema-11.19.0-py3-none-any.whl", hash = "sha256:c4ed86e23fbf7cf3298b1ea0ab1433090d8209e6ba1a342cb114434ead06f1c1", size = 798164, upload-time = "2026-05-08T00:33:58.243Z" },
 ]
 
 [[package]]
@@ -2857,7 +2857,7 @@ dev = [
     { name = "matplotlib", specifier = ">=3.9.2,<4" },
     { name = "mkdocs-material", specifier = ">=9.1.2,<10" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.0,<2" },
-    { name = "nmdc-schema", specifier = "==11.18.0" },
+    { name = "nmdc-schema", specifier = "==11.19.0" },
     { name = "oaklib", specifier = ">=0.6.1,<0.7" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "pytest", specifier = ">=9.0.0,<10" },
