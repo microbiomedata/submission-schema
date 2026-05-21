@@ -704,6 +704,7 @@ slots:
       - value: "Partial 16S, 850 nt"
     rank: 34
     range: string
+    pattern: "^.{0,256}$"
     aliases:
       - First ribosomal sequence comments
   isolate_second_ribosomal_seq:
@@ -748,6 +749,7 @@ slots:
       - Required if second ribosomal sequence type is Other.
     rank: 37
     range: string
+    pattern: "^.{0,256}$"
     aliases:
       - Second ribosomal sequence comments
   isolate_fungal_16s_screening:
