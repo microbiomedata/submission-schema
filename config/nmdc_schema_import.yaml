@@ -825,6 +825,7 @@ slots:
       - HcrCoresInterface
       - HcrFluidsSwabsInterface
       - HostAssociatedInterface
+      - IsolateInterface
       - MiscEnvsInterface
       - PlantAssociatedInterface
       - SedimentInterface
@@ -2542,6 +2543,7 @@ slots:
     source: Biosample
     destinations:
       - HostAssociatedInterface
+      - IsolateInterface
       - PlantAssociatedInterface
     modifications:
       - replace:
@@ -4812,6 +4814,7 @@ slots:
     source: Biosample
     destinations:
       - DhMultiviewCommonColumnsMixin
+      - IsolateInterface
     modifications:
       - replace:
           description: >-
@@ -5910,3 +5913,71 @@ slots:
           description: A URL to a description of the sequencing protocol used to generate
             the data.
           range: string
+
+  ## ----------------------------------------------------------------------
+  ## #422: Wire isolate biology slots into IsolateInterface.
+  ## Source: nmdc-schema PRs #2977 (Organism, OrganismSample classes) and
+  ## #2975 (NcbiTaxon class + classified_as slot). Requires nmdc-schema
+  ## release containing those PRs (currently only v11.19.2-rc.1).
+  ## Ranks: 100-block, ordered by JGI Isolate (NA) v19 form field number
+  ## (e.g. JGI #6 Genus -> rank 106, JGI #11 NCBI Tax ID -> rank 111).
+  ## slot_group: new topical group `organism_section` per #422 discussion.
+  ## ----------------------------------------------------------------------
+
+  - slot: organism_genus
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 106
+          slot_group: organism_section
+          required: true
+
+  - slot: organism_species
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 107
+          slot_group: organism_section
+          required: true
+
+  - slot: strain_name
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 108
+          slot_group: organism_section
+          required: true
+
+  - slot: isolate_name
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 109
+          slot_group: organism_section
+
+  - slot: classified_as
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 111
+          slot_group: organism_section
+          required: true
+          # NcbiTaxon is a class in nmdc-schema; flatten to string+pattern
+          # so the value fits a DataHarmonizer cell.
+          range: string
+          structured_pattern:
+            syntax: 'NCBITaxon:\d+'
+            interpolated: false
+          examples:
+            - value: 'NCBITaxon:562'
+            - value: 'NCBITaxon:1392'
