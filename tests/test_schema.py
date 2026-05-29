@@ -239,6 +239,11 @@ TEMPLATE_INSTANCES = {
     # AnalysisTypeEnum has no isolate WGS value yet; see submission-schema#418
     "IsolateInterface": {
         "samp_name": "000001",
+        "collection_date": "1970-01-01",
+        "organism_genus": "Escherichia",
+        "organism_species": "coli",
+        "strain_name": "K-12",
+        "classified_as": "NCBITaxon:562",
     },
     "JgiIsolateInterface": {
         "samp_name": "000001",

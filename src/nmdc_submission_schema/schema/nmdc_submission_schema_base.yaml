@@ -1429,6 +1429,19 @@ settings:
   percentage: '[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%'
   text: '[^;|\t\r\n]+'
 subsets:
+  jgi_isolate:
+    description: >-
+      Slots originating from the JGI Isolate (NA) v19 submission form that are not
+      already captured by MIxS or other existing standards. These slots support
+      organism identity, strain verification, purity assessment, and biosafety
+      classification for cultured isolate submissions to JGI.
+    see_also:
+      - https://github.com/microbiomedata/nmdc-schema/issues/2803
+    comments:
+      - >-
+        Mirrors the jgi_isolate subset defined in nmdc-schema basic_slots.yaml.
+        Imported slots (e.g. organism_genus) carry in_subset: jgi_isolate, so the
+        subset must be declared here for downstream LinkML generators to resolve it.
   nmdc_env_triad_enums:
     todos:
       - replace membership in this subset with mappings between the individual environmental triad/context enums and the EnvO subProperties

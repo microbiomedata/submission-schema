@@ -36,7 +36,9 @@ linkml = "^1.9.4"
 matplotlib = "^3.9.2"
 mkdocs-material = "^9.1.2"
 mkdocs-mermaid2-plugin = "^1.1.0"
-nmdc-schema = "11.17.1"
+# TODO: bump to stable 11.19.2 once released; rc is the only release carrying the
+# Organism/OrganismSample slots (PRs #2977/#2975) wired into IsolateInterface (#422).
+nmdc-schema = "11.19.2rc1"
 oaklib = "^0.6.1" # was using 0.5.6 up to 2024-12-10
 pydantic = "^2.11.7"
 pytest = "^8.3.4"

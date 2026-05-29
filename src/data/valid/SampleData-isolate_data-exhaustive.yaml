@@ -8,14 +8,24 @@
 ## analysis_type is overridden to required: false in IsolateInterface and JgiIsolateInterface.
 ##
 ## NOTE: IsolateInterface nmdc-schema slots (organism_genus, organism_species, strain_name,
-## isolate_name, classified_as, host_taxid, collection_date) are absent here — they are
-## wired in via config/nmdc_schema_import.yaml once nmdc-schema PR #2977 and #2975 merge.
+## classified_as, collection_date) are now wired in via config/nmdc_schema_import.yaml
+## (nmdc-schema PR #2977 and #2975, released in 11.19.2rc1) and are required, so they appear
+## below. isolate_name and host_taxid remain optional and are omitted.
 isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
     # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
     analysis_type:
       - metagenomics
     source_mat_id: igsn:000
+    ## --- Organism identity (NCBITaxon:515635 = Dictyoglomus turgidum DSM 6724) ---
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    # collection_date is required on IsolateInterface (wired required:true via #422);
+    # illustrative placeholder — real isolation date for this culture-collection strain
+    # not sourced from GOLD. Requiredness for isolates under audit in #429.
+    collection_date: "2008"
 jgi_isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
     # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
