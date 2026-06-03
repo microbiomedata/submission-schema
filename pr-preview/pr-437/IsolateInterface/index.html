@@ -321,8 +321,8 @@
 
 
 
-        IsolateInterface --&gt; "0..1" JGIBiosafetyMaterialCategoryEnum : biosafety_mat_cat
-        click JGIBiosafetyMaterialCategoryEnum href "../JGIBiosafetyMaterialCategoryEnum/"
+        IsolateInterface --&gt; "0..1" JgiIsolateBiosafetyMaterialCategoryEnum : biosafety_mat_cat
+        click JgiIsolateBiosafetyMaterialCategoryEnum href "../JgiIsolateBiosafetyMaterialCategoryEnum/"
 
 
 
@@ -368,7 +368,7 @@
 <tbody>
 <tr>
 <td><a href="../biosafety_mat_cat/">biosafety_mat_cat</a></td>
-<td>0..1 <br/> <a href="../JGIBiosafetyMaterialCategoryEnum/">JGIBiosafetyMaterialCategoryEnum</a></td>
+<td>0..1 <br/> <a href="../JgiIsolateBiosafetyMaterialCategoryEnum/">JgiIsolateBiosafetyMaterialCategoryEnum</a></td>
 <td>Select the biosafety material category for your JGI samples</td>
 <td>direct</td>
 </tr>
@@ -591,6 +591,7 @@ slot_usage:
     required: false
   biosafety_mat_cat:
     name: biosafety_mat_cat
+    range: JgiIsolateBiosafetyMaterialCategoryEnum
     required: false
   estimated_size:
     name: estimated_size
@@ -675,6 +676,7 @@ slot_usage:
     required: false
   biosafety_mat_cat:
     name: biosafety_mat_cat
+    range: JgiIsolateBiosafetyMaterialCategoryEnum
     required: false
   estimated_size:
     name: estimated_size
@@ -699,7 +701,7 @@ attributes:
     - JgiMgLrInterface
     - JgiMtInterface
     - IsolateInterface
-    range: JGIBiosafetyMaterialCategoryEnum
+    range: JgiIsolateBiosafetyMaterialCategoryEnum
     required: false
   collection_date:
     name: collection_date
