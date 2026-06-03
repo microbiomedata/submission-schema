@@ -765,6 +765,7 @@ slots:
       - value: Sorghum bicolor - root
     aliases:
       - Sample Isolated From
+    comments:
       - JGI v19 form field 44
   collection_site_or_growth_conditions:
     title: collection site or growth conditions
@@ -779,6 +780,7 @@ slots:
       - value: JGI grown culture
     aliases:
       - Collection Site or Growth Conditions
+    comments:
       - JGI v19 form field 45
   ## data aggregation slots for SampleData
   isolate_data:
