@@ -22,6 +22,9 @@ isolate_data:
     organism_species: turgidum
     strain_name: DSM 6724
     classified_as: NCBITaxon:515635
+    # biosafety_mat_cat belongs on IsolateInterface (biology tab); moved from
+    # jgi_isolate_data per https://github.com/microbiomedata/submission-schema/issues/435.
+    biosafety_mat_cat: Bacteria
     # collection_date is required on IsolateInterface (wired required:true via #422);
     # illustrative placeholder — real isolation date for this culture-collection strain
     # not sourced from GOLD. Requiredness for isolates under audit in #429.
@@ -51,8 +54,7 @@ jgi_isolate_data:
     container_name: Dturgidum_DSM6724
     jgi_sample_format: TE
     dnase: "no"
-    ## --- Biosafety and extraction ---
-    biosafety_mat_cat: Bacteria
+    ## --- Extraction ---
     dna_isolate_meth: CTAB
     ## --- Isolate-specific fields ---
     isolate_single_colony: "yes"
