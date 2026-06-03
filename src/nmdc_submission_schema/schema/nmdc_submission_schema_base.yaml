@@ -1227,7 +1227,10 @@ classes:
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
-      ## biology slots (local definitions; not from nmdc-schema import)
+      # biosafety_mat_cat lives here (biology tab) rather than on JgiIsolateInterface
+      # (logistics tab) so that LinkML class rules can reference both biosafety_mat_cat
+      # and estimated_size on the same class. A class rule can only reference slots
+      # present on that class. See https://github.com/microbiomedata/submission-schema/issues/435.
       - biosafety_mat_cat
       ## estimated_size is imported from nmdc-schema Organism via config/nmdc_schema_import.yaml
     slot_usage:
@@ -1250,6 +1253,10 @@ classes:
     # source_mat_id, classified_as, host_taxid, collection_date, estimated_size) are
     # routed here via config/nmdc_schema_import.yaml once PR #2977 is released.
     # TODO: add isolate WGS permissible value to AnalysisTypeEnum in nmdc-schema
+    # These rules enforce the category-conditional genome size limits from JGI's
+    # submission validation code (extensions/server/submission_runtimes.py,
+    # check_genome_size). They require biosafety_mat_cat to be on this class,
+    # which is why that slot was moved here from JgiIsolateInterface.
     rules:
       - title: eukaryote_genome_size_max
         description: Eukaryote samples (Alga, Animal, Plant, Protist) are capped at 100,000 Mb.
@@ -1322,11 +1329,9 @@ classes:
       - container_name
       - jgi_sample_format
       - dnase
-      # biosafety_mat_cat was moved to IsolateInterface (biology tab) so that
-      # conditional max rules for estimated_size can reference both slots on the
-      # same class (see submission-schema#435). The slot_usage entry below keeps
-      # the JgiIsolateBiosafetyMaterialCategoryEnum range override for when the
-      # two tabs are processed together.
+      # biosafety_mat_cat was moved to IsolateInterface so that the conditional
+      # estimated_size max rules can reference both slots on the same class.
+      # See https://github.com/microbiomedata/submission-schema/issues/435.
       - dna_isolate_meth
       ## isolate-specific JGI-only slots
       - isolate_single_colony
