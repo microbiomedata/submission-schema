@@ -25,6 +25,9 @@ isolate_data:
     # biosafety_mat_cat belongs on IsolateInterface (biology tab); moved from
     # jgi_isolate_data per https://github.com/microbiomedata/submission-schema/issues/435.
     biosafety_mat_cat: Bacteria
+    # estimated_size required when biosafety_mat_cat is set (genome_size_required_when_category_set rule).
+    # Dictyoglomus turgidum DSM 6724 genome is ~1.9 Mb; value in Mb (submission-schema unit).
+    estimated_size: 2
     # collection_date is required on IsolateInterface (wired required:true via #422);
     # illustrative placeholder — real isolation date for this culture-collection strain
     # not sourced from GOLD. Requiredness for isolates under audit in #429.
