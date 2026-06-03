@@ -1709,6 +1709,16 @@ slots:
           rank: 103
           slot_group: mixs_core_section
 
+  - slot: estimated_size
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 146
+          slot_group: organism_section
+          required: false
+
   - slot: ethylbenzene
     source: Biosample
     destinations:

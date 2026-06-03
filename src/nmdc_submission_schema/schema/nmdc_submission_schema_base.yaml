@@ -1226,17 +1226,70 @@ classes:
     is_a: DhInterface
     mixins:
       - DhMultiviewCommonColumnsMixin
+    slots:
+      ## biology slots (local definitions; not from nmdc-schema import)
+      - biosafety_mat_cat
+      ## estimated_size is imported from nmdc-schema Organism via config/nmdc_schema_import.yaml
     slot_usage:
       # analysis_type has no valid enum value for isolate WGS; suppress the inherited
       # required constraint until a proper value is added to AnalysisTypeEnum in nmdc-schema
       analysis_type:
         required: false
+      biosafety_mat_cat:
+        required: false
+      estimated_size:
+        slot_group: organism_section
+        title: Estimated genome size (Mb)
+        comments:
+          - Enter the estimated genome size in megabases (Mb). JGI accepts up to 5,000 Mb
+            for microbes and up to 100,000 Mb for eukaryotes.
+        unit:
+          ucum_code: Mbase
     # nmdc-schema slots (organism_genus, organism_species, strain_name, isolate_name,
-    # source_mat_id, classified_as, host_taxid, collection_date) are routed here
-    # via config/nmdc_schema_import.yaml once PR #2977 is released.
+    # source_mat_id, classified_as, host_taxid, collection_date, estimated_size) are
+    # routed here via config/nmdc_schema_import.yaml once PR #2977 is released.
     # TODO: add isolate WGS permissible value to AnalysisTypeEnum in nmdc-schema
-    # TODO: resolve open debate on estimated_size, gc_content, biosafety_mat_cat
-    # (currently JGI-only per Montana's spreadsheet; see submission-schema#418)
+    rules:
+      - title: eukaryote_genome_size_max
+        description: Eukaryote samples (Alga, Animal, Plant, Protist) are capped at 100,000 Mb.
+        preconditions:
+          slot_conditions:
+            biosafety_mat_cat:
+              equals_string_in:
+                - Alga
+                - Animal
+                - Plant
+                - Protist
+        postconditions:
+          slot_conditions:
+            estimated_size:
+              maximum_value: 100000
+      - title: microbe_genome_size_max
+        description: Microbial samples (Archaea, Bacteria, Fungi, Plasmid, Virus, Synthetic Construct) are capped at 5,000 Mb.
+        preconditions:
+          slot_conditions:
+            biosafety_mat_cat:
+              equals_string_in:
+                - Archaea
+                - Bacteria
+                - Fungi
+                - Plasmid
+                - Virus
+                - Synthetic Construct
+        postconditions:
+          slot_conditions:
+            estimated_size:
+              maximum_value: 5000
+      - title: genome_size_required_when_category_set
+        description: If a biosafety category is provided, estimated genome size is required.
+        preconditions:
+          slot_conditions:
+            biosafety_mat_cat:
+              pattern: ".+"
+        postconditions:
+          slot_conditions:
+            estimated_size:
+              pattern: ".+"
 
   JgiIsolateInterface:
     annotations:
@@ -1268,7 +1321,11 @@ classes:
       - container_name
       - jgi_sample_format
       - dnase
-      - biosafety_mat_cat
+      # biosafety_mat_cat was moved to IsolateInterface (biology tab) so that
+      # conditional max rules for estimated_size can reference both slots on the
+      # same class (see submission-schema#435). The slot_usage entry below keeps
+      # the JgiIsolateBiosafetyMaterialCategoryEnum range override for when the
+      # two tabs are processed together.
       - dna_isolate_meth
       ## isolate-specific JGI-only slots
       - isolate_single_colony
