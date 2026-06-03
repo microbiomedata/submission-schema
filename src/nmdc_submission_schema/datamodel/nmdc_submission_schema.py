@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-08T09:57:29
+# Generation date: 2026-06-03T18:37:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -68,6 +68,7 @@ CATH = CurieNamespace('CATH', 'https://bioregistry.io/cath:')
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'https://bioregistry.io/chembl.compound:')
 CHMO = CurieNamespace('CHMO', 'http://purl.obolibrary.org/obo/CHMO_')
+COB = CurieNamespace('COB', 'http://purl.obolibrary.org/obo/COB_')
 COG = CurieNamespace('COG', 'https://bioregistry.io/cog:')
 CONTAMINANT = CurieNamespace('Contaminant', 'http://example.org/contaminant/')
 DRUGBANK = CurieNamespace('DRUGBANK', 'https://bioregistry.io/drugbank:')
@@ -120,12 +121,16 @@ TIGRFAM = CurieNamespace('TIGRFAM', 'https://bioregistry.io/tigrfam:')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UNIPROTKB = CurieNamespace('UniProtKB', 'https://bioregistry.io/uniprot:')
+ATCC = CurieNamespace('atcc', 'https://www.atcc.org/products/')
+BCRC = CurieNamespace('bcrc', 'https://catalog.bcrc.firdi.org.tw/BcrcContent?bid=')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOPROJECT = CurieNamespace('bioproject', 'https://bioregistry.io/bioproject:')
 BIOSAMPLE = CurieNamespace('biosample', 'https://bioregistry.io/biosample:')
 CAS = CurieNamespace('cas', 'https://bioregistry.io/cas:')
+CCUG = CurieNamespace('ccug', 'https://www.ccug.se/strain?id=')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://bioregistry.io/doi:')
+DSMZ = CurieNamespace('dsmz', 'https://www.dsmz.de/collection/catalogue/details/culture/')
 EDAM_DATA = CurieNamespace('edam_data', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('edam_format', 'http://edamontology.org/format_')
 EMSL = CurieNamespace('emsl', 'http://example.org/emsl_in_mongodb/')
@@ -138,14 +143,17 @@ GTPO = CurieNamespace('gtpo', 'http://example.org/gtpo/')
 IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
 IMG_TAXON = CurieNamespace('img_taxon', 'https://bioregistry.io/img.taxon:')
 INSDC_SRA = CurieNamespace('insdc_sra', 'https://bioregistry.io/insdc.sra:')
+JCM = CurieNamespace('jcm', 'http://www.jcm.riken.go.jp/cgi-bin/jcm/jcm_number?JCM=')
 JGI = CurieNamespace('jgi', 'http://example.org/jgi/')
 JGI_ANALYSIS = CurieNamespace('jgi_analysis', 'https://data.jgi.doe.gov/search?q=')
 JGI_PROPOSAL = CurieNamespace('jgi_proposal', 'https://bioregistry.io/jgi.proposal:')
 KEGG = CurieNamespace('kegg', 'https://bioregistry.io/kegg:')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+LMG = CurieNamespace('lmg', 'https://bccm.belspo.be/catalogues/lmg-strain-details?NUM=')
 MGNIFY_ANALYSIS = CurieNamespace('mgnify_analysis', 'https://bioregistry.io/mgnify.analysis:')
 MGNIFY_PROJ = CurieNamespace('mgnify_proj', 'https://bioregistry.io/mgnify.proj:')
 MY_EMSL = CurieNamespace('my_emsl', 'https://release.my.emsl.pnnl.gov/released_data/')
+NBRC = CurieNamespace('nbrc', 'http://www.nbrc.nite.go.jp/NBRC2/NBRCCatalogueDetailServlet?ID=NBRC&CAT=')
 NEON_IDENTIFIER = CurieNamespace('neon_identifier', 'http://example.org/neon/identifier/')
 NEON_SCHEMA = CurieNamespace('neon_schema', 'http://example.org/neon/schema/')
 NMDC = CurieNamespace('nmdc', 'https://w3id.org/nmdc/')
@@ -7248,8 +7256,12 @@ class AeroStrucEnum(EnumDefinitionImpl):
 
 class AnalysisTypeEnum(EnumDefinitionImpl):
 
-    metabolomics = PermissibleValue(text="metabolomics")
-    lipidomics = PermissibleValue(text="lipidomics")
+    metabolomics = PermissibleValue(
+        text="metabolomics",
+        description="Mass spectrometry-based analysis of metabolites.")
+    lipidomics = PermissibleValue(
+        text="lipidomics",
+        description="Mass spectrometry-based analysis of lipids.")
     metagenomics = PermissibleValue(
         text="metagenomics",
         title="Metagenomics",
@@ -7258,8 +7270,12 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
         text="metagenomics_long_read",
         title="Metagenomics (long read)",
         description="Long-read metagenomic sequencing")
-    metaproteomics = PermissibleValue(text="metaproteomics")
-    metatranscriptomics = PermissibleValue(text="metatranscriptomics")
+    metaproteomics = PermissibleValue(
+        text="metaproteomics",
+        description="Mass spectrometry-based analysis of proteins from a mixed community.")
+    metatranscriptomics = PermissibleValue(
+        text="metatranscriptomics",
+        description="Short-read metatranscriptomic sequencing of RNA from a mixed community.")
 
     _defn = EnumDefinition(
         name="AnalysisTypeEnum",
@@ -7268,14 +7284,28 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "natural organic matter",
-            PermissibleValue(text="natural organic matter"))
+            PermissibleValue(
+                text="natural organic matter",
+                description="""Analysis of natural organic matter (NOM), such as by Fourier-transform ion cyclotron resonance mass spectrometry (FTICR-MS)."""))
         setattr(cls, "bulk chemistry",
-            PermissibleValue(text="bulk chemistry"))
+            PermissibleValue(
+                text="bulk chemistry",
+                description="""Analysis of bulk chemical properties of a sample, such as pH, conductivity, total carbon, total nitrogen, etc."""))
         setattr(cls, "amplicon sequencing assay",
             PermissibleValue(
                 text="amplicon sequencing assay",
                 title="Amplicon sequencing assay",
                 meaning=OBI["0002767"]))
+        setattr(cls, "isolate genome sequencing",
+            PermissibleValue(
+                text="isolate genome sequencing",
+                title="Isolate genome sequencing",
+                description="Sequencing of DNA from an isolated organism, such as a pure culture."))
+        setattr(cls, "isolate transcriptome sequencing",
+            PermissibleValue(
+                text="isolate transcriptome sequencing",
+                title="Isolate transcriptome sequencing",
+                description="Sequencing of RNA from an isolated organism, such as a pure culture."))
 
 class ArchStrucEnum(EnumDefinitionImpl):
 
@@ -11967,12 +11997,16 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     """
     Derived from InstrumentModelEnum by filtering for Illumina models
     """
-    novaseq = PermissibleValue(text="novaseq")
+    novaseq = PermissibleValue(
+        text="novaseq",
+        meaning=OBI["0003685"])
     novaseq_6000 = PermissibleValue(
         text="novaseq_6000",
         meaning=OBI["0002630"])
     novaseq_x = PermissibleValue(text="novaseq_x")
-    hiseq = PermissibleValue(text="hiseq")
+    hiseq = PermissibleValue(
+        text="hiseq",
+        meaning=OBI["0003683"])
     hiseq_1000 = PermissibleValue(
         text="hiseq_1000",
         meaning=OBI["0002022"])
@@ -12003,7 +12037,9 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     nextseq_1000 = PermissibleValue(
         text="nextseq_1000",
         meaning=OBI["0003606"])
-    nextseq = PermissibleValue(text="nextseq")
+    nextseq = PermissibleValue(
+        text="nextseq",
+        meaning=OBI["0003684"])
     nextseq_500 = PermissibleValue(
         text="nextseq_500",
         meaning=OBI["0002021"])
