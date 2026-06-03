@@ -751,6 +751,35 @@ slots:
     range: YesNoEnum
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
+  sample_isolated_from:
+    title: sample isolated from
+    description: Free-text description of what the organism was isolated from.
+    rank: 40
+    range: string
+    examples:
+      - value: soil
+      - value: leaf
+      - value: seawater
+      - value: single colony isolate
+      - value: DSM 3658
+      - value: Sorghum bicolor - root
+    aliases:
+      - Sample Isolated From
+      - JGI v19 form field 44
+  collection_site_or_growth_conditions:
+    title: collection site or growth conditions
+    description: Free-text description of the collection site or growth conditions for the isolate.
+    rank: 41
+    range: string
+    examples:
+      - value: Field
+      - value: Greenhouse
+      - value: Deep well
+      - value: Liquid culture from a frozen stock
+      - value: JGI grown culture
+    aliases:
+      - Collection Site or Growth Conditions
+      - JGI v19 form field 45
   ## data aggregation slots for SampleData
   isolate_data:
     description: aggregation slot relating isolate data collections to a SampleData container
@@ -1281,6 +1310,8 @@ classes:
       - isolate_second_ribosomal_seq_comments
       - isolate_fungal_16s_screening
       - isolate_its_match_unite
+      - sample_isolated_from
+      - collection_site_or_growth_conditions
     slot_usage:
       # analysis_type has no valid enum value for isolate WGS; suppress the inherited
       # required constraint until a proper value is added to AnalysisTypeEnum in nmdc-schema
@@ -1344,6 +1375,10 @@ classes:
       isolate_fungal_16s_screening:
         slot_group: jgi_isolate_section
       isolate_its_match_unite:
+        slot_group: jgi_isolate_section
+      sample_isolated_from:
+        slot_group: jgi_isolate_section
+      collection_site_or_growth_conditions:
         slot_group: jgi_isolate_section
     rules:
       - title: well_requires_plate
