@@ -398,6 +398,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       Identifier and Mapping Information
@@ -487,7 +496,6 @@ Alias: sample_isolated_from</p>
 <h2 id="aliases">Aliases</h2>
 <ul>
 <li>Sample Isolated From</li>
-<li>JGI v19 form field 44</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -517,6 +525,10 @@ Alias: sample_isolated_from</p>
 </tr>
 </tbody>
 </table>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>JGI v19 form field 44</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -547,6 +559,8 @@ Alias: sample_isolated_from</p>
 <pre><code class="language-yaml">name: sample_isolated_from
 description: Free-text description of what the organism was isolated from.
 title: sample isolated from
+comments:
+- JGI v19 form field 44
 examples:
 - value: soil
 - value: leaf
@@ -557,7 +571,6 @@ examples:
 from_schema: https://example.com/nmdc_submission_schema
 aliases:
 - Sample Isolated From
-- JGI v19 form field 44
 rank: 40
 alias: sample_isolated_from
 domain_of:
