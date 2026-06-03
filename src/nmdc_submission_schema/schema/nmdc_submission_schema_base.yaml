@@ -1237,6 +1237,7 @@ classes:
         required: false
       biosafety_mat_cat:
         required: false
+        range: JgiIsolateBiosafetyMaterialCategoryEnum
       estimated_size:
         slot_group: organism_section
         title: Estimated genome size (Mb)
@@ -1377,9 +1378,6 @@ classes:
         slot_group: jgi_isolate_section
       dnase:
         slot_group: jgi_isolate_section
-      biosafety_mat_cat:
-        slot_group: jgi_isolate_section
-        range: JgiIsolateBiosafetyMaterialCategoryEnum
       dna_isolate_meth:
         slot_group: jgi_isolate_section
       isolate_single_colony:
