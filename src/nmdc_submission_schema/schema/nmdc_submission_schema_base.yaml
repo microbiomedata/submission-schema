@@ -1234,6 +1234,16 @@ classes:
         title: Estimated genome size (Mb)
         unit:
           ucum_code: Mbase
+      # JGI requires all three date components; full YYYY-MM-DD is mandatory here.
+      # Export layer splits into Collection Year / Collection Month (full name) / Collection Day.
+      collection_date:
+        comments:
+          - Use the date the sample was collected from its natural habitat, not the
+            date of purchase or culturing. Full date required: YYYY-MM-DD.
+        examples:
+          - value: "2017-01-20"
+          - value: "2013-03-25"
+        pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
 
   JgiIsolateInterface:
     annotations:

@@ -22,10 +22,8 @@ isolate_data:
     organism_species: turgidum
     strain_name: DSM 6724
     classified_as: NCBITaxon:515635
-    # collection_date is required on IsolateInterface (wired required:true via #422);
-    # illustrative placeholder — real isolation date for this culture-collection strain
-    # not sourced from GOLD. Requiredness for isolates under audit in #429.
-    collection_date: "2008"
+    # Illustrative placeholder: real isolation date for this strain not in GOLD.
+    collection_date: "2008-01-01"
 jgi_isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
     # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
