@@ -5981,3 +5981,12 @@ slots:
           examples:
             - value: 'NCBITaxon:562'
             - value: 'NCBITaxon:1392'
+
+  - slot: estimated_size
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 112
+          slot_group: organism_section
