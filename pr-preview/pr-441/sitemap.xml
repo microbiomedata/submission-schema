@@ -2341,15 +2341,7 @@
          <lastmod>2026-06-04</lastmod>
     </url>
     <url>
-         <loc>https://microbiomedata.github.io/submission-schema/rna_collection_day/</loc>
-         <lastmod>2026-06-04</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/rna_collection_month/</loc>
-         <lastmod>2026-06-04</lastmod>
-    </url>
-    <url>
-         <loc>https://microbiomedata.github.io/submission-schema/rna_collection_year/</loc>
+         <loc>https://microbiomedata.github.io/submission-schema/rna_collection_date/</loc>
          <lastmod>2026-06-04</lastmod>
     </url>
     <url>
