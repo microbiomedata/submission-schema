@@ -751,9 +751,6 @@ slots:
     range: YesNoEnum
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
-  ## RNA experiment date slots (JGI isolate transcriptome; local to submission-schema)
-  ## These will move to JgiIsolateTranscriptomeInterface once
-  ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
   rna_collection_year:
     title: RNA experiment collection year
     description: Year in which the RNA sample was collected or the culture experiment was performed.
@@ -1316,8 +1313,7 @@ classes:
       - isolate_second_ribosomal_seq_comments
       - isolate_fungal_16s_screening
       - isolate_its_match_unite
-      ## RNA experiment date slots; will move to JgiIsolateTranscriptomeInterface once
-      ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
+      ## RNA experiment dates; move to JgiIsolateTranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438.
       - rna_collection_year
       - rna_collection_month
       - rna_collection_day
@@ -1385,8 +1381,7 @@ classes:
         slot_group: jgi_isolate_section
       isolate_its_match_unite:
         slot_group: jgi_isolate_section
-      ## RNA experiment date slots; will move to JgiIsolateTranscriptomeInterface once
-      ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
+      ## RNA experiment dates; move to JgiIsolateTranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438.
       rna_collection_year:
         slot_group: jgi_isolate_section
       rna_collection_month:
