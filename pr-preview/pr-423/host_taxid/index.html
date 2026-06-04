@@ -537,14 +537,14 @@ Alias: host_taxid</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
-<td>plant_associated dh_interface</td>
-<td>yes</td>
-</tr>
-<tr>
 <td><a href="../HostAssociatedInterface/">HostAssociatedInterface</a></td>
 <td>host_associated dh_interface</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
+<td>plant_associated dh_interface</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -608,6 +608,12 @@ title: host taxid
 comments:
 - Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value
 from_schema: https://example.com/nmdc_submission_schema
+structured_aliases:
+  Host NCBI Taxonomy ID:
+    literal_form: Host NCBI Taxonomy ID
+    predicate: EXACT_SYNONYM
+    contexts:
+    - https://jgi.doe.gov/isolate-submission-form/v19
 rank: 259
 keywords:
 - host
