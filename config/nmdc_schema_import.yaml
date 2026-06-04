@@ -3737,10 +3737,7 @@ slots:
           rank: 40
           slot_group: mixs_core_section
 
-  # Routing ref_biomaterial to JgiIsolateInterface here because JgiIsolateGenomeInterface
-  # and JgiIsolateTranscriptomeInterface do not exist yet. Once
-  # https://github.com/microbiomedata/submission-schema/issues/438 is resolved, this
-  # entry should move ref_biomaterial to those two interfaces instead.
+  # Move to JgiIsolateGenomeInterface + JgiIsolateTranscriptomeInterface once https://github.com/microbiomedata/submission-schema/issues/438 resolves.
   - slot: ref_biomaterial
     source: Organism
     destinations:

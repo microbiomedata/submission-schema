@@ -1270,11 +1270,7 @@ classes:
       - dnase
       - biosafety_mat_cat
       - dna_isolate_meth
-      ## ref_biomaterial: nmdc-schema MIxS slot (MIXS:0000025) on Organism; required by JGI
-      ## for resequencing projects. Temporary home: will move to JgiIsolateGenomeInterface
-      ## and JgiIsolateTranscriptomeInterface once
-      ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
-      - ref_biomaterial
+      - ref_biomaterial  # temporary; splits to JgiIsolateGenome/TranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438
       ## isolate-specific JGI-only slots
       - isolate_single_colony
       - isolate_known_contaminants
