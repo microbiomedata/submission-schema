@@ -5991,10 +5991,9 @@ slots:
           rank: 112
           slot_group: organism_section
           # Bounds in Mb (unit override to Mbase is in IsolateInterface slot_usage).
-          # Floor 0.1 Mb: covers all real biological genomes JGI sequences (p5% of
-          # GOLD est_size is 0.054 Mb; below that are viral contigs and junk).
+          # Floor 0.000001 Mb (= 1 bp): excludes zero/negative; any real genome passes.
           # Ceiling 100,000 Mb: matches esplims eukaryote limit and nmdc-schema max
           # (100,000,000,000 bp). Microbe ceiling (5,000 Mb) is enforced downstream
           # in esplims check_genome_size, conditioned on biosafety_mat_cat.
-          minimum_value: 0.1
+          minimum_value: 0.000001
           maximum_value: 100000
