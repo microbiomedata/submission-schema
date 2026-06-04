@@ -4,7 +4,7 @@ schema-clean:
 
 .PHONY: schema-build
 schema-build:
-	$(RUN) python tools/build.py
+	$(RUN) python -m tools.build
 
 .PHONY: run-examples
 run-examples:
