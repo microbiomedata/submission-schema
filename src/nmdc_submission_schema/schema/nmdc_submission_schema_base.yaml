@@ -740,7 +740,7 @@ slots:
       - For fungal draft samples, was 16S screening performed?
   isolate_its_match_unite:
     title: ITS matches UNITE
-    description: For fungal draft samples only — does the ITS sequence match taxonomy in the UNITE database?
+    description: For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?
     comments:
       - Required for fungal minimal, standard, and improved drafts.
       - Screen at https://unite.ut.ee/ before submitting.
@@ -751,6 +751,41 @@ slots:
     range: YesNoEnum
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
+  ## RNA experiment date slots (JGI isolate transcriptome; local to submission-schema)
+  ## These will move to JgiIsolateTranscriptomeInterface once
+  ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
+  rna_collection_year:
+    title: RNA experiment collection year
+    description: Year in which the RNA sample was collected or the culture experiment was performed.
+    examples:
+      - value: "2024"
+    rank: 43
+    range: integer
+    aliases:
+      - Collection Year
+    structured_aliases:
+      - literal_form: Collection Year
+        predicate: EXACT_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
+  rna_collection_month:
+    title: RNA experiment collection month
+    description: Month in which the RNA sample was collected or the culture experiment was performed. Use the full month name.
+    examples:
+      - value: January
+    rank: 44
+    range: string
+    aliases:
+      - Collection Month
+  rna_collection_day:
+    title: RNA experiment collection day
+    description: Day on which the RNA sample was collected or the culture experiment was performed.
+    examples:
+      - value: "15"
+    rank: 45
+    range: integer
+    minimum_value: 1
+    maximum_value: 31
   ## data aggregation slots for SampleData
   isolate_data:
     description: aggregation slot relating isolate data collections to a SampleData container
@@ -1281,6 +1316,11 @@ classes:
       - isolate_second_ribosomal_seq_comments
       - isolate_fungal_16s_screening
       - isolate_its_match_unite
+      ## RNA experiment date slots; will move to JgiIsolateTranscriptomeInterface once
+      ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
+      - rna_collection_year
+      - rna_collection_month
+      - rna_collection_day
     slot_usage:
       # analysis_type has no valid enum value for isolate WGS; suppress the inherited
       # required constraint until a proper value is added to AnalysisTypeEnum in nmdc-schema
@@ -1344,6 +1384,14 @@ classes:
       isolate_fungal_16s_screening:
         slot_group: jgi_isolate_section
       isolate_its_match_unite:
+        slot_group: jgi_isolate_section
+      ## RNA experiment date slots; will move to JgiIsolateTranscriptomeInterface once
+      ## https://github.com/microbiomedata/submission-schema/issues/438 is resolved.
+      rna_collection_year:
+        slot_group: jgi_isolate_section
+      rna_collection_month:
+        slot_group: jgi_isolate_section
+      rna_collection_day:
         slot_group: jgi_isolate_section
     rules:
       - title: well_requires_plate
