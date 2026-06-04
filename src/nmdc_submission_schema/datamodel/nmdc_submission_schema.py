@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-23T10:40:16
+# Generation date: 2026-06-03T18:37:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -68,6 +68,7 @@ CATH = CurieNamespace('CATH', 'https://bioregistry.io/cath:')
 CHEBI = CurieNamespace('CHEBI', 'http://purl.obolibrary.org/obo/CHEBI_')
 CHEMBL_COMPOUND = CurieNamespace('CHEMBL_COMPOUND', 'https://bioregistry.io/chembl.compound:')
 CHMO = CurieNamespace('CHMO', 'http://purl.obolibrary.org/obo/CHMO_')
+COB = CurieNamespace('COB', 'http://purl.obolibrary.org/obo/COB_')
 COG = CurieNamespace('COG', 'https://bioregistry.io/cog:')
 CONTAMINANT = CurieNamespace('Contaminant', 'http://example.org/contaminant/')
 DRUGBANK = CurieNamespace('DRUGBANK', 'https://bioregistry.io/drugbank:')
@@ -80,6 +81,7 @@ FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
 GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 HMDB = CurieNamespace('HMDB', 'https://bioregistry.io/hmdb:')
+IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 ISA = CurieNamespace('ISA', 'http://example.org/isa/')
 KEGG_COMPOUND = CurieNamespace('KEGG_COMPOUND', 'https://bioregistry.io/kegg.compound:')
 KEGG_MODULE = CurieNamespace('KEGG_MODULE', 'https://bioregistry.io/kegg.module:')
@@ -119,12 +121,16 @@ TIGRFAM = CurieNamespace('TIGRFAM', 'https://bioregistry.io/tigrfam:')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 UO = CurieNamespace('UO', 'http://purl.obolibrary.org/obo/UO_')
 UNIPROTKB = CurieNamespace('UniProtKB', 'https://bioregistry.io/uniprot:')
+ATCC = CurieNamespace('atcc', 'https://www.atcc.org/products/')
+BCRC = CurieNamespace('bcrc', 'https://catalog.bcrc.firdi.org.tw/BcrcContent?bid=')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/vocab/')
 BIOPROJECT = CurieNamespace('bioproject', 'https://bioregistry.io/bioproject:')
 BIOSAMPLE = CurieNamespace('biosample', 'https://bioregistry.io/biosample:')
 CAS = CurieNamespace('cas', 'https://bioregistry.io/cas:')
+CCUG = CurieNamespace('ccug', 'https://www.ccug.se/strain?id=')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://bioregistry.io/doi:')
+DSMZ = CurieNamespace('dsmz', 'https://www.dsmz.de/collection/catalogue/details/culture/')
 EDAM_DATA = CurieNamespace('edam_data', 'http://edamontology.org/data_')
 EDAM_FORMAT = CurieNamespace('edam_format', 'http://edamontology.org/format_')
 EMSL = CurieNamespace('emsl', 'http://example.org/emsl_in_mongodb/')
@@ -137,14 +143,17 @@ GTPO = CurieNamespace('gtpo', 'http://example.org/gtpo/')
 IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
 IMG_TAXON = CurieNamespace('img_taxon', 'https://bioregistry.io/img.taxon:')
 INSDC_SRA = CurieNamespace('insdc_sra', 'https://bioregistry.io/insdc.sra:')
+JCM = CurieNamespace('jcm', 'http://www.jcm.riken.go.jp/cgi-bin/jcm/jcm_number?JCM=')
 JGI = CurieNamespace('jgi', 'http://example.org/jgi/')
 JGI_ANALYSIS = CurieNamespace('jgi_analysis', 'https://data.jgi.doe.gov/search?q=')
 JGI_PROPOSAL = CurieNamespace('jgi_proposal', 'https://bioregistry.io/jgi.proposal:')
 KEGG = CurieNamespace('kegg', 'https://bioregistry.io/kegg:')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+LMG = CurieNamespace('lmg', 'https://bccm.belspo.be/catalogues/lmg-strain-details?NUM=')
 MGNIFY_ANALYSIS = CurieNamespace('mgnify_analysis', 'https://bioregistry.io/mgnify.analysis:')
 MGNIFY_PROJ = CurieNamespace('mgnify_proj', 'https://bioregistry.io/mgnify.proj:')
 MY_EMSL = CurieNamespace('my_emsl', 'https://release.my.emsl.pnnl.gov/released_data/')
+NBRC = CurieNamespace('nbrc', 'http://www.nbrc.nite.go.jp/NBRC2/NBRCCatalogueDetailServlet?ID=NBRC&CAT=')
 NEON_IDENTIFIER = CurieNamespace('neon_identifier', 'http://example.org/neon/identifier/')
 NEON_SCHEMA = CurieNamespace('neon_schema', 'http://example.org/neon/schema/')
 NMDC = CurieNamespace('nmdc', 'https://w3id.org/nmdc/')
@@ -581,7 +590,7 @@ class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
 @dataclass(repr=False)
 class DhMultiviewCommonColumnsMixin(YAMLRoot):
     """
-    Mixin with DhMutliviewCommon Columns
+    Mixin with DhMultiviewCommon Columns
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -809,9 +818,11 @@ class AirInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     humidity: Optional[str] = None
     methane: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     oxygen: Optional[str] = None
     perturbation: Optional[str] = None
@@ -923,6 +934,9 @@ class AirInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.humidity is not None and not isinstance(self.humidity, str):
             self.humidity = str(self.humidity)
 
@@ -931,6 +945,9 @@ class AirInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -1050,6 +1067,7 @@ class BiofilmInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     glucosidase_act: Optional[float] = None
     magnesium: Optional[str] = None
     mean_frict_vel: Optional[float] = None
@@ -1063,6 +1081,7 @@ class BiofilmInterface(DhInterface):
     org_matter: Optional[float] = None
     org_nitro: Optional[float] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     part_org_carb: Optional[str] = None
     perturbation: Optional[str] = None
@@ -1230,6 +1249,9 @@ class BiofilmInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.glucosidase_act is not None and not isinstance(self.glucosidase_act, float):
             self.glucosidase_act = float(self.glucosidase_act)
 
@@ -1268,6 +1290,9 @@ class BiofilmInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -1445,6 +1470,7 @@ class BuiltEnvInterface(DhInterface):
     exp_duct: Optional[float] = None
     exp_pipe: Optional[float] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     ext_door: Optional[str] = None
     ext_wall_orient: Optional[Union[str, "CompassDirections8Enum"]] = None
     ext_window_orient: Optional[Union[str, "CompassDirections8Enum"]] = None
@@ -1484,6 +1510,7 @@ class BuiltEnvInterface(DhInterface):
     occup_document: Optional[Union[str, "OccupDocumentEnum"]] = None
     occup_samp: Optional[float] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     pres_animal_insect: Optional[str] = None
     quad_pos: Optional[Union[str, "QuadPosEnum"]] = None
     rel_air_humidity: Optional[float] = None
@@ -1772,6 +1799,9 @@ class BuiltEnvInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.ext_door is not None and not isinstance(self.ext_door, str):
             self.ext_door = str(self.ext_door)
 
@@ -1891,6 +1921,9 @@ class BuiltEnvInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.pres_animal_insect is not None and not isinstance(self.pres_animal_insect, str):
             self.pres_animal_insect = str(self.pres_animal_insect)
@@ -2252,6 +2285,7 @@ class HcrCoresInterface(DhInterface):
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     ethylbenzene: Optional[str] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     field: Optional[str] = None
     hc_produced: Optional[Union[str, "HcProducedEnum"]] = None
     hcr: Optional[Union[str, "HcrEnum"]] = None
@@ -2265,6 +2299,7 @@ class HcrCoresInterface(DhInterface):
     nitrite: Optional[str] = None
     org_count_qpcr_info: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     owc_tvdss: Optional[float] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     permeability: Optional[str] = None
@@ -2451,6 +2486,9 @@ class HcrCoresInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.field is not None and not isinstance(self.field, str):
             self.field = str(self.field)
 
@@ -2489,6 +2527,9 @@ class HcrCoresInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.owc_tvdss is not None and not isinstance(self.owc_tvdss, float):
             self.owc_tvdss = float(self.owc_tvdss)
@@ -2703,6 +2744,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     ethylbenzene: Optional[str] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     field: Optional[str] = None
     hc_produced: Optional[Union[str, "HcProducedEnum"]] = None
     hcr: Optional[Union[str, "HcrEnum"]] = None
@@ -2718,6 +2760,7 @@ class HcrFluidsSwabsInterface(DhInterface):
     nitrite: Optional[str] = None
     org_count_qpcr_info: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     ph: Optional[float] = None
     ph_meth: Optional[str] = None
@@ -2917,6 +2960,9 @@ class HcrFluidsSwabsInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.field is not None and not isinstance(self.field, str):
             self.field = str(self.field)
 
@@ -2961,6 +3007,9 @@ class HcrFluidsSwabsInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -3149,6 +3198,7 @@ class HostAssociatedInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     genetic_mod: Optional[str] = None
     gravidity: Optional[str] = None
     host_age: Optional[str] = None
@@ -3178,6 +3228,7 @@ class HostAssociatedInterface(DhInterface):
     host_taxid: Optional[str] = None
     host_tot_mass: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     perturbation: Optional[str] = None
     salinity: Optional[str] = None
@@ -3283,6 +3334,9 @@ class HostAssociatedInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.genetic_mod is not None and not isinstance(self.genetic_mod, str):
             self.genetic_mod = str(self.genetic_mod)
 
@@ -3369,6 +3423,9 @@ class HostAssociatedInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -3888,6 +3945,7 @@ class MiscEnvsInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     nitrate: Optional[str] = None
     nitrite: Optional[str] = None
     nitro: Optional[str] = None
@@ -3895,6 +3953,7 @@ class MiscEnvsInterface(DhInterface):
     org_matter: Optional[float] = None
     org_nitro: Optional[float] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     perturbation: Optional[str] = None
     ph: Optional[float] = None
@@ -4039,6 +4098,9 @@ class MiscEnvsInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.nitrate is not None and not isinstance(self.nitrate, str):
             self.nitrate = str(self.nitrate)
 
@@ -4059,6 +4121,9 @@ class MiscEnvsInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -4182,6 +4247,7 @@ class PlantAssociatedInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     fertilizer_regm: Optional[str] = None
     fungicide_regm: Optional[str] = None
     gaseous_environment: Optional[str] = None
@@ -4209,6 +4275,7 @@ class PlantAssociatedInterface(DhInterface):
     mineral_nutr_regm: Optional[str] = None
     non_min_nutr_regm: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     perturbation: Optional[str] = None
     pesticide_regm: Optional[str] = None
@@ -4375,6 +4442,9 @@ class PlantAssociatedInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.fertilizer_regm is not None and not isinstance(self.fertilizer_regm, str):
             self.fertilizer_regm = str(self.fertilizer_regm)
 
@@ -4455,6 +4525,9 @@ class PlantAssociatedInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -4632,6 +4705,7 @@ class SedimentInterface(DhInterface):
     ecosystem_subtype: Optional[Union[str, "EcosystemSubtypeEnum"]] = None
     ecosystem_type: Optional[Union[str, "EcosystemTypeEnum"]] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     extreme_event: Optional[str] = None
     fire: Optional[str] = None
     flooding: Optional[str] = None
@@ -4659,6 +4733,7 @@ class SedimentInterface(DhInterface):
     org_nitro: Optional[float] = None
     org_nitro_method: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     part_org_carb: Optional[str] = None
     particle_class: Optional[str] = None
@@ -4861,6 +4936,9 @@ class SedimentInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.extreme_event is not None and not isinstance(self.extreme_event, str):
             self.extreme_event = str(self.extreme_event)
 
@@ -4941,6 +5019,9 @@ class SedimentInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -5627,12 +5708,14 @@ class WastewaterSludgeInterface(DhInterface):
     efficiency_percent: Optional[str] = None
     emulsions: Optional[str] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     gaseous_substances: Optional[str] = None
     indust_eff_percent: Optional[float] = None
     inorg_particles: Optional[str] = None
     nitrate: Optional[str] = None
     org_particles: Optional[str] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     perturbation: Optional[str] = None
     ph: Optional[float] = None
@@ -5753,6 +5836,9 @@ class WastewaterSludgeInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.gaseous_substances is not None and not isinstance(self.gaseous_substances, str):
             self.gaseous_substances = str(self.gaseous_substances)
 
@@ -5770,6 +5856,9 @@ class WastewaterSludgeInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -5928,6 +6017,7 @@ class WaterInterface(DhInterface):
     ecosystem_type: Optional[str] = None
     elev: Optional[float] = None
     experimental_factor: Optional[str] = None
+    experimental_factor_other: Optional[str] = None
     filter_method: Optional[str] = None
     fluor: Optional[str] = None
     gaseous_environment: Optional[str] = None
@@ -5947,6 +6037,7 @@ class WaterInterface(DhInterface):
     org_matter: Optional[float] = None
     org_nitro: Optional[float] = None
     organism_count: Optional[str] = None
+    other_treatment: Optional[str] = None
     oxy_stat_samp: Optional[Union[str, "OxyStatSampEnum"]] = None
     part_org_carb: Optional[str] = None
     part_org_nitro: Optional[str] = None
@@ -6163,6 +6254,9 @@ class WaterInterface(DhInterface):
         if self.experimental_factor is not None and not isinstance(self.experimental_factor, str):
             self.experimental_factor = str(self.experimental_factor)
 
+        if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
+            self.experimental_factor_other = str(self.experimental_factor_other)
+
         if self.filter_method is not None and not isinstance(self.filter_method, str):
             self.filter_method = str(self.filter_method)
 
@@ -6219,6 +6313,9 @@ class WaterInterface(DhInterface):
 
         if self.organism_count is not None and not isinstance(self.organism_count, str):
             self.organism_count = str(self.organism_count)
+
+        if self.other_treatment is not None and not isinstance(self.other_treatment, str):
+            self.other_treatment = str(self.other_treatment)
 
         if self.oxy_stat_samp is not None and not isinstance(self.oxy_stat_samp, OxyStatSampEnum):
             self.oxy_stat_samp = OxyStatSampEnum(self.oxy_stat_samp)
@@ -7159,8 +7256,12 @@ class AeroStrucEnum(EnumDefinitionImpl):
 
 class AnalysisTypeEnum(EnumDefinitionImpl):
 
-    metabolomics = PermissibleValue(text="metabolomics")
-    lipidomics = PermissibleValue(text="lipidomics")
+    metabolomics = PermissibleValue(
+        text="metabolomics",
+        description="Mass spectrometry-based analysis of metabolites.")
+    lipidomics = PermissibleValue(
+        text="lipidomics",
+        description="Mass spectrometry-based analysis of lipids.")
     metagenomics = PermissibleValue(
         text="metagenomics",
         title="Metagenomics",
@@ -7169,8 +7270,12 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
         text="metagenomics_long_read",
         title="Metagenomics (long read)",
         description="Long-read metagenomic sequencing")
-    metaproteomics = PermissibleValue(text="metaproteomics")
-    metatranscriptomics = PermissibleValue(text="metatranscriptomics")
+    metaproteomics = PermissibleValue(
+        text="metaproteomics",
+        description="Mass spectrometry-based analysis of proteins from a mixed community.")
+    metatranscriptomics = PermissibleValue(
+        text="metatranscriptomics",
+        description="Short-read metatranscriptomic sequencing of RNA from a mixed community.")
 
     _defn = EnumDefinition(
         name="AnalysisTypeEnum",
@@ -7179,14 +7284,28 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     @classmethod
     def _addvals(cls):
         setattr(cls, "natural organic matter",
-            PermissibleValue(text="natural organic matter"))
+            PermissibleValue(
+                text="natural organic matter",
+                description="""Analysis of natural organic matter (NOM), such as by Fourier-transform ion cyclotron resonance mass spectrometry (FTICR-MS)."""))
         setattr(cls, "bulk chemistry",
-            PermissibleValue(text="bulk chemistry"))
+            PermissibleValue(
+                text="bulk chemistry",
+                description="""Analysis of bulk chemical properties of a sample, such as pH, conductivity, total carbon, total nitrogen, etc."""))
         setattr(cls, "amplicon sequencing assay",
             PermissibleValue(
                 text="amplicon sequencing assay",
                 title="Amplicon sequencing assay",
                 meaning=OBI["0002767"]))
+        setattr(cls, "isolate genome sequencing",
+            PermissibleValue(
+                text="isolate genome sequencing",
+                title="Isolate genome sequencing",
+                description="Sequencing of DNA from an isolated organism, such as a pure culture."))
+        setattr(cls, "isolate transcriptome sequencing",
+            PermissibleValue(
+                text="isolate transcriptome sequencing",
+                title="Isolate transcriptome sequencing",
+                description="Sequencing of RNA from an isolated organism, such as a pure culture."))
 
 class ArchStrucEnum(EnumDefinitionImpl):
 
@@ -11878,12 +11997,16 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     """
     Derived from InstrumentModelEnum by filtering for Illumina models
     """
-    novaseq = PermissibleValue(text="novaseq")
+    novaseq = PermissibleValue(
+        text="novaseq",
+        meaning=OBI["0003685"])
     novaseq_6000 = PermissibleValue(
         text="novaseq_6000",
         meaning=OBI["0002630"])
     novaseq_x = PermissibleValue(text="novaseq_x")
-    hiseq = PermissibleValue(text="hiseq")
+    hiseq = PermissibleValue(
+        text="hiseq",
+        meaning=OBI["0003683"])
     hiseq_1000 = PermissibleValue(
         text="hiseq_1000",
         meaning=OBI["0002022"])
@@ -11914,7 +12037,9 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     nextseq_1000 = PermissibleValue(
         text="nextseq_1000",
         meaning=OBI["0003606"])
-    nextseq = PermissibleValue(text="nextseq")
+    nextseq = PermissibleValue(
+        text="nextseq",
+        meaning=OBI["0003684"])
     nextseq_500 = PermissibleValue(
         text="nextseq_500",
         meaning=OBI["0002021"])
@@ -13664,7 +13789,7 @@ slots.al_sat = Slot(uri=MIXS['0000607'], name="al_sat", curie=MIXS.curie('000060
 
 slots.al_sat_meth = Slot(uri=MIXS['0000324'], name="al_sat_meth", curie=MIXS.curie('0000324'),
                    model_uri=NMDC_SUB_SCHEMA.al_sat_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.alkalinity = Slot(uri=MIXS['0000421'], name="alkalinity", curie=MIXS.curie('0000421'),
                    model_uri=NMDC_SUB_SCHEMA.alkalinity, domain=None, range=Optional[str],
@@ -13929,7 +14054,7 @@ slots.crop_rotation = Slot(uri=MIXS['0000318'], name="crop_rotation", curie=MIXS
 
 slots.cult_root_med = Slot(uri=MIXS['0001041'], name="cult_root_med", curie=MIXS.curie('0001041'),
                    model_uri=NMDC_SUB_SCHEMA.cult_root_med, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(.*|PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(.*|PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.cur_land_use = Slot(uri=MIXS['0001080'], name="cur_land_use", curie=MIXS.curie('0001080'),
                    model_uri=NMDC_SUB_SCHEMA.cur_land_use, domain=None, range=Optional[str])
@@ -13939,7 +14064,7 @@ slots.cur_vegetation = Slot(uri=MIXS['0000312'], name="cur_vegetation", curie=MI
 
 slots.cur_vegetation_meth = Slot(uri=MIXS['0000314'], name="cur_vegetation_meth", curie=MIXS.curie('0000314'),
                    model_uri=NMDC_SUB_SCHEMA.cur_vegetation_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.date_last_rain = Slot(uri=MIXS['0000786'], name="date_last_rain", curie=MIXS.curie('0000786'),
                    model_uri=NMDC_SUB_SCHEMA.date_last_rain, domain=None, range=Optional[str])
@@ -14224,7 +14349,7 @@ slots.gender_restroom = Slot(uri=MIXS['0000808'], name="gender_restroom", curie=
 
 slots.genetic_mod = Slot(uri=MIXS['0000859'], name="genetic_mod", curie=MIXS.curie('0000859'),
                    model_uri=NMDC_SUB_SCHEMA.genetic_mod, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.geo_loc_name = Slot(uri=MIXS['0000010'], name="geo_loc_name", curie=MIXS.curie('0000010'),
                    model_uri=NMDC_SUB_SCHEMA.geo_loc_name, domain=None, range=str,
@@ -14293,7 +14418,7 @@ slots.heavy_metals = Slot(uri=MIXS['0000652'], name="heavy_metals", curie=MIXS.c
 
 slots.heavy_metals_meth = Slot(uri=MIXS['0000343'], name="heavy_metals_meth", curie=MIXS.curie('0000343'),
                    model_uri=NMDC_SUB_SCHEMA.heavy_metals_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.height_carper_fiber = Slot(uri=MIXS['0000167'], name="height_carper_fiber", curie=MIXS.curie('0000167'),
                    model_uri=NMDC_SUB_SCHEMA.height_carper_fiber, domain=None, range=Optional[float],
@@ -14304,7 +14429,7 @@ slots.herbicide_regm = Slot(uri=MIXS['0000561'], name="herbicide_regm", curie=MI
 
 slots.horizon_meth = Slot(uri=MIXS['0000321'], name="horizon_meth", curie=MIXS.curie('0000321'),
                    model_uri=NMDC_SUB_SCHEMA.horizon_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.host_age = Slot(uri=MIXS['0000255'], name="host_age", curie=MIXS.curie('0000255'),
                    model_uri=NMDC_SUB_SCHEMA.host_age, domain=None, range=Optional[str],
@@ -14349,7 +14474,7 @@ slots.host_genotype = Slot(uri=MIXS['0000365'], name="host_genotype", curie=MIXS
 
 slots.host_growth_cond = Slot(uri=MIXS['0000871'], name="host_growth_cond", curie=MIXS.curie('0000871'),
                    model_uri=NMDC_SUB_SCHEMA.host_growth_cond, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
 
 slots.host_height = Slot(uri=MIXS['0000264'], name="host_height", curie=MIXS.curie('0000264'),
                    model_uri=NMDC_SUB_SCHEMA.host_height, domain=None, range=Optional[str],
@@ -14464,14 +14589,14 @@ slots.light_type = Slot(uri=MIXS['0000769'], name="light_type", curie=MIXS.curie
 
 slots.link_addit_analys = Slot(uri=MIXS['0000340'], name="link_addit_analys", curie=MIXS.curie('0000340'),
                    model_uri=NMDC_SUB_SCHEMA.link_addit_analys, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.link_class_info = Slot(uri=MIXS['0000329'], name="link_class_info", curie=MIXS.curie('0000329'),
                    model_uri=NMDC_SUB_SCHEMA.link_class_info, domain=None, range=Optional[str])
 
 slots.link_climate_info = Slot(uri=MIXS['0000328'], name="link_climate_info", curie=MIXS.curie('0000328'),
                    model_uri=NMDC_SUB_SCHEMA.link_climate_info, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.lithology = Slot(uri=MIXS['0000990'], name="lithology", curie=MIXS.curie('0000990'),
                    model_uri=NMDC_SUB_SCHEMA.lithology, domain=None, range=Optional[Union[str, "LithologyEnum"]])
@@ -14481,7 +14606,7 @@ slots.local_class = Slot(uri=MIXS['0000330'], name="local_class", curie=MIXS.cur
 
 slots.local_class_meth = Slot(uri=MIXS['0000331'], name="local_class_meth", curie=MIXS.curie('0000331'),
                    model_uri=NMDC_SUB_SCHEMA.local_class_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.magnesium = Slot(uri=MIXS['0000431'], name="magnesium", curie=MIXS.curie('0000431'),
                    model_uri=NMDC_SUB_SCHEMA.magnesium, domain=None, range=Optional[str],
@@ -14719,7 +14844,7 @@ slots.pressure = Slot(uri=MIXS['0000412'], name="pressure", curie=MIXS.curie('00
 
 slots.prev_land_use_meth = Slot(uri=MIXS['0000316'], name="prev_land_use_meth", curie=MIXS.curie('0000316'),
                    model_uri=NMDC_SUB_SCHEMA.prev_land_use_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.previous_land_use = Slot(uri=MIXS['0000315'], name="previous_land_use", curie=MIXS.curie('0000315'),
                    model_uri=NMDC_SUB_SCHEMA.previous_land_use, domain=None, range=Optional[str],
@@ -14849,7 +14974,7 @@ slots.room_window_count = Slot(uri=MIXS['0000237'], name="room_window_count", cu
 
 slots.root_cond = Slot(uri=MIXS['0001061'], name="root_cond", curie=MIXS.curie('0001061'),
                    model_uri=NMDC_SUB_SCHEMA.root_cond, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
 
 slots.root_med_carbon = Slot(uri=MIXS['0000577'], name="root_med_carbon", curie=MIXS.curie('0000577'),
                    model_uri=NMDC_SUB_SCHEMA.root_med_carbon, domain=None, range=Optional[str])
@@ -14878,7 +15003,7 @@ slots.salinity = Slot(uri=MIXS['0000183'], name="salinity", curie=MIXS.curie('00
 
 slots.salinity_meth = Slot(uri=MIXS['0000341'], name="salinity_meth", curie=MIXS.curie('0000341'),
                    model_uri=NMDC_SUB_SCHEMA.salinity_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.salt_regm = Slot(uri=MIXS['0000582'], name="salt_regm", curie=MIXS.curie('0000582'),
                    model_uri=NMDC_SUB_SCHEMA.salt_regm, domain=None, range=Optional[str])
@@ -14887,7 +15012,8 @@ slots.samp_capt_status = Slot(uri=MIXS['0000860'], name="samp_capt_status", curi
                    model_uri=NMDC_SUB_SCHEMA.samp_capt_status, domain=None, range=Optional[Union[str, "SampCaptStatusEnum"]])
 
 slots.samp_collec_device = Slot(uri=MIXS['0000002'], name="samp_collec_device", curie=MIXS.curie('0000002'),
-                   model_uri=NMDC_SUB_SCHEMA.samp_collec_device, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.samp_collec_device, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^([^\[\]]+|.+ \[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\])$'))
 
 slots.samp_collec_method = Slot(uri=MIXS['0001225'], name="samp_collec_method", curie=MIXS.curie('0001225'),
                    model_uri=NMDC_SUB_SCHEMA.samp_collec_method, domain=None, range=Optional[str])
@@ -15193,7 +15319,7 @@ slots.tillage = Slot(uri=MIXS['0001081'], name="tillage", curie=MIXS.curie('0001
 
 slots.tiss_cult_growth_med = Slot(uri=MIXS['0001070'], name="tiss_cult_growth_med", curie=MIXS.curie('0001070'),
                    model_uri=NMDC_SUB_SCHEMA.tiss_cult_growth_med, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)|.*)$'))
 
 slots.toluene = Slot(uri=MIXS['0000154'], name="toluene", curie=MIXS.curie('0000154'),
                    model_uri=NMDC_SUB_SCHEMA.toluene, domain=None, range=Optional[str],
@@ -15225,7 +15351,7 @@ slots.tot_nitro = Slot(uri=MIXS['0000102'], name="tot_nitro", curie=MIXS.curie('
 
 slots.tot_nitro_cont_meth = Slot(uri=MIXS['0000338'], name="tot_nitro_cont_meth", curie=MIXS.curie('0000338'),
                    model_uri=NMDC_SUB_SCHEMA.tot_nitro_cont_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.tot_nitro_content = Slot(uri=MIXS['0000530'], name="tot_nitro_content", curie=MIXS.curie('0000530'),
                    model_uri=NMDC_SUB_SCHEMA.tot_nitro_content, domain=None, range=Optional[str],
@@ -15233,7 +15359,7 @@ slots.tot_nitro_content = Slot(uri=MIXS['0000530'], name="tot_nitro_content", cu
 
 slots.tot_org_c_meth = Slot(uri=MIXS['0000337'], name="tot_org_c_meth", curie=MIXS.curie('0000337'),
                    model_uri=NMDC_SUB_SCHEMA.tot_org_c_meth, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(PMID:\d+|doi:10.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
+                   pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 
 slots.tot_org_carb = Slot(uri=MIXS['0000533'], name="tot_org_carb", curie=MIXS.curie('0000533'),
                    model_uri=NMDC_SUB_SCHEMA.tot_org_carb, domain=None, range=Optional[float],
