@@ -4,6 +4,7 @@ id: https://example.com/nmdc_submission_schema
 version: 0.0.0
 prefixes:
   UO: http://purl.obolibrary.org/obo/UO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   qud: http://example.org/qud/
   xsd: http://www.w3.org/2001/XMLSchema#
   nmdc_sub_schema: https://example.com/nmdc_sub_schema/
@@ -147,19 +148,47 @@ enums:
         description: ITS sequence where DNA was isolated at the Arizona Genomics Institute (AGI)
       28S:
       Other:
-  JgiIsolateBiosafetyMaterialCategoryEnum:
-    description: Biosafety material category for single-organism isolate samples sent to JGI
+  JgiIsolateMaterialKindEnum:
+    # JGI labels this field "Biosafety Material Category" but the values indicate the
+    # broad kind of organism or genetic element, not a biosafety level (BSL-1..4).
+    # JGI uses it for internal routing; the name is preserved in the slot's structured_aliases.
+    description: >-
+      Broad kind of organism or genetic element being sequenced. JGI uses this for
+      internal biosafety routing under the field label "Biosafety Material Category".
     permissible_values:
       Alga:
+        description: >-
+          Photosynthetic eukaryote other than land plants. Polyphyletic; no single
+          NCBITaxon node covers all algae.
       Animal:
+        meaning: NCBITaxon:33208
+        description: Metazoan (multicellular animal).
       Archaea:
+        meaning: NCBITaxon:2157
+        description: Domain Archaea.
       Bacteria:
+        meaning: NCBITaxon:2
+        description: Domain Bacteria.
       Fungi:
+        meaning: NCBITaxon:4751
+        description: Kingdom Fungi.
       Plant:
+        meaning: NCBITaxon:33090
+        description: Viridiplantae (green plants including land plants and green algae).
       Plasmid:
+        description: >-
+          DNA isolated primarily from a plasmid rather than a cellular organism.
+          Not a taxonomic group; no NCBITaxon meaning applicable.
       Protist:
+        description: >-
+          Eukaryote that is not an animal, plant, or fungus. Polyphyletic; no single
+          NCBITaxon node covers all protists.
       Virus:
+        meaning: NCBITaxon:10239
+        description: Viruses (all Baltimore groups).
       Synthetic Construct:
+        meaning: NCBITaxon:32630
+        description: Artificially constructed sequence not derived from a natural organism.
 slots:
   air_data:
     description: aggregation slot relating air data collections to a SampleData container
@@ -597,11 +626,22 @@ slots:
     minimum_value: 0.0001
     maximum_value: 2000
   biosafety_mat_cat:
-    description: Select the biosafety material category for your JGI samples.
+    # JGI calls this "Biosafety Material Category" but the values are organism/material
+    # kind (Bacteria, Fungi, etc.), not biosafety levels (BSL-1..4). The label reflects
+    # JGI's internal routing use; we keep the slot name to match the JGI form.
+    description: >-
+      Broad kind of organism or genetic element. JGI uses this field, labeled
+      "Biosafety Material Category", for internal routing; values are organism
+      categories, not biosafety levels.
     title: JGI Biosafety Material Category
     rank: 17
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
+    structured_aliases:
+      - literal_form: Biosafety Material Category
+        predicate: EXACT_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
   jgi_sample_contact:
     title: DNA sample contact
     examples:
@@ -1333,7 +1373,7 @@ classes:
         slot_group: jgi_isolate_section
       biosafety_mat_cat:
         slot_group: jgi_isolate_section
-        range: JgiIsolateBiosafetyMaterialCategoryEnum
+        range: JgiIsolateMaterialKindEnum
       dna_isolate_meth:
         slot_group: jgi_isolate_section
       isolate_single_colony:
