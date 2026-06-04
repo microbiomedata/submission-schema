@@ -760,7 +760,7 @@ slots:
       Year, Collection Month (full name), and Collection Day columns.
     comments:
       - Use the date of the RNA experiment, not the date the source culture was
-        obtained. Full date required: YYYY-MM-DD.
+        obtained. Full date (YYYY-MM-DD) is required.
     examples:
       - value: "2017-01-20"
       - value: "2021-06-15"
