@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/diss_oxygen/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/estimated_size/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Slot: dissolved oxygen (diss_oxygen) - submission-schema</title>
+        <title>Slot: estimated size (estimated_size) - submission-schema</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-dissolved-oxygen-diss_oxygen" class="md-skip">
+        <a href="#slot-estimated-size-estimated_size" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: dissolved oxygen (diss_oxygen)
+              Slot: estimated size (estimated_size)
             
           </span>
         </div>
@@ -408,15 +408,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Annotations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       Schema Source
@@ -466,10 +457,10 @@
   
 
 
-<h1 id="slot-dissolved-oxygen-diss_oxygen">Slot: dissolved oxygen (diss_oxygen)</h1>
-<p><em>Concentration of dissolved oxygen</em></p>
-<p>URI: <a href="https://w3id.org/mixs/0000119">MIXS:0000119</a>
-Alias: diss_oxygen</p>
+<h1 id="slot-estimated-size-estimated_size">Slot: estimated size (estimated_size)</h1>
+<p><em>The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period</em></p>
+<p>URI: <a href="https://w3id.org/mixs/0000024">MIXS:0000024</a>
+Alias: estimated_size</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -483,34 +474,19 @@ Alias: diss_oxygen</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
-<td>biofilm dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MiscEnvsInterface/">MiscEnvsInterface</a></td>
-<td>misc_envs dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../WaterInterface/">WaterInterface</a></td>
-<td>water dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
-<td>no</td>
+<td><a href="../IsolateInterface/">IsolateInterface</a></td>
+<td>Metadata for microbial isolate samples submitted to NMDC</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../String/">String</a></p>
+<p>Range: <a href="../Integer/">Integer</a></p>
 </li>
 <li>
-<p>Regex pattern: <code>^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$</code></p>
+<p>Minimum Value: 1</p>
 </li>
 </ul>
 <h2 id="examples">Examples</h2>
@@ -522,34 +498,15 @@ Alias: diss_oxygen</p>
 </thead>
 <tbody>
 <tr>
-<td>175 umol/L</td>
+<td>None</td>
 </tr>
 </tbody>
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>Value must be reported in one of the following units: mg/L, umol/kg, umol/L. Provide the numeric portion followed by a space and the unit.</li>
+<li>JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Preferred_unit</td>
-<td>micromole per kilogram, milligram per liter</td>
-</tr>
-<tr>
-<td>storage_units</td>
-<td>mg/L</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -565,52 +522,43 @@ Alias: diss_oxygen</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>MIXS:0000119</td>
+<td>MIXS:0000024</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:diss_oxygen</td>
+<td>nmdc_sub_schema:estimated_size</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: diss_oxygen
-annotations:
-  Preferred_unit:
-    tag: Preferred_unit
-    value: micromole per kilogram, milligram per liter
-  storage_units:
-    tag: storage_units
-    value: mg/L|umol/kg|umol/L
-description: Concentration of dissolved oxygen
-title: dissolved oxygen
+<pre><code class="language-yaml">name: estimated_size
+description: The estimated size of the genome prior to sequencing. Of particular importance
+  in the sequencing of (eukaryotic) genome which could remain in draft form for a
+  long or unspecified period
+title: estimated size
 comments:
-- 'Value must be reported in one of the following units: mg/L, umol/kg, umol/L. Provide
-  the numeric portion followed by a space and the unit.'
+- JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
 examples:
-- value: 175 umol/L
+- object: 300000
 from_schema: https://example.com/nmdc_submission_schema
-rank: 19
+structured_aliases:
+  Estimated Genome Size (Mb):
+    literal_form: Estimated Genome Size (Mb)
+    predicate: BROAD_SYNONYM
+    contexts:
+    - https://jgi.doe.gov/isolate-submission-form/v19
+rank: 112
 keywords:
-- dissolved
-- oxygen
-slot_uri: MIXS:0000119
-alias: diss_oxygen
+- size
+slot_uri: MIXS:0000024
+alias: estimated_size
 domain_of:
-- BiofilmInterface
-- MiscEnvsInterface
-- SedimentInterface
-- WaterInterface
-slot_group: mixs_core_section
-range: string
-pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
-  *.*$
-structured_pattern:
-  syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
-  interpolated: true
-  partial_match: true
+- IsolateInterface
+slot_group: organism_section
+range: integer
+minimum_value: 1
 
 </code></pre>
 

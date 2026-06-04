@@ -287,6 +287,8 @@
 
       IsolateInterface : collection_date
 
+      IsolateInterface : estimated_size
+
       IsolateInterface : host_taxid
 
       IsolateInterface : isolate_name
@@ -367,6 +369,12 @@
 <td><a href="../classified_as/">classified_as</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Taxonomic classification of this organism</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../estimated_size/">estimated_size</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>The estimated size of the genome prior to sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -468,10 +476,16 @@ slots:
 - strain_name
 - isolate_name
 - classified_as
+- estimated_size
 slot_usage:
   analysis_type:
     name: analysis_type
     required: false
+  estimated_size:
+    name: estimated_size
+    title: Estimated genome size (Mb)
+    unit:
+      ucum_code: Mbase
 
 </code></pre>
 </details>
@@ -495,6 +509,11 @@ slot_usage:
   analysis_type:
     name: analysis_type
     required: false
+  estimated_size:
+    name: estimated_size
+    title: Estimated genome size (Mb)
+    unit:
+      ucum_code: Mbase
 attributes:
   collection_date:
     name: collection_date
@@ -769,6 +788,36 @@ attributes:
     structured_pattern:
       syntax: NCBITaxon:\d+
       interpolated: false
+  estimated_size:
+    name: estimated_size
+    description: The estimated size of the genome prior to sequencing. Of particular
+      importance in the sequencing of (eukaryotic) genome which could remain in draft
+      form for a long or unspecified period
+    title: Estimated genome size (Mb)
+    comments:
+    - JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
+    examples:
+    - object: 300000
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Estimated Genome Size (Mb):
+        literal_form: Estimated Genome Size (Mb)
+        predicate: BROAD_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 112
+    keywords:
+    - size
+    slot_uri: MIXS:0000024
+    alias: estimated_size
+    owner: IsolateInterface
+    domain_of:
+    - IsolateInterface
+    slot_group: organism_section
+    range: integer
+    minimum_value: 1
+    unit:
+      ucum_code: Mbase
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample
