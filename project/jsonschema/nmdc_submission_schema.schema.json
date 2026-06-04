@@ -125,6 +125,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+): ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+), ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$",
@@ -154,6 +161,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -194,7 +208,8 @@
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -353,7 +368,9 @@
                 "metatranscriptomics",
                 "natural organic matter",
                 "bulk chemistry",
-                "amplicon sequencing assay"
+                "amplicon sequencing assay",
+                "isolate genome sequencing",
+                "isolate transcriptome sequencing"
             ],
             "title": "AnalysisTypeEnum",
             "type": "string"
@@ -601,6 +618,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+): ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+), ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$",
@@ -714,6 +738,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -813,7 +844,8 @@
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -1419,6 +1451,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "ext_door": {
                     "description": "The number of exterior doors in the built structure",
                     "type": [
@@ -1673,6 +1712,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -4827,6 +4873,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "field": {
                     "description": "Name of the hydrocarbon field (e.g. Albacora)",
                     "type": [
@@ -4923,6 +4976,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "owc_tvdss": {
                     "description": "Depth of the original oil water contact (OWC) zone (average) (m TVDSS)",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$",
@@ -5013,7 +5073,8 @@
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -5601,6 +5662,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "field": {
                     "description": "Name of the hydrocarbon field (e.g. Albacora)",
                     "type": [
@@ -5712,6 +5780,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -5795,7 +5870,8 @@
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -6232,9 +6308,16 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "genetic_mod": {
                     "description": "Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -6343,7 +6426,7 @@
                 },
                 "host_growth_cond": {
                     "description": "Literature reference giving growth conditions of the host",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
                     "type": [
                         "string",
                         "null"
@@ -6457,6 +6540,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -6481,7 +6571,8 @@
                     "description": "Reason for the sample"
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -7804,6 +7895,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "geo_loc_name": {
                     "description": "The geographical origin of the sample as defined by the country or sea name followed by specific region name.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+): ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+), ([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+)$",
@@ -7865,6 +7963,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -7938,7 +8043,8 @@
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -8203,7 +8309,7 @@
                 },
                 "cult_root_med": {
                     "description": "Name or reference for the hydroponic or in vitro culture rooting medium; can be the name of a commonly used medium or reference to a specific medium, e.g. Murashige and Skoog medium. If the medium has not been formally published, use the rooting medium descriptors",
-                    "pattern": "^(.*|PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(.*|PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -8285,6 +8391,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "fertilizer_regm": {
                     "description": "Information about treatment involving the use of fertilizers; should include the name of fertilizer, amount administered, treatment regimen including how many times the treatment was repeated, how long each treatment lasted, and the start and end time of the entire treatment; can include multiple fertilizer regimens",
                     "type": [
@@ -8308,7 +8421,7 @@
                 },
                 "genetic_mod": {
                     "description": "Genetic modifications of the genome of an organism, which may occur naturally by spontaneous mutation, or be introduced by some experimental means, e.g. specification of a transgene or the gene knocked-out or details of transient transfection",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -8502,6 +8615,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -8528,7 +8648,7 @@
                     ]
                 },
                 "plant_growth_med": {
-                    "description": "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from EO:plant growth medium (follow this link for terms http://purl.obolibrary.org/obo/EO_0007147) or other controlled vocabulary",
+                    "description": "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from the Plant Environment Ontology (PECO), plant growth medium exposure (http://purl.obolibrary.org/obo/PECO_0007147), or other controlled vocabulary.",
                     "pattern": "^\\S+.*\\S+ \\[[a-zA-Z]{2,}:\\d+\\]$",
                     "type": [
                         "string",
@@ -8547,7 +8667,7 @@
                     "description": "Sex of the reproductive parts on the whole plant, e.g. pistillate, staminate, monoecieous, hermaphrodite"
                 },
                 "plant_struc": {
-                    "description": "Name of plant structure the sample was obtained from; for Plant Ontology (PO) (v releases/2017-12-14) terms, see http://purl.bioontology.org/ontology/PO, e.g. petiole epidermis (PO_0000051). If an individual flower is sampled, the sex of it can be recorded here",
+                    "description": "Name of plant structure the sample was obtained from; for Plant Ontology (PO) terms, see http://obofoundry.org/ontology/po.html, e.g. petiole epidermis (PO:0000051). If an individual flower is sampled, the sex of it can be recorded here.",
                     "pattern": "^([^\\s-]{1,2}|[^\\s-]+.+[^\\s-]+) \\[[a-zA-Z]{2,}:[a-zA-Z0-9]\\d+\\]$",
                     "type": "string"
                 },
@@ -8567,7 +8687,7 @@
                 },
                 "root_cond": {
                     "description": "Relevant rooting conditions such as field plot size, sowing density, container dimensions, number of plants per container",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
                     "type": [
                         "string",
                         "null"
@@ -8634,7 +8754,7 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -8652,7 +8772,8 @@
                     "description": "Reason for the sample"
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -8767,7 +8888,7 @@
                 },
                 "tiss_cult_growth_med": {
                     "description": "Description of plant tissue culture growth media used",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)|.*)$",
                     "type": [
                         "string",
                         "null"
@@ -9543,6 +9664,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "extreme_event": {
                     "description": "Unusual physical events that may have affected microbial populations",
                     "type": [
@@ -9758,6 +9886,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -9872,14 +10007,15 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -10039,7 +10175,7 @@
                 },
                 "tot_nitro_cont_meth": {
                     "description": "Reference or method used in determining the total nitrogen",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10055,7 +10191,7 @@
                 },
                 "tot_org_c_meth": {
                     "description": "Reference or method used in determining total organic carbon",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10199,7 +10335,7 @@
                 },
                 "al_sat_meth": {
                     "description": "Reference or method used in determining Aluminum saturation",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10328,7 +10464,7 @@
                 },
                 "cur_vegetation_meth": {
                     "description": "Reference or method used in vegetation classification",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10476,7 +10612,7 @@
                 },
                 "heavy_metals_meth": {
                     "description": "Reference or method used in determining heavy metals",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10484,7 +10620,7 @@
                 },
                 "horizon_meth": {
                     "description": "Reference or method used in determining the horizon",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10540,7 +10676,7 @@
                 },
                 "link_addit_analys": {
                     "description": "Link to additional analysis results performed on the sample",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10555,7 +10691,7 @@
                 },
                 "link_climate_info": {
                     "description": "Link to climate resource",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10570,7 +10706,7 @@
                 },
                 "local_class_meth": {
                     "description": "Reference or method used in determining the local soil classification",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10720,7 +10856,7 @@
                 },
                 "prev_land_use_meth": {
                     "description": "Reference or method used in determining previous land use and dates",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10748,14 +10884,15 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -10947,7 +11084,7 @@
                 },
                 "tot_nitro_cont_meth": {
                     "description": "Reference or method used in determining the total nitrogen",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -10963,7 +11100,7 @@
                 },
                 "tot_org_c_meth": {
                     "description": "Reference or method used in determining total organic carbon",
-                    "pattern": "^(PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
@@ -12339,6 +12476,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "gaseous_substances": {
                     "description": "Amount or concentration of substances such as hydrogen sulfide, carbon dioxide, methane, etc.; can include multiple substances",
                     "type": [
@@ -12389,6 +12533,13 @@
                 "organism_count": {
                     "description": "Total cell count of any organism (or group of organisms) per gram, volume or area of sample, should include name of organism followed by count. The method that was used for the enumeration (e.g. qPCR, atp, mpn, etc.) Should also be provided. (example: total prokaryotes; 3.5e7 cells per ml; qpcr)",
                     "pattern": "^(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other)\\|)*(\\S+.*\\S+;[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)? \\S+.*\\S+;(qPCR|ATP|MPN|other))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
                     "type": [
                         "string",
                         "null"
@@ -12459,7 +12610,8 @@
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"
@@ -13023,6 +13175,13 @@
                         "null"
                     ]
                 },
+                "experimental_factor_other": {
+                    "description": "Other details about your sample that you feel can't be accurately represented in the available columns.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "filter_method": {
                     "description": "Type of filter used or how the sample was filtered",
                     "type": [
@@ -13179,6 +13338,13 @@
                         "null"
                     ]
                 },
+                "other_treatment": {
+                    "description": "Other treatments applied to your samples that are not applicable to the provided fields",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "oxy_stat_samp": {
                     "$ref": "#/$defs/OxyStatSampEnum",
                     "description": "Oxygenation status of sample"
@@ -13303,14 +13469,15 @@
                 },
                 "salinity_meth": {
                     "description": "Reference or method used in determining salinity.",
-                    "pattern": "^PMID:\\d+|doi:10.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$",
+                    "pattern": "^(PMID:\\d+|doi:10\\.\\d{2,9}/.*|https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*))$",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "samp_collec_device": {
-                    "description": "The device used to collect an environmental sample. This field accepts terms listed under environmental sampling device (http://purl.obolibrary.org/obo/ENVO). This field also accepts terms listed under specimen collection device (http://purl.obolibrary.org/obo/GENEPIO_0002094)",
+                    "description": "The device used to collect an environmental sample. Recommended values are subclasses of specimen collection device (http://purl.obolibrary.org/obo/OBI_0002814). OBI itself contains only swab/wipe subclasses; environmental sampling devices (corers, grab samplers, passive samplers, etc.) are defined in GENEPIO under the same OBI:0002814 parent. Free-text values are accepted for backward compatibility; new submissions should prefer the form: label [PREFIX:LOCALID].",
+                    "pattern": "^([^\\[\\]]+|.+ \\[[A-Za-z][A-Za-z0-9_]*:[A-Za-z0-9_]+\\])$",
                     "type": [
                         "string",
                         "null"

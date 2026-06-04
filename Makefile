@@ -6,7 +6,7 @@ SHELL := bash
 .SUFFIXES:
 .SECONDARY:
 
-RUN = poetry run
+RUN = uv run
 SCHEMA_NAME = nmdc_submission_schema
 SOURCE_SCHEMA_PATH = src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml
 SOURCE_SCHEMA_DIR = $(dir $(SOURCE_SCHEMA_PATH))
@@ -39,7 +39,7 @@ help:
 # install any dependencies required for building
 .PHONY: install
 install:
-	poetry install
+	uv sync
 
 .PHONY: all
 all: schema-build gen-project gendoc
