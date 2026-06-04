@@ -1,0 +1,18 @@
+## Valid: JgiIsolateInterface with rna_collection_date for a transcriptome project.
+## rna_collection_date stores the RNA experiment date as YYYY-MM-DD; the JGI
+## export layer splits this into Collection Year, Collection Month (full name),
+## and Collection Day columns.
+jgi_isolate_data:
+  - samp_name: test_isolate_rna_001
+    analysis_type:
+      - metagenomics
+    source_mat_id: igsn:000
+    cont_type: tube
+    container_name: test_tube_001
+    jgi_sample_format: TE
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    dna_isolate_meth: CTAB
+    isolate_single_colony: "yes"
+    isolate_ribosomal_seq_type: 16S
+    rna_collection_date: "2021-06-15"

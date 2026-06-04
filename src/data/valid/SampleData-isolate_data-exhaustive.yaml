@@ -53,3 +53,4 @@ jgi_isolate_data:
     ## isolate_second_ribosomal_seq not provided: no secondary sequence for this bacterial isolate
     ## isolate_fungal_16s_screening not applicable: non-fungal sample
     ## isolate_its_match_unite not applicable: non-fungal sample
+    ## rna_collection_date: RNA/transcriptome projects only; omitted for this DNA isolate

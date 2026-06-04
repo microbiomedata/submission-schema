@@ -751,38 +751,35 @@ slots:
     range: YesNoEnum
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
-  rna_collection_year:
-    title: RNA experiment collection year
-    description: Year in which the RNA sample was collected or the culture experiment was performed.
+  rna_collection_date:
+    title: Collection date
+    description: >-
+      Date the RNA sample was collected or the culture experiment was performed,
+      in YYYY-MM-DD format. For RNA projects, use the experiment date rather than
+      the original field collection date. JGI export splits this into Collection
+      Year, Collection Month (full name), and Collection Day columns.
+    comments:
+      - Use the date of the RNA experiment, not the date the source culture was
+        obtained. Full date required: YYYY-MM-DD.
     examples:
-      - value: "2024"
+      - value: "2017-01-20"
+      - value: "2021-06-15"
     rank: 43
-    range: integer
-    aliases:
-      - Collection Year
+    range: string
+    pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
     structured_aliases:
       - literal_form: Collection Year
-        predicate: EXACT_SYNONYM
+        predicate: RELATED_SYNONYM
         contexts:
           - https://jgi.doe.gov/isolate-submission-form/v19
-  rna_collection_month:
-    title: RNA experiment collection month
-    description: Month in which the RNA sample was collected or the culture experiment was performed. Use the full month name.
-    examples:
-      - value: January
-    rank: 44
-    range: string
-    aliases:
-      - Collection Month
-  rna_collection_day:
-    title: RNA experiment collection day
-    description: Day on which the RNA sample was collected or the culture experiment was performed.
-    examples:
-      - value: "15"
-    rank: 45
-    range: integer
-    minimum_value: 1
-    maximum_value: 31
+      - literal_form: Collection Month
+        predicate: RELATED_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
+      - literal_form: Collection Day
+        predicate: RELATED_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
   ## data aggregation slots for SampleData
   isolate_data:
     description: aggregation slot relating isolate data collections to a SampleData container
@@ -1313,10 +1310,8 @@ classes:
       - isolate_second_ribosomal_seq_comments
       - isolate_fungal_16s_screening
       - isolate_its_match_unite
-      ## RNA experiment dates; move to JgiIsolateTranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438.
-      - rna_collection_year
-      - rna_collection_month
-      - rna_collection_day
+      ## Move to JgiIsolateTranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438.
+      - rna_collection_date
     slot_usage:
       # analysis_type has no valid enum value for isolate WGS; suppress the inherited
       # required constraint until a proper value is added to AnalysisTypeEnum in nmdc-schema
@@ -1381,12 +1376,8 @@ classes:
         slot_group: jgi_isolate_section
       isolate_its_match_unite:
         slot_group: jgi_isolate_section
-      ## RNA experiment dates; move to JgiIsolateTranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438.
-      rna_collection_year:
-        slot_group: jgi_isolate_section
-      rna_collection_month:
-        slot_group: jgi_isolate_section
-      rna_collection_day:
+      ## Move to JgiIsolateTranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438.
+      rna_collection_date:
         slot_group: jgi_isolate_section
     rules:
       - title: well_requires_plate
