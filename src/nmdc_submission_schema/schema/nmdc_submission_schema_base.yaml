@@ -752,10 +752,11 @@ slots:
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
   sample_isolated_from:
-    title: sample isolated from
+    title: Sample Isolated From
     description: Free-text description of what the organism was isolated from.
     rank: 40
     range: string
+    required: true
     examples:
       - value: soil
       - value: leaf
@@ -763,13 +764,18 @@ slots:
       - value: single colony isolate
       - value: DSM 3658
       - value: Sorghum bicolor - root
-    aliases:
-      - Sample Isolated From
+    structured_aliases:
+      - literal_form: Sample Isolated From
+        predicate: EXACT_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
     comments:
       - JGI v19 form field 44
   collection_site_or_growth_conditions:
-    title: collection site or growth conditions
-    description: Free-text description of the collection site or growth conditions for the isolate.
+    title: Collection Site or Growth Conditions
+    description: >-
+      Free-text description of the collection site or growth conditions for the
+      isolate.
     rank: 41
     range: string
     examples:
@@ -778,10 +784,14 @@ slots:
       - value: Deep well
       - value: Liquid culture from a frozen stock
       - value: JGI grown culture
-    aliases:
-      - Collection Site or Growth Conditions
+    structured_aliases:
+      - literal_form: Collection Site or Growth Conditions
+        predicate: EXACT_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
     comments:
       - JGI v19 form field 45
+      - Required for RNA and methylation samples.
   ## data aggregation slots for SampleData
   isolate_data:
     description: aggregation slot relating isolate data collections to a SampleData container

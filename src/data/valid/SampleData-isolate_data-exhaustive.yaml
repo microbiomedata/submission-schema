@@ -41,6 +41,9 @@ jgi_isolate_data:
     container_name: Dturgidum_DSM6724
     jgi_sample_format: TE
     dnase: "no"
+    ## --- Isolation and site ---
+    sample_isolated_from: isolated from ant-cultivated fungus garden, Apterostigma colony
+    ## collection_site_or_growth_conditions omitted: not a transcriptome/methylation project
     ## --- Biosafety and extraction ---
     biosafety_mat_cat: Bacteria
     dna_isolate_meth: CTAB
