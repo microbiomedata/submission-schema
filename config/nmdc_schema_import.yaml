@@ -3738,15 +3738,6 @@ slots:
           slot_group: mixs_core_section
 
   # Move to JgiIsolateGenomeInterface + JgiIsolateTranscriptomeInterface once https://github.com/microbiomedata/submission-schema/issues/438 resolves.
-  - slot: ref_biomaterial
-    source: Organism
-    destinations:
-      - JgiIsolateInterface
-    modifications:
-      - replace:
-          rank: 40
-          slot_group: jgi_isolate_section
-
   - slot: rel_air_humidity
     source: Biosample
     destinations:

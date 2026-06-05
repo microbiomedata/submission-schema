@@ -626,6 +626,32 @@ slots:
     pattern: ^[A-Z0-9]+$
     recommended: true
 
+  reference_genome:
+    title: Reference Genome
+    description: >-
+      Genome record to use as a reference for read alignment or assembly
+      scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/
+      Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.
+    comments:
+      - Provide a reference if one exists; helps JGI with assembly and QC
+        even for de novo projects.
+      - This is a local slot pending promotion to nmdc-schema; see
+        https://github.com/microbiomedata/submission-schema/issues/447
+    examples:
+      - value: "2648501807"
+        description: IMG taxon OID
+      - value: GCF_000195995.2
+        description: NCBI RefSeq assembly accession
+      - value: Mycocosm:Aspni7
+        description: Mycocosm ID
+    rank: 40
+    range: string
+    structured_aliases:
+      - literal_form: Reference Genome
+        predicate: EXACT_SYNONYM
+        contexts:
+          - https://jgi.doe.gov/isolate-submission-form/v19
+
   ## isolate-specific slots (JGI-only; not stored in nmdc-schema)
   isolate_single_colony:
     title: single colony isolation
@@ -1270,7 +1296,7 @@ classes:
       - dnase
       - biosafety_mat_cat
       - dna_isolate_meth
-      - ref_biomaterial  # temporary; splits to JgiIsolateGenome/TranscriptomeInterface per https://github.com/microbiomedata/submission-schema/issues/438
+      - reference_genome  # Move to JgiIsolateGenomeInterface per https://github.com/microbiomedata/submission-schema/issues/438
       ## isolate-specific JGI-only slots
       - isolate_single_colony
       - isolate_known_contaminants
@@ -1326,7 +1352,7 @@ classes:
         range: JgiIsolateBiosafetyMaterialCategoryEnum
       dna_isolate_meth:
         slot_group: jgi_isolate_section
-      ref_biomaterial:
+      reference_genome:
         slot_group: jgi_isolate_section
       isolate_single_colony:
         slot_group: jgi_isolate_section
