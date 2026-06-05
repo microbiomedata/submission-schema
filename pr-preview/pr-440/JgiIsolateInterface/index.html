@@ -527,7 +527,7 @@
 
       JgiIsolateInterface : nuc_acid_concentration
 
-      JgiIsolateInterface : ref_biomaterial
+      JgiIsolateInterface : reference_genome
 
       JgiIsolateInterface : replicate_group
 
@@ -587,19 +587,19 @@
 </tr>
 <tr>
 <td><a href="../jgi_sample_contact/">jgi_sample_contact</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_project_pi/">jgi_project_pi</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_proposal_id/">jgi_proposal_id</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -670,9 +670,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../ref_biomaterial/">ref_biomaterial</a></td>
+<td><a href="../reference_genome/">reference_genome</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Reference for the organism, preferentially a DOI when a primary publication o...</td>
+<td>Genome record to use as a reference for read alignment or assembly scaffoldin...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -733,12 +733,6 @@
 <td><a href="../isolate_its_match_unite/">isolate_its_match_unite</a></td>
 <td>0..1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
 <td>For fungal draft samples only — does the ITS sequence match taxonomy in the U...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../ref_biomaterial/">ref_biomaterial</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Reference for the organism, preferentially a DOI when a primary publication o...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -952,7 +946,7 @@ slots:
 - dnase
 - biosafety_mat_cat
 - dna_isolate_meth
-- ref_biomaterial
+- reference_genome
 - isolate_single_colony
 - isolate_known_contaminants
 - isolate_ribosomal_seq
@@ -963,7 +957,6 @@ slots:
 - isolate_second_ribosomal_seq_comments
 - isolate_fungal_16s_screening
 - isolate_its_match_unite
-- ref_biomaterial
 slot_usage:
   analysis_type:
     name: analysis_type
@@ -1026,8 +1019,8 @@ slot_usage:
   dna_isolate_meth:
     name: dna_isolate_meth
     slot_group: jgi_isolate_section
-  ref_biomaterial:
-    name: ref_biomaterial
+  reference_genome:
+    name: reference_genome
     slot_group: jgi_isolate_section
   isolate_single_colony:
     name: isolate_single_colony
@@ -1201,8 +1194,8 @@ slot_usage:
   dna_isolate_meth:
     name: dna_isolate_meth
     slot_group: jgi_isolate_section
-  ref_biomaterial:
-    name: ref_biomaterial
+  reference_genome:
+    name: reference_genome
     slot_group: jgi_isolate_section
   isolate_single_colony:
     name: isolate_single_colony
@@ -1366,7 +1359,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_project_pi:
     name: jgi_project_pi
     title: JGI sequencing project PI
@@ -1383,7 +1376,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_proposal_id:
     name: jgi_proposal_id
     title: JGI proposal number
@@ -1401,7 +1394,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
     pattern: ^[A-Z0-9]+$
   nuc_acid_absorb1:
     name: nuc_acid_absorb1
@@ -1653,55 +1646,37 @@ attributes:
     range: string
     required: true
     recommended: false
-  ref_biomaterial:
-    name: ref_biomaterial
-    description: Reference for the organism, preferentially a DOI when a primary publication
-      or genome report exists; PMID and URL are also accepted per the MIxS ref_biomaterial
-      pattern (`{PMID}|{DOI}|{URL}`). Reuses MIxS ref_biomaterial (MIXS:0000025).
-    title: reference for biomaterial
+  reference_genome:
+    name: reference_genome
+    description: Genome record to use as a reference for read alignment or assembly
+      scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome
+      ID, or NCBI assembly accession (GCF_/GCA_). Free-text.
+    title: Reference Genome
     comments:
-    - The MIxS pattern accepts DOI, PMID, or URL. DOI is preferred when available
-      — it gives a stable reference to the publication or genome report. See the `associated_dois`
-      pattern elsewhere in the NMDC schema for DOI-structured alternatives.
-    - JGI "Reference Genome" submissions sometimes carry non-publication identifiers
-      such as IMG or Phytozome IDs, which do not match the MIxS pattern. Those are
-      out of scope for this slot and should be captured separately (see `gold_organism_identifiers`
-      and `insdc_nucleotide_identifiers` for genome / assembly references).
-    - The MIxS name ref_biomaterial may be renamed in a future MIxS release. See ongoing
-      MIxS renaming work.
+    - Provide a reference if one exists; helps JGI with assembly and QC even for de
+      novo projects.
+    - This is a local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
     examples:
-    - description: DOI form (preferred when a primary publication exists)
-      object:
-        type: nmdc:TextValue
-        has_raw_value: doi:10.1016/j.syapm.2018.01.009
-    - description: PubMed ID form
-      object:
-        type: nmdc:TextValue
-        has_raw_value: PMID:24296464
-    - description: URL form (e.g. NCBI Genome record)
-      object:
-        type: nmdc:TextValue
-        has_raw_value: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000016065.1/
+    - value: '2648501807'
+      description: IMG taxon OID
+    - value: GCF_000195995.2
+      description: NCBI RefSeq assembly accession
+    - value: Mycocosm:Aspni7
+      description: Mycocosm ID
     from_schema: https://example.com/nmdc_submission_schema
     structured_aliases:
       Reference Genome:
         literal_form: Reference Genome
-        predicate: RELATED_SYNONYM
+        predicate: EXACT_SYNONYM
         contexts:
         - https://jgi.doe.gov/isolate-submission-form/v19
     rank: 40
-    slot_uri: MIXS:0000025
-    alias: ref_biomaterial
+    alias: reference_genome
     owner: JgiIsolateInterface
     domain_of:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    pattern: ^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
-    structured_pattern:
-      syntax: ^({PMID}|{DOI}|{URL})$
-      interpolated: true
-      partial_match: true
   isolate_single_colony:
     name: isolate_single_colony
     description: Was the sample isolated from a single colony or equivalent axenic/pure

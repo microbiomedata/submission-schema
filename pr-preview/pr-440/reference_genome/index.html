@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/ref_biomaterial/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/reference_genome/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: reference for biomaterial (ref_biomaterial) - submission-schema</title>
+        <title>Slot: Reference Genome (reference_genome) - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-reference-for-biomaterial-ref_biomaterial" class="md-skip">
+        <a href="#slot-reference-genome-reference_genome" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: reference for biomaterial (ref_biomaterial)
+              Slot: Reference Genome (reference_genome)
             
           </span>
         </div>
@@ -520,10 +520,10 @@
   
 
 
-<h1 id="slot-reference-for-biomaterial-ref_biomaterial">Slot: reference for biomaterial (ref_biomaterial)</h1>
-<p><em>Reference for the organism, preferentially a DOI when a primary publication or genome report exists; PMID and URL are also accepted per the MIxS ref_biomaterial pattern (<code>{PMID}|{DOI}|{URL}</code>). Reuses MIxS ref_biomaterial (MIXS:0000025).</em></p>
-<p>URI: <a href="https://w3id.org/mixs/0000025">MIXS:0000025</a>
-Alias: ref_biomaterial</p>
+<h1 id="slot-reference-genome-reference_genome">Slot: Reference Genome (reference_genome)</h1>
+<p><em>Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF</em>/GCA_). Free-text._</p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/reference_genome">nmdc_sub_schema:reference_genome</a>
+Alias: reference_genome</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -545,12 +545,7 @@ Alias: ref_biomaterial</p>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Regex pattern: <code>^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$</code></p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -561,21 +556,20 @@ Alias: ref_biomaterial</p>
 </thead>
 <tbody>
 <tr>
-<td>None</td>
+<td>2648501807</td>
 </tr>
 <tr>
-<td>None</td>
+<td>GCF_000195995.2</td>
 </tr>
 <tr>
-<td>None</td>
+<td>Mycocosm:Aspni7</td>
 </tr>
 </tbody>
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>The MIxS pattern accepts DOI, PMID, or URL. DOI is preferred when available — it gives a stable reference to the publication or genome report. See the <code>associated_dois</code> pattern elsewhere in the NMDC schema for DOI-structured alternatives.</li>
-<li>JGI "Reference Genome" submissions sometimes carry non-publication identifiers such as IMG or Phytozome IDs, which do not match the MIxS pattern. Those are out of scope for this slot and should be captured separately (see <code>gold_organism_identifiers</code> and <code>insdc_nucleotide_identifiers</code> for genome / assembly references).</li>
-<li>The MIxS name ref_biomaterial may be renamed in a future MIxS release. See ongoing MIxS renaming work.</li>
+<li>Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.</li>
+<li>This is a local slot pending promotion to nmdc-schema; see <a href="https://github.com/microbiomedata/submission-schema/issues/447">https://github.com/microbiomedata/submission-schema/issues/447</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -593,64 +587,45 @@ Alias: ref_biomaterial</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>MIXS:0000025</td>
+<td>nmdc_sub_schema:reference_genome</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:ref_biomaterial</td>
+<td>nmdc_sub_schema:reference_genome</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: ref_biomaterial
-description: Reference for the organism, preferentially a DOI when a primary publication
-  or genome report exists; PMID and URL are also accepted per the MIxS ref_biomaterial
-  pattern (`{PMID}|{DOI}|{URL}`). Reuses MIxS ref_biomaterial (MIXS:0000025).
-title: reference for biomaterial
+<pre><code class="language-yaml">name: reference_genome
+description: Genome record to use as a reference for read alignment or assembly scaffolding.
+  Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly
+  accession (GCF_/GCA_). Free-text.
+title: Reference Genome
 comments:
-- The MIxS pattern accepts DOI, PMID, or URL. DOI is preferred when available — it
-  gives a stable reference to the publication or genome report. See the `associated_dois`
-  pattern elsewhere in the NMDC schema for DOI-structured alternatives.
-- JGI &quot;Reference Genome&quot; submissions sometimes carry non-publication identifiers such
-  as IMG or Phytozome IDs, which do not match the MIxS pattern. Those are out of scope
-  for this slot and should be captured separately (see `gold_organism_identifiers`
-  and `insdc_nucleotide_identifiers` for genome / assembly references).
-- The MIxS name ref_biomaterial may be renamed in a future MIxS release. See ongoing
-  MIxS renaming work.
+- Provide a reference if one exists; helps JGI with assembly and QC even for de novo
+  projects.
+- This is a local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
 examples:
-- description: DOI form (preferred when a primary publication exists)
-  object:
-    type: nmdc:TextValue
-    has_raw_value: doi:10.1016/j.syapm.2018.01.009
-- description: PubMed ID form
-  object:
-    type: nmdc:TextValue
-    has_raw_value: PMID:24296464
-- description: URL form (e.g. NCBI Genome record)
-  object:
-    type: nmdc:TextValue
-    has_raw_value: https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_000016065.1/
+- value: '2648501807'
+  description: IMG taxon OID
+- value: GCF_000195995.2
+  description: NCBI RefSeq assembly accession
+- value: Mycocosm:Aspni7
+  description: Mycocosm ID
 from_schema: https://example.com/nmdc_submission_schema
 structured_aliases:
   Reference Genome:
     literal_form: Reference Genome
-    predicate: RELATED_SYNONYM
+    predicate: EXACT_SYNONYM
     contexts:
     - https://jgi.doe.gov/isolate-submission-form/v19
 rank: 40
-slot_uri: MIXS:0000025
-alias: ref_biomaterial
+alias: reference_genome
 domain_of:
 - JgiIsolateInterface
-slot_group: jgi_isolate_section
 range: string
-pattern: ^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*))$
-structured_pattern:
-  syntax: ^({PMID}|{DOI}|{URL})$
-  interpolated: true
-  partial_match: true
 
 </code></pre>
 
