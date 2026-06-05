@@ -5997,3 +5997,4 @@ slots:
           # in esplims check_genome_size, conditioned on biosafety_mat_cat.
           minimum_value: 0.000001
           maximum_value: 100000
+
