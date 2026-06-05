@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: sample isolated from (sample_isolated_from) - submission-schema</title>
+        <title>Slot: Sample Isolated From (sample_isolated_from) - submission-schema</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: sample isolated from (sample_isolated_from)
+              Slot: Sample Isolated From (sample_isolated_from)
             
           </span>
         </div>
@@ -429,17 +429,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Aliases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -531,7 +520,7 @@
   
 
 
-<h1 id="slot-sample-isolated-from-sample_isolated_from">Slot: sample isolated from (sample_isolated_from)</h1>
+<h1 id="slot-sample-isolated-from-sample_isolated_from">Slot: Sample Isolated From (sample_isolated_from)</h1>
 <p><em>Free-text description of what the organism was isolated from.</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/sample_isolated_from">nmdc_sub_schema:sample_isolated_from</a>
 Alias: sample_isolated_from</p>
@@ -556,11 +545,12 @@ Alias: sample_isolated_from</p>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-<h2 id="aliases">Aliases</h2>
-<ul>
-<li>Sample Isolated From</li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -623,7 +613,7 @@ Alias: sample_isolated_from</p>
 
 <pre><code class="language-yaml">name: sample_isolated_from
 description: Free-text description of what the organism was isolated from.
-title: sample isolated from
+title: Sample Isolated From
 comments:
 - JGI v19 form field 44
 examples:
@@ -634,13 +624,18 @@ examples:
 - value: DSM 3658
 - value: Sorghum bicolor - root
 from_schema: https://example.com/nmdc_submission_schema
-aliases:
-- Sample Isolated From
+structured_aliases:
+  Sample Isolated From:
+    literal_form: Sample Isolated From
+    predicate: EXACT_SYNONYM
+    contexts:
+    - https://jgi.doe.gov/isolate-submission-form/v19
 rank: 40
 alias: sample_isolated_from
 domain_of:
 - JgiIsolateInterface
 range: string
+required: true
 
 </code></pre>
 

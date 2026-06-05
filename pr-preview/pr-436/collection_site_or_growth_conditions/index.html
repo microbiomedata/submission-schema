@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: collection site or growth conditions (collection_site_or_growth_conditions) - submission-schema</title>
+        <title>Slot: Collection Site or Growth Conditions (collection_site_or_growth_conditions) - submission-schema</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: collection site or growth conditions (collection_site_or_growth_conditions)
+              Slot: Collection Site or Growth Conditions (collection_site_or_growth_conditions)
             
           </span>
         </div>
@@ -429,17 +429,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#aliases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Aliases
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -531,7 +520,7 @@
   
 
 
-<h1 id="slot-collection-site-or-growth-conditions-collection_site_or_growth_conditions">Slot: collection site or growth conditions (collection_site_or_growth_conditions)</h1>
+<h1 id="slot-collection-site-or-growth-conditions-collection_site_or_growth_conditions">Slot: Collection Site or Growth Conditions (collection_site_or_growth_conditions)</h1>
 <p><em>Free-text description of the collection site or growth conditions for the isolate.</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/collection_site_or_growth_conditions">nmdc_sub_schema:collection_site_or_growth_conditions</a>
 Alias: collection_site_or_growth_conditions</p>
@@ -557,10 +546,6 @@ Alias: collection_site_or_growth_conditions</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
-</ul>
-<h2 id="aliases">Aliases</h2>
-<ul>
-<li>Collection Site or Growth Conditions</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -590,6 +575,7 @@ Alias: collection_site_or_growth_conditions</p>
 <h2 id="comments">Comments</h2>
 <ul>
 <li>JGI v19 form field 45</li>
+<li>Required for RNA and methylation samples.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -621,9 +607,10 @@ Alias: collection_site_or_growth_conditions</p>
 <pre><code class="language-yaml">name: collection_site_or_growth_conditions
 description: Free-text description of the collection site or growth conditions for
   the isolate.
-title: collection site or growth conditions
+title: Collection Site or Growth Conditions
 comments:
 - JGI v19 form field 45
+- Required for RNA and methylation samples.
 examples:
 - value: Field
 - value: Greenhouse
@@ -631,8 +618,12 @@ examples:
 - value: Liquid culture from a frozen stock
 - value: JGI grown culture
 from_schema: https://example.com/nmdc_submission_schema
-aliases:
-- Collection Site or Growth Conditions
+structured_aliases:
+  Collection Site or Growth Conditions:
+    literal_form: Collection Site or Growth Conditions
+    predicate: EXACT_SYNONYM
+    contexts:
+    - https://jgi.doe.gov/isolate-submission-form/v19
 rank: 41
 alias: collection_site_or_growth_conditions
 domain_of:

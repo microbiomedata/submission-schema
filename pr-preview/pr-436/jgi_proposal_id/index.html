@@ -525,6 +525,11 @@ Alias: jgi_proposal_id</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../JgiIsolateInterface/">JgiIsolateInterface</a></td>
 <td>JGI-specific submission metadata for isolate sequencing projects</td>
 <td>yes</td>
@@ -532,11 +537,6 @@ Alias: jgi_proposal_id</p>
 <tr>
 <td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
 <td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
-<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -552,7 +552,7 @@ Alias: jgi_proposal_id</p>
 <p>Range: <a href="../String/">String</a></p>
 </li>
 <li>
-<p>Recommended: True</p>
+<p>Required: True</p>
 </li>
 <li>
 <p>Regex pattern: <code>^[A-Z0-9]+$</code></p>
@@ -615,7 +615,7 @@ domain_of:
 - JgiMtInterface
 - JgiIsolateInterface
 range: string
-recommended: true
+required: true
 pattern: ^[A-Z0-9]+$
 
 </code></pre>

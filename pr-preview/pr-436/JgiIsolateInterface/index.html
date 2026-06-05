@@ -589,19 +589,19 @@
 </tr>
 <tr>
 <td><a href="../jgi_sample_contact/">jgi_sample_contact</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_project_pi/">jgi_project_pi</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_proposal_id/">jgi_proposal_id</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -733,7 +733,7 @@
 </tr>
 <tr>
 <td><a href="../sample_isolated_from/">sample_isolated_from</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Free-text description of what the organism was isolated from</td>
 <td>direct</td>
 </tr>
@@ -1374,7 +1374,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_project_pi:
     name: jgi_project_pi
     title: JGI sequencing project PI
@@ -1391,7 +1391,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_proposal_id:
     name: jgi_proposal_id
     title: JGI proposal number
@@ -1409,7 +1409,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
     pattern: ^[A-Z0-9]+$
   nuc_acid_absorb1:
     name: nuc_acid_absorb1
@@ -1858,7 +1858,7 @@ attributes:
   sample_isolated_from:
     name: sample_isolated_from
     description: Free-text description of what the organism was isolated from.
-    title: sample isolated from
+    title: Sample Isolated From
     comments:
     - JGI v19 form field 44
     examples:
@@ -1869,8 +1869,12 @@ attributes:
     - value: DSM 3658
     - value: Sorghum bicolor - root
     from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Sample Isolated From
+    structured_aliases:
+      Sample Isolated From:
+        literal_form: Sample Isolated From
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
     rank: 40
     alias: sample_isolated_from
     owner: JgiIsolateInterface
@@ -1878,13 +1882,15 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
+    required: true
   collection_site_or_growth_conditions:
     name: collection_site_or_growth_conditions
     description: Free-text description of the collection site or growth conditions
       for the isolate.
-    title: collection site or growth conditions
+    title: Collection Site or Growth Conditions
     comments:
     - JGI v19 form field 45
+    - Required for RNA and methylation samples.
     examples:
     - value: Field
     - value: Greenhouse
@@ -1892,8 +1898,12 @@ attributes:
     - value: Liquid culture from a frozen stock
     - value: JGI grown culture
     from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Collection Site or Growth Conditions
+    structured_aliases:
+      Collection Site or Growth Conditions:
+        literal_form: Collection Site or Growth Conditions
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
     rank: 41
     alias: collection_site_or_growth_conditions
     owner: JgiIsolateInterface
