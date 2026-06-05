@@ -585,19 +585,19 @@
 </tr>
 <tr>
 <td><a href="../jgi_sample_contact/">jgi_sample_contact</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_project_pi/">jgi_project_pi</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_proposal_id/">jgi_proposal_id</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -1344,7 +1344,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_project_pi:
     name: jgi_project_pi
     title: JGI sequencing project PI
@@ -1361,7 +1361,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_proposal_id:
     name: jgi_proposal_id
     title: JGI proposal number
@@ -1379,7 +1379,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
     pattern: ^[A-Z0-9]+$
   nuc_acid_absorb1:
     name: nuc_acid_absorb1
