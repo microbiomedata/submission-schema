@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-05-29T15:38:13
+# Generation date: 2026-06-03T18:37:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -296,14 +296,6 @@ class WastewaterSludgeInterfaceSampName(extended_str):
 
 
 class WaterInterfaceSampName(extended_str):
-    pass
-
-
-class IsolateInterfaceSampName(extended_str):
-    pass
-
-
-class JgiIsolateInterfaceSampName(extended_str):
     pass
 
 
@@ -6473,261 +6465,6 @@ class WaterInterface(DhInterface):
 
 
 @dataclass(repr=False)
-class IsolateInterface(DhInterface):
-    """
-    Metadata for microbial isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy,
-    strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and
-    Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["IsolateInterface"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:IsolateInterface"
-    class_name: ClassVar[str] = "IsolateInterface"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.IsolateInterface
-
-    samp_name: Union[str, IsolateInterfaceSampName] = None
-    collection_date: str = None
-    organism_genus: str = None
-    organism_species: str = None
-    strain_name: str = None
-    classified_as: str = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
-    host_taxid: Optional[str] = None
-    source_mat_id: Optional[str] = None
-    isolate_name: Optional[str] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.samp_name):
-            self.MissingRequiredField("samp_name")
-        if not isinstance(self.samp_name, IsolateInterfaceSampName):
-            self.samp_name = IsolateInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.collection_date):
-            self.MissingRequiredField("collection_date")
-        if not isinstance(self.collection_date, str):
-            self.collection_date = str(self.collection_date)
-
-        if self._is_empty(self.organism_genus):
-            self.MissingRequiredField("organism_genus")
-        if not isinstance(self.organism_genus, str):
-            self.organism_genus = str(self.organism_genus)
-
-        if self._is_empty(self.organism_species):
-            self.MissingRequiredField("organism_species")
-        if not isinstance(self.organism_species, str):
-            self.organism_species = str(self.organism_species)
-
-        if self._is_empty(self.strain_name):
-            self.MissingRequiredField("strain_name")
-        if not isinstance(self.strain_name, str):
-            self.strain_name = str(self.strain_name)
-
-        if self._is_empty(self.classified_as):
-            self.MissingRequiredField("classified_as")
-        if not isinstance(self.classified_as, str):
-            self.classified_as = str(self.classified_as)
-
-        if self._is_empty(self.analysis_type):
-            self.MissingRequiredField("analysis_type")
-        if not isinstance(self.analysis_type, list):
-            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
-        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
-
-        if self.host_taxid is not None and not isinstance(self.host_taxid, str):
-            self.host_taxid = str(self.host_taxid)
-
-        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
-            self.source_mat_id = str(self.source_mat_id)
-
-        if self.isolate_name is not None and not isinstance(self.isolate_name, str):
-            self.isolate_name = str(self.isolate_name)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class JgiIsolateInterface(DhInterface):
-    """
-    JGI-specific submission metadata for isolate sequencing projects. Captures physical sample logistics, strain
-    verification sequences, and QC fields required by JGI but not stored in nmdc-schema.
-    """
-    _inherited_slots: ClassVar[list[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["JgiIsolateInterface"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:JgiIsolateInterface"
-    class_name: ClassVar[str] = "JgiIsolateInterface"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiIsolateInterface
-
-    samp_name: Union[str, JgiIsolateInterfaceSampName] = None
-    jgi_samp_id: str = None
-    jgi_sample_name: str = None
-    jgi_seq_project: float = None
-    jgi_seq_project_name: str = None
-    nuc_acid_concentration: float = None
-    jgi_sample_volume: float = None
-    cont_type: Union[str, "JgiContTypeEnum"] = None
-    container_name: str = None
-    jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
-    dnase: Union[str, "YesNoEnum"] = None
-    biosafety_mat_cat: Union[str, "JgiIsolateBiosafetyMaterialCategoryEnum"] = None
-    dna_isolate_meth: str = None
-    isolate_single_colony: Union[str, "YesNoEnum"] = None
-    isolate_ribosomal_seq: str = None
-    isolate_ribosomal_seq_type: Union[str, "RibosomalSequenceTypeEnum"] = None
-    analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
-    replicate_group: Optional[str] = None
-    jgi_sample_contact: Optional[str] = None
-    jgi_project_pi: Optional[str] = None
-    jgi_proposal_id: Optional[str] = None
-    nuc_acid_absorb1: Optional[float] = None
-    nuc_acid_absorb2: Optional[float] = None
-    cont_well: Optional[str] = None
-    isolate_known_contaminants: Optional[str] = None
-    isolate_ribosomal_seq_comments: Optional[str] = None
-    isolate_second_ribosomal_seq: Optional[str] = None
-    isolate_second_ribosomal_seq_type: Optional[Union[str, "RibosomalSequenceTypeEnum"]] = None
-    isolate_second_ribosomal_seq_comments: Optional[str] = None
-    isolate_fungal_16s_screening: Optional[Union[str, "YesNoEnum"]] = None
-    isolate_its_match_unite: Optional[Union[str, "YesNoEnum"]] = None
-    source_mat_id: Optional[str] = None
-
-    def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.samp_name):
-            self.MissingRequiredField("samp_name")
-        if not isinstance(self.samp_name, JgiIsolateInterfaceSampName):
-            self.samp_name = JgiIsolateInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.jgi_samp_id):
-            self.MissingRequiredField("jgi_samp_id")
-        if not isinstance(self.jgi_samp_id, str):
-            self.jgi_samp_id = str(self.jgi_samp_id)
-
-        if self._is_empty(self.jgi_sample_name):
-            self.MissingRequiredField("jgi_sample_name")
-        if not isinstance(self.jgi_sample_name, str):
-            self.jgi_sample_name = str(self.jgi_sample_name)
-
-        if self._is_empty(self.jgi_seq_project):
-            self.MissingRequiredField("jgi_seq_project")
-        if not isinstance(self.jgi_seq_project, float):
-            self.jgi_seq_project = float(self.jgi_seq_project)
-
-        if self._is_empty(self.jgi_seq_project_name):
-            self.MissingRequiredField("jgi_seq_project_name")
-        if not isinstance(self.jgi_seq_project_name, str):
-            self.jgi_seq_project_name = str(self.jgi_seq_project_name)
-
-        if self._is_empty(self.nuc_acid_concentration):
-            self.MissingRequiredField("nuc_acid_concentration")
-        if not isinstance(self.nuc_acid_concentration, float):
-            self.nuc_acid_concentration = float(self.nuc_acid_concentration)
-
-        if self._is_empty(self.jgi_sample_volume):
-            self.MissingRequiredField("jgi_sample_volume")
-        if not isinstance(self.jgi_sample_volume, float):
-            self.jgi_sample_volume = float(self.jgi_sample_volume)
-
-        if self._is_empty(self.cont_type):
-            self.MissingRequiredField("cont_type")
-        if not isinstance(self.cont_type, JgiContTypeEnum):
-            self.cont_type = JgiContTypeEnum(self.cont_type)
-
-        if self._is_empty(self.container_name):
-            self.MissingRequiredField("container_name")
-        if not isinstance(self.container_name, str):
-            self.container_name = str(self.container_name)
-
-        if self._is_empty(self.jgi_sample_format):
-            self.MissingRequiredField("jgi_sample_format")
-        if not isinstance(self.jgi_sample_format, JGISampleFormatEnum):
-            self.jgi_sample_format = JGISampleFormatEnum(self.jgi_sample_format)
-
-        if self._is_empty(self.dnase):
-            self.MissingRequiredField("dnase")
-        if not isinstance(self.dnase, YesNoEnum):
-            self.dnase = YesNoEnum(self.dnase)
-
-        if self._is_empty(self.biosafety_mat_cat):
-            self.MissingRequiredField("biosafety_mat_cat")
-        if not isinstance(self.biosafety_mat_cat, JgiIsolateBiosafetyMaterialCategoryEnum):
-            self.biosafety_mat_cat = JgiIsolateBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
-
-        if self._is_empty(self.dna_isolate_meth):
-            self.MissingRequiredField("dna_isolate_meth")
-        if not isinstance(self.dna_isolate_meth, str):
-            self.dna_isolate_meth = str(self.dna_isolate_meth)
-
-        if self._is_empty(self.isolate_single_colony):
-            self.MissingRequiredField("isolate_single_colony")
-        if not isinstance(self.isolate_single_colony, YesNoEnum):
-            self.isolate_single_colony = YesNoEnum(self.isolate_single_colony)
-
-        if self._is_empty(self.isolate_ribosomal_seq):
-            self.MissingRequiredField("isolate_ribosomal_seq")
-        if not isinstance(self.isolate_ribosomal_seq, str):
-            self.isolate_ribosomal_seq = str(self.isolate_ribosomal_seq)
-
-        if self._is_empty(self.isolate_ribosomal_seq_type):
-            self.MissingRequiredField("isolate_ribosomal_seq_type")
-        if not isinstance(self.isolate_ribosomal_seq_type, RibosomalSequenceTypeEnum):
-            self.isolate_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_ribosomal_seq_type)
-
-        if self._is_empty(self.analysis_type):
-            self.MissingRequiredField("analysis_type")
-        if not isinstance(self.analysis_type, list):
-            self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
-        self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
-
-        if self.replicate_group is not None and not isinstance(self.replicate_group, str):
-            self.replicate_group = str(self.replicate_group)
-
-        if self.jgi_sample_contact is not None and not isinstance(self.jgi_sample_contact, str):
-            self.jgi_sample_contact = str(self.jgi_sample_contact)
-
-        if self.jgi_project_pi is not None and not isinstance(self.jgi_project_pi, str):
-            self.jgi_project_pi = str(self.jgi_project_pi)
-
-        if self.jgi_proposal_id is not None and not isinstance(self.jgi_proposal_id, str):
-            self.jgi_proposal_id = str(self.jgi_proposal_id)
-
-        if self.nuc_acid_absorb1 is not None and not isinstance(self.nuc_acid_absorb1, float):
-            self.nuc_acid_absorb1 = float(self.nuc_acid_absorb1)
-
-        if self.nuc_acid_absorb2 is not None and not isinstance(self.nuc_acid_absorb2, float):
-            self.nuc_acid_absorb2 = float(self.nuc_acid_absorb2)
-
-        if self.cont_well is not None and not isinstance(self.cont_well, str):
-            self.cont_well = str(self.cont_well)
-
-        if self.isolate_known_contaminants is not None and not isinstance(self.isolate_known_contaminants, str):
-            self.isolate_known_contaminants = str(self.isolate_known_contaminants)
-
-        if self.isolate_ribosomal_seq_comments is not None and not isinstance(self.isolate_ribosomal_seq_comments, str):
-            self.isolate_ribosomal_seq_comments = str(self.isolate_ribosomal_seq_comments)
-
-        if self.isolate_second_ribosomal_seq is not None and not isinstance(self.isolate_second_ribosomal_seq, str):
-            self.isolate_second_ribosomal_seq = str(self.isolate_second_ribosomal_seq)
-
-        if self.isolate_second_ribosomal_seq_type is not None and not isinstance(self.isolate_second_ribosomal_seq_type, RibosomalSequenceTypeEnum):
-            self.isolate_second_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_second_ribosomal_seq_type)
-
-        if self.isolate_second_ribosomal_seq_comments is not None and not isinstance(self.isolate_second_ribosomal_seq_comments, str):
-            self.isolate_second_ribosomal_seq_comments = str(self.isolate_second_ribosomal_seq_comments)
-
-        if self.isolate_fungal_16s_screening is not None and not isinstance(self.isolate_fungal_16s_screening, YesNoEnum):
-            self.isolate_fungal_16s_screening = YesNoEnum(self.isolate_fungal_16s_screening)
-
-        if self.isolate_its_match_unite is not None and not isinstance(self.isolate_its_match_unite, YesNoEnum):
-            self.isolate_its_match_unite = YesNoEnum(self.isolate_its_match_unite)
-
-        if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
-            self.source_mat_id = str(self.source_mat_id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class SampleData(YAMLRoot):
     """
     represents data produced by the DataHarmonizer tabs of the submission portal
@@ -6756,8 +6493,6 @@ class SampleData(YAMLRoot):
     metagenome_sequencing_interleaved_data: Optional[Union[dict[Union[str, MetagenomeSequencingInterleavedDataInterfaceSampName], Union[dict, MetagenomeSequencingInterleavedDataInterface]], list[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]] = empty_dict()
     metatranscriptome_sequencing_non_interleaved_data: Optional[Union[dict[Union[str, MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName], Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]], list[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]] = empty_dict()
     metatranscriptome_sequencing_interleaved_data: Optional[Union[dict[Union[str, MetatranscriptomeSequencingInterleavedDataInterfaceSampName], Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]], list[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]] = empty_dict()
-    isolate_data: Optional[Union[dict[Union[str, IsolateInterfaceSampName], Union[dict, IsolateInterface]], list[Union[dict, IsolateInterface]]]] = empty_dict()
-    jgi_isolate_data: Optional[Union[dict[Union[str, JgiIsolateInterfaceSampName], Union[dict, JgiIsolateInterface]], list[Union[dict, JgiIsolateInterface]]]] = empty_dict()
 
     def __post_init__(self, *_: str, **kwargs: Any):
         self._normalize_inlined_as_list(slot_name="air_data", slot_type=AirInterface, key_name="samp_name", keyed=True)
@@ -6793,10 +6528,6 @@ class SampleData(YAMLRoot):
         self._normalize_inlined_as_list(slot_name="metatranscriptome_sequencing_non_interleaved_data", slot_type=MetatranscriptomeSequencingNonInterleavedDataInterface, key_name="samp_name", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="metatranscriptome_sequencing_interleaved_data", slot_type=MetatranscriptomeSequencingInterleavedDataInterface, key_name="samp_name", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="isolate_data", slot_type=IsolateInterface, key_name="samp_name", keyed=True)
-
-        self._normalize_inlined_as_list(slot_name="jgi_isolate_data", slot_type=JgiIsolateInterface, key_name="samp_name", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -7003,50 +6734,6 @@ class SeasonEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="SeasonEnum",
     )
-
-class RibosomalSequenceTypeEnum(EnumDefinitionImpl):
-
-    ITS = PermissibleValue(text="ITS")
-    Other = PermissibleValue(text="Other")
-
-    _defn = EnumDefinition(
-        name="RibosomalSequenceTypeEnum",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "16S",
-            PermissibleValue(text="16S"))
-        setattr(cls, "ITS-AGI",
-            PermissibleValue(
-                text="ITS-AGI",
-                description="ITS sequence where DNA was isolated at the Arizona Genomics Institute (AGI)"))
-        setattr(cls, "28S",
-            PermissibleValue(text="28S"))
-
-class JgiIsolateBiosafetyMaterialCategoryEnum(EnumDefinitionImpl):
-    """
-    Biosafety material category for single-organism isolate samples sent to JGI
-    """
-    Alga = PermissibleValue(text="Alga")
-    Animal = PermissibleValue(text="Animal")
-    Archaea = PermissibleValue(text="Archaea")
-    Bacteria = PermissibleValue(text="Bacteria")
-    Fungi = PermissibleValue(text="Fungi")
-    Plant = PermissibleValue(text="Plant")
-    Plasmid = PermissibleValue(text="Plasmid")
-    Protist = PermissibleValue(text="Protist")
-    Virus = PermissibleValue(text="Virus")
-
-    _defn = EnumDefinition(
-        name="JgiIsolateBiosafetyMaterialCategoryEnum",
-        description="Biosafety material category for single-organism isolate samples sent to JGI",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Synthetic Construct",
-            PermissibleValue(text="Synthetic Construct"))
 
 class UnitEnum(EnumDefinitionImpl):
 
@@ -12310,12 +11997,16 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     """
     Derived from InstrumentModelEnum by filtering for Illumina models
     """
-    novaseq = PermissibleValue(text="novaseq")
+    novaseq = PermissibleValue(
+        text="novaseq",
+        meaning=OBI["0003685"])
     novaseq_6000 = PermissibleValue(
         text="novaseq_6000",
         meaning=OBI["0002630"])
     novaseq_x = PermissibleValue(text="novaseq_x")
-    hiseq = PermissibleValue(text="hiseq")
+    hiseq = PermissibleValue(
+        text="hiseq",
+        meaning=OBI["0003683"])
     hiseq_1000 = PermissibleValue(
         text="hiseq_1000",
         meaning=OBI["0002022"])
@@ -12346,7 +12037,9 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     nextseq_1000 = PermissibleValue(
         text="nextseq_1000",
         meaning=OBI["0003606"])
-    nextseq = PermissibleValue(text="nextseq")
+    nextseq = PermissibleValue(
+        text="nextseq",
+        meaning=OBI["0003684"])
     nextseq_500 = PermissibleValue(
         text="nextseq_500",
         meaning=OBI["0002021"])
@@ -14049,46 +13742,6 @@ slots.jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="jgi_projec
 slots.jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
                    model_uri=NMDC_SUB_SCHEMA.jgi_proposal_id, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[A-Z0-9]+$'))
-
-slots.isolate_single_colony = Slot(uri=NMDC_SUB_SCHEMA.isolate_single_colony, name="isolate_single_colony", curie=NMDC_SUB_SCHEMA.curie('isolate_single_colony'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_single_colony, domain=None, range=Union[str, "YesNoEnum"])
-
-slots.isolate_known_contaminants = Slot(uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, name="isolate_known_contaminants", curie=NMDC_SUB_SCHEMA.curie('isolate_known_contaminants'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, domain=None, range=Optional[str])
-
-slots.isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, domain=None, range=str,
-                   pattern=re.compile(r'^[ACGTN]{200,5000}$'))
-
-slots.isolate_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, name="isolate_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, domain=None, range=Union[str, "RibosomalSequenceTypeEnum"])
-
-slots.isolate_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, name="isolate_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_comments'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^.{0,256}$'))
-
-slots.isolate_second_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq, name="isolate_second_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_second_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^[ACGTN]{200,5000}$'))
-
-slots.isolate_second_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq_type, name="isolate_second_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_second_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq_type, domain=None, range=Optional[Union[str, "RibosomalSequenceTypeEnum"]])
-
-slots.isolate_second_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq_comments, name="isolate_second_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_second_ribosomal_seq_comments'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq_comments, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^.{0,256}$'))
-
-slots.isolate_fungal_16s_screening = Slot(uri=NMDC_SUB_SCHEMA.isolate_fungal_16s_screening, name="isolate_fungal_16s_screening", curie=NMDC_SUB_SCHEMA.curie('isolate_fungal_16s_screening'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_fungal_16s_screening, domain=None, range=Optional[Union[str, "YesNoEnum"]])
-
-slots.isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHEMA.isolate_its_match_unite, name="isolate_its_match_unite", curie=NMDC_SUB_SCHEMA.curie('isolate_its_match_unite'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_its_match_unite, domain=None, range=Optional[Union[str, "YesNoEnum"]])
-
-slots.isolate_data = Slot(uri=NMDC_SUB_SCHEMA.isolate_data, name="isolate_data", curie=NMDC_SUB_SCHEMA.curie('isolate_data'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_data, domain=None, range=Optional[Union[dict[Union[str, IsolateInterfaceSampName], Union[dict, IsolateInterface]], list[Union[dict, IsolateInterface]]]])
-
-slots.jgi_isolate_data = Slot(uri=NMDC_SUB_SCHEMA.jgi_isolate_data, name="jgi_isolate_data", curie=NMDC_SUB_SCHEMA.curie('jgi_isolate_data'),
-                   model_uri=NMDC_SUB_SCHEMA.jgi_isolate_data, domain=None, range=Optional[Union[dict[Union[str, JgiIsolateInterfaceSampName], Union[dict, JgiIsolateInterface]], list[Union[dict, JgiIsolateInterface]]]])
 
 slots.abs_air_humidity = Slot(uri=MIXS['0000122'], name="abs_air_humidity", curie=MIXS.curie('0000122'),
                    model_uri=NMDC_SUB_SCHEMA.abs_air_humidity, domain=None, range=Optional[str],
@@ -15924,22 +15577,6 @@ slots.processing_institution = Slot(uri=NMDC_SUB_SCHEMA.processing_institution, 
 slots.protocol_link = Slot(uri=NMDC_SUB_SCHEMA.protocol_link, name="protocol_link", curie=NMDC_SUB_SCHEMA.curie('protocol_link'),
                    model_uri=NMDC_SUB_SCHEMA.protocol_link, domain=None, range=Optional[str])
 
-slots.organism_genus = Slot(uri=NMDC_SUB_SCHEMA.organism_genus, name="organism_genus", curie=NMDC_SUB_SCHEMA.curie('organism_genus'),
-                   model_uri=NMDC_SUB_SCHEMA.organism_genus, domain=None, range=str)
-
-slots.organism_species = Slot(uri=NMDC_SUB_SCHEMA.organism_species, name="organism_species", curie=NMDC_SUB_SCHEMA.curie('organism_species'),
-                   model_uri=NMDC_SUB_SCHEMA.organism_species, domain=None, range=str)
-
-slots.strain_name = Slot(uri=NMDC_SUB_SCHEMA.strain_name, name="strain_name", curie=NMDC_SUB_SCHEMA.curie('strain_name'),
-                   model_uri=NMDC_SUB_SCHEMA.strain_name, domain=None, range=str)
-
-slots.isolate_name = Slot(uri=NMDC_SUB_SCHEMA.isolate_name, name="isolate_name", curie=NMDC_SUB_SCHEMA.curie('isolate_name'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_name, domain=None, range=Optional[str])
-
-slots.classified_as = Slot(uri=NMDC_SUB_SCHEMA.classified_as, name="classified_as", curie=NMDC_SUB_SCHEMA.curie('classified_as'),
-                   model_uri=NMDC_SUB_SCHEMA.classified_as, domain=None, range=str,
-                   pattern=re.compile(r'NCBITaxon:\d+'))
-
 slots.AirInterface_depth = Slot(uri=MIXS['0000018'], name="AirInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_depth, domain=AirInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
@@ -16690,104 +16327,3 @@ slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_ident
 slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
                    model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[str],
                    pattern=re.compile(r'^insdc.sra:(E|D|S)RX[0-9]{6,}$'))
-
-slots.IsolateInterface_analysis_type = Slot(uri=NMDC_SUB_SCHEMA.analysis_type, name="IsolateInterface_analysis_type", curie=NMDC_SUB_SCHEMA.curie('analysis_type'),
-                   model_uri=NMDC_SUB_SCHEMA.IsolateInterface_analysis_type, domain=IsolateInterface, range=Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]])
-
-slots.JgiIsolateInterface_analysis_type = Slot(uri=NMDC_SUB_SCHEMA.analysis_type, name="JgiIsolateInterface_analysis_type", curie=NMDC_SUB_SCHEMA.curie('analysis_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_analysis_type, domain=JgiIsolateInterface, range=Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]])
-
-slots.JgiIsolateInterface_replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group, name="JgiIsolateInterface_replicate_group", curie=NMDC_SUB_SCHEMA.curie('replicate_group'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_replicate_group, domain=JgiIsolateInterface, range=Optional[str])
-
-slots.JgiIsolateInterface_jgi_samp_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_samp_id, name="JgiIsolateInterface_jgi_samp_id", curie=NMDC_SUB_SCHEMA.curie('jgi_samp_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_samp_id, domain=JgiIsolateInterface, range=str)
-
-slots.JgiIsolateInterface_jgi_sample_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_name, name="JgiIsolateInterface_jgi_sample_name", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_sample_name, domain=JgiIsolateInterface, range=str,
-                   pattern=re.compile(r'^[-_.a-zA-Z0-9]*$'))
-
-slots.JgiIsolateInterface_jgi_seq_project = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project, name="JgiIsolateInterface_jgi_seq_project", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_seq_project, domain=JgiIsolateInterface, range=float)
-
-slots.JgiIsolateInterface_jgi_seq_project_name = Slot(uri=NMDC_SUB_SCHEMA.jgi_seq_project_name, name="JgiIsolateInterface_jgi_seq_project_name", curie=NMDC_SUB_SCHEMA.curie('jgi_seq_project_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_seq_project_name, domain=JgiIsolateInterface, range=str)
-
-slots.JgiIsolateInterface_jgi_sample_contact = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_contact, name="JgiIsolateInterface_jgi_sample_contact", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_contact'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_sample_contact, domain=JgiIsolateInterface, range=Optional[str])
-
-slots.JgiIsolateInterface_jgi_project_pi = Slot(uri=NMDC_SUB_SCHEMA.jgi_project_pi, name="JgiIsolateInterface_jgi_project_pi", curie=NMDC_SUB_SCHEMA.curie('jgi_project_pi'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_project_pi, domain=JgiIsolateInterface, range=Optional[str])
-
-slots.JgiIsolateInterface_jgi_proposal_id = Slot(uri=NMDC_SUB_SCHEMA.jgi_proposal_id, name="JgiIsolateInterface_jgi_proposal_id", curie=NMDC_SUB_SCHEMA.curie('jgi_proposal_id'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_proposal_id, domain=JgiIsolateInterface, range=Optional[str],
-                   pattern=re.compile(r'^[A-Z0-9]+$'))
-
-slots.JgiIsolateInterface_nuc_acid_absorb1 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb1, name="JgiIsolateInterface_nuc_acid_absorb1", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb1'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_nuc_acid_absorb1, domain=JgiIsolateInterface, range=Optional[float])
-
-slots.JgiIsolateInterface_nuc_acid_absorb2 = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_absorb2, name="JgiIsolateInterface_nuc_acid_absorb2", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_absorb2'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_nuc_acid_absorb2, domain=JgiIsolateInterface, range=Optional[float])
-
-slots.JgiIsolateInterface_nuc_acid_concentration = Slot(uri=NMDC_SUB_SCHEMA.nuc_acid_concentration, name="JgiIsolateInterface_nuc_acid_concentration", curie=NMDC_SUB_SCHEMA.curie('nuc_acid_concentration'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_nuc_acid_concentration, domain=JgiIsolateInterface, range=float)
-
-slots.JgiIsolateInterface_jgi_sample_volume = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_volume, name="JgiIsolateInterface_jgi_sample_volume", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_volume'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_sample_volume, domain=JgiIsolateInterface, range=float)
-
-slots.JgiIsolateInterface_cont_type = Slot(uri=NMDC_SUB_SCHEMA.cont_type, name="JgiIsolateInterface_cont_type", curie=NMDC_SUB_SCHEMA.curie('cont_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_cont_type, domain=JgiIsolateInterface, range=Union[str, "JgiContTypeEnum"])
-
-slots.JgiIsolateInterface_cont_well = Slot(uri=NMDC_SUB_SCHEMA.cont_well, name="JgiIsolateInterface_cont_well", curie=NMDC_SUB_SCHEMA.curie('cont_well'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_cont_well, domain=JgiIsolateInterface, range=Optional[str],
-                   pattern=re.compile(r'^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$'))
-
-slots.JgiIsolateInterface_container_name = Slot(uri=NMDC_SUB_SCHEMA.container_name, name="JgiIsolateInterface_container_name", curie=NMDC_SUB_SCHEMA.curie('container_name'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_container_name, domain=JgiIsolateInterface, range=str,
-                   pattern=re.compile(r'^[-_.a-zA-Z0-9]{1,20}$'))
-
-slots.JgiIsolateInterface_jgi_sample_format = Slot(uri=NMDC_SUB_SCHEMA.jgi_sample_format, name="JgiIsolateInterface_jgi_sample_format", curie=NMDC_SUB_SCHEMA.curie('jgi_sample_format'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_jgi_sample_format, domain=JgiIsolateInterface, range=Union[str, "JGISampleFormatEnum"])
-
-slots.JgiIsolateInterface_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiIsolateInterface_dnase", curie=NMDC_SUB_SCHEMA.curie('dnase'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_dnase, domain=JgiIsolateInterface, range=Union[str, "YesNoEnum"])
-
-slots.JgiIsolateInterface_biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="JgiIsolateInterface_biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_biosafety_mat_cat, domain=JgiIsolateInterface, range=Union[str, "JgiIsolateBiosafetyMaterialCategoryEnum"])
-
-slots.JgiIsolateInterface_dna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.dna_isolate_meth, name="JgiIsolateInterface_dna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('dna_isolate_meth'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_dna_isolate_meth, domain=JgiIsolateInterface, range=str)
-
-slots.JgiIsolateInterface_isolate_single_colony = Slot(uri=NMDC_SUB_SCHEMA.isolate_single_colony, name="JgiIsolateInterface_isolate_single_colony", curie=NMDC_SUB_SCHEMA.curie('isolate_single_colony'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_single_colony, domain=JgiIsolateInterface, range=Union[str, "YesNoEnum"])
-
-slots.JgiIsolateInterface_isolate_known_contaminants = Slot(uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, name="JgiIsolateInterface_isolate_known_contaminants", curie=NMDC_SUB_SCHEMA.curie('isolate_known_contaminants'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_known_contaminants, domain=JgiIsolateInterface, range=Optional[str])
-
-slots.JgiIsolateInterface_isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="JgiIsolateInterface_isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_ribosomal_seq, domain=JgiIsolateInterface, range=str,
-                   pattern=re.compile(r'^[ACGTN]{200,5000}$'))
-
-slots.JgiIsolateInterface_isolate_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, name="JgiIsolateInterface_isolate_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_ribosomal_seq_type, domain=JgiIsolateInterface, range=Union[str, "RibosomalSequenceTypeEnum"])
-
-slots.JgiIsolateInterface_isolate_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, name="JgiIsolateInterface_isolate_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_comments'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_ribosomal_seq_comments, domain=JgiIsolateInterface, range=Optional[str],
-                   pattern=re.compile(r'^.{0,256}$'))
-
-slots.JgiIsolateInterface_isolate_second_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq, name="JgiIsolateInterface_isolate_second_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_second_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_second_ribosomal_seq, domain=JgiIsolateInterface, range=Optional[str],
-                   pattern=re.compile(r'^[ACGTN]{200,5000}$'))
-
-slots.JgiIsolateInterface_isolate_second_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq_type, name="JgiIsolateInterface_isolate_second_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_second_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_second_ribosomal_seq_type, domain=JgiIsolateInterface, range=Optional[Union[str, "RibosomalSequenceTypeEnum"]])
-
-slots.JgiIsolateInterface_isolate_second_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_second_ribosomal_seq_comments, name="JgiIsolateInterface_isolate_second_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_second_ribosomal_seq_comments'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_second_ribosomal_seq_comments, domain=JgiIsolateInterface, range=Optional[str],
-                   pattern=re.compile(r'^.{0,256}$'))
-
-slots.JgiIsolateInterface_isolate_fungal_16s_screening = Slot(uri=NMDC_SUB_SCHEMA.isolate_fungal_16s_screening, name="JgiIsolateInterface_isolate_fungal_16s_screening", curie=NMDC_SUB_SCHEMA.curie('isolate_fungal_16s_screening'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_fungal_16s_screening, domain=JgiIsolateInterface, range=Optional[Union[str, "YesNoEnum"]])
-
-slots.JgiIsolateInterface_isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHEMA.isolate_its_match_unite, name="JgiIsolateInterface_isolate_its_match_unite", curie=NMDC_SUB_SCHEMA.curie('isolate_its_match_unite'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateInterface_isolate_its_match_unite, domain=JgiIsolateInterface, range=Optional[Union[str, "YesNoEnum"]])

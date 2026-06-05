@@ -10245,6 +10245,7 @@
       "permissible_values": {
         "novaseq": {
           "text": "novaseq",
+          "meaning": "OBI:0003685",
           "aliases": [
             "NovaSeq",
             "Illumina NovaSeq"
@@ -10253,6 +10254,7 @@
         "novaseq_6000": {
           "text": "novaseq_6000",
           "meaning": "OBI:0002630",
+          "is_a": "novaseq",
           "comments": [
             "Possible flowcell versions are SP, S1, S2, S4."
           ],
@@ -10289,6 +10291,7 @@
         },
         "novaseq_x": {
           "text": "novaseq_x",
+          "is_a": "novaseq",
           "comments": [
             "Possible flowcell versions are 1.5B, 10B, 25B. Only difference between X and X Plus is 2 flowcells for X Plus versus 1 flowcell for X."
           ],
@@ -10317,6 +10320,7 @@
         },
         "hiseq": {
           "text": "hiseq",
+          "meaning": "OBI:0003683",
           "aliases": [
             "Illumina HiSeq"
           ]
@@ -10324,6 +10328,7 @@
         "hiseq_1000": {
           "text": "hiseq_1000",
           "meaning": "OBI:0002022",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq 1000"
           ]
@@ -10331,6 +10336,7 @@
         "hiseq_1500": {
           "text": "hiseq_1500",
           "meaning": "OBI:0003386",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq 1500"
           ]
@@ -10338,6 +10344,7 @@
         "hiseq_2000": {
           "text": "hiseq_2000",
           "meaning": "OBI:0002001",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq 2000"
           ]
@@ -10345,6 +10352,7 @@
         "hiseq_2500": {
           "text": "hiseq_2500",
           "meaning": "OBI:0002002",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq 2500"
           ],
@@ -10368,6 +10376,7 @@
         "hiseq_3000": {
           "text": "hiseq_3000",
           "meaning": "OBI:0002048",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq 3000"
           ]
@@ -10375,6 +10384,7 @@
         "hiseq_4000": {
           "text": "hiseq_4000",
           "meaning": "OBI:0002049",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq 4000"
           ]
@@ -10382,6 +10392,7 @@
         "hiseq_x_ten": {
           "text": "hiseq_x_ten",
           "meaning": "OBI:0002129",
+          "is_a": "hiseq",
           "aliases": [
             "Illumina HiSeq X Ten"
           ]
@@ -10413,12 +10424,14 @@
         "nextseq_1000": {
           "text": "nextseq_1000",
           "meaning": "OBI:0003606",
+          "is_a": "nextseq",
           "aliases": [
             "Illumina NextSeq 1000"
           ]
         },
         "nextseq": {
           "text": "nextseq",
+          "meaning": "OBI:0003684",
           "aliases": [
             "NextSeq",
             "Illumina NextSeq"
@@ -10443,6 +10456,7 @@
         "nextseq_500": {
           "text": "nextseq_500",
           "meaning": "OBI:0002021",
+          "is_a": "nextseq",
           "aliases": [
             "NextSeq 500",
             "Illumina NextSeq 500"
@@ -10451,6 +10465,7 @@
         "nextseq_550": {
           "text": "nextseq_550",
           "meaning": "OBI:0003387",
+          "is_a": "nextseq",
           "aliases": [
             "NextSeq 550",
             "Illumina NextSeq 550"
@@ -25564,7 +25579,8 @@
       "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
       "title": "sample name",
       "comments": [
-        "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+        "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+        "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
       ],
       "examples": [
         {
@@ -32741,7 +32757,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -36690,7 +36707,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -42492,7 +42510,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -42823,7 +42842,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -47029,7 +47049,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -51438,7 +51459,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -54208,7 +54230,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -55011,7 +55034,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -55860,7 +55884,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -56705,7 +56730,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -59846,7 +59872,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -63791,7 +63818,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -68989,7 +69017,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -73946,7 +73975,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -76540,7 +76570,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -81845,7 +81876,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -82235,7 +82267,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -82583,7 +82616,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -82973,7 +83007,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -83321,7 +83356,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {
@@ -83499,7 +83535,8 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
+            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
           ],
           "examples": [
             {

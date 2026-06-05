@@ -648,14 +648,14 @@ slots:
       - value: Jordan James
     rank: 18
     range: string
-    recommended: true
+    required: true
   jgi_project_pi:
     title: JGI sequencing project PI
     examples:
       - value: Jordan James
     rank: 19
     range: string
-    recommended: true
+    required: true
   jgi_proposal_id:
     title: JGI proposal number
     examples:
@@ -664,7 +664,7 @@ slots:
     rank: 20
     range: string
     pattern: ^[A-Z0-9]+$
-    recommended: true
+    required: true
 
   ## isolate-specific slots (JGI-only; not stored in nmdc-schema)
   isolate_single_colony:
@@ -709,7 +709,7 @@ slots:
     rank: 32
     range: string
     required: true
-    pattern: "^[ACGTN]{200,5000}$"
+    pattern: "^[ATCGN]+$"
     aliases:
       - First ribosomal sequence
   isolate_ribosomal_seq_type:
@@ -744,7 +744,7 @@ slots:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 35
     range: string
-    pattern: "^[ACGTN]{200,5000}$"
+    pattern: "^[ATCGN]+$"
     aliases:
       - Second ribosomal sequence
   isolate_second_ribosomal_seq_type:
