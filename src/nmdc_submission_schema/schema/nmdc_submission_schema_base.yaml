@@ -1279,7 +1279,7 @@ classes:
       collection_date:
         comments:
           - Use the date the sample was collected from its natural habitat, not the
-            date of purchase or culturing. Full date required: YYYY-MM-DD.
+            date of purchase or culturing. Full date (YYYY-MM-DD) is required.
         examples:
           - value: "2017-01-20"
           - value: "2013-03-25"
