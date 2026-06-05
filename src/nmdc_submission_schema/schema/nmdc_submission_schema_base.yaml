@@ -1226,7 +1226,6 @@ classes:
     is_a: DhInterface
     mixins:
       - DhMultiviewCommonColumnsMixin
-    slot_usage:
     # nmdc-schema slots (organism_genus, organism_species, strain_name, isolate_name,
     # source_mat_id, classified_as, host_taxid, collection_date) are routed here
     # via config/nmdc_schema_import.yaml once PR #2977 is released.
