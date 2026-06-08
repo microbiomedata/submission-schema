@@ -1725,7 +1725,7 @@ attributes:
     slot_group: jgi_isolate_section
     range: string
     required: true
-    pattern: ^[ATCGN]+$
+    pattern: ^[ATCGN]{200,5000}$
   isolate_ribosomal_seq_type:
     name: isolate_ribosomal_seq_type
     description: Type of the first ribosomal sequence provided.
@@ -1780,7 +1780,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    pattern: ^[ATCGN]+$
+    pattern: ^[ATCGN]{200,5000}$
   isolate_second_ribosomal_seq_type:
     name: isolate_second_ribosomal_seq_type
     description: Type of the second ribosomal sequence provided.
@@ -1859,7 +1859,7 @@ attributes:
     name: sample_isolated_from
     description: Free-text description of what the organism was isolated from.
     title: Sample Isolated From
-    comments:
+    notes:
     - JGI v19 form field 44
     examples:
     - value: soil
@@ -1888,8 +1888,9 @@ attributes:
     description: Free-text description of the collection site or growth conditions
       for the isolate.
     title: Collection Site or Growth Conditions
-    comments:
+    notes:
     - JGI v19 form field 45
+    comments:
     - Required for RNA and methylation samples.
     examples:
     - value: Field
