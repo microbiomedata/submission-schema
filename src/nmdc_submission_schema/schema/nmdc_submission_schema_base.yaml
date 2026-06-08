@@ -635,7 +635,8 @@ slots:
     comments:
       - Provide a reference if one exists; helps JGI with assembly and QC
         even for de novo projects.
-      - This is a local slot pending promotion to nmdc-schema; see
+    notes:
+      - Local slot pending promotion to nmdc-schema; see
         https://github.com/microbiomedata/submission-schema/issues/447
     examples:
       - value: "2648501807"
