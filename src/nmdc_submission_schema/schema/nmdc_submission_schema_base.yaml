@@ -669,7 +669,11 @@ slots:
     rank: 32
     range: string
     required: true
-    pattern: "^[ATCGN]+$"
+    # Baseline length bounds from the JGI template (metadata_submission_templates.yml:
+    # minlength 200, maxlength 5000). Product-specific minimums (1300 nt microbial
+    # drafts, 220 bp single cells) are enforced by JGI's first_ribosomal_req function,
+    # which needs a sequencing-product lookup not available here.
+    pattern: "^[ATCGN]{200,5000}$"
     aliases:
       - First ribosomal sequence
   isolate_ribosomal_seq_type:
@@ -704,7 +708,9 @@ slots:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 35
     range: string
-    pattern: "^[ATCGN]+$"
+    # Baseline length bounds from the JGI template (minlength 200, maxlength 5000).
+    # Product-specific minimums are enforced by JGI's second_ribosomal_req function.
+    pattern: "^[ATCGN]{200,5000}$"
     aliases:
       - Second ribosomal sequence
   isolate_second_ribosomal_seq_type:
