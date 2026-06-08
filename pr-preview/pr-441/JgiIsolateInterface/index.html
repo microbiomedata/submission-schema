@@ -587,19 +587,19 @@
 </tr>
 <tr>
 <td><a href="../jgi_sample_contact/">jgi_sample_contact</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_project_pi/">jgi_project_pi</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../jgi_proposal_id/">jgi_proposal_id</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -732,7 +732,7 @@
 <tr>
 <td><a href="../rna_collection_date/">rna_collection_date</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Date the RNA sample was collected or the culture experiment was performed, in...</td>
+<td>Date the RNA sample was collected or the experiment was performed, in YYYY-MM...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1359,7 +1359,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_project_pi:
     name: jgi_project_pi
     title: JGI sequencing project PI
@@ -1376,7 +1376,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   jgi_proposal_id:
     name: jgi_proposal_id
     title: JGI proposal number
@@ -1394,7 +1394,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
     pattern: ^[A-Z0-9]+$
   nuc_acid_absorb1:
     name: nuc_acid_absorb1
@@ -1710,7 +1710,7 @@ attributes:
     slot_group: jgi_isolate_section
     range: string
     required: true
-    pattern: ^[ATCGN]+$
+    pattern: ^[ATCGN]{200,5000}$
   isolate_ribosomal_seq_type:
     name: isolate_ribosomal_seq_type
     description: Type of the first ribosomal sequence provided.
@@ -1765,7 +1765,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    pattern: ^[ATCGN]+$
+    pattern: ^[ATCGN]{200,5000}$
   isolate_second_ribosomal_seq_type:
     name: isolate_second_ribosomal_seq_type
     description: Type of the second ribosomal sequence provided.
@@ -1842,14 +1842,10 @@ attributes:
     range: YesNoEnum
   rna_collection_date:
     name: rna_collection_date
-    description: Date the RNA sample was collected or the culture experiment was performed,
+    description: Date the RNA sample was collected or the experiment was performed,
       in YYYY-MM-DD format. For RNA projects, use the experiment date rather than
-      the original field collection date. JGI export splits this into Collection Year,
-      Collection Month (full name), and Collection Day columns.
+      the original field collection date.
     title: Collection date
-    comments:
-    - Use the date of the RNA experiment, not the date the source culture was obtained.
-      Full date (YYYY-MM-DD) is required.
     examples:
     - value: '2017-01-20'
     - value: '2021-06-15'
