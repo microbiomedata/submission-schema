@@ -1652,10 +1652,11 @@ attributes:
       scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome
       ID, or NCBI assembly accession (GCF_/GCA_). Free-text.
     title: Reference Genome
+    notes:
+    - Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
     comments:
     - Provide a reference if one exists; helps JGI with assembly and QC even for de
       novo projects.
-    - This is a local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
     examples:
     - value: '2648501807'
       description: IMG taxon OID
@@ -1741,7 +1742,7 @@ attributes:
     slot_group: jgi_isolate_section
     range: string
     required: true
-    pattern: ^[ATCGN]+$
+    pattern: ^[ATCGN]{200,5000}$
   isolate_ribosomal_seq_type:
     name: isolate_ribosomal_seq_type
     description: Type of the first ribosomal sequence provided.
@@ -1796,7 +1797,7 @@ attributes:
     - JgiIsolateInterface
     slot_group: jgi_isolate_section
     range: string
-    pattern: ^[ATCGN]+$
+    pattern: ^[ATCGN]{200,5000}$
   isolate_second_ribosomal_seq_type:
     name: isolate_second_ribosomal_seq_type
     description: Type of the second ribosomal sequence provided.

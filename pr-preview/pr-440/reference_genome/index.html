@@ -569,7 +569,6 @@ Alias: reference_genome</p>
 <h2 id="comments">Comments</h2>
 <ul>
 <li>Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.</li>
-<li>This is a local slot pending promotion to nmdc-schema; see <a href="https://github.com/microbiomedata/submission-schema/issues/447">https://github.com/microbiomedata/submission-schema/issues/447</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -603,10 +602,11 @@ description: Genome record to use as a reference for read alignment or assembly 
   Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly
   accession (GCF_/GCA_). Free-text.
 title: Reference Genome
+notes:
+- Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
 comments:
 - Provide a reference if one exists; helps JGI with assembly and QC even for de novo
   projects.
-- This is a local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
 examples:
 - value: '2648501807'
   description: IMG taxon OID
