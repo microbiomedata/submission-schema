@@ -754,13 +754,9 @@ slots:
   rna_collection_date:
     title: Collection date
     description: >-
-      Date the RNA sample was collected or the culture experiment was performed,
-      in YYYY-MM-DD format. For RNA projects, use the experiment date rather than
-      the original field collection date. JGI export splits this into Collection
-      Year, Collection Month (full name), and Collection Day columns.
-    comments:
-      - Use the date of the RNA experiment, not the date the source culture was
-        obtained. Full date (YYYY-MM-DD) is required.
+      Date the RNA sample was collected or the experiment was performed, in
+      YYYY-MM-DD format. For RNA projects, use the experiment date rather than
+      the original field collection date.
     examples:
       - value: "2017-01-20"
       - value: "2021-06-15"
