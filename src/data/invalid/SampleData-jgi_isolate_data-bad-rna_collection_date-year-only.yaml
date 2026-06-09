@@ -1,0 +1,15 @@
+## Invalid: rna_collection_date must be YYYY-MM-DD; year-only fails.
+jgi_isolate_data:
+  - samp_name: test_isolate_rna_bad_date
+    analysis_type:
+      - metagenomics
+    source_mat_id: igsn:000
+    cont_type: tube
+    container_name: test_tube_001
+    jgi_sample_format: TE
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    dna_isolate_meth: CTAB
+    isolate_single_colony: "yes"
+    isolate_ribosomal_seq_type: 16S
+    rna_collection_date: "2021"
