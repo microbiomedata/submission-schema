@@ -61,6 +61,7 @@ enums:
   JGISampleFormatEnum:
     permissible_values:
       10 mM Tris-HCl:
+      DNAStable:
       Ethanol:
       Gentegra-DNA:
       Gentegra-RNA:
@@ -68,6 +69,7 @@ enums:
       MDA Reaction Buffer:
       PBS:
       Pellet:
+      RNAStable:
       TE:
       Water:
   JGIBiosafetyMaterialCategoryEnum:
