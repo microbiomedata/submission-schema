@@ -366,6 +366,25 @@ slots:
     title: Data Files
     rank: 12
     is_a: dh_section
+  organism_section:
+    title: Organism
+    rank: 13
+    is_a: dh_section
+    description: >-
+      Biological identity of the isolate organism: free-text genus, species,
+      strain, and isolate name, the NCBI taxonomic classification, and the
+      estimated genome size. These describe what the organism is, as distinct
+      from the JGI submission logistics captured in the JGI Isolate section.
+  jgi_isolate_section:
+    title: JGI Isolate
+    rank: 14
+    is_a: dh_section
+    description: >-
+      JGI submission logistics and quality control for single-organism isolate
+      samples: sample and container identifiers, nucleic-acid concentration and
+      absorbance readings, strain-verification ribosomal sequences, contaminant
+      and fungal screening, and the biosafety material category. These are
+      required by JGI for sample handling and are not stored in nmdc-schema.
   read_1_url:
     title: read 1 FASTQ
     description: >-
