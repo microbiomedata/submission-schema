@@ -11,7 +11,7 @@ isolate_data:
   - samp_name: Dturgidum_DSM6724_isolate01
     analysis_type:
       - isolate genome sequencing
-    source_mat_id: igsn:DT6724AA
+    source_mat_id: 'DSM 6724'
     collection_date: "2008-05-12"
     organism_genus: Dictyoglomus
     organism_species: turgidum
@@ -26,7 +26,7 @@ jgi_isolate_data:
   - samp_name: Dturgidum_DSM6724_isolate01
     analysis_type:
       - isolate genome sequencing
-    source_mat_id: igsn:DT6724AA
+    source_mat_id: 'DSM 6724'
     replicate_group: Dturgidum_rep1
     jgi_samp_id: "900101"
     jgi_sample_name: Dturgidum_DSM6724_isolate01
