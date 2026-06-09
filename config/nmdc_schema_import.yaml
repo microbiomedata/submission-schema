@@ -3739,6 +3739,7 @@ slots:
           rank: 40
           slot_group: mixs_core_section
 
+  # Move to JgiIsolateGenomeInterface + JgiIsolateTranscriptomeInterface once https://github.com/microbiomedata/submission-schema/issues/438 resolves.
   - slot: rel_air_humidity
     source: Biosample
     destinations:
