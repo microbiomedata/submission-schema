@@ -1,49 +1,51 @@
 ## Synthetic invalid example. Single intended failure: source_mat_id does not match the igsn/biosample/gold pattern.
-## Derived from the synthetic exhaustive isolate example with one field changed.
-## Values are invented, not from the JGI spreadsheet or the data lakehouse.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus
+## turgidum DSM 6724) with one field changed. Values are invented.
 isolate_data:
-  - samp_name: Pputida_NMDC_EX_001
+  - samp_name: Dturgidum_DSM6724_isolate01
     analysis_type:
       - isolate genome sequencing
-    source_mat_id: EX0001ABC
-    collection_date: "2024-06-15"
-    organism_genus: Pseudomonas
-    organism_species: putida
-    strain_name: NMDC-EX-001
-    isolate_name: EX-001
-    classified_as: NCBITaxon:303
+    source_mat_id: DT6724AA
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    isolate_name: DSM 6724
+    classified_as: NCBITaxon:515635
     host_taxid: NCBITaxon:4577
-    estimated_size: 6200
+    estimated_size: 1.85
+    gc_content: 34.0
+    ploidy: haploid
 jgi_isolate_data:
-  - samp_name: Pputida_NMDC_EX_001
+  - samp_name: Dturgidum_DSM6724_isolate01
     analysis_type:
       - isolate genome sequencing
-    source_mat_id: igsn:EX0001ABC
-    replicate_group: Pputida_EX_rep1
-    jgi_samp_id: "900001"
-    jgi_sample_name: Pputida_NMDC_EX_001
-    jgi_seq_project: 1400001
-    jgi_seq_project_name: Pseudomonas putida NMDC-EX-001
+    source_mat_id: igsn:DT6724AA
+    replicate_group: Dturgidum_rep1
+    jgi_samp_id: "900101"
+    jgi_sample_name: Dturgidum_DSM6724_isolate01
+    jgi_seq_project: 1400101
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724
     jgi_sample_contact: Doe, Jane
     jgi_project_pi: Roe, Richard
-    jgi_proposal_id: EX5001
+    jgi_proposal_id: EX5101
     nuc_acid_absorb1: 1.85
     nuc_acid_absorb2: 2.05
     nuc_acid_concentration: 45.0
     jgi_sample_volume: 30.0
     cont_type: plate
     cont_well: B3
-    container_name: PputidaPlate01
+    container_name: DturgidumPlate01
     jgi_sample_format: Gentegra-DNA
     dnase: "yes"
     biosafety_mat_cat: Bacteria
     dna_isolate_meth: CTAB chloroform extraction
     isolate_single_colony: "yes"
     isolate_known_contaminants: none observed
-    isolate_ribosomal_seq: ATCGATCGATCGAAGGTTCCGGAANNATCG
+    isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
     isolate_ribosomal_seq_type: 16S
-    isolate_ribosomal_seq_comments: Sanger-sequenced 16S amplicon, approximately 1450 bp
-    isolate_second_ribosomal_seq: ATCGATCGATCGATCGATCG
+    isolate_ribosomal_seq_comments: Sanger-sequenced 16S amplicon, approximately 240 bp
+    isolate_second_ribosomal_seq: TCCGTAGGTGAACCTGCGGAAGGATCATTACCGAGTTTACAACTCCCAAACCCCTGTGAACATACCACTTGTTGCCTCGGCGGATCAGCCCGCTCCCGGTAAAACGGGACGGCCCGCCAGAGGACCCCTAAACTCTGTTTCTATATGTAACTTCTGAGTAAAACCATAAATAAATCAAAACTTTCAACAACGGATCTCTTGG
     isolate_second_ribosomal_seq_type: ITS
     isolate_second_ribosomal_seq_comments: ITS1-5.8S-ITS2 region
     isolate_fungal_16s_screening: "no"

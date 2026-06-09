@@ -1,12 +1,6 @@
-## Synthetic exhaustive example for IsolateInterface and JgiIsolateInterface.
-## Organism: Dictyoglomus turgidum DSM 6724 (NCBITaxon:515635, looked up via NCBI
-## Taxonomy), a real free-living thermophilic bacterium. The organism identity is
-## real; all JGI logistics values (sample/project IDs, contacts, container) are
-## invented and are NOT taken from the Pupo spreadsheet rows or the JGI/GOLD data
-## lakehouse. estimated_size 1.85 (Mb, float) is D. turgidum's real genome size and
-## exercises the float range. Every slot of both classes is populated. host_taxid
-## carries an illustrative value to exercise the optional host field; a free-living
-## isolate would normally leave it blank.
+## Synthetic invalid example. Single intended failure: isolate_ribosomal_seq is shorter than the 200-base minimum.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus
+## turgidum DSM 6724) with one field changed. Values are invented.
 isolate_data:
   - samp_name: Dturgidum_DSM6724_isolate01
     analysis_type:
@@ -48,7 +42,7 @@ jgi_isolate_data:
     dna_isolate_meth: CTAB chloroform extraction
     isolate_single_colony: "yes"
     isolate_known_contaminants: none observed
-    isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
+    isolate_ribosomal_seq: ATCGATCGATCG
     isolate_ribosomal_seq_type: 16S
     isolate_ribosomal_seq_comments: Sanger-sequenced 16S amplicon, approximately 240 bp
     isolate_second_ribosomal_seq: TCCGTAGGTGAACCTGCGGAAGGATCATTACCGAGTTTACAACTCCCAAACCCCTGTGAACATACCACTTGTTGCCTCGGCGGATCAGCCCGCTCCCGGTAAAACGGGACGGCCCGCCAGAGGACCCCTAAACTCTGTTTCTATATGTAACTTCTGAGTAAAACCATAAATAAATCAAAACTTTCAACAACGGATCTCTTGG
