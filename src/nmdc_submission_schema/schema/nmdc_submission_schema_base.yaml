@@ -767,8 +767,9 @@ slots:
     structured_aliases:
       - literal_form: Sample Isolated From
         predicate: EXACT_SYNONYM
-        contexts:
-          - https://jgi.doe.gov/isolate-submission-form/v19
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
   collection_site_or_growth_conditions:
     title: Collection Site or Growth Conditions
     description: >-
@@ -785,8 +786,9 @@ slots:
     structured_aliases:
       - literal_form: Collection Site or Growth Conditions
         predicate: EXACT_SYNONYM
-        contexts:
-          - https://jgi.doe.gov/isolate-submission-form/v19
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
     comments:
       - Required for RNA and methylation samples.
   ## data aggregation slots for SampleData
