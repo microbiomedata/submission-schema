@@ -5992,11 +5992,30 @@ slots:
       - replace:
           rank: 112
           slot_group: organism_section
-          # Bounds in Mb (unit override to Mbase is in IsolateInterface slot_usage).
-          # Floor 0.000001 Mb (= 1 bp): excludes zero/negative; any real genome passes.
-          # Ceiling 100,000 Mb: matches esplims eukaryote limit and nmdc-schema max
-          # (100,000,000,000 bp). Microbe ceiling (5,000 Mb) is enforced downstream
-          # in esplims check_genome_size, conditioned on biosafety_mat_cat.
+          range: float
           minimum_value: 0.000001
           maximum_value: 100000
+          notes:
+            - Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp.
+
+  - slot: gc_content
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 113
+          slot_group: organism_section
+
+  - slot: ploidy
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 114
+          slot_group: organism_section
+          range: string
+          notes:
+            - Free-text string at the JGI submission gate; nmdc-schema models ploidy as PloidyEnum.
 
