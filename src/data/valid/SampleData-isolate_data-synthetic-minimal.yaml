@@ -22,6 +22,7 @@ jgi_isolate_data:
     jgi_sample_contact: Doe, Jane
     jgi_project_pi: Roe, Richard
     jgi_proposal_id: EX5102
+    sample_isolated_from: hot spring sediment
     nuc_acid_concentration: 38.0
     jgi_sample_volume: 25.0
     cont_type: tube
