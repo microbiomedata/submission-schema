@@ -8,6 +8,7 @@ readme = "README.md"
 license = "MIT"
 dependencies = [
     "linkml-runtime>=1.6.2,<2",
+    "nmdc-schema",
     "rdflib>=6.2.0,<7",
 ]
 
@@ -61,6 +62,9 @@ cache-keys = [
     { file = "pyproject.toml" },
     { git = { commit = true, tags = true } },
 ]
+
+[tool.uv.sources]
+nmdc-schema = { git = "https://github.com/microbiomedata/nmdc-schema.git", rev = "e3254eb1f9e5c7866cdd2da580b18e06cb58bc5d" }
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning>=0.5.0,<1"]
