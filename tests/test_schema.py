@@ -235,8 +235,6 @@ TEMPLATE_INSTANCES = {
         "lat_lon": "12.34 -56.78",
         "samp_name": "000001",
     },
-    # analysis_type is required: false in IsolateInterface and JgiIsolateInterface because
-    # AnalysisTypeEnum has no isolate WGS value yet; see submission-schema#418
     "IsolateInterface": {
         "samp_name": "000001",
         "collection_date": "1970-01-01",
@@ -244,9 +242,11 @@ TEMPLATE_INSTANCES = {
         "organism_species": "coli",
         "strain_name": "K-12",
         "classified_as": "NCBITaxon:562",
+        "analysis_type": ["isolate genome sequencing"],
     },
     "JgiIsolateInterface": {
         "samp_name": "000001",
+        "analysis_type": ["isolate genome sequencing"],
         "nuc_acid_concentration": 1.0,
         "cont_type": "plate",
         "cont_well": "C5",

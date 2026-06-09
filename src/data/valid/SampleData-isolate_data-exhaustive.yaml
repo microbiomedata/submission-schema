@@ -3,19 +3,14 @@
 ## Source: GOLD analysis project Ga0028539, its_analysis_project_id 1377532
 ## Retrieved from gold-db-2 postgresql.gold.analysis_project via JGI Dremio lakehouse.
 ##
-## NOTE: analysis_type is not included; AnalysisTypeEnum has no isolate-WGS value yet.
-## A permissible value should be added to AnalysisTypeEnum in nmdc-schema. Until then,
-## analysis_type is overridden to required: false in IsolateInterface and JgiIsolateInterface.
-##
 ## NOTE: IsolateInterface nmdc-schema slots (organism_genus, organism_species, strain_name,
 ## classified_as, collection_date) are now wired in via config/nmdc_schema_import.yaml
 ## (nmdc-schema PR #2977 and #2975, released in 11.19.2rc1) and are required, so they appear
 ## below. isolate_name and host_taxid remain optional and are omitted.
 isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
-    # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
     analysis_type:
-      - metagenomics
+      - isolate genome sequencing
     source_mat_id: igsn:000
     ## --- Organism identity (NCBITaxon:515635 = Dictyoglomus turgidum DSM 6724) ---
     organism_genus: Dictyoglomus
@@ -26,9 +21,8 @@ isolate_data:
     collection_date: "2008-01-01"
 jgi_isolate_data:
   - samp_name: Dictyoglomus_turgidum_DSM6724_isolate001
-    # analysis_type placeholder — no isolate WGS value in AnalysisTypeEnum yet (nmdc-schema#3017)
     analysis_type:
-      - metagenomics
+      - isolate genome sequencing
     source_mat_id: igsn:000
     ## --- JGI project logistics (real values from GOLD Ga0028539 / ITS project 1377532) ---
     replicate_group: Dturgidum_rep1
