@@ -1,0 +1,42 @@
+## Synthetic minimal example for IsolateInterface and JgiIsolateInterface.
+## Only the required slots of each class are populated, so this file checks that
+## a submission with nothing optional still validates.
+##
+## Values are invented for this example. They are NOT taken from the JGI Isolate
+## (NA) v19 spreadsheet and NOT pulled from the JGI/GOLD data lakehouse. The
+## organism is a real species (Aspergillus niger, NCBITaxon:5061, looked up via
+## NCBI Taxonomy) with a made-up strain code; all other values are fictional.
+##
+## cont_type is tube here: the plate/well rule only requires a well when
+## cont_type is plate, so a tube with no well is the smallest valid container.
+isolate_data:
+  - samp_name: Aniger_NMDC_EX_002
+    analysis_type:
+      - isolate genome sequencing
+    collection_date: "2024-03-22"
+    organism_genus: Aspergillus
+    organism_species: niger
+    strain_name: NMDC-EX-002
+    classified_as: NCBITaxon:5061
+jgi_isolate_data:
+  - samp_name: Aniger_NMDC_EX_002
+    analysis_type:
+      - isolate genome sequencing
+    jgi_samp_id: "900002"
+    jgi_sample_name: Aniger_NMDC_EX_002
+    jgi_seq_project: 1400002
+    jgi_seq_project_name: Aspergillus niger NMDC-EX-002
+    jgi_sample_contact: Doe, Jane
+    jgi_project_pi: Roe, Richard
+    jgi_proposal_id: EX5002
+    nuc_acid_concentration: 38.0
+    jgi_sample_volume: 25.0
+    cont_type: tube
+    container_name: AnigerTube02
+    jgi_sample_format: Low EDTA TE
+    dnase: "no"
+    biosafety_mat_cat: Fungi
+    dna_isolate_meth: CTAB chloroform extraction
+    isolate_single_colony: "yes"
+    isolate_ribosomal_seq: ATCGATCGATCGAAGGTTCCGGAATTATCG
+    isolate_ribosomal_seq_type: ITS
