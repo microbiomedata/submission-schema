@@ -23,6 +23,6 @@ jgi_isolate_genome_data:
     jgi_sample_format: Glycerol
     dnase: "yes"
     biosafety_mat_cat: Bacteria
-    dna_isolate_meth: CTAB chloroform extraction
+    isolate_meth: CTAB chloroform extraction
     isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
     isolate_ribosomal_seq_type: 16S

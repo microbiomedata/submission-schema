@@ -13874,6 +13874,41 @@
       ],
       "range": "YesNoEnum"
     },
+    "isolate_meth": {
+      "name": "isolate_meth",
+      "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
+      "title": "Sample Isolation Method",
+      "examples": [
+        {
+          "value": "Wizard Genomic DNA Purification Kit"
+        },
+        {
+          "value": "CTAB chloroform extraction"
+        },
+        {
+          "value": "TRIzol RNA extraction"
+        }
+      ],
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "structured_aliases": {
+        "Sample Isolation Method": {
+          "literal_form": "Sample Isolation Method",
+          "predicate": "EXACT_SYNONYM",
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview.",
+            "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
+        }
+      },
+      "rank": 16,
+      "domain_of": [
+        "JgiIsolateCommonMixin",
+        "JgiIsolateGenomeInterface"
+      ],
+      "range": "string",
+      "required": true
+    },
     "sample_isolated_from": {
       "name": "sample_isolated_from",
       "description": "Free-text description of what the organism was isolated from.",
@@ -17692,9 +17727,7 @@
       "rank": 16,
       "domain_of": [
         "JgiMgInterface",
-        "JgiMgLrInterface",
-        "JgiIsolateCommonMixin",
-        "JgiIsolateGenomeInterface"
+        "JgiMgLrInterface"
       ],
       "slot_group": "jgi_metagenomics_section",
       "range": "string",
@@ -55153,9 +55186,7 @@
           "owner": "JgiMgInterface",
           "domain_of": [
             "JgiMgInterface",
-            "JgiMgLrInterface",
-            "JgiIsolateCommonMixin",
-            "JgiIsolateGenomeInterface"
+            "JgiMgLrInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
@@ -56063,9 +56094,7 @@
           "owner": "JgiMgLrInterface",
           "domain_of": [
             "JgiMgInterface",
-            "JgiMgLrInterface",
-            "JgiIsolateCommonMixin",
-            "JgiIsolateGenomeInterface"
+            "JgiMgLrInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
@@ -85533,7 +85562,7 @@
         "jgi_sample_format",
         "dnase",
         "biosafety_mat_cat",
-        "dna_isolate_meth",
+        "isolate_meth",
         "reference_genome",
         "sample_isolated_from",
         "collection_site_or_growth_conditions",
@@ -85616,8 +85645,8 @@
           "slot_group": "jgi_isolate_section",
           "range": "JgiIsolateMaterialKindEnum"
         },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
+        "isolate_meth": {
+          "name": "isolate_meth",
           "slot_group": "jgi_isolate_section"
         },
         "reference_genome": {
@@ -86162,32 +86191,43 @@
           "range": "JgiIsolateMaterialKindEnum",
           "required": true
         },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
+        "isolate_meth": {
+          "name": "isolate_meth",
+          "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
+          "title": "Sample Isolation Method",
           "examples": [
             {
-              "value": "phenol/chloroform extraction"
+              "value": "Wizard Genomic DNA Purification Kit"
+            },
+            {
+              "value": "CTAB chloroform extraction"
+            },
+            {
+              "value": "TRIzol RNA extraction"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
+          "structured_aliases": {
+            "Sample Isolation Method": {
+              "literal_form": "Sample Isolation Method",
+              "predicate": "EXACT_SYNONYM",
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview.",
+                "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
+            }
+          },
           "rank": 16,
-          "alias": "dna_isolate_meth",
+          "alias": "isolate_meth",
           "owner": "JgiIsolateCommonMixin",
           "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface",
             "JgiIsolateCommonMixin",
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
           "range": "string",
-          "required": true,
-          "recommended": false
+          "required": true
         },
         "reference_genome": {
           "name": "reference_genome",
@@ -87471,32 +87511,43 @@
           "range": "JgiIsolateMaterialKindEnum",
           "required": true
         },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
+        "isolate_meth": {
+          "name": "isolate_meth",
+          "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
+          "title": "Sample Isolation Method",
           "examples": [
             {
-              "value": "phenol/chloroform extraction"
+              "value": "Wizard Genomic DNA Purification Kit"
+            },
+            {
+              "value": "CTAB chloroform extraction"
+            },
+            {
+              "value": "TRIzol RNA extraction"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
+          "structured_aliases": {
+            "Sample Isolation Method": {
+              "literal_form": "Sample Isolation Method",
+              "predicate": "EXACT_SYNONYM",
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview.",
+                "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
+            }
+          },
           "rank": 16,
-          "alias": "dna_isolate_meth",
+          "alias": "isolate_meth",
           "owner": "JgiIsolateGenomeInterface",
           "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface",
             "JgiIsolateCommonMixin",
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
           "range": "string",
-          "required": true,
-          "recommended": false
+          "required": true
         },
         "reference_genome": {
           "name": "reference_genome",
@@ -88619,32 +88670,43 @@
           "range": "JgiIsolateMaterialKindEnum",
           "required": true
         },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
+        "isolate_meth": {
+          "name": "isolate_meth",
+          "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
+          "title": "Sample Isolation Method",
           "examples": [
             {
-              "value": "phenol/chloroform extraction"
+              "value": "Wizard Genomic DNA Purification Kit"
+            },
+            {
+              "value": "CTAB chloroform extraction"
+            },
+            {
+              "value": "TRIzol RNA extraction"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
+          "structured_aliases": {
+            "Sample Isolation Method": {
+              "literal_form": "Sample Isolation Method",
+              "predicate": "EXACT_SYNONYM",
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview.",
+                "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
+            }
+          },
           "rank": 16,
-          "alias": "dna_isolate_meth",
+          "alias": "isolate_meth",
           "owner": "JgiIsolateTranscriptomeInterface",
           "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface",
             "JgiIsolateCommonMixin",
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
           "range": "string",
-          "required": true,
-          "recommended": false
+          "required": true
         },
         "reference_genome": {
           "name": "reference_genome",

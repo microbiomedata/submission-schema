@@ -844,6 +844,23 @@ slots:
     range: YesNoEnum
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
+  isolate_meth:
+    title: Sample Isolation Method
+    description: Method, protocol, or kit used to extract DNA or RNA from the sample.
+    rank: 16
+    range: string
+    required: true
+    examples:
+      - value: Wizard Genomic DNA Purification Kit
+      - value: CTAB chloroform extraction
+      - value: TRIzol RNA extraction
+    structured_aliases:
+      - literal_form: Sample Isolation Method
+        predicate: EXACT_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+          - JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method.
   sample_isolated_from:
     title: Sample Isolated From
     description: Free-text description of what the organism was isolated from.
@@ -1447,7 +1464,7 @@ classes:
       - jgi_sample_format
       - dnase
       - biosafety_mat_cat
-      - dna_isolate_meth
+      - isolate_meth
       - reference_genome
       - sample_isolated_from
       - collection_site_or_growth_conditions
@@ -1489,7 +1506,7 @@ classes:
       biosafety_mat_cat:
         slot_group: jgi_isolate_section
         range: JgiIsolateMaterialKindEnum
-      dna_isolate_meth:
+      isolate_meth:
         slot_group: jgi_isolate_section
       reference_genome:
         slot_group: jgi_isolate_section
