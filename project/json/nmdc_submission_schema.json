@@ -30923,7 +30923,7 @@
     "estimated_size": {
       "name": "estimated_size",
       "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
-      "title": "estimated size",
+      "title": "Estimated genome size (Mb)",
       "notes": [
         "Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp."
       ],
@@ -30956,7 +30956,10 @@
       "slot_group": "organism_section",
       "range": "float",
       "minimum_value": 1e-06,
-      "maximum_value": 100000
+      "maximum_value": 100000,
+      "unit": {
+        "ucum_code": "Mbase"
+      }
     },
     "gc_content": {
       "name": "gc_content",
@@ -84933,15 +84936,11 @@
           "name": "isolate_known_contaminants",
           "slot_group": "organism_section"
         },
-        "estimated_size": {
-          "name": "estimated_size",
-          "title": "Estimated genome size (Mb)",
-          "unit": {
-            "ucum_code": "Mbase"
-          }
-        },
         "collection_date": {
           "name": "collection_date",
+          "notes": [
+            "JGI requires all three date components, so the full YYYY-MM-DD is mandatory on the isolate interface. The export layer splits it into Collection Year, Collection Month, and Collection Day columns."
+          ],
           "comments": [
             "Use the date the sample was collected from its natural habitat, not the date of purchase or culturing. Full date (YYYY-MM-DD) is required."
           ],
@@ -85018,6 +85017,9 @@
           "name": "collection_date",
           "description": "The date of sampling",
           "title": "collection date",
+          "notes": [
+            "JGI requires all three date components, so the full YYYY-MM-DD is mandatory on the isolate interface. The export layer splits it into Collection Year, Collection Month, and Collection Day columns."
+          ],
           "comments": [
             "Use the date the sample was collected from its natural habitat, not the date of purchase or culturing. Full date (YYYY-MM-DD) is required."
           ],

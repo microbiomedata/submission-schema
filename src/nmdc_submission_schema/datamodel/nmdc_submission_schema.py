@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-09T21:32:32
+# Generation date: 2026-06-09T22:10:37
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -17175,9 +17175,6 @@ slots.IsolateInterface_isolate_single_colony = Slot(uri=NMDC_SUB_SCHEMA.isolate_
 
 slots.IsolateInterface_isolate_known_contaminants = Slot(uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, name="IsolateInterface_isolate_known_contaminants", curie=NMDC_SUB_SCHEMA.curie('isolate_known_contaminants'),
                    model_uri=NMDC_SUB_SCHEMA.IsolateInterface_isolate_known_contaminants, domain=IsolateInterface, range=Optional[str])
-
-slots.IsolateInterface_estimated_size = Slot(uri=MIXS['0000024'], name="IsolateInterface_estimated_size", curie=MIXS.curie('0000024'),
-                   model_uri=NMDC_SUB_SCHEMA.IsolateInterface_estimated_size, domain=IsolateInterface, range=Optional[float])
 
 slots.IsolateInterface_collection_date = Slot(uri=MIXS['0000011'], name="IsolateInterface_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=NMDC_SUB_SCHEMA.IsolateInterface_collection_date, domain=IsolateInterface, range=str,

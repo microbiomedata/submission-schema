@@ -844,6 +844,22 @@ slots:
           required: true
           pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
           slot_group: mixs_modified_section
+      - in_classes:
+          - IsolateInterface
+        replace:
+          comments:
+            - Use the date the sample was collected from its natural habitat, not the
+              date of purchase or culturing. Full date (YYYY-MM-DD) is required.
+          examples:
+            - value: "2017-01-20"
+            - value: "2013-03-25"
+          aliases:
+            - Collection Year
+            - Collection Month
+            - Collection Day
+          pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
+          notes:
+            - JGI requires all three date components, so the full YYYY-MM-DD is mandatory on the isolate interface. The export layer splits it into Collection Year, Collection Month, and Collection Day columns.
 
   - slot: collection_date_inc
     source: Biosample
@@ -5997,11 +6013,14 @@ slots:
       - IsolateInterface
     modifications:
       - replace:
+          title: Estimated genome size (Mb)
           rank: 112
           slot_group: organism_section
           range: float
           minimum_value: 0.000001
           maximum_value: 100000
+          unit:
+            ucum_code: Mbase
           notes:
             - Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp.
 
