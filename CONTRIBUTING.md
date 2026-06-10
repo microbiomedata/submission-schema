@@ -73,13 +73,11 @@ generated, but it is not committed.
 - every file in `src/data/invalid/` must fail validation, and should fail for one
   specific reason, named in the file name
 
-The example data uses synthetic values. The organism identity is real (for example
-Dictyoglomus turgidum DSM 6724), but the JGI logistics values (sample and project
-IDs, contacts, container) are invented and shaped to match real GOLD formats. No
-rows are copied from the JGI example submission spreadsheet or the JGI/GOLD
-lakehouse, because those carry real proposal and personnel identifiers. An earlier
-lakehouse-derived example was removed and replaced with a synthetic one for this
-reason.
+Example data may use real GOLD or lakehouse values, as long as the source records
+are not embargoed, marked private, or very recent. Do not copy from the JGI example
+submission spreadsheet, which is off-limits. Organism identities are real (for
+example Dictyoglomus turgidum DSM 6724); the current JGI logistics values are
+synthetic but shaped to match real GOLD formats.
 
 One consequence: if you remove a constraint, an invalid example whose only error
 was that constraint will start passing, which breaks the test. Delete those
