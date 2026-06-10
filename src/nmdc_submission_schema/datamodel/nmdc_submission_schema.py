@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-10T17:22:35
+# Generation date: 2026-06-10T15:08:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -10110,6 +10110,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Organic waste"))
         setattr(cls, "Outdoor Air",
             PermissibleValue(text="Outdoor Air"))
+        setattr(cls, "Partial-Nitrification/Anammox (PNA)",
+            PermissibleValue(text="Partial-Nitrification/Anammox (PNA)"))
         setattr(cls, "Peat moss",
             PermissibleValue(text="Peat moss"))
         setattr(cls, "Persistent organic pollutants (POP)",
@@ -10564,6 +10566,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Aerial root"))
         setattr(cls, "Aerobic media",
             PermissibleValue(text="Aerobic media"))
+        setattr(cls, "Aerobic zone",
+            PermissibleValue(text="Aerobic zone"))
         setattr(cls, "Agricultural field",
             PermissibleValue(text="Agricultural field"))
         setattr(cls, "Agricultural land",
@@ -10584,6 +10588,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Amniotic sac"))
         setattr(cls, "Anaerobic media",
             PermissibleValue(text="Anaerobic media"))
+        setattr(cls, "Anaerobic zone",
+            PermissibleValue(text="Anaerobic zone"))
         setattr(cls, "Anaerobic-Aerobic",
             PermissibleValue(text="Anaerobic-Aerobic"))
         setattr(cls, "Antennal/Green glands",
@@ -12448,6 +12454,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Urban floodwater"))
         setattr(cls, "Urothelial carcinoma/Transitional cell carcinoma (TCC)",
             PermissibleValue(text="Urothelial carcinoma/Transitional cell carcinoma (TCC)"))
+        setattr(cls, "Vernal pools",
+            PermissibleValue(text="Vernal pools"))
         setattr(cls, "Visceral fat",
             PermissibleValue(text="Visceral fat"))
         setattr(cls, "Vitreous humor",
@@ -12735,6 +12743,8 @@ class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
             PermissibleValue(text="Upland zone"))
         setattr(cls, "Uranium contaminated",
             PermissibleValue(text="Uranium contaminated"))
+        setattr(cls, "Vernal pools",
+            PermissibleValue(text="Vernal pools"))
         setattr(cls, "Wetland zone",
             PermissibleValue(text="Wetland zone"))
 
