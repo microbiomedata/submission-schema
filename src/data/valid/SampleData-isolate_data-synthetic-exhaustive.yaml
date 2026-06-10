@@ -1,14 +1,13 @@
-## Synthetic exhaustive example for IsolateInterface and JgiIsolateInterface.
-## Organism: Dictyoglomus turgidum DSM 6724 (NCBITaxon:515635, looked up via NCBI
-## Taxonomy), a real free-living thermophilic bacterium. The organism identity is
-## real; all JGI logistics values (sample/project IDs, contacts, container) are
-## invented and are NOT taken from the Pupo spreadsheet rows or the JGI/GOLD data
-## lakehouse. estimated_size 1.85 (Mb, float) is D. turgidum's real genome size and
-## exercises the float range. Every slot of both classes is populated. host_taxid
-## carries an illustrative value to exercise the optional host field; a free-living
-## isolate would normally leave it blank.
+## Synthetic exhaustive example for IsolateInterface and JgiIsolateGenomeInterface.
+## Organism: Dictyoglomus turgidum DSM 6724 (NCBITaxon:515635), a real free-living
+## thermophilic bacterium. Organism identity, ecosystem-derived isolation source
+## (GOLD organism_v2: Environmental > Aquatic > Thermal springs), genome size
+## (1.85 Mb) and GC (34%) are real. JGI logistics values are synthetic but shaped
+## to match real GOLD `project` formats (its_proposal_id 6-digit, its_spid 7-digit,
+## its_sample_id 6-digit, contact as First Last); PI/contact names and IDs do not
+## identify any real proposal or person. Every slot of both classes is populated.
 isolate_data:
-  - samp_name: Dturgidum_DSM6724_isolate01
+  - samp_name: Dtur_DSM6724_g1
     analysis_type:
       - isolate genome sequencing
     source_mat_id: 'DSM 6724'
@@ -22,33 +21,33 @@ isolate_data:
     estimated_size: 1.85
     gc_content: 34.0
     ploidy: haploid
-jgi_isolate_data:
-  - samp_name: Dturgidum_DSM6724_isolate01
+    isolate_single_colony: "yes"
+    isolate_known_contaminants: none observed
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_g1
     analysis_type:
       - isolate genome sequencing
     source_mat_id: 'DSM 6724'
-    replicate_group: Dturgidum_rep1
-    jgi_samp_id: "900101"
-    jgi_sample_name: Dturgidum_DSM6724_isolate01
-    jgi_seq_project: 1400101
-    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724
-    jgi_sample_contact: Doe, Jane
-    jgi_project_pi: Roe, Richard
-    jgi_proposal_id: EX5101
-    sample_isolated_from: hot spring sediment
+    replicate_group: Dtur_DSM6724_repA
+    jgi_samp_id: "248017"
+    jgi_sample_name: Dtur_DSM6724_g1
+    jgi_seq_project: 1248701
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
+    jgi_sample_contact: Jordan Rivera
+    jgi_project_pi: Morgan Avery
+    jgi_proposal_id: "505831"
+    sample_isolated_from: thermal spring
     nuc_acid_absorb1: 1.85
     nuc_acid_absorb2: 2.05
     nuc_acid_concentration: 45.0
     jgi_sample_volume: 30.0
     cont_type: plate
     cont_well: B3
-    container_name: DturgidumPlate01
+    container_name: DturGenomePlate01
     jgi_sample_format: Gentegra-DNA
     dnase: "yes"
     biosafety_mat_cat: Bacteria
     dna_isolate_meth: CTAB chloroform extraction
-    isolate_single_colony: "yes"
-    isolate_known_contaminants: none observed
     isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
     isolate_ribosomal_seq_type: 16S
     isolate_ribosomal_seq_comments: Sanger-sequenced 16S amplicon, approximately 240 bp

@@ -1,52 +1,28 @@
-## Synthetic invalid example. Single intended failure: isolate_ribosomal_seq_type is not in RibosomalSequenceTypeEnum.
-## Derived from the synthetic exhaustive isolate example (Dictyoglomus
-## turgidum DSM 6724) with one field changed. Values are invented.
-isolate_data:
-  - samp_name: Dturgidum_DSM6724_isolate01
+## Invalid. Single failure: isolate_ribosomal_seq_type is not in RibosomalSequenceTypeEnum.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus turgidum
+## DSM 6724) with one field changed. JGI logistics values are synthetic, shaped to
+## real GOLD formats. Single point of failure.
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_g1
     analysis_type:
       - isolate genome sequencing
-    source_mat_id: igsn:DT6724AA
-    collection_date: "2008-05-12"
-    organism_genus: Dictyoglomus
-    organism_species: turgidum
-    strain_name: DSM 6724
-    isolate_name: DSM 6724
-    classified_as: NCBITaxon:515635
-    host_taxid: NCBITaxon:4577
-    estimated_size: 1.85
-    gc_content: 34.0
-    ploidy: haploid
-jgi_isolate_data:
-  - samp_name: Dturgidum_DSM6724_isolate01
-    analysis_type:
-      - isolate genome sequencing
-    source_mat_id: igsn:DT6724AA
-    replicate_group: Dturgidum_rep1
-    jgi_samp_id: "900101"
-    jgi_sample_name: Dturgidum_DSM6724_isolate01
-    jgi_seq_project: 1400101
-    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724
-    jgi_sample_contact: Doe, Jane
-    jgi_project_pi: Roe, Richard
-    jgi_proposal_id: EX5101
-    nuc_acid_absorb1: 1.85
-    nuc_acid_absorb2: 2.05
+    source_mat_id: 'DSM 6724'
+    replicate_group: Dtur_DSM6724_repA
+    jgi_samp_id: "248017"
+    jgi_sample_name: Dtur_DSM6724_g1
+    jgi_seq_project: 1248701
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
+    jgi_sample_contact: Jordan Rivera
+    jgi_project_pi: Morgan Avery
+    jgi_proposal_id: "505831"
+    sample_isolated_from: thermal spring
     nuc_acid_concentration: 45.0
     jgi_sample_volume: 30.0
-    cont_type: plate
-    cont_well: B3
-    container_name: DturgidumPlate01
+    cont_type: tube
+    container_name: DturGenomeTube01
     jgi_sample_format: Gentegra-DNA
     dnase: "yes"
     biosafety_mat_cat: Bacteria
     dna_isolate_meth: CTAB chloroform extraction
-    isolate_single_colony: "yes"
-    isolate_known_contaminants: none observed
     isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
     isolate_ribosomal_seq_type: 18S
-    isolate_ribosomal_seq_comments: Sanger-sequenced 16S amplicon, approximately 240 bp
-    isolate_second_ribosomal_seq: TCCGTAGGTGAACCTGCGGAAGGATCATTACCGAGTTTACAACTCCCAAACCCCTGTGAACATACCACTTGTTGCCTCGGCGGATCAGCCCGCTCCCGGTAAAACGGGACGGCCCGCCAGAGGACCCCTAAACTCTGTTTCTATATGTAACTTCTGAGTAAAACCATAAATAAATCAAAACTTTCAACAACGGATCTCTTGG
-    isolate_second_ribosomal_seq_type: ITS
-    isolate_second_ribosomal_seq_comments: ITS1-5.8S-ITS2 region
-    isolate_fungal_16s_screening: "no"
-    isolate_its_match_unite: "no"

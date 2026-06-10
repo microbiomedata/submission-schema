@@ -1,24 +1,27 @@
-## Invalid: sample_isolated_from is required on JgiIsolateInterface; omitting it fails.
-jgi_isolate_data:
-  - samp_name: test_isolate_no_isolation_source
+## Invalid. Single failure: sample_isolated_from is required; omitting it fails.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus turgidum
+## DSM 6724) with one field changed. JGI logistics values are synthetic, shaped to
+## real GOLD formats. Single point of failure.
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_g1
     analysis_type:
-      - metagenomics
-    source_mat_id: igsn:000
-    jgi_samp_id: "999001"
-    jgi_sample_name: test_isolate_001
-    jgi_seq_project: 9990001
-    jgi_seq_project_name: Test Project
-    nuc_acid_concentration: 25.0
-    jgi_sample_volume: 50
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    replicate_group: Dtur_DSM6724_repA
+    jgi_samp_id: "248017"
+    jgi_sample_name: Dtur_DSM6724_g1
+    jgi_seq_project: 1248701
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
+    jgi_sample_contact: Jordan Rivera
+    jgi_project_pi: Morgan Avery
+    jgi_proposal_id: "505831"
+    nuc_acid_concentration: 45.0
+    jgi_sample_volume: 30.0
     cont_type: tube
-    container_name: test_tube_001
-    jgi_sample_format: TE
-    dnase: "no"
+    container_name: DturGenomeTube01
+    jgi_sample_format: Gentegra-DNA
+    dnase: "yes"
     biosafety_mat_cat: Bacteria
-    dna_isolate_meth: CTAB
-    isolate_single_colony: "yes"
-    isolate_ribosomal_seq: AGAGTTTGATCCTGGCTCAGGATGAACGCTGGCGGCGTGCTTAACACATGCAAGTCGAACGG
+    dna_isolate_meth: CTAB chloroform extraction
+    isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
     isolate_ribosomal_seq_type: 16S
-    jgi_sample_contact: Jordan James
-    jgi_project_pi: Jordan James
-    jgi_proposal_id: PR123456

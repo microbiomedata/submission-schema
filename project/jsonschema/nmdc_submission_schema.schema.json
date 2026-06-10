@@ -285,8 +285,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -929,8 +928,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -1964,8 +1962,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -3632,8 +3629,7 @@
                     "description": "Type of sample being submitted"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -5198,8 +5194,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -6001,8 +5996,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -6644,8 +6638,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -6742,10 +6735,7 @@
                     "items": {
                         "$ref": "#/$defs/AnalysisTypeEnum"
                     },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                    "type": "array"
                 },
                 "classified_as": {
                     "description": "Taxonomic classification of this organism. Narrowed from the global OntologyClass range (defined on the slot itself) to NcbiTaxon, since organism identity at NMDC is anchored to NCBI Taxonomy. Per #3016 \u2014 the broader pattern is to narrow `classified_as` to `NcbiTaxon` on all organism-oriented classes via slot_usage.",
@@ -6754,11 +6744,36 @@
                 },
                 "collection_date": {
                     "description": "The date of sampling",
-                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
+                    "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
                     "type": "string"
+                },
+                "estimated_size": {
+                    "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+                    "maximum": 100000,
+                    "minimum": 1e-06,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "gc_content": {
+                    "description": "Estimated GC content as a percentage.",
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 },
                 "host_taxid": {
                     "description": "NCBI taxon id of the host, e.g. 9606",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "isolate_known_contaminants": {
+                    "description": "List any organisms known or suspected to grow in co-culture or that may be contaminating the culture, along with an estimate of the percentage.",
                     "type": [
                         "string",
                         "null"
@@ -6771,6 +6786,10 @@
                         "null"
                     ]
                 },
+                "isolate_single_colony": {
+                    "$ref": "#/$defs/YesNoEnum",
+                    "description": "Was the sample isolated from a single colony or equivalent axenic/pure culture?"
+                },
                 "organism_genus": {
                     "description": "Genus of the organism.",
                     "type": "string"
@@ -6779,13 +6798,19 @@
                     "description": "Species of the organism.",
                     "type": "string"
                 },
+                "ploidy": {
+                    "description": "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -6797,11 +6822,13 @@
                 }
             },
             "required": [
+                "isolate_single_colony",
                 "collection_date",
                 "organism_genus",
                 "organism_species",
                 "strain_name",
                 "classified_as",
+                "analysis_type",
                 "samp_name"
             ],
             "title": "IsolateInterface",
@@ -6820,6 +6847,7 @@
             "description": "",
             "enum": [
                 "10 mM Tris-HCl",
+                "DNAStable",
                 "Ethanol",
                 "Gentegra-DNA",
                 "Gentegra-RNA",
@@ -6827,6 +6855,7 @@
                 "MDA Reaction Buffer",
                 "PBS",
                 "Pellet",
+                "RNAStable",
                 "TE",
                 "Water"
             ],
@@ -6842,70 +6871,9 @@
             "title": "JgiContTypeEnum",
             "type": "string"
         },
-        "JgiIsolateBiosafetyMaterialCategoryEnum": {
-            "description": "Biosafety material category for single-organism isolate samples sent to JGI",
-            "enum": [
-                "Alga",
-                "Animal",
-                "Archaea",
-                "Bacteria",
-                "Fungi",
-                "Plant",
-                "Plasmid",
-                "Protist",
-                "Virus",
-                "Synthetic Construct"
-            ],
-            "title": "JgiIsolateBiosafetyMaterialCategoryEnum",
-            "type": "string"
-        },
-        "JgiIsolateInterface": {
+        "JgiIsolateGenomeInterface": {
             "additionalProperties": false,
             "allOf": [
-                {
-                    "if": {
-                        "properties": {
-                            "cont_well": {
-                                "pattern": ".+"
-                            }
-                        },
-                        "required": [
-                            "cont_well"
-                        ]
-                    },
-                    "then": {
-                        "properties": {
-                            "cont_type": {
-                                "const": "plate"
-                            }
-                        },
-                        "required": [
-                            "cont_type"
-                        ]
-                    }
-                },
-                {
-                    "if": {
-                        "properties": {
-                            "cont_type": {
-                                "const": "plate"
-                            }
-                        },
-                        "required": [
-                            "cont_type"
-                        ]
-                    },
-                    "then": {
-                        "properties": {
-                            "cont_well": {
-                                "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
-                            }
-                        },
-                        "required": [
-                            "cont_well"
-                        ]
-                    }
-                },
                 {
                     "if": {
                         "properties": {
@@ -6971,23 +6939,71 @@
                             "isolate_second_ribosomal_seq_comments"
                         ]
                     }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "cont_well": {
+                                "pattern": ".+"
+                            }
+                        },
+                        "required": [
+                            "cont_well"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "cont_type"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "cont_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "cont_well": {
+                                "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
+                            }
+                        },
+                        "required": [
+                            "cont_well"
+                        ]
+                    }
                 }
             ],
-            "description": "JGI-specific submission metadata for isolate sequencing projects. Captures physical sample logistics, strain verification sequences, and QC fields required by JGI but not stored in nmdc-schema.",
+            "description": "JGI submission metadata for isolate GENOME sequencing projects. Shared JGI logistics plus ribosomal strain-verification sequences and fungal screening.",
             "properties": {
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
                     "items": {
                         "$ref": "#/$defs/AnalysisTypeEnum"
                     },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                    "type": "array"
                 },
                 "biosafety_mat_cat": {
-                    "$ref": "#/$defs/JgiIsolateBiosafetyMaterialCategoryEnum",
-                    "description": "Select the biosafety material category for your JGI samples."
+                    "$ref": "#/$defs/JgiIsolateMaterialKindEnum",
+                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                },
+                "collection_site_or_growth_conditions": {
+                    "description": "Free-text description of the collection site or growth conditions for the isolate.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7017,18 +7033,11 @@
                 },
                 "isolate_its_match_unite": {
                     "$ref": "#/$defs/YesNoEnum",
-                    "description": "For fungal draft samples only \u2014 does the ITS sequence match taxonomy in the UNITE database?"
-                },
-                "isolate_known_contaminants": {
-                    "description": "List any organisms known or suspected to grow in co-culture or that may be contaminating the culture, along with an estimate of the percentage.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "description": "For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?"
                 },
                 "isolate_ribosomal_seq": {
                     "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
-                    "pattern": "^[ACGTN]{200,5000}$",
+                    "pattern": "^[ATCGN]{200,5000}$",
                     "type": "string"
                 },
                 "isolate_ribosomal_seq_comments": {
@@ -7045,7 +7054,7 @@
                 },
                 "isolate_second_ribosomal_seq": {
                     "description": "Optional secondary ribosomal sequence for additional strain verification. For 28S must be >300 nt with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
-                    "pattern": "^[ACGTN]{200,5000}$",
+                    "pattern": "^[ATCGN]{200,5000}$",
                     "type": [
                         "string",
                         "null"
@@ -7063,31 +7072,18 @@
                     "$ref": "#/$defs/RibosomalSequenceTypeEnum",
                     "description": "Type of the second ribosomal sequence provided."
                 },
-                "isolate_single_colony": {
-                    "$ref": "#/$defs/YesNoEnum",
-                    "description": "Was the sample isolated from a single colony or equivalent axenic/pure culture?"
-                },
                 "jgi_project_pi": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_proposal_id": {
                     "pattern": "^[A-Z0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -7130,6 +7126,13 @@
                     "minimum": 0.0001,
                     "type": "number"
                 },
+                "reference_genome": {
+                    "description": "Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "replicate_group": {
                     "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
                     "type": [
@@ -7141,9 +7144,12 @@
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
                 },
+                "sample_isolated_from": {
+                    "description": "Free-text description of what the organism was isolated from.",
+                    "type": "string"
+                },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -7151,10 +7157,17 @@
                 }
             },
             "required": [
+                "isolate_ribosomal_seq",
+                "isolate_ribosomal_seq_type",
+                "analysis_type",
+                "samp_name",
                 "jgi_samp_id",
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
+                "jgi_sample_contact",
+                "jgi_project_pi",
+                "jgi_proposal_id",
                 "nuc_acid_concentration",
                 "jgi_sample_volume",
                 "cont_type",
@@ -7163,12 +7176,231 @@
                 "dnase",
                 "biosafety_mat_cat",
                 "dna_isolate_meth",
-                "isolate_single_colony",
-                "isolate_ribosomal_seq",
-                "isolate_ribosomal_seq_type",
-                "samp_name"
+                "sample_isolated_from"
             ],
-            "title": "JgiIsolateInterface",
+            "title": "JgiIsolateGenomeInterface",
+            "type": "object"
+        },
+        "JgiIsolateMaterialKindEnum": {
+            "description": "Broad kind of organism or genetic element being sequenced. JGI uses this for internal biosafety routing under the field label \"Biosafety Material Category\".",
+            "enum": [
+                "Alga",
+                "Animal",
+                "Archaea",
+                "Bacteria",
+                "Fungi",
+                "Plant",
+                "Plasmid",
+                "Protist",
+                "Virus",
+                "Synthetic Construct"
+            ],
+            "title": "JgiIsolateMaterialKindEnum",
+            "type": "string"
+        },
+        "JgiIsolateTranscriptomeInterface": {
+            "additionalProperties": false,
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "cont_well": {
+                                "pattern": ".+"
+                            }
+                        },
+                        "required": [
+                            "cont_well"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "cont_type"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "cont_type": {
+                                "const": "plate"
+                            }
+                        },
+                        "required": [
+                            "cont_type"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "cont_well": {
+                                "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$"
+                            }
+                        },
+                        "required": [
+                            "cont_well"
+                        ]
+                    }
+                }
+            ],
+            "description": "JGI submission metadata for isolate TRANSCRIPTOME sequencing projects. Shared JGI logistics plus the RNA experiment collection date.",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "biosafety_mat_cat": {
+                    "$ref": "#/$defs/JgiIsolateMaterialKindEnum",
+                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                },
+                "collection_site_or_growth_conditions": {
+                    "description": "Free-text description of the collection site or growth conditions for the isolate.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cont_type": {
+                    "$ref": "#/$defs/JgiContTypeEnum",
+                    "description": "Tube or plate (96-well)"
+                },
+                "cont_well": {
+                    "pattern": "^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "container_name": {
+                    "pattern": "^[-_.a-zA-Z0-9]{1,20}$",
+                    "type": "string"
+                },
+                "dna_isolate_meth": {
+                    "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+                    "type": "string"
+                },
+                "dnase": {
+                    "$ref": "#/$defs/YesNoEnum"
+                },
+                "jgi_project_pi": {
+                    "type": "string"
+                },
+                "jgi_proposal_id": {
+                    "pattern": "^[A-Z0-9]+$",
+                    "type": "string"
+                },
+                "jgi_samp_id": {
+                    "type": "string"
+                },
+                "jgi_sample_contact": {
+                    "type": "string"
+                },
+                "jgi_sample_format": {
+                    "$ref": "#/$defs/JGISampleFormatEnum",
+                    "description": "Solution in which the JGI sample has been suspended"
+                },
+                "jgi_sample_name": {
+                    "description": "Give the JGI sample a name that is meaningful to you. Sample names must be unique across all JGI projects and contain a-z, A-Z, 0-9, - and _ only.",
+                    "pattern": "^[-_.a-zA-Z0-9]*$",
+                    "type": "string"
+                },
+                "jgi_sample_volume": {
+                    "maximum": 1000,
+                    "minimum": 0.0001,
+                    "type": "number"
+                },
+                "jgi_seq_project": {
+                    "type": "number"
+                },
+                "jgi_seq_project_name": {
+                    "type": "string"
+                },
+                "nuc_acid_absorb1": {
+                    "description": "260/280 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "nuc_acid_absorb2": {
+                    "description": "260/230 measurement of nucleic acid sample purity",
+                    "minimum": 0.0001,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "nuc_acid_concentration": {
+                    "maximum": 2000,
+                    "minimum": 0.0001,
+                    "type": "number"
+                },
+                "reference_genome": {
+                    "description": "Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "replicate_group": {
+                    "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "rna_collection_date": {
+                    "description": "Date the RNA sample was collected or the experiment was performed, in YYYY-MM-DD format. For RNA projects, use the experiment date rather than the original field collection date.",
+                    "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "sample_isolated_from": {
+                    "description": "Free-text description of what the organism was isolated from.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "analysis_type",
+                "samp_name",
+                "jgi_samp_id",
+                "jgi_sample_name",
+                "jgi_seq_project",
+                "jgi_seq_project_name",
+                "jgi_sample_contact",
+                "jgi_project_pi",
+                "jgi_proposal_id",
+                "nuc_acid_concentration",
+                "jgi_sample_volume",
+                "cont_type",
+                "container_name",
+                "jgi_sample_format",
+                "dnase",
+                "biosafety_mat_cat",
+                "dna_isolate_meth",
+                "sample_isolated_from"
+            ],
+            "title": "JgiIsolateTranscriptomeInterface",
             "type": "object"
         },
         "JgiMgInterface": {
@@ -7230,7 +7462,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
-                    "description": "Select the biosafety material category for your JGI samples."
+                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7255,26 +7487,17 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "jgi_project_pi": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_proposal_id": {
                     "pattern": "^[A-Z0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -7329,8 +7552,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -7349,6 +7571,9 @@
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
+                "jgi_sample_contact",
+                "jgi_project_pi",
+                "jgi_proposal_id",
                 "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
@@ -7415,7 +7640,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
-                    "description": "Select the biosafety material category for your JGI samples."
+                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7440,26 +7665,17 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "jgi_project_pi": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_proposal_id": {
                     "pattern": "^[A-Z0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -7508,8 +7724,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -7530,6 +7745,9 @@
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
+                "jgi_sample_contact",
+                "jgi_project_pi",
+                "jgi_proposal_id",
                 "jgi_sample_volume",
                 "analysis_type",
                 "samp_name"
@@ -7596,7 +7814,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
-                    "description": "Select the biosafety material category for your JGI samples."
+                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7617,26 +7835,17 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "jgi_project_pi": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_proposal_id": {
                     "pattern": "^[A-Z0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_samp_id": {
                     "type": "string"
                 },
                 "jgi_sample_contact": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "jgi_sample_format": {
                     "$ref": "#/$defs/JGISampleFormatEnum",
@@ -7692,8 +7901,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -7712,6 +7920,9 @@
                 "jgi_sample_name",
                 "jgi_seq_project",
                 "jgi_seq_project_name",
+                "jgi_sample_contact",
+                "jgi_project_pi",
+                "jgi_proposal_id",
                 "jgi_sample_volume",
                 "replicate_group",
                 "analysis_type",
@@ -7828,8 +8039,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -7918,8 +8128,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -7996,8 +8205,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -8086,8 +8294,7 @@
                     "type": "string"
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -8531,8 +8738,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -9255,8 +9461,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -9629,10 +9834,20 @@
                         "null"
                     ]
                 },
-                "jgi_isolate_data": {
-                    "description": "aggregation slot relating jgi_isolate data collections to a SampleData container",
+                "jgi_isolate_genome_data": {
+                    "description": "aggregation slot relating JGI isolate genome data collections to a SampleData container",
                     "items": {
-                        "$ref": "#/$defs/JgiIsolateInterface"
+                        "$ref": "#/$defs/JgiIsolateGenomeInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "jgi_isolate_transcriptome_data": {
+                    "description": "aggregation slot relating JGI isolate transcriptome data collections to a SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/JgiIsolateTranscriptomeInterface"
                     },
                     "type": [
                         "array",
@@ -10545,8 +10760,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -11460,8 +11674,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -13158,8 +13371,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -14023,8 +14235,7 @@
                     ]
                 },
                 "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source  of this sample.",
-                    "pattern": "^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$",
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
                     "type": [
                         "string",
                         "null"
@@ -14320,10 +14531,20 @@
                 "null"
             ]
         },
-        "jgi_isolate_data": {
-            "description": "aggregation slot relating jgi_isolate data collections to a SampleData container",
+        "jgi_isolate_genome_data": {
+            "description": "aggregation slot relating JGI isolate genome data collections to a SampleData container",
             "items": {
-                "$ref": "#/$defs/JgiIsolateInterface"
+                "$ref": "#/$defs/JgiIsolateGenomeInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "jgi_isolate_transcriptome_data": {
+            "description": "aggregation slot relating JGI isolate transcriptome data collections to a SampleData container",
+            "items": {
+                "$ref": "#/$defs/JgiIsolateTranscriptomeInterface"
             },
             "type": [
                 "array",

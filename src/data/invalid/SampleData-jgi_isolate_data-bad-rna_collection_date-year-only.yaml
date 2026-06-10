@@ -1,15 +1,26 @@
-## Invalid: rna_collection_date must be YYYY-MM-DD; year-only fails.
-jgi_isolate_data:
-  - samp_name: test_isolate_rna_bad_date
+## Invalid. Single failure: rna_collection_date must be YYYY-MM-DD; year-only fails.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus turgidum
+## DSM 6724) with one field changed. JGI logistics values are synthetic, shaped to
+## real GOLD formats. Single point of failure.
+jgi_isolate_transcriptome_data:
+  - samp_name: Dtur_DSM6724_rna1
     analysis_type:
-      - metagenomics
-    source_mat_id: igsn:000
+      - isolate transcriptome sequencing
+    source_mat_id: 'DSM 6724'
+    jgi_samp_id: "248040"
+    jgi_sample_name: Dtur_DSM6724_rna1
+    jgi_seq_project: 1248755
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Transcriptome
+    jgi_sample_contact: Jordan Rivera
+    jgi_project_pi: Morgan Avery
+    jgi_proposal_id: "505842"
+    sample_isolated_from: liquid culture from a frozen stock
+    nuc_acid_concentration: 25.0
+    jgi_sample_volume: 50.0
     cont_type: tube
-    container_name: test_tube_001
-    jgi_sample_format: TE
+    container_name: DturRnaTube01
+    jgi_sample_format: RNAStable
     dnase: "yes"
     biosafety_mat_cat: Bacteria
-    dna_isolate_meth: CTAB
-    isolate_single_colony: "yes"
-    isolate_ribosomal_seq_type: 16S
+    dna_isolate_meth: TRIzol RNA extraction
     rna_collection_date: "2021"
