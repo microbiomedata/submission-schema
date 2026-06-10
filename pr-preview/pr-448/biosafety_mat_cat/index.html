@@ -499,7 +499,7 @@
 
 
 <h1 id="slot-jgi-biosafety-material-category-biosafety_mat_cat">Slot: JGI Biosafety Material Category (biosafety_mat_cat)</h1>
-<p><em>Broad kind of organism or genetic element. JGI uses this field, labeled "Biosafety Material Category", for internal routing; values are organism categories, not biosafety levels.</em></p>
+<p><em>JGI material category, labeled "Biosafety Material Category" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/biosafety_mat_cat">nmdc_sub_schema:biosafety_mat_cat</a>
 Alias: biosafety_mat_cat</p>
 <!-- no inheritance hierarchy -->
@@ -515,6 +515,11 @@ Alias: biosafety_mat_cat</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>jgi_mt dh_interface</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
 <td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
 <td>no</td>
@@ -525,8 +530,8 @@ Alias: biosafety_mat_cat</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
-<td>jgi_mt dh_interface</td>
+<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
+<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -537,11 +542,6 @@ Alias: biosafety_mat_cat</p>
 <tr>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 <td>Shared JGI isolate submission fields common to both the genome and the transc...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
-<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -583,10 +583,14 @@ Alias: biosafety_mat_cat</p>
 <details>
 
 <pre><code class="language-yaml">name: biosafety_mat_cat
-description: Broad kind of organism or genetic element. JGI uses this field, labeled
-  &quot;Biosafety Material Category&quot;, for internal routing; values are organism categories,
-  not biosafety levels.
+description: JGI material category, labeled &quot;Biosafety Material Category&quot; on the form
+  and used for internal routing rather than as a biosafety level. The permissible
+  values are set by the slot's range; the isolate interfaces narrow that range to
+  organism kinds.
 title: JGI Biosafety Material Category
+notes:
+- The slot name is kept to match the JGI form even though the values are categories,
+  not biosafety levels.
 from_schema: https://example.com/nmdc_submission_schema
 structured_aliases:
   Biosafety Material Category:
