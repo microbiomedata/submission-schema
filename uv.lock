@@ -2784,8 +2784,8 @@ wheels = [
 
 [[package]]
 name = "nmdc-schema"
-version = "0.0.0"
-source = { git = "https://github.com/microbiomedata/nmdc-schema.git?rev=e3254eb1f9e5c7866cdd2da580b18e06cb58bc5d#e3254eb1f9e5c7866cdd2da580b18e06cb58bc5d" }
+version = "11.20.0"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click" },
     { name = "click-log" },
@@ -2802,6 +2802,10 @@ dependencies = [
     { name = "rdflib" },
     { name = "requests" },
     { name = "urllib3" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a2/fc/3778c6e380d8e78f994297d9268a5d285dba343271571177634d9a1538ae/nmdc_schema-11.20.0.tar.gz", hash = "sha256:6eafd0bc92b0435b93e9f0064438e55e31ff7ac9a0c9b47e569c8676b713eef5", size = 771868, upload-time = "2026-06-10T21:21:08.524Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/8b/050dd7e311b5fb3be39ebce5e986f10ac6f758f0f1870d69513343cf7f0f/nmdc_schema-11.20.0-py3-none-any.whl", hash = "sha256:5321201d5f085b12f9b6fddf5cda5019461c281811c7840193845235d825c6da", size = 845561, upload-time = "2026-06-10T21:21:06.434Z" },
 ]
 
 [[package]]
@@ -2855,7 +2859,7 @@ dev = [
     { name = "matplotlib", specifier = ">=3.9.2,<4" },
     { name = "mkdocs-material", specifier = ">=9.1.2,<10" },
     { name = "mkdocs-mermaid2-plugin", specifier = ">=1.1.0,<2" },
-    { name = "nmdc-schema", git = "https://github.com/microbiomedata/nmdc-schema.git?rev=e3254eb1f9e5c7866cdd2da580b18e06cb58bc5d" },
+    { name = "nmdc-schema", specifier = "==11.20.0" },
     { name = "oaklib", specifier = ">=0.6.1,<0.7" },
     { name = "pydantic", specifier = ">=2.11.7,<3" },
     { name = "pytest", specifier = ">=9.0.0,<10" },

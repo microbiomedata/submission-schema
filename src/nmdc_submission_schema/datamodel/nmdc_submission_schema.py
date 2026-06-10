@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-10T16:43:50
+# Generation date: 2026-06-10T17:22:35
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -77,7 +77,6 @@ EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/')
 EGGNOG = CurieNamespace('EGGNOG', 'https://bioregistry.io/eggnog:')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
-FMA = CurieNamespace('FMA', 'http://purl.obolibrary.org/obo/FMA_')
 GENEPIO = CurieNamespace('GENEPIO', 'http://purl.obolibrary.org/obo/GENEPIO_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 HMDB = CurieNamespace('HMDB', 'https://bioregistry.io/hmdb:')

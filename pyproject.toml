@@ -24,7 +24,7 @@ dev = [
     "matplotlib>=3.9.2,<4",
     "mkdocs-material>=9.1.2,<10",
     "mkdocs-mermaid2-plugin>=1.1.0,<2",
-    "nmdc-schema==11.20.0rc1",
+    "nmdc-schema==11.20.0",
     "oaklib>=0.6.1,<0.7", # was using 0.5.6 up to 2024-12-10
     "pydantic>=2.11.7,<3",
     "pytest>=9.0.0,<10",
@@ -61,9 +61,6 @@ cache-keys = [
     { file = "pyproject.toml" },
     { git = { commit = true, tags = true } },
 ]
-
-[tool.uv.sources]
-nmdc-schema = { git = "https://github.com/microbiomedata/nmdc-schema.git", rev = "e3254eb1f9e5c7866cdd2da580b18e06cb58bc5d" }
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning>=0.5.0,<1"]

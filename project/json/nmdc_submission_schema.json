@@ -88,10 +88,6 @@
       "prefix_prefix": "FBcv",
       "prefix_reference": "http://purl.obolibrary.org/obo/FBcv_"
     },
-    "FMA": {
-      "prefix_prefix": "FMA",
-      "prefix_reference": "http://purl.obolibrary.org/obo/FMA_"
-    },
     "GENEPIO": {
       "prefix_prefix": "GENEPIO",
       "prefix_reference": "http://purl.obolibrary.org/obo/GENEPIO_"
@@ -15075,7 +15071,7 @@
           "value": "percent"
         }
       },
-      "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+      "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
       "title": "aromatics wt%",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 292,
@@ -15102,7 +15098,7 @@
           "value": "percent"
         }
       },
-      "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+      "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
       "title": "asphaltenes wt%",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 293,
@@ -21027,9 +21023,10 @@
         "Host NCBI Taxonomy ID": {
           "literal_form": "Host NCBI Taxonomy ID",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 259,
@@ -22529,7 +22526,7 @@
         }
       },
       "description": "Concentration of nitrate nitrogen in the sample",
-      "title": "nitrate_nitrogen",
+      "title": "nitrate nitrogen",
       "comments": [
         "Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide the numeric portion followed by a space and the unit.",
         "often below some specified limit of detection"
@@ -22620,7 +22617,7 @@
         }
       },
       "description": "Concentration of nitrite nitrogen in the sample",
-      "title": "nitrite_nitrogen",
+      "title": "nitrite nitrogen",
       "comments": [
         "Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide the numeric portion followed by a space and the unit."
       ],
@@ -24084,7 +24081,7 @@
           "value": "Cel"
         }
       },
-      "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high  pour point  is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)",
+      "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
       "title": "pour point",
       "comments": [
         "Value must be reported in degrees Celsius. Provide the numeric portion only."
@@ -24723,7 +24720,7 @@
           "value": "percent"
         }
       },
-      "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+      "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
       "title": "resins wt%",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 348,
@@ -25650,7 +25647,7 @@
         "samp_collect_method": {
           "literal_form": "samp_collect_method",
           "contexts": [
-            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
           ]
         }
       },
@@ -26443,7 +26440,7 @@
           "value": "percent"
         }
       },
-      "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+      "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
       "title": "saturates wt%",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 359,
@@ -28263,7 +28260,7 @@
           "value": "mg/L"
         }
       },
-      "description": "Total Acid Number  (TAN) is a measurement of acidity that is determined by the amount of  potassium hydroxide  in milligrams that is needed to neutralize the acids in one gram of oil.  It is an important quality measurement of  crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)",
+      "description": "Total Acid Number (TAN) is a measurement of acidity that is determined by the amount of potassium hydroxide in milligrams that is needed to neutralize the acids in one gram of oil. It is an important quality measurement of crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)",
       "title": "total acid number",
       "comments": [
         "Value must be reported in mg/L. Provide the numeric portion only."
@@ -29500,7 +29497,7 @@
           "value": "cP at degree Celsius"
         }
       },
-      "description": "A measure of oil's resistance  to gradual deformation by  shear stress  or  tensile stress (e.g. 3.5 cp; 100   C)",
+      "description": "A measure of oil's resistance to gradual deformation by shear stress or tensile stress (e.g. 3.5 cp; 100 °C)",
       "title": "viscosity",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 384,
@@ -30746,9 +30743,10 @@
         "Genus": {
           "literal_form": "Genus",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 106,
@@ -30787,9 +30785,10 @@
         "Species": {
           "literal_form": "Species",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 107,
@@ -30829,9 +30828,10 @@
         "Strain or cultivar": {
           "literal_form": "Strain or cultivar",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "related_mappings": [
@@ -30873,9 +30873,10 @@
         "Isolate": {
           "literal_form": "Isolate",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "related_mappings": [
@@ -30938,14 +30939,19 @@
           "object": 300000
         }
       ],
+      "in_subset": [
+        "jgi_isolate"
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "structured_aliases": {
         "Estimated Genome Size (Mb)": {
           "literal_form": "Estimated Genome Size (Mb)",
           "predicate": "BROAD_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview.",
+            "Per @aclum: Mb is a coarser unit than bp, so a single Mb value covers many possible bp values; the alias is broader in granularity."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 21,
@@ -30976,9 +30982,10 @@
         "GC Content %": {
           "literal_form": "GC Content %",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 113,
@@ -31033,9 +31040,10 @@
         "Host Genus": {
           "literal_form": "Host Genus",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 45,
@@ -31070,9 +31078,10 @@
         "Host Species": {
           "literal_form": "Host Species",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 46,
@@ -31103,9 +31112,10 @@
         "Host Strain": {
           "literal_form": "Host Strain",
           "predicate": "EXACT_SYNONYM",
-          "contexts": [
-            "https://jgi.doe.gov/isolate-submission-form/v19"
-          ]
+          "notes": [
+            "Exact JGI form template is access-restricted; source is the public submission overview."
+          ],
+          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
         }
       },
       "rank": 47,
@@ -32547,7 +32557,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -36295,7 +36305,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -43815,7 +43825,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "aromatics wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 292,
@@ -43844,7 +43854,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "asphaltenes wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 293,
@@ -45795,7 +45805,7 @@
               "value": "Cel"
             }
           },
-          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high  pour point  is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)",
+          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
           "title": "pour point",
           "comments": [
             "Value must be reported in degrees Celsius. Provide the numeric portion only."
@@ -45897,7 +45907,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "resins wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 348,
@@ -46030,7 +46040,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -46525,7 +46535,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "saturates wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 359,
@@ -46941,7 +46951,7 @@
               "value": "mg/L"
             }
           },
-          "description": "Total Acid Number  (TAN) is a measurement of acidity that is determined by the amount of  potassium hydroxide  in milligrams that is needed to neutralize the acids in one gram of oil.  It is an important quality measurement of  crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)",
+          "description": "Total Acid Number (TAN) is a measurement of acidity that is determined by the amount of potassium hydroxide in milligrams that is needed to neutralize the acids in one gram of oil. It is an important quality measurement of crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)",
           "title": "total acid number",
           "comments": [
             "Value must be reported in mg/L. Provide the numeric portion only."
@@ -47414,7 +47424,7 @@
               "value": "cP at degree Celsius"
             }
           },
-          "description": "A measure of oil's resistance  to gradual deformation by  shear stress  or  tensile stress (e.g. 3.5 cp; 100   C)",
+          "description": "A measure of oil's resistance to gradual deformation by shear stress or tensile stress (e.g. 3.5 cp; 100 °C)",
           "title": "viscosity",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 384,
@@ -48062,7 +48072,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "aromatics wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 292,
@@ -48091,7 +48101,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "asphaltenes wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 293,
@@ -50137,7 +50147,7 @@
               "value": "Cel"
             }
           },
-          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high  pour point  is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (soure: https://en.wikipedia.org/wiki/pour_point)",
+          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
           "title": "pour point",
           "comments": [
             "Value must be reported in degrees Celsius. Provide the numeric portion only."
@@ -50307,7 +50317,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "resins wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 348,
@@ -50440,7 +50450,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -50944,7 +50954,7 @@
               "value": "percent"
             }
           },
-          "description": "Saturate, Aromatic, Resin and Asphaltene  (SARA) is an analysis method that divides  crude oil  components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
+          "description": "Saturate, Aromatic, Resin and Asphaltene (SARA) is an analysis method that divides crude oil components according to their polarizability and polarity. There are three main methods to obtain SARA results. The most popular one is known as the Iatroscan TLC-FID and is referred to as IP-143 (source: https://en.wikipedia.org/wiki/Saturate,_aromatic,_resin_and_asphaltene)",
           "title": "saturates wt%",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 359,
@@ -51264,7 +51274,7 @@
               "value": "mg/L"
             }
           },
-          "description": "Total Acid Number  (TAN) is a measurement of acidity that is determined by the amount of  potassium hydroxide  in milligrams that is needed to neutralize the acids in one gram of oil.  It is an important quality measurement of  crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)",
+          "description": "Total Acid Number (TAN) is a measurement of acidity that is determined by the amount of potassium hydroxide in milligrams that is needed to neutralize the acids in one gram of oil. It is an important quality measurement of crude oil. (source: https://en.wikipedia.org/wiki/Total_acid_number)",
           "title": "total acid number",
           "comments": [
             "Value must be reported in mg/L. Provide the numeric portion only."
@@ -51737,7 +51747,7 @@
               "value": "cP at degree Celsius"
             }
           },
-          "description": "A measure of oil's resistance  to gradual deformation by  shear stress  or  tensile stress (e.g. 3.5 cp; 100   C)",
+          "description": "A measure of oil's resistance to gradual deformation by shear stress or tensile stress (e.g. 3.5 cp; 100 °C)",
           "title": "viscosity",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 384,
@@ -53812,9 +53822,10 @@
             "Host NCBI Taxonomy ID": {
               "literal_form": "Host NCBI Taxonomy ID",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 259,
@@ -54220,7 +54231,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -59759,7 +59770,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -62498,9 +62509,10 @@
             "Host NCBI Taxonomy ID": {
               "literal_form": "Host NCBI Taxonomy ID",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 259,
@@ -63719,7 +63731,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -68399,7 +68411,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -72495,7 +72507,7 @@
             }
           },
           "description": "Concentration of nitrate nitrogen in the sample",
-          "title": "nitrate_nitrogen",
+          "title": "nitrate nitrogen",
           "comments": [
             "Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide the numeric portion followed by a space and the unit.",
             "often below some specified limit of detection"
@@ -72543,7 +72555,7 @@
             }
           },
           "description": "Concentration of nitrite nitrogen in the sample",
-          "title": "nitrite_nitrogen",
+          "title": "nitrite nitrogen",
           "comments": [
             "Value must be reported in one of the following units: [ppm], mg/kg, mg/L. Provide the numeric portion followed by a space and the unit."
           ],
@@ -73191,7 +73203,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -76329,7 +76341,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -81179,7 +81191,7 @@
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
               "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.2.2"
+                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
               ]
             }
           },
@@ -85168,9 +85180,10 @@
             "Genus": {
               "literal_form": "Genus",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 106,
@@ -85211,9 +85224,10 @@
             "Species": {
               "literal_form": "Species",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 107,
@@ -85255,9 +85269,10 @@
             "Strain or cultivar": {
               "literal_form": "Strain or cultivar",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "related_mappings": [
@@ -85301,9 +85316,10 @@
             "Isolate": {
               "literal_form": "Isolate",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "related_mappings": [
@@ -85366,9 +85382,10 @@
             "GC Content %": {
               "literal_form": "GC Content %",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 113,
@@ -86357,9 +86374,10 @@
             "Host NCBI Taxonomy ID": {
               "literal_form": "Host NCBI Taxonomy ID",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 48,
@@ -86404,9 +86422,10 @@
             "Host Genus": {
               "literal_form": "Host Genus",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 45,
@@ -86443,9 +86462,10 @@
             "Host Species": {
               "literal_form": "Host Species",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 46,
@@ -86478,9 +86498,10 @@
             "Host Strain": {
               "literal_form": "Host Strain",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 47,
@@ -86811,14 +86832,19 @@
               "object": 300000
             }
           ],
+          "in_subset": [
+            "jgi_isolate"
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Estimated Genome Size (Mb)": {
               "literal_form": "Estimated Genome Size (Mb)",
               "predicate": "BROAD_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview.",
+                "Per @aclum: Mb is a coarser unit than bp, so a single Mb value covers many possible bp values; the alias is broader in granularity."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 21,
@@ -87725,9 +87751,10 @@
             "Host NCBI Taxonomy ID": {
               "literal_form": "Host NCBI Taxonomy ID",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 48,
@@ -87772,9 +87799,10 @@
             "Host Genus": {
               "literal_form": "Host Genus",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 45,
@@ -87811,9 +87839,10 @@
             "Host Species": {
               "literal_form": "Host Species",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 46,
@@ -87846,9 +87875,10 @@
             "Host Strain": {
               "literal_form": "Host Strain",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 47,
@@ -88887,9 +88917,10 @@
             "Host NCBI Taxonomy ID": {
               "literal_form": "Host NCBI Taxonomy ID",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 48,
@@ -88934,9 +88965,10 @@
             "Host Genus": {
               "literal_form": "Host Genus",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 45,
@@ -88973,9 +89005,10 @@
             "Host Species": {
               "literal_form": "Host Species",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 46,
@@ -89008,9 +89041,10 @@
             "Host Strain": {
               "literal_form": "Host Strain",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://jgi.doe.gov/isolate-submission-form/v19"
-              ]
+              "notes": [
+                "Exact JGI form template is access-restricted; source is the public submission overview."
+              ],
+              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
             }
           },
           "rank": 47,
