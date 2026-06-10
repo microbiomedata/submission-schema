@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/light_regm/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/isolate_meth/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: light regimen (light_regm) - submission-schema</title>
+        <title>Slot: Sample Isolation Method (isolate_meth) - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-light-regimen-light_regm" class="md-skip">
+        <a href="#slot-sample-isolation-method-isolate_meth" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: light regimen (light_regm)
+              Slot: Sample Isolation Method (isolate_meth)
             
           </span>
         </div>
@@ -452,17 +452,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -520,10 +509,10 @@
   
 
 
-<h1 id="slot-light-regimen-light_regm">Slot: light regimen (light_regm)</h1>
-<p><em>Information about treatment(s) involving exposure to light, including both light intensity and quality</em></p>
-<p>URI: <a href="https://w3id.org/mixs/0000569">MIXS:0000569</a>
-Alias: light_regm</p>
+<h1 id="slot-sample-isolation-method-isolate_meth">Slot: Sample Isolation Method (isolate_meth)</h1>
+<p><em>Method, protocol, or kit used to extract DNA or RNA from the sample.</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/isolate_meth">nmdc_sub_schema:isolate_meth</a>
+Alias: isolate_meth</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -537,30 +526,30 @@ Alias: light_regm</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SoilInterface/">SoilInterface</a></td>
-<td>soil dh_interface</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../WaterInterface/">WaterInterface</a></td>
-<td>water dh_interface</td>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
+<td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
+<td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
-<td>plant_associated dh_interface</td>
+<td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
+<td>Shared JGI isolate submission fields common to both the genome and the transc...</td>
 <td>yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="examples">Examples</h2>
 <table>
@@ -571,30 +560,17 @@ Alias: light_regm</p>
 </thead>
 <tbody>
 <tr>
-<td>incandescant light;10 lux;450 nanometer</td>
+<td>Wizard Genomic DNA Purification Kit</td>
+</tr>
+<tr>
+<td>CTAB chloroform extraction</td>
+</tr>
+<tr>
+<td>TRIzol RNA extraction</td>
 </tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Expected_value</td>
-<td>exposure type;light intensity;light quality</td>
-</tr>
-<tr>
-<td>Preferred_unit</td>
-<td>lux; micrometer, nanometer, angstrom</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -610,45 +586,41 @@ Alias: light_regm</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>MIXS:0000569</td>
+<td>nmdc_sub_schema:isolate_meth</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:light_regm</td>
+<td>nmdc_sub_schema:isolate_meth</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: light_regm
-annotations:
-  Expected_value:
-    tag: Expected_value
-    value: exposure type;light intensity;light quality
-  Preferred_unit:
-    tag: Preferred_unit
-    value: lux; micrometer, nanometer, angstrom
-description: Information about treatment(s) involving exposure to light, including
-  both light intensity and quality
-title: light regimen
+<pre><code class="language-yaml">name: isolate_meth
+description: Method, protocol, or kit used to extract DNA or RNA from the sample.
+title: Sample Isolation Method
 examples:
-- value: incandescant light;10 lux;450 nanometer
+- value: Wizard Genomic DNA Purification Kit
+- value: CTAB chloroform extraction
+- value: TRIzol RNA extraction
 from_schema: https://example.com/nmdc_submission_schema
-rank: 24
-keywords:
-- light
-- regimen
-string_serialization: '{text};{float} {unit};{float} {unit}'
-slot_uri: MIXS:0000569
-alias: light_regm
+structured_aliases:
+  Sample Isolation Method:
+    literal_form: Sample Isolation Method
+    predicate: EXACT_SYNONYM
+    notes:
+    - Exact JGI form template is access-restricted; source is the public submission
+      overview.
+    - JGI labels this field Sample Isolation Method, but its definition is the DNA
+      or RNA extraction method.
+    source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+rank: 16
+alias: isolate_meth
 domain_of:
-- PlantAssociatedInterface
-- SedimentInterface
-- SoilInterface
-- WaterInterface
-slot_group: mixs_modified_section
+- JgiIsolateCommonMixin
 range: string
+required: true
 
 </code></pre>
 
