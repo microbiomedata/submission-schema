@@ -6021,3 +6021,31 @@ slots:
           notes:
             - Free-text string at the JGI submission gate; nmdc-schema models ploidy as PloidyEnum.
 
+  ## Host organism fields placed on the JGI isolate interfaces per Montana-SlotEval (#449).
+  ## Routed to JgiIsolateCommonMixin so both JgiIsolateGenomeInterface and
+  ## JgiIsolateTranscriptomeInterface inherit them. host_taxid stays on IsolateInterface.
+  - slot: host_genus
+    source: Biosample
+    destinations:
+      - JgiIsolateCommonMixin
+    modifications:
+      - replace:
+          rank: 45
+          slot_group: jgi_isolate_section
+  - slot: host_species
+    source: Biosample
+    destinations:
+      - JgiIsolateCommonMixin
+    modifications:
+      - replace:
+          rank: 46
+          slot_group: jgi_isolate_section
+  - slot: host_strain
+    source: Biosample
+    destinations:
+      - JgiIsolateCommonMixin
+    modifications:
+      - replace:
+          rank: 47
+          slot_group: jgi_isolate_section
+

@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-09T20:14:48
+# Generation date: 2026-06-09T20:35:14
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -819,6 +819,9 @@ class JgiIsolateCommonMixin(YAMLRoot):
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
     collection_site_or_growth_conditions: Optional[str] = None
+    host_genus: Optional[str] = None
+    host_species: Optional[str] = None
+    host_strain: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.jgi_samp_id):
@@ -918,6 +921,15 @@ class JgiIsolateCommonMixin(YAMLRoot):
 
         if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
             self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
+
+        if self.host_genus is not None and not isinstance(self.host_genus, str):
+            self.host_genus = str(self.host_genus)
+
+        if self.host_species is not None and not isinstance(self.host_species, str):
+            self.host_species = str(self.host_species)
+
+        if self.host_strain is not None and not isinstance(self.host_strain, str):
+            self.host_strain = str(self.host_strain)
 
         super().__post_init__(**kwargs)
 
@@ -6775,6 +6787,9 @@ class JgiIsolateGenomeInterface(DhInterface):
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
     collection_site_or_growth_conditions: Optional[str] = None
+    host_genus: Optional[str] = None
+    host_species: Optional[str] = None
+    host_strain: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
@@ -6917,6 +6932,15 @@ class JgiIsolateGenomeInterface(DhInterface):
         if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
             self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
 
+        if self.host_genus is not None and not isinstance(self.host_genus, str):
+            self.host_genus = str(self.host_genus)
+
+        if self.host_species is not None and not isinstance(self.host_species, str):
+            self.host_species = str(self.host_species)
+
+        if self.host_strain is not None and not isinstance(self.host_strain, str):
+            self.host_strain = str(self.host_strain)
+
         super().__post_init__(**kwargs)
 
 
@@ -6934,6 +6958,7 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface
 
     samp_name: Union[str, JgiIsolateTranscriptomeInterfaceSampName] = None
+    rna_collection_date: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     jgi_samp_id: str = None
     jgi_sample_name: str = None
@@ -6951,7 +6976,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     biosafety_mat_cat: Union[str, "JgiIsolateMaterialKindEnum"] = None
     dna_isolate_meth: str = None
     sample_isolated_from: str = None
-    rna_collection_date: Optional[str] = None
     source_mat_id: Optional[str] = None
     replicate_group: Optional[str] = None
     nuc_acid_absorb1: Optional[float] = None
@@ -6959,12 +6983,20 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
     collection_site_or_growth_conditions: Optional[str] = None
+    host_genus: Optional[str] = None
+    host_species: Optional[str] = None
+    host_strain: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
             self.MissingRequiredField("samp_name")
         if not isinstance(self.samp_name, JgiIsolateTranscriptomeInterfaceSampName):
             self.samp_name = JgiIsolateTranscriptomeInterfaceSampName(self.samp_name)
+
+        if self._is_empty(self.rna_collection_date):
+            self.MissingRequiredField("rna_collection_date")
+        if not isinstance(self.rna_collection_date, str):
+            self.rna_collection_date = str(self.rna_collection_date)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -7052,9 +7084,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
         if not isinstance(self.sample_isolated_from, str):
             self.sample_isolated_from = str(self.sample_isolated_from)
 
-        if self.rna_collection_date is not None and not isinstance(self.rna_collection_date, str):
-            self.rna_collection_date = str(self.rna_collection_date)
-
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
 
@@ -7075,6 +7104,15 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
 
         if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
             self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
+
+        if self.host_genus is not None and not isinstance(self.host_genus, str):
+            self.host_genus = str(self.host_genus)
+
+        if self.host_species is not None and not isinstance(self.host_species, str):
+            self.host_species = str(self.host_species)
+
+        if self.host_strain is not None and not isinstance(self.host_strain, str):
+            self.host_strain = str(self.host_strain)
 
         super().__post_init__(**kwargs)
 
@@ -16361,6 +16399,15 @@ slots.gc_content = Slot(uri=NMDC_SUB_SCHEMA.gc_content, name="gc_content", curie
 slots.ploidy = Slot(uri=MIXS['0000021'], name="ploidy", curie=MIXS.curie('0000021'),
                    model_uri=NMDC_SUB_SCHEMA.ploidy, domain=None, range=Optional[str])
 
+slots.host_genus = Slot(uri=NMDC_SUB_SCHEMA.host_genus, name="host_genus", curie=NMDC_SUB_SCHEMA.curie('host_genus'),
+                   model_uri=NMDC_SUB_SCHEMA.host_genus, domain=None, range=Optional[str])
+
+slots.host_species = Slot(uri=NMDC_SUB_SCHEMA.host_species, name="host_species", curie=NMDC_SUB_SCHEMA.curie('host_species'),
+                   model_uri=NMDC_SUB_SCHEMA.host_species, domain=None, range=Optional[str])
+
+slots.host_strain = Slot(uri=NMDC_SUB_SCHEMA.host_strain, name="host_strain", curie=NMDC_SUB_SCHEMA.curie('host_strain'),
+                   model_uri=NMDC_SUB_SCHEMA.host_strain, domain=None, range=Optional[str])
+
 slots.AirInterface_depth = Slot(uri=MIXS['0000018'], name="AirInterface_depth", curie=MIXS.curie('0000018'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_depth, domain=AirInterface, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(\s*-\s*[-+]?[0-9]*\.?[0-9]+)?$'))
@@ -17224,5 +17271,5 @@ slots.JgiIsolateGenomeInterface_isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHE
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_its_match_unite, domain=JgiIsolateGenomeInterface, range=Optional[Union[str, "YesNoEnum"]])
 
 slots.JgiIsolateTranscriptomeInterface_rna_collection_date = Slot(uri=NMDC_SUB_SCHEMA.rna_collection_date, name="JgiIsolateTranscriptomeInterface_rna_collection_date", curie=NMDC_SUB_SCHEMA.curie('rna_collection_date'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_rna_collection_date, domain=JgiIsolateTranscriptomeInterface, range=Optional[str],
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_rna_collection_date, domain=JgiIsolateTranscriptomeInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$'))

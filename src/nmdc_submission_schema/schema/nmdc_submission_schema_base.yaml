@@ -1604,6 +1604,7 @@ classes:
     slot_usage:
       rna_collection_date:
         slot_group: jgi_isolate_section
+        required: true
 
   DhInterface:
     description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
