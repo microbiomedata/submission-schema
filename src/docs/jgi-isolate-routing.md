@@ -62,7 +62,6 @@ interfaces change.
 | `estimated_size` | organism_section | imported (Organism) |  |
 | `gc_content` | organism_section | imported (Organism) |  |
 | `ploidy` | organism_section | imported (Organism) |  |
-| `host_taxid` | mixs_core_section | imported (Biosample) |  |
 
 ### JgiIsolateGenomeInterface
 
@@ -71,24 +70,24 @@ fungal fields.
 
 | slot | section | source | required |
 |---|---|---|---|
+| `jgi_seq_project` | jgi_isolate_section | native | yes |
 | `samp_name` | sample_id_section | imported (Biosample) | yes |
+| `jgi_seq_project_name` | jgi_isolate_section | native | yes |
 | `source_mat_id` | sample_id_section | imported (Biosample) |  |
 | `analysis_type` | sample_id_section | imported (Biosample) | yes |
-| `jgi_seq_project` | jgi_isolate_section | native | yes |
-| `jgi_seq_project_name` | jgi_isolate_section | native | yes |
 | `jgi_samp_id` | jgi_isolate_section | native | yes |
 | `jgi_sample_name` | jgi_isolate_section | native | yes |
 | `replicate_group` | jgi_isolate_section | native |  |
 | `nuc_acid_concentration` | jgi_isolate_section | native | yes |
 | `nuc_acid_absorb1` | jgi_isolate_section | native |  |
-| `nuc_acid_absorb2` | jgi_isolate_section | native |  |
 | `jgi_sample_volume` | jgi_isolate_section | native | yes |
+| `nuc_acid_absorb2` | jgi_isolate_section | native |  |
 | `container_name` | jgi_isolate_section | native | yes |
 | `cont_type` | jgi_isolate_section | native | yes |
 | `cont_well` | jgi_isolate_section | native |  |
 | `jgi_sample_format` | jgi_isolate_section | native | yes |
 | `dnase` | jgi_isolate_section | native | yes |
-| `dna_isolate_meth` | jgi_isolate_section | imported (Biosample) | yes |
+| `isolate_meth` | jgi_isolate_section | native | yes |
 | `biosafety_mat_cat` | jgi_isolate_section | native | yes |
 | `jgi_sample_contact` | jgi_isolate_section | native | yes |
 | `jgi_project_pi` | jgi_isolate_section | native | yes |
@@ -107,6 +106,7 @@ fungal fields.
 | `host_genus` | jgi_isolate_section | imported (Biosample) |  |
 | `host_species` | jgi_isolate_section | imported (Biosample) |  |
 | `host_strain` | jgi_isolate_section | imported (Biosample) |  |
+| `host_taxid` | jgi_isolate_section | imported (Biosample) |  |
 
 ### JgiIsolateTranscriptomeInterface
 
@@ -115,24 +115,24 @@ ribosomal or fungal fields.
 
 | slot | section | source | required |
 |---|---|---|---|
+| `jgi_seq_project` | jgi_isolate_section | native | yes |
 | `samp_name` | sample_id_section | imported (Biosample) | yes |
+| `jgi_seq_project_name` | jgi_isolate_section | native | yes |
 | `source_mat_id` | sample_id_section | imported (Biosample) |  |
 | `analysis_type` | sample_id_section | imported (Biosample) | yes |
-| `jgi_seq_project` | jgi_isolate_section | native | yes |
-| `jgi_seq_project_name` | jgi_isolate_section | native | yes |
 | `jgi_samp_id` | jgi_isolate_section | native | yes |
 | `jgi_sample_name` | jgi_isolate_section | native | yes |
 | `replicate_group` | jgi_isolate_section | native |  |
 | `nuc_acid_concentration` | jgi_isolate_section | native | yes |
 | `nuc_acid_absorb1` | jgi_isolate_section | native |  |
-| `nuc_acid_absorb2` | jgi_isolate_section | native |  |
 | `jgi_sample_volume` | jgi_isolate_section | native | yes |
+| `nuc_acid_absorb2` | jgi_isolate_section | native |  |
 | `container_name` | jgi_isolate_section | native | yes |
 | `cont_type` | jgi_isolate_section | native | yes |
 | `cont_well` | jgi_isolate_section | native |  |
 | `jgi_sample_format` | jgi_isolate_section | native | yes |
 | `dnase` | jgi_isolate_section | native | yes |
-| `dna_isolate_meth` | jgi_isolate_section | imported (Biosample) | yes |
+| `isolate_meth` | jgi_isolate_section | native | yes |
 | `biosafety_mat_cat` | jgi_isolate_section | native | yes |
 | `jgi_sample_contact` | jgi_isolate_section | native | yes |
 | `jgi_project_pi` | jgi_isolate_section | native | yes |
@@ -144,6 +144,7 @@ ribosomal or fungal fields.
 | `host_genus` | jgi_isolate_section | imported (Biosample) |  |
 | `host_species` | jgi_isolate_section | imported (Biosample) |  |
 | `host_strain` | jgi_isolate_section | imported (Biosample) |  |
+| `host_taxid` | jgi_isolate_section | imported (Biosample) |  |
 
 ## Related
 
