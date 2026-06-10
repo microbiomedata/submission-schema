@@ -632,12 +632,6 @@ interfaces change.</p>
 <td>imported (Organism)</td>
 <td></td>
 </tr>
-<tr>
-<td><code>host_taxid</code></td>
-<td>mixs_core_section</td>
-<td>imported (Biosample)</td>
-<td></td>
-</tr>
 </tbody>
 </table>
 <h3 id="jgiisolategenomeinterface">JgiIsolateGenomeInterface</h3>
@@ -654,9 +648,21 @@ fungal fields.</p>
 </thead>
 <tbody>
 <tr>
+<td><code>jgi_seq_project</code></td>
+<td>jgi_isolate_section</td>
+<td>native</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><code>samp_name</code></td>
 <td>sample_id_section</td>
 <td>imported (Biosample)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>jgi_seq_project_name</code></td>
+<td>jgi_isolate_section</td>
+<td>native</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -669,18 +675,6 @@ fungal fields.</p>
 <td><code>analysis_type</code></td>
 <td>sample_id_section</td>
 <td>imported (Biosample)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>jgi_seq_project</code></td>
-<td>jgi_isolate_section</td>
-<td>native</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>jgi_seq_project_name</code></td>
-<td>jgi_isolate_section</td>
-<td>native</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -714,16 +708,16 @@ fungal fields.</p>
 <td></td>
 </tr>
 <tr>
-<td><code>nuc_acid_absorb2</code></td>
-<td>jgi_isolate_section</td>
-<td>native</td>
-<td></td>
-</tr>
-<tr>
 <td><code>jgi_sample_volume</code></td>
 <td>jgi_isolate_section</td>
 <td>native</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><code>nuc_acid_absorb2</code></td>
+<td>jgi_isolate_section</td>
+<td>native</td>
+<td></td>
 </tr>
 <tr>
 <td><code>container_name</code></td>
@@ -756,9 +750,9 @@ fungal fields.</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><code>dna_isolate_meth</code></td>
+<td><code>isolate_meth</code></td>
 <td>jgi_isolate_section</td>
-<td>imported (Biosample)</td>
+<td>native</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -869,6 +863,12 @@ fungal fields.</p>
 <td>imported (Biosample)</td>
 <td></td>
 </tr>
+<tr>
+<td><code>host_taxid</code></td>
+<td>jgi_isolate_section</td>
+<td>imported (Biosample)</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <h3 id="jgiisolatetranscriptomeinterface">JgiIsolateTranscriptomeInterface</h3>
@@ -885,9 +885,21 @@ ribosomal or fungal fields.</p>
 </thead>
 <tbody>
 <tr>
+<td><code>jgi_seq_project</code></td>
+<td>jgi_isolate_section</td>
+<td>native</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><code>samp_name</code></td>
 <td>sample_id_section</td>
 <td>imported (Biosample)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><code>jgi_seq_project_name</code></td>
+<td>jgi_isolate_section</td>
+<td>native</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -900,18 +912,6 @@ ribosomal or fungal fields.</p>
 <td><code>analysis_type</code></td>
 <td>sample_id_section</td>
 <td>imported (Biosample)</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>jgi_seq_project</code></td>
-<td>jgi_isolate_section</td>
-<td>native</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><code>jgi_seq_project_name</code></td>
-<td>jgi_isolate_section</td>
-<td>native</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -945,16 +945,16 @@ ribosomal or fungal fields.</p>
 <td></td>
 </tr>
 <tr>
-<td><code>nuc_acid_absorb2</code></td>
-<td>jgi_isolate_section</td>
-<td>native</td>
-<td></td>
-</tr>
-<tr>
 <td><code>jgi_sample_volume</code></td>
 <td>jgi_isolate_section</td>
 <td>native</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><code>nuc_acid_absorb2</code></td>
+<td>jgi_isolate_section</td>
+<td>native</td>
+<td></td>
 </tr>
 <tr>
 <td><code>container_name</code></td>
@@ -987,9 +987,9 @@ ribosomal or fungal fields.</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><code>dna_isolate_meth</code></td>
+<td><code>isolate_meth</code></td>
 <td>jgi_isolate_section</td>
-<td>imported (Biosample)</td>
+<td>native</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -1054,6 +1054,12 @@ ribosomal or fungal fields.</p>
 </tr>
 <tr>
 <td><code>host_strain</code></td>
+<td>jgi_isolate_section</td>
+<td>imported (Biosample)</td>
+<td></td>
+</tr>
+<tr>
+<td><code>host_taxid</code></td>
 <td>jgi_isolate_section</td>
 <td>imported (Biosample)</td>
 <td></td>
