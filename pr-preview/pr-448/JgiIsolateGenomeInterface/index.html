@@ -413,6 +413,8 @@
 
 
 
+      JgiIsolateGenomeInterface : estimated_size
+
       JgiIsolateGenomeInterface : host_genus
 
       JgiIsolateGenomeInterface : host_species
@@ -584,6 +586,12 @@
 <td><a href="../isolate_its_match_unite/">isolate_its_match_unite</a></td>
 <td>0..1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
 <td>For fungal draft samples only -- does the ITS sequence match taxonomy in the ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../estimated_size/">estimated_size</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>The estimated size of the genome prior to sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -904,6 +912,7 @@ slots:
 - isolate_second_ribosomal_seq_comments
 - isolate_fungal_16s_screening
 - isolate_its_match_unite
+- estimated_size
 slot_usage:
   isolate_ribosomal_seq:
     name: isolate_ribosomal_seq
@@ -1164,6 +1173,43 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: YesNoEnum
+  estimated_size:
+    name: estimated_size
+    description: The estimated size of the genome prior to sequencing. Of particular
+      importance in the sequencing of (eukaryotic) genome which could remain in draft
+      form for a long or unspecified period
+    title: Estimated genome size (Mb)
+    notes:
+    - Required for all DNA isolate products (draft genomes, resequencing, methylation)
+      per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome
+      isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema
+      stores estimated_size as integer bp.
+    comments:
+    - JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
+    examples:
+    - object: 300000
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Estimated Genome Size (Mb):
+        literal_form: Estimated Genome Size (Mb)
+        predicate: BROAD_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 21
+    keywords:
+    - size
+    slot_uri: MIXS:0000024
+    alias: estimated_size
+    owner: JgiIsolateGenomeInterface
+    domain_of:
+    - JgiIsolateGenomeInterface
+    slot_group: jgi_isolate_section
+    range: float
+    required: true
+    minimum_value: 1.0e-06
+    maximum_value: 100000
+    unit:
+      ucum_code: Mbase
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample

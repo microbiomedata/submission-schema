@@ -336,8 +336,6 @@
 
       IsolateInterface : collection_date
 
-      IsolateInterface : estimated_size
-
       IsolateInterface : gc_content
 
       IsolateInterface : isolate_known_contaminants
@@ -439,12 +437,6 @@
 <td><a href="../classified_as/">classified_as</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Taxonomic classification of this organism</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../estimated_size/">estimated_size</a></td>
-<td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td>The estimated size of the genome prior to sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -559,7 +551,6 @@ slots:
 - strain_name
 - isolate_name
 - classified_as
-- estimated_size
 - gc_content
 - ploidy
 slot_usage:
@@ -924,40 +915,6 @@ attributes:
     structured_pattern:
       syntax: NCBITaxon:\d+
       interpolated: false
-  estimated_size:
-    name: estimated_size
-    description: The estimated size of the genome prior to sequencing. Of particular
-      importance in the sequencing of (eukaryotic) genome which could remain in draft
-      form for a long or unspecified period
-    title: Estimated genome size (Mb)
-    notes:
-    - Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer
-      bp.
-    comments:
-    - JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
-    examples:
-    - object: 300000
-    from_schema: https://example.com/nmdc_submission_schema
-    structured_aliases:
-      Estimated Genome Size (Mb):
-        literal_form: Estimated Genome Size (Mb)
-        predicate: BROAD_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
-    rank: 112
-    keywords:
-    - size
-    slot_uri: MIXS:0000024
-    alias: estimated_size
-    owner: IsolateInterface
-    domain_of:
-    - IsolateInterface
-    slot_group: organism_section
-    range: float
-    minimum_value: 1.0e-06
-    maximum_value: 100000
-    unit:
-      ucum_code: Mbase
   gc_content:
     name: gc_content
     description: Estimated GC content as a percentage.

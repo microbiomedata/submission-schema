@@ -537,8 +537,8 @@ Alias: estimated_size</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../IsolateInterface/">IsolateInterface</a></td>
-<td>Metadata for microbial isolate samples submitted to NMDC</td>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -547,6 +547,9 @@ Alias: estimated_size</p>
 <ul>
 <li>
 <p>Range: <a href="../Float/">Float</a></p>
+</li>
+<li>
+<p>Required: True</p>
 </li>
 <li>
 <p>Minimum Value: 0</p>
@@ -605,8 +608,10 @@ description: The estimated size of the genome prior to sequencing. Of particular
   long or unspecified period
 title: Estimated genome size (Mb)
 notes:
-- Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer
-  bp.
+- Required for all DNA isolate products (draft genomes, resequencing, methylation)
+  per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome
+  isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema
+  stores estimated_size as integer bp.
 comments:
 - JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
 examples:
@@ -618,15 +623,16 @@ structured_aliases:
     predicate: BROAD_SYNONYM
     contexts:
     - https://jgi.doe.gov/isolate-submission-form/v19
-rank: 112
+rank: 21
 keywords:
 - size
 slot_uri: MIXS:0000024
 alias: estimated_size
 domain_of:
-- IsolateInterface
-slot_group: organism_section
+- JgiIsolateGenomeInterface
+slot_group: jgi_isolate_section
 range: float
+required: true
 minimum_value: 1.0e-06
 maximum_value: 100000
 unit:
