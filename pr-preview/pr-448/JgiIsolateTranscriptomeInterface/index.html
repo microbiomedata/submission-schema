@@ -375,6 +375,12 @@
 
 
 
+      JgiIsolateTranscriptomeInterface : host_genus
+
+      JgiIsolateTranscriptomeInterface : host_species
+
+      JgiIsolateTranscriptomeInterface : host_strain
+
       JgiIsolateTranscriptomeInterface : jgi_project_pi
 
       JgiIsolateTranscriptomeInterface : jgi_proposal_id
@@ -442,7 +448,7 @@
 <tbody>
 <tr>
 <td><a href="../rna_collection_date/">rna_collection_date</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Date the RNA sample was collected or the experiment was performed, in YYYY-MM...</td>
 <td>direct</td>
 </tr>
@@ -596,6 +602,24 @@
 <td>Free-text description of the collection site or growth conditions for the iso...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
+<tr>
+<td><a href="../host_genus/">host_genus</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Genus of the host organism that the sample was collected from</td>
+<td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
+</tr>
+<tr>
+<td><a href="../host_species/">host_species</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Species of the host organism that the sample was collected from</td>
+<td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
+</tr>
+<tr>
+<td><a href="../host_strain/">host_strain</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Strain of the host organism that the sample was collected from</td>
+<td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="usages">Usages</h2>
@@ -679,6 +703,7 @@ slot_usage:
   rna_collection_date:
     name: rna_collection_date
     slot_group: jgi_isolate_section
+    required: true
 
 </code></pre>
 </details>
@@ -701,6 +726,7 @@ slot_usage:
   rna_collection_date:
     name: rna_collection_date
     slot_group: jgi_isolate_section
+    required: true
 attributes:
   rna_collection_date:
     name: rna_collection_date
@@ -741,6 +767,7 @@ attributes:
     - JgiIsolateTranscriptomeInterface
     slot_group: jgi_isolate_section
     range: string
+    required: true
     pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
   analysis_type:
     name: analysis_type
@@ -1346,6 +1373,88 @@ attributes:
         source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 41
     alias: collection_site_or_growth_conditions
+    owner: JgiIsolateTranscriptomeInterface
+    domain_of:
+    - JgiIsolateCommonMixin
+    slot_group: jgi_isolate_section
+    range: string
+  host_genus:
+    name: host_genus
+    description: Genus of the host organism that the sample was collected from.
+    comments:
+    - Free-text submitter-provided host genus. For an ontology-grounded host identification,
+      use `host_taxid` (MIXS:0000250) on the same class.
+    examples:
+    - value: Zea
+      description: GOLD organism_v2 host_name "Zea mays" (n=432 records, queried 2026-04-30)
+    - value: Escherichia
+      description: GOLD organism_v2 host_name "Escherichia coli K-12" (Go0084483 Escherichia
+        phage JSE, queried 2026-04-30)
+    in_subset:
+    - jgi_isolate
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Host Genus:
+        literal_form: Host Genus
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 45
+    alias: host_genus
+    owner: JgiIsolateTranscriptomeInterface
+    domain_of:
+    - JgiIsolateCommonMixin
+    slot_group: jgi_isolate_section
+    range: string
+  host_species:
+    name: host_species
+    description: Species of the host organism that the sample was collected from.
+    comments:
+    - Free-text submitter-provided host species. For an ontology-grounded host identification,
+      use `host_taxid` (MIXS:0000250) on the same class.
+    examples:
+    - value: mays
+      description: GOLD organism_v2 host_name "Zea mays" (n=432 records, queried 2026-04-30)
+    - value: coli
+      description: GOLD organism_v2 host_name "Escherichia coli K-12" (Go0084483 Escherichia
+        phage JSE, queried 2026-04-30)
+    in_subset:
+    - jgi_isolate
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Host Species:
+        literal_form: Host Species
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 46
+    alias: host_species
+    owner: JgiIsolateTranscriptomeInterface
+    domain_of:
+    - JgiIsolateCommonMixin
+    slot_group: jgi_isolate_section
+    range: string
+  host_strain:
+    name: host_strain
+    description: Strain of the host organism that the sample was collected from.
+    comments:
+    - Free-text submitter-provided host strain. For an ontology-grounded host identification,
+      use `host_taxid` (MIXS:0000250) on the same class.
+    examples:
+    - value: K-12
+      description: GOLD organism_v2 host_name "Escherichia coli K-12" (Go0084483 Escherichia
+        phage JSE, queried 2026-04-30)
+    in_subset:
+    - jgi_isolate
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Host Strain:
+        literal_form: Host Strain
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 47
+    alias: host_strain
     owner: JgiIsolateTranscriptomeInterface
     domain_of:
     - JgiIsolateCommonMixin

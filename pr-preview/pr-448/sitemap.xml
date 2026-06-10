@@ -1637,6 +1637,10 @@
          <lastmod>2026-06-10</lastmod>
     </url>
     <url>
+         <loc>https://microbiomedata.github.io/submission-schema/host_genus/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
          <loc>https://microbiomedata.github.io/submission-schema/host_growth_cond/</loc>
          <lastmod>2026-06-10</lastmod>
     </url>
@@ -1666,6 +1670,14 @@
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/host_shape/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/host_species/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/host_strain/</loc>
          <lastmod>2026-06-10</lastmod>
     </url>
     <url>
@@ -1814,6 +1826,10 @@
     </url>
     <url>
          <loc>https://microbiomedata.github.io/submission-schema/iwf/</loc>
+         <lastmod>2026-06-10</lastmod>
+    </url>
+    <url>
+         <loc>https://microbiomedata.github.io/submission-schema/jgi-isolate-routing/</loc>
          <lastmod>2026-06-10</lastmod>
     </url>
     <url>
