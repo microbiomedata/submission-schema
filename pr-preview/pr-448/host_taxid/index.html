@@ -537,6 +537,11 @@ Alias: host_taxid</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 <td>Shared JGI isolate submission fields common to both the genome and the transc...</td>
 <td>yes</td>
@@ -549,11 +554,6 @@ Alias: host_taxid</p>
 <tr>
 <td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
 <td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
-<td>JGI submission metadata for isolate GENOME sequencing projects</td>
 <td>no</td>
 </tr>
 <tr>
@@ -627,8 +627,10 @@ structured_aliases:
   Host NCBI Taxonomy ID:
     literal_form: Host NCBI Taxonomy ID
     predicate: EXACT_SYNONYM
-    contexts:
-    - https://jgi.doe.gov/isolate-submission-form/v19
+    notes:
+    - Exact JGI form template is access-restricted; source is the public submission
+      overview.
+    source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
 rank: 259
 keywords:
 - host

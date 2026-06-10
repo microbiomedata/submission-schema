@@ -1188,13 +1188,19 @@ attributes:
     - JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
     examples:
     - object: 300000
+    in_subset:
+    - jgi_isolate
     from_schema: https://example.com/nmdc_submission_schema
     structured_aliases:
       Estimated Genome Size (Mb):
         literal_form: Estimated Genome Size (Mb)
         predicate: BROAD_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
+        notes:
+        - Exact JGI form template is access-restricted; source is the public submission
+          overview.
+        - 'Per @aclum: Mb is a coarser unit than bp, so a single Mb value covers many
+          possible bp values; the alias is broader in granularity.'
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 21
     keywords:
     - size
@@ -1845,8 +1851,10 @@ attributes:
       Host NCBI Taxonomy ID:
         literal_form: Host NCBI Taxonomy ID
         predicate: EXACT_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
+        notes:
+        - Exact JGI form template is access-restricted; source is the public submission
+          overview.
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 48
     keywords:
     - host
@@ -1880,8 +1888,10 @@ attributes:
       Host Genus:
         literal_form: Host Genus
         predicate: EXACT_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
+        notes:
+        - Exact JGI form template is access-restricted; source is the public submission
+          overview.
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 45
     alias: host_genus
     owner: JgiIsolateGenomeInterface
@@ -1908,8 +1918,10 @@ attributes:
       Host Species:
         literal_form: Host Species
         predicate: EXACT_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
+        notes:
+        - Exact JGI form template is access-restricted; source is the public submission
+          overview.
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 46
     alias: host_species
     owner: JgiIsolateGenomeInterface
@@ -1934,8 +1946,10 @@ attributes:
       Host Strain:
         literal_form: Host Strain
         predicate: EXACT_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
+        notes:
+        - Exact JGI form template is access-restricted; source is the public submission
+          overview.
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 47
     alias: host_strain
     owner: JgiIsolateGenomeInterface
