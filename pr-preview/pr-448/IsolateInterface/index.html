@@ -569,13 +569,12 @@ slot_usage:
   isolate_known_contaminants:
     name: isolate_known_contaminants
     slot_group: organism_section
-  estimated_size:
-    name: estimated_size
-    title: Estimated genome size (Mb)
-    unit:
-      ucum_code: Mbase
   collection_date:
     name: collection_date
+    notes:
+    - JGI requires all three date components, so the full YYYY-MM-DD is mandatory
+      on the isolate interface. The export layer splits it into Collection Year, Collection
+      Month, and Collection Day columns.
     comments:
     - Use the date the sample was collected from its natural habitat, not the date
       of purchase or culturing. Full date (YYYY-MM-DD) is required.
@@ -613,13 +612,12 @@ slot_usage:
   isolate_known_contaminants:
     name: isolate_known_contaminants
     slot_group: organism_section
-  estimated_size:
-    name: estimated_size
-    title: Estimated genome size (Mb)
-    unit:
-      ucum_code: Mbase
   collection_date:
     name: collection_date
+    notes:
+    - JGI requires all three date components, so the full YYYY-MM-DD is mandatory
+      on the isolate interface. The export layer splits it into Collection Year, Collection
+      Month, and Collection Day columns.
     comments:
     - Use the date the sample was collected from its natural habitat, not the date
       of purchase or culturing. Full date (YYYY-MM-DD) is required.
@@ -677,6 +675,10 @@ attributes:
     name: collection_date
     description: The date of sampling
     title: collection date
+    notes:
+    - JGI requires all three date components, so the full YYYY-MM-DD is mandatory
+      on the isolate interface. The export layer splits it into Collection Year, Collection
+      Month, and Collection Day columns.
     comments:
     - Use the date the sample was collected from its natural habitat, not the date
       of purchase or culturing. Full date (YYYY-MM-DD) is required.

@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: estimated size (estimated_size) - submission-schema</title>
+        <title>Slot: Estimated genome size (Mb) (estimated_size) - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-estimated-size-estimated_size" class="md-skip">
+        <a href="#slot-estimated-genome-size-mb-estimated_size" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: estimated size (estimated_size)
+              Slot: Estimated genome size (Mb) (estimated_size)
             
           </span>
         </div>
@@ -520,7 +520,7 @@
   
 
 
-<h1 id="slot-estimated-size-estimated_size">Slot: estimated size (estimated_size)</h1>
+<h1 id="slot-estimated-genome-size-mb-estimated_size">Slot: Estimated genome size (Mb) (estimated_size)</h1>
 <p><em>The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period</em></p>
 <p>URI: <a href="https://w3id.org/mixs/0000024">MIXS:0000024</a>
 Alias: estimated_size</p>
@@ -539,7 +539,7 @@ Alias: estimated_size</p>
 <tr>
 <td><a href="../IsolateInterface/">IsolateInterface</a></td>
 <td>Metadata for microbial isolate samples submitted to NMDC</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -603,7 +603,7 @@ Alias: estimated_size</p>
 description: The estimated size of the genome prior to sequencing. Of particular importance
   in the sequencing of (eukaryotic) genome which could remain in draft form for a
   long or unspecified period
-title: estimated size
+title: Estimated genome size (Mb)
 notes:
 - Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer
   bp.
@@ -629,6 +629,8 @@ slot_group: organism_section
 range: float
 minimum_value: 1.0e-06
 maximum_value: 100000
+unit:
+  ucum_code: Mbase
 
 </code></pre>
 
