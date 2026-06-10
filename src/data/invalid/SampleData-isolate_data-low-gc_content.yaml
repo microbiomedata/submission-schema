@@ -1,0 +1,15 @@
+## Invalid. Single failure: gc_content is below the 0 minimum.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus turgidum
+## DSM 6724) with one field changed. JGI logistics values are synthetic, shaped to
+## real GOLD formats. Single point of failure.
+isolate_data:
+  - samp_name: Dtur_DSM6724_g1
+    analysis_type:
+      - isolate genome sequencing
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    isolate_single_colony: "yes"
+    gc_content: -5.0

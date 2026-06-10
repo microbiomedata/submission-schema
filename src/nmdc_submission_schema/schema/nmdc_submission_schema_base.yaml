@@ -4,6 +4,7 @@ id: https://example.com/nmdc_submission_schema
 version: 0.0.0
 prefixes:
   UO: http://purl.obolibrary.org/obo/UO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   qud: http://example.org/qud/
   xsd: http://www.w3.org/2001/XMLSchema#
   nmdc_sub_schema: https://example.com/nmdc_sub_schema/
@@ -60,6 +61,7 @@ enums:
   JGISampleFormatEnum:
     permissible_values:
       10 mM Tris-HCl:
+      DNAStable:
       Ethanol:
       Gentegra-DNA:
       Gentegra-RNA:
@@ -67,6 +69,7 @@ enums:
       MDA Reaction Buffer:
       PBS:
       Pellet:
+      RNAStable:
       TE:
       Water:
   JGIBiosafetyMaterialCategoryEnum:
@@ -139,6 +142,52 @@ enums:
         meaning: NCIT:C94733
       winter:
         meaning: NCIT:C94730
+  RibosomalSequenceTypeEnum:
+    permissible_values:
+      16S:
+      ITS:
+      ITS-AGI:
+        description: ITS sequence where DNA was isolated at the Arizona Genomics Institute (AGI)
+      28S:
+      Other:
+  JgiIsolateMaterialKindEnum:
+    description: >-
+      Broad kind of organism or genetic element being sequenced. JGI uses this for
+      internal biosafety routing under the field label "Biosafety Material Category".
+    permissible_values:
+      Alga:
+        description: >-
+          Photosynthetic eukaryote other than land plants. Polyphyletic; no single
+          NCBITaxon node covers all algae.
+      Animal:
+        meaning: NCBITaxon:33208
+        description: Metazoan (multicellular animal).
+      Archaea:
+        meaning: NCBITaxon:2157
+        description: Domain Archaea.
+      Bacteria:
+        meaning: NCBITaxon:2
+        description: Domain Bacteria.
+      Fungi:
+        meaning: NCBITaxon:4751
+        description: Kingdom Fungi.
+      Plant:
+        meaning: NCBITaxon:33090
+        description: Viridiplantae (green plants including land plants and green algae).
+      Plasmid:
+        description: >-
+          DNA isolated primarily from a plasmid rather than a cellular organism.
+          Not a taxonomic group; no NCBITaxon meaning applicable.
+      Protist:
+        description: >-
+          Eukaryote that is not an animal, plant, or fungus. Polyphyletic; no single
+          NCBITaxon node covers all protists.
+      Virus:
+        meaning: NCBITaxon:10239
+        description: Viruses (all Baltimore groups).
+      Synthetic Construct:
+        meaning: NCBITaxon:32630
+        description: Artificially constructed sequence not derived from a natural organism.
 slots:
   air_data:
     description: aggregation slot relating air data collections to a SampleData container
@@ -316,6 +365,28 @@ slots:
     title: Data Files
     rank: 12
     is_a: dh_section
+  organism_section:
+    title: Organism
+    rank: 13
+    is_a: dh_section
+    description: >-
+      Biological identity and culture provenance of the isolate organism:
+      free-text genus, species, strain, and isolate name, the NCBI taxonomic
+      classification, estimated genome size, whether the sample came from a
+      single colony, and any known contaminants. These describe what the
+      organism is, as distinct from the JGI submission logistics captured in the
+      JGI Isolate section.
+  jgi_isolate_section:
+    title: JGI Isolate
+    rank: 14
+    is_a: dh_section
+    description: >-
+      JGI submission logistics and quality control for single-organism isolate
+      samples: sample and container identifiers, nucleic-acid concentration and
+      absorbance readings, the biosafety material category, and, for genome
+      submissions, strain-verification ribosomal sequences and fungal screening.
+      These are required by JGI for sample handling and are not stored in
+      nmdc-schema.
   read_1_url:
     title: read 1 FASTQ
     description: >-
@@ -576,34 +647,304 @@ slots:
     minimum_value: 0.0001
     maximum_value: 2000
   biosafety_mat_cat:
-    description: Select the biosafety material category for your JGI samples.
+    description: >-
+      JGI material category, labeled "Biosafety Material Category" on the form and
+      used for internal routing rather than as a biosafety level. The permissible
+      values are set by the slot's range; the isolate interfaces narrow that range
+      to organism kinds.
     title: JGI Biosafety Material Category
     rank: 17
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
+    notes:
+      - The slot name is kept to match the JGI form even though the values are categories, not biosafety levels.
+    structured_aliases:
+      - literal_form: Biosafety Material Category
+        predicate: EXACT_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
   jgi_sample_contact:
     title: DNA sample contact
     examples:
       - value: Jordan James
     rank: 18
     range: string
-    recommended: true
+    required: true
   jgi_project_pi:
     title: JGI sequencing project PI
     examples:
       - value: Jordan James
     rank: 19
     range: string
-    recommended: true
+    required: true
   jgi_proposal_id:
     title: JGI proposal number
     examples:
       - value: PR123456
-      - value: 123456    
+      - value: 123456
     rank: 20
     range: string
     pattern: ^[A-Z0-9]+$
+    required: true
+
+  reference_genome:
+    title: Reference Genome
+    description: >-
+      Genome record to use as a reference for read alignment or assembly
+      scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/
+      Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.
+    comments:
+      - Provide a reference if one exists; helps JGI with assembly and QC
+        even for de novo projects.
+    notes:
+      - Local slot pending promotion to nmdc-schema; see
+        https://github.com/microbiomedata/submission-schema/issues/447
+    examples:
+      - value: "2648501807"
+        description: IMG taxon OID
+      - value: GCF_000195995.2
+        description: NCBI RefSeq assembly accession
+      - value: Mycocosm:Aspni7
+        description: Mycocosm ID
+    rank: 40
+    range: string
+    structured_aliases:
+      - literal_form: Reference Genome
+        predicate: EXACT_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+
+  ## isolate-specific slots (JGI-only; not stored in nmdc-schema)
+  isolate_single_colony:
+    title: single colony isolation
+    description: Was the sample isolated from a single colony or equivalent axenic/pure culture?
+    comments:
+      - Answer yes if the sample originated from a single colony pick, single-cell isolation,
+        or equivalent process expected to yield a genetically homogeneous culture.
+    examples:
+      - value: "yes"
+    rank: 30
+    range: YesNoEnum
+    required: true
+    aliases:
+      - Is the sample isolated from a single colony or equivalent?
+  isolate_known_contaminants:
+    title: known or suspected organisms
+    description: >-
+      List any organisms known or suspected to grow in co-culture or that may be
+      contaminating the culture, along with an estimate of the percentage.
+    comments:
+      - Leave blank if no contaminants are known or suspected.
+    examples:
+      - value: "Bacillus subtilis ~5%"
+    rank: 31
+    range: string
     recommended: true
+    aliases:
+      - Known / Suspected Organisms
+  isolate_ribosomal_seq:
+    title: first ribosomal sequence
+    description: >-
+      Primary ribosomal sequence for strain verification. For microbial drafts must
+      be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N
+      with no FASTA header line.
+    comments:
+      - Required for all microbial and fungal genome projects.
+      - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
+      - Sequence must come from the actual sample to be shipped to JGI.
+    examples:
+      - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
+    rank: 32
+    range: string
+    required: true
+    pattern: "^[ATCGN]{200,5000}$"
+    aliases:
+      - First ribosomal sequence
+  isolate_ribosomal_seq_type:
+    title: first ribosomal sequence type
+    description: Type of the first ribosomal sequence provided.
+    examples:
+      - value: 16S
+    rank: 33
+    range: RibosomalSequenceTypeEnum
+    required: true
+    aliases:
+      - First ribosomal sequence type
+  isolate_ribosomal_seq_comments:
+    title: first ribosomal sequence comments
+    description: Additional information about the first ribosomal sequence.
+    comments:
+      - Required if ribosomal sequence type is Other.
+    examples:
+      - value: "Partial 16S, 850 nt"
+    rank: 34
+    range: string
+    pattern: "^.{0,256}$"
+    aliases:
+      - First ribosomal sequence comments
+  isolate_second_ribosomal_seq:
+    title: second ribosomal sequence
+    description: >-
+      Optional secondary ribosomal sequence for additional strain verification.
+      For 28S must be >300 nt with <10% Ns. Use only A, C, G, T, or N with no
+      FASTA header line.
+    examples:
+      - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
+    rank: 35
+    range: string
+    pattern: "^[ATCGN]{200,5000}$"
+    aliases:
+      - Second ribosomal sequence
+  isolate_second_ribosomal_seq_type:
+    title: second ribosomal sequence type
+    description: Type of the second ribosomal sequence provided.
+    examples:
+      - value: ITS
+    rank: 36
+    range: RibosomalSequenceTypeEnum
+    aliases:
+      - Second ribosomal sequence type
+  isolate_second_ribosomal_seq_comments:
+    title: second ribosomal sequence comments
+    description: Additional information about the second ribosomal sequence.
+    comments:
+      - Required if second ribosomal sequence type is Other.
+    rank: 37
+    range: string
+    pattern: "^.{0,256}$"
+    aliases:
+      - Second ribosomal sequence comments
+  isolate_fungal_16s_screening:
+    title: 16S screening performed
+    description: For fungal draft samples only — was 16S screening performed to check for bacterial contamination?
+    comments:
+      - Required for fungal minimal, standard, and improved drafts.
+      - Leave blank for non-fungal samples.
+    examples:
+      - value: "yes"
+    rank: 38
+    range: YesNoEnum
+    aliases:
+      - For fungal draft samples, was 16S screening performed?
+  isolate_its_match_unite:
+    title: ITS matches UNITE
+    description: For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?
+    comments:
+      - Required for fungal minimal, standard, and improved drafts.
+      - Screen at https://unite.ut.ee/ before submitting.
+      - Leave blank for non-fungal samples.
+    examples:
+      - value: "yes"
+    rank: 39
+    range: YesNoEnum
+    aliases:
+      - For fungal draft samples, does ITS match taxonomy in UNITE?
+  isolate_meth:
+    title: Sample Isolation Method
+    description: Method, protocol, or kit used to extract DNA or RNA from the sample.
+    rank: 16
+    range: string
+    required: true
+    examples:
+      - value: Wizard Genomic DNA Purification Kit
+      - value: CTAB chloroform extraction
+      - value: TRIzol RNA extraction
+    structured_aliases:
+      - literal_form: Sample Isolation Method
+        predicate: EXACT_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+          - JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method.
+  sample_isolated_from:
+    title: Sample Isolated From
+    description: Free-text description of what the organism was isolated from.
+    rank: 40
+    range: string
+    required: true
+    examples:
+      - value: soil
+      - value: leaf
+      - value: seawater
+      - value: single colony isolate
+      - value: DSM 3658
+      - value: Sorghum bicolor - root
+    structured_aliases:
+      - literal_form: Sample Isolated From
+        predicate: EXACT_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+  collection_site_or_growth_conditions:
+    title: Collection Site or Growth Conditions
+    description: >-
+      Free-text description of the collection site or growth conditions for the
+      isolate.
+    rank: 41
+    range: string
+    examples:
+      - value: Field
+      - value: Greenhouse
+      - value: Deep well
+      - value: Liquid culture from a frozen stock
+      - value: JGI grown culture
+    structured_aliases:
+      - literal_form: Collection Site or Growth Conditions
+        predicate: EXACT_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+    comments:
+      - Required for RNA and methylation samples.
+  rna_collection_date:
+    title: Collection date
+    description: >-
+      Date the RNA sample was collected or the experiment was performed, in
+      YYYY-MM-DD format. For RNA projects, use the experiment date rather than
+      the original field collection date.
+    examples:
+      - value: "2017-01-20"
+      - value: "2021-06-15"
+    rank: 43
+    range: string
+    pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
+    structured_aliases:
+      - literal_form: Collection Year
+        predicate: RELATED_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+      - literal_form: Collection Month
+        predicate: RELATED_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+      - literal_form: Collection Day
+        predicate: RELATED_SYNONYM
+        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
+        notes:
+          - Exact JGI form template is access-restricted; source is the public submission overview.
+  ## data aggregation slots for SampleData
+  isolate_data:
+    description: aggregation slot relating isolate data collections to a SampleData container
+    multivalued: true
+    range: IsolateInterface
+    inlined: true
+    inlined_as_list: true
+  jgi_isolate_genome_data:
+    description: aggregation slot relating JGI isolate genome data collections to a SampleData container
+    multivalued: true
+    range: JgiIsolateGenomeInterface
+    inlined: true
+    inlined_as_list: true
+  jgi_isolate_transcriptome_data:
+    description: aggregation slot relating JGI isolate transcriptome data collections to a SampleData container
+    multivalued: true
+    range: JgiIsolateTranscriptomeInterface
+    inlined: true
+    inlined_as_list: true
 
 classes:
   AirInterface:
@@ -1054,6 +1395,213 @@ classes:
       - other_treatment
       - start_date_inc
       - start_time_inc
+  IsolateInterface:
+    annotations:
+      excel_worksheet_name: Isolate
+    description: >-
+      Metadata for microbial isolate samples submitted to NMDC. Captures core
+      biological identity slots (taxonomy, strain, culture collection) that NMDC
+      stores and queries. Slots are sourced from nmdc-schema OrganismSample and
+      Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.
+    title: Isolate
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+    slots:
+      - isolate_single_colony
+      - isolate_known_contaminants
+    slot_usage:
+      isolate_single_colony:
+        slot_group: organism_section
+      isolate_known_contaminants:
+        slot_group: organism_section
+
+  JgiIsolateCommonMixin:
+    mixin: true
+    description: >-
+      Shared JGI isolate submission fields common to both the genome and the
+      transcriptome sequencing interfaces: sample/project identifiers, nucleic
+      acid QC, shipping container, biosafety, and isolation provenance. Mixed
+      into JgiIsolateGenomeInterface and JgiIsolateTranscriptomeInterface.
+    title: JGI Isolate (common)
+    slots:
+      - replicate_group
+      - jgi_samp_id
+      - jgi_sample_name
+      - jgi_seq_project
+      - jgi_seq_project_name
+      - jgi_sample_contact
+      - jgi_project_pi
+      - jgi_proposal_id
+      - nuc_acid_absorb1
+      - nuc_acid_absorb2
+      - nuc_acid_concentration
+      - jgi_sample_volume
+      - cont_type
+      - cont_well
+      - container_name
+      - jgi_sample_format
+      - dnase
+      - biosafety_mat_cat
+      - isolate_meth
+      - reference_genome
+      - sample_isolated_from
+      - collection_site_or_growth_conditions
+    slot_usage:
+      replicate_group:
+        slot_group: jgi_isolate_section
+      jgi_samp_id:
+        slot_group: jgi_isolate_section
+      jgi_sample_name:
+        slot_group: jgi_isolate_section
+      jgi_seq_project:
+        slot_group: jgi_isolate_section
+      jgi_seq_project_name:
+        slot_group: jgi_isolate_section
+      jgi_sample_contact:
+        slot_group: jgi_isolate_section
+      jgi_project_pi:
+        slot_group: jgi_isolate_section
+      jgi_proposal_id:
+        slot_group: jgi_isolate_section
+      nuc_acid_absorb1:
+        slot_group: jgi_isolate_section
+      nuc_acid_absorb2:
+        slot_group: jgi_isolate_section
+      nuc_acid_concentration:
+        slot_group: jgi_isolate_section
+      jgi_sample_volume:
+        slot_group: jgi_isolate_section
+      cont_type:
+        slot_group: jgi_isolate_section
+      cont_well:
+        slot_group: jgi_isolate_section
+      container_name:
+        slot_group: jgi_isolate_section
+      jgi_sample_format:
+        slot_group: jgi_isolate_section
+      dnase:
+        slot_group: jgi_isolate_section
+      biosafety_mat_cat:
+        slot_group: jgi_isolate_section
+        range: JgiIsolateMaterialKindEnum
+      isolate_meth:
+        slot_group: jgi_isolate_section
+      reference_genome:
+        slot_group: jgi_isolate_section
+      sample_isolated_from:
+        slot_group: jgi_isolate_section
+      collection_site_or_growth_conditions:
+        slot_group: jgi_isolate_section
+    rules:
+      - title: well_requires_plate
+        description: If a well is specified, the container type must be a plate.
+        preconditions:
+          slot_conditions:
+            cont_well:
+              pattern: ".+"
+        postconditions:
+          slot_conditions:
+            cont_type:
+              equals_string: plate
+      - title: plate_requires_well
+        description: If a plate is specified, a well must be specified.
+        preconditions:
+          slot_conditions:
+            cont_type:
+              equals_string: plate
+        postconditions:
+          slot_conditions:
+            cont_well:
+              pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
+
+  JgiIsolateGenomeInterface:
+    annotations:
+      excel_worksheet_name: JGI Isolate Genome
+    description: >-
+      JGI submission metadata for isolate GENOME sequencing projects. Shared JGI
+      logistics plus ribosomal strain-verification sequences and fungal screening.
+    title: JGI Isolate Genome
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - JgiIsolateCommonMixin
+    slots:
+      - isolate_ribosomal_seq
+      - isolate_ribosomal_seq_type
+      - isolate_ribosomal_seq_comments
+      - isolate_second_ribosomal_seq
+      - isolate_second_ribosomal_seq_type
+      - isolate_second_ribosomal_seq_comments
+      - isolate_fungal_16s_screening
+      - isolate_its_match_unite
+    slot_usage:
+      isolate_ribosomal_seq:
+        slot_group: jgi_isolate_section
+      isolate_ribosomal_seq_type:
+        slot_group: jgi_isolate_section
+      isolate_ribosomal_seq_comments:
+        slot_group: jgi_isolate_section
+      isolate_second_ribosomal_seq:
+        slot_group: jgi_isolate_section
+      isolate_second_ribosomal_seq_type:
+        slot_group: jgi_isolate_section
+      isolate_second_ribosomal_seq_comments:
+        slot_group: jgi_isolate_section
+      isolate_fungal_16s_screening:
+        slot_group: jgi_isolate_section
+      isolate_its_match_unite:
+        slot_group: jgi_isolate_section
+    rules:
+      - title: ribosomal_seq_type_other_requires_comments
+        description: If the first ribosomal sequence type is Other, comments are required.
+        preconditions:
+          slot_conditions:
+            isolate_ribosomal_seq_type:
+              equals_string: Other
+        postconditions:
+          slot_conditions:
+            isolate_ribosomal_seq_comments:
+              pattern: ".+"
+      - title: second_ribosomal_seq_type_requires_sequence
+        description: If a second ribosomal sequence type is provided, the sequence itself must also be provided.
+        preconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq_type:
+              pattern: ".+"
+        postconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq:
+              pattern: ".+"
+      - title: second_ribosomal_seq_type_other_requires_comments
+        description: If the second ribosomal sequence type is Other, comments are required.
+        preconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq_type:
+              equals_string: Other
+        postconditions:
+          slot_conditions:
+            isolate_second_ribosomal_seq_comments:
+              pattern: ".+"
+
+  JgiIsolateTranscriptomeInterface:
+    annotations:
+      excel_worksheet_name: JGI Isolate Transcriptome
+    description: >-
+      JGI submission metadata for isolate TRANSCRIPTOME sequencing projects.
+      Shared JGI logistics plus the RNA experiment collection date.
+    title: JGI Isolate Transcriptome
+    is_a: DhInterface
+    mixins:
+      - DhMultiviewCommonColumnsMixin
+      - JgiIsolateCommonMixin
+    slots:
+      - rna_collection_date
+    slot_usage:
+      rna_collection_date:
+        slot_group: jgi_isolate_section
+        required: true
+
   DhInterface:
     description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
     title: Dh Root Interface
@@ -1078,12 +1626,28 @@ classes:
       - metagenome_sequencing_interleaved_data
       - metatranscriptome_sequencing_non_interleaved_data
       - metatranscriptome_sequencing_interleaved_data
+      - isolate_data
+      - jgi_isolate_genome_data
+      - jgi_isolate_transcriptome_data
     tree_root: true
 settings:
   float: '[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?'
   percentage: '[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?%'
   text: '[^;|\t\r\n]+'
 subsets:
+  jgi_isolate:
+    description: >-
+      Slots originating from the JGI Isolate (NA) v19 submission form that are not
+      already captured by MIxS or other existing standards. These slots support
+      organism identity, strain verification, purity assessment, and biosafety
+      classification for cultured isolate submissions to JGI.
+    see_also:
+      - https://github.com/microbiomedata/nmdc-schema/issues/2803
+    comments:
+      - >-
+        Mirrors the jgi_isolate subset defined in nmdc-schema basic_slots.yaml.
+        Imported slots (e.g. organism_genus) carry in_subset: jgi_isolate, so the
+        subset must be declared here for downstream LinkML generators to resolve it.
   nmdc_env_triad_enums:
     todos:
       - replace membership in this subset with mappings between the individual environmental triad/context enums and the EnvO subProperties

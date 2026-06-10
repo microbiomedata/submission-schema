@@ -1,0 +1,38 @@
+## Synthetic minimal example for IsolateInterface and JgiIsolateGenomeInterface.
+## Only required slots are populated. Organism: Dictyoglomus turgidum DSM 6724
+## (NCBITaxon:515635). JGI logistics values are synthetic but shaped to match real
+## GOLD `project` formats; they do not identify any real proposal or person.
+## cont_type is tube (no well needed).
+isolate_data:
+  - samp_name: Dtur_DSM6724_g2
+    analysis_type:
+      - isolate genome sequencing
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    isolate_single_colony: "yes"
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_g2
+    analysis_type:
+      - isolate genome sequencing
+    jgi_samp_id: "248022"
+    jgi_sample_name: Dtur_DSM6724_g2
+    jgi_seq_project: 1248701
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505831"
+    sample_isolated_from: thermal spring
+    nuc_acid_concentration: 38.0
+    jgi_sample_volume: 25.0
+    cont_type: tube
+    container_name: DturGenomeTube02
+    jgi_sample_format: Low EDTA TE
+    dnase: "no"
+    biosafety_mat_cat: Bacteria
+    isolate_meth: CTAB chloroform extraction
+    isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
+    isolate_ribosomal_seq_type: 16S
+    estimated_size: 1.85

@@ -1,0 +1,58 @@
+## Synthetic exhaustive example for IsolateInterface and JgiIsolateGenomeInterface.
+## Organism: Dictyoglomus turgidum DSM 6724 (NCBITaxon:515635), a real free-living
+## thermophilic bacterium. Organism identity, ecosystem-derived isolation source
+## (GOLD organism_v2: Environmental > Aquatic > Thermal springs), genome size
+## (1.85 Mb) and GC (34%) are real. The JGI submission IDs are placeholders shaped
+## to match real GOLD project formats (proposal 6-digit, sequencing project
+## 7-digit, sample 6-digit); the contact and PI names are obvious placeholders
+## (Jane Doe, John Doe). Every slot of both classes is populated.
+isolate_data:
+  - samp_name: Dtur_DSM6724_g1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    isolate_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    gc_content: 34.0
+    ploidy: haploid
+    isolate_single_colony: "yes"
+    isolate_known_contaminants: none observed
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_g1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    replicate_group: Dtur_DSM6724_repA
+    jgi_samp_id: "248017"
+    jgi_sample_name: Dtur_DSM6724_g1
+    jgi_seq_project: 1248701
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505831"
+    sample_isolated_from: thermal spring
+    host_taxid: NCBITaxon:4577
+    nuc_acid_absorb1: 1.85
+    nuc_acid_absorb2: 2.05
+    nuc_acid_concentration: 45.0
+    jgi_sample_volume: 30.0
+    cont_type: plate
+    cont_well: B3
+    container_name: DturGenomePlate01
+    jgi_sample_format: Gentegra-DNA
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    isolate_meth: CTAB chloroform extraction
+    isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
+    isolate_ribosomal_seq_type: 16S
+    isolate_ribosomal_seq_comments: Sanger-sequenced 16S amplicon, approximately 240 bp
+    isolate_second_ribosomal_seq: TCCGTAGGTGAACCTGCGGAAGGATCATTACCGAGTTTACAACTCCCAAACCCCTGTGAACATACCACTTGTTGCCTCGGCGGATCAGCCCGCTCCCGGTAAAACGGGACGGCCCGCCAGAGGACCCCTAAACTCTGTTTCTATATGTAACTTCTGAGTAAAACCATAAATAAATCAAAACTTTCAACAACGGATCTCTTGG
+    isolate_second_ribosomal_seq_type: ITS
+    isolate_second_ribosomal_seq_comments: ITS1-5.8S-ITS2 region
+    isolate_fungal_16s_screening: "no"
+    isolate_its_match_unite: "no"
+    estimated_size: 1.85

@@ -1,0 +1,12 @@
+## Invalid: collection_date on IsolateInterface must be YYYY-MM-DD; year-month fails.
+isolate_data:
+  - samp_name: test_isolate_bad_date
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: igsn:000
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    isolate_single_colony: "yes"
+    collection_date: "2008-01"

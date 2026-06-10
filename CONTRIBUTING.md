@@ -39,15 +39,53 @@ Please use our [Issue Tracker](https://github.com/microbiomedata/submission-sche
 
 ### Building the schema YAML file
 
-`TODO`
+`make schema-build` runs `tools/build.py`, which combines the hand-written base
+schema (`src/nmdc_submission_schema/schema/nmdc_submission_schema_base.yaml`) with
+slots pulled from nmdc-schema as listed in `config/nmdc_schema_import.yaml`. It
+writes one built schema file:
+`src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml`.
+
+The nmdc-schema slots come from the installed `nmdc_schema` Python package, so the
+built schema reflects the nmdc-schema version pinned in `pyproject.toml`. To pick
+up new or changed nmdc-schema slots, update the pin (or the import list) and
+rebuild.
 
 ### Building the project artifacts
 
-`TODO`
+`make all` runs `schema-build`, then generates the project files, then the docs.
+This repository commits its generated files so that tools using the schema do not
+have to build it themselves:
+
+- `src/nmdc_submission_schema/schema/nmdc_submission_schema.yaml`: the built schema
+- `project/jsonschema/nmdc_submission_schema.schema.json`: the JSON Schema used for validation
+- `project/json/nmdc_submission_schema.json`: the file the DataHarmonizer interface loads
+- `src/nmdc_submission_schema/datamodel/nmdc_submission_schema.py`: the Pydantic classes
+
+Run `make all` and commit these files whenever you change the schema source or the
+nmdc-schema pin, so they stay in sync with the source. The `docs/` folder is also
+generated, but it is not committed.
 
 ### Automated testing
 
-`TODO`
+`make test` runs the Python tests and checks the example data in `src/data/`:
+
+- every file in `src/data/valid/` must pass validation
+- every file in `src/data/invalid/` must fail validation, and should fail for one
+  specific reason, named in the file name
+
+Example data may use real GOLD or lakehouse values, as long as the source records
+are not embargoed, marked private, or very recent. Do not copy from the JGI example
+submission spreadsheet, which is off-limits. Organism identities are real (for
+example Dictyoglomus turgidum DSM 6724); the current JGI logistics values are
+synthetic but shaped to match real GOLD formats. Any invented values, especially
+personnel names, should be obvious placeholders (for example Jane Doe) so they are
+not mistaken for real data.
+
+One consequence: if you remove a constraint, an invalid example whose only error
+was that constraint will start passing, which breaks the test. Delete those
+examples. For instance, when the `source_mat_id` format check was removed (JGI
+accepts culture-collection IDs such as "ATCC 5680"), the invalid examples that
+failed only that check were deleted.
 
 ### Interactive testing
 

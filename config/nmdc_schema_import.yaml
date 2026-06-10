@@ -825,6 +825,7 @@ slots:
       - HcrCoresInterface
       - HcrFluidsSwabsInterface
       - HostAssociatedInterface
+      - IsolateInterface
       - MiscEnvsInterface
       - PlantAssociatedInterface
       - SedimentInterface
@@ -843,6 +844,22 @@ slots:
           required: true
           pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
           slot_group: mixs_modified_section
+      - in_classes:
+          - IsolateInterface
+        replace:
+          comments:
+            - Use the date the sample was collected from its natural habitat, not the
+              date of purchase or culturing. Full date (YYYY-MM-DD) is required.
+          examples:
+            - value: "2017-01-20"
+            - value: "2013-03-25"
+          aliases:
+            - Collection Year
+            - Collection Month
+            - Collection Day
+          pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
+          notes:
+            - JGI requires all three date components, so the full YYYY-MM-DD is mandatory on the isolate interface. The export layer splits it into Collection Year, Collection Month, and Collection Day columns.
 
   - slot: collection_date_inc
     source: Biosample
@@ -2543,6 +2560,7 @@ slots:
     destinations:
       - HostAssociatedInterface
       - PlantAssociatedInterface
+      - JgiIsolateCommonMixin
     modifications:
       - replace:
           rank: 259
@@ -2551,6 +2569,11 @@ slots:
           - PlantAssociatedInterface
         replace:
           required: true
+      - in_classes:
+          - JgiIsolateCommonMixin
+        replace:
+          rank: 48
+          slot_group: jgi_isolate_section
 
   - slot: host_tot_mass
     source: Biosample
@@ -3737,6 +3760,7 @@ slots:
           rank: 40
           slot_group: mixs_core_section
 
+  # Move to JgiIsolateGenomeInterface + JgiIsolateTranscriptomeInterface once https://github.com/microbiomedata/submission-schema/issues/438 resolves.
   - slot: rel_air_humidity
     source: Biosample
     destinations:
@@ -4814,23 +4838,25 @@ slots:
     source: Biosample
     destinations:
       - DhMultiviewCommonColumnsMixin
+      - IsolateInterface
     modifications:
       - replace:
           description: >-
-            A globally unique identifier assigned to the parent sample or sample that is the source 
+            A globally unique identifier assigned to the parent sample or sample that is the source
             of this sample.
           examples:
             - value: 'igsn:AU1243'
             - value: 'biosample:SAMEA2397676'
-          pattern: '^igsn:[a-zA-Z0-9]+|biosample:SAMN[a-zA-Z0-9]+|biosample:SAME[a-zA-Z0-9]+|biosample:SAMJ[a-zA-Z0-9]+|gold:Gb[0-9]+$'
           rank: 2
           slot_group: sample_id_section
         append:
           comments:
             - >-
-              Identifiers must be prefixed. Possible FAIR prefixes are: `igsn` for International 
-              Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for NCBI 
-              biosample accession IDs, `gold` for GOLD identifiers.
+              Prefixed FAIR identifiers are preferred where available: `igsn` for
+              International Generic Sample Numbers (http://www.geosamples.org/getigsn),
+              `biosample` for NCBI biosample accession IDs, `gold` for GOLD identifiers.
+              The format is not constrained, so culture collection identifiers such as
+              "DSM 6724" or "ATCC 5680" are also accepted.
 
   - slot: space_typ_state
     source: Biosample
@@ -5912,3 +5938,140 @@ slots:
           description: A URL to a description of the sequencing protocol used to generate
             the data.
           range: string
+
+  ## ----------------------------------------------------------------------
+  ## #422: Wire isolate biology slots into IsolateInterface.
+  ## Source: nmdc-schema PRs #2977 (Organism, OrganismSample classes) and
+  ## #2975 (NcbiTaxon class + classified_as slot). Requires nmdc-schema
+  ## release containing those PRs (currently only v11.19.2-rc.1).
+  ## Ranks: 100-block, ordered by JGI Isolate (NA) v19 form field number
+  ## (e.g. JGI #6 Genus -> rank 106, JGI #11 NCBI Tax ID -> rank 111).
+  ## slot_group: new topical group `organism_section` per #422 discussion.
+  ## ----------------------------------------------------------------------
+
+  - slot: organism_genus
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 106
+          slot_group: organism_section
+          required: true
+
+  - slot: organism_species
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 107
+          slot_group: organism_section
+          required: true
+
+  - slot: strain_name
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 108
+          slot_group: organism_section
+          required: true
+
+  - slot: isolate_name
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 109
+          slot_group: organism_section
+
+  - slot: classified_as
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 111
+          slot_group: organism_section
+          required: true
+          # NcbiTaxon is a class in nmdc-schema; flatten to string+pattern
+          # so the value fits a DataHarmonizer cell.
+          range: string
+          structured_pattern:
+            syntax: 'NCBITaxon:\d+'
+            interpolated: false
+          examples:
+            - value: 'NCBITaxon:562'
+            - value: 'NCBITaxon:1392'
+
+  - slot: estimated_size
+    source: Organism
+    destinations:
+      - JgiIsolateGenomeInterface
+    modifications:
+      - replace:
+          title: Estimated genome size (Mb)
+          rank: 21
+          slot_group: jgi_isolate_section
+          required: true
+          range: float
+          minimum_value: 0.000001
+          maximum_value: 100000
+          unit:
+            ucum_code: Mbase
+          notes:
+            - Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp.
+
+  - slot: gc_content
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 113
+          slot_group: organism_section
+
+  - slot: ploidy
+    source: Organism
+    destinations:
+      - IsolateInterface
+    modifications:
+      - replace:
+          rank: 114
+          slot_group: organism_section
+          range: string
+          notes:
+            - Free-text string at the JGI submission gate; nmdc-schema models ploidy as PloidyEnum.
+
+  ## Host organism fields placed on the JGI isolate interfaces per Montana-SlotEval (#449).
+  ## Routed to JgiIsolateCommonMixin so both JgiIsolateGenomeInterface and
+  ## JgiIsolateTranscriptomeInterface inherit them. host_taxid is routed to the same
+  ## mixin (see its entry above), so all four host fields are on both JGI interfaces.
+  - slot: host_genus
+    source: Biosample
+    destinations:
+      - JgiIsolateCommonMixin
+    modifications:
+      - replace:
+          rank: 45
+          slot_group: jgi_isolate_section
+  - slot: host_species
+    source: Biosample
+    destinations:
+      - JgiIsolateCommonMixin
+    modifications:
+      - replace:
+          rank: 46
+          slot_group: jgi_isolate_section
+  - slot: host_strain
+    source: Biosample
+    destinations:
+      - JgiIsolateCommonMixin
+    modifications:
+      - replace:
+          rank: 47
+          slot_group: jgi_isolate_section
+
