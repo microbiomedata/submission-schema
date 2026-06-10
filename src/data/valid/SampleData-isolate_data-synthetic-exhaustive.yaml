@@ -2,10 +2,10 @@
 ## Organism: Dictyoglomus turgidum DSM 6724 (NCBITaxon:515635), a real free-living
 ## thermophilic bacterium. Organism identity, ecosystem-derived isolation source
 ## (GOLD organism_v2: Environmental > Aquatic > Thermal springs), genome size
-## (1.85 Mb) and GC (34%) are real. JGI logistics values are synthetic but shaped
-## to match real GOLD `project` formats (its_proposal_id 6-digit, its_spid 7-digit,
-## its_sample_id 6-digit, contact as First Last); PI/contact names and IDs do not
-## identify any real proposal or person. Every slot of both classes is populated.
+## (1.85 Mb) and GC (34%) are real. The JGI submission IDs are placeholders shaped
+## to match real GOLD project formats (proposal 6-digit, sequencing project
+## 7-digit, sample 6-digit); the contact and PI names are obvious placeholders
+## (Jane Doe, John Doe). Every slot of both classes is populated.
 isolate_data:
   - samp_name: Dtur_DSM6724_g1
     analysis_type:
@@ -32,8 +32,8 @@ jgi_isolate_genome_data:
     jgi_sample_name: Dtur_DSM6724_g1
     jgi_seq_project: 1248701
     jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
-    jgi_sample_contact: Jordan Rivera
-    jgi_project_pi: Morgan Avery
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
     jgi_proposal_id: "505831"
     sample_isolated_from: thermal spring
     host_taxid: NCBITaxon:4577

@@ -14,8 +14,8 @@ jgi_isolate_transcriptome_data:
     jgi_sample_name: Dtur_DSM6724_rna1
     jgi_seq_project: 1248755
     jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Transcriptome
-    jgi_sample_contact: Jordan Rivera
-    jgi_project_pi: Morgan Avery
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
     jgi_proposal_id: "505842"
     sample_isolated_from: liquid culture from a frozen stock
     nuc_acid_concentration: 25.0

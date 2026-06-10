@@ -12,8 +12,8 @@ jgi_isolate_genome_data:
     jgi_sample_name: Dtur_DSM6724_g1
     jgi_seq_project: 1248701
     jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Isolate Genome
-    jgi_sample_contact: Jordan Rivera
-    jgi_project_pi: Morgan Avery
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
     jgi_proposal_id: "505831"
     sample_isolated_from: thermal spring
     nuc_acid_concentration: 2500.0
