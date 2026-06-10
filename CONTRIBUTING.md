@@ -77,7 +77,9 @@ Example data may use real GOLD or lakehouse values, as long as the source record
 are not embargoed, marked private, or very recent. Do not copy from the JGI example
 submission spreadsheet, which is off-limits. Organism identities are real (for
 example Dictyoglomus turgidum DSM 6724); the current JGI logistics values are
-synthetic but shaped to match real GOLD formats.
+synthetic but shaped to match real GOLD formats. Any invented values, especially
+personnel names, should be obvious placeholders (for example Jane Doe) so they are
+not mistaken for real data.
 
 One consequence: if you remove a constraint, an invalid example whose only error
 was that constraint will start passing, which breaks the test. Delete those
