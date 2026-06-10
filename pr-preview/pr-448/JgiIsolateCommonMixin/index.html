@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://microbiomedata.github.io/submission-schema/JgiIsolateInterface/" rel="canonical"/>
+<link href="https://microbiomedata.github.io/submission-schema/JgiIsolateCommonMixin/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Class: JGI Isolate (JgiIsolateInterface) - submission-schema</title>
+<title>Class: JGI Isolate (common) (JgiIsolateCommonMixin) - submission-schema</title>
 <link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -20,7 +20,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-jgi-isolate-jgiisolateinterface">
+<a class="md-skip" href="#class-jgi-isolate-common-jgiisolatecommonmixin">
           Skip to content
         </a>
 </div>
@@ -44,7 +44,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: JGI Isolate (JgiIsolateInterface)
+              Class: JGI Isolate (common) (JgiIsolateCommonMixin)
             
           </span>
 </div>
@@ -206,15 +206,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-<span class="md-ellipsis">
-      
-        Inheritance
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
 <span class="md-ellipsis">
       
@@ -224,10 +215,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#usages">
+<a class="md-nav__link" href="#mixin-usage">
 <span class="md-ellipsis">
       
-        Usages
+        Mixin Usage
       
     </span>
 </a>
@@ -260,33 +251,6 @@
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ribosomal_seq_type_other_requires_comments">
-<span class="md-ellipsis">
-      
-        ribosomal_seq_type_other_requires_comments
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#second_ribosomal_seq_type_requires_sequence">
-<span class="md-ellipsis">
-      
-        second_ribosomal_seq_type_requires_sequence
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#second_ribosomal_seq_type_other_requires_comments">
-<span class="md-ellipsis">
-      
-        second_ribosomal_seq_type_other_requires_comments
-      
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
@@ -300,15 +264,6 @@
 </a>
 <nav aria-label="Identifier and Mapping Information" class="md-nav">
 <ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#annotations">
-<span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-</a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#schema-source">
 <span class="md-ellipsis">
@@ -368,188 +323,100 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="class-jgi-isolate-jgiisolateinterface">Class: JGI Isolate (JgiIsolateInterface)</h1>
-<p><em>JGI-specific submission metadata for isolate sequencing projects. Captures physical sample logistics, strain verification sequences, and QC fields required by JGI but not stored in nmdc-schema.</em></p>
-<p>URI: <a href="https://example.com/nmdc_sub_schema/JgiIsolateInterface">nmdc_sub_schema:JgiIsolateInterface</a></p>
+<h1 id="class-jgi-isolate-common-jgiisolatecommonmixin">Class: JGI Isolate (common) (JgiIsolateCommonMixin)</h1>
+<p><em>Shared JGI isolate submission fields common to both the genome and the transcriptome sequencing interfaces: sample/project identifiers, nucleic acid QC, shipping container, biosafety, and isolation provenance. Mixed into JgiIsolateGenomeInterface and JgiIsolateTranscriptomeInterface.</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/JgiIsolateCommonMixin">nmdc_sub_schema:JgiIsolateCommonMixin</a></p>
 <div class="mermaid"> classDiagram
-    class JgiIsolateInterface
-    click JgiIsolateInterface href "../JgiIsolateInterface/"
-      DhMultiviewCommonColumnsMixin &lt;|-- JgiIsolateInterface
-        click DhMultiviewCommonColumnsMixin href "../DhMultiviewCommonColumnsMixin/"
-      DhInterface &lt;|-- JgiIsolateInterface
-        click DhInterface href "../DhInterface/"
+    class JgiIsolateCommonMixin
+    click JgiIsolateCommonMixin href "../JgiIsolateCommonMixin/"
+      JgiIsolateCommonMixin &lt;|-- JgiIsolateGenomeInterface
+        click JgiIsolateGenomeInterface href "../JgiIsolateGenomeInterface/"
+      JgiIsolateCommonMixin &lt;|-- JgiIsolateTranscriptomeInterface
+        click JgiIsolateTranscriptomeInterface href "../JgiIsolateTranscriptomeInterface/"
 
-      JgiIsolateInterface : analysis_type
-
-
-
-
-
-        JgiIsolateInterface --&gt; "*" AnalysisTypeEnum : analysis_type
-        click AnalysisTypeEnum href "../AnalysisTypeEnum/"
-
-
-
-      JgiIsolateInterface : biosafety_mat_cat
+      JgiIsolateCommonMixin : biosafety_mat_cat
 
 
 
 
 
-        JgiIsolateInterface --&gt; "1" JgiIsolateMaterialKindEnum : biosafety_mat_cat
+        JgiIsolateCommonMixin --&gt; "1" JgiIsolateMaterialKindEnum : biosafety_mat_cat
         click JgiIsolateMaterialKindEnum href "../JgiIsolateMaterialKindEnum/"
 
 
 
-      JgiIsolateInterface : collection_site_or_growth_conditions
+      JgiIsolateCommonMixin : collection_site_or_growth_conditions
 
-      JgiIsolateInterface : cont_type
-
-
+      JgiIsolateCommonMixin : cont_type
 
 
 
-        JgiIsolateInterface --&gt; "1" JgiContTypeEnum : cont_type
+
+
+        JgiIsolateCommonMixin --&gt; "1" JgiContTypeEnum : cont_type
         click JgiContTypeEnum href "../JgiContTypeEnum/"
 
 
 
-      JgiIsolateInterface : cont_well
+      JgiIsolateCommonMixin : cont_well
 
-      JgiIsolateInterface : container_name
+      JgiIsolateCommonMixin : container_name
 
-      JgiIsolateInterface : dna_isolate_meth
+      JgiIsolateCommonMixin : dna_isolate_meth
 
-      JgiIsolateInterface : dnase
-
-
+      JgiIsolateCommonMixin : dnase
 
 
 
-        JgiIsolateInterface --&gt; "1" YesNoEnum : dnase
+
+
+        JgiIsolateCommonMixin --&gt; "1" YesNoEnum : dnase
         click YesNoEnum href "../YesNoEnum/"
 
 
 
-      JgiIsolateInterface : isolate_fungal_16s_screening
+      JgiIsolateCommonMixin : jgi_project_pi
+
+      JgiIsolateCommonMixin : jgi_proposal_id
+
+      JgiIsolateCommonMixin : jgi_samp_id
+
+      JgiIsolateCommonMixin : jgi_sample_contact
+
+      JgiIsolateCommonMixin : jgi_sample_format
 
 
 
 
 
-        JgiIsolateInterface --&gt; "0..1" YesNoEnum : isolate_fungal_16s_screening
-        click YesNoEnum href "../YesNoEnum/"
-
-
-
-      JgiIsolateInterface : isolate_its_match_unite
-
-
-
-
-
-        JgiIsolateInterface --&gt; "0..1" YesNoEnum : isolate_its_match_unite
-        click YesNoEnum href "../YesNoEnum/"
-
-
-
-      JgiIsolateInterface : isolate_known_contaminants
-
-      JgiIsolateInterface : isolate_ribosomal_seq
-
-      JgiIsolateInterface : isolate_ribosomal_seq_comments
-
-      JgiIsolateInterface : isolate_ribosomal_seq_type
-
-
-
-
-
-        JgiIsolateInterface --&gt; "1" RibosomalSequenceTypeEnum : isolate_ribosomal_seq_type
-        click RibosomalSequenceTypeEnum href "../RibosomalSequenceTypeEnum/"
-
-
-
-      JgiIsolateInterface : isolate_second_ribosomal_seq
-
-      JgiIsolateInterface : isolate_second_ribosomal_seq_comments
-
-      JgiIsolateInterface : isolate_second_ribosomal_seq_type
-
-
-
-
-
-        JgiIsolateInterface --&gt; "0..1" RibosomalSequenceTypeEnum : isolate_second_ribosomal_seq_type
-        click RibosomalSequenceTypeEnum href "../RibosomalSequenceTypeEnum/"
-
-
-
-      JgiIsolateInterface : isolate_single_colony
-
-
-
-
-
-        JgiIsolateInterface --&gt; "1" YesNoEnum : isolate_single_colony
-        click YesNoEnum href "../YesNoEnum/"
-
-
-
-      JgiIsolateInterface : jgi_project_pi
-
-      JgiIsolateInterface : jgi_proposal_id
-
-      JgiIsolateInterface : jgi_samp_id
-
-      JgiIsolateInterface : jgi_sample_contact
-
-      JgiIsolateInterface : jgi_sample_format
-
-
-
-
-
-        JgiIsolateInterface --&gt; "1" JGISampleFormatEnum : jgi_sample_format
+        JgiIsolateCommonMixin --&gt; "1" JGISampleFormatEnum : jgi_sample_format
         click JGISampleFormatEnum href "../JGISampleFormatEnum/"
 
 
 
-      JgiIsolateInterface : jgi_sample_name
+      JgiIsolateCommonMixin : jgi_sample_name
 
-      JgiIsolateInterface : jgi_sample_volume
+      JgiIsolateCommonMixin : jgi_sample_volume
 
-      JgiIsolateInterface : jgi_seq_project
+      JgiIsolateCommonMixin : jgi_seq_project
 
-      JgiIsolateInterface : jgi_seq_project_name
+      JgiIsolateCommonMixin : jgi_seq_project_name
 
-      JgiIsolateInterface : nuc_acid_absorb1
+      JgiIsolateCommonMixin : nuc_acid_absorb1
 
-      JgiIsolateInterface : nuc_acid_absorb2
+      JgiIsolateCommonMixin : nuc_acid_absorb2
 
-      JgiIsolateInterface : nuc_acid_concentration
+      JgiIsolateCommonMixin : nuc_acid_concentration
 
-      JgiIsolateInterface : reference_genome
+      JgiIsolateCommonMixin : reference_genome
 
-      JgiIsolateInterface : replicate_group
+      JgiIsolateCommonMixin : replicate_group
 
-      JgiIsolateInterface : rna_collection_date
-
-      JgiIsolateInterface : samp_name
-
-      JgiIsolateInterface : sample_isolated_from
-
-      JgiIsolateInterface : source_mat_id
+      JgiIsolateCommonMixin : sample_isolated_from
 
 
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../DhInterface/">DhInterface</a><ul>
-<li><strong>JgiIsolateInterface</strong> [ <a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a>]</li>
-</ul>
-</li>
-</ul>
+<!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -682,66 +549,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../isolate_single_colony/">isolate_single_colony</a></td>
-<td>1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
-<td>Was the sample isolated from a single colony or equivalent axenic/pure cultur...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_known_contaminants/">isolate_known_contaminants</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>List any organisms known or suspected to grow in co-culture or that may be co...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_ribosomal_seq/">isolate_ribosomal_seq</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Primary ribosomal sequence for strain verification</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_ribosomal_seq_type/">isolate_ribosomal_seq_type</a></td>
-<td>1 <br/> <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></td>
-<td>Type of the first ribosomal sequence provided</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_ribosomal_seq_comments/">isolate_ribosomal_seq_comments</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Additional information about the first ribosomal sequence</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_second_ribosomal_seq/">isolate_second_ribosomal_seq</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Optional secondary ribosomal sequence for additional strain verification</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_second_ribosomal_seq_type/">isolate_second_ribosomal_seq_type</a></td>
-<td>0..1 <br/> <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></td>
-<td>Type of the second ribosomal sequence provided</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_second_ribosomal_seq_comments/">isolate_second_ribosomal_seq_comments</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Additional information about the second ribosomal sequence</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_fungal_16s_screening/">isolate_fungal_16s_screening</a></td>
-<td>0..1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
-<td>For fungal draft samples only — was 16S screening performed to check for bact...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../isolate_its_match_unite/">isolate_its_match_unite</a></td>
-<td>0..1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
-<td>For fungal draft samples only -- does the ITS sequence match taxonomy in the ...</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../sample_isolated_from/">sample_isolated_from</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Free-text description of what the organism was isolated from</td>
@@ -753,48 +560,24 @@
 <td>Free-text description of the collection site or growth conditions for the iso...</td>
 <td>direct</td>
 </tr>
-<tr>
-<td><a href="../rna_collection_date/">rna_collection_date</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Date the RNA sample was collected or the experiment was performed, in YYYY-MM...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../analysis_type/">analysis_type</a></td>
-<td>* <br/> <a href="../AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
-<td>Select all the data types associated or available for this biosample</td>
-<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
-</tr>
-<tr>
-<td><a href="../samp_name/">samp_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>A local identifier or name that for the material sample collected</td>
-<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
-</tr>
-<tr>
-<td><a href="../source_mat_id/">source_mat_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A globally unique identifier assigned to the parent sample or sample that is ...</td>
-<td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
-</tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
+<h2 id="mixin-usage">Mixin Usage</h2>
 <table>
 <thead>
 <tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
+<th>mixed into</th>
+<th>description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SampleData/">SampleData</a></td>
-<td><a href="../jgi_isolate_data/">jgi_isolate_data</a></td>
-<td>range</td>
-<td><a href="./">JgiIsolateInterface</a></td>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
+</tr>
+<tr>
+<td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
+<td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
 </tr>
 </tbody>
 </table>
@@ -837,79 +620,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="ribosomal_seq_type_other_requires_comments">ribosomal_seq_type_other_requires_comments</h3>
-<table>
-<thead>
-<tr>
-<th>Rule Applied</th>
-<th>Preconditions</th>
-<th>Postconditions</th>
-<th>Elseconditions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>slot_conditions</td>
-<td><code>{'isolate_ribosomal_seq_type': {'equals_string': 'Other'}}</code></td>
-<td><code>{'isolate_ribosomal_seq_comments': {'pattern': '.+'}}</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="second_ribosomal_seq_type_requires_sequence">second_ribosomal_seq_type_requires_sequence</h3>
-<table>
-<thead>
-<tr>
-<th>Rule Applied</th>
-<th>Preconditions</th>
-<th>Postconditions</th>
-<th>Elseconditions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>slot_conditions</td>
-<td><code>{'isolate_second_ribosomal_seq_type': {'pattern': '.+'}}</code></td>
-<td><code>{'isolate_second_ribosomal_seq': {'pattern': '.+'}}</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h3 id="second_ribosomal_seq_type_other_requires_comments">second_ribosomal_seq_type_other_requires_comments</h3>
-<table>
-<thead>
-<tr>
-<th>Rule Applied</th>
-<th>Preconditions</th>
-<th>Postconditions</th>
-<th>Elseconditions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>slot_conditions</td>
-<td><code>{'isolate_second_ribosomal_seq_type': {'equals_string': 'Other'}}</code></td>
-<td><code>{'isolate_second_ribosomal_seq_comments': {'pattern': '.+'}}</code></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>excel_worksheet_name</td>
-<td>JGI Isolate</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -925,11 +636,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>nmdc_sub_schema:JgiIsolateInterface</td>
+<td>nmdc_sub_schema:JgiIsolateCommonMixin</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:JgiIsolateInterface</td>
+<td>nmdc_sub_schema:JgiIsolateCommonMixin</td>
 </tr>
 </tbody>
 </table>
@@ -937,19 +648,14 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: JgiIsolateInterface
-annotations:
-  excel_worksheet_name:
-    tag: excel_worksheet_name
-    value: JGI Isolate
-description: JGI-specific submission metadata for isolate sequencing projects. Captures
-  physical sample logistics, strain verification sequences, and QC fields required
-  by JGI but not stored in nmdc-schema.
-title: JGI Isolate
+<pre><code class="language-yaml">name: JgiIsolateCommonMixin
+description: 'Shared JGI isolate submission fields common to both the genome and the
+  transcriptome sequencing interfaces: sample/project identifiers, nucleic acid QC,
+  shipping container, biosafety, and isolation provenance. Mixed into JgiIsolateGenomeInterface
+  and JgiIsolateTranscriptomeInterface.'
+title: JGI Isolate (common)
 from_schema: https://example.com/nmdc_submission_schema
-is_a: DhInterface
-mixins:
-- DhMultiviewCommonColumnsMixin
+mixin: true
 slots:
 - replicate_group
 - jgi_samp_id
@@ -971,23 +677,9 @@ slots:
 - biosafety_mat_cat
 - dna_isolate_meth
 - reference_genome
-- isolate_single_colony
-- isolate_known_contaminants
-- isolate_ribosomal_seq
-- isolate_ribosomal_seq_type
-- isolate_ribosomal_seq_comments
-- isolate_second_ribosomal_seq
-- isolate_second_ribosomal_seq_type
-- isolate_second_ribosomal_seq_comments
-- isolate_fungal_16s_screening
-- isolate_its_match_unite
 - sample_isolated_from
 - collection_site_or_growth_conditions
-- rna_collection_date
 slot_usage:
-  analysis_type:
-    name: analysis_type
-    required: false
   replicate_group:
     name: replicate_group
     slot_group: jgi_isolate_section
@@ -1049,43 +741,11 @@ slot_usage:
   reference_genome:
     name: reference_genome
     slot_group: jgi_isolate_section
-  isolate_single_colony:
-    name: isolate_single_colony
-    slot_group: jgi_isolate_section
-  isolate_known_contaminants:
-    name: isolate_known_contaminants
-    slot_group: jgi_isolate_section
-  isolate_ribosomal_seq:
-    name: isolate_ribosomal_seq
-    slot_group: jgi_isolate_section
-  isolate_ribosomal_seq_type:
-    name: isolate_ribosomal_seq_type
-    slot_group: jgi_isolate_section
-  isolate_ribosomal_seq_comments:
-    name: isolate_ribosomal_seq_comments
-    slot_group: jgi_isolate_section
-  isolate_second_ribosomal_seq:
-    name: isolate_second_ribosomal_seq
-    slot_group: jgi_isolate_section
-  isolate_second_ribosomal_seq_type:
-    name: isolate_second_ribosomal_seq_type
-    slot_group: jgi_isolate_section
-  isolate_second_ribosomal_seq_comments:
-    name: isolate_second_ribosomal_seq_comments
-    slot_group: jgi_isolate_section
-  isolate_fungal_16s_screening:
-    name: isolate_fungal_16s_screening
-    slot_group: jgi_isolate_section
-  isolate_its_match_unite:
-    name: isolate_its_match_unite
-    slot_group: jgi_isolate_section
   sample_isolated_from:
     name: sample_isolated_from
     slot_group: jgi_isolate_section
   collection_site_or_growth_conditions:
     name: collection_site_or_growth_conditions
-  rna_collection_date:
-    name: rna_collection_date
     slot_group: jgi_isolate_section
 rules:
 - preconditions:
@@ -1112,65 +772,20 @@ rules:
         pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
   description: If a plate is specified, a well must be specified.
   title: plate_requires_well
-- preconditions:
-    slot_conditions:
-      isolate_ribosomal_seq_type:
-        name: isolate_ribosomal_seq_type
-        equals_string: Other
-  postconditions:
-    slot_conditions:
-      isolate_ribosomal_seq_comments:
-        name: isolate_ribosomal_seq_comments
-        pattern: .+
-  description: If the first ribosomal sequence type is Other, comments are required.
-  title: ribosomal_seq_type_other_requires_comments
-- preconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq_type:
-        name: isolate_second_ribosomal_seq_type
-        pattern: .+
-  postconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq:
-        name: isolate_second_ribosomal_seq
-        pattern: .+
-  description: If a second ribosomal sequence type is provided, the sequence itself
-    must also be provided.
-  title: second_ribosomal_seq_type_requires_sequence
-- preconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq_type:
-        name: isolate_second_ribosomal_seq_type
-        equals_string: Other
-  postconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq_comments:
-        name: isolate_second_ribosomal_seq_comments
-        pattern: .+
-  description: If the second ribosomal sequence type is Other, comments are required.
-  title: second_ribosomal_seq_type_other_requires_comments
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: JgiIsolateInterface
-annotations:
-  excel_worksheet_name:
-    tag: excel_worksheet_name
-    value: JGI Isolate
-description: JGI-specific submission metadata for isolate sequencing projects. Captures
-  physical sample logistics, strain verification sequences, and QC fields required
-  by JGI but not stored in nmdc-schema.
-title: JGI Isolate
+<pre><code class="language-yaml">name: JgiIsolateCommonMixin
+description: 'Shared JGI isolate submission fields common to both the genome and the
+  transcriptome sequencing interfaces: sample/project identifiers, nucleic acid QC,
+  shipping container, biosafety, and isolation provenance. Mixed into JgiIsolateGenomeInterface
+  and JgiIsolateTranscriptomeInterface.'
+title: JGI Isolate (common)
 from_schema: https://example.com/nmdc_submission_schema
-is_a: DhInterface
-mixins:
-- DhMultiviewCommonColumnsMixin
+mixin: true
 slot_usage:
-  analysis_type:
-    name: analysis_type
-    required: false
   replicate_group:
     name: replicate_group
     slot_group: jgi_isolate_section
@@ -1232,43 +847,11 @@ slot_usage:
   reference_genome:
     name: reference_genome
     slot_group: jgi_isolate_section
-  isolate_single_colony:
-    name: isolate_single_colony
-    slot_group: jgi_isolate_section
-  isolate_known_contaminants:
-    name: isolate_known_contaminants
-    slot_group: jgi_isolate_section
-  isolate_ribosomal_seq:
-    name: isolate_ribosomal_seq
-    slot_group: jgi_isolate_section
-  isolate_ribosomal_seq_type:
-    name: isolate_ribosomal_seq_type
-    slot_group: jgi_isolate_section
-  isolate_ribosomal_seq_comments:
-    name: isolate_ribosomal_seq_comments
-    slot_group: jgi_isolate_section
-  isolate_second_ribosomal_seq:
-    name: isolate_second_ribosomal_seq
-    slot_group: jgi_isolate_section
-  isolate_second_ribosomal_seq_type:
-    name: isolate_second_ribosomal_seq_type
-    slot_group: jgi_isolate_section
-  isolate_second_ribosomal_seq_comments:
-    name: isolate_second_ribosomal_seq_comments
-    slot_group: jgi_isolate_section
-  isolate_fungal_16s_screening:
-    name: isolate_fungal_16s_screening
-    slot_group: jgi_isolate_section
-  isolate_its_match_unite:
-    name: isolate_its_match_unite
-    slot_group: jgi_isolate_section
   sample_isolated_from:
     name: sample_isolated_from
     slot_group: jgi_isolate_section
   collection_site_or_growth_conditions:
     name: collection_site_or_growth_conditions
-  rna_collection_date:
-    name: rna_collection_date
     slot_group: jgi_isolate_section
 attributes:
   replicate_group:
@@ -1282,12 +865,12 @@ attributes:
     from_schema: https://example.com/nmdc_submission_schema
     rank: 5
     alias: replicate_group
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
   jgi_samp_id:
@@ -1305,12 +888,12 @@ attributes:
     - rna_samp_id
     rank: 3
     alias: jgi_samp_id
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1327,12 +910,12 @@ attributes:
     - rna_sample_name
     rank: 4
     alias: jgi_sample_name
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1353,12 +936,12 @@ attributes:
     - rna_seq_project
     rank: 1
     alias: jgi_seq_project
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: float
     required: true
@@ -1377,12 +960,12 @@ attributes:
     - rna_seq_project_name
     rank: 2
     alias: jgi_seq_project_name
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1394,12 +977,12 @@ attributes:
     from_schema: https://example.com/nmdc_submission_schema
     rank: 18
     alias: jgi_sample_contact
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1411,12 +994,12 @@ attributes:
     from_schema: https://example.com/nmdc_submission_schema
     rank: 19
     alias: jgi_project_pi
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1429,12 +1012,12 @@ attributes:
     from_schema: https://example.com/nmdc_submission_schema
     rank: 20
     alias: jgi_proposal_id
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1453,12 +1036,12 @@ attributes:
     - rna_absorb1
     rank: 7
     alias: nuc_acid_absorb1
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: float
     recommended: true
@@ -1477,12 +1060,12 @@ attributes:
     - nuc_acid_absorb2
     rank: 9
     alias: nuc_acid_absorb2
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: float
     recommended: true
@@ -1503,12 +1086,12 @@ attributes:
     - rna_concentration
     rank: 6
     alias: nuc_acid_concentration
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: float
     required: true
@@ -1529,12 +1112,12 @@ attributes:
     - rna_volume
     rank: 8
     alias: jgi_sample_volume
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: float
     required: true
@@ -1550,12 +1133,12 @@ attributes:
     - rna_cont_type
     rank: 11
     alias: cont_type
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: JgiContTypeEnum
     required: true
@@ -1576,12 +1159,12 @@ attributes:
     - rna_cont_well
     rank: 12
     alias: cont_well
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     recommended: true
@@ -1600,12 +1183,12 @@ attributes:
     - rna_container_id
     rank: 10
     alias: container_name
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1622,12 +1205,12 @@ attributes:
     - rna_sample_format
     rank: 13
     alias: jgi_sample_format
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: JGISampleFormatEnum
     required: true
@@ -1644,12 +1227,12 @@ attributes:
     - dnase_rna
     rank: 15
     alias: dnase
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: YesNoEnum
     required: true
@@ -1670,12 +1253,12 @@ attributes:
         source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 17
     alias: biosafety_mat_cat
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
     - JgiMtInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: JgiIsolateMaterialKindEnum
     required: true
@@ -1690,11 +1273,11 @@ attributes:
     - Sample Isolation Method
     rank: 16
     alias: dna_isolate_meth
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
     - JgiMgInterface
     - JgiMgLrInterface
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1728,205 +1311,11 @@ attributes:
         source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 40
     alias: reference_genome
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
-  isolate_single_colony:
-    name: isolate_single_colony
-    description: Was the sample isolated from a single colony or equivalent axenic/pure
-      culture?
-    title: single colony isolation
-    comments:
-    - Answer yes if the sample originated from a single colony pick, single-cell isolation,
-      or equivalent process expected to yield a genetically homogeneous culture.
-    examples:
-    - value: 'yes'
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Is the sample isolated from a single colony or equivalent?
-    rank: 30
-    alias: isolate_single_colony
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: YesNoEnum
-    required: true
-  isolate_known_contaminants:
-    name: isolate_known_contaminants
-    description: List any organisms known or suspected to grow in co-culture or that
-      may be contaminating the culture, along with an estimate of the percentage.
-    title: known or suspected organisms
-    comments:
-    - Leave blank if no contaminants are known or suspected.
-    examples:
-    - value: Bacillus subtilis ~5%
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Known / Suspected Organisms
-    rank: 31
-    alias: isolate_known_contaminants
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: string
-    recommended: true
-  isolate_ribosomal_seq:
-    name: isolate_ribosomal_seq
-    description: Primary ribosomal sequence for strain verification. For microbial
-      drafts must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns. Use only A,
-      C, G, T, or N with no FASTA header line.
-    title: first ribosomal sequence
-    comments:
-    - Required for all microbial and fungal genome projects.
-    - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
-    - Sequence must come from the actual sample to be shipped to JGI.
-    examples:
-    - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - First ribosomal sequence
-    rank: 32
-    alias: isolate_ribosomal_seq
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: string
-    required: true
-    pattern: ^[ATCGN]{200,5000}$
-  isolate_ribosomal_seq_type:
-    name: isolate_ribosomal_seq_type
-    description: Type of the first ribosomal sequence provided.
-    title: first ribosomal sequence type
-    examples:
-    - value: 16S
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - First ribosomal sequence type
-    rank: 33
-    alias: isolate_ribosomal_seq_type
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: RibosomalSequenceTypeEnum
-    required: true
-  isolate_ribosomal_seq_comments:
-    name: isolate_ribosomal_seq_comments
-    description: Additional information about the first ribosomal sequence.
-    title: first ribosomal sequence comments
-    comments:
-    - Required if ribosomal sequence type is Other.
-    examples:
-    - value: Partial 16S, 850 nt
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - First ribosomal sequence comments
-    rank: 34
-    alias: isolate_ribosomal_seq_comments
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: string
-    pattern: ^.{0,256}$
-  isolate_second_ribosomal_seq:
-    name: isolate_second_ribosomal_seq
-    description: Optional secondary ribosomal sequence for additional strain verification.
-      For 28S must be &gt;300 nt with &lt;10% Ns. Use only A, C, G, T, or N with no FASTA
-      header line.
-    title: second ribosomal sequence
-    examples:
-    - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Second ribosomal sequence
-    rank: 35
-    alias: isolate_second_ribosomal_seq
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: string
-    pattern: ^[ATCGN]{200,5000}$
-  isolate_second_ribosomal_seq_type:
-    name: isolate_second_ribosomal_seq_type
-    description: Type of the second ribosomal sequence provided.
-    title: second ribosomal sequence type
-    examples:
-    - value: ITS
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Second ribosomal sequence type
-    rank: 36
-    alias: isolate_second_ribosomal_seq_type
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: RibosomalSequenceTypeEnum
-  isolate_second_ribosomal_seq_comments:
-    name: isolate_second_ribosomal_seq_comments
-    description: Additional information about the second ribosomal sequence.
-    title: second ribosomal sequence comments
-    comments:
-    - Required if second ribosomal sequence type is Other.
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Second ribosomal sequence comments
-    rank: 37
-    alias: isolate_second_ribosomal_seq_comments
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: string
-    pattern: ^.{0,256}$
-  isolate_fungal_16s_screening:
-    name: isolate_fungal_16s_screening
-    description: For fungal draft samples only — was 16S screening performed to check
-      for bacterial contamination?
-    title: 16S screening performed
-    comments:
-    - Required for fungal minimal, standard, and improved drafts.
-    - Leave blank for non-fungal samples.
-    examples:
-    - value: 'yes'
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - For fungal draft samples, was 16S screening performed?
-    rank: 38
-    alias: isolate_fungal_16s_screening
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: YesNoEnum
-  isolate_its_match_unite:
-    name: isolate_its_match_unite
-    description: For fungal draft samples only -- does the ITS sequence match taxonomy
-      in the UNITE database?
-    title: ITS matches UNITE
-    comments:
-    - Required for fungal minimal, standard, and improved drafts.
-    - Screen at https://unite.ut.ee/ before submitting.
-    - Leave blank for non-fungal samples.
-    examples:
-    - value: 'yes'
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - For fungal draft samples, does ITS match taxonomy in UNITE?
-    rank: 39
-    alias: isolate_its_match_unite
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
-    slot_group: jgi_isolate_section
-    range: YesNoEnum
   sample_isolated_from:
     name: sample_isolated_from
     description: Free-text description of what the organism was isolated from.
@@ -1949,9 +1338,9 @@ attributes:
         source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 40
     alias: sample_isolated_from
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
     required: true
@@ -1979,140 +1368,11 @@ attributes:
         source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
     rank: 41
     alias: collection_site_or_growth_conditions
-    owner: JgiIsolateInterface
+    owner: JgiIsolateCommonMixin
     domain_of:
-    - JgiIsolateInterface
-    range: string
-  rna_collection_date:
-    name: rna_collection_date
-    description: Date the RNA sample was collected or the experiment was performed,
-      in YYYY-MM-DD format. For RNA projects, use the experiment date rather than
-      the original field collection date.
-    title: Collection date
-    examples:
-    - value: '2017-01-20'
-    - value: '2021-06-15'
-    from_schema: https://example.com/nmdc_submission_schema
-    structured_aliases:
-      Collection Year:
-        literal_form: Collection Year
-        predicate: RELATED_SYNONYM
-        notes:
-        - Exact JGI form template is access-restricted; source is the public submission
-          overview.
-        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
-      Collection Month:
-        literal_form: Collection Month
-        predicate: RELATED_SYNONYM
-        notes:
-        - Exact JGI form template is access-restricted; source is the public submission
-          overview.
-        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
-      Collection Day:
-        literal_form: Collection Day
-        predicate: RELATED_SYNONYM
-        notes:
-        - Exact JGI form template is access-restricted; source is the public submission
-          overview.
-        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
-    rank: 43
-    alias: rna_collection_date
-    owner: JgiIsolateInterface
-    domain_of:
-    - JgiIsolateInterface
+    - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
-    pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
-  analysis_type:
-    name: analysis_type
-    description: Select all the data types associated or available for this biosample
-    title: analysis/data type
-    comments:
-    - MIxS:investigation_type was included as a `see_also` but that term doesn't resolve
-      any more
-    examples:
-    - value: metagenomics; metabolomics; metaproteomics
-    from_schema: https://example.com/nmdc_submission_schema
-    rank: 3
-    alias: analysis_type
-    owner: JgiIsolateInterface
-    domain_of:
-    - DhMultiviewCommonColumnsMixin
-    slot_group: sample_id_section
-    range: AnalysisTypeEnum
-    required: false
-    multivalued: true
-  samp_name:
-    name: samp_name
-    annotations:
-      Preferred_unit:
-        tag: Preferred_unit
-        value: ''
-    description: A local identifier or name that for the material sample collected.
-      Refers to the original material collected or to any derived sub-samples.
-    title: sample name
-    comments:
-    - It can have any format, but we suggest that you make it concise, unique and
-      consistent within your lab, and as informative as possible.
-    - If multiple sample environments (soil, water, etc) are used, these values must
-      be unique across all environments.
-    examples:
-    - value: Rock core CB1178(5-6) from NSW
-    from_schema: https://example.com/nmdc_submission_schema
-    rank: 1
-    keywords:
-    - sample
-    slot_uri: MIXS:0001107
-    identifier: true
-    alias: samp_name
-    owner: JgiIsolateInterface
-    domain_of:
-    - DhMultiviewCommonColumnsMixin
-    slot_group: sample_id_section
-    range: string
-    required: true
-  source_mat_id:
-    name: source_mat_id
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: 'for cultures of microorganisms: identifiers for two culture collections;
-          for other material a unique arbitrary identifer'
-    description: A globally unique identifier assigned to the parent sample or sample
-      that is the source of this sample.
-    title: source material identifier
-    todos:
-    - Currently, the comments say to use UUIDs. However, if we implement assigning
-      NMDC identifiers with the minter we dont need to require a GUID. It can be an
-      optional field to fill out only if they already have a resolvable ID.
-    comments:
-    - Identifiers must be prefixed. Possible FAIR prefixes are IGSNs (http://www.geosamples.org/getigsn),
-      NCBI biosample accession numbers, ARK identifiers (https://arks.org/). These
-      IDs enable linking to derived analytes and subsamples. If you have not assigned
-      FAIR identifiers to your samples, you can generate UUIDs (https://www.uuidgenerator.net/).
-    - 'Prefixed FAIR identifiers are preferred where available: `igsn` for International
-      Generic Sample Numbers (http://www.geosamples.org/getigsn), `biosample` for
-      NCBI biosample accession IDs, `gold` for GOLD identifiers. The format is not
-      constrained, so culture collection identifiers such as "DSM 6724" or "ATCC 5680"
-      are also accepted.'
-    examples:
-    - value: igsn:AU1243
-    - value: biosample:SAMEA2397676
-    from_schema: https://example.com/nmdc_submission_schema
-    rank: 2
-    keywords:
-    - identifier
-    - material
-    - source
-    slot_uri: MIXS:0000026
-    alias: source_mat_id
-    owner: JgiIsolateInterface
-    domain_of:
-    - DhMultiviewCommonColumnsMixin
-    - IsolateInterface
-    slot_group: sample_id_section
-    range: string
-    multivalued: false
 rules:
 - preconditions:
     slot_conditions:
@@ -2138,43 +1398,6 @@ rules:
         pattern: ^(?!A1$|A12$|H1$|H12$)(([A-H][1-9])|([A-H]1[0-2]))$
   description: If a plate is specified, a well must be specified.
   title: plate_requires_well
-- preconditions:
-    slot_conditions:
-      isolate_ribosomal_seq_type:
-        name: isolate_ribosomal_seq_type
-        equals_string: Other
-  postconditions:
-    slot_conditions:
-      isolate_ribosomal_seq_comments:
-        name: isolate_ribosomal_seq_comments
-        pattern: .+
-  description: If the first ribosomal sequence type is Other, comments are required.
-  title: ribosomal_seq_type_other_requires_comments
-- preconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq_type:
-        name: isolate_second_ribosomal_seq_type
-        pattern: .+
-  postconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq:
-        name: isolate_second_ribosomal_seq
-        pattern: .+
-  description: If a second ribosomal sequence type is provided, the sequence itself
-    must also be provided.
-  title: second_ribosomal_seq_type_requires_sequence
-- preconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq_type:
-        name: isolate_second_ribosomal_seq_type
-        equals_string: Other
-  postconditions:
-    slot_conditions:
-      isolate_second_ribosomal_seq_comments:
-        name: isolate_second_ribosomal_seq_comments
-        pattern: .+
-  description: If the second ribosomal sequence type is Other, comments are required.
-  title: second_ribosomal_seq_type_other_requires_comments
 
 </code></pre>
 </details>

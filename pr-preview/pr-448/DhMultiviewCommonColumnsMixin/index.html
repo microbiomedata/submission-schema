@@ -340,8 +340,10 @@
         click MetatranscriptomeSequencingInterleavedDataInterface href "../MetatranscriptomeSequencingInterleavedDataInterface/"
       DhMultiviewCommonColumnsMixin &lt;|-- IsolateInterface
         click IsolateInterface href "../IsolateInterface/"
-      DhMultiviewCommonColumnsMixin &lt;|-- JgiIsolateInterface
-        click JgiIsolateInterface href "../JgiIsolateInterface/"
+      DhMultiviewCommonColumnsMixin &lt;|-- JgiIsolateGenomeInterface
+        click JgiIsolateGenomeInterface href "../JgiIsolateGenomeInterface/"
+      DhMultiviewCommonColumnsMixin &lt;|-- JgiIsolateTranscriptomeInterface
+        click JgiIsolateTranscriptomeInterface href "../JgiIsolateTranscriptomeInterface/"
 
       DhMultiviewCommonColumnsMixin : analysis_type
 
@@ -486,8 +488,12 @@
 <td>Metadata for microbial isolate samples submitted to NMDC</td>
 </tr>
 <tr>
-<td><a href="../JgiIsolateInterface/">JgiIsolateInterface</a></td>
-<td>JGI-specific submission metadata for isolate sequencing projects</td>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
+</tr>
+<tr>
+<td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
+<td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
 </tr>
 </tbody>
 </table>

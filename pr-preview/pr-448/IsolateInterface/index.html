@@ -327,7 +327,7 @@
 
 
 
-        IsolateInterface --&gt; "*" AnalysisTypeEnum : analysis_type
+        IsolateInterface --&gt; "1..*" AnalysisTypeEnum : analysis_type
         click AnalysisTypeEnum href "../AnalysisTypeEnum/"
 
 
@@ -342,7 +342,20 @@
 
       IsolateInterface : host_taxid
 
+      IsolateInterface : isolate_known_contaminants
+
       IsolateInterface : isolate_name
+
+      IsolateInterface : isolate_single_colony
+
+
+
+
+
+        IsolateInterface --&gt; "1" YesNoEnum : isolate_single_colony
+        click YesNoEnum href "../YesNoEnum/"
+
+
 
       IsolateInterface : organism_genus
 
@@ -376,6 +389,18 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../isolate_single_colony/">isolate_single_colony</a></td>
+<td>1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
+<td>Was the sample isolated from a single colony or equivalent axenic/pure cultur...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isolate_known_contaminants/">isolate_known_contaminants</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>List any organisms known or suspected to grow in co-culture or that may be co...</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../collection_date/">collection_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
@@ -444,7 +469,7 @@
 </tr>
 <tr>
 <td><a href="../analysis_type/">analysis_type</a></td>
-<td>* <br/> <a href="../AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
+<td>1..* <br/> <a href="../AnalysisTypeEnum/">AnalysisTypeEnum</a></td>
 <td>Select all the data types associated or available for this biosample</td>
 <td><a href="../DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
 </tr>
@@ -533,6 +558,8 @@ is_a: DhInterface
 mixins:
 - DhMultiviewCommonColumnsMixin
 slots:
+- isolate_single_colony
+- isolate_known_contaminants
 - collection_date
 - host_taxid
 - source_mat_id
@@ -545,9 +572,12 @@ slots:
 - gc_content
 - ploidy
 slot_usage:
-  analysis_type:
-    name: analysis_type
-    required: false
+  isolate_single_colony:
+    name: isolate_single_colony
+    slot_group: organism_section
+  isolate_known_contaminants:
+    name: isolate_known_contaminants
+    slot_group: organism_section
   estimated_size:
     name: estimated_size
     title: Estimated genome size (Mb)
@@ -586,9 +616,12 @@ is_a: DhInterface
 mixins:
 - DhMultiviewCommonColumnsMixin
 slot_usage:
-  analysis_type:
-    name: analysis_type
-    required: false
+  isolate_single_colony:
+    name: isolate_single_colony
+    slot_group: organism_section
+  isolate_known_contaminants:
+    name: isolate_known_contaminants
+    slot_group: organism_section
   estimated_size:
     name: estimated_size
     title: Estimated genome size (Mb)
@@ -608,6 +641,47 @@ slot_usage:
     - Collection Day
     pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
 attributes:
+  isolate_single_colony:
+    name: isolate_single_colony
+    description: Was the sample isolated from a single colony or equivalent axenic/pure
+      culture?
+    title: single colony isolation
+    comments:
+    - Answer yes if the sample originated from a single colony pick, single-cell isolation,
+      or equivalent process expected to yield a genetically homogeneous culture.
+    examples:
+    - value: 'yes'
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - Is the sample isolated from a single colony or equivalent?
+    rank: 30
+    alias: isolate_single_colony
+    owner: IsolateInterface
+    domain_of:
+    - IsolateInterface
+    slot_group: organism_section
+    range: YesNoEnum
+    required: true
+  isolate_known_contaminants:
+    name: isolate_known_contaminants
+    description: List any organisms known or suspected to grow in co-culture or that
+      may be contaminating the culture, along with an estimate of the percentage.
+    title: known or suspected organisms
+    comments:
+    - Leave blank if no contaminants are known or suspected.
+    examples:
+    - value: Bacillus subtilis ~5%
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - Known / Suspected Organisms
+    rank: 31
+    alias: isolate_known_contaminants
+    owner: IsolateInterface
+    domain_of:
+    - IsolateInterface
+    slot_group: organism_section
+    range: string
+    recommended: true
   collection_date:
     name: collection_date
     description: The date of sampling
@@ -982,7 +1056,7 @@ attributes:
     - DhMultiviewCommonColumnsMixin
     slot_group: sample_id_section
     range: AnalysisTypeEnum
-    required: false
+    required: true
     multivalued: true
   samp_name:
     name: samp_name

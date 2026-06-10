@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/jgi_isolate_data/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/jgi_isolate_genome_data/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: jgi_isolate_data - submission-schema</title>
+        <title>Slot: jgi_isolate_genome_data - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-jgi_isolate_data" class="md-skip">
+        <a href="#slot-jgi_isolate_genome_data" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: jgi_isolate_data
+              Slot: jgi_isolate_genome_data
             
           </span>
         </div>
@@ -498,10 +498,10 @@
   
 
 
-<h1 id="slot-jgi_isolate_data">Slot: jgi_isolate_data</h1>
-<p><em>aggregation slot relating jgi_isolate data collections to a SampleData container</em></p>
-<p>URI: <a href="https://example.com/nmdc_sub_schema/jgi_isolate_data">nmdc_sub_schema:jgi_isolate_data</a>
-Alias: jgi_isolate_data</p>
+<h1 id="slot-jgi_isolate_genome_data">Slot: jgi_isolate_genome_data</h1>
+<p><em>aggregation slot relating JGI isolate genome data collections to a SampleData container</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/jgi_isolate_genome_data">nmdc_sub_schema:jgi_isolate_genome_data</a>
+Alias: jgi_isolate_genome_data</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -524,7 +524,7 @@ Alias: jgi_isolate_data</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../JgiIsolateInterface/">JgiIsolateInterface</a></p>
+<p>Range: <a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></p>
 </li>
 <li>
 <p>Multivalued: True</p>
@@ -546,26 +546,26 @@ Alias: jgi_isolate_data</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>nmdc_sub_schema:jgi_isolate_data</td>
+<td>nmdc_sub_schema:jgi_isolate_genome_data</td>
 </tr>
 <tr>
 <td>native</td>
-<td>nmdc_sub_schema:jgi_isolate_data</td>
+<td>nmdc_sub_schema:jgi_isolate_genome_data</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: jgi_isolate_data
-description: aggregation slot relating jgi_isolate data collections to a SampleData
+<pre><code class="language-yaml">name: jgi_isolate_genome_data
+description: aggregation slot relating JGI isolate genome data collections to a SampleData
   container
 from_schema: https://example.com/nmdc_submission_schema
 rank: 1000
-alias: jgi_isolate_data
+alias: jgi_isolate_genome_data
 domain_of:
 - SampleData
-range: JgiIsolateInterface
+range: JgiIsolateGenomeInterface
 multivalued: true
 inlined: true
 inlined_as_list: true

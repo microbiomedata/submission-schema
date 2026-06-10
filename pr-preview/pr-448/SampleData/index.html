@@ -355,14 +355,25 @@
 
 
 
-      SampleData : jgi_isolate_data
+      SampleData : jgi_isolate_genome_data
 
 
 
 
 
-        SampleData --&gt; "*" JgiIsolateInterface : jgi_isolate_data
-        click JgiIsolateInterface href "../JgiIsolateInterface/"
+        SampleData --&gt; "*" JgiIsolateGenomeInterface : jgi_isolate_genome_data
+        click JgiIsolateGenomeInterface href "../JgiIsolateGenomeInterface/"
+
+
+
+      SampleData : jgi_isolate_transcriptome_data
+
+
+
+
+
+        SampleData --&gt; "*" JgiIsolateTranscriptomeInterface : jgi_isolate_transcriptome_data
+        click JgiIsolateTranscriptomeInterface href "../JgiIsolateTranscriptomeInterface/"
 
 
 
@@ -621,9 +632,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../jgi_isolate_data/">jgi_isolate_data</a></td>
-<td>* <br/> <a href="../JgiIsolateInterface/">JgiIsolateInterface</a></td>
-<td>aggregation slot relating jgi_isolate data collections to a SampleData contai...</td>
+<td><a href="../jgi_isolate_genome_data/">jgi_isolate_genome_data</a></td>
+<td>* <br/> <a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>aggregation slot relating JGI isolate genome data collections to a SampleData...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../jgi_isolate_transcriptome_data/">jgi_isolate_transcriptome_data</a></td>
+<td>* <br/> <a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
+<td>aggregation slot relating JGI isolate transcriptome data collections to a Sam...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -680,7 +697,8 @@ slots:
 - metatranscriptome_sequencing_non_interleaved_data
 - metatranscriptome_sequencing_interleaved_data
 - isolate_data
-- jgi_isolate_data
+- jgi_isolate_genome_data
+- jgi_isolate_transcriptome_data
 tree_root: true
 
 </code></pre>
@@ -942,17 +960,31 @@ attributes:
     multivalued: true
     inlined: true
     inlined_as_list: true
-  jgi_isolate_data:
-    name: jgi_isolate_data
-    description: aggregation slot relating jgi_isolate data collections to a SampleData
-      container
+  jgi_isolate_genome_data:
+    name: jgi_isolate_genome_data
+    description: aggregation slot relating JGI isolate genome data collections to
+      a SampleData container
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1000
-    alias: jgi_isolate_data
+    alias: jgi_isolate_genome_data
     owner: SampleData
     domain_of:
     - SampleData
-    range: JgiIsolateInterface
+    range: JgiIsolateGenomeInterface
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+  jgi_isolate_transcriptome_data:
+    name: jgi_isolate_transcriptome_data
+    description: aggregation slot relating JGI isolate transcriptome data collections
+      to a SampleData container
+    from_schema: https://example.com/nmdc_submission_schema
+    rank: 1000
+    alias: jgi_isolate_transcriptome_data
+    owner: SampleData
+    domain_of:
+    - SampleData
+    range: JgiIsolateTranscriptomeInterface
     multivalued: true
     inlined: true
     inlined_as_list: true

@@ -635,8 +635,12 @@
 <td>Metadata for microbial isolate samples submitted to NMDC</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="JgiIsolateInterface/">JgiIsolateInterface</a></td>
-<td>JGI-specific submission metadata for isolate sequencing projects</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
+<td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="JgiMgInterface/">JgiMgInterface</a></td>
@@ -677,6 +681,10 @@
 <tr>
 <td><a href="DhMultiviewCommonColumnsMixin/">DhMultiviewCommonColumnsMixin</a></td>
 <td>Mixin with DhMultiviewCommon Columns</td>
+</tr>
+<tr>
+<td><a href="JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
+<td>Shared JGI isolate submission fields common to both the genome and the transc...</td>
 </tr>
 <tr>
 <td><a href="MetagenomeSequencingInterleavedDataInterface/">MetagenomeSequencingInterleavedDataInterface</a></td>
@@ -1810,12 +1818,16 @@
 <td>Proportion of the produced fluids derived from injected water at the time of ...</td>
 </tr>
 <tr>
-<td><a href="jgi_isolate_data/">jgi_isolate_data</a></td>
-<td>aggregation slot relating jgi_isolate data collections to a SampleData contai...</td>
+<td><a href="jgi_isolate_genome_data/">jgi_isolate_genome_data</a></td>
+<td>aggregation slot relating JGI isolate genome data collections to a SampleData...</td>
 </tr>
 <tr>
 <td><a href="jgi_isolate_section/">jgi_isolate_section</a></td>
 <td>JGI submission logistics and quality control for single-organism isolate samp...</td>
+</tr>
+<tr>
+<td><a href="jgi_isolate_transcriptome_data/">jgi_isolate_transcriptome_data</a></td>
+<td>aggregation slot relating JGI isolate transcriptome data collections to a Sam...</td>
 </tr>
 <tr>
 <td><a href="jgi_metagenomics_section/">jgi_metagenomics_section</a></td>
@@ -2147,7 +2159,7 @@
 </tr>
 <tr>
 <td><a href="organism_section/">organism_section</a></td>
-<td>Biological identity of the isolate organism: free-text genus, species, strain...</td>
+<td>Biological identity and culture provenance of the isolate organism: free-text...</td>
 </tr>
 <tr>
 <td><a href="organism_species/">organism_species</a></td>
