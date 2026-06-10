@@ -6989,7 +6989,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JgiIsolateMaterialKindEnum",
-                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                    "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds."
                 },
                 "collection_site_or_growth_conditions": {
                     "description": "Free-text description of the collection site or growth conditions for the isolate.",
@@ -7278,7 +7278,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JgiIsolateMaterialKindEnum",
-                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                    "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds."
                 },
                 "collection_site_or_growth_conditions": {
                     "description": "Free-text description of the collection site or growth conditions for the isolate.",
@@ -7509,7 +7509,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
-                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                    "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7687,7 +7687,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
-                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                    "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7861,7 +7861,7 @@
                 },
                 "biosafety_mat_cat": {
                     "$ref": "#/$defs/JGIBiosafetyMaterialCategoryEnum",
-                    "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels."
+                    "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds."
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",

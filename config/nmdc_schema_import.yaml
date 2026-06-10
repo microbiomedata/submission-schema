@@ -6047,7 +6047,8 @@ slots:
 
   ## Host organism fields placed on the JGI isolate interfaces per Montana-SlotEval (#449).
   ## Routed to JgiIsolateCommonMixin so both JgiIsolateGenomeInterface and
-  ## JgiIsolateTranscriptomeInterface inherit them. host_taxid stays on IsolateInterface.
+  ## JgiIsolateTranscriptomeInterface inherit them. host_taxid is routed to the same
+  ## mixin (see its entry above), so all four host fields are on both JGI interfaces.
   - slot: host_genus
     source: Biosample
     destinations:

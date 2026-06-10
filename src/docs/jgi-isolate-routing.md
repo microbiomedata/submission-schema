@@ -18,7 +18,8 @@ projects:
 
 - **IsolateInterface**: organism biology (genus, species, strain, taxonomic
   classification, genome size, GC, ploidy, single-colony provenance). These
-  describe what the organism is. Stored in nmdc-schema.
+  describe what the organism is. Most are stored in nmdc-schema; the single-colony
+  and known-contaminants fields are JGI-only and defined in submission-schema.
 - **JgiIsolateGenomeInterface**: JGI submission logistics for isolate genome
   sequencing, plus ribosomal strain-verification sequences and fungal screening.
 - **JgiIsolateTranscriptomeInterface**: JGI submission logistics for isolate

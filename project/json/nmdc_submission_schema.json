@@ -13525,8 +13525,11 @@
     },
     "biosafety_mat_cat": {
       "name": "biosafety_mat_cat",
-      "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+      "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
       "title": "JGI Biosafety Material Category",
+      "notes": [
+        "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "structured_aliases": {
         "Biosafety Material Category": {
@@ -55198,8 +55201,11 @@
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
-          "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+          "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
           "title": "JGI Biosafety Material Category",
+          "notes": [
+            "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Biosafety Material Category": {
@@ -56052,8 +56058,11 @@
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
-          "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+          "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
           "title": "JGI Biosafety Material Category",
+          "notes": [
+            "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Biosafety Material Category": {
@@ -56928,8 +56937,11 @@
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
-          "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+          "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
           "title": "JGI Biosafety Material Category",
+          "notes": [
+            "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Biosafety Material Category": {
@@ -86166,8 +86178,11 @@
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
-          "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+          "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
           "title": "JGI Biosafety Material Category",
+          "notes": [
+            "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Biosafety Material Category": {
@@ -87486,8 +87501,11 @@
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
-          "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+          "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
           "title": "JGI Biosafety Material Category",
+          "notes": [
+            "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Biosafety Material Category": {
@@ -88645,8 +88663,11 @@
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
-          "description": "Broad kind of organism or genetic element. JGI uses this field, labeled \"Biosafety Material Category\", for internal routing; values are organism categories, not biosafety levels.",
+          "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
           "title": "JGI Biosafety Material Category",
+          "notes": [
+            "The slot name is kept to match the JGI form even though the values are categories, not biosafety levels."
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "Biosafety Material Category": {

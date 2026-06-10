@@ -151,9 +151,6 @@ enums:
       28S:
       Other:
   JgiIsolateMaterialKindEnum:
-    # JGI labels this field "Biosafety Material Category" but the values indicate the
-    # broad kind of organism or genetic element, not a biosafety level (BSL-1..4).
-    # JGI uses it for internal routing; the name is preserved in the slot's structured_aliases.
     description: >-
       Broad kind of organism or genetic element being sequenced. JGI uses this for
       internal biosafety routing under the field label "Biosafety Material Category".
@@ -650,17 +647,17 @@ slots:
     minimum_value: 0.0001
     maximum_value: 2000
   biosafety_mat_cat:
-    # JGI calls this "Biosafety Material Category" but the values are organism/material
-    # kind (Bacteria, Fungi, etc.), not biosafety levels (BSL-1..4). The label reflects
-    # JGI's internal routing use; we keep the slot name to match the JGI form.
     description: >-
-      Broad kind of organism or genetic element. JGI uses this field, labeled
-      "Biosafety Material Category", for internal routing; values are organism
-      categories, not biosafety levels.
+      JGI material category, labeled "Biosafety Material Category" on the form and
+      used for internal routing rather than as a biosafety level. The permissible
+      values are set by the slot's range; the isolate interfaces narrow that range
+      to organism kinds.
     title: JGI Biosafety Material Category
     rank: 17
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
+    notes:
+      - The slot name is kept to match the JGI form even though the values are categories, not biosafety levels.
     structured_aliases:
       - literal_form: Biosafety Material Category
         predicate: EXACT_SYNONYM
