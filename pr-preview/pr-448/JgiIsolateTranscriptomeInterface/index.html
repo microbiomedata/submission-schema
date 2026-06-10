@@ -381,6 +381,8 @@
 
       JgiIsolateTranscriptomeInterface : host_strain
 
+      JgiIsolateTranscriptomeInterface : host_taxid
+
       JgiIsolateTranscriptomeInterface : jgi_project_pi
 
       JgiIsolateTranscriptomeInterface : jgi_proposal_id
@@ -600,6 +602,12 @@
 <td><a href="../collection_site_or_growth_conditions/">collection_site_or_growth_conditions</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Free-text description of the collection site or growth conditions for the iso...</td>
+<td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
+</tr>
+<tr>
+<td><a href="../host_taxid/">host_taxid</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>NCBI taxon id of the host, e</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
 <tr>
@@ -1375,6 +1383,37 @@ attributes:
     alias: collection_site_or_growth_conditions
     owner: JgiIsolateTranscriptomeInterface
     domain_of:
+    - JgiIsolateCommonMixin
+    slot_group: jgi_isolate_section
+    range: string
+  host_taxid:
+    name: host_taxid
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: NCBI taxon identifier
+    description: NCBI taxon id of the host, e.g. 9606
+    title: host taxid
+    comments:
+    - Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Host NCBI Taxonomy ID:
+        literal_form: Host NCBI Taxonomy ID
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 48
+    keywords:
+    - host
+    - host.
+    - taxon
+    slot_uri: MIXS:0000250
+    alias: host_taxid
+    owner: JgiIsolateTranscriptomeInterface
+    domain_of:
+    - HostAssociatedInterface
+    - PlantAssociatedInterface
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string

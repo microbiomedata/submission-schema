@@ -381,6 +381,8 @@
 
       JgiIsolateCommonMixin : host_strain
 
+      JgiIsolateCommonMixin : host_taxid
+
       JgiIsolateCommonMixin : jgi_project_pi
 
       JgiIsolateCommonMixin : jgi_proposal_id
@@ -567,6 +569,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../host_taxid/">host_taxid</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>NCBI taxon id of the host, e</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../host_genus/">host_genus</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Genus of the host organism that the sample was collected from</td>
@@ -703,6 +711,7 @@ slots:
 - reference_genome
 - sample_isolated_from
 - collection_site_or_growth_conditions
+- host_taxid
 - host_genus
 - host_species
 - host_strain
@@ -773,6 +782,10 @@ slot_usage:
     slot_group: jgi_isolate_section
   collection_site_or_growth_conditions:
     name: collection_site_or_growth_conditions
+    slot_group: jgi_isolate_section
+  host_taxid:
+    name: host_taxid
+    rank: 48
     slot_group: jgi_isolate_section
 rules:
 - preconditions:
@@ -879,6 +892,10 @@ slot_usage:
     slot_group: jgi_isolate_section
   collection_site_or_growth_conditions:
     name: collection_site_or_growth_conditions
+    slot_group: jgi_isolate_section
+  host_taxid:
+    name: host_taxid
+    rank: 48
     slot_group: jgi_isolate_section
 attributes:
   replicate_group:
@@ -1397,6 +1414,37 @@ attributes:
     alias: collection_site_or_growth_conditions
     owner: JgiIsolateCommonMixin
     domain_of:
+    - JgiIsolateCommonMixin
+    slot_group: jgi_isolate_section
+    range: string
+  host_taxid:
+    name: host_taxid
+    annotations:
+      Expected_value:
+        tag: Expected_value
+        value: NCBI taxon identifier
+    description: NCBI taxon id of the host, e.g. 9606
+    title: host taxid
+    comments:
+    - Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value
+    from_schema: https://example.com/nmdc_submission_schema
+    structured_aliases:
+      Host NCBI Taxonomy ID:
+        literal_form: Host NCBI Taxonomy ID
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://jgi.doe.gov/isolate-submission-form/v19
+    rank: 48
+    keywords:
+    - host
+    - host.
+    - taxon
+    slot_uri: MIXS:0000250
+    alias: host_taxid
+    owner: JgiIsolateCommonMixin
+    domain_of:
+    - HostAssociatedInterface
+    - PlantAssociatedInterface
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string

@@ -340,8 +340,6 @@
 
       IsolateInterface : gc_content
 
-      IsolateInterface : host_taxid
-
       IsolateInterface : isolate_known_contaminants
 
       IsolateInterface : isolate_name
@@ -405,12 +403,6 @@
 <td><a href="../collection_date/">collection_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The date of sampling</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../host_taxid/">host_taxid</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>NCBI taxon id of the host, e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -561,7 +553,6 @@ slots:
 - isolate_single_colony
 - isolate_known_contaminants
 - collection_date
-- host_taxid
 - source_mat_id
 - organism_genus
 - organism_species
@@ -721,37 +712,6 @@ attributes:
     range: string
     required: true
     pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
-  host_taxid:
-    name: host_taxid
-    annotations:
-      Expected_value:
-        tag: Expected_value
-        value: NCBI taxon identifier
-    description: NCBI taxon id of the host, e.g. 9606
-    title: host taxid
-    comments:
-    - Homo sapiens [NCBITaxon:9606] would be a reasonable has_raw_value
-    from_schema: https://example.com/nmdc_submission_schema
-    structured_aliases:
-      Host NCBI Taxonomy ID:
-        literal_form: Host NCBI Taxonomy ID
-        predicate: EXACT_SYNONYM
-        contexts:
-        - https://jgi.doe.gov/isolate-submission-form/v19
-    rank: 259
-    keywords:
-    - host
-    - host.
-    - taxon
-    slot_uri: MIXS:0000250
-    alias: host_taxid
-    owner: IsolateInterface
-    domain_of:
-    - HostAssociatedInterface
-    - PlantAssociatedInterface
-    - IsolateInterface
-    slot_group: mixs_core_section
-    range: string
   source_mat_id:
     name: source_mat_id
     annotations:
