@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-09T20:35:14
+# Generation date: 2026-06-09T21:22:17
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -819,6 +819,7 @@ class JgiIsolateCommonMixin(YAMLRoot):
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
     collection_site_or_growth_conditions: Optional[str] = None
+    host_taxid: Optional[str] = None
     host_genus: Optional[str] = None
     host_species: Optional[str] = None
     host_strain: Optional[str] = None
@@ -921,6 +922,9 @@ class JgiIsolateCommonMixin(YAMLRoot):
 
         if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
             self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
+
+        if self.host_taxid is not None and not isinstance(self.host_taxid, str):
+            self.host_taxid = str(self.host_taxid)
 
         if self.host_genus is not None and not isinstance(self.host_genus, str):
             self.host_genus = str(self.host_genus)
@@ -6668,7 +6672,6 @@ class IsolateInterface(DhInterface):
     classified_as: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     isolate_known_contaminants: Optional[str] = None
-    host_taxid: Optional[str] = None
     source_mat_id: Optional[str] = None
     isolate_name: Optional[str] = None
     estimated_size: Optional[float] = None
@@ -6719,9 +6722,6 @@ class IsolateInterface(DhInterface):
 
         if self.isolate_known_contaminants is not None and not isinstance(self.isolate_known_contaminants, str):
             self.isolate_known_contaminants = str(self.isolate_known_contaminants)
-
-        if self.host_taxid is not None and not isinstance(self.host_taxid, str):
-            self.host_taxid = str(self.host_taxid)
 
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
@@ -6787,6 +6787,7 @@ class JgiIsolateGenomeInterface(DhInterface):
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
     collection_site_or_growth_conditions: Optional[str] = None
+    host_taxid: Optional[str] = None
     host_genus: Optional[str] = None
     host_species: Optional[str] = None
     host_strain: Optional[str] = None
@@ -6932,6 +6933,9 @@ class JgiIsolateGenomeInterface(DhInterface):
         if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
             self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
 
+        if self.host_taxid is not None and not isinstance(self.host_taxid, str):
+            self.host_taxid = str(self.host_taxid)
+
         if self.host_genus is not None and not isinstance(self.host_genus, str):
             self.host_genus = str(self.host_genus)
 
@@ -6983,6 +6987,7 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
     collection_site_or_growth_conditions: Optional[str] = None
+    host_taxid: Optional[str] = None
     host_genus: Optional[str] = None
     host_species: Optional[str] = None
     host_strain: Optional[str] = None
@@ -7104,6 +7109,9 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
 
         if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
             self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
+
+        if self.host_taxid is not None and not isinstance(self.host_taxid, str):
+            self.host_taxid = str(self.host_taxid)
 
         if self.host_genus is not None and not isinstance(self.host_genus, str):
             self.host_genus = str(self.host_genus)
@@ -17241,6 +17249,9 @@ slots.JgiIsolateCommonMixin_sample_isolated_from = Slot(uri=NMDC_SUB_SCHEMA.samp
 
 slots.JgiIsolateCommonMixin_collection_site_or_growth_conditions = Slot(uri=NMDC_SUB_SCHEMA.collection_site_or_growth_conditions, name="JgiIsolateCommonMixin_collection_site_or_growth_conditions", curie=NMDC_SUB_SCHEMA.curie('collection_site_or_growth_conditions'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_collection_site_or_growth_conditions, domain=None, range=Optional[str])
+
+slots.JgiIsolateCommonMixin_host_taxid = Slot(uri=MIXS['0000250'], name="JgiIsolateCommonMixin_host_taxid", curie=MIXS.curie('0000250'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_host_taxid, domain=None, range=Optional[str])
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq, domain=JgiIsolateGenomeInterface, range=str,

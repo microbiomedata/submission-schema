@@ -6765,13 +6765,6 @@
                         "null"
                     ]
                 },
-                "host_taxid": {
-                    "description": "NCBI taxon id of the host, e.g. 9606",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "isolate_known_contaminants": {
                     "description": "List any organisms known or suspected to grow in co-culture or that may be contaminating the culture, along with an estimate of the percentage.",
                     "type": [
@@ -7043,6 +7036,13 @@
                 },
                 "host_strain": {
                     "description": "Strain of the host organism that the sample was collected from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "host_taxid": {
+                    "description": "NCBI taxon id of the host, e.g. 9606",
                     "type": [
                         "string",
                         "null"
@@ -7325,6 +7325,13 @@
                 },
                 "host_strain": {
                     "description": "Strain of the host organism that the sample was collected from.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "host_taxid": {
+                    "description": "NCBI taxon id of the host, e.g. 9606",
                     "type": [
                         "string",
                         "null"
