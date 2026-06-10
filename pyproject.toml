@@ -8,7 +8,6 @@ readme = "README.md"
 license = "MIT"
 dependencies = [
     "linkml-runtime>=1.6.2,<2",
-    "nmdc-schema",
     "rdflib>=6.2.0,<7",
 ]
 

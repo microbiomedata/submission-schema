@@ -17,7 +17,6 @@ isolate_data:
     strain_name: DSM 6724
     isolate_name: DSM 6724
     classified_as: NCBITaxon:515635
-    estimated_size: 1.85
     gc_content: 34.0
     ploidy: haploid
     isolate_single_colony: "yes"
@@ -56,3 +55,4 @@ jgi_isolate_genome_data:
     isolate_second_ribosomal_seq_comments: ITS1-5.8S-ITS2 region
     isolate_fungal_16s_screening: "no"
     isolate_its_match_unite: "no"
+    estimated_size: 1.85

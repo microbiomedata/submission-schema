@@ -60,9 +60,9 @@ interfaces change.
 | `strain_name` | organism_section | imported (Organism) | yes |
 | `isolate_name` | organism_section | imported (Organism) |  |
 | `classified_as` | organism_section | imported (Organism) | yes |
-| `estimated_size` | organism_section | imported (Organism) |  |
 | `gc_content` | organism_section | imported (Organism) |  |
 | `ploidy` | organism_section | imported (Organism) |  |
+
 
 ### JgiIsolateGenomeInterface
 
@@ -93,6 +93,7 @@ fungal fields.
 | `jgi_sample_contact` | jgi_isolate_section | native | yes |
 | `jgi_project_pi` | jgi_isolate_section | native | yes |
 | `jgi_proposal_id` | jgi_isolate_section | native | yes |
+| `estimated_size` | jgi_isolate_section | imported (Organism) | yes |
 | `isolate_ribosomal_seq` | jgi_isolate_section | native | yes |
 | `isolate_ribosomal_seq_type` | jgi_isolate_section | native | yes |
 | `isolate_ribosomal_seq_comments` | jgi_isolate_section | native |  |
@@ -108,6 +109,7 @@ fungal fields.
 | `host_species` | jgi_isolate_section | imported (Biosample) |  |
 | `host_strain` | jgi_isolate_section | imported (Biosample) |  |
 | `host_taxid` | jgi_isolate_section | imported (Biosample) |  |
+
 
 ### JgiIsolateTranscriptomeInterface
 
@@ -146,6 +148,7 @@ ribosomal or fungal fields.
 | `host_species` | jgi_isolate_section | imported (Biosample) |  |
 | `host_strain` | jgi_isolate_section | imported (Biosample) |  |
 | `host_taxid` | jgi_isolate_section | imported (Biosample) |  |
+
 
 ## Related
 

@@ -248,6 +248,7 @@ TEMPLATE_INSTANCES = {
     "JgiIsolateGenomeInterface": {
         "samp_name": "000001",
         "analysis_type": ["isolate genome sequencing"],
+        "estimated_size": 1.85,
         "nuc_acid_concentration": 1.0,
         "cont_type": "plate",
         "cont_well": "C5",

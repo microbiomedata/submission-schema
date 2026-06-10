@@ -6010,19 +6010,20 @@ slots:
   - slot: estimated_size
     source: Organism
     destinations:
-      - IsolateInterface
+      - JgiIsolateGenomeInterface
     modifications:
       - replace:
           title: Estimated genome size (Mb)
-          rank: 112
-          slot_group: organism_section
+          rank: 21
+          slot_group: jgi_isolate_section
+          required: true
           range: float
           minimum_value: 0.000001
           maximum_value: 100000
           unit:
             ucum_code: Mbase
           notes:
-            - Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp.
+            - Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp.
 
   - slot: gc_content
     source: Organism

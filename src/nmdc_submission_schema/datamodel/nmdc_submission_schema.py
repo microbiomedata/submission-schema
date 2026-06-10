@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-09T22:21:52
+# Generation date: 2026-06-10T16:43:50
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -6674,7 +6674,6 @@ class IsolateInterface(DhInterface):
     isolate_known_contaminants: Optional[str] = None
     source_mat_id: Optional[str] = None
     isolate_name: Optional[str] = None
-    estimated_size: Optional[float] = None
     gc_content: Optional[float] = None
     ploidy: Optional[str] = None
 
@@ -6729,9 +6728,6 @@ class IsolateInterface(DhInterface):
         if self.isolate_name is not None and not isinstance(self.isolate_name, str):
             self.isolate_name = str(self.isolate_name)
 
-        if self.estimated_size is not None and not isinstance(self.estimated_size, float):
-            self.estimated_size = float(self.estimated_size)
-
         if self.gc_content is not None and not isinstance(self.gc_content, float):
             self.gc_content = float(self.gc_content)
 
@@ -6757,6 +6753,7 @@ class JgiIsolateGenomeInterface(DhInterface):
     samp_name: Union[str, JgiIsolateGenomeInterfaceSampName] = None
     isolate_ribosomal_seq: str = None
     isolate_ribosomal_seq_type: Union[str, "RibosomalSequenceTypeEnum"] = None
+    estimated_size: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     jgi_samp_id: str = None
     jgi_sample_name: str = None
@@ -6807,6 +6804,11 @@ class JgiIsolateGenomeInterface(DhInterface):
             self.MissingRequiredField("isolate_ribosomal_seq_type")
         if not isinstance(self.isolate_ribosomal_seq_type, RibosomalSequenceTypeEnum):
             self.isolate_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_ribosomal_seq_type)
+
+        if self._is_empty(self.estimated_size):
+            self.MissingRequiredField("estimated_size")
+        if not isinstance(self.estimated_size, float):
+            self.estimated_size = float(self.estimated_size)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -16402,7 +16404,7 @@ slots.classified_as = Slot(uri=NMDC_SUB_SCHEMA.classified_as, name="classified_a
                    pattern=re.compile(r'NCBITaxon:\d+'))
 
 slots.estimated_size = Slot(uri=MIXS['0000024'], name="estimated_size", curie=MIXS.curie('0000024'),
-                   model_uri=NMDC_SUB_SCHEMA.estimated_size, domain=None, range=Optional[float])
+                   model_uri=NMDC_SUB_SCHEMA.estimated_size, domain=None, range=float)
 
 slots.gc_content = Slot(uri=NMDC_SUB_SCHEMA.gc_content, name="gc_content", curie=NMDC_SUB_SCHEMA.curie('gc_content'),
                    model_uri=NMDC_SUB_SCHEMA.gc_content, domain=None, range=Optional[float])

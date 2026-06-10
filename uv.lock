@@ -2809,7 +2809,6 @@ name = "nmdc-submission-schema"
 source = { editable = "." }
 dependencies = [
     { name = "linkml-runtime" },
-    { name = "nmdc-schema" },
     { name = "rdflib" },
 ]
 
@@ -2840,7 +2839,6 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "linkml-runtime", specifier = ">=1.6.2,<2" },
-    { name = "nmdc-schema", git = "https://github.com/microbiomedata/nmdc-schema.git?rev=e3254eb1f9e5c7866cdd2da580b18e06cb58bc5d" },
     { name = "rdflib", specifier = ">=6.2.0,<7" },
 ]
 

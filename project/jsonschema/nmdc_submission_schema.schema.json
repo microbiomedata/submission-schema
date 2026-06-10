@@ -6747,15 +6747,6 @@
                     "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
                     "type": "string"
                 },
-                "estimated_size": {
-                    "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
-                    "maximum": 100000,
-                    "minimum": 1e-06,
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
                 "gc_content": {
                     "description": "Estimated GC content as a percentage.",
                     "maximum": 100,
@@ -7016,6 +7007,12 @@
                 "dnase": {
                     "$ref": "#/$defs/YesNoEnum"
                 },
+                "estimated_size": {
+                    "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+                    "maximum": 100000,
+                    "minimum": 1e-06,
+                    "type": "number"
+                },
                 "host_genus": {
                     "description": "Genus of the host organism that the sample was collected from.",
                     "type": [
@@ -7180,6 +7177,7 @@
             "required": [
                 "isolate_ribosomal_seq",
                 "isolate_ribosomal_seq_type",
+                "estimated_size",
                 "analysis_type",
                 "samp_name",
                 "jgi_samp_id",
