@@ -13180,6 +13180,9 @@
       "name": "replicate_group",
       "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
       "title": "Biological replicate/sample group Name",
+      "comments": [
+        "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+      ],
       "examples": [
         {
           "value": "SampleGroup1"
@@ -13449,7 +13452,8 @@
       "description": "260/280 measurement of nucleic acid sample purity",
       "title": "nucleic acid absorbance 260/280",
       "comments": [
-        "Recommended value is between 1 and 3."
+        "Recommended value is between 1 and 3.",
+        "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
       ],
       "examples": [
         {
@@ -13478,7 +13482,8 @@
       "description": "260/230 measurement of nucleic acid sample purity",
       "title": "nucleic acid absorbance 260/230",
       "comments": [
-        "Recommended value is between 1 and 3."
+        "Recommended value is between 1 and 3.",
+        "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
       ],
       "examples": [
         {
@@ -13635,7 +13640,8 @@
         "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
       ],
       "comments": [
-        "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+        "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+        "Required for resequencing, gene expression, IsoSeq, and methylation projects."
       ],
       "examples": [
         {
@@ -54988,7 +54994,8 @@
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -55020,7 +55027,8 @@
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -55515,6 +55523,9 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -55868,7 +55879,8 @@
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -55901,7 +55913,8 @@
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -56397,6 +56410,9 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -56749,7 +56765,8 @@
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -56781,7 +56798,8 @@
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -57275,6 +57293,9 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -85675,6 +85696,9 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -85892,7 +85916,8 @@
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -85924,7 +85949,8 @@
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -86243,7 +86269,8 @@
             "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
           ],
           "comments": [
-            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+            "Required for resequencing, gene expression, IsoSeq, and methylation projects."
           ],
           "examples": [
             {
@@ -87052,6 +87079,9 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -87269,7 +87299,8 @@
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -87301,7 +87332,8 @@
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -87620,7 +87652,8 @@
             "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
           ],
           "comments": [
-            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+            "Required for resequencing, gene expression, IsoSeq, and methylation projects."
           ],
           "examples": [
             {
@@ -88218,6 +88251,9 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -88435,7 +88471,8 @@
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -88467,7 +88504,8 @@
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -88786,7 +88824,8 @@
             "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
           ],
           "comments": [
-            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+            "Required for resequencing, gene expression, IsoSeq, and methylation projects."
           ],
           "examples": [
             {
