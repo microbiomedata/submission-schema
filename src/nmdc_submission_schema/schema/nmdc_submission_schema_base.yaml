@@ -1434,10 +1434,10 @@ classes:
     annotations:
       excel_worksheet_name: Isolate
     description: >-
-      Metadata for microbial isolate samples submitted to NMDC. Captures core
+      Metadata for isolate samples submitted to NMDC. Captures core
       biological identity slots (taxonomy, strain, culture collection) that NMDC
       stores and queries. Slots are sourced from nmdc-schema OrganismSample and
-      Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.
+      Organism classes.
     title: Isolate
     is_a: DhInterface
     mixins:
@@ -1450,6 +1450,9 @@ classes:
         slot_group: organism_section
       isolate_known_contaminants:
         slot_group: organism_section
+      samp_name:
+      examples:
+        - value: E.coli_1234
 
   JgiIsolateCommonMixin:
     mixin: true
