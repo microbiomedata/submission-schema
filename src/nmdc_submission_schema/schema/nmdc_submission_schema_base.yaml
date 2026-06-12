@@ -707,7 +707,6 @@ slots:
 
   reference_genome:
     title: Reference Genome
-    recommended: true
     description: >-
       Genome record to use as a reference for read alignment or assembly
       scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/
@@ -854,7 +853,6 @@ slots:
       - value: "yes"
     rank: 38
     range: YesNoEnum
-    recommended: true
     notes:
       - JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
@@ -870,7 +868,6 @@ slots:
       - value: "yes"
     rank: 39
     range: YesNoEnum
-    recommended: true
     notes:
       - JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
@@ -901,7 +898,6 @@ slots:
       isolate.
     rank: 41
     range: string
-    recommended: true
     examples:
       - value: Field
       - value: Greenhouse
@@ -1622,6 +1618,8 @@ classes:
     slot_usage:
       rna_collection_date:
         slot_group: jgi_isolate_section
+        required: true
+      collection_site_or_growth_conditions:
         required: true
 
   DhInterface:

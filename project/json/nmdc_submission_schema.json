@@ -13877,8 +13877,7 @@
         "JgiIsolateCommonMixin",
         "JgiIsolateGenomeInterface"
       ],
-      "range": "string",
-      "recommended": true
+      "range": "string"
     },
     "isolate_single_colony": {
       "name": "isolate_single_colony",
@@ -14088,8 +14087,7 @@
       "domain_of": [
         "JgiIsolateGenomeInterface"
       ],
-      "range": "YesNoEnum",
-      "recommended": true
+      "range": "YesNoEnum"
     },
     "isolate_its_match_unite": {
       "name": "isolate_its_match_unite",
@@ -14116,8 +14114,7 @@
       "domain_of": [
         "JgiIsolateGenomeInterface"
       ],
-      "range": "YesNoEnum",
-      "recommended": true
+      "range": "YesNoEnum"
     },
     "sample_isolated_from": {
       "name": "sample_isolated_from",
@@ -14202,8 +14199,7 @@
         "JgiIsolateCommonMixin",
         "JgiIsolateGenomeInterface"
       ],
-      "range": "string",
-      "recommended": true
+      "range": "string"
     },
     "rna_collection_date": {
       "name": "rna_collection_date",
@@ -31140,7 +31136,7 @@
     },
     "estimated_size": {
       "name": "estimated_size",
-      "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+      "description": "Provide an estimate of the genome size in megabases",
       "title": "Estimated genome size (Mb)",
       "notes": [
         "Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp."
@@ -31150,7 +31146,7 @@
       ],
       "examples": [
         {
-          "object": 300000
+          "value": "4.6"
         }
       ],
       "in_subset": [
@@ -86535,8 +86531,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "recommended": true
+          "range": "string"
         },
         "sample_isolated_from": {
           "name": "sample_isolated_from",
@@ -86627,8 +86622,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "recommended": true
+          "range": "string"
         },
         "host_taxid": {
           "name": "host_taxid",
@@ -87079,8 +87073,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "YesNoEnum",
-          "recommended": true
+          "range": "YesNoEnum"
         },
         "isolate_its_match_unite": {
           "name": "isolate_its_match_unite",
@@ -87110,8 +87103,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "YesNoEnum",
-          "recommended": true
+          "range": "YesNoEnum"
         },
         "dna_isolate_meth": {
           "name": "dna_isolate_meth",
@@ -87141,7 +87133,7 @@
         },
         "estimated_size": {
           "name": "estimated_size",
-          "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+          "description": "Provide an estimate of the genome size in megabases",
           "title": "Estimated genome size (Mb)",
           "notes": [
             "Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp."
@@ -87151,7 +87143,7 @@
           ],
           "examples": [
             {
-              "object": 300000
+              "value": "4.6"
             }
           ],
           "in_subset": [
@@ -87949,8 +87941,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "recommended": true
+          "range": "string"
         },
         "sample_isolated_from": {
           "name": "sample_isolated_from",
@@ -88041,8 +88032,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "recommended": true
+          "range": "string"
         },
         "host_taxid": {
           "name": "host_taxid",
@@ -88291,6 +88281,10 @@
         "rna_collection_date": {
           "name": "rna_collection_date",
           "slot_group": "jgi_isolate_section",
+          "required": true
+        },
+        "collection_site_or_growth_conditions": {
+          "name": "collection_site_or_growth_conditions",
           "required": true
         }
       },
@@ -89131,8 +89125,7 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "recommended": true
+          "range": "string"
         },
         "sample_isolated_from": {
           "name": "sample_isolated_from",
@@ -89224,7 +89217,7 @@
           ],
           "slot_group": "jgi_isolate_section",
           "range": "string",
-          "recommended": true
+          "required": true
         },
         "host_taxid": {
           "name": "host_taxid",

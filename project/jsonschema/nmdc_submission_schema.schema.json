@@ -7012,7 +7012,7 @@
                     "$ref": "#/$defs/YesNoEnum"
                 },
                 "estimated_size": {
-                    "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+                    "description": "Provide an estimate of the genome size in megabases",
                     "maximum": 100000,
                     "minimum": 1e-06,
                     "type": "number"
@@ -7281,10 +7281,7 @@
                 },
                 "collection_site_or_growth_conditions": {
                     "description": "Free-text description of the collection site or growth conditions for the isolate.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "cont_type": {
                     "$ref": "#/$defs/JgiContTypeEnum",
@@ -7444,7 +7441,8 @@
                 "jgi_sample_format",
                 "dnase",
                 "biosafety_mat_cat",
-                "sample_isolated_from"
+                "sample_isolated_from",
+                "collection_site_or_growth_conditions"
             ],
             "title": "JgiIsolateTranscriptomeInterface",
             "type": "object"

@@ -292,6 +292,7 @@ TEMPLATE_INSTANCES = {
         "biosafety_mat_cat": "Bacteria",
         "sample_isolated_from": "isolated from soil sample",
         "rna_collection_date": "1970-01-01",
+        "collection_site_or_growth_conditions": "liquid culture",
     },
 }
 

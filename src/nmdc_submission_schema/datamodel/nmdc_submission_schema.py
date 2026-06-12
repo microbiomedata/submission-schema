@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-12T15:47:01
+# Generation date: 2026-06-12T17:51:43
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -6959,6 +6959,7 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     samp_name: Union[str, JgiIsolateTranscriptomeInterfaceSampName] = None
     rna_collection_date: str = None
     rna_isolate_meth: str = None
+    collection_site_or_growth_conditions: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     jgi_samp_id: str = None
     jgi_sample_name: str = None
@@ -6981,7 +6982,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     nuc_acid_absorb2: Optional[float] = None
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
-    collection_site_or_growth_conditions: Optional[str] = None
     host_taxid: Optional[str] = None
     host_genus: Optional[str] = None
     host_species: Optional[str] = None
@@ -7007,6 +7007,11 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
             self.MissingRequiredField("rna_isolate_meth")
         if not isinstance(self.rna_isolate_meth, str):
             self.rna_isolate_meth = str(self.rna_isolate_meth)
+
+        if self._is_empty(self.collection_site_or_growth_conditions):
+            self.MissingRequiredField("collection_site_or_growth_conditions")
+        if not isinstance(self.collection_site_or_growth_conditions, str):
+            self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -7106,9 +7111,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
 
         if self.reference_genome is not None and not isinstance(self.reference_genome, str):
             self.reference_genome = str(self.reference_genome)
-
-        if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
-            self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
 
         if self.host_taxid is not None and not isinstance(self.host_taxid, str):
             self.host_taxid = str(self.host_taxid)
@@ -17339,3 +17341,6 @@ slots.JgiIsolateGenomeInterface_isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHE
 slots.JgiIsolateTranscriptomeInterface_rna_collection_date = Slot(uri=NMDC_SUB_SCHEMA.rna_collection_date, name="JgiIsolateTranscriptomeInterface_rna_collection_date", curie=NMDC_SUB_SCHEMA.curie('rna_collection_date'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_rna_collection_date, domain=JgiIsolateTranscriptomeInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$'))
+
+slots.JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions = Slot(uri=NMDC_SUB_SCHEMA.collection_site_or_growth_conditions, name="JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions", curie=NMDC_SUB_SCHEMA.curie('collection_site_or_growth_conditions'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions, domain=JgiIsolateTranscriptomeInterface, range=str)
