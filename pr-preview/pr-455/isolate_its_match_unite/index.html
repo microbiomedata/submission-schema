@@ -617,6 +617,10 @@ Alias: isolate_its_match_unite</p>
 description: For fungal draft samples only -- does the ITS sequence match taxonomy
   in the UNITE database?
 title: ITS matches UNITE
+notes:
+- JGI requires this for fungal draft products. submission-schema does not enforce
+  that as a rule because the requirement keys on the JGI Sequencing Product, which
+  the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
 comments:
 - Required for fungal light, minimal, standard, and improved drafts.
 - Screen at https://unite.ut.ee/ before submitting.

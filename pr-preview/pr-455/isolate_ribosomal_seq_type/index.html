@@ -614,6 +614,9 @@ Alias: isolate_ribosomal_seq_type</p>
 <pre><code class="language-yaml">name: isolate_ribosomal_seq_type
 description: Type of the first ribosomal sequence provided.
 title: first ribosomal sequence type
+notes:
+- Conditionally required for draft genome products only, for the same reason as isolate_ribosomal_seq,
+  and not enforced here. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
 comments:
 - Required for draft genome products (microbial and fungal genome drafts); not required
   for resequencing, methylation, or transcriptome products.

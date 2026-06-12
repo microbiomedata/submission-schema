@@ -616,6 +616,10 @@ Alias: isolate_fungal_16s_screening</p>
 description: For fungal draft samples only — was 16S screening performed to check
   for bacterial contamination?
 title: 16S screening performed
+notes:
+- JGI requires this for fungal draft products. submission-schema does not enforce
+  that as a rule because the requirement keys on the JGI Sequencing Product, which
+  the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
 comments:
 - Required for fungal light, minimal, standard, and improved drafts.
 - Leave blank for non-fungal samples.

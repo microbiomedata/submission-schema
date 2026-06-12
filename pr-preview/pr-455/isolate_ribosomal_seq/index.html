@@ -621,6 +621,15 @@ description: Primary ribosomal sequence for strain verification. For microbial d
   must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns; for fungal ITS &gt;450 nt
   with &lt;2% Ns. Use only A, C, G, T, or N with no FASTA header line.
 title: first ribosomal sequence
+notes:
+- JGI requires the ribosomal sequence for draft genome products but not for resequencing,
+  methylation, or transcriptome products. submission-schema does not enforce that
+  as a rule because the requirement keys on the JGI Sequencing Product, which the
+  schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
+- The product-specific length and N-content thresholds in the description (&gt;1300 nt
+  microbial drafts, &gt;220 bp &lt;10% Ns single cells, &gt;450 nt &lt;2% Ns fungal ITS) are not
+  enforced; the flat pattern checks only 200-5000 A/C/G/T/N. Product-aware checks
+  would live in nmdc-server (validation.ts).
 comments:
 - Required for draft genome products (microbial minimal/improved drafts, single cells,
   and fungal minimal/standard/improved drafts); not required for resequencing, methylation,

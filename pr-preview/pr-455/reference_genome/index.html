@@ -542,14 +542,14 @@ Alias: reference_genome</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
-<td>JGI submission metadata for isolate GENOME sequencing projects</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 <td>Shared JGI isolate submission fields common to both the genome and the transc...</td>
 <td>yes</td>
+</tr>
+<tr>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -620,6 +620,10 @@ description: Genome record to use as a reference for read alignment or assembly 
 title: Reference Genome
 notes:
 - Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
+- JGI requires this for resequencing, gene expression, IsoSeq, and methylation products.
+  submission-schema does not enforce that as a rule because analysis_type is identical
+  (&quot;isolate genome sequencing&quot;) for draft and resequencing, so a rule keyed on it
+  cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
 comments:
 - Provide a reference if one exists; helps JGI with assembly and QC even for de novo
   projects.

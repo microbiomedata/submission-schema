@@ -901,6 +901,11 @@ attributes:
     name: nuc_acid_absorb1
     description: 260/280 measurement of nucleic acid sample purity
     title: nucleic acid absorbance 260/280
+    notes:
+    - JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts,
+      microbial improved drafts, methylation, and any PacBio libraries. submission-schema
+      does not enforce that as a rule because the requirement keys on the JGI Sequencing
+      Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Recommended value is between 1 and 3.
     - Required for plant/algal drafts, fungal standard/improved drafts, microbial
@@ -928,6 +933,11 @@ attributes:
     name: nuc_acid_absorb2
     description: 260/230 measurement of nucleic acid sample purity
     title: nucleic acid absorbance 260/230
+    notes:
+    - JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts,
+      microbial improved drafts, methylation, and any PacBio libraries. submission-schema
+      does not enforce that as a rule because the requirement keys on the JGI Sequencing
+      Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Recommended value is between 1 and 3.
     - Required for plant/algal drafts, fungal standard/improved drafts, microbial
@@ -1327,6 +1337,11 @@ attributes:
       name.  If your project does not contain biological replicates, give each sample
       its own group name.
     title: Biological replicate/sample group Name
+    notes:
+    - JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation
+      products. submission-schema does not enforce that as a rule because the requirement
+      keys on the JGI Sequencing Product, which the schema does not carry as a slot.
+      Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects.
     examples:

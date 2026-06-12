@@ -1026,6 +1026,15 @@ attributes:
       drafts must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns; for fungal ITS
       &gt;450 nt with &lt;2% Ns. Use only A, C, G, T, or N with no FASTA header line.
     title: first ribosomal sequence
+    notes:
+    - JGI requires the ribosomal sequence for draft genome products but not for resequencing,
+      methylation, or transcriptome products. submission-schema does not enforce that
+      as a rule because the requirement keys on the JGI Sequencing Product, which
+      the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
+    - The product-specific length and N-content thresholds in the description (&gt;1300
+      nt microbial drafts, &gt;220 bp &lt;10% Ns single cells, &gt;450 nt &lt;2% Ns fungal ITS)
+      are not enforced; the flat pattern checks only 200-5000 A/C/G/T/N. Product-aware
+      checks would live in nmdc-server (validation.ts).
     comments:
     - Required for draft genome products (microbial minimal/improved drafts, single
       cells, and fungal minimal/standard/improved drafts); not required for resequencing,
@@ -1050,6 +1059,9 @@ attributes:
     name: isolate_ribosomal_seq_type
     description: Type of the first ribosomal sequence provided.
     title: first ribosomal sequence type
+    notes:
+    - Conditionally required for draft genome products only, for the same reason as
+      isolate_ribosomal_seq, and not enforced here. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Required for draft genome products (microbial and fungal genome drafts); not
       required for resequencing, methylation, or transcriptome products.
@@ -1142,6 +1154,10 @@ attributes:
     description: For fungal draft samples only — was 16S screening performed to check
       for bacterial contamination?
     title: 16S screening performed
+    notes:
+    - JGI requires this for fungal draft products. submission-schema does not enforce
+      that as a rule because the requirement keys on the JGI Sequencing Product, which
+      the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Required for fungal light, minimal, standard, and improved drafts.
     - Leave blank for non-fungal samples.
@@ -1163,6 +1179,10 @@ attributes:
     description: For fungal draft samples only -- does the ITS sequence match taxonomy
       in the UNITE database?
     title: ITS matches UNITE
+    notes:
+    - JGI requires this for fungal draft products. submission-schema does not enforce
+      that as a rule because the requirement keys on the JGI Sequencing Product, which
+      the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Required for fungal light, minimal, standard, and improved drafts.
     - Screen at https://unite.ut.ee/ before submitting.
@@ -1319,6 +1339,11 @@ attributes:
       name.  If your project does not contain biological replicates, give each sample
       its own group name.
     title: Biological replicate/sample group Name
+    notes:
+    - JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation
+      products. submission-schema does not enforce that as a rule because the requirement
+      keys on the JGI Sequencing Product, which the schema does not carry as a slot.
+      Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects.
     examples:
@@ -1488,6 +1513,11 @@ attributes:
     name: nuc_acid_absorb1
     description: 260/280 measurement of nucleic acid sample purity
     title: nucleic acid absorbance 260/280
+    notes:
+    - JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts,
+      microbial improved drafts, methylation, and any PacBio libraries. submission-schema
+      does not enforce that as a rule because the requirement keys on the JGI Sequencing
+      Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Recommended value is between 1 and 3.
     - Required for plant/algal drafts, fungal standard/improved drafts, microbial
@@ -1514,6 +1544,11 @@ attributes:
     name: nuc_acid_absorb2
     description: 260/230 measurement of nucleic acid sample purity
     title: nucleic acid absorbance 260/230
+    notes:
+    - JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts,
+      microbial improved drafts, methylation, and any PacBio libraries. submission-schema
+      does not enforce that as a rule because the requirement keys on the JGI Sequencing
+      Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Recommended value is between 1 and 3.
     - Required for plant/algal drafts, fungal standard/improved drafts, microbial
@@ -1773,6 +1808,10 @@ attributes:
     title: Reference Genome
     notes:
     - Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447
+    - JGI requires this for resequencing, gene expression, IsoSeq, and methylation
+      products. submission-schema does not enforce that as a rule because analysis_type
+      is identical ("isolate genome sequencing") for draft and resequencing, so a
+      rule keyed on it cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     comments:
     - Provide a reference if one exists; helps JGI with assembly and QC even for de
       novo projects.

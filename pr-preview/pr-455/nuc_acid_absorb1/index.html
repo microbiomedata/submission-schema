@@ -548,11 +548,6 @@ Alias: nuc_acid_absorb1</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
-<td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
 <td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
 <td>yes</td>
@@ -563,14 +558,19 @@ Alias: nuc_acid_absorb1</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
-<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
-<td>yes</td>
-</tr>
-<tr>
 <td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
 <td>JGI submission metadata for isolate GENOME sequencing projects</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../JgiIsolateTranscriptomeInterface/">JgiIsolateTranscriptomeInterface</a></td>
+<td>JGI submission metadata for isolate TRANSCRIPTOME sequencing projects</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
+<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
@@ -644,6 +644,11 @@ Alias: nuc_acid_absorb1</p>
 <pre><code class="language-yaml">name: nuc_acid_absorb1
 description: 260/280 measurement of nucleic acid sample purity
 title: nucleic acid absorbance 260/280
+notes:
+- JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts,
+  microbial improved drafts, methylation, and any PacBio libraries. submission-schema
+  does not enforce that as a rule because the requirement keys on the JGI Sequencing
+  Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
 comments:
 - Recommended value is between 1 and 3.
 - Required for plant/algal drafts, fungal standard/improved drafts, microbial improved
