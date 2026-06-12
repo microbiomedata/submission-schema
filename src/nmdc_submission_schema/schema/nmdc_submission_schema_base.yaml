@@ -602,6 +602,7 @@ slots:
     minimum_value: 0.0001
     maximum_value: 1000
     unit:
+      descriptive_name: microliters
       ucum_code: uL
     aliases:
       - dna_volume
@@ -654,6 +655,7 @@ slots:
     minimum_value: 0.0001
     maximum_value: 2000
     unit:
+      descriptive_name: nanograms per microliter
       ucum_code: ng/uL
   biosafety_mat_cat:
     description: >-
