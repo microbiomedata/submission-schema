@@ -1,0 +1,49 @@
+## Valid (LinkML) but INVALID (JGI). Microbial draft isolate with an over-cap estimated_size.
+## JGI caps estimated genome size at 5000 Mb for microbial categories (Archaea, Bacteria,
+## Fungi, Plasmid, Virus, Synthetic Construct) and 100000 Mb for eukaryotes (Alga, Animal,
+## Plant, Protist). This Bacteria record declares estimated_size: 6000, which exceeds the
+## microbial cap, so JGI would reject it. LinkML only enforces the outer 0-100000 bound
+## (maximum_value: 100000), so 6000 passes; the category-conditional 5000 cap depends on
+## biosafety_mat_cat and is not expressible in LinkML. The nmdc-server TypeScript validator
+## is where this would be enforced.
+isolate_data:
+  - samp_name: Dtur_DSM6724_big1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    isolate_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    gc_content: 34.0
+    ploidy: haploid
+    isolate_single_colony: "yes"
+    isolate_known_contaminants: none observed
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_big1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    replicate_group: Dtur_DSM6724_repA
+    jgi_samp_id: "248023"
+    jgi_sample_name: Dtur_DSM6724_big1
+    jgi_seq_project: 1248707
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Minimal Draft Isolate
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505831"
+    sample_isolated_from: thermal spring
+    nuc_acid_concentration: 45.0
+    jgi_sample_volume: 30.0
+    cont_type: plate
+    cont_well: B7
+    container_name: DturBigPlate01
+    jgi_sample_format: Gentegra-DNA
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    isolate_meth: CTAB chloroform extraction
+    isolate_ribosomal_seq: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
+    isolate_ribosomal_seq_type: 16S
+    estimated_size: 6000.0

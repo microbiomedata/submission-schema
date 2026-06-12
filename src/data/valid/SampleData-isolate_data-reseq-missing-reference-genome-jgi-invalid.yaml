@@ -1,0 +1,46 @@
+## Valid (LinkML) but INVALID (JGI). Microbial RESEQUENCING isolate missing reference_genome.
+## JGI requires reference_genome for resequencing products (and gene expression, IsoSeq, and
+## methylation). It is omitted here, so JGI would reject this. LinkML accepts it because the
+## requirement is product-conditional (analysis_type is the coarse "isolate genome sequencing"
+## for both draft and resequencing products), so the schema cannot require it only for reseq.
+## The nmdc-server TypeScript validator is where this would be enforced.
+## (Compare SampleData-isolate_data-reseq-no-ribosomal, which is a complete, JGI-valid reseq.)
+isolate_data:
+  - samp_name: Dtur_DSM6724_reseq2
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    isolate_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    gc_content: 34.0
+    ploidy: haploid
+    isolate_single_colony: "yes"
+    isolate_known_contaminants: none observed
+jgi_isolate_genome_data:
+  - samp_name: Dtur_DSM6724_reseq2
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    replicate_group: Dtur_DSM6724_repA
+    jgi_samp_id: "248022"
+    jgi_sample_name: Dtur_DSM6724_reseq2
+    jgi_seq_project: 1248706
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 Resequencing
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505831"
+    sample_isolated_from: thermal spring
+    nuc_acid_concentration: 45.0
+    jgi_sample_volume: 30.0
+    cont_type: plate
+    cont_well: B6
+    container_name: DturReseqPlate02
+    jgi_sample_format: Gentegra-DNA
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    isolate_meth: CTAB chloroform extraction
+    estimated_size: 1.85

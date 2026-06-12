@@ -1,0 +1,28 @@
+## Valid (LinkML) but INVALID (JGI). Isolate transcriptome (RNA expression) missing group name.
+## JGI requires the biological replicate / sample group name (replicate_group) for RNA
+## expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. It is omitted here, so
+## JGI would reject this. LinkML accepts it because the requirement is keyed on the JGI
+## sequencing strategy, which the schema does not carry; the nmdc-server TypeScript validator
+## would enforce it. (Compare SampleData-jgi_isolate_data-rna_collection_date, a valid record.)
+jgi_isolate_transcriptome_data:
+  - samp_name: Dtur_DSM6724_rna2
+    analysis_type:
+      - isolate transcriptome sequencing
+    source_mat_id: 'DSM 6724'
+    jgi_samp_id: "248041"
+    jgi_sample_name: Dtur_DSM6724_rna2
+    jgi_seq_project: 1248756
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 RNA Expression and IsoSeq
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505842"
+    sample_isolated_from: liquid culture from a frozen stock
+    nuc_acid_concentration: 25.0
+    jgi_sample_volume: 50.0
+    cont_type: tube
+    container_name: DturRnaTube02
+    jgi_sample_format: RNAStable
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    isolate_meth: TRIzol RNA extraction
+    rna_collection_date: "2021-06-15"

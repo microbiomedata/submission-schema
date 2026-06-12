@@ -1,0 +1,53 @@
+## Valid (LinkML) and valid (JGI). Fungal DRAFT genome isolate, fully populated.
+## Fungal drafts have extra JGI requirements, all present here:
+##   - isolate_ribosomal_seq is an ITS sequence (JGI: ITS >450 nt with <2% Ns). LinkML
+##     enforces only the flat 200-5000 pattern; the ">450 / <2% Ns" rule is JGI-only.
+##   - isolate_fungal_16s_screening = yes and isolate_its_match_unite = yes (JGI requires
+##     both for fungal light/minimal/standard/improved drafts; LinkML cannot enforce the
+##     product-conditional requirement).
+## Organism: Neurospora crassa (NCBITaxon:5141), a model fungus. Synthetic JGI logistics.
+isolate_data:
+  - samp_name: Ncra_OR74A_g1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'FGSC 2489'
+    collection_date: "2009-03-18"
+    organism_genus: Neurospora
+    organism_species: crassa
+    strain_name: OR74A
+    isolate_name: FGSC 2489
+    classified_as: NCBITaxon:5141
+    gc_content: 50.0
+    ploidy: haploid
+    isolate_single_colony: "yes"
+    isolate_known_contaminants: none observed
+jgi_isolate_genome_data:
+  - samp_name: Ncra_OR74A_g1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'FGSC 2489'
+    replicate_group: Ncra_OR74A_repA
+    jgi_samp_id: "248051"
+    jgi_sample_name: Ncra_OR74A_g1
+    jgi_seq_project: 1248771
+    jgi_seq_project_name: Neurospora crassa OR74A Fungal Improved Draft
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505855"
+    sample_isolated_from: fungal mycelium from agar slant
+    nuc_acid_absorb1: 1.90
+    nuc_acid_absorb2: 2.10
+    nuc_acid_concentration: 60.0
+    jgi_sample_volume: 40.0
+    cont_type: plate
+    cont_well: C2
+    container_name: NcraGenomePlate01
+    jgi_sample_format: Gentegra-DNA
+    dnase: "yes"
+    biosafety_mat_cat: Fungi
+    isolate_meth: CTAB chloroform extraction
+    isolate_ribosomal_seq: TCCGTAGGTGAACCTGCGGAAGGATCATTACCGAGTTTACAACTCCCAAACCCCTGTGAACATACCACTTGTTGCCTCGGCGGATCAGCCCGCTCCCGGTAAAACGGGACGGCCCGCCAGAGGACCCCTAAACTCTGTTTCTATATGTAACTTCTGAGTAAAACCATAAATAAATCAAAACTTTCAACAACGGATCTCTTGGTTCTGGCATCGATGAAGAACGCAGCGAAATGCGATAAGTAATGTGAATTGCAGAATTCAGTGAATCATCGAATCTTTGAACGCACATTGCGCCCGCCAGTATTCTGGCGGGCATGCCTGTTCGAGCGTCATTTCAACCCTCAAGCACAGCTTGGTGTTGGGACTCGCGTTAATTCGCGTTCCTCAAATTGATTGGCGGTCACGTCGAGCTTCCATAGCGTAGTAGTAAAACCCTCGTTACTGGTAATCGTCGCGGCCACGCCGTTAAACCCCAACTTCTGAATGTTGACCTCGGATCAGGTAGGAATACCCGCTGAACTTAAGCATATCAATAAGCGGAGGA
+    isolate_ribosomal_seq_type: ITS
+    isolate_fungal_16s_screening: "yes"
+    isolate_its_match_unite: "yes"
+    estimated_size: 41.0
