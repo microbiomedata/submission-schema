@@ -532,7 +532,7 @@
 
 
 <h1 id="slot-first-ribosomal-sequence-isolate_ribosomal_seq">Slot: first ribosomal sequence (isolate_ribosomal_seq)</h1>
-<p><em>Primary ribosomal sequence for strain verification. For microbial drafts must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns. Use only A, C, G, T, or N with no FASTA header line.</em></p>
+<p><em>Primary ribosomal sequence for strain verification. For microbial drafts must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns; for fungal ITS &gt;450 nt with &lt;2% Ns. Use only A, C, G, T, or N with no FASTA header line.</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/isolate_ribosomal_seq">nmdc_sub_schema:isolate_ribosomal_seq</a>
 Alias: isolate_ribosomal_seq</p>
 <!-- no inheritance hierarchy -->
@@ -560,9 +560,6 @@ Alias: isolate_ribosomal_seq</p>
 <p>Range: <a href="../String/">String</a></p>
 </li>
 <li>
-<p>Required: True</p>
-</li>
-<li>
 <p>Regex pattern: <code>^[ATCGN]{200,5000}$</code></p>
 </li>
 </ul>
@@ -585,7 +582,7 @@ Alias: isolate_ribosomal_seq</p>
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>Required for all microbial and fungal genome projects.</li>
+<li>Required for draft genome products (microbial minimal/improved drafts, single cells, and fungal minimal/standard/improved drafts); not required for resequencing, methylation, or transcriptome products.</li>
 <li>16S is required for microbial drafts and single cells; ITS for fungal drafts.</li>
 <li>Sequence must come from the actual sample to be shipped to JGI.</li>
 </ul>
@@ -618,11 +615,13 @@ Alias: isolate_ribosomal_seq</p>
 
 <pre><code class="language-yaml">name: isolate_ribosomal_seq
 description: Primary ribosomal sequence for strain verification. For microbial drafts
-  must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns. Use only A, C, G, T, or
-  N with no FASTA header line.
+  must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns; for fungal ITS &gt;450 nt
+  with &lt;2% Ns. Use only A, C, G, T, or N with no FASTA header line.
 title: first ribosomal sequence
 comments:
-- Required for all microbial and fungal genome projects.
+- Required for draft genome products (microbial minimal/improved drafts, single cells,
+  and fungal minimal/standard/improved drafts); not required for resequencing, methylation,
+  or transcriptome products.
 - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
 - Sequence must come from the actual sample to be shipped to JGI.
 examples:
@@ -635,7 +634,6 @@ alias: isolate_ribosomal_seq
 domain_of:
 - JgiIsolateGenomeInterface
 range: string
-required: true
 pattern: ^[ATCGN]{200,5000}$
 
 </code></pre>

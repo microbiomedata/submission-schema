@@ -457,7 +457,7 @@
 
 
 
-        JgiIsolateGenomeInterface --&gt; "1" RibosomalSequenceTypeEnum : isolate_ribosomal_seq_type
+        JgiIsolateGenomeInterface --&gt; "0..1" RibosomalSequenceTypeEnum : isolate_ribosomal_seq_type
         click RibosomalSequenceTypeEnum href "../RibosomalSequenceTypeEnum/"
 
 
@@ -542,13 +542,13 @@
 <tbody>
 <tr>
 <td><a href="../isolate_ribosomal_seq/">isolate_ribosomal_seq</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Primary ribosomal sequence for strain verification</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../isolate_ribosomal_seq_type/">isolate_ribosomal_seq_type</a></td>
-<td>1 <br/> <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></td>
+<td>0..1 <br/> <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></td>
 <td>Type of the first ribosomal sequence provided</td>
 <td>direct</td>
 </tr>
@@ -1023,11 +1023,13 @@ attributes:
   isolate_ribosomal_seq:
     name: isolate_ribosomal_seq
     description: Primary ribosomal sequence for strain verification. For microbial
-      drafts must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns. Use only A,
-      C, G, T, or N with no FASTA header line.
+      drafts must be &gt;1300 nt; for single cells &gt;220 bp with &lt;10% Ns; for fungal ITS
+      &gt;450 nt with &lt;2% Ns. Use only A, C, G, T, or N with no FASTA header line.
     title: first ribosomal sequence
     comments:
-    - Required for all microbial and fungal genome projects.
+    - Required for draft genome products (microbial minimal/improved drafts, single
+      cells, and fungal minimal/standard/improved drafts); not required for resequencing,
+      methylation, or transcriptome products.
     - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
     - Sequence must come from the actual sample to be shipped to JGI.
     examples:
@@ -1042,12 +1044,14 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: string
-    required: true
     pattern: ^[ATCGN]{200,5000}$
   isolate_ribosomal_seq_type:
     name: isolate_ribosomal_seq_type
     description: Type of the first ribosomal sequence provided.
     title: first ribosomal sequence type
+    comments:
+    - Required for draft genome products (microbial and fungal genome drafts); not
+      required for resequencing, methylation, or transcriptome products.
     examples:
     - value: 16S
     from_schema: https://example.com/nmdc_submission_schema
@@ -1060,7 +1064,6 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: RibosomalSequenceTypeEnum
-    required: true
   isolate_ribosomal_seq_comments:
     name: isolate_ribosomal_seq_comments
     description: Additional information about the first ribosomal sequence.
@@ -1138,7 +1141,7 @@ attributes:
       for bacterial contamination?
     title: 16S screening performed
     comments:
-    - Required for fungal minimal, standard, and improved drafts.
+    - Required for fungal light, minimal, standard, and improved drafts.
     - Leave blank for non-fungal samples.
     examples:
     - value: 'yes'
@@ -1158,7 +1161,7 @@ attributes:
       in the UNITE database?
     title: ITS matches UNITE
     comments:
-    - Required for fungal minimal, standard, and improved drafts.
+    - Required for fungal light, minimal, standard, and improved drafts.
     - Screen at https://unite.ut.ee/ before submitting.
     - Leave blank for non-fungal samples.
     examples:

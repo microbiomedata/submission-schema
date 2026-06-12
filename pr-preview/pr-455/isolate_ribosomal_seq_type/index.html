@@ -451,6 +451,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -545,12 +556,7 @@ Alias: isolate_ribosomal_seq_type</p>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></li>
 </ul>
 <h2 id="aliases">Aliases</h2>
 <ul>
@@ -569,6 +575,10 @@ Alias: isolate_ribosomal_seq_type</p>
 </tr>
 </tbody>
 </table>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Required for draft genome products (microbial and fungal genome drafts); not required for resequencing, methylation, or transcriptome products.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -599,6 +609,9 @@ Alias: isolate_ribosomal_seq_type</p>
 <pre><code class="language-yaml">name: isolate_ribosomal_seq_type
 description: Type of the first ribosomal sequence provided.
 title: first ribosomal sequence type
+comments:
+- Required for draft genome products (microbial and fungal genome drafts); not required
+  for resequencing, methylation, or transcriptome products.
 examples:
 - value: 16S
 from_schema: https://example.com/nmdc_submission_schema
@@ -609,7 +622,6 @@ alias: isolate_ribosomal_seq_type
 domain_of:
 - JgiIsolateGenomeInterface
 range: RibosomalSequenceTypeEnum
-required: true
 
 </code></pre>
 
