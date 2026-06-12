@@ -594,7 +594,7 @@
 </tr>
 <tr>
 <td><a href="../reference_genome/">reference_genome</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Genome record to use as a reference for read alignment or assembly scaffoldin...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -606,7 +606,7 @@
 </tr>
 <tr>
 <td><a href="../collection_site_or_growth_conditions/">collection_site_or_growth_conditions</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Free-text description of the collection site or growth conditions for the iso...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -720,6 +720,9 @@ slot_usage:
     name: rna_collection_date
     slot_group: jgi_isolate_section
     required: true
+  collection_site_or_growth_conditions:
+    name: collection_site_or_growth_conditions
+    required: true
 
 </code></pre>
 </details>
@@ -742,6 +745,9 @@ slot_usage:
   rna_collection_date:
     name: rna_collection_date
     slot_group: jgi_isolate_section
+    required: true
+  collection_site_or_growth_conditions:
+    name: collection_site_or_growth_conditions
     required: true
 attributes:
   rna_collection_date:
@@ -1373,7 +1379,6 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
   sample_isolated_from:
     name: sample_isolated_from
     description: Free-text description of what the organism was isolated from.
@@ -1431,7 +1436,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
-    recommended: true
+    required: true
   host_taxid:
     name: host_taxid
     annotations:

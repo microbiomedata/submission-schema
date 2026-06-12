@@ -521,7 +521,7 @@
 
 
 <h1 id="slot-estimated-genome-size-mb-estimated_size">Slot: Estimated genome size (Mb) (estimated_size)</h1>
-<p><em>The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period</em></p>
+<p><em>Provide an estimate of the genome size in megabases</em></p>
 <p>URI: <a href="https://w3id.org/mixs/0000024">MIXS:0000024</a>
 Alias: estimated_size</p>
 <!-- no inheritance hierarchy -->
@@ -567,7 +567,7 @@ Alias: estimated_size</p>
 </thead>
 <tbody>
 <tr>
-<td>None</td>
+<td>4.6</td>
 </tr>
 </tbody>
 </table>
@@ -603,9 +603,7 @@ Alias: estimated_size</p>
 <details>
 
 <pre><code class="language-yaml">name: estimated_size
-description: The estimated size of the genome prior to sequencing. Of particular importance
-  in the sequencing of (eukaryotic) genome which could remain in draft form for a
-  long or unspecified period
+description: Provide an estimate of the genome size in megabases
 title: Estimated genome size (Mb)
 notes:
 - Required for all DNA isolate products (draft genomes, resequencing, methylation)
@@ -615,7 +613,7 @@ notes:
 comments:
 - JGI reports values in megabases (Mb); NMDC stores them in base pairs (bp).
 examples:
-- object: 300000
+- value: '4.6'
 in_subset:
 - jgi_isolate
 from_schema: https://example.com/nmdc_submission_schema
