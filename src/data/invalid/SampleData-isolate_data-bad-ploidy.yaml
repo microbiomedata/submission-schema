@@ -1,0 +1,20 @@
+## Invalid. Single failure: ploidy is not in PloidyEnum.
+## Derived from the synthetic exhaustive isolate example (Dictyoglomus turgidum
+## DSM 6724) with one field changed: ploidy "octoploid" is a real JGI ploidy value
+## that is deliberately not a PloidyEnum permissible value (per the enum's own
+## description it should be normalized to "other"). Single point of failure.
+isolate_data:
+  - samp_name: Dtur_DSM6724_g1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    isolate_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    gc_content: 34.0
+    ploidy: octoploid
+    isolate_single_colony: "yes"
+    isolate_known_contaminants: none observed
