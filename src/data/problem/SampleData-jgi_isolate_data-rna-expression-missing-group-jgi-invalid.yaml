@@ -1,8 +1,4 @@
-## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2177.
-## Isolate transcriptome (RNA expression) missing replicate_group, which JGI requires for RNA
-## expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation. It slips through because the
-## requirement is keyed on the JGI sequencing strategy, which the schema does not carry.
-## (Compare valid/SampleData-jgi_isolate_data-rna_collection_date, a valid record.)
+## Isolate transcriptome missing replicate_group, which JGI requires for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation. Passes LinkML. See src/data/problem/README.md and the replicate_group notes. Tracked in nmdc-server https://github.com/microbiomedata/nmdc-server/issues/2177.
 jgi_isolate_transcriptome_data:
   - samp_name: Dtur_DSM6724_rna2
     analysis_type:

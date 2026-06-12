@@ -1,8 +1,4 @@
-## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2177.
-## Microbial RESEQUENCING isolate missing reference_genome, which JGI requires for resequencing
-## (and gene expression, IsoSeq, methylation). It slips through because analysis_type is "isolate
-## genome sequencing" for both draft and resequencing, so a rule keyed on it cannot require it for
-## reseq only. (Compare valid/SampleData-isolate_data-reseq-no-ribosomal, a complete JGI-valid reseq.)
+## Resequencing isolate missing reference_genome, which JGI requires for resequencing. Passes LinkML. See src/data/problem/README.md and the reference_genome notes. Tracked in nmdc-server https://github.com/microbiomedata/nmdc-server/issues/2177.
 isolate_data:
   - samp_name: Dtur_DSM6724_reseq2
     analysis_type:

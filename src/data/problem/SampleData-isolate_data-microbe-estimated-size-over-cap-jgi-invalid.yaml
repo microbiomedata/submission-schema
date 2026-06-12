@@ -1,7 +1,4 @@
-## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2176.
-## Bacteria record with estimated_size: 6000, exceeding JGI's 5000 Mb cap for microbial categories
-## (eukaryotes are capped at 100000). submission-schema enforces only the outer 0-100000 bound;
-## the category-conditional 5000 cap depends on biosafety_mat_cat, which we have not expressed.
+## Bacteria with estimated_size above JGI's 5000 Mb microbial cap. Passes LinkML on main; PR https://github.com/microbiomedata/submission-schema/pull/456 proposes enforcing the cap. See src/data/problem/README.md. Tracked in nmdc-server https://github.com/microbiomedata/nmdc-server/issues/2176.
 isolate_data:
   - samp_name: Dtur_DSM6724_big1
     analysis_type:

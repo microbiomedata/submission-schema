@@ -1,8 +1,4 @@
-## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2177.
-## Microbial IMPROVED DRAFT isolate missing nuc_acid_absorb1 (260/280) and nuc_acid_absorb2
-## (260/230), which JGI requires for improved/plant/algal/fungal drafts, methylation, and PacBio
-## libraries. It slips through because the requirement is keyed on the JGI Sequencing Product,
-## which the schema does not carry.
+## Microbial improved draft missing nuc_acid_absorb1 and nuc_acid_absorb2, which JGI requires for improved/plant/algal/fungal drafts, methylation, and PacBio. Passes LinkML. See src/data/problem/README.md. Tracked in nmdc-server https://github.com/microbiomedata/nmdc-server/issues/2177.
 isolate_data:
   - samp_name: Dtur_DSM6724_imp1
     analysis_type:

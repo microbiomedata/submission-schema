@@ -1,10 +1,4 @@
-## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2176.
-## Microbial single-cell isolate genome with no environmental tab. JGI requires Latitude,
-## Longitude, Depth, Elevation, and Country for single cells; those live on an environmental tab
-## (Soil/Water/Host), absent here. submission-schema has no rule requiring an env tab for
-## single-cell products (a cross-tab requirement we have not expressed).
-## Also: for single cells JGI wants the 16S sequence >220 bp with <10% Ns; submission-schema
-## enforces only the flat 200-5000 pattern.
+## Single-cell genome with no environmental tab; JGI requires latitude, longitude, depth, elevation, and country for single cells (a cross-tab requirement). Passes LinkML. See src/data/problem/README.md. Tracked in nmdc-server https://github.com/microbiomedata/nmdc-server/issues/2177.
 isolate_data:
   - samp_name: Dtur_DSM6724_sc1
     analysis_type:
