@@ -311,7 +311,7 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="class-isolate-isolateinterface">Class: Isolate (IsolateInterface)</h1>
-<p><em>Metadata for microbial isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.</em></p>
+<p><em>Metadata for isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes.</em></p>
 <p>URI: <a href="https://example.com/nmdc_sub_schema/IsolateInterface">nmdc_sub_schema:IsolateInterface</a></p>
 <div class="mermaid"> classDiagram
     class IsolateInterface
@@ -541,10 +541,9 @@ annotations:
   excel_worksheet_name:
     tag: excel_worksheet_name
     value: Isolate
-description: 'Metadata for microbial isolate samples submitted to NMDC. Captures core
-  biological identity slots (taxonomy, strain, culture collection) that NMDC stores
-  and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes;
-  depends on nmdc-schema PR #2977 and #2975 merging.'
+description: Metadata for isolate samples submitted to NMDC. Captures core biological
+  identity slots (taxonomy, strain, culture collection) that NMDC stores and queries.
+  Slots are sourced from nmdc-schema OrganismSample and Organism classes.
 title: Isolate
 from_schema: https://example.com/nmdc_submission_schema
 is_a: DhInterface
@@ -569,6 +568,13 @@ slot_usage:
   isolate_known_contaminants:
     name: isolate_known_contaminants
     slot_group: organism_section
+  samp_name:
+    name: samp_name
+    comments:
+    - It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible.
+    examples:
+    - value: E.coli_1234
   collection_date:
     name: collection_date
     notes:
@@ -596,10 +602,9 @@ annotations:
   excel_worksheet_name:
     tag: excel_worksheet_name
     value: Isolate
-description: 'Metadata for microbial isolate samples submitted to NMDC. Captures core
-  biological identity slots (taxonomy, strain, culture collection) that NMDC stores
-  and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes;
-  depends on nmdc-schema PR #2977 and #2975 merging.'
+description: Metadata for isolate samples submitted to NMDC. Captures core biological
+  identity slots (taxonomy, strain, culture collection) that NMDC stores and queries.
+  Slots are sourced from nmdc-schema OrganismSample and Organism classes.
 title: Isolate
 from_schema: https://example.com/nmdc_submission_schema
 is_a: DhInterface
@@ -612,6 +617,13 @@ slot_usage:
   isolate_known_contaminants:
     name: isolate_known_contaminants
     slot_group: organism_section
+  samp_name:
+    name: samp_name
+    comments:
+    - It can have any format, but we suggest that you make it concise, unique and
+      consistent within your lab, and as informative as possible.
+    examples:
+    - value: E.coli_1234
   collection_date:
     name: collection_date
     notes:
@@ -1006,10 +1018,8 @@ attributes:
     comments:
     - It can have any format, but we suggest that you make it concise, unique and
       consistent within your lab, and as informative as possible.
-    - If multiple sample environments (soil, water, etc) are used, these values must
-      be unique across all environments.
     examples:
-    - value: Rock core CB1178(5-6) from NSW
+    - value: E.coli_1234
     from_schema: https://example.com/nmdc_submission_schema
     rank: 1
     keywords:
