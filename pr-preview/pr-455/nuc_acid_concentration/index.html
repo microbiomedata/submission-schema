@@ -558,14 +558,14 @@ Alias: nuc_acid_concentration</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
-<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
+<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
+<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
-<td>JGI submission metadata for isolate GENOME sequencing projects</td>
-<td>no</td>
+<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
+<td>jgi_mt dh_interface</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
@@ -573,8 +573,8 @@ Alias: nuc_acid_concentration</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../JgiMgInterface/">JgiMgInterface</a></td>
-<td>Metadata for samples sent to JGI for standard metagenome sequencing</td>
+<td><a href="../JgiMgLrInterface/">JgiMgLrInterface</a></td>
+<td>Metadata for samples sent to JGI for long read metagenome sequencing</td>
 <td>yes</td>
 </tr>
 <tr>
@@ -583,9 +583,9 @@ Alias: nuc_acid_concentration</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../JgiMtInterface/">JgiMtInterface</a></td>
-<td>jgi_mt dh_interface</td>
-<td>yes</td>
+<td><a href="../JgiIsolateGenomeInterface/">JgiIsolateGenomeInterface</a></td>
+<td>JGI submission metadata for isolate GENOME sequencing projects</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -681,6 +681,8 @@ range: float
 required: true
 minimum_value: 0.0001
 maximum_value: 2000
+unit:
+  ucum_code: ng/uL
 
 </code></pre>
 
