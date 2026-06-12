@@ -18,8 +18,16 @@ the corresponding example here becomes a regular `invalid/` counter-example and 
 
 They are deliberately **not** in `valid/` (they are not valid submissions) and **not** in
 `invalid/` (they do not fail LinkML). They are also **not exercised by `make run-examples`**,
-which only asserts that `valid/` passes and `invalid/` fails. They exist to document, with
-concrete data, the gap between what submission-schema currently enforces and what JGI requires.
+which only asserts that `valid/` passes and `invalid/` fails. Nothing in CI validates this
+directory; that is intentional. They exist to document, with concrete data, the gap between what
+submission-schema currently enforces and what JGI requires.
+
+This directory is a debt to pay down, not a set of fixtures to maintain. Each file marks one JGI
+rule that submission-schema does not yet enforce. As enforcement becomes possible, either as a
+LinkML rule or in the nmdc-server TypeScript validator, the matching example should move to
+`invalid/` as a real counter-example (as #456 does for the `estimated_size` cap) or be deleted.
+A growing `problem/` means enforcement is falling behind; maintainers should work to drive the
+count toward zero.
 
 Each file carries a one-line header naming the specific JGI rule it illustrates. The reason each
 rule is not enforced in submission-schema is recorded in `notes:` on the relevant slot in the
