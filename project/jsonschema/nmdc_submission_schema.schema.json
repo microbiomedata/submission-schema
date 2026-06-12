@@ -6786,11 +6786,8 @@
                     "type": "string"
                 },
                 "ploidy": {
-                    "description": "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/PloidyEnum",
+                    "description": "The ploidy level of the genome (e.g. allopolyploid, haploid, diploid, triploid, tetraploid). It has implications for the downstream study of duplicated gene and regions of the genomes (and perhaps for difficulties in assembly). For terms, please select terms listed under class ploidy (PATO:001374) of Phenotypic Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to http://purl.bioontology.org/ontology/PATO"
                 },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
@@ -9619,6 +9616,22 @@
                 "Unisexual"
             ],
             "title": "PlantSexEnum",
+            "type": "string"
+        },
+        "PloidyEnum": {
+            "description": "Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured pattern to an enumerated set with referential integrity to PATO.",
+            "enum": [
+                "haploid",
+                "diploid",
+                "triploid",
+                "tetraploid",
+                "hexaploid",
+                "polyploid",
+                "allopolyploidy",
+                "aneuploid",
+                "other"
+            ],
+            "title": "PloidyEnum",
             "type": "string"
         },
         "ProcessingInstitutionEnum": {
