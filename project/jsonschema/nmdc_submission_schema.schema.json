@@ -6930,6 +6930,35 @@
                 {
                     "if": {
                         "properties": {
+                            "biosafety_mat_cat": {
+                                "enum": [
+                                    "Archaea",
+                                    "Bacteria",
+                                    "Fungi",
+                                    "Plasmid",
+                                    "Virus",
+                                    "Synthetic Construct"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "biosafety_mat_cat"
+                        ]
+                    },
+                    "then": {
+                        "properties": {
+                            "estimated_size": {
+                                "maximum": 5000
+                            }
+                        },
+                        "required": [
+                            "estimated_size"
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
                             "cont_well": {
                                 "pattern": ".+"
                             }
@@ -8358,6 +8387,19 @@
             ],
             "title": "MetatranscriptomeSequencingNonInterleavedDataInterface",
             "type": "object"
+        },
+        "MicrobialBiosafetyMaterialCategoryEnum": {
+            "description": "The subset of JgiIsolateMaterialKindEnum categories that JGI treats as microbial and caps at an estimated genome size of 5000 Mb. Eukaryotic categories (Alga, Animal, Plant, Protist) are excluded; they remain bounded only by the estimated_size outer maximum of 100000 Mb.",
+            "enum": [
+                "Archaea",
+                "Bacteria",
+                "Fungi",
+                "Plasmid",
+                "Virus",
+                "Synthetic Construct"
+            ],
+            "title": "MicrobialBiosafetyMaterialCategoryEnum",
+            "type": "string"
         },
         "MiscEnvsInterface": {
             "additionalProperties": false,

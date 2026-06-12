@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-10T15:08:35
+# Generation date: 2026-06-12T12:04:27
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -7470,6 +7470,45 @@ class JgiIsolateMaterialKindEnum(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="JgiIsolateMaterialKindEnum",
         description="""Broad kind of organism or genetic element being sequenced. JGI uses this for internal biosafety routing under the field label \"Biosafety Material Category\".""",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Synthetic Construct",
+            PermissibleValue(
+                text="Synthetic Construct",
+                description="Artificially constructed sequence not derived from a natural organism.",
+                meaning=NCBITAXON["32630"]))
+
+class MicrobialBiosafetyMaterialCategoryEnum(EnumDefinitionImpl):
+    """
+    The subset of JgiIsolateMaterialKindEnum categories that JGI treats as microbial and caps at an estimated genome
+    size of 5000 Mb. Eukaryotic categories (Alga, Animal, Plant, Protist) are excluded; they remain bounded only by
+    the estimated_size outer maximum of 100000 Mb.
+    """
+    Archaea = PermissibleValue(
+        text="Archaea",
+        description="Domain Archaea.",
+        meaning=NCBITAXON["2157"])
+    Bacteria = PermissibleValue(
+        text="Bacteria",
+        description="Domain Bacteria.",
+        meaning=NCBITAXON["2"])
+    Fungi = PermissibleValue(
+        text="Fungi",
+        description="Kingdom Fungi.",
+        meaning=NCBITAXON["4751"])
+    Plasmid = PermissibleValue(
+        text="Plasmid",
+        description="""DNA isolated primarily from a plasmid rather than a cellular organism. Not a taxonomic group; no NCBITaxon meaning applicable.""")
+    Virus = PermissibleValue(
+        text="Virus",
+        description="Viruses (all Baltimore groups).",
+        meaning=NCBITAXON["10239"])
+
+    _defn = EnumDefinition(
+        name="MicrobialBiosafetyMaterialCategoryEnum",
+        description="""The subset of JgiIsolateMaterialKindEnum categories that JGI treats as microbial and caps at an estimated genome size of 5000 Mb. Eukaryotic categories (Alga, Animal, Plant, Protist) are excluded; they remain bounded only by the estimated_size outer maximum of 100000 Mb.""",
     )
 
     @classmethod
