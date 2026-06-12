@@ -381,8 +381,6 @@
 
       JgiIsolateTranscriptomeInterface : host_taxid
 
-      JgiIsolateTranscriptomeInterface : isolate_meth
-
       JgiIsolateTranscriptomeInterface : jgi_project_pi
 
       JgiIsolateTranscriptomeInterface : jgi_proposal_id
@@ -422,6 +420,8 @@
 
       JgiIsolateTranscriptomeInterface : rna_collection_date
 
+      JgiIsolateTranscriptomeInterface : rna_isolate_meth
+
       JgiIsolateTranscriptomeInterface : samp_name
 
       JgiIsolateTranscriptomeInterface : sample_isolated_from
@@ -452,6 +452,12 @@
 <td><a href="../rna_collection_date/">rna_collection_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date the RNA sample was collected or the experiment was performed, in YYYY-MM...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rna_isolate_meth/">rna_isolate_meth</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Describe the method/protocol/kit used to extract DNA/RNA</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -581,12 +587,6 @@
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
 <tr>
-<td><a href="../isolate_meth/">isolate_meth</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Method, protocol, or kit used to extract DNA or RNA from the sample</td>
-<td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
-</tr>
-<tr>
 <td><a href="../reference_genome/">reference_genome</a></td>
 <td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Genome record to use as a reference for read alignment or assembly scaffoldin...</td>
@@ -707,6 +707,7 @@ mixins:
 - JgiIsolateCommonMixin
 slots:
 - rna_collection_date
+- rna_isolate_meth
 slot_usage:
   rna_collection_date:
     name: rna_collection_date
@@ -777,6 +778,25 @@ attributes:
     range: string
     required: true
     pattern: ^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$
+  rna_isolate_meth:
+    name: rna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: RNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    alias: rna_isolate_meth
+    owner: JgiIsolateTranscriptomeInterface
+    domain_of:
+    - JgiMtInterface
+    - JgiIsolateTranscriptomeInterface
+    slot_group: jgi_metatranscriptomics_section
+    range: string
+    required: true
+    recommended: false
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample
@@ -1306,33 +1326,6 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: JgiIsolateMaterialKindEnum
-    required: true
-  isolate_meth:
-    name: isolate_meth
-    description: Method, protocol, or kit used to extract DNA or RNA from the sample.
-    title: Sample Isolation Method
-    examples:
-    - value: Wizard Genomic DNA Purification Kit
-    - value: CTAB chloroform extraction
-    - value: TRIzol RNA extraction
-    from_schema: https://example.com/nmdc_submission_schema
-    structured_aliases:
-      Sample Isolation Method:
-        literal_form: Sample Isolation Method
-        predicate: EXACT_SYNONYM
-        notes:
-        - Exact JGI form template is access-restricted; source is the public submission
-          overview.
-        - JGI labels this field Sample Isolation Method, but its definition is the
-          DNA or RNA extraction method.
-        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
-    rank: 16
-    alias: isolate_meth
-    owner: JgiIsolateTranscriptomeInterface
-    domain_of:
-    - JgiIsolateCommonMixin
-    slot_group: jgi_isolate_section
-    range: string
     required: true
   reference_genome:
     name: reference_genome
