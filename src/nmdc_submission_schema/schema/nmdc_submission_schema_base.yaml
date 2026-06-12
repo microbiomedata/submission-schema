@@ -772,7 +772,7 @@ slots:
       <2% Ns. Use only A, C, G, T, or N with no FASTA header line.
     comments:
       - At least one ribosomal sequence is required for strain verification and must come from the actual sample to be shipped to JGI.  Please use only A, C, G, T or N, with no header.  Sequence of insufficient quality may delay the completion of the project. 16s sequence is required for all microbial drafts and single cells.  For microbial drafts, sequence MUST be >1300 nt; for single cells the sequence MUST be >220 bp, with <10% Ns. 
-ITS sequence is required for all samples for fungal drafts for strain verification. ITS sequence must be >450 nt with <2% Ns. 
+      - ITS sequence is required for all samples for fungal drafts for strain verification. ITS sequence must be >450 nt with <2% Ns. 
     examples:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 32
