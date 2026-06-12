@@ -13197,7 +13197,8 @@
         "JgiIsolateCommonMixin",
         "JgiIsolateGenomeInterface"
       ],
-      "range": "string"
+      "range": "string",
+      "recommended": true
     },
     "cont_well": {
       "name": "cont_well",
@@ -13673,7 +13674,8 @@
         "JgiIsolateCommonMixin",
         "JgiIsolateGenomeInterface"
       ],
-      "range": "string"
+      "range": "string",
+      "recommended": true
     },
     "isolate_single_colony": {
       "name": "isolate_single_colony",
@@ -13744,6 +13746,7 @@
         "JgiIsolateGenomeInterface"
       ],
       "range": "string",
+      "recommended": true,
       "pattern": "^[ATCGN]{200,5000}$"
     },
     "isolate_ribosomal_seq_type": {
@@ -13766,7 +13769,8 @@
       "domain_of": [
         "JgiIsolateGenomeInterface"
       ],
-      "range": "RibosomalSequenceTypeEnum"
+      "range": "RibosomalSequenceTypeEnum",
+      "recommended": true
     },
     "isolate_ribosomal_seq_comments": {
       "name": "isolate_ribosomal_seq_comments",
@@ -13869,7 +13873,8 @@
       "domain_of": [
         "JgiIsolateGenomeInterface"
       ],
-      "range": "YesNoEnum"
+      "range": "YesNoEnum",
+      "recommended": true
     },
     "isolate_its_match_unite": {
       "name": "isolate_its_match_unite",
@@ -13893,7 +13898,8 @@
       "domain_of": [
         "JgiIsolateGenomeInterface"
       ],
-      "range": "YesNoEnum"
+      "range": "YesNoEnum",
+      "recommended": true
     },
     "isolate_meth": {
       "name": "isolate_meth",
@@ -14013,7 +14019,8 @@
         "JgiIsolateCommonMixin",
         "JgiIsolateGenomeInterface"
       ],
-      "range": "string"
+      "range": "string",
+      "recommended": true
     },
     "rna_collection_date": {
       "name": "rna_collection_date",
@@ -55544,7 +55551,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -56431,7 +56439,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -57315,7 +57324,8 @@
           ],
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "string",
-          "required": true
+          "required": true,
+          "recommended": true
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -85717,7 +85727,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -86306,7 +86317,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "sample_isolated_from": {
           "name": "sample_isolated_from",
@@ -86397,7 +86409,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "host_taxid": {
           "name": "host_taxid",
@@ -86689,6 +86702,7 @@
           ],
           "slot_group": "jgi_isolate_section",
           "range": "string",
+          "recommended": true,
           "pattern": "^[ATCGN]{200,5000}$"
         },
         "isolate_ribosomal_seq_type": {
@@ -86714,7 +86728,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "RibosomalSequenceTypeEnum"
+          "range": "RibosomalSequenceTypeEnum",
+          "recommended": true
         },
         "isolate_ribosomal_seq_comments": {
           "name": "isolate_ribosomal_seq_comments",
@@ -86832,7 +86847,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "YesNoEnum"
+          "range": "YesNoEnum",
+          "recommended": true
         },
         "isolate_its_match_unite": {
           "name": "isolate_its_match_unite",
@@ -86859,7 +86875,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "YesNoEnum"
+          "range": "YesNoEnum",
+          "recommended": true
         },
         "estimated_size": {
           "name": "estimated_size",
@@ -87101,7 +87118,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -87690,7 +87708,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "sample_isolated_from": {
           "name": "sample_isolated_from",
@@ -87781,7 +87800,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "host_taxid": {
           "name": "host_taxid",
@@ -88273,7 +88293,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -88862,7 +88883,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "sample_isolated_from": {
           "name": "sample_isolated_from",
@@ -88953,7 +88975,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "host_taxid": {
           "name": "host_taxid",

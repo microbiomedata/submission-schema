@@ -478,6 +478,7 @@ slots:
       - Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects.
     rank: 5
     range: string
+    recommended: true
     examples:
       - value: SampleGroup1
   cont_well:
@@ -694,6 +695,7 @@ slots:
 
   reference_genome:
     title: Reference Genome
+    recommended: true
     description: >-
       Genome record to use as a reference for read alignment or assembly
       scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/
@@ -763,6 +765,7 @@ slots:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 32
     range: string
+    recommended: true
     pattern: "^[ATCGN]{200,5000}$"
     aliases:
       - First ribosomal sequence
@@ -775,6 +778,7 @@ slots:
       - value: 16S
     rank: 33
     range: RibosomalSequenceTypeEnum
+    recommended: true
     aliases:
       - First ribosomal sequence type
   isolate_ribosomal_seq_comments:
@@ -831,6 +835,7 @@ slots:
       - value: "yes"
     rank: 38
     range: YesNoEnum
+    recommended: true
     aliases:
       - For fungal draft samples, was 16S screening performed?
   isolate_its_match_unite:
@@ -844,6 +849,7 @@ slots:
       - value: "yes"
     rank: 39
     range: YesNoEnum
+    recommended: true
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
   isolate_meth:
@@ -889,6 +895,7 @@ slots:
       isolate.
     rank: 41
     range: string
+    recommended: true
     examples:
       - value: Field
       - value: Greenhouse
