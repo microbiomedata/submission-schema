@@ -7608,7 +7608,6 @@
                 "cont_type",
                 "container_name",
                 "dnase",
-                "dna_isolate_meth",
                 "biosafety_mat_cat",
                 "jgi_samp_id",
                 "jgi_sample_format",
@@ -7619,6 +7618,7 @@
                 "jgi_project_pi",
                 "jgi_proposal_id",
                 "jgi_sample_volume",
+                "dna_isolate_meth",
                 "analysis_type",
                 "samp_name"
             ],
@@ -7783,7 +7783,6 @@
                 "container_name",
                 "dnase",
                 "biosafety_mat_cat",
-                "dna_isolate_meth",
                 "jgi_samp_id",
                 "jgi_sample_format",
                 "jgi_sample_name",
@@ -7793,6 +7792,7 @@
                 "jgi_project_pi",
                 "jgi_proposal_id",
                 "jgi_sample_volume",
+                "dna_isolate_meth",
                 "analysis_type",
                 "samp_name"
             ],
@@ -7958,7 +7958,6 @@
                 "container_name",
                 "dnase",
                 "biosafety_mat_cat",
-                "rna_isolate_meth",
                 "jgi_samp_id",
                 "jgi_sample_format",
                 "jgi_sample_name",
@@ -7969,6 +7968,7 @@
                 "jgi_proposal_id",
                 "jgi_sample_volume",
                 "replicate_group",
+                "rna_isolate_meth",
                 "analysis_type",
                 "samp_name"
             ],

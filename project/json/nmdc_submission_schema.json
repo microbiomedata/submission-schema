@@ -55082,7 +55082,6 @@
         "cont_well",
         "container_name",
         "dnase",
-        "dna_isolate_meth",
         "biosafety_mat_cat",
         "jgi_samp_id",
         "jgi_sample_format",
@@ -55405,32 +55404,6 @@
           "range": "YesNoEnum",
           "required": true
         },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
-          "examples": [
-            {
-              "value": "phenol/chloroform extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
-          "rank": 16,
-          "alias": "dna_isolate_meth",
-          "owner": "JgiMgInterface",
-          "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface",
-            "JgiIsolateGenomeInterface"
-          ],
-          "slot_group": "jgi_metagenomics_section",
-          "range": "string",
-          "required": true,
-          "recommended": false
-        },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
           "description": "JGI material category, labeled \"Biosafety Material Category\" on the form and used for internal routing rather than as a biosafety level. The permissible values are set by the slot's range; the isolate interfaces narrow that range to organism kinds.",
@@ -55749,6 +55722,32 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "string",
           "recommended": true
+        },
+        "dna_isolate_meth": {
+          "name": "dna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "DNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "dna_isolate_meth",
+          "owner": "JgiMgInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiIsolateGenomeInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -55985,7 +55984,6 @@
         "container_name",
         "dnase",
         "biosafety_mat_cat",
-        "dna_isolate_meth",
         "jgi_samp_id",
         "jgi_sample_format",
         "jgi_sample_name",
@@ -56343,32 +56341,6 @@
           "range": "JGIBiosafetyMaterialCategoryEnum",
           "required": true
         },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
-          "examples": [
-            {
-              "value": "phenol/chloroform extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
-          "rank": 16,
-          "alias": "dna_isolate_meth",
-          "owner": "JgiMgLrInterface",
-          "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface",
-            "JgiIsolateGenomeInterface"
-          ],
-          "slot_group": "jgi_metagenomics_section",
-          "range": "string",
-          "required": true,
-          "recommended": false
-        },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
           "title": "JGI sample ID",
@@ -56656,6 +56628,32 @@
           "range": "string",
           "recommended": true
         },
+        "dna_isolate_meth": {
+          "name": "dna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "DNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "dna_isolate_meth",
+          "owner": "JgiMgLrInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiIsolateGenomeInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
+        },
         "analysis_type": {
           "name": "analysis_type",
           "description": "Select all the data types associated or available for this biosample",
@@ -56891,7 +56889,6 @@
         "container_name",
         "dnase",
         "biosafety_mat_cat",
-        "rna_isolate_meth",
         "jgi_samp_id",
         "jgi_sample_format",
         "jgi_sample_name",
@@ -57246,31 +57243,6 @@
           "range": "JGIBiosafetyMaterialCategoryEnum",
           "required": true
         },
-        "rna_isolate_meth": {
-          "name": "rna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "RNA isolation method",
-          "examples": [
-            {
-              "value": "phenol/chloroform extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
-          "rank": 16,
-          "alias": "rna_isolate_meth",
-          "owner": "JgiMtInterface",
-          "domain_of": [
-            "JgiMtInterface",
-            "JgiIsolateTranscriptomeInterface"
-          ],
-          "slot_group": "jgi_metatranscriptomics_section",
-          "range": "string",
-          "required": true,
-          "recommended": false
-        },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
           "title": "JGI sample ID",
@@ -57558,6 +57530,31 @@
           "range": "string",
           "required": true,
           "recommended": true
+        },
+        "rna_isolate_meth": {
+          "name": "rna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "RNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "rna_isolate_meth",
+          "owner": "JgiMtInterface",
+          "domain_of": [
+            "JgiMtInterface",
+            "JgiIsolateTranscriptomeInterface"
+          ],
+          "slot_group": "jgi_metatranscriptomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -86852,7 +86849,6 @@
         "isolate_fungal_16s_screening",
         "isolate_its_match_unite",
         "dna_isolate_meth",
-        "dna_isolate_meth",
         "estimated_size"
       ],
       "slot_usage": {
@@ -88274,7 +88270,6 @@
       ],
       "slots": [
         "rna_collection_date",
-        "rna_isolate_meth",
         "rna_isolate_meth"
       ],
       "slot_usage": {

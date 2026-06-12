@@ -1037,7 +1037,6 @@ classes:
       - cont_well
       - container_name
       - dnase
-      - dna_isolate_meth
       - biosafety_mat_cat
       - jgi_samp_id
       - jgi_sample_format
@@ -1126,7 +1125,6 @@ classes:
       - container_name
       - dnase
       - biosafety_mat_cat
-      - dna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -1216,7 +1214,6 @@ classes:
       - container_name
       - dnase
       - biosafety_mat_cat
-      - rna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -1551,7 +1548,6 @@ classes:
       - isolate_second_ribosomal_seq_comments
       - isolate_fungal_16s_screening
       - isolate_its_match_unite
-      - dna_isolate_meth
     slot_usage:
       isolate_ribosomal_seq:
         slot_group: jgi_isolate_section
@@ -1614,7 +1610,6 @@ classes:
       - JgiIsolateCommonMixin
     slots:
       - rna_collection_date
-      - rna_isolate_meth
     slot_usage:
       rna_collection_date:
         slot_group: jgi_isolate_section

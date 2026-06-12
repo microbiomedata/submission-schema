@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-12T17:51:43
+# Generation date: 2026-06-12T18:57:54
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -3655,7 +3655,6 @@ class JgiMgInterface(DhInterface):
     cont_type: Union[str, "JgiContTypeEnum"] = None
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
-    dna_isolate_meth: str = None
     biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
@@ -3666,6 +3665,7 @@ class JgiMgInterface(DhInterface):
     jgi_project_pi: str = None
     jgi_proposal_id: str = None
     jgi_sample_volume: float = None
+    dna_isolate_meth: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
@@ -3698,11 +3698,6 @@ class JgiMgInterface(DhInterface):
             self.MissingRequiredField("dnase")
         if not isinstance(self.dnase, YesNoEnum):
             self.dnase = YesNoEnum(self.dnase)
-
-        if self._is_empty(self.dna_isolate_meth):
-            self.MissingRequiredField("dna_isolate_meth")
-        if not isinstance(self.dna_isolate_meth, str):
-            self.dna_isolate_meth = str(self.dna_isolate_meth)
 
         if self._is_empty(self.biosafety_mat_cat):
             self.MissingRequiredField("biosafety_mat_cat")
@@ -3803,7 +3798,6 @@ class JgiMgLrInterface(DhInterface):
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
-    dna_isolate_meth: str = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     jgi_sample_name: str = None
@@ -3813,6 +3807,7 @@ class JgiMgLrInterface(DhInterface):
     jgi_project_pi: str = None
     jgi_proposal_id: str = None
     jgi_sample_volume: float = None
+    dna_isolate_meth: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     cont_well: Optional[str] = None
     replicate_group: Optional[str] = None
@@ -3858,11 +3853,6 @@ class JgiMgLrInterface(DhInterface):
             self.MissingRequiredField("biosafety_mat_cat")
         if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
             self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
-
-        if self._is_empty(self.dna_isolate_meth):
-            self.MissingRequiredField("dna_isolate_meth")
-        if not isinstance(self.dna_isolate_meth, str):
-            self.dna_isolate_meth = str(self.dna_isolate_meth)
 
         if self._is_empty(self.jgi_samp_id):
             self.MissingRequiredField("jgi_samp_id")
@@ -3950,7 +3940,6 @@ class JgiMtInterface(DhInterface):
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
-    rna_isolate_meth: str = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     jgi_sample_name: str = None
@@ -3961,6 +3950,7 @@ class JgiMtInterface(DhInterface):
     jgi_proposal_id: str = None
     jgi_sample_volume: float = None
     replicate_group: str = None
+    rna_isolate_meth: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
@@ -3997,11 +3987,6 @@ class JgiMtInterface(DhInterface):
             self.MissingRequiredField("biosafety_mat_cat")
         if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
             self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
-
-        if self._is_empty(self.rna_isolate_meth):
-            self.MissingRequiredField("rna_isolate_meth")
-        if not isinstance(self.rna_isolate_meth, str):
-            self.rna_isolate_meth = str(self.rna_isolate_meth)
 
         if self._is_empty(self.jgi_samp_id):
             self.MissingRequiredField("jgi_samp_id")
@@ -6792,11 +6777,6 @@ class JgiIsolateGenomeInterface(DhInterface):
         if not isinstance(self.dna_isolate_meth, str):
             self.dna_isolate_meth = str(self.dna_isolate_meth)
 
-        if self._is_empty(self.dna_isolate_meth):
-            self.MissingRequiredField("dna_isolate_meth")
-        if not isinstance(self.dna_isolate_meth, str):
-            self.dna_isolate_meth = str(self.dna_isolate_meth)
-
         if self._is_empty(self.estimated_size):
             self.MissingRequiredField("estimated_size")
         if not isinstance(self.estimated_size, float):
@@ -6997,11 +6977,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
             self.MissingRequiredField("rna_collection_date")
         if not isinstance(self.rna_collection_date, str):
             self.rna_collection_date = str(self.rna_collection_date)
-
-        if self._is_empty(self.rna_isolate_meth):
-            self.MissingRequiredField("rna_isolate_meth")
-        if not isinstance(self.rna_isolate_meth, str):
-            self.rna_isolate_meth = str(self.rna_isolate_meth)
 
         if self._is_empty(self.rna_isolate_meth):
             self.MissingRequiredField("rna_isolate_meth")
