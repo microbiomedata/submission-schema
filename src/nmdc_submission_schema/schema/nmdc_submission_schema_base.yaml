@@ -1451,8 +1451,10 @@ classes:
       isolate_known_contaminants:
         slot_group: organism_section
       samp_name:
-      examples:
-        - value: E.coli_1234
+        examples:
+          - value: E.coli_1234
+        comments:
+          - It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
 
   JgiIsolateCommonMixin:
     mixin: true
