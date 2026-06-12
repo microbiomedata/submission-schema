@@ -6026,6 +6026,9 @@ slots:
             ucum_code: Mbase
           notes:
             - Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp.
+          examples:
+            - 4.6
+          description: Provide an estimate of the genome size in megabases
 
   - slot: gc_content
     source: Organism
