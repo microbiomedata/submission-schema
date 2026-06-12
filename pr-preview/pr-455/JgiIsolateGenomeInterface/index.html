@@ -1036,11 +1036,14 @@ attributes:
       are not enforced; the flat pattern checks only 200-5000 A/C/G/T/N. Product-aware
       checks would live in nmdc-server (validation.ts).
     comments:
-    - Required for draft genome products (microbial minimal/improved drafts, single
-      cells, and fungal minimal/standard/improved drafts); not required for resequencing,
-      methylation, or transcriptome products.
-    - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
-    - Sequence must come from the actual sample to be shipped to JGI.
+    - At least one ribosomal sequence is required for strain verification and must
+      come from the actual sample to be shipped to JGI.  Please use only A, C, G,
+      T or N, with no header.  Sequence of insufficient quality may delay the completion
+      of the project. 16s sequence is required for all microbial drafts and single
+      cells.  For microbial drafts, sequence MUST be &gt;1300 nt; for single cells the
+      sequence MUST be &gt;220 bp, with &lt;10% Ns.
+    - ITS sequence is required for all samples for fungal drafts for strain verification.
+      ITS sequence must be &gt;450 nt with &lt;2% Ns.
     examples:
     - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     from_schema: https://example.com/nmdc_submission_schema
@@ -1103,6 +1106,10 @@ attributes:
       For 28S must be &gt;300 nt with &lt;10% Ns. Use only A, C, G, T, or N with no FASTA
       header line.
     title: second ribosomal sequence
+    comments:
+    - Other types of ribosomal sequence may be provided as a secondary check.  Sequence
+      MUST come from the actual sample to be shipped to JGI.  For 28s, the sequence
+      must be &gt;300 nt with &lt;10% Ns. Please use only A, C, G, T or N, with no header.
     examples:
     - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     from_schema: https://example.com/nmdc_submission_schema

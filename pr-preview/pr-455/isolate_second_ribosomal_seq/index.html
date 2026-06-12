@@ -451,6 +451,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -569,6 +580,10 @@ Alias: isolate_second_ribosomal_seq</p>
 </tr>
 </tbody>
 </table>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>Other types of ribosomal sequence may be provided as a secondary check.  Sequence MUST come from the actual sample to be shipped to JGI.  For 28s, the sequence must be &gt;300 nt with &lt;10% Ns. Please use only A, C, G, T or N, with no header.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -601,6 +616,10 @@ description: Optional secondary ribosomal sequence for additional strain verific
   For 28S must be &gt;300 nt with &lt;10% Ns. Use only A, C, G, T, or N with no FASTA header
   line.
 title: second ribosomal sequence
+comments:
+- Other types of ribosomal sequence may be provided as a secondary check.  Sequence
+  MUST come from the actual sample to be shipped to JGI.  For 28s, the sequence must
+  be &gt;300 nt with &lt;10% Ns. Please use only A, C, G, T or N, with no header.
 examples:
 - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
 from_schema: https://example.com/nmdc_submission_schema
