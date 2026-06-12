@@ -6,8 +6,8 @@
 ## coarse "isolate genome sequencing" for both drafts (require ribosomal) and resequencing
 ## (does not), so LinkML cannot tell them apart. The nmdc-server TypeScript validator is where
 ## this rule would be enforced.
-## This file lives in valid/ because it passes LinkML; the "jgi-invalid" in the name and these
-## comments record that it is NOT a complete JGI-legal draft submission.
+## This file lives in problem/ because it passes LinkML but is NOT a complete JGI-legal draft
+## submission. See src/data/problem/README.md.
 isolate_data:
   - samp_name: Dtur_DSM6724_draft_noribo
     analysis_type:
