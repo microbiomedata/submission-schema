@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-11T15:36:12
+# Generation date: 2026-06-12T18:57:54
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -810,7 +810,6 @@ class JgiIsolateCommonMixin(YAMLRoot):
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JgiIsolateMaterialKindEnum"] = None
-    isolate_meth: str = None
     sample_isolated_from: str = None
     replicate_group: Optional[str] = None
     nuc_acid_absorb1: Optional[float] = None
@@ -893,11 +892,6 @@ class JgiIsolateCommonMixin(YAMLRoot):
             self.MissingRequiredField("biosafety_mat_cat")
         if not isinstance(self.biosafety_mat_cat, JgiIsolateMaterialKindEnum):
             self.biosafety_mat_cat = JgiIsolateMaterialKindEnum(self.biosafety_mat_cat)
-
-        if self._is_empty(self.isolate_meth):
-            self.MissingRequiredField("isolate_meth")
-        if not isinstance(self.isolate_meth, str):
-            self.isolate_meth = str(self.isolate_meth)
 
         if self._is_empty(self.sample_isolated_from):
             self.MissingRequiredField("sample_isolated_from")
@@ -3661,7 +3655,6 @@ class JgiMgInterface(DhInterface):
     cont_type: Union[str, "JgiContTypeEnum"] = None
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
-    dna_isolate_meth: str = None
     biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
@@ -3672,6 +3665,7 @@ class JgiMgInterface(DhInterface):
     jgi_project_pi: str = None
     jgi_proposal_id: str = None
     jgi_sample_volume: float = None
+    dna_isolate_meth: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
@@ -3704,11 +3698,6 @@ class JgiMgInterface(DhInterface):
             self.MissingRequiredField("dnase")
         if not isinstance(self.dnase, YesNoEnum):
             self.dnase = YesNoEnum(self.dnase)
-
-        if self._is_empty(self.dna_isolate_meth):
-            self.MissingRequiredField("dna_isolate_meth")
-        if not isinstance(self.dna_isolate_meth, str):
-            self.dna_isolate_meth = str(self.dna_isolate_meth)
 
         if self._is_empty(self.biosafety_mat_cat):
             self.MissingRequiredField("biosafety_mat_cat")
@@ -3809,7 +3798,6 @@ class JgiMgLrInterface(DhInterface):
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
-    dna_isolate_meth: str = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     jgi_sample_name: str = None
@@ -3819,6 +3807,7 @@ class JgiMgLrInterface(DhInterface):
     jgi_project_pi: str = None
     jgi_proposal_id: str = None
     jgi_sample_volume: float = None
+    dna_isolate_meth: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     cont_well: Optional[str] = None
     replicate_group: Optional[str] = None
@@ -3864,11 +3853,6 @@ class JgiMgLrInterface(DhInterface):
             self.MissingRequiredField("biosafety_mat_cat")
         if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
             self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
-
-        if self._is_empty(self.dna_isolate_meth):
-            self.MissingRequiredField("dna_isolate_meth")
-        if not isinstance(self.dna_isolate_meth, str):
-            self.dna_isolate_meth = str(self.dna_isolate_meth)
 
         if self._is_empty(self.jgi_samp_id):
             self.MissingRequiredField("jgi_samp_id")
@@ -3956,7 +3940,6 @@ class JgiMtInterface(DhInterface):
     container_name: str = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JGIBiosafetyMaterialCategoryEnum"] = None
-    rna_isolate_meth: str = None
     jgi_samp_id: str = None
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     jgi_sample_name: str = None
@@ -3967,6 +3950,7 @@ class JgiMtInterface(DhInterface):
     jgi_proposal_id: str = None
     jgi_sample_volume: float = None
     replicate_group: str = None
+    rna_isolate_meth: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     nuc_acid_absorb1: Optional[float] = None
     nuc_acid_absorb2: Optional[float] = None
@@ -4003,11 +3987,6 @@ class JgiMtInterface(DhInterface):
             self.MissingRequiredField("biosafety_mat_cat")
         if not isinstance(self.biosafety_mat_cat, JGIBiosafetyMaterialCategoryEnum):
             self.biosafety_mat_cat = JGIBiosafetyMaterialCategoryEnum(self.biosafety_mat_cat)
-
-        if self._is_empty(self.rna_isolate_meth):
-            self.MissingRequiredField("rna_isolate_meth")
-        if not isinstance(self.rna_isolate_meth, str):
-            self.rna_isolate_meth = str(self.rna_isolate_meth)
 
         if self._is_empty(self.jgi_samp_id):
             self.MissingRequiredField("jgi_samp_id")
@@ -6651,9 +6630,8 @@ class WaterInterface(DhInterface):
 @dataclass(repr=False)
 class IsolateInterface(DhInterface):
     """
-    Metadata for microbial isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy,
-    strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and
-    Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.
+    Metadata for isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture
+    collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -6750,8 +6728,7 @@ class JgiIsolateGenomeInterface(DhInterface):
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface
 
     samp_name: Union[str, JgiIsolateGenomeInterfaceSampName] = None
-    isolate_ribosomal_seq: str = None
-    isolate_ribosomal_seq_type: Union[str, "RibosomalSequenceTypeEnum"] = None
+    dna_isolate_meth: str = None
     estimated_size: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     jgi_samp_id: str = None
@@ -6768,8 +6745,9 @@ class JgiIsolateGenomeInterface(DhInterface):
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JgiIsolateMaterialKindEnum"] = None
-    isolate_meth: str = None
     sample_isolated_from: str = None
+    isolate_ribosomal_seq: Optional[str] = None
+    isolate_ribosomal_seq_type: Optional[Union[str, "RibosomalSequenceTypeEnum"]] = None
     isolate_ribosomal_seq_comments: Optional[str] = None
     isolate_second_ribosomal_seq: Optional[str] = None
     isolate_second_ribosomal_seq_type: Optional[Union[str, "RibosomalSequenceTypeEnum"]] = None
@@ -6794,15 +6772,10 @@ class JgiIsolateGenomeInterface(DhInterface):
         if not isinstance(self.samp_name, JgiIsolateGenomeInterfaceSampName):
             self.samp_name = JgiIsolateGenomeInterfaceSampName(self.samp_name)
 
-        if self._is_empty(self.isolate_ribosomal_seq):
-            self.MissingRequiredField("isolate_ribosomal_seq")
-        if not isinstance(self.isolate_ribosomal_seq, str):
-            self.isolate_ribosomal_seq = str(self.isolate_ribosomal_seq)
-
-        if self._is_empty(self.isolate_ribosomal_seq_type):
-            self.MissingRequiredField("isolate_ribosomal_seq_type")
-        if not isinstance(self.isolate_ribosomal_seq_type, RibosomalSequenceTypeEnum):
-            self.isolate_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_ribosomal_seq_type)
+        if self._is_empty(self.dna_isolate_meth):
+            self.MissingRequiredField("dna_isolate_meth")
+        if not isinstance(self.dna_isolate_meth, str):
+            self.dna_isolate_meth = str(self.dna_isolate_meth)
 
         if self._is_empty(self.estimated_size):
             self.MissingRequiredField("estimated_size")
@@ -6885,15 +6858,16 @@ class JgiIsolateGenomeInterface(DhInterface):
         if not isinstance(self.biosafety_mat_cat, JgiIsolateMaterialKindEnum):
             self.biosafety_mat_cat = JgiIsolateMaterialKindEnum(self.biosafety_mat_cat)
 
-        if self._is_empty(self.isolate_meth):
-            self.MissingRequiredField("isolate_meth")
-        if not isinstance(self.isolate_meth, str):
-            self.isolate_meth = str(self.isolate_meth)
-
         if self._is_empty(self.sample_isolated_from):
             self.MissingRequiredField("sample_isolated_from")
         if not isinstance(self.sample_isolated_from, str):
             self.sample_isolated_from = str(self.sample_isolated_from)
+
+        if self.isolate_ribosomal_seq is not None and not isinstance(self.isolate_ribosomal_seq, str):
+            self.isolate_ribosomal_seq = str(self.isolate_ribosomal_seq)
+
+        if self.isolate_ribosomal_seq_type is not None and not isinstance(self.isolate_ribosomal_seq_type, RibosomalSequenceTypeEnum):
+            self.isolate_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_ribosomal_seq_type)
 
         if self.isolate_ribosomal_seq_comments is not None and not isinstance(self.isolate_ribosomal_seq_comments, str):
             self.isolate_ribosomal_seq_comments = str(self.isolate_ribosomal_seq_comments)
@@ -6964,6 +6938,8 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
 
     samp_name: Union[str, JgiIsolateTranscriptomeInterfaceSampName] = None
     rna_collection_date: str = None
+    rna_isolate_meth: str = None
+    collection_site_or_growth_conditions: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     jgi_samp_id: str = None
     jgi_sample_name: str = None
@@ -6979,7 +6955,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     jgi_sample_format: Union[str, "JGISampleFormatEnum"] = None
     dnase: Union[str, "YesNoEnum"] = None
     biosafety_mat_cat: Union[str, "JgiIsolateMaterialKindEnum"] = None
-    isolate_meth: str = None
     sample_isolated_from: str = None
     source_mat_id: Optional[str] = None
     replicate_group: Optional[str] = None
@@ -6987,7 +6962,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
     nuc_acid_absorb2: Optional[float] = None
     cont_well: Optional[str] = None
     reference_genome: Optional[str] = None
-    collection_site_or_growth_conditions: Optional[str] = None
     host_taxid: Optional[str] = None
     host_genus: Optional[str] = None
     host_species: Optional[str] = None
@@ -7003,6 +6977,16 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
             self.MissingRequiredField("rna_collection_date")
         if not isinstance(self.rna_collection_date, str):
             self.rna_collection_date = str(self.rna_collection_date)
+
+        if self._is_empty(self.rna_isolate_meth):
+            self.MissingRequiredField("rna_isolate_meth")
+        if not isinstance(self.rna_isolate_meth, str):
+            self.rna_isolate_meth = str(self.rna_isolate_meth)
+
+        if self._is_empty(self.collection_site_or_growth_conditions):
+            self.MissingRequiredField("collection_site_or_growth_conditions")
+        if not isinstance(self.collection_site_or_growth_conditions, str):
+            self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
 
         if self._is_empty(self.analysis_type):
             self.MissingRequiredField("analysis_type")
@@ -7080,11 +7064,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
         if not isinstance(self.biosafety_mat_cat, JgiIsolateMaterialKindEnum):
             self.biosafety_mat_cat = JgiIsolateMaterialKindEnum(self.biosafety_mat_cat)
 
-        if self._is_empty(self.isolate_meth):
-            self.MissingRequiredField("isolate_meth")
-        if not isinstance(self.isolate_meth, str):
-            self.isolate_meth = str(self.isolate_meth)
-
         if self._is_empty(self.sample_isolated_from):
             self.MissingRequiredField("sample_isolated_from")
         if not isinstance(self.sample_isolated_from, str):
@@ -7107,9 +7086,6 @@ class JgiIsolateTranscriptomeInterface(DhInterface):
 
         if self.reference_genome is not None and not isinstance(self.reference_genome, str):
             self.reference_genome = str(self.reference_genome)
-
-        if self.collection_site_or_growth_conditions is not None and not isinstance(self.collection_site_or_growth_conditions, str):
-            self.collection_site_or_growth_conditions = str(self.collection_site_or_growth_conditions)
 
         if self.host_taxid is not None and not isinstance(self.host_taxid, str):
             self.host_taxid = str(self.host_taxid)
@@ -14562,11 +14538,11 @@ slots.isolate_known_contaminants = Slot(uri=NMDC_SUB_SCHEMA.isolate_known_contam
                    model_uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, domain=None, range=Optional[str])
 
 slots.isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, domain=None, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[ATCGN]{200,5000}$'))
 
 slots.isolate_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, name="isolate_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, domain=None, range=Union[str, "RibosomalSequenceTypeEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, domain=None, range=Optional[Union[str, "RibosomalSequenceTypeEnum"]])
 
 slots.isolate_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, name="isolate_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_comments'),
                    model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, domain=None, range=Optional[str],
@@ -14588,9 +14564,6 @@ slots.isolate_fungal_16s_screening = Slot(uri=NMDC_SUB_SCHEMA.isolate_fungal_16s
 
 slots.isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHEMA.isolate_its_match_unite, name="isolate_its_match_unite", curie=NMDC_SUB_SCHEMA.curie('isolate_its_match_unite'),
                    model_uri=NMDC_SUB_SCHEMA.isolate_its_match_unite, domain=None, range=Optional[Union[str, "YesNoEnum"]])
-
-slots.isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.isolate_meth, name="isolate_meth", curie=NMDC_SUB_SCHEMA.curie('isolate_meth'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_meth, domain=None, range=str)
 
 slots.sample_isolated_from = Slot(uri=NMDC_SUB_SCHEMA.sample_isolated_from, name="sample_isolated_from", curie=NMDC_SUB_SCHEMA.curie('sample_isolated_from'),
                    model_uri=NMDC_SUB_SCHEMA.sample_isolated_from, domain=None, range=str)
@@ -17235,6 +17208,9 @@ slots.IsolateInterface_isolate_single_colony = Slot(uri=NMDC_SUB_SCHEMA.isolate_
 slots.IsolateInterface_isolate_known_contaminants = Slot(uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, name="IsolateInterface_isolate_known_contaminants", curie=NMDC_SUB_SCHEMA.curie('isolate_known_contaminants'),
                    model_uri=NMDC_SUB_SCHEMA.IsolateInterface_isolate_known_contaminants, domain=IsolateInterface, range=Optional[str])
 
+slots.IsolateInterface_samp_name = Slot(uri=MIXS['0001107'], name="IsolateInterface_samp_name", curie=MIXS.curie('0001107'),
+                   model_uri=NMDC_SUB_SCHEMA.IsolateInterface_samp_name, domain=IsolateInterface, range=Union[str, IsolateInterfaceSampName])
+
 slots.IsolateInterface_collection_date = Slot(uri=MIXS['0000011'], name="IsolateInterface_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=NMDC_SUB_SCHEMA.IsolateInterface_collection_date, domain=IsolateInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$'))
@@ -17297,9 +17273,6 @@ slots.JgiIsolateCommonMixin_dnase = Slot(uri=NMDC_SUB_SCHEMA.dnase, name="JgiIso
 slots.JgiIsolateCommonMixin_biosafety_mat_cat = Slot(uri=NMDC_SUB_SCHEMA.biosafety_mat_cat, name="JgiIsolateCommonMixin_biosafety_mat_cat", curie=NMDC_SUB_SCHEMA.curie('biosafety_mat_cat'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_biosafety_mat_cat, domain=None, range=Union[str, "JgiIsolateMaterialKindEnum"])
 
-slots.JgiIsolateCommonMixin_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.isolate_meth, name="JgiIsolateCommonMixin_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('isolate_meth'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_isolate_meth, domain=None, range=str)
-
 slots.JgiIsolateCommonMixin_reference_genome = Slot(uri=NMDC_SUB_SCHEMA.reference_genome, name="JgiIsolateCommonMixin_reference_genome", curie=NMDC_SUB_SCHEMA.curie('reference_genome'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_reference_genome, domain=None, range=Optional[str])
 
@@ -17313,11 +17286,11 @@ slots.JgiIsolateCommonMixin_host_taxid = Slot(uri=MIXS['0000250'], name="JgiIsol
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_host_taxid, domain=None, range=Optional[str])
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq, domain=JgiIsolateGenomeInterface, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq, domain=JgiIsolateGenomeInterface, range=Optional[str],
                    pattern=re.compile(r'^[ATCGN]{200,5000}$'))
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq_type, domain=JgiIsolateGenomeInterface, range=Union[str, "RibosomalSequenceTypeEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq_type, domain=JgiIsolateGenomeInterface, range=Optional[Union[str, "RibosomalSequenceTypeEnum"]])
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_comments'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq_comments, domain=JgiIsolateGenomeInterface, range=Optional[str],
@@ -17343,3 +17316,6 @@ slots.JgiIsolateGenomeInterface_isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHE
 slots.JgiIsolateTranscriptomeInterface_rna_collection_date = Slot(uri=NMDC_SUB_SCHEMA.rna_collection_date, name="JgiIsolateTranscriptomeInterface_rna_collection_date", curie=NMDC_SUB_SCHEMA.curie('rna_collection_date'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_rna_collection_date, domain=JgiIsolateTranscriptomeInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$'))
+
+slots.JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions = Slot(uri=NMDC_SUB_SCHEMA.collection_site_or_growth_conditions, name="JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions", curie=NMDC_SUB_SCHEMA.curie('collection_site_or_growth_conditions'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions, domain=JgiIsolateTranscriptomeInterface, range=str)

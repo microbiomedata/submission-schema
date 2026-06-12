@@ -1,0 +1,23 @@
+## Isolate transcriptome missing replicate_group, which JGI requires for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation. Passes LinkML. See src/data/problem/README.md and the replicate_group notes. Tracked in nmdc-server https://github.com/microbiomedata/nmdc-server/issues/2177.
+jgi_isolate_transcriptome_data:
+  - samp_name: Dtur_DSM6724_rna2
+    analysis_type:
+      - isolate transcriptome sequencing
+    source_mat_id: 'DSM 6724'
+    jgi_samp_id: "248041"
+    jgi_sample_name: Dtur_DSM6724_rna2
+    jgi_seq_project: 1248756
+    jgi_seq_project_name: Dictyoglomus turgidum DSM 6724 RNA Expression and IsoSeq
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505842"
+    sample_isolated_from: liquid culture from a frozen stock
+    nuc_acid_concentration: 25.0
+    jgi_sample_volume: 50.0
+    cont_type: tube
+    container_name: DturRnaTube02
+    jgi_sample_format: RNAStable
+    dnase: "yes"
+    biosafety_mat_cat: Bacteria
+    rna_isolate_meth: TRIzol RNA extraction
+    rna_collection_date: "2021-06-15"

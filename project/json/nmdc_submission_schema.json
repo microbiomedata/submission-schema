@@ -13365,6 +13365,12 @@
       "name": "replicate_group",
       "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
       "title": "Biological replicate/sample group Name",
+      "notes": [
+        "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+      ],
+      "comments": [
+        "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+      ],
       "examples": [
         {
           "value": "SampleGroup1"
@@ -13379,7 +13385,8 @@
         "JgiIsolateCommonMixin",
         "JgiIsolateGenomeInterface"
       ],
-      "range": "string"
+      "range": "string",
+      "recommended": true
     },
     "cont_well": {
       "name": "cont_well",
@@ -13627,14 +13634,22 @@
       "range": "float",
       "required": true,
       "minimum_value": 0.0001,
-      "maximum_value": 1000
+      "maximum_value": 1000,
+      "unit": {
+        "descriptive_name": "microliters",
+        "ucum_code": "uL"
+      }
     },
     "nuc_acid_absorb1": {
       "name": "nuc_acid_absorb1",
       "description": "260/280 measurement of nucleic acid sample purity",
       "title": "nucleic acid absorbance 260/280",
+      "notes": [
+        "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+      ],
       "comments": [
-        "Recommended value is between 1 and 3."
+        "Recommended value is between 1 and 3.",
+        "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
       ],
       "examples": [
         {
@@ -13662,8 +13677,12 @@
       "name": "nuc_acid_absorb2",
       "description": "260/230 measurement of nucleic acid sample purity",
       "title": "nucleic acid absorbance 260/230",
+      "notes": [
+        "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+      ],
       "comments": [
-        "Recommended value is between 1 and 3."
+        "Recommended value is between 1 and 3.",
+        "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
       ],
       "examples": [
         {
@@ -13717,7 +13736,11 @@
       "range": "float",
       "required": true,
       "minimum_value": 0.0001,
-      "maximum_value": 2000
+      "maximum_value": 2000,
+      "unit": {
+        "descriptive_name": "nanograms per microliter",
+        "ucum_code": "ng/uL"
+      }
     },
     "biosafety_mat_cat": {
       "name": "biosafety_mat_cat",
@@ -13817,10 +13840,12 @@
       "description": "Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.",
       "title": "Reference Genome",
       "notes": [
-        "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
+        "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447",
+        "JGI requires this for resequencing, gene expression, IsoSeq, and methylation products. submission-schema does not enforce that as a rule because analysis_type is identical (\"isolate genome sequencing\") for draft and resequencing, so a rule keyed on it cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
       ],
       "comments": [
-        "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+        "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+        "Required for resequencing, gene expression, IsoSeq, and methylation projects."
       ],
       "examples": [
         {
@@ -13902,12 +13927,15 @@
     },
     "isolate_ribosomal_seq": {
       "name": "isolate_ribosomal_seq",
-      "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
+      "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns; for fungal ITS >450 nt with <2% Ns. Use only A, C, G, T, or N with no FASTA header line.",
       "title": "first ribosomal sequence",
+      "notes": [
+        "JGI requires the ribosomal sequence for draft genome products but not for resequencing, methylation, or transcriptome products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.",
+        "The product-specific length and N-content thresholds in the description (>1300 nt microbial drafts, >220 bp <10% Ns single cells, >450 nt <2% Ns fungal ITS) are not enforced; the flat pattern checks only 200-5000 A/C/G/T/N. Product-aware checks would live in nmdc-server (validation.ts)."
+      ],
       "comments": [
-        "Required for all microbial and fungal genome projects.",
-        "16S is required for microbial drafts and single cells; ITS for fungal drafts.",
-        "Sequence must come from the actual sample to be shipped to JGI."
+        "At least one ribosomal sequence is required for strain verification and must come from the actual sample to be shipped to JGI.  Please use only A, C, G, T or N, with no header.  Sequence of insufficient quality may delay the completion of the project. 16s sequence is required for all microbial drafts and single cells.  For microbial drafts, sequence MUST be >1300 nt; for single cells the sequence MUST be >220 bp, with <10% Ns.",
+        "ITS sequence is required for all samples for fungal drafts for strain verification. ITS sequence must be >450 nt with <2% Ns."
       ],
       "examples": [
         {
@@ -13923,13 +13951,19 @@
         "JgiIsolateGenomeInterface"
       ],
       "range": "string",
-      "required": true,
+      "recommended": true,
       "pattern": "^[ATCGN]{200,5000}$"
     },
     "isolate_ribosomal_seq_type": {
       "name": "isolate_ribosomal_seq_type",
       "description": "Type of the first ribosomal sequence provided.",
       "title": "first ribosomal sequence type",
+      "notes": [
+        "Conditionally required for draft genome products only, for the same reason as isolate_ribosomal_seq, and not enforced here. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+      ],
+      "comments": [
+        "Required for draft genome products (microbial and fungal genome drafts); not required for resequencing, methylation, or transcriptome products."
+      ],
       "examples": [
         {
           "value": "16S"
@@ -13944,7 +13978,7 @@
         "JgiIsolateGenomeInterface"
       ],
       "range": "RibosomalSequenceTypeEnum",
-      "required": true
+      "recommended": true
     },
     "isolate_ribosomal_seq_comments": {
       "name": "isolate_ribosomal_seq_comments",
@@ -13973,6 +14007,9 @@
       "name": "isolate_second_ribosomal_seq",
       "description": "Optional secondary ribosomal sequence for additional strain verification. For 28S must be >300 nt with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
       "title": "second ribosomal sequence",
+      "comments": [
+        "Other types of ribosomal sequence may be provided as a secondary check.  Sequence MUST come from the actual sample to be shipped to JGI.  For 28s, the sequence must be >300 nt with <10% Ns. Please use only A, C, G, T or N, with no header."
+      ],
       "examples": [
         {
           "value": "AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT"
@@ -14030,8 +14067,11 @@
       "name": "isolate_fungal_16s_screening",
       "description": "For fungal draft samples only — was 16S screening performed to check for bacterial contamination?",
       "title": "16S screening performed",
+      "notes": [
+        "JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+      ],
       "comments": [
-        "Required for fungal minimal, standard, and improved drafts.",
+        "Required for fungal light, minimal, standard, and improved drafts.",
         "Leave blank for non-fungal samples."
       ],
       "examples": [
@@ -14053,8 +14093,11 @@
       "name": "isolate_its_match_unite",
       "description": "For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?",
       "title": "ITS matches UNITE",
+      "notes": [
+        "JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+      ],
       "comments": [
-        "Required for fungal minimal, standard, and improved drafts.",
+        "Required for fungal light, minimal, standard, and improved drafts.",
         "Screen at https://unite.ut.ee/ before submitting.",
         "Leave blank for non-fungal samples."
       ],
@@ -14072,41 +14115,6 @@
         "JgiIsolateGenomeInterface"
       ],
       "range": "YesNoEnum"
-    },
-    "isolate_meth": {
-      "name": "isolate_meth",
-      "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
-      "title": "Sample Isolation Method",
-      "examples": [
-        {
-          "value": "Wizard Genomic DNA Purification Kit"
-        },
-        {
-          "value": "CTAB chloroform extraction"
-        },
-        {
-          "value": "TRIzol RNA extraction"
-        }
-      ],
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "structured_aliases": {
-        "Sample Isolation Method": {
-          "literal_form": "Sample Isolation Method",
-          "predicate": "EXACT_SYNONYM",
-          "notes": [
-            "Exact JGI form template is access-restricted; source is the public submission overview.",
-            "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
-          ],
-          "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
-        }
-      },
-      "rank": 16,
-      "domain_of": [
-        "JgiIsolateCommonMixin",
-        "JgiIsolateGenomeInterface"
-      ],
-      "range": "string",
-      "required": true
     },
     "sample_isolated_from": {
       "name": "sample_isolated_from",
@@ -17926,7 +17934,8 @@
       "rank": 16,
       "domain_of": [
         "JgiMgInterface",
-        "JgiMgLrInterface"
+        "JgiMgLrInterface",
+        "JgiIsolateGenomeInterface"
       ],
       "slot_group": "jgi_metagenomics_section",
       "range": "string",
@@ -24954,7 +24963,8 @@
       ],
       "rank": 16,
       "domain_of": [
-        "JgiMtInterface"
+        "JgiMtInterface",
+        "JgiIsolateTranscriptomeInterface"
       ],
       "slot_group": "jgi_metatranscriptomics_section",
       "range": "string",
@@ -31126,7 +31136,7 @@
     },
     "estimated_size": {
       "name": "estimated_size",
-      "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+      "description": "Provide an estimate of the genome size in megabases",
       "title": "Estimated genome size (Mb)",
       "notes": [
         "Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp."
@@ -31136,7 +31146,7 @@
       ],
       "examples": [
         {
-          "object": 300000
+          "value": "4.6"
         }
       ],
       "in_subset": [
@@ -55072,7 +55082,6 @@
         "cont_well",
         "container_name",
         "dnase",
-        "dna_isolate_meth",
         "biosafety_mat_cat",
         "jgi_samp_id",
         "jgi_sample_format",
@@ -55169,8 +55178,12 @@
           "name": "nuc_acid_absorb1",
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -55201,8 +55214,12 @@
           "name": "nuc_acid_absorb2",
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -55262,7 +55279,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "descriptive_name": "nanograms per microliter",
+            "ucum_code": "ng/uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -55382,31 +55403,6 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "YesNoEnum",
           "required": true
-        },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
-          "examples": [
-            {
-              "value": "phenol/chloroform extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
-          "rank": 16,
-          "alias": "dna_isolate_meth",
-          "owner": "JgiMgInterface",
-          "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface"
-          ],
-          "slot_group": "jgi_metagenomics_section",
-          "range": "string",
-          "required": true,
-          "recommended": false
         },
         "biosafety_mat_cat": {
           "name": "biosafety_mat_cat",
@@ -55691,12 +55687,22 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "descriptive_name": "microliters",
+            "ucum_code": "uL"
+          }
         },
         "replicate_group": {
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "notes": [
+            "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -55714,7 +55720,34 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
+        },
+        "dna_isolate_meth": {
+          "name": "dna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "DNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "dna_isolate_meth",
+          "owner": "JgiMgInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiIsolateGenomeInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -55951,7 +55984,6 @@
         "container_name",
         "dnase",
         "biosafety_mat_cat",
-        "dna_isolate_meth",
         "jgi_samp_id",
         "jgi_sample_format",
         "jgi_sample_name",
@@ -56049,8 +56081,12 @@
           "name": "nuc_acid_absorb1",
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -56082,8 +56118,12 @@
           "name": "nuc_acid_absorb2",
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -56144,7 +56184,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "descriptive_name": "nanograms per microliter",
+            "ucum_code": "ng/uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -56296,31 +56340,6 @@
           "slot_group": "jgi_metagenomics_section",
           "range": "JGIBiosafetyMaterialCategoryEnum",
           "required": true
-        },
-        "dna_isolate_meth": {
-          "name": "dna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "DNA isolation method",
-          "examples": [
-            {
-              "value": "phenol/chloroform extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
-          "rank": 16,
-          "alias": "dna_isolate_meth",
-          "owner": "JgiMgLrInterface",
-          "domain_of": [
-            "JgiMgInterface",
-            "JgiMgLrInterface"
-          ],
-          "slot_group": "jgi_metagenomics_section",
-          "range": "string",
-          "required": true,
-          "recommended": false
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -56573,12 +56592,22 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "descriptive_name": "microliters",
+            "ucum_code": "uL"
+          }
         },
         "replicate_group": {
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "notes": [
+            "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -56596,7 +56625,34 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_metagenomics_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
+        },
+        "dna_isolate_meth": {
+          "name": "dna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "DNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "dna_isolate_meth",
+          "owner": "JgiMgLrInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiIsolateGenomeInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -56833,7 +56889,6 @@
         "container_name",
         "dnase",
         "biosafety_mat_cat",
-        "rna_isolate_meth",
         "jgi_samp_id",
         "jgi_sample_format",
         "jgi_sample_name",
@@ -56930,8 +56985,12 @@
           "name": "nuc_acid_absorb1",
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -56962,8 +57021,12 @@
           "name": "nuc_acid_absorb2",
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -57023,7 +57086,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "descriptive_name": "nanograms per microliter",
+            "ucum_code": "ng/uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -57175,30 +57242,6 @@
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "JGIBiosafetyMaterialCategoryEnum",
           "required": true
-        },
-        "rna_isolate_meth": {
-          "name": "rna_isolate_meth",
-          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
-          "title": "RNA isolation method",
-          "examples": [
-            {
-              "value": "phenol/chloroform extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "aliases": [
-            "Sample Isolation Method"
-          ],
-          "rank": 16,
-          "alias": "rna_isolate_meth",
-          "owner": "JgiMtInterface",
-          "domain_of": [
-            "JgiMtInterface"
-          ],
-          "slot_group": "jgi_metatranscriptomics_section",
-          "range": "string",
-          "required": true,
-          "recommended": false
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -57451,12 +57494,22 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "descriptive_name": "microliters",
+            "ucum_code": "uL"
+          }
         },
         "replicate_group": {
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "notes": [
+            "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -57475,7 +57528,33 @@
           ],
           "slot_group": "jgi_metatranscriptomics_section",
           "range": "string",
-          "required": true
+          "required": true,
+          "recommended": true
+        },
+        "rna_isolate_meth": {
+          "name": "rna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "RNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "rna_isolate_meth",
+          "owner": "JgiMtInterface",
+          "domain_of": [
+            "JgiMtInterface",
+            "JgiIsolateTranscriptomeInterface"
+          ],
+          "slot_group": "jgi_metatranscriptomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -85128,7 +85207,7 @@
           "value": "Isolate"
         }
       },
-      "description": "Metadata for microbial isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.",
+      "description": "Metadata for isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes.",
       "title": "Isolate",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "is_a": "DhInterface",
@@ -85156,6 +85235,17 @@
         "isolate_known_contaminants": {
           "name": "isolate_known_contaminants",
           "slot_group": "organism_section"
+        },
+        "samp_name": {
+          "name": "samp_name",
+          "comments": [
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
+          ],
+          "examples": [
+            {
+              "value": "E.coli_1234"
+            }
+          ]
         },
         "collection_date": {
           "name": "collection_date",
@@ -85671,12 +85761,11 @@
           "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
           "title": "sample name",
           "comments": [
-            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.",
-            "If multiple sample environments (soil, water, etc) are used, these values must be unique across all environments."
+            "It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible."
           ],
           "examples": [
             {
-              "value": "Rock core CB1178(5-6) from NSW"
+              "value": "E.coli_1234"
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
@@ -85744,7 +85833,6 @@
         "jgi_sample_format",
         "dnase",
         "biosafety_mat_cat",
-        "isolate_meth",
         "reference_genome",
         "sample_isolated_from",
         "collection_site_or_growth_conditions",
@@ -85827,10 +85915,6 @@
           "slot_group": "jgi_isolate_section",
           "range": "JgiIsolateMaterialKindEnum"
         },
-        "isolate_meth": {
-          "name": "isolate_meth",
-          "slot_group": "jgi_isolate_section"
-        },
         "reference_genome": {
           "name": "reference_genome",
           "slot_group": "jgi_isolate_section"
@@ -85854,6 +85938,12 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "notes": [
+            "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -85871,7 +85961,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -86070,8 +86161,12 @@
           "name": "nuc_acid_absorb1",
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -86102,8 +86197,12 @@
           "name": "nuc_acid_absorb2",
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -86163,7 +86262,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "descriptive_name": "nanograms per microliter",
+            "ucum_code": "ng/uL"
+          }
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
@@ -86195,7 +86298,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "descriptive_name": "microliters",
+            "ucum_code": "uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -86376,53 +86483,17 @@
           "range": "JgiIsolateMaterialKindEnum",
           "required": true
         },
-        "isolate_meth": {
-          "name": "isolate_meth",
-          "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
-          "title": "Sample Isolation Method",
-          "examples": [
-            {
-              "value": "Wizard Genomic DNA Purification Kit"
-            },
-            {
-              "value": "CTAB chloroform extraction"
-            },
-            {
-              "value": "TRIzol RNA extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "structured_aliases": {
-            "Sample Isolation Method": {
-              "literal_form": "Sample Isolation Method",
-              "predicate": "EXACT_SYNONYM",
-              "notes": [
-                "Exact JGI form template is access-restricted; source is the public submission overview.",
-                "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
-              ],
-              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
-            }
-          },
-          "rank": 16,
-          "alias": "isolate_meth",
-          "owner": "JgiIsolateCommonMixin",
-          "domain_of": [
-            "JgiIsolateCommonMixin",
-            "JgiIsolateGenomeInterface"
-          ],
-          "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "required": true
-        },
         "reference_genome": {
           "name": "reference_genome",
           "description": "Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.",
           "title": "Reference Genome",
           "notes": [
-            "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
+            "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447",
+            "JGI requires this for resequencing, gene expression, IsoSeq, and methylation products. submission-schema does not enforce that as a rule because analysis_type is identical (\"isolate genome sequencing\") for draft and resequencing, so a rule keyed on it cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
           ],
           "comments": [
-            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+            "Required for resequencing, gene expression, IsoSeq, and methylation projects."
           ],
           "examples": [
             {
@@ -86777,6 +86848,7 @@
         "isolate_second_ribosomal_seq_comments",
         "isolate_fungal_16s_screening",
         "isolate_its_match_unite",
+        "dna_isolate_meth",
         "estimated_size"
       ],
       "slot_usage": {
@@ -86816,12 +86888,15 @@
       "attributes": {
         "isolate_ribosomal_seq": {
           "name": "isolate_ribosomal_seq",
-          "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
+          "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns; for fungal ITS >450 nt with <2% Ns. Use only A, C, G, T, or N with no FASTA header line.",
           "title": "first ribosomal sequence",
+          "notes": [
+            "JGI requires the ribosomal sequence for draft genome products but not for resequencing, methylation, or transcriptome products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.",
+            "The product-specific length and N-content thresholds in the description (>1300 nt microbial drafts, >220 bp <10% Ns single cells, >450 nt <2% Ns fungal ITS) are not enforced; the flat pattern checks only 200-5000 A/C/G/T/N. Product-aware checks would live in nmdc-server (validation.ts)."
+          ],
           "comments": [
-            "Required for all microbial and fungal genome projects.",
-            "16S is required for microbial drafts and single cells; ITS for fungal drafts.",
-            "Sequence must come from the actual sample to be shipped to JGI."
+            "At least one ribosomal sequence is required for strain verification and must come from the actual sample to be shipped to JGI.  Please use only A, C, G, T or N, with no header.  Sequence of insufficient quality may delay the completion of the project. 16s sequence is required for all microbial drafts and single cells.  For microbial drafts, sequence MUST be >1300 nt; for single cells the sequence MUST be >220 bp, with <10% Ns.",
+            "ITS sequence is required for all samples for fungal drafts for strain verification. ITS sequence must be >450 nt with <2% Ns."
           ],
           "examples": [
             {
@@ -86840,13 +86915,19 @@
           ],
           "slot_group": "jgi_isolate_section",
           "range": "string",
-          "required": true,
+          "recommended": true,
           "pattern": "^[ATCGN]{200,5000}$"
         },
         "isolate_ribosomal_seq_type": {
           "name": "isolate_ribosomal_seq_type",
           "description": "Type of the first ribosomal sequence provided.",
           "title": "first ribosomal sequence type",
+          "notes": [
+            "Conditionally required for draft genome products only, for the same reason as isolate_ribosomal_seq, and not enforced here. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for draft genome products (microbial and fungal genome drafts); not required for resequencing, methylation, or transcriptome products."
+          ],
           "examples": [
             {
               "value": "16S"
@@ -86864,7 +86945,7 @@
           ],
           "slot_group": "jgi_isolate_section",
           "range": "RibosomalSequenceTypeEnum",
-          "required": true
+          "recommended": true
         },
         "isolate_ribosomal_seq_comments": {
           "name": "isolate_ribosomal_seq_comments",
@@ -86896,6 +86977,9 @@
           "name": "isolate_second_ribosomal_seq",
           "description": "Optional secondary ribosomal sequence for additional strain verification. For 28S must be >300 nt with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
           "title": "second ribosomal sequence",
+          "comments": [
+            "Other types of ribosomal sequence may be provided as a secondary check.  Sequence MUST come from the actual sample to be shipped to JGI.  For 28s, the sequence must be >300 nt with <10% Ns. Please use only A, C, G, T or N, with no header."
+          ],
           "examples": [
             {
               "value": "AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT"
@@ -86962,8 +87046,11 @@
           "name": "isolate_fungal_16s_screening",
           "description": "For fungal draft samples only — was 16S screening performed to check for bacterial contamination?",
           "title": "16S screening performed",
+          "notes": [
+            "JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Required for fungal minimal, standard, and improved drafts.",
+            "Required for fungal light, minimal, standard, and improved drafts.",
             "Leave blank for non-fungal samples."
           ],
           "examples": [
@@ -86988,8 +87075,11 @@
           "name": "isolate_its_match_unite",
           "description": "For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?",
           "title": "ITS matches UNITE",
+          "notes": [
+            "JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Required for fungal minimal, standard, and improved drafts.",
+            "Required for fungal light, minimal, standard, and improved drafts.",
             "Screen at https://unite.ut.ee/ before submitting.",
             "Leave blank for non-fungal samples."
           ],
@@ -87011,9 +87101,35 @@
           "slot_group": "jgi_isolate_section",
           "range": "YesNoEnum"
         },
+        "dna_isolate_meth": {
+          "name": "dna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "DNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "dna_isolate_meth",
+          "owner": "JgiIsolateGenomeInterface",
+          "domain_of": [
+            "JgiMgInterface",
+            "JgiMgLrInterface",
+            "JgiIsolateGenomeInterface"
+          ],
+          "slot_group": "jgi_metagenomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
+        },
         "estimated_size": {
           "name": "estimated_size",
-          "description": "The estimated size of the genome prior to sequencing. Of particular importance in the sequencing of (eukaryotic) genome which could remain in draft form for a long or unspecified period",
+          "description": "Provide an estimate of the genome size in megabases",
           "title": "Estimated genome size (Mb)",
           "notes": [
             "Required for all DNA isolate products (draft genomes, resequencing, methylation) per JGI; on the genome interface, not the shared IsolateInterface, so transcriptome isolates are not asked for it. Float Mb at the JGI submission gate; nmdc-schema stores estimated_size as integer bp."
@@ -87023,7 +87139,7 @@
           ],
           "examples": [
             {
-              "object": 300000
+              "value": "4.6"
             }
           ],
           "in_subset": [
@@ -87231,6 +87347,12 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "notes": [
+            "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -87248,7 +87370,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -87447,8 +87570,12 @@
           "name": "nuc_acid_absorb1",
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -87479,8 +87606,12 @@
           "name": "nuc_acid_absorb2",
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -87540,7 +87671,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "descriptive_name": "nanograms per microliter",
+            "ucum_code": "ng/uL"
+          }
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
@@ -87572,7 +87707,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "descriptive_name": "microliters",
+            "ucum_code": "uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -87753,53 +87892,17 @@
           "range": "JgiIsolateMaterialKindEnum",
           "required": true
         },
-        "isolate_meth": {
-          "name": "isolate_meth",
-          "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
-          "title": "Sample Isolation Method",
-          "examples": [
-            {
-              "value": "Wizard Genomic DNA Purification Kit"
-            },
-            {
-              "value": "CTAB chloroform extraction"
-            },
-            {
-              "value": "TRIzol RNA extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "structured_aliases": {
-            "Sample Isolation Method": {
-              "literal_form": "Sample Isolation Method",
-              "predicate": "EXACT_SYNONYM",
-              "notes": [
-                "Exact JGI form template is access-restricted; source is the public submission overview.",
-                "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
-              ],
-              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
-            }
-          },
-          "rank": 16,
-          "alias": "isolate_meth",
-          "owner": "JgiIsolateGenomeInterface",
-          "domain_of": [
-            "JgiIsolateCommonMixin",
-            "JgiIsolateGenomeInterface"
-          ],
-          "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "required": true
-        },
         "reference_genome": {
           "name": "reference_genome",
           "description": "Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.",
           "title": "Reference Genome",
           "notes": [
-            "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
+            "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447",
+            "JGI requires this for resequencing, gene expression, IsoSeq, and methylation products. submission-schema does not enforce that as a rule because analysis_type is identical (\"isolate genome sequencing\") for draft and resequencing, so a rule keyed on it cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
           ],
           "comments": [
-            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+            "Required for resequencing, gene expression, IsoSeq, and methylation projects."
           ],
           "examples": [
             {
@@ -88166,12 +88269,17 @@
         "JgiIsolateCommonMixin"
       ],
       "slots": [
-        "rna_collection_date"
+        "rna_collection_date",
+        "rna_isolate_meth"
       ],
       "slot_usage": {
         "rna_collection_date": {
           "name": "rna_collection_date",
           "slot_group": "jgi_isolate_section",
+          "required": true
+        },
+        "collection_site_or_growth_conditions": {
+          "name": "collection_site_or_growth_conditions",
           "required": true
         }
       },
@@ -88225,6 +88333,31 @@
           "range": "string",
           "required": true,
           "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$"
+        },
+        "rna_isolate_meth": {
+          "name": "rna_isolate_meth",
+          "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+          "title": "RNA isolation method",
+          "examples": [
+            {
+              "value": "phenol/chloroform extraction"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "aliases": [
+            "Sample Isolation Method"
+          ],
+          "rank": 16,
+          "alias": "rna_isolate_meth",
+          "owner": "JgiIsolateTranscriptomeInterface",
+          "domain_of": [
+            "JgiMtInterface",
+            "JgiIsolateTranscriptomeInterface"
+          ],
+          "slot_group": "jgi_metatranscriptomics_section",
+          "range": "string",
+          "required": true,
+          "recommended": false
         },
         "analysis_type": {
           "name": "analysis_type",
@@ -88397,6 +88530,12 @@
           "name": "replicate_group",
           "description": "Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.",
           "title": "Biological replicate/sample group Name",
+          "notes": [
+            "JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
+          "comments": [
+            "Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects."
+          ],
           "examples": [
             {
               "value": "SampleGroup1"
@@ -88414,7 +88553,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "recommended": true
         },
         "jgi_samp_id": {
           "name": "jgi_samp_id",
@@ -88613,8 +88753,12 @@
           "name": "nuc_acid_absorb1",
           "description": "260/280 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/280",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -88645,8 +88789,12 @@
           "name": "nuc_acid_absorb2",
           "description": "260/230 measurement of nucleic acid sample purity",
           "title": "nucleic acid absorbance 260/230",
+          "notes": [
+            "JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
+          ],
           "comments": [
-            "Recommended value is between 1 and 3."
+            "Recommended value is between 1 and 3.",
+            "Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries."
           ],
           "examples": [
             {
@@ -88706,7 +88854,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "descriptive_name": "nanograms per microliter",
+            "ucum_code": "ng/uL"
+          }
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
@@ -88738,7 +88890,11 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "descriptive_name": "microliters",
+            "ucum_code": "uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -88919,53 +89075,17 @@
           "range": "JgiIsolateMaterialKindEnum",
           "required": true
         },
-        "isolate_meth": {
-          "name": "isolate_meth",
-          "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
-          "title": "Sample Isolation Method",
-          "examples": [
-            {
-              "value": "Wizard Genomic DNA Purification Kit"
-            },
-            {
-              "value": "CTAB chloroform extraction"
-            },
-            {
-              "value": "TRIzol RNA extraction"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "structured_aliases": {
-            "Sample Isolation Method": {
-              "literal_form": "Sample Isolation Method",
-              "predicate": "EXACT_SYNONYM",
-              "notes": [
-                "Exact JGI form template is access-restricted; source is the public submission overview.",
-                "JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method."
-              ],
-              "source": "https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/"
-            }
-          },
-          "rank": 16,
-          "alias": "isolate_meth",
-          "owner": "JgiIsolateTranscriptomeInterface",
-          "domain_of": [
-            "JgiIsolateCommonMixin",
-            "JgiIsolateGenomeInterface"
-          ],
-          "slot_group": "jgi_isolate_section",
-          "range": "string",
-          "required": true
-        },
         "reference_genome": {
           "name": "reference_genome",
           "description": "Genome record to use as a reference for read alignment or assembly scaffolding. Preferred formats are IMG taxon OID, Mycocosm/Phycocosm/ Phytozome ID, or NCBI assembly accession (GCF_/GCA_). Free-text.",
           "title": "Reference Genome",
           "notes": [
-            "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447"
+            "Local slot pending promotion to nmdc-schema; see https://github.com/microbiomedata/submission-schema/issues/447",
+            "JGI requires this for resequencing, gene expression, IsoSeq, and methylation products. submission-schema does not enforce that as a rule because analysis_type is identical (\"isolate genome sequencing\") for draft and resequencing, so a rule keyed on it cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177."
           ],
           "comments": [
-            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects."
+            "Provide a reference if one exists; helps JGI with assembly and QC even for de novo projects.",
+            "Required for resequencing, gene expression, IsoSeq, and methylation projects."
           ],
           "examples": [
             {
@@ -89091,7 +89211,8 @@
             "JgiIsolateGenomeInterface"
           ],
           "slot_group": "jgi_isolate_section",
-          "range": "string"
+          "range": "string",
+          "required": true
         },
         "host_taxid": {
           "name": "host_taxid",

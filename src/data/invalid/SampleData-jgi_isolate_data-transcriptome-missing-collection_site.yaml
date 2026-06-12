@@ -1,10 +1,7 @@
-## Valid: JgiIsolateTranscriptomeInterface for an isolate transcriptome project.
-## rna_collection_date stores the RNA experiment date as YYYY-MM-DD; the JGI export
-## layer splits this into Collection Year, Collection Month (full name), and
-## Collection Day columns. The transcriptome interface shares the JGI sample
-## logistics but carries no ribosomal strain-verification fields (those are on the
-## genome interface). Organism: Dictyoglomus turgidum DSM 6724. JGI logistics values
-## are synthetic but shaped to real GOLD `project` formats; non-identifying.
+## Invalid. Single failure: collection_site_or_growth_conditions is required on
+## JgiIsolateTranscriptomeInterface (JGI requires it for RNA projects) but is omitted here.
+## Derived from the valid transcriptome example (Dictyoglomus turgidum DSM 6724) with
+## collection_site_or_growth_conditions removed. Single point of failure.
 jgi_isolate_transcriptome_data:
   - samp_name: Dtur_DSM6724_rna1
     analysis_type:
@@ -27,4 +24,3 @@ jgi_isolate_transcriptome_data:
     biosafety_mat_cat: Bacteria
     rna_isolate_meth: TRIzol RNA extraction
     rna_collection_date: "2021-06-15"
-    collection_site_or_growth_conditions: anaerobic liquid culture, 70 C

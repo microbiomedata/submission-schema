@@ -1,0 +1,16 @@
+## Invalid. Single failure: isolate_single_colony 'maybe' is not in YesNoEnum.
+isolate_data:
+  - samp_name: Dtur_DSM6724_g1
+    analysis_type:
+      - isolate genome sequencing
+    source_mat_id: 'DSM 6724'
+    collection_date: "2008-05-12"
+    organism_genus: Dictyoglomus
+    organism_species: turgidum
+    strain_name: DSM 6724
+    isolate_name: DSM 6724
+    classified_as: NCBITaxon:515635
+    gc_content: 34.0
+    ploidy: haploid
+    isolate_single_colony: "maybe"
+    isolate_known_contaminants: none observed
