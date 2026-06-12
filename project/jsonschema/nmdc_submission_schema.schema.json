@@ -7057,9 +7057,12 @@
                     "type": "string"
                 },
                 "isolate_ribosomal_seq": {
-                    "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N with no FASTA header line.",
+                    "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns; for fungal ITS >450 nt with <2% Ns. Use only A, C, G, T, or N with no FASTA header line.",
                     "pattern": "^[ATCGN]{200,5000}$",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "isolate_ribosomal_seq_comments": {
                     "description": "Additional information about the first ribosomal sequence.",
@@ -7178,8 +7181,6 @@
                 }
             },
             "required": [
-                "isolate_ribosomal_seq",
-                "isolate_ribosomal_seq_type",
                 "estimated_size",
                 "analysis_type",
                 "samp_name",

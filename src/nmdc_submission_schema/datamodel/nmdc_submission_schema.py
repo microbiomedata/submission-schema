@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-11T16:39:12
+# Generation date: 2026-06-11T21:39:46
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -6750,8 +6750,6 @@ class JgiIsolateGenomeInterface(DhInterface):
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface
 
     samp_name: Union[str, JgiIsolateGenomeInterfaceSampName] = None
-    isolate_ribosomal_seq: str = None
-    isolate_ribosomal_seq_type: Union[str, "RibosomalSequenceTypeEnum"] = None
     estimated_size: float = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     jgi_samp_id: str = None
@@ -6770,6 +6768,8 @@ class JgiIsolateGenomeInterface(DhInterface):
     biosafety_mat_cat: Union[str, "JgiIsolateMaterialKindEnum"] = None
     isolate_meth: str = None
     sample_isolated_from: str = None
+    isolate_ribosomal_seq: Optional[str] = None
+    isolate_ribosomal_seq_type: Optional[Union[str, "RibosomalSequenceTypeEnum"]] = None
     isolate_ribosomal_seq_comments: Optional[str] = None
     isolate_second_ribosomal_seq: Optional[str] = None
     isolate_second_ribosomal_seq_type: Optional[Union[str, "RibosomalSequenceTypeEnum"]] = None
@@ -6793,16 +6793,6 @@ class JgiIsolateGenomeInterface(DhInterface):
             self.MissingRequiredField("samp_name")
         if not isinstance(self.samp_name, JgiIsolateGenomeInterfaceSampName):
             self.samp_name = JgiIsolateGenomeInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.isolate_ribosomal_seq):
-            self.MissingRequiredField("isolate_ribosomal_seq")
-        if not isinstance(self.isolate_ribosomal_seq, str):
-            self.isolate_ribosomal_seq = str(self.isolate_ribosomal_seq)
-
-        if self._is_empty(self.isolate_ribosomal_seq_type):
-            self.MissingRequiredField("isolate_ribosomal_seq_type")
-        if not isinstance(self.isolate_ribosomal_seq_type, RibosomalSequenceTypeEnum):
-            self.isolate_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_ribosomal_seq_type)
 
         if self._is_empty(self.estimated_size):
             self.MissingRequiredField("estimated_size")
@@ -6894,6 +6884,12 @@ class JgiIsolateGenomeInterface(DhInterface):
             self.MissingRequiredField("sample_isolated_from")
         if not isinstance(self.sample_isolated_from, str):
             self.sample_isolated_from = str(self.sample_isolated_from)
+
+        if self.isolate_ribosomal_seq is not None and not isinstance(self.isolate_ribosomal_seq, str):
+            self.isolate_ribosomal_seq = str(self.isolate_ribosomal_seq)
+
+        if self.isolate_ribosomal_seq_type is not None and not isinstance(self.isolate_ribosomal_seq_type, RibosomalSequenceTypeEnum):
+            self.isolate_ribosomal_seq_type = RibosomalSequenceTypeEnum(self.isolate_ribosomal_seq_type)
 
         if self.isolate_ribosomal_seq_comments is not None and not isinstance(self.isolate_ribosomal_seq_comments, str):
             self.isolate_ribosomal_seq_comments = str(self.isolate_ribosomal_seq_comments)
@@ -14514,11 +14510,11 @@ slots.isolate_known_contaminants = Slot(uri=NMDC_SUB_SCHEMA.isolate_known_contam
                    model_uri=NMDC_SUB_SCHEMA.isolate_known_contaminants, domain=None, range=Optional[str])
 
 slots.isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, domain=None, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[ATCGN]{200,5000}$'))
 
 slots.isolate_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, name="isolate_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, domain=None, range=Union[str, "RibosomalSequenceTypeEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, domain=None, range=Optional[Union[str, "RibosomalSequenceTypeEnum"]])
 
 slots.isolate_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, name="isolate_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_comments'),
                    model_uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, domain=None, range=Optional[str],
@@ -17265,11 +17261,11 @@ slots.JgiIsolateCommonMixin_host_taxid = Slot(uri=MIXS['0000250'], name="JgiIsol
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_host_taxid, domain=None, range=Optional[str])
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq, domain=JgiIsolateGenomeInterface, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq, domain=JgiIsolateGenomeInterface, range=Optional[str],
                    pattern=re.compile(r'^[ATCGN]{200,5000}$'))
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq_type = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_type, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq_type", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_type'),
-                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq_type, domain=JgiIsolateGenomeInterface, range=Union[str, "RibosomalSequenceTypeEnum"])
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq_type, domain=JgiIsolateGenomeInterface, range=Optional[Union[str, "RibosomalSequenceTypeEnum"]])
 
 slots.JgiIsolateGenomeInterface_isolate_ribosomal_seq_comments = Slot(uri=NMDC_SUB_SCHEMA.isolate_ribosomal_seq_comments, name="JgiIsolateGenomeInterface_isolate_ribosomal_seq_comments", curie=NMDC_SUB_SCHEMA.curie('isolate_ribosomal_seq_comments'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_ribosomal_seq_comments, domain=JgiIsolateGenomeInterface, range=Optional[str],

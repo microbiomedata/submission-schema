@@ -753,28 +753,28 @@ slots:
     title: first ribosomal sequence
     description: >-
       Primary ribosomal sequence for strain verification. For microbial drafts must
-      be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N
-      with no FASTA header line.
+      be >1300 nt; for single cells >220 bp with <10% Ns; for fungal ITS >450 nt with
+      <2% Ns. Use only A, C, G, T, or N with no FASTA header line.
     comments:
-      - Required for all microbial and fungal genome projects.
+      - Required for draft genome products (microbial minimal/improved drafts, single cells, and fungal minimal/standard/improved drafts); not required for resequencing, methylation, or transcriptome products.
       - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
       - Sequence must come from the actual sample to be shipped to JGI.
     examples:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 32
     range: string
-    required: true
     pattern: "^[ATCGN]{200,5000}$"
     aliases:
       - First ribosomal sequence
   isolate_ribosomal_seq_type:
     title: first ribosomal sequence type
     description: Type of the first ribosomal sequence provided.
+    comments:
+      - Required for draft genome products (microbial and fungal genome drafts); not required for resequencing, methylation, or transcriptome products.
     examples:
       - value: 16S
     rank: 33
     range: RibosomalSequenceTypeEnum
-    required: true
     aliases:
       - First ribosomal sequence type
   isolate_ribosomal_seq_comments:
@@ -825,7 +825,7 @@ slots:
     title: 16S screening performed
     description: For fungal draft samples only — was 16S screening performed to check for bacterial contamination?
     comments:
-      - Required for fungal minimal, standard, and improved drafts.
+      - Required for fungal light, minimal, standard, and improved drafts.
       - Leave blank for non-fungal samples.
     examples:
       - value: "yes"
@@ -837,7 +837,7 @@ slots:
     title: ITS matches UNITE
     description: For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?
     comments:
-      - Required for fungal minimal, standard, and improved drafts.
+      - Required for fungal light, minimal, standard, and improved drafts.
       - Screen at https://unite.ut.ee/ before submitting.
       - Leave blank for non-fungal samples.
     examples:
