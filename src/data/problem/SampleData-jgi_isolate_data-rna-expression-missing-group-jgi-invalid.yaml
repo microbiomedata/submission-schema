@@ -19,5 +19,5 @@ jgi_isolate_transcriptome_data:
     jgi_sample_format: RNAStable
     dnase: "yes"
     biosafety_mat_cat: Bacteria
-    isolate_meth: TRIzol RNA extraction
+    rna_isolate_meth: TRIzol RNA extraction
     rna_collection_date: "2021-06-15"

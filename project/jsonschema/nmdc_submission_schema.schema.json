@@ -6731,7 +6731,7 @@
         },
         "IsolateInterface": {
             "additionalProperties": false,
-            "description": "Metadata for microbial isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.",
+            "description": "Metadata for isolate samples submitted to NMDC. Captures core biological identity slots (taxonomy, strain, culture collection) that NMDC stores and queries. Slots are sourced from nmdc-schema OrganismSample and Organism classes.",
             "properties": {
                 "analysis_type": {
                     "description": "Select all the data types associated or available for this biosample",
@@ -7004,6 +7004,10 @@
                     "pattern": "^[-_.a-zA-Z0-9]{1,20}$",
                     "type": "string"
                 },
+                "dna_isolate_meth": {
+                    "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+                    "type": "string"
+                },
                 "dnase": {
                     "$ref": "#/$defs/YesNoEnum"
                 },
@@ -7048,10 +7052,6 @@
                 "isolate_its_match_unite": {
                     "$ref": "#/$defs/YesNoEnum",
                     "description": "For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?"
-                },
-                "isolate_meth": {
-                    "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
-                    "type": "string"
                 },
                 "isolate_ribosomal_seq": {
                     "description": "Primary ribosomal sequence for strain verification. For microbial drafts must be >1300 nt; for single cells >220 bp with <10% Ns; for fungal ITS >450 nt with <2% Ns. Use only A, C, G, T, or N with no FASTA header line.",
@@ -7178,6 +7178,7 @@
                 }
             },
             "required": [
+                "dna_isolate_meth",
                 "estimated_size",
                 "analysis_type",
                 "samp_name",
@@ -7195,7 +7196,6 @@
                 "jgi_sample_format",
                 "dnase",
                 "biosafety_mat_cat",
-                "isolate_meth",
                 "sample_isolated_from"
             ],
             "title": "JgiIsolateGenomeInterface",
@@ -7332,10 +7332,6 @@
                         "null"
                     ]
                 },
-                "isolate_meth": {
-                    "description": "Method, protocol, or kit used to extract DNA or RNA from the sample.",
-                    "type": "string"
-                },
                 "jgi_project_pi": {
                     "type": "string"
                 },
@@ -7409,6 +7405,10 @@
                     "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$",
                     "type": "string"
                 },
+                "rna_isolate_meth": {
+                    "description": "Describe the method/protocol/kit used to extract DNA/RNA.",
+                    "type": "string"
+                },
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
@@ -7427,6 +7427,7 @@
             },
             "required": [
                 "rna_collection_date",
+                "rna_isolate_meth",
                 "analysis_type",
                 "samp_name",
                 "jgi_samp_id",
@@ -7443,7 +7444,6 @@
                 "jgi_sample_format",
                 "dnase",
                 "biosafety_mat_cat",
-                "isolate_meth",
                 "sample_isolated_from"
             ],
             "title": "JgiIsolateTranscriptomeInterface",

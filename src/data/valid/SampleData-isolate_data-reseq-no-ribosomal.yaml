@@ -47,6 +47,6 @@ jgi_isolate_genome_data:
     jgi_sample_format: Gentegra-DNA
     dnase: "yes"
     biosafety_mat_cat: Bacteria
-    isolate_meth: CTAB chloroform extraction
+    dna_isolate_meth: CTAB chloroform extraction
     reference_genome: "2648501807"
     estimated_size: 1.85
