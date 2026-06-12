@@ -474,7 +474,7 @@
 </tr>
 <tr>
 <td><a href="../replicate_group/">replicate_group</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Samples that are biological replicates should have the same group name</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -588,7 +588,7 @@
 </tr>
 <tr>
 <td><a href="../reference_genome/">reference_genome</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Genome record to use as a reference for read alignment or assembly scaffoldin...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -600,7 +600,7 @@
 </tr>
 <tr>
 <td><a href="../collection_site_or_growth_conditions/">collection_site_or_growth_conditions</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Free-text description of the collection site or growth conditions for the iso...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -888,6 +888,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
   jgi_samp_id:
     name: jgi_samp_id
     title: JGI sample ID
@@ -1347,6 +1348,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
   sample_isolated_from:
     name: sample_isolated_from
     description: Free-text description of what the organism was isolated from.
@@ -1404,6 +1406,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
   host_taxid:
     name: host_taxid
     annotations:

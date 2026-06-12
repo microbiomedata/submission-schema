@@ -429,7 +429,7 @@
 
 
 
-        JgiIsolateGenomeInterface --&gt; "0..1" YesNoEnum : isolate_fungal_16s_screening
+        JgiIsolateGenomeInterface --&gt; "0..1 _recommended_" YesNoEnum : isolate_fungal_16s_screening
         click YesNoEnum href "../YesNoEnum/"
 
 
@@ -440,7 +440,7 @@
 
 
 
-        JgiIsolateGenomeInterface --&gt; "0..1" YesNoEnum : isolate_its_match_unite
+        JgiIsolateGenomeInterface --&gt; "0..1 _recommended_" YesNoEnum : isolate_its_match_unite
         click YesNoEnum href "../YesNoEnum/"
 
 
@@ -457,7 +457,7 @@
 
 
 
-        JgiIsolateGenomeInterface --&gt; "0..1" RibosomalSequenceTypeEnum : isolate_ribosomal_seq_type
+        JgiIsolateGenomeInterface --&gt; "0..1 _recommended_" RibosomalSequenceTypeEnum : isolate_ribosomal_seq_type
         click RibosomalSequenceTypeEnum href "../RibosomalSequenceTypeEnum/"
 
 
@@ -542,13 +542,13 @@
 <tbody>
 <tr>
 <td><a href="../isolate_ribosomal_seq/">isolate_ribosomal_seq</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Primary ribosomal sequence for strain verification</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../isolate_ribosomal_seq_type/">isolate_ribosomal_seq_type</a></td>
-<td>0..1 <br/> <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../RibosomalSequenceTypeEnum/">RibosomalSequenceTypeEnum</a></td>
 <td>Type of the first ribosomal sequence provided</td>
 <td>direct</td>
 </tr>
@@ -578,13 +578,13 @@
 </tr>
 <tr>
 <td><a href="../isolate_fungal_16s_screening/">isolate_fungal_16s_screening</a></td>
-<td>0..1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
 <td>For fungal draft samples only — was 16S screening performed to check for bact...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../isolate_its_match_unite/">isolate_its_match_unite</a></td>
-<td>0..1 <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../YesNoEnum/">YesNoEnum</a></td>
 <td>For fungal draft samples only -- does the ITS sequence match taxonomy in the ...</td>
 <td>direct</td>
 </tr>
@@ -614,7 +614,7 @@
 </tr>
 <tr>
 <td><a href="../replicate_group/">replicate_group</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Samples that are biological replicates should have the same group name</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -728,7 +728,7 @@
 </tr>
 <tr>
 <td><a href="../reference_genome/">reference_genome</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Genome record to use as a reference for read alignment or assembly scaffoldin...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -740,7 +740,7 @@
 </tr>
 <tr>
 <td><a href="../collection_site_or_growth_conditions/">collection_site_or_growth_conditions</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>Free-text description of the collection site or growth conditions for the iso...</td>
 <td><a href="../JgiIsolateCommonMixin/">JgiIsolateCommonMixin</a></td>
 </tr>
@@ -1044,6 +1044,7 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
     pattern: ^[ATCGN]{200,5000}$
   isolate_ribosomal_seq_type:
     name: isolate_ribosomal_seq_type
@@ -1064,6 +1065,7 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: RibosomalSequenceTypeEnum
+    recommended: true
   isolate_ribosomal_seq_comments:
     name: isolate_ribosomal_seq_comments
     description: Additional information about the first ribosomal sequence.
@@ -1155,6 +1157,7 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: YesNoEnum
+    recommended: true
   isolate_its_match_unite:
     name: isolate_its_match_unite
     description: For fungal draft samples only -- does the ITS sequence match taxonomy
@@ -1176,6 +1179,7 @@ attributes:
     - JgiIsolateGenomeInterface
     slot_group: jgi_isolate_section
     range: YesNoEnum
+    recommended: true
   estimated_size:
     name: estimated_size
     description: The estimated size of the genome prior to sequencing. Of particular
@@ -1330,6 +1334,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
   jgi_samp_id:
     name: jgi_samp_id
     title: JGI sample ID
@@ -1789,6 +1794,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
   sample_isolated_from:
     name: sample_isolated_from
     description: Free-text description of what the organism was isolated from.
@@ -1846,6 +1852,7 @@ attributes:
     - JgiIsolateCommonMixin
     slot_group: jgi_isolate_section
     range: string
+    recommended: true
   host_taxid:
     name: host_taxid
     annotations:
