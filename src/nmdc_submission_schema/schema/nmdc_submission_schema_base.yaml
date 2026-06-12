@@ -601,6 +601,8 @@ slots:
     required: true
     minimum_value: 0.0001
     maximum_value: 1000
+    unit:
+      ucum_code: uL
     aliases:
       - dna_volume
       - rna_volume
@@ -651,6 +653,8 @@ slots:
     required: true
     minimum_value: 0.0001
     maximum_value: 2000
+    unit:
+      ucum_code: ng/uL
   biosafety_mat_cat:
     description: >-
       JGI material category, labeled "Biosafety Material Category" on the form and

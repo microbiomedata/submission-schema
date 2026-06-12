@@ -13446,7 +13446,10 @@
       "range": "float",
       "required": true,
       "minimum_value": 0.0001,
-      "maximum_value": 1000
+      "maximum_value": 1000,
+      "unit": {
+        "ucum_code": "uL"
+      }
     },
     "nuc_acid_absorb1": {
       "name": "nuc_acid_absorb1",
@@ -13538,7 +13541,10 @@
       "range": "float",
       "required": true,
       "minimum_value": 0.0001,
-      "maximum_value": 2000
+      "maximum_value": 2000,
+      "unit": {
+        "ucum_code": "ng/uL"
+      }
     },
     "biosafety_mat_cat": {
       "name": "biosafety_mat_cat",
@@ -55096,7 +55102,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "ucum_code": "ng/uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -55525,7 +55534,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "ucum_code": "uL"
+          }
         },
         "replicate_group": {
           "name": "replicate_group",
@@ -55984,7 +55996,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "ucum_code": "ng/uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -56413,7 +56428,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "ucum_code": "uL"
+          }
         },
         "replicate_group": {
           "name": "replicate_group",
@@ -56869,7 +56887,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "ucum_code": "ng/uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -57297,7 +57318,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "ucum_code": "uL"
+          }
         },
         "replicate_group": {
           "name": "replicate_group",
@@ -86022,7 +86046,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "ucum_code": "ng/uL"
+          }
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
@@ -86054,7 +86081,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "ucum_code": "uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -87413,7 +87443,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "ucum_code": "ng/uL"
+          }
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
@@ -87445,7 +87478,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "ucum_code": "uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
@@ -88588,7 +88624,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 2000
+          "maximum_value": 2000,
+          "unit": {
+            "ucum_code": "ng/uL"
+          }
         },
         "jgi_sample_volume": {
           "name": "jgi_sample_volume",
@@ -88620,7 +88659,10 @@
           "range": "float",
           "required": true,
           "minimum_value": 0.0001,
-          "maximum_value": 1000
+          "maximum_value": 1000,
+          "unit": {
+            "ucum_code": "uL"
+          }
         },
         "cont_type": {
           "name": "cont_type",
