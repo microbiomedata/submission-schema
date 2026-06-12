@@ -1,12 +1,14 @@
-## Valid (LinkML) but INVALID (JGI). Microbial single-cell isolate genome, no environmental tab.
+## Passes LinkML, but NOT a valid JGI submission. Microbial single-cell isolate genome, no env tab.
 ## JGI requires Latitude, Longitude, Depth, Elevation, and Country for single-cell products.
 ## Those fields live on an environmental tab (Soil/Water/Host interface), not on the isolate
-## tabs. This submission has only the isolate + JGI genome tabs and no environmental tab, so
-## the required lat/lon are absent and JGI would reject it. LinkML accepts it because there is
-## no schema rule requiring an environmental tab for single-cell products. The nmdc-server
-## TypeScript validator (with the geographic fields wired to the env tab) would enforce it.
-## Also note: for single cells JGI wants the 16S ribosomal sequence >220 bp with <10% Ns
-## (LinkML enforces only the flat 200-5000 pattern).
+## tabs. This submission has only the isolate + JGI genome tabs and no environmental tab, so the
+## required lat/lon are absent and JGI would reject it. It passes submission-schema validation:
+## there is no rule requiring an environmental tab for single-cell products, and we have not
+## found a way to express that cross-tab requirement in submission-schema with the current
+## version of LinkML; it may need more sophisticated rules, or nmdc-server TypeScript validation
+## (web/src/views/SubmissionPortal/validation.ts; tracked in nmdc-server #2176, not yet implemented).
+## Also note: for single cells JGI wants the 16S ribosomal sequence >220 bp with <10% Ns;
+## submission-schema enforces only the flat 200-5000 pattern.
 isolate_data:
   - samp_name: Dtur_DSM6724_sc1
     analysis_type:

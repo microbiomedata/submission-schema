@@ -1,9 +1,11 @@
-## Valid (LinkML) but INVALID (JGI). Microbial IMPROVED DRAFT isolate missing absorbances.
+## Passes LinkML, but NOT a valid JGI submission. Microbial IMPROVED DRAFT isolate missing absorbances.
 ## JGI requires nuc_acid_absorb1 (260/280) AND nuc_acid_absorb2 (260/230) for microbial
 ## improved drafts (and plant/algal drafts, fungal standard/improved drafts, methylation, and
-## any PacBio libraries). Both are omitted here, so JGI would reject this. LinkML accepts it
-## because the requirement is product-conditional (keyed on the JGI Sequencing Product, which
-## the schema does not carry); the nmdc-server TypeScript validator would enforce it.
+## any PacBio libraries). Both are omitted here, so JGI would reject this. It passes
+## submission-schema validation: the requirement is keyed on the JGI Sequencing Product, which
+## the schema does not carry. We have not found a way to express this in submission-schema with
+## the current version of LinkML; it may need more sophisticated rules, or nmdc-server TypeScript
+## validation (web/src/views/SubmissionPortal/validation.ts; tracked in nmdc-server #2177, not yet implemented).
 isolate_data:
   - samp_name: Dtur_DSM6724_imp1
     analysis_type:

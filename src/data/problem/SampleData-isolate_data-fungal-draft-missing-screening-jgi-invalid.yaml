@@ -1,10 +1,11 @@
-## Valid (LinkML) but INVALID (JGI). Fungal DRAFT genome isolate missing fungal screening.
+## Passes LinkML, but NOT a valid JGI submission. Fungal DRAFT genome isolate missing screening.
 ## JGI requires isolate_fungal_16s_screening AND isolate_its_match_unite for fungal
 ## light/minimal/standard/improved drafts. Both are omitted here, so JGI would reject this.
-## LinkML accepts it: the requirement is conditional on the sample being a fungal draft, which
-## the schema cannot determine (biosafety_mat_cat = Fungi is present, but the schema has no
-## rule tying "Fungi + draft product" to these two fields). The nmdc-server TypeScript
-## validator is where this would be enforced.
+## It passes submission-schema validation: the requirement is conditional on the JGI Sequencing
+## Product (a fungal draft). biosafety_mat_cat = Fungi is present, but the product is not, so we
+## have not found a way to express this in submission-schema with the current version of LinkML;
+## it may need more sophisticated rules, or nmdc-server TypeScript validation
+## (web/src/views/SubmissionPortal/validation.ts; tracked in nmdc-server #2177, not yet implemented).
 isolate_data:
   - samp_name: Ncra_OR74A_g2
     analysis_type:

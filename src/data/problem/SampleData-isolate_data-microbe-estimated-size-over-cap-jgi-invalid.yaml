@@ -1,11 +1,13 @@
-## Valid (LinkML) but INVALID (JGI). Microbial draft isolate with an over-cap estimated_size.
+## Passes LinkML, but NOT a valid JGI submission. Microbial draft isolate with an over-cap estimated_size.
 ## JGI caps estimated genome size at 5000 Mb for microbial categories (Archaea, Bacteria,
 ## Fungi, Plasmid, Virus, Synthetic Construct) and 100000 Mb for eukaryotes (Alga, Animal,
 ## Plant, Protist). This Bacteria record declares estimated_size: 6000, which exceeds the
-## microbial cap, so JGI would reject it. LinkML only enforces the outer 0-100000 bound
-## (maximum_value: 100000), so 6000 passes; the category-conditional 5000 cap depends on
-## biosafety_mat_cat and is not expressible in LinkML. The nmdc-server TypeScript validator
-## is where this would be enforced.
+## microbial cap, so JGI would reject it. submission-schema enforces only the outer 0-100000
+## bound (maximum_value: 100000), so 6000 passes; the category-conditional 5000 cap depends on
+## biosafety_mat_cat. We have not found a way to express this category-conditional cap in
+## submission-schema with the current version of LinkML; it may need more sophisticated rules, or
+## nmdc-server TypeScript validation (web/src/views/SubmissionPortal/validation.ts; tracked in
+## nmdc-server #2176, not yet implemented).
 isolate_data:
   - samp_name: Dtur_DSM6724_big1
     analysis_type:

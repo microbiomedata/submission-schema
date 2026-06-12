@@ -1,9 +1,11 @@
-## Valid (LinkML) but INVALID (JGI). Microbial RESEQUENCING isolate missing reference_genome.
+## Passes LinkML, but NOT a valid JGI submission. Microbial RESEQUENCING isolate missing reference_genome.
 ## JGI requires reference_genome for resequencing products (and gene expression, IsoSeq, and
-## methylation). It is omitted here, so JGI would reject this. LinkML accepts it because the
-## requirement is product-conditional (analysis_type is the coarse "isolate genome sequencing"
-## for both draft and resequencing products), so the schema cannot require it only for reseq.
-## The nmdc-server TypeScript validator is where this would be enforced.
+## methylation). It is omitted here, so JGI would reject this. It passes submission-schema
+## validation: analysis_type carries the same coarse value "isolate genome sequencing" for both
+## draft and resequencing products, so a rule keyed on analysis_type cannot require it for reseq
+## only. We have not found a way to express this in submission-schema with the current version of
+## LinkML; it may need more sophisticated rules, or nmdc-server TypeScript validation
+## (web/src/views/SubmissionPortal/validation.ts; tracked in nmdc-server #2177, not yet implemented).
 ## (Compare SampleData-isolate_data-reseq-no-ribosomal, which is a complete, JGI-valid reseq.)
 isolate_data:
   - samp_name: Dtur_DSM6724_reseq2
