@@ -6035,16 +6035,13 @@ slots:
           slot_group: organism_section
 
   - slot: ploidy
-    source: Organism
+    source: OrganismSample
     destinations:
       - IsolateInterface
     modifications:
       - replace:
           rank: 114
           slot_group: organism_section
-          range: string
-          notes:
-            - Free-text string at the JGI submission gate; nmdc-schema models ploidy as PloidyEnum.
 
   ## Host organism fields placed on the JGI isolate interfaces per Montana-SlotEval (#449).
   ## Routed to JgiIsolateCommonMixin so both JgiIsolateGenomeInterface and

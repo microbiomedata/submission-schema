@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-12T12:04:27
+# Generation date: 2026-06-12T15:14:53
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -6674,7 +6674,7 @@ class IsolateInterface(DhInterface):
     source_mat_id: Optional[str] = None
     isolate_name: Optional[str] = None
     gc_content: Optional[float] = None
-    ploidy: Optional[str] = None
+    ploidy: Optional[Union[str, "PloidyEnum"]] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
@@ -6730,8 +6730,8 @@ class IsolateInterface(DhInterface):
         if self.gc_content is not None and not isinstance(self.gc_content, float):
             self.gc_content = float(self.gc_content)
 
-        if self.ploidy is not None and not isinstance(self.ploidy, str):
-            self.ploidy = str(self.ploidy)
+        if self.ploidy is not None and not isinstance(self.ploidy, PloidyEnum):
+            self.ploidy = PloidyEnum(self.ploidy)
 
         super().__post_init__(**kwargs)
 
@@ -9703,6 +9703,54 @@ class ProcessingInstitutionEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ProcessingInstitutionEnum",
+    )
+
+class PloidyEnum(EnumDefinitionImpl):
+    """
+    Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in
+    the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the
+    range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured
+    pattern to an enumerated set with referential integrity to PATO.
+    """
+    haploid = PermissibleValue(
+        text="haploid",
+        description="A single set of unpaired chromosomes.",
+        meaning=PATO["0001375"])
+    diploid = PermissibleValue(
+        text="diploid",
+        description="Two sets of homologous chromosomes (one from each parent).",
+        meaning=PATO["0001394"])
+    triploid = PermissibleValue(
+        text="triploid",
+        description="Three sets of chromosomes.",
+        meaning=PATO["0001381"])
+    tetraploid = PermissibleValue(
+        text="tetraploid",
+        description="Four sets of chromosomes.",
+        meaning=PATO["0001382"])
+    hexaploid = PermissibleValue(
+        text="hexaploid",
+        description="Six sets of chromosomes.",
+        meaning=PATO["0001384"])
+    polyploid = PermissibleValue(
+        text="polyploid",
+        description="More than two sets of chromosomes (generic — use a more specific value when known).",
+        meaning=PATO["0001377"])
+    allopolyploidy = PermissibleValue(
+        text="allopolyploidy",
+        description="Polyploid arising from hybridization between two or more species. (PATO label uses -y suffix.)",
+        meaning=PATO["0001379"])
+    aneuploid = PermissibleValue(
+        text="aneuploid",
+        description="A genome with an abnormal number of chromosomes (not an exact multiple of the haploid number).",
+        meaning=PATO["0001385"])
+    other = PermissibleValue(
+        text="other",
+        description="""A ploidy state with biological meaning that is not covered by the listed permissible values (e.g. dikaryon / dikaryotic, polykaryotic, octoploid, or hedged values like \"likely diploid\"). Use this when the submitter's value is interpretable but does not map cleanly to one of the named ploidy classes. The original free-text qualifier should be preserved upstream (e.g. in a sample-level note) when it carries information beyond the bare classification.""")
+
+    _defn = EnumDefinition(
+        name="PloidyEnum",
+        description="""Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured pattern to an enumerated set with referential integrity to PATO.""",
     )
 
 class EcosystemEnum(EnumDefinitionImpl):
@@ -16458,7 +16506,7 @@ slots.gc_content = Slot(uri=NMDC_SUB_SCHEMA.gc_content, name="gc_content", curie
                    model_uri=NMDC_SUB_SCHEMA.gc_content, domain=None, range=Optional[float])
 
 slots.ploidy = Slot(uri=MIXS['0000021'], name="ploidy", curie=MIXS.curie('0000021'),
-                   model_uri=NMDC_SUB_SCHEMA.ploidy, domain=None, range=Optional[str])
+                   model_uri=NMDC_SUB_SCHEMA.ploidy, domain=None, range=Optional[Union[str, "PloidyEnum"]])
 
 slots.host_genus = Slot(uri=NMDC_SUB_SCHEMA.host_genus, name="host_genus", curie=NMDC_SUB_SCHEMA.curie('host_genus'),
                    model_uri=NMDC_SUB_SCHEMA.host_genus, domain=None, range=Optional[str])
