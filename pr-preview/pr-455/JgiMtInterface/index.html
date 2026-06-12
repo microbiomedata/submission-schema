@@ -510,12 +510,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rna_isolate_meth/">rna_isolate_meth</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Describe the method/protocol/kit used to extract DNA/RNA</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../jgi_samp_id/">jgi_samp_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
@@ -722,7 +716,6 @@ slots:
 - container_name
 - dnase
 - biosafety_mat_cat
-- rna_isolate_meth
 - jgi_samp_id
 - jgi_sample_format
 - jgi_sample_name
@@ -1109,25 +1102,6 @@ attributes:
     slot_group: jgi_metatranscriptomics_section
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
-  rna_isolate_meth:
-    name: rna_isolate_meth
-    description: Describe the method/protocol/kit used to extract DNA/RNA.
-    title: RNA isolation method
-    examples:
-    - value: phenol/chloroform extraction
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Sample Isolation Method
-    rank: 16
-    alias: rna_isolate_meth
-    owner: JgiMtInterface
-    domain_of:
-    - JgiMtInterface
-    - JgiIsolateTranscriptomeInterface
-    slot_group: jgi_metatranscriptomics_section
-    range: string
-    required: true
-    recommended: false
   jgi_samp_id:
     name: jgi_samp_id
     title: JGI sample ID
@@ -1355,6 +1329,25 @@ attributes:
     range: string
     required: true
     recommended: true
+  rna_isolate_meth:
+    name: rna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: RNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    alias: rna_isolate_meth
+    owner: JgiMtInterface
+    domain_of:
+    - JgiMtInterface
+    - JgiIsolateTranscriptomeInterface
+    slot_group: jgi_metatranscriptomics_section
+    range: string
+    required: true
+    recommended: false
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample

@@ -510,12 +510,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../dna_isolate_meth/">dna_isolate_meth</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Describe the method/protocol/kit used to extract DNA/RNA</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../jgi_samp_id/">jgi_samp_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
@@ -722,7 +716,6 @@ slots:
 - container_name
 - dnase
 - biosafety_mat_cat
-- dna_isolate_meth
 - jgi_samp_id
 - jgi_sample_format
 - jgi_sample_name
@@ -1113,26 +1106,6 @@ attributes:
     slot_group: jgi_metagenomics_section
     range: JGIBiosafetyMaterialCategoryEnum
     required: true
-  dna_isolate_meth:
-    name: dna_isolate_meth
-    description: Describe the method/protocol/kit used to extract DNA/RNA.
-    title: DNA isolation method
-    examples:
-    - value: phenol/chloroform extraction
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Sample Isolation Method
-    rank: 16
-    alias: dna_isolate_meth
-    owner: JgiMgLrInterface
-    domain_of:
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiIsolateGenomeInterface
-    slot_group: jgi_metagenomics_section
-    range: string
-    required: true
-    recommended: false
   jgi_samp_id:
     name: jgi_samp_id
     title: JGI sample ID
@@ -1359,6 +1332,26 @@ attributes:
     slot_group: jgi_metagenomics_section
     range: string
     recommended: true
+  dna_isolate_meth:
+    name: dna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: DNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    alias: dna_isolate_meth
+    owner: JgiMgLrInterface
+    domain_of:
+    - JgiMgInterface
+    - JgiMgLrInterface
+    - JgiIsolateGenomeInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample

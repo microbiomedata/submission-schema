@@ -504,12 +504,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../dna_isolate_meth/">dna_isolate_meth</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Describe the method/protocol/kit used to extract DNA/RNA</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../biosafety_mat_cat/">biosafety_mat_cat</a></td>
 <td>1 <br/> <a href="../JGIBiosafetyMaterialCategoryEnum/">JGIBiosafetyMaterialCategoryEnum</a></td>
 <td>JGI material category, labeled "Biosafety Material Category" on the form and ...</td>
@@ -721,7 +715,6 @@ slots:
 - cont_well
 - container_name
 - dnase
-- dna_isolate_meth
 - biosafety_mat_cat
 - jgi_samp_id
 - jgi_sample_format
@@ -1077,26 +1070,6 @@ attributes:
     slot_group: jgi_metagenomics_section
     range: YesNoEnum
     required: true
-  dna_isolate_meth:
-    name: dna_isolate_meth
-    description: Describe the method/protocol/kit used to extract DNA/RNA.
-    title: DNA isolation method
-    examples:
-    - value: phenol/chloroform extraction
-    from_schema: https://example.com/nmdc_submission_schema
-    aliases:
-    - Sample Isolation Method
-    rank: 16
-    alias: dna_isolate_meth
-    owner: JgiMgInterface
-    domain_of:
-    - JgiMgInterface
-    - JgiMgLrInterface
-    - JgiIsolateGenomeInterface
-    slot_group: jgi_metagenomics_section
-    range: string
-    required: true
-    recommended: false
   biosafety_mat_cat:
     name: biosafety_mat_cat
     description: JGI material category, labeled "Biosafety Material Category" on the
@@ -1353,6 +1326,26 @@ attributes:
     slot_group: jgi_metagenomics_section
     range: string
     recommended: true
+  dna_isolate_meth:
+    name: dna_isolate_meth
+    description: Describe the method/protocol/kit used to extract DNA/RNA.
+    title: DNA isolation method
+    examples:
+    - value: phenol/chloroform extraction
+    from_schema: https://example.com/nmdc_submission_schema
+    aliases:
+    - Sample Isolation Method
+    rank: 16
+    alias: dna_isolate_meth
+    owner: JgiMgInterface
+    domain_of:
+    - JgiMgInterface
+    - JgiMgLrInterface
+    - JgiIsolateGenomeInterface
+    slot_group: jgi_metagenomics_section
+    range: string
+    required: true
+    recommended: false
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample
