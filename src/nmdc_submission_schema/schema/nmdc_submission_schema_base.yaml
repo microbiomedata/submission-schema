@@ -875,23 +875,6 @@ slots:
       - JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
-  isolate_meth:
-    title: Sample Isolation Method
-    description: Method, protocol, or kit used to extract DNA or RNA from the sample.
-    rank: 16
-    range: string
-    required: true
-    examples:
-      - value: Wizard Genomic DNA Purification Kit
-      - value: CTAB chloroform extraction
-      - value: TRIzol RNA extraction
-    structured_aliases:
-      - literal_form: Sample Isolation Method
-        predicate: EXACT_SYNONYM
-        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
-        notes:
-          - Exact JGI form template is access-restricted; source is the public submission overview.
-          - JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method.
   sample_isolated_from:
     title: Sample Isolated From
     description: Free-text description of what the organism was isolated from.
@@ -1483,7 +1466,6 @@ classes:
       - jgi_sample_format
       - dnase
       - biosafety_mat_cat
-      - isolate_meth
       - reference_genome
       - sample_isolated_from
       - collection_site_or_growth_conditions
@@ -1525,8 +1507,6 @@ classes:
       biosafety_mat_cat:
         slot_group: jgi_isolate_section
         range: JgiIsolateMaterialKindEnum
-      isolate_meth:
-        slot_group: jgi_isolate_section
       reference_genome:
         slot_group: jgi_isolate_section
       sample_isolated_from:
@@ -1575,6 +1555,7 @@ classes:
       - isolate_second_ribosomal_seq_comments
       - isolate_fungal_16s_screening
       - isolate_its_match_unite
+      - dna_isolate_meth
     slot_usage:
       isolate_ribosomal_seq:
         slot_group: jgi_isolate_section
@@ -1637,6 +1618,7 @@ classes:
       - JgiIsolateCommonMixin
     slots:
       - rna_collection_date
+      - rna_isolate_meth
     slot_usage:
       rna_collection_date:
         slot_group: jgi_isolate_section
