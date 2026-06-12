@@ -523,7 +523,7 @@ Alias: ploidy</p>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../PloidyEnum/">PloidyEnum</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -560,8 +560,6 @@ description: The ploidy level of the genome (e.g. allopolyploid, haploid, diploi
   Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer to
   http://purl.bioontology.org/ontology/PATO
 title: ploidy
-notes:
-- Free-text string at the JGI submission gate; nmdc-schema models ploidy as PloidyEnum.
 from_schema: https://example.com/nmdc_submission_schema
 rank: 114
 slot_uri: MIXS:0000021
@@ -569,7 +567,7 @@ alias: ploidy
 domain_of:
 - IsolateInterface
 slot_group: organism_section
-range: string
+range: PloidyEnum
 
 </code></pre>
 

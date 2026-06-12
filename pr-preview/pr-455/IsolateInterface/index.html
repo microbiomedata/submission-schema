@@ -359,6 +359,15 @@
 
       IsolateInterface : ploidy
 
+
+
+
+
+        IsolateInterface --&gt; "0..1" PloidyEnum : ploidy
+        click PloidyEnum href "../PloidyEnum/"
+
+
+
       IsolateInterface : samp_name
 
       IsolateInterface : source_mat_id
@@ -447,7 +456,7 @@
 </tr>
 <tr>
 <td><a href="../ploidy/">ploidy</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../PloidyEnum/">PloidyEnum</a></td>
 <td>The ploidy level of the genome (e</td>
 <td>direct</td>
 </tr>
@@ -957,8 +966,6 @@ attributes:
       Quality Ontology (PATO), and for a browser of PATO (v 2018-03-27) please refer
       to http://purl.bioontology.org/ontology/PATO
     title: ploidy
-    notes:
-    - Free-text string at the JGI submission gate; nmdc-schema models ploidy as PloidyEnum.
     from_schema: https://example.com/nmdc_submission_schema
     rank: 114
     slot_uri: MIXS:0000021
@@ -967,7 +974,7 @@ attributes:
     domain_of:
     - IsolateInterface
     slot_group: organism_section
-    range: string
+    range: PloidyEnum
   analysis_type:
     name: analysis_type
     description: Select all the data types associated or available for this biosample

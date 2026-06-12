@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/potassium/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/PloidyEnum/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: potassium (potassium) - submission-schema</title>
+        <title>Enum: PloidyEnum - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-potassium-potassium" class="md-skip">
+        <a href="#enum-ploidyenum" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: potassium (potassium)
+              Enum: PloidyEnum
             
           </span>
         </div>
@@ -407,10 +407,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
+        Permissible Values
       
     </span>
   </a>
@@ -418,21 +418,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
+  <a href="#slots" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
+        Slots
       
     </span>
   </a>
@@ -463,17 +452,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -486,17 +464,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mappings
-      
-    </span>
-  </a>
   
 </li>
       
@@ -531,160 +498,243 @@
   
 
 
-<h1 id="slot-potassium-potassium">Slot: potassium (potassium)</h1>
-<p><em>Concentration of potassium in the sample</em></p>
-<p>URI: <a href="https://w3id.org/mixs/0000430">MIXS:0000430</a>
-Alias: potassium</p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
+<h1 id="enum-ploidyenum">Enum: PloidyEnum</h1>
+<p><em>Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in the JGI GOLD lakehouse table <code>gold.dw_sample_taxonomy_info.ploidy_comments</code> (queried 2026-04-29). Used as the range of the <code>ploidy</code> slot, narrowing the MIxS-imported <code>ploidy</code> (MIXS:0000021) from a free- text / structured pattern to an enumerated set with referential integrity to PATO.</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/PloidyEnum">nmdc_sub_schema:PloidyEnum</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>haploid</td>
+<td>PATO:0001375</td>
+<td>A single set of unpaired chromosomes</td>
+</tr>
+<tr>
+<td>diploid</td>
+<td>PATO:0001394</td>
+<td>Two sets of homologous chromosomes (one from each parent)</td>
+</tr>
+<tr>
+<td>triploid</td>
+<td>PATO:0001381</td>
+<td>Three sets of chromosomes</td>
+</tr>
+<tr>
+<td>tetraploid</td>
+<td>PATO:0001382</td>
+<td>Four sets of chromosomes</td>
+</tr>
+<tr>
+<td>hexaploid</td>
+<td>PATO:0001384</td>
+<td>Six sets of chromosomes</td>
+</tr>
+<tr>
+<td>polyploid</td>
+<td>PATO:0001377</td>
+<td>More than two sets of chromosomes (generic — use a more specific value when k...</td>
+</tr>
+<tr>
+<td>allopolyploidy</td>
+<td>PATO:0001379</td>
+<td>Polyploid arising from hybridization between two or more species</td>
+</tr>
+<tr>
+<td>aneuploid</td>
+<td>PATO:0001385</td>
+<td>A genome with an abnormal number of chromosomes (not an exact multiple of the...</td>
+</tr>
+<tr>
+<td>other</td>
+<td>None</td>
+<td>A ploidy state with biological meaning that is not covered by the listed perm...</td>
+</tr>
+</tbody>
+</table>
+<h2 id="slots">Slots</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
-<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../HcrFluidsSwabsInterface/">HcrFluidsSwabsInterface</a></td>
-<td>hcr_fluids_swabs dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../HcrCoresInterface/">HcrCoresInterface</a></td>
-<td>hcr_cores dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../WaterInterface/">WaterInterface</a></td>
-<td>water dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
-<td>biofilm dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MiscEnvsInterface/">MiscEnvsInterface</a></td>
-<td>misc_envs dh_interface</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>
-<p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Regex pattern: <code>^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$</code></p>
-</li>
-</ul>
-<h2 id="examples">Examples</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>463 mg/L</td>
+<td><a href="../ploidy/">ploidy</a></td>
+<td>The ploidy level of the genome (e</td>
 </tr>
 </tbody>
 </table>
 <h2 id="comments">Comments</h2>
 <ul>
-<li>Value must be reported in one of the following units: [ppm], mg/L, mg/kg. Provide the numeric portion followed by a space and the unit.</li>
+<li>Values frequent in JGI but absent from PATO (octoploid, dikaryon / dikaryotic, polykaryotic), cytogenetic notation (e.g. 2n=38), compound or hedged values (e.g. "Likely haploid"), and non-English labels are not modeled directly. ETL should normalize to a permissible value when the meaning is unambiguous; fall back to the <code>other</code> permissible value when a JGI value has biological meaning but no listed mapping; treat as missing only when the value is uninterpretable.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Preferred_unit</td>
-<td>milligram per liter, parts per million</td>
-</tr>
-<tr>
-<td>storage_units</td>
-<td>[ppm]</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>MIXS:0000430</td>
-</tr>
-<tr>
-<td>native</td>
-<td>nmdc_sub_schema:potassium</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: potassium
-annotations:
-  Preferred_unit:
-    tag: Preferred_unit
-    value: milligram per liter, parts per million
-  storage_units:
-    tag: storage_units
-    value: '[ppm]|mg/L|mg/kg'
-description: Concentration of potassium in the sample
-title: potassium
+<pre><code class="language-yaml">name: PloidyEnum
+description: Ploidy of an organism's genome. Permissible values map to PATO classes
+  and were selected from values observed in the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments`
+  (queried 2026-04-29). Used as the range of the `ploidy` slot, narrowing the MIxS-imported
+  `ploidy` (MIXS:0000021) from a free- text / structured pattern to an enumerated
+  set with referential integrity to PATO.
 comments:
-- 'Value must be reported in one of the following units: [ppm], mg/L, mg/kg. Provide
-  the numeric portion followed by a space and the unit.'
-examples:
-- value: 463 mg/L
+- Values frequent in JGI but absent from PATO (octoploid, dikaryon / dikaryotic, polykaryotic),
+  cytogenetic notation (e.g. 2n=38), compound or hedged values (e.g. &quot;Likely haploid&quot;),
+  and non-English labels are not modeled directly. ETL should normalize to a permissible
+  value when the meaning is unambiguous; fall back to the `other` permissible value
+  when a JGI value has biological meaning but no listed mapping; treat as missing
+  only when the value is uninterpretable.
 from_schema: https://example.com/nmdc_submission_schema
-rank: 38
-slot_uri: MIXS:0000430
-alias: potassium
-domain_of:
-- BiofilmInterface
-- HcrCoresInterface
-- HcrFluidsSwabsInterface
-- MiscEnvsInterface
-- SedimentInterface
-- WaterInterface
-slot_group: mixs_core_section
-range: string
-pattern: ^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)?
-  *.*$
-structured_pattern:
-  syntax: ^{scientific_float}( *- *{scientific_float})? *{text}$
-  interpolated: true
-  partial_match: true
+rank: 1000
+permissible_values:
+  haploid:
+    text: haploid
+    description: A single set of unpaired chromosomes.
+    meaning: PATO:0001375
+    structured_aliases:
+      Haploid:
+        literal_form: Haploid
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      1n:
+        literal_form: 1n
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+  diploid:
+    text: diploid
+    description: Two sets of homologous chromosomes (one from each parent).
+    meaning: PATO:0001394
+    structured_aliases:
+      Diploid:
+        literal_form: Diploid
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      2n:
+        literal_form: 2n
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      2N:
+        literal_form: 2N
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      2x:
+        literal_form: 2x
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+  triploid:
+    text: triploid
+    description: Three sets of chromosomes.
+    meaning: PATO:0001381
+    structured_aliases:
+      Triploid:
+        literal_form: Triploid
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      3n:
+        literal_form: 3n
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      3x:
+        literal_form: 3x
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+  tetraploid:
+    text: tetraploid
+    description: Four sets of chromosomes.
+    meaning: PATO:0001382
+    structured_aliases:
+      Tetraploid:
+        literal_form: Tetraploid
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      tetraploidy:
+        literal_form: tetraploidy
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      4n:
+        literal_form: 4n
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      4x:
+        literal_form: 4x
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+  hexaploid:
+    text: hexaploid
+    description: Six sets of chromosomes.
+    meaning: PATO:0001384
+    structured_aliases:
+      Hexaploid:
+        literal_form: Hexaploid
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      6n:
+        literal_form: 6n
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+      6x:
+        literal_form: 6x
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+  polyploid:
+    text: polyploid
+    description: More than two sets of chromosomes (generic — use a more specific
+      value when known).
+    meaning: PATO:0001377
+  allopolyploidy:
+    text: allopolyploidy
+    description: Polyploid arising from hybridization between two or more species.
+      (PATO label uses -y suffix.)
+    meaning: PATO:0001379
+    structured_aliases:
+      Allopolyploid:
+        literal_form: Allopolyploid
+        predicate: EXACT_SYNONYM
+        contexts:
+        - https://gold.jgi.doe.gov/
+  aneuploid:
+    text: aneuploid
+    description: A genome with an abnormal number of chromosomes (not an exact multiple
+      of the haploid number).
+    meaning: PATO:0001385
+  other:
+    text: other
+    description: A ploidy state with biological meaning that is not covered by the
+      listed permissible values (e.g. dikaryon / dikaryotic, polykaryotic, octoploid,
+      or hedged values like &quot;likely diploid&quot;). Use this when the submitter's value
+      is interpretable but does not map cleanly to one of the named ploidy classes.
+      The original free-text qualifier should be preserved upstream (e.g. in a sample-level
+      note) when it carries information beyond the bare classification.
 
 </code></pre>
 
