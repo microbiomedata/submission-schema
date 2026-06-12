@@ -1,12 +1,8 @@
-## Passes LinkML, but NOT a valid JGI submission. Isolate transcriptome (RNA expression) missing group name.
-## JGI requires the biological replicate / sample group name (replicate_group) for RNA
-## expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. It is omitted here, so
-## JGI would reject this. It passes submission-schema validation: the requirement is keyed on the
-## JGI sequencing strategy, which the schema does not carry. We have not found a way to express
-## this in submission-schema with the current version of LinkML; it may need more sophisticated
-## rules, or nmdc-server TypeScript validation (web/src/views/SubmissionPortal/validation.ts;
-## tracked in nmdc-server #2177, not yet implemented).
-## (Compare SampleData-jgi_isolate_data-rna_collection_date, a valid record.)
+## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2177.
+## Isolate transcriptome (RNA expression) missing replicate_group, which JGI requires for RNA
+## expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation. It slips through because the
+## requirement is keyed on the JGI sequencing strategy, which the schema does not carry.
+## (Compare valid/SampleData-jgi_isolate_data-rna_collection_date, a valid record.)
 jgi_isolate_transcriptome_data:
   - samp_name: Dtur_DSM6724_rna2
     analysis_type:

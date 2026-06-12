@@ -1,14 +1,8 @@
-## Passes LinkML, but NOT a valid JGI submission. Microbial DRAFT genome isolate, ribosomal
-## sequence omitted.
-## JGI requires a ribosomal sequence for draft genome products (16S >1300 nt for microbial
-## drafts). This record is a draft genome with NO isolate_ribosomal_seq, so JGI would reject it.
-## It passes submission-schema validation: the requirement is conditional on the JGI Sequencing
-## Product, and analysis_type carries the same coarse value "isolate genome sequencing" for both
-## drafts (require ribosomal) and resequencing (do not), so a rule keyed on analysis_type cannot
-## tell them apart. We have not found a way to express this in submission-schema with the current
-## version of LinkML; it may need more sophisticated rules, or nmdc-server TypeScript validation
-## (web/src/views/SubmissionPortal/validation.ts; tracked in nmdc-server #2177, not yet implemented).
-## See src/data/problem/README.md.
+## Passes LinkML, not a valid JGI submission. See src/data/problem/README.md. Tracked in nmdc-server #2177.
+## Microbial DRAFT genome isolate with NO isolate_ribosomal_seq. JGI requires a ribosomal sequence
+## (16S >1300 nt) for draft genome products. It slips through because analysis_type carries the
+## same value "isolate genome sequencing" for both drafts and resequencing, so a rule keyed on it
+## cannot tell them apart.
 isolate_data:
   - samp_name: Dtur_DSM6724_draft_noribo
     analysis_type:
