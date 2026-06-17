@@ -269,6 +269,15 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microbial_estimated_size_cap">
+<span class="md-ellipsis">
+      
+        microbial_estimated_size_cap
+      
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -847,6 +856,25 @@
 </tr>
 </tbody>
 </table>
+<h3 id="microbial_estimated_size_cap">microbial_estimated_size_cap</h3>
+<table>
+<thead>
+<tr>
+<th>Rule Applied</th>
+<th>Preconditions</th>
+<th>Postconditions</th>
+<th>Elseconditions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slot_conditions</td>
+<td><code>{'biosafety_mat_cat': {'range': 'MicrobialBiosafetyMaterialCategoryEnum', 'value_presence': 'PRESENT', 'equals_string_in': ['Archaea', 'Bacteria', 'Fungi', 'Plasmid', 'Virus', 'Synthetic Construct']}}</code></td>
+<td><code>{'estimated_size': {'maximum_value': 5000}}</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
 <table>
@@ -977,6 +1005,37 @@ rules:
         pattern: .+
   description: If the second ribosomal sequence type is Other, comments are required.
   title: second_ribosomal_seq_type_other_requires_comments
+- preconditions:
+    slot_conditions:
+      biosafety_mat_cat:
+        name: biosafety_mat_cat
+        range: MicrobialBiosafetyMaterialCategoryEnum
+        value_presence: PRESENT
+        equals_string_in:
+        - Archaea
+        - Bacteria
+        - Fungi
+        - Plasmid
+        - Virus
+        - Synthetic Construct
+  postconditions:
+    slot_conditions:
+      estimated_size:
+        name: estimated_size
+        maximum_value: 5000
+  description: For microbial biosafety categories (Archaea, Bacteria, Fungi, Plasmid,
+    Virus, Synthetic Construct), JGI caps the estimated genome size at 5000 Mb. Eukaryotic
+    categories are not capped here and remain bounded only by the estimated_size outer
+    maximum of 100000 Mb.
+  title: microbial_estimated_size_cap
+  notes:
+  - The precondition lists the six microbial categories twice, with range and equals_string_in,
+    because the two validators honor different keywords inside a rule precondition.
+    linkml-validate (JSON-Schema path) honors equals_string_in (it becomes a JSON-Schema
+    enum) and drops range here (a range in a precondition emits an empty schema that
+    matches any value). DataHarmonizer 1.7.0 honors range (enum membership) and has
+    no handling for equals_string_in. Supplying both lets each validator use the keyword
+    it understands. Keep both lists in sync with MicrobialBiosafetyMaterialCategoryEnum.
 
 </code></pre>
 </details>
@@ -2052,6 +2111,37 @@ rules:
         pattern: .+
   description: If the second ribosomal sequence type is Other, comments are required.
   title: second_ribosomal_seq_type_other_requires_comments
+- preconditions:
+    slot_conditions:
+      biosafety_mat_cat:
+        name: biosafety_mat_cat
+        range: MicrobialBiosafetyMaterialCategoryEnum
+        value_presence: PRESENT
+        equals_string_in:
+        - Archaea
+        - Bacteria
+        - Fungi
+        - Plasmid
+        - Virus
+        - Synthetic Construct
+  postconditions:
+    slot_conditions:
+      estimated_size:
+        name: estimated_size
+        maximum_value: 5000
+  description: For microbial biosafety categories (Archaea, Bacteria, Fungi, Plasmid,
+    Virus, Synthetic Construct), JGI caps the estimated genome size at 5000 Mb. Eukaryotic
+    categories are not capped here and remain bounded only by the estimated_size outer
+    maximum of 100000 Mb.
+  title: microbial_estimated_size_cap
+  notes:
+  - The precondition lists the six microbial categories twice, with range and equals_string_in,
+    because the two validators honor different keywords inside a rule precondition.
+    linkml-validate (JSON-Schema path) honors equals_string_in (it becomes a JSON-Schema
+    enum) and drops range here (a range in a precondition emits an empty schema that
+    matches any value). DataHarmonizer 1.7.0 honors range (enum membership) and has
+    no handling for equals_string_in. Supplying both lets each validator use the keyword
+    it understands. Keep both lists in sync with MicrobialBiosafetyMaterialCategoryEnum.
 
 </code></pre>
 </details>

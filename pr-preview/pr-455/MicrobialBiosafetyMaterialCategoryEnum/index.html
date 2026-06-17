@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/org_nitro_method/">
+        <link rel="canonical" href="https://microbiomedata.github.io/submission-schema/MicrobialBiosafetyMaterialCategoryEnum/">
       
       
       
@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: organic nitrogen method (org_nitro_method) - submission-schema</title>
+        <title>Enum: MicrobialBiosafetyMaterialCategoryEnum - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-organic-nitrogen-method-org_nitro_method" class="md-skip">
+        <a href="#enum-microbialbiosafetymaterialcategoryenum" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: organic nitrogen method (org_nitro_method)
+              Enum: MicrobialBiosafetyMaterialCategoryEnum
             
           </span>
         </div>
@@ -407,54 +407,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
+  <a href="#permissible-values" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Applicable Classes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Properties
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Examples
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Comments
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
+        Permissible Values
       
     </span>
   </a>
@@ -490,17 +446,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mappings
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -531,116 +476,91 @@
   
 
 
-<h1 id="slot-organic-nitrogen-method-org_nitro_method">Slot: organic nitrogen method (org_nitro_method)</h1>
-<p><em>Method used for obtaining organic nitrogen</em></p>
-<p>URI: <a href="https://example.com/nmdc_sub_schema/org_nitro_method">nmdc_sub_schema:org_nitro_method</a>
-Alias: org_nitro_method</p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Modifies Slot</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SoilMixsInspiredMixin/">SoilMixsInspiredMixin</a></td>
-<td>Mixin with SoilMixsInspired Terms</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SoilInterface/">SoilInterface</a></td>
-<td>soil dh_interface</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
-<h2 id="examples">Examples</h2>
+<h1 id="enum-microbialbiosafetymaterialcategoryenum">Enum: MicrobialBiosafetyMaterialCategoryEnum</h1>
+<p><em>The subset of JgiIsolateMaterialKindEnum categories that JGI treats as microbial and caps at an estimated genome size of 5000 Mb. Eukaryotic categories (Alga, Animal, Plant, Protist) are excluded; they remain bounded only by the estimated_size outer maximum of 100000 Mb.</em></p>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/MicrobialBiosafetyMaterialCategoryEnum">nmdc_sub_schema:MicrobialBiosafetyMaterialCategoryEnum</a></p>
+<h2 id="permissible-values">Permissible Values</h2>
 <table>
 <thead>
 <tr>
 <th>Value</th>
+<th>Meaning</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://doi.org/10.1016/0038-0717(85)90144-0">https://doi.org/10.1016/0038-0717(85)90144-0</a></td>
+<td>Archaea</td>
+<td>NCBITaxon:2157</td>
+<td>Domain Archaea</td>
 </tr>
 <tr>
-<td>doi:10.1016/0038-0717(85)90144-0</td>
+<td>Bacteria</td>
+<td>NCBITaxon:2</td>
+<td>Domain Bacteria</td>
+</tr>
+<tr>
+<td>Fungi</td>
+<td>NCBITaxon:4751</td>
+<td>Kingdom Fungi</td>
+</tr>
+<tr>
+<td>Plasmid</td>
+<td>None</td>
+<td>DNA isolated primarily from a plasmid rather than a cellular organism</td>
+</tr>
+<tr>
+<td>Virus</td>
+<td>NCBITaxon:10239</td>
+<td>Viruses (all Baltimore groups)</td>
+</tr>
+<tr>
+<td>Synthetic Construct</td>
+<td>NCBITaxon:32630</td>
+<td>Artificially constructed sequence not derived from a natural organism</td>
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>required if "org_nitro" is provided</li>
-</ul>
-<h2 id="see-also">See Also</h2>
-<ul>
-<li><a href="https://w3id.org/mixs/0000338">MIXS:0000338</a></li>
-<li><a href="https://w3id.org/mixs/0000205">MIXS:0000205</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>nmdc_sub_schema:org_nitro_method</td>
-</tr>
-<tr>
-<td>native</td>
-<td>nmdc_sub_schema:org_nitro_method</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: org_nitro_method
-description: Method used for obtaining organic nitrogen
-title: organic nitrogen method
-comments:
-- required if &quot;org_nitro&quot; is provided
-examples:
-- value: https://doi.org/10.1016/0038-0717(85)90144-0
-- value: doi:10.1016/0038-0717(85)90144-0
+<pre><code class="language-yaml">name: MicrobialBiosafetyMaterialCategoryEnum
+description: The subset of JgiIsolateMaterialKindEnum categories that JGI treats as
+  microbial and caps at an estimated genome size of 5000 Mb. Eukaryotic categories
+  (Alga, Animal, Plant, Protist) are excluded; they remain bounded only by the estimated_size
+  outer maximum of 100000 Mb.
 from_schema: https://example.com/nmdc_submission_schema
-see_also:
-- MIXS:0000338
-- MIXS:0000205
-rank: 14
-string_serialization: '{PMID}|{DOI}|{URL}'
-alias: org_nitro_method
-domain_of:
-- SedimentInterface
-- SoilInterface
-- SoilMixsInspiredMixin
-slot_group: mixs_inspired_section
-range: string
+rank: 1000
+permissible_values:
+  Archaea:
+    text: Archaea
+    description: Domain Archaea.
+    meaning: NCBITaxon:2157
+  Bacteria:
+    text: Bacteria
+    description: Domain Bacteria.
+    meaning: NCBITaxon:2
+  Fungi:
+    text: Fungi
+    description: Kingdom Fungi.
+    meaning: NCBITaxon:4751
+  Plasmid:
+    text: Plasmid
+    description: DNA isolated primarily from a plasmid rather than a cellular organism.
+      Not a taxonomic group; no NCBITaxon meaning applicable.
+  Virus:
+    text: Virus
+    description: Viruses (all Baltimore groups).
+    meaning: NCBITaxon:10239
+  Synthetic Construct:
+    text: Synthetic Construct
+    description: Artificially constructed sequence not derived from a natural organism.
+    meaning: NCBITaxon:32630
 
 </code></pre>
 
