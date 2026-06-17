@@ -4466,6 +4466,7 @@ slots:
       - HcrCoresInterface
       - HcrFluidsSwabsInterface
       - HostAssociatedInterface
+      - IsolateInterface
       - MiscEnvsInterface
       - PlantAssociatedInterface
       - SedimentInterface
@@ -4474,9 +4475,37 @@ slots:
       - WaterInterface
     modifications:
       - replace:
-          pattern: '[^\:\n\r]+\:[^\:\n\r]+'
           rank: 5
           slot_group: sample_id_section
+        remove:
+          - pattern
+          - string_serialization
+      - in_classes:
+          - AirInterface
+          - BiofilmInterface
+          - BuiltEnvInterface
+          - HcrCoresInterface
+          - HcrFluidsSwabsInterface
+          - HostAssociatedInterface
+          - MiscEnvsInterface
+          - PlantAssociatedInterface
+          - SedimentInterface
+          - SoilInterface
+          - WastewaterSludgeInterface
+          - WaterInterface
+        replace:
+          pattern: '[^\:\n\r]+\:[^\:\n\r]+'
+      - in_classes:
+          - IsolateInterface
+        replace:
+          description: Enter the name of the sample which was processed to produce the isolate.
+          examples:
+            - value: forest_floor_soil_00001
+          comments:
+            - This should be provided if one or more environmental templates are used in this 
+              submission.
+            - The value provided here should be a value from the 'sample name' column in one of
+              the environmental templates.
 
   - slot: sample_shipped
     source: Biosample
