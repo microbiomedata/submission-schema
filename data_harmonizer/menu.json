@@ -99,6 +99,21 @@
       "name": "MetatranscriptomeSequencingInterleavedDataInterface",
       "status": "published",
       "display": true
+    },
+    "IsolateInterface": {
+      "name": "IsolateInterface",
+      "status": "published",
+      "display": true
+    },
+    "JgiIsolateGenomeInterface": {
+      "name": "JgiIsolateGenomeInterface",
+      "status": "published",
+      "display": true
+    },
+    "JgiIsolateTranscriptomeInterface": {
+      "name": "JgiIsolateTranscriptomeInterface",
+      "status": "published",
+      "display": true
     }
   }
 }
