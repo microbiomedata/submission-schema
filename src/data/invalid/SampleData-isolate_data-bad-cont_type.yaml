@@ -1,7 +1,4 @@
-## Invalid. Single failure: isolate_ribosomal_seq_type is not in RibosomalSequenceTypeEnum.
-## Derived from the synthetic exhaustive isolate example (Dictyoglomus turgidum
-## DSM 6724) with one field changed. JGI logistics values are synthetic, shaped to
-## real GOLD formats. Single point of failure.
+## Invalid. Single failure: cont_type 'flask' is not in JgiContTypeEnum (tube/plate).
 jgi_isolate_genome_data:
   - samp_name: Dtur_DSM6724_g1
     analysis_type:
@@ -18,12 +15,12 @@ jgi_isolate_genome_data:
     sample_isolated_from: thermal spring
     nuc_acid_concentration: 45.0
     jgi_sample_volume: 30.0
-    cont_type: tube
+    cont_type: flask
     container_name: DturGenomeTube01
     jgi_sample_format: Gentegra-DNA
     dnase: "yes"
     biosafety_mat_cat: Bacteria
     dna_isolate_meth: CTAB chloroform extraction
     isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
-    isolate_ribosomal_seq_type: 18S
+    isolate_ribosomal_seq_type: 16S
     estimated_size: 1.85

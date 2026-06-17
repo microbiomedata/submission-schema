@@ -500,8 +500,13 @@ slots:
   replicate_group:
     title: Biological replicate/sample group Name
     description: Samples that are biological replicates should have the same group name.  If your project does not contain biological replicates, give each sample its own group name.
+    comments:
+      - Required for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation projects.
     rank: 5
     range: string
+    recommended: true
+    notes:
+      - JGI requires this for RNA expression, IsoSeq, ChIP, Bisulphite-Seq, and methylation products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     examples:
       - value: SampleGroup1
   cont_well:
@@ -624,6 +629,9 @@ slots:
     required: true
     minimum_value: 0.0001
     maximum_value: 1000
+    unit:
+      descriptive_name: microliters
+      ucum_code: uL
     aliases:
       - dna_volume
       - rna_volume
@@ -632,12 +640,15 @@ slots:
     title: nucleic acid absorbance 260/280
     comments:
       - Recommended value is between 1 and 3.
+      - Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries.
     examples:
       - value: 2.02
     rank: 7
     range: float
     minimum_value: 0.0001
     recommended: true
+    notes:
+      - JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
       - dna_absorb1
       - rna_absorb1
@@ -646,12 +657,15 @@ slots:
     title: nucleic acid absorbance 260/230
     comments:
       - Recommended value is between 1 and 3.
+      - Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries.
     examples:
       - value: 2.02
     rank: 9
     range: float
     minimum_value: 0.0001
     recommended: true
+    notes:
+      - JGI requires absorbance for plant/algal drafts, fungal standard/improved drafts, microbial improved drafts, methylation, and any PacBio libraries. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
       - dna_absorb2
       - nuc_acid_absorb2
@@ -672,6 +686,9 @@ slots:
     required: true
     minimum_value: 0.0001
     maximum_value: 2000
+    unit:
+      descriptive_name: nanograms per microliter
+      ucum_code: ng/uL
   biosafety_mat_cat:
     description: >-
       JGI material category, labeled "Biosafety Material Category" on the form and
@@ -723,9 +740,11 @@ slots:
     comments:
       - Provide a reference if one exists; helps JGI with assembly and QC
         even for de novo projects.
+      - Required for resequencing, gene expression, IsoSeq, and methylation projects.
     notes:
       - Local slot pending promotion to nmdc-schema; see
         https://github.com/microbiomedata/submission-schema/issues/447
+      - JGI requires this for resequencing, gene expression, IsoSeq, and methylation products. submission-schema does not enforce that as a rule because analysis_type is identical ("isolate genome sequencing") for draft and resequencing, so a rule keyed on it cannot single out resequencing. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     examples:
       - value: "2648501807"
         description: IMG taxon OID
@@ -774,28 +793,34 @@ slots:
     title: first ribosomal sequence
     description: >-
       Primary ribosomal sequence for strain verification. For microbial drafts must
-      be >1300 nt; for single cells >220 bp with <10% Ns. Use only A, C, G, T, or N
-      with no FASTA header line.
+      be >1300 nt; for single cells >220 bp with <10% Ns; for fungal ITS >450 nt with
+      <2% Ns. Use only A, C, G, T, or N with no FASTA header line.
     comments:
-      - Required for all microbial and fungal genome projects.
-      - 16S is required for microbial drafts and single cells; ITS for fungal drafts.
-      - Sequence must come from the actual sample to be shipped to JGI.
+      - At least one ribosomal sequence is required for strain verification and must come from the actual sample to be shipped to JGI.  Please use only A, C, G, T or N, with no header.  Sequence of insufficient quality may delay the completion of the project. 16s sequence is required for all microbial drafts and single cells.  For microbial drafts, sequence MUST be >1300 nt; for single cells the sequence MUST be >220 bp, with <10% Ns. 
+      - ITS sequence is required for all samples for fungal drafts for strain verification. ITS sequence must be >450 nt with <2% Ns. 
     examples:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 32
     range: string
-    required: true
+    recommended: true
+    notes:
+      - JGI requires the ribosomal sequence for draft genome products but not for resequencing, methylation, or transcriptome products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
+      - The product-specific length and N-content thresholds in the description (>1300 nt microbial drafts, >220 bp <10% Ns single cells, >450 nt <2% Ns fungal ITS) are not enforced; the flat pattern checks only 200-5000 A/C/G/T/N. Product-aware checks would live in nmdc-server (validation.ts).
     pattern: "^[ATCGN]{200,5000}$"
     aliases:
       - First ribosomal sequence
   isolate_ribosomal_seq_type:
     title: first ribosomal sequence type
     description: Type of the first ribosomal sequence provided.
+    comments:
+      - Required for draft genome products (microbial and fungal genome drafts); not required for resequencing, methylation, or transcriptome products.
     examples:
       - value: 16S
     rank: 33
     range: RibosomalSequenceTypeEnum
-    required: true
+    recommended: true
+    notes:
+      - Conditionally required for draft genome products only, for the same reason as isolate_ribosomal_seq, and not enforced here. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
       - First ribosomal sequence type
   isolate_ribosomal_seq_comments:
@@ -816,6 +841,8 @@ slots:
       Optional secondary ribosomal sequence for additional strain verification.
       For 28S must be >300 nt with <10% Ns. Use only A, C, G, T, or N with no
       FASTA header line.
+    comments:
+      - Other types of ribosomal sequence may be provided as a secondary check.  Sequence MUST come from the actual sample to be shipped to JGI.  For 28s, the sequence must be >300 nt with <10% Ns. Please use only A, C, G, T or N, with no header.
     examples:
       - value: AAATTGAAGAGTTTGATCATGGCTCAGATTGAACGCTGGCGGCAGGCCTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGCTAGTAGGTGGGGTAACGGCTCACCTAGGCGACGTTGAGGCGTGGCTTCCGGAGCTAACGCGTTAAGTCGACCGCCTGGGGAGTACGGCCGCAAGGTTAAAACT
     rank: 35
@@ -846,44 +873,31 @@ slots:
     title: 16S screening performed
     description: For fungal draft samples only — was 16S screening performed to check for bacterial contamination?
     comments:
-      - Required for fungal minimal, standard, and improved drafts.
+      - Required for fungal light, minimal, standard, and improved drafts.
       - Leave blank for non-fungal samples.
     examples:
       - value: "yes"
     rank: 38
     range: YesNoEnum
+    notes:
+      - JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
       - For fungal draft samples, was 16S screening performed?
   isolate_its_match_unite:
     title: ITS matches UNITE
     description: For fungal draft samples only -- does the ITS sequence match taxonomy in the UNITE database?
     comments:
-      - Required for fungal minimal, standard, and improved drafts.
+      - Required for fungal light, minimal, standard, and improved drafts.
       - Screen at https://unite.ut.ee/ before submitting.
       - Leave blank for non-fungal samples.
     examples:
       - value: "yes"
     rank: 39
     range: YesNoEnum
+    notes:
+      - JGI requires this for fungal draft products. submission-schema does not enforce that as a rule because the requirement keys on the JGI Sequencing Product, which the schema does not carry as a slot. Tracked in https://github.com/microbiomedata/nmdc-server/issues/2177.
     aliases:
       - For fungal draft samples, does ITS match taxonomy in UNITE?
-  isolate_meth:
-    title: Sample Isolation Method
-    description: Method, protocol, or kit used to extract DNA or RNA from the sample.
-    rank: 16
-    range: string
-    required: true
-    examples:
-      - value: Wizard Genomic DNA Purification Kit
-      - value: CTAB chloroform extraction
-      - value: TRIzol RNA extraction
-    structured_aliases:
-      - literal_form: Sample Isolation Method
-        predicate: EXACT_SYNONYM
-        source: https://jgi.doe.gov/user-programs/pmo-overview/project-materials-submission-overview/
-        notes:
-          - Exact JGI form template is access-restricted; source is the public submission overview.
-          - JGI labels this field Sample Isolation Method, but its definition is the DNA or RNA extraction method.
   sample_isolated_from:
     title: Sample Isolated From
     description: Free-text description of what the organism was isolated from.
@@ -1049,7 +1063,6 @@ classes:
       - cont_well
       - container_name
       - dnase
-      - dna_isolate_meth
       - biosafety_mat_cat
       - jgi_samp_id
       - jgi_sample_format
@@ -1138,7 +1151,6 @@ classes:
       - container_name
       - dnase
       - biosafety_mat_cat
-      - dna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -1228,7 +1240,6 @@ classes:
       - container_name
       - dnase
       - biosafety_mat_cat
-      - rna_isolate_meth
       - jgi_samp_id
       - jgi_sample_format
       - jgi_sample_name
@@ -1425,10 +1436,10 @@ classes:
     annotations:
       excel_worksheet_name: Isolate
     description: >-
-      Metadata for microbial isolate samples submitted to NMDC. Captures core
+      Metadata for isolate samples submitted to NMDC. Captures core
       biological identity slots (taxonomy, strain, culture collection) that NMDC
       stores and queries. Slots are sourced from nmdc-schema OrganismSample and
-      Organism classes; depends on nmdc-schema PR #2977 and #2975 merging.
+      Organism classes.
     title: Isolate
     is_a: DhInterface
     mixins:
@@ -1441,6 +1452,11 @@ classes:
         slot_group: organism_section
       isolate_known_contaminants:
         slot_group: organism_section
+      samp_name:
+        examples:
+          - value: E.coli_1234
+        comments:
+          - It can have any format, but we suggest that you make it concise, unique and consistent within your lab, and as informative as possible.
 
   JgiIsolateCommonMixin:
     mixin: true
@@ -1469,7 +1485,6 @@ classes:
       - jgi_sample_format
       - dnase
       - biosafety_mat_cat
-      - isolate_meth
       - reference_genome
       - sample_isolated_from
       - collection_site_or_growth_conditions
@@ -1511,8 +1526,6 @@ classes:
       biosafety_mat_cat:
         slot_group: jgi_isolate_section
         range: JgiIsolateMaterialKindEnum
-      isolate_meth:
-        slot_group: jgi_isolate_section
       reference_genome:
         slot_group: jgi_isolate_section
       sample_isolated_from:
@@ -1659,6 +1672,8 @@ classes:
     slot_usage:
       rna_collection_date:
         slot_group: jgi_isolate_section
+        required: true
+      collection_site_or_growth_conditions:
         required: true
 
   DhInterface:
