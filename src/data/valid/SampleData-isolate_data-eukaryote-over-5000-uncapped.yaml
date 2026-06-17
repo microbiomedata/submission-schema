@@ -1,0 +1,26 @@
+## Valid. Eukaryotic isolate (biosafety_mat_cat: Alga) with estimated_size 8000 Mb. This is above
+## JGI's 5000 Mb microbial cap but JGI does not cap eukaryotes, so it must pass. Guards the
+## category scope of the microbial_estimated_size_cap rule. Values synthetic, shaped to GOLD formats.
+jgi_isolate_genome_data:
+  - samp_name: Cvar_NIES2541_g1
+    analysis_type:
+      - isolate genome sequencing
+    jgi_samp_id: "248030"
+    jgi_sample_name: Cvar_NIES2541_g1
+    jgi_seq_project: 1248710
+    jgi_seq_project_name: Chlorella variabilis NIES-2541 Isolate Genome
+    jgi_sample_contact: Jane Doe
+    jgi_project_pi: John Doe
+    jgi_proposal_id: "505844"
+    sample_isolated_from: freshwater pond
+    estimated_size: 8000
+    nuc_acid_concentration: 38.0
+    jgi_sample_volume: 25.0
+    cont_type: tube
+    container_name: CvarGenomeTube01
+    jgi_sample_format: Low EDTA TE
+    dnase: "no"
+    biosafety_mat_cat: Alga
+    isolate_meth: CTAB chloroform extraction
+    isolate_ribosomal_seq: GAGTTTGATCCTGGCTCAGATTGAACGCTGGCGGCATGCTTAACACATGCAAGTCGAACGGTAACAGGAAGAAGCTTGCTTCTTTGCTGACGAGTGGCGGACGGGTGAGTAATGTCTGGGAAACTGCCTGATGGAGGGGGATAACTACTGGAAACGGTAGCTAATACCGCATAACGTCGCAAGACCAAAGAGGGGGACCTTCGGGCCTCTTGCCATCGGATGTGCCCAGATGGGATTAGC
+    isolate_ribosomal_seq_type: 28S
