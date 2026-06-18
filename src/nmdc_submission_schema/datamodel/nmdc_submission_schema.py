@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-17T15:36:34
+# Generation date: 2026-06-18T13:38:32
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -141,6 +141,7 @@ GOLD = CurieNamespace('gold', 'https://bioregistry.io/gold:')
 GTPO = CurieNamespace('gtpo', 'http://example.org/gtpo/')
 IGSN = CurieNamespace('igsn', 'https://app.geosamples.org/sample/igsn/')
 IMG_TAXON = CurieNamespace('img_taxon', 'https://bioregistry.io/img.taxon:')
+INSDC_RUN = CurieNamespace('insdc_run', 'https://bioregistry.io/insdc.run:')
 INSDC_SRA = CurieNamespace('insdc_sra', 'https://bioregistry.io/insdc.sra:')
 JCM = CurieNamespace('jcm', 'http://www.jcm.riken.go.jp/cgi-bin/jcm/jcm_number?JCM=')
 JGI = CurieNamespace('jgi', 'http://example.org/jgi/')
@@ -6649,6 +6650,7 @@ class IsolateInterface(DhInterface):
     classified_as: str = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
     isolate_known_contaminants: Optional[str] = None
+    sample_link: Optional[str] = None
     source_mat_id: Optional[str] = None
     isolate_name: Optional[str] = None
     gc_content: Optional[float] = None
@@ -6698,6 +6700,9 @@ class IsolateInterface(DhInterface):
 
         if self.isolate_known_contaminants is not None and not isinstance(self.isolate_known_contaminants, str):
             self.isolate_known_contaminants = str(self.isolate_known_contaminants)
+
+        if self.sample_link is not None and not isinstance(self.sample_link, str):
+            self.sample_link = str(self.sample_link)
 
         if self.source_mat_id is not None and not isinstance(self.source_mat_id, str):
             self.source_mat_id = str(self.source_mat_id)
@@ -9683,50 +9688,52 @@ class ProcessingInstitutionEnum(EnumDefinitionImpl):
 
 class PloidyEnum(EnumDefinitionImpl):
     """
-    Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in
-    the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the
-    range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured
-    pattern to an enumerated set with referential integrity to PATO.
+    The ploidy state of an organism's genome, drawn from the ploidy classes of the Phenotypic Quality Ontology (PATO).
     """
     haploid = PermissibleValue(
         text="haploid",
-        description="A single set of unpaired chromosomes.",
+        description="A single set of homologous chromosomes.",
         meaning=PATO["0001375"])
     diploid = PermissibleValue(
         text="diploid",
-        description="Two sets of homologous chromosomes (one from each parent).",
+        description="Two homologous sets of chromosomes.",
         meaning=PATO["0001394"])
     triploid = PermissibleValue(
         text="triploid",
-        description="Three sets of chromosomes.",
+        description="Three homologous sets of chromosomes.",
         meaning=PATO["0001381"])
     tetraploid = PermissibleValue(
         text="tetraploid",
-        description="Four sets of chromosomes.",
+        description="Four homologous sets of chromosomes.",
         meaning=PATO["0001382"])
+    pentaploid = PermissibleValue(
+        text="pentaploid",
+        description="Five homologous sets of chromosomes.",
+        meaning=PATO["0001383"])
     hexaploid = PermissibleValue(
         text="hexaploid",
-        description="Six sets of chromosomes.",
+        description="Six homologous sets of chromosomes.",
         meaning=PATO["0001384"])
     polyploid = PermissibleValue(
         text="polyploid",
-        description="More than two sets of chromosomes (generic — use a more specific value when known).",
+        description="""More than two homologous sets of chromosomes; use a more specific value when the level is known.""",
         meaning=PATO["0001377"])
     allopolyploidy = PermissibleValue(
         text="allopolyploidy",
-        description="Polyploid arising from hybridization between two or more species. (PATO label uses -y suffix.)",
+        description="Polyploid whose chromosome sets derive from two or more different species.",
         meaning=PATO["0001379"])
+    autopolyploid = PermissibleValue(
+        text="autopolyploid",
+        description="Polyploid whose chromosome sets derive from a single species.",
+        meaning=PATO["0001378"])
     aneuploid = PermissibleValue(
         text="aneuploid",
-        description="A genome with an abnormal number of chromosomes (not an exact multiple of the haploid number).",
+        description="""A chromosome number that is not an exact multiple of the haploid set (extra or missing chromosomes).""",
         meaning=PATO["0001385"])
-    other = PermissibleValue(
-        text="other",
-        description="""A ploidy state with biological meaning that is not covered by the listed permissible values (e.g. dikaryon / dikaryotic, polykaryotic, octoploid, or hedged values like \"likely diploid\"). Use this when the submitter's value is interpretable but does not map cleanly to one of the named ploidy classes. The original free-text qualifier should be preserved upstream (e.g. in a sample-level note) when it carries information beyond the bare classification.""")
 
     _defn = EnumDefinition(
         name="PloidyEnum",
-        description="""Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured pattern to an enumerated set with referential integrity to PATO.""",
+        description="""The ploidy state of an organism's genome, drawn from the ploidy classes of the Phenotypic Quality Ontology (PATO).""",
     )
 
 class EcosystemEnum(EnumDefinitionImpl):
@@ -15969,8 +15976,7 @@ slots.samp_well_name = Slot(uri=MIXS['0000296'], name="samp_well_name", curie=MI
                    model_uri=NMDC_SUB_SCHEMA.samp_well_name, domain=None, range=Optional[str])
 
 slots.sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
-                   model_uri=NMDC_SUB_SCHEMA.sample_link, domain=None, range=Optional[str],
-                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+                   model_uri=NMDC_SUB_SCHEMA.sample_link, domain=None, range=Optional[str])
 
 slots.sample_shipped = Slot(uri=NMDC_SUB_SCHEMA.sample_shipped, name="sample_shipped", curie=NMDC_SUB_SCHEMA.curie('sample_shipped'),
                    model_uri=NMDC_SUB_SCHEMA.sample_shipped, domain=None, range=str,
@@ -16526,6 +16532,10 @@ slots.AirInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="AirInterfac
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_samp_store_temp, domain=AirInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.AirInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="AirInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.AirInterface_sample_link, domain=AirInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.AirInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="AirInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.AirInterface_specific_ecosystem, domain=AirInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -16565,6 +16575,10 @@ slots.BiofilmInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="Biofilm
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_samp_store_temp, domain=BiofilmInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.BiofilmInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="BiofilmInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_sample_link, domain=BiofilmInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.BiofilmInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="BiofilmInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BiofilmInterface_specific_ecosystem, domain=BiofilmInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -16599,6 +16613,10 @@ slots.BuiltEnvInterface_env_medium = Slot(uri=MIXS['0000014'], name="BuiltEnvInt
 slots.BuiltEnvInterface_lat_lon = Slot(uri=MIXS['0000009'], name="BuiltEnvInterface_lat_lon", curie=MIXS.curie('0000009'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_lat_lon, domain=BuiltEnvInterface, range=str,
                    pattern=re.compile(r'^(-?((?:[0-8]?[0-9](?:\.\d{0,8})?)|90)) -?[0-9]+(?:\.[0-9]{0,8})?$|^-?(1[0-7]{1,2})$'))
+
+slots.BuiltEnvInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="BuiltEnvInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_sample_link, domain=BuiltEnvInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.BuiltEnvInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="BuiltEnvInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.BuiltEnvInterface_specific_ecosystem, domain=BuiltEnvInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
@@ -16639,6 +16657,10 @@ slots.HcrCoresInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HcrCor
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_samp_store_temp, domain=HcrCoresInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.HcrCoresInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="HcrCoresInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_sample_link, domain=HcrCoresInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.HcrCoresInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="HcrCoresInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrCoresInterface_specific_ecosystem, domain=HcrCoresInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -16678,6 +16700,10 @@ slots.HcrFluidsSwabsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_samp_store_temp, domain=HcrFluidsSwabsInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.HcrFluidsSwabsInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="HcrFluidsSwabsInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_sample_link, domain=HcrFluidsSwabsInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.HcrFluidsSwabsInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="HcrFluidsSwabsInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HcrFluidsSwabsInterface_specific_ecosystem, domain=HcrFluidsSwabsInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -16716,6 +16742,10 @@ slots.HostAssociatedInterface_lat_lon = Slot(uri=MIXS['0000009'], name="HostAsso
 slots.HostAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="HostAssociatedInterface_samp_store_temp", curie=MIXS.curie('0000110'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_samp_store_temp, domain=HostAssociatedInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
+
+slots.HostAssociatedInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="HostAssociatedInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_sample_link, domain=HostAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.HostAssociatedInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="HostAssociatedInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.HostAssociatedInterface_specific_ecosystem, domain=HostAssociatedInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
@@ -16939,6 +16969,10 @@ slots.MiscEnvsInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="MiscEn
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_samp_store_temp, domain=MiscEnvsInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.MiscEnvsInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="MiscEnvsInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_sample_link, domain=MiscEnvsInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.MiscEnvsInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="MiscEnvsInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.MiscEnvsInterface_specific_ecosystem, domain=MiscEnvsInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -17002,6 +17036,10 @@ slots.PlantAssociatedInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name=
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_samp_store_temp, domain=PlantAssociatedInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.PlantAssociatedInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="PlantAssociatedInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_sample_link, domain=PlantAssociatedInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.PlantAssociatedInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="PlantAssociatedInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.PlantAssociatedInterface_specific_ecosystem, domain=PlantAssociatedInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -17055,6 +17093,10 @@ slots.SedimentInterface_microbial_biomass_n = Slot(uri=NMDC_SUB_SCHEMA.microbial
 slots.SedimentInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SedimentInterface_samp_store_temp", curie=MIXS.curie('0000110'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_samp_store_temp, domain=SedimentInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
+
+slots.SedimentInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="SedimentInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.SedimentInterface_sample_link, domain=SedimentInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.SedimentInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="SedimentInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.SedimentInterface_specific_ecosystem, domain=SedimentInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
@@ -17129,6 +17171,10 @@ slots.SoilInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="SoilInterf
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_samp_store_temp, domain=SoilInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.SoilInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="SoilInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.SoilInterface_sample_link, domain=SoilInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.SoilInterface_sieving = Slot(uri=MIXS['0000322'], name="SoilInterface_sieving", curie=MIXS.curie('0000322'),
                    model_uri=NMDC_SUB_SCHEMA.SoilInterface_sieving, domain=SoilInterface, range=Optional[str])
 
@@ -17178,6 +17224,10 @@ slots.WastewaterSludgeInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_samp_store_temp, domain=WastewaterSludgeInterface, range=float,
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
+slots.WastewaterSludgeInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="WastewaterSludgeInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_sample_link, domain=WastewaterSludgeInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
+
 slots.WastewaterSludgeInterface_specific_ecosystem = Slot(uri=NMDC_SUB_SCHEMA.specific_ecosystem, name="WastewaterSludgeInterface_specific_ecosystem", curie=NMDC_SUB_SCHEMA.curie('specific_ecosystem'),
                    model_uri=NMDC_SUB_SCHEMA.WastewaterSludgeInterface_specific_ecosystem, domain=WastewaterSludgeInterface, range=Optional[Union[str, "SpecificEcosystemEnum"]])
 
@@ -17204,6 +17254,10 @@ slots.WaterInterface_lat_lon = Slot(uri=MIXS['0000009'], name="WaterInterface_la
 slots.WaterInterface_samp_store_temp = Slot(uri=MIXS['0000110'], name="WaterInterface_samp_store_temp", curie=MIXS.curie('0000110'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_samp_store_temp, domain=WaterInterface, range=Optional[float],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
+
+slots.WaterInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="WaterInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.WaterInterface_sample_link, domain=WaterInterface, range=Optional[str],
+                   pattern=re.compile(r'[^\:\n\r]+\:[^\:\n\r]+'))
 
 slots.WaterInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WaterInterface_env_broad_scale", curie=MIXS.curie('0000012'),
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_broad_scale, domain=WaterInterface, range=str,
@@ -17253,6 +17307,9 @@ slots.IsolateInterface_samp_name = Slot(uri=MIXS['0001107'], name="IsolateInterf
 slots.IsolateInterface_collection_date = Slot(uri=MIXS['0000011'], name="IsolateInterface_collection_date", curie=MIXS.curie('0000011'),
                    model_uri=NMDC_SUB_SCHEMA.IsolateInterface_collection_date, domain=IsolateInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$'))
+
+slots.IsolateInterface_sample_link = Slot(uri=NMDC_SUB_SCHEMA.sample_link, name="IsolateInterface_sample_link", curie=NMDC_SUB_SCHEMA.curie('sample_link'),
+                   model_uri=NMDC_SUB_SCHEMA.IsolateInterface_sample_link, domain=IsolateInterface, range=Optional[str])
 
 slots.JgiIsolateCommonMixin_replicate_group = Slot(uri=NMDC_SUB_SCHEMA.replicate_group, name="JgiIsolateCommonMixin_replicate_group", curie=NMDC_SUB_SCHEMA.curie('replicate_group'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateCommonMixin_replicate_group, domain=None, range=Optional[str])

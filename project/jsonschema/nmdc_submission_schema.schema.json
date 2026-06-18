@@ -6741,7 +6741,7 @@
                     "type": "array"
                 },
                 "classified_as": {
-                    "description": "Taxonomic classification of this organism. Narrowed from the global OntologyClass range (defined on the slot itself) to NcbiTaxon, since organism identity at NMDC is anchored to NCBI Taxonomy. Per #3016 \u2014 the broader pattern is to narrow `classified_as` to `NcbiTaxon` on all organism-oriented classes via slot_usage.",
+                    "description": "Taxonomic classification of this organism.",
                     "pattern": "NCBITaxon:\\d+",
                     "type": "string"
                 },
@@ -6792,6 +6792,13 @@
                 "samp_name": {
                     "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
                     "type": "string"
+                },
+                "sample_link": {
+                    "description": "Enter the name of the sample which was processed to produce the isolate.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "source_mat_id": {
                     "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
@@ -9659,17 +9666,18 @@
             "type": "string"
         },
         "PloidyEnum": {
-            "description": "Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured pattern to an enumerated set with referential integrity to PATO.",
+            "description": "The ploidy state of an organism's genome, drawn from the ploidy classes of the Phenotypic Quality Ontology (PATO).",
             "enum": [
                 "haploid",
                 "diploid",
                 "triploid",
                 "tetraploid",
+                "pentaploid",
                 "hexaploid",
                 "polyploid",
                 "allopolyploidy",
-                "aneuploid",
-                "other"
+                "autopolyploid",
+                "aneuploid"
             ],
             "title": "PloidyEnum",
             "type": "string"

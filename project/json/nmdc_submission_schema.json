@@ -316,6 +316,10 @@
       "prefix_prefix": "insdc.sra",
       "prefix_reference": "https://bioregistry.io/insdc.sra:"
     },
+    "insdc.run": {
+      "prefix_prefix": "insdc.run",
+      "prefix_reference": "https://bioregistry.io/insdc.run:"
+    },
     "jgi.analysis": {
       "prefix_prefix": "jgi.analysis",
       "prefix_reference": "https://data.jgi.doe.gov/search?q="
@@ -4571,186 +4575,231 @@
     },
     "PloidyEnum": {
       "name": "PloidyEnum",
-      "description": "Ploidy of an organism's genome. Permissible values map to PATO classes and were selected from values observed in the JGI GOLD lakehouse table `gold.dw_sample_taxonomy_info.ploidy_comments` (queried 2026-04-29). Used as the range of the `ploidy` slot, narrowing the MIxS-imported `ploidy` (MIXS:0000021) from a free- text / structured pattern to an enumerated set with referential integrity to PATO.",
-      "comments": [
-        "Values frequent in JGI but absent from PATO (octoploid, dikaryon / dikaryotic, polykaryotic), cytogenetic notation (e.g. 2n=38), compound or hedged values (e.g. \"Likely haploid\"), and non-English labels are not modeled directly. ETL should normalize to a permissible value when the meaning is unambiguous; fall back to the `other` permissible value when a JGI value has biological meaning but no listed mapping; treat as missing only when the value is uninterpretable."
+      "description": "The ploidy state of an organism's genome, drawn from the ploidy classes of the Phenotypic Quality Ontology (PATO).",
+      "notes": [
+        "How this enum was built: each value is a PATO ploidy (PATO:0001374) subclass observed in the GOLD field dw_sample_taxonomy_info.ploidy_comments (queried 2026-04-29), or added to complete the series, with GOLD literal forms as structured aliases. Alias `source` URLs cite the public GOLD portal because that field is access-restricted. This is the range of the `ploidy` slot, narrowing MIxS `ploidy` (MIXS:0000021) from free text.",
+        "PATO term requests needed before these can become permissible values: octoploid (eight homologous sets; PATO's polyploidy ladder stops at hexaploid) and the allopolyploidy subtypes allotetraploid, allohexaploid, and segmental allotetraploid. All were observed in GOLD and are recorded here as narrow synonyms of `polyploid` / `allopolyploidy` until PATO classes exist. Tracked in https://github.com/pato-ontology/pato/issues/605.",
+        "Deliberately out of scope: dikaryon / dikaryotic / polykaryotic describe the number of nuclei per cell (a fungal life-cycle state), not chromosome-set ploidy, and have no PATO ploidy class; if needed they belong in a separate slot. Cytogenetic counts (e.g. 2n=38), bare integers, hedged phrases (e.g. \"Likely haploid\"), and free-text identifiers seen in the source field are left to this optional slot being unset rather than forced into a value."
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "permissible_values": {
         "haploid": {
           "text": "haploid",
-          "description": "A single set of unpaired chromosomes.",
+          "description": "A single set of homologous chromosomes.",
           "meaning": "PATO:0001375",
           "structured_aliases": {
             "Haploid": {
               "literal_form": "Haploid",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "1n": {
               "literal_form": "1n",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "1N": {
+              "literal_form": "1N",
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "haploide": {
+              "literal_form": "haploide",
+              "predicate": "EXACT_SYNONYM",
+              "notes": [
+                "French-language spelling observed in GOLD."
+              ],
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
         "diploid": {
           "text": "diploid",
-          "description": "Two sets of homologous chromosomes (one from each parent).",
+          "description": "Two homologous sets of chromosomes.",
           "meaning": "PATO:0001394",
           "structured_aliases": {
             "Diploid": {
               "literal_form": "Diploid",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "2n": {
               "literal_form": "2n",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "2N": {
               "literal_form": "2N",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "2x": {
               "literal_form": "2x",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "Diploïde": {
+              "literal_form": "Diploïde",
+              "predicate": "EXACT_SYNONYM",
+              "notes": [
+                "French-language spelling observed in GOLD."
+              ],
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
         "triploid": {
           "text": "triploid",
-          "description": "Three sets of chromosomes.",
+          "description": "Three homologous sets of chromosomes.",
           "meaning": "PATO:0001381",
           "structured_aliases": {
             "Triploid": {
               "literal_form": "Triploid",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "3n": {
               "literal_form": "3n",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "3x": {
               "literal_form": "3x",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
         "tetraploid": {
           "text": "tetraploid",
-          "description": "Four sets of chromosomes.",
+          "description": "Four homologous sets of chromosomes.",
           "meaning": "PATO:0001382",
           "structured_aliases": {
             "Tetraploid": {
               "literal_form": "Tetraploid",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "tetraploidy": {
               "literal_form": "tetraploidy",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "4n": {
               "literal_form": "4n",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "4x": {
               "literal_form": "4x",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
+        "pentaploid": {
+          "text": "pentaploid",
+          "description": "Five homologous sets of chromosomes.",
+          "meaning": "PATO:0001383",
+          "notes": [
+            "Not observed in the 2026-04-29 GOLD snapshot; included so the triploid–hexaploid ladder is not arbitrarily gapped."
+          ]
+        },
         "hexaploid": {
           "text": "hexaploid",
-          "description": "Six sets of chromosomes.",
+          "description": "Six homologous sets of chromosomes.",
           "meaning": "PATO:0001384",
           "structured_aliases": {
             "Hexaploid": {
               "literal_form": "Hexaploid",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "6n": {
               "literal_form": "6n",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "6x": {
               "literal_form": "6x",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
         "polyploid": {
           "text": "polyploid",
-          "description": "More than two sets of chromosomes (generic — use a more specific value when known).",
-          "meaning": "PATO:0001377"
+          "description": "More than two homologous sets of chromosomes; use a more specific value when the level is known.",
+          "meaning": "PATO:0001377",
+          "structured_aliases": {
+            "octoploid": {
+              "literal_form": "octoploid",
+              "predicate": "NARROW_SYNONYM",
+              "notes": [
+                "Eight homologous sets; observed in GOLD (also as \"octaploid\", \"octapolid\"). No PATO class exists, so it is recorded as a narrow synonym of polyploid pending a PATO term request."
+              ],
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "octaploid": {
+              "literal_form": "octaploid",
+              "predicate": "NARROW_SYNONYM",
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "octapolid": {
+              "literal_form": "octapolid",
+              "predicate": "NARROW_SYNONYM",
+              "notes": [
+                "Misspelling of octoploid retained as observed in GOLD."
+              ],
+              "source": "https://gold.jgi.doe.gov/"
+            }
+          }
         },
         "allopolyploidy": {
           "text": "allopolyploidy",
-          "description": "Polyploid arising from hybridization between two or more species. (PATO label uses -y suffix.)",
+          "description": "Polyploid whose chromosome sets derive from two or more different species.",
           "meaning": "PATO:0001379",
           "structured_aliases": {
             "Allopolyploid": {
               "literal_form": "Allopolyploid",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "Allotetraploid": {
+              "literal_form": "Allotetraploid",
+              "predicate": "NARROW_SYNONYM",
+              "notes": [
+                "Allopolyploid at the tetraploid level; observed in GOLD (also \"segmental allotetraploid\"). No PATO class exists, so it is recorded as a narrow synonym pending a PATO term request."
+              ],
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "segmental allotetraploid": {
+              "literal_form": "segmental allotetraploid",
+              "predicate": "NARROW_SYNONYM",
+              "source": "https://gold.jgi.doe.gov/"
+            },
+            "allohexaploid": {
+              "literal_form": "allohexaploid",
+              "predicate": "NARROW_SYNONYM",
+              "notes": [
+                "Allopolyploid at the hexaploid level; observed in GOLD. No PATO class exists, so it is recorded as a narrow synonym pending a PATO term request."
+              ],
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
+        "autopolyploid": {
+          "text": "autopolyploid",
+          "description": "Polyploid whose chromosome sets derive from a single species.",
+          "meaning": "PATO:0001378",
+          "notes": [
+            "Not observed in the 2026-04-29 GOLD snapshot; included as the origin-counterpart of `allopolyploidy`."
+          ]
+        },
         "aneuploid": {
           "text": "aneuploid",
-          "description": "A genome with an abnormal number of chromosomes (not an exact multiple of the haploid number).",
+          "description": "A chromosome number that is not an exact multiple of the haploid set (extra or missing chromosomes).",
           "meaning": "PATO:0001385"
-        },
-        "other": {
-          "text": "other",
-          "description": "A ploidy state with biological meaning that is not covered by the listed permissible values (e.g. dikaryon / dikaryotic, polykaryotic, octoploid, or hedged values like \"likely diploid\"). Use this when the submitter's value is interpretable but does not map cleanly to one of the named ploidy classes. The original free-text qualifier should be preserved upstream (e.g. in a sample-level note) when it carries information beyond the bare classification."
         }
       }
     },
@@ -26602,7 +26651,6 @@
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 5,
-      "string_serialization": "{text}:{text}",
       "domain_of": [
         "AirInterface",
         "BiofilmInterface",
@@ -26616,13 +26664,13 @@
         "SoilInterface",
         "WastewaterSludgeInterface",
         "WaterInterface",
-        "SampIdNewTermsMixin"
+        "SampIdNewTermsMixin",
+        "IsolateInterface"
       ],
       "slot_group": "sample_id_section",
       "range": "string",
       "recommended": true,
-      "multivalued": false,
-      "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+      "multivalued": false
     },
     "sample_shipped": {
       "name": "sample_shipped",
@@ -30915,6 +30963,9 @@
       "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
       "title": "INSDC experiment identifiers",
       "from_schema": "https://example.com/nmdc_submission_schema",
+      "see_also": [
+        "https://www.ncbi.nlm.nih.gov/sra/docs/submitmeta/#sra-metadata-experiment"
+      ],
       "rank": 6,
       "is_a": "external_database_identifiers",
       "mixins": [
@@ -30964,21 +31015,23 @@
     "organism_genus": {
       "name": "organism_genus",
       "description": "Genus of the organism.",
+      "notes": [
+        "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)",
+        "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)",
+        "GOLD organism_v2 (Go0000058, queried 2026-04-14)"
+      ],
       "comments": [
         "Free-text submitter-provided genus name. For an ontology-grounded classification, use `classified_as` with a NcbiTaxon instance on the parent Organism class."
       ],
       "examples": [
         {
-          "value": "Shewanella",
-          "description": "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)"
+          "value": "Shewanella"
         },
         {
-          "value": "Ruegeria",
-          "description": "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+          "value": "Ruegeria"
         },
         {
-          "value": "Campylobacter",
-          "description": "GOLD organism_v2 (Go0000058, queried 2026-04-14)"
+          "value": "Campylobacter"
         }
       ],
       "in_subset": [
@@ -31006,21 +31059,23 @@
     "organism_species": {
       "name": "organism_species",
       "description": "Species of the organism.",
+      "notes": [
+        "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)",
+        "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+      ],
       "comments": [
         "Free-text submitter-provided species name. For an ontology-grounded classification, use `classified_as` with a NcbiTaxon instance on the parent Organism class."
       ],
       "examples": [
         {
-          "value": "loihica",
-          "description": "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)"
+          "value": "loihica"
         },
         {
-          "value": "pomeroyi",
-          "description": "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+          "value": "pomeroyi"
         },
         {
           "value": "sp.",
-          "description": "GOLD organism_v2.species (n=37 records, queried 2026-04-30) — used when the isolate has not yet been assigned a species name"
+          "description": "use when the isolate has not yet been assigned a species name"
         }
       ],
       "in_subset": [
@@ -31048,22 +31103,20 @@
     "strain_name": {
       "name": "strain_name",
       "description": "Strain or cultivar name of the organism.",
-      "comments": [
+      "notes": [
         "Microbial strain identifiers and plant cultivar names (governed by the International Code of Nomenclature for Cultivated Plants, ICNCP) are nomenclaturally distinct, but this slot accepts both for now to match the JGI Isolate (NA) v19 form's combined \"Strain or cultivar\" field. A separate `cultivar_name` slot may be added if a plant-specific use case emerges; see #3056.",
-        "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding (e.g. \"strain:PV-4\"). NMDC splits the concept into separate slots; this slot covers the strain rank specifically."
+        "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding (e.g. \"strain:PV-4\"). NMDC splits the concept into separate slots; this slot covers the strain rank specifically.",
+        "Example values are strain names from GOLD organism_v2."
       ],
       "examples": [
         {
-          "value": "PV-4",
-          "description": "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)"
+          "value": "PV-4"
         },
         {
-          "value": "DSS-3",
-          "description": "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+          "value": "DSS-3"
         },
         {
-          "value": "DSM 6724",
-          "description": "GOLD organism_v2 Dictyoglomus turgidum (Go0000002, queried 2026-04-14)"
+          "value": "DSM 6724"
         }
       ],
       "in_subset": [
@@ -31094,21 +31147,19 @@
     "isolate_name": {
       "name": "isolate_name",
       "description": "Isolate or mutant name.",
-      "comments": [
-        "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with strain, cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding. NMDC uses a separate slot for the isolate rank specifically."
+      "notes": [
+        "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with strain, cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding. NMDC uses a separate slot for the isolate rank specifically.",
+        "Example values are from GOLD dw_sample_taxonomy_info.isolate; \"Isolate\" is a generic placeholder used when no specific mutant or isolate name is recorded."
       ],
       "examples": [
         {
-          "value": "Bd21-3",
-          "description": "GOLD dw_sample_taxonomy_info.isolate (n=260 records, queried 2026-04-30) — Brachypodium distachyon Bd21-3 reference accession"
+          "value": "Bd21-3"
         },
         {
-          "value": "MR164",
-          "description": "GOLD dw_sample_taxonomy_info.isolate (n=555 records, queried 2026-04-30)"
+          "value": "MR164"
         },
         {
-          "value": "Isolate",
-          "description": "GOLD dw_sample_taxonomy_info.isolate (n=918 records, queried 2026-04-30) — generic placeholder used when no specific mutant/isolate name is recorded"
+          "value": "Isolate"
         }
       ],
       "in_subset": [
@@ -31137,9 +31188,12 @@
     },
     "classified_as": {
       "name": "classified_as",
-      "description": "Taxonomic classification of this organism. Narrowed from the global OntologyClass range (defined on the slot itself) to NcbiTaxon, since organism identity at NMDC is anchored to NCBI Taxonomy. Per #3016 — the broader pattern is to narrow `classified_as` to `NcbiTaxon` on all organism-oriented classes via slot_usage.",
+      "description": "Taxonomic classification of this organism.",
+      "notes": [
+        "Narrowing `classified_as` to `NcbiTaxon` on organism-oriented classes via slot_usage is tracked in https://github.com/microbiomedata/nmdc-schema/issues/3016."
+      ],
       "comments": [
-        "Taxonomy-oriented uses (e.g. on Organism) should point to NcbiTaxon instances. OrganismSample reaches taxonomy indirectly via expected_organism.classified_as. The global range stays OntologyClass; narrowing to NcbiTaxon via slot_usage is tracked in #3016."
+        "Taxonomy-oriented uses (e.g. on Organism) should point to NcbiTaxon instances. OrganismSample reaches taxonomy indirectly via expected_organism.classified_as."
       ],
       "examples": [
         {
@@ -31151,7 +31205,8 @@
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "see_also": [
-        "https://github.com/microbiomedata/nmdc-schema/issues/2959"
+        "https://github.com/microbiomedata/nmdc-schema/issues/2959",
+        "https://github.com/microbiomedata/nmdc-schema/issues/3016"
       ],
       "narrow_mappings": [
         "biolink:in_taxon"
@@ -31220,6 +31275,14 @@
     "gc_content": {
       "name": "gc_content",
       "description": "Estimated GC content as a percentage.",
+      "examples": [
+        {
+          "value": "45"
+        },
+        {
+          "value": "60"
+        }
+      ],
       "in_subset": [
         "jgi_isolate"
       ],
@@ -31262,17 +31325,19 @@
     "host_genus": {
       "name": "host_genus",
       "description": "Genus of the host organism that the sample was collected from.",
+      "notes": [
+        "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+        "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+      ],
       "comments": [
         "Free-text submitter-provided host genus. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
       ],
       "examples": [
         {
-          "value": "Zea",
-          "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+          "value": "Zea"
         },
         {
-          "value": "Escherichia",
-          "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          "value": "Escherichia"
         }
       ],
       "in_subset": [
@@ -31300,17 +31365,19 @@
     "host_species": {
       "name": "host_species",
       "description": "Species of the host organism that the sample was collected from.",
+      "notes": [
+        "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+        "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+      ],
       "comments": [
         "Free-text submitter-provided host species. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
       ],
       "examples": [
         {
-          "value": "mays",
-          "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+          "value": "mays"
         },
         {
-          "value": "coli",
-          "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          "value": "coli"
         }
       ],
       "in_subset": [
@@ -31338,13 +31405,15 @@
     "host_strain": {
       "name": "host_strain",
       "description": "Strain of the host organism that the sample was collected from.",
+      "notes": [
+        "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+      ],
       "comments": [
         "Free-text submitter-provided host strain. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
       ],
       "examples": [
         {
-          "value": "K-12",
-          "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          "value": "K-12"
         }
       ],
       "in_subset": [
@@ -31496,6 +31565,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -33073,7 +33146,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "AirInterface",
           "domain_of": [
@@ -33089,7 +33161,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -33769,6 +33842,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -36821,7 +36898,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "BiofilmInterface",
           "domain_of": [
@@ -36837,7 +36913,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -37815,6 +37892,10 @@
         "lat_lon": {
           "name": "lat_lon",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -41739,7 +41820,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "BuiltEnvInterface",
           "domain_of": [
@@ -41755,7 +41835,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -43878,6 +43959,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -46746,7 +46831,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "HcrCoresInterface",
           "domain_of": [
@@ -46762,7 +46846,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -48092,6 +48177,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -51165,7 +51254,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "HcrFluidsSwabsInterface",
           "domain_of": [
@@ -51181,7 +51269,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -52465,6 +52554,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -54772,7 +54865,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "HostAssociatedInterface",
           "domain_of": [
@@ -54788,7 +54880,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -57945,6 +58038,10 @@
           "name": "samp_store_temp",
           "required": true
         },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+        },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "range": "SpecificEcosystemEnum"
@@ -60355,7 +60452,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "MiscEnvsInterface",
           "domain_of": [
@@ -60371,7 +60467,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -61129,6 +61226,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -64341,7 +64442,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "PlantAssociatedInterface",
           "domain_of": [
@@ -64357,7 +64457,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -65081,6 +65182,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -68996,7 +69101,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "SedimentInterface",
           "domain_of": [
@@ -69012,7 +69116,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -70310,6 +70415,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "sieving": {
           "name": "sieving",
@@ -73707,7 +73816,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "SoilInterface",
           "domain_of": [
@@ -73723,7 +73831,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -75153,6 +75262,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "required": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "specific_ecosystem": {
           "name": "specific_ecosystem",
@@ -76926,7 +77039,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "WastewaterSludgeInterface",
           "domain_of": [
@@ -76942,7 +77054,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -77807,6 +77920,10 @@
         "samp_store_temp": {
           "name": "samp_store_temp",
           "recommended": true
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
         },
         "env_broad_scale": {
           "name": "env_broad_scale",
@@ -81776,7 +81893,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "WaterInterface",
           "domain_of": [
@@ -81792,7 +81908,8 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
@@ -83093,6 +83210,9 @@
           "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
           "title": "INSDC experiment identifiers",
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://www.ncbi.nlm.nih.gov/sra/docs/submitmeta/#sra-metadata-experiment"
+          ],
           "rank": 6,
           "is_a": "external_database_identifiers",
           "mixins": [
@@ -83444,6 +83564,9 @@
           "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
           "title": "INSDC experiment identifiers",
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://www.ncbi.nlm.nih.gov/sra/docs/submitmeta/#sra-metadata-experiment"
+          ],
           "rank": 6,
           "is_a": "external_database_identifiers",
           "mixins": [
@@ -83837,6 +83960,9 @@
           "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
           "title": "INSDC experiment identifiers",
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://www.ncbi.nlm.nih.gov/sra/docs/submitmeta/#sra-metadata-experiment"
+          ],
           "rank": 6,
           "is_a": "external_database_identifiers",
           "mixins": [
@@ -84188,6 +84314,9 @@
           "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
           "title": "INSDC experiment identifiers",
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://www.ncbi.nlm.nih.gov/sra/docs/submitmeta/#sra-metadata-experiment"
+          ],
           "rank": 6,
           "is_a": "external_database_identifiers",
           "mixins": [
@@ -84614,7 +84743,6 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 5,
-          "string_serialization": "{text}:{text}",
           "alias": "sample_link",
           "owner": "SampIdNewTermsMixin",
           "domain_of": [
@@ -84630,13 +84758,13 @@
             "SoilInterface",
             "WastewaterSludgeInterface",
             "WaterInterface",
-            "SampIdNewTermsMixin"
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
           ],
           "slot_group": "sample_id_section",
           "range": "string",
           "recommended": true,
-          "multivalued": false,
-          "pattern": "[^\\:\\n\\r]+\\:[^\\:\\n\\r]+"
+          "multivalued": false
         }
       }
     },
@@ -85254,6 +85382,7 @@
         "isolate_single_colony",
         "isolate_known_contaminants",
         "collection_date",
+        "sample_link",
         "source_mat_id",
         "organism_genus",
         "organism_species",
@@ -85305,6 +85434,19 @@
             "Collection Day"
           ],
           "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$"
+        },
+        "sample_link": {
+          "name": "sample_link",
+          "description": "Enter the name of the sample which was processed to produce the isolate.",
+          "comments": [
+            "This should be provided if one or more environmental templates are used in this submission.",
+            "The value provided here should be a value from the 'sample name' column in one of the environmental templates."
+          ],
+          "examples": [
+            {
+              "value": "forest_floor_soil_00001"
+            }
+          ]
         }
       },
       "attributes": {
@@ -85411,6 +85553,44 @@
           "required": true,
           "pattern": "^[12]\\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\\d|3[01])$"
         },
+        "sample_link": {
+          "name": "sample_link",
+          "description": "Enter the name of the sample which was processed to produce the isolate.",
+          "title": "sample linkage",
+          "comments": [
+            "This should be provided if one or more environmental templates are used in this submission.",
+            "The value provided here should be a value from the 'sample name' column in one of the environmental templates."
+          ],
+          "examples": [
+            {
+              "value": "forest_floor_soil_00001"
+            }
+          ],
+          "from_schema": "https://example.com/nmdc_submission_schema",
+          "rank": 5,
+          "alias": "sample_link",
+          "owner": "IsolateInterface",
+          "domain_of": [
+            "AirInterface",
+            "BiofilmInterface",
+            "BuiltEnvInterface",
+            "HcrCoresInterface",
+            "HcrFluidsSwabsInterface",
+            "HostAssociatedInterface",
+            "MiscEnvsInterface",
+            "PlantAssociatedInterface",
+            "SedimentInterface",
+            "SoilInterface",
+            "WastewaterSludgeInterface",
+            "WaterInterface",
+            "SampIdNewTermsMixin",
+            "IsolateInterface"
+          ],
+          "slot_group": "sample_id_section",
+          "range": "string",
+          "recommended": true,
+          "multivalued": false
+        },
         "source_mat_id": {
           "name": "source_mat_id",
           "annotations": {
@@ -85478,21 +85658,23 @@
         "organism_genus": {
           "name": "organism_genus",
           "description": "Genus of the organism.",
+          "notes": [
+            "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)",
+            "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)",
+            "GOLD organism_v2 (Go0000058, queried 2026-04-14)"
+          ],
           "comments": [
             "Free-text submitter-provided genus name. For an ontology-grounded classification, use `classified_as` with a NcbiTaxon instance on the parent Organism class."
           ],
           "examples": [
             {
-              "value": "Shewanella",
-              "description": "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)"
+              "value": "Shewanella"
             },
             {
-              "value": "Ruegeria",
-              "description": "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+              "value": "Ruegeria"
             },
             {
-              "value": "Campylobacter",
-              "description": "GOLD organism_v2 (Go0000058, queried 2026-04-14)"
+              "value": "Campylobacter"
             }
           ],
           "in_subset": [
@@ -85522,21 +85704,23 @@
         "organism_species": {
           "name": "organism_species",
           "description": "Species of the organism.",
+          "notes": [
+            "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)",
+            "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+          ],
           "comments": [
             "Free-text submitter-provided species name. For an ontology-grounded classification, use `classified_as` with a NcbiTaxon instance on the parent Organism class."
           ],
           "examples": [
             {
-              "value": "loihica",
-              "description": "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)"
+              "value": "loihica"
             },
             {
-              "value": "pomeroyi",
-              "description": "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+              "value": "pomeroyi"
             },
             {
               "value": "sp.",
-              "description": "GOLD organism_v2.species (n=37 records, queried 2026-04-30) — used when the isolate has not yet been assigned a species name"
+              "description": "use when the isolate has not yet been assigned a species name"
             }
           ],
           "in_subset": [
@@ -85566,22 +85750,20 @@
         "strain_name": {
           "name": "strain_name",
           "description": "Strain or cultivar name of the organism.",
-          "comments": [
+          "notes": [
             "Microbial strain identifiers and plant cultivar names (governed by the International Code of Nomenclature for Cultivated Plants, ICNCP) are nomenclaturally distinct, but this slot accepts both for now to match the JGI Isolate (NA) v19 form's combined \"Strain or cultivar\" field. A separate `cultivar_name` slot may be added if a plant-specific use case emerges; see #3056.",
-            "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding (e.g. \"strain:PV-4\"). NMDC splits the concept into separate slots; this slot covers the strain rank specifically."
+            "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding (e.g. \"strain:PV-4\"). NMDC splits the concept into separate slots; this slot covers the strain rank specifically.",
+            "Example values are strain names from GOLD organism_v2."
           ],
           "examples": [
             {
-              "value": "PV-4",
-              "description": "GOLD organism_v2 Go0000189 (Shewanella loihica PV-4, queried 2026-04-21)"
+              "value": "PV-4"
             },
             {
-              "value": "DSS-3",
-              "description": "GOLD organism_v2 Go0000514 (Ruegeria pomeroyi DSS-3, queried 2026-04-21)"
+              "value": "DSS-3"
             },
             {
-              "value": "DSM 6724",
-              "description": "GOLD organism_v2 Dictyoglomus turgidum (Go0000002, queried 2026-04-14)"
+              "value": "DSM 6724"
             }
           ],
           "in_subset": [
@@ -85614,21 +85796,19 @@
         "isolate_name": {
           "name": "isolate_name",
           "description": "Isolate or mutant name.",
-          "comments": [
-            "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with strain, cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding. NMDC uses a separate slot for the isolate rank specifically."
+          "notes": [
+            "MIxS `subspecf_gen_lin` (MIXS:0000020) covers this concept along with strain, cultivar, serovar, biotype, ecotype, and other sub-species lineage types in a single slot using a rank-prefix encoding. NMDC uses a separate slot for the isolate rank specifically.",
+            "Example values are from GOLD dw_sample_taxonomy_info.isolate; \"Isolate\" is a generic placeholder used when no specific mutant or isolate name is recorded."
           ],
           "examples": [
             {
-              "value": "Bd21-3",
-              "description": "GOLD dw_sample_taxonomy_info.isolate (n=260 records, queried 2026-04-30) — Brachypodium distachyon Bd21-3 reference accession"
+              "value": "Bd21-3"
             },
             {
-              "value": "MR164",
-              "description": "GOLD dw_sample_taxonomy_info.isolate (n=555 records, queried 2026-04-30)"
+              "value": "MR164"
             },
             {
-              "value": "Isolate",
-              "description": "GOLD dw_sample_taxonomy_info.isolate (n=918 records, queried 2026-04-30) — generic placeholder used when no specific mutant/isolate name is recorded"
+              "value": "Isolate"
             }
           ],
           "in_subset": [
@@ -85659,9 +85839,12 @@
         },
         "classified_as": {
           "name": "classified_as",
-          "description": "Taxonomic classification of this organism. Narrowed from the global OntologyClass range (defined on the slot itself) to NcbiTaxon, since organism identity at NMDC is anchored to NCBI Taxonomy. Per #3016 — the broader pattern is to narrow `classified_as` to `NcbiTaxon` on all organism-oriented classes via slot_usage.",
+          "description": "Taxonomic classification of this organism.",
+          "notes": [
+            "Narrowing `classified_as` to `NcbiTaxon` on organism-oriented classes via slot_usage is tracked in https://github.com/microbiomedata/nmdc-schema/issues/3016."
+          ],
           "comments": [
-            "Taxonomy-oriented uses (e.g. on Organism) should point to NcbiTaxon instances. OrganismSample reaches taxonomy indirectly via expected_organism.classified_as. The global range stays OntologyClass; narrowing to NcbiTaxon via slot_usage is tracked in #3016."
+            "Taxonomy-oriented uses (e.g. on Organism) should point to NcbiTaxon instances. OrganismSample reaches taxonomy indirectly via expected_organism.classified_as."
           ],
           "examples": [
             {
@@ -85673,7 +85856,8 @@
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "see_also": [
-            "https://github.com/microbiomedata/nmdc-schema/issues/2959"
+            "https://github.com/microbiomedata/nmdc-schema/issues/2959",
+            "https://github.com/microbiomedata/nmdc-schema/issues/3016"
           ],
           "narrow_mappings": [
             "biolink:in_taxon"
@@ -85697,6 +85881,14 @@
         "gc_content": {
           "name": "gc_content",
           "description": "Estimated GC content as a percentage.",
+          "examples": [
+            {
+              "value": "45"
+            },
+            {
+              "value": "60"
+            }
+          ],
           "in_subset": [
             "jgi_isolate"
           ],
@@ -86702,17 +86894,19 @@
         "host_genus": {
           "name": "host_genus",
           "description": "Genus of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host genus. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "Zea",
-              "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+              "value": "Zea"
             },
             {
-              "value": "Escherichia",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "Escherichia"
             }
           ],
           "in_subset": [
@@ -86742,17 +86936,19 @@
         "host_species": {
           "name": "host_species",
           "description": "Species of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host species. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "mays",
-              "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+              "value": "mays"
             },
             {
-              "value": "coli",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "coli"
             }
           ],
           "in_subset": [
@@ -86782,13 +86978,15 @@
         "host_strain": {
           "name": "host_strain",
           "description": "Strain of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host strain. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "K-12",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "K-12"
             }
           ],
           "in_subset": [
@@ -88111,17 +88309,19 @@
         "host_genus": {
           "name": "host_genus",
           "description": "Genus of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host genus. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "Zea",
-              "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+              "value": "Zea"
             },
             {
-              "value": "Escherichia",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "Escherichia"
             }
           ],
           "in_subset": [
@@ -88151,17 +88351,19 @@
         "host_species": {
           "name": "host_species",
           "description": "Species of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host species. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "mays",
-              "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+              "value": "mays"
             },
             {
-              "value": "coli",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "coli"
             }
           ],
           "in_subset": [
@@ -88191,13 +88393,15 @@
         "host_strain": {
           "name": "host_strain",
           "description": "Strain of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host strain. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "K-12",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "K-12"
             }
           ],
           "in_subset": [
@@ -89327,17 +89531,19 @@
         "host_genus": {
           "name": "host_genus",
           "description": "Genus of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host genus. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "Zea",
-              "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+              "value": "Zea"
             },
             {
-              "value": "Escherichia",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "Escherichia"
             }
           ],
           "in_subset": [
@@ -89367,17 +89573,19 @@
         "host_species": {
           "name": "host_species",
           "description": "Species of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host species. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "mays",
-              "description": "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)"
+              "value": "mays"
             },
             {
-              "value": "coli",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "coli"
             }
           ],
           "in_subset": [
@@ -89407,13 +89615,15 @@
         "host_strain": {
           "name": "host_strain",
           "description": "Strain of the host organism that the sample was collected from.",
+          "notes": [
+            "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+          ],
           "comments": [
             "Free-text submitter-provided host strain. For an ontology-grounded host identification, use `host_taxid` (MIXS:0000250) on the same class."
           ],
           "examples": [
             {
-              "value": "K-12",
-              "description": "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
+              "value": "K-12"
             }
           ],
           "in_subset": [
