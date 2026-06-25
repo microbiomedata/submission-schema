@@ -1686,8 +1686,7 @@ classes:
       collection_site_or_growth_conditions:
         required: true
       rna_isolate_meth:
-        slot_group: jgi_rna_isolate_section
-        
+        slot_group: jgi_rna_isolate_section        
 
   DhInterface:
     description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
