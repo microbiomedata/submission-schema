@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-18T13:38:32
+# Generation date: 2026-06-25T12:33:40
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -14489,6 +14489,12 @@ slots.data_files_section = Slot(uri=NMDC_SUB_SCHEMA.data_files_section, name="da
 slots.organism_section = Slot(uri=NMDC_SUB_SCHEMA.organism_section, name="organism_section", curie=NMDC_SUB_SCHEMA.curie('organism_section'),
                    model_uri=NMDC_SUB_SCHEMA.organism_section, domain=None, range=Optional[str])
 
+slots.jgi_rna_isolate_section = Slot(uri=NMDC_SUB_SCHEMA.jgi_rna_isolate_section, name="jgi_rna_isolate_section", curie=NMDC_SUB_SCHEMA.curie('jgi_rna_isolate_section'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_rna_isolate_section, domain=None, range=Optional[str])
+
+slots.jgi_dna_isolate_section = Slot(uri=NMDC_SUB_SCHEMA.jgi_dna_isolate_section, name="jgi_dna_isolate_section", curie=NMDC_SUB_SCHEMA.curie('jgi_dna_isolate_section'),
+                   model_uri=NMDC_SUB_SCHEMA.jgi_dna_isolate_section, domain=None, range=Optional[str])
+
 slots.jgi_isolate_section = Slot(uri=NMDC_SUB_SCHEMA.jgi_isolate_section, name="jgi_isolate_section", curie=NMDC_SUB_SCHEMA.curie('jgi_isolate_section'),
                    model_uri=NMDC_SUB_SCHEMA.jgi_isolate_section, domain=None, range=Optional[str])
 
@@ -17409,9 +17415,15 @@ slots.JgiIsolateGenomeInterface_isolate_fungal_16s_screening = Slot(uri=NMDC_SUB
 slots.JgiIsolateGenomeInterface_isolate_its_match_unite = Slot(uri=NMDC_SUB_SCHEMA.isolate_its_match_unite, name="JgiIsolateGenomeInterface_isolate_its_match_unite", curie=NMDC_SUB_SCHEMA.curie('isolate_its_match_unite'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_isolate_its_match_unite, domain=JgiIsolateGenomeInterface, range=Optional[Union[str, "YesNoEnum"]])
 
+slots.JgiIsolateGenomeInterface_dna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.dna_isolate_meth, name="JgiIsolateGenomeInterface_dna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('dna_isolate_meth'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateGenomeInterface_dna_isolate_meth, domain=JgiIsolateGenomeInterface, range=str)
+
 slots.JgiIsolateTranscriptomeInterface_rna_collection_date = Slot(uri=NMDC_SUB_SCHEMA.rna_collection_date, name="JgiIsolateTranscriptomeInterface_rna_collection_date", curie=NMDC_SUB_SCHEMA.curie('rna_collection_date'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_rna_collection_date, domain=JgiIsolateTranscriptomeInterface, range=str,
                    pattern=re.compile(r'^[12]\d{3}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12]\d|3[01])$'))
 
 slots.JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions = Slot(uri=NMDC_SUB_SCHEMA.collection_site_or_growth_conditions, name="JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions", curie=NMDC_SUB_SCHEMA.curie('collection_site_or_growth_conditions'),
                    model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_collection_site_or_growth_conditions, domain=JgiIsolateTranscriptomeInterface, range=str)
+
+slots.JgiIsolateTranscriptomeInterface_rna_isolate_meth = Slot(uri=NMDC_SUB_SCHEMA.rna_isolate_meth, name="JgiIsolateTranscriptomeInterface_rna_isolate_meth", curie=NMDC_SUB_SCHEMA.curie('rna_isolate_meth'),
+                   model_uri=NMDC_SUB_SCHEMA.JgiIsolateTranscriptomeInterface_rna_isolate_meth, domain=JgiIsolateTranscriptomeInterface, range=str)

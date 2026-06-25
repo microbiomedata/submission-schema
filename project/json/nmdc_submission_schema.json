@@ -13310,12 +13310,26 @@
       "rank": 13,
       "is_a": "dh_section"
     },
+    "jgi_rna_isolate_section": {
+      "name": "jgi_rna_isolate_section",
+      "title": "RNA JGI Isolate",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "rank": 14,
+      "is_a": "dh_section"
+    },
+    "jgi_dna_isolate_section": {
+      "name": "jgi_dna_isolate_section",
+      "title": "DNA JGI Isolate",
+      "from_schema": "https://example.com/nmdc_submission_schema",
+      "rank": 15,
+      "is_a": "dh_section"
+    },
     "jgi_isolate_section": {
       "name": "jgi_isolate_section",
       "description": "JGI submission logistics and quality control for single-organism isolate samples: sample and container identifiers, nucleic-acid concentration and absorbance readings, the biosafety material category, and, for genome submissions, strain-verification ribosomal sequences and fungal screening. These are required by JGI for sample handling and are not stored in nmdc-schema.",
       "title": "JGI Isolate",
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "rank": 14,
+      "rank": 16,
       "is_a": "dh_section"
     },
     "read_1_url": {
@@ -87088,35 +87102,39 @@
       "slot_usage": {
         "isolate_ribosomal_seq": {
           "name": "isolate_ribosomal_seq",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_ribosomal_seq_type": {
           "name": "isolate_ribosomal_seq_type",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_ribosomal_seq_comments": {
           "name": "isolate_ribosomal_seq_comments",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_second_ribosomal_seq": {
           "name": "isolate_second_ribosomal_seq",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_second_ribosomal_seq_type": {
           "name": "isolate_second_ribosomal_seq_type",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_second_ribosomal_seq_comments": {
           "name": "isolate_second_ribosomal_seq_comments",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_fungal_16s_screening": {
           "name": "isolate_fungal_16s_screening",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
         },
         "isolate_its_match_unite": {
           "name": "isolate_its_match_unite",
-          "slot_group": "jgi_isolate_section"
+          "slot_group": "jgi_dna_isolate_section"
+        },
+        "dna_isolate_meth": {
+          "name": "dna_isolate_meth",
+          "slot_group": "jgi_dna_isolate_section"
         }
       },
       "attributes": {
@@ -87147,7 +87165,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "string",
           "recommended": true,
           "pattern": "^[ATCGN]{200,5000}$"
@@ -87177,7 +87195,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "RibosomalSequenceTypeEnum",
           "recommended": true
         },
@@ -87203,7 +87221,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "string",
           "pattern": "^.{0,256}$"
         },
@@ -87229,7 +87247,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "string",
           "pattern": "^[ATCGN]{200,5000}$"
         },
@@ -87252,7 +87270,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "RibosomalSequenceTypeEnum"
         },
         "isolate_second_ribosomal_seq_comments": {
@@ -87272,7 +87290,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "string",
           "pattern": "^.{0,256}$"
         },
@@ -87302,7 +87320,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "YesNoEnum"
         },
         "isolate_its_match_unite": {
@@ -87332,7 +87350,7 @@
           "domain_of": [
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_isolate_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "YesNoEnum"
         },
         "dna_isolate_meth": {
@@ -87356,7 +87374,7 @@
             "JgiMgLrInterface",
             "JgiIsolateGenomeInterface"
           ],
-          "slot_group": "jgi_metagenomics_section",
+          "slot_group": "jgi_dna_isolate_section",
           "range": "string",
           "required": true,
           "recommended": false
@@ -88553,6 +88571,10 @@
         "collection_site_or_growth_conditions": {
           "name": "collection_site_or_growth_conditions",
           "required": true
+        },
+        "rna_isolate_meth": {
+          "name": "rna_isolate_meth",
+          "slot_group": "jgi_rna_isolate_section"
         }
       },
       "attributes": {
@@ -88626,7 +88648,7 @@
             "JgiMtInterface",
             "JgiIsolateTranscriptomeInterface"
           ],
-          "slot_group": "jgi_metatranscriptomics_section",
+          "slot_group": "jgi_rna_isolate_section",
           "range": "string",
           "required": true,
           "recommended": false
