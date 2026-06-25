@@ -402,9 +402,17 @@ slots:
       single colony, and any known contaminants. These describe what the
       organism is, as distinct from the JGI submission logistics captured in the
       JGI Isolate section.
+  jgi_rna_isolate_section:
+    title: RNA JGI Isolate
+    rank: 14
+    is_a: dh_section
+  jgi_dna_isolate_section:
+    title: DNA JGI Isolate
+    rank: 15
+    is_a: dh_section
   jgi_isolate_section:
     title: JGI Isolate
-    rank: 14
+    rank: 16
     is_a: dh_section
     description: >-
       JGI submission logistics and quality control for single-organism isolate
@@ -1576,21 +1584,23 @@ classes:
       - isolate_its_match_unite
     slot_usage:
       isolate_ribosomal_seq:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_ribosomal_seq_type:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_ribosomal_seq_comments:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_second_ribosomal_seq:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_second_ribosomal_seq_type:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_second_ribosomal_seq_comments:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_fungal_16s_screening:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
       isolate_its_match_unite:
-        slot_group: jgi_isolate_section
+        slot_group: jgi_dna_isolate_section
+      dna_isolate_meth:
+        slot_group: jgi_dna_isolate_section
     rules:
       - title: ribosomal_seq_type_other_requires_comments
         description: If the first ribosomal sequence type is Other, comments are required.
@@ -1675,6 +1685,9 @@ classes:
         required: true
       collection_site_or_growth_conditions:
         required: true
+      rna_isolate_meth:
+        slot_group: jgi_rna_isolate_section
+        
 
   DhInterface:
     description: One DataHarmonizer interface, for the specified combination of a checklist, enviornmental_package, and various standards, user facilities or analysis types
