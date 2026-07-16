@@ -29,7 +29,7 @@ uv add --group dev "nmdc-schema==X.Y.Z"  # replace X.Y.Z with the desired versio
 ```
 
 > [!NOTE]  
-> It is important to use the `==` version constraint to ensure the exact version is installed. 
+> It is important to use the `==` version constraint to ensure the exact version is installed.
 
 ### Building the submission schema
 
