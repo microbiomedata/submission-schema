@@ -8080,7 +8080,7 @@
                 },
                 "insdc_experiment_identifiers": {
                     "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
                     "type": [
                         "string",
                         "null"
@@ -8156,7 +8156,7 @@
                 },
                 "insdc_experiment_identifiers": {
                     "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
                     "type": [
                         "string",
                         "null"
@@ -8246,7 +8246,7 @@
                 },
                 "insdc_experiment_identifiers": {
                     "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
                     "type": [
                         "string",
                         "null"
@@ -8322,7 +8322,7 @@
                 },
                 "insdc_experiment_identifiers": {
                     "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc.sra:(E|D|S)RX[0-9]{6,}$",
+                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
                     "type": [
                         "string",
                         "null"
