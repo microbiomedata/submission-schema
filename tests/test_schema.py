@@ -381,13 +381,18 @@ def test_every_example_is_a_scalar_value():
 
     ``test_examples`` above cannot catch that: it skips any example with a falsy value
     (``if not new_value: continue``), which is exactly what an objectified example has.
+
+    Both halves are checked, rather than just a missing ``value``. An example carrying an
+    ``object`` payload alongside a scalar ``value`` still ships that payload, and nothing in
+    this build removes it. nmdc-schema forbids that combination upstream, so reaching it
+    means an assumption this build rests on has changed and wants a person to look.
     """
     schema_view = SchemaView(SCHEMA_YAML_PATH)
     offenders = []
     for class_name in schema_view.all_classes():
         for slot in schema_view.class_induced_slots(class_name):
             for example in slot.examples or []:
-                if example.value is None:
+                if example.value is None or example.object is not None:
                     offenders.append(f"{class_name}.{slot.name}: {example}")
     assert not offenders, "Examples that are not scalar values:\n" + "\n".join(
         sorted(set(offenders))
