@@ -137,3 +137,21 @@ def test_mixed_examples_on_one_slot():
         "hand written",
         "from nmdc-schema",
     ]
+
+
+def test_examples_given_as_plain_dicts():
+    """SchemaView can hand back examples as dicts rather than Example objects.
+
+    ``modify_quantity_value_slot`` already coerces for this reason, and the derivation
+    inherits that coercion, so the dict path needs its own coverage.
+    """
+    slot = SlotDefinition("s")
+    slot.examples = [
+        {"object": {"type": "nmdc:TextValue", "has_raw_value": "from a dict"}},
+        {"value": "already scalar"},
+    ]
+    schema_view = schema_with_slot(slot)
+    scalarize_object_examples(schema_view)
+    derived = only_slot(schema_view).examples
+    assert [e.value for e in derived] == ["from a dict", "already scalar"]
+    assert [e.object for e in derived] == [None, None]

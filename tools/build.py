@@ -134,13 +134,14 @@ def scalarize_object_examples(schema_view: SchemaView) -> None:
             Example(**e) if isinstance(e, dict) else e for e in slot_def.examples
         ]
         replaced = False
-        for index, example in enumerate(examples):
+        for example in examples:
             if example.value is not None or example.object is None:
                 continue
             raw = raw_value(example.object)
             if raw is None:
                 continue
-            examples[index] = Example(value=str(raw), description=example.description)
+            example.value = str(raw)
+            example.object = None
             replaced = True
         if replaced:
             slot_def.examples = examples
