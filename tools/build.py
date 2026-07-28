@@ -65,6 +65,15 @@ def rel(path: Path) -> Path:
     return path.relative_to(ROOT)
 
 
+def raw_value_of(example_object) -> Union[str, None]:
+    """Return an example object's ``has_raw_value``, or None if it does not have one.
+
+    Accepts either a mapping or the JsonObj that SchemaView hands back."""
+    if isinstance(example_object, dict):
+        return example_object.get("has_raw_value")
+    return getattr(example_object, "has_raw_value", None)
+
+
 def iter_slot_definitions(schema_view: SchemaView) -> Iterable[SlotDefinition]:
     """Yield each slot and slot usage definition in the schema."""
     for slot_def in schema_view.all_slots().values():
@@ -122,11 +131,6 @@ def scalarize_object_examples(schema_view: SchemaView) -> None:
     since it belongs to a class this schema does not collapse.
     """
 
-    def raw_value(obj) -> Union[str, None]:
-        if isinstance(obj, dict):
-            return obj.get("has_raw_value")
-        return getattr(obj, "has_raw_value", None)
-
     for slot_def in iter_slot_definitions(schema_view):
         if not slot_def.examples:
             continue
@@ -137,7 +141,7 @@ def scalarize_object_examples(schema_view: SchemaView) -> None:
         for example in examples:
             if example.value is not None or example.object is None:
                 continue
-            raw = raw_value(example.object)
+            raw = raw_value_of(example.object)
             if raw is None:
                 continue
             example.value = str(raw)

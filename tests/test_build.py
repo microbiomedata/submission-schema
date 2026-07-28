@@ -4,7 +4,7 @@ import pytest
 from linkml_runtime import SchemaView
 from linkml_runtime.linkml_model import Example, SchemaDefinition, SlotDefinition
 
-from tools.build import scalarize_object_examples
+from tools.build import raw_value_of, scalarize_object_examples
 
 
 def schema_with_slot(slot: SlotDefinition) -> SchemaView:
@@ -155,3 +155,17 @@ def test_examples_given_as_plain_dicts():
     derived = only_slot(schema_view).examples
     assert [e.value for e in derived] == ["from a dict", "already scalar"]
     assert [e.object for e in derived] == [None, None]
+
+
+def test_raw_value_of_reads_both_shapes():
+    """SchemaView yields JsonObj; a YAML-loaded schema yields a plain dict."""
+    from jsonasobj2 import JsonObj
+
+    assert raw_value_of({"has_raw_value": "20 Cel"}) == "20 Cel"
+    assert raw_value_of(JsonObj(has_raw_value="20 Cel")) == "20 Cel"
+
+
+def test_raw_value_of_returns_none_without_a_raw_value():
+    """A Doi or other non-wrapper example object has no has_raw_value to derive from."""
+    assert raw_value_of({"doi_value": "doi:10.1234/5678"}) is None
+    assert raw_value_of(None) is None
