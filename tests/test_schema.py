@@ -369,3 +369,26 @@ def test_examples():
                 assert (
                     report.results == []
                 ), f"Example '{example}' on {class_def.name}.{slot.name} failed validation"
+
+
+def test_every_example_is_a_scalar_value():
+    """No example may survive the build as an ``object:``.
+
+    submission-schema collapses every wrapper range (QuantityValue, TextValue,
+    GeolocationValue, ...) to a scalar, and ``scalarize_object_examples`` in tools/build.py
+    collapses their examples to match. If a slot slipped through, the schema would ship
+    DataHarmonizer an example that no submitter could type.
+
+    ``test_examples`` above cannot catch that: it skips any example with a falsy value
+    (``if not new_value: continue``), which is exactly what an objectified example has.
+    """
+    schema_view = SchemaView(SCHEMA_YAML_PATH)
+    offenders = []
+    for class_name in schema_view.all_classes():
+        for slot in schema_view.class_induced_slots(class_name):
+            for example in slot.examples or []:
+                if example.value is None:
+                    offenders.append(f"{class_name}.{slot.name}: {example}")
+    assert not offenders, "Examples that are not scalar values:\n" + "\n".join(
+        sorted(set(offenders))
+    )

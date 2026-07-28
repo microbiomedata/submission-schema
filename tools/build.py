@@ -103,6 +103,50 @@ def replace_range(
     schema_view.set_modified()
 
 
+def scalarize_object_examples(schema_view: SchemaView) -> None:
+    """Rewrite objectified nmdc-schema examples as the scalar strings this schema needs.
+
+    nmdc-schema gives a slot whose range is a wrapper class (QuantityValue, TextValue,
+    GeolocationValue, and so on) an ``examples: - object:`` instance rather than a scalar
+    ``value:`` string. submission-schema collapses every one of those ranges to a scalar, so
+    the examples have to collapse too, or DataHarmonizer is handed an example that does not
+    look like anything a submitter would type.
+
+    Every one of those wrapper classes carries ``has_raw_value``, holding exactly that
+    string, so one rule covers all of them.
+
+    Examples are matched on their own shape rather than on the slot's range, because
+    ``config/nmdc_schema_import.yaml`` may already have rewritten the range during import.
+    ``lat_lon`` is the case in point: its range is set to ``string`` on the way in, while its
+    example arrives objectified. An object example with no ``has_raw_value`` is left alone,
+    since it belongs to a class this schema does not collapse.
+    """
+
+    def raw_value(obj) -> Union[str, None]:
+        if isinstance(obj, dict):
+            return obj.get("has_raw_value")
+        return getattr(obj, "has_raw_value", None)
+
+    for slot_def in iter_slot_definitions(schema_view):
+        if not slot_def.examples:
+            continue
+        examples = [
+            Example(**e) if isinstance(e, dict) else e for e in slot_def.examples
+        ]
+        replaced = False
+        for index, example in enumerate(examples):
+            if example.value is not None or example.object is None:
+                continue
+            raw = raw_value(example.object)
+            if raw is None:
+                continue
+            examples[index] = Example(value=str(raw), description=example.description)
+            replaced = True
+        if replaced:
+            slot_def.examples = examples
+    schema_view.set_modified()
+
+
 def modify_controlled_term_value_slot(slot: SlotDefinition) -> None:
     """Modify a slot that was imported with range ControlledTermValue"""
     slot.range = "string"
@@ -234,6 +278,9 @@ def main(download_gold_ecosystem_terms: bool) -> None:
             target_schema=submission_schema,
             config=nmdc_schema_import_config,
         )
+
+    with log("Deriving scalar examples from objectified nmdc-schema examples"):
+        scalarize_object_examples(submission_schema)
 
     with log("Merging nmdc-schema prefixes into submission-schema"):
         merge_prefixes(submission_schema, source_schema=nmdc_schema)
