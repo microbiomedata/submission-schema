@@ -4,7 +4,12 @@ import pytest
 from linkml_runtime import SchemaView
 from linkml_runtime.linkml_model import Example, SchemaDefinition, SlotDefinition
 
-from tools.build import raw_value_of, scalarize_object_examples
+from tools.build import (
+    derive_scalar_examples,
+    numeric_value_of,
+    raw_value_of,
+    scalarize_object_examples,
+)
 
 
 def schema_with_slot(slot: SlotDefinition) -> SchemaView:
@@ -169,3 +174,41 @@ def test_raw_value_of_returns_none_without_a_raw_value():
     """A Doi or other non-wrapper example object has no has_raw_value to derive from."""
     assert raw_value_of({"doi_value": "doi:10.1234/5678"}) is None
     assert raw_value_of(None) is None
+
+
+def test_quantity_value_slots_are_left_for_the_range_transform():
+    """modify_quantity_value_slot is the only place that knows number versus string."""
+    slot = SlotDefinition(
+        "s",
+        range="QuantityValue",
+        examples=[object_example(type="nmdc:QuantityValue", has_raw_value="20 Cel")],
+    )
+    schema_view = schema_with_slot(slot)
+    scalarize_object_examples(schema_view)
+    assert only_slot(schema_view).examples[0].object is not None
+
+
+def test_numeric_derivation_ignores_a_disagreeing_raw_value():
+    """rel_air_humidity: storage_units is '%' but the example is dimensionless.
+
+    Deriving from has_raw_value gives '0.8 1', which is not a float. The numeric slot
+    is unambiguous. See https://github.com/microbiomedata/nmdc-schema/issues/3295.
+    """
+    example = object_example(
+        type="nmdc:QuantityValue",
+        has_raw_value="0.8 1",
+        has_numeric_value=0.8,
+        has_unit="1",
+    )
+    slot = SlotDefinition("rel_air_humidity", examples=[example])
+    derive_scalar_examples(slot, derive=numeric_value_of)
+    assert slot.examples[0].value == "0.8"
+    assert float(slot.examples[0].value) == 0.8
+
+
+def test_numeric_value_of_reads_both_shapes():
+    from jsonasobj2 import JsonObj
+
+    assert numeric_value_of({"has_numeric_value": 20}) == 20
+    assert numeric_value_of(JsonObj(has_numeric_value=0.8)) == 0.8
+    assert numeric_value_of({"has_raw_value": "20 Cel"}) is None
