@@ -5877,10 +5877,10 @@ slots:
   - slot: model
     source: Instrument
     destinations:
-      - MetagenomeSequencingNonInterleavedDataInterface
-      - MetagenomeSequencingInterleavedDataInterface
-      - MetatranscriptomeSequencingNonInterleavedDataInterface
-      - MetatranscriptomeSequencingInterleavedDataInterface
+      - DnaSequencingNonInterleavedDataInterface
+      - DnaSequencingInterleavedDataInterface
+      - RnaSequencingNonInterleavedDataInterface
+      - RnaSequencingInterleavedDataInterface
     modifications:
       - replace:
           rank: 2
@@ -5894,10 +5894,10 @@ slots:
   - slot: insdc_bioproject_identifiers
     source: NucleotideSequencing
     destinations:
-      - MetagenomeSequencingNonInterleavedDataInterface
-      - MetagenomeSequencingInterleavedDataInterface
-      - MetatranscriptomeSequencingNonInterleavedDataInterface
-      - MetatranscriptomeSequencingInterleavedDataInterface
+      - DnaSequencingNonInterleavedDataInterface
+      - DnaSequencingInterleavedDataInterface
+      - RnaSequencingNonInterleavedDataInterface
+      - RnaSequencingInterleavedDataInterface
     modifications:
       - replace:
           rank: 5
@@ -5908,46 +5908,46 @@ slots:
             - value: bioproject:PRJNA366857
       # this is a hack to work around a SchemaView issue
       - in_classes:
-        - MetagenomeSequencingNonInterleavedDataInterface
-        - MetagenomeSequencingInterleavedDataInterface
-        - MetatranscriptomeSequencingNonInterleavedDataInterface
-        - MetatranscriptomeSequencingInterleavedDataInterface
+        - DnaSequencingNonInterleavedDataInterface
+        - DnaSequencingInterleavedDataInterface
+        - RnaSequencingNonInterleavedDataInterface
+        - RnaSequencingInterleavedDataInterface
         replace:
           multivalued: false
 
 
-  - slot: insdc_experiment_identifiers
-    source: NucleotideSequencing
+  - slot: insdc_run_identifiers
+    source: DataObject
     destinations:
-      - MetagenomeSequencingNonInterleavedDataInterface
-      - MetagenomeSequencingInterleavedDataInterface
-      - MetatranscriptomeSequencingNonInterleavedDataInterface
-      - MetatranscriptomeSequencingInterleavedDataInterface
+      - DnaSequencingNonInterleavedDataInterface
+      - DnaSequencingInterleavedDataInterface
+      - RnaSequencingNonInterleavedDataInterface
+      - RnaSequencingInterleavedDataInterface
     modifications:
       - replace:
           rank: 6
           slot_group: sequencing_section
-          title: INSDC experiment identifiers
+          title: INSDC run identifiers
           range: string
           description: If multiple identifiers are provided, separate them with a
             semicolon. The number of identifiers must match the number of sequencing
             files.
       # this is a hack to work around a SchemaView issue
       - in_classes:
-        - MetagenomeSequencingNonInterleavedDataInterface
-        - MetagenomeSequencingInterleavedDataInterface
-        - MetatranscriptomeSequencingNonInterleavedDataInterface
-        - MetatranscriptomeSequencingInterleavedDataInterface
+        - DnaSequencingNonInterleavedDataInterface
+        - DnaSequencingInterleavedDataInterface
+        - RnaSequencingNonInterleavedDataInterface
+        - RnaSequencingInterleavedDataInterface
         replace:
           multivalued: false
 
   - slot: processing_institution
     source: NucleotideSequencing
     destinations:
-      - MetagenomeSequencingNonInterleavedDataInterface
-      - MetagenomeSequencingInterleavedDataInterface
-      - MetatranscriptomeSequencingNonInterleavedDataInterface
-      - MetatranscriptomeSequencingInterleavedDataInterface
+      - DnaSequencingNonInterleavedDataInterface
+      - DnaSequencingInterleavedDataInterface
+      - RnaSequencingNonInterleavedDataInterface
+      - RnaSequencingInterleavedDataInterface
     modifications:
       - replace:
           rank: 3
@@ -5957,10 +5957,10 @@ slots:
   - slot: protocol_link
     source: NucleotideSequencing
     destinations:
-      - MetagenomeSequencingNonInterleavedDataInterface
-      - MetagenomeSequencingInterleavedDataInterface
-      - MetatranscriptomeSequencingNonInterleavedDataInterface
-      - MetatranscriptomeSequencingInterleavedDataInterface
+      - DnaSequencingNonInterleavedDataInterface
+      - DnaSequencingInterleavedDataInterface
+      - RnaSequencingNonInterleavedDataInterface
+      - RnaSequencingInterleavedDataInterface
     modifications:
       - replace:
           rank: 4
