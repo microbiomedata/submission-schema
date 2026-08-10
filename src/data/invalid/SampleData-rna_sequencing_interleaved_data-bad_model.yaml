@@ -1,4 +1,4 @@
-metatranscriptome_sequencing_interleaved_data:
+rna_sequencing_interleaved_data:
   - samp_name: sample name
     analysis_type:
       - metatranscriptomics
