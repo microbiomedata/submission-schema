@@ -6,6 +6,6 @@ dna_sequencing_interleaved_data:
     processing_institution: UCSD
     protocol_link: https://example.com/protocol.html
     insdc_bioproject_identifiers: bioproject:PRJNA366857
-    insdc_run_identifiers: insdc.sra:SRR28062759
+    insdc_run_identifiers: insdc.sra:SRR280627
     interleaved_url: https://example.com/read1.fastq
     interleaved_md5_checksum: 0123456789abcdef0123456789abcdef
