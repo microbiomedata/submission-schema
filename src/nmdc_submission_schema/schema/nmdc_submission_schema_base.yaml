@@ -1708,10 +1708,10 @@ classes:
       - jgi_mg_lr_data
       - jgi_mg_data
       - jgi_mt_data
-      - metagenome_sequencing_non_interleaved_data
-      - metagenome_sequencing_interleaved_data
-      - metatranscriptome_sequencing_non_interleaved_data
-      - metatranscriptome_sequencing_interleaved_data
+      - dna_sequencing_non_interleaved_data
+      - dna_sequencing_interleaved_data
+      - rna_sequencing_non_interleaved_data
+      - rna_sequencing_interleaved_data
       - isolate_data
       - jgi_isolate_genome_data
       - jgi_isolate_transcriptome_data
