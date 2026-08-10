@@ -311,7 +311,7 @@ slots:
     range: WaterInterface
     inlined: true
     inlined_as_list: true
-  metagenome_sequencing_non_interleaved_data:
+  dna_sequencing_non_interleaved_data:
     description: >-
       aggregation slot relating non-interleaved metagenome sequencing data collections to a 
       SampleData container
@@ -319,7 +319,7 @@ slots:
     range: DnaSequencingNonInterleavedDataInterface
     inlined: true
     inlined_as_list: true
-  metagenome_sequencing_interleaved_data:
+  dna_sequencing_interleaved_data:
     description: >-
       aggregation slot relating interleaved metagenome sequencing data collections to a SampleData 
       container
@@ -327,7 +327,7 @@ slots:
     range: DnaSequencingInterleavedDataInterface
     inlined: true
     inlined_as_list: true
-  metatranscriptome_sequencing_non_interleaved_data:
+  rna_sequencing_non_interleaved_data:
     description: >-
       aggregation slot relating non-interleaved metatranscriptome sequencing data collections to a 
       SampleData container
@@ -335,7 +335,7 @@ slots:
     range: RnaSequencingNonInterleavedDataInterface
     inlined: true
     inlined_as_list: true
-  metatranscriptome_sequencing_interleaved_data:
+  rna_sequencing_interleaved_data:
     description: >-
       aggregation slot relating interleaved metatranscriptome sequencing data collections to a 
       SampleData container
