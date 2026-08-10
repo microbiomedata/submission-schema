@@ -1,4 +1,4 @@
-metagenome_sequencing_interleaved_data:
+dna_sequencing_interleaved_data:
   - samp_name: sample name
     analysis_type:
       - metagenomics
