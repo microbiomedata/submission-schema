@@ -313,7 +313,7 @@ slots:
     inlined_as_list: true
   dna_sequencing_non_interleaved_data:
     description: >-
-      aggregation slot relating non-interleaved dna sequencing data collections to a 
+      aggregation slot relating non-interleaved DNA sequencing data collections to a 
       SampleData container
     multivalued: true
     range: DnaSequencingNonInterleavedDataInterface
@@ -321,7 +321,7 @@ slots:
     inlined_as_list: true
   dna_sequencing_interleaved_data:
     description: >-
-      aggregation slot relating interleaved dna sequencing data collections to a SampleData 
+      aggregation slot relating interleaved DNA sequencing data collections to a SampleData 
       container
     multivalued: true
     range: DnaSequencingInterleavedDataInterface
@@ -329,7 +329,7 @@ slots:
     inlined_as_list: true
   rna_sequencing_non_interleaved_data:
     description: >-
-      aggregation slot relating non-interleaved rna sequencing data collections to a 
+      aggregation slot relating non-interleaved RNA sequencing data collections to a 
       SampleData container
     multivalued: true
     range: RnaSequencingNonInterleavedDataInterface
@@ -337,7 +337,7 @@ slots:
     inlined_as_list: true
   rna_sequencing_interleaved_data:
     description: >-
-      aggregation slot relating interleaved rna sequencing data collections to a 
+      aggregation slot relating interleaved RNA sequencing data collections to a 
       SampleData container
     multivalued: true
     range: RnaSequencingInterleavedDataInterface
@@ -1374,8 +1374,8 @@ classes:
       - DhMultiviewCommonColumnsMixin
       - SampIdNewTermsMixin
   DnaSequencingNonInterleavedDataInterface:
-    description: Interface for non-interleaved metagenome sequencing data
-    title: Metagenome Sequence Data (Non-Interleaved)
+    description: Interface for non-interleaved DNA sequencing data
+    title: DNA Sequence Data (Non-Interleaved)
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
@@ -1384,16 +1384,16 @@ classes:
       - read_2_url
       - read_2_md5_checksum
   DnaSequencingInterleavedDataInterface:
-    description: Interface for interleaved metagenome sequencing data
-    title: Metagenome Sequence Data (Interleaved)
+    description: Interface for interleaved DNA sequencing data
+    title: DNA Sequence Data (Interleaved)
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
       - interleaved_url
       - interleaved_md5_checksum
   RnaSequencingNonInterleavedDataInterface:
-    description: Interface for non-interleaved metatranscriptome sequencing data
-    title: Metatranscriptome Sequence Data (Non-Interleaved)
+    description: Interface for non-interleaved RNA sequencing data
+    title: RNA Sequence Data (Non-Interleaved)
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
@@ -1402,8 +1402,8 @@ classes:
       - read_2_url
       - read_2_md5_checksum
   RnaSequencingInterleavedDataInterface:
-    description: Interface for interleaved metatranscriptome sequencing data
-    title: Metatranscriptome Sequence Data (Interleaved)
+    description: Interface for interleaved RNA sequencing data
+    title: RNA Sequence Data (Interleaved)
     mixins:
       - DhMultiviewCommonColumnsMixin
     slots:
