@@ -1,6 +1,6 @@
-metagenome_sequencing_interleaved_data:
+dna_sequencing_interleaved_data:
   - samp_name: sample name
     analysis_type:
       - metagenomics
-    model: novaseq_6000
+    model: solarix_7T
     interleaved_url: https://example.com/data.fastq
