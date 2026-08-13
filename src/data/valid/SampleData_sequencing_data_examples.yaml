@@ -1,0 +1,63 @@
+rna_sequencing_interleaved_data:
+  - samp_name: sample name isolate transcriptome interleaved url
+    analysis_type:
+      - isolate transcriptome sequencing
+    model: novaseq_6000
+    processing_institution: UCSD
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_run_identifiers: insdc.run:SRR400868
+    interleaved_url: https://example.com/read1.fastq
+    interleaved_md5_checksum: 0123456789abcdef0123456789abcdef
+  - samp_name: sample name isolate transcriptome sra accession
+    analysis_type:
+      - isolate transcriptome sequencing
+    model: novaseq_6000
+    processing_institution: UCSD
+    protocol_link: https://example.com/protocol.html
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_run_identifiers: insdc.run:SRR400868
+  - samp_name: sample name isolate transcriptome non-interleaved
+    analysis_type:
+      - isolate genome sequencing
+    model: novaseq_6000
+    processing_institution: UCSD
+    protocol_link: https://example.com/protocol.html
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_experiment_identifiers: insdc.sra:ERX012345
+    insdc_run_identifiers: insdc.run:SRR400868
+    read_1_url: https://example.com/read1.fastq
+    read_1_md5_checksum: 0123456789abcdef0123456789abcdef
+    read_2_url: https://example.com/read2.fastq
+    read_2_md5_checksum: 0123456789abcdef0123456789abcdef
+  - samp_name: sample name isolate genome interleaved url
+    analysis_type:
+      - isolate genome sequencing
+    model: novaseq_6000
+    processing_institution: UCSD
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_run_identifiers: insdc.run:SRR400868
+    interleaved_url: https://example.com/read1.fastq
+    interleaved_md5_checksum: 0123456789abcdef0123456789abcdef
+  - samp_name: sample name isolate genome sra accession
+    analysis_type:
+      - isolate genome sequencing
+    model: novaseq_6000
+    processing_institution: UCSD
+    protocol_link: https://example.com/protocol.html
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_run_identifiers: insdc.run:SRR400868
+  - samp_name: sample name isolate genome non-interleaved
+    analysis_type:
+      - isolate genome sequencing
+    model: novaseq_6000
+    processing_institution: UCSD
+    protocol_link: https://example.com/protocol.html
+    insdc_bioproject_identifiers: bioproject:PRJNA366857
+    insdc_experiment_identifiers: insdc.sra:ERX012345
+    insdc_run_identifiers: insdc.run:SRR400868
+    read_1_url: https://example.com/read1.fastq
+    read_1_md5_checksum: 0123456789abcdef0123456789abcdef
+    read_2_url: https://example.com/read2.fastq
+    read_2_md5_checksum: 0123456789abcdef0123456789abcdef
+
+    
