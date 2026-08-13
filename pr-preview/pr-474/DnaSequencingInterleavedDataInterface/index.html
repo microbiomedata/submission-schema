@@ -376,7 +376,7 @@
 <tbody>
 <tr>
 <td><a href="../interleaved_url/">interleaved_url</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>URL for FASTQ file of interleaved reads</td>
 <td>direct</td>
 </tr>
@@ -541,7 +541,6 @@ attributes:
     - RnaSequencingInterleavedDataInterface
     slot_group: data_files_section
     range: string
-    required: true
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   interleaved_md5_checksum:
     name: interleaved_md5_checksum

@@ -380,7 +380,7 @@
 <tbody>
 <tr>
 <td><a href="../read_1_url/">read_1_url</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>URL for FASTQ file of read 1 of a pair of reads</td>
 <td>direct</td>
 </tr>
@@ -392,7 +392,7 @@
 </tr>
 <tr>
 <td><a href="../read_2_url/">read_2_url</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>URL for FASTQ file of read 2 of a pair of reads</td>
 <td>direct</td>
 </tr>
@@ -559,7 +559,6 @@ attributes:
     - RnaSequencingNonInterleavedDataInterface
     slot_group: data_files_section
     range: string
-    required: true
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   read_1_md5_checksum:
     name: read_1_md5_checksum
@@ -596,7 +595,6 @@ attributes:
     - RnaSequencingNonInterleavedDataInterface
     slot_group: data_files_section
     range: string
-    required: true
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
   read_2_md5_checksum:
     name: read_2_md5_checksum

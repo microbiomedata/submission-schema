@@ -526,13 +526,13 @@ Alias: read_1_url</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../RnaSequencingNonInterleavedDataInterface/">RnaSequencingNonInterleavedDataInterface</a></td>
-<td>Interface for non-interleaved RNA sequencing data</td>
+<td><a href="../DnaSequencingNonInterleavedDataInterface/">DnaSequencingNonInterleavedDataInterface</a></td>
+<td>Interface for non-interleaved DNA sequencing data</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../DnaSequencingNonInterleavedDataInterface/">DnaSequencingNonInterleavedDataInterface</a></td>
-<td>Interface for non-interleaved DNA sequencing data</td>
+<td><a href="../RnaSequencingNonInterleavedDataInterface/">RnaSequencingNonInterleavedDataInterface</a></td>
+<td>Interface for non-interleaved RNA sequencing data</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -541,9 +541,6 @@ Alias: read_1_url</p>
 <ul>
 <li>
 <p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Required: True</p>
 </li>
 <li>
 <p>Regex pattern: <code>^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$</code></p>
@@ -597,7 +594,6 @@ domain_of:
 - RnaSequencingNonInterleavedDataInterface
 slot_group: data_files_section
 range: string
-required: true
 pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
 
 </code></pre>
