@@ -596,3 +596,101 @@ settings:
     assert key2_setting.setting_value == "[0-9]+"
     # Check that unused settings were not copied to the target schema
     assert "key3" not in empty_target_schema.schema.settings
+
+
+def test_import_elements_copies_subsets_used_by_slot(empty_target_schema):
+    """When a slot in one or more subsets is imported, the corresponding subset
+    definitions are imported into the target schema."""
+
+    source_schema = SchemaView("""
+id: http://example.org/source
+name: source_schema
+slots:
+  a:
+    range: string
+    in_subset:
+      - subset1
+      - subset2
+subsets:
+  subset1:
+    description: Subset 1
+  subset2:
+    description: Subset 2
+  subset3:
+    description: Subset 3
+""")
+
+    config = ImporterConfig(
+        slots=[
+            SlotImport(
+                slot="a",
+            )
+        ]
+    )
+
+    import_elements(
+        source_schema=source_schema, config=config, target_schema=empty_target_schema
+    )
+
+    # Check that the slot 'a' was copied to the target schema
+    copied_slot = empty_target_schema.get_slot("a")
+    assert copied_slot is not None
+    assert copied_slot.range == "string"
+    assert copied_slot.in_subset is not None
+    assert set(copied_slot.in_subset) == {"subset1", "subset2"}
+    # Check that the used subsets were copied to the target schema
+    subset1 = empty_target_schema.schema.subsets.get("subset1")
+    assert subset1 is not None
+    assert subset1.description == "Subset 1"
+    subset2 = empty_target_schema.schema.subsets.get("subset2")
+    assert subset2 is not None
+    assert subset2.description == "Subset 2"
+    # Check that unused subsets were not copied to the target schema
+    assert "subset3" not in empty_target_schema.schema.subsets
+
+
+def test_import_elements_copies_subset_used_by_class(empty_target_schema):
+    """When a slot is imported into a class that is in a subset, the corresponding subset
+    definition is imported into the target schema."""
+
+    source_schema = SchemaView("""
+id: http://example.org/source
+name: source_schema
+slots:
+  a:
+    range: MyClass
+classes:
+  MyClass:
+    in_subset:
+      - subset1
+subsets:
+  subset1:
+    description: Subset 1
+  subset2:
+    description: Subset 2
+""")
+
+    config = ImporterConfig(
+        slots=[
+            SlotImport(
+                slot="a",
+            )
+        ]
+    )
+
+    import_elements(
+        source_schema=source_schema, config=config, target_schema=empty_target_schema
+    )
+
+    # Check that class 'MyClass' was copied to the target schema
+    copied_class = empty_target_schema.get_class("MyClass")
+    assert copied_class is not None
+    assert copied_class.in_subset is not None
+    assert set(copied_class.in_subset) == {"subset1"}
+    # Check that the used subset was copied to the target schema
+    subset1 = empty_target_schema.schema.subsets.get("subset1")
+    assert subset1 is not None
+    assert subset1.description == "Subset 1"
+    # Check that unused subsets were not copied to the target schema
+    assert "subset2" not in empty_target_schema.schema.subsets
+

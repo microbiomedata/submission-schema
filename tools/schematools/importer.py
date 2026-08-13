@@ -9,7 +9,7 @@ from linkml_runtime.linkml_model import (
     Element,
     EnumDefinition,
     SlotDefinition,
-    TypeDefinition,
+    TypeDefinition, SubsetDefinition,
 )
 from pydantic import BaseModel
 
@@ -101,6 +101,14 @@ def _import_elements_with_dependencies(
     if include_self and target_schema.get_element(element.name):
         return
 
+    # If the element is in a subset, import the subset definition as well
+    if element.in_subset:
+        for subset_name in element.in_subset:
+            subset = source_schema.get_subset(subset_name)
+            _import_elements_with_dependencies(
+                subset, source_schema=source_schema, target_schema=target_schema
+            )
+
     if isinstance(element, ClassDefinition):
         if include_self:
             target_schema.add_class(element)
@@ -185,6 +193,11 @@ def _import_elements_with_dependencies(
             _import_elements_with_dependencies(
                 ancestor_type, source_schema=source_schema, target_schema=target_schema
             )
+
+    elif isinstance(element, SubsetDefinition):
+        if include_self:
+            target_schema.add_subset(element)
+
     else:
         LOGGER.warning("Unsupported element type: %s", type(element))
         return
