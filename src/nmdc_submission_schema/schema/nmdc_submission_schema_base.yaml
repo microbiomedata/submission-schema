@@ -431,7 +431,6 @@ slots:
       your data to an appropriate raw data repository on your behalf please contact us at
       microbiomedata.science@gmail.com.
     range: string
-    required: true
     slot_group: data_files_section
     rank: 10
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
@@ -456,7 +455,6 @@ slots:
       your data to an appropriate raw data repository on your behalf please contact us at
       microbiomedata.science@gmail.com.
     range: string
-    required: true
     slot_group: data_files_section
     rank: 12
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
@@ -481,7 +479,6 @@ slots:
       your data to an appropriate raw data repository on your behalf please contact us at
       microbiomedata.science@gmail.com.
     range: string
-    required: true
     slot_group: data_files_section
     rank: 14
     pattern: ^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$
