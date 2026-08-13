@@ -5,7 +5,8 @@ dna_sequencing_interleaved_data:
     model: novaseq_6000
     processing_institution: UCSD
     insdc_bioproject_identifiers: bioproject:PRJNA366857
-    insdc_run_identifiers: insdc.run:SRR400868
+    insdc_run_identifiers: 
+      - insdc.run:SRR400868
     interleaved_url: https://example.com/read1.fastq
     interleaved_md5_checksum: 0123456789abcdef0123456789abcdef
   - samp_name: sample name isolate genome sra accession
