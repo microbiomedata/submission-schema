@@ -3,4 +3,5 @@ dna_sequencing_interleaved_data:
     analysis_type:
       - metagenomics
     model: novaseq_6000
-    interleaved_url: https://example.com/data.fastq
+    indsc_run_identifiers: 
+      - insdc.run:SRR394827
