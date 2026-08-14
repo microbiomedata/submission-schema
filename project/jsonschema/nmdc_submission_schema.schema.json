@@ -2358,6 +2358,178 @@
             "title": "DhInterface",
             "type": "object"
         },
+        "DnaSequencingInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for interleaved DNA sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_run_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc\\.run:(E|D|S)RR[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_md5_checksum": {
+                    "description": "MD5 checksum of file in \"interleaved FASTQ\".",
+                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_url": {
+                    "description": "URL for FASTQ file of interleaved reads.",
+                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "DnaSequencingInterleavedDataInterface",
+            "type": "object"
+        },
+        "DnaSequencingNonInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for non-interleaved DNA sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_run_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc\\.run:(E|D|S)RR[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 1 FASTQ\".",
+                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_url": {
+                    "description": "URL for FASTQ file of read 1 of a pair of reads.",
+                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_2_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 2 FASTQ\".",
+                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_2_url": {
+                    "description": "URL for FASTQ file of read 2 of a pair of reads.",
+                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "DnaSequencingNonInterleavedDataInterface",
+            "type": "object"
+        },
         "DoorCompTypeEnum": {
             "description": "",
             "enum": [
@@ -2590,7 +2762,6 @@
                 "Aquaculture farm",
                 "Aquatic biofilm",
                 "Aquifer",
-                "Arable",
                 "Archaea",
                 "Archipelago",
                 "Arterial ulcer",
@@ -3208,7 +3379,6 @@
             "enum": [
                 "Agricultural land",
                 "Alpine",
-                "Arable",
                 "Biocrust",
                 "Biofilm",
                 "Boreal forest/Taiga",
@@ -4685,7 +4855,7 @@
                     "type": "array"
                 },
                 "api": {
-                    "description": "API gravity is a measure of how heavy or light a petroleum liquid is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g. 31.1   API)",
+                    "description": "API gravity is a measure of how heavy or light a petroleum liquid is compared to water (source: https://en.wikipedia.org/wiki/API_gravity)",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$",
                     "type": [
                         "string",
@@ -4709,7 +4879,7 @@
                     ]
                 },
                 "basin": {
-                    "description": "Name of the basin (e.g. Campos)",
+                    "description": "Name of the basin",
                     "type": [
                         "string",
                         "null"
@@ -5445,7 +5615,7 @@
                     "type": "array"
                 },
                 "api": {
-                    "description": "API gravity is a measure of how heavy or light a petroleum liquid is compared to water (source: https://en.wikipedia.org/wiki/API_gravity) (e.g. 31.1   API)",
+                    "description": "API gravity is a measure of how heavy or light a petroleum liquid is compared to water (source: https://en.wikipedia.org/wiki/API_gravity)",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$",
                     "type": [
                         "string",
@@ -5469,7 +5639,7 @@
                     ]
                 },
                 "basin": {
-                    "description": "Name of the basin (e.g. Campos)",
+                    "description": "Name of the basin",
                     "type": [
                         "string",
                         "null"
@@ -8059,338 +8229,6 @@
             "title": "MechStrucEnum",
             "type": "string"
         },
-        "MetagenomeSequencingInterleavedDataInterface": {
-            "additionalProperties": false,
-            "description": "Interface for interleaved metagenome sequencing data",
-            "properties": {
-                "analysis_type": {
-                    "description": "Select all the data types associated or available for this biosample",
-                    "items": {
-                        "$ref": "#/$defs/AnalysisTypeEnum"
-                    },
-                    "type": "array"
-                },
-                "insdc_bioproject_identifiers": {
-                    "description": "identifiers for corresponding project in INSDC Bioproject",
-                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "insdc_experiment_identifiers": {
-                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "interleaved_md5_checksum": {
-                    "description": "MD5 checksum of file in \"interleaved FASTQ\".",
-                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "interleaved_url": {
-                    "description": "URL for FASTQ file of interleaved reads.",
-                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
-                    "type": "string"
-                },
-                "model": {
-                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
-                    "description": "The model of the Illumina sequencing instrument used to generate the data."
-                },
-                "processing_institution": {
-                    "$ref": "#/$defs/ProcessingInstitutionEnum",
-                    "description": "The organization that processed the sample."
-                },
-                "protocol_link": {
-                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "interleaved_url",
-                "model",
-                "analysis_type",
-                "samp_name"
-            ],
-            "title": "MetagenomeSequencingInterleavedDataInterface",
-            "type": "object"
-        },
-        "MetagenomeSequencingNonInterleavedDataInterface": {
-            "additionalProperties": false,
-            "description": "Interface for non-interleaved metagenome sequencing data",
-            "properties": {
-                "analysis_type": {
-                    "description": "Select all the data types associated or available for this biosample",
-                    "items": {
-                        "$ref": "#/$defs/AnalysisTypeEnum"
-                    },
-                    "type": "array"
-                },
-                "insdc_bioproject_identifiers": {
-                    "description": "identifiers for corresponding project in INSDC Bioproject",
-                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "insdc_experiment_identifiers": {
-                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "model": {
-                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
-                    "description": "The model of the Illumina sequencing instrument used to generate the data."
-                },
-                "processing_institution": {
-                    "$ref": "#/$defs/ProcessingInstitutionEnum",
-                    "description": "The organization that processed the sample."
-                },
-                "protocol_link": {
-                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "read_1_md5_checksum": {
-                    "description": "MD5 checksum of file in \"read 1 FASTQ\".",
-                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "read_1_url": {
-                    "description": "URL for FASTQ file of read 1 of a pair of reads.",
-                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
-                    "type": "string"
-                },
-                "read_2_md5_checksum": {
-                    "description": "MD5 checksum of file in \"read 2 FASTQ\".",
-                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "read_2_url": {
-                    "description": "URL for FASTQ file of read 2 of a pair of reads.",
-                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "read_1_url",
-                "read_2_url",
-                "model",
-                "analysis_type",
-                "samp_name"
-            ],
-            "title": "MetagenomeSequencingNonInterleavedDataInterface",
-            "type": "object"
-        },
-        "MetatranscriptomeSequencingInterleavedDataInterface": {
-            "additionalProperties": false,
-            "description": "Interface for interleaved metatranscriptome sequencing data",
-            "properties": {
-                "analysis_type": {
-                    "description": "Select all the data types associated or available for this biosample",
-                    "items": {
-                        "$ref": "#/$defs/AnalysisTypeEnum"
-                    },
-                    "type": "array"
-                },
-                "insdc_bioproject_identifiers": {
-                    "description": "identifiers for corresponding project in INSDC Bioproject",
-                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "insdc_experiment_identifiers": {
-                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "interleaved_md5_checksum": {
-                    "description": "MD5 checksum of file in \"interleaved FASTQ\".",
-                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "interleaved_url": {
-                    "description": "URL for FASTQ file of interleaved reads.",
-                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
-                    "type": "string"
-                },
-                "model": {
-                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
-                    "description": "The model of the Illumina sequencing instrument used to generate the data."
-                },
-                "processing_institution": {
-                    "$ref": "#/$defs/ProcessingInstitutionEnum",
-                    "description": "The organization that processed the sample."
-                },
-                "protocol_link": {
-                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "interleaved_url",
-                "model",
-                "analysis_type",
-                "samp_name"
-            ],
-            "title": "MetatranscriptomeSequencingInterleavedDataInterface",
-            "type": "object"
-        },
-        "MetatranscriptomeSequencingNonInterleavedDataInterface": {
-            "additionalProperties": false,
-            "description": "Interface for non-interleaved metatranscriptome sequencing data",
-            "properties": {
-                "analysis_type": {
-                    "description": "Select all the data types associated or available for this biosample",
-                    "items": {
-                        "$ref": "#/$defs/AnalysisTypeEnum"
-                    },
-                    "type": "array"
-                },
-                "insdc_bioproject_identifiers": {
-                    "description": "identifiers for corresponding project in INSDC Bioproject",
-                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "insdc_experiment_identifiers": {
-                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
-                    "pattern": "^insdc\\.sra:(E|D|S)RX[0-9]{6,}$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "model": {
-                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
-                    "description": "The model of the Illumina sequencing instrument used to generate the data."
-                },
-                "processing_institution": {
-                    "$ref": "#/$defs/ProcessingInstitutionEnum",
-                    "description": "The organization that processed the sample."
-                },
-                "protocol_link": {
-                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "read_1_md5_checksum": {
-                    "description": "MD5 checksum of file in \"read 1 FASTQ\".",
-                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "read_1_url": {
-                    "description": "URL for FASTQ file of read 1 of a pair of reads.",
-                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
-                    "type": "string"
-                },
-                "read_2_md5_checksum": {
-                    "description": "MD5 checksum of file in \"read 2 FASTQ\".",
-                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "read_2_url": {
-                    "description": "URL for FASTQ file of read 2 of a pair of reads.",
-                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
-                    "type": "string"
-                },
-                "samp_name": {
-                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
-                    "type": "string"
-                },
-                "source_mat_id": {
-                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "read_1_url",
-                "read_2_url",
-                "model",
-                "analysis_type",
-                "samp_name"
-            ],
-            "title": "MetatranscriptomeSequencingNonInterleavedDataInterface",
-            "type": "object"
-        },
         "MicrobialBiosafetyMaterialCategoryEnum": {
             "description": "The subset of JgiIsolateMaterialKindEnum categories that JGI treats as microbial and caps at an estimated genome size of 5000 Mb. Eukaryotic categories (Alga, Animal, Plant, Protist) are excluded; they remain bounded only by the estimated_size outer maximum of 100000 Mb.",
             "enum": [
@@ -9396,21 +9234,21 @@
                     ]
                 },
                 "root_med_carbon": {
-                    "description": "Source of organic carbon in the culture rooting medium; e.g. sucrose",
+                    "description": "Source of organic carbon in the culture rooting medium",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "root_med_macronutr": {
-                    "description": "Measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S); e.g. KH2PO4 (170 mg/L)",
+                    "description": "Measurement of the culture rooting medium macronutrients (N,P, K, Ca, Mg, S)",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "root_med_micronutr": {
-                    "description": "Measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo); e.g. H3BO3 (6.2 mg/L)",
+                    "description": "Measurement of the culture rooting medium micronutrients (Fe, Mn, Zn, B, Cu, Mo)",
                     "type": [
                         "string",
                         "null"
@@ -9433,14 +9271,14 @@
                     ]
                 },
                 "root_med_solid": {
-                    "description": "Specification of the solidifying agent in the culture rooting medium; e.g. agar",
+                    "description": "Specification of the solidifying agent in the culture rooting medium",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "root_med_suppl": {
-                    "description": "Organic supplements of the culture rooting medium, such as vitamins, amino acids, organic acids, antibiotics activated charcoal; e.g. nicotinic acid (0.5  mg/L)",
+                    "description": "Organic supplements of the culture rooting medium, such as vitamins, amino acids, organic acids, antibiotics, activated charcoal",
                     "type": [
                         "string",
                         "null"
@@ -9756,6 +9594,178 @@
             "title": "RibosomalSequenceTypeEnum",
             "type": "string"
         },
+        "RnaSequencingInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for interleaved RNA sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_run_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc\\.run:(E|D|S)RR[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_md5_checksum": {
+                    "description": "MD5 checksum of file in \"interleaved FASTQ\".",
+                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "interleaved_url": {
+                    "description": "URL for FASTQ file of interleaved reads.",
+                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "RnaSequencingInterleavedDataInterface",
+            "type": "object"
+        },
+        "RnaSequencingNonInterleavedDataInterface": {
+            "additionalProperties": false,
+            "description": "Interface for non-interleaved RNA sequencing data",
+            "properties": {
+                "analysis_type": {
+                    "description": "Select all the data types associated or available for this biosample",
+                    "items": {
+                        "$ref": "#/$defs/AnalysisTypeEnum"
+                    },
+                    "type": "array"
+                },
+                "insdc_bioproject_identifiers": {
+                    "description": "identifiers for corresponding project in INSDC Bioproject",
+                    "pattern": "^bioproject:PRJ[DEN][A-Z][0-9]+$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "insdc_run_identifiers": {
+                    "description": "If multiple identifiers are provided, separate them with a semicolon. The number of identifiers must match the number of sequencing files.",
+                    "pattern": "^insdc\\.run:(E|D|S)RR[0-9]{6,}$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "model": {
+                    "$ref": "#/$defs/IlluminaInstrumentModelEnum",
+                    "description": "The model of the Illumina sequencing instrument used to generate the data."
+                },
+                "processing_institution": {
+                    "$ref": "#/$defs/ProcessingInstitutionEnum",
+                    "description": "The organization that processed the sample."
+                },
+                "protocol_link": {
+                    "description": "A URL to a description of the sequencing protocol used to generate the data.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 1 FASTQ\".",
+                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_1_url": {
+                    "description": "URL for FASTQ file of read 1 of a pair of reads.",
+                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_2_md5_checksum": {
+                    "description": "MD5 checksum of file in \"read 2 FASTQ\".",
+                    "pattern": "^[a-fA-F0-9]{32}(?:\\s*;\\s*[a-fA-F0-9]{32})*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "read_2_url": {
+                    "description": "URL for FASTQ file of read 2 of a pair of reads.",
+                    "pattern": "^https://[^\\s;]+(?:\\s*;\\s*https://[^\\s;]+)*$",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "samp_name": {
+                    "description": "A local identifier or name that for the material sample collected. Refers to the original material collected or to any derived sub-samples.",
+                    "type": "string"
+                },
+                "source_mat_id": {
+                    "description": "A globally unique identifier assigned to the parent sample or sample that is the source of this sample.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "model",
+                "analysis_type",
+                "samp_name"
+            ],
+            "title": "RnaSequencingNonInterleavedDataInterface",
+            "type": "object"
+        },
         "RoomCondtEnum": {
             "description": "",
             "enum": [
@@ -9914,6 +9924,26 @@
                         "null"
                     ]
                 },
+                "dna_sequencing_interleaved_data": {
+                    "description": "aggregation slot relating interleaved DNA sequencing data collections to a SampleData  container",
+                    "items": {
+                        "$ref": "#/$defs/DnaSequencingInterleavedDataInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "dna_sequencing_non_interleaved_data": {
+                    "description": "aggregation slot relating non-interleaved DNA sequencing data collections to a  SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/DnaSequencingNonInterleavedDataInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "emsl_data": {
                     "description": "aggregation slot relating emsl data collections to a SampleData container",
                     "items": {
@@ -9994,50 +10024,30 @@
                         "null"
                     ]
                 },
-                "metagenome_sequencing_interleaved_data": {
-                    "description": "aggregation slot relating interleaved metagenome sequencing data collections to a SampleData  container",
-                    "items": {
-                        "$ref": "#/$defs/MetagenomeSequencingInterleavedDataInterface"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "metagenome_sequencing_non_interleaved_data": {
-                    "description": "aggregation slot relating non-interleaved metagenome sequencing data collections to a  SampleData container",
-                    "items": {
-                        "$ref": "#/$defs/MetagenomeSequencingNonInterleavedDataInterface"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "metatranscriptome_sequencing_interleaved_data": {
-                    "description": "aggregation slot relating interleaved metatranscriptome sequencing data collections to a  SampleData container",
-                    "items": {
-                        "$ref": "#/$defs/MetatranscriptomeSequencingInterleavedDataInterface"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "metatranscriptome_sequencing_non_interleaved_data": {
-                    "description": "aggregation slot relating non-interleaved metatranscriptome sequencing data collections to a  SampleData container",
-                    "items": {
-                        "$ref": "#/$defs/MetatranscriptomeSequencingNonInterleavedDataInterface"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "plant_associated_data": {
                     "description": "aggregation slot relating plant_associated data collections to a SampleData container",
                     "items": {
                         "$ref": "#/$defs/PlantAssociatedInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rna_sequencing_interleaved_data": {
+                    "description": "aggregation slot relating interleaved RNA sequencing data collections to a  SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/RnaSequencingInterleavedDataInterface"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rna_sequencing_non_interleaved_data": {
+                    "description": "aggregation slot relating non-interleaved RNA sequencing data collections to a  SampleData container",
+                    "items": {
+                        "$ref": "#/$defs/RnaSequencingNonInterleavedDataInterface"
                     },
                     "type": [
                         "array",
@@ -14613,6 +14623,26 @@
                 "null"
             ]
         },
+        "dna_sequencing_interleaved_data": {
+            "description": "aggregation slot relating interleaved DNA sequencing data collections to a SampleData  container",
+            "items": {
+                "$ref": "#/$defs/DnaSequencingInterleavedDataInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "dna_sequencing_non_interleaved_data": {
+            "description": "aggregation slot relating non-interleaved DNA sequencing data collections to a  SampleData container",
+            "items": {
+                "$ref": "#/$defs/DnaSequencingNonInterleavedDataInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "emsl_data": {
             "description": "aggregation slot relating emsl data collections to a SampleData container",
             "items": {
@@ -14693,50 +14723,30 @@
                 "null"
             ]
         },
-        "metagenome_sequencing_interleaved_data": {
-            "description": "aggregation slot relating interleaved metagenome sequencing data collections to a SampleData  container",
-            "items": {
-                "$ref": "#/$defs/MetagenomeSequencingInterleavedDataInterface"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "metagenome_sequencing_non_interleaved_data": {
-            "description": "aggregation slot relating non-interleaved metagenome sequencing data collections to a  SampleData container",
-            "items": {
-                "$ref": "#/$defs/MetagenomeSequencingNonInterleavedDataInterface"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "metatranscriptome_sequencing_interleaved_data": {
-            "description": "aggregation slot relating interleaved metatranscriptome sequencing data collections to a  SampleData container",
-            "items": {
-                "$ref": "#/$defs/MetatranscriptomeSequencingInterleavedDataInterface"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
-        "metatranscriptome_sequencing_non_interleaved_data": {
-            "description": "aggregation slot relating non-interleaved metatranscriptome sequencing data collections to a  SampleData container",
-            "items": {
-                "$ref": "#/$defs/MetatranscriptomeSequencingNonInterleavedDataInterface"
-            },
-            "type": [
-                "array",
-                "null"
-            ]
-        },
         "plant_associated_data": {
             "description": "aggregation slot relating plant_associated data collections to a SampleData container",
             "items": {
                 "$ref": "#/$defs/PlantAssociatedInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "rna_sequencing_interleaved_data": {
+            "description": "aggregation slot relating interleaved RNA sequencing data collections to a  SampleData container",
+            "items": {
+                "$ref": "#/$defs/RnaSequencingInterleavedDataInterface"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
+        "rna_sequencing_non_interleaved_data": {
+            "description": "aggregation slot relating non-interleaved RNA sequencing data collections to a  SampleData container",
+            "items": {
+                "$ref": "#/$defs/RnaSequencingNonInterleavedDataInterface"
             },
             "type": [
                 "array",

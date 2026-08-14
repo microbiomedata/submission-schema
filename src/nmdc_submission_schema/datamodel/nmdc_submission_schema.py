@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-16T09:00:51
+# Generation date: 2026-08-13T17:02:42
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -217,19 +217,19 @@ class ExternalIdentifier(Uriorcurie):
 
 
 # Class references
-class MetagenomeSequencingNonInterleavedDataInterfaceSampName(extended_str):
+class DnaSequencingNonInterleavedDataInterfaceSampName(extended_str):
     pass
 
 
-class MetagenomeSequencingInterleavedDataInterfaceSampName(extended_str):
+class DnaSequencingInterleavedDataInterfaceSampName(extended_str):
     pass
 
 
-class MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName(extended_str):
+class RnaSequencingNonInterleavedDataInterfaceSampName(extended_str):
     pass
 
 
-class MetatranscriptomeSequencingInterleavedDataInterfaceSampName(extended_str):
+class RnaSequencingInterleavedDataInterfaceSampName(extended_str):
     pass
 
 
@@ -318,26 +318,26 @@ class NamedThingId(URIorCURIE):
 
 
 @dataclass(repr=False)
-class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
+class DnaSequencingNonInterleavedDataInterface(YAMLRoot):
     """
-    Interface for non-interleaved metagenome sequencing data
+    Interface for non-interleaved DNA sequencing data
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetagenomeSequencingNonInterleavedDataInterface"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetagenomeSequencingNonInterleavedDataInterface"
-    class_name: ClassVar[str] = "MetagenomeSequencingNonInterleavedDataInterface"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["DnaSequencingNonInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:DnaSequencingNonInterleavedDataInterface"
+    class_name: ClassVar[str] = "DnaSequencingNonInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.DnaSequencingNonInterleavedDataInterface
 
-    samp_name: Union[str, MetagenomeSequencingNonInterleavedDataInterfaceSampName] = None
-    read_1_url: str = None
-    read_2_url: str = None
+    samp_name: Union[str, DnaSequencingNonInterleavedDataInterfaceSampName] = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
+    read_1_url: Optional[str] = None
     read_1_md5_checksum: Optional[str] = None
+    read_2_url: Optional[str] = None
     read_2_md5_checksum: Optional[str] = None
     insdc_bioproject_identifiers: Optional[str] = None
-    insdc_experiment_identifiers: Optional[str] = None
+    insdc_run_identifiers: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
     source_mat_id: Optional[str] = None
@@ -345,18 +345,8 @@ class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
             self.MissingRequiredField("samp_name")
-        if not isinstance(self.samp_name, MetagenomeSequencingNonInterleavedDataInterfaceSampName):
-            self.samp_name = MetagenomeSequencingNonInterleavedDataInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.read_1_url):
-            self.MissingRequiredField("read_1_url")
-        if not isinstance(self.read_1_url, str):
-            self.read_1_url = str(self.read_1_url)
-
-        if self._is_empty(self.read_2_url):
-            self.MissingRequiredField("read_2_url")
-        if not isinstance(self.read_2_url, str):
-            self.read_2_url = str(self.read_2_url)
+        if not isinstance(self.samp_name, DnaSequencingNonInterleavedDataInterfaceSampName):
+            self.samp_name = DnaSequencingNonInterleavedDataInterfaceSampName(self.samp_name)
 
         if self._is_empty(self.model):
             self.MissingRequiredField("model")
@@ -369,8 +359,14 @@ class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
 
+        if self.read_1_url is not None and not isinstance(self.read_1_url, str):
+            self.read_1_url = str(self.read_1_url)
+
         if self.read_1_md5_checksum is not None and not isinstance(self.read_1_md5_checksum, str):
             self.read_1_md5_checksum = str(self.read_1_md5_checksum)
+
+        if self.read_2_url is not None and not isinstance(self.read_2_url, str):
+            self.read_2_url = str(self.read_2_url)
 
         if self.read_2_md5_checksum is not None and not isinstance(self.read_2_md5_checksum, str):
             self.read_2_md5_checksum = str(self.read_2_md5_checksum)
@@ -378,8 +374,8 @@ class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
         if self.insdc_bioproject_identifiers is not None and not isinstance(self.insdc_bioproject_identifiers, str):
             self.insdc_bioproject_identifiers = str(self.insdc_bioproject_identifiers)
 
-        if self.insdc_experiment_identifiers is not None and not isinstance(self.insdc_experiment_identifiers, str):
-            self.insdc_experiment_identifiers = str(self.insdc_experiment_identifiers)
+        if self.insdc_run_identifiers is not None and not isinstance(self.insdc_run_identifiers, str):
+            self.insdc_run_identifiers = str(self.insdc_run_identifiers)
 
         if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
             self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
@@ -394,24 +390,24 @@ class MetagenomeSequencingNonInterleavedDataInterface(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
+class DnaSequencingInterleavedDataInterface(YAMLRoot):
     """
-    Interface for interleaved metagenome sequencing data
+    Interface for interleaved DNA sequencing data
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetagenomeSequencingInterleavedDataInterface"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetagenomeSequencingInterleavedDataInterface"
-    class_name: ClassVar[str] = "MetagenomeSequencingInterleavedDataInterface"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["DnaSequencingInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:DnaSequencingInterleavedDataInterface"
+    class_name: ClassVar[str] = "DnaSequencingInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.DnaSequencingInterleavedDataInterface
 
-    samp_name: Union[str, MetagenomeSequencingInterleavedDataInterfaceSampName] = None
-    interleaved_url: str = None
+    samp_name: Union[str, DnaSequencingInterleavedDataInterfaceSampName] = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
+    interleaved_url: Optional[str] = None
     interleaved_md5_checksum: Optional[str] = None
     insdc_bioproject_identifiers: Optional[str] = None
-    insdc_experiment_identifiers: Optional[str] = None
+    insdc_run_identifiers: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
     source_mat_id: Optional[str] = None
@@ -419,13 +415,8 @@ class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
             self.MissingRequiredField("samp_name")
-        if not isinstance(self.samp_name, MetagenomeSequencingInterleavedDataInterfaceSampName):
-            self.samp_name = MetagenomeSequencingInterleavedDataInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.interleaved_url):
-            self.MissingRequiredField("interleaved_url")
-        if not isinstance(self.interleaved_url, str):
-            self.interleaved_url = str(self.interleaved_url)
+        if not isinstance(self.samp_name, DnaSequencingInterleavedDataInterfaceSampName):
+            self.samp_name = DnaSequencingInterleavedDataInterfaceSampName(self.samp_name)
 
         if self._is_empty(self.model):
             self.MissingRequiredField("model")
@@ -437,6 +428,9 @@ class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
         if not isinstance(self.analysis_type, list):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
+
+        if self.interleaved_url is not None and not isinstance(self.interleaved_url, str):
+            self.interleaved_url = str(self.interleaved_url)
 
         if self.interleaved_md5_checksum is not None and not isinstance(self.interleaved_md5_checksum, str):
             self.interleaved_md5_checksum = str(self.interleaved_md5_checksum)
@@ -444,8 +438,8 @@ class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
         if self.insdc_bioproject_identifiers is not None and not isinstance(self.insdc_bioproject_identifiers, str):
             self.insdc_bioproject_identifiers = str(self.insdc_bioproject_identifiers)
 
-        if self.insdc_experiment_identifiers is not None and not isinstance(self.insdc_experiment_identifiers, str):
-            self.insdc_experiment_identifiers = str(self.insdc_experiment_identifiers)
+        if self.insdc_run_identifiers is not None and not isinstance(self.insdc_run_identifiers, str):
+            self.insdc_run_identifiers = str(self.insdc_run_identifiers)
 
         if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
             self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
@@ -460,26 +454,26 @@ class MetagenomeSequencingInterleavedDataInterface(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
+class RnaSequencingNonInterleavedDataInterface(YAMLRoot):
     """
-    Interface for non-interleaved metatranscriptome sequencing data
+    Interface for non-interleaved RNA sequencing data
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetatranscriptomeSequencingNonInterleavedDataInterface"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetatranscriptomeSequencingNonInterleavedDataInterface"
-    class_name: ClassVar[str] = "MetatranscriptomeSequencingNonInterleavedDataInterface"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["RnaSequencingNonInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:RnaSequencingNonInterleavedDataInterface"
+    class_name: ClassVar[str] = "RnaSequencingNonInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.RnaSequencingNonInterleavedDataInterface
 
-    samp_name: Union[str, MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName] = None
-    read_1_url: str = None
-    read_2_url: str = None
+    samp_name: Union[str, RnaSequencingNonInterleavedDataInterfaceSampName] = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
+    read_1_url: Optional[str] = None
     read_1_md5_checksum: Optional[str] = None
+    read_2_url: Optional[str] = None
     read_2_md5_checksum: Optional[str] = None
     insdc_bioproject_identifiers: Optional[str] = None
-    insdc_experiment_identifiers: Optional[str] = None
+    insdc_run_identifiers: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
     source_mat_id: Optional[str] = None
@@ -487,18 +481,8 @@ class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
             self.MissingRequiredField("samp_name")
-        if not isinstance(self.samp_name, MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName):
-            self.samp_name = MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.read_1_url):
-            self.MissingRequiredField("read_1_url")
-        if not isinstance(self.read_1_url, str):
-            self.read_1_url = str(self.read_1_url)
-
-        if self._is_empty(self.read_2_url):
-            self.MissingRequiredField("read_2_url")
-        if not isinstance(self.read_2_url, str):
-            self.read_2_url = str(self.read_2_url)
+        if not isinstance(self.samp_name, RnaSequencingNonInterleavedDataInterfaceSampName):
+            self.samp_name = RnaSequencingNonInterleavedDataInterfaceSampName(self.samp_name)
 
         if self._is_empty(self.model):
             self.MissingRequiredField("model")
@@ -511,8 +495,14 @@ class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
 
+        if self.read_1_url is not None and not isinstance(self.read_1_url, str):
+            self.read_1_url = str(self.read_1_url)
+
         if self.read_1_md5_checksum is not None and not isinstance(self.read_1_md5_checksum, str):
             self.read_1_md5_checksum = str(self.read_1_md5_checksum)
+
+        if self.read_2_url is not None and not isinstance(self.read_2_url, str):
+            self.read_2_url = str(self.read_2_url)
 
         if self.read_2_md5_checksum is not None and not isinstance(self.read_2_md5_checksum, str):
             self.read_2_md5_checksum = str(self.read_2_md5_checksum)
@@ -520,8 +510,8 @@ class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
         if self.insdc_bioproject_identifiers is not None and not isinstance(self.insdc_bioproject_identifiers, str):
             self.insdc_bioproject_identifiers = str(self.insdc_bioproject_identifiers)
 
-        if self.insdc_experiment_identifiers is not None and not isinstance(self.insdc_experiment_identifiers, str):
-            self.insdc_experiment_identifiers = str(self.insdc_experiment_identifiers)
+        if self.insdc_run_identifiers is not None and not isinstance(self.insdc_run_identifiers, str):
+            self.insdc_run_identifiers = str(self.insdc_run_identifiers)
 
         if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
             self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
@@ -536,24 +526,24 @@ class MetatranscriptomeSequencingNonInterleavedDataInterface(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
+class RnaSequencingInterleavedDataInterface(YAMLRoot):
     """
-    Interface for interleaved metatranscriptome sequencing data
+    Interface for interleaved RNA sequencing data
     """
     _inherited_slots: ClassVar[list[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["MetatranscriptomeSequencingInterleavedDataInterface"]
-    class_class_curie: ClassVar[str] = "nmdc_sub_schema:MetatranscriptomeSequencingInterleavedDataInterface"
-    class_name: ClassVar[str] = "MetatranscriptomeSequencingInterleavedDataInterface"
-    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface
+    class_class_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA["RnaSequencingInterleavedDataInterface"]
+    class_class_curie: ClassVar[str] = "nmdc_sub_schema:RnaSequencingInterleavedDataInterface"
+    class_name: ClassVar[str] = "RnaSequencingInterleavedDataInterface"
+    class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.RnaSequencingInterleavedDataInterface
 
-    samp_name: Union[str, MetatranscriptomeSequencingInterleavedDataInterfaceSampName] = None
-    interleaved_url: str = None
+    samp_name: Union[str, RnaSequencingInterleavedDataInterfaceSampName] = None
     model: Union[str, "IlluminaInstrumentModelEnum"] = None
     analysis_type: Union[Union[str, "AnalysisTypeEnum"], list[Union[str, "AnalysisTypeEnum"]]] = None
+    interleaved_url: Optional[str] = None
     interleaved_md5_checksum: Optional[str] = None
     insdc_bioproject_identifiers: Optional[str] = None
-    insdc_experiment_identifiers: Optional[str] = None
+    insdc_run_identifiers: Optional[str] = None
     processing_institution: Optional[Union[str, "ProcessingInstitutionEnum"]] = None
     protocol_link: Optional[str] = None
     source_mat_id: Optional[str] = None
@@ -561,13 +551,8 @@ class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self._is_empty(self.samp_name):
             self.MissingRequiredField("samp_name")
-        if not isinstance(self.samp_name, MetatranscriptomeSequencingInterleavedDataInterfaceSampName):
-            self.samp_name = MetatranscriptomeSequencingInterleavedDataInterfaceSampName(self.samp_name)
-
-        if self._is_empty(self.interleaved_url):
-            self.MissingRequiredField("interleaved_url")
-        if not isinstance(self.interleaved_url, str):
-            self.interleaved_url = str(self.interleaved_url)
+        if not isinstance(self.samp_name, RnaSequencingInterleavedDataInterfaceSampName):
+            self.samp_name = RnaSequencingInterleavedDataInterfaceSampName(self.samp_name)
 
         if self._is_empty(self.model):
             self.MissingRequiredField("model")
@@ -580,14 +565,17 @@ class MetatranscriptomeSequencingInterleavedDataInterface(YAMLRoot):
             self.analysis_type = [self.analysis_type] if self.analysis_type is not None else []
         self.analysis_type = [v if isinstance(v, AnalysisTypeEnum) else AnalysisTypeEnum(v) for v in self.analysis_type]
 
+        if self.interleaved_url is not None and not isinstance(self.interleaved_url, str):
+            self.interleaved_url = str(self.interleaved_url)
+
         if self.interleaved_md5_checksum is not None and not isinstance(self.interleaved_md5_checksum, str):
             self.interleaved_md5_checksum = str(self.interleaved_md5_checksum)
 
         if self.insdc_bioproject_identifiers is not None and not isinstance(self.insdc_bioproject_identifiers, str):
             self.insdc_bioproject_identifiers = str(self.insdc_bioproject_identifiers)
 
-        if self.insdc_experiment_identifiers is not None and not isinstance(self.insdc_experiment_identifiers, str):
-            self.insdc_experiment_identifiers = str(self.insdc_experiment_identifiers)
+        if self.insdc_run_identifiers is not None and not isinstance(self.insdc_run_identifiers, str):
+            self.insdc_run_identifiers = str(self.insdc_run_identifiers)
 
         if self.processing_institution is not None and not isinstance(self.processing_institution, ProcessingInstitutionEnum):
             self.processing_institution = ProcessingInstitutionEnum(self.processing_institution)
@@ -7134,10 +7122,10 @@ class SampleData(YAMLRoot):
     jgi_mg_lr_data: Optional[Union[dict[Union[str, JgiMgLrInterfaceSampName], Union[dict, JgiMgLrInterface]], list[Union[dict, JgiMgLrInterface]]]] = empty_dict()
     jgi_mg_data: Optional[Union[dict[Union[str, JgiMgInterfaceSampName], Union[dict, JgiMgInterface]], list[Union[dict, JgiMgInterface]]]] = empty_dict()
     jgi_mt_data: Optional[Union[dict[Union[str, JgiMtInterfaceSampName], Union[dict, JgiMtInterface]], list[Union[dict, JgiMtInterface]]]] = empty_dict()
-    metagenome_sequencing_non_interleaved_data: Optional[Union[dict[Union[str, MetagenomeSequencingNonInterleavedDataInterfaceSampName], Union[dict, MetagenomeSequencingNonInterleavedDataInterface]], list[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]] = empty_dict()
-    metagenome_sequencing_interleaved_data: Optional[Union[dict[Union[str, MetagenomeSequencingInterleavedDataInterfaceSampName], Union[dict, MetagenomeSequencingInterleavedDataInterface]], list[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]] = empty_dict()
-    metatranscriptome_sequencing_non_interleaved_data: Optional[Union[dict[Union[str, MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName], Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]], list[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]] = empty_dict()
-    metatranscriptome_sequencing_interleaved_data: Optional[Union[dict[Union[str, MetatranscriptomeSequencingInterleavedDataInterfaceSampName], Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]], list[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]] = empty_dict()
+    dna_sequencing_non_interleaved_data: Optional[Union[dict[Union[str, DnaSequencingNonInterleavedDataInterfaceSampName], Union[dict, DnaSequencingNonInterleavedDataInterface]], list[Union[dict, DnaSequencingNonInterleavedDataInterface]]]] = empty_dict()
+    dna_sequencing_interleaved_data: Optional[Union[dict[Union[str, DnaSequencingInterleavedDataInterfaceSampName], Union[dict, DnaSequencingInterleavedDataInterface]], list[Union[dict, DnaSequencingInterleavedDataInterface]]]] = empty_dict()
+    rna_sequencing_non_interleaved_data: Optional[Union[dict[Union[str, RnaSequencingNonInterleavedDataInterfaceSampName], Union[dict, RnaSequencingNonInterleavedDataInterface]], list[Union[dict, RnaSequencingNonInterleavedDataInterface]]]] = empty_dict()
+    rna_sequencing_interleaved_data: Optional[Union[dict[Union[str, RnaSequencingInterleavedDataInterfaceSampName], Union[dict, RnaSequencingInterleavedDataInterface]], list[Union[dict, RnaSequencingInterleavedDataInterface]]]] = empty_dict()
     isolate_data: Optional[Union[dict[Union[str, IsolateInterfaceSampName], Union[dict, IsolateInterface]], list[Union[dict, IsolateInterface]]]] = empty_dict()
     jgi_isolate_genome_data: Optional[Union[dict[Union[str, JgiIsolateGenomeInterfaceSampName], Union[dict, JgiIsolateGenomeInterface]], list[Union[dict, JgiIsolateGenomeInterface]]]] = empty_dict()
     jgi_isolate_transcriptome_data: Optional[Union[dict[Union[str, JgiIsolateTranscriptomeInterfaceSampName], Union[dict, JgiIsolateTranscriptomeInterface]], list[Union[dict, JgiIsolateTranscriptomeInterface]]]] = empty_dict()
@@ -7169,13 +7157,13 @@ class SampleData(YAMLRoot):
 
         self._normalize_inlined_as_list(slot_name="jgi_mt_data", slot_type=JgiMtInterface, key_name="samp_name", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="metagenome_sequencing_non_interleaved_data", slot_type=MetagenomeSequencingNonInterleavedDataInterface, key_name="samp_name", keyed=True)
+        self._normalize_inlined_as_list(slot_name="dna_sequencing_non_interleaved_data", slot_type=DnaSequencingNonInterleavedDataInterface, key_name="samp_name", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="metagenome_sequencing_interleaved_data", slot_type=MetagenomeSequencingInterleavedDataInterface, key_name="samp_name", keyed=True)
+        self._normalize_inlined_as_list(slot_name="dna_sequencing_interleaved_data", slot_type=DnaSequencingInterleavedDataInterface, key_name="samp_name", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="metatranscriptome_sequencing_non_interleaved_data", slot_type=MetatranscriptomeSequencingNonInterleavedDataInterface, key_name="samp_name", keyed=True)
+        self._normalize_inlined_as_list(slot_name="rna_sequencing_non_interleaved_data", slot_type=RnaSequencingNonInterleavedDataInterface, key_name="samp_name", keyed=True)
 
-        self._normalize_inlined_as_list(slot_name="metatranscriptome_sequencing_interleaved_data", slot_type=MetatranscriptomeSequencingInterleavedDataInterface, key_name="samp_name", keyed=True)
+        self._normalize_inlined_as_list(slot_name="rna_sequencing_interleaved_data", slot_type=RnaSequencingInterleavedDataInterface, key_name="samp_name", keyed=True)
 
         self._normalize_inlined_as_list(slot_name="isolate_data", slot_type=IsolateInterface, key_name="samp_name", keyed=True)
 
@@ -10328,7 +10316,6 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
     Anthosphere = PermissibleValue(text="Anthosphere")
     Antlers = PermissibleValue(text="Antlers")
     Aquifer = PermissibleValue(text="Aquifer")
-    Arable = PermissibleValue(text="Arable")
     Archaea = PermissibleValue(text="Archaea")
     Archipelago = PermissibleValue(text="Archipelago")
     Ascites = PermissibleValue(text="Ascites")
@@ -12592,7 +12579,6 @@ class EcosystemTypeForSoilEnum(EnumDefinitionImpl):
 class EcosystemSubtypeForSoilEnum(EnumDefinitionImpl):
 
     Alpine = PermissibleValue(text="Alpine")
-    Arable = PermissibleValue(text="Arable")
     Biocrust = PermissibleValue(text="Biocrust")
     Biofilm = PermissibleValue(text="Biofilm")
     Chaparral = PermissibleValue(text="Chaparral")
@@ -14437,17 +14423,17 @@ slots.wastewater_sludge_data = Slot(uri=NMDC_SUB_SCHEMA.wastewater_sludge_data, 
 slots.water_data = Slot(uri=NMDC_SUB_SCHEMA.water_data, name="water_data", curie=NMDC_SUB_SCHEMA.curie('water_data'),
                    model_uri=NMDC_SUB_SCHEMA.water_data, domain=None, range=Optional[Union[dict[Union[str, WaterInterfaceSampName], Union[dict, WaterInterface]], list[Union[dict, WaterInterface]]]])
 
-slots.metagenome_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, name="metagenome_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metagenome_sequencing_non_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, MetagenomeSequencingNonInterleavedDataInterfaceSampName], Union[dict, MetagenomeSequencingNonInterleavedDataInterface]], list[Union[dict, MetagenomeSequencingNonInterleavedDataInterface]]]])
+slots.dna_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.dna_sequencing_non_interleaved_data, name="dna_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('dna_sequencing_non_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.dna_sequencing_non_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, DnaSequencingNonInterleavedDataInterfaceSampName], Union[dict, DnaSequencingNonInterleavedDataInterface]], list[Union[dict, DnaSequencingNonInterleavedDataInterface]]]])
 
-slots.metagenome_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, name="metagenome_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metagenome_sequencing_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metagenome_sequencing_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, MetagenomeSequencingInterleavedDataInterfaceSampName], Union[dict, MetagenomeSequencingInterleavedDataInterface]], list[Union[dict, MetagenomeSequencingInterleavedDataInterface]]]])
+slots.dna_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.dna_sequencing_interleaved_data, name="dna_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('dna_sequencing_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.dna_sequencing_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, DnaSequencingInterleavedDataInterfaceSampName], Union[dict, DnaSequencingInterleavedDataInterface]], list[Union[dict, DnaSequencingInterleavedDataInterface]]]])
 
-slots.metatranscriptome_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, name="metatranscriptome_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metatranscriptome_sequencing_non_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_non_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, MetatranscriptomeSequencingNonInterleavedDataInterfaceSampName], Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]], list[Union[dict, MetatranscriptomeSequencingNonInterleavedDataInterface]]]])
+slots.rna_sequencing_non_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.rna_sequencing_non_interleaved_data, name="rna_sequencing_non_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('rna_sequencing_non_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.rna_sequencing_non_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, RnaSequencingNonInterleavedDataInterfaceSampName], Union[dict, RnaSequencingNonInterleavedDataInterface]], list[Union[dict, RnaSequencingNonInterleavedDataInterface]]]])
 
-slots.metatranscriptome_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, name="metatranscriptome_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('metatranscriptome_sequencing_interleaved_data'),
-                   model_uri=NMDC_SUB_SCHEMA.metatranscriptome_sequencing_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, MetatranscriptomeSequencingInterleavedDataInterfaceSampName], Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]], list[Union[dict, MetatranscriptomeSequencingInterleavedDataInterface]]]])
+slots.rna_sequencing_interleaved_data = Slot(uri=NMDC_SUB_SCHEMA.rna_sequencing_interleaved_data, name="rna_sequencing_interleaved_data", curie=NMDC_SUB_SCHEMA.curie('rna_sequencing_interleaved_data'),
+                   model_uri=NMDC_SUB_SCHEMA.rna_sequencing_interleaved_data, domain=None, range=Optional[Union[dict[Union[str, RnaSequencingInterleavedDataInterfaceSampName], Union[dict, RnaSequencingInterleavedDataInterface]], list[Union[dict, RnaSequencingInterleavedDataInterface]]]])
 
 slots.dh_section = Slot(uri=NMDC_SUB_SCHEMA.dh_section, name="dh_section", curie=NMDC_SUB_SCHEMA.curie('dh_section'),
                    model_uri=NMDC_SUB_SCHEMA.dh_section, domain=None, range=Optional[str])
@@ -14501,7 +14487,7 @@ slots.jgi_isolate_section = Slot(uri=NMDC_SUB_SCHEMA.jgi_isolate_section, name="
                    model_uri=NMDC_SUB_SCHEMA.jgi_isolate_section, domain=None, range=Optional[str])
 
 slots.read_1_url = Slot(uri=NMDC_SUB_SCHEMA.read_1_url, name="read_1_url", curie=NMDC_SUB_SCHEMA.curie('read_1_url'),
-                   model_uri=NMDC_SUB_SCHEMA.read_1_url, domain=None, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.read_1_url, domain=None, range=Optional[str],
                    pattern=re.compile(r'^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$'))
 
 slots.read_1_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, name="read_1_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('read_1_md5_checksum'),
@@ -14509,7 +14495,7 @@ slots.read_1_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_1_md5_checksum, name="
                    pattern=re.compile(r'^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$'))
 
 slots.read_2_url = Slot(uri=NMDC_SUB_SCHEMA.read_2_url, name="read_2_url", curie=NMDC_SUB_SCHEMA.curie('read_2_url'),
-                   model_uri=NMDC_SUB_SCHEMA.read_2_url, domain=None, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.read_2_url, domain=None, range=Optional[str],
                    pattern=re.compile(r'^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$'))
 
 slots.read_2_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, name="read_2_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('read_2_md5_checksum'),
@@ -14517,7 +14503,7 @@ slots.read_2_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.read_2_md5_checksum, name="
                    pattern=re.compile(r'^[a-fA-F0-9]{32}(?:\s*;\s*[a-fA-F0-9]{32})*$'))
 
 slots.interleaved_url = Slot(uri=NMDC_SUB_SCHEMA.interleaved_url, name="interleaved_url", curie=NMDC_SUB_SCHEMA.curie('interleaved_url'),
-                   model_uri=NMDC_SUB_SCHEMA.interleaved_url, domain=None, range=str,
+                   model_uri=NMDC_SUB_SCHEMA.interleaved_url, domain=None, range=Optional[str],
                    pattern=re.compile(r'^https://[^\s;]+(?:\s*;\s*https://[^\s;]+)*$'))
 
 slots.interleaved_md5_checksum = Slot(uri=NMDC_SUB_SCHEMA.interleaved_md5_checksum, name="interleaved_md5_checksum", curie=NMDC_SUB_SCHEMA.curie('interleaved_md5_checksum'),
@@ -16460,9 +16446,9 @@ slots.study_identifiers = Slot(uri=NMDC_SUB_SCHEMA.study_identifiers, name="stud
                    model_uri=NMDC_SUB_SCHEMA.study_identifiers, domain=None, range=Optional[Union[Union[str, ExternalIdentifier], list[Union[str, ExternalIdentifier]]]],
                    pattern=re.compile(r'^[a-zA-Z0-9][a-zA-Z0-9_\.]+:[a-zA-Z0-9_][a-zA-Z0-9_\-\/\.,]*$'))
 
-slots.insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^insdc\.sra:(E|D|S)RX[0-9]{6,}$'))
+slots.insdc_run_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_run_identifiers, name="insdc_run_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_run_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.insdc_run_identifiers, domain=None, range=Optional[str],
+                   pattern=re.compile(r'^insdc\.run:(E|D|S)RR[0-9]{6,}$'))
 
 slots.processing_institution = Slot(uri=NMDC_SUB_SCHEMA.processing_institution, name="processing_institution", curie=NMDC_SUB_SCHEMA.curie('processing_institution'),
                    model_uri=NMDC_SUB_SCHEMA.processing_institution, domain=None, range=Optional[Union[str, "ProcessingInstitutionEnum"]])
@@ -17271,37 +17257,37 @@ slots.WaterInterface_env_broad_scale = Slot(uri=MIXS['0000012'], name="WaterInte
                    model_uri=NMDC_SUB_SCHEMA.WaterInterface_env_broad_scale, domain=WaterInterface, range=str,
                    pattern=re.compile(r'^([^\s-]{1,2}|[^\s-]+.+[^\s-]+) \[ENVO:\d{7,8}\]$'))
 
-slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[str],
+slots.DnaSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="DnaSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.DnaSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=DnaSequencingNonInterleavedDataInterface, range=Optional[str],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
-slots.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingNonInterleavedDataInterface, range=Optional[str],
-                   pattern=re.compile(r'^insdc\.sra:(E|D|S)RX[0-9]{6,}$'))
+slots.DnaSequencingNonInterleavedDataInterface_insdc_run_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_run_identifiers, name="DnaSequencingNonInterleavedDataInterface_insdc_run_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_run_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.DnaSequencingNonInterleavedDataInterface_insdc_run_identifiers, domain=DnaSequencingNonInterleavedDataInterface, range=Optional[str],
+                   pattern=re.compile(r'^insdc\.run:(E|D|S)RR[0-9]{6,}$'))
 
-slots.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[str],
+slots.DnaSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="DnaSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.DnaSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=DnaSequencingInterleavedDataInterface, range=Optional[str],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
-slots.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetagenomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetagenomeSequencingInterleavedDataInterface, range=Optional[str],
-                   pattern=re.compile(r'^insdc\.sra:(E|D|S)RX[0-9]{6,}$'))
+slots.DnaSequencingInterleavedDataInterface_insdc_run_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_run_identifiers, name="DnaSequencingInterleavedDataInterface_insdc_run_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_run_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.DnaSequencingInterleavedDataInterface_insdc_run_identifiers, domain=DnaSequencingInterleavedDataInterface, range=Optional[str],
+                   pattern=re.compile(r'^insdc\.run:(E|D|S)RR[0-9]{6,}$'))
 
-slots.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[str],
+slots.RnaSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="RnaSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.RnaSequencingNonInterleavedDataInterface_insdc_bioproject_identifiers, domain=RnaSequencingNonInterleavedDataInterface, range=Optional[str],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
-slots.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingNonInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingNonInterleavedDataInterface, range=Optional[str],
-                   pattern=re.compile(r'^insdc\.sra:(E|D|S)RX[0-9]{6,}$'))
+slots.RnaSequencingNonInterleavedDataInterface_insdc_run_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_run_identifiers, name="RnaSequencingNonInterleavedDataInterface_insdc_run_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_run_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.RnaSequencingNonInterleavedDataInterface_insdc_run_identifiers, domain=RnaSequencingNonInterleavedDataInterface, range=Optional[str],
+                   pattern=re.compile(r'^insdc\.run:(E|D|S)RR[0-9]{6,}$'))
 
-slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[str],
+slots.RnaSequencingInterleavedDataInterface_insdc_bioproject_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_bioproject_identifiers, name="RnaSequencingInterleavedDataInterface_insdc_bioproject_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_bioproject_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.RnaSequencingInterleavedDataInterface_insdc_bioproject_identifiers, domain=RnaSequencingInterleavedDataInterface, range=Optional[str],
                    pattern=re.compile(r'^bioproject:PRJ[DEN][A-Z][0-9]+$'))
 
-slots.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_experiment_identifiers, name="MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_experiment_identifiers'),
-                   model_uri=NMDC_SUB_SCHEMA.MetatranscriptomeSequencingInterleavedDataInterface_insdc_experiment_identifiers, domain=MetatranscriptomeSequencingInterleavedDataInterface, range=Optional[str],
-                   pattern=re.compile(r'^insdc\.sra:(E|D|S)RX[0-9]{6,}$'))
+slots.RnaSequencingInterleavedDataInterface_insdc_run_identifiers = Slot(uri=NMDC_SUB_SCHEMA.insdc_run_identifiers, name="RnaSequencingInterleavedDataInterface_insdc_run_identifiers", curie=NMDC_SUB_SCHEMA.curie('insdc_run_identifiers'),
+                   model_uri=NMDC_SUB_SCHEMA.RnaSequencingInterleavedDataInterface_insdc_run_identifiers, domain=RnaSequencingInterleavedDataInterface, range=Optional[str],
+                   pattern=re.compile(r'^insdc\.run:(E|D|S)RR[0-9]{6,}$'))
 
 slots.IsolateInterface_isolate_single_colony = Slot(uri=NMDC_SUB_SCHEMA.isolate_single_colony, name="IsolateInterface_isolate_single_colony", curie=NMDC_SUB_SCHEMA.curie('isolate_single_colony'),
                    model_uri=NMDC_SUB_SCHEMA.IsolateInterface_isolate_single_colony, domain=IsolateInterface, range=Union[str, "YesNoEnum"])
