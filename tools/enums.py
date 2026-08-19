@@ -21,6 +21,8 @@ def inject_illumina_instrument_model_enum(
         if value.aliases is not None
         and any("Illumina" in alias for alias in value.aliases)
     }
+    for pv in illumina_model_permissible_values.values():
+        pv.is_a = None
     schema_view.add_enum(
         EnumDefinition(
             name="IlluminaInstrumentModelEnum",
