@@ -320,6 +320,19 @@ def test_excel_worksheet_name_annotations():
         ), f'excel_worksheet_name "{excel_worksheet_name_annotation.value}" is too long'
 
 
+def test_permissible_values_do_not_use_is_a():
+    """DataHarmonizer (as of version 1.7.1) has buggy handling of permissible values
+    that use an is_a relationship. Until that is fixed, we should avoid using is_a in
+    permissible values."""
+
+    schema_view = SchemaView(SCHEMA_YAML_PATH)
+    for enum_name, enum_def in schema_view.all_enums().items():
+        for pv_name, pv_def in enum_def.permissible_values.items():
+            assert (
+                pv_def.is_a is None
+            ), f"Permissible value '{pv_name}' in enum '{enum_name}' uses is_a"
+
+
 def test_examples():
     """Verify that the examples listed in slot definitions are valid"""
     schema_view = SchemaView(SCHEMA_YAML_PATH)
