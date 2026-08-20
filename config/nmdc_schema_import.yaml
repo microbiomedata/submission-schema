@@ -2719,6 +2719,18 @@ slots:
           rank: 335
           slot_group: mixs_core_section
 
+  - slot: jgi_sample_volume
+    source: Biosample
+    destinations:
+      - JgiMgInterface
+      - JgiMgLrInterface
+      - JgiMtInterface
+      - JgiIsolateCommonMixin
+      - JgiIsolateGenomeInterface
+    modifications:
+      - replace:
+          rank: 7
+
   - slot: last_clean
     source: Biosample
     destinations:
@@ -3148,6 +3160,18 @@ slots:
       - replace:
           rank: 264
           slot_group: mixs_core_section
+
+  - slot: nuc_acid_absorb1
+    source: Biosample
+    destinations:
+      - JgiMgInterface
+      - JgiMgLrInterface
+      - JgiMtInterface
+      - JgiIsolateCommonMixin
+      - JgiIsolateGenomeInterface
+    modifications:
+      - replace:
+          rank: 8
 
   - slot: number_pets
     source: Biosample
