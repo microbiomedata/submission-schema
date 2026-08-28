@@ -13759,7 +13759,7 @@
         "dna_volume",
         "rna_volume"
       ],
-      "rank": 8,
+      "rank": 7,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -13797,7 +13797,7 @@
         "dna_absorb1",
         "rna_absorb1"
       ],
-      "rank": 7,
+      "rank": 8,
       "domain_of": [
         "JgiMgInterface",
         "JgiMgLrInterface",
@@ -55946,7 +55946,7 @@
             "dna_absorb1",
             "rna_absorb1"
           ],
-          "rank": 7,
+          "rank": 8,
           "alias": "nuc_acid_absorb1",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -56424,7 +56424,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 8,
+          "rank": 7,
           "alias": "jgi_sample_volume",
           "owner": "JgiMgInterface",
           "domain_of": [
@@ -56849,7 +56849,7 @@
             "dna_absorb1",
             "rna_absorb1"
           ],
-          "rank": 7,
+          "rank": 8,
           "alias": "nuc_acid_absorb1",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -57329,7 +57329,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 8,
+          "rank": 7,
           "alias": "jgi_sample_volume",
           "owner": "JgiMgLrInterface",
           "domain_of": [
@@ -57753,7 +57753,7 @@
             "dna_absorb1",
             "rna_absorb1"
           ],
-          "rank": 7,
+          "rank": 8,
           "alias": "nuc_acid_absorb1",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -58231,7 +58231,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 8,
+          "rank": 7,
           "alias": "jgi_sample_volume",
           "owner": "JgiMtInterface",
           "domain_of": [
@@ -87458,7 +87458,7 @@
             "dna_absorb1",
             "rna_absorb1"
           ],
-          "rank": 7,
+          "rank": 8,
           "alias": "nuc_acid_absorb1",
           "owner": "JgiIsolateCommonMixin",
           "domain_of": [
@@ -87564,7 +87564,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 8,
+          "rank": 7,
           "alias": "jgi_sample_volume",
           "owner": "JgiIsolateCommonMixin",
           "domain_of": [
@@ -88884,7 +88884,7 @@
             "dna_absorb1",
             "rna_absorb1"
           ],
-          "rank": 7,
+          "rank": 8,
           "alias": "nuc_acid_absorb1",
           "owner": "JgiIsolateGenomeInterface",
           "domain_of": [
@@ -88990,7 +88990,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 8,
+          "rank": 7,
           "alias": "jgi_sample_volume",
           "owner": "JgiIsolateGenomeInterface",
           "domain_of": [
@@ -90116,7 +90116,7 @@
             "dna_absorb1",
             "rna_absorb1"
           ],
-          "rank": 7,
+          "rank": 8,
           "alias": "nuc_acid_absorb1",
           "owner": "JgiIsolateTranscriptomeInterface",
           "domain_of": [
@@ -90222,7 +90222,7 @@
             "dna_volume",
             "rna_volume"
           ],
-          "rank": 8,
+          "rank": 7,
           "alias": "jgi_sample_volume",
           "owner": "JgiIsolateTranscriptomeInterface",
           "domain_of": [

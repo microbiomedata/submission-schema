@@ -629,7 +629,7 @@ slots:
         This form accepts values < 25, but JGI may refuse to process them unless permission has been granted by a project manager.
     examples:
       - value: 25
-    rank: 8
+    rank: 7
     range: float
     required: true
     minimum_value: 0.0001
@@ -648,7 +648,7 @@ slots:
       - Required for plant/algal drafts, fungal standard/improved drafts, microbial improved draft, methylation, or any PacBio libraries.
     examples:
       - value: 2.02
-    rank: 7
+    rank: 8
     range: float
     minimum_value: 0.0001
     recommended: true
