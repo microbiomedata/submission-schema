@@ -861,20 +861,6 @@ slots:
           notes:
             - JGI requires all three date components, so the full YYYY-MM-DD is mandatory on the isolate interface. The export layer splits it into Collection Year, Collection Month, and Collection Day columns.
 
-  - slot: collection_date_inc
-    source: Biosample
-    destinations:
-      - PlantAssociatedInterface
-      - SedimentInterface
-      - SoilMixsInspiredMixin
-      - SoilInterface
-      - WaterInterface
-    modifications:
-      - replace:
-          rank: 2
-          slot_group: mixs_inspired_section
-          pattern: ^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$
-
   - slot: collection_time
     source: Biosample
     destinations:

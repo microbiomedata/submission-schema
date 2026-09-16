@@ -15,7 +15,6 @@ soil_data:
     chem_administration: "agar [CHEBI:2509];2018-05-11|agar [CHEBI:2509];2018-05-22"
     climate_environment: xxx
     collection_date: '2022-01-15'
-    collection_date_inc: '2022-01-22'
     collection_time: '11:11'
     collection_time_inc: '11:11'
     crop_rotation: xxx
