@@ -172,10 +172,6 @@
       "prefix_prefix": "OMIT",
       "prefix_reference": "http://purl.obolibrary.org/obo/OMIT_"
     },
-    "ORCID": {
-      "prefix_prefix": "ORCID",
-      "prefix_reference": "https://orcid.org/"
-    },
     "PANTHER.FAMILY": {
       "prefix_prefix": "PANTHER.FAMILY",
       "prefix_reference": "https://bioregistry.io/panther.family:"
@@ -263,6 +259,10 @@
     "dcterms": {
       "prefix_prefix": "dcterms",
       "prefix_reference": "http://purl.org/dc/terms/"
+    },
+    "dcm": {
+      "prefix_prefix": "dcm",
+      "prefix_reference": "https://kbase.github.io/credit_engine/"
     },
     "doi": {
       "prefix_prefix": "doi",
@@ -359,6 +359,10 @@
     "nmdc": {
       "prefix_prefix": "nmdc",
       "prefix_reference": "https://w3id.org/nmdc/"
+    },
+    "orcid": {
+      "prefix_prefix": "orcid",
+      "prefix_reference": "https://orcid.org/"
     },
     "owl": {
       "prefix_prefix": "owl",
@@ -472,10 +476,7 @@
       "comments": [
         "Not every badge is completeness-based, so not every MetadataBadgeEnum permissible value has a subset here. expert_curation is awarded from ProvenanceMetadata.source_system_of_record rather than from slot completeness, so it has no badge_topic subset."
       ],
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "https://github.com/microbiomedata/nmdc-schema/issues/3228"
-      ]
+      "from_schema": "https://example.com/nmdc_submission_schema"
     },
     "biogeochemistry": {
       "name": "biogeochemistry",
@@ -490,10 +491,9 @@
         "badge_topic"
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "https://github.com/microbiomedata/nmdc-schema/issues/3228",
-        "https://github.com/microbiomedata/nmdc-schema/issues/3326"
-      ]
+      "created_on": "2026-08-13T00:00:00+00:00",
+      "last_updated_on": "2026-08-13T00:00:00+00:00",
+      "modified_by": "orcid:0000-0001-9076-6066"
     },
     "host_information": {
       "name": "host_information",
@@ -511,10 +511,9 @@
         "badge_topic"
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "https://github.com/microbiomedata/nmdc-schema/issues/3228",
-        "https://github.com/microbiomedata/nmdc-schema/issues/3326"
-      ]
+      "created_on": "2026-08-13T00:00:00+00:00",
+      "last_updated_on": "2026-08-13T00:00:00+00:00",
+      "modified_by": "orcid:0000-0001-9076-6066"
     }
   },
   "types": {
@@ -8132,6 +8131,9 @@
         "Bile ducts: Bile": {
           "text": "Bile ducts: Bile"
         },
+        "Biocrust": {
+          "text": "Biocrust"
+        },
         "Biofilm": {
           "text": "Biofilm"
         },
@@ -8428,6 +8430,9 @@
         },
         "Cyanobacterial bloom": {
           "text": "Cyanobacterial bloom"
+        },
+        "Decaying algal biomass": {
+          "text": "Decaying algal biomass"
         },
         "Deglaciated soil": {
           "text": "Deglaciated soil"
@@ -10136,6 +10141,9 @@
         "Wooden surface": {
           "text": "Wooden surface"
         },
+        "Wound": {
+          "text": "Wound"
+        },
         "Xylem vessels": {
           "text": "Xylem vessels"
         }
@@ -10396,6 +10404,9 @@
         },
         "B horizon/Subsoil": {
           "text": "B horizon/Subsoil"
+        },
+        "Biocrust": {
+          "text": "Biocrust"
         },
         "Biological": {
           "text": "Biological"
@@ -14469,6 +14480,9 @@
         "makes it easier to read example data files",
         "required for polymorphic MongoDB collections"
       ],
+      "comments": [
+        "Deprecating this slot was proposed and rejected: without it, a document read back from a polymorphic MongoDB collection cannot be resolved to the class it instantiates. It is required on every class for that reason, rather than as a convention inherited from LinkML."
+      ],
       "examples": [
         {
           "value": "nmdc:Biosample"
@@ -14478,11 +14492,6 @@
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "https://github.com/microbiomedata/nmdc-schema/issues/1048",
-        "https://github.com/microbiomedata/nmdc-schema/issues/1233",
-        "https://github.com/microbiomedata/nmdc-schema/issues/248"
-      ],
       "structured_aliases": {
         "workflow_execution_class": {
           "literal_form": "workflow_execution_class",
@@ -17116,52 +17125,6 @@
       "required": true,
       "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
     },
-    "collection_date_inc": {
-      "name": "collection_date_inc",
-      "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-      "title": "incubation collection date",
-      "deprecated": "No longer needed. The harvest date is the harvested sample's own collection_date; the incubation can be recorded as a process (a MaterialProcessing subclass) that links the input and output samples and carries start_date and end_date. See https://github.com/microbiomedata/nmdc-schema/issues/2658 and the example src/data/valid/Database-incubation-as-culturing.yaml.",
-      "notes": [
-        "MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision date only"
-      ],
-      "comments": [
-        "Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable."
-      ],
-      "examples": [
-        {
-          "value": "2021-04-15"
-        },
-        {
-          "value": "2021-04"
-        },
-        {
-          "value": "2021"
-        }
-      ],
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "MIXS:0000011"
-      ],
-      "contributors": [
-        "ORCID:0009-0008-4013-7737",
-        "ORCID:0000-0001-9076-6066"
-      ],
-      "last_updated_on": "2026-07-21T00:00:00+00:00",
-      "modified_by": "ORCID:0009-0008-4013-7737",
-      "rank": 2,
-      "string_serialization": "{date, arbitrary precision}",
-      "domain_of": [
-        "PlantAssociatedInterface",
-        "SedimentInterface",
-        "SoilInterface",
-        "WaterInterface",
-        "SoilMixsInspiredMixin"
-      ],
-      "slot_group": "mixs_inspired_section",
-      "range": "string",
-      "recommended": true,
-      "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
-    },
     "collection_time": {
       "name": "collection_time",
       "description": "The time of sampling, either as an instance (single point) or interval.",
@@ -17202,6 +17165,7 @@
       "name": "collection_time_inc",
       "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
       "title": "incubation collection time, GMT",
+      "deprecated": "This slot is directly replaced by collection_time. Any instances that would use collection_time_inc should use collection_time instead.",
       "notes": [
         "MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional time only"
       ],
@@ -17220,6 +17184,12 @@
       "see_also": [
         "MIXS:0000011"
       ],
+      "deprecated_element_has_exact_replacement": "collection_time",
+      "contributors": [
+        "orcid:0009-0008-4013-7737"
+      ],
+      "last_updated_on": "2026-09-04T00:00:00+00:00",
+      "modified_by": "orcid:0009-0008-4013-7737",
       "rank": 3,
       "string_serialization": "{time, seconds optional}",
       "domain_of": [
@@ -31504,10 +31474,6 @@
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "https://github.com/microbiomedata/nmdc-schema/issues/2959",
-        "https://github.com/microbiomedata/nmdc-schema/issues/3016"
-      ],
       "narrow_mappings": [
         "biolink:in_taxon"
       ],
@@ -61714,7 +61680,6 @@
         "chem_mutagen",
         "climate_environment",
         "collection_date",
-        "collection_date_inc",
         "collection_time",
         "cult_root_med",
         "depth",
@@ -62270,54 +62235,6 @@
           "slot_group": "mixs_modified_section",
           "range": "string",
           "required": true,
-          "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
-        },
-        "collection_date_inc": {
-          "name": "collection_date_inc",
-          "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection date",
-          "deprecated": "No longer needed. The harvest date is the harvested sample's own collection_date; the incubation can be recorded as a process (a MaterialProcessing subclass) that links the input and output samples and carries start_date and end_date. See https://github.com/microbiomedata/nmdc-schema/issues/2658 and the example src/data/valid/Database-incubation-as-culturing.yaml.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision date only"
-          ],
-          "comments": [
-            "Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable."
-          ],
-          "examples": [
-            {
-              "value": "2021-04-15"
-            },
-            {
-              "value": "2021-04"
-            },
-            {
-              "value": "2021"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "contributors": [
-            "ORCID:0009-0008-4013-7737",
-            "ORCID:0000-0001-9076-6066"
-          ],
-          "last_updated_on": "2026-07-21T00:00:00+00:00",
-          "modified_by": "ORCID:0009-0008-4013-7737",
-          "rank": 2,
-          "string_serialization": "{date, arbitrary precision}",
-          "alias": "collection_date_inc",
-          "owner": "PlantAssociatedInterface",
-          "domain_of": [
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WaterInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
           "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
         },
         "collection_time": {
@@ -65745,7 +65662,6 @@
         "chlorophyll",
         "climate_environment",
         "collection_date",
-        "collection_date_inc",
         "collection_time",
         "density",
         "depth",
@@ -66740,54 +66656,6 @@
           "slot_group": "mixs_modified_section",
           "range": "string",
           "required": true,
-          "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
-        },
-        "collection_date_inc": {
-          "name": "collection_date_inc",
-          "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection date",
-          "deprecated": "No longer needed. The harvest date is the harvested sample's own collection_date; the incubation can be recorded as a process (a MaterialProcessing subclass) that links the input and output samples and carries start_date and end_date. See https://github.com/microbiomedata/nmdc-schema/issues/2658 and the example src/data/valid/Database-incubation-as-culturing.yaml.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision date only"
-          ],
-          "comments": [
-            "Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable."
-          ],
-          "examples": [
-            {
-              "value": "2021-04-15"
-            },
-            {
-              "value": "2021-04"
-            },
-            {
-              "value": "2021"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "contributors": [
-            "ORCID:0009-0008-4013-7737",
-            "ORCID:0000-0001-9076-6066"
-          ],
-          "last_updated_on": "2026-07-21T00:00:00+00:00",
-          "modified_by": "ORCID:0009-0008-4013-7737",
-          "rank": 2,
-          "string_serialization": "{date, arbitrary precision}",
-          "alias": "collection_date_inc",
-          "owner": "SedimentInterface",
-          "domain_of": [
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WaterInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
           "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
         },
         "collection_time": {
@@ -71052,7 +70920,6 @@
         "chem_administration",
         "climate_environment",
         "collection_date",
-        "collection_date_inc",
         "collection_time",
         "collection_time_inc",
         "crop_rotation",
@@ -71901,54 +71768,6 @@
           "required": true,
           "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
         },
-        "collection_date_inc": {
-          "name": "collection_date_inc",
-          "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection date",
-          "deprecated": "No longer needed. The harvest date is the harvested sample's own collection_date; the incubation can be recorded as a process (a MaterialProcessing subclass) that links the input and output samples and carries start_date and end_date. See https://github.com/microbiomedata/nmdc-schema/issues/2658 and the example src/data/valid/Database-incubation-as-culturing.yaml.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision date only"
-          ],
-          "comments": [
-            "Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable."
-          ],
-          "examples": [
-            {
-              "value": "2021-04-15"
-            },
-            {
-              "value": "2021-04"
-            },
-            {
-              "value": "2021"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "contributors": [
-            "ORCID:0009-0008-4013-7737",
-            "ORCID:0000-0001-9076-6066"
-          ],
-          "last_updated_on": "2026-07-21T00:00:00+00:00",
-          "modified_by": "ORCID:0009-0008-4013-7737",
-          "rank": 2,
-          "string_serialization": "{date, arbitrary precision}",
-          "alias": "collection_date_inc",
-          "owner": "SoilInterface",
-          "domain_of": [
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WaterInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
-          "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
-        },
         "collection_time": {
           "name": "collection_time",
           "description": "The time of sampling, either as an instance (single point) or interval.",
@@ -71991,6 +71810,7 @@
           "name": "collection_time_inc",
           "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
           "title": "incubation collection time, GMT",
+          "deprecated": "This slot is directly replaced by collection_time. Any instances that would use collection_time_inc should use collection_time instead.",
           "notes": [
             "MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional time only"
           ],
@@ -72009,6 +71829,12 @@
           "see_also": [
             "MIXS:0000011"
           ],
+          "deprecated_element_has_exact_replacement": "collection_time",
+          "contributors": [
+            "orcid:0009-0008-4013-7737"
+          ],
+          "last_updated_on": "2026-09-04T00:00:00+00:00",
+          "modified_by": "orcid:0009-0008-4013-7737",
           "rank": 3,
           "string_serialization": "{time, seconds optional}",
           "alias": "collection_time_inc",
@@ -78701,7 +78527,6 @@
         "chlorophyll",
         "climate_environment",
         "collection_date",
-        "collection_date_inc",
         "collection_time",
         "conduc",
         "density",
@@ -79741,54 +79566,6 @@
           "slot_group": "mixs_modified_section",
           "range": "string",
           "required": true,
-          "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
-        },
-        "collection_date_inc": {
-          "name": "collection_date_inc",
-          "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection date",
-          "deprecated": "No longer needed. The harvest date is the harvested sample's own collection_date; the incubation can be recorded as a process (a MaterialProcessing subclass) that links the input and output samples and carries start_date and end_date. See https://github.com/microbiomedata/nmdc-schema/issues/2658 and the example src/data/valid/Database-incubation-as-culturing.yaml.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision date only"
-          ],
-          "comments": [
-            "Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable."
-          ],
-          "examples": [
-            {
-              "value": "2021-04-15"
-            },
-            {
-              "value": "2021-04"
-            },
-            {
-              "value": "2021"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "contributors": [
-            "ORCID:0009-0008-4013-7737",
-            "ORCID:0000-0001-9076-6066"
-          ],
-          "last_updated_on": "2026-07-21T00:00:00+00:00",
-          "modified_by": "ORCID:0009-0008-4013-7737",
-          "rank": 2,
-          "string_serialization": "{date, arbitrary precision}",
-          "alias": "collection_date_inc",
-          "owner": "WaterInterface",
-          "domain_of": [
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WaterInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
           "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
         },
         "collection_time": {
@@ -85814,7 +85591,6 @@
       "from_schema": "https://example.com/nmdc_submission_schema",
       "mixin": true,
       "slots": [
-        "collection_date_inc",
         "collection_time",
         "collection_time_inc",
         "experimental_factor_other",
@@ -85830,7 +85606,6 @@
         "other_treatment",
         "start_date_inc",
         "start_time_inc",
-        "collection_date_inc",
         "collection_time",
         "collection_time_inc",
         "experimental_factor_other",
@@ -85848,54 +85623,6 @@
         "start_time_inc"
       ],
       "attributes": {
-        "collection_date_inc": {
-          "name": "collection_date_inc",
-          "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection date",
-          "deprecated": "No longer needed. The harvest date is the harvested sample's own collection_date; the incubation can be recorded as a process (a MaterialProcessing subclass) that links the input and output samples and carries start_date and end_date. See https://github.com/microbiomedata/nmdc-schema/issues/2658 and the example src/data/valid/Database-incubation-as-culturing.yaml.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking arbitrary precision date only"
-          ],
-          "comments": [
-            "Date should be formatted as YYYY(-MM(-DD)). Ie, 2021-04-15, 2021-04 and 2021 are all acceptable."
-          ],
-          "examples": [
-            {
-              "value": "2021-04-15"
-            },
-            {
-              "value": "2021-04"
-            },
-            {
-              "value": "2021"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "contributors": [
-            "ORCID:0009-0008-4013-7737",
-            "ORCID:0000-0001-9076-6066"
-          ],
-          "last_updated_on": "2026-07-21T00:00:00+00:00",
-          "modified_by": "ORCID:0009-0008-4013-7737",
-          "rank": 2,
-          "string_serialization": "{date, arbitrary precision}",
-          "alias": "collection_date_inc",
-          "owner": "SoilMixsInspiredMixin",
-          "domain_of": [
-            "PlantAssociatedInterface",
-            "SedimentInterface",
-            "SoilInterface",
-            "WaterInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
-          "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$"
-        },
         "collection_time": {
           "name": "collection_time",
           "description": "The time of sampling, either as an instance (single point) or interval.",
@@ -85938,6 +85665,7 @@
           "name": "collection_time_inc",
           "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
           "title": "incubation collection time, GMT",
+          "deprecated": "This slot is directly replaced by collection_time. Any instances that would use collection_time_inc should use collection_time instead.",
           "notes": [
             "MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional time only"
           ],
@@ -85956,6 +85684,12 @@
           "see_also": [
             "MIXS:0000011"
           ],
+          "deprecated_element_has_exact_replacement": "collection_time",
+          "contributors": [
+            "orcid:0009-0008-4013-7737"
+          ],
+          "last_updated_on": "2026-09-04T00:00:00+00:00",
+          "modified_by": "orcid:0009-0008-4013-7737",
           "rank": 3,
           "string_serialization": "{time, seconds optional}",
           "alias": "collection_time_inc",
@@ -86907,10 +86641,6 @@
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "https://github.com/microbiomedata/nmdc-schema/issues/2959",
-            "https://github.com/microbiomedata/nmdc-schema/issues/3016"
-          ],
           "narrow_mappings": [
             "biolink:in_taxon"
           ],
@@ -91148,6 +90878,9 @@
             "makes it easier to read example data files",
             "required for polymorphic MongoDB collections"
           ],
+          "comments": [
+            "Deprecating this slot was proposed and rejected: without it, a document read back from a polymorphic MongoDB collection cannot be resolved to the class it instantiates. It is required on every class for that reason, rather than as a convention inherited from LinkML."
+          ],
           "examples": [
             {
               "value": "nmdc:Biosample"
@@ -91157,11 +90890,6 @@
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "https://github.com/microbiomedata/nmdc-schema/issues/1048",
-            "https://github.com/microbiomedata/nmdc-schema/issues/1233",
-            "https://github.com/microbiomedata/nmdc-schema/issues/248"
-          ],
           "structured_aliases": {
             "workflow_execution_class": {
               "literal_form": "workflow_execution_class",

@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-08-19T10:09:47
+# Generation date: 2026-09-17T15:44:59
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -100,7 +100,6 @@ NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxo
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OMIT = CurieNamespace('OMIT', 'http://purl.obolibrary.org/obo/OMIT_')
-ORCID = CurieNamespace('ORCID', 'https://orcid.org/')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'https://bioregistry.io/panther.family:')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 PFAM = CurieNamespace('PFAM', 'https://bioregistry.io/pfam:')
@@ -127,6 +126,7 @@ BIOPROJECT = CurieNamespace('bioproject', 'https://bioregistry.io/bioproject:')
 BIOSAMPLE = CurieNamespace('biosample', 'https://bioregistry.io/biosample:')
 CAS = CurieNamespace('cas', 'https://bioregistry.io/cas:')
 CCUG = CurieNamespace('ccug', 'https://www.ccug.se/strain?id=')
+DCM = CurieNamespace('dcm', 'https://kbase.github.io/credit_engine/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://bioregistry.io/doi:')
 DSMZ = CurieNamespace('dsmz', 'https://www.dsmz.de/collection/catalogue/details/culture/')
@@ -158,6 +158,7 @@ NEON_IDENTIFIER = CurieNamespace('neon_identifier', 'http://example.org/neon/ide
 NEON_SCHEMA = CurieNamespace('neon_schema', 'http://example.org/neon/schema/')
 NMDC = CurieNamespace('nmdc', 'https://w3id.org/nmdc/')
 NMDC_SUB_SCHEMA = CurieNamespace('nmdc_sub_schema', 'https://example.com/nmdc_sub_schema/')
+ORCID = CurieNamespace('orcid', 'https://orcid.org/')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 PUBMED = CurieNamespace('pubmed', 'https://bioregistry.io/pubmed:')
@@ -656,7 +657,6 @@ class SoilMixsInspiredMixin(YAMLRoot):
     class_name: ClassVar[str] = "SoilMixsInspiredMixin"
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.SoilMixsInspiredMixin
 
-    collection_date_inc: Optional[str] = None
     collection_time: Optional[str] = None
     collection_time_inc: Optional[str] = None
     experimental_factor_other: Optional[str] = None
@@ -674,9 +674,6 @@ class SoilMixsInspiredMixin(YAMLRoot):
     start_time_inc: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
-            self.collection_date_inc = str(self.collection_date_inc)
-
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
 
@@ -721,9 +718,6 @@ class SoilMixsInspiredMixin(YAMLRoot):
 
         if self.start_time_inc is not None and not isinstance(self.start_time_inc, str):
             self.start_time_inc = str(self.start_time_inc)
-
-        if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
-            self.collection_date_inc = str(self.collection_date_inc)
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
@@ -4392,7 +4386,6 @@ class PlantAssociatedInterface(DhInterface):
     chem_administration: Optional[str] = None
     chem_mutagen: Optional[str] = None
     climate_environment: Optional[str] = None
-    collection_date_inc: Optional[str] = None
     collection_time: Optional[str] = None
     cult_root_med: Optional[str] = None
     depth: Optional[str] = None
@@ -4568,9 +4561,6 @@ class PlantAssociatedInterface(DhInterface):
 
         if self.climate_environment is not None and not isinstance(self.climate_environment, str):
             self.climate_environment = str(self.climate_environment)
-
-        if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
-            self.collection_date_inc = str(self.collection_date_inc)
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
@@ -4844,7 +4834,6 @@ class SedimentInterface(DhInterface):
     chloride: Optional[str] = None
     chlorophyll: Optional[str] = None
     climate_environment: Optional[str] = None
-    collection_date_inc: Optional[str] = None
     collection_time: Optional[str] = None
     density: Optional[str] = None
     diether_lipids: Optional[str] = None
@@ -5044,9 +5033,6 @@ class SedimentInterface(DhInterface):
 
         if self.climate_environment is not None and not isinstance(self.climate_environment, str):
             self.climate_environment = str(self.climate_environment)
-
-        if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
-            self.collection_date_inc = str(self.collection_date_inc)
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
@@ -5353,7 +5339,6 @@ class SoilInterface(DhInterface):
     carb_nitro_ratio: Optional[float] = None
     chem_administration: Optional[str] = None
     climate_environment: Optional[str] = None
-    collection_date_inc: Optional[str] = None
     collection_time: Optional[str] = None
     collection_time_inc: Optional[str] = None
     crop_rotation: Optional[str] = None
@@ -5550,9 +5535,6 @@ class SoilInterface(DhInterface):
 
         if self.climate_environment is not None and not isinstance(self.climate_environment, str):
             self.climate_environment = str(self.climate_environment)
-
-        if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
-            self.collection_date_inc = str(self.collection_date_inc)
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
@@ -6151,7 +6133,6 @@ class WaterInterface(DhInterface):
     chloride: Optional[str] = None
     chlorophyll: Optional[str] = None
     climate_environment: Optional[str] = None
-    collection_date_inc: Optional[str] = None
     collection_time: Optional[str] = None
     conduc: Optional[str] = None
     density: Optional[str] = None
@@ -6347,9 +6328,6 @@ class WaterInterface(DhInterface):
 
         if self.climate_environment is not None and not isinstance(self.climate_environment, str):
             self.climate_environment = str(self.climate_environment)
-
-        if self.collection_date_inc is not None and not isinstance(self.collection_date_inc, str):
-            self.collection_date_inc = str(self.collection_date_inc)
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
@@ -11344,6 +11322,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Bark = PermissibleValue(text="Bark")
     Benthic = PermissibleValue(text="Benthic")
     Bile = PermissibleValue(text="Bile")
+    Biocrust = PermissibleValue(text="Biocrust")
     Biofilm = PermissibleValue(text="Biofilm")
     Biofilter = PermissibleValue(text="Biofilter")
     Biofouling = PermissibleValue(text="Biofouling")
@@ -11594,6 +11573,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Wastewater = PermissibleValue(text="Wastewater")
     Well = PermissibleValue(text="Well")
     White = PermissibleValue(text="White")
+    Wound = PermissibleValue(text="Wound")
 
     _defn = EnumDefinition(
         name="SpecificEcosystemEnum",
@@ -11829,6 +11809,8 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
             PermissibleValue(text="Cyanobacterial aggregates"))
         setattr(cls, "Cyanobacterial bloom",
             PermissibleValue(text="Cyanobacterial bloom"))
+        setattr(cls, "Decaying algal biomass",
+            PermissibleValue(text="Decaying algal biomass"))
         setattr(cls, "Deglaciated soil",
             PermissibleValue(text="Deglaciated soil"))
         setattr(cls, "Delivery networks",
@@ -12686,6 +12668,7 @@ class EcosystemSubtypeForSoilEnum(EnumDefinitionImpl):
 class SpecificEcosystemForSoilEnum(EnumDefinitionImpl):
 
     Alpine = PermissibleValue(text="Alpine")
+    Biocrust = PermissibleValue(text="Biocrust")
     Biological = PermissibleValue(text="Biological")
     Bog = PermissibleValue(text="Bog")
     Contaminated = PermissibleValue(text="Contaminated")
@@ -14909,10 +14892,6 @@ slots.climate_environment = Slot(uri=MIXS['0001040'], name="climate_environment"
 
 slots.collection_date = Slot(uri=MIXS['0000011'], name="collection_date", curie=MIXS.curie('0000011'),
                    model_uri=NMDC_SUB_SCHEMA.collection_date, domain=None, range=str,
-                   pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
-
-slots.collection_date_inc = Slot(uri=NMDC_SUB_SCHEMA.collection_date_inc, name="collection_date_inc", curie=NMDC_SUB_SCHEMA.curie('collection_date_inc'),
-                   model_uri=NMDC_SUB_SCHEMA.collection_date_inc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[12]\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\d|3[01]))?)?$'))
 
 slots.collection_time = Slot(uri=NMDC_SUB_SCHEMA.collection_time, name="collection_time", curie=NMDC_SUB_SCHEMA.curie('collection_time'),

@@ -8831,14 +8831,6 @@
                     "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
                     "type": "string"
                 },
-                "collection_date_inc": {
-                    "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "collection_time": {
                     "description": "The time of sampling, either as an instance (single point) or interval.",
                     "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
@@ -10282,14 +10274,6 @@
                     "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
                     "type": "string"
                 },
-                "collection_date_inc": {
-                    "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "collection_time": {
                     "description": "The time of sampling, either as an instance (single point) or interval.",
                     "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
@@ -11186,14 +11170,6 @@
                     "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
                     "type": "string"
                 },
-                "collection_date_inc": {
-                    "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "collection_time": {
                     "description": "The time of sampling, either as an instance (single point) or interval.",
                     "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
@@ -12027,6 +12003,7 @@
                 "Bile",
                 "Bile ducts",
                 "Bile ducts: Bile",
+                "Biocrust",
                 "Biofilm",
                 "Biofilter",
                 "Biofouling",
@@ -12126,6 +12103,7 @@
                 "Cuticle",
                 "Cyanobacterial aggregates",
                 "Cyanobacterial bloom",
+                "Decaying algal biomass",
                 "Deglaciated soil",
                 "Delivery networks",
                 "Dental abscess",
@@ -12695,6 +12673,7 @@
                 "Wood/Secondary xylem",
                 "Woodchip biofilm",
                 "Wooden surface",
+                "Wound",
                 "Xylem vessels"
             ],
             "title": "SpecificEcosystemEnum",
@@ -12709,6 +12688,7 @@
                 "Agricultural soil",
                 "Alpine",
                 "B horizon/Subsoil",
+                "Biocrust",
                 "Biological",
                 "Bog",
                 "Boreal forest",
@@ -13744,14 +13724,6 @@
                     "description": "The date of sampling",
                     "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
                     "type": "string"
-                },
-                "collection_date_inc": {
-                    "description": "Date the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-                    "pattern": "^[12]\\d{3}(?:(?:-(?:0[1-9]|1[0-2]))(?:-(?:0[1-9]|[12]\\d|3[01]))?)?$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 },
                 "collection_time": {
                     "description": "The time of sampling, either as an instance (single point) or interval.",
