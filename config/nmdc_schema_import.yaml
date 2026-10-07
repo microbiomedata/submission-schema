@@ -874,16 +874,6 @@ slots:
           rank: 1
           slot_group: mixs_inspired_section
 
-  - slot: collection_time_inc
-    source: Biosample
-    destinations:
-      - SoilMixsInspiredMixin
-      - SoilInterface
-    modifications:
-      - replace:
-          rank: 3
-          slot_group: mixs_inspired_section
-
   - slot: conduc
     source: Biosample
     destinations:
