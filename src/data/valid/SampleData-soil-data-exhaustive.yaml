@@ -16,7 +16,6 @@ soil_data:
     climate_environment: xxx
     collection_date: '2022-01-15'
     collection_time: '11:11'
-    collection_time_inc: '11:11'
     crop_rotation: xxx
     cur_land_use: cities
     cur_vegetation: xxx
