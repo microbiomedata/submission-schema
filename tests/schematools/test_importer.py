@@ -1,7 +1,8 @@
 import pytest
 from linkml_runtime import SchemaView
 from linkml_runtime.linkml_model import Example
-from linkml_runtime.linkml_model.meta import Setting
+from linkml_runtime.linkml_model.meta import PatternExpression, Setting
+from linkml_runtime.linkml_model.units import UnitOfMeasure
 
 from tools.schematools import import_elements
 from tools.schematools.importer import (
@@ -596,6 +597,68 @@ settings:
     assert key2_setting.setting_value == "[0-9]+"
     # Check that unused settings were not copied to the target schema
     assert "key3" not in empty_target_schema.schema.settings
+
+
+@pytest.mark.parametrize("in_classes", [None, ["DestinationClass"]])
+def test_import_elements_replaces_nested_values_with_typed_objects(in_classes):
+    """Replacement values that are mappings in the config should be stored as linkml_runtime
+    objects, not as JsonObj or dict, so that SchemaView methods such as materialize_patterns
+    can read every field. This covers both the top-level slot and slot_usage in a class."""
+
+    source_schema = SchemaView("""
+id: http://example.org/source
+name: source_schema
+slots:
+  a:
+    range: string
+""")
+
+    target_schema = SchemaView("""
+id: http://example.org/target
+name: target_schema
+classes:
+  DestinationClass:
+settings:
+  key1: "[A-Z]+"
+  key2: "[0-9]+"
+""")
+
+    config = ImporterConfig(
+        slots=[
+            SlotImport(
+                slot="a",
+                destinations=["DestinationClass"],
+                modifications=[
+                    SlotModification(
+                        in_classes=in_classes,
+                        replace={
+                            "structured_pattern": {
+                                "syntax": "{key1}:{key2}",
+                                "interpolated": True,
+                            },
+                            "unit": {"ucum_code": "m"},
+                            "examples": [{"value": "ABC:123"}],
+                        },
+                    )
+                ],
+            )
+        ]
+    )
+
+    import_elements(
+        source_schema=source_schema, config=config, target_schema=target_schema
+    )
+
+    if in_classes:
+        modified_slot = target_schema.get_class("DestinationClass").slot_usage["a"]
+    else:
+        modified_slot = target_schema.get_slot("a")
+    assert isinstance(modified_slot.structured_pattern, PatternExpression)
+    assert isinstance(modified_slot.unit, UnitOfMeasure)
+    assert all(isinstance(ex, Example) for ex in modified_slot.examples)
+
+    target_schema.materialize_patterns()
+    assert "[A-Z]+:[0-9]+" in modified_slot.pattern
 
 
 def test_import_elements_copies_subsets_used_by_slot(empty_target_schema):

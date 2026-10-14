@@ -4495,6 +4495,7 @@ slots:
           recommended: false
           structured_pattern:
             syntax: '^{float} {text}$'
+            interpolated: true
 
   - slot: sample_type
     source: Biosample

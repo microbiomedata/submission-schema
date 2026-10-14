@@ -50,6 +50,23 @@ AUTOMATIC_ON_REPLACE = {
 }
 
 
+def _coerce_slot_value(key: str, value: Any) -> Any:
+    """
+    Convert a value from the import config to the type SlotDefinition uses for that key.
+
+    Plain setattr stores nested mappings as JsonObj (structured_pattern, unit) or dict
+    (examples). The SlotDefinition constructor builds PatternExpression, UnitOfMeasure
+    and Example objects instead, which is what SchemaView expects.
+
+    :param key: The SlotDefinition field name.
+    :param value: The value as read from the config.
+    :return: The converted value.
+    """
+    if value is None:
+        return None
+    return getattr(SlotDefinition(name="_", **{key: value}), key)
+
+
 def apply_slot_modification(
     slot: SlotDefinition, modification: SlotModification
 ) -> None:
@@ -61,7 +78,7 @@ def apply_slot_modification(
     """
     if modification.replace:
         for key, value in modification.replace.items():
-            setattr(slot, key, value)
+            setattr(slot, key, _coerce_slot_value(key, value))
             try:
                 if (key, value) in AUTOMATIC_ON_REPLACE:
                     apply_slot_modification(slot, AUTOMATIC_ON_REPLACE[(key, value)])
@@ -71,7 +88,7 @@ def apply_slot_modification(
         for key, value in modification.append.items():
             current_value = getattr(slot, key, [])
             if isinstance(current_value, list):
-                current_value.extend(value)
+                current_value.extend(_coerce_slot_value(key, value))
                 setattr(slot, key, current_value)
     if modification.remove:
         for key in modification.remove:
