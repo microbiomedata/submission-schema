@@ -1,6 +1,6 @@
 import pytest
 from linkml_runtime import SchemaView
-from linkml_runtime.linkml_model import Example
+from linkml_runtime.linkml_model import Example, SlotDefinition
 from linkml_runtime.linkml_model.meta import PatternExpression, Setting
 from linkml_runtime.linkml_model.units import UnitOfMeasure
 
@@ -9,6 +9,7 @@ from tools.schematools.importer import (
     ImporterConfig,
     SlotImport,
     SlotModification,
+    apply_slot_modification,
 )
 
 
@@ -659,6 +660,14 @@ settings:
 
     target_schema.materialize_patterns()
     assert "[A-Z]+:[0-9]+" in modified_slot.pattern
+
+
+def test_apply_slot_modification_replaces_slot_name():
+    """A replacement of the slot name should set the new name."""
+
+    slot = SlotDefinition(name="a")
+    apply_slot_modification(slot, SlotModification(replace={"name": "renamed"}))
+    assert slot.name == "renamed"
 
 
 def test_import_elements_copies_subsets_used_by_slot(empty_target_schema):

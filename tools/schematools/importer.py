@@ -64,7 +64,8 @@ def _coerce_slot_value(key: str, value: Any) -> Any:
     """
     if value is None:
         return None
-    return getattr(SlotDefinition(name="_", **{key: value}), key)
+    # The placeholder name comes first so that a replacement of "name" itself overrides it.
+    return getattr(SlotDefinition(**{"name": "_", key: value}), key)
 
 
 def apply_slot_modification(
