@@ -2842,7 +2842,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "linkml-runtime", specifier = ">=1.6.2,<2" },
-    { name = "rdflib", specifier = ">=6.2.0" },
+    { name = "rdflib", specifier = ">=6.2.0,<8" },
 ]
 
 [package.metadata.requires-dev]
