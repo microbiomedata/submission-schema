@@ -11,7 +11,7 @@ from linkml_runtime.linkml_model import (
     SlotDefinition,
     TypeDefinition, SubsetDefinition,
 )
-from pydantic import BaseModel
+from pydantic import BaseModel, model_validator
 
 LOGGER = logging.getLogger(__name__)
 
@@ -23,6 +23,16 @@ class SlotModification(BaseModel):
     replace: Optional[dict[str, Any]] = None
     append: Optional[dict[str, Any]] = None
     remove: Optional[list[str]] = None
+
+    @model_validator(mode="after")
+    def _reject_name_changes(self) -> "SlotModification":
+        """The importer looks slots up by their nmdc-schema name, so renaming is not supported."""
+        if "name" in (self.replace or {}) or "name" in (self.remove or []):
+            raise ValueError(
+                "Slot modifications cannot replace or remove 'name'. Renaming an imported "
+                "slot is not supported; the build looks slots up by their nmdc-schema name."
+            )
+        return self
 
 
 class SlotImport(BaseModel):
@@ -64,7 +74,6 @@ def _coerce_slot_value(key: str, value: Any) -> Any:
     """
     if value is None:
         return None
-    # The placeholder name comes first so that a replacement of "name" itself overrides it.
     return getattr(SlotDefinition(**{"name": "_", key: value}), key)
 
 
