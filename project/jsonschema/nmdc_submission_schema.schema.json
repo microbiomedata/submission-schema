@@ -369,7 +369,17 @@
                 "bulk chemistry",
                 "amplicon sequencing assay",
                 "isolate genome sequencing",
-                "isolate transcriptome sequencing"
+                "isolate transcriptome sequencing",
+                "proteomics",
+                "molecular structure",
+                "chemical speciation mapping",
+                "isotope profiling",
+                "imaging - xray",
+                "imaging - electron",
+                "imaging - ion",
+                "imaging - light",
+                "hydraulic properties",
+                "other emsl analyses"
             ],
             "title": "AnalysisTypeEnum",
             "type": "string"
@@ -1922,7 +1932,7 @@
                 },
                 "season": {
                     "$ref": "#/$defs/SeasonEnum",
-                    "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)"
+                    "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices."
                 },
                 "season_use": {
                     "$ref": "#/$defs/SeasonUseEnum",
@@ -2655,6 +2665,7 @@
                 "Cephalochordata",
                 "Ciliophora",
                 "Cnidaria",
+                "DWTP",
                 "Drugs production",
                 "Endosymbionts",
                 "Fish",
@@ -3546,6 +3557,7 @@
                 "Fermented seafood",
                 "Fermented vegetables",
                 "Fetus",
+                "Filtered water",
                 "Fish products",
                 "Floodplain",
                 "Food sample",
@@ -3676,6 +3688,7 @@
                 "SBR-EBPR",
                 "SSF (Solid state fermentation)",
                 "Salt",
+                "Sand filter",
                 "Sand microcosm",
                 "Sap",
                 "Saprolite\u2013Bedrock interface",
@@ -5203,7 +5216,7 @@
                     ]
                 },
                 "pour_point": {
-                    "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
+                    "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material.",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$",
                     "type": [
                         "number",
@@ -5984,7 +5997,7 @@
                     ]
                 },
                 "pour_point": {
-                    "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
+                    "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material.",
                     "pattern": "^[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$",
                     "type": [
                         "number",
@@ -9522,7 +9535,8 @@
                 "Battelle",
                 "ANL",
                 "UCD_Genome_Center",
-                "Azenta"
+                "Azenta",
+                "SeqCenter"
             ],
             "title": "ProcessingInstitutionEnum",
             "type": "string"
@@ -11172,14 +11186,6 @@
                 },
                 "collection_time": {
                     "description": "The time of sampling, either as an instance (single point) or interval.",
-                    "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "collection_time_inc": {
-                    "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
                     "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$",
                     "type": [
                         "string",
@@ -13042,6 +13048,7 @@
                 "mg",
                 "umol/L/h",
                 "g/cm3",
+                "g/mL",
                 "g/L",
                 "wk",
                 "[g]",

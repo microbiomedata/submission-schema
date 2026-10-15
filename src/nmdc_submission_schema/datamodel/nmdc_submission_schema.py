@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-09-17T15:44:59
+# Generation date: 2026-10-15T12:42:59
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -126,6 +126,8 @@ BIOPROJECT = CurieNamespace('bioproject', 'https://bioregistry.io/bioproject:')
 BIOSAMPLE = CurieNamespace('biosample', 'https://bioregistry.io/biosample:')
 CAS = CurieNamespace('cas', 'https://bioregistry.io/cas:')
 CCUG = CurieNamespace('ccug', 'https://www.ccug.se/strain?id=')
+CHRONO = CurieNamespace('chrono', 'http://rs.tdwg.org/chrono/terms/')
+DC = CurieNamespace('dc', 'http://purl.org/dc/elements/1.1/')
 DCM = CurieNamespace('dcm', 'https://kbase.github.io/credit_engine/')
 DCTERMS = CurieNamespace('dcterms', 'http://purl.org/dc/terms/')
 DOI = CurieNamespace('doi', 'https://bioregistry.io/doi:')
@@ -658,7 +660,6 @@ class SoilMixsInspiredMixin(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = NMDC_SUB_SCHEMA.SoilMixsInspiredMixin
 
     collection_time: Optional[str] = None
-    collection_time_inc: Optional[str] = None
     experimental_factor_other: Optional[str] = None
     filter_method: Optional[str] = None
     isotope_exposure: Optional[str] = None
@@ -676,9 +677,6 @@ class SoilMixsInspiredMixin(YAMLRoot):
     def __post_init__(self, *_: str, **kwargs: Any):
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
-
-        if self.collection_time_inc is not None and not isinstance(self.collection_time_inc, str):
-            self.collection_time_inc = str(self.collection_time_inc)
 
         if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
             self.experimental_factor_other = str(self.experimental_factor_other)
@@ -721,9 +719,6 @@ class SoilMixsInspiredMixin(YAMLRoot):
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
-
-        if self.collection_time_inc is not None and not isinstance(self.collection_time_inc, str):
-            self.collection_time_inc = str(self.collection_time_inc)
 
         if self.experimental_factor_other is not None and not isinstance(self.experimental_factor_other, str):
             self.experimental_factor_other = str(self.experimental_factor_other)
@@ -5340,7 +5335,6 @@ class SoilInterface(DhInterface):
     chem_administration: Optional[str] = None
     climate_environment: Optional[str] = None
     collection_time: Optional[str] = None
-    collection_time_inc: Optional[str] = None
     crop_rotation: Optional[str] = None
     cur_land_use: Optional[str] = None
     cur_vegetation: Optional[str] = None
@@ -5538,9 +5532,6 @@ class SoilInterface(DhInterface):
 
         if self.collection_time is not None and not isinstance(self.collection_time, str):
             self.collection_time = str(self.collection_time)
-
-        if self.collection_time_inc is not None and not isinstance(self.collection_time_inc, str):
-            self.collection_time_inc = str(self.collection_time_inc)
 
         if self.crop_rotation is not None and not isinstance(self.crop_rotation, str):
             self.crop_rotation = str(self.crop_rotation)
@@ -7911,6 +7902,10 @@ class UnitEnum(EnumDefinitionImpl):
             PermissibleValue(
                 text="g/cm3",
                 description="""The Unified Code for Units of Measure (UCUM) representation of grams per cubic centimeter."""))
+        setattr(cls, "g/mL",
+            PermissibleValue(
+                text="g/mL",
+                description="The Unified Code for Units of Measure (UCUM) representation of grams per milliliter."))
         setattr(cls, "g/L",
             PermissibleValue(
                 text="g/L",
@@ -8009,6 +8004,9 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
     metatranscriptomics = PermissibleValue(
         text="metatranscriptomics",
         description="Short-read metatranscriptomic sequencing of RNA from a mixed community.")
+    proteomics = PermissibleValue(
+        text="proteomics",
+        description="Mass spectrometry-based analysis of proteins from a single organism.")
 
     _defn = EnumDefinition(
         name="AnalysisTypeEnum",
@@ -8039,6 +8037,42 @@ class AnalysisTypeEnum(EnumDefinitionImpl):
                 text="isolate transcriptome sequencing",
                 title="Isolate transcriptome sequencing",
                 description="Sequencing of RNA from an isolated organism, such as a pure culture."))
+        setattr(cls, "molecular structure",
+            PermissibleValue(
+                text="molecular structure",
+                description="Analysis of the configuration and arrangement of atoms within molecules of a sample."))
+        setattr(cls, "chemical speciation mapping",
+            PermissibleValue(
+                text="chemical speciation mapping",
+                description="""Identification and/or measurement of specific forms (isotopes, redox state, molecular structure, etc.) of one or more elements in a sample."""))
+        setattr(cls, "isotope profiling",
+            PermissibleValue(
+                text="isotope profiling",
+                description="""Measurement of stable isotope ratios in a sample, typically for hydrogen, carbon, nitrogen, or oxygen."""))
+        setattr(cls, "imaging - xray",
+            PermissibleValue(
+                text="imaging - xray",
+                description="""A technique that uses X-rays to generate an image of a sample based on how strongly the different components absorb X-rays. Resulting images may be assembled into a 3D computer model."""))
+        setattr(cls, "imaging - electron",
+            PermissibleValue(
+                text="imaging - electron",
+                description="""A microscopy technique that uses beams of electrons to scan a sample and generate images."""))
+        setattr(cls, "imaging - ion",
+            PermissibleValue(
+                text="imaging - ion",
+                description="A microscopy technique that uses ions to scan a sample and generate images."))
+        setattr(cls, "imaging - light",
+            PermissibleValue(
+                text="imaging - light",
+                description="A microscopy technique that uses visible light to generate images of a sample."))
+        setattr(cls, "hydraulic properties",
+            PermissibleValue(
+                text="hydraulic properties",
+                description="""Measurement of the relative permeability-saturation-capillary pressure (k-s-p) relations of a sample."""))
+        setattr(cls, "other emsl analyses",
+            PermissibleValue(
+                text="other emsl analyses",
+                description="Other analyses planned at EMSL that are not listed here."))
 
 class ArchStrucEnum(EnumDefinitionImpl):
 
@@ -9649,6 +9683,10 @@ class ProcessingInstitutionEnum(EnumDefinitionImpl):
         text="Azenta",
         title="Azenta Life Sciences",
         meaning=None)
+    SeqCenter = PermissibleValue(
+        text="SeqCenter",
+        title="SeqCenter",
+        meaning=None)
 
     _defn = EnumDefinition(
         name="ProcessingInstitutionEnum",
@@ -9734,6 +9772,7 @@ class EcosystemCategoryEnum(EnumDefinitionImpl):
     Cephalochordata = PermissibleValue(text="Cephalochordata")
     Ciliophora = PermissibleValue(text="Ciliophora")
     Cnidaria = PermissibleValue(text="Cnidaria")
+    DWTP = PermissibleValue(text="DWTP")
     Endosymbionts = PermissibleValue(text="Endosymbionts")
     Fish = PermissibleValue(text="Fish")
     Fungi = PermissibleValue(text="Fungi")
@@ -10036,6 +10075,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Fermented seafood"))
         setattr(cls, "Fermented vegetables",
             PermissibleValue(text="Fermented vegetables"))
+        setattr(cls, "Filtered water",
+            PermissibleValue(text="Filtered water"))
         setattr(cls, "Fish products",
             PermissibleValue(text="Fish products"))
         setattr(cls, "Food sample",
@@ -10188,6 +10229,8 @@ class EcosystemTypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="SBR-EBPR"))
         setattr(cls, "SSF (Solid state fermentation)",
             PermissibleValue(text="SSF (Solid state fermentation)"))
+        setattr(cls, "Sand filter",
+            PermissibleValue(text="Sand filter"))
         setattr(cls, "Sand microcosm",
             PermissibleValue(text="Sand microcosm"))
         setattr(cls, "Saprolite–Bedrock interface",
@@ -14898,10 +14941,6 @@ slots.collection_time = Slot(uri=NMDC_SUB_SCHEMA.collection_time, name="collecti
                    model_uri=NMDC_SUB_SCHEMA.collection_time, domain=None, range=Optional[str],
                    pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
 
-slots.collection_time_inc = Slot(uri=NMDC_SUB_SCHEMA.collection_time_inc, name="collection_time_inc", curie=NMDC_SUB_SCHEMA.curie('collection_time_inc'),
-                   model_uri=NMDC_SUB_SCHEMA.collection_time_inc, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^([01]?\d|2[0-3]|24(?=:00?:00?$)):([0-5]\d)(:([0-5]\d))?$'))
-
 slots.conduc = Slot(uri=MIXS['0000692'], name="conduc", curie=MIXS.curie('0000692'),
                    model_uri=NMDC_SUB_SCHEMA.conduc, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
@@ -15861,7 +15900,7 @@ slots.salinity = Slot(uri=MIXS['0000183'], name="salinity", curie=MIXS.curie('00
                    model_uri=NMDC_SUB_SCHEMA.salinity, domain=None, range=Optional[str],
                    pattern=re.compile(r'^[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?( *- *[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?)? *.*$'))
 
-slots.salinity_meth = Slot(uri=MIXS['0000341'], name="salinity_meth", curie=MIXS.curie('0000341'),
+slots.salinity_meth = Slot(uri=NMDC_SUB_SCHEMA.salinity_meth, name="salinity_meth", curie=NMDC_SUB_SCHEMA.curie('salinity_meth'),
                    model_uri=NMDC_SUB_SCHEMA.salinity_meth, domain=None, range=Optional[str],
                    pattern=re.compile(r'^(PMID:\d+|doi:10\.\d{2,9}/.*|https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*))$'))
 

@@ -440,6 +440,14 @@
       "prefix_prefix": "nbrc",
       "prefix_reference": "http://www.nbrc.nite.go.jp/NBRC2/NBRCCatalogueDetailServlet?ID=NBRC&CAT="
     },
+    "chrono": {
+      "prefix_prefix": "chrono",
+      "prefix_reference": "http://rs.tdwg.org/chrono/terms/"
+    },
+    "dc": {
+      "prefix_prefix": "dc",
+      "prefix_reference": "http://purl.org/dc/elements/1.1/"
+    },
     "TAXRANK": {
       "prefix_prefix": "TAXRANK",
       "prefix_reference": "http://purl.obolibrary.org/obo/TAXRANK_"
@@ -2051,6 +2059,13 @@
             "grams per cubic centimeter"
           ]
         },
+        "g/mL": {
+          "text": "g/mL",
+          "description": "The Unified Code for Units of Measure (UCUM) representation of grams per milliliter.",
+          "aliases": [
+            "grams per milliliter"
+          ]
+        },
         "g/L": {
           "text": "g/L",
           "description": "The Unified Code for Units of Measure (UCUM) representation of grams per liter.",
@@ -2287,6 +2302,46 @@
           "broad_mappings": [
             "OBI:0001177"
           ]
+        },
+        "proteomics": {
+          "text": "proteomics",
+          "description": "Mass spectrometry-based analysis of proteins from a single organism."
+        },
+        "molecular structure": {
+          "text": "molecular structure",
+          "description": "Analysis of the configuration and arrangement of atoms within molecules of a sample."
+        },
+        "chemical speciation mapping": {
+          "text": "chemical speciation mapping",
+          "description": "Identification and/or measurement of specific forms (isotopes, redox state, molecular structure, etc.) of one or more elements in a sample."
+        },
+        "isotope profiling": {
+          "text": "isotope profiling",
+          "description": "Measurement of stable isotope ratios in a sample, typically for hydrogen, carbon, nitrogen, or oxygen."
+        },
+        "imaging - xray": {
+          "text": "imaging - xray",
+          "description": "A technique that uses X-rays to generate an image of a sample based on how strongly the different components absorb X-rays. Resulting images may be assembled into a 3D computer model."
+        },
+        "imaging - electron": {
+          "text": "imaging - electron",
+          "description": "A microscopy technique that uses beams of electrons to scan a sample and generate images."
+        },
+        "imaging - ion": {
+          "text": "imaging - ion",
+          "description": "A microscopy technique that uses ions to scan a sample and generate images."
+        },
+        "imaging - light": {
+          "text": "imaging - light",
+          "description": "A microscopy technique that uses visible light to generate images of a sample."
+        },
+        "hydraulic properties": {
+          "text": "hydraulic properties",
+          "description": "Measurement of the relative permeability-saturation-capillary pressure (k-s-p) relations of a sample."
+        },
+        "other emsl analyses": {
+          "text": "other emsl analyses",
+          "description": "Other analyses planned at EMSL that are not listed here."
         }
       }
     },
@@ -4627,6 +4682,11 @@
           "text": "Azenta",
           "meaning": "https://www.azenta.com/",
           "title": "Azenta Life Sciences"
+        },
+        "SeqCenter": {
+          "text": "SeqCenter",
+          "meaning": "https://www.seqcenter.com/",
+          "title": "SeqCenter"
         }
       }
     },
@@ -4941,6 +5001,9 @@
         },
         "Cnidaria": {
           "text": "Cnidaria"
+        },
+        "DWTP": {
+          "text": "DWTP"
         },
         "Drugs production": {
           "text": "Drugs production"
@@ -5319,6 +5382,9 @@
         },
         "Fetus": {
           "text": "Fetus"
+        },
+        "Filtered water": {
+          "text": "Filtered water"
         },
         "Fish products": {
           "text": "Fish products"
@@ -5709,6 +5775,9 @@
         },
         "Salt": {
           "text": "Salt"
+        },
+        "Sand filter": {
+          "text": "Sand filter"
         },
         "Sand microcosm": {
           "text": "Sand microcosm"
@@ -10635,23 +10704,17 @@
             "Illumina NovaSeq S2": {
               "literal_form": "Illumina NovaSeq S2",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "Illumina NovaSeq S4": {
               "literal_form": "Illumina NovaSeq S4",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "Illumina NovaSeq SP": {
               "literal_form": "Illumina NovaSeq SP",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
@@ -10671,9 +10734,7 @@
             "Illumina NovaSeq X 25B": {
               "literal_form": "Illumina NovaSeq X 25B",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           },
           "exact_mappings": [
@@ -10721,16 +10782,12 @@
             "Illumina HiSeq 2500-1TB": {
               "literal_form": "Illumina HiSeq 2500-1TB",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "Illumina HiSeq 2500-Rapid": {
               "literal_form": "Illumina HiSeq 2500-Rapid",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
@@ -10773,9 +10830,7 @@
             "Illumina MiSeq": {
               "literal_form": "Illumina MiSeq",
               "predicate": "EXACT_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
@@ -10797,16 +10852,12 @@
             "Illumina NextSeq-HO": {
               "literal_form": "Illumina NextSeq-HO",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             },
             "Illumina NextSeq-MO": {
               "literal_form": "Illumina NextSeq-MO",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://gold.jgi.doe.gov/"
-              ]
+              "source": "https://gold.jgi.doe.gov/"
             }
           }
         },
@@ -14476,6 +14527,7 @@
     "type": {
       "name": "type",
       "description": "the class_uri of the class that has been instantiated",
+      "title": "Type",
       "notes": [
         "makes it easier to read example data files",
         "required for polymorphic MongoDB collections"
@@ -14496,9 +14548,10 @@
         "workflow_execution_class": {
           "literal_form": "workflow_execution_class",
           "predicate": "NARROW_SYNONYM",
-          "contexts": [
-            "https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml"
-          ]
+          "notes": [
+            "JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml); source is the public NMDC page describing how JAT is used."
+          ],
+          "source": "https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md"
         }
       },
       "slot_uri": "rdf:type",
@@ -14820,6 +14873,12 @@
     },
     "al_sat_meth": {
       "name": "al_sat_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "al_sat"
+        }
+      },
       "description": "Reference or method used in determining Aluminum saturation",
       "title": "aluminum saturation method/ extreme unusual properties",
       "todos": [
@@ -14912,6 +14971,12 @@
     },
     "alkalinity_method": {
       "name": "alkalinity_method",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "alkalinity"
+        }
+      },
       "description": "Method used for alkalinity measurement",
       "title": "alkalinity method",
       "examples": [
@@ -15945,6 +16010,10 @@
         "Preferred_unit": {
           "tag": "Preferred_unit",
           "value": "milligram per liter"
+        },
+        "method_for": {
+          "tag": "method_for",
+          "value": "biocide"
         }
       },
       "description": "Method of biocide administration (dose, frequency, duration, time elapsed between last biociding and sampling) (e.g. 150 mg/l; weekly; 4 hr; 3 days)",
@@ -16919,6 +16988,10 @@
         "Preferred_unit": {
           "tag": "Preferred_unit",
           "value": "milligram per liter"
+        },
+        "method_for": {
+          "tag": "method_for",
+          "value": "chem_treatment"
         }
       },
       "description": "Method of chemical administration(dose, frequency, duration, time elapsed between administration and sampling) (e.g. 50 mg/l; twice a week; 1 hr; 0 days)",
@@ -17161,46 +17234,6 @@
       "recommended": true,
       "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$"
     },
-    "collection_time_inc": {
-      "name": "collection_time_inc",
-      "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-      "title": "incubation collection time, GMT",
-      "deprecated": "This slot is directly replaced by collection_time. Any instances that would use collection_time_inc should use collection_time instead.",
-      "notes": [
-        "MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional time only"
-      ],
-      "comments": [
-        "Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter"
-      ],
-      "examples": [
-        {
-          "value": "13:33"
-        },
-        {
-          "value": "13:33:55"
-        }
-      ],
-      "from_schema": "https://example.com/nmdc_submission_schema",
-      "see_also": [
-        "MIXS:0000011"
-      ],
-      "deprecated_element_has_exact_replacement": "collection_time",
-      "contributors": [
-        "orcid:0009-0008-4013-7737"
-      ],
-      "last_updated_on": "2026-09-04T00:00:00+00:00",
-      "modified_by": "orcid:0009-0008-4013-7737",
-      "rank": 3,
-      "string_serialization": "{time, seconds optional}",
-      "domain_of": [
-        "SoilInterface",
-        "SoilMixsInspiredMixin"
-      ],
-      "slot_group": "mixs_inspired_section",
-      "range": "string",
-      "recommended": true,
-      "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$"
-    },
     "conduc": {
       "name": "conduc",
       "annotations": {
@@ -17386,6 +17419,12 @@
     },
     "cur_vegetation_meth": {
       "name": "cur_vegetation_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "cur_vegetation"
+        }
+      },
       "description": "Reference or method used in vegetation classification",
       "title": "current vegetation method",
       "todos": [
@@ -18463,6 +18502,7 @@
     "ecosystem": {
       "name": "ecosystem",
       "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+      "title": "Ecosystem",
       "comments": [
         "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
       ],
@@ -18512,6 +18552,7 @@
     "ecosystem_category": {
       "name": "ecosystem_category",
       "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+      "title": "Ecosystem Category",
       "comments": [
         "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
       ],
@@ -18542,6 +18583,7 @@
     "ecosystem_subtype": {
       "name": "ecosystem_subtype",
       "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+      "title": "Ecosystem Subtype",
       "comments": [
         "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
       ],
@@ -18572,6 +18614,7 @@
     "ecosystem_type": {
       "name": "ecosystem_type",
       "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+      "title": "Ecosystem Type",
       "comments": [
         "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
       ],
@@ -18827,33 +18870,31 @@
     "id": {
       "name": "id",
       "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+      "title": "ID",
       "notes": [
         "abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?",
         "a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted",
         "typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions",
-        "minting authority shoulders should probably be enumerated and checked in the pattern"
-      ],
-      "examples": [
-        {
-          "value": "nmdc:mgmag-00-x012.1_7_c1",
-          "description": "https://github.com/microbiomedata/nmdc-schema/pull/499#discussion_r1018499248"
-        }
+        "minting authority shoulders should probably be enumerated and checked in the pattern",
+        "This slot has no examples on purpose. linkml 1.12 copies a slot's examples into every class that uses it, and no single id matches every class id pattern (https://github.com/microbiomedata/nmdc-schema/issues/3540). Id examples belong in each class's slot_usage."
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "structured_aliases": {
         "workflow_execution_id": {
           "literal_form": "workflow_execution_id",
           "predicate": "NARROW_SYNONYM",
-          "contexts": [
-            "https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml"
-          ]
+          "notes": [
+            "JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml); source is the public NMDC page describing how JAT is used."
+          ],
+          "source": "https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md"
         },
         "data_object_id": {
           "literal_form": "data_object_id",
           "predicate": "NARROW_SYNONYM",
-          "contexts": [
-            "https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml"
-          ]
+          "notes": [
+            "JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml); source is the public NMDC page describing how JAT is used."
+          ],
+          "source": "https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md"
         }
       },
       "identifier": true,
@@ -18867,6 +18908,7 @@
     "name": {
       "name": "name",
       "description": "A human readable label for an entity",
+      "title": "Name",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "domain_of": [
         "NamedThing"
@@ -18876,6 +18918,7 @@
     "description": {
       "name": "description",
       "description": "a human-readable description of a thing",
+      "title": "Description",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "slot_uri": "dcterms:description",
       "domain_of": [
@@ -18886,6 +18929,7 @@
     "alternative_identifiers": {
       "name": "alternative_identifiers",
       "description": "A list of alternative identifiers for the entity.",
+      "title": "Alternative Identifiers",
       "from_schema": "https://example.com/nmdc_submission_schema",
       "domain_of": [
         "NamedThing"
@@ -20564,6 +20608,12 @@
     },
     "heavy_metals_meth": {
       "name": "heavy_metals_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "heavy_metals"
+        }
+      },
       "description": "Reference or method used in determining heavy metals",
       "title": "heavy metals method/ extreme unusual properties",
       "comments": [
@@ -20670,6 +20720,12 @@
     },
     "horizon_meth": {
       "name": "horizon_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "soil_horizon"
+        }
+      },
       "description": "Reference or method used in determining the horizon",
       "title": "horizon method",
       "examples": [
@@ -21037,8 +21093,8 @@
       },
       "description": "Familial relationships to other hosts in the same study; can include multiple relationships.",
       "title": "host family relationship",
-      "comments": [
-        "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+      "notes": [
+        "MIxS defined this slot through v6.1.1 and dropped it in v6.2.0. Retained for submission-schema compatibility."
       ],
       "examples": [
         {
@@ -21750,6 +21806,7 @@
     "infiltrations": {
       "name": "infiltrations",
       "description": "The amount of time it takes to complete each infiltration activity",
+      "title": "Infiltrations",
       "examples": [
         {
           "value": "00:01:32;00:00:53"
@@ -22357,6 +22414,12 @@
     },
     "local_class_meth": {
       "name": "local_class_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "local_class"
+        }
+      },
       "description": "Reference or method used in determining the local soil classification",
       "title": "soil_taxonomic/local classification method",
       "examples": [
@@ -22689,6 +22752,12 @@
     },
     "micro_biomass_c_meth": {
       "name": "micro_biomass_c_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "microbial_biomass_c"
+        }
+      },
       "description": "Reference or method used in determining microbial biomass carbon",
       "title": "microbial biomass carbon method",
       "todos": [
@@ -22722,6 +22791,12 @@
     },
     "micro_biomass_meth": {
       "name": "micro_biomass_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "microbial_biomass"
+        }
+      },
       "description": "Reference or method used in determining microbial biomass",
       "title": "microbial biomass method",
       "comments": [
@@ -22752,6 +22827,12 @@
     },
     "micro_biomass_n_meth": {
       "name": "micro_biomass_n_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "microbial_biomass_n"
+        }
+      },
       "description": "Reference or method used in determining microbial biomass nitrogen",
       "title": "microbial biomass nitrogen method",
       "comments": [
@@ -23206,6 +23287,12 @@
     },
     "non_microb_biomass_method": {
       "name": "non_microb_biomass_method",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "non_microb_biomass"
+        }
+      },
       "description": "Reference or method used in determining biomass",
       "title": "non-microbial biomass method",
       "comments": [
@@ -23626,6 +23713,12 @@
     },
     "org_nitro_method": {
       "name": "org_nitro_method",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "org_nitro"
+        }
+      },
       "description": "Method used for obtaining organic nitrogen",
       "title": "organic nitrogen method",
       "comments": [
@@ -24160,6 +24253,12 @@
     },
     "ph_meth": {
       "name": "ph_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "ph"
+        }
+      },
       "description": "Reference or method used in determining pH",
       "title": "pH method",
       "comments": [
@@ -24381,6 +24480,11 @@
       "name": "plant_growth_med",
       "description": "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from the Plant Environment Ontology (PECO), plant growth medium exposure (http://purl.obolibrary.org/obo/PECO_0007147), or other controlled vocabulary.",
       "title": "plant growth medium",
+      "examples": [
+        {
+          "value": "hydroponic plant culture media exposure [PECO:0007067]"
+        }
+      ],
       "from_schema": "https://example.com/nmdc_submission_schema",
       "rank": 267,
       "keywords": [
@@ -24597,12 +24701,15 @@
           "value": "Cel"
         }
       },
-      "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
+      "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material.",
       "title": "pour point",
       "comments": [
         "Value must be reported in degrees Celsius. Provide the numeric portion only."
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
+      "see_also": [
+        "https://en.wikipedia.org/wiki/pour_point"
+      ],
       "rank": 341,
       "slot_uri": "MIXS:0000127",
       "domain_of": [
@@ -24720,6 +24827,12 @@
     },
     "prev_land_use_meth": {
       "name": "prev_land_use_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "previous_land_use"
+        }
+      },
       "description": "Reference or method used in determining previous land use and dates",
       "title": "history/previous land use method",
       "examples": [
@@ -26024,6 +26137,10 @@
     "salinity_meth": {
       "name": "salinity_meth",
       "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "salinity"
+        },
         "Expected_value": {
           "tag": "Expected_value",
           "value": "PMID,DOI or url"
@@ -26031,8 +26148,10 @@
       },
       "description": "Reference or method used in determining salinity.",
       "title": "salinity method",
-      "comments": [
-        "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+      "notes": [
+        "MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS v6.2.0 by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with no deprecation, rename or successor.",
+        "MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404 on 2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc: URI.",
+        "Retained for submission-schema compatibility."
       ],
       "examples": [
         {
@@ -26043,8 +26162,12 @@
         }
       ],
       "from_schema": "https://example.com/nmdc_submission_schema",
+      "see_also": [
+        "https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308",
+        "https://github.com/GenomicsStandardsConsortium/mixs/issues/1361",
+        "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1"
+      ],
       "rank": 55,
-      "slot_uri": "MIXS:0000341",
       "domain_of": [
         "PlantAssociatedInterface",
         "SedimentInterface",
@@ -26169,9 +26292,8 @@
       "structured_aliases": {
         "samp_collect_method": {
           "literal_form": "samp_collect_method",
-          "contexts": [
-            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-          ]
+          "predicate": "EXACT_SYNONYM",
+          "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
         }
       },
       "rank": 15,
@@ -26983,7 +27105,7 @@
     },
     "season": {
       "name": "season",
-      "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)",
+      "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices.",
       "title": "season",
       "examples": [
         {
@@ -27091,7 +27213,8 @@
       "description": "Mean seasonal temperature",
       "title": "mean seasonal temperature",
       "comments": [
-        "Value must be reported in degrees Celsius. Provide the numeric portion only."
+        "Value must be reported in degrees Celsius. Provide the numeric portion only.",
+        "this slot should not be populated unless season is also populated"
       ],
       "examples": [
         {
@@ -27739,8 +27862,10 @@
       },
       "description": "The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
       "title": "soil texture measurement",
+      "notes": [
+        "MIxS defined this slot through v6.1.1 and dropped it in v6.2.0. Retained for submission-schema compatibility."
+      ],
       "comments": [
-        "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility.",
         "Old MIxS used 'quantity value' range but this is clearly structured text, not a single quantity."
       ],
       "examples": [
@@ -27760,6 +27885,12 @@
     },
     "soil_texture_meth": {
       "name": "soil_texture_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "soil_text_measure"
+        }
+      },
       "description": "Reference or method used in determining soil texture",
       "title": "soil texture method",
       "examples": [
@@ -27811,6 +27942,12 @@
     },
     "soil_type_meth": {
       "name": "soil_type_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "soil_type"
+        }
+      },
       "description": "Reference or method used in determining soil series name or other lower-level classification",
       "title": "soil type method",
       "examples": [
@@ -28075,6 +28212,7 @@
     "specific_ecosystem": {
       "name": "specific_ecosystem",
       "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+      "title": "Specific Ecosystem",
       "comments": [
         "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
       ],
@@ -28332,6 +28470,12 @@
       "name": "store_cond",
       "description": "Explain how the soil sample is stored (fresh/frozen/other).",
       "title": "storage conditions",
+      "notes": [
+        "The MIxS v7.0.1 description (MIXS:0000327) combines the definition, submitter guidance and example values in one string. NMDC keeps only the definition in description and moves the guidance to comments, so that description holds a definition and example values stay in examples."
+      ],
+      "comments": [
+        "State whether the sample was fresh, frozen or stored another way, and record factors that may affect nucleic acid recovery or library construction: temperature, humidity and microbial overgrowth."
+      ],
       "examples": [
         {
           "value": "frozen"
@@ -29344,6 +29488,12 @@
     },
     "tot_nitro_cont_meth": {
       "name": "tot_nitro_cont_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "tot_nitro_content"
+        }
+      },
       "description": "Reference or method used in determining the total nitrogen",
       "title": "total nitrogen content method",
       "examples": [
@@ -29421,6 +29571,12 @@
     },
     "tot_org_c_meth": {
       "name": "tot_org_c_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "tot_org_carb"
+        }
+      },
       "description": "Reference or method used in determining total organic carbon",
       "title": "total organic carbon method",
       "examples": [
@@ -30378,6 +30534,12 @@
     },
     "water_cont_soil_meth": {
       "name": "water_cont_soil_meth",
+      "annotations": {
+        "method_for": {
+          "tag": "method_for",
+          "value": "water_content"
+        }
+      },
       "description": "Reference or method used in determining the water content of soil",
       "title": "water content method",
       "todos": [
@@ -31591,6 +31753,7 @@
     "host_genus": {
       "name": "host_genus",
       "description": "Genus of the host organism that the sample was collected from.",
+      "title": "Host Genus",
       "notes": [
         "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
         "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -31632,6 +31795,7 @@
     "host_species": {
       "name": "host_species",
       "description": "Species of the host organism that the sample was collected from.",
+      "title": "Host Species",
       "notes": [
         "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
         "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -31673,6 +31837,7 @@
     "host_strain": {
       "name": "host_strain",
       "description": "Strain of the host organism that the sample was collected from.",
+      "title": "Host Strain",
       "notes": [
         "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
       ],
@@ -32209,6 +32374,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -32241,6 +32407,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -32273,6 +32440,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -32305,6 +32473,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -33151,9 +33320,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -33533,6 +33701,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -35199,6 +35368,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -35231,6 +35401,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -35263,6 +35434,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -35295,6 +35467,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -36552,6 +36725,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -36971,9 +37150,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -37409,6 +37587,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -39628,6 +39807,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -39660,6 +39840,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -39692,6 +39873,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -39724,6 +39906,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -42218,7 +42401,7 @@
         },
         "season": {
           "name": "season",
-          "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices. This field accepts terms listed under season (http://purl.obolibrary.org/obo/NCIT_C94729)",
+          "description": "The season when sampling occurred. Any of the four periods into which the year is divided by the equinoxes and solstices.",
           "title": "season",
           "examples": [
             {
@@ -42467,6 +42650,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -44414,6 +44598,12 @@
         },
         "alkalinity_method": {
           "name": "alkalinity_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "alkalinity"
+            }
+          },
           "description": "Method used for alkalinity measurement",
           "title": "alkalinity method",
           "examples": [
@@ -45227,6 +45417,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -45259,6 +45450,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -45291,6 +45483,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -45323,6 +45516,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -46416,6 +46610,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -46543,12 +46743,15 @@
               "value": "Cel"
             }
           },
-          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
+          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material.",
           "title": "pour point",
           "comments": [
             "Value must be reported in degrees Celsius. Provide the numeric portion only."
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://en.wikipedia.org/wiki/pour_point"
+          ],
           "rank": 341,
           "slot_uri": "MIXS:0000127",
           "alias": "pour_point",
@@ -46780,9 +46983,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -47389,6 +47591,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -48729,6 +48932,12 @@
         },
         "alkalinity_method": {
           "name": "alkalinity_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "alkalinity"
+            }
+          },
           "description": "Method used for alkalinity measurement",
           "title": "alkalinity method",
           "examples": [
@@ -48989,6 +49198,10 @@
             "Preferred_unit": {
               "tag": "Preferred_unit",
               "value": "milligram per liter"
+            },
+            "method_for": {
+              "tag": "method_for",
+              "value": "biocide"
             }
           },
           "description": "Method of biocide administration (dose, frequency, duration, time elapsed between last biociding and sampling) (e.g. 150 mg/l; weekly; 4 hr; 3 days)",
@@ -49114,6 +49327,10 @@
             "Preferred_unit": {
               "tag": "Preferred_unit",
               "value": "milligram per liter"
+            },
+            "method_for": {
+              "tag": "method_for",
+              "value": "chem_treatment"
             }
           },
           "description": "Method of chemical administration(dose, frequency, duration, time elapsed between administration and sampling) (e.g. 50 mg/l; twice a week; 1 hr; 0 days)",
@@ -49664,6 +49881,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -49696,6 +49914,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -49728,6 +49947,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -49760,6 +49980,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -50856,6 +51077,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -50953,12 +51180,15 @@
               "value": "Cel"
             }
           },
-          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material. (source: https://en.wikipedia.org/wiki/pour_point)",
+          "description": "Temperature at which a liquid becomes semi solid and loses its flow characteristics. In crude oil a high pour point is generally associated with a high paraffin content, typically found in crude deriving from a larger proportion of plant material.",
           "title": "pour point",
           "comments": [
             "Value must be reported in degrees Celsius. Provide the numeric portion only."
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://en.wikipedia.org/wiki/pour_point"
+          ],
           "rank": 341,
           "slot_uri": "MIXS:0000127",
           "alias": "pour_point",
@@ -51258,9 +51488,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -51876,6 +52105,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -53395,6 +53625,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -53427,6 +53658,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -53459,6 +53691,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -53491,6 +53724,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -54272,8 +54506,8 @@
           },
           "description": "Familial relationships to other hosts in the same study; can include multiple relationships.",
           "title": "host family relationship",
-          "comments": [
-            "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+          "notes": [
+            "MIxS defined this slot through v6.1.1 and dropped it in v6.2.0. Retained for submission-schema compatibility."
           ],
           "examples": [
             {
@@ -55154,9 +55388,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -55521,6 +55754,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -59478,6 +59712,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -59510,6 +59745,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -59542,6 +59778,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -59574,6 +59811,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -60478,6 +60716,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -60816,9 +61060,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -61254,6 +61497,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -62365,6 +62609,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -62397,6 +62642,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -62429,6 +62675,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -62461,6 +62708,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -64169,6 +64417,11 @@
           "name": "plant_growth_med",
           "description": "Specification of the media for growing the plants or tissue cultured samples, e.g. soil, aeroponic, hydroponic, in vitro solid culture medium, in vitro liquid culture medium. Recommended value is a specific value from the Plant Environment Ontology (PECO), plant growth medium exposure (http://purl.obolibrary.org/obo/PECO_0007147), or other controlled vocabulary.",
           "title": "plant growth medium",
+          "examples": [
+            {
+              "value": "hydroponic plant culture media exposure [PECO:0007067]"
+            }
+          ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "rank": 267,
           "keywords": [
@@ -64660,6 +64913,10 @@
         "salinity_meth": {
           "name": "salinity_meth",
           "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "salinity"
+            },
             "Expected_value": {
               "tag": "Expected_value",
               "value": "PMID,DOI or url"
@@ -64667,8 +64924,10 @@
           },
           "description": "Reference or method used in determining salinity.",
           "title": "salinity method",
-          "comments": [
-            "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+          "notes": [
+            "MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS v6.2.0 by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with no deprecation, rename or successor.",
+            "MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404 on 2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc: URI.",
+            "Retained for submission-schema compatibility."
           ],
           "examples": [
             {
@@ -64679,8 +64938,12 @@
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308",
+            "https://github.com/GenomicsStandardsConsortium/mixs/issues/1361",
+            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1"
+          ],
           "rank": 55,
-          "slot_uri": "MIXS:0000341",
           "alias": "salinity_meth",
           "owner": "PlantAssociatedInterface",
           "domain_of": [
@@ -64813,9 +65076,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -65205,6 +65467,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -65966,6 +66229,12 @@
         },
         "alkalinity_method": {
           "name": "alkalinity_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "alkalinity"
+            }
+          },
           "description": "Method used for alkalinity measurement",
           "title": "alkalinity method",
           "examples": [
@@ -67132,6 +67401,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -67164,6 +67434,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -67196,6 +67467,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -67228,6 +67500,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -68168,6 +68441,12 @@
         },
         "micro_biomass_c_meth": {
           "name": "micro_biomass_c_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass_c"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass carbon",
           "title": "microbial biomass carbon method",
           "todos": [
@@ -68203,6 +68482,12 @@
         },
         "micro_biomass_meth": {
           "name": "micro_biomass_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass",
           "title": "microbial biomass method",
           "comments": [
@@ -68235,6 +68520,12 @@
         },
         "micro_biomass_n_meth": {
           "name": "micro_biomass_n_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass_n"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass nitrogen",
           "title": "microbial biomass nitrogen method",
           "comments": [
@@ -68695,6 +68986,12 @@
         },
         "org_nitro_method": {
           "name": "org_nitro_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "org_nitro"
+            }
+          },
           "description": "Method used for obtaining organic nitrogen",
           "title": "organic nitrogen method",
           "comments": [
@@ -69042,6 +69339,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -69435,6 +69738,10 @@
         "salinity_meth": {
           "name": "salinity_meth",
           "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "salinity"
+            },
             "Expected_value": {
               "tag": "Expected_value",
               "value": "PMID,DOI or url"
@@ -69442,8 +69749,10 @@
           },
           "description": "Reference or method used in determining salinity.",
           "title": "salinity method",
-          "comments": [
-            "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+          "notes": [
+            "MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS v6.2.0 by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with no deprecation, rename or successor.",
+            "MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404 on 2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc: URI.",
+            "Retained for submission-schema compatibility."
           ],
           "examples": [
             {
@@ -69454,8 +69763,12 @@
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308",
+            "https://github.com/GenomicsStandardsConsortium/mixs/issues/1361",
+            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1"
+          ],
           "rank": 55,
-          "slot_uri": "MIXS:0000341",
           "alias": "salinity_meth",
           "owner": "SedimentInterface",
           "domain_of": [
@@ -69532,9 +69845,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -70035,6 +70347,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -70382,6 +70695,12 @@
         },
         "tot_nitro_cont_meth": {
           "name": "tot_nitro_cont_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "tot_nitro_content"
+            }
+          },
           "description": "Reference or method used in determining the total nitrogen",
           "title": "total nitrogen content method",
           "examples": [
@@ -70463,6 +70782,12 @@
         },
         "tot_org_c_meth": {
           "name": "tot_org_c_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "tot_org_carb"
+            }
+          },
           "description": "Reference or method used in determining total organic carbon",
           "title": "total organic carbon method",
           "examples": [
@@ -70591,6 +70916,12 @@
         },
         "water_cont_soil_meth": {
           "name": "water_cont_soil_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "water_content"
+            }
+          },
           "description": "Reference or method used in determining the water content of soil",
           "title": "water content method",
           "todos": [
@@ -70921,7 +71252,6 @@
         "climate_environment",
         "collection_date",
         "collection_time",
-        "collection_time_inc",
         "crop_rotation",
         "cur_land_use",
         "cur_vegetation",
@@ -71322,6 +71652,12 @@
         },
         "al_sat_meth": {
           "name": "al_sat_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "al_sat"
+            }
+          },
           "description": "Reference or method used in determining Aluminum saturation",
           "title": "aluminum saturation method/ extreme unusual properties",
           "todos": [
@@ -71806,48 +72142,6 @@
           "recommended": true,
           "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$"
         },
-        "collection_time_inc": {
-          "name": "collection_time_inc",
-          "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection time, GMT",
-          "deprecated": "This slot is directly replaced by collection_time. Any instances that would use collection_time_inc should use collection_time instead.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional time only"
-          ],
-          "comments": [
-            "Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter"
-          ],
-          "examples": [
-            {
-              "value": "13:33"
-            },
-            {
-              "value": "13:33:55"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "deprecated_element_has_exact_replacement": "collection_time",
-          "contributors": [
-            "orcid:0009-0008-4013-7737"
-          ],
-          "last_updated_on": "2026-09-04T00:00:00+00:00",
-          "modified_by": "orcid:0009-0008-4013-7737",
-          "rank": 3,
-          "string_serialization": "{time, seconds optional}",
-          "alias": "collection_time_inc",
-          "owner": "SoilInterface",
-          "domain_of": [
-            "SoilInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
-          "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$"
-        },
         "crop_rotation": {
           "name": "crop_rotation",
           "annotations": {
@@ -71952,6 +72246,12 @@
         },
         "cur_vegetation_meth": {
           "name": "cur_vegetation_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "cur_vegetation"
+            }
+          },
           "description": "Reference or method used in vegetation classification",
           "title": "current vegetation method",
           "todos": [
@@ -72074,6 +72374,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -72106,6 +72407,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -72138,6 +72440,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -72170,6 +72473,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -72856,6 +73160,12 @@
         },
         "heavy_metals_meth": {
           "name": "heavy_metals_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "heavy_metals"
+            }
+          },
           "description": "Reference or method used in determining heavy metals",
           "title": "heavy metals method/ extreme unusual properties",
           "comments": [
@@ -72898,6 +73208,12 @@
         },
         "horizon_meth": {
           "name": "horizon_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "soil_horizon"
+            }
+          },
           "description": "Reference or method used in determining the horizon",
           "title": "horizon method",
           "examples": [
@@ -72972,6 +73288,7 @@
         "infiltrations": {
           "name": "infiltrations",
           "description": "The amount of time it takes to complete each infiltration activity",
+          "title": "Infiltrations",
           "examples": [
             {
               "value": "00:01:32;00:00:53"
@@ -73337,6 +73654,12 @@
         },
         "local_class_meth": {
           "name": "local_class_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "local_class"
+            }
+          },
           "description": "Reference or method used in determining the local soil classification",
           "title": "soil_taxonomic/local classification method",
           "examples": [
@@ -73414,6 +73737,12 @@
         },
         "micro_biomass_c_meth": {
           "name": "micro_biomass_c_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass_c"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass carbon",
           "title": "microbial biomass carbon method",
           "todos": [
@@ -73449,6 +73778,12 @@
         },
         "micro_biomass_meth": {
           "name": "micro_biomass_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass",
           "title": "microbial biomass method",
           "comments": [
@@ -73481,6 +73816,12 @@
         },
         "micro_biomass_n_meth": {
           "name": "micro_biomass_n_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass_n"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass nitrogen",
           "title": "microbial biomass nitrogen method",
           "comments": [
@@ -73750,6 +74091,12 @@
         },
         "non_microb_biomass_method": {
           "name": "non_microb_biomass_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "non_microb_biomass"
+            }
+          },
           "description": "Reference or method used in determining biomass",
           "title": "non-microbial biomass method",
           "comments": [
@@ -73875,6 +74222,12 @@
         },
         "org_nitro_method": {
           "name": "org_nitro_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "org_nitro"
+            }
+          },
           "description": "Method used for obtaining organic nitrogen",
           "title": "organic nitrogen method",
           "comments": [
@@ -74015,6 +74368,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -74108,6 +74467,12 @@
         },
         "prev_land_use_meth": {
           "name": "prev_land_use_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "previous_land_use"
+            }
+          },
           "description": "Reference or method used in determining previous land use and dates",
           "title": "history/previous land use method",
           "examples": [
@@ -74252,6 +74617,10 @@
         "salinity_meth": {
           "name": "salinity_meth",
           "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "salinity"
+            },
             "Expected_value": {
               "tag": "Expected_value",
               "value": "PMID,DOI or url"
@@ -74259,8 +74628,10 @@
           },
           "description": "Reference or method used in determining salinity.",
           "title": "salinity method",
-          "comments": [
-            "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+          "notes": [
+            "MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS v6.2.0 by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with no deprecation, rename or successor.",
+            "MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404 on 2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc: URI.",
+            "Retained for submission-schema compatibility."
           ],
           "examples": [
             {
@@ -74271,8 +74642,12 @@
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308",
+            "https://github.com/GenomicsStandardsConsortium/mixs/issues/1361",
+            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1"
+          ],
           "rank": 55,
-          "slot_uri": "MIXS:0000341",
           "alias": "salinity_meth",
           "owner": "SoilInterface",
           "domain_of": [
@@ -74349,9 +74724,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -74634,7 +75008,8 @@
           "description": "Mean seasonal temperature",
           "title": "mean seasonal temperature",
           "comments": [
-            "Value must be reported in degrees Celsius. Provide the numeric portion only."
+            "Value must be reported in degrees Celsius. Provide the numeric portion only.",
+            "this slot should not be populated unless season is also populated"
           ],
           "examples": [
             {
@@ -74935,8 +75310,10 @@
           },
           "description": "The relative proportion of different grain sizes of mineral particles in a soil, as described using a standard system; express as % sand (50 um to 2 mm), silt (2 um to 50 um), and clay (<2 um) with textural name (e.g., silty clay loam) optional.",
           "title": "soil texture measurement",
+          "notes": [
+            "MIxS defined this slot through v6.1.1 and dropped it in v6.2.0. Retained for submission-schema compatibility."
+          ],
           "comments": [
-            "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility.",
             "Old MIxS used 'quantity value' range but this is clearly structured text, not a single quantity."
           ],
           "examples": [
@@ -74958,6 +75335,12 @@
         },
         "soil_texture_meth": {
           "name": "soil_texture_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "soil_text_measure"
+            }
+          },
           "description": "Reference or method used in determining soil texture",
           "title": "soil texture method",
           "examples": [
@@ -75013,6 +75396,12 @@
         },
         "soil_type_meth": {
           "name": "soil_type_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "soil_type"
+            }
+          },
           "description": "Reference or method used in determining soil series name or other lower-level classification",
           "title": "soil type method",
           "examples": [
@@ -75039,6 +75428,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -75148,6 +75538,12 @@
           "name": "store_cond",
           "description": "Explain how the soil sample is stored (fresh/frozen/other).",
           "title": "storage conditions",
+          "notes": [
+            "The MIxS v7.0.1 description (MIXS:0000327) combines the definition, submitter guidance and example values in one string. NMDC keeps only the definition in description and moves the guidance to comments, so that description holds a definition and example values stay in examples."
+          ],
+          "comments": [
+            "State whether the sample was fresh, frozen or stored another way, and record factors that may affect nucleic acid recovery or library construction: temperature, humidity and microbial overgrowth."
+          ],
           "examples": [
             {
               "value": "frozen"
@@ -75300,6 +75696,12 @@
         },
         "tot_nitro_cont_meth": {
           "name": "tot_nitro_cont_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "tot_nitro_content"
+            }
+          },
           "description": "Reference or method used in determining the total nitrogen",
           "title": "total nitrogen content method",
           "examples": [
@@ -75381,6 +75783,12 @@
         },
         "tot_org_c_meth": {
           "name": "tot_org_c_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "tot_org_carb"
+            }
+          },
           "description": "Reference or method used in determining total organic carbon",
           "title": "total organic carbon method",
           "examples": [
@@ -75521,6 +75929,12 @@
         },
         "water_cont_soil_meth": {
           "name": "water_cont_soil_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "water_content"
+            }
+          },
           "description": "Reference or method used in determining the water content of soil",
           "title": "water content method",
           "todos": [
@@ -76296,6 +76710,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -76328,6 +76743,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -76360,6 +76776,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -76392,6 +76809,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -77246,6 +77664,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -77521,9 +77945,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -78064,6 +78487,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -78793,6 +79217,12 @@
         },
         "alkalinity_method": {
           "name": "alkalinity_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "alkalinity"
+            }
+          },
           "description": "Method used for alkalinity measurement",
           "title": "alkalinity method",
           "examples": [
@@ -80220,6 +80650,7 @@
         "ecosystem": {
           "name": "ecosystem",
           "description": "An ecosystem is a combination of a physical environment (abiotic factors) and all the organisms (biotic factors) that interact with this environment. Ecosystem is in position 1/5 in a GOLD path.",
+          "title": "Ecosystem",
           "comments": [
             "The abiotic factors play a profound role on the type and composition of organisms in a given environment. The GOLD Ecosystem at the top of the five-level classification system is aimed at capturing the broader environment from which an organism or environmental sample is collected. The three broad groups under Ecosystem are Environmental, Host-associated, and Engineered. They represent samples collected from a natural environment or from another organism or from engineered environments like bioreactors respectively."
           ],
@@ -80252,6 +80683,7 @@
         "ecosystem_category": {
           "name": "ecosystem_category",
           "description": "Ecosystem categories represent divisions within the ecosystem based on specific characteristics of the environment from where an organism or sample is isolated. Ecosystem category is in position 2/5 in a GOLD path.",
+          "title": "Ecosystem Category",
           "comments": [
             "The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial. Ecosystem categories for Host-associated samples can be individual hosts or phyla and for engineered samples it may be manipulated environments like bioreactors, solid waste etc."
           ],
@@ -80284,6 +80716,7 @@
         "ecosystem_subtype": {
           "name": "ecosystem_subtype",
           "description": "Ecosystem subtypes represent further subdivision of Ecosystem types into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD path.",
+          "title": "Ecosystem Subtype",
           "comments": [
             "Ecosystem Type Marine (Environmental -> Aquatic -> Marine) is further divided (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in the Ecosystem subtype category."
           ],
@@ -80316,6 +80749,7 @@
         "ecosystem_type": {
           "name": "ecosystem_type",
           "description": "Ecosystem types represent things having common characteristics within the Ecosystem Category. These common characteristics based grouping is still broad but specific to the characteristics of a given environment. Ecosystem type is in position 3/5 in a GOLD path.",
+          "title": "Ecosystem Type",
           "comments": [
             "The Aquatic ecosystem category (for example) may have ecosystem types like Marine or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor air as different Ecosystem Types. In the case of Host-associated samples, ecosystem type can represent Respiratory system, Digestive system, Roots etc."
           ],
@@ -81871,6 +82305,12 @@
         },
         "ph_meth": {
           "name": "ph_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "ph"
+            }
+          },
           "description": "Reference or method used in determining pH",
           "title": "pH method",
           "comments": [
@@ -82320,6 +82760,10 @@
         "salinity_meth": {
           "name": "salinity_meth",
           "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "salinity"
+            },
             "Expected_value": {
               "tag": "Expected_value",
               "value": "PMID,DOI or url"
@@ -82327,8 +82771,10 @@
           },
           "description": "Reference or method used in determining salinity.",
           "title": "salinity method",
-          "comments": [
-            "Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility."
+          "notes": [
+            "MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS v6.2.0 by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with no deprecation, rename or successor.",
+            "MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404 on 2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc: URI.",
+            "Retained for submission-schema compatibility."
           ],
           "examples": [
             {
@@ -82339,8 +82785,12 @@
             }
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
+          "see_also": [
+            "https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308",
+            "https://github.com/GenomicsStandardsConsortium/mixs/issues/1361",
+            "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1"
+          ],
           "rank": 55,
-          "slot_uri": "MIXS:0000341",
           "alias": "salinity_meth",
           "owner": "WaterInterface",
           "domain_of": [
@@ -82417,9 +82867,8 @@
           "structured_aliases": {
             "samp_collect_method": {
               "literal_form": "samp_collect_method",
-              "contexts": [
-                "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0"
-              ]
+              "predicate": "EXACT_SYNONYM",
+              "source": "https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1"
             }
           },
           "rank": 15,
@@ -82993,6 +83442,7 @@
         "specific_ecosystem": {
           "name": "specific_ecosystem",
           "description": "Specific ecosystems represent specific features of the environment like aphotic zone in an ocean or gastric mucosa within a host digestive system. Specific ecosystem is in position 5/5 in a GOLD path.",
+          "title": "Specific Ecosystem",
           "comments": [
             "Specific ecosystems help to define samples based on very specific characteristics of an environment under the five-level classification system."
           ],
@@ -85592,7 +86042,6 @@
       "mixin": true,
       "slots": [
         "collection_time",
-        "collection_time_inc",
         "experimental_factor_other",
         "filter_method",
         "isotope_exposure",
@@ -85607,7 +86056,6 @@
         "start_date_inc",
         "start_time_inc",
         "collection_time",
-        "collection_time_inc",
         "experimental_factor_other",
         "filter_method",
         "isotope_exposure",
@@ -85654,48 +86102,6 @@
             "SedimentInterface",
             "SoilInterface",
             "WaterInterface",
-            "SoilMixsInspiredMixin"
-          ],
-          "slot_group": "mixs_inspired_section",
-          "range": "string",
-          "recommended": true,
-          "pattern": "^([01]?\\d|2[0-3]|24(?=:00?:00?$)):([0-5]\\d)(:([0-5]\\d))?$"
-        },
-        "collection_time_inc": {
-          "name": "collection_time_inc",
-          "description": "Time the incubation was harvested/collected/ended. Only relevant for incubation samples.",
-          "title": "incubation collection time, GMT",
-          "deprecated": "This slot is directly replaced by collection_time. Any instances that would use collection_time_inc should use collection_time instead.",
-          "notes": [
-            "MIxS collection_date accepts (truncated) ISO8601. DH taking seconds optional time only"
-          ],
-          "comments": [
-            "Time should be entered as HH:MM(:SS) in GMT. See here for a converter: https://www.worldtimebuddy.com/pst-to-gmt-converter"
-          ],
-          "examples": [
-            {
-              "value": "13:33"
-            },
-            {
-              "value": "13:33:55"
-            }
-          ],
-          "from_schema": "https://example.com/nmdc_submission_schema",
-          "see_also": [
-            "MIXS:0000011"
-          ],
-          "deprecated_element_has_exact_replacement": "collection_time",
-          "contributors": [
-            "orcid:0009-0008-4013-7737"
-          ],
-          "last_updated_on": "2026-09-04T00:00:00+00:00",
-          "modified_by": "orcid:0009-0008-4013-7737",
-          "rank": 3,
-          "string_serialization": "{time, seconds optional}",
-          "alias": "collection_time_inc",
-          "owner": "SoilMixsInspiredMixin",
-          "domain_of": [
-            "SoilInterface",
             "SoilMixsInspiredMixin"
           ],
           "slot_group": "mixs_inspired_section",
@@ -85815,6 +86221,12 @@
         },
         "micro_biomass_c_meth": {
           "name": "micro_biomass_c_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass_c"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass carbon",
           "title": "microbial biomass carbon method",
           "todos": [
@@ -85850,6 +86262,12 @@
         },
         "micro_biomass_n_meth": {
           "name": "micro_biomass_n_meth",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "microbial_biomass_n"
+            }
+          },
           "description": "Reference or method used in determining microbial biomass nitrogen",
           "title": "microbial biomass nitrogen method",
           "comments": [
@@ -85974,6 +86392,12 @@
         },
         "non_microb_biomass_method": {
           "name": "non_microb_biomass_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "non_microb_biomass"
+            }
+          },
           "description": "Reference or method used in determining biomass",
           "title": "non-microbial biomass method",
           "comments": [
@@ -86004,6 +86428,12 @@
         },
         "org_nitro_method": {
           "name": "org_nitro_method",
+          "annotations": {
+            "method_for": {
+              "tag": "method_for",
+              "value": "org_nitro"
+            }
+          },
           "description": "Method used for obtaining organic nitrogen",
           "title": "organic nitrogen method",
           "comments": [
@@ -87680,6 +88110,7 @@
         "host_genus": {
           "name": "host_genus",
           "description": "Genus of the host organism that the sample was collected from.",
+          "title": "Host Genus",
           "notes": [
             "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -87723,6 +88154,7 @@
         "host_species": {
           "name": "host_species",
           "description": "Species of the host organism that the sample was collected from.",
+          "title": "Host Species",
           "notes": [
             "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -87766,6 +88198,7 @@
         "host_strain": {
           "name": "host_strain",
           "description": "Strain of the host organism that the sample was collected from.",
+          "title": "Host Strain",
           "notes": [
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
           ],
@@ -89106,6 +89539,7 @@
         "host_genus": {
           "name": "host_genus",
           "description": "Genus of the host organism that the sample was collected from.",
+          "title": "Host Genus",
           "notes": [
             "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -89149,6 +89583,7 @@
         "host_species": {
           "name": "host_species",
           "description": "Species of the host organism that the sample was collected from.",
+          "title": "Host Species",
           "notes": [
             "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -89192,6 +89627,7 @@
         "host_strain": {
           "name": "host_strain",
           "description": "Strain of the host organism that the sample was collected from.",
+          "title": "Host Strain",
           "notes": [
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
           ],
@@ -90339,6 +90775,7 @@
         "host_genus": {
           "name": "host_genus",
           "description": "Genus of the host organism that the sample was collected from.",
+          "title": "Host Genus",
           "notes": [
             "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -90382,6 +90819,7 @@
         "host_species": {
           "name": "host_species",
           "description": "Species of the host organism that the sample was collected from.",
+          "title": "Host Species",
           "notes": [
             "GOLD organism_v2 host_name \"Zea mays\" (n=432 records, queried 2026-04-30)",
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
@@ -90425,6 +90863,7 @@
         "host_strain": {
           "name": "host_strain",
           "description": "Strain of the host organism that the sample was collected from.",
+          "title": "Host Strain",
           "notes": [
             "GOLD organism_v2 host_name \"Escherichia coli K-12\" (Go0084483 Escherichia phage JSE, queried 2026-04-30)"
           ],
@@ -90796,33 +91235,31 @@
         "id": {
           "name": "id",
           "description": "A unique identifier for a thing. Must be either a CURIE shorthand for a URI or a complete URI",
+          "title": "ID",
           "notes": [
             "abstracted pattern: prefix:typecode-authshoulder-blade(.version)?(_seqsuffix)?",
             "a minimum length of 3 characters is suggested for typecodes, but 1 or 2 characters will be accepted",
             "typecodes must correspond 1:1 to a class in the NMDC schema. this will be checked via per-class id slot usage assertions",
-            "minting authority shoulders should probably be enumerated and checked in the pattern"
-          ],
-          "examples": [
-            {
-              "value": "nmdc:mgmag-00-x012.1_7_c1",
-              "description": "https://github.com/microbiomedata/nmdc-schema/pull/499#discussion_r1018499248"
-            }
+            "minting authority shoulders should probably be enumerated and checked in the pattern",
+            "This slot has no examples on purpose. linkml 1.12 copies a slot's examples into every class that uses it, and no single id matches every class id pattern (https://github.com/microbiomedata/nmdc-schema/issues/3540). Id examples belong in each class's slot_usage."
           ],
           "from_schema": "https://example.com/nmdc_submission_schema",
           "structured_aliases": {
             "workflow_execution_id": {
               "literal_form": "workflow_execution_id",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml"
-              ]
+              "notes": [
+                "JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml); source is the public NMDC page describing how JAT is used."
+              ],
+              "source": "https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md"
             },
             "data_object_id": {
               "literal_form": "data_object_id",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml"
-              ]
+              "notes": [
+                "JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml); source is the public NMDC page describing how JAT is used."
+              ],
+              "source": "https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md"
             }
           },
           "identifier": true,
@@ -90838,6 +91275,7 @@
         "name": {
           "name": "name",
           "description": "A human readable label for an entity",
+          "title": "Name",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "alias": "name",
           "owner": "NamedThing",
@@ -90849,6 +91287,7 @@
         "description": {
           "name": "description",
           "description": "a human-readable description of a thing",
+          "title": "Description",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "slot_uri": "dcterms:description",
           "alias": "description",
@@ -90861,6 +91300,7 @@
         "alternative_identifiers": {
           "name": "alternative_identifiers",
           "description": "A list of alternative identifiers for the entity.",
+          "title": "Alternative Identifiers",
           "from_schema": "https://example.com/nmdc_submission_schema",
           "alias": "alternative_identifiers",
           "owner": "NamedThing",
@@ -90874,6 +91314,7 @@
         "type": {
           "name": "type",
           "description": "the class_uri of the class that has been instantiated",
+          "title": "Type",
           "notes": [
             "makes it easier to read example data files",
             "required for polymorphic MongoDB collections"
@@ -90894,9 +91335,10 @@
             "workflow_execution_class": {
               "literal_form": "workflow_execution_class",
               "predicate": "NARROW_SYNONYM",
-              "contexts": [
-                "https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml"
-              ]
+              "notes": [
+                "JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml); source is the public NMDC page describing how JAT is used."
+              ],
+              "source": "https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md"
             }
           },
           "slot_uri": "rdf:type",
