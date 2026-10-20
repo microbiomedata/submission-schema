@@ -6,8 +6,9 @@ The TSVs were first made from Google Sheets in which squad members voted on cand
 
 ## How each value set was chosen
 
-- Water and sediment, all three slots, and plant-associated `env_broad_scale` and `env_medium`: the rows marked `TRUE` in the `include_in_enum` column of that value set's voting sheet.
+- Water, all three slots, and plant-associated `env_broad_scale` and `env_medium`: the rows marked `TRUE` in the `include_in_enum` column of that value set's voting sheet.
+- Sediment, all three slots: the classes @turbomam voted to include (`mam_vote` is 1). The `include_in_enum` column was not used.
 - Plant-associated `env_local_scale`: the classes @turbomam voted to include, minus any that @cmungall voted to exclude.
 - Soil `env_broad_scale`: every subclass of terrestrial biome (ENVO:00000446).
-- Soil `env_local_scale`: every class whose vote sum is 1 or more. Votes were -1, 0 or +1. This includes some National Land Cover Database (NLCD) land cover classes under environmental zone (ENVO:01000408), despite the modeling questions in https://github.com/EnvironmentOntology/envo/issues/1527 and https://github.com/EnvironmentOntology/envo/issues/1583.
+- Soil `env_local_scale`: every class whose vote sum is 1 or more and whose `IAA_score` is 0 or more. Votes were -1, 0 or +1. This includes some National Land Cover Database (NLCD) land cover classes under environmental zone (ENVO:01000408), despite the modeling questions in https://github.com/EnvironmentOntology/envo/issues/1527 and https://github.com/EnvironmentOntology/envo/issues/1583.
 - Soil `env_medium`: every subclass of soil (ENVO:00001998), except subclasses of enriched soil, and except soils that ENVO relates to a class in the soil `env_local_scale` value set. For example, garden soil is left out because garden is in that set. `soil/env_medium/discover_excludable_soils_curated.tsv` lists the candidate relationships, and its `override` column records manual `keep soil` and `exclude soil` decisions.
