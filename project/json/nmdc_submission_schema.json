@@ -6917,6 +6917,9 @@
         "Hydroponic media": {
           "text": "Hydroponic media"
         },
+        "Hydrothermal field": {
+          "text": "Hydrothermal field"
+        },
         "Hydrothermal vents": {
           "text": "Hydrothermal vents"
         },
@@ -9937,6 +9940,9 @@
         },
         "Sludge": {
           "text": "Sludge"
+        },
+        "Slurry": {
+          "text": "Slurry"
         },
         "Small intestine": {
           "text": "Small intestine"

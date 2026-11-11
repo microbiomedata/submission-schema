@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-11-10T23:18:00
+# Generation date: 2026-11-11T00:16:18
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -10939,6 +10939,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Hot (42-90C)"))
         setattr(cls, "Hydroponic media",
             PermissibleValue(text="Hydroponic media"))
+        setattr(cls, "Hydrothermal field",
+            PermissibleValue(text="Hydrothermal field"))
         setattr(cls, "Hydrothermal vents",
             PermissibleValue(text="Hydrothermal vents"))
         setattr(cls, "Hyperplastic/Inflammatory polyps",
@@ -11628,6 +11630,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Skin = PermissibleValue(text="Skin")
     Skull = PermissibleValue(text="Skull")
     Sludge = PermissibleValue(text="Sludge")
+    Slurry = PermissibleValue(text="Slurry")
     Snow = PermissibleValue(text="Snow")
     Soil = PermissibleValue(text="Soil")
     Speleothems = PermissibleValue(text="Speleothems")
