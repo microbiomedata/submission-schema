@@ -2997,6 +2997,7 @@
                 "Hotel",
                 "HuSC",
                 "Hydroponic media",
+                "Hydrothermal field",
                 "Hydrothermal vents",
                 "Hyperplastic/Inflammatory polyps",
                 "Hypersaline",
@@ -6864,6 +6865,7 @@
                 "novaseq",
                 "novaseq_6000",
                 "novaseq_x",
+                "novaseq_x_plus",
                 "hiseq",
                 "hiseq_1000",
                 "hiseq_1500",
@@ -9536,7 +9538,9 @@
                 "ANL",
                 "UCD_Genome_Center",
                 "Azenta",
-                "SeqCenter"
+                "SeqCenter",
+                "Aalborg_University",
+                "Georgia_Institute_of_Technology"
             ],
             "title": "ProcessingInstitutionEnum",
             "type": "string"
@@ -12554,6 +12558,7 @@
                 "Skin tissue",
                 "Skull",
                 "Sludge",
+                "Slurry",
                 "Small intestine",
                 "Small intestine content",
                 "Small intestine mucosa",
@@ -13069,7 +13074,14 @@
                 "cm3/cm3",
                 "[kn_i]",
                 "m3/s",
-                "[in_i]"
+                "[in_i]",
+                "L/d",
+                "L/min",
+                "m3/h",
+                "10*6.[gal_us]/d",
+                "{copies}/L",
+                "{copies}/mL",
+                "{copies}/g"
             ],
             "title": "UnitEnum",
             "type": "string"
