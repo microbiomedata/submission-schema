@@ -474,6 +474,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -548,6 +559,11 @@ Alias: micro_biomass_n_meth</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../SoilInterface/">SoilInterface</a></td>
 <td>soil dh_interface</td>
 <td>no</td>
@@ -555,11 +571,6 @@ Alias: micro_biomass_n_meth</p>
 <tr>
 <td><a href="../SoilMixsInspiredMixin/">SoilMixsInspiredMixin</a></td>
 <td>Mixin with SoilMixsInspired Terms</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -593,6 +604,21 @@ Alias: micro_biomass_n_meth</p>
 <li><a href="https://w3id.org/mixs/0000339">MIXS:0000339</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method_for</td>
+<td>microbial_biomass_n</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -620,6 +646,10 @@ Alias: micro_biomass_n_meth</p>
 <details>
 
 <pre><code class="language-yaml">name: micro_biomass_n_meth
+annotations:
+  method_for:
+    tag: method_for
+    value: microbial_biomass_n
 description: Reference or method used in determining microbial biomass nitrogen
 title: microbial biomass nitrogen method
 comments:

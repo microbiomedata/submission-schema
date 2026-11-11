@@ -21,7 +21,7 @@
     
     
       
-        <title>Slot: type - submission-schema</title>
+        <title>Slot: Type (type) - submission-schema</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-type" class="md-skip">
+        <a href="#slot-type-type" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: type
+              Slot: Type (type)
             
           </span>
         </div>
@@ -520,7 +520,7 @@
   
 
 
-<h1 id="slot-type">Slot: type</h1>
+<h1 id="slot-type-type">Slot: Type (type)</h1>
 <p><em>the class_uri of the class that has been instantiated</em></p>
 <p>URI: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a>
 Alias: type</p>
@@ -601,6 +601,7 @@ Alias: type</p>
 
 <pre><code class="language-yaml">name: type
 description: the class_uri of the class that has been instantiated
+title: Type
 notes:
 - makes it easier to read example data files
 - required for polymorphic MongoDB collections
@@ -617,8 +618,11 @@ structured_aliases:
   workflow_execution_class:
     literal_form: workflow_execution_class
     predicate: NARROW_SYNONYM
-    contexts:
-    - https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml
+    notes:
+    - JGI Analysis Tracker (JAT) macro nmdc_metadata.yaml, in an access-restricted
+      Bitbucket repository (https://bitbucket.org/berkeleylab/jgi-jat/macros/nmdc_metadata.yaml);
+      source is the public NMDC page describing how JAT is used.
+    source: https://github.com/microbiomedata/nmdc_automation/blob/main/data_management/README.md
 rank: 1000
 slot_uri: rdf:type
 designates_type: true

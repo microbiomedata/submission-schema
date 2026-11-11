@@ -452,6 +452,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -558,6 +569,21 @@ Alias: prev_land_use_meth</p>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method_for</td>
+<td>previous_land_use</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -585,6 +611,10 @@ Alias: prev_land_use_meth</p>
 <details>
 
 <pre><code class="language-yaml">name: prev_land_use_meth
+annotations:
+  method_for:
+    tag: method_for
+    value: previous_land_use
 description: Reference or method used in determining previous land use and dates
 title: history/previous land use method
 examples:

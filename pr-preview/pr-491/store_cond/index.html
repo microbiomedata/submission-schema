@@ -440,6 +440,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comments
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -554,6 +565,10 @@ Alias: store_cond</p>
 </tr>
 </tbody>
 </table>
+<h2 id="comments">Comments</h2>
+<ul>
+<li>State whether the sample was fresh, frozen or stored another way, and record factors that may affect nucleic acid recovery or library construction: temperature, humidity and microbial overgrowth.</li>
+</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -584,6 +599,15 @@ Alias: store_cond</p>
 <pre><code class="language-yaml">name: store_cond
 description: Explain how the soil sample is stored (fresh/frozen/other).
 title: storage conditions
+notes:
+- The MIxS v7.0.1 description (MIXS:0000327) combines the definition, submitter guidance
+  and example values in one string. NMDC keeps only the definition in description
+  and moves the guidance to comments, so that description holds a definition and example
+  values stay in examples.
+comments:
+- 'State whether the sample was fresh, frozen or stored another way, and record factors
+  that may affect nucleic acid recovery or library construction: temperature, humidity
+  and microbial overgrowth.'
 examples:
 - value: frozen
 from_schema: https://example.com/nmdc_submission_schema

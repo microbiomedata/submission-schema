@@ -1685,6 +1685,10 @@ attributes:
       partial_match: true
   alkalinity_method:
     name: alkalinity_method
+    annotations:
+      method_for:
+        tag: method_for
+        value: alkalinity
     description: Method used for alkalinity measurement
     title: alkalinity method
     examples:
@@ -2841,6 +2845,7 @@ attributes:
     description: An ecosystem is a combination of a physical environment (abiotic
       factors) and all the organisms (biotic factors) that interact with this environment.
       Ecosystem is in position 1/5 in a GOLD path.
+    title: Ecosystem
     comments:
     - The abiotic factors play a profound role on the type and composition of organisms
       in a given environment. The GOLD Ecosystem at the top of the five-level classification
@@ -2877,6 +2882,7 @@ attributes:
     description: Ecosystem categories represent divisions within the ecosystem based
       on specific characteristics of the environment from where an organism or sample
       is isolated. Ecosystem category is in position 2/5 in a GOLD path.
+    title: Ecosystem Category
     comments:
     - The Environmental ecosystem (for example) is divided into Air, Aquatic and Terrestrial.
       Ecosystem categories for Host-associated samples can be individual hosts or
@@ -2910,6 +2916,7 @@ attributes:
     description: Ecosystem subtypes represent further subdivision of Ecosystem types
       into more distinct subtypes. Ecosystem subtype is in position 4/5 in a GOLD
       path.
+    title: Ecosystem Subtype
     comments:
     - Ecosystem Type Marine (Environmental -&gt; Aquatic -&gt; Marine) is further divided
       (for example) into Intertidal zone, Coastal, Pelagic, Intertidal zone etc. in
@@ -2943,6 +2950,7 @@ attributes:
       the Ecosystem Category. These common characteristics based grouping is still
       broad but specific to the characteristics of a given environment. Ecosystem
       type is in position 3/5 in a GOLD path.
+    title: Ecosystem Type
     comments:
     - The Aquatic ecosystem category (for example) may have ecosystem types like Marine
       or Thermal springs etc. Ecosystem category Air may have Indoor air or Outdoor
@@ -4250,6 +4258,10 @@ attributes:
     maximum_value: 14
   ph_meth:
     name: ph_meth
+    annotations:
+      method_for:
+        tag: method_for
+        value: ph
     description: Reference or method used in determining pH
     title: pH method
     comments:
@@ -4608,20 +4620,31 @@ attributes:
   salinity_meth:
     name: salinity_meth
     annotations:
+      method_for:
+        tag: method_for
+        value: salinity
       Expected_value:
         tag: Expected_value
         value: PMID,DOI or url
     description: Reference or method used in determining salinity.
     title: salinity method
-    comments:
-    - Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema
-      compatibility.
+    notes:
+    - MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS
+      v6.2.0 by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with
+      no deprecation, rename or successor.
+    - 'MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404
+      on 2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc:
+      URI.'
+    - Retained for submission-schema compatibility.
     examples:
     - value: doi:10.1016/j.ecss.2011.11.024
     - value: https://doi.org/10.1016/j.ecss.2011.11.024
     from_schema: https://example.com/nmdc_submission_schema
+    see_also:
+    - https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308
+    - https://github.com/GenomicsStandardsConsortium/mixs/issues/1361
+    - https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1
     rank: 55
-    slot_uri: MIXS:0000341
     alias: salinity_meth
     owner: WaterInterface
     domain_of:
@@ -4691,8 +4714,8 @@ attributes:
     structured_aliases:
       samp_collect_method:
         literal_form: samp_collect_method
-        contexts:
-        - https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v6.3.0
+        predicate: EXACT_SYNONYM
+        source: https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/v7.0.1
     rank: 15
     keywords:
     - method
@@ -5164,6 +5187,7 @@ attributes:
     description: Specific ecosystems represent specific features of the environment
       like aphotic zone in an ocean or gastric mucosa within a host digestive system.
       Specific ecosystem is in position 5/5 in a GOLD path.
+    title: Specific Ecosystem
     comments:
     - Specific ecosystems help to define samples based on very specific characteristics
       of an environment under the five-level classification system.

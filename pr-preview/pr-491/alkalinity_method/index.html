@@ -452,6 +452,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -531,6 +542,11 @@ Alias: alkalinity_method</p>
 <td>no</td>
 </tr>
 <tr>
+<td><a href="../WaterInterface/">WaterInterface</a></td>
+<td>water dh_interface</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../HcrCoresInterface/">HcrCoresInterface</a></td>
 <td>hcr_cores dh_interface</td>
 <td>no</td>
@@ -538,11 +554,6 @@ Alias: alkalinity_method</p>
 <tr>
 <td><a href="../HcrFluidsSwabsInterface/">HcrFluidsSwabsInterface</a></td>
 <td>hcr_fluids_swabs dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../WaterInterface/">WaterInterface</a></td>
-<td>water dh_interface</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -565,6 +576,21 @@ Alias: alkalinity_method</p>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method_for</td>
+<td>alkalinity</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -592,6 +618,10 @@ Alias: alkalinity_method</p>
 <details>
 
 <pre><code class="language-yaml">name: alkalinity_method
+annotations:
+  method_for:
+    tag: method_for
+    value: alkalinity
 description: Method used for alkalinity measurement
 title: alkalinity method
 examples:

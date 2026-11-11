@@ -463,6 +463,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -537,8 +548,23 @@ Alias: ph_meth</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../MiscEnvsInterface/">MiscEnvsInterface</a></td>
 <td>misc_envs dh_interface</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></td>
+<td>wastewater_sludge dh_interface</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
+<td>biofilm dh_interface</td>
 <td>no</td>
 </tr>
 <tr>
@@ -552,23 +578,8 @@ Alias: ph_meth</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../HcrCoresInterface/">HcrCoresInterface</a></td>
 <td>hcr_cores dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../WastewaterSludgeInterface/">WastewaterSludgeInterface</a></td>
-<td>wastewater_sludge dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../BiofilmInterface/">BiofilmInterface</a></td>
-<td>biofilm dh_interface</td>
 <td>no</td>
 </tr>
 <tr>
@@ -606,6 +617,21 @@ Alias: ph_meth</p>
 <li>This can include a link to the instrument used or a citation for the method.</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method_for</td>
+<td>ph</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -633,6 +659,10 @@ Alias: ph_meth</p>
 <details>
 
 <pre><code class="language-yaml">name: ph_meth
+annotations:
+  method_for:
+    tag: method_for
+    value: ph
 description: Reference or method used in determining pH
 title: pH method
 comments:

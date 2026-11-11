@@ -440,10 +440,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comments
+        See Also
       
     </span>
   </a>
@@ -533,7 +533,7 @@
 
 <h1 id="slot-salinity-method-salinity_meth">Slot: salinity method (salinity_meth)</h1>
 <p><em>Reference or method used in determining salinity.</em></p>
-<p>URI: <a href="https://w3id.org/mixs/0000341">MIXS:0000341</a>
+<p>URI: <a href="https://example.com/nmdc_sub_schema/salinity_meth">nmdc_sub_schema:salinity_meth</a>
 Alias: salinity_meth</p>
 <!-- no inheritance hierarchy -->
 
@@ -548,13 +548,8 @@ Alias: salinity_meth</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SoilInterface/">SoilInterface</a></td>
-<td>soil dh_interface</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
-<td>plant_associated dh_interface</td>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
 <td>no</td>
 </tr>
 <tr>
@@ -563,8 +558,13 @@ Alias: salinity_meth</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
+<td><a href="../PlantAssociatedInterface/">PlantAssociatedInterface</a></td>
+<td>plant_associated dh_interface</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -594,9 +594,11 @@ Alias: salinity_meth</p>
 </tr>
 </tbody>
 </table>
-<h2 id="comments">Comments</h2>
+<h2 id="see-also">See Also</h2>
 <ul>
-<li>Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility.</li>
+<li><a href="https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308">https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308</a></li>
+<li><a href="https://github.com/GenomicsStandardsConsortium/mixs/issues/1361">https://github.com/GenomicsStandardsConsortium/mixs/issues/1361</a></li>
+<li><a href="https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1">https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="annotations">Annotations</h3>
@@ -608,6 +610,10 @@ Alias: salinity_meth</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>method_for</td>
+<td>salinity</td>
+</tr>
 <tr>
 <td>Expected_value</td>
 <td>PMID,DOI or url</td>
@@ -629,7 +635,7 @@ Alias: salinity_meth</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>MIXS:0000341</td>
+<td>nmdc_sub_schema:salinity_meth</td>
 </tr>
 <tr>
 <td>native</td>
@@ -642,19 +648,30 @@ Alias: salinity_meth</p>
 
 <pre><code class="language-yaml">name: salinity_meth
 annotations:
+  method_for:
+    tag: method_for
+    value: salinity
   Expected_value:
     tag: Expected_value
     value: PMID,DOI or url
 description: Reference or method used in determining salinity.
 title: salinity method
-comments:
-- Legacy MIxS slot removed from GSC MIxS v6.2.2. Retained for submission-schema compatibility.
+notes:
+- MIxS defined this slot as MIXS:0000341 through v6.1.1. It was dropped in MIxS v6.2.0
+  by GenomicsStandardsConsortium/mixs commit e0df7c79f (2023-10-04), with no deprecation,
+  rename or successor.
+- 'MIXS:0000341 no longer resolves (https://w3id.org/mixs/0000341 returned 404 on
+  2026-10-15), so no mapping to it is asserted. The slot uses the default nmdc: URI.'
+- Retained for submission-schema compatibility.
 examples:
 - value: doi:10.1016/j.ecss.2011.11.024
 - value: https://doi.org/10.1016/j.ecss.2011.11.024
 from_schema: https://example.com/nmdc_submission_schema
+see_also:
+- https://github.com/GenomicsStandardsConsortium/mixs/commit/e0df7c79f7e742903ccea8007b6ad9c8dcd33308
+- https://github.com/GenomicsStandardsConsortium/mixs/issues/1361
+- https://github.com/GenomicsStandardsConsortium/mixs/releases/tag/mixs6.1.1
 rank: 55
-slot_uri: MIXS:0000341
 alias: salinity_meth
 domain_of:
 - PlantAssociatedInterface

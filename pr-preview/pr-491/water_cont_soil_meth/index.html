@@ -474,6 +474,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -548,13 +559,13 @@ Alias: water_cont_soil_meth</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../SoilInterface/">SoilInterface</a></td>
-<td>soil dh_interface</td>
+<td><a href="../SedimentInterface/">SedimentInterface</a></td>
+<td>sediment dh_interface</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../SedimentInterface/">SedimentInterface</a></td>
-<td>sediment dh_interface</td>
+<td><a href="../SoilInterface/">SoilInterface</a></td>
+<td>soil dh_interface</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -590,6 +601,21 @@ Alias: water_cont_soil_meth</p>
 <li>Should this be multi valued? How to we manage and validate this?</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method_for</td>
+<td>water_content</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -617,6 +643,10 @@ Alias: water_cont_soil_meth</p>
 <details>
 
 <pre><code class="language-yaml">name: water_cont_soil_meth
+annotations:
+  method_for:
+    tag: method_for
+    value: water_content
 description: Reference or method used in determining the water content of soil
 title: water content method
 todos:

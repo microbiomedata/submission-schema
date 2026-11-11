@@ -463,6 +463,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -576,6 +587,21 @@ Alias: heavy_metals_meth</p>
 <li>Required when heavy metals are provided</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method_for</td>
+<td>heavy_metals</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: <a href="https://example.com/nmdc_submission_schema">https://example.com/nmdc_submission_schema</a></li>
@@ -603,6 +629,10 @@ Alias: heavy_metals_meth</p>
 <details>
 
 <pre><code class="language-yaml">name: heavy_metals_meth
+annotations:
+  method_for:
+    tag: method_for
+    value: heavy_metals
 description: Reference or method used in determining heavy metals
 title: heavy metals method/ extreme unusual properties
 comments:
