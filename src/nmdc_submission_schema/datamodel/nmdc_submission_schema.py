@@ -1,5 +1,5 @@
 # Auto generated from nmdc_submission_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-10-15T12:42:59
+# Generation date: 2026-11-14T19:20:25
 # Schema: nmdc_submission_schema
 #
 # id: https://example.com/nmdc_submission_schema
@@ -73,7 +73,7 @@ COG = CurieNamespace('COG', 'https://bioregistry.io/cog:')
 CONTAMINANT = CurieNamespace('Contaminant', 'http://example.org/contaminant/')
 DRUGBANK = CurieNamespace('DRUGBANK', 'https://bioregistry.io/drugbank:')
 EC = CurieNamespace('EC', 'https://bioregistry.io/eccode:')
-EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/')
+EFO = CurieNamespace('EFO', 'http://www.ebi.ac.uk/efo/EFO_')
 EGGNOG = CurieNamespace('EGGNOG', 'https://bioregistry.io/eggnog:')
 ENVO = CurieNamespace('ENVO', 'http://purl.obolibrary.org/obo/ENVO_')
 FBCV = CurieNamespace('FBcv', 'http://purl.obolibrary.org/obo/FBcv_')
@@ -88,7 +88,7 @@ KEGG_ORTHOLOGY = CurieNamespace('KEGG_ORTHOLOGY', 'https://bioregistry.io/kegg.o
 KEGG_REACTION = CurieNamespace('KEGG_REACTION', 'https://bioregistry.io/kegg.reaction:')
 KEGG_PATHWAY = CurieNamespace('KEGG_PATHWAY', 'https://bioregistry.io/kegg.pathway:')
 MASSIVE = CurieNamespace('MASSIVE', 'https://bioregistry.io/reference/massive:')
-MCO = CurieNamespace('MCO', 'http://purl.obolibrary.org/obo/MICRO_')
+MCO = CurieNamespace('MCO', 'http://purl.obolibrary.org/obo/MCO_')
 MESH = CurieNamespace('MESH', 'https://bioregistry.io/mesh:')
 MISO = CurieNamespace('MISO', 'http://purl.obolibrary.org/obo/MISO_')
 MIXS = CurieNamespace('MIXS', 'https://w3id.org/mixs/')
@@ -97,8 +97,10 @@ METACYC = CurieNamespace('MetaCyc', 'https://bioregistry.io/metacyc.compound:')
 METANETX = CurieNamespace('MetaNetX', 'http://example.org/metanetx/')
 NCBI = CurieNamespace('NCBI', 'http://example.org/ncbitaxon/')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
+NCBI_BIOSAMPLE_ATTRIBUTE = CurieNamespace('NCBI_BIOSAMPLE_ATTRIBUTE', 'https://www.ncbi.nlm.nih.gov/biosample/docs/attributes/#')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
+OM = CurieNamespace('OM', 'http://www.ontology-of-units-of-measure.org/resource/om-2/')
 OMIT = CurieNamespace('OMIT', 'http://purl.obolibrary.org/obo/OMIT_')
 PANTHER_FAMILY = CurieNamespace('PANTHER_FAMILY', 'https://bioregistry.io/panther.family:')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
@@ -164,14 +166,16 @@ ORCID = CurieNamespace('orcid', 'https://orcid.org/')
 OWL = CurieNamespace('owl', 'http://www.w3.org/2002/07/owl#')
 PROV = CurieNamespace('prov', 'http://www.w3.org/ns/prov#')
 PUBMED = CurieNamespace('pubmed', 'https://bioregistry.io/pubmed:')
+QUANTITYKIND = CurieNamespace('quantitykind', 'http://qudt.org/vocab/quantitykind/')
 QUD = CurieNamespace('qud', 'http://example.org/qud/')
-QUDT = CurieNamespace('qudt', 'http://qudt.org/1.1/schema/qudt#')
+QUDT = CurieNamespace('qudt', 'http://qudt.org/schema/qudt/')
 RDF = CurieNamespace('rdf', 'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
 RDFS = CurieNamespace('rdfs', 'http://www.w3.org/2000/01/rdf-schema#')
 ROR = CurieNamespace('ror', 'https://bioregistry.io/ror:')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 SHEX = CurieNamespace('shex', 'http://www.w3.org/ns/shex#')
 SKOS = CurieNamespace('skos', 'http://www.w3.org/2004/02/skos/core#')
+UNIT = CurieNamespace('unit', 'http://qudt.org/vocab/unit/')
 WGS84 = CurieNamespace('wgs84', 'http://www.w3.org/2003/01/geo/wgs84_pos#')
 WIKIDATA = CurieNamespace('wikidata', 'http://www.wikidata.org/entity/')
 XSD = CurieNamespace('xsd', 'http://www.w3.org/2001/XMLSchema#')
@@ -7972,6 +7976,41 @@ class UnitEnum(EnumDefinitionImpl):
                 text="[in_i]",
                 title="inches",
                 description="The Unified Code for Units of Measure (UCUM) representation of inch."))
+        setattr(cls, "L/d",
+            PermissibleValue(
+                text="L/d",
+                title="liters per day",
+                description="The Unified Code for Units of Measure (UCUM) representation of liters per day."))
+        setattr(cls, "L/min",
+            PermissibleValue(
+                text="L/min",
+                title="liters per minute",
+                description="The Unified Code for Units of Measure (UCUM) representation of liters per minute."))
+        setattr(cls, "m3/h",
+            PermissibleValue(
+                text="m3/h",
+                title="cubic meters per hour",
+                description="The Unified Code for Units of Measure (UCUM) representation of cubic meters per hour."))
+        setattr(cls, "10*6.[gal_us]/d",
+            PermissibleValue(
+                text="10*6.[gal_us]/d",
+                title="million US gallons per day",
+                description="""The Unified Code for Units of Measure (UCUM) representation of million US gallons per day, the flow unit United States wastewater utilities report."""))
+        setattr(cls, "{copies}/L",
+            PermissibleValue(
+                text="{copies}/L",
+                title="copies per liter",
+                description="""The Unified Code for Units of Measure (UCUM) representation of gene or genome copies per liter, written with a UCUM annotation because a copy count is dimensionless."""))
+        setattr(cls, "{copies}/mL",
+            PermissibleValue(
+                text="{copies}/mL",
+                title="copies per milliliter",
+                description="""The Unified Code for Units of Measure (UCUM) representation of gene or genome copies per milliliter."""))
+        setattr(cls, "{copies}/g",
+            PermissibleValue(
+                text="{copies}/g",
+                title="copies per gram",
+                description="""The Unified Code for Units of Measure (UCUM) representation of gene or genome copies per gram, used for wastewater solids."""))
 
 class AeroStrucEnum(EnumDefinitionImpl):
 
@@ -9132,11 +9171,21 @@ class SampSubtypeEnum(EnumDefinitionImpl):
 class SampWeatherEnum(EnumDefinitionImpl):
 
     cloudy = PermissibleValue(text="cloudy")
-    foggy = PermissibleValue(text="foggy")
-    hail = PermissibleValue(text="hail")
-    rain = PermissibleValue(text="rain")
-    sleet = PermissibleValue(text="sleet")
-    snow = PermissibleValue(text="snow")
+    foggy = PermissibleValue(
+        text="foggy",
+        meaning=ENVO["01000844"])
+    hail = PermissibleValue(
+        text="hail",
+        meaning=ENVO["01000874"])
+    rain = PermissibleValue(
+        text="rain",
+        meaning=ENVO["01001564"])
+    sleet = PermissibleValue(
+        text="sleet",
+        meaning=ENVO["03400014"])
+    snow = PermissibleValue(
+        text="snow",
+        meaning=ENVO["01000895"])
     sunny = PermissibleValue(text="sunny")
     windy = PermissibleValue(text="windy")
 
@@ -9687,6 +9736,14 @@ class ProcessingInstitutionEnum(EnumDefinitionImpl):
         text="SeqCenter",
         title="SeqCenter",
         meaning=None)
+    Aalborg_University = PermissibleValue(
+        text="Aalborg_University",
+        title="Aalborg University",
+        meaning=ROR["04m5j1k67"])
+    Georgia_Institute_of_Technology = PermissibleValue(
+        text="Georgia_Institute_of_Technology",
+        title="Georgia Institute of Technology",
+        meaning=ROR["01zkghx44"])
 
     _defn = EnumDefinition(
         name="ProcessingInstitutionEnum",
@@ -10882,6 +10939,8 @@ class EcosystemSubtypeEnum(EnumDefinitionImpl):
             PermissibleValue(text="Hot (42-90C)"))
         setattr(cls, "Hydroponic media",
             PermissibleValue(text="Hydroponic media"))
+        setattr(cls, "Hydrothermal field",
+            PermissibleValue(text="Hydrothermal field"))
         setattr(cls, "Hydrothermal vents",
             PermissibleValue(text="Hydrothermal vents"))
         setattr(cls, "Hyperplastic/Inflammatory polyps",
@@ -11391,6 +11450,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Cervix = PermissibleValue(text="Cervix")
     Cheese = PermissibleValue(text="Cheese")
     Chemocline = PermissibleValue(text="Chemocline")
+    Chimney = PermissibleValue(text="Chimney")
     Chloraminated = PermissibleValue(text="Chloraminated")
     Chlorinated = PermissibleValue(text="Chlorinated")
     Chyme = PermissibleValue(text="Chyme")
@@ -11571,6 +11631,7 @@ class SpecificEcosystemEnum(EnumDefinitionImpl):
     Skin = PermissibleValue(text="Skin")
     Skull = PermissibleValue(text="Skull")
     Sludge = PermissibleValue(text="Sludge")
+    Slurry = PermissibleValue(text="Slurry")
     Snow = PermissibleValue(text="Snow")
     Soil = PermissibleValue(text="Soil")
     Speleothems = PermissibleValue(text="Speleothems")
@@ -12842,7 +12903,12 @@ class IlluminaInstrumentModelEnum(EnumDefinitionImpl):
     novaseq_6000 = PermissibleValue(
         text="novaseq_6000",
         meaning=OBI["0002630"])
-    novaseq_x = PermissibleValue(text="novaseq_x")
+    novaseq_x = PermissibleValue(
+        text="novaseq_x",
+        meaning=OBI["0003663"])
+    novaseq_x_plus = PermissibleValue(
+        text="novaseq_x_plus",
+        meaning=OBI["0003664"])
     hiseq = PermissibleValue(
         text="hiseq",
         meaning=OBI["0003683"])
